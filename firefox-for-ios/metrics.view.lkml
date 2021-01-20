@@ -1,5 +1,5 @@
 view: firefox_ios_metrics {
-  sql_table_name: `mozdata.org_mozilla_ios_firefox.metrics`
+  sql_table_name: `moz-fx-data-shared-prod.org_mozilla_ios_firefox.metrics`
     ;;
 
   dimension: additional_properties {
