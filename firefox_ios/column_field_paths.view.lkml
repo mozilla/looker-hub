@@ -1,5 +1,4 @@
 view: column_field_paths {
-  # # You can specify the table name if it's different from the view name:
   sql_table_name: `moz-fx-data-shared-prod`.org_mozilla_ios_firefox.INFORMATION_SCHEMA.COLUMN_FIELD_PATHS ;;
 
   dimension: table_catalog {
@@ -24,5 +23,9 @@ view: column_field_paths {
 
   dimension: data_type {
     type: string
+  }
+
+  measure: count {
+    type: count
   }
 }
