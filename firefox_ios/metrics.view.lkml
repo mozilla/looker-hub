@@ -1,4 +1,4 @@
-view: firefox_ios_metrics {
+view: metrics {
   sql_table_name: `moz-fx-data-shared-prod.org_mozilla_ios_firefox.metrics`
     ;;
 
