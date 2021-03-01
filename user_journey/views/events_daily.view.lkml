@@ -1,14 +1,3 @@
-# Un-hide and use this explore, or copy the joins into another explore, to get all the fully nested relationships from this view
-explore: events_daily {
-  hidden: yes
-
-  join: events_daily__experiments {
-    view_label: "Events Daily: Experiments"
-    sql: LEFT JOIN UNNEST(${events_daily.experiments}) as events_daily__experiments ;;
-    relationship: one_to_many
-  }
-}
-
 view: events_daily {
   sql_table_name: `mozdata.messaging_system.events_daily`
     ;;
@@ -87,22 +76,5 @@ view: events_daily {
     convert_tz: no
     datatype: date
     sql: ${TABLE}.submission_date ;;
-  }
-
-  measure: count {
-    type: count
-    drill_fields: []
-  }
-}
-
-view: events_daily__experiments {
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-
-  dimension: value {
-    type: string
-    sql: ${TABLE}.value ;;
   }
 }
