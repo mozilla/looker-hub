@@ -31,6 +31,7 @@ view: events_daily {
   dimension: events {
     type: string
     sql: ${TABLE}.events ;;
+    hidden: yes
   }
 
   dimension: experiments {
@@ -63,18 +64,8 @@ view: events_daily {
     sql: ${TABLE}.subdivision1 ;;
   }
 
-  dimension_group: submission {
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}.submission_date ;;
+  dimension: submission_date {
+    type: date
+    sql: CAST(${TABLE}.submission_date AS TIMESTAMP) ;;
   }
 }
