@@ -1,5 +1,5 @@
 view: baseline {
-  sql_table_name: `moz-fx-data-shared-prod.org_mozilla_ios_firefox{% parameter channel %}.baseline`
+  sql_table_name: `moz-fx-data-shared-prod.org_mozilla_ios_firefox.baseline`
     ;;
 
   dimension: additional_properties {
