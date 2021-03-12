@@ -1,9 +1,9 @@
 ---
 version: 2
 jobs:
-  build:
-    machine:
-      image: ubuntu-2004:202101-01
+  deploy:
+    docker:
+      - image: cimg/base:2020.01
     steps:
       - run: curl https://mozilla.cloud.looker.com/webhooks/projects/looker-hub/deploy
 workflows:
