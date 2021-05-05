@@ -266,6 +266,12 @@ view: discovery {
     type: string
     group_label: "Metrics String"
     group_item_label: "Mission Identifier"
+
+    link: {
+      label: "Glean Dictionary reference for Mission Identifier"
+      url: "https://dictionary.telemetry.mozilla.org/apps/discovery/metrics/mission_identifier"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__string__mission_status {
@@ -273,6 +279,12 @@ view: discovery {
     type: string
     group_label: "Metrics String"
     group_item_label: "Mission Status"
+
+    link: {
+      label: "Glean Dictionary reference for Mission Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/discovery/metrics/mission_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__string__test_burnham_mission {
@@ -280,6 +292,12 @@ view: discovery {
     type: string
     group_label: "Metrics String"
     group_item_label: "Test Burnham Mission"
+
+    link: {
+      label: "Glean Dictionary reference for Test Burnham Mission"
+      url: "https://dictionary.telemetry.mozilla.org/apps/discovery/metrics/test_burnham_mission"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__string__test_burnham_position {
@@ -287,6 +305,12 @@ view: discovery {
     type: string
     group_label: "Metrics String"
     group_item_label: "Test Burnham Position"
+
+    link: {
+      label: "Glean Dictionary reference for Test Burnham Position"
+      url: "https://dictionary.telemetry.mozilla.org/apps/discovery/metrics/test_burnham_position"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__string__test_burnham_status {
@@ -294,6 +318,12 @@ view: discovery {
     type: string
     group_label: "Metrics String"
     group_item_label: "Test Burnham Status"
+
+    link: {
+      label: "Glean Dictionary reference for Test Burnham Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/discovery/metrics/test_burnham_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__string__test_burnham_test_name {
@@ -301,6 +331,12 @@ view: discovery {
     type: string
     group_label: "Metrics String"
     group_item_label: "Test Burnham Test Name"
+
+    link: {
+      label: "Glean Dictionary reference for Test Burnham Test Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/discovery/metrics/test_burnham_test_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__string__test_name {
@@ -308,6 +344,12 @@ view: discovery {
     type: string
     group_label: "Metrics String"
     group_item_label: "Test Name"
+
+    link: {
+      label: "Glean Dictionary reference for Test Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/discovery/metrics/test_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__uuid__test_burnham_test_run {
@@ -315,6 +357,12 @@ view: discovery {
     type: string
     group_label: "Metrics Uuid"
     group_item_label: "Test Burnham Test Run"
+
+    link: {
+      label: "Glean Dictionary reference for Test Burnham Test Run"
+      url: "https://dictionary.telemetry.mozilla.org/apps/discovery/metrics/test_burnham_test_run"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__uuid__test_run {
@@ -322,6 +370,12 @@ view: discovery {
     type: string
     group_label: "Metrics Uuid"
     group_item_label: "Test Run"
+
+    link: {
+      label: "Glean Dictionary reference for Test Run"
+      url: "https://dictionary.telemetry.mozilla.org/apps/discovery/metrics/test_run"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: normalized_app_name {

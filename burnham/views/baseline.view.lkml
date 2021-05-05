@@ -226,6 +226,12 @@ view: baseline {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Glean Validation Metrics Ping Count"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation Metrics Ping Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/baseline/metrics/glean_validation_metrics_ping_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__datetime__glean_validation_first_run_hour {
@@ -233,6 +239,12 @@ view: baseline {
     type: string
     group_label: "Metrics Datetime"
     group_item_label: "Glean Validation First Run Hour"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation First Run Hour"
+      url: "https://dictionary.telemetry.mozilla.org/apps/baseline/metrics/glean_validation_first_run_hour"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__jwe {
@@ -275,6 +287,12 @@ view: baseline {
     type: string
     group_label: "Metrics String"
     group_item_label: "Glean Baseline Locale"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Baseline Locale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/baseline/metrics/glean_baseline_locale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__timespan__glean_baseline_duration__time_unit {
@@ -282,6 +300,12 @@ view: baseline {
     type: string
     group_label: "Metrics Timespan Glean Baseline Duration"
     group_item_label: "Time Unit"
+
+    link: {
+      label: "Glean Dictionary reference for Time Unit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/baseline/metrics/time_unit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__timespan__glean_baseline_duration__value {
@@ -289,6 +313,12 @@ view: baseline {
     type: number
     group_label: "Metrics Timespan Glean Baseline Duration"
     group_item_label: "Value"
+
+    link: {
+      label: "Glean Dictionary reference for Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/baseline/metrics/value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: normalized_app_name {

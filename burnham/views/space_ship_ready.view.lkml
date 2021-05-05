@@ -256,6 +256,12 @@ view: space_ship_ready {
     type: string
     group_label: "Metrics String"
     group_item_label: "Test Name"
+
+    link: {
+      label: "Glean Dictionary reference for Test Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/space_ship_ready/metrics/test_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__uuid__test_run {
@@ -263,6 +269,12 @@ view: space_ship_ready {
     type: string
     group_label: "Metrics Uuid"
     group_item_label: "Test Run"
+
+    link: {
+      label: "Glean Dictionary reference for Test Run"
+      url: "https://dictionary.telemetry.mozilla.org/apps/space_ship_ready/metrics/test_run"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: normalized_app_name {

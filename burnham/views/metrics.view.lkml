@@ -226,6 +226,12 @@ view: metrics {
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Glean Core Migration Successful"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Core Migration Successful"
+      url: "https://dictionary.telemetry.mozilla.org/apps/metrics/metrics/glean_core_migration_successful"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__boolean__glean_error_preinit_tasks_timeout {
@@ -233,6 +239,12 @@ view: metrics {
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Glean Error Preinit Tasks Timeout"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Preinit Tasks Timeout"
+      url: "https://dictionary.telemetry.mozilla.org/apps/metrics/metrics/glean_error_preinit_tasks_timeout"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__counter__glean_error_io {
@@ -240,6 +252,12 @@ view: metrics {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Glean Error Io"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Io"
+      url: "https://dictionary.telemetry.mozilla.org/apps/metrics/metrics/glean_error_io"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__counter__glean_error_preinit_tasks_overflow {
@@ -247,6 +265,12 @@ view: metrics {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Glean Error Preinit Tasks Overflow"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Preinit Tasks Overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/metrics/metrics/glean_error_preinit_tasks_overflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__counter__glean_time_invalid_timezone_offset {
@@ -254,6 +278,12 @@ view: metrics {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Glean Time Invalid Timezone Offset"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Time Invalid Timezone Offset"
+      url: "https://dictionary.telemetry.mozilla.org/apps/metrics/metrics/glean_time_invalid_timezone_offset"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__counter__glean_upload_deleted_pings_after_quota_hit {
@@ -261,6 +291,12 @@ view: metrics {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Glean Upload Deleted Pings After Quota Hit"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload Deleted Pings After Quota Hit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/metrics/metrics/glean_upload_deleted_pings_after_quota_hit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__counter__glean_upload_pending_pings {
@@ -268,6 +304,12 @@ view: metrics {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Glean Upload Pending Pings"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload Pending Pings"
+      url: "https://dictionary.telemetry.mozilla.org/apps/metrics/metrics/glean_upload_pending_pings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__counter__glean_validation_app_forceclosed_count {
@@ -275,6 +317,12 @@ view: metrics {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Glean Validation App Forceclosed Count"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation App Forceclosed Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/metrics/metrics/glean_validation_app_forceclosed_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__counter__glean_validation_baseline_ping_count {
@@ -282,6 +330,12 @@ view: metrics {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Glean Validation Baseline Ping Count"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation Baseline Ping Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/metrics/metrics/glean_validation_baseline_ping_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__counter__glean_validation_foreground_count {
@@ -289,6 +343,12 @@ view: metrics {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Glean Validation Foreground Count"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation Foreground Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/metrics/metrics/glean_validation_foreground_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__datetime__glean_validation_first_run_hour {
@@ -296,6 +356,12 @@ view: metrics {
     type: string
     group_label: "Metrics Datetime"
     group_item_label: "Glean Validation First Run Hour"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation First Run Hour"
+      url: "https://dictionary.telemetry.mozilla.org/apps/metrics/metrics/glean_validation_first_run_hour"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__jwe {
@@ -343,6 +409,12 @@ view: metrics {
     type: number
     group_label: "Metrics Memory Distribution Glean Database Size"
     group_item_label: "Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/metrics/metrics/sum"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__memory_distribution__glean_database_size__values {
@@ -355,6 +427,12 @@ view: metrics {
     type: number
     group_label: "Metrics Memory Distribution Glean Upload Discarded Exceeding Pings Size"
     group_item_label: "Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/metrics/metrics/sum"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__values {
@@ -367,6 +445,12 @@ view: metrics {
     type: number
     group_label: "Metrics Memory Distribution Glean Upload Pending Pings Directory Size"
     group_item_label: "Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/metrics/metrics/sum"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
@@ -379,6 +463,12 @@ view: metrics {
     type: string
     group_label: "Metrics String"
     group_item_label: "Ping Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Ping Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/metrics/metrics/ping_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: normalized_app_name {
