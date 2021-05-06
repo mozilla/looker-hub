@@ -627,6 +627,13 @@ view: new_profile {
     group_item_label: "Auto Download"
   }
 
+  dimension: environment__settings__update__background {
+    sql: ${TABLE}.environment.settings.update.background ;;
+    type: yesno
+    group_label: "Environment Settings Update"
+    group_item_label: "Background"
+  }
+
   dimension: environment__settings__update__channel {
     sql: ${TABLE}.environment.settings.update.channel ;;
     type: string
