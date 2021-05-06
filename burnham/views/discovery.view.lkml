@@ -224,6 +224,12 @@ view: discovery {
   dimension: metrics__jwe {
     sql: ${TABLE}.metrics.jwe ;;
     hidden: yes
+
+    link: {
+      label: "Glean Dictionary reference for Jwe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/jwe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -269,7 +275,7 @@ view: discovery {
 
     link: {
       label: "Glean Dictionary reference for Mission Identifier"
-      url: "https://dictionary.telemetry.mozilla.org/apps/discovery/metrics/mission_identifier"
+      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/mission_identifier"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -282,7 +288,7 @@ view: discovery {
 
     link: {
       label: "Glean Dictionary reference for Mission Status"
-      url: "https://dictionary.telemetry.mozilla.org/apps/discovery/metrics/mission_status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/mission_status"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -295,7 +301,7 @@ view: discovery {
 
     link: {
       label: "Glean Dictionary reference for Test Burnham Mission"
-      url: "https://dictionary.telemetry.mozilla.org/apps/discovery/metrics/test_burnham_mission"
+      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/test_burnham_mission"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -308,7 +314,7 @@ view: discovery {
 
     link: {
       label: "Glean Dictionary reference for Test Burnham Position"
-      url: "https://dictionary.telemetry.mozilla.org/apps/discovery/metrics/test_burnham_position"
+      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/test_burnham_position"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -321,7 +327,7 @@ view: discovery {
 
     link: {
       label: "Glean Dictionary reference for Test Burnham Status"
-      url: "https://dictionary.telemetry.mozilla.org/apps/discovery/metrics/test_burnham_status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/test_burnham_status"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -334,7 +340,7 @@ view: discovery {
 
     link: {
       label: "Glean Dictionary reference for Test Burnham Test Name"
-      url: "https://dictionary.telemetry.mozilla.org/apps/discovery/metrics/test_burnham_test_name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/test_burnham_test_name"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -347,7 +353,7 @@ view: discovery {
 
     link: {
       label: "Glean Dictionary reference for Test Name"
-      url: "https://dictionary.telemetry.mozilla.org/apps/discovery/metrics/test_name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/test_name"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -360,7 +366,7 @@ view: discovery {
 
     link: {
       label: "Glean Dictionary reference for Test Burnham Test Run"
-      url: "https://dictionary.telemetry.mozilla.org/apps/discovery/metrics/test_burnham_test_run"
+      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/test_burnham_test_run"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -373,7 +379,7 @@ view: discovery {
 
     link: {
       label: "Glean Dictionary reference for Test Run"
-      url: "https://dictionary.telemetry.mozilla.org/apps/discovery/metrics/test_run"
+      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/test_run"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

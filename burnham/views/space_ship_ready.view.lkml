@@ -224,6 +224,12 @@ view: space_ship_ready {
   dimension: metrics__jwe {
     sql: ${TABLE}.metrics.jwe ;;
     hidden: yes
+
+    link: {
+      label: "Glean Dictionary reference for Jwe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/jwe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -259,7 +265,7 @@ view: space_ship_ready {
 
     link: {
       label: "Glean Dictionary reference for Test Name"
-      url: "https://dictionary.telemetry.mozilla.org/apps/space_ship_ready/metrics/test_name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/test_name"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -272,7 +278,7 @@ view: space_ship_ready {
 
     link: {
       label: "Glean Dictionary reference for Test Run"
-      url: "https://dictionary.telemetry.mozilla.org/apps/space_ship_ready/metrics/test_run"
+      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/test_run"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

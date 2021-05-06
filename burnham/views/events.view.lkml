@@ -224,6 +224,12 @@ view: events {
   dimension: metrics__jwe {
     sql: ${TABLE}.metrics.jwe ;;
     hidden: yes
+
+    link: {
+      label: "Glean Dictionary reference for Jwe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/jwe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
