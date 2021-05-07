@@ -1,4 +1,4 @@
-view: space_ship_ready {
+view: bookmarks_sync_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     type: string
@@ -221,6 +221,91 @@ view: space_ship_ready {
     group_item_label: "Version"
   }
 
+  dimension: metrics__counter__bookmarks_sync_outgoing_batches {
+    sql: ${TABLE}.metrics.counter.bookmarks_sync_outgoing_batches ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Bookmarks Sync Outgoing Batches"
+  }
+
+  dimension: metrics__datetime__bookmarks_sync_finished_at {
+    sql: ${TABLE}.metrics.datetime.bookmarks_sync_finished_at ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Bookmarks Sync Finished At"
+  }
+
+  dimension: metrics__datetime__bookmarks_sync_started_at {
+    sql: ${TABLE}.metrics.datetime.bookmarks_sync_started_at ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Bookmarks Sync Started At"
+  }
+
+  dimension: metrics__jwe {
+    sql: ${TABLE}.metrics.jwe ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__bookmarks_sync_incoming {
+    sql: ${TABLE}.metrics.labeled_counter.bookmarks_sync_incoming ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__bookmarks_sync_outgoing {
+    sql: ${TABLE}.metrics.labeled_counter.bookmarks_sync_outgoing ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__bookmarks_sync_remote_tree_problems {
+    sql: ${TABLE}.metrics.labeled_counter.bookmarks_sync_remote_tree_problems ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_rate {
+    sql: ${TABLE}.metrics.labeled_rate ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_string__bookmarks_sync_failure_reason {
+    sql: ${TABLE}.metrics.labeled_string.bookmarks_sync_failure_reason ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string__bookmarks_sync_uid {
+    sql: ${TABLE}.metrics.string.bookmarks_sync_uid ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Bookmarks Sync Uid"
+  }
+
+  dimension: metrics__uuid__sync_sync_uuid {
+    sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Sync Sync Uuid"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -353,14 +438,24 @@ view: space_ship_ready {
     ]
   }
 
-  measure: clients {
-    type: count_distinct
-    sql: ${client_info__client_id} ;;
+  parameter: channel {
+    type: unquoted
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.org_mozilla_firefox.bookmarks_sync"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.bookmarks_sync"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.bookmarks_sync"
+    }
   }
 
-  measure: ping_count {
-    type: count
-  }
-
-  sql_table_name: `mozdata.burnham.space_ship_ready` ;;
+  sql_table_name: `{% parameter channel %}` ;;
 }

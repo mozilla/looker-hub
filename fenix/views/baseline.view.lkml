@@ -1,4 +1,90 @@
-view: space_ship_ready {
+view: baseline {
+  dimension: metrics__counter__events_total_uri_count {
+    sql: ${TABLE}.metrics.counter.events_total_uri_count ;;
+    type: number
+    group_label: "Events"
+    group_item_label: "Total Uri Count"
+
+    link: {
+      label: "Glean Dictionary reference for Events Total Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_total_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of URIs visited by the user in the current session, including
+page reloads. This does not include background page requests and URIs from
+embedded pages or private browsing but may be incremented without user
+interaction by website scripts that programmatically redirect to a new
+location.
+"
+  }
+
+  dimension: metrics__timespan__glean_baseline_duration__value {
+    sql: ${TABLE}.metrics.timespan.glean_baseline_duration.value ;;
+    type: number
+    group_label: "Glean Baseline"
+    group_item_label: "Duration Value"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Baseline Duration Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_baseline_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The duration of the last foreground session.
+"
+  }
+
+  dimension: metrics__string__glean_baseline_locale {
+    sql: ${TABLE}.metrics.string.glean_baseline_locale ;;
+    type: string
+    group_label: "Glean Baseline"
+    group_item_label: "Locale"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Baseline Locale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_baseline_locale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The locale of the application during initialization (e.g. \"es-ES\").
+If the locale can't be determined on the system, the value is
+[\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers),
+to indicate \"undetermined\".
+"
+  }
+
+  dimension: metrics__datetime__glean_validation_first_run_hour {
+    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
+    type: string
+    group_label: "Glean Validation"
+    group_item_label: "First Run Hour"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation First Run Hour"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_first_run_hour"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The hour of the first run of the application.
+"
+  }
+
+  dimension: metrics__counter__glean_validation_metrics_ping_count {
+    sql: ${TABLE}.metrics.counter.glean_validation_metrics_ping_count ;;
+    type: number
+    group_label: "Glean Validation"
+    group_item_label: "Metrics Ping Count"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation Metrics Ping Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_metrics_ping_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of metrics pings sent during the lifetime of this baseline ping."
+  }
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     type: string
@@ -362,5 +448,74 @@ view: space_ship_ready {
     type: count
   }
 
-  sql_table_name: `mozdata.burnham.space_ship_ready` ;;
+  measure: events_total_uri_count {
+    type: sum
+    sql: ${metrics__counter__events_total_uri_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Events Total Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_total_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: events_total_uri_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__events_total_uri_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Events Total Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_total_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_validation_metrics_ping_count {
+    type: sum
+    sql: ${metrics__counter__glean_validation_metrics_ping_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation Metrics Ping Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_metrics_ping_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_validation_metrics_ping_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__glean_validation_metrics_ping_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation Metrics Ping Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_metrics_ping_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  parameter: channel {
+    type: unquoted
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.org_mozilla_firefox.baseline"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.baseline"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.baseline"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }

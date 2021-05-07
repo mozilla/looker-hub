@@ -1,4 +1,4 @@
-view: space_ship_ready {
+view: sync_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     type: string
@@ -221,6 +221,48 @@ view: space_ship_ready {
     group_item_label: "Version"
   }
 
+  dimension: metrics__jwe {
+    sql: ${TABLE}.metrics.jwe ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_rate {
+    sql: ${TABLE}.metrics.labeled_rate ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_string__sync_failure_reason {
+    sql: ${TABLE}.metrics.labeled_string.sync_failure_reason ;;
+    hidden: yes
+  }
+
+  dimension: metrics__uuid__sync_sync_uuid {
+    sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Sync Sync Uuid"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -353,14 +395,24 @@ view: space_ship_ready {
     ]
   }
 
-  measure: clients {
-    type: count_distinct
-    sql: ${client_info__client_id} ;;
+  parameter: channel {
+    type: unquoted
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.org_mozilla_firefox.sync"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.sync"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.sync"
+    }
   }
 
-  measure: ping_count {
-    type: count
-  }
-
-  sql_table_name: `mozdata.burnham.space_ship_ready` ;;
+  sql_table_name: `{% parameter channel %}` ;;
 }

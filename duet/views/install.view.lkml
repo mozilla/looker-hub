@@ -1,96 +1,52 @@
-view: space_ship_ready {
+view: install {
+  dimension: _64bit_build {
+    sql: ${TABLE}._64bit_build ;;
+    type: yesno
+  }
+
+  dimension: _64bit_os {
+    sql: ${TABLE}._64bit_os ;;
+    type: yesno
+  }
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     type: string
   }
 
-  dimension: client_info__android_sdk_version {
-    sql: ${TABLE}.client_info.android_sdk_version ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Android Sdk Version"
+  dimension: admin_user {
+    sql: ${TABLE}.admin_user ;;
+    type: yesno
   }
 
-  dimension: client_info__app_build {
-    sql: ${TABLE}.client_info.app_build ;;
+  dimension: attribution {
+    sql: ${TABLE}.attribution ;;
     type: string
-    group_label: "Client Info"
-    group_item_label: "App Build"
   }
 
-  dimension: client_info__app_channel {
-    sql: ${TABLE}.client_info.app_channel ;;
+  dimension: build_channel {
+    sql: ${TABLE}.build_channel ;;
     type: string
-    group_label: "Client Info"
-    group_item_label: "App Channel"
   }
 
-  dimension: client_info__app_display_version {
-    sql: ${TABLE}.client_info.app_display_version ;;
+  dimension: build_id {
+    sql: ${TABLE}.build_id ;;
     type: string
-    group_label: "Client Info"
-    group_item_label: "App Display Version"
   }
 
-  dimension: client_info__architecture {
-    sql: ${TABLE}.client_info.architecture ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Architecture"
+  dimension: bytes_downloaded {
+    sql: ${TABLE}.bytes_downloaded ;;
+    type: number
   }
 
-  dimension: client_info__client_id {
-    sql: ${TABLE}.client_info.client_id ;;
-    hidden: yes
+  dimension: default_path {
+    sql: ${TABLE}.default_path ;;
+    type: yesno
   }
 
-  dimension: client_info__device_manufacturer {
-    sql: ${TABLE}.client_info.device_manufacturer ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Device Manufacturer"
-  }
-
-  dimension: client_info__device_model {
-    sql: ${TABLE}.client_info.device_model ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Device Model"
-  }
-
-  dimension: client_info__first_run_date {
-    sql: ${TABLE}.client_info.first_run_date ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "First Run Date"
-  }
-
-  dimension: client_info__locale {
-    sql: ${TABLE}.client_info.locale ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Locale"
-  }
-
-  dimension: client_info__os {
-    sql: ${TABLE}.client_info.os ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Os"
-  }
-
-  dimension: client_info__os_version {
-    sql: ${TABLE}.client_info.os_version ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Os Version"
-  }
-
-  dimension: client_info__telemetry_sdk_build {
-    sql: ${TABLE}.client_info.telemetry_sdk_build ;;
-    type: string
-    group_label: "Client Info"
-    group_item_label: "Telemetry Sdk Build"
+  dimension: disk_space_error {
+    sql: ${TABLE}.disk_space_error ;;
+    type: yesno
   }
 
   dimension: document_id {
@@ -98,9 +54,89 @@ view: space_ship_ready {
     hidden: yes
   }
 
-  dimension: events {
-    sql: ${TABLE}.events ;;
-    hidden: yes
+  dimension: download_ip {
+    sql: ${TABLE}.download_ip ;;
+    type: string
+  }
+
+  dimension: download_latency {
+    sql: ${TABLE}.download_latency ;;
+    type: number
+  }
+
+  dimension: download_retries {
+    sql: ${TABLE}.download_retries ;;
+    type: number
+  }
+
+  dimension: download_size {
+    sql: ${TABLE}.download_size ;;
+    type: number
+  }
+
+  dimension: download_time {
+    sql: ${TABLE}.download_time ;;
+    type: number
+  }
+
+  dimension: file_error {
+    sql: ${TABLE}.file_error ;;
+    type: yesno
+  }
+
+  dimension: finish_time {
+    sql: ${TABLE}.finish_time ;;
+    type: number
+  }
+
+  dimension: from_msi {
+    sql: ${TABLE}.from_msi ;;
+    type: yesno
+  }
+
+  dimension: funnelcake {
+    sql: ${TABLE}.funnelcake ;;
+    type: string
+  }
+
+  dimension: had_old_install {
+    sql: ${TABLE}.had_old_install ;;
+    type: yesno
+  }
+
+  dimension: install_time {
+    sql: ${TABLE}.install_time ;;
+    type: number
+  }
+
+  dimension: install_timeout {
+    sql: ${TABLE}.install_timeout ;;
+    type: yesno
+  }
+
+  dimension: installer_type {
+    sql: ${TABLE}.installer_type ;;
+    type: string
+  }
+
+  dimension: installer_version {
+    sql: ${TABLE}.installer_version ;;
+    type: string
+  }
+
+  dimension: intro_time {
+    sql: ${TABLE}.intro_time ;;
+    type: number
+  }
+
+  dimension: locale {
+    sql: ${TABLE}.locale ;;
+    type: string
+  }
+
+  dimension: manual_download {
+    sql: ${TABLE}.manual_download ;;
+    type: yesno
   }
 
   dimension: metadata__geo__city {
@@ -221,6 +257,21 @@ view: space_ship_ready {
     group_item_label: "Version"
   }
 
+  dimension: new_default {
+    sql: ${TABLE}.new_default ;;
+    type: yesno
+  }
+
+  dimension: new_launched {
+    sql: ${TABLE}.new_launched ;;
+    type: yesno
+  }
+
+  dimension: no_write_access {
+    sql: ${TABLE}.no_write_access ;;
+    type: yesno
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -246,49 +297,114 @@ view: space_ship_ready {
     type: string
   }
 
-  dimension: ping_info__end_time {
-    sql: ${TABLE}.ping_info.end_time ;;
+  dimension: old_build_id {
+    sql: ${TABLE}.old_build_id ;;
     type: string
-    group_label: "Ping Info"
-    group_item_label: "End Time"
   }
 
-  dimension: ping_info__experiments {
-    sql: ${TABLE}.ping_info.experiments ;;
-    hidden: yes
+  dimension: old_default {
+    sql: ${TABLE}.old_default ;;
+    type: yesno
   }
 
-  dimension: ping_info__ping_type {
-    sql: ${TABLE}.ping_info.ping_type ;;
+  dimension: old_running {
+    sql: ${TABLE}.old_running ;;
+    type: yesno
+  }
+
+  dimension: old_version {
+    sql: ${TABLE}.old_version ;;
     type: string
-    group_label: "Ping Info"
-    group_item_label: "Ping Type"
   }
 
-  dimension: ping_info__reason {
-    sql: ${TABLE}.ping_info.reason ;;
-    type: string
-    group_label: "Ping Info"
-    group_item_label: "Reason"
-  }
-
-  dimension: ping_info__seq {
-    sql: ${TABLE}.ping_info.seq ;;
+  dimension: options_time {
+    sql: ${TABLE}.options_time ;;
     type: number
-    group_label: "Ping Info"
-    group_item_label: "Seq"
   }
 
-  dimension: ping_info__start_time {
-    sql: ${TABLE}.ping_info.start_time ;;
+  dimension: os_version {
+    sql: ${TABLE}.os_version ;;
     type: string
-    group_label: "Ping Info"
-    group_item_label: "Start Time"
+  }
+
+  dimension: out_of_retries {
+    sql: ${TABLE}.out_of_retries ;;
+    type: yesno
+  }
+
+  dimension: ping_version {
+    sql: ${TABLE}.ping_version ;;
+    type: string
+  }
+
+  dimension: preinstall_time {
+    sql: ${TABLE}.preinstall_time ;;
+    type: number
+  }
+
+  dimension: profile_cleanup_prompt {
+    sql: ${TABLE}.profile_cleanup_prompt ;;
+    type: string
+  }
+
+  dimension: profile_cleanup_requested {
+    sql: ${TABLE}.profile_cleanup_requested ;;
+    type: yesno
   }
 
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+  }
+
+  dimension: server_os {
+    sql: ${TABLE}.server_os ;;
+    type: yesno
+  }
+
+  dimension: service_pack {
+    sql: ${TABLE}.service_pack ;;
+    type: string
+  }
+
+  dimension: set_default {
+    sql: ${TABLE}.set_default ;;
+    type: yesno
+  }
+
+  dimension: sig_not_trusted {
+    sql: ${TABLE}.sig_not_trusted ;;
+    type: yesno
+  }
+
+  dimension: sig_unexpected {
+    sql: ${TABLE}.sig_unexpected ;;
+    type: yesno
+  }
+
+  dimension: silent {
+    sql: ${TABLE}.silent ;;
+    type: yesno
+  }
+
+  dimension: succeeded {
+    sql: ${TABLE}.succeeded ;;
+    type: yesno
+  }
+
+  dimension: update_channel {
+    sql: ${TABLE}.update_channel ;;
+    type: string
+  }
+
+  dimension: user_cancelled {
+    sql: ${TABLE}.user_cancelled ;;
+    type: yesno
+  }
+
+  dimension: version {
+    sql: ${TABLE}.version ;;
+    type: string
   }
 
   dimension_group: metadata__header__parsed {
@@ -307,38 +423,6 @@ view: space_ship_ready {
     group_item_label: "Parsed Date"
   }
 
-  dimension_group: ping_info__parsed_end {
-    sql: ${TABLE}.ping_info.parsed_end_time ;;
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    group_label: "Ping Info"
-    group_item_label: "Parsed End Time"
-  }
-
-  dimension_group: ping_info__parsed_start {
-    sql: ${TABLE}.ping_info.parsed_start_time ;;
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    group_label: "Ping Info"
-    group_item_label: "Parsed Start Time"
-  }
-
   dimension_group: submission {
     sql: ${TABLE}.submission_timestamp ;;
     type: time
@@ -353,14 +437,9 @@ view: space_ship_ready {
     ]
   }
 
-  measure: clients {
-    type: count_distinct
-    sql: ${client_info__client_id} ;;
-  }
-
   measure: ping_count {
     type: count
   }
 
-  sql_table_name: `mozdata.burnham.space_ship_ready` ;;
+  sql_table_name: `mozdata.firefox_installer.install` ;;
 }

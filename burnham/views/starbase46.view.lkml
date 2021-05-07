@@ -1,4 +1,36 @@
 view: starbase46 {
+  dimension: metrics__string__test_name {
+    sql: ${TABLE}.metrics.string.test_name ;;
+    type: string
+    group_label: "Test"
+    group_item_label: "Name"
+
+    link: {
+      label: "Glean Dictionary reference for Test Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/test_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Name of the current test.
+"
+  }
+
+  dimension: metrics__uuid__test_run {
+    sql: ${TABLE}.metrics.uuid.test_run ;;
+    type: string
+    group_label: "Test"
+    group_item_label: "Run"
+
+    link: {
+      label: "Glean Dictionary reference for Test Run"
+      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/test_run"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "ID of the current test run.
+"
+  }
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     type: string
@@ -219,68 +251,6 @@ view: starbase46 {
     type: string
     group_label: "Metadata User Agent"
     group_item_label: "Version"
-  }
-
-  dimension: metrics__jwe {
-    sql: ${TABLE}.metrics.jwe ;;
-    hidden: yes
-
-    link: {
-      label: "Glean Dictionary reference for Jwe"
-      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/jwe"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_label {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_state {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_value {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_rate {
-    sql: ${TABLE}.metrics.labeled_rate ;;
-    hidden: yes
-  }
-
-  dimension: metrics__string__test_name {
-    sql: ${TABLE}.metrics.string.test_name ;;
-    type: string
-    group_label: "Metrics String"
-    group_item_label: "Test Name"
-
-    link: {
-      label: "Glean Dictionary reference for Test Name"
-      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/test_name"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  dimension: metrics__uuid__test_run {
-    sql: ${TABLE}.metrics.uuid.test_run ;;
-    type: string
-    group_label: "Metrics Uuid"
-    group_item_label: "Test Run"
-
-    link: {
-      label: "Glean Dictionary reference for Test Run"
-      url: "https://dictionary.telemetry.mozilla.org/apps/burnham/metrics/test_run"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
   }
 
   dimension: normalized_app_name {

@@ -1,4 +1,4 @@
-view: space_ship_ready {
+view: installation_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     type: string
@@ -221,6 +221,85 @@ view: space_ship_ready {
     group_item_label: "Version"
   }
 
+  dimension: metrics__datetime__installation_timestamp {
+    sql: ${TABLE}.metrics.datetime.installation_timestamp ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Installation Timestamp"
+  }
+
+  dimension: metrics__jwe {
+    sql: ${TABLE}.metrics.jwe ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_rate {
+    sql: ${TABLE}.metrics.labeled_rate ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string__installation_adgroup {
+    sql: ${TABLE}.metrics.string.installation_adgroup ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Installation Adgroup"
+  }
+
+  dimension: metrics__string__installation_campaign {
+    sql: ${TABLE}.metrics.string.installation_campaign ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Installation Campaign"
+  }
+
+  dimension: metrics__string__installation_creative {
+    sql: ${TABLE}.metrics.string.installation_creative ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Installation Creative"
+  }
+
+  dimension: metrics__string__installation_identifier {
+    sql: ${TABLE}.metrics.string.installation_identifier ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Installation Identifier"
+  }
+
+  dimension: metrics__string__installation_network {
+    sql: ${TABLE}.metrics.string.installation_network ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Installation Network"
+  }
+
+  dimension: metrics__string__installation_timestamp {
+    sql: ${TABLE}.metrics.string.installation_timestamp ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Installation Timestamp"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -353,14 +432,24 @@ view: space_ship_ready {
     ]
   }
 
-  measure: clients {
-    type: count_distinct
-    sql: ${client_info__client_id} ;;
+  parameter: channel {
+    type: unquoted
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.org_mozilla_firefox.installation"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.installation"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.installation"
+    }
   }
 
-  measure: ping_count {
-    type: count
-  }
-
-  sql_table_name: `mozdata.burnham.space_ship_ready` ;;
+  sql_table_name: `{% parameter channel %}` ;;
 }
