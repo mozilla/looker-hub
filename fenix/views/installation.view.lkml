@@ -1,4 +1,102 @@
-view: space_ship_ready {
+view: installation {
+  dimension: metrics__string__installation_adgroup {
+    sql: ${TABLE}.metrics.string.installation_adgroup ;;
+    type: string
+    group_label: "Installation"
+    group_item_label: "Adgroup"
+
+    link: {
+      label: "Glean Dictionary reference for Installation Adgroup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/installation_adgroup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the AdGroup that was used to source this installation.
+"
+  }
+
+  dimension: metrics__string__installation_campaign {
+    sql: ${TABLE}.metrics.string.installation_campaign ;;
+    type: string
+    group_label: "Installation"
+    group_item_label: "Campaign"
+
+    link: {
+      label: "Glean Dictionary reference for Installation Campaign"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/installation_campaign"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the campaign that is responsible for this installation.
+"
+  }
+
+  dimension: metrics__string__installation_creative {
+    sql: ${TABLE}.metrics.string.installation_creative ;;
+    type: string
+    group_label: "Installation"
+    group_item_label: "Creative"
+
+    link: {
+      label: "Glean Dictionary reference for Installation Creative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/installation_creative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The identifier of the creative material that the user interacted with.
+"
+  }
+
+  dimension: metrics__string__installation_identifier {
+    sql: ${TABLE}.metrics.string.installation_identifier ;;
+    type: string
+    group_label: "Installation"
+    group_item_label: "Identifier"
+
+    link: {
+      label: "Glean Dictionary reference for Installation Identifier"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/installation_identifier"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The hashed and salted GAID. Used for a short term installation validation test.
+"
+  }
+
+  dimension: metrics__string__installation_network {
+    sql: ${TABLE}.metrics.string.installation_network ;;
+    type: string
+    group_label: "Installation"
+    group_item_label: "Network"
+
+    link: {
+      label: "Glean Dictionary reference for Installation Network"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/installation_network"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the Network that sourced this installation.
+"
+  }
+
+  dimension: metrics__string__installation_timestamp {
+    sql: ${TABLE}.metrics.string.installation_timestamp ;;
+    type: string
+    group_label: "Installation"
+    group_item_label: "Timestamp"
+
+    link: {
+      label: "Glean Dictionary reference for Installation Timestamp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/installation_timestamp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Glean generated date and time of the installation. This is
+unique per app install, though the rest of the data in this
+ping is from Adjust and will remain static across installs.
+"
+  }
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     type: string
@@ -362,5 +460,24 @@ view: space_ship_ready {
     type: count
   }
 
-  sql_table_name: `mozdata.burnham.space_ship_ready` ;;
+  parameter: channel {
+    type: unquoted
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.org_mozilla_firefox.installation"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.installation"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.installation"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }

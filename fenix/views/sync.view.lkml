@@ -1,4 +1,20 @@
-view: space_ship_ready {
+view: sync {
+  dimension: metrics__uuid__sync_sync_uuid {
+    sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
+    type: string
+    group_label: "Sync"
+    group_item_label: "Sync Uuid"
+
+    link: {
+      label: "Glean Dictionary reference for Sync Sync Uuid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/sync_sync_uuid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Unique identifier for this sync, used to correlate together individual pings for data types that were synchronized together (history, bookmarks, logins). If a data type is synchronized by itself via the legacy 'sync' API (as opposed to the Sync Manager), then this field will not be set on the corresponding ping.
+"
+  }
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     type: string
@@ -362,5 +378,24 @@ view: space_ship_ready {
     type: count
   }
 
-  sql_table_name: `mozdata.burnham.space_ship_ready` ;;
+  parameter: channel {
+    type: unquoted
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.org_mozilla_firefox.sync"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.sync"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.sync"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }

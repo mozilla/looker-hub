@@ -1,4 +1,4 @@
-view: space_ship_ready {
+view: first_session {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     type: string
@@ -362,5 +362,24 @@ view: space_ship_ready {
     type: count
   }
 
-  sql_table_name: `mozdata.burnham.space_ship_ready` ;;
+  parameter: channel {
+    type: unquoted
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.org_mozilla_firefox.first_session"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.first_session"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.first_session"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }

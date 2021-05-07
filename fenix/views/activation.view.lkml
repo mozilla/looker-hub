@@ -1,4 +1,38 @@
-view: space_ship_ready {
+view: activation {
+  dimension: metrics__uuid__activation_activation_id {
+    sql: ${TABLE}.metrics.uuid.activation_activation_id ;;
+    type: string
+    group_label: "Activation"
+    group_item_label: "Activation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Activation Activation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/activation_activation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An alternate identifier, not correlated with the client_id, generated once
+and only sent with the activation ping.
+"
+  }
+
+  dimension: metrics__string__activation_identifier {
+    sql: ${TABLE}.metrics.string.activation_identifier ;;
+    type: string
+    group_label: "Activation"
+    group_item_label: "Identifier"
+
+    link: {
+      label: "Glean Dictionary reference for Activation Identifier"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/activation_identifier"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A hashed and salted version of the Google Advertising ID from the device.
+This will never be sent in a ping that also contains the client_id.
+"
+  }
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     type: string
@@ -362,5 +396,24 @@ view: space_ship_ready {
     type: count
   }
 
-  sql_table_name: `mozdata.burnham.space_ship_ready` ;;
+  parameter: channel {
+    type: unquoted
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.org_mozilla_firefox.activation"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.activation"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.activation"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }

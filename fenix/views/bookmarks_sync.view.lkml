@@ -1,4 +1,4 @@
-view: space_ship_ready {
+view: bookmarks_sync {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     type: string
@@ -362,5 +362,24 @@ view: space_ship_ready {
     type: count
   }
 
-  sql_table_name: `mozdata.burnham.space_ship_ready` ;;
+  parameter: channel {
+    type: unquoted
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.org_mozilla_firefox.bookmarks_sync"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.bookmarks_sync"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.bookmarks_sync"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
