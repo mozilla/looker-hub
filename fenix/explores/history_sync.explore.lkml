@@ -5,8 +5,8 @@ explore: history_sync {
 
   always_filter: {
     filters: [
-      submission_date: "28 days",
       channel: "mozdata.org^_mozilla^_firefox.history^_sync",
+      submission_date: "28 days",
     ]
   }
 }

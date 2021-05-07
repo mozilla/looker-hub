@@ -5,8 +5,8 @@ explore: baseline {
 
   always_filter: {
     filters: [
-      submission_date: "28 days",
       channel: "mozdata.org^_mozilla^_firefox.baseline",
+      submission_date: "28 days",
     ]
   }
 }
