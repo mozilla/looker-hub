@@ -147,6 +147,7 @@ view: baseline_clients_daily_table {
 
   parameter: channel {
     type: unquoted
+    default_value: "mozdata.org_mozilla_ios_firefox.baseline_clients_daily"
 
     allowed_value: {
       label: "Release"

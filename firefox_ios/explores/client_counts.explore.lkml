@@ -1,6 +1,7 @@
 include: "/looker-hub/firefox_ios/views/client_counts.view.lkml"
 
 explore: client_counts {
+  sql_always_where: ${client_counts.submission_date} >= '2010-01-01' ;;
   view_name: client_counts
   description: "Client counts across dimensions and cohorts."
 

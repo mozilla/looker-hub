@@ -347,8 +347,7 @@ view: activation_table {
       quarter,
       year,
     ]
-    group_label: "Metadata Header"
-    group_item_label: "Parsed Date"
+    label: "Metadata Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -363,8 +362,7 @@ view: activation_table {
       quarter,
       year,
     ]
-    group_label: "Ping Info"
-    group_item_label: "Parsed End Time"
+    label: "Ping Info: Parsed End Time"
   }
 
   dimension_group: ping_info__parsed_start {
@@ -379,8 +377,7 @@ view: activation_table {
       quarter,
       year,
     ]
-    group_label: "Ping Info"
-    group_item_label: "Parsed Start Time"
+    label: "Ping Info: Parsed Start Time"
   }
 
   dimension_group: submission {
@@ -399,6 +396,7 @@ view: activation_table {
 
   parameter: channel {
     type: unquoted
+    default_value: "mozdata.org_mozilla_firefox.activation"
 
     allowed_value: {
       label: "Release"

@@ -905,6 +905,7 @@ view: migration_table {
 
   parameter: channel {
     type: unquoted
+    default_value: "mozdata.org_mozilla_firefox.migration"
 
     allowed_value: {
       label: "Release"

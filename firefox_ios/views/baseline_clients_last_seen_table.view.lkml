@@ -177,6 +177,7 @@ view: baseline_clients_last_seen_table {
 
   parameter: channel {
     type: unquoted
+    default_value: "mozdata.org_mozilla_ios_firefox.baseline_clients_last_seen"
 
     allowed_value: {
       label: "Release"

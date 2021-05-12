@@ -298,7 +298,7 @@ view: growth_accounting {
 
   measure: established_user_retention_rate {
     type: number
-    sql: SAFE_DIVIDE(,${established_users_returning},(${established_users_returning} + ${established_users_churned_count})) ;;
+    sql: SAFE_DIVIDE(${established_users_returning},(${established_users_returning} + ${established_users_churned_count})) ;;
   }
 
   measure: new_user_retention_rate {

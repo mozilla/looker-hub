@@ -419,8 +419,7 @@ view: install {
       quarter,
       year,
     ]
-    group_label: "Metadata Header"
-    group_item_label: "Parsed Date"
+    label: "Metadata Header: Parsed Date"
   }
 
   dimension_group: submission {

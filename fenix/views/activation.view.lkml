@@ -337,8 +337,7 @@ This will never be sent in a ping that also contains the client_id.
       quarter,
       year,
     ]
-    group_label: "Metadata Header"
-    group_item_label: "Parsed Date"
+    label: "Metadata Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -353,8 +352,7 @@ This will never be sent in a ping that also contains the client_id.
       quarter,
       year,
     ]
-    group_label: "Ping Info"
-    group_item_label: "Parsed End Time"
+    label: "Ping Info: Parsed End Time"
   }
 
   dimension_group: ping_info__parsed_start {
@@ -369,8 +367,7 @@ This will never be sent in a ping that also contains the client_id.
       quarter,
       year,
     ]
-    group_label: "Ping Info"
-    group_item_label: "Parsed Start Time"
+    label: "Ping Info: Parsed Start Time"
   }
 
   dimension_group: submission {
@@ -398,6 +395,7 @@ This will never be sent in a ping that also contains the client_id.
 
   parameter: channel {
     type: unquoted
+    default_value: "mozdata.org_mozilla_firefox.activation"
 
     allowed_value: {
       label: "Release"

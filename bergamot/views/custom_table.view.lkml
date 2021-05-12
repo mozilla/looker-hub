@@ -1,4 +1,4 @@
-view: space_ship_ready {
+view: custom_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     type: string
@@ -221,6 +221,135 @@ view: space_ship_ready {
     group_item_label: "Version"
   }
 
+  dimension: metrics__counter__errors_marian {
+    sql: ${TABLE}.metrics.counter.errors_marian ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Errors Marian"
+  }
+
+  dimension: metrics__counter__errors_memory {
+    sql: ${TABLE}.metrics.counter.errors_memory ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Errors Memory"
+  }
+
+  dimension: metrics__counter__errors_model_download {
+    sql: ${TABLE}.metrics.counter.errors_model_download ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Errors Model Download"
+  }
+
+  dimension: metrics__counter__errors_translation {
+    sql: ${TABLE}.metrics.counter.errors_translation ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Errors Translation"
+  }
+
+  dimension: metrics__counter__service_lang_mismatch {
+    sql: ${TABLE}.metrics.counter.service_lang_mismatch ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Service Lang Mismatch"
+  }
+
+  dimension: metrics__counter__service_not_supported {
+    sql: ${TABLE}.metrics.counter.service_not_supported ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Service Not Supported"
+  }
+
+  dimension: metrics__counter__service_not_suppported {
+    sql: ${TABLE}.metrics.counter.service_not_suppported ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Service Not Suppported"
+  }
+
+  dimension: metrics__counter__test_counter_test {
+    sql: ${TABLE}.metrics.counter.test_counter_test ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Test Counter Test"
+  }
+
+  dimension: metrics__jwe {
+    sql: ${TABLE}.metrics.jwe ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_rate {
+    sql: ${TABLE}.metrics.labeled_rate ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string__metadata_firefox_client_id {
+    sql: ${TABLE}.metrics.string.metadata_firefox_client_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Metadata Firefox Client Id"
+  }
+
+  dimension: metrics__string__metadata_from_lang {
+    sql: ${TABLE}.metrics.string.metadata_from_lang ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Metadata From Lang"
+  }
+
+  dimension: metrics__string__metadata_to_lang {
+    sql: ${TABLE}.metrics.string.metadata_to_lang ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Metadata To Lang"
+  }
+
+  dimension: metrics__string__performance_model_download_time {
+    sql: ${TABLE}.metrics.string.performance_model_download_time ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Performance Model Download Time"
+  }
+
+  dimension: metrics__string__performance_model_load_time {
+    sql: ${TABLE}.metrics.string.performance_model_load_time ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Performance Model Load Time"
+  }
+
+  dimension: metrics__string__performance_translation_quality {
+    sql: ${TABLE}.metrics.string.performance_translation_quality ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Performance Translation Quality"
+  }
+
+  dimension: metrics__string__performance_translation_time {
+    sql: ${TABLE}.metrics.string.performance_translation_time ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Performance Translation Time"
+  }
+
+  dimension: metrics__string__performance_words_per_second {
+    sql: ${TABLE}.metrics.string.performance_words_per_second ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Performance Words Per Second"
+  }
+
+  dimension: metrics__string__test_string_test {
+    sql: ${TABLE}.metrics.string.test_string_test ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Test String Test"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -303,8 +432,7 @@ view: space_ship_ready {
       quarter,
       year,
     ]
-    group_label: "Metadata Header"
-    group_item_label: "Parsed Date"
+    label: "Metadata Header: Parsed Date"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -319,8 +447,7 @@ view: space_ship_ready {
       quarter,
       year,
     ]
-    group_label: "Ping Info"
-    group_item_label: "Parsed End Time"
+    label: "Ping Info: Parsed End Time"
   }
 
   dimension_group: ping_info__parsed_start {
@@ -335,8 +462,7 @@ view: space_ship_ready {
       quarter,
       year,
     ]
-    group_label: "Ping Info"
-    group_item_label: "Parsed Start Time"
+    label: "Ping Info: Parsed Start Time"
   }
 
   dimension_group: submission {
@@ -353,14 +479,5 @@ view: space_ship_ready {
     ]
   }
 
-  measure: clients {
-    type: count_distinct
-    sql: ${client_info__client_id} ;;
-  }
-
-  measure: ping_count {
-    type: count
-  }
-
-  sql_table_name: `mozdata.burnham.space_ship_ready` ;;
+  sql_table_name: `mozdata.org_mozilla_bergamot.custom` ;;
 }
