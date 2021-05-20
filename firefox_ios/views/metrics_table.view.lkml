@@ -179,6 +179,13 @@ view: metrics_table {
     group_item_label: "X Source Tags"
   }
 
+  dimension: metadata__header__x_telemetry_agent {
+    sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
+    type: string
+    group_label: "Metadata Header"
+    group_item_label: "X Telemetry Agent"
+  }
+
   dimension: metadata__isp__db_version {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
@@ -726,6 +733,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__bookmarks_view_list {
     sql: ${TABLE}.metrics.labeled_counter.bookmarks_view_list ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__firefox_home_page_your_library {
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_your_library ;;
     hidden: yes
   }
 

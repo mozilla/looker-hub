@@ -213,6 +213,13 @@ This will never be sent in a ping that also contains the client_id.
     group_item_label: "X Source Tags"
   }
 
+  dimension: metadata__header__x_telemetry_agent {
+    sql: ${TABLE}.metadata.header.x_telemetry_agent ;;
+    type: string
+    group_label: "Metadata Header"
+    group_item_label: "X Telemetry Agent"
+  }
+
   dimension: metadata__isp__db_version {
     sql: ${TABLE}.metadata.isp.db_version ;;
     type: string
