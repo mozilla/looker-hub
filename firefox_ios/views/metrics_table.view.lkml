@@ -736,6 +736,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__firefox_home_page_your_library {
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_your_library ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
