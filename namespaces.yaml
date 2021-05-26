@@ -49,6 +49,30 @@ bergamot:
       - channel: null
         table: mozdata.org_mozilla_bergamot.custom
       type: table_view
+contextual_services:
+  connection: bigquery-oauth
+  explores:
+    event_aggregates:
+      type: ping_explore
+      views:
+        base_view: event_aggregates
+    topsites_clicks:
+      type: ping_explore
+      views:
+        base_view: topsites_click
+  glean_app: false
+  owners:
+  - mmccorquodale@mozilla.com
+  pretty_name: Contextual Services
+  views:
+    event_aggregates:
+      tables:
+      - table: mozdata.contextual_services.event_aggregates
+      type: ping_view
+    topsites_click:
+      tables:
+      - table: mozdata.contextual_services.topsites_click
+      type: ping_view
 duet:
   glean_app: false
   owners:
