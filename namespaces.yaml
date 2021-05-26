@@ -524,3 +524,27 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.metrics
       type: table_view
+search:
+  explores:
+    desktop_search_counts:
+      type: ping_explore
+      views:
+        base_view: search_clients_engines_sources_daily
+    mobile_search_counts:
+      type: ping_explore
+      views:
+        base_view: mobile_search_clients_engines_sources_daily
+  glean_app: false
+  owners:
+  - mmccorquodale@mozilla.com
+  - xluo@mozilla.com
+  pretty_name: Search
+  views:
+    mobile_search_clients_engines_sources_daily:
+      tables:
+      - table: mozdata.search.mobile_search_clients_engines_sources_daily
+      type: ping_view
+    search_clients_engines_sources_daily:
+      tables:
+      - table: mozdata.search.search_clients_engines_sources_daily
+      type: ping_view
