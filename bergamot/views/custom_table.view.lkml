@@ -314,6 +314,118 @@ view: custom_table {
     hidden: yes
   }
 
+  dimension: metrics__quantity__metadata_cpu_cores_count {
+    sql: ${TABLE}.metrics.quantity.metadata_cpu_cores_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Metadata Cpu Cores Count"
+  }
+
+  dimension: metrics__quantity__metadata_cpu_count {
+    sql: ${TABLE}.metrics.quantity.metadata_cpu_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Metadata Cpu Count"
+  }
+
+  dimension: metrics__quantity__metadata_cpu_l2_cache {
+    sql: ${TABLE}.metrics.quantity.metadata_cpu_l2_cache ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Metadata Cpu L2 Cache"
+  }
+
+  dimension: metrics__quantity__metadata_cpu_l3_cache {
+    sql: ${TABLE}.metrics.quantity.metadata_cpu_l3_cache ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Metadata Cpu L3 Cache"
+  }
+
+  dimension: metrics__quantity__metadata_cpu_speed {
+    sql: ${TABLE}.metrics.quantity.metadata_cpu_speed ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Metadata Cpu Speed"
+  }
+
+  dimension: metrics__quantity__metadata_system_memory {
+    sql: ${TABLE}.metrics.quantity.metadata_system_memory ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Metadata System Memory"
+  }
+
+  dimension: metrics__quantity__performance_full_page_translated_wps {
+    sql: ${TABLE}.metrics.quantity.performance_full_page_translated_wps ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Performance Full Page Translated Wps"
+  }
+
+  dimension: metrics__quantity__performance_translation_engine_wps {
+    sql: ${TABLE}.metrics.quantity.performance_translation_engine_wps ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Performance Translation Engine Wps"
+  }
+
+  dimension: metrics__string__metadata_bergamot_translator_version {
+    sql: ${TABLE}.metrics.string.metadata_bergamot_translator_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Metadata Bergamot Translator Version"
+  }
+
+  dimension: metrics__string__metadata_cpu_extensions {
+    sql: ${TABLE}.metrics.string.metadata_cpu_extensions ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Metadata Cpu Extensions"
+  }
+
+  dimension: metrics__string__metadata_cpu_family {
+    sql: ${TABLE}.metrics.string.metadata_cpu_family ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Metadata Cpu Family"
+  }
+
+  dimension: metrics__string__metadata_cpu_model {
+    sql: ${TABLE}.metrics.string.metadata_cpu_model ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Metadata Cpu Model"
+  }
+
+  dimension: metrics__string__metadata_cpu_stepping {
+    sql: ${TABLE}.metrics.string.metadata_cpu_stepping ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Metadata Cpu Stepping"
+  }
+
+  dimension: metrics__string__metadata_cpu_vendor {
+    sql: ${TABLE}.metrics.string.metadata_cpu_vendor ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Metadata Cpu Vendor"
+  }
+
+  dimension: metrics__string__metadata_extension_build_id {
+    sql: ${TABLE}.metrics.string.metadata_extension_build_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Metadata Extension Build Id"
+  }
+
+  dimension: metrics__string__metadata_extension_version {
+    sql: ${TABLE}.metrics.string.metadata_extension_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Metadata Extension Version"
+  }
+
   dimension: metrics__string__metadata_firefox_client_id {
     sql: ${TABLE}.metrics.string.metadata_firefox_client_id ;;
     type: string
@@ -375,6 +487,62 @@ view: custom_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Test String Test"
+  }
+
+  dimension: metrics__timespan__performance_full_page_translated_time__time_unit {
+    sql: ${TABLE}.metrics.timespan.performance_full_page_translated_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Performance Full Page Translated Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__performance_full_page_translated_time__value {
+    sql: ${TABLE}.metrics.timespan.performance_full_page_translated_time.value ;;
+    type: number
+    group_label: "Metrics Timespan Performance Full Page Translated Time"
+    group_item_label: "Value"
+  }
+
+  dimension: metrics__timespan__performance_model_download_time_num__time_unit {
+    sql: ${TABLE}.metrics.timespan.performance_model_download_time_num.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Performance Model Download Time Num"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__performance_model_download_time_num__value {
+    sql: ${TABLE}.metrics.timespan.performance_model_download_time_num.value ;;
+    type: number
+    group_label: "Metrics Timespan Performance Model Download Time Num"
+    group_item_label: "Value"
+  }
+
+  dimension: metrics__timespan__performance_model_load_time_num__time_unit {
+    sql: ${TABLE}.metrics.timespan.performance_model_load_time_num.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Performance Model Load Time Num"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__performance_model_load_time_num__value {
+    sql: ${TABLE}.metrics.timespan.performance_model_load_time_num.value ;;
+    type: number
+    group_label: "Metrics Timespan Performance Model Load Time Num"
+    group_item_label: "Value"
+  }
+
+  dimension: metrics__timespan__performance_translation_engine_time__time_unit {
+    sql: ${TABLE}.metrics.timespan.performance_translation_engine_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Performance Translation Engine Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__performance_translation_engine_time__value {
+    sql: ${TABLE}.metrics.timespan.performance_translation_engine_time.value ;;
+    type: number
+    group_label: "Metrics Timespan Performance Translation Engine Time"
+    group_item_label: "Value"
   }
 
   dimension: normalized_app_name {

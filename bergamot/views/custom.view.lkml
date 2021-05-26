@@ -63,6 +63,215 @@ view: custom {
 "
   }
 
+  dimension: metrics__string__metadata_bergamot_translator_version {
+    sql: ${TABLE}.metrics.string.metadata_bergamot_translator_version ;;
+    type: string
+    group_label: "Metadata"
+    group_item_label: "Bergamot Translator Version"
+
+    link: {
+      label: "Glean Dictionary reference for Metadata Bergamot Translator Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/metadata_bergamot_translator_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bergamot translator engine version
+"
+  }
+
+  dimension: metrics__quantity__metadata_cpu_cores_count {
+    sql: ${TABLE}.metrics.quantity.metadata_cpu_cores_count ;;
+    type: number
+    group_label: "Metadata"
+    group_item_label: "Cpu Cores Count"
+
+    link: {
+      label: "Glean Dictionary reference for Metadata Cpu Cores Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/metadata_cpu_cores_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Telemetry Environment `system.cpu.cores` metric
+"
+  }
+
+  dimension: metrics__quantity__metadata_cpu_count {
+    sql: ${TABLE}.metrics.quantity.metadata_cpu_count ;;
+    type: number
+    group_label: "Metadata"
+    group_item_label: "Cpu Count"
+
+    link: {
+      label: "Glean Dictionary reference for Metadata Cpu Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/metadata_cpu_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Telemetry Environment `system.cpu.count` metric
+"
+  }
+
+  dimension: metrics__string__metadata_cpu_extensions {
+    sql: ${TABLE}.metrics.string.metadata_cpu_extensions ;;
+    type: string
+    group_label: "Metadata"
+    group_item_label: "Cpu Extensions"
+
+    link: {
+      label: "Glean Dictionary reference for Metadata Cpu Extensions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/metadata_cpu_extensions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Telemetry Environment `system.cpu.extensions` metric
+"
+  }
+
+  dimension: metrics__string__metadata_cpu_family {
+    sql: ${TABLE}.metrics.string.metadata_cpu_family ;;
+    type: string
+    group_label: "Metadata"
+    group_item_label: "Cpu Family"
+
+    link: {
+      label: "Glean Dictionary reference for Metadata Cpu Family"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/metadata_cpu_family"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Telemetry Environment `system.cpu.family` metric
+"
+  }
+
+  dimension: metrics__quantity__metadata_cpu_l2_cache {
+    sql: ${TABLE}.metrics.quantity.metadata_cpu_l2_cache ;;
+    type: number
+    group_label: "Metadata"
+    group_item_label: "Cpu L2 Cache"
+
+    link: {
+      label: "Glean Dictionary reference for Metadata Cpu L2 Cache"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/metadata_cpu_l2_cache"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Telemetry Environment `system.cpu.l2cacheKB` metric
+"
+  }
+
+  dimension: metrics__quantity__metadata_cpu_l3_cache {
+    sql: ${TABLE}.metrics.quantity.metadata_cpu_l3_cache ;;
+    type: number
+    group_label: "Metadata"
+    group_item_label: "Cpu L3 Cache"
+
+    link: {
+      label: "Glean Dictionary reference for Metadata Cpu L3 Cache"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/metadata_cpu_l3_cache"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Telemetry Environment `system.cpu.l3cacheKB` metric
+"
+  }
+
+  dimension: metrics__string__metadata_cpu_model {
+    sql: ${TABLE}.metrics.string.metadata_cpu_model ;;
+    type: string
+    group_label: "Metadata"
+    group_item_label: "Cpu Model"
+
+    link: {
+      label: "Glean Dictionary reference for Metadata Cpu Model"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/metadata_cpu_model"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Telemetry Environment `system.cpu.model` metric
+"
+  }
+
+  dimension: metrics__quantity__metadata_cpu_speed {
+    sql: ${TABLE}.metrics.quantity.metadata_cpu_speed ;;
+    type: number
+    group_label: "Metadata"
+    group_item_label: "Cpu Speed"
+
+    link: {
+      label: "Glean Dictionary reference for Metadata Cpu Speed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/metadata_cpu_speed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Telemetry Environment `system.cpu.speedMHz` metric
+"
+  }
+
+  dimension: metrics__string__metadata_cpu_stepping {
+    sql: ${TABLE}.metrics.string.metadata_cpu_stepping ;;
+    type: string
+    group_label: "Metadata"
+    group_item_label: "Cpu Stepping"
+
+    link: {
+      label: "Glean Dictionary reference for Metadata Cpu Stepping"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/metadata_cpu_stepping"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Telemetry Environment `system.cpu.stepping` metric
+"
+  }
+
+  dimension: metrics__string__metadata_cpu_vendor {
+    sql: ${TABLE}.metrics.string.metadata_cpu_vendor ;;
+    type: string
+    group_label: "Metadata"
+    group_item_label: "Cpu Vendor"
+
+    link: {
+      label: "Glean Dictionary reference for Metadata Cpu Vendor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/metadata_cpu_vendor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Telemetry Environment `system.cpu.vendor` metric
+"
+  }
+
+  dimension: metrics__string__metadata_extension_build_id {
+    sql: ${TABLE}.metrics.string.metadata_extension_build_id ;;
+    type: string
+    group_label: "Metadata"
+    group_item_label: "Extension Build Id"
+
+    link: {
+      label: "Glean Dictionary reference for Metadata Extension Build Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/metadata_extension_build_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Extension build id, indicating which git revision
+and build config was used to produce this build
+"
+  }
+
+  dimension: metrics__string__metadata_extension_version {
+    sql: ${TABLE}.metrics.string.metadata_extension_version ;;
+    type: string
+    group_label: "Metadata"
+    group_item_label: "Extension Version"
+
+    link: {
+      label: "Glean Dictionary reference for Metadata Extension Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/metadata_extension_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Extension version
+"
+  }
+
   dimension: metrics__string__metadata_firefox_client_id {
     sql: ${TABLE}.metrics.string.metadata_firefox_client_id ;;
     type: string
@@ -95,6 +304,22 @@ view: custom {
 "
   }
 
+  dimension: metrics__quantity__metadata_system_memory {
+    sql: ${TABLE}.metrics.quantity.metadata_system_memory ;;
+    type: number
+    group_label: "Metadata"
+    group_item_label: "System Memory"
+
+    link: {
+      label: "Glean Dictionary reference for Metadata System Memory"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/metadata_system_memory"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Telemetry Environment `system.memoryMB` metric
+"
+  }
+
   dimension: metrics__string__metadata_to_lang {
     sql: ${TABLE}.metrics.string.metadata_to_lang ;;
     type: string
@@ -108,6 +333,40 @@ view: custom {
     }
 
     description: "Translation target language.
+"
+  }
+
+  dimension: metrics__timespan__performance_full_page_translated_time__value {
+    sql: ${TABLE}.metrics.timespan.performance_full_page_translated_time.value ;;
+    type: number
+    group_label: "Performance"
+    group_item_label: "Full Page Translated Time Value"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Full Page Translated Time Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/performance_full_page_translated_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Timing from \"translation button pressed\"
+to \"full page is translated\".
+"
+  }
+
+  dimension: metrics__quantity__performance_full_page_translated_wps {
+    sql: ${TABLE}.metrics.quantity.performance_full_page_translated_wps ;;
+    type: number
+    group_label: "Performance"
+    group_item_label: "Full Page Translated Wps"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Full Page Translated Wps"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/performance_full_page_translated_wps"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Speed of the translation from \"translation button
+pressed\" to \"full page is translated\".
 "
   }
 
@@ -127,6 +386,24 @@ view: custom {
 "
   }
 
+  dimension: metrics__timespan__performance_model_download_time_num__value {
+    sql: ${TABLE}.metrics.timespan.performance_model_download_time_num.value ;;
+    type: number
+    group_label: "Performance"
+    group_item_label: "Model Download Time Num Value"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Model Download Time Num Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/performance_model_download_time_num"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent on downloading a translation model for a language pair.
+(Renamed from model_download_time to model_download_time_num as part of
+changing type from string to quantity)
+"
+  }
+
   dimension: metrics__string__performance_model_load_time {
     sql: ${TABLE}.metrics.string.performance_model_load_time ;;
     type: string
@@ -140,6 +417,56 @@ view: custom {
     }
 
     description: "Time spent on loading a model into memory to start translation (ms).
+"
+  }
+
+  dimension: metrics__timespan__performance_model_load_time_num__value {
+    sql: ${TABLE}.metrics.timespan.performance_model_load_time_num.value ;;
+    type: number
+    group_label: "Performance"
+    group_item_label: "Model Load Time Num Value"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Model Load Time Num Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/performance_model_load_time_num"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent on loading a model into memory to start translation.
+(Renamed from model_load_time to model_load_time_num as part of
+changing type from string to quantity)
+"
+  }
+
+  dimension: metrics__timespan__performance_translation_engine_time__value {
+    sql: ${TABLE}.metrics.timespan.performance_translation_engine_time.value ;;
+    type: number
+    group_label: "Performance"
+    group_item_label: "Translation Engine Time Value"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Translation Engine Time Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/performance_translation_engine_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent on translation by the translation engine.
+"
+  }
+
+  dimension: metrics__quantity__performance_translation_engine_wps {
+    sql: ${TABLE}.metrics.quantity.performance_translation_engine_wps ;;
+    type: number
+    group_label: "Performance"
+    group_item_label: "Translation Engine Wps"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Translation Engine Wps"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bergamot/metrics/performance_translation_engine_wps"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Speed of translation as measured by the translation engine.
 "
   }
 
