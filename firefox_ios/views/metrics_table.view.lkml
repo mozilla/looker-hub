@@ -906,6 +906,13 @@ view: metrics_table {
     group_item_label: "Tracking Protection Strength"
   }
 
+  dimension: metrics__uuid__legacy_ids_client_id {
+    sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Legacy Ids Client Id"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
