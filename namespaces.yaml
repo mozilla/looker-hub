@@ -1,3 +1,34 @@
+activity_stream:
+  explores:
+    event_counts:
+      type: ping_explore
+      views:
+        base_view: events
+    pocket_tile_impressions:
+      type: ping_explore
+      views:
+        base_view: impression_stats_flat
+    session_counts:
+      type: ping_explore
+      views:
+        base_view: sessions
+  glean_app: false
+  owners:
+  - najiang@mozilla.com
+  pretty_name: Activity Stream
+  views:
+    events:
+      tables:
+      - table: mozdata.activity_stream.events
+      type: ping_view
+    impression_stats_flat:
+      tables:
+      - table: mozdata.activity_stream.impression_stats_flat
+      type: ping_view
+    sessions:
+      tables:
+      - table: mozdata.activity_stream.sessions
+      type: ping_view
 bergamot:
   explores:
     custom:
@@ -18,6 +49,30 @@ bergamot:
       - channel: null
         table: mozdata.org_mozilla_bergamot.custom
       type: table_view
+contextual_services:
+  connection: bigquery-oauth
+  explores:
+    event_aggregates:
+      type: ping_explore
+      views:
+        base_view: event_aggregates
+    topsites_clicks:
+      type: ping_explore
+      views:
+        base_view: topsites_click
+  glean_app: false
+  owners:
+  - mmccorquodale@mozilla.com
+  pretty_name: Contextual Services
+  views:
+    event_aggregates:
+      tables:
+      - table: mozdata.contextual_services.event_aggregates
+      type: ping_view
+    topsites_click:
+      tables:
+      - table: mozdata.contextual_services.topsites_click
+      type: ping_view
 duet:
   glean_app: false
   owners:
@@ -493,3 +548,27 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.metrics
       type: table_view
+search:
+  explores:
+    desktop_search_counts:
+      type: ping_explore
+      views:
+        base_view: search_clients_engines_sources_daily
+    mobile_search_counts:
+      type: ping_explore
+      views:
+        base_view: mobile_search_clients_engines_sources_daily
+  glean_app: false
+  owners:
+  - mmccorquodale@mozilla.com
+  - xluo@mozilla.com
+  pretty_name: Search
+  views:
+    mobile_search_clients_engines_sources_daily:
+      tables:
+      - table: mozdata.search.mobile_search_clients_engines_sources_daily
+      type: ping_view
+    search_clients_engines_sources_daily:
+      tables:
+      - table: mozdata.search.search_clients_engines_sources_daily
+      type: ping_view
