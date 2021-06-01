@@ -95,6 +95,10 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: activation
+    addresses_sync:
+      type: glean_ping_explore
+      views:
+        base_view: addresses_sync
     baseline:
       type: glean_ping_explore
       views:
@@ -108,6 +112,10 @@ fenix:
       views:
         base_view: client_counts
         extended_view: baseline_clients_daily_table
+    creditcards_sync:
+      type: glean_ping_explore
+      views:
+        base_view: creditcards_sync
     events:
       type: glean_ping_explore
       views:
@@ -148,6 +156,10 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: sync
+    tabs_sync:
+      type: glean_ping_explore
+      views:
+        base_view: tabs_sync
   glean_app: true
   owners:
   - frank@mozilla.com
@@ -172,6 +184,24 @@ fenix:
         table: mozdata.org_mozilla_firefox_beta.activation
       - channel: nightly
         table: mozdata.org_mozilla_fenix.activation
+      type: table_view
+    addresses_sync:
+      tables:
+      - channel: release
+        table: mozdata.org_mozilla_firefox.addresses_sync
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.addresses_sync
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.addresses_sync
+      type: glean_ping_view
+    addresses_sync_table:
+      tables:
+      - channel: release
+        table: mozdata.org_mozilla_firefox.addresses_sync
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.addresses_sync
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.addresses_sync
       type: table_view
     baseline:
       tables:
@@ -240,6 +270,24 @@ fenix:
       tables:
       - table: mozdata.org_mozilla_firefox.baseline_clients_daily
       type: client_counts_view
+    creditcards_sync:
+      tables:
+      - channel: release
+        table: mozdata.org_mozilla_firefox.creditcards_sync
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.creditcards_sync
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.creditcards_sync
+      type: glean_ping_view
+    creditcards_sync_table:
+      tables:
+      - channel: release
+        table: mozdata.org_mozilla_firefox.creditcards_sync
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.creditcards_sync
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.creditcards_sync
+      type: table_view
     event_types_table:
       tables:
       - channel: release
@@ -428,6 +476,24 @@ fenix:
         table: mozdata.org_mozilla_firefox_beta.sync
       - channel: nightly
         table: mozdata.org_mozilla_fenix.sync
+      type: table_view
+    tabs_sync:
+      tables:
+      - channel: release
+        table: mozdata.org_mozilla_firefox.tabs_sync
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.tabs_sync
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.tabs_sync
+      type: glean_ping_view
+    tabs_sync_table:
+      tables:
+      - channel: release
+        table: mozdata.org_mozilla_firefox.tabs_sync
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.tabs_sync
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.tabs_sync
       type: table_view
 firefox_ios:
   explores:
