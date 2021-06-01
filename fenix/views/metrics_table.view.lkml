@@ -424,6 +424,27 @@ view: metrics_table {
     group_item_label: "Preferences Voice Search Enabled"
   }
 
+  dimension: metrics__counter__credit_cards_autofill_card {
+    sql: ${TABLE}.metrics.counter.credit_cards_autofill_card ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Credit Cards Autofill Card"
+  }
+
+  dimension: metrics__counter__credit_cards_delete_card {
+    sql: ${TABLE}.metrics.counter.credit_cards_delete_card ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Credit Cards Delete Card"
+  }
+
+  dimension: metrics__counter__credit_cards_manual_save {
+    sql: ${TABLE}.metrics.counter.credit_cards_manual_save ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Credit Cards Manual Save"
+  }
+
   dimension: metrics__counter__events_normal_and_private_uri_count {
     sql: ${TABLE}.metrics.counter.events_normal_and_private_uri_count ;;
     type: number

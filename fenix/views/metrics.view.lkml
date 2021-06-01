@@ -47,6 +47,57 @@ view: metrics {
 "
   }
 
+  dimension: metrics__counter__credit_cards_autofill_card {
+    sql: ${TABLE}.metrics.counter.credit_cards_autofill_card ;;
+    type: number
+    group_label: "Credit Cards"
+    group_item_label: "Autofill Card"
+
+    link: {
+      label: "Glean Dictionary reference for Credit Cards Autofill Card"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/credit_cards_autofill_card"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of the number of times the user has autofilled
+a credit card.
+"
+  }
+
+  dimension: metrics__counter__credit_cards_delete_card {
+    sql: ${TABLE}.metrics.counter.credit_cards_delete_card ;;
+    type: number
+    group_label: "Credit Cards"
+    group_item_label: "Delete Card"
+
+    link: {
+      label: "Glean Dictionary reference for Credit Cards Delete Card"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/credit_cards_delete_card"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of the number of credit cards that have been deleted by
+the user.
+"
+  }
+
+  dimension: metrics__counter__credit_cards_manual_save {
+    sql: ${TABLE}.metrics.counter.credit_cards_manual_save ;;
+    type: number
+    group_label: "Credit Cards"
+    group_item_label: "Manual Save"
+
+    link: {
+      label: "Glean Dictionary reference for Credit Cards Manual Save"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/credit_cards_manual_save"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of the number of credit cards that have been saved
+manually by the user.
+"
+  }
+
   dimension: metrics__timespan__engine_kill_background_age__value {
     sql: ${TABLE}.metrics.timespan.engine_kill_background_age.value ;;
     type: number
@@ -3621,6 +3672,81 @@ documented in the ping's pings.yaml file.
 
   measure: ping_count {
     type: count
+  }
+
+  measure: credit_cards_autofill_card {
+    type: sum
+    sql: ${metrics__counter__credit_cards_autofill_card} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Credit Cards Autofill Card"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/credit_cards_autofill_card"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: credit_cards_autofill_card_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__credit_cards_autofill_card: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Credit Cards Autofill Card"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/credit_cards_autofill_card"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: credit_cards_delete_card {
+    type: sum
+    sql: ${metrics__counter__credit_cards_delete_card} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Credit Cards Delete Card"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/credit_cards_delete_card"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: credit_cards_delete_card_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__credit_cards_delete_card: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Credit Cards Delete Card"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/credit_cards_delete_card"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: credit_cards_manual_save {
+    type: sum
+    sql: ${metrics__counter__credit_cards_manual_save} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Credit Cards Manual Save"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/credit_cards_manual_save"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: credit_cards_manual_save_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__credit_cards_manual_save: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Credit Cards Manual Save"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/credit_cards_manual_save"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   measure: events_normal_and_private_uri_count {
