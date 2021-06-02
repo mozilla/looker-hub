@@ -56,10 +56,22 @@ contextual_services:
       type: ping_explore
       views:
         base_view: event_aggregates
+    quicksuggest_clicks:
+      type: ping_explore
+      views:
+        base_view: quicksuggest_click
+    quicksuggest_impressions:
+      type: ping_explore
+      views:
+        base_view: quicksuggest_impression
     topsites_clicks:
       type: ping_explore
       views:
         base_view: topsites_click
+    topsites_impressions:
+      type: ping_explore
+      views:
+        base_view: topsites_impression
   glean_app: false
   owners:
   - mmccorquodale@mozilla.com
@@ -69,9 +81,21 @@ contextual_services:
       tables:
       - table: mozdata.contextual_services.event_aggregates
       type: ping_view
+    quicksuggest_click:
+      tables:
+      - table: mozdata.contextual_services.quicksuggest_click
+      type: ping_view
+    quicksuggest_impression:
+      tables:
+      - table: mozdata.contextual_services.quicksuggest_impression
+      type: ping_view
     topsites_click:
       tables:
       - table: mozdata.contextual_services.topsites_click
+      type: ping_view
+    topsites_impression:
+      tables:
+      - table: mozdata.contextual_services.topsites_impression
       type: ping_view
 duet:
   glean_app: false
@@ -124,6 +148,10 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: first_session
+    funnel_analysis:
+      type: funnel_analysis_explore
+      views:
+        base_view: funnel_analysis
     growth_accounting:
       type: growth_accounting_explore
       views:
@@ -334,6 +362,15 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fenix.first_session
       type: table_view
+    funnel_analysis:
+      tables:
+      - event_types: '`mozdata.org_mozilla_firefox.event_types`'
+        funnel_analysis: events_daily_table
+        step_1: event_types
+        step_2: event_types
+        step_3: event_types
+        step_4: event_types
+      type: funnel_analysis_view
     geckoview_version_table:
       tables:
       - channel: nightly

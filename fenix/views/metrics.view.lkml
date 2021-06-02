@@ -330,6 +330,57 @@ MANUAL, ONE_DAY, ONE_WEEK, ONE_MONTH
 "
   }
 
+  dimension: metrics__counter__metrics_credit_cards_autofill_count {
+    sql: ${TABLE}.metrics.counter.metrics_credit_cards_autofill_count ;;
+    type: number
+    group_label: "Metrics"
+    group_item_label: "Credit Cards Autofill Count"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Credit Cards Autofill Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_credit_cards_autofill_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates the number of times the user has autofilled
+a credit card.
+"
+  }
+
+  dimension: metrics__counter__metrics_credit_cards_deleted_count {
+    sql: ${TABLE}.metrics.counter.metrics_credit_cards_deleted_count ;;
+    type: number
+    group_label: "Metrics"
+    group_item_label: "Credit Cards Deleted Count"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Credit Cards Deleted Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_credit_cards_deleted_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates the number of credit cards that have been
+deleted by the user.
+"
+  }
+
+  dimension: metrics__counter__metrics_credit_cards_saved_count {
+    sql: ${TABLE}.metrics.counter.metrics_credit_cards_saved_count ;;
+    type: number
+    group_label: "Metrics"
+    group_item_label: "Credit Cards Saved Count"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Credit Cards Saved Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_credit_cards_saved_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates the number of credit cards that have been
+saved manually by the user.
+"
+  }
+
   dimension: metrics__boolean__metrics_default_browser {
     sql: ${TABLE}.metrics.boolean.metrics_default_browser ;;
     type: yesno
@@ -2606,6 +2657,118 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Baseline Compile Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Baseline Compile Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_baseline_compile_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load baseline compiling Javascript in ms.
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_delazification_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Delazification Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Delazification Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_delazification_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load delazifying Javascript in ms.
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_execution_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Execution Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Execution Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_execution_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load executing Javascript in ms.
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_gc_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Gc Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Gc Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_gc_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load in the GC in ms.
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_parse_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Parse Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Parse Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_parse_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load syntax parsing JS scripts on the main thread in ms.
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_protect_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Protect Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Protect Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_protect_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load protecting JIT executable memory.
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Xdr Encode Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Xdr Encode Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_xdr_encode_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load XDR encoding Javascript in ms.
+"
+  }
+
   dimension: metrics__custom_distribution__js_baseline_compile_percentage__sum {
     sql: ${TABLE}.metrics.custom_distribution.js_baseline_compile_percentage.sum ;;
     type: number
@@ -3795,6 +3958,81 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Events Total Uri Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_total_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: metrics_credit_cards_autofill_count {
+    type: sum
+    sql: ${metrics__counter__metrics_credit_cards_autofill_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Credit Cards Autofill Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_credit_cards_autofill_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: metrics_credit_cards_autofill_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__metrics_credit_cards_autofill_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Credit Cards Autofill Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_credit_cards_autofill_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: metrics_credit_cards_deleted_count {
+    type: sum
+    sql: ${metrics__counter__metrics_credit_cards_deleted_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Credit Cards Deleted Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_credit_cards_deleted_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: metrics_credit_cards_deleted_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__metrics_credit_cards_deleted_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Credit Cards Deleted Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_credit_cards_deleted_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: metrics_credit_cards_saved_count {
+    type: sum
+    sql: ${metrics__counter__metrics_credit_cards_saved_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Credit Cards Saved Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_credit_cards_saved_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: metrics_credit_cards_saved_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__metrics_credit_cards_saved_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Credit Cards Saved Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_credit_cards_saved_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
