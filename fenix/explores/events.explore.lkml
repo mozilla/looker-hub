@@ -10,4 +10,6 @@ explore: events {
       submission_date: "28 days",
     ]
   }
+
+  description: "Explore for the events ping. The events ping's purpose is to transport all of the event metric information. The `events` ping is automatically sent when the application becomes inactive."
 }

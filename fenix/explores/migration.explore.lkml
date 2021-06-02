@@ -10,4 +10,6 @@ explore: migration {
       submission_date: "28 days",
     ]
   }
+
+  description: "Explore for the migration ping. A ping sent after a Fennec->Fenix migration was completed."
 }

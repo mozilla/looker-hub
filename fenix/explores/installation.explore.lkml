@@ -10,4 +10,6 @@ explore: installation {
       submission_date: "28 days",
     ]
   }
+
+  description: "Explore for the installation ping. This ping is intended to capture the source of the installation"
 }

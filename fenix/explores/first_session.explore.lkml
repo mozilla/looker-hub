@@ -10,4 +10,6 @@ explore: first_session {
       submission_date: "28 days",
     ]
   }
+
+  description: "Explore for the first_session ping. This ping is intended to capture the source of the app install on the first session."
 }
