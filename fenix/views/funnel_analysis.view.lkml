@@ -12,19 +12,19 @@ view: funnel_analysis {
   dimension: completed_step_2 {
     type: yesno
     description: "Whether the user completed step 2 on the associated day."
-    sql: REGEXP_CONTAINS(${TABLE}.events, mozfun.event_analysis.create_funnel_regex([${step_2.match_string}],True)) ;;
+    sql: REGEXP_CONTAINS(${TABLE}.events, mozfun.event_analysis.create_funnel_regex([${step_1.match_string},${step_2.match_string}],True)) ;;
   }
 
   dimension: completed_step_3 {
     type: yesno
     description: "Whether the user completed step 3 on the associated day."
-    sql: REGEXP_CONTAINS(${TABLE}.events, mozfun.event_analysis.create_funnel_regex([${step_3.match_string}],True)) ;;
+    sql: REGEXP_CONTAINS(${TABLE}.events, mozfun.event_analysis.create_funnel_regex([${step_1.match_string},${step_2.match_string},${step_3.match_string}],True)) ;;
   }
 
   dimension: completed_step_4 {
     type: yesno
     description: "Whether the user completed step 4 on the associated day."
-    sql: REGEXP_CONTAINS(${TABLE}.events, mozfun.event_analysis.create_funnel_regex([${step_4.match_string}],True)) ;;
+    sql: REGEXP_CONTAINS(${TABLE}.events, mozfun.event_analysis.create_funnel_regex([${step_1.match_string},${step_2.match_string},${step_3.match_string},${step_4.match_string}],True)) ;;
   }
 
   measure: count_completed_step_1 {
