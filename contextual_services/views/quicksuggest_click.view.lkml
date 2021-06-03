@@ -1,7 +1,7 @@
 view: quicksuggest_click {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
-    type: string
+    hidden: yes
   }
 
   dimension: advertiser {

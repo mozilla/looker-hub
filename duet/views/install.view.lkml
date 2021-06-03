@@ -11,7 +11,7 @@ view: install {
 
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
-    type: string
+    hidden: yes
   }
 
   dimension: admin_user {

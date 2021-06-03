@@ -1,7 +1,7 @@
 view: new_profile {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
-    type: string
+    hidden: yes
   }
 
   dimension: application__architecture {
