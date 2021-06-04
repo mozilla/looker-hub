@@ -11,7 +11,7 @@ view: install {
 
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
-    type: string
+    hidden: yes
   }
 
   dimension: admin_user {
@@ -52,6 +52,7 @@ view: install {
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    primary_key: yes
   }
 
   dimension: download_ip {

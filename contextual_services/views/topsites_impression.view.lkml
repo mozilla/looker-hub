@@ -1,26 +1,16 @@
-view: events {
-  dimension: action_position {
-    sql: ${TABLE}.action_position ;;
-    type: number
-  }
-
+view: topsites_impression {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
   }
 
-  dimension: addon_version {
-    sql: ${TABLE}.addon_version ;;
+  dimension: advertiser {
+    sql: ${TABLE}.advertiser ;;
     type: string
   }
 
-  dimension: browser_session_id {
-    sql: ${TABLE}.browser_session_id ;;
-    type: string
-  }
-
-  dimension: client_id {
-    sql: ${TABLE}.client_id ;;
+  dimension: context_id {
+    sql: ${TABLE}.context_id ;;
     hidden: yes
   }
 
@@ -28,11 +18,6 @@ view: events {
     sql: ${TABLE}.document_id ;;
     hidden: yes
     primary_key: yes
-  }
-
-  dimension: event {
-    sql: ${TABLE}.event ;;
-    type: string
   }
 
   dimension: experiments {
@@ -195,23 +180,18 @@ view: events {
     type: string
   }
 
-  dimension: page {
-    sql: ${TABLE}.page ;;
-    type: string
-  }
-
-  dimension: profile_creation_date {
-    sql: ${TABLE}.profile_creation_date ;;
+  dimension: position {
+    sql: ${TABLE}.position ;;
     type: number
-  }
-
-  dimension: region {
-    sql: ${TABLE}.region ;;
-    type: string
   }
 
   dimension: release_channel {
     sql: ${TABLE}.release_channel ;;
+    type: string
+  }
+
+  dimension: reporting_url {
+    sql: ${TABLE}.reporting_url ;;
     type: string
   }
 
@@ -220,29 +200,14 @@ view: events {
     type: number
   }
 
-  dimension: session_id {
-    sql: ${TABLE}.session_id ;;
-    type: string
-  }
-
-  dimension: shield_id {
-    sql: ${TABLE}.shield_id ;;
-    type: string
-  }
-
   dimension: source {
     sql: ${TABLE}.source ;;
     type: string
   }
 
-  dimension: user_prefs {
-    sql: ${TABLE}.user_prefs ;;
+  dimension: tile_id {
+    sql: ${TABLE}.tile_id ;;
     type: number
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
   }
 
   dimension: version {
@@ -281,12 +246,12 @@ view: events {
 
   measure: clients {
     type: count_distinct
-    sql: ${client_id} ;;
+    sql: ${context_id} ;;
   }
 
   measure: ping_count {
     type: count
   }
 
-  sql_table_name: `mozdata.activity_stream.events` ;;
+  sql_table_name: `mozdata.contextual_services.topsites_impression` ;;
 }

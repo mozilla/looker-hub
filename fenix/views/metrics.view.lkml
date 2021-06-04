@@ -31,6 +31,56 @@ view: metrics {
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_ad_clicks {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
+    group_label: "Browser Search"
+    group_item_label: "Ad Clicks"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Ad Clicks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/browser_search_ad_clicks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages.
+The key format is `<provider-name>`.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_in_content {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
+    group_label: "Browser Search"
+    group_item_label: "In Content"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search In Content"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/browser_search_in_content"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Records the type of interaction a user has on SERP pages.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_with_ads {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
+    group_label: "Browser Search"
+    group_item_label: "With Ads"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search With Ads"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/browser_search_with_ads"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed.
+The key format is `<provider-name>`.
+"
+  }
+
   dimension: metrics__boolean__contextual_menu_long_press_tapped {
     sql: ${TABLE}.metrics.boolean.contextual_menu_long_press_tapped ;;
     type: yesno
@@ -129,6 +179,23 @@ time its content process got killed.
 
     description: "Measures the age of the engine session of a foreground (selected) tab
 at the time its content process got killed.
+"
+  }
+
+  dimension: metrics__labeled_counter__engine_tab_kills {
+    sql: ${TABLE}.metrics.labeled_counter.engine_tab_kills ;;
+    group_label: "Engine Tab"
+    group_item_label: "Kills"
+
+    link: {
+      label: "Glean Dictionary reference for Engine Tab Kills"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/engine_tab_kills"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "How often was the content process of a foreground (selected) or
+background tab killed.
 "
   }
 
@@ -573,6 +640,31 @@ user has at least *one* recently used PWA. If they have 0, this metric
 will not be sent, resulting in a null value during analysis on the
 server-side. To disambiguate between a failed `recently_used_pwa_count`
 metric and 0 recent PWAs, please see `has_recent_pwas`.
+"
+  }
+
+  dimension: metrics__labeled_counter__metrics_search_count {
+    sql: ${TABLE}.metrics.labeled_counter.metrics_search_count ;;
+    group_label: "Metrics"
+    group_item_label: "Search Count"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Search Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_search_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "The labels for this counter are `<search-engine-name>.<source>`.
+
+If the search engine is bundled with Fenix `search-engine-name` will be
+the name of the search engine. If it's a custom search engine (defined:
+https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
+`custom`.
+
+`source` will be: `action`, `suggestion`, `widget`, `shortcut`, `topsite`
+(depending on the source from which the search started). Also added the
+`other` option for the source but it should never enter on this case.
 "
   }
 
@@ -1100,6 +1192,70 @@ data.
 "
   }
 
+  dimension: metrics__labeled_counter__perf_startup_startup_type {
+    sql: ${TABLE}.metrics.labeled_counter.perf_startup_startup_type ;;
+    group_label: "Perf Startup"
+    group_item_label: "Startup Type"
+
+    link: {
+      label: "Glean Dictionary reference for Perf Startup Startup Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/perf_startup_startup_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Indicates how the browser was started. The label is divided into two
+variables. `state` is how cached the browser is when started. `path` is
+what code path we are expected to take. Together, they create a combined
+label: `state_path`. For brevity, the specific states are documented in
+the [Fenix perf
+glossary](https://wiki.mozilla.org/index.php?title=Performance/Fenix/Glossary).
+<br><br>
+This implementation is intended to be simple, not comprehensive. We list
+the implications below.
+
+<br><br>
+These ways of opening the app undesirably adds events to our primary
+buckets (non-`unknown` cases):
+<br>- App switcher cold/warm: `cold/warm_` + duplicates path from
+previous launch
+<br>- Home screen shortcuts: `*_view`
+<br>- An Intent is sent internally that's uses `ACTION_MAIN` or
+`ACTION_VIEW` could be: `*_main/view` (unknown if this ever happens)
+<br>- A command-line launch uses `ACTION_MAIN` or `ACTION_VIEW` could be:
+`*_main/view`
+
+<br><br>
+These ways of opening the app undesirably do not add their events to our
+primary buckets:
+<br>- Close and reopen the app very quickly: no event is recorded.
+
+<br><br>
+These ways of opening the app don't affect our primary buckets:
+<br>- App switcher hot: `hot_unknown`
+<br>- PWA (all states): `unknown_unknown`
+<br>- Custom tab: `unknown_view`
+<br>- Cold start where a service or other non-activity starts the process
+(not manually tested) - this seems to happen if you have the homescreen
+widget: `unknown_*`
+<br>- Another activity is drawn before HomeActivity (e.g. widget voice
+search): `unknown_*`
+<br>- Widget text search: `*_unknown`
+
+<br><br>
+In addition to the events above, the `unknown` state may be chosen when we
+were unable to determine a cause due to implementation details or the API
+was used incorrectly. We may be able to record the events listed above
+into different buckets but we kept the implementation simple for now.
+<br><br>
+N.B.: for implementation simplicity, we duplicate the logic in app that
+determines `path` so it's not perfectly accurate. In one way, we record we
+is intended to happen rather than what actually happened (e.g. the user
+may click a link so we record VIEW but the app does a MAIN by going to the
+homescreen because the link was invalid).
+"
+  }
+
   dimension: metrics__boolean__preferences_bookmarks_suggestion {
     sql: ${TABLE}.metrics.boolean.preferences_bookmarks_suggestion ;;
     type: yesno
@@ -1478,6 +1634,74 @@ will be \"custom\"
 "
   }
 
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Label"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_label"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Counts the number of times a metric was set with an invalid label.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Overflow"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_overflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Counts the number of times a metric was set a value that overflowed.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid State"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Counts the number of times a timing metric was used incorrectly.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Value"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Counts the number of times a metric was set to an invalid value.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
   dimension: metrics__counter__glean_error_io {
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
@@ -1616,6 +1840,24 @@ This does not include the size of the deletion request pings directory.
 "
   }
 
+  dimension: metrics__labeled_counter__glean_upload_ping_upload_failure {
+    sql: ${TABLE}.metrics.labeled_counter.glean_upload_ping_upload_failure ;;
+    group_label: "Glean Upload"
+    group_item_label: "Ping Upload Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload Ping Upload Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_upload_ping_upload_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Counts the number of ping upload failures, by type of failure.
+This includes failures for all ping types,
+though the counts appear in the next successfully sent `metrics` ping.
+"
+  }
+
   dimension: metrics__datetime__glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: string
@@ -1645,6 +1887,29 @@ This does not include the size of the deletion request pings directory.
     }
 
     description: "On mobile, the number of times the application went to foreground.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_validation_pings_submitted {
+    sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
+    group_label: "Glean Validation"
+    group_item_label: "Pings Submitted"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation Pings Submitted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_pings_submitted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "A count of the pings submitted, by ping type.
+
+This metric appears in both the metrics and baseline pings.
+
+- On the metrics ping, the counts include the number of pings sent since
+  the last metrics ping (including the last metrics ping)
+- On the baseline ping, the counts include the number of pings send since
+  the last baseline ping (including the last baseline ping)
 "
   }
 
@@ -1682,6 +1947,22 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__labeled_counter__logins_store_read_query_error_count {
+    sql: ${TABLE}.metrics.labeled_counter.logins_store_read_query_error_count ;;
+    group_label: "Logins Store"
+    group_item_label: "Read Query Error Count"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Read Query Error Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_read_query_error_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "The total number of errors encountered during read operations on the logins store, labeled by type. It is intended to be used together with `read_query_count` to measure the overall error rate of read operations on the logins store.
+"
+  }
+
   dimension: metrics__timing_distribution__logins_store_read_query_time__sum {
     sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.sum ;;
     type: number
@@ -1711,6 +1992,22 @@ documented in the ping's pings.yaml file.
     }
 
     description: "The number of times the login store was unlocked. It is intended to be used together with `unlock_error_count` to measure the overall error rate of unlocking the logins store.
+"
+  }
+
+  dimension: metrics__labeled_counter__logins_store_unlock_error_count {
+    sql: ${TABLE}.metrics.labeled_counter.logins_store_unlock_error_count ;;
+    group_label: "Logins Store"
+    group_item_label: "Unlock Error Count"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Unlock Error Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_unlock_error_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "The number of errors encountered when unlocking the logins store, labeled by type. It is intended to be used together with `unlock_count` to measure the overall error rate of unlocking the logins store.
 "
   }
 
@@ -1746,6 +2043,22 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__labeled_counter__logins_store_write_query_error_count {
+    sql: ${TABLE}.metrics.labeled_counter.logins_store_write_query_error_count ;;
+    group_label: "Logins Store"
+    group_item_label: "Write Query Error Count"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Write Query Error Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_write_query_error_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "The total number of errors encountered during write operations on the logins store, labeled by type. It is intended to be used together with `write_query_count` to measure the overall error rate of write operations on the logins store.
+"
+  }
+
   dimension: metrics__timing_distribution__logins_store_write_query_time__sum {
     sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.sum ;;
     type: number
@@ -1778,6 +2091,22 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__labeled_counter__avif_bit_depth {
+    sql: ${TABLE}.metrics.labeled_counter.avif_bit_depth ;;
+    group_label: "Avif"
+    group_item_label: "Bit Depth"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Bit Depth"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_bit_depth"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Bits per pixel of AVIF image.
+"
+  }
+
   dimension: metrics__quantity__avif_dav1d_decode_error {
     sql: ${TABLE}.metrics.quantity.avif_dav1d_decode_error ;;
     type: number
@@ -1791,6 +2120,54 @@ documented in the ping's pings.yaml file.
     }
 
     description: "Image-decode Error from dav1d decoder
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_decode_result {
+    sql: ${TABLE}.metrics.labeled_counter.avif_decode_result ;;
+    group_label: "Avif"
+    group_item_label: "Decode Result"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Decode Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_decode_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Decode result of AVIF image.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_decoder {
+    sql: ${TABLE}.metrics.labeled_counter.avif_decoder ;;
+    group_label: "Avif"
+    group_item_label: "Decoder"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Decoder"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_decoder"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Decoder of AVIF image.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_yuv_color_space {
+    sql: ${TABLE}.metrics.labeled_counter.avif_yuv_color_space ;;
+    group_label: "Avif"
+    group_item_label: "Yuv Color Space"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Yuv Color Space"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_yuv_color_space"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "YUV color space of AVIF image.
 "
   }
 
@@ -2207,6 +2584,22 @@ documented in the ping's pings.yaml file.
     }
 
     description: "The time, in percentage of a vsync interval, spent from the vsync that started a paint in the content process until that frame is presented in the compositor.
+"
+  }
+
+  dimension: metrics__labeled_counter__gfx_content_frame_time_reason {
+    sql: ${TABLE}.metrics.labeled_counter.gfx_content_frame_time_reason ;;
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "The reason that `gfx.content.frame_time.from_paint` recorded a slow (>200ms) result, if any.
 "
   }
 
@@ -2849,6 +3242,38 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__labeled_counter__media_audio_backend {
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_backend ;;
+    group_label: "Media Audio"
+    group_item_label: "Backend"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Backend"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_backend"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "The operating system audio backend
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_init_failure {
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
+    group_label: "Media"
+    group_item_label: "Audio Init Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Init Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_init_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Failure occurs when initializing the audio stream.
+"
+  }
+
   dimension: metrics__timing_distribution__network_cache_hit_time__sum {
     sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.sum ;;
     type: number
@@ -3345,6 +3770,23 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__labeled_counter__crash_metrics_crash_count {
+    sql: ${TABLE}.metrics.labeled_counter.crash_metrics_crash_count ;;
+    group_label: "Crash Metrics"
+    group_item_label: "Crash Count"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Metrics Crash Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_metrics_crash_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Counts the number of crashes that occur in the application. This measures only the counts of each crash in association with the labeled type of the crash. The labels correspond to the types of crashes handled by lib-crash.
+Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfatal_native_code_crash`
+"
+  }
+
   dimension: metrics__counter__places_manager_read_query_count {
     sql: ${TABLE}.metrics.counter.places_manager_read_query_count ;;
     type: number
@@ -3358,6 +3800,22 @@ documented in the ping's pings.yaml file.
     }
 
     description: "The total number of read operations performed on the places store. The count only includes operations triggered by the application, not e.g. incidental reads performed as part of a sync. It is intended to be used together with `read_query_error_count` to measure the overall error rate of read operations on the places store.
+"
+  }
+
+  dimension: metrics__labeled_counter__places_manager_read_query_error_count {
+    sql: ${TABLE}.metrics.labeled_counter.places_manager_read_query_error_count ;;
+    group_label: "Places Manager"
+    group_item_label: "Read Query Error Count"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager Read Query Error Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_read_query_error_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "The total number of errors encountered during read operations on the places store, labeled by type. It is intended to be used together with `read_query_count` to measure the overall error rate of read operations on the places store.
 "
   }
 
@@ -3406,6 +3864,22 @@ documented in the ping's pings.yaml file.
     }
 
     description: "The total number of write operations performed on the places store. The count only includes operations triggered by the application, not e.g. incidental writes performed as part of a sync. It is intended to be used together with `write_query_error_count` to measure the overall error rate of write operations on the places store.
+"
+  }
+
+  dimension: metrics__labeled_counter__places_manager_write_query_error_count {
+    sql: ${TABLE}.metrics.labeled_counter.places_manager_write_query_error_count ;;
+    group_label: "Places Manager"
+    group_item_label: "Write Query Error Count"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager Write Query Error Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_write_query_error_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "The total number of errors encountered during write operations on the places store, labeled by type. It is intended to be used together with `write_query_count` to measure the overall error rate of write operations on the places store.
 "
   }
 
@@ -3472,7 +3946,7 @@ documented in the ping's pings.yaml file.
 
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
-    type: string
+    hidden: yes
   }
 
   dimension: client_info__android_sdk_version {
@@ -3567,6 +4041,7 @@ documented in the ping's pings.yaml file.
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    primary_key: yes
   }
 
   dimension: events {
@@ -4508,4 +4983,1329 @@ documented in the ping's pings.yaml file.
   }
 
   sql_table_name: `{% parameter channel %}` ;;
+}
+
+view: metrics__metrics__labeled_counter__avif_bit_depth {
+  label: "Avif - Bit Depth"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_bit_depth
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_bit_depth.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_decode_result {
+  label: "Avif - Decode Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_decode_result
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_decode_result.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_decoder {
+  label: "Avif - Decoder"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_decoder
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_decoder.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_yuv_color_space {
+  label: "Avif - Yuv Color Space"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_yuv_color_space
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_yuv_color_space.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_search_ad_clicks {
+  label: "Browser Search - Ad Clicks"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_search_in_content {
+  label: "Browser Search - In Content"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_in_content
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_in_content.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_search_with_ads {
+  label: "Browser Search - With Ads"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_with_ads
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_with_ads.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__crash_metrics_crash_count {
+  label: "Crash Metrics - Crash Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__crash_metrics_crash_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__crash_metrics_crash_count.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__engine_tab_kills {
+  label: "Engine Tab - Kills"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__engine_tab_kills
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__engine_tab_kills.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
+  label: "Gfx Content Frame Time - Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__gfx_content_frame_time_reason
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__gfx_content_frame_time_reason.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__glean_error_invalid_label {
+  label: "Glean Error - Invalid Label"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__glean_error_invalid_overflow {
+  label: "Glean Error - Invalid Overflow"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__glean_error_invalid_state {
+  label: "Glean Error - Invalid State"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__glean_error_invalid_value {
+  label: "Glean Error - Invalid Value"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__glean_upload_ping_upload_failure {
+  label: "Glean Upload - Ping Upload Failure"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__glean_validation_pings_submitted {
+  label: "Glean Validation - Pings Submitted"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__logins_store_read_query_error_count {
+  label: "Logins Store - Read Query Error Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_count.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__logins_store_unlock_error_count {
+  label: "Logins Store - Unlock Error Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_count.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__logins_store_write_query_error_count {
+  label: "Logins Store - Write Query Error Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_audio_backend {
+  label: "Media Audio - Backend"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__media_audio_backend
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__media_audio_backend.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_audio_init_failure {
+  label: "Media - Audio Init Failure"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__media_audio_init_failure
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__media_audio_init_failure.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__metrics_search_count {
+  label: "Metrics - Search Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__metrics_search_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__metrics_search_count.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__perf_startup_startup_type {
+  label: "Perf Startup - Startup Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__perf_startup_startup_type
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__perf_startup_startup_type.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__places_manager_read_query_error_count {
+  label: "Places Manager - Read Query Error Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__places_manager_read_query_error_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__places_manager_read_query_error_count.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: metrics__metrics__labeled_counter__places_manager_write_query_error_count {
+  label: "Places Manager - Write Query Error Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__places_manager_write_query_error_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__places_manager_write_query_error_count.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_bit_depth {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.avif_bit_depth) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_decode_result {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.avif_decode_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_decoder {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.avif_decoder) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_yuv_color_space {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.avif_yuv_color_space) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.browser_search_ad_clicks) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__browser_search_in_content {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.browser_search_in_content) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__browser_search_with_ads {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.browser_search_with_ads) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__crash_metrics_crash_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.crash_metrics_crash_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__engine_tab_kills {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.engine_tab_kills) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.gfx_content_frame_time_reason) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.glean_error_invalid_label) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.glean_error_invalid_state) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.glean_error_invalid_value) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.glean_upload_ping_upload_failure) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.glean_validation_pings_submitted) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.logins_store_read_query_error_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.logins_store_unlock_error_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.logins_store_write_query_error_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__media_audio_backend {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.media_audio_backend) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__media_audio_init_failure {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.media_audio_init_failure) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__metrics_search_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.metrics_search_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__perf_startup_startup_type {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.perf_startup_startup_type) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__places_manager_read_query_error_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.places_manager_read_query_error_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__places_manager_write_query_error_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.metrics as t,
+unnest(metrics.labeled_counter.places_manager_write_query_error_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
 }

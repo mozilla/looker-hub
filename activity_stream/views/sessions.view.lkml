@@ -1,7 +1,7 @@
 view: sessions {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
-    type: string
+    hidden: yes
   }
 
   dimension: addon_version {
@@ -17,6 +17,7 @@ view: sessions {
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    primary_key: yes
   }
 
   dimension: experiments {

@@ -1,7 +1,7 @@
 view: startup_timeline {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
-    type: string
+    hidden: yes
   }
 
   dimension: client_info__android_sdk_version {
@@ -96,6 +96,7 @@ view: startup_timeline {
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    primary_key: yes
   }
 
   dimension: events {
