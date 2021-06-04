@@ -557,7 +557,7 @@ The labels are the `category.name` identifier of the metric.
 }
 
 view: installation__metrics__labeled_counter__glean_error_invalid_label {
-  label: "Labeled Counter Glean Error Invalid Label"
+  label: "Glean Error - Invalid Label"
 
   dimension: document_id {
     type: string
@@ -566,7 +566,7 @@ view: installation__metrics__labeled_counter__glean_error_invalid_label {
     hidden: yes
   }
 
-  dimension: key {
+  dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__installation__metrics__labeled_counter__glean_error_invalid_label
@@ -591,7 +591,7 @@ view: installation__metrics__labeled_counter__glean_error_invalid_label {
 }
 
 view: installation__metrics__labeled_counter__glean_error_invalid_overflow {
-  label: "Labeled Counter Glean Error Invalid Overflow"
+  label: "Glean Error - Invalid Overflow"
 
   dimension: document_id {
     type: string
@@ -600,7 +600,7 @@ view: installation__metrics__labeled_counter__glean_error_invalid_overflow {
     hidden: yes
   }
 
-  dimension: key {
+  dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__installation__metrics__labeled_counter__glean_error_invalid_overflow
@@ -625,7 +625,7 @@ view: installation__metrics__labeled_counter__glean_error_invalid_overflow {
 }
 
 view: installation__metrics__labeled_counter__glean_error_invalid_state {
-  label: "Labeled Counter Glean Error Invalid State"
+  label: "Glean Error - Invalid State"
 
   dimension: document_id {
     type: string
@@ -634,7 +634,7 @@ view: installation__metrics__labeled_counter__glean_error_invalid_state {
     hidden: yes
   }
 
-  dimension: key {
+  dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__installation__metrics__labeled_counter__glean_error_invalid_state
@@ -659,7 +659,7 @@ view: installation__metrics__labeled_counter__glean_error_invalid_state {
 }
 
 view: installation__metrics__labeled_counter__glean_error_invalid_value {
-  label: "Labeled Counter Glean Error Invalid Value"
+  label: "Glean Error - Invalid Value"
 
   dimension: document_id {
     type: string
@@ -668,7 +668,7 @@ view: installation__metrics__labeled_counter__glean_error_invalid_value {
     hidden: yes
   }
 
-  dimension: key {
+  dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__installation__metrics__labeled_counter__glean_error_invalid_value

@@ -2358,7 +2358,7 @@ The labels are the `category.name` identifier of the metric.
 }
 
 view: migration__metrics__labeled_counter__glean_error_invalid_label {
-  label: "Labeled Counter Glean Error Invalid Label"
+  label: "Glean Error - Invalid Label"
 
   dimension: document_id {
     type: string
@@ -2367,7 +2367,7 @@ view: migration__metrics__labeled_counter__glean_error_invalid_label {
     hidden: yes
   }
 
-  dimension: key {
+  dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__migration__metrics__labeled_counter__glean_error_invalid_label
@@ -2392,7 +2392,7 @@ view: migration__metrics__labeled_counter__glean_error_invalid_label {
 }
 
 view: migration__metrics__labeled_counter__glean_error_invalid_overflow {
-  label: "Labeled Counter Glean Error Invalid Overflow"
+  label: "Glean Error - Invalid Overflow"
 
   dimension: document_id {
     type: string
@@ -2401,7 +2401,7 @@ view: migration__metrics__labeled_counter__glean_error_invalid_overflow {
     hidden: yes
   }
 
-  dimension: key {
+  dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__migration__metrics__labeled_counter__glean_error_invalid_overflow
@@ -2426,7 +2426,7 @@ view: migration__metrics__labeled_counter__glean_error_invalid_overflow {
 }
 
 view: migration__metrics__labeled_counter__glean_error_invalid_state {
-  label: "Labeled Counter Glean Error Invalid State"
+  label: "Glean Error - Invalid State"
 
   dimension: document_id {
     type: string
@@ -2435,7 +2435,7 @@ view: migration__metrics__labeled_counter__glean_error_invalid_state {
     hidden: yes
   }
 
-  dimension: key {
+  dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__migration__metrics__labeled_counter__glean_error_invalid_state
@@ -2460,7 +2460,7 @@ view: migration__metrics__labeled_counter__glean_error_invalid_state {
 }
 
 view: migration__metrics__labeled_counter__glean_error_invalid_value {
-  label: "Labeled Counter Glean Error Invalid Value"
+  label: "Glean Error - Invalid Value"
 
   dimension: document_id {
     type: string
@@ -2469,7 +2469,7 @@ view: migration__metrics__labeled_counter__glean_error_invalid_value {
     hidden: yes
   }
 
-  dimension: key {
+  dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__migration__metrics__labeled_counter__glean_error_invalid_value
@@ -2494,7 +2494,7 @@ view: migration__metrics__labeled_counter__glean_error_invalid_value {
 }
 
 view: migration__metrics__labeled_counter__migration_bookmarks_migrated {
-  label: "Labeled Counter Migration Bookmarks Migrated"
+  label: "Migration Bookmarks - Migrated"
 
   dimension: document_id {
     type: string
@@ -2503,7 +2503,7 @@ view: migration__metrics__labeled_counter__migration_bookmarks_migrated {
     hidden: yes
   }
 
-  dimension: key {
+  dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__migration__metrics__labeled_counter__migration_bookmarks_migrated
@@ -2528,7 +2528,7 @@ view: migration__metrics__labeled_counter__migration_bookmarks_migrated {
 }
 
 view: migration__metrics__labeled_counter__migration_history_migrated {
-  label: "Labeled Counter Migration History Migrated"
+  label: "Migration History - Migrated"
 
   dimension: document_id {
     type: string
@@ -2537,7 +2537,7 @@ view: migration__metrics__labeled_counter__migration_history_migrated {
     hidden: yes
   }
 
-  dimension: key {
+  dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__migration__metrics__labeled_counter__migration_history_migrated
@@ -2562,7 +2562,7 @@ view: migration__metrics__labeled_counter__migration_history_migrated {
 }
 
 view: migration__metrics__labeled_counter__migration_logins_failure_counts {
-  label: "Labeled Counter Migration Logins Failure Counts"
+  label: "Migration Logins - Failure Counts"
 
   dimension: document_id {
     type: string
@@ -2571,7 +2571,7 @@ view: migration__metrics__labeled_counter__migration_logins_failure_counts {
     hidden: yes
   }
 
-  dimension: key {
+  dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__migration__metrics__labeled_counter__migration_logins_failure_counts
