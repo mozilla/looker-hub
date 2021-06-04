@@ -17,6 +17,7 @@ view: topsites_impression {
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    primary_key: yes
   }
 
   dimension: experiments {

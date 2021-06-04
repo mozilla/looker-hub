@@ -370,6 +370,20 @@ view: custom_table {
     group_item_label: "Performance Translation Engine Wps"
   }
 
+  dimension: metrics__quantity__performance_word_count {
+    sql: ${TABLE}.metrics.quantity.performance_word_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Performance Word Count"
+  }
+
+  dimension: metrics__quantity__performance_word_count_visible_in_viewport {
+    sql: ${TABLE}.metrics.quantity.performance_word_count_visible_in_viewport ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Performance Word Count Visible In Viewport"
+  }
+
   dimension: metrics__string__metadata_bergamot_translator_version {
     sql: ${TABLE}.metrics.string.metadata_bergamot_translator_version ;;
     type: string

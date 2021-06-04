@@ -96,6 +96,7 @@ view: history_sync {
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    primary_key: yes
   }
 
   dimension: events {

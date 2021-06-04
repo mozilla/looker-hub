@@ -1,4 +1,72 @@
 view: migration {
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Label"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_label"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Counts the number of times a metric was set with an invalid label.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Overflow"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_overflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Counts the number of times a metric was set a value that overflowed.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid State"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Counts the number of times a timing metric was used incorrectly.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Value"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Counts the number of times a metric was set to an invalid value.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
   dimension: metrics__boolean__migration_addons_any_failures {
     sql: ${TABLE}.metrics.boolean.migration_addons_any_failures ;;
     type: yesno
@@ -156,6 +224,22 @@ view: migration {
     }
 
     description: "Why this migration failed. See codes in TelemetryHelpers.kt
+"
+  }
+
+  dimension: metrics__labeled_counter__migration_bookmarks_migrated {
+    sql: ${TABLE}.metrics.labeled_counter.migration_bookmarks_migrated ;;
+    group_label: "Migration Bookmarks"
+    group_item_label: "Migrated"
+
+    link: {
+      label: "Glean Dictionary reference for Migration Bookmarks Migrated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/migration_bookmarks_migrated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Counters describing how bookmark migration went; should add-up to 'migration.bookmarks.detected'.
 "
   }
 
@@ -495,6 +579,22 @@ view: migration {
 "
   }
 
+  dimension: metrics__labeled_counter__migration_history_migrated {
+    sql: ${TABLE}.metrics.labeled_counter.migration_history_migrated ;;
+    group_label: "Migration History"
+    group_item_label: "Migrated"
+
+    link: {
+      label: "Glean Dictionary reference for Migration History Migrated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/migration_history_migrated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Counters describing how history migration went; should add-up to 'migration.history.detected'.
+"
+  }
+
   dimension: metrics__counter__migration_history_success_reason {
     sql: ${TABLE}.metrics.counter.migration_history_success_reason ;;
     type: number
@@ -556,6 +656,22 @@ view: migration {
     }
 
     description: "How many logins were detected?
+"
+  }
+
+  dimension: metrics__labeled_counter__migration_logins_failure_counts {
+    sql: ${TABLE}.metrics.labeled_counter.migration_logins_failure_counts ;;
+    group_label: "Migration Logins"
+    group_item_label: "Failure Counts"
+
+    link: {
+      label: "Glean Dictionary reference for Migration Logins Failure Counts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/migration_logins_failure_counts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "How many logins failed to be migrated, and in which ways?
 "
   }
 
@@ -1152,6 +1268,7 @@ view: migration {
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    primary_key: yes
   }
 
   dimension: events {
@@ -2238,4 +2355,375 @@ view: migration {
   }
 
   sql_table_name: `{% parameter channel %}` ;;
+}
+
+view: migration__metrics__labeled_counter__glean_error_invalid_label {
+  label: "Labeled Counter Glean Error Invalid Label"
+
+  dimension: document_id {
+    type: string
+    sql: ${migration.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__migration__metrics__labeled_counter__glean_error_invalid_label
+    suggest_dimension: suggest__migration__metrics__labeled_counter__glean_error_invalid_label.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${migration.client_info__client_id} end ;;
+  }
+}
+
+view: migration__metrics__labeled_counter__glean_error_invalid_overflow {
+  label: "Labeled Counter Glean Error Invalid Overflow"
+
+  dimension: document_id {
+    type: string
+    sql: ${migration.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__migration__metrics__labeled_counter__glean_error_invalid_overflow
+    suggest_dimension: suggest__migration__metrics__labeled_counter__glean_error_invalid_overflow.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${migration.client_info__client_id} end ;;
+  }
+}
+
+view: migration__metrics__labeled_counter__glean_error_invalid_state {
+  label: "Labeled Counter Glean Error Invalid State"
+
+  dimension: document_id {
+    type: string
+    sql: ${migration.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__migration__metrics__labeled_counter__glean_error_invalid_state
+    suggest_dimension: suggest__migration__metrics__labeled_counter__glean_error_invalid_state.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${migration.client_info__client_id} end ;;
+  }
+}
+
+view: migration__metrics__labeled_counter__glean_error_invalid_value {
+  label: "Labeled Counter Glean Error Invalid Value"
+
+  dimension: document_id {
+    type: string
+    sql: ${migration.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__migration__metrics__labeled_counter__glean_error_invalid_value
+    suggest_dimension: suggest__migration__metrics__labeled_counter__glean_error_invalid_value.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${migration.client_info__client_id} end ;;
+  }
+}
+
+view: migration__metrics__labeled_counter__migration_bookmarks_migrated {
+  label: "Labeled Counter Migration Bookmarks Migrated"
+
+  dimension: document_id {
+    type: string
+    sql: ${migration.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__migration__metrics__labeled_counter__migration_bookmarks_migrated
+    suggest_dimension: suggest__migration__metrics__labeled_counter__migration_bookmarks_migrated.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${migration.client_info__client_id} end ;;
+  }
+}
+
+view: migration__metrics__labeled_counter__migration_history_migrated {
+  label: "Labeled Counter Migration History Migrated"
+
+  dimension: document_id {
+    type: string
+    sql: ${migration.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__migration__metrics__labeled_counter__migration_history_migrated
+    suggest_dimension: suggest__migration__metrics__labeled_counter__migration_history_migrated.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${migration.client_info__client_id} end ;;
+  }
+}
+
+view: migration__metrics__labeled_counter__migration_logins_failure_counts {
+  label: "Labeled Counter Migration Logins Failure Counts"
+
+  dimension: document_id {
+    type: string
+    sql: ${migration.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__migration__metrics__labeled_counter__migration_logins_failure_counts
+    suggest_dimension: suggest__migration__metrics__labeled_counter__migration_logins_failure_counts.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${migration.client_info__client_id} end ;;
+  }
+}
+
+view: suggest__migration__metrics__labeled_counter__glean_error_invalid_label {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox_beta.migration as t,
+unnest(metrics.labeled_counter.glean_error_invalid_label) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__migration__metrics__labeled_counter__glean_error_invalid_overflow {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox_beta.migration as t,
+unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__migration__metrics__labeled_counter__glean_error_invalid_state {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox_beta.migration as t,
+unnest(metrics.labeled_counter.glean_error_invalid_state) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__migration__metrics__labeled_counter__glean_error_invalid_value {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox_beta.migration as t,
+unnest(metrics.labeled_counter.glean_error_invalid_value) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__migration__metrics__labeled_counter__migration_bookmarks_migrated {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox_beta.migration as t,
+unnest(metrics.labeled_counter.migration_bookmarks_migrated) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__migration__metrics__labeled_counter__migration_history_migrated {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox_beta.migration as t,
+unnest(metrics.labeled_counter.migration_history_migrated) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__migration__metrics__labeled_counter__migration_logins_failure_counts {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox_beta.migration as t,
+unnest(metrics.labeled_counter.migration_logins_failure_counts) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
 }
