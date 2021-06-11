@@ -417,6 +417,20 @@ view: metrics_table {
     group_item_label: "Default Browser Onboarding Go To Settings Pressed"
   }
 
+  dimension: metrics__counter__firefox_home_page_open_from_awesomebar {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_open_from_awesomebar ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page Open From Awesomebar"
+  }
+
+  dimension: metrics__counter__firefox_home_page_open_from_menu_home_button {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_open_from_menu_home_button ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page Open From Menu Home Button"
+  }
+
   dimension: metrics__counter__glean_error_io {
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
@@ -548,6 +562,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Pocket Open Story"
+  }
+
+  dimension: metrics__counter__pocket_section_impressions {
+    sql: ${TABLE}.metrics.counter.pocket_section_impressions ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Pocket Section Impressions"
   }
 
   dimension: metrics__counter__qr_code_scanned {
@@ -726,6 +747,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__bookmarks_edit {
+    sql: ${TABLE}.metrics.labeled_counter.bookmarks_edit ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__bookmarks_open {
     sql: ${TABLE}.metrics.labeled_counter.bookmarks_open ;;
     hidden: yes
@@ -773,6 +799,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__library_panel_pressed {
     sql: ${TABLE}.metrics.labeled_counter.library_panel_pressed ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__pocket_open_story_position {
+    sql: ${TABLE}.metrics.labeled_counter.pocket_open_story_position ;;
     hidden: yes
   }
 
