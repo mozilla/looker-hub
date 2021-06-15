@@ -651,6 +651,42 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.metrics
       type: table_view
+mozilla_vpn:
+  glean_app: false
+  owners:
+  - dthorn@mozilla.com
+  pretty_name: Mozilla VPN
+  views:
+    devices:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.devices
+      type: table_view
+    funnel_fxa_login_to_protected:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.funnel_fxa_login_to_protected
+      type: table_view
+    funnel_ga_to_subscriptions:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.funnel_ga_to_subscriptions
+      type: table_view
+    retention_by_subscription:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.retention_by_subscription
+      type: table_view
+    site_metrics_summary:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.site_metrics_summary
+      type: table_view
+    subscriptions:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.all_subscriptions
+      type: table_view
 search:
   explores:
     desktop_search_counts:
