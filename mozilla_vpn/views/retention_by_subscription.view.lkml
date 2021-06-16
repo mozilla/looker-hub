@@ -65,6 +65,16 @@ view: retention_by_subscription {
     type: string
   }
 
+  dimension: plan_interval_count {
+    sql: ${TABLE}.plan_interval_count ;;
+    type: number
+  }
+
+  dimension: pricing_plan {
+    sql: ${TABLE}.pricing_plan ;;
+    type: string
+  }
+
   dimension: product_name {
     sql: ${TABLE}.product_name ;;
     type: string
