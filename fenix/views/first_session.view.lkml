@@ -1,4 +1,154 @@
 view: first_session {
+  dimension: metrics__string__first_session_adgroup {
+    sql: ${TABLE}.metrics.string.first_session_adgroup ;;
+    type: string
+    group_label: "First Session"
+    group_item_label: "Adgroup"
+
+    link: {
+      label: "Glean Dictionary reference for First Session Adgroup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_adgroup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the AdGroup that was used to source this installation.
+"
+  }
+
+  dimension: metrics__string__first_session_campaign {
+    sql: ${TABLE}.metrics.string.first_session_campaign ;;
+    type: string
+    group_label: "First Session"
+    group_item_label: "Campaign"
+
+    link: {
+      label: "Glean Dictionary reference for First Session Campaign"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_campaign"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the campaign that is responsible for this installation.
+"
+  }
+
+  dimension: metrics__string__first_session_creative {
+    sql: ${TABLE}.metrics.string.first_session_creative ;;
+    type: string
+    group_label: "First Session"
+    group_item_label: "Creative"
+
+    link: {
+      label: "Glean Dictionary reference for First Session Creative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_creative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The identifier of the creative material that the user interacted with.
+"
+  }
+
+  dimension: metrics__string__first_session_network {
+    sql: ${TABLE}.metrics.string.first_session_network ;;
+    type: string
+    group_label: "First Session"
+    group_item_label: "Network"
+
+    link: {
+      label: "Glean Dictionary reference for First Session Network"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_network"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the Network that sourced this installation.
+"
+  }
+
+  dimension: metrics__datetime__first_session_timestamp {
+    sql: ${TABLE}.metrics.datetime.first_session_timestamp ;;
+    type: string
+    group_label: "First Session"
+    group_item_label: "Timestamp"
+
+    link: {
+      label: "Glean Dictionary reference for First Session Timestamp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_timestamp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Glean generated date and time of the installation. This is
+unique per app install, though the rest of the data in this
+ping is from Adjust and will remain static across installs.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Label"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_label"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Counts the number of times a metric was set with an invalid label.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Overflow"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_overflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Counts the number of times a metric was set a value that overflowed.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid State"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Counts the number of times a timing metric was used incorrectly.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Value"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Counts the number of times a metric was set to an invalid value.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -388,4 +538,216 @@ view: first_session {
   }
 
   sql_table_name: `{% parameter channel %}` ;;
+}
+
+view: first_session__metrics__labeled_counter__glean_error_invalid_label {
+  label: "Glean Error - Invalid Label"
+
+  dimension: document_id {
+    type: string
+    sql: ${first_session.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__first_session__metrics__labeled_counter__glean_error_invalid_label
+    suggest_dimension: suggest__first_session__metrics__labeled_counter__glean_error_invalid_label.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${first_session.client_info__client_id} end ;;
+  }
+}
+
+view: first_session__metrics__labeled_counter__glean_error_invalid_overflow {
+  label: "Glean Error - Invalid Overflow"
+
+  dimension: document_id {
+    type: string
+    sql: ${first_session.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__first_session__metrics__labeled_counter__glean_error_invalid_overflow
+    suggest_dimension: suggest__first_session__metrics__labeled_counter__glean_error_invalid_overflow.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${first_session.client_info__client_id} end ;;
+  }
+}
+
+view: first_session__metrics__labeled_counter__glean_error_invalid_state {
+  label: "Glean Error - Invalid State"
+
+  dimension: document_id {
+    type: string
+    sql: ${first_session.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__first_session__metrics__labeled_counter__glean_error_invalid_state
+    suggest_dimension: suggest__first_session__metrics__labeled_counter__glean_error_invalid_state.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${first_session.client_info__client_id} end ;;
+  }
+}
+
+view: first_session__metrics__labeled_counter__glean_error_invalid_value {
+  label: "Glean Error - Invalid Value"
+
+  dimension: document_id {
+    type: string
+    sql: ${first_session.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__first_session__metrics__labeled_counter__glean_error_invalid_value
+    suggest_dimension: suggest__first_session__metrics__labeled_counter__glean_error_invalid_value.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${first_session.client_info__client_id} end ;;
+  }
+}
+
+view: suggest__first_session__metrics__labeled_counter__glean_error_invalid_label {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.first_session as t,
+unnest(metrics.labeled_counter.glean_error_invalid_label) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__first_session__metrics__labeled_counter__glean_error_invalid_overflow {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.first_session as t,
+unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__first_session__metrics__labeled_counter__glean_error_invalid_state {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.first_session as t,
+unnest(metrics.labeled_counter.glean_error_invalid_state) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__first_session__metrics__labeled_counter__glean_error_invalid_value {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.first_session as t,
+unnest(metrics.labeled_counter.glean_error_invalid_value) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
 }
