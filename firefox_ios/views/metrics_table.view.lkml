@@ -431,6 +431,20 @@ view: metrics_table {
     group_item_label: "Firefox Home Page Open From Menu Home Button"
   }
 
+  dimension: metrics__counter__firefox_home_page_recently_saved_bookmark_item {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_recently_saved_bookmark_item ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page Recently Saved Bookmark Item"
+  }
+
+  dimension: metrics__counter__firefox_home_page_recently_saved_show_all {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_recently_saved_show_all ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page Recently Saved Show All"
+  }
+
   dimension: metrics__counter__glean_error_io {
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
