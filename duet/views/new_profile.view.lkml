@@ -600,6 +600,13 @@ view: new_profile {
     group_item_label: "Locale"
   }
 
+  dimension: environment__settings__sandbox__content_win32k_lockdown_state {
+    sql: ${TABLE}.environment.settings.sandbox.content_win32k_lockdown_state ;;
+    type: number
+    group_label: "Environment Settings Sandbox"
+    group_item_label: "Content Win32K Lockdown State"
+  }
+
   dimension: environment__settings__sandbox__effective_content_process_level {
     sql: ${TABLE}.environment.settings.sandbox.effective_content_process_level ;;
     type: number
