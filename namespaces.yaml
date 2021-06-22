@@ -16,6 +16,7 @@ activity_stream:
   owners:
   - najiang@mozilla.com
   pretty_name: Activity Stream
+  spoke: looker-spoke-default
   views:
     events:
       tables:
@@ -39,6 +40,7 @@ bergamot:
   owners:
   - epavlov@mozilla.com
   pretty_name: Bergamot Translator
+  spoke: looker-spoke-default
   views:
     custom:
       tables:
@@ -75,7 +77,9 @@ contextual_services:
   glean_app: false
   owners:
   - mmccorquodale@mozilla.com
+  - rburwei@mozilla.com
   pretty_name: Contextual Services
+  spoke: looker-spoke-private
   views:
     event_aggregates:
       tables:
@@ -102,6 +106,7 @@ duet:
   owners:
   - ascholtz@mozilla.com
   pretty_name: DUET
+  spoke: looker-spoke-default
   views:
     install:
       tables:
@@ -194,6 +199,7 @@ fenix:
   - mdroettboom@mozilla.com
   - vzare@mozilla.com
   pretty_name: Firefox for Android
+  spoke: looker-spoke-default
   views:
     activation:
       tables:
@@ -561,6 +567,7 @@ firefox_ios:
   - frank@mozilla.com
   - athomas@mozilla.com
   pretty_name: Firefox for iOS
+  spoke: looker-spoke-default
   views:
     baseline:
       tables:
@@ -656,6 +663,7 @@ mozilla_vpn:
   owners:
   - dthorn@mozilla.com
   pretty_name: Mozilla VPN
+  spoke: looker-spoke-default
   views:
     devices:
       tables:
@@ -702,6 +710,7 @@ search:
   - mmccorquodale@mozilla.com
   - xluo@mozilla.com
   pretty_name: Search
+  spoke: looker-spoke-default
   views:
     mobile_search_clients_engines_sources_daily:
       tables:
