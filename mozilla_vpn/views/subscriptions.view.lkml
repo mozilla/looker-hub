@@ -90,6 +90,11 @@ view: subscriptions {
     type: number
   }
 
+  dimension: plan_interval_timezone {
+    sql: ${TABLE}.plan_interval_timezone ;;
+    type: string
+  }
+
   dimension: pricing_plan {
     sql: ${TABLE}.pricing_plan ;;
     type: string
