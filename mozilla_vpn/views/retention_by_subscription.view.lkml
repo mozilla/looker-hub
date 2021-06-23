@@ -4,6 +4,16 @@ view: retention_by_subscription {
     type: string
   }
 
+  dimension: billing_scheme {
+    sql: ${TABLE}.billing_scheme ;;
+    type: string
+  }
+
+  dimension: cancel_at_period_end {
+    sql: ${TABLE}.cancel_at_period_end ;;
+    type: yesno
+  }
+
   dimension: coarse_attribution_category {
     sql: ${TABLE}.coarse_attribution_category ;;
     type: string
@@ -18,6 +28,21 @@ view: retention_by_subscription {
   dimension: country_name {
     sql: ${TABLE}.country_name ;;
     type: string
+  }
+
+  dimension: customer_id {
+    sql: ${TABLE}.customer_id ;;
+    type: string
+  }
+
+  dimension: fxa_uid {
+    sql: ${TABLE}.fxa_uid ;;
+    type: string
+  }
+
+  dimension: months_renewed {
+    sql: ${TABLE}.months_renewed ;;
+    type: number
   }
 
   dimension: normalized_acquisition_channel {
@@ -70,8 +95,18 @@ view: retention_by_subscription {
     type: number
   }
 
+  dimension: plan_interval_timezone {
+    sql: ${TABLE}.plan_interval_timezone ;;
+    type: string
+  }
+
   dimension: pricing_plan {
     sql: ${TABLE}.pricing_plan ;;
+    type: string
+  }
+
+  dimension: product_id {
+    sql: ${TABLE}.product_id ;;
     type: string
   }
 
@@ -85,19 +120,29 @@ view: retention_by_subscription {
     type: string
   }
 
+  dimension: referrer {
+    sql: ${TABLE}.referrer ;;
+    type: string
+  }
+
   dimension: renewal_period {
     sql: ${TABLE}.renewal_period ;;
     type: number
   }
 
-  dimension: renewal_subscription_id {
-    sql: ${TABLE}.renewal_subscription_id ;;
+  dimension: status {
+    sql: ${TABLE}.status ;;
     type: string
   }
 
   dimension: subscription_id {
     sql: ${TABLE}.subscription_id ;;
     type: string
+  }
+
+  dimension: user_id {
+    sql: ${TABLE}.user_id ;;
+    type: number
   }
 
   dimension: utm_campaign {
@@ -140,19 +185,32 @@ view: retention_by_subscription {
     datatype: date
   }
 
-  dimension_group: activity_period_month {
-    sql: ${TABLE}.activity_period_month ;;
+  dimension_group: cancel_at {
+    sql: ${TABLE}.cancel_at ;;
     type: time
     timeframes: [
       raw,
+      time,
       date,
       week,
       month,
       quarter,
       year,
     ]
-    convert_tz: no
-    datatype: date
+  }
+
+  dimension_group: canceled_at {
+    sql: ${TABLE}.canceled_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
   }
 
   dimension_group: cohort_month {
@@ -168,6 +226,118 @@ view: retention_by_subscription {
     ]
     convert_tz: no
     datatype: date
+  }
+
+  dimension_group: created {
+    sql: ${TABLE}.created ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
+  dimension_group: customer_start {
+    sql: ${TABLE}.customer_start_date ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
+  dimension_group: end {
+    sql: ${TABLE}.end_date ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
+  dimension_group: ended_at {
+    sql: ${TABLE}.ended_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
+  dimension_group: event {
+    sql: ${TABLE}.event_timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
+  dimension_group: subscription_start {
+    sql: ${TABLE}.subscription_start_date ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
+  dimension_group: trial_end {
+    sql: ${TABLE}.trial_end ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
+  dimension_group: user_registration {
+    sql: ${TABLE}.user_registration_date ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
   }
 
   sql_table_name: `mozdata.mozilla_vpn.retention_by_subscription` ;;
