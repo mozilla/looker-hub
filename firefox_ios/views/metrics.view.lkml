@@ -446,6 +446,23 @@ the Recently Saved section is tapped
 "
   }
 
+  dimension: metrics__counter__firefox_home_page_recently_saved_reading_item {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_recently_saved_reading_item ;;
+    type: number
+    group_label: "Firefox Home Page"
+    group_item_label: "Recently Saved Reading Item"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Recently Saved Reading Item"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_recently_saved_reading_item"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a reading list
+item in the Recently Saved section is tapped.
+"
+  }
+
   dimension: metrics__counter__firefox_home_page_recently_saved_show_all {
     sql: ${TABLE}.metrics.counter.firefox_home_page_recently_saved_show_all ;;
     type: number
@@ -2663,6 +2680,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Firefox Home Page Recently Saved Bookmark Item"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_recently_saved_bookmark_item"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_recently_saved_reading_item {
+    type: sum
+    sql: ${metrics__counter__firefox_home_page_recently_saved_reading_item} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Recently Saved Reading Item"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_recently_saved_reading_item"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_recently_saved_reading_item_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__firefox_home_page_recently_saved_reading_item: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Recently Saved Reading Item"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_recently_saved_reading_item"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

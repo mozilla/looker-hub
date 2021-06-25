@@ -438,6 +438,13 @@ view: metrics_table {
     group_item_label: "Firefox Home Page Recently Saved Bookmark Item"
   }
 
+  dimension: metrics__counter__firefox_home_page_recently_saved_reading_item {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_recently_saved_reading_item ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page Recently Saved Reading Item"
+  }
+
   dimension: metrics__counter__firefox_home_page_recently_saved_show_all {
     sql: ${TABLE}.metrics.counter.firefox_home_page_recently_saved_show_all ;;
     type: number

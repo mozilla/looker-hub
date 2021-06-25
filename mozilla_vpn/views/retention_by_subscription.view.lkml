@@ -14,6 +14,11 @@ view: retention_by_subscription {
     type: yesno
   }
 
+  dimension: canceled_for_customer_at {
+    sql: ${TABLE}.canceled_for_customer_at ;;
+    type: string
+  }
+
   dimension: coarse_attribution_category {
     sql: ${TABLE}.coarse_attribution_category ;;
     type: string
