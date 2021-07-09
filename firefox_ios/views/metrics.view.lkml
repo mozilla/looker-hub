@@ -425,7 +425,8 @@ from awesomebar.
     }
 
     description: "Counts when user opens Firefox Home from
-bottom right hamburger menu Home button.
+bottom right hamburger menu Home button
+and New Tab button.
 "
   }
 
