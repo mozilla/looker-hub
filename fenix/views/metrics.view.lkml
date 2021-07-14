@@ -3386,6 +3386,54 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__custom_distribution__performance_clone_deserialize_items__sum {
+    sql: ${TABLE}.metrics.custom_distribution.performance_clone_deserialize_items.sum ;;
+    type: number
+    group_label: "Performance Clone Deserialize"
+    group_item_label: "Items Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Clone Deserialize Items Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_clone_deserialize_items"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of deserialized data, in items
+"
+  }
+
+  dimension: metrics__memory_distribution__performance_clone_deserialize_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.performance_clone_deserialize_size.sum ;;
+    type: number
+    group_label: "Performance Clone Deserialize"
+    group_item_label: "Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Clone Deserialize Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_clone_deserialize_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of deserialized data, in bytes
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_clone_deserialize_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.sum ;;
+    type: number
+    group_label: "Performance Clone Deserialize"
+    group_item_label: "Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Clone Deserialize Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_clone_deserialize_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent deserializing structured data
+"
+  }
+
   dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__sum {
     sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.sum ;;
     type: number

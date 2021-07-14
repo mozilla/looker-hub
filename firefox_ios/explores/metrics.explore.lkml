@@ -73,6 +73,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__glean_validation_pings_submitted}) AS metrics__metrics__labeled_counter__glean_validation_pings_submitted ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__glean_validation_pings_submitted.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray}) AS metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__library_panel_pressed {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__library_panel_pressed}) AS metrics__metrics__labeled_counter__library_panel_pressed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__library_panel_pressed.document_id} ;;
@@ -169,6 +174,10 @@ explore: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_fa
 }
 
 explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
   hidden: yes
 }
 
