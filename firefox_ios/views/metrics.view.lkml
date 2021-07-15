@@ -498,6 +498,73 @@ History, Reading List, or Downloads buttons
 "
   }
 
+  dimension: metrics__counter__inactive_tabs_tray_open_inactive_tab {
+    sql: ${TABLE}.metrics.counter.inactive_tabs_tray_open_inactive_tab ;;
+    type: number
+    group_label: "Inactive Tabs Tray"
+    group_item_label: "Open Inactive Tab"
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Open Inactive Tab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_open_inactive_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times user opens an inactive tab.
+"
+  }
+
+  dimension: metrics__counter__inactive_tabs_tray_open_recently_closed_list {
+    sql: ${TABLE}.metrics.counter.inactive_tabs_tray_open_recently_closed_list ;;
+    type: number
+    group_label: "Inactive Tabs Tray"
+    group_item_label: "Open Recently Closed List"
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Open Recently Closed List"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_open_recently_closed_list"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times user opens recently closed
+section from inactive tabs tray.
+"
+  }
+
+  dimension: metrics__counter__inactive_tabs_tray_open_recently_closed_tab {
+    sql: ${TABLE}.metrics.counter.inactive_tabs_tray_open_recently_closed_tab ;;
+    type: number
+    group_label: "Inactive Tabs Tray"
+    group_item_label: "Open Recently Closed Tab"
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Open Recently Closed Tab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_open_recently_closed_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the Go To Settings button on
+default browser card is clicked.
+"
+  }
+
+  dimension: metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
+    sql: ${TABLE}.metrics.labeled_counter.inactive_tabs_tray_toggle_inactive_tab_tray ;;
+    group_label: "Inactive Tabs Tray"
+    group_item_label: "Toggle Inactive Tab Tray"
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Toggle Inactive Tab Tray"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_toggle_inactive_tab_tray"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Counts the number of times user toggle (expand or collapse)
+inactive tab section.
+"
+  }
+
   dimension: metrics__uuid__legacy_ids_client_id {
     sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
     type: string
@@ -2738,6 +2805,81 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Firefox Home Page Recently Saved Show All"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_recently_saved_show_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: inactive_tabs_tray_open_inactive_tab {
+    type: sum
+    sql: ${metrics__counter__inactive_tabs_tray_open_inactive_tab} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Open Inactive Tab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_open_inactive_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: inactive_tabs_tray_open_inactive_tab_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__inactive_tabs_tray_open_inactive_tab: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Open Inactive Tab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_open_inactive_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: inactive_tabs_tray_open_recently_closed_list {
+    type: sum
+    sql: ${metrics__counter__inactive_tabs_tray_open_recently_closed_list} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Open Recently Closed List"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_open_recently_closed_list"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: inactive_tabs_tray_open_recently_closed_list_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__inactive_tabs_tray_open_recently_closed_list: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Open Recently Closed List"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_open_recently_closed_list"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: inactive_tabs_tray_open_recently_closed_tab {
+    type: sum
+    sql: ${metrics__counter__inactive_tabs_tray_open_recently_closed_tab} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Open Recently Closed Tab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_open_recently_closed_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: inactive_tabs_tray_open_recently_closed_tab_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__inactive_tabs_tray_open_recently_closed_tab: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Open Recently Closed Tab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_open_recently_closed_tab"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

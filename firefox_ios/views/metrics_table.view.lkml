@@ -515,6 +515,27 @@ view: metrics_table {
     group_item_label: "Glean Validation Foreground Count"
   }
 
+  dimension: metrics__counter__inactive_tabs_tray_open_inactive_tab {
+    sql: ${TABLE}.metrics.counter.inactive_tabs_tray_open_inactive_tab ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Inactive Tabs Tray Open Inactive Tab"
+  }
+
+  dimension: metrics__counter__inactive_tabs_tray_open_recently_closed_list {
+    sql: ${TABLE}.metrics.counter.inactive_tabs_tray_open_recently_closed_list ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Inactive Tabs Tray Open Recently Closed List"
+  }
+
+  dimension: metrics__counter__inactive_tabs_tray_open_recently_closed_tab {
+    sql: ${TABLE}.metrics.counter.inactive_tabs_tray_open_recently_closed_tab ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Inactive Tabs Tray Open Recently Closed Tab"
+  }
+
   dimension: metrics__counter__page_action_menu_add_to_reading_list {
     sql: ${TABLE}.metrics.counter.page_action_menu_add_to_reading_list ;;
     type: number
@@ -822,6 +843,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__glean_validation_pings_submitted {
     sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
+    sql: ${TABLE}.metrics.labeled_counter.inactive_tabs_tray_toggle_inactive_tab_tray ;;
     hidden: yes
   }
 

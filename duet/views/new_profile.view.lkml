@@ -949,6 +949,13 @@ view: new_profile {
     hidden: yes
   }
 
+  dimension: environment__system__has_win_package_id {
+    sql: ${TABLE}.environment.system.has_win_package_id ;;
+    type: yesno
+    group_label: "Environment System"
+    group_item_label: "Has Win Package Id"
+  }
+
   dimension: environment__system__hdd__binary__model {
     sql: ${TABLE}.environment.system.hdd.binary.model ;;
     type: string
