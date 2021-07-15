@@ -1,37 +1,7 @@
 view: growth_accounting {
-  dimension: android_sdk_version {
-    sql: ${TABLE}.android_sdk_version ;;
+  dimension: app_version {
+    sql: ${TABLE}.app_version ;;
     type: string
-  }
-
-  dimension: app_build {
-    sql: ${TABLE}.app_build ;;
-    type: string
-  }
-
-  dimension: app_channel {
-    sql: ${TABLE}.app_channel ;;
-    type: string
-  }
-
-  dimension: app_display_version {
-    sql: ${TABLE}.app_display_version ;;
-    type: string
-  }
-
-  dimension: architecture {
-    sql: ${TABLE}.architecture ;;
-    type: string
-  }
-
-  dimension: city {
-    sql: ${TABLE}.city ;;
-    type: string
-  }
-
-  dimension: client_id {
-    sql: ${TABLE}.client_id ;;
-    hidden: yes
   }
 
   dimension: country {
@@ -40,8 +10,8 @@ view: growth_accounting {
     map_layer_name: countries
   }
 
-  dimension: days_created_profile_bits {
-    sql: ${TABLE}.days_created_profile_bits ;;
+  dimension: days_registered_bits {
+    sql: ${TABLE}.days_registered_bits ;;
     type: number
   }
 
@@ -50,18 +20,18 @@ view: growth_accounting {
     type: number
   }
 
-  dimension: days_seen_session_end_bits {
-    sql: ${TABLE}.days_seen_session_end_bits ;;
+  dimension: days_seen_in_tier1_country_bits {
+    sql: ${TABLE}.days_seen_in_tier1_country_bits ;;
     type: number
   }
 
-  dimension: days_seen_session_start_bits {
-    sql: ${TABLE}.days_seen_session_start_bits ;;
+  dimension: days_seen_no_monitor_bits {
+    sql: ${TABLE}.days_seen_no_monitor_bits ;;
     type: number
   }
 
-  dimension: days_since_created_profile {
-    sql: ${TABLE}.days_since_created_profile ;;
+  dimension: days_since_registered {
+    sql: ${TABLE}.days_since_registered ;;
     type: number
   }
 
@@ -70,63 +40,33 @@ view: growth_accounting {
     type: number
   }
 
-  dimension: days_since_seen_session_end {
-    sql: ${TABLE}.days_since_seen_session_end ;;
+  dimension: days_since_seen_in_tier1_country {
+    sql: ${TABLE}.days_since_seen_in_tier1_country ;;
     type: number
   }
 
-  dimension: days_since_seen_session_start {
-    sql: ${TABLE}.days_since_seen_session_start ;;
+  dimension: days_since_seen_no_monitor {
+    sql: ${TABLE}.days_since_seen_no_monitor ;;
     type: number
   }
 
-  dimension: device_manufacturer {
-    sql: ${TABLE}.device_manufacturer ;;
+  dimension: language {
+    sql: ${TABLE}.language ;;
     type: string
   }
 
-  dimension: device_model {
-    sql: ${TABLE}.device_model ;;
+  dimension: os_name {
+    sql: ${TABLE}.os_name ;;
     type: string
   }
 
-  dimension: durations {
-    sql: ${TABLE}.durations ;;
-    type: number
-  }
-
-  dimension: is_new_profile {
-    sql: ${TABLE}.is_new_profile ;;
-    type: yesno
-  }
-
-  dimension: locale {
-    sql: ${TABLE}.locale ;;
+  dimension: os_version {
+    sql: ${TABLE}.os_version ;;
     type: string
   }
 
-  dimension: normalized_channel {
-    sql: ${TABLE}.normalized_channel ;;
-    type: string
-  }
-
-  dimension: normalized_os {
-    sql: ${TABLE}.normalized_os ;;
-    type: string
-  }
-
-  dimension: normalized_os_version {
-    sql: ${TABLE}.normalized_os_version ;;
-    type: string
-  }
-
-  dimension: sample_id {
-    sql: ${TABLE}.sample_id ;;
-    type: number
-  }
-
-  dimension: telemetry_sdk_build {
-    sql: ${TABLE}.telemetry_sdk_build ;;
+  dimension: user_id {
+    sql: ${TABLE}.user_id ;;
     type: string
   }
 
@@ -159,36 +99,6 @@ view: growth_accounting {
     type: string
     hidden: yes
     primary_key: yes
-  }
-
-  dimension_group: first_run {
-    sql: ${TABLE}.first_run_date ;;
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    convert_tz: no
-    datatype: date
-  }
-
-  dimension_group: first_seen {
-    sql: ${TABLE}.first_seen_date ;;
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    convert_tz: no
-    datatype: date
   }
 
   dimension_group: submission {
@@ -336,5 +246,5 @@ view: growth_accounting {
     sql: SAFE_DIVIDE(${new_users} + ${overall_resurrected},${established_users_churned_count} + ${new_users_churned_count}) ;;
   }
 
-  sql_table_name: `mozdata.org_mozilla_ios_firefox.baseline_clients_last_seen` ;;
+  sql_table_name: `mozdata.firefox_accounts.fxa_users_last_seen` ;;
 }
