@@ -991,6 +991,11 @@ view: metrics_table {
     group_item_label: "Tracking Protection Strength"
   }
 
+  dimension: metrics__url {
+    sql: ${TABLE}.metrics.url ;;
+    hidden: yes
+  }
+
   dimension: metrics__uuid__legacy_ids_client_id {
     sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
     type: string
