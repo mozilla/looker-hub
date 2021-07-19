@@ -272,6 +272,11 @@ view: activation_table {
     group_item_label: "Activation Identifier"
   }
 
+  dimension: metrics__url {
+    sql: ${TABLE}.metrics.url ;;
+    hidden: yes
+  }
+
   dimension: metrics__uuid__activation_activation_id {
     sql: ${TABLE}.metrics.uuid.activation_activation_id ;;
     type: string

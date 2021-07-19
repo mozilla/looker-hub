@@ -313,6 +313,11 @@ view: bookmarks_sync_table {
     group_item_label: "Bookmarks Sync Uid"
   }
 
+  dimension: metrics__url {
+    sql: ${TABLE}.metrics.url ;;
+    hidden: yes
+  }
+
   dimension: metrics__uuid__sync_sync_uuid {
     sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
     type: string

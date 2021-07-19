@@ -332,6 +332,11 @@ view: baseline_table {
     group_item_label: "Value"
   }
 
+  dimension: metrics__url {
+    sql: ${TABLE}.metrics.url ;;
+    hidden: yes
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string

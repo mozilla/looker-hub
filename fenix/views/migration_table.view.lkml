@@ -826,6 +826,11 @@ view: migration_table {
     group_item_label: "Value"
   }
 
+  dimension: metrics__url {
+    sql: ${TABLE}.metrics.url ;;
+    hidden: yes
+  }
+
   dimension: metrics__uuid__migration_telemetry_identifiers_fennec_client_id {
     sql: ${TABLE}.metrics.uuid.migration_telemetry_identifiers_fennec_client_id ;;
     type: string
