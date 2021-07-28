@@ -538,7 +538,7 @@ firefox_accounts:
         base_view: funnel_analysis
     growth_accounting:
       type: growth_accounting_explore
-      view:
+      views:
         base_view: growth_accounting
   glean_app: false
   owners:
