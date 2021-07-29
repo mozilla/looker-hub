@@ -424,6 +424,27 @@ view: metrics_table {
     group_item_label: "Default Browser Onboarding Go To Settings Pressed"
   }
 
+  dimension: metrics__counter__firefox_home_page_jump_back_in_section_view {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_section_view ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page Jump Back In Section View"
+  }
+
+  dimension: metrics__counter__firefox_home_page_jump_back_in_show_all {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_show_all ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page Jump Back In Show All"
+  }
+
+  dimension: metrics__counter__firefox_home_page_jump_back_in_tab_opened {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_tab_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page Jump Back In Tab Opened"
+  }
+
   dimension: metrics__counter__firefox_home_page_open_from_awesomebar {
     sql: ${TABLE}.metrics.counter.firefox_home_page_open_from_awesomebar ;;
     type: number
