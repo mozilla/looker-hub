@@ -395,6 +395,57 @@ default browser onboarding is clicked.
 "
   }
 
+  dimension: metrics__counter__firefox_home_page_jump_back_in_section_view {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_section_view ;;
+    type: number
+    group_label: "Firefox Home Page"
+    group_item_label: "Jump Back In Section View"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Section View"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_section_view"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user sees the
+Jump Back In section on the homepage
+"
+  }
+
+  dimension: metrics__counter__firefox_home_page_jump_back_in_show_all {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_show_all ;;
+    type: number
+    group_label: "Firefox Home Page"
+    group_item_label: "Jump Back In Show All"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Show All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_show_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps the
+Show All button in the Jump Back In section.
+"
+  }
+
+  dimension: metrics__counter__firefox_home_page_jump_back_in_tab_opened {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_tab_opened ;;
+    type: number
+    group_label: "Firefox Home Page"
+    group_item_label: "Jump Back In Tab Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Tab Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_tab_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps to open an
+existing tab from the Jump Back In section
+"
+  }
+
   dimension: metrics__counter__firefox_home_page_open_from_awesomebar {
     sql: ${TABLE}.metrics.counter.firefox_home_page_open_from_awesomebar ;;
     type: number
@@ -2680,6 +2731,81 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Default Browser Onboarding Go To Settings Pressed"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/default_browser_onboarding_go_to_settings_pressed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_jump_back_in_section_view {
+    type: sum
+    sql: ${metrics__counter__firefox_home_page_jump_back_in_section_view} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Section View"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_section_view"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_jump_back_in_section_view_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__firefox_home_page_jump_back_in_section_view: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Section View"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_section_view"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_jump_back_in_show_all {
+    type: sum
+    sql: ${metrics__counter__firefox_home_page_jump_back_in_show_all} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Show All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_show_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_jump_back_in_show_all_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__firefox_home_page_jump_back_in_show_all: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Show All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_show_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_jump_back_in_tab_opened {
+    type: sum
+    sql: ${metrics__counter__firefox_home_page_jump_back_in_tab_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Tab Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_tab_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_jump_back_in_tab_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__firefox_home_page_jump_back_in_tab_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Tab Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_tab_opened"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
