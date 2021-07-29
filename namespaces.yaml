@@ -570,6 +570,11 @@ firefox_accounts:
       - channel: release
         table: mozdata.firefox_accounts.fxa_content_auth_oauth_events
       type: table_view
+    fxa_first_seen_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_accounts.fxa_users_first_seen
+      type: table_view
     growth_accounting:
       tables:
       - table: mozdata.firefox_accounts.fxa_users_last_seen
