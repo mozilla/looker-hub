@@ -1,4 +1,99 @@
 view: baseline {
+  dimension: metrics__labeled_counter__browser_search_ad_clicks {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
+    group_label: "Browser Search"
+    group_item_label: "Ad Clicks"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Ad Clicks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/browser_search_ad_clicks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages.
+The key format is `<provider-name>`.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_in_content {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
+    group_label: "Browser Search"
+    group_item_label: "In Content"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search In Content"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/browser_search_in_content"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Records the type of interaction a user has on SERP pages.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_with_ads {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
+    group_label: "Browser Search"
+    group_item_label: "With Ads"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search With Ads"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/browser_search_with_ads"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed.
+The key format is `<provider-name>`.
+"
+  }
+
+  dimension: metrics__counter__events_total_uri_count {
+    sql: ${TABLE}.metrics.counter.events_total_uri_count ;;
+    type: number
+    group_label: "Events"
+    group_item_label: "Total Uri Count"
+
+    link: {
+      label: "Glean Dictionary reference for Events Total Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_total_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of URIs visited by the user in the current session, including
+page reloads. This does not include background page requests and URIs from
+embedded pages or private browsing but may be incremented without user
+interaction by website scripts that programmatically redirect to a new
+location.
+"
+  }
+
+  dimension: metrics__labeled_counter__metrics_search_count {
+    sql: ${TABLE}.metrics.labeled_counter.metrics_search_count ;;
+    group_label: "Metrics"
+    group_item_label: "Search Count"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Search Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_search_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "The labels for this counter are `<search-engine-name>.<source>`.
+
+If the search engine is bundled with Fenix `search-engine-name` will be
+the name of the search engine. If it's a custom search engine (defined:
+https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
+`custom`.
+
+`source` will be: `action`, `suggestion`, `widget`, `shortcut`, `topsite`
+(depending on the source from which the search started). Also added the
+`other` option for the source but it should never enter on this case.
+"
+  }
+
   dimension: metrics__timespan__glean_baseline_duration__value {
     sql: ${TABLE}.metrics.timespan.glean_baseline_duration.value ;;
     type: number
@@ -7,7 +102,7 @@ view: baseline {
 
     link: {
       label: "Glean Dictionary reference for Glean Baseline Duration Value"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_baseline_duration"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_baseline_duration"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -23,7 +118,7 @@ view: baseline {
 
     link: {
       label: "Glean Dictionary reference for Glean Baseline Locale"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_baseline_locale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_baseline_locale"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -41,7 +136,7 @@ to indicate \"undetermined\".
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Label"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_label"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -58,7 +153,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Overflow"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -75,7 +170,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid State"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_state"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -92,7 +187,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Value"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_value"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -110,7 +205,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Validation First Run Hour"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_validation_first_run_hour"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_first_run_hour"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -125,7 +220,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Validation Pings Submitted"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_validation_pings_submitted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_pings_submitted"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -149,7 +244,7 @@ This metric appears in both the metrics and baseline pings.
 
     link: {
       label: "Glean Dictionary reference for Glean Validation Metrics Ping Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_validation_metrics_ping_count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_metrics_ping_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -531,13 +626,38 @@ This metric appears in both the metrics and baseline pings.
     type: count
   }
 
+  measure: events_total_uri_count {
+    type: sum
+    sql: ${metrics__counter__events_total_uri_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Events Total Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_total_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: events_total_uri_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__events_total_uri_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Events Total Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_total_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: glean_validation_metrics_ping_count {
     type: sum
     sql: ${metrics__counter__glean_validation_metrics_ping_count} ;;
 
     link: {
       label: "Glean Dictionary reference for Glean Validation Metrics Ping Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_validation_metrics_ping_count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_metrics_ping_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -551,32 +671,134 @@ This metric appears in both the metrics and baseline pings.
 
     link: {
       label: "Glean Dictionary reference for Glean Validation Metrics Ping Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_validation_metrics_ping_count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_metrics_ping_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_ios_firefox.baseline"
+    default_value: "mozdata.org_mozilla_firefox.baseline"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_ios_firefox.baseline"
+      value: "mozdata.org_mozilla_firefox.baseline"
     }
 
     allowed_value: {
       label: "Beta"
-      value: "mozdata.org_mozilla_ios_firefoxbeta.baseline"
+      value: "mozdata.org_mozilla_firefox_beta.baseline"
     }
 
     allowed_value: {
       label: "Nightly"
-      value: "mozdata.org_mozilla_ios_fennec.baseline"
+      value: "mozdata.org_mozilla_fenix.baseline"
     }
   }
 
   sql_table_name: `{% parameter channel %}` ;;
+}
+
+view: baseline__metrics__labeled_counter__browser_search_ad_clicks {
+  label: "Browser Search - Ad Clicks"
+
+  dimension: document_id {
+    type: string
+    sql: ${baseline.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__baseline__metrics__labeled_counter__browser_search_ad_clicks
+    suggest_dimension: suggest__baseline__metrics__labeled_counter__browser_search_ad_clicks.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+  }
+}
+
+view: baseline__metrics__labeled_counter__browser_search_in_content {
+  label: "Browser Search - In Content"
+
+  dimension: document_id {
+    type: string
+    sql: ${baseline.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__baseline__metrics__labeled_counter__browser_search_in_content
+    suggest_dimension: suggest__baseline__metrics__labeled_counter__browser_search_in_content.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+  }
+}
+
+view: baseline__metrics__labeled_counter__browser_search_with_ads {
+  label: "Browser Search - With Ads"
+
+  dimension: document_id {
+    type: string
+    sql: ${baseline.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__baseline__metrics__labeled_counter__browser_search_with_ads
+    suggest_dimension: suggest__baseline__metrics__labeled_counter__browser_search_with_ads.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+  }
 }
 
 view: baseline__metrics__labeled_counter__glean_error_invalid_label {
@@ -749,12 +971,103 @@ view: baseline__metrics__labeled_counter__glean_validation_pings_submitted {
   }
 }
 
+view: baseline__metrics__labeled_counter__metrics_search_count {
+  label: "Metrics - Search Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${baseline.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__baseline__metrics__labeled_counter__metrics_search_count
+    suggest_dimension: suggest__baseline__metrics__labeled_counter__metrics_search_count.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+  }
+}
+
+view: suggest__baseline__metrics__labeled_counter__browser_search_ad_clicks {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.baseline as t,
+unnest(metrics.labeled_counter.browser_search_ad_clicks) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__baseline__metrics__labeled_counter__browser_search_in_content {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.baseline as t,
+unnest(metrics.labeled_counter.browser_search_in_content) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__baseline__metrics__labeled_counter__browser_search_with_ads {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.baseline as t,
+unnest(metrics.labeled_counter.browser_search_with_ads) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__baseline__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_ios_firefox.baseline as t,
+from mozdata.org_mozilla_firefox.baseline as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -773,7 +1086,7 @@ view: suggest__baseline__metrics__labeled_counter__glean_error_invalid_overflow 
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_ios_firefox.baseline as t,
+from mozdata.org_mozilla_firefox.baseline as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -792,7 +1105,7 @@ view: suggest__baseline__metrics__labeled_counter__glean_error_invalid_state {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_ios_firefox.baseline as t,
+from mozdata.org_mozilla_firefox.baseline as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -811,7 +1124,7 @@ view: suggest__baseline__metrics__labeled_counter__glean_error_invalid_value {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_ios_firefox.baseline as t,
+from mozdata.org_mozilla_firefox.baseline as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -830,8 +1143,27 @@ view: suggest__baseline__metrics__labeled_counter__glean_validation_pings_submit
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_ios_firefox.baseline as t,
+from mozdata.org_mozilla_firefox.baseline as t,
 unnest(metrics.labeled_counter.glean_validation_pings_submitted) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__baseline__metrics__labeled_counter__metrics_search_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.baseline as t,
+unnest(metrics.labeled_counter.metrics_search_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

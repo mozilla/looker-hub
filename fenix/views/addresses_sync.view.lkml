@@ -1,39 +1,4 @@
-view: baseline {
-  dimension: metrics__timespan__glean_baseline_duration__value {
-    sql: ${TABLE}.metrics.timespan.glean_baseline_duration.value ;;
-    type: number
-    group_label: "Glean Baseline"
-    group_item_label: "Duration Value"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Baseline Duration Value"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_baseline_duration"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The duration of the last foreground session.
-"
-  }
-
-  dimension: metrics__string__glean_baseline_locale {
-    sql: ${TABLE}.metrics.string.glean_baseline_locale ;;
-    type: string
-    group_label: "Glean Baseline"
-    group_item_label: "Locale"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Baseline Locale"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_baseline_locale"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The locale of the application during initialization (e.g. \"es-ES\").
-If the locale can't be determined on the system, the value is
-[\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers),
-to indicate \"undetermined\".
-"
-  }
-
+view: addresses_sync {
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
@@ -41,7 +6,7 @@ to indicate \"undetermined\".
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Label"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_label"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -58,7 +23,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Overflow"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -75,7 +40,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid State"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_state"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -92,7 +57,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Value"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_value"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -102,58 +67,100 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
-  dimension: metrics__datetime__glean_validation_first_run_hour {
-    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
+  dimension: metrics__datetime__addresses_sync_finished_at {
+    sql: ${TABLE}.metrics.datetime.addresses_sync_finished_at ;;
     type: string
-    group_label: "Glean Validation"
-    group_item_label: "First Run Hour"
+    group_label: "Addresses Sync"
+    group_item_label: "Finished At"
 
     link: {
-      label: "Glean Dictionary reference for Glean Validation First Run Hour"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_validation_first_run_hour"
+      label: "Glean Dictionary reference for Addresses Sync Finished At"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_sync_finished_at"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The hour of the first run of the application.
+    description: "Records when the addresses sync finished. This includes the time to download, apply, and upload all records.
 "
   }
 
-  dimension: metrics__labeled_counter__glean_validation_pings_submitted {
-    sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
-    group_label: "Glean Validation"
-    group_item_label: "Pings Submitted"
+  dimension: metrics__labeled_counter__addresses_sync_incoming {
+    sql: ${TABLE}.metrics.labeled_counter.addresses_sync_incoming ;;
+    group_label: "Addresses Sync"
+    group_item_label: "Incoming"
 
     link: {
-      label: "Glean Dictionary reference for Glean Validation Pings Submitted"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_validation_pings_submitted"
+      label: "Glean Dictionary reference for Addresses Sync Incoming"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_sync_incoming"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
     hidden: yes
-    description: "A count of the pings submitted, by ping type.
-
-This metric appears in both the metrics and baseline pings.
-
-- On the metrics ping, the counts include the number of pings sent since
-  the last metrics ping (including the last metrics ping)
-- On the baseline ping, the counts include the number of pings send since
-  the last baseline ping (including the last baseline ping)
+    description: "Records incoming addresses record counts. `applied` is the number of incoming records that were successfully stored or updated in the local database. `failed_to_apply` is the number of records that were ignored due to errors. `reconciled` is the number of merged records.
 "
   }
 
-  dimension: metrics__counter__glean_validation_metrics_ping_count {
-    sql: ${TABLE}.metrics.counter.glean_validation_metrics_ping_count ;;
-    type: number
-    group_label: "Glean Validation"
-    group_item_label: "Metrics Ping Count"
+  dimension: metrics__labeled_counter__addresses_sync_outgoing {
+    sql: ${TABLE}.metrics.labeled_counter.addresses_sync_outgoing ;;
+    group_label: "Addresses Sync"
+    group_item_label: "Outgoing"
 
     link: {
-      label: "Glean Dictionary reference for Glean Validation Metrics Ping Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_validation_metrics_ping_count"
+      label: "Glean Dictionary reference for Addresses Sync Outgoing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_sync_outgoing"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The number of metrics pings sent during the lifetime of this baseline ping."
+    hidden: yes
+    description: "Records outgoing addresses record counts. `uploaded` is the number of records that were successfully sent to the server. `failed_to_upload` is the number of records that weren't uploaded, and will be retried on the next sync.
+"
+  }
+
+  dimension: metrics__counter__addresses_sync_outgoing_batches {
+    sql: ${TABLE}.metrics.counter.addresses_sync_outgoing_batches ;;
+    type: number
+    group_label: "Addresses Sync"
+    group_item_label: "Outgoing Batches"
+
+    link: {
+      label: "Glean Dictionary reference for Addresses Sync Outgoing Batches"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_sync_outgoing_batches"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of batches needed to upload all outgoing records. The Sync server has a hard limit on the number of records (and request body bytes) on the number of records that can fit into a single batch, and large syncs may require multiple batches.
+"
+  }
+
+  dimension: metrics__datetime__addresses_sync_started_at {
+    sql: ${TABLE}.metrics.datetime.addresses_sync_started_at ;;
+    type: string
+    group_label: "Addresses Sync"
+    group_item_label: "Started At"
+
+    link: {
+      label: "Glean Dictionary reference for Addresses Sync Started At"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_sync_started_at"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records when the addresses sync started.
+"
+  }
+
+  dimension: metrics__string__addresses_sync_uid {
+    sql: ${TABLE}.metrics.string.addresses_sync_uid ;;
+    type: string
+    group_label: "Addresses Sync"
+    group_item_label: "Uid"
+
+    link: {
+      label: "Glean Dictionary reference for Addresses Sync Uid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_sync_uid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The user's hashed Firefox Account ID.
+"
   }
 
   dimension: additional_properties {
@@ -531,60 +538,128 @@ This metric appears in both the metrics and baseline pings.
     type: count
   }
 
-  measure: glean_validation_metrics_ping_count {
+  measure: addresses_sync_outgoing_batches {
     type: sum
-    sql: ${metrics__counter__glean_validation_metrics_ping_count} ;;
+    sql: ${metrics__counter__addresses_sync_outgoing_batches} ;;
 
     link: {
-      label: "Glean Dictionary reference for Glean Validation Metrics Ping Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_validation_metrics_ping_count"
+      label: "Glean Dictionary reference for Addresses Sync Outgoing Batches"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_sync_outgoing_batches"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
 
-  measure: glean_validation_metrics_ping_count_client_count {
+  measure: addresses_sync_outgoing_batches_client_count {
     type: count_distinct
     filters: [
-      metrics__counter__glean_validation_metrics_ping_count: ">0",
+      metrics__counter__addresses_sync_outgoing_batches: ">0",
     ]
     sql: ${client_info__client_id} ;;
 
     link: {
-      label: "Glean Dictionary reference for Glean Validation Metrics Ping Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_validation_metrics_ping_count"
+      label: "Glean Dictionary reference for Addresses Sync Outgoing Batches"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_sync_outgoing_batches"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_ios_firefox.baseline"
+    default_value: "mozdata.org_mozilla_firefox.addresses_sync"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_ios_firefox.baseline"
+      value: "mozdata.org_mozilla_firefox.addresses_sync"
     }
 
     allowed_value: {
       label: "Beta"
-      value: "mozdata.org_mozilla_ios_firefoxbeta.baseline"
+      value: "mozdata.org_mozilla_firefox_beta.addresses_sync"
     }
 
     allowed_value: {
       label: "Nightly"
-      value: "mozdata.org_mozilla_ios_fennec.baseline"
+      value: "mozdata.org_mozilla_fenix.addresses_sync"
     }
   }
 
   sql_table_name: `{% parameter channel %}` ;;
 }
 
-view: baseline__metrics__labeled_counter__glean_error_invalid_label {
+view: addresses_sync__metrics__labeled_counter__addresses_sync_incoming {
+  label: "Addresses Sync - Incoming"
+
+  dimension: document_id {
+    type: string
+    sql: ${addresses_sync.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__addresses_sync__metrics__labeled_counter__addresses_sync_incoming
+    suggest_dimension: suggest__addresses_sync__metrics__labeled_counter__addresses_sync_incoming.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${addresses_sync.client_info__client_id} end ;;
+  }
+}
+
+view: addresses_sync__metrics__labeled_counter__addresses_sync_outgoing {
+  label: "Addresses Sync - Outgoing"
+
+  dimension: document_id {
+    type: string
+    sql: ${addresses_sync.document_id} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__addresses_sync__metrics__labeled_counter__addresses_sync_outgoing
+    suggest_dimension: suggest__addresses_sync__metrics__labeled_counter__addresses_sync_outgoing.key
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${addresses_sync.client_info__client_id} end ;;
+  }
+}
+
+view: addresses_sync__metrics__labeled_counter__glean_error_invalid_label {
   label: "Glean Error - Invalid Label"
 
   dimension: document_id {
     type: string
-    sql: ${baseline.document_id} ;;
+    sql: ${addresses_sync.document_id} ;;
     primary_key: yes
     hidden: yes
   }
@@ -592,8 +667,8 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_label {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    suggest_explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_label
-    suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_error_invalid_label.key
+    suggest_explore: suggest__addresses_sync__metrics__labeled_counter__glean_error_invalid_label
+    suggest_dimension: suggest__addresses_sync__metrics__labeled_counter__glean_error_invalid_label.key
   }
 
   dimension: value {
@@ -609,16 +684,16 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_label {
 
   measure: client_count {
     type: count_distinct
-    sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    sql: case when ${value} > 0 then ${addresses_sync.client_info__client_id} end ;;
   }
 }
 
-view: baseline__metrics__labeled_counter__glean_error_invalid_overflow {
+view: addresses_sync__metrics__labeled_counter__glean_error_invalid_overflow {
   label: "Glean Error - Invalid Overflow"
 
   dimension: document_id {
     type: string
-    sql: ${baseline.document_id} ;;
+    sql: ${addresses_sync.document_id} ;;
     primary_key: yes
     hidden: yes
   }
@@ -626,8 +701,8 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_overflow {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    suggest_explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_error_invalid_overflow.key
+    suggest_explore: suggest__addresses_sync__metrics__labeled_counter__glean_error_invalid_overflow
+    suggest_dimension: suggest__addresses_sync__metrics__labeled_counter__glean_error_invalid_overflow.key
   }
 
   dimension: value {
@@ -643,16 +718,16 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_overflow {
 
   measure: client_count {
     type: count_distinct
-    sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    sql: case when ${value} > 0 then ${addresses_sync.client_info__client_id} end ;;
   }
 }
 
-view: baseline__metrics__labeled_counter__glean_error_invalid_state {
+view: addresses_sync__metrics__labeled_counter__glean_error_invalid_state {
   label: "Glean Error - Invalid State"
 
   dimension: document_id {
     type: string
-    sql: ${baseline.document_id} ;;
+    sql: ${addresses_sync.document_id} ;;
     primary_key: yes
     hidden: yes
   }
@@ -660,8 +735,8 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_state {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    suggest_explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_error_invalid_state.key
+    suggest_explore: suggest__addresses_sync__metrics__labeled_counter__glean_error_invalid_state
+    suggest_dimension: suggest__addresses_sync__metrics__labeled_counter__glean_error_invalid_state.key
   }
 
   dimension: value {
@@ -677,16 +752,16 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_state {
 
   measure: client_count {
     type: count_distinct
-    sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    sql: case when ${value} > 0 then ${addresses_sync.client_info__client_id} end ;;
   }
 }
 
-view: baseline__metrics__labeled_counter__glean_error_invalid_value {
+view: addresses_sync__metrics__labeled_counter__glean_error_invalid_value {
   label: "Glean Error - Invalid Value"
 
   dimension: document_id {
     type: string
-    sql: ${baseline.document_id} ;;
+    sql: ${addresses_sync.document_id} ;;
     primary_key: yes
     hidden: yes
   }
@@ -694,8 +769,8 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_value {
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    suggest_explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_error_invalid_value.key
+    suggest_explore: suggest__addresses_sync__metrics__labeled_counter__glean_error_invalid_value
+    suggest_dimension: suggest__addresses_sync__metrics__labeled_counter__glean_error_invalid_value.key
   }
 
   dimension: value {
@@ -711,50 +786,54 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_value {
 
   measure: client_count {
     type: count_distinct
-    sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    sql: case when ${value} > 0 then ${addresses_sync.client_info__client_id} end ;;
   }
 }
 
-view: baseline__metrics__labeled_counter__glean_validation_pings_submitted {
-  label: "Glean Validation - Pings Submitted"
-
-  dimension: document_id {
-    type: string
-    sql: ${baseline.document_id} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__baseline__metrics__labeled_counter__glean_validation_pings_submitted
-    suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_validation_pings_submitted.key
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
-  }
-}
-
-view: suggest__baseline__metrics__labeled_counter__glean_error_invalid_label {
+view: suggest__addresses_sync__metrics__labeled_counter__addresses_sync_incoming {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_ios_firefox.baseline as t,
+from mozdata.org_mozilla_firefox.addresses_sync as t,
+unnest(metrics.labeled_counter.addresses_sync_incoming) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__addresses_sync__metrics__labeled_counter__addresses_sync_outgoing {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.addresses_sync as t,
+unnest(metrics.labeled_counter.addresses_sync_outgoing) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__addresses_sync__metrics__labeled_counter__glean_error_invalid_label {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_firefox.addresses_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -768,12 +847,12 @@ order by n desc ;;
   }
 }
 
-view: suggest__baseline__metrics__labeled_counter__glean_error_invalid_overflow {
+view: suggest__addresses_sync__metrics__labeled_counter__glean_error_invalid_overflow {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_ios_firefox.baseline as t,
+from mozdata.org_mozilla_firefox.addresses_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -787,12 +866,12 @@ order by n desc ;;
   }
 }
 
-view: suggest__baseline__metrics__labeled_counter__glean_error_invalid_state {
+view: suggest__addresses_sync__metrics__labeled_counter__glean_error_invalid_state {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_ios_firefox.baseline as t,
+from mozdata.org_mozilla_firefox.addresses_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -806,32 +885,13 @@ order by n desc ;;
   }
 }
 
-view: suggest__baseline__metrics__labeled_counter__glean_error_invalid_value {
+view: suggest__addresses_sync__metrics__labeled_counter__glean_error_invalid_value {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_ios_firefox.baseline as t,
+from mozdata.org_mozilla_firefox.addresses_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__baseline__metrics__labeled_counter__glean_validation_pings_submitted {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_ios_firefox.baseline as t,
-unnest(metrics.labeled_counter.glean_validation_pings_submitted) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
