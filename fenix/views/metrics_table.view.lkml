@@ -249,6 +249,20 @@ view: metrics_table {
     group_item_label: "Addons Has Installed Addons"
   }
 
+  dimension: metrics__boolean__android_autofill_enabled {
+    sql: ${TABLE}.metrics.boolean.android_autofill_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Android Autofill Enabled"
+  }
+
+  dimension: metrics__boolean__android_autofill_supported {
+    sql: ${TABLE}.metrics.boolean.android_autofill_supported ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Android Autofill Supported"
+  }
+
   dimension: metrics__boolean__contextual_menu_long_press_tapped {
     sql: ${TABLE}.metrics.boolean.contextual_menu_long_press_tapped ;;
     type: yesno

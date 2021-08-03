@@ -31,6 +31,40 @@ view: metrics {
 "
   }
 
+  dimension: metrics__boolean__android_autofill_enabled {
+    sql: ${TABLE}.metrics.boolean.android_autofill_enabled ;;
+    type: yesno
+    group_label: "Android Autofill"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Android Autofill Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/android_autofill_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not Firefox is the Android Autofill provider for this user.
+provider.
+"
+  }
+
+  dimension: metrics__boolean__android_autofill_supported {
+    sql: ${TABLE}.metrics.boolean.android_autofill_supported ;;
+    type: yesno
+    group_label: "Android Autofill"
+    group_item_label: "Supported"
+
+    link: {
+      label: "Glean Dictionary reference for Android Autofill Supported"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/android_autofill_supported"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not Android Autofill is supported by the device and is
+supported for this user.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     group_label: "Browser Search"
