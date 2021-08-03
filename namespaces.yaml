@@ -723,6 +723,13 @@ mozilla_vpn:
       - channel: release
         table: mozdata.mozilla_vpn.all_subscriptions
       type: table_view
+revenue:
+  connection: bigquery-oauth
+  glean_app: false
+  owners:
+  - akomarzewski@mozilla.com
+  pretty_name: Revenue
+  spoke: looker-spoke-private
 search:
   explores:
     desktop_search_counts:
