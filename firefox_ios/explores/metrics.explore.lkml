@@ -38,6 +38,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__bookmarks_view_list}) AS metrics__metrics__labeled_counter__bookmarks_view_list ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__bookmarks_view_list.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__browser_search_ad_clicks {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_ad_clicks}) AS metrics__metrics__labeled_counter__browser_search_ad_clicks ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_ad_clicks.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_with_ads {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_with_ads}) AS metrics__metrics__labeled_counter__browser_search_with_ads ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_with_ads.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__firefox_home_page_your_library {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__firefox_home_page_your_library}) AS metrics__metrics__labeled_counter__firefox_home_page_your_library ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__firefox_home_page_your_library.document_id} ;;
@@ -146,6 +156,14 @@ explore: suggest__metrics__metrics__labeled_counter__bookmarks_open {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__bookmarks_view_list {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__browser_search_with_ads {
   hidden: yes
 }
 
