@@ -329,6 +329,40 @@ from either the Home Panel tab button or the App Menu.
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_ad_clicks {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
+    group_label: "Browser Search"
+    group_item_label: "Ad Clicks"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Ad Clicks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/browser_search_ad_clicks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages.
+The key format is ‘<provider-name>’.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_with_ads {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
+    group_label: "Browser Search"
+    group_item_label: "With Ads"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search With Ads"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/browser_search_with_ads"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed.
+The key format is ‘<provider-name>’.
+"
+  }
+
   dimension: metrics__counter__default_browser_card_dismiss_pressed {
     sql: ${TABLE}.metrics.counter.default_browser_card_dismiss_pressed ;;
     type: number
@@ -901,6 +935,23 @@ on Firefox Home
     }
 
     description: "Measures the state of the \"Close Private Tabs\" preference.
+"
+  }
+
+  dimension: metrics__string__preferences_home_page_setting {
+    sql: ${TABLE}.metrics.string.preferences_home_page_setting ;;
+    type: string
+    group_label: "Preferences"
+    group_item_label: "Home Page Setting"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Home Page Setting"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/preferences_home_page_setting"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The setting a user chooses as their Home page. By default,
+it is initially set to Firefox Home.
 "
   }
 

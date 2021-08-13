@@ -832,6 +832,16 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__browser_search_ad_clicks {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_with_ads {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__firefox_home_page_your_library {
     sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_your_library ;;
     hidden: yes
@@ -968,6 +978,13 @@ view: metrics_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Ping Reason"
+  }
+
+  dimension: metrics__string__preferences_home_page_setting {
+    sql: ${TABLE}.metrics.string.preferences_home_page_setting ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Preferences Home Page Setting"
   }
 
   dimension: metrics__string__preferences_mail_client {
