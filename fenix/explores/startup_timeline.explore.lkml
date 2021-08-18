@@ -32,6 +32,31 @@ explore: startup_timeline {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${startup_timeline.metrics__labeled_counter__glean_error_invalid_value}) AS startup_timeline__metrics__labeled_counter__glean_error_invalid_value ON ${startup_timeline.document_id} = ${startup_timeline__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  query: client_count {
+    description: "Number of clients over the past 28 days"
+    dimensions: [submission_date]
+    measures: [clients]
+    filters: [
+      submission_date: "28 days",
+    ]
+    sorts: [
+      submission_date: desc,
+    ]
+  }
+
+  query: client_count_tier_1 {
+    description: "Number of clients over the past 28 days for tier-1 countries"
+    dimensions: [submission_date]
+    measures: [clients]
+    filters: [
+      submission_date: "28 days",
+      country: "United States,France,Germany,United Kingdom,Canada",
+    ]
+    sorts: [
+      submission_date: desc,
+    ]
+  }
 }
 
 explore: suggest__startup_timeline__metrics__labeled_counter__glean_error_invalid_label {
