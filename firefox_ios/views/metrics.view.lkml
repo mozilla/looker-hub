@@ -1,5 +1,6 @@
 view: metrics {
   dimension: metrics__counter__app_opened_as_default_browser {
+    label: "App Opened As Default Browser"
     sql: ${TABLE}.metrics.counter.app_opened_as_default_browser ;;
     type: number
     group_label: "App"
@@ -20,6 +21,7 @@ often Firefox is set as the default browser.
   }
 
   dimension: metrics__counter__app_menu_block_images_disabled {
+    label: "App Menu Block Images Disabled"
     sql: ${TABLE}.metrics.counter.app_menu_block_images_disabled ;;
     type: number
     group_label: "App Menu"
@@ -37,6 +39,7 @@ in the app menu
   }
 
   dimension: metrics__counter__app_menu_block_images_enabled {
+    label: "App Menu Block Images Enabled"
     sql: ${TABLE}.metrics.counter.app_menu_block_images_enabled ;;
     type: number
     group_label: "App Menu"
@@ -54,6 +57,7 @@ in the app menu
   }
 
   dimension: metrics__counter__app_menu_home {
+    label: "App Menu Home"
     sql: ${TABLE}.metrics.counter.app_menu_home ;;
     type: number
     group_label: "App Menu"
@@ -70,6 +74,7 @@ in the app menu
   }
 
   dimension: metrics__counter__app_menu_library {
+    label: "App Menu Library"
     sql: ${TABLE}.metrics.counter.app_menu_library ;;
     type: number
     group_label: "App Menu"
@@ -86,6 +91,7 @@ in the app menu
   }
 
   dimension: metrics__counter__app_menu_logins {
+    label: "App Menu Logins"
     sql: ${TABLE}.metrics.counter.app_menu_logins ;;
     type: number
     group_label: "App Menu"
@@ -103,6 +109,7 @@ in the app menu
   }
 
   dimension: metrics__counter__app_menu_night_mode_disabled {
+    label: "App Menu Night Mode Disabled"
     sql: ${TABLE}.metrics.counter.app_menu_night_mode_disabled ;;
     type: number
     group_label: "App Menu"
@@ -120,6 +127,7 @@ in the app menu
   }
 
   dimension: metrics__counter__app_menu_night_mode_enabled {
+    label: "App Menu Night Mode Enabled"
     sql: ${TABLE}.metrics.counter.app_menu_night_mode_enabled ;;
     type: number
     group_label: "App Menu"
@@ -137,6 +145,7 @@ in the app menu
   }
 
   dimension: metrics__counter__app_menu_settings {
+    label: "App Menu Settings"
     sql: ${TABLE}.metrics.counter.app_menu_settings ;;
     type: number
     group_label: "App Menu"
@@ -153,6 +162,7 @@ in the app menu
   }
 
   dimension: metrics__counter__app_menu_sign_into_sync {
+    label: "App Menu Sign Into Sync"
     sql: ${TABLE}.metrics.counter.app_menu_sign_into_sync ;;
     type: number
     group_label: "App Menu"
@@ -170,6 +180,7 @@ in the app menu
   }
 
   dimension: metrics__counter__app_menu_whats_new {
+    label: "App Menu Whats New"
     sql: ${TABLE}.metrics.counter.app_menu_whats_new ;;
     type: number
     group_label: "App Menu"
@@ -186,6 +197,7 @@ in the app menu
   }
 
   dimension: metrics__boolean__application_services_bookmark_highlights_visible {
+    label: "Application Services Bookmark Highlights Visible"
     sql: ${TABLE}.metrics.boolean.application_services_bookmark_highlights_visible ;;
     type: yesno
     group_label: "Application Services"
@@ -203,6 +215,7 @@ preference.
   }
 
   dimension: metrics__boolean__application_services_pocket_stories_visible {
+    label: "Application Services Pocket Stories Visible"
     sql: ${TABLE}.metrics.boolean.application_services_pocket_stories_visible ;;
     type: yesno
     group_label: "Application Services"
@@ -219,6 +232,7 @@ preference.
   }
 
   dimension: metrics__boolean__application_services_recent_highlights_visible {
+    label: "Application Services Recent Highlights Visible"
     sql: ${TABLE}.metrics.boolean.application_services_recent_highlights_visible ;;
     type: yesno
     group_label: "Application Services"
@@ -236,6 +250,7 @@ preference.
   }
 
   dimension: metrics__labeled_counter__bookmarks_add {
+    label: "Bookmarks Add"
     sql: ${TABLE}.metrics.labeled_counter.bookmarks_add ;;
     group_label: "Bookmarks"
     group_item_label: "Add"
@@ -255,6 +270,7 @@ following:
   }
 
   dimension: metrics__labeled_counter__bookmarks_delete {
+    label: "Bookmarks Delete"
     sql: ${TABLE}.metrics.labeled_counter.bookmarks_delete ;;
     group_label: "Bookmarks"
     group_item_label: "Delete"
@@ -275,6 +291,7 @@ the following:
   }
 
   dimension: metrics__labeled_counter__bookmarks_edit {
+    label: "Bookmarks Edit"
     sql: ${TABLE}.metrics.labeled_counter.bookmarks_edit ;;
     group_label: "Bookmarks"
     group_item_label: "Edit"
@@ -294,6 +311,7 @@ be edited from:
   }
 
   dimension: metrics__labeled_counter__bookmarks_open {
+    label: "Bookmarks Open"
     sql: ${TABLE}.metrics.labeled_counter.bookmarks_open ;;
     group_label: "Bookmarks"
     group_item_label: "Open"
@@ -313,6 +331,7 @@ the following:
   }
 
   dimension: metrics__labeled_counter__bookmarks_view_list {
+    label: "Bookmarks View List"
     sql: ${TABLE}.metrics.labeled_counter.bookmarks_view_list ;;
     group_label: "Bookmarks"
     group_item_label: "View List"
@@ -330,6 +349,7 @@ from either the Home Panel tab button or the App Menu.
   }
 
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
+    label: "Browser Search Ad Clicks"
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     group_label: "Browser Search"
     group_item_label: "Ad Clicks"
@@ -347,6 +367,7 @@ The key format is ‘<provider-name>’.
   }
 
   dimension: metrics__labeled_counter__browser_search_with_ads {
+    label: "Browser Search With Ads"
     sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
     group_label: "Browser Search"
     group_item_label: "With Ads"
@@ -364,6 +385,7 @@ The key format is ‘<provider-name>’.
   }
 
   dimension: metrics__counter__default_browser_card_dismiss_pressed {
+    label: "Default Browser Card Dismiss Pressed"
     sql: ${TABLE}.metrics.counter.default_browser_card_dismiss_pressed ;;
     type: number
     group_label: "Default Browser Card"
@@ -380,6 +402,7 @@ The key format is ‘<provider-name>’.
   }
 
   dimension: metrics__counter__default_browser_card_go_to_settings_pressed {
+    label: "Default Browser Card Go To Settings Pressed"
     sql: ${TABLE}.metrics.counter.default_browser_card_go_to_settings_pressed ;;
     type: number
     group_label: "Default Browser Card"
@@ -397,6 +420,7 @@ default browser card is clicked.
   }
 
   dimension: metrics__counter__default_browser_onboarding_dismiss_pressed {
+    label: "Default Browser Onboarding Dismiss Pressed"
     sql: ${TABLE}.metrics.counter.default_browser_onboarding_dismiss_pressed ;;
     type: number
     group_label: "Default Browser Onboarding"
@@ -413,6 +437,7 @@ default browser card is clicked.
   }
 
   dimension: metrics__counter__default_browser_onboarding_go_to_settings_pressed {
+    label: "Default Browser Onboarding Go To Settings Pressed"
     sql: ${TABLE}.metrics.counter.default_browser_onboarding_go_to_settings_pressed ;;
     type: number
     group_label: "Default Browser Onboarding"
@@ -430,6 +455,7 @@ default browser onboarding is clicked.
   }
 
   dimension: metrics__counter__firefox_home_page_jump_back_in_section_view {
+    label: "Firefox Home Page Jump Back In Section View"
     sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_section_view ;;
     type: number
     group_label: "Firefox Home Page"
@@ -447,6 +473,7 @@ Jump Back In section on the homepage
   }
 
   dimension: metrics__counter__firefox_home_page_jump_back_in_show_all {
+    label: "Firefox Home Page Jump Back In Show All"
     sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_show_all ;;
     type: number
     group_label: "Firefox Home Page"
@@ -464,6 +491,7 @@ Show All button in the Jump Back In section.
   }
 
   dimension: metrics__counter__firefox_home_page_jump_back_in_tab_opened {
+    label: "Firefox Home Page Jump Back In Tab Opened"
     sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_tab_opened ;;
     type: number
     group_label: "Firefox Home Page"
@@ -481,6 +509,7 @@ existing tab from the Jump Back In section
   }
 
   dimension: metrics__counter__firefox_home_page_open_from_awesomebar {
+    label: "Firefox Home Page Open From Awesomebar"
     sql: ${TABLE}.metrics.counter.firefox_home_page_open_from_awesomebar ;;
     type: number
     group_label: "Firefox Home Page"
@@ -498,6 +527,7 @@ from awesomebar.
   }
 
   dimension: metrics__counter__firefox_home_page_open_from_menu_home_button {
+    label: "Firefox Home Page Open From Menu Home Button"
     sql: ${TABLE}.metrics.counter.firefox_home_page_open_from_menu_home_button ;;
     type: number
     group_label: "Firefox Home Page"
@@ -516,6 +546,7 @@ and New Tab button.
   }
 
   dimension: metrics__counter__firefox_home_page_recently_saved_bookmark_item {
+    label: "Firefox Home Page Recently Saved Bookmark Item"
     sql: ${TABLE}.metrics.counter.firefox_home_page_recently_saved_bookmark_item ;;
     type: number
     group_label: "Firefox Home Page"
@@ -533,6 +564,7 @@ the Recently Saved section is tapped
   }
 
   dimension: metrics__counter__firefox_home_page_recently_saved_reading_item {
+    label: "Firefox Home Page Recently Saved Reading Item"
     sql: ${TABLE}.metrics.counter.firefox_home_page_recently_saved_reading_item ;;
     type: number
     group_label: "Firefox Home Page"
@@ -550,6 +582,7 @@ item in the Recently Saved section is tapped.
   }
 
   dimension: metrics__counter__firefox_home_page_recently_saved_show_all {
+    label: "Firefox Home Page Recently Saved Show All"
     sql: ${TABLE}.metrics.counter.firefox_home_page_recently_saved_show_all ;;
     type: number
     group_label: "Firefox Home Page"
@@ -567,6 +600,7 @@ button of the Recently Saved Section
   }
 
   dimension: metrics__labeled_counter__firefox_home_page_your_library {
+    label: "Firefox Home Page Your Library"
     sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_your_library ;;
     group_label: "Firefox Home Page"
     group_item_label: "Your Library"
@@ -584,6 +618,7 @@ History, Reading List, or Downloads buttons
   }
 
   dimension: metrics__counter__inactive_tabs_tray_open_inactive_tab {
+    label: "Inactive Tabs Tray Open Inactive Tab"
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_open_inactive_tab ;;
     type: number
     group_label: "Inactive Tabs Tray"
@@ -600,6 +635,7 @@ History, Reading List, or Downloads buttons
   }
 
   dimension: metrics__counter__inactive_tabs_tray_open_recently_closed_list {
+    label: "Inactive Tabs Tray Open Recently Closed List"
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_open_recently_closed_list ;;
     type: number
     group_label: "Inactive Tabs Tray"
@@ -617,6 +653,7 @@ section from inactive tabs tray.
   }
 
   dimension: metrics__counter__inactive_tabs_tray_open_recently_closed_tab {
+    label: "Inactive Tabs Tray Open Recently Closed Tab"
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_open_recently_closed_tab ;;
     type: number
     group_label: "Inactive Tabs Tray"
@@ -634,6 +671,7 @@ default browser card is clicked.
   }
 
   dimension: metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
+    label: "Inactive Tabs Tray Toggle Inactive Tab Tray"
     sql: ${TABLE}.metrics.labeled_counter.inactive_tabs_tray_toggle_inactive_tab_tray ;;
     group_label: "Inactive Tabs Tray"
     group_item_label: "Toggle Inactive Tab Tray"
@@ -651,6 +689,7 @@ inactive tab section.
   }
 
   dimension: metrics__uuid__legacy_ids_client_id {
+    label: "Legacy Ids Client Id"
     sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
     type: string
     group_label: "Legacy Ids"
@@ -667,6 +706,7 @@ inactive tab section.
   }
 
   dimension: metrics__labeled_counter__library_panel_pressed {
+    label: "Library Panel Pressed"
     sql: ${TABLE}.metrics.labeled_counter.library_panel_pressed ;;
     group_label: "Library"
     group_item_label: "Panel Pressed"
@@ -685,6 +725,7 @@ Downloads and Synced tabs
   }
 
   dimension: metrics__counter__page_action_menu_add_to_reading_list {
+    label: "Page Action Menu Add To Reading List"
     sql: ${TABLE}.metrics.counter.page_action_menu_add_to_reading_list ;;
     type: number
     group_label: "Page Action Menu"
@@ -702,6 +743,7 @@ in the page action menu
   }
 
   dimension: metrics__counter__page_action_menu_copy_address {
+    label: "Page Action Menu Copy Address"
     sql: ${TABLE}.metrics.counter.page_action_menu_copy_address ;;
     type: number
     group_label: "Page Action Menu"
@@ -719,6 +761,7 @@ in the page action menu
   }
 
   dimension: metrics__counter__page_action_menu_find_in_page {
+    label: "Page Action Menu Find In Page"
     sql: ${TABLE}.metrics.counter.page_action_menu_find_in_page ;;
     type: number
     group_label: "Page Action Menu"
@@ -736,6 +779,7 @@ in the page action menu
   }
 
   dimension: metrics__counter__page_action_menu_pin_to_top_sites {
+    label: "Page Action Menu Pin To Top Sites"
     sql: ${TABLE}.metrics.counter.page_action_menu_pin_to_top_sites ;;
     type: number
     group_label: "Page Action Menu"
@@ -753,6 +797,7 @@ in the page action menu
   }
 
   dimension: metrics__counter__page_action_menu_remove_pinned_site {
+    label: "Page Action Menu Remove Pinned Site"
     sql: ${TABLE}.metrics.counter.page_action_menu_remove_pinned_site ;;
     type: number
     group_label: "Page Action Menu"
@@ -770,6 +815,7 @@ in the page action menu
   }
 
   dimension: metrics__counter__page_action_menu_report_site_issue {
+    label: "Page Action Menu Report Site Issue"
     sql: ${TABLE}.metrics.counter.page_action_menu_report_site_issue ;;
     type: number
     group_label: "Page Action Menu"
@@ -787,6 +833,7 @@ in the page action menu
   }
 
   dimension: metrics__counter__page_action_menu_request_desktop_site {
+    label: "Page Action Menu Request Desktop Site"
     sql: ${TABLE}.metrics.counter.page_action_menu_request_desktop_site ;;
     type: number
     group_label: "Page Action Menu"
@@ -804,6 +851,7 @@ in the page action menu
   }
 
   dimension: metrics__counter__page_action_menu_request_mobile_site {
+    label: "Page Action Menu Request Mobile Site"
     sql: ${TABLE}.metrics.counter.page_action_menu_request_mobile_site ;;
     type: number
     group_label: "Page Action Menu"
@@ -821,6 +869,7 @@ in the page action menu
   }
 
   dimension: metrics__counter__page_action_menu_send_to_device {
+    label: "Page Action Menu Send To Device"
     sql: ${TABLE}.metrics.counter.page_action_menu_send_to_device ;;
     type: number
     group_label: "Page Action Menu"
@@ -838,6 +887,7 @@ in the page action menu
   }
 
   dimension: metrics__counter__page_action_menu_share_page_with {
+    label: "Page Action Menu Share Page With"
     sql: ${TABLE}.metrics.counter.page_action_menu_share_page_with ;;
     type: number
     group_label: "Page Action Menu"
@@ -855,6 +905,7 @@ page action menu
   }
 
   dimension: metrics__counter__pocket_open_story {
+    label: "Pocket Open Story"
     sql: ${TABLE}.metrics.counter.pocket_open_story ;;
     type: number
     group_label: "Pocket"
@@ -872,6 +923,7 @@ Pocket article from Firefox home Pocket feed
   }
 
   dimension: metrics__labeled_counter__pocket_open_story_position {
+    label: "Pocket Open Story Position"
     sql: ${TABLE}.metrics.labeled_counter.pocket_open_story_position ;;
     group_label: "Pocket"
     group_item_label: "Open Story Position"
@@ -890,6 +942,7 @@ The label is position of tile i.e. 0,1,2...
   }
 
   dimension: metrics__counter__pocket_section_impressions {
+    label: "Pocket Section Impressions"
     sql: ${TABLE}.metrics.counter.pocket_section_impressions ;;
     type: number
     group_label: "Pocket"
@@ -907,6 +960,7 @@ on Firefox Home
   }
 
   dimension: metrics__boolean__preferences_block_popups {
+    label: "Preferences Block Popups"
     sql: ${TABLE}.metrics.boolean.preferences_block_popups ;;
     type: yesno
     group_label: "Preferences"
@@ -923,6 +977,7 @@ on Firefox Home
   }
 
   dimension: metrics__boolean__preferences_close_private_tabs {
+    label: "Preferences Close Private Tabs"
     sql: ${TABLE}.metrics.boolean.preferences_close_private_tabs ;;
     type: yesno
     group_label: "Preferences"
@@ -939,6 +994,7 @@ on Firefox Home
   }
 
   dimension: metrics__string__preferences_home_page_setting {
+    label: "Preferences Home Page Setting"
     sql: ${TABLE}.metrics.string.preferences_home_page_setting ;;
     type: string
     group_label: "Preferences"
@@ -956,6 +1012,7 @@ it is initially set to Firefox Home.
   }
 
   dimension: metrics__string__preferences_mail_client {
+    label: "Preferences Mail Client"
     sql: ${TABLE}.metrics.string.preferences_mail_client ;;
     type: string
     group_label: "Preferences"
@@ -976,6 +1033,7 @@ of users is using their client.
   }
 
   dimension: metrics__string__preferences_new_tab_experience {
+    label: "Preferences New Tab Experience"
     sql: ${TABLE}.metrics.string.preferences_new_tab_experience ;;
     type: string
     group_label: "Preferences"
@@ -996,6 +1054,7 @@ introduce the new Activity Stream features.
   }
 
   dimension: metrics__boolean__preferences_save_logins {
+    label: "Preferences Save Logins"
     sql: ${TABLE}.metrics.boolean.preferences_save_logins ;;
     type: yesno
     group_label: "Preferences"
@@ -1012,6 +1071,7 @@ introduce the new Activity Stream features.
   }
 
   dimension: metrics__boolean__preferences_show_clipboard_bar {
+    label: "Preferences Show Clipboard Bar"
     sql: ${TABLE}.metrics.boolean.preferences_show_clipboard_bar ;;
     type: yesno
     group_label: "Preferences"
@@ -1028,6 +1088,7 @@ introduce the new Activity Stream features.
   }
 
   dimension: metrics__counter__qr_code_scanned {
+    label: "Qr Code Scanned"
     sql: ${TABLE}.metrics.counter.qr_code_scanned ;;
     type: number
     group_label: "Qr Code"
@@ -1044,6 +1105,7 @@ introduce the new Activity Stream features.
   }
 
   dimension: metrics__counter__reader_mode_close {
+    label: "Reader Mode Close"
     sql: ${TABLE}.metrics.counter.reader_mode_close ;;
     type: number
     group_label: "Reader Mode"
@@ -1060,6 +1122,7 @@ introduce the new Activity Stream features.
   }
 
   dimension: metrics__counter__reader_mode_open {
+    label: "Reader Mode Open"
     sql: ${TABLE}.metrics.counter.reader_mode_open ;;
     type: number
     group_label: "Reader Mode"
@@ -1076,6 +1139,7 @@ introduce the new Activity Stream features.
   }
 
   dimension: metrics__labeled_counter__reading_list_add {
+    label: "Reading List Add"
     sql: ${TABLE}.metrics.labeled_counter.reading_list_add ;;
     group_label: "Reading List"
     group_item_label: "Add"
@@ -1096,6 +1160,7 @@ list from the following:
   }
 
   dimension: metrics__labeled_counter__reading_list_delete {
+    label: "Reading List Delete"
     sql: ${TABLE}.metrics.labeled_counter.reading_list_delete ;;
     group_label: "Reading List"
     group_item_label: "Delete"
@@ -1115,6 +1180,7 @@ reading list from the following:
   }
 
   dimension: metrics__counter__reading_list_mark_read {
+    label: "Reading List Mark Read"
     sql: ${TABLE}.metrics.counter.reading_list_mark_read ;;
     type: number
     group_label: "Reading List"
@@ -1132,6 +1198,7 @@ marked as read.
   }
 
   dimension: metrics__counter__reading_list_mark_unread {
+    label: "Reading List Mark Unread"
     sql: ${TABLE}.metrics.counter.reading_list_mark_unread ;;
     type: number
     group_label: "Reading List"
@@ -1149,6 +1216,7 @@ marked as unread.
   }
 
   dimension: metrics__counter__reading_list_open {
+    label: "Reading List Open"
     sql: ${TABLE}.metrics.counter.reading_list_open ;;
     type: number
     group_label: "Reading List"
@@ -1166,6 +1234,7 @@ Reading List
   }
 
   dimension: metrics__labeled_counter__search_counts {
+    label: "Search Counts"
     sql: ${TABLE}.metrics.labeled_counter.search_counts ;;
     group_label: "Search"
     group_item_label: "Counts"
@@ -1192,6 +1261,7 @@ search started.  One of:
   }
 
   dimension: metrics__string__search_default_engine {
+    label: "Search Default Engine"
     sql: ${TABLE}.metrics.string.search_default_engine ;;
     type: string
     group_label: "Search"
@@ -1210,6 +1280,7 @@ then the value will be 'custom'.
   }
 
   dimension: metrics__labeled_counter__search_google_topsite_pressed {
+    label: "Search Google Topsite Pressed"
     sql: ${TABLE}.metrics.labeled_counter.search_google_topsite_pressed ;;
     group_label: "Search"
     group_item_label: "Google Topsite Pressed"
@@ -1227,6 +1298,7 @@ is pressed
   }
 
   dimension: metrics__labeled_counter__search_in_content {
+    label: "Search In Content"
     sql: ${TABLE}.metrics.labeled_counter.search_in_content ;;
     group_label: "Search"
     group_item_label: "In Content"
@@ -1243,6 +1315,7 @@ is pressed
   }
 
   dimension: metrics__counter__search_start_search_pressed {
+    label: "Search Start Search Pressed"
     sql: ${TABLE}.metrics.counter.search_start_search_pressed ;;
     type: number
     group_label: "Search"
@@ -1260,6 +1333,7 @@ pressed
   }
 
   dimension: metrics__counter__settings_menu_set_as_default_browser_pressed {
+    label: "Settings Menu Set As Default Browser Pressed"
     sql: ${TABLE}.metrics.counter.settings_menu_set_as_default_browser_pressed ;;
     type: number
     group_label: "Settings Menu"
@@ -1277,6 +1351,7 @@ browser menu option is tapped.
   }
 
   dimension: metrics__counter__sync_create_account_pressed {
+    label: "Sync Create Account Pressed"
     sql: ${TABLE}.metrics.counter.sync_create_account_pressed ;;
     type: number
     group_label: "Sync"
@@ -1294,6 +1369,7 @@ on create account button in sync library view
   }
 
   dimension: metrics__counter__sync_open_sync_home_shortcut {
+    label: "Sync Open Sync Home Shortcut"
     sql: ${TABLE}.metrics.counter.sync_open_sync_home_shortcut ;;
     type: number
     group_label: "Sync"
@@ -1311,6 +1387,7 @@ synced tab list from home view
   }
 
   dimension: metrics__counter__sync_open_tab {
+    label: "Sync Open Tab"
     sql: ${TABLE}.metrics.counter.sync_open_tab ;;
     type: number
     group_label: "Sync"
@@ -1328,6 +1405,7 @@ synced tab
   }
 
   dimension: metrics__counter__sync_sign_in_sync_pressed {
+    label: "Sync Sign In Sync Pressed"
     sql: ${TABLE}.metrics.counter.sync_sign_in_sync_pressed ;;
     type: number
     group_label: "Sync"
@@ -1346,6 +1424,7 @@ library view
   }
 
   dimension: metrics__labeled_counter__tabs_close {
+    label: "Tabs Close"
     sql: ${TABLE}.metrics.labeled_counter.tabs_close ;;
     group_label: "Tabs"
     group_item_label: "Close"
@@ -1364,6 +1443,7 @@ is closed.
   }
 
   dimension: metrics__labeled_counter__tabs_close_all {
+    label: "Tabs Close All"
     sql: ${TABLE}.metrics.labeled_counter.tabs_close_all ;;
     group_label: "Tabs"
     group_item_label: "Close All"
@@ -1382,6 +1462,7 @@ is closed.
   }
 
   dimension: metrics__counter__tabs_cumulative_count {
+    label: "Tabs Cumulative Count"
     sql: ${TABLE}.metrics.counter.tabs_cumulative_count ;;
     type: number
     group_label: "Tabs"
@@ -1406,6 +1487,7 @@ average open tabs per foreground \"session\".
   }
 
   dimension: metrics__counter__tabs_new_tab_pressed {
+    label: "Tabs New Tab Pressed"
     sql: ${TABLE}.metrics.counter.tabs_new_tab_pressed ;;
     type: number
     group_label: "Tabs"
@@ -1423,6 +1505,7 @@ pressed
   }
 
   dimension: metrics__labeled_counter__tabs_open {
+    label: "Tabs Open"
     sql: ${TABLE}.metrics.labeled_counter.tabs_open ;;
     group_label: "Tabs"
     group_item_label: "Open"
@@ -1441,6 +1524,7 @@ is opened.
   }
 
   dimension: metrics__boolean__theme_automatic_mode {
+    label: "Theme Automatic Mode"
     sql: ${TABLE}.metrics.boolean.theme_automatic_mode ;;
     type: yesno
     group_label: "Theme"
@@ -1458,6 +1542,7 @@ preference.
   }
 
   dimension: metrics__string__theme_automatic_slider_value {
+    label: "Theme Automatic Slider Value"
     sql: ${TABLE}.metrics.string.theme_automatic_slider_value ;;
     type: string
     group_label: "Theme"
@@ -1475,6 +1560,7 @@ value of the automatic theme switching slider.
   }
 
   dimension: metrics__string__theme_name {
+    label: "Theme Name"
     sql: ${TABLE}.metrics.string.theme_name ;;
     type: string
     group_label: "Theme"
@@ -1493,6 +1579,7 @@ value of the automatic theme switching slider.
   }
 
   dimension: metrics__boolean__theme_use_system_theme {
+    label: "Theme Use System Theme"
     sql: ${TABLE}.metrics.boolean.theme_use_system_theme ;;
     type: yesno
     group_label: "Theme"
@@ -1510,6 +1597,7 @@ theme preference.
   }
 
   dimension: metrics__boolean__tracking_protection_enabled {
+    label: "Tracking Protection Enabled"
     sql: ${TABLE}.metrics.boolean.tracking_protection_enabled ;;
     type: yesno
     group_label: "Tracking Protection"
@@ -1527,6 +1615,7 @@ preference.
   }
 
   dimension: metrics__string__tracking_protection_strength {
+    label: "Tracking Protection Strength"
     sql: ${TABLE}.metrics.string.tracking_protection_strength ;;
     type: string
     group_label: "Tracking Protection"
@@ -1546,6 +1635,7 @@ tracking-protection that is enabled. One of:
   }
 
   dimension: metrics__counter__widget_l_tabs_open_url {
+    label: "Widget L Tabs Open Url"
     sql: ${TABLE}.metrics.counter.widget_l_tabs_open_url ;;
     type: number
     group_label: "Widget"
@@ -1562,6 +1652,7 @@ tracking-protection that is enabled. One of:
   }
 
   dimension: metrics__counter__widget_m_quick_action_close_private {
+    label: "Widget M Quick Action Close Private"
     sql: ${TABLE}.metrics.counter.widget_m_quick_action_close_private ;;
     type: number
     group_label: "Widget"
@@ -1579,6 +1670,7 @@ widget closes private tabs
   }
 
   dimension: metrics__counter__widget_m_quick_action_copied_link {
+    label: "Widget M Quick Action Copied Link"
     sql: ${TABLE}.metrics.counter.widget_m_quick_action_copied_link ;;
     type: number
     group_label: "Widget"
@@ -1596,6 +1688,7 @@ widget opens copied links
   }
 
   dimension: metrics__counter__widget_m_quick_action_private_search {
+    label: "Widget M Quick Action Private Search"
     sql: ${TABLE}.metrics.counter.widget_m_quick_action_private_search ;;
     type: number
     group_label: "Widget"
@@ -1613,6 +1706,7 @@ widget opens firefox for private search
   }
 
   dimension: metrics__counter__widget_m_quick_action_search {
+    label: "Widget M Quick Action Search"
     sql: ${TABLE}.metrics.counter.widget_m_quick_action_search ;;
     type: number
     group_label: "Widget"
@@ -1630,6 +1724,7 @@ widget opens firefox for regular search
   }
 
   dimension: metrics__counter__widget_m_tabs_open_url {
+    label: "Widget M Tabs Open Url"
     sql: ${TABLE}.metrics.counter.widget_m_tabs_open_url ;;
     type: number
     group_label: "Widget"
@@ -1646,6 +1741,7 @@ widget opens firefox for regular search
   }
 
   dimension: metrics__counter__widget_m_top_sites_widget {
+    label: "Widget M Top Sites Widget"
     sql: ${TABLE}.metrics.counter.widget_m_top_sites_widget ;;
     type: number
     group_label: "Widget"
@@ -1662,6 +1758,7 @@ widget opens firefox for regular search
   }
 
   dimension: metrics__counter__widget_s_quick_action_search {
+    label: "Widget S Quick Action Search"
     sql: ${TABLE}.metrics.counter.widget_s_quick_action_search ;;
     type: number
     group_label: "Widget"
@@ -1679,6 +1776,7 @@ widget opens firefox for regular search
   }
 
   dimension: metrics__memory_distribution__glean_database_size__sum {
+    label: "Glean Database Size Sum"
     sql: ${TABLE}.metrics.memory_distribution.glean_database_size.sum ;;
     type: number
     group_label: "Glean Database"
@@ -1695,6 +1793,7 @@ widget opens firefox for regular search
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
+    label: "Glean Error Invalid Label"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -1712,6 +1811,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    label: "Glean Error Invalid Overflow"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -1729,6 +1829,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
+    label: "Glean Error Invalid State"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -1746,6 +1847,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
+    label: "Glean Error Invalid Value"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
@@ -1763,6 +1865,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__counter__glean_error_io {
+    label: "Glean Error Io"
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
     group_label: "Glean Error"
@@ -1780,6 +1883,7 @@ when writing a pending ping to disk.
   }
 
   dimension: metrics__counter__glean_error_preinit_tasks_overflow {
+    label: "Glean Error Preinit Tasks Overflow"
     sql: ${TABLE}.metrics.counter.glean_error_preinit_tasks_overflow ;;
     type: number
     group_label: "Glean Error"
@@ -1797,6 +1901,7 @@ Only sent if the buffer overflows.
   }
 
   dimension: metrics__boolean__glean_error_preinit_tasks_timeout {
+    label: "Glean Error Preinit Tasks Timeout"
     sql: ${TABLE}.metrics.boolean.glean_error_preinit_tasks_timeout ;;
     type: yesno
     group_label: "Glean Error"
@@ -1812,6 +1917,7 @@ Only sent if the buffer overflows.
   }
 
   dimension: metrics__counter__glean_time_invalid_timezone_offset {
+    label: "Glean Time Invalid Timezone Offset"
     sql: ${TABLE}.metrics.counter.glean_time_invalid_timezone_offset ;;
     type: number
     group_label: "Glean Time"
@@ -1831,6 +1937,7 @@ If invalid a UTC offset is used (+0h).
   }
 
   dimension: metrics__counter__glean_upload_deleted_pings_after_quota_hit {
+    label: "Glean Upload Deleted Pings After Quota Hit"
     sql: ${TABLE}.metrics.counter.glean_upload_deleted_pings_after_quota_hit ;;
     type: number
     group_label: "Glean Upload"
@@ -1851,6 +1958,7 @@ deletion request pings are never deleted.
   }
 
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__sum {
+    label: "Glean Upload Discarded Exceeding Pings Size Sum"
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.sum ;;
     type: number
     group_label: "Glean Upload"
@@ -1867,6 +1975,7 @@ deletion request pings are never deleted.
   }
 
   dimension: metrics__counter__glean_upload_pending_pings {
+    label: "Glean Upload Pending Pings"
     sql: ${TABLE}.metrics.counter.glean_upload_pending_pings ;;
     type: number
     group_label: "Glean Upload"
@@ -1884,6 +1993,7 @@ This does not include deletion-request pings.
   }
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
+    label: "Glean Upload Pending Pings Directory Size Sum"
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.sum ;;
     type: number
     group_label: "Glean Upload"
@@ -1901,6 +2011,7 @@ This does not include the size of the deletion request pings directory.
   }
 
   dimension: metrics__labeled_counter__glean_upload_ping_upload_failure {
+    label: "Glean Upload Ping Upload Failure"
     sql: ${TABLE}.metrics.labeled_counter.glean_upload_ping_upload_failure ;;
     group_label: "Glean Upload"
     group_item_label: "Ping Upload Failure"
@@ -1919,6 +2030,7 @@ though the counts appear in the next successfully sent `metrics` ping.
   }
 
   dimension: metrics__datetime__glean_validation_first_run_hour {
+    label: "Glean Validation First Run Hour"
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: string
     group_label: "Glean Validation"
@@ -1935,6 +2047,7 @@ though the counts appear in the next successfully sent `metrics` ping.
   }
 
   dimension: metrics__counter__glean_validation_foreground_count {
+    label: "Glean Validation Foreground Count"
     sql: ${TABLE}.metrics.counter.glean_validation_foreground_count ;;
     type: number
     group_label: "Glean Validation"
@@ -1951,6 +2064,7 @@ though the counts appear in the next successfully sent `metrics` ping.
   }
 
   dimension: metrics__labeled_counter__glean_validation_pings_submitted {
+    label: "Glean Validation Pings Submitted"
     sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
     group_label: "Glean Validation"
     group_item_label: "Pings Submitted"
@@ -1974,6 +2088,7 @@ This metric appears in both the metrics and baseline pings.
   }
 
   dimension: metrics__string__ping_reason {
+    label: "Glean Ping Reason"
     sql: ${TABLE}.metrics.string.ping_reason ;;
     type: string
     group_label: "Glean"
@@ -1992,6 +2107,7 @@ documented in the ping's pings.yaml file.
   }
 
   dimension: metrics__boolean__glean_core_migration_successful {
+    label: "Glean Core Migration Successful"
     sql: ${TABLE}.metrics.boolean.glean_core_migration_successful ;;
     type: yesno
     group_label: "Glean Core Migration"
@@ -2007,6 +2123,7 @@ documented in the ping's pings.yaml file.
   }
 
   dimension: metrics__counter__glean_validation_app_forceclosed_count {
+    label: "Glean Validation App Forceclosed Count"
     sql: ${TABLE}.metrics.counter.glean_validation_app_forceclosed_count ;;
     type: number
     group_label: "Glean Validation"
@@ -2022,6 +2139,7 @@ documented in the ping's pings.yaml file.
   }
 
   dimension: metrics__counter__glean_validation_baseline_ping_count {
+    label: "Glean Validation Baseline Ping Count"
     sql: ${TABLE}.metrics.counter.glean_validation_baseline_ping_count ;;
     type: number
     group_label: "Glean Validation"

@@ -1,5 +1,6 @@
 view: installation {
   dimension: metrics__string__installation_adgroup {
+    label: "Installation Adgroup"
     sql: ${TABLE}.metrics.string.installation_adgroup ;;
     type: string
     group_label: "Installation"
@@ -16,6 +17,7 @@ view: installation {
   }
 
   dimension: metrics__string__installation_campaign {
+    label: "Installation Campaign"
     sql: ${TABLE}.metrics.string.installation_campaign ;;
     type: string
     group_label: "Installation"
@@ -32,6 +34,7 @@ view: installation {
   }
 
   dimension: metrics__string__installation_creative {
+    label: "Installation Creative"
     sql: ${TABLE}.metrics.string.installation_creative ;;
     type: string
     group_label: "Installation"
@@ -48,6 +51,7 @@ view: installation {
   }
 
   dimension: metrics__string__installation_identifier {
+    label: "Installation Identifier"
     sql: ${TABLE}.metrics.string.installation_identifier ;;
     type: string
     group_label: "Installation"
@@ -64,6 +68,7 @@ view: installation {
   }
 
   dimension: metrics__string__installation_network {
+    label: "Installation Network"
     sql: ${TABLE}.metrics.string.installation_network ;;
     type: string
     group_label: "Installation"
@@ -80,6 +85,7 @@ view: installation {
   }
 
   dimension: metrics__string__installation_timestamp {
+    label: "Installation Timestamp"
     sql: ${TABLE}.metrics.string.installation_timestamp ;;
     type: string
     group_label: "Installation"
@@ -98,6 +104,7 @@ ping is from Adjust and will remain static across installs.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
+    label: "Glean Error Invalid Label"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -115,6 +122,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    label: "Glean Error Invalid Overflow"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -132,6 +140,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
+    label: "Glean Error Invalid State"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -149,6 +158,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
+    label: "Glean Error Invalid Value"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"

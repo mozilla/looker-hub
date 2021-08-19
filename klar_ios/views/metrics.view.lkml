@@ -1,5 +1,6 @@
 view: metrics {
   dimension: metrics__memory_distribution__glean_database_size__sum {
+    label: "Glean Database Size Sum"
     sql: ${TABLE}.metrics.memory_distribution.glean_database_size.sum ;;
     type: number
     group_label: "Glean Database"
@@ -16,6 +17,7 @@ view: metrics {
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
+    label: "Glean Error Invalid Label"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -33,6 +35,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    label: "Glean Error Invalid Overflow"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -50,6 +53,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
+    label: "Glean Error Invalid State"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -67,6 +71,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
+    label: "Glean Error Invalid Value"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
@@ -84,6 +89,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__counter__glean_error_io {
+    label: "Glean Error Io"
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
     group_label: "Glean Error"
@@ -101,6 +107,7 @@ when writing a pending ping to disk.
   }
 
   dimension: metrics__counter__glean_error_preinit_tasks_overflow {
+    label: "Glean Error Preinit Tasks Overflow"
     sql: ${TABLE}.metrics.counter.glean_error_preinit_tasks_overflow ;;
     type: number
     group_label: "Glean Error"
@@ -118,6 +125,7 @@ Only sent if the buffer overflows.
   }
 
   dimension: metrics__boolean__glean_error_preinit_tasks_timeout {
+    label: "Glean Error Preinit Tasks Timeout"
     sql: ${TABLE}.metrics.boolean.glean_error_preinit_tasks_timeout ;;
     type: yesno
     group_label: "Glean Error"
@@ -133,6 +141,7 @@ Only sent if the buffer overflows.
   }
 
   dimension: metrics__counter__glean_time_invalid_timezone_offset {
+    label: "Glean Time Invalid Timezone Offset"
     sql: ${TABLE}.metrics.counter.glean_time_invalid_timezone_offset ;;
     type: number
     group_label: "Glean Time"
@@ -152,6 +161,7 @@ If invalid a UTC offset is used (+0h).
   }
 
   dimension: metrics__counter__glean_upload_deleted_pings_after_quota_hit {
+    label: "Glean Upload Deleted Pings After Quota Hit"
     sql: ${TABLE}.metrics.counter.glean_upload_deleted_pings_after_quota_hit ;;
     type: number
     group_label: "Glean Upload"
@@ -172,6 +182,7 @@ deletion request pings are never deleted.
   }
 
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__sum {
+    label: "Glean Upload Discarded Exceeding Pings Size Sum"
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.sum ;;
     type: number
     group_label: "Glean Upload"
@@ -188,6 +199,7 @@ deletion request pings are never deleted.
   }
 
   dimension: metrics__counter__glean_upload_pending_pings {
+    label: "Glean Upload Pending Pings"
     sql: ${TABLE}.metrics.counter.glean_upload_pending_pings ;;
     type: number
     group_label: "Glean Upload"
@@ -205,6 +217,7 @@ This does not include deletion-request pings.
   }
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
+    label: "Glean Upload Pending Pings Directory Size Sum"
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.sum ;;
     type: number
     group_label: "Glean Upload"
@@ -222,6 +235,7 @@ This does not include the size of the deletion request pings directory.
   }
 
   dimension: metrics__labeled_counter__glean_upload_ping_upload_failure {
+    label: "Glean Upload Ping Upload Failure"
     sql: ${TABLE}.metrics.labeled_counter.glean_upload_ping_upload_failure ;;
     group_label: "Glean Upload"
     group_item_label: "Ping Upload Failure"
@@ -240,6 +254,7 @@ though the counts appear in the next successfully sent `metrics` ping.
   }
 
   dimension: metrics__datetime__glean_validation_first_run_hour {
+    label: "Glean Validation First Run Hour"
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: string
     group_label: "Glean Validation"
@@ -256,6 +271,7 @@ though the counts appear in the next successfully sent `metrics` ping.
   }
 
   dimension: metrics__counter__glean_validation_foreground_count {
+    label: "Glean Validation Foreground Count"
     sql: ${TABLE}.metrics.counter.glean_validation_foreground_count ;;
     type: number
     group_label: "Glean Validation"
@@ -272,6 +288,7 @@ though the counts appear in the next successfully sent `metrics` ping.
   }
 
   dimension: metrics__labeled_counter__glean_validation_pings_submitted {
+    label: "Glean Validation Pings Submitted"
     sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
     group_label: "Glean Validation"
     group_item_label: "Pings Submitted"
@@ -295,6 +312,7 @@ This metric appears in both the metrics and baseline pings.
   }
 
   dimension: metrics__string__ping_reason {
+    label: "Glean Ping Reason"
     sql: ${TABLE}.metrics.string.ping_reason ;;
     type: string
     group_label: "Glean"
