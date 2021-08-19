@@ -1,5 +1,6 @@
 view: bookmarks_sync {
   dimension: metrics__labeled_counter__glean_error_invalid_label {
+    label: "Glean Error Invalid Label"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -17,6 +18,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    label: "Glean Error Invalid Overflow"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -34,6 +36,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
+    label: "Glean Error Invalid State"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -51,6 +54,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
+    label: "Glean Error Invalid Value"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
@@ -68,6 +72,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__datetime__bookmarks_sync_finished_at {
+    label: "Bookmarks Sync Finished At"
     sql: ${TABLE}.metrics.datetime.bookmarks_sync_finished_at ;;
     type: string
     group_label: "Bookmarks Sync"
@@ -84,6 +89,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__bookmarks_sync_incoming {
+    label: "Bookmarks Sync Incoming"
     sql: ${TABLE}.metrics.labeled_counter.bookmarks_sync_incoming ;;
     group_label: "Bookmarks Sync"
     group_item_label: "Incoming"
@@ -100,6 +106,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__bookmarks_sync_outgoing {
+    label: "Bookmarks Sync Outgoing"
     sql: ${TABLE}.metrics.labeled_counter.bookmarks_sync_outgoing ;;
     group_label: "Bookmarks Sync"
     group_item_label: "Outgoing"
@@ -116,6 +123,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__counter__bookmarks_sync_outgoing_batches {
+    label: "Bookmarks Sync Outgoing Batches"
     sql: ${TABLE}.metrics.counter.bookmarks_sync_outgoing_batches ;;
     type: number
     group_label: "Bookmarks Sync"
@@ -132,6 +140,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__bookmarks_sync_remote_tree_problems {
+    label: "Bookmarks Sync Remote Tree Problems"
     sql: ${TABLE}.metrics.labeled_counter.bookmarks_sync_remote_tree_problems ;;
     group_label: "Bookmarks Sync"
     group_item_label: "Remote Tree Problems"
@@ -148,6 +157,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__datetime__bookmarks_sync_started_at {
+    label: "Bookmarks Sync Started At"
     sql: ${TABLE}.metrics.datetime.bookmarks_sync_started_at ;;
     type: string
     group_label: "Bookmarks Sync"
@@ -164,6 +174,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__bookmarks_sync_uid {
+    label: "Bookmarks Sync Uid"
     sql: ${TABLE}.metrics.string.bookmarks_sync_uid ;;
     type: string
     group_label: "Bookmarks Sync"
@@ -180,6 +191,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__uuid__sync_sync_uuid {
+    label: "Sync Sync Uuid"
     sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
     type: string
     group_label: "Sync"

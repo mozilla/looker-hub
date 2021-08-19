@@ -1,5 +1,6 @@
 view: activation {
   dimension: metrics__uuid__activation_activation_id {
+    label: "Activation Activation Id"
     sql: ${TABLE}.metrics.uuid.activation_activation_id ;;
     type: string
     group_label: "Activation"
@@ -17,6 +18,7 @@ and only sent with the activation ping.
   }
 
   dimension: metrics__string__activation_identifier {
+    label: "Activation Identifier"
     sql: ${TABLE}.metrics.string.activation_identifier ;;
     type: string
     group_label: "Activation"
@@ -34,6 +36,7 @@ This will never be sent in a ping that also contains the client_id.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
+    label: "Glean Error Invalid Label"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -51,6 +54,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    label: "Glean Error Invalid Overflow"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -68,6 +72,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
+    label: "Glean Error Invalid State"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -85,6 +90,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
+    label: "Glean Error Invalid Value"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"

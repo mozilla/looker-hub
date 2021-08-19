@@ -1,5 +1,6 @@
 view: custom {
   dimension: metrics__counter__errors_marian {
+    label: "Errors Marian"
     sql: ${TABLE}.metrics.counter.errors_marian ;;
     type: number
     group_label: "Errors"
@@ -16,6 +17,7 @@ view: custom {
   }
 
   dimension: metrics__counter__errors_memory {
+    label: "Errors Memory"
     sql: ${TABLE}.metrics.counter.errors_memory ;;
     type: number
     group_label: "Errors"
@@ -32,6 +34,7 @@ view: custom {
   }
 
   dimension: metrics__counter__errors_model_download {
+    label: "Errors Model Download"
     sql: ${TABLE}.metrics.counter.errors_model_download ;;
     type: number
     group_label: "Errors"
@@ -48,6 +51,7 @@ view: custom {
   }
 
   dimension: metrics__counter__errors_translation {
+    label: "Errors Translation"
     sql: ${TABLE}.metrics.counter.errors_translation ;;
     type: number
     group_label: "Errors"
@@ -64,6 +68,7 @@ view: custom {
   }
 
   dimension: metrics__string__metadata_bergamot_translator_version {
+    label: "Metadata Bergamot Translator Version"
     sql: ${TABLE}.metrics.string.metadata_bergamot_translator_version ;;
     type: string
     group_label: "Metadata"
@@ -80,6 +85,7 @@ view: custom {
   }
 
   dimension: metrics__quantity__metadata_cpu_cores_count {
+    label: "Metadata Cpu Cores Count"
     sql: ${TABLE}.metrics.quantity.metadata_cpu_cores_count ;;
     type: number
     group_label: "Metadata"
@@ -96,6 +102,7 @@ view: custom {
   }
 
   dimension: metrics__quantity__metadata_cpu_count {
+    label: "Metadata Cpu Count"
     sql: ${TABLE}.metrics.quantity.metadata_cpu_count ;;
     type: number
     group_label: "Metadata"
@@ -112,6 +119,7 @@ view: custom {
   }
 
   dimension: metrics__string__metadata_cpu_extensions {
+    label: "Metadata Cpu Extensions"
     sql: ${TABLE}.metrics.string.metadata_cpu_extensions ;;
     type: string
     group_label: "Metadata"
@@ -128,6 +136,7 @@ view: custom {
   }
 
   dimension: metrics__string__metadata_cpu_family {
+    label: "Metadata Cpu Family"
     sql: ${TABLE}.metrics.string.metadata_cpu_family ;;
     type: string
     group_label: "Metadata"
@@ -144,6 +153,7 @@ view: custom {
   }
 
   dimension: metrics__quantity__metadata_cpu_l2_cache {
+    label: "Metadata Cpu L2 Cache"
     sql: ${TABLE}.metrics.quantity.metadata_cpu_l2_cache ;;
     type: number
     group_label: "Metadata"
@@ -160,6 +170,7 @@ view: custom {
   }
 
   dimension: metrics__quantity__metadata_cpu_l3_cache {
+    label: "Metadata Cpu L3 Cache"
     sql: ${TABLE}.metrics.quantity.metadata_cpu_l3_cache ;;
     type: number
     group_label: "Metadata"
@@ -176,6 +187,7 @@ view: custom {
   }
 
   dimension: metrics__string__metadata_cpu_model {
+    label: "Metadata Cpu Model"
     sql: ${TABLE}.metrics.string.metadata_cpu_model ;;
     type: string
     group_label: "Metadata"
@@ -192,6 +204,7 @@ view: custom {
   }
 
   dimension: metrics__quantity__metadata_cpu_speed {
+    label: "Metadata Cpu Speed"
     sql: ${TABLE}.metrics.quantity.metadata_cpu_speed ;;
     type: number
     group_label: "Metadata"
@@ -208,6 +221,7 @@ view: custom {
   }
 
   dimension: metrics__string__metadata_cpu_stepping {
+    label: "Metadata Cpu Stepping"
     sql: ${TABLE}.metrics.string.metadata_cpu_stepping ;;
     type: string
     group_label: "Metadata"
@@ -224,6 +238,7 @@ view: custom {
   }
 
   dimension: metrics__string__metadata_cpu_vendor {
+    label: "Metadata Cpu Vendor"
     sql: ${TABLE}.metrics.string.metadata_cpu_vendor ;;
     type: string
     group_label: "Metadata"
@@ -240,6 +255,7 @@ view: custom {
   }
 
   dimension: metrics__string__metadata_extension_build_id {
+    label: "Metadata Extension Build Id"
     sql: ${TABLE}.metrics.string.metadata_extension_build_id ;;
     type: string
     group_label: "Metadata"
@@ -257,6 +273,7 @@ and build config was used to produce this build
   }
 
   dimension: metrics__string__metadata_extension_version {
+    label: "Metadata Extension Version"
     sql: ${TABLE}.metrics.string.metadata_extension_version ;;
     type: string
     group_label: "Metadata"
@@ -273,6 +290,7 @@ and build config was used to produce this build
   }
 
   dimension: metrics__string__metadata_firefox_client_id {
+    label: "Metadata Firefox Client Id"
     sql: ${TABLE}.metrics.string.metadata_firefox_client_id ;;
     type: string
     group_label: "Metadata"
@@ -289,6 +307,7 @@ and build config was used to produce this build
   }
 
   dimension: metrics__string__metadata_from_lang {
+    label: "Metadata From Lang"
     sql: ${TABLE}.metrics.string.metadata_from_lang ;;
     type: string
     group_label: "Metadata"
@@ -305,6 +324,7 @@ and build config was used to produce this build
   }
 
   dimension: metrics__quantity__metadata_system_memory {
+    label: "Metadata System Memory"
     sql: ${TABLE}.metrics.quantity.metadata_system_memory ;;
     type: number
     group_label: "Metadata"
@@ -321,6 +341,7 @@ and build config was used to produce this build
   }
 
   dimension: metrics__string__metadata_to_lang {
+    label: "Metadata To Lang"
     sql: ${TABLE}.metrics.string.metadata_to_lang ;;
     type: string
     group_label: "Metadata"
@@ -337,6 +358,7 @@ and build config was used to produce this build
   }
 
   dimension: metrics__timespan__performance_full_page_translated_time__value {
+    label: "Performance Full Page Translated Time Value"
     sql: ${TABLE}.metrics.timespan.performance_full_page_translated_time.value ;;
     type: number
     group_label: "Performance"
@@ -354,6 +376,7 @@ to \"full page is translated\".
   }
 
   dimension: metrics__quantity__performance_full_page_translated_wps {
+    label: "Performance Full Page Translated Wps"
     sql: ${TABLE}.metrics.quantity.performance_full_page_translated_wps ;;
     type: number
     group_label: "Performance"
@@ -371,6 +394,7 @@ pressed\" to \"full page is translated\".
   }
 
   dimension: metrics__string__performance_model_download_time {
+    label: "Performance Model Download Time"
     sql: ${TABLE}.metrics.string.performance_model_download_time ;;
     type: string
     group_label: "Performance"
@@ -387,6 +411,7 @@ pressed\" to \"full page is translated\".
   }
 
   dimension: metrics__timespan__performance_model_download_time_num__value {
+    label: "Performance Model Download Time Num Value"
     sql: ${TABLE}.metrics.timespan.performance_model_download_time_num.value ;;
     type: number
     group_label: "Performance"
@@ -405,6 +430,7 @@ changing type from string to quantity)
   }
 
   dimension: metrics__string__performance_model_load_time {
+    label: "Performance Model Load Time"
     sql: ${TABLE}.metrics.string.performance_model_load_time ;;
     type: string
     group_label: "Performance"
@@ -421,6 +447,7 @@ changing type from string to quantity)
   }
 
   dimension: metrics__timespan__performance_model_load_time_num__value {
+    label: "Performance Model Load Time Num Value"
     sql: ${TABLE}.metrics.timespan.performance_model_load_time_num.value ;;
     type: number
     group_label: "Performance"
@@ -439,6 +466,7 @@ changing type from string to quantity)
   }
 
   dimension: metrics__timespan__performance_translation_engine_time__value {
+    label: "Performance Translation Engine Time Value"
     sql: ${TABLE}.metrics.timespan.performance_translation_engine_time.value ;;
     type: number
     group_label: "Performance"
@@ -455,6 +483,7 @@ changing type from string to quantity)
   }
 
   dimension: metrics__quantity__performance_translation_engine_wps {
+    label: "Performance Translation Engine Wps"
     sql: ${TABLE}.metrics.quantity.performance_translation_engine_wps ;;
     type: number
     group_label: "Performance"
@@ -471,6 +500,7 @@ changing type from string to quantity)
   }
 
   dimension: metrics__string__performance_translation_quality {
+    label: "Performance Translation Quality"
     sql: ${TABLE}.metrics.string.performance_translation_quality ;;
     type: string
     group_label: "Performance"
@@ -487,6 +517,7 @@ changing type from string to quantity)
   }
 
   dimension: metrics__string__performance_translation_time {
+    label: "Performance Translation Time"
     sql: ${TABLE}.metrics.string.performance_translation_time ;;
     type: string
     group_label: "Performance"
@@ -503,6 +534,7 @@ changing type from string to quantity)
   }
 
   dimension: metrics__quantity__performance_word_count {
+    label: "Performance Word Count"
     sql: ${TABLE}.metrics.quantity.performance_word_count ;;
     type: number
     group_label: "Performance"
@@ -519,6 +551,7 @@ changing type from string to quantity)
   }
 
   dimension: metrics__quantity__performance_word_count_visible_in_viewport {
+    label: "Performance Word Count Visible In Viewport"
     sql: ${TABLE}.metrics.quantity.performance_word_count_visible_in_viewport ;;
     type: number
     group_label: "Performance"
@@ -536,6 +569,7 @@ were visible in the viewport at the time of \"translation button pressed\".
   }
 
   dimension: metrics__string__performance_words_per_second {
+    label: "Performance Words Per Second"
     sql: ${TABLE}.metrics.string.performance_words_per_second ;;
     type: string
     group_label: "Performance"
@@ -552,6 +586,7 @@ were visible in the viewport at the time of \"translation button pressed\".
   }
 
   dimension: metrics__counter__service_lang_mismatch {
+    label: "Service Lang Mismatch"
     sql: ${TABLE}.metrics.counter.service_lang_mismatch ;;
     type: number
     group_label: "Service"
@@ -568,6 +603,7 @@ were visible in the viewport at the time of \"translation button pressed\".
   }
 
   dimension: metrics__counter__service_not_supported {
+    label: "Service Not Supported"
     sql: ${TABLE}.metrics.counter.service_not_supported ;;
     type: number
     group_label: "Service"
@@ -584,6 +620,7 @@ were visible in the viewport at the time of \"translation button pressed\".
   }
 
   dimension: metrics__counter__service_not_suppported {
+    label: "Service Not Suppported"
     sql: ${TABLE}.metrics.counter.service_not_suppported ;;
     type: number
     group_label: "Service"
@@ -600,6 +637,7 @@ were visible in the viewport at the time of \"translation button pressed\".
   }
 
   dimension: metrics__counter__test_counter_test {
+    label: "Test Counter Test"
     sql: ${TABLE}.metrics.counter.test_counter_test ;;
     type: number
     group_label: "Test"
@@ -616,6 +654,7 @@ were visible in the viewport at the time of \"translation button pressed\".
   }
 
   dimension: metrics__string__test_string_test {
+    label: "Test String Test"
     sql: ${TABLE}.metrics.string.test_string_test ;;
     type: string
     group_label: "Test"
@@ -632,6 +671,7 @@ were visible in the viewport at the time of \"translation button pressed\".
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
+    label: "Glean Error Invalid Label"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -649,6 +689,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    label: "Glean Error Invalid Overflow"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -666,6 +707,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
+    label: "Glean Error Invalid State"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -683,6 +725,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
+    label: "Glean Error Invalid Value"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"

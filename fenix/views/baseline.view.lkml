@@ -1,5 +1,6 @@
 view: baseline {
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
+    label: "Browser Search Ad Clicks"
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     group_label: "Browser Search"
     group_item_label: "Ad Clicks"
@@ -17,6 +18,7 @@ The key format is `<provider-name>`.
   }
 
   dimension: metrics__labeled_counter__browser_search_in_content {
+    label: "Browser Search In Content"
     sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
     group_label: "Browser Search"
     group_item_label: "In Content"
@@ -33,6 +35,7 @@ The key format is `<provider-name>`.
   }
 
   dimension: metrics__labeled_counter__browser_search_with_ads {
+    label: "Browser Search With Ads"
     sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
     group_label: "Browser Search"
     group_item_label: "With Ads"
@@ -50,6 +53,7 @@ The key format is `<provider-name>`.
   }
 
   dimension: metrics__counter__events_total_uri_count {
+    label: "Events Total Uri Count"
     sql: ${TABLE}.metrics.counter.events_total_uri_count ;;
     type: number
     group_label: "Events"
@@ -70,6 +74,7 @@ location.
   }
 
   dimension: metrics__labeled_counter__metrics_search_count {
+    label: "Metrics Search Count"
     sql: ${TABLE}.metrics.labeled_counter.metrics_search_count ;;
     group_label: "Metrics"
     group_item_label: "Search Count"
@@ -95,6 +100,7 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
   }
 
   dimension: metrics__timespan__glean_baseline_duration__value {
+    label: "Glean Baseline Duration Value"
     sql: ${TABLE}.metrics.timespan.glean_baseline_duration.value ;;
     type: number
     group_label: "Glean Baseline"
@@ -111,6 +117,7 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
   }
 
   dimension: metrics__string__glean_baseline_locale {
+    label: "Glean Baseline Locale"
     sql: ${TABLE}.metrics.string.glean_baseline_locale ;;
     type: string
     group_label: "Glean Baseline"
@@ -130,6 +137,7 @@ to indicate \"undetermined\".
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
+    label: "Glean Error Invalid Label"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -147,6 +155,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    label: "Glean Error Invalid Overflow"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -164,6 +173,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
+    label: "Glean Error Invalid State"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -181,6 +191,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
+    label: "Glean Error Invalid Value"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
@@ -198,6 +209,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__datetime__glean_validation_first_run_hour {
+    label: "Glean Validation First Run Hour"
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: string
     group_label: "Glean Validation"
@@ -214,6 +226,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_validation_pings_submitted {
+    label: "Glean Validation Pings Submitted"
     sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
     group_label: "Glean Validation"
     group_item_label: "Pings Submitted"
@@ -237,6 +250,7 @@ This metric appears in both the metrics and baseline pings.
   }
 
   dimension: metrics__counter__glean_validation_metrics_ping_count {
+    label: "Glean Validation Metrics Ping Count"
     sql: ${TABLE}.metrics.counter.glean_validation_metrics_ping_count ;;
     type: number
     group_label: "Glean Validation"

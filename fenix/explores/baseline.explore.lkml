@@ -57,6 +57,31 @@ explore: baseline {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${baseline.metrics__labeled_counter__metrics_search_count}) AS baseline__metrics__labeled_counter__metrics_search_count ON ${baseline.document_id} = ${baseline__metrics__labeled_counter__metrics_search_count.document_id} ;;
   }
+
+  query: client_count {
+    description: "Number of clients over the past 28 days"
+    dimensions: [submission_date]
+    measures: [clients]
+    filters: [
+      submission_date: "28 days",
+    ]
+    sorts: [
+      submission_date: desc,
+    ]
+  }
+
+  query: client_count_tier_1 {
+    description: "Number of clients over the past 28 days for tier-1 countries"
+    dimensions: [submission_date]
+    measures: [clients]
+    filters: [
+      submission_date: "28 days",
+      country: "United States,France,Germany,United Kingdom,Canada",
+    ]
+    sorts: [
+      submission_date: desc,
+    ]
+  }
 }
 
 explore: suggest__baseline__metrics__labeled_counter__browser_search_ad_clicks {

@@ -1,5 +1,6 @@
 view: addresses_sync {
   dimension: metrics__labeled_counter__glean_error_invalid_label {
+    label: "Glean Error Invalid Label"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -17,6 +18,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    label: "Glean Error Invalid Overflow"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -34,6 +36,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
+    label: "Glean Error Invalid State"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -51,6 +54,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
+    label: "Glean Error Invalid Value"
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
@@ -68,6 +72,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__datetime__addresses_sync_finished_at {
+    label: "Addresses Sync Finished At"
     sql: ${TABLE}.metrics.datetime.addresses_sync_finished_at ;;
     type: string
     group_label: "Addresses Sync"
@@ -84,6 +89,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__addresses_sync_incoming {
+    label: "Addresses Sync Incoming"
     sql: ${TABLE}.metrics.labeled_counter.addresses_sync_incoming ;;
     group_label: "Addresses Sync"
     group_item_label: "Incoming"
@@ -100,6 +106,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__labeled_counter__addresses_sync_outgoing {
+    label: "Addresses Sync Outgoing"
     sql: ${TABLE}.metrics.labeled_counter.addresses_sync_outgoing ;;
     group_label: "Addresses Sync"
     group_item_label: "Outgoing"
@@ -116,6 +123,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__counter__addresses_sync_outgoing_batches {
+    label: "Addresses Sync Outgoing Batches"
     sql: ${TABLE}.metrics.counter.addresses_sync_outgoing_batches ;;
     type: number
     group_label: "Addresses Sync"
@@ -132,6 +140,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__datetime__addresses_sync_started_at {
+    label: "Addresses Sync Started At"
     sql: ${TABLE}.metrics.datetime.addresses_sync_started_at ;;
     type: string
     group_label: "Addresses Sync"
@@ -148,6 +157,7 @@ The labels are the `category.name` identifier of the metric.
   }
 
   dimension: metrics__string__addresses_sync_uid {
+    label: "Addresses Sync Uid"
     sql: ${TABLE}.metrics.string.addresses_sync_uid ;;
     type: string
     group_label: "Addresses Sync"

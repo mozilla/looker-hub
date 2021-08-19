@@ -686,6 +686,59 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.metrics
       type: table_view
+focus_android:
+  explores:
+    activation:
+      type: glean_ping_explore
+      views:
+        base_view: activation
+    baseline:
+      type: glean_ping_explore
+      views:
+        base_view: baseline
+    metrics:
+      type: glean_ping_explore
+      views:
+        base_view: metrics
+  glean_app: true
+  owners:
+  - jalmeida@mozilla.com
+  - tlong@mozilla.com
+  pretty_name: Firefox Focus for Android
+  spoke: looker-spoke-default
+  views:
+    activation:
+      tables:
+      - table: mozdata.org_mozilla_focus.activation
+      type: glean_ping_view
+    activation_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_focus.activation
+      type: table_view
+    baseline:
+      tables:
+      - table: mozdata.org_mozilla_focus.baseline
+      type: glean_ping_view
+    baseline_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_focus.baseline
+      type: table_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_focus.events
+      type: table_view
+    metrics:
+      tables:
+      - table: mozdata.org_mozilla_focus.metrics
+      type: glean_ping_view
+    metrics_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_focus.metrics
+      type: table_view
 focus_ios:
   explores:
     baseline:
@@ -757,6 +810,59 @@ focus_ios:
       tables:
       - channel: null
         table: mozdata.org_mozilla_ios_focus.metrics
+      type: table_view
+klar_android:
+  explores:
+    activation:
+      type: glean_ping_explore
+      views:
+        base_view: activation
+    baseline:
+      type: glean_ping_explore
+      views:
+        base_view: baseline
+    metrics:
+      type: glean_ping_explore
+      views:
+        base_view: metrics
+  glean_app: true
+  owners:
+  - jalmeida@mozilla.com
+  - tlong@mozilla.com
+  pretty_name: Firefox Klar for Android
+  spoke: looker-spoke-default
+  views:
+    activation:
+      tables:
+      - table: mozdata.org_mozilla_klar.activation
+      type: glean_ping_view
+    activation_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_klar.activation
+      type: table_view
+    baseline:
+      tables:
+      - table: mozdata.org_mozilla_klar.baseline
+      type: glean_ping_view
+    baseline_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_klar.baseline
+      type: table_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_klar.events
+      type: table_view
+    metrics:
+      tables:
+      - table: mozdata.org_mozilla_klar.metrics
+      type: glean_ping_view
+    metrics_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_klar.metrics
       type: table_view
 klar_ios:
   explores:
