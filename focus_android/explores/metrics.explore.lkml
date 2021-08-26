@@ -62,6 +62,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__glean_validation_pings_submitted}) AS metrics__metrics__labeled_counter__glean_validation_pings_submitted ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__glean_validation_pings_submitted.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__shortcuts_shortcut_removed_counter}) AS metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter.document_id} ;;
+  }
+
   query: client_count {
     description: "Number of clients over the past 28 days"
     dimensions: [submission_date]
@@ -125,5 +130,9 @@ explore: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_fa
 }
 
 explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter {
   hidden: yes
 }
