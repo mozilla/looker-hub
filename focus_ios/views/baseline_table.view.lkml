@@ -341,6 +341,11 @@ to indicate \"undetermined\".
 "
   }
 
+  dimension: metrics__text {
+    sql: ${TABLE}.metrics.text ;;
+    hidden: yes
+  }
+
   dimension: metrics__timespan__glean_baseline_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.glean_baseline_duration.time_unit ;;
     type: string

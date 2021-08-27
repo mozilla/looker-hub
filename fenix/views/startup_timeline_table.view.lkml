@@ -350,6 +350,11 @@ the `framework_primary/secondary` metrics.
 "
   }
 
+  dimension: metrics__text {
+    sql: ${TABLE}.metrics.text ;;
+    hidden: yes
+  }
+
   dimension: metrics__timespan__startup_timeline_framework_primary__time_unit {
     sql: ${TABLE}.metrics.timespan.startup_timeline_framework_primary.time_unit ;;
     type: string

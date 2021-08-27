@@ -1,9 +1,4 @@
 view: subscriptions {
-  dimension: attribution_category {
-    sql: ${TABLE}.attribution_category ;;
-    type: string
-  }
-
   dimension: billing_grace_period {
     sql: ${TABLE}.billing_grace_period ;;
     hidden: yes
@@ -21,11 +16,6 @@ view: subscriptions {
 
   dimension: canceled_for_customer_at {
     sql: ${TABLE}.canceled_for_customer_at ;;
-    type: string
-  }
-
-  dimension: coarse_attribution_category {
-    sql: ${TABLE}.coarse_attribution_category ;;
     type: string
   }
 
@@ -47,6 +37,16 @@ view: subscriptions {
 
   dimension: customer_id {
     sql: ${TABLE}.customer_id ;;
+    type: string
+  }
+
+  dimension: entrypoint_experiment {
+    sql: ${TABLE}.entrypoint_experiment ;;
+    type: string
+  }
+
+  dimension: entrypoint_variation {
+    sql: ${TABLE}.entrypoint_variation ;;
     type: string
   }
 
@@ -135,11 +135,6 @@ view: subscriptions {
     type: string
   }
 
-  dimension: referrer {
-    sql: ${TABLE}.referrer ;;
-    type: string
-  }
-
   dimension: status {
     sql: ${TABLE}.status ;;
     type: string
@@ -172,6 +167,11 @@ view: subscriptions {
 
   dimension: utm_source {
     sql: ${TABLE}.utm_source ;;
+    type: string
+  }
+
+  dimension: utm_term {
+    sql: ${TABLE}.utm_term ;;
     type: string
   }
 

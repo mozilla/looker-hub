@@ -724,6 +724,150 @@ Downloads and Synced tabs
 "
   }
 
+  dimension: metrics__counter__onboarding_sync_screen {
+    label: "Onboarding Sync Screen"
+    sql: ${TABLE}.metrics.counter.onboarding_sync_screen ;;
+    type: number
+    group_label: "Onboarding"
+    group_item_label: "Sync Screen"
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Sync Screen"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_sync_screen"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a user is shown the second screen, the
+Sync Screen, from the onboarding process.
+"
+  }
+
+  dimension: metrics__counter__onboarding_sync_screen_browse {
+    label: "Onboarding Sync Screen Browse"
+    sql: ${TABLE}.metrics.counter.onboarding_sync_screen_browse ;;
+    type: number
+    group_label: "Onboarding"
+    group_item_label: "Sync Screen Browse"
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Sync Screen Browse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_sync_screen_browse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a user taps on the start browsing button
+in onboarding's second screen, the Sync Screen.
+"
+  }
+
+  dimension: metrics__counter__onboarding_sync_screen_sign_up {
+    label: "Onboarding Sync Screen Sign Up"
+    sql: ${TABLE}.metrics.counter.onboarding_sync_screen_sign_up ;;
+    type: number
+    group_label: "Onboarding"
+    group_item_label: "Sync Screen Sign Up"
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Sync Screen Sign Up"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_sync_screen_sign_up"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a user taps on the sign up button in
+onboarding's second screen, the Sync Screen.
+"
+  }
+
+  dimension: metrics__counter__onboarding_welcome_screen {
+    label: "Onboarding Welcome Screen"
+    sql: ${TABLE}.metrics.counter.onboarding_welcome_screen ;;
+    type: number
+    group_label: "Onboarding"
+    group_item_label: "Welcome Screen"
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Welcome Screen"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_welcome_screen"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a user is shown the first screen, the
+welcome screen, from the onboarding process.
+"
+  }
+
+  dimension: metrics__counter__onboarding_welcome_screen_close {
+    label: "Onboarding Welcome Screen Close"
+    sql: ${TABLE}.metrics.counter.onboarding_welcome_screen_close ;;
+    type: number
+    group_label: "Onboarding"
+    group_item_label: "Welcome Screen Close"
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Welcome Screen Close"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_welcome_screen_close"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a user taps on the close button in
+onboarding's first screen, the welcome screen.
+"
+  }
+
+  dimension: metrics__counter__onboarding_welcome_screen_next {
+    label: "Onboarding Welcome Screen Next"
+    sql: ${TABLE}.metrics.counter.onboarding_welcome_screen_next ;;
+    type: number
+    group_label: "Onboarding"
+    group_item_label: "Welcome Screen Next"
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Welcome Screen Next"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_welcome_screen_next"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a user taps on the next button in
+onboarding's first screen, the welcome screen.
+"
+  }
+
+  dimension: metrics__counter__onboarding_welcome_screen_sign_in {
+    label: "Onboarding Welcome Screen Sign In"
+    sql: ${TABLE}.metrics.counter.onboarding_welcome_screen_sign_in ;;
+    type: number
+    group_label: "Onboarding"
+    group_item_label: "Welcome Screen Sign In"
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Welcome Screen Sign In"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_welcome_screen_sign_in"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a user taps on the Sign In button in
+onboarding's first screen, the welcome screen.
+"
+  }
+
+  dimension: metrics__counter__onboarding_welcome_screen_sign_up {
+    label: "Onboarding Welcome Screen Sign Up"
+    sql: ${TABLE}.metrics.counter.onboarding_welcome_screen_sign_up ;;
+    type: number
+    group_label: "Onboarding"
+    group_item_label: "Welcome Screen Sign Up"
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Welcome Screen Sign Up"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_welcome_screen_sign_up"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a user taps the sign up button in
+onboarding's first screen, the welcome screen.
+"
+  }
+
   dimension: metrics__counter__page_action_menu_add_to_reading_list {
     label: "Page Action Menu Add To Reading List"
     sql: ${TABLE}.metrics.counter.page_action_menu_add_to_reading_list ;;
@@ -3210,6 +3354,206 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Inactive Tabs Tray Open Recently Closed Tab"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_open_recently_closed_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: onboarding_sync_screen {
+    type: sum
+    sql: ${metrics__counter__onboarding_sync_screen} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Sync Screen"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_sync_screen"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: onboarding_sync_screen_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__onboarding_sync_screen: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Sync Screen"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_sync_screen"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: onboarding_sync_screen_browse {
+    type: sum
+    sql: ${metrics__counter__onboarding_sync_screen_browse} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Sync Screen Browse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_sync_screen_browse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: onboarding_sync_screen_browse_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__onboarding_sync_screen_browse: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Sync Screen Browse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_sync_screen_browse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: onboarding_sync_screen_sign_up {
+    type: sum
+    sql: ${metrics__counter__onboarding_sync_screen_sign_up} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Sync Screen Sign Up"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_sync_screen_sign_up"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: onboarding_sync_screen_sign_up_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__onboarding_sync_screen_sign_up: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Sync Screen Sign Up"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_sync_screen_sign_up"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: onboarding_welcome_screen {
+    type: sum
+    sql: ${metrics__counter__onboarding_welcome_screen} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Welcome Screen"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_welcome_screen"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: onboarding_welcome_screen_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__onboarding_welcome_screen: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Welcome Screen"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_welcome_screen"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: onboarding_welcome_screen_close {
+    type: sum
+    sql: ${metrics__counter__onboarding_welcome_screen_close} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Welcome Screen Close"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_welcome_screen_close"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: onboarding_welcome_screen_close_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__onboarding_welcome_screen_close: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Welcome Screen Close"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_welcome_screen_close"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: onboarding_welcome_screen_next {
+    type: sum
+    sql: ${metrics__counter__onboarding_welcome_screen_next} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Welcome Screen Next"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_welcome_screen_next"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: onboarding_welcome_screen_next_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__onboarding_welcome_screen_next: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Welcome Screen Next"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_welcome_screen_next"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: onboarding_welcome_screen_sign_in {
+    type: sum
+    sql: ${metrics__counter__onboarding_welcome_screen_sign_in} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Welcome Screen Sign In"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_welcome_screen_sign_in"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: onboarding_welcome_screen_sign_in_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__onboarding_welcome_screen_sign_in: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Welcome Screen Sign In"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_welcome_screen_sign_in"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: onboarding_welcome_screen_sign_up {
+    type: sum
+    sql: ${metrics__counter__onboarding_welcome_screen_sign_up} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Welcome Screen Sign Up"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_welcome_screen_sign_up"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: onboarding_welcome_screen_sign_up_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__onboarding_welcome_screen_sign_up: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Onboarding Welcome Screen Sign Up"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/onboarding_welcome_screen_sign_up"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
