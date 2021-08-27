@@ -457,6 +457,11 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__text {
+    sql: ${TABLE}.metrics.text ;;
+    hidden: yes
+  }
+
   dimension: metrics__url {
     sql: ${TABLE}.metrics.url ;;
     hidden: yes

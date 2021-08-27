@@ -712,6 +712,86 @@ default browser card is clicked.
 "
   }
 
+  dimension: metrics__counter__onboarding_sync_screen {
+    sql: ${TABLE}.metrics.counter.onboarding_sync_screen ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Onboarding Sync Screen"
+    description: "The number of times a user is shown the second screen, the
+Sync Screen, from the onboarding process.
+"
+  }
+
+  dimension: metrics__counter__onboarding_sync_screen_browse {
+    sql: ${TABLE}.metrics.counter.onboarding_sync_screen_browse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Onboarding Sync Screen Browse"
+    description: "The number of times a user taps on the start browsing button
+in onboarding's second screen, the Sync Screen.
+"
+  }
+
+  dimension: metrics__counter__onboarding_sync_screen_sign_up {
+    sql: ${TABLE}.metrics.counter.onboarding_sync_screen_sign_up ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Onboarding Sync Screen Sign Up"
+    description: "The number of times a user taps on the sign up button in
+onboarding's second screen, the Sync Screen.
+"
+  }
+
+  dimension: metrics__counter__onboarding_welcome_screen {
+    sql: ${TABLE}.metrics.counter.onboarding_welcome_screen ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Onboarding Welcome Screen"
+    description: "The number of times a user is shown the first screen, the
+welcome screen, from the onboarding process.
+"
+  }
+
+  dimension: metrics__counter__onboarding_welcome_screen_close {
+    sql: ${TABLE}.metrics.counter.onboarding_welcome_screen_close ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Onboarding Welcome Screen Close"
+    description: "The number of times a user taps on the close button in
+onboarding's first screen, the welcome screen.
+"
+  }
+
+  dimension: metrics__counter__onboarding_welcome_screen_next {
+    sql: ${TABLE}.metrics.counter.onboarding_welcome_screen_next ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Onboarding Welcome Screen Next"
+    description: "The number of times a user taps on the next button in
+onboarding's first screen, the welcome screen.
+"
+  }
+
+  dimension: metrics__counter__onboarding_welcome_screen_sign_in {
+    sql: ${TABLE}.metrics.counter.onboarding_welcome_screen_sign_in ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Onboarding Welcome Screen Sign In"
+    description: "The number of times a user taps on the Sign In button in
+onboarding's first screen, the welcome screen.
+"
+  }
+
+  dimension: metrics__counter__onboarding_welcome_screen_sign_up {
+    sql: ${TABLE}.metrics.counter.onboarding_welcome_screen_sign_up ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Onboarding Welcome Screen Sign Up"
+    description: "The number of times a user taps the sign up button in
+onboarding's first screen, the welcome screen.
+"
+  }
+
   dimension: metrics__counter__page_action_menu_add_to_reading_list {
     sql: ${TABLE}.metrics.counter.page_action_menu_add_to_reading_list ;;
     type: number
@@ -1432,6 +1512,11 @@ tracking-protection that is enabled. One of:
 * basic
 * strict
 "
+  }
+
+  dimension: metrics__text {
+    sql: ${TABLE}.metrics.text ;;
+    hidden: yes
   }
 
   dimension: metrics__url {

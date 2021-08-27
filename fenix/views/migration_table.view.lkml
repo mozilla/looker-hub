@@ -644,6 +644,11 @@ view: migration_table {
     group_item_label: "Migration Fxa Unsupported State Version"
   }
 
+  dimension: metrics__text {
+    sql: ${TABLE}.metrics.text ;;
+    hidden: yes
+  }
+
   dimension: metrics__timespan__migration_addons_total_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.migration_addons_total_duration.time_unit ;;
     type: string

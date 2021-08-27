@@ -105,6 +105,24 @@ The key format is `<provider-name>`.
 "
   }
 
+  dimension: metrics__counter__settings_screen_autocomplete_domain_added {
+    label: "Settings Screen Autocomplete Domain Added"
+    sql: ${TABLE}.metrics.counter.settings_screen_autocomplete_domain_added ;;
+    type: number
+    group_label: "Settings Screen"
+    group_item_label: "Autocomplete Domain Added"
+
+    link: {
+      label: "Glean Dictionary reference for Settings Screen Autocomplete Domain Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/settings_screen_autocomplete_domain_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many times a user has added
+a website to the autocomplete list.
+"
+  }
+
   dimension: metrics__counter__settings_screen_whats_new_tapped {
     label: "Settings Screen Whats New Tapped"
     sql: ${TABLE}.metrics.counter.settings_screen_whats_new_tapped ;;
@@ -120,6 +138,79 @@ The key format is `<provider-name>`.
 
     description: "A counter that indicates how many times a user has clicked
 the whats new button from settings screen.
+"
+  }
+
+  dimension: metrics__counter__shortcuts_shortcut_added_counter {
+    label: "Shortcuts Shortcut Added Counter"
+    sql: ${TABLE}.metrics.counter.shortcuts_shortcut_added_counter ;;
+    type: number
+    group_label: "Shortcuts"
+    group_item_label: "Shortcut Added Counter"
+
+    link: {
+      label: "Glean Dictionary reference for Shortcuts Shortcut Added Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/shortcuts_shortcut_added_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many times a user has added
+a website to shortcuts.
+"
+  }
+
+  dimension: metrics__counter__shortcuts_shortcut_opened_counter {
+    label: "Shortcuts Shortcut Opened Counter"
+    sql: ${TABLE}.metrics.counter.shortcuts_shortcut_opened_counter ;;
+    type: number
+    group_label: "Shortcuts"
+    group_item_label: "Shortcut Opened Counter"
+
+    link: {
+      label: "Glean Dictionary reference for Shortcuts Shortcut Opened Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/shortcuts_shortcut_opened_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many times a user has opened
+a website from a shortcut in the home screen.
+"
+  }
+
+  dimension: metrics__labeled_counter__shortcuts_shortcut_removed_counter {
+    label: "Shortcuts Shortcut Removed Counter"
+    sql: ${TABLE}.metrics.labeled_counter.shortcuts_shortcut_removed_counter ;;
+    group_label: "Shortcuts"
+    group_item_label: "Shortcut Removed Counter"
+
+    link: {
+      label: "Glean Dictionary reference for Shortcuts Shortcut Removed Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/shortcuts_shortcut_removed_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "A counter that indicates how many times a user has removed
+a website from shortcuts.
+It also indicates the screen it was removed from, home or browser.
+"
+  }
+
+  dimension: metrics__quantity__shortcuts_shortcuts_on_home_number {
+    label: "Shortcuts Shortcuts On Home Number"
+    sql: ${TABLE}.metrics.quantity.shortcuts_shortcuts_on_home_number ;;
+    type: number
+    group_label: "Shortcuts"
+    group_item_label: "Shortcuts On Home Number"
+
+    link: {
+      label: "Glean Dictionary reference for Shortcuts Shortcuts On Home Number"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/shortcuts_shortcuts_on_home_number"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of shortcuts the user has on home screen,
+0, 1, 2, 3 or 4 (maximum)
 "
   }
 
@@ -895,6 +986,31 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: count
   }
 
+  measure: settings_screen_autocomplete_domain_added {
+    type: sum
+    sql: ${metrics__counter__settings_screen_autocomplete_domain_added} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Settings Screen Autocomplete Domain Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/settings_screen_autocomplete_domain_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: settings_screen_autocomplete_domain_added_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__settings_screen_autocomplete_domain_added: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Settings Screen Autocomplete Domain Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/settings_screen_autocomplete_domain_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: settings_screen_whats_new_tapped {
     type: sum
     sql: ${metrics__counter__settings_screen_whats_new_tapped} ;;
@@ -916,6 +1032,56 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     link: {
       label: "Glean Dictionary reference for Settings Screen Whats New Tapped"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/settings_screen_whats_new_tapped"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: shortcuts_shortcut_added_counter {
+    type: sum
+    sql: ${metrics__counter__shortcuts_shortcut_added_counter} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shortcuts Shortcut Added Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/shortcuts_shortcut_added_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: shortcuts_shortcut_added_counter_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__shortcuts_shortcut_added_counter: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shortcuts Shortcut Added Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/shortcuts_shortcut_added_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: shortcuts_shortcut_opened_counter {
+    type: sum
+    sql: ${metrics__counter__shortcuts_shortcut_opened_counter} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shortcuts Shortcut Opened Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/shortcuts_shortcut_opened_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: shortcuts_shortcut_opened_counter_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__shortcuts_shortcut_opened_counter: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shortcuts Shortcut Opened Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/shortcuts_shortcut_opened_counter"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

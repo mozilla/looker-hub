@@ -824,6 +824,28 @@ between a failed `top_sites_count` ping and 0 top sites, please see
 "
   }
 
+  dimension: metrics__counter__recent_bookmarks_bookmark_clicked {
+    sql: ${TABLE}.metrics.counter.recent_bookmarks_bookmark_clicked ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Recent Bookmarks Bookmark Clicked"
+    description: "A counter that indicates the number of times that a user
+has clicked on a recently saved bookmark from the home
+screen.
+"
+  }
+
+  dimension: metrics__counter__recent_bookmarks_show_all_bookmarks {
+    sql: ${TABLE}.metrics.counter.recent_bookmarks_show_all_bookmarks ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Recent Bookmarks Show All Bookmarks"
+    description: "A counter that indicates the number of times that a user
+has clicked the show all button for recently saved bookmarks
+on the home screen.
+"
+  }
+
   dimension: metrics__custom_distribution__geckoview_document_site_origins__sum {
     sql: ${TABLE}.metrics.custom_distribution.geckoview_document_site_origins.sum ;;
     type: number
@@ -1794,6 +1816,11 @@ will be \"custom\"
 
   dimension: metrics__string_list__preferences_tracking_protection {
     sql: ${TABLE}.metrics.string_list.preferences_tracking_protection ;;
+    hidden: yes
+  }
+
+  dimension: metrics__text {
+    sql: ${TABLE}.metrics.text ;;
     hidden: yes
   }
 

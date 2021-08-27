@@ -1614,6 +1614,44 @@ homescreen because the link was invalid).
 "
   }
 
+  dimension: metrics__counter__recent_bookmarks_bookmark_clicked {
+    label: "Recent Bookmarks Bookmark Clicked"
+    sql: ${TABLE}.metrics.counter.recent_bookmarks_bookmark_clicked ;;
+    type: number
+    group_label: "Recent Bookmarks"
+    group_item_label: "Bookmark Clicked"
+
+    link: {
+      label: "Glean Dictionary reference for Recent Bookmarks Bookmark Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_bookmarks_bookmark_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates the number of times that a user
+has clicked on a recently saved bookmark from the home
+screen.
+"
+  }
+
+  dimension: metrics__counter__recent_bookmarks_show_all_bookmarks {
+    label: "Recent Bookmarks Show All Bookmarks"
+    sql: ${TABLE}.metrics.counter.recent_bookmarks_show_all_bookmarks ;;
+    type: number
+    group_label: "Recent Bookmarks"
+    group_item_label: "Show All Bookmarks"
+
+    link: {
+      label: "Glean Dictionary reference for Recent Bookmarks Show All Bookmarks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_bookmarks_show_all_bookmarks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates the number of times that a user
+has clicked the show all button for recently saved bookmarks
+on the home screen.
+"
+  }
+
   dimension: metrics__string__search_default_engine_code {
     label: "Search Default Engine Code"
     sql: ${TABLE}.metrics.string.search_default_engine_code ;;
@@ -4995,6 +5033,56 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     link: {
       label: "Glean Dictionary reference for Metrics Top Sites Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_top_sites_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: recent_bookmarks_bookmark_clicked {
+    type: sum
+    sql: ${metrics__counter__recent_bookmarks_bookmark_clicked} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Recent Bookmarks Bookmark Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_bookmarks_bookmark_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: recent_bookmarks_bookmark_clicked_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__recent_bookmarks_bookmark_clicked: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Recent Bookmarks Bookmark Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_bookmarks_bookmark_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: recent_bookmarks_show_all_bookmarks {
+    type: sum
+    sql: ${metrics__counter__recent_bookmarks_show_all_bookmarks} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Recent Bookmarks Show All Bookmarks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_bookmarks_show_all_bookmarks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: recent_bookmarks_show_all_bookmarks_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__recent_bookmarks_show_all_bookmarks: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Recent Bookmarks Show All Bookmarks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_bookmarks_show_all_bookmarks"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

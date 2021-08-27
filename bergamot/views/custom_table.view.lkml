@@ -624,6 +624,11 @@ and build config was used to produce this build
 "
   }
 
+  dimension: metrics__text {
+    sql: ${TABLE}.metrics.text ;;
+    hidden: yes
+  }
+
   dimension: metrics__timespan__performance_full_page_translated_time__time_unit {
     sql: ${TABLE}.metrics.timespan.performance_full_page_translated_time.time_unit ;;
     type: string

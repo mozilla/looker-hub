@@ -312,11 +312,32 @@ view: metrics_table {
     group_item_label: "Glean Validation Foreground Count"
   }
 
+  dimension: metrics__counter__settings_screen_autocomplete_domain_added {
+    sql: ${TABLE}.metrics.counter.settings_screen_autocomplete_domain_added ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Settings Screen Autocomplete Domain Added"
+  }
+
   dimension: metrics__counter__settings_screen_whats_new_tapped {
     sql: ${TABLE}.metrics.counter.settings_screen_whats_new_tapped ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Settings Screen Whats New Tapped"
+  }
+
+  dimension: metrics__counter__shortcuts_shortcut_added_counter {
+    sql: ${TABLE}.metrics.counter.shortcuts_shortcut_added_counter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Shortcuts Shortcut Added Counter"
+  }
+
+  dimension: metrics__counter__shortcuts_shortcut_opened_counter {
+    sql: ${TABLE}.metrics.counter.shortcuts_shortcut_opened_counter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Shortcuts Shortcut Opened Counter"
   }
 
   dimension: metrics__datetime__glean_validation_first_run_hour {
@@ -381,6 +402,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__shortcuts_shortcut_removed_counter {
+    sql: ${TABLE}.metrics.labeled_counter.shortcuts_shortcut_removed_counter ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_rate {
     sql: ${TABLE}.metrics.labeled_rate ;;
     hidden: yes
@@ -422,6 +448,13 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__quantity__shortcuts_shortcuts_on_home_number {
+    sql: ${TABLE}.metrics.quantity.shortcuts_shortcuts_on_home_number ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Shortcuts Shortcuts On Home Number"
+  }
+
   dimension: metrics__string__browser_default_search_engine {
     sql: ${TABLE}.metrics.string.browser_default_search_engine ;;
     type: string
@@ -441,6 +474,11 @@ view: metrics_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Ping Reason"
+  }
+
+  dimension: metrics__text {
+    sql: ${TABLE}.metrics.text ;;
+    hidden: yes
   }
 
   dimension: metrics__url {
