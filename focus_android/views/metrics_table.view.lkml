@@ -256,6 +256,41 @@ view: metrics_table {
     group_item_label: "Glean Error Preinit Tasks Timeout"
   }
 
+  dimension: metrics__boolean__tracking_protection_has_advertising_blocked {
+    sql: ${TABLE}.metrics.boolean.tracking_protection_has_advertising_blocked ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Tracking Protection Has Advertising Blocked"
+  }
+
+  dimension: metrics__boolean__tracking_protection_has_analytics_blocked {
+    sql: ${TABLE}.metrics.boolean.tracking_protection_has_analytics_blocked ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Tracking Protection Has Analytics Blocked"
+  }
+
+  dimension: metrics__boolean__tracking_protection_has_content_blocked {
+    sql: ${TABLE}.metrics.boolean.tracking_protection_has_content_blocked ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Tracking Protection Has Content Blocked"
+  }
+
+  dimension: metrics__boolean__tracking_protection_has_ever_changed_etp {
+    sql: ${TABLE}.metrics.boolean.tracking_protection_has_ever_changed_etp ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Tracking Protection Has Ever Changed Etp"
+  }
+
+  dimension: metrics__boolean__tracking_protection_has_social_blocked {
+    sql: ${TABLE}.metrics.boolean.tracking_protection_has_social_blocked ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Tracking Protection Has Social Blocked"
+  }
+
   dimension: metrics__counter__glean_error_io {
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
@@ -338,6 +373,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Shortcuts Shortcut Opened Counter"
+  }
+
+  dimension: metrics__counter__tracking_protection_toolbar_shield_clicked {
+    sql: ${TABLE}.metrics.counter.tracking_protection_toolbar_shield_clicked ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tracking Protection Toolbar Shield Clicked"
   }
 
   dimension: metrics__datetime__glean_validation_first_run_hour {
