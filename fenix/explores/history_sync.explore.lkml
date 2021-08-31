@@ -42,31 +42,6 @@ explore: history_sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${history_sync.metrics__labeled_counter__history_sync_outgoing}) AS history_sync__metrics__labeled_counter__history_sync_outgoing ON ${history_sync.document_id} = ${history_sync__metrics__labeled_counter__history_sync_outgoing.document_id} ;;
   }
-
-  query: client_count {
-    description: "Number of clients over the past 28 days"
-    dimensions: [submission_date]
-    measures: [clients]
-    filters: [
-      submission_date: "28 days",
-    ]
-    sorts: [
-      submission_date: desc,
-    ]
-  }
-
-  query: client_count_tier_1 {
-    description: "Number of clients over the past 28 days for tier-1 countries"
-    dimensions: [submission_date]
-    measures: [clients]
-    filters: [
-      submission_date: "28 days",
-      country: "United States,France,Germany,United Kingdom,Canada",
-    ]
-    sorts: [
-      submission_date: desc,
-    ]
-  }
 }
 
 explore: suggest__history_sync__metrics__labeled_counter__glean_error_invalid_label {
