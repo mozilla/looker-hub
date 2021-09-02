@@ -8,7 +8,7 @@ explore: first_session {
 
   always_filter: {
     filters: [
-      channel: "mozdata.org^_mozilla^_firefox.first^_session",
+      channel: "mozdata.fenix.first^_session",
       submission_date: "28 days",
     ]
   }

@@ -500,11 +500,11 @@ The labels are the `category.name` identifier of the metric.
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox.first_session"
+    default_value: "mozdata.fenix.first_session"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_firefox.first_session"
+      value: "mozdata.fenix.first_session"
     }
 
     allowed_value: {

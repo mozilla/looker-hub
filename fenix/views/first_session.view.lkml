@@ -570,11 +570,11 @@ The labels are the `category.name` identifier of the metric.
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox.first_session"
+    default_value: "mozdata.fenix.first_session"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_firefox.first_session"
+      value: "mozdata.fenix.first_session"
     }
 
     allowed_value: {
@@ -756,7 +756,7 @@ view: suggest__first_session__metrics__labeled_counter__glean_error_invalid_labe
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.first_session as t,
+from mozdata.fenix.first_session as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -775,7 +775,7 @@ view: suggest__first_session__metrics__labeled_counter__glean_error_invalid_over
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.first_session as t,
+from mozdata.fenix.first_session as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -794,7 +794,7 @@ view: suggest__first_session__metrics__labeled_counter__glean_error_invalid_stat
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.first_session as t,
+from mozdata.fenix.first_session as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -813,7 +813,7 @@ view: suggest__first_session__metrics__labeled_counter__glean_error_invalid_valu
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.first_session as t,
+from mozdata.fenix.first_session as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0

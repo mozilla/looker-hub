@@ -177,11 +177,11 @@ view: baseline_clients_last_seen_table {
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox.baseline_clients_last_seen"
+    default_value: "mozdata.fenix.baseline_clients_last_seen"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_firefox.baseline_clients_last_seen"
+      value: "mozdata.fenix.baseline_clients_last_seen"
     }
 
     allowed_value: {

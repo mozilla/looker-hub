@@ -453,11 +453,11 @@ The labels are the `category.name` identifier of the metric.
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_ios_firefox.events"
+    default_value: "mozdata.firefox_ios.events"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_ios_firefox.events"
+      value: "mozdata.firefox_ios.events"
     }
 
     allowed_value: {

@@ -45,5 +45,5 @@ view: migrated_clients_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.org_mozilla_firefox.migrated_clients` ;;
+  sql_table_name: `mozdata.fenix.migrated_clients` ;;
 }

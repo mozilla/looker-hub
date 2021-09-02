@@ -147,11 +147,11 @@ view: baseline_clients_daily_table {
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox.baseline_clients_daily"
+    default_value: "mozdata.fenix.baseline_clients_daily"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_firefox.baseline_clients_daily"
+      value: "mozdata.fenix.baseline_clients_daily"
     }
 
     allowed_value: {

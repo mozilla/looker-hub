@@ -8,7 +8,7 @@ explore: sync {
 
   always_filter: {
     filters: [
-      channel: "mozdata.org^_mozilla^_firefox.sync",
+      channel: "mozdata.fenix.sync",
       submission_date: "28 days",
     ]
   }

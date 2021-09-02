@@ -929,11 +929,11 @@ view: migration_table {
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox.migration"
+    default_value: "mozdata.fenix.migration"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_firefox.migration"
+      value: "mozdata.fenix.migration"
     }
 
     allowed_value: {

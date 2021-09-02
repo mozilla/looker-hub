@@ -145,6 +145,11 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: creditcards_sync
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
     first_session:
       type: glean_ping_explore
       views:
@@ -200,7 +205,7 @@ fenix:
     activation:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.activation
+        table: mozdata.fenix.activation
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.activation
       - channel: nightly
@@ -209,7 +214,7 @@ fenix:
     activation_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.activation
+        table: mozdata.fenix.activation
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.activation
       - channel: nightly
@@ -218,7 +223,7 @@ fenix:
     addresses_sync:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.addresses_sync
+        table: mozdata.fenix.addresses_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.addresses_sync
       - channel: nightly
@@ -227,7 +232,7 @@ fenix:
     addresses_sync_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.addresses_sync
+        table: mozdata.fenix.addresses_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.addresses_sync
       - channel: nightly
@@ -236,7 +241,7 @@ fenix:
     baseline:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.baseline
+        table: mozdata.fenix.baseline
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.baseline
       - channel: nightly
@@ -245,7 +250,7 @@ fenix:
     baseline_clients_daily_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.baseline_clients_daily
+        table: mozdata.fenix.baseline_clients_daily
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.baseline_clients_daily
       - channel: nightly
@@ -254,7 +259,7 @@ fenix:
     baseline_clients_first_seen_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.baseline_clients_first_seen
+        table: mozdata.fenix.baseline_clients_first_seen
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.baseline_clients_first_seen
       - channel: nightly
@@ -263,7 +268,7 @@ fenix:
     baseline_clients_last_seen_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.baseline_clients_last_seen
+        table: mozdata.fenix.baseline_clients_last_seen
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.baseline_clients_last_seen
       - channel: nightly
@@ -272,7 +277,7 @@ fenix:
     baseline_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.baseline
+        table: mozdata.fenix.baseline
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.baseline
       - channel: nightly
@@ -281,7 +286,7 @@ fenix:
     bookmarks_sync:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.bookmarks_sync
+        table: mozdata.fenix.bookmarks_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.bookmarks_sync
       - channel: nightly
@@ -290,7 +295,7 @@ fenix:
     bookmarks_sync_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.bookmarks_sync
+        table: mozdata.fenix.bookmarks_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.bookmarks_sync
       - channel: nightly
@@ -298,12 +303,12 @@ fenix:
       type: table_view
     client_counts:
       tables:
-      - table: mozdata.org_mozilla_firefox.baseline_clients_daily
+      - table: mozdata.fenix.baseline_clients_daily
       type: client_counts_view
     creditcards_sync:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.creditcards_sync
+        table: mozdata.fenix.creditcards_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.creditcards_sync
       - channel: nightly
@@ -312,7 +317,7 @@ fenix:
     creditcards_sync_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.creditcards_sync
+        table: mozdata.fenix.creditcards_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.creditcards_sync
       - channel: nightly
@@ -321,26 +326,36 @@ fenix:
     event_types_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.event_types
+        table: mozdata.fenix.event_types
       type: table_view
+    events:
+      tables:
+      - base_table: mozdata.fenix.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
     events_daily_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.events_daily
+        table: mozdata.fenix.events_daily
       type: table_view
     events_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.events
+        table: mozdata.fenix.events
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.events
       - channel: nightly
         table: mozdata.org_mozilla_fenix.events
       type: table_view
+    events_unnested_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.events_unnested
+      type: table_view
     first_session:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.first_session
+        table: mozdata.fenix.first_session
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.first_session
       - channel: nightly
@@ -349,7 +364,7 @@ fenix:
     first_session_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.first_session
+        table: mozdata.fenix.first_session
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.first_session
       - channel: nightly
@@ -357,7 +372,7 @@ fenix:
       type: table_view
     funnel_analysis:
       tables:
-      - event_types: '`mozdata.org_mozilla_firefox.event_types`'
+      - event_types: '`mozdata.fenix.event_types`'
         funnel_analysis: events_daily_table
         step_1: event_types
         step_2: event_types
@@ -371,12 +386,12 @@ fenix:
       type: table_view
     growth_accounting:
       tables:
-      - table: mozdata.org_mozilla_firefox.baseline_clients_last_seen
+      - table: mozdata.fenix.baseline_clients_last_seen
       type: growth_accounting_view
     history_sync:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.history_sync
+        table: mozdata.fenix.history_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.history_sync
       - channel: nightly
@@ -385,7 +400,7 @@ fenix:
     history_sync_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.history_sync
+        table: mozdata.fenix.history_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.history_sync
       - channel: nightly
@@ -394,7 +409,7 @@ fenix:
     installation:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.installation
+        table: mozdata.fenix.installation
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.installation
       - channel: nightly
@@ -403,7 +418,7 @@ fenix:
     installation_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.installation
+        table: mozdata.fenix.installation
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.installation
       - channel: nightly
@@ -412,7 +427,7 @@ fenix:
     logins_sync:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.logins_sync
+        table: mozdata.fenix.logins_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.logins_sync
       - channel: nightly
@@ -421,7 +436,7 @@ fenix:
     logins_sync_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.logins_sync
+        table: mozdata.fenix.logins_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.logins_sync
       - channel: nightly
@@ -430,7 +445,7 @@ fenix:
     metrics:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.metrics
+        table: mozdata.fenix.metrics
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.metrics
       - channel: nightly
@@ -439,7 +454,7 @@ fenix:
     metrics_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.metrics
+        table: mozdata.fenix.metrics
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.metrics
       - channel: nightly
@@ -448,10 +463,12 @@ fenix:
     migrated_clients_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.migrated_clients
+        table: mozdata.fenix.migrated_clients
       type: table_view
     migration:
       tables:
+      - channel: release
+        table: mozdata.fenix.migration
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.migration
       - channel: nightly
@@ -460,7 +477,7 @@ fenix:
     migration_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.migration
+        table: mozdata.fenix.migration
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.migration
       - channel: nightly
@@ -474,7 +491,7 @@ fenix:
     startup_timeline:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.startup_timeline
+        table: mozdata.fenix.startup_timeline
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.startup_timeline
       - channel: nightly
@@ -483,7 +500,7 @@ fenix:
     startup_timeline_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.startup_timeline
+        table: mozdata.fenix.startup_timeline
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.startup_timeline
       - channel: nightly
@@ -492,7 +509,7 @@ fenix:
     sync:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.sync
+        table: mozdata.fenix.sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.sync
       - channel: nightly
@@ -501,7 +518,7 @@ fenix:
     sync_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.sync
+        table: mozdata.fenix.sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.sync
       - channel: nightly
@@ -510,7 +527,7 @@ fenix:
     tabs_sync:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.tabs_sync
+        table: mozdata.fenix.tabs_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.tabs_sync
       - channel: nightly
@@ -519,7 +536,7 @@ fenix:
     tabs_sync_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_firefox.tabs_sync
+        table: mozdata.fenix.tabs_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.tabs_sync
       - channel: nightly
@@ -590,6 +607,11 @@ firefox_ios:
       views:
         base_view: client_counts
         extended_view: baseline_clients_daily_table
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
     growth_accounting:
       type: growth_accounting_explore
       views:
@@ -609,7 +631,7 @@ firefox_ios:
     baseline:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_ios_firefox.baseline
+        table: mozdata.firefox_ios.baseline
       - channel: beta
         table: mozdata.org_mozilla_ios_firefoxbeta.baseline
       - channel: nightly
@@ -618,7 +640,7 @@ firefox_ios:
     baseline_clients_daily_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_ios_firefox.baseline_clients_daily
+        table: mozdata.firefox_ios.baseline_clients_daily
       - channel: beta
         table: mozdata.org_mozilla_ios_firefoxbeta.baseline_clients_daily
       - channel: nightly
@@ -627,7 +649,7 @@ firefox_ios:
     baseline_clients_first_seen_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_ios_firefox.baseline_clients_first_seen
+        table: mozdata.firefox_ios.baseline_clients_first_seen
       - channel: beta
         table: mozdata.org_mozilla_ios_firefoxbeta.baseline_clients_first_seen
       - channel: nightly
@@ -636,7 +658,7 @@ firefox_ios:
     baseline_clients_last_seen_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_ios_firefox.baseline_clients_last_seen
+        table: mozdata.firefox_ios.baseline_clients_last_seen
       - channel: beta
         table: mozdata.org_mozilla_ios_firefoxbeta.baseline_clients_last_seen
       - channel: nightly
@@ -645,7 +667,7 @@ firefox_ios:
     baseline_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_ios_firefox.baseline
+        table: mozdata.firefox_ios.baseline
       - channel: beta
         table: mozdata.org_mozilla_ios_firefoxbeta.baseline
       - channel: nightly
@@ -653,25 +675,35 @@ firefox_ios:
       type: table_view
     client_counts:
       tables:
-      - table: mozdata.org_mozilla_ios_firefox.baseline_clients_daily
+      - table: mozdata.firefox_ios.baseline_clients_daily
       type: client_counts_view
+    events:
+      tables:
+      - base_table: mozdata.firefox_ios.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
     events_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_ios_firefox.events
+        table: mozdata.firefox_ios.events
       - channel: beta
         table: mozdata.org_mozilla_ios_firefoxbeta.events
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.events
       type: table_view
+    events_unnested_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.events_unnested
+      type: table_view
     growth_accounting:
       tables:
-      - table: mozdata.org_mozilla_ios_firefox.baseline_clients_last_seen
+      - table: mozdata.firefox_ios.baseline_clients_last_seen
       type: growth_accounting_view
     metrics:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_ios_firefox.metrics
+        table: mozdata.firefox_ios.metrics
       - channel: beta
         table: mozdata.org_mozilla_ios_firefoxbeta.metrics
       - channel: nightly
@@ -680,7 +712,7 @@ firefox_ios:
     metrics_table:
       tables:
       - channel: release
-        table: mozdata.org_mozilla_ios_firefox.metrics
+        table: mozdata.firefox_ios.metrics
       - channel: beta
         table: mozdata.org_mozilla_ios_firefoxbeta.metrics
       - channel: nightly

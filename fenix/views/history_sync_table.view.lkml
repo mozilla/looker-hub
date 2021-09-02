@@ -519,11 +519,11 @@ The labels are the `category.name` identifier of the metric.
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox.history_sync"
+    default_value: "mozdata.fenix.history_sync"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_firefox.history_sync"
+      value: "mozdata.fenix.history_sync"
     }
 
     allowed_value: {

@@ -539,11 +539,11 @@ the `framework_primary/secondary` metrics.
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox.startup_timeline"
+    default_value: "mozdata.fenix.startup_timeline"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_firefox.startup_timeline"
+      value: "mozdata.fenix.startup_timeline"
     }
 
     allowed_value: {

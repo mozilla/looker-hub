@@ -6882,11 +6882,11 @@ will be \"custom\"
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox.metrics"
+    default_value: "mozdata.fenix.metrics"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_firefox.metrics"
+      value: "mozdata.fenix.metrics"
     }
 
     allowed_value: {

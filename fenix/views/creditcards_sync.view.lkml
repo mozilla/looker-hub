@@ -610,11 +610,11 @@ The labels are the `category.name` identifier of the metric.
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox.creditcards_sync"
+    default_value: "mozdata.fenix.creditcards_sync"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_firefox.creditcards_sync"
+      value: "mozdata.fenix.creditcards_sync"
     }
 
     allowed_value: {
@@ -876,7 +876,7 @@ view: suggest__creditcards_sync__metrics__labeled_counter__creditcards_sync_inco
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.creditcards_sync as t,
+from mozdata.fenix.creditcards_sync as t,
 unnest(metrics.labeled_counter.creditcards_sync_incoming) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -895,7 +895,7 @@ view: suggest__creditcards_sync__metrics__labeled_counter__creditcards_sync_outg
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.creditcards_sync as t,
+from mozdata.fenix.creditcards_sync as t,
 unnest(metrics.labeled_counter.creditcards_sync_outgoing) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -914,7 +914,7 @@ view: suggest__creditcards_sync__metrics__labeled_counter__glean_error_invalid_l
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.creditcards_sync as t,
+from mozdata.fenix.creditcards_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -933,7 +933,7 @@ view: suggest__creditcards_sync__metrics__labeled_counter__glean_error_invalid_o
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.creditcards_sync as t,
+from mozdata.fenix.creditcards_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -952,7 +952,7 @@ view: suggest__creditcards_sync__metrics__labeled_counter__glean_error_invalid_s
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.creditcards_sync as t,
+from mozdata.fenix.creditcards_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -971,7 +971,7 @@ view: suggest__creditcards_sync__metrics__labeled_counter__glean_error_invalid_v
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.creditcards_sync as t,
+from mozdata.fenix.creditcards_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
