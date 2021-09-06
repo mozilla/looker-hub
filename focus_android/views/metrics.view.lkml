@@ -105,6 +105,40 @@ The key format is `<provider-name>`.
 "
   }
 
+  dimension: metrics__boolean__mozilla_products_has_fenix_installed {
+    label: "Mozilla Products Has Fenix Installed"
+    sql: ${TABLE}.metrics.boolean.mozilla_products_has_fenix_installed ;;
+    type: yesno
+    group_label: "Mozilla Products"
+    group_item_label: "Has Fenix Installed"
+
+    link: {
+      label: "Glean Dictionary reference for Mozilla Products Has Fenix Installed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/mozilla_products_has_fenix_installed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If Fenix is installed on the users's device.
+"
+  }
+
+  dimension: metrics__boolean__mozilla_products_is_fenix_default_browser {
+    label: "Mozilla Products Is Fenix Default Browser"
+    sql: ${TABLE}.metrics.boolean.mozilla_products_is_fenix_default_browser ;;
+    type: yesno
+    group_label: "Mozilla Products"
+    group_item_label: "Is Fenix Default Browser"
+
+    link: {
+      label: "Glean Dictionary reference for Mozilla Products Is Fenix Default Browser"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/mozilla_products_is_fenix_default_browser"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Fenix is the default browser on user's device
+"
+  }
+
   dimension: metrics__counter__settings_screen_autocomplete_domain_added {
     label: "Settings Screen Autocomplete Domain Added"
     sql: ${TABLE}.metrics.counter.settings_screen_autocomplete_domain_added ;;

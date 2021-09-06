@@ -936,6 +936,14 @@ klar_ios:
       - channel: null
         table: mozdata.org_mozilla_ios_klar.metrics
       type: table_view
+mlhackweek_search:
+  explores: {}
+  glean_app: true
+  owners:
+  - gleonard@mozilla.com
+  pretty_name: ML Hack Week Search App
+  spoke: looker-spoke-default
+  views: {}
 mozilla_vpn:
   glean_app: false
   owners:

@@ -2265,6 +2265,23 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__labeled_counter__avif_alpha {
+    label: "Avif Alpha"
+    sql: ${TABLE}.metrics.labeled_counter.avif_alpha ;;
+    group_label: "Avif"
+    group_item_label: "Alpha"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Alpha"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_alpha"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "AVIF alpha plane.
+"
+  }
+
   dimension: metrics__quantity__avif_aom_decode_error {
     label: "Avif Aom Decode Error"
     sql: ${TABLE}.metrics.quantity.avif_aom_decode_error ;;
@@ -2296,6 +2313,74 @@ documented in the ping's pings.yaml file.
 
     hidden: yes
     description: "Bits per pixel of AVIF image.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_cicp_cp {
+    label: "Avif Cicp Cp"
+    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_cp ;;
+    group_label: "Avif"
+    group_item_label: "Cicp Cp"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Cicp Cp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_cicp_cp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "AVIF CICP colour primaries.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_cicp_mc {
+    label: "Avif Cicp Mc"
+    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_mc ;;
+    group_label: "Avif"
+    group_item_label: "Cicp Mc"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Cicp Mc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_cicp_mc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "AVIF CICP transfer characteristics.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_cicp_tc {
+    label: "Avif Cicp Tc"
+    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_tc ;;
+    group_label: "Avif"
+    group_item_label: "Cicp Tc"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Cicp Tc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_cicp_tc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "AVIF CICP transfer characteristics.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_colr {
+    label: "Avif Colr"
+    sql: ${TABLE}.metrics.labeled_counter.avif_colr ;;
+    group_label: "Avif"
+    group_item_label: "Colr"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Colr"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_colr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "AVIF colour information type.
 "
   }
 
@@ -2347,6 +2432,40 @@ documented in the ping's pings.yaml file.
 
     hidden: yes
     description: "Decoder of AVIF image.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_ispe {
+    label: "Avif Ispe"
+    sql: ${TABLE}.metrics.labeled_counter.avif_ispe ;;
+    group_label: "Avif"
+    group_item_label: "Ispe"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Ispe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_ispe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "AVIF spatial extents (image size).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_pixi {
+    label: "Avif Pixi"
+    sql: ${TABLE}.metrics.labeled_counter.avif_pixi ;;
+    group_label: "Avif"
+    group_item_label: "Pixi"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Pixi"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_pixi"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    hidden: yes
+    description: "AVIF pixel information (bits per channel).
 "
   }
 
