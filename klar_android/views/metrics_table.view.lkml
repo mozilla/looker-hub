@@ -290,6 +290,24 @@ changes the default browser through the app settings.
     description: "Set to true if the tasks that are queued prior to Glean initialization time out."
   }
 
+  dimension: metrics__boolean__mozilla_products_has_fenix_installed {
+    sql: ${TABLE}.metrics.boolean.mozilla_products_has_fenix_installed ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Mozilla Products Has Fenix Installed"
+    description: "If Fenix is installed on the users's device.
+"
+  }
+
+  dimension: metrics__boolean__mozilla_products_is_fenix_default_browser {
+    sql: ${TABLE}.metrics.boolean.mozilla_products_is_fenix_default_browser ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Mozilla Products Is Fenix Default Browser"
+    description: "Fenix is the default browser on user's device
+"
+  }
+
   dimension: metrics__boolean__tracking_protection_has_advertising_blocked {
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_advertising_blocked ;;
     type: yesno

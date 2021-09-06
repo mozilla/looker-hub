@@ -1028,10 +1028,45 @@ on the home screen.
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__avif_alpha {
+    sql: ${TABLE}.metrics.labeled_counter.avif_alpha ;;
+    hidden: yes
+    description: "AVIF alpha plane.
+"
+  }
+
   dimension: metrics__labeled_counter__avif_bit_depth {
     sql: ${TABLE}.metrics.labeled_counter.avif_bit_depth ;;
     hidden: yes
     description: "Bits per pixel of AVIF image.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_cicp_cp {
+    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_cp ;;
+    hidden: yes
+    description: "AVIF CICP colour primaries.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_cicp_mc {
+    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_mc ;;
+    hidden: yes
+    description: "AVIF CICP transfer characteristics.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_cicp_tc {
+    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_tc ;;
+    hidden: yes
+    description: "AVIF CICP transfer characteristics.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_colr {
+    sql: ${TABLE}.metrics.labeled_counter.avif_colr ;;
+    hidden: yes
+    description: "AVIF colour information type.
 "
   }
 
@@ -1046,6 +1081,20 @@ on the home screen.
     sql: ${TABLE}.metrics.labeled_counter.avif_decoder ;;
     hidden: yes
     description: "Decoder of AVIF image.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_ispe {
+    sql: ${TABLE}.metrics.labeled_counter.avif_ispe ;;
+    hidden: yes
+    description: "AVIF spatial extents (image size).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_pixi {
+    sql: ${TABLE}.metrics.labeled_counter.avif_pixi ;;
+    hidden: yes
+    description: "AVIF pixel information (bits per channel).
 "
   }
 
