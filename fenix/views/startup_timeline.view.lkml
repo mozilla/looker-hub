@@ -1,6 +1,7 @@
 view: startup_timeline {
   dimension: metrics__counter__startup_timeline_clock_ticks_per_second {
     label: "Startup Timeline Clock Ticks Per Second"
+    hidden: yes
     sql: ${TABLE}.metrics.counter.startup_timeline_clock_ticks_per_second ;;
     type: number
     group_label: "Startup Timeline"
@@ -20,6 +21,7 @@ the `framework_start` metric.
 
   dimension: metrics__quantity__startup_timeline_clock_ticks_per_second_v2 {
     label: "Startup Timeline Clock Ticks Per Second V2"
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.startup_timeline_clock_ticks_per_second_v2 ;;
     type: number
     group_label: "Startup Timeline"
@@ -39,6 +41,7 @@ the `framework_primary/secondary` metrics.
 
   dimension: metrics__timespan__startup_timeline_framework_primary__value {
     label: "Startup Timeline Framework Primary Value"
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.startup_timeline_framework_primary.value ;;
     type: number
     group_label: "Startup Timeline"
@@ -72,6 +75,7 @@ between devices, is also reported as a metric
 
   dimension: metrics__timespan__startup_timeline_framework_secondary__value {
     label: "Startup Timeline Framework Secondary Value"
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.startup_timeline_framework_secondary.value ;;
     type: number
     group_label: "Startup Timeline"
@@ -92,6 +96,7 @@ metric, see `framework_primary`
 
   dimension: metrics__timespan__startup_timeline_framework_start__value {
     label: "Startup Timeline Framework Start Value"
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.startup_timeline_framework_start.value ;;
     type: number
     group_label: "Startup Timeline"
@@ -117,6 +122,7 @@ devices, is also reported as a metric
 
   dimension: metrics__boolean__startup_timeline_framework_start_error {
     label: "Startup Timeline Framework Start Error"
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.startup_timeline_framework_start_error ;;
     type: yesno
     group_label: "Startup Timeline"
@@ -136,6 +142,7 @@ indicative of a bug in the implementation.
 
   dimension: metrics__boolean__startup_timeline_framework_start_read_error {
     label: "Startup Timeline Framework Start Read Error"
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.startup_timeline_framework_start_read_error ;;
     type: yesno
     group_label: "Startup Timeline"
@@ -155,6 +162,7 @@ the application will catch a file reading exception.
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -165,7 +173,6 @@ the application will catch a file reading exception.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set with an invalid label.
 The labels are the `category.name` identifier of the metric.
 "
@@ -173,6 +180,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
     label: "Glean Error Invalid Overflow"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -183,7 +191,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set a value that overflowed.
 The labels are the `category.name` identifier of the metric.
 "
@@ -191,6 +198,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
     label: "Glean Error Invalid State"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -201,7 +209,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a timing metric was used incorrectly.
 The labels are the `category.name` identifier of the metric.
 "
@@ -209,6 +216,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     label: "Glean Error Invalid Value"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
@@ -219,7 +227,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
@@ -704,6 +711,7 @@ view: startup_timeline__metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__startup_timeline__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__startup_timeline__metrics__labeled_counter__glean_error_invalid_label.key
+    hidden: no
   }
 
   dimension: value {
@@ -715,11 +723,13 @@ view: startup_timeline__metrics__labeled_counter__glean_error_invalid_label {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${startup_timeline.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -744,6 +754,7 @@ view: startup_timeline__metrics__labeled_counter__glean_error_invalid_overflow {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__startup_timeline__metrics__labeled_counter__glean_error_invalid_overflow
     suggest_dimension: suggest__startup_timeline__metrics__labeled_counter__glean_error_invalid_overflow.key
+    hidden: no
   }
 
   dimension: value {
@@ -755,11 +766,13 @@ view: startup_timeline__metrics__labeled_counter__glean_error_invalid_overflow {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${startup_timeline.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -784,6 +797,7 @@ view: startup_timeline__metrics__labeled_counter__glean_error_invalid_state {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__startup_timeline__metrics__labeled_counter__glean_error_invalid_state
     suggest_dimension: suggest__startup_timeline__metrics__labeled_counter__glean_error_invalid_state.key
+    hidden: no
   }
 
   dimension: value {
@@ -795,11 +809,13 @@ view: startup_timeline__metrics__labeled_counter__glean_error_invalid_state {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${startup_timeline.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -824,6 +840,7 @@ view: startup_timeline__metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__startup_timeline__metrics__labeled_counter__glean_error_invalid_value
     suggest_dimension: suggest__startup_timeline__metrics__labeled_counter__glean_error_invalid_value.key
+    hidden: no
   }
 
   dimension: value {
@@ -835,11 +852,13 @@ view: startup_timeline__metrics__labeled_counter__glean_error_invalid_value {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${startup_timeline.client_info__client_id} end ;;
+    hidden: no
   }
 }
 

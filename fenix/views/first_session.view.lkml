@@ -1,6 +1,7 @@
 view: first_session {
   dimension: metrics__string__first_session_adgroup {
     label: "First Session Adgroup"
+    hidden: no
     sql: ${TABLE}.metrics.string.first_session_adgroup ;;
     type: string
     group_label: "First Session"
@@ -18,6 +19,7 @@ view: first_session {
 
   dimension: metrics__string__first_session_campaign {
     label: "First Session Campaign"
+    hidden: no
     sql: ${TABLE}.metrics.string.first_session_campaign ;;
     type: string
     group_label: "First Session"
@@ -35,6 +37,7 @@ view: first_session {
 
   dimension: metrics__string__first_session_creative {
     label: "First Session Creative"
+    hidden: no
     sql: ${TABLE}.metrics.string.first_session_creative ;;
     type: string
     group_label: "First Session"
@@ -52,6 +55,7 @@ view: first_session {
 
   dimension: metrics__string__first_session_network {
     label: "First Session Network"
+    hidden: no
     sql: ${TABLE}.metrics.string.first_session_network ;;
     type: string
     group_label: "First Session"
@@ -69,6 +73,7 @@ view: first_session {
 
   dimension: metrics__datetime__first_session_timestamp {
     label: "First Session Timestamp"
+    hidden: no
     sql: ${TABLE}.metrics.datetime.first_session_timestamp ;;
     type: string
     group_label: "First Session"
@@ -88,6 +93,7 @@ ping is from Adjust and will remain static across installs.
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -98,7 +104,6 @@ ping is from Adjust and will remain static across installs.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set with an invalid label.
 The labels are the `category.name` identifier of the metric.
 "
@@ -106,6 +111,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
     label: "Glean Error Invalid Overflow"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -116,7 +122,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set a value that overflowed.
 The labels are the `category.name` identifier of the metric.
 "
@@ -124,6 +129,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
     label: "Glean Error Invalid State"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -134,7 +140,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a timing metric was used incorrectly.
 The labels are the `category.name` identifier of the metric.
 "
@@ -142,6 +147,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     label: "Glean Error Invalid Value"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
@@ -152,7 +158,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
@@ -612,6 +617,7 @@ view: first_session__metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__first_session__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__first_session__metrics__labeled_counter__glean_error_invalid_label.key
+    hidden: no
   }
 
   dimension: value {
@@ -623,11 +629,13 @@ view: first_session__metrics__labeled_counter__glean_error_invalid_label {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${first_session.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -652,6 +660,7 @@ view: first_session__metrics__labeled_counter__glean_error_invalid_overflow {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__first_session__metrics__labeled_counter__glean_error_invalid_overflow
     suggest_dimension: suggest__first_session__metrics__labeled_counter__glean_error_invalid_overflow.key
+    hidden: no
   }
 
   dimension: value {
@@ -663,11 +672,13 @@ view: first_session__metrics__labeled_counter__glean_error_invalid_overflow {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${first_session.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -692,6 +703,7 @@ view: first_session__metrics__labeled_counter__glean_error_invalid_state {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__first_session__metrics__labeled_counter__glean_error_invalid_state
     suggest_dimension: suggest__first_session__metrics__labeled_counter__glean_error_invalid_state.key
+    hidden: no
   }
 
   dimension: value {
@@ -703,11 +715,13 @@ view: first_session__metrics__labeled_counter__glean_error_invalid_state {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${first_session.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -732,6 +746,7 @@ view: first_session__metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__first_session__metrics__labeled_counter__glean_error_invalid_value
     suggest_dimension: suggest__first_session__metrics__labeled_counter__glean_error_invalid_value.key
+    hidden: no
   }
 
   dimension: value {
@@ -743,11 +758,13 @@ view: first_session__metrics__labeled_counter__glean_error_invalid_value {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${first_session.client_info__client_id} end ;;
+    hidden: no
   }
 }
 

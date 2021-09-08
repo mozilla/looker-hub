@@ -1,6 +1,7 @@
 view: logins_sync {
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -11,7 +12,6 @@ view: logins_sync {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set with an invalid label.
 The labels are the `category.name` identifier of the metric.
 "
@@ -19,6 +19,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
     label: "Glean Error Invalid Overflow"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -29,7 +30,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set a value that overflowed.
 The labels are the `category.name` identifier of the metric.
 "
@@ -37,6 +37,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
     label: "Glean Error Invalid State"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -47,7 +48,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a timing metric was used incorrectly.
 The labels are the `category.name` identifier of the metric.
 "
@@ -55,6 +55,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     label: "Glean Error Invalid Value"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
@@ -65,7 +66,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
@@ -73,6 +73,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__datetime__logins_sync_finished_at {
     label: "Logins Sync Finished At"
+    hidden: no
     sql: ${TABLE}.metrics.datetime.logins_sync_finished_at ;;
     type: string
     group_label: "Logins Sync"
@@ -90,6 +91,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__logins_sync_incoming {
     label: "Logins Sync Incoming"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.logins_sync_incoming ;;
     group_label: "Logins Sync"
     group_item_label: "Incoming"
@@ -100,13 +102,13 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Records incoming passwords record counts. `applied` is the number of incoming passwords entries that were successfully stored or updated in the local database. `failed_to_apply` is the number of entries that were ignored due to errors. `reconciled` is the number of entries with changes both locally and remotely that were merged.
 "
   }
 
   dimension: metrics__labeled_counter__logins_sync_outgoing {
     label: "Logins Sync Outgoing"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.logins_sync_outgoing ;;
     group_label: "Logins Sync"
     group_item_label: "Outgoing"
@@ -117,13 +119,13 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Records outgoing passwords record counts. `uploaded` is the number of records that were successfully sent to the server. `failed_to_upload` is the number of records that weren't uploaded, and will be retried on the next sync.
 "
   }
 
   dimension: metrics__counter__logins_sync_outgoing_batches {
     label: "Logins Sync Outgoing Batches"
+    hidden: no
     sql: ${TABLE}.metrics.counter.logins_sync_outgoing_batches ;;
     type: number
     group_label: "Logins Sync"
@@ -141,6 +143,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__datetime__logins_sync_started_at {
     label: "Logins Sync Started At"
+    hidden: no
     sql: ${TABLE}.metrics.datetime.logins_sync_started_at ;;
     type: string
     group_label: "Logins Sync"
@@ -158,6 +161,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__logins_sync_uid {
     label: "Logins Sync Uid"
+    hidden: no
     sql: ${TABLE}.metrics.string.logins_sync_uid ;;
     type: string
     group_label: "Logins Sync"
@@ -175,6 +179,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__uuid__sync_sync_uuid {
     label: "Sync Sync Uuid"
+    hidden: no
     sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
     type: string
     group_label: "Sync"
@@ -669,6 +674,7 @@ view: logins_sync__metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__logins_sync__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__logins_sync__metrics__labeled_counter__glean_error_invalid_label.key
+    hidden: no
   }
 
   dimension: value {
@@ -680,11 +686,13 @@ view: logins_sync__metrics__labeled_counter__glean_error_invalid_label {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${logins_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -709,6 +717,7 @@ view: logins_sync__metrics__labeled_counter__glean_error_invalid_overflow {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__logins_sync__metrics__labeled_counter__glean_error_invalid_overflow
     suggest_dimension: suggest__logins_sync__metrics__labeled_counter__glean_error_invalid_overflow.key
+    hidden: no
   }
 
   dimension: value {
@@ -720,11 +729,13 @@ view: logins_sync__metrics__labeled_counter__glean_error_invalid_overflow {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${logins_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -749,6 +760,7 @@ view: logins_sync__metrics__labeled_counter__glean_error_invalid_state {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__logins_sync__metrics__labeled_counter__glean_error_invalid_state
     suggest_dimension: suggest__logins_sync__metrics__labeled_counter__glean_error_invalid_state.key
+    hidden: no
   }
 
   dimension: value {
@@ -760,11 +772,13 @@ view: logins_sync__metrics__labeled_counter__glean_error_invalid_state {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${logins_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -789,6 +803,7 @@ view: logins_sync__metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__logins_sync__metrics__labeled_counter__glean_error_invalid_value
     suggest_dimension: suggest__logins_sync__metrics__labeled_counter__glean_error_invalid_value.key
+    hidden: no
   }
 
   dimension: value {
@@ -800,11 +815,13 @@ view: logins_sync__metrics__labeled_counter__glean_error_invalid_value {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${logins_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -829,6 +846,7 @@ view: logins_sync__metrics__labeled_counter__logins_sync_incoming {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__logins_sync__metrics__labeled_counter__logins_sync_incoming
     suggest_dimension: suggest__logins_sync__metrics__labeled_counter__logins_sync_incoming.key
+    hidden: no
   }
 
   dimension: value {
@@ -840,11 +858,13 @@ view: logins_sync__metrics__labeled_counter__logins_sync_incoming {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${logins_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -869,6 +889,7 @@ view: logins_sync__metrics__labeled_counter__logins_sync_outgoing {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__logins_sync__metrics__labeled_counter__logins_sync_outgoing
     suggest_dimension: suggest__logins_sync__metrics__labeled_counter__logins_sync_outgoing.key
+    hidden: no
   }
 
   dimension: value {
@@ -880,11 +901,13 @@ view: logins_sync__metrics__labeled_counter__logins_sync_outgoing {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${logins_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
