@@ -1670,11 +1670,11 @@ tracking-protection that is enabled. One of:
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_ios_firefox.metrics"
+    default_value: "mozdata.firefox_ios.metrics"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_ios_firefox.metrics"
+      value: "mozdata.firefox_ios.metrics"
     }
 
     allowed_value: {

@@ -1,6 +1,7 @@
 view: installation {
   dimension: metrics__string__installation_adgroup {
     label: "Installation Adgroup"
+    hidden: yes
     sql: ${TABLE}.metrics.string.installation_adgroup ;;
     type: string
     group_label: "Installation"
@@ -18,6 +19,7 @@ view: installation {
 
   dimension: metrics__string__installation_campaign {
     label: "Installation Campaign"
+    hidden: yes
     sql: ${TABLE}.metrics.string.installation_campaign ;;
     type: string
     group_label: "Installation"
@@ -35,6 +37,7 @@ view: installation {
 
   dimension: metrics__string__installation_creative {
     label: "Installation Creative"
+    hidden: yes
     sql: ${TABLE}.metrics.string.installation_creative ;;
     type: string
     group_label: "Installation"
@@ -52,6 +55,7 @@ view: installation {
 
   dimension: metrics__string__installation_identifier {
     label: "Installation Identifier"
+    hidden: yes
     sql: ${TABLE}.metrics.string.installation_identifier ;;
     type: string
     group_label: "Installation"
@@ -69,6 +73,7 @@ view: installation {
 
   dimension: metrics__string__installation_network {
     label: "Installation Network"
+    hidden: yes
     sql: ${TABLE}.metrics.string.installation_network ;;
     type: string
     group_label: "Installation"
@@ -86,6 +91,7 @@ view: installation {
 
   dimension: metrics__string__installation_timestamp {
     label: "Installation Timestamp"
+    hidden: yes
     sql: ${TABLE}.metrics.string.installation_timestamp ;;
     type: string
     group_label: "Installation"
@@ -105,6 +111,7 @@ ping is from Adjust and will remain static across installs.
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -115,7 +122,6 @@ ping is from Adjust and will remain static across installs.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set with an invalid label.
 The labels are the `category.name` identifier of the metric.
 "
@@ -123,6 +129,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
     label: "Glean Error Invalid Overflow"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -133,7 +140,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set a value that overflowed.
 The labels are the `category.name` identifier of the metric.
 "
@@ -141,6 +147,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
     label: "Glean Error Invalid State"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -151,7 +158,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a timing metric was used incorrectly.
 The labels are the `category.name` identifier of the metric.
 "
@@ -159,6 +165,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     label: "Glean Error Invalid Value"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
@@ -169,7 +176,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
@@ -587,11 +593,11 @@ The labels are the `category.name` identifier of the metric.
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox.installation"
+    default_value: "mozdata.fenix.installation"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_firefox.installation"
+      value: "mozdata.fenix.installation"
     }
 
     allowed_value: {
@@ -629,6 +635,7 @@ view: installation__metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__installation__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__installation__metrics__labeled_counter__glean_error_invalid_label.key
+    hidden: no
   }
 
   dimension: value {
@@ -640,11 +647,13 @@ view: installation__metrics__labeled_counter__glean_error_invalid_label {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${installation.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -669,6 +678,7 @@ view: installation__metrics__labeled_counter__glean_error_invalid_overflow {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__installation__metrics__labeled_counter__glean_error_invalid_overflow
     suggest_dimension: suggest__installation__metrics__labeled_counter__glean_error_invalid_overflow.key
+    hidden: no
   }
 
   dimension: value {
@@ -680,11 +690,13 @@ view: installation__metrics__labeled_counter__glean_error_invalid_overflow {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${installation.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -709,6 +721,7 @@ view: installation__metrics__labeled_counter__glean_error_invalid_state {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__installation__metrics__labeled_counter__glean_error_invalid_state
     suggest_dimension: suggest__installation__metrics__labeled_counter__glean_error_invalid_state.key
+    hidden: no
   }
 
   dimension: value {
@@ -720,11 +733,13 @@ view: installation__metrics__labeled_counter__glean_error_invalid_state {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${installation.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -749,6 +764,7 @@ view: installation__metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__installation__metrics__labeled_counter__glean_error_invalid_value
     suggest_dimension: suggest__installation__metrics__labeled_counter__glean_error_invalid_value.key
+    hidden: no
   }
 
   dimension: value {
@@ -760,11 +776,13 @@ view: installation__metrics__labeled_counter__glean_error_invalid_value {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${installation.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -773,7 +791,7 @@ view: suggest__installation__metrics__labeled_counter__glean_error_invalid_label
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.installation as t,
+from mozdata.fenix.installation as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -792,7 +810,7 @@ view: suggest__installation__metrics__labeled_counter__glean_error_invalid_overf
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.installation as t,
+from mozdata.fenix.installation as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -811,7 +829,7 @@ view: suggest__installation__metrics__labeled_counter__glean_error_invalid_state
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.installation as t,
+from mozdata.fenix.installation as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -830,7 +848,7 @@ view: suggest__installation__metrics__labeled_counter__glean_error_invalid_value
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.installation as t,
+from mozdata.fenix.installation as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0

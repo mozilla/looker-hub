@@ -1,6 +1,7 @@
 view: bookmarks_sync {
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -11,7 +12,6 @@ view: bookmarks_sync {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set with an invalid label.
 The labels are the `category.name` identifier of the metric.
 "
@@ -19,6 +19,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
     label: "Glean Error Invalid Overflow"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -29,7 +30,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set a value that overflowed.
 The labels are the `category.name` identifier of the metric.
 "
@@ -37,6 +37,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
     label: "Glean Error Invalid State"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -47,7 +48,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a timing metric was used incorrectly.
 The labels are the `category.name` identifier of the metric.
 "
@@ -55,6 +55,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     label: "Glean Error Invalid Value"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
@@ -65,7 +66,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
@@ -73,6 +73,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__datetime__bookmarks_sync_finished_at {
     label: "Bookmarks Sync Finished At"
+    hidden: no
     sql: ${TABLE}.metrics.datetime.bookmarks_sync_finished_at ;;
     type: string
     group_label: "Bookmarks Sync"
@@ -90,6 +91,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__bookmarks_sync_incoming {
     label: "Bookmarks Sync Incoming"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.bookmarks_sync_incoming ;;
     group_label: "Bookmarks Sync"
     group_item_label: "Incoming"
@@ -100,13 +102,13 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Records incoming bookmark record counts.
 "
   }
 
   dimension: metrics__labeled_counter__bookmarks_sync_outgoing {
     label: "Bookmarks Sync Outgoing"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.bookmarks_sync_outgoing ;;
     group_label: "Bookmarks Sync"
     group_item_label: "Outgoing"
@@ -117,13 +119,13 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Records outgoing bookmark record counts.
 "
   }
 
   dimension: metrics__counter__bookmarks_sync_outgoing_batches {
     label: "Bookmarks Sync Outgoing Batches"
+    hidden: no
     sql: ${TABLE}.metrics.counter.bookmarks_sync_outgoing_batches ;;
     type: number
     group_label: "Bookmarks Sync"
@@ -141,6 +143,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__bookmarks_sync_remote_tree_problems {
     label: "Bookmarks Sync Remote Tree Problems"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.bookmarks_sync_remote_tree_problems ;;
     group_label: "Bookmarks Sync"
     group_item_label: "Remote Tree Problems"
@@ -151,13 +154,13 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Records counts for structure problems and divergences in the remote bookmarks tree. These are documented in https://github.com/mozilla/dogear/blob/fbade15f2a4f11215e30b8f428a0a8df3defeaec/src/tree.rs#L1273-L1294.
 "
   }
 
   dimension: metrics__datetime__bookmarks_sync_started_at {
     label: "Bookmarks Sync Started At"
+    hidden: no
     sql: ${TABLE}.metrics.datetime.bookmarks_sync_started_at ;;
     type: string
     group_label: "Bookmarks Sync"
@@ -175,6 +178,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__bookmarks_sync_uid {
     label: "Bookmarks Sync Uid"
+    hidden: no
     sql: ${TABLE}.metrics.string.bookmarks_sync_uid ;;
     type: string
     group_label: "Bookmarks Sync"
@@ -192,6 +196,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__uuid__sync_sync_uuid {
     label: "Sync Sync Uuid"
+    hidden: no
     sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
     type: string
     group_label: "Sync"
@@ -644,11 +649,11 @@ The labels are the `category.name` identifier of the metric.
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox.bookmarks_sync"
+    default_value: "mozdata.fenix.bookmarks_sync"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_firefox.bookmarks_sync"
+      value: "mozdata.fenix.bookmarks_sync"
     }
 
     allowed_value: {
@@ -686,6 +691,7 @@ view: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming
     suggest_dimension: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming.key
+    hidden: no
   }
 
   dimension: value {
@@ -697,11 +703,13 @@ view: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${bookmarks_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -726,6 +734,7 @@ view: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_outgoing {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_outgoing
     suggest_dimension: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_outgoing.key
+    hidden: no
   }
 
   dimension: value {
@@ -737,11 +746,13 @@ view: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_outgoing {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${bookmarks_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -766,6 +777,7 @@ view: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_remote_tree_probl
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_remote_tree_problems
     suggest_dimension: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_remote_tree_problems.key
+    hidden: no
   }
 
   dimension: value {
@@ -777,11 +789,13 @@ view: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_remote_tree_probl
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${bookmarks_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -806,6 +820,7 @@ view: bookmarks_sync__metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__bookmarks_sync__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__bookmarks_sync__metrics__labeled_counter__glean_error_invalid_label.key
+    hidden: no
   }
 
   dimension: value {
@@ -817,11 +832,13 @@ view: bookmarks_sync__metrics__labeled_counter__glean_error_invalid_label {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${bookmarks_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -846,6 +863,7 @@ view: bookmarks_sync__metrics__labeled_counter__glean_error_invalid_overflow {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__bookmarks_sync__metrics__labeled_counter__glean_error_invalid_overflow
     suggest_dimension: suggest__bookmarks_sync__metrics__labeled_counter__glean_error_invalid_overflow.key
+    hidden: no
   }
 
   dimension: value {
@@ -857,11 +875,13 @@ view: bookmarks_sync__metrics__labeled_counter__glean_error_invalid_overflow {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${bookmarks_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -886,6 +906,7 @@ view: bookmarks_sync__metrics__labeled_counter__glean_error_invalid_state {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__bookmarks_sync__metrics__labeled_counter__glean_error_invalid_state
     suggest_dimension: suggest__bookmarks_sync__metrics__labeled_counter__glean_error_invalid_state.key
+    hidden: no
   }
 
   dimension: value {
@@ -897,11 +918,13 @@ view: bookmarks_sync__metrics__labeled_counter__glean_error_invalid_state {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${bookmarks_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -926,6 +949,7 @@ view: bookmarks_sync__metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__bookmarks_sync__metrics__labeled_counter__glean_error_invalid_value
     suggest_dimension: suggest__bookmarks_sync__metrics__labeled_counter__glean_error_invalid_value.key
+    hidden: no
   }
 
   dimension: value {
@@ -937,11 +961,13 @@ view: bookmarks_sync__metrics__labeled_counter__glean_error_invalid_value {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${bookmarks_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -950,7 +976,7 @@ view: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.bookmarks_sync as t,
+from mozdata.fenix.bookmarks_sync as t,
 unnest(metrics.labeled_counter.bookmarks_sync_incoming) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -969,7 +995,7 @@ view: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_outgoing
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.bookmarks_sync as t,
+from mozdata.fenix.bookmarks_sync as t,
 unnest(metrics.labeled_counter.bookmarks_sync_outgoing) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -988,7 +1014,7 @@ view: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_remote_t
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.bookmarks_sync as t,
+from mozdata.fenix.bookmarks_sync as t,
 unnest(metrics.labeled_counter.bookmarks_sync_remote_tree_problems) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -1007,7 +1033,7 @@ view: suggest__bookmarks_sync__metrics__labeled_counter__glean_error_invalid_lab
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.bookmarks_sync as t,
+from mozdata.fenix.bookmarks_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -1026,7 +1052,7 @@ view: suggest__bookmarks_sync__metrics__labeled_counter__glean_error_invalid_ove
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.bookmarks_sync as t,
+from mozdata.fenix.bookmarks_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -1045,7 +1071,7 @@ view: suggest__bookmarks_sync__metrics__labeled_counter__glean_error_invalid_sta
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.bookmarks_sync as t,
+from mozdata.fenix.bookmarks_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -1064,7 +1090,7 @@ view: suggest__bookmarks_sync__metrics__labeled_counter__glean_error_invalid_val
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.bookmarks_sync as t,
+from mozdata.fenix.bookmarks_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0

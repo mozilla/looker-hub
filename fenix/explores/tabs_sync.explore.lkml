@@ -8,7 +8,7 @@ explore: tabs_sync {
 
   always_filter: {
     filters: [
-      channel: "mozdata.org^_mozilla^_firefox.tabs^_sync",
+      channel: "mozdata.fenix.tabs^_sync",
       submission_date: "28 days",
     ]
   }

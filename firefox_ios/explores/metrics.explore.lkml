@@ -8,7 +8,7 @@ explore: metrics {
 
   always_filter: {
     filters: [
-      channel: "mozdata.org^_mozilla^_ios^_firefox.metrics",
+      channel: "mozdata.firefox^_ios.metrics",
       submission_date: "28 days",
     ]
   }

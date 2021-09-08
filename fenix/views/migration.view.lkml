@@ -1,6 +1,7 @@
 view: migration {
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -11,7 +12,6 @@ view: migration {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set with an invalid label.
 The labels are the `category.name` identifier of the metric.
 "
@@ -19,6 +19,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
     label: "Glean Error Invalid Overflow"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -29,7 +30,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set a value that overflowed.
 The labels are the `category.name` identifier of the metric.
 "
@@ -37,6 +37,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
     label: "Glean Error Invalid State"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -47,7 +48,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a timing metric was used incorrectly.
 The labels are the `category.name` identifier of the metric.
 "
@@ -55,6 +55,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     label: "Glean Error Invalid Value"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
@@ -65,7 +66,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
@@ -73,6 +73,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_addons_any_failures {
     label: "Migration Addons Any Failures"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.migration_addons_any_failures ;;
     type: yesno
     group_label: "Migration Addons"
@@ -90,6 +91,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_addons_failed_addons {
     label: "Migration Addons Failed Addons"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_addons_failed_addons ;;
     type: number
     group_label: "Migration Addons"
@@ -107,6 +109,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_addons_failure_reason {
     label: "Migration Addons Failure Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_addons_failure_reason ;;
     type: number
     group_label: "Migration Addons"
@@ -124,6 +127,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_addons_migrated_addons {
     label: "Migration Addons Migrated Addons"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_addons_migrated_addons ;;
     type: number
     group_label: "Migration Addons"
@@ -141,6 +145,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_addons_success_reason {
     label: "Migration Addons Success Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_addons_success_reason ;;
     type: number
     group_label: "Migration Addons"
@@ -158,6 +163,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_addons_total_duration__value {
     label: "Migration Addons Total Duration Value"
+    hidden: no
     sql: ${TABLE}.metrics.timespan.migration_addons_total_duration.value ;;
     type: number
     group_label: "Migration Addons"
@@ -175,6 +181,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_bookmarks_any_failures {
     label: "Migration Bookmarks Any Failures"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.migration_bookmarks_any_failures ;;
     type: yesno
     group_label: "Migration Bookmarks"
@@ -192,6 +199,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_bookmarks_detected {
     label: "Migration Bookmarks Detected"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_bookmarks_detected ;;
     type: number
     group_label: "Migration Bookmarks"
@@ -209,6 +217,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_bookmarks_duration__value {
     label: "Migration Bookmarks Duration Value"
+    hidden: no
     sql: ${TABLE}.metrics.timespan.migration_bookmarks_duration.value ;;
     type: number
     group_label: "Migration Bookmarks"
@@ -226,6 +235,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_bookmarks_failure_reason {
     label: "Migration Bookmarks Failure Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_bookmarks_failure_reason ;;
     type: number
     group_label: "Migration Bookmarks"
@@ -243,6 +253,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__migration_bookmarks_migrated {
     label: "Migration Bookmarks Migrated"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.migration_bookmarks_migrated ;;
     group_label: "Migration Bookmarks"
     group_item_label: "Migrated"
@@ -253,13 +264,13 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counters describing how bookmark migration went; should add-up to 'migration.bookmarks.detected'.
 "
   }
 
   dimension: metrics__counter__migration_bookmarks_success_reason {
     label: "Migration Bookmarks Success Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_bookmarks_success_reason ;;
     type: number
     group_label: "Migration Bookmarks"
@@ -277,6 +288,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_bookmarks_total_duration__value {
     label: "Migration Bookmarks Total Duration Value"
+    hidden: no
     sql: ${TABLE}.metrics.timespan.migration_bookmarks_total_duration.value ;;
     type: number
     group_label: "Migration Bookmarks"
@@ -294,6 +306,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_fxa_any_failures {
     label: "Migration Fxa Any Failures"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.migration_fxa_any_failures ;;
     type: yesno
     group_label: "Migration Fxa"
@@ -311,6 +324,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__migration_fxa_bad_auth_state {
     label: "Migration Fxa Bad Auth State"
+    hidden: no
     sql: ${TABLE}.metrics.string.migration_fxa_bad_auth_state ;;
     type: string
     group_label: "Migration Fxa"
@@ -328,6 +342,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_fxa_failure_reason {
     label: "Migration Fxa Failure Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_fxa_failure_reason ;;
     type: number
     group_label: "Migration Fxa"
@@ -345,6 +360,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__migration_fxa_failure_reason_rust {
     label: "Migration Fxa Failure Reason Rust"
+    hidden: yes
     sql: ${TABLE}.metrics.string.migration_fxa_failure_reason_rust ;;
     type: string
     group_label: "Migration Fxa"
@@ -362,6 +378,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_fxa_has_custom_idp_server {
     label: "Migration Fxa Has Custom Idp Server"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.migration_fxa_has_custom_idp_server ;;
     type: yesno
     group_label: "Migration Fxa"
@@ -379,6 +396,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_fxa_has_custom_token_server {
     label: "Migration Fxa Has Custom Token Server"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.migration_fxa_has_custom_token_server ;;
     type: yesno
     group_label: "Migration Fxa"
@@ -396,6 +414,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_fxa_success_reason {
     label: "Migration Fxa Success Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_fxa_success_reason ;;
     type: number
     group_label: "Migration Fxa"
@@ -413,6 +432,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_fxa_total_duration__value {
     label: "Migration Fxa Total Duration Value"
+    hidden: no
     sql: ${TABLE}.metrics.timespan.migration_fxa_total_duration.value ;;
     type: number
     group_label: "Migration Fxa"
@@ -430,6 +450,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__migration_fxa_unsupported_account_version {
     label: "Migration Fxa Unsupported Account Version"
+    hidden: no
     sql: ${TABLE}.metrics.string.migration_fxa_unsupported_account_version ;;
     type: string
     group_label: "Migration Fxa"
@@ -447,6 +468,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__migration_fxa_unsupported_pickle_version {
     label: "Migration Fxa Unsupported Pickle Version"
+    hidden: no
     sql: ${TABLE}.metrics.string.migration_fxa_unsupported_pickle_version ;;
     type: string
     group_label: "Migration Fxa"
@@ -464,6 +486,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__migration_fxa_unsupported_state_version {
     label: "Migration Fxa Unsupported State Version"
+    hidden: no
     sql: ${TABLE}.metrics.string.migration_fxa_unsupported_state_version ;;
     type: string
     group_label: "Migration Fxa"
@@ -481,6 +504,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_gecko_any_failures {
     label: "Migration Gecko Any Failures"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.migration_gecko_any_failures ;;
     type: yesno
     group_label: "Migration Gecko"
@@ -498,6 +522,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_gecko_failure_reason {
     label: "Migration Gecko Failure Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_gecko_failure_reason ;;
     type: number
     group_label: "Migration Gecko"
@@ -515,6 +540,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_gecko_success_reason {
     label: "Migration Gecko Success Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_gecko_success_reason ;;
     type: number
     group_label: "Migration Gecko"
@@ -532,6 +558,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_gecko_total_duration__value {
     label: "Migration Gecko Total Duration Value"
+    hidden: no
     sql: ${TABLE}.metrics.timespan.migration_gecko_total_duration.value ;;
     type: number
     group_label: "Migration Gecko"
@@ -549,6 +576,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_history_any_failures {
     label: "Migration History Any Failures"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.migration_history_any_failures ;;
     type: yesno
     group_label: "Migration History"
@@ -566,6 +594,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_history_detected {
     label: "Migration History Detected"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_history_detected ;;
     type: number
     group_label: "Migration History"
@@ -583,6 +612,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_history_duration__value {
     label: "Migration History Duration Value"
+    hidden: no
     sql: ${TABLE}.metrics.timespan.migration_history_duration.value ;;
     type: number
     group_label: "Migration History"
@@ -600,6 +630,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_history_failure_reason {
     label: "Migration History Failure Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_history_failure_reason ;;
     type: number
     group_label: "Migration History"
@@ -617,6 +648,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__migration_history_migrated {
     label: "Migration History Migrated"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.migration_history_migrated ;;
     group_label: "Migration History"
     group_item_label: "Migrated"
@@ -627,13 +659,13 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counters describing how history migration went; should add-up to 'migration.history.detected'.
 "
   }
 
   dimension: metrics__counter__migration_history_success_reason {
     label: "Migration History Success Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_history_success_reason ;;
     type: number
     group_label: "Migration History"
@@ -651,6 +683,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_history_total_duration__value {
     label: "Migration History Total Duration Value"
+    hidden: no
     sql: ${TABLE}.metrics.timespan.migration_history_total_duration.value ;;
     type: number
     group_label: "Migration History"
@@ -668,6 +701,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_logins_any_failures {
     label: "Migration Logins Any Failures"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.migration_logins_any_failures ;;
     type: yesno
     group_label: "Migration Logins"
@@ -685,6 +719,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_logins_detected {
     label: "Migration Logins Detected"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_logins_detected ;;
     type: number
     group_label: "Migration Logins"
@@ -702,6 +737,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__migration_logins_failure_counts {
     label: "Migration Logins Failure Counts"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.migration_logins_failure_counts ;;
     group_label: "Migration Logins"
     group_item_label: "Failure Counts"
@@ -712,13 +748,13 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "How many logins failed to be migrated, and in which ways?
 "
   }
 
   dimension: metrics__counter__migration_logins_failure_reason {
     label: "Migration Logins Failure Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_logins_failure_reason ;;
     type: number
     group_label: "Migration Logins"
@@ -736,6 +772,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_logins_success_reason {
     label: "Migration Logins Success Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_logins_success_reason ;;
     type: number
     group_label: "Migration Logins"
@@ -753,6 +790,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_logins_total_duration__value {
     label: "Migration Logins Total Duration Value"
+    hidden: no
     sql: ${TABLE}.metrics.timespan.migration_logins_total_duration.value ;;
     type: number
     group_label: "Migration Logins"
@@ -770,6 +808,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_logins_unsupported_db_version {
     label: "Migration Logins Unsupported Db Version"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_logins_unsupported_db_version ;;
     type: number
     group_label: "Migration Logins"
@@ -787,6 +826,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_open_tabs_any_failures {
     label: "Migration Open Tabs Any Failures"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.migration_open_tabs_any_failures ;;
     type: yesno
     group_label: "Migration Open Tabs"
@@ -804,6 +844,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_open_tabs_detected {
     label: "Migration Open Tabs Detected"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_open_tabs_detected ;;
     type: number
     group_label: "Migration Open Tabs"
@@ -821,6 +862,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_open_tabs_failure_reason {
     label: "Migration Open Tabs Failure Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_open_tabs_failure_reason ;;
     type: number
     group_label: "Migration Open Tabs"
@@ -838,6 +880,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_open_tabs_migrated {
     label: "Migration Open Tabs Migrated"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_open_tabs_migrated ;;
     type: number
     group_label: "Migration Open Tabs"
@@ -855,6 +898,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_open_tabs_success_reason {
     label: "Migration Open Tabs Success Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_open_tabs_success_reason ;;
     type: number
     group_label: "Migration Open Tabs"
@@ -872,6 +916,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_open_tabs_total_duration__value {
     label: "Migration Open Tabs Total Duration Value"
+    hidden: no
     sql: ${TABLE}.metrics.timespan.migration_open_tabs_total_duration.value ;;
     type: number
     group_label: "Migration Open Tabs"
@@ -889,6 +934,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_pinned_sites_any_failures {
     label: "Migration Pinned Sites Any Failures"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.migration_pinned_sites_any_failures ;;
     type: yesno
     group_label: "Migration Pinned Sites"
@@ -906,6 +952,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_pinned_sites_detected_pinned_sites {
     label: "Migration Pinned Sites Detected Pinned Sites"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_pinned_sites_detected_pinned_sites ;;
     type: number
     group_label: "Migration Pinned Sites"
@@ -923,6 +970,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_pinned_sites_failure_reason {
     label: "Migration Pinned Sites Failure Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_pinned_sites_failure_reason ;;
     type: number
     group_label: "Migration Pinned Sites"
@@ -940,6 +988,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_pinned_sites_migrated_pinned_sites {
     label: "Migration Pinned Sites Migrated Pinned Sites"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_pinned_sites_migrated_pinned_sites ;;
     type: number
     group_label: "Migration Pinned Sites"
@@ -957,6 +1006,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_pinned_sites_success_reason {
     label: "Migration Pinned Sites Success Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_pinned_sites_success_reason ;;
     type: number
     group_label: "Migration Pinned Sites"
@@ -974,6 +1024,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_pinned_sites_total_duration__value {
     label: "Migration Pinned Sites Total Duration Value"
+    hidden: no
     sql: ${TABLE}.metrics.timespan.migration_pinned_sites_total_duration.value ;;
     type: number
     group_label: "Migration Pinned Sites"
@@ -991,6 +1042,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_search_any_failures {
     label: "Migration Search Any Failures"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.migration_search_any_failures ;;
     type: yesno
     group_label: "Migration Search"
@@ -1008,6 +1060,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_search_failure_reason {
     label: "Migration Search Failure Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_search_failure_reason ;;
     type: number
     group_label: "Migration Search"
@@ -1025,6 +1078,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_search_success_reason {
     label: "Migration Search Success Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_search_success_reason ;;
     type: number
     group_label: "Migration Search"
@@ -1042,6 +1096,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_search_total_duration__value {
     label: "Migration Search Total Duration Value"
+    hidden: no
     sql: ${TABLE}.metrics.timespan.migration_search_total_duration.value ;;
     type: number
     group_label: "Migration Search"
@@ -1059,6 +1114,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_settings_any_failures {
     label: "Migration Settings Any Failures"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.migration_settings_any_failures ;;
     type: yesno
     group_label: "Migration Settings"
@@ -1076,6 +1132,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_settings_failure_reason {
     label: "Migration Settings Failure Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_settings_failure_reason ;;
     type: number
     group_label: "Migration Settings"
@@ -1093,6 +1150,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_settings_success_reason {
     label: "Migration Settings Success Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_settings_success_reason ;;
     type: number
     group_label: "Migration Settings"
@@ -1110,6 +1168,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_settings_telemetry_enabled {
     label: "Migration Settings Telemetry Enabled"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.migration_settings_telemetry_enabled ;;
     type: yesno
     group_label: "Migration Settings"
@@ -1127,6 +1186,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_settings_total_duration__value {
     label: "Migration Settings Total Duration Value"
+    hidden: no
     sql: ${TABLE}.metrics.timespan.migration_settings_total_duration.value ;;
     type: number
     group_label: "Migration Settings"
@@ -1144,6 +1204,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_telemetry_identifiers_any_failures {
     label: "Migration Telemetry Identifiers Any Failures"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.migration_telemetry_identifiers_any_failures ;;
     type: yesno
     group_label: "Migration Telemetry Identifiers"
@@ -1161,6 +1222,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_telemetry_identifiers_failure_reason {
     label: "Migration Telemetry Identifiers Failure Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_telemetry_identifiers_failure_reason ;;
     type: number
     group_label: "Migration Telemetry Identifiers"
@@ -1178,6 +1240,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__uuid__migration_telemetry_identifiers_fennec_client_id {
     label: "Migration Telemetry Identifiers Fennec Client Id"
+    hidden: no
     sql: ${TABLE}.metrics.uuid.migration_telemetry_identifiers_fennec_client_id ;;
     type: string
     group_label: "Migration Telemetry Identifiers"
@@ -1195,6 +1258,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__datetime__migration_telemetry_identifiers_fennec_profile_creation_date {
     label: "Migration Telemetry Identifiers Fennec Profile Creation Date"
+    hidden: no
     sql: ${TABLE}.metrics.datetime.migration_telemetry_identifiers_fennec_profile_creation_date ;;
     type: string
     group_label: "Migration Telemetry Identifiers"
@@ -1212,6 +1276,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_telemetry_identifiers_success_reason {
     label: "Migration Telemetry Identifiers Success Reason"
+    hidden: no
     sql: ${TABLE}.metrics.counter.migration_telemetry_identifiers_success_reason ;;
     type: number
     group_label: "Migration Telemetry Identifiers"
@@ -1229,6 +1294,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_telemetry_identifiers_total_duration__value {
     label: "Migration Telemetry Identifiers Total Duration Value"
+    hidden: no
     sql: ${TABLE}.metrics.timespan.migration_telemetry_identifiers_total_duration.value ;;
     type: number
     group_label: "Migration Telemetry Identifiers"
@@ -1247,7 +1313,6 @@ The labels are the `category.name` identifier of the metric.
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
-    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: client_info__android_sdk_version {
@@ -1255,7 +1320,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Android Sdk Version"
-    description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
   dimension: client_info__app_build {
@@ -1263,7 +1327,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "App Build"
-    description: "The build identifier generated by the CI system (e.g. \"1234/A\"). For language bindings that provide automatic detection for this value, (e.g. Android/Kotlin), in the unlikely event that the build identifier can not be retrieved from the OS, it is set to \"inaccessible\". For other language bindings, if the value was not provided through configuration, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__app_channel {
@@ -1271,7 +1334,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "App Channel"
-    description: "The channel the application is being distributed on."
   }
 
   dimension: client_info__app_display_version {
@@ -1279,7 +1341,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "App Display Version"
-    description: "The user visible version string (e.g. \"1.0.3\").  In the unlikely event that the display version can not be retrieved, it is set to \"inaccessible\"."
   }
 
   dimension: client_info__architecture {
@@ -1287,13 +1348,11 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Architecture"
-    description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
   }
 
   dimension: client_info__client_id {
     sql: ${TABLE}.client_info.client_id ;;
     hidden: yes
-    description: "A UUID uniquely identifying the client."
   }
 
   dimension: client_info__device_manufacturer {
@@ -1301,7 +1360,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
-    description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__device_model {
@@ -1309,7 +1367,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Device Model"
-    description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__first_run_date {
@@ -1317,7 +1374,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "First Run Date"
-    description: "The date of the first run of the application."
   }
 
   dimension: client_info__locale {
@@ -1325,7 +1381,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Locale"
-    description: "The locale of the application during initialization (e.g. \"es-ES\"). If the locale can't be determined on the system, the value is [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers), to indicate \"undetermined\"."
   }
 
   dimension: client_info__os {
@@ -1333,7 +1388,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Os"
-    description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
   dimension: client_info__os_version {
@@ -1341,7 +1395,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
-    description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -1349,13 +1402,11 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
-    description: "The version of the Glean SDK"
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
-    description: "The document ID specified in the URI when the client sent this message"
     primary_key: yes
   }
 
@@ -1377,7 +1428,6 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
-    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -1385,7 +1435,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Db Version"
-    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -1393,7 +1442,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
-    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -1401,7 +1449,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
-    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -1409,7 +1456,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "Date"
-    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -1417,12 +1463,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "Dnt"
-    description: "DNT (Do Not Track) HTTP header"
-  }
-
-  dimension: metadata__header__parsed_x_source_tags {
-    sql: ${TABLE}.metadata.header.parsed_x_source_tags ;;
-    hidden: yes
   }
 
   dimension: metadata__header__x_debug_id {
@@ -1430,7 +1470,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Debug Id"
-    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -1438,7 +1477,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
-    description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -1446,7 +1484,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
-    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -1454,7 +1491,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
-    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -1462,7 +1498,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
-    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -1470,7 +1505,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Db Version"
-    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -1478,7 +1512,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Name"
-    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -1486,7 +1519,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Organization"
-    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -1513,25 +1545,21 @@ The labels are the `category.name` identifier of the metric.
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
-    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
-    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
-    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
-    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -1582,52 +1610,6 @@ The labels are the `category.name` identifier of the metric.
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
-    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
-  }
-
-  dimension_group: metadata__header__parsed {
-    sql: ${TABLE}.metadata.header.parsed_date ;;
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    label: "Metadata Header: Parsed Date"
-  }
-
-  dimension_group: ping_info__parsed_end {
-    sql: ${TABLE}.ping_info.parsed_end_time ;;
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    label: "Ping Info: Parsed End Time"
-  }
-
-  dimension_group: ping_info__parsed_start {
-    sql: ${TABLE}.ping_info.parsed_start_time ;;
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    label: "Ping Info: Parsed Start Time"
   }
 
   dimension_group: submission {
@@ -1642,7 +1624,6 @@ The labels are the `category.name` identifier of the metric.
       quarter,
       year,
     ]
-    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: clients {
@@ -2456,7 +2437,12 @@ The labels are the `category.name` identifier of the metric.
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox_beta.migration"
+    default_value: "mozdata.fenix.migration"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.fenix.migration"
+    }
 
     allowed_value: {
       label: "Beta"
@@ -2493,6 +2479,7 @@ view: migration__metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__migration__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__migration__metrics__labeled_counter__glean_error_invalid_label.key
+    hidden: no
   }
 
   dimension: value {
@@ -2504,11 +2491,13 @@ view: migration__metrics__labeled_counter__glean_error_invalid_label {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${migration.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -2533,6 +2522,7 @@ view: migration__metrics__labeled_counter__glean_error_invalid_overflow {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__migration__metrics__labeled_counter__glean_error_invalid_overflow
     suggest_dimension: suggest__migration__metrics__labeled_counter__glean_error_invalid_overflow.key
+    hidden: no
   }
 
   dimension: value {
@@ -2544,11 +2534,13 @@ view: migration__metrics__labeled_counter__glean_error_invalid_overflow {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${migration.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -2573,6 +2565,7 @@ view: migration__metrics__labeled_counter__glean_error_invalid_state {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__migration__metrics__labeled_counter__glean_error_invalid_state
     suggest_dimension: suggest__migration__metrics__labeled_counter__glean_error_invalid_state.key
+    hidden: no
   }
 
   dimension: value {
@@ -2584,11 +2577,13 @@ view: migration__metrics__labeled_counter__glean_error_invalid_state {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${migration.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -2613,6 +2608,7 @@ view: migration__metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__migration__metrics__labeled_counter__glean_error_invalid_value
     suggest_dimension: suggest__migration__metrics__labeled_counter__glean_error_invalid_value.key
+    hidden: no
   }
 
   dimension: value {
@@ -2624,11 +2620,13 @@ view: migration__metrics__labeled_counter__glean_error_invalid_value {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${migration.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -2653,6 +2651,7 @@ view: migration__metrics__labeled_counter__migration_bookmarks_migrated {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__migration__metrics__labeled_counter__migration_bookmarks_migrated
     suggest_dimension: suggest__migration__metrics__labeled_counter__migration_bookmarks_migrated.key
+    hidden: no
   }
 
   dimension: value {
@@ -2664,11 +2663,13 @@ view: migration__metrics__labeled_counter__migration_bookmarks_migrated {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${migration.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -2693,6 +2694,7 @@ view: migration__metrics__labeled_counter__migration_history_migrated {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__migration__metrics__labeled_counter__migration_history_migrated
     suggest_dimension: suggest__migration__metrics__labeled_counter__migration_history_migrated.key
+    hidden: no
   }
 
   dimension: value {
@@ -2704,11 +2706,13 @@ view: migration__metrics__labeled_counter__migration_history_migrated {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${migration.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -2733,6 +2737,7 @@ view: migration__metrics__labeled_counter__migration_logins_failure_counts {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__migration__metrics__labeled_counter__migration_logins_failure_counts
     suggest_dimension: suggest__migration__metrics__labeled_counter__migration_logins_failure_counts.key
+    hidden: no
   }
 
   dimension: value {
@@ -2744,11 +2749,13 @@ view: migration__metrics__labeled_counter__migration_logins_failure_counts {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${migration.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -2757,7 +2764,7 @@ view: suggest__migration__metrics__labeled_counter__glean_error_invalid_label {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox_beta.migration as t,
+from mozdata.fenix.migration as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -2776,7 +2783,7 @@ view: suggest__migration__metrics__labeled_counter__glean_error_invalid_overflow
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox_beta.migration as t,
+from mozdata.fenix.migration as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -2795,7 +2802,7 @@ view: suggest__migration__metrics__labeled_counter__glean_error_invalid_state {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox_beta.migration as t,
+from mozdata.fenix.migration as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -2814,7 +2821,7 @@ view: suggest__migration__metrics__labeled_counter__glean_error_invalid_value {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox_beta.migration as t,
+from mozdata.fenix.migration as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -2833,7 +2840,7 @@ view: suggest__migration__metrics__labeled_counter__migration_bookmarks_migrated
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox_beta.migration as t,
+from mozdata.fenix.migration as t,
 unnest(metrics.labeled_counter.migration_bookmarks_migrated) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -2852,7 +2859,7 @@ view: suggest__migration__metrics__labeled_counter__migration_history_migrated {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox_beta.migration as t,
+from mozdata.fenix.migration as t,
 unnest(metrics.labeled_counter.migration_history_migrated) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -2871,7 +2878,7 @@ view: suggest__migration__metrics__labeled_counter__migration_logins_failure_cou
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox_beta.migration as t,
+from mozdata.fenix.migration as t,
 unnest(metrics.labeled_counter.migration_logins_failure_counts) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0

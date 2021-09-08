@@ -1,6 +1,7 @@
 view: baseline {
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
     label: "Browser Search Ad Clicks"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     group_label: "Browser Search"
     group_item_label: "Ad Clicks"
@@ -11,7 +12,6 @@ view: baseline {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Records clicks of adverts on SERP pages.
 The key format is `<provider-name>`.
 "
@@ -19,6 +19,7 @@ The key format is `<provider-name>`.
 
   dimension: metrics__labeled_counter__browser_search_in_content {
     label: "Browser Search In Content"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
     group_label: "Browser Search"
     group_item_label: "In Content"
@@ -29,13 +30,13 @@ The key format is `<provider-name>`.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Records the type of interaction a user has on SERP pages.
 "
   }
 
   dimension: metrics__labeled_counter__browser_search_with_ads {
     label: "Browser Search With Ads"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
     group_label: "Browser Search"
     group_item_label: "With Ads"
@@ -46,7 +47,6 @@ The key format is `<provider-name>`.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Records counts of SERP pages with adverts displayed.
 The key format is `<provider-name>`.
 "
@@ -54,6 +54,7 @@ The key format is `<provider-name>`.
 
   dimension: metrics__counter__events_total_uri_count {
     label: "Events Total Uri Count"
+    hidden: no
     sql: ${TABLE}.metrics.counter.events_total_uri_count ;;
     type: number
     group_label: "Events"
@@ -75,6 +76,7 @@ location.
 
   dimension: metrics__labeled_counter__metrics_search_count {
     label: "Metrics Search Count"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.metrics_search_count ;;
     group_label: "Metrics"
     group_item_label: "Search Count"
@@ -85,7 +87,6 @@ location.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "The labels for this counter are `<search-engine-name>.<source>`.
 
 If the search engine is bundled with Fenix `search-engine-name` will be
@@ -101,6 +102,7 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
 
   dimension: metrics__timespan__glean_baseline_duration__value {
     label: "Glean Baseline Duration Value"
+    hidden: no
     sql: ${TABLE}.metrics.timespan.glean_baseline_duration.value ;;
     type: number
     group_label: "Glean Baseline"
@@ -118,6 +120,7 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
 
   dimension: metrics__string__glean_baseline_locale {
     label: "Glean Baseline Locale"
+    hidden: yes
     sql: ${TABLE}.metrics.string.glean_baseline_locale ;;
     type: string
     group_label: "Glean Baseline"
@@ -138,6 +141,7 @@ to indicate \"undetermined\".
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -148,7 +152,6 @@ to indicate \"undetermined\".
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set with an invalid label.
 The labels are the `category.name` identifier of the metric.
 "
@@ -156,6 +159,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
     label: "Glean Error Invalid Overflow"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -166,7 +170,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set a value that overflowed.
 The labels are the `category.name` identifier of the metric.
 "
@@ -174,6 +177,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
     label: "Glean Error Invalid State"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -184,7 +188,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a timing metric was used incorrectly.
 The labels are the `category.name` identifier of the metric.
 "
@@ -192,6 +195,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     label: "Glean Error Invalid Value"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
@@ -202,7 +206,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
@@ -210,6 +213,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__datetime__glean_validation_first_run_hour {
     label: "Glean Validation First Run Hour"
+    hidden: no
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: string
     group_label: "Glean Validation"
@@ -227,6 +231,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_validation_pings_submitted {
     label: "Glean Validation Pings Submitted"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
     group_label: "Glean Validation"
     group_item_label: "Pings Submitted"
@@ -237,7 +242,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "A count of the pings submitted, by ping type.
 
 This metric appears in both the metrics and baseline pings.
@@ -251,6 +255,7 @@ This metric appears in both the metrics and baseline pings.
 
   dimension: metrics__counter__glean_validation_metrics_ping_count {
     label: "Glean Validation Metrics Ping Count"
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glean_validation_metrics_ping_count ;;
     type: number
     group_label: "Glean Validation"
@@ -727,11 +732,11 @@ This metric appears in both the metrics and baseline pings.
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox.baseline"
+    default_value: "mozdata.fenix.baseline"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_firefox.baseline"
+      value: "mozdata.fenix.baseline"
     }
 
     allowed_value: {
@@ -769,6 +774,7 @@ view: baseline__metrics__labeled_counter__browser_search_ad_clicks {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__baseline__metrics__labeled_counter__browser_search_ad_clicks
     suggest_dimension: suggest__baseline__metrics__labeled_counter__browser_search_ad_clicks.key
+    hidden: no
   }
 
   dimension: value {
@@ -780,11 +786,13 @@ view: baseline__metrics__labeled_counter__browser_search_ad_clicks {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -809,6 +817,7 @@ view: baseline__metrics__labeled_counter__browser_search_in_content {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__baseline__metrics__labeled_counter__browser_search_in_content
     suggest_dimension: suggest__baseline__metrics__labeled_counter__browser_search_in_content.key
+    hidden: no
   }
 
   dimension: value {
@@ -820,11 +829,13 @@ view: baseline__metrics__labeled_counter__browser_search_in_content {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -849,6 +860,7 @@ view: baseline__metrics__labeled_counter__browser_search_with_ads {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__baseline__metrics__labeled_counter__browser_search_with_ads
     suggest_dimension: suggest__baseline__metrics__labeled_counter__browser_search_with_ads.key
+    hidden: no
   }
 
   dimension: value {
@@ -860,11 +872,13 @@ view: baseline__metrics__labeled_counter__browser_search_with_ads {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -889,6 +903,7 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_error_invalid_label.key
+    hidden: no
   }
 
   dimension: value {
@@ -900,11 +915,13 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_label {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -929,6 +946,7 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_overflow {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_overflow
     suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_error_invalid_overflow.key
+    hidden: no
   }
 
   dimension: value {
@@ -940,11 +958,13 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_overflow {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -969,6 +989,7 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_state {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_state
     suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_error_invalid_state.key
+    hidden: no
   }
 
   dimension: value {
@@ -980,11 +1001,13 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_state {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -1009,6 +1032,7 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_value
     suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_error_invalid_value.key
+    hidden: no
   }
 
   dimension: value {
@@ -1020,11 +1044,13 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_value {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -1049,6 +1075,7 @@ view: baseline__metrics__labeled_counter__glean_validation_pings_submitted {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__baseline__metrics__labeled_counter__glean_validation_pings_submitted
     suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_validation_pings_submitted.key
+    hidden: no
   }
 
   dimension: value {
@@ -1060,11 +1087,13 @@ view: baseline__metrics__labeled_counter__glean_validation_pings_submitted {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -1089,6 +1118,7 @@ view: baseline__metrics__labeled_counter__metrics_search_count {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__baseline__metrics__labeled_counter__metrics_search_count
     suggest_dimension: suggest__baseline__metrics__labeled_counter__metrics_search_count.key
+    hidden: no
   }
 
   dimension: value {
@@ -1100,11 +1130,13 @@ view: baseline__metrics__labeled_counter__metrics_search_count {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -1113,7 +1145,7 @@ view: suggest__baseline__metrics__labeled_counter__browser_search_ad_clicks {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.baseline as t,
+from mozdata.fenix.baseline as t,
 unnest(metrics.labeled_counter.browser_search_ad_clicks) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -1132,7 +1164,7 @@ view: suggest__baseline__metrics__labeled_counter__browser_search_in_content {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.baseline as t,
+from mozdata.fenix.baseline as t,
 unnest(metrics.labeled_counter.browser_search_in_content) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -1151,7 +1183,7 @@ view: suggest__baseline__metrics__labeled_counter__browser_search_with_ads {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.baseline as t,
+from mozdata.fenix.baseline as t,
 unnest(metrics.labeled_counter.browser_search_with_ads) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -1170,7 +1202,7 @@ view: suggest__baseline__metrics__labeled_counter__glean_error_invalid_label {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.baseline as t,
+from mozdata.fenix.baseline as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -1189,7 +1221,7 @@ view: suggest__baseline__metrics__labeled_counter__glean_error_invalid_overflow 
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.baseline as t,
+from mozdata.fenix.baseline as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -1208,7 +1240,7 @@ view: suggest__baseline__metrics__labeled_counter__glean_error_invalid_state {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.baseline as t,
+from mozdata.fenix.baseline as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -1227,7 +1259,7 @@ view: suggest__baseline__metrics__labeled_counter__glean_error_invalid_value {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.baseline as t,
+from mozdata.fenix.baseline as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -1246,7 +1278,7 @@ view: suggest__baseline__metrics__labeled_counter__glean_validation_pings_submit
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.baseline as t,
+from mozdata.fenix.baseline as t,
 unnest(metrics.labeled_counter.glean_validation_pings_submitted) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -1265,7 +1297,7 @@ view: suggest__baseline__metrics__labeled_counter__metrics_search_count {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.baseline as t,
+from mozdata.fenix.baseline as t,
 unnest(metrics.labeled_counter.metrics_search_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0

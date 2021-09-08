@@ -38,5 +38,5 @@ view: event_types_table {
     ]
   }
 
-  sql_table_name: `mozdata.org_mozilla_firefox.event_types` ;;
+  sql_table_name: `mozdata.fenix.event_types` ;;
 }

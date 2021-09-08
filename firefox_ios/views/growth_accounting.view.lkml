@@ -336,5 +336,5 @@ view: growth_accounting {
     sql: SAFE_DIVIDE(${new_users} + ${overall_resurrected},${established_users_churned_count} + ${new_users_churned_count}) ;;
   }
 
-  sql_table_name: `mozdata.org_mozilla_ios_firefox.baseline_clients_last_seen` ;;
+  sql_table_name: `mozdata.firefox_ios.baseline_clients_last_seen` ;;
 }

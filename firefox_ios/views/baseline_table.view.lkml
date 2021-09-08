@@ -510,11 +510,11 @@ to indicate \"undetermined\".
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_ios_firefox.baseline"
+    default_value: "mozdata.firefox_ios.baseline"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_ios_firefox.baseline"
+      value: "mozdata.firefox_ios.baseline"
     }
 
     allowed_value: {

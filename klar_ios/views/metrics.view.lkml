@@ -1,6 +1,7 @@
 view: metrics {
   dimension: metrics__memory_distribution__glean_database_size__sum {
     label: "Glean Database Size Sum"
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.glean_database_size.sum ;;
     type: number
     group_label: "Glean Database"
@@ -18,6 +19,7 @@ view: metrics {
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -28,7 +30,6 @@ view: metrics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set with an invalid label.
 The labels are the `category.name` identifier of the metric.
 "
@@ -36,6 +37,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
     label: "Glean Error Invalid Overflow"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -46,7 +48,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set a value that overflowed.
 The labels are the `category.name` identifier of the metric.
 "
@@ -54,6 +55,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
     label: "Glean Error Invalid State"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -64,7 +66,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a timing metric was used incorrectly.
 The labels are the `category.name` identifier of the metric.
 "
@@ -72,6 +73,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     label: "Glean Error Invalid Value"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
@@ -82,7 +84,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
@@ -90,6 +91,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__glean_error_io {
     label: "Glean Error Io"
+    hidden: no
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
     group_label: "Glean Error"
@@ -108,6 +110,7 @@ when writing a pending ping to disk.
 
   dimension: metrics__counter__glean_error_preinit_tasks_overflow {
     label: "Glean Error Preinit Tasks Overflow"
+    hidden: no
     sql: ${TABLE}.metrics.counter.glean_error_preinit_tasks_overflow ;;
     type: number
     group_label: "Glean Error"
@@ -126,6 +129,7 @@ Only sent if the buffer overflows.
 
   dimension: metrics__boolean__glean_error_preinit_tasks_timeout {
     label: "Glean Error Preinit Tasks Timeout"
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.glean_error_preinit_tasks_timeout ;;
     type: yesno
     group_label: "Glean Error"
@@ -142,6 +146,7 @@ Only sent if the buffer overflows.
 
   dimension: metrics__counter__glean_time_invalid_timezone_offset {
     label: "Glean Time Invalid Timezone Offset"
+    hidden: no
     sql: ${TABLE}.metrics.counter.glean_time_invalid_timezone_offset ;;
     type: number
     group_label: "Glean Time"
@@ -162,6 +167,7 @@ If invalid a UTC offset is used (+0h).
 
   dimension: metrics__counter__glean_upload_deleted_pings_after_quota_hit {
     label: "Glean Upload Deleted Pings After Quota Hit"
+    hidden: no
     sql: ${TABLE}.metrics.counter.glean_upload_deleted_pings_after_quota_hit ;;
     type: number
     group_label: "Glean Upload"
@@ -183,6 +189,7 @@ deletion request pings are never deleted.
 
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__sum {
     label: "Glean Upload Discarded Exceeding Pings Size Sum"
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.sum ;;
     type: number
     group_label: "Glean Upload"
@@ -200,6 +207,7 @@ deletion request pings are never deleted.
 
   dimension: metrics__counter__glean_upload_pending_pings {
     label: "Glean Upload Pending Pings"
+    hidden: no
     sql: ${TABLE}.metrics.counter.glean_upload_pending_pings ;;
     type: number
     group_label: "Glean Upload"
@@ -218,6 +226,7 @@ This does not include deletion-request pings.
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
     label: "Glean Upload Pending Pings Directory Size Sum"
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.sum ;;
     type: number
     group_label: "Glean Upload"
@@ -236,6 +245,7 @@ This does not include the size of the deletion request pings directory.
 
   dimension: metrics__labeled_counter__glean_upload_ping_upload_failure {
     label: "Glean Upload Ping Upload Failure"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_upload_ping_upload_failure ;;
     group_label: "Glean Upload"
     group_item_label: "Ping Upload Failure"
@@ -246,7 +256,6 @@ This does not include the size of the deletion request pings directory.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of ping upload failures, by type of failure.
 This includes failures for all ping types,
 though the counts appear in the next successfully sent `metrics` ping.
@@ -255,6 +264,7 @@ though the counts appear in the next successfully sent `metrics` ping.
 
   dimension: metrics__datetime__glean_validation_first_run_hour {
     label: "Glean Validation First Run Hour"
+    hidden: no
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: string
     group_label: "Glean Validation"
@@ -272,6 +282,7 @@ though the counts appear in the next successfully sent `metrics` ping.
 
   dimension: metrics__counter__glean_validation_foreground_count {
     label: "Glean Validation Foreground Count"
+    hidden: no
     sql: ${TABLE}.metrics.counter.glean_validation_foreground_count ;;
     type: number
     group_label: "Glean Validation"
@@ -289,6 +300,7 @@ though the counts appear in the next successfully sent `metrics` ping.
 
   dimension: metrics__labeled_counter__glean_validation_pings_submitted {
     label: "Glean Validation Pings Submitted"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
     group_label: "Glean Validation"
     group_item_label: "Pings Submitted"
@@ -299,7 +311,6 @@ though the counts appear in the next successfully sent `metrics` ping.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "A count of the pings submitted, by ping type.
 
 This metric appears in both the metrics and baseline pings.
@@ -313,6 +324,7 @@ This metric appears in both the metrics and baseline pings.
 
   dimension: metrics__string__ping_reason {
     label: "Glean Ping Reason"
+    hidden: yes
     sql: ${TABLE}.metrics.string.ping_reason ;;
     type: string
     group_label: "Glean"
@@ -914,6 +926,7 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label.key
+    hidden: no
   }
 
   dimension: value {
@@ -925,11 +938,13 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_label {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -954,6 +969,7 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_overflow {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow
     suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow.key
+    hidden: no
   }
 
   dimension: value {
@@ -965,11 +981,13 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_overflow {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -994,6 +1012,7 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_state {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state
     suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state.key
+    hidden: no
   }
 
   dimension: value {
@@ -1005,11 +1024,13 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_state {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -1034,6 +1055,7 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value
     suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value.key
+    hidden: no
   }
 
   dimension: value {
@@ -1045,11 +1067,13 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_value {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -1074,6 +1098,7 @@ view: metrics__metrics__labeled_counter__glean_upload_ping_upload_failure {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure
     suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure.key
+    hidden: no
   }
 
   dimension: value {
@@ -1085,11 +1110,13 @@ view: metrics__metrics__labeled_counter__glean_upload_ping_upload_failure {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -1114,6 +1141,7 @@ view: metrics__metrics__labeled_counter__glean_validation_pings_submitted {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted
     suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted.key
+    hidden: no
   }
 
   dimension: value {
@@ -1125,11 +1153,13 @@ view: metrics__metrics__labeled_counter__glean_validation_pings_submitted {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 

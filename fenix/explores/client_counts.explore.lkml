@@ -7,7 +7,7 @@ explore: client_counts {
 
   always_filter: {
     filters: [
-      channel: "mozdata.org^_mozilla^_firefox.baseline^_clients^_daily",
+      channel: "mozdata.fenix.baseline^_clients^_daily",
       submission_date: "28 days",
     ]
   }

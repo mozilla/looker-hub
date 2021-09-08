@@ -8,7 +8,7 @@ explore: activation {
 
   always_filter: {
     filters: [
-      channel: "mozdata.org^_mozilla^_firefox.activation",
+      channel: "mozdata.fenix.activation",
       submission_date: "28 days",
     ]
   }

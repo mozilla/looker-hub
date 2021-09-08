@@ -8,7 +8,7 @@ explore: creditcards_sync {
 
   always_filter: {
     filters: [
-      channel: "mozdata.org^_mozilla^_firefox.creditcards^_sync",
+      channel: "mozdata.fenix.creditcards^_sync",
       submission_date: "28 days",
     ]
   }

@@ -1,6 +1,7 @@
 view: baseline {
   dimension: metrics__timespan__glean_baseline_duration__value {
     label: "Glean Baseline Duration Value"
+    hidden: no
     sql: ${TABLE}.metrics.timespan.glean_baseline_duration.value ;;
     type: number
     group_label: "Glean Baseline"
@@ -18,6 +19,7 @@ view: baseline {
 
   dimension: metrics__string__glean_baseline_locale {
     label: "Glean Baseline Locale"
+    hidden: yes
     sql: ${TABLE}.metrics.string.glean_baseline_locale ;;
     type: string
     group_label: "Glean Baseline"
@@ -38,6 +40,7 @@ to indicate \"undetermined\".
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -48,7 +51,6 @@ to indicate \"undetermined\".
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set with an invalid label.
 The labels are the `category.name` identifier of the metric.
 "
@@ -56,6 +58,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
     label: "Glean Error Invalid Overflow"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -66,7 +69,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set a value that overflowed.
 The labels are the `category.name` identifier of the metric.
 "
@@ -74,6 +76,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
     label: "Glean Error Invalid State"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -84,7 +87,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a timing metric was used incorrectly.
 The labels are the `category.name` identifier of the metric.
 "
@@ -92,6 +94,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     label: "Glean Error Invalid Value"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
@@ -102,7 +105,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
@@ -110,6 +112,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__datetime__glean_validation_first_run_hour {
     label: "Glean Validation First Run Hour"
+    hidden: no
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: string
     group_label: "Glean Validation"
@@ -127,6 +130,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_validation_pings_submitted {
     label: "Glean Validation Pings Submitted"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
     group_label: "Glean Validation"
     group_item_label: "Pings Submitted"
@@ -137,7 +141,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "A count of the pings submitted, by ping type.
 
 This metric appears in both the metrics and baseline pings.
@@ -583,6 +586,7 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_error_invalid_label.key
+    hidden: no
   }
 
   dimension: value {
@@ -594,11 +598,13 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_label {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -623,6 +629,7 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_overflow {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_overflow
     suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_error_invalid_overflow.key
+    hidden: no
   }
 
   dimension: value {
@@ -634,11 +641,13 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_overflow {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -663,6 +672,7 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_state {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_state
     suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_error_invalid_state.key
+    hidden: no
   }
 
   dimension: value {
@@ -674,11 +684,13 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_state {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -703,6 +715,7 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_value
     suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_error_invalid_value.key
+    hidden: no
   }
 
   dimension: value {
@@ -714,11 +727,13 @@ view: baseline__metrics__labeled_counter__glean_error_invalid_value {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -743,6 +758,7 @@ view: baseline__metrics__labeled_counter__glean_validation_pings_submitted {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__baseline__metrics__labeled_counter__glean_validation_pings_submitted
     suggest_dimension: suggest__baseline__metrics__labeled_counter__glean_validation_pings_submitted.key
+    hidden: no
   }
 
   dimension: value {
@@ -754,11 +770,13 @@ view: baseline__metrics__labeled_counter__glean_validation_pings_submitted {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    hidden: no
   }
 }
 

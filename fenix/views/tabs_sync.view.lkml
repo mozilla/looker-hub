@@ -1,6 +1,7 @@
 view: tabs_sync {
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -11,7 +12,6 @@ view: tabs_sync {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set with an invalid label.
 The labels are the `category.name` identifier of the metric.
 "
@@ -19,6 +19,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
     label: "Glean Error Invalid Overflow"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -29,7 +30,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set a value that overflowed.
 The labels are the `category.name` identifier of the metric.
 "
@@ -37,6 +37,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
     label: "Glean Error Invalid State"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -47,7 +48,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a timing metric was used incorrectly.
 The labels are the `category.name` identifier of the metric.
 "
@@ -55,6 +55,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     label: "Glean Error Invalid Value"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
@@ -65,7 +66,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
@@ -73,6 +73,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__datetime__tabs_sync_finished_at {
     label: "Tabs Sync Finished At"
+    hidden: no
     sql: ${TABLE}.metrics.datetime.tabs_sync_finished_at ;;
     type: string
     group_label: "Tabs Sync"
@@ -90,6 +91,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__tabs_sync_incoming {
     label: "Tabs Sync Incoming"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.tabs_sync_incoming ;;
     group_label: "Tabs Sync"
     group_item_label: "Incoming"
@@ -100,13 +102,13 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Records incoming tabs record counts. `applied` is the number of incoming records that were successfully stored or updated in the local database. `failed_to_apply` is the number of records that were ignored due to errors. `reconciled` is the number of merged records.
 "
   }
 
   dimension: metrics__labeled_counter__tabs_sync_outgoing {
     label: "Tabs Sync Outgoing"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.tabs_sync_outgoing ;;
     group_label: "Tabs Sync"
     group_item_label: "Outgoing"
@@ -117,13 +119,13 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Records outgoing tabs record counts. `uploaded` is the number of records that were successfully sent to the server. `failed_to_upload` is the number of records that weren't uploaded, and will be retried on the next sync.
 "
   }
 
   dimension: metrics__counter__tabs_sync_outgoing_batches {
     label: "Tabs Sync Outgoing Batches"
+    hidden: no
     sql: ${TABLE}.metrics.counter.tabs_sync_outgoing_batches ;;
     type: number
     group_label: "Tabs Sync"
@@ -141,6 +143,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__datetime__tabs_sync_started_at {
     label: "Tabs Sync Started At"
+    hidden: no
     sql: ${TABLE}.metrics.datetime.tabs_sync_started_at ;;
     type: string
     group_label: "Tabs Sync"
@@ -158,6 +161,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__tabs_sync_uid {
     label: "Tabs Sync Uid"
+    hidden: no
     sql: ${TABLE}.metrics.string.tabs_sync_uid ;;
     type: string
     group_label: "Tabs Sync"
@@ -610,11 +614,11 @@ The labels are the `category.name` identifier of the metric.
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox.tabs_sync"
+    default_value: "mozdata.fenix.tabs_sync"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_firefox.tabs_sync"
+      value: "mozdata.fenix.tabs_sync"
     }
 
     allowed_value: {
@@ -636,7 +640,7 @@ view: suggest__tabs_sync__metrics__labeled_counter__glean_error_invalid_label {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.tabs_sync as t,
+from mozdata.fenix.tabs_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -655,7 +659,7 @@ view: suggest__tabs_sync__metrics__labeled_counter__glean_error_invalid_overflow
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.tabs_sync as t,
+from mozdata.fenix.tabs_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -674,7 +678,7 @@ view: suggest__tabs_sync__metrics__labeled_counter__glean_error_invalid_state {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.tabs_sync as t,
+from mozdata.fenix.tabs_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -693,7 +697,7 @@ view: suggest__tabs_sync__metrics__labeled_counter__glean_error_invalid_value {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.tabs_sync as t,
+from mozdata.fenix.tabs_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -712,7 +716,7 @@ view: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_incoming {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.tabs_sync as t,
+from mozdata.fenix.tabs_sync as t,
 unnest(metrics.labeled_counter.tabs_sync_incoming) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -731,7 +735,7 @@ view: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_outgoing {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.tabs_sync as t,
+from mozdata.fenix.tabs_sync as t,
 unnest(metrics.labeled_counter.tabs_sync_outgoing) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -766,6 +770,7 @@ view: tabs_sync__metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__tabs_sync__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__tabs_sync__metrics__labeled_counter__glean_error_invalid_label.key
+    hidden: no
   }
 
   dimension: value {
@@ -777,11 +782,13 @@ view: tabs_sync__metrics__labeled_counter__glean_error_invalid_label {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${tabs_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -806,6 +813,7 @@ view: tabs_sync__metrics__labeled_counter__glean_error_invalid_overflow {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__tabs_sync__metrics__labeled_counter__glean_error_invalid_overflow
     suggest_dimension: suggest__tabs_sync__metrics__labeled_counter__glean_error_invalid_overflow.key
+    hidden: no
   }
 
   dimension: value {
@@ -817,11 +825,13 @@ view: tabs_sync__metrics__labeled_counter__glean_error_invalid_overflow {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${tabs_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -846,6 +856,7 @@ view: tabs_sync__metrics__labeled_counter__glean_error_invalid_state {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__tabs_sync__metrics__labeled_counter__glean_error_invalid_state
     suggest_dimension: suggest__tabs_sync__metrics__labeled_counter__glean_error_invalid_state.key
+    hidden: no
   }
 
   dimension: value {
@@ -857,11 +868,13 @@ view: tabs_sync__metrics__labeled_counter__glean_error_invalid_state {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${tabs_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -886,6 +899,7 @@ view: tabs_sync__metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__tabs_sync__metrics__labeled_counter__glean_error_invalid_value
     suggest_dimension: suggest__tabs_sync__metrics__labeled_counter__glean_error_invalid_value.key
+    hidden: no
   }
 
   dimension: value {
@@ -897,11 +911,13 @@ view: tabs_sync__metrics__labeled_counter__glean_error_invalid_value {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${tabs_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -926,6 +942,7 @@ view: tabs_sync__metrics__labeled_counter__tabs_sync_incoming {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_incoming
     suggest_dimension: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_incoming.key
+    hidden: no
   }
 
   dimension: value {
@@ -937,11 +954,13 @@ view: tabs_sync__metrics__labeled_counter__tabs_sync_incoming {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${tabs_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -966,6 +985,7 @@ view: tabs_sync__metrics__labeled_counter__tabs_sync_outgoing {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_outgoing
     suggest_dimension: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_outgoing.key
+    hidden: no
   }
 
   dimension: value {
@@ -977,10 +997,12 @@ view: tabs_sync__metrics__labeled_counter__tabs_sync_outgoing {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${tabs_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }

@@ -1,6 +1,7 @@
 view: metrics {
   dimension: metrics__boolean__addons_has_enabled_addons {
     label: "Addons Has Enabled Addons"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.addons_has_enabled_addons ;;
     type: yesno
     group_label: "Addons"
@@ -18,6 +19,7 @@ view: metrics {
 
   dimension: metrics__boolean__addons_has_installed_addons {
     label: "Addons Has Installed Addons"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.addons_has_installed_addons ;;
     type: yesno
     group_label: "Addons"
@@ -35,6 +37,7 @@ view: metrics {
 
   dimension: metrics__boolean__android_autofill_enabled {
     label: "Android Autofill Enabled"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.android_autofill_enabled ;;
     type: yesno
     group_label: "Android Autofill"
@@ -53,6 +56,7 @@ provider.
 
   dimension: metrics__boolean__android_autofill_supported {
     label: "Android Autofill Supported"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.android_autofill_supported ;;
     type: yesno
     group_label: "Android Autofill"
@@ -71,6 +75,7 @@ supported for this user.
 
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
     label: "Browser Search Ad Clicks"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     group_label: "Browser Search"
     group_item_label: "Ad Clicks"
@@ -81,7 +86,6 @@ supported for this user.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Records clicks of adverts on SERP pages.
 The key format is `<provider-name>`.
 "
@@ -89,6 +93,7 @@ The key format is `<provider-name>`.
 
   dimension: metrics__labeled_counter__browser_search_in_content {
     label: "Browser Search In Content"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
     group_label: "Browser Search"
     group_item_label: "In Content"
@@ -99,13 +104,13 @@ The key format is `<provider-name>`.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Records the type of interaction a user has on SERP pages.
 "
   }
 
   dimension: metrics__labeled_counter__browser_search_with_ads {
     label: "Browser Search With Ads"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
     group_label: "Browser Search"
     group_item_label: "With Ads"
@@ -116,7 +121,6 @@ The key format is `<provider-name>`.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Records counts of SERP pages with adverts displayed.
 The key format is `<provider-name>`.
 "
@@ -124,6 +128,7 @@ The key format is `<provider-name>`.
 
   dimension: metrics__boolean__contextual_menu_long_press_tapped {
     label: "Contextual Menu Long Press Tapped"
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.contextual_menu_long_press_tapped ;;
     type: yesno
     group_label: "Contextual Menu"
@@ -141,6 +146,7 @@ The key format is `<provider-name>`.
 
   dimension: metrics__counter__credit_cards_autofill_card {
     label: "Credit Cards Autofill Card"
+    hidden: yes
     sql: ${TABLE}.metrics.counter.credit_cards_autofill_card ;;
     type: number
     group_label: "Credit Cards"
@@ -159,6 +165,7 @@ a credit card.
 
   dimension: metrics__counter__credit_cards_delete_card {
     label: "Credit Cards Delete Card"
+    hidden: yes
     sql: ${TABLE}.metrics.counter.credit_cards_delete_card ;;
     type: number
     group_label: "Credit Cards"
@@ -177,6 +184,7 @@ the user.
 
   dimension: metrics__counter__credit_cards_manual_save {
     label: "Credit Cards Manual Save"
+    hidden: yes
     sql: ${TABLE}.metrics.counter.credit_cards_manual_save ;;
     type: number
     group_label: "Credit Cards"
@@ -195,6 +203,7 @@ manually by the user.
 
   dimension: metrics__timespan__engine_kill_background_age__value {
     label: "Engine Kill Background Age Value"
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.engine_kill_background_age.value ;;
     type: number
     group_label: "Engine"
@@ -213,6 +222,7 @@ time its content process got killed.
 
   dimension: metrics__timespan__engine_kill_foreground_age__value {
     label: "Engine Kill Foreground Age Value"
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.engine_kill_foreground_age.value ;;
     type: number
     group_label: "Engine"
@@ -231,6 +241,7 @@ at the time its content process got killed.
 
   dimension: metrics__labeled_counter__engine_tab_kills {
     label: "Engine Tab Kills"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.engine_tab_kills ;;
     group_label: "Engine Tab"
     group_item_label: "Kills"
@@ -241,7 +252,6 @@ at the time its content process got killed.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "How often was the content process of a foreground (selected) or
 background tab killed.
 "
@@ -249,6 +259,7 @@ background tab killed.
 
   dimension: metrics__timing_distribution__engine_tab_kill_background_age__sum {
     label: "Engine Tab Kill Background Age Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.engine_tab_kill_background_age.sum ;;
     type: number
     group_label: "Engine Tab"
@@ -267,6 +278,7 @@ time its content process got killed.
 
   dimension: metrics__timing_distribution__engine_tab_kill_foreground_age__sum {
     label: "Engine Tab Kill Foreground Age Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.engine_tab_kill_foreground_age.sum ;;
     type: number
     group_label: "Engine Tab"
@@ -285,6 +297,7 @@ at the time its content process got killed.
 
   dimension: metrics__counter__events_normal_and_private_uri_count {
     label: "Events Normal And Private Uri Count"
+    hidden: no
     sql: ${TABLE}.metrics.counter.events_normal_and_private_uri_count ;;
     type: number
     group_label: "Events"
@@ -306,6 +319,7 @@ programmatically redirect to a new location.
 
   dimension: metrics__counter__events_total_uri_count {
     label: "Events Total Uri Count"
+    hidden: no
     sql: ${TABLE}.metrics.counter.events_total_uri_count ;;
     type: number
     group_label: "Events"
@@ -327,6 +341,7 @@ location.
 
   dimension: metrics__string__experiments_metrics_active_experiment {
     label: "Experiments Metrics Active Experiment"
+    hidden: yes
     sql: ${TABLE}.metrics.string.experiments_metrics_active_experiment ;;
     type: string
     group_label: "Experiments Metrics"
@@ -344,6 +359,7 @@ location.
 
   dimension: metrics__boolean__metrics_activity_state_provider_error {
     label: "Metrics Activity State Provider Error"
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.metrics_activity_state_provider_error ;;
     type: yesno
     group_label: "Metrics"
@@ -364,6 +380,7 @@ these assumptions.
 
   dimension: metrics__string__metrics_adjust_ad_group {
     label: "Metrics Adjust Ad Group"
+    hidden: no
     sql: ${TABLE}.metrics.string.metrics_adjust_ad_group ;;
     type: string
     group_label: "Metrics"
@@ -383,6 +400,7 @@ install is organic, this will be empty.
 
   dimension: metrics__string__metrics_adjust_campaign {
     label: "Metrics Adjust Campaign"
+    hidden: no
     sql: ${TABLE}.metrics.string.metrics_adjust_campaign ;;
     type: string
     group_label: "Metrics"
@@ -402,6 +420,7 @@ install is organic, this will be empty.
 
   dimension: metrics__string__metrics_adjust_creative {
     label: "Metrics Adjust Creative"
+    hidden: no
     sql: ${TABLE}.metrics.string.metrics_adjust_creative ;;
     type: string
     group_label: "Metrics"
@@ -421,6 +440,7 @@ install is organic, this will be empty.
 
   dimension: metrics__string__metrics_adjust_network {
     label: "Metrics Adjust Network"
+    hidden: no
     sql: ${TABLE}.metrics.string.metrics_adjust_network ;;
     type: string
     group_label: "Metrics"
@@ -440,6 +460,7 @@ install is organic, this will be empty.
 
   dimension: metrics__string__metrics_close_tab_setting {
     label: "Metrics Close Tab Setting"
+    hidden: no
     sql: ${TABLE}.metrics.string.metrics_close_tab_setting ;;
     type: string
     group_label: "Metrics"
@@ -458,6 +479,7 @@ MANUAL, ONE_DAY, ONE_WEEK, ONE_MONTH
 
   dimension: metrics__counter__metrics_credit_cards_autofill_count {
     label: "Metrics Credit Cards Autofill Count"
+    hidden: yes
     sql: ${TABLE}.metrics.counter.metrics_credit_cards_autofill_count ;;
     type: number
     group_label: "Metrics"
@@ -476,6 +498,7 @@ a credit card.
 
   dimension: metrics__counter__metrics_credit_cards_deleted_count {
     label: "Metrics Credit Cards Deleted Count"
+    hidden: yes
     sql: ${TABLE}.metrics.counter.metrics_credit_cards_deleted_count ;;
     type: number
     group_label: "Metrics"
@@ -494,6 +517,7 @@ deleted by the user.
 
   dimension: metrics__counter__metrics_credit_cards_saved_count {
     label: "Metrics Credit Cards Saved Count"
+    hidden: yes
     sql: ${TABLE}.metrics.counter.metrics_credit_cards_saved_count ;;
     type: number
     group_label: "Metrics"
@@ -512,6 +536,7 @@ saved manually by the user.
 
   dimension: metrics__boolean__metrics_default_browser {
     label: "Metrics Default Browser"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.metrics_default_browser ;;
     type: yesno
     group_label: "Metrics"
@@ -529,6 +554,7 @@ saved manually by the user.
 
   dimension: metrics__string__metrics_default_moz_browser {
     label: "Metrics Default Moz Browser"
+    hidden: no
     sql: ${TABLE}.metrics.string.metrics_default_moz_browser ;;
     type: string
     group_label: "Metrics"
@@ -547,6 +573,7 @@ owned product
 
   dimension: metrics__counter__metrics_desktop_bookmarks_count {
     label: "Metrics Desktop Bookmarks Count"
+    hidden: no
     sql: ${TABLE}.metrics.counter.metrics_desktop_bookmarks_count ;;
     type: number
     group_label: "Metrics"
@@ -568,6 +595,7 @@ ping and 0 bookmarks, please see `has_desktop_bookmarks`.
 
   dimension: metrics__string__metrics_distribution_id {
     label: "Metrics Distribution Id"
+    hidden: no
     sql: ${TABLE}.metrics.string.metrics_distribution_id ;;
     type: string
     group_label: "Metrics"
@@ -586,6 +614,7 @@ to identify installs from Mozilla Online.
 
   dimension: metrics__boolean__metrics_has_desktop_bookmarks {
     label: "Metrics Has Desktop Bookmarks"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.metrics_has_desktop_bookmarks ;;
     type: yesno
     group_label: "Metrics"
@@ -603,6 +632,7 @@ to identify installs from Mozilla Online.
 
   dimension: metrics__boolean__metrics_has_mobile_bookmarks {
     label: "Metrics Has Mobile Bookmarks"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.metrics_has_mobile_bookmarks ;;
     type: yesno
     group_label: "Metrics"
@@ -620,6 +650,7 @@ to identify installs from Mozilla Online.
 
   dimension: metrics__boolean__metrics_has_open_tabs {
     label: "Metrics Has Open Tabs"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.metrics_has_open_tabs ;;
     type: yesno
     group_label: "Metrics"
@@ -637,6 +668,7 @@ to identify installs from Mozilla Online.
 
   dimension: metrics__boolean__metrics_has_recent_pwas {
     label: "Metrics Has Recent Pwas"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.metrics_has_recent_pwas ;;
     type: yesno
     group_label: "Metrics"
@@ -655,6 +687,7 @@ See recently_used_pwa_count for the actual count.
 
   dimension: metrics__boolean__metrics_has_top_sites {
     label: "Metrics Has Top Sites"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.metrics_has_top_sites ;;
     type: yesno
     group_label: "Metrics"
@@ -672,6 +705,7 @@ See recently_used_pwa_count for the actual count.
 
   dimension: metrics__counter__metrics_mobile_bookmarks_count {
     label: "Metrics Mobile Bookmarks Count"
+    hidden: no
     sql: ${TABLE}.metrics.counter.metrics_mobile_bookmarks_count ;;
     type: number
     group_label: "Metrics"
@@ -693,6 +727,7 @@ ping and 0 bookmarks, please see `has_mobile_bookmarks`.
 
   dimension: metrics__counter__metrics_recently_used_pwa_count {
     label: "Metrics Recently Used Pwa Count"
+    hidden: no
     sql: ${TABLE}.metrics.counter.metrics_recently_used_pwa_count ;;
     type: number
     group_label: "Metrics"
@@ -718,6 +753,7 @@ metric and 0 recent PWAs, please see `has_recent_pwas`.
 
   dimension: metrics__labeled_counter__metrics_search_count {
     label: "Metrics Search Count"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.metrics_search_count ;;
     group_label: "Metrics"
     group_item_label: "Search Count"
@@ -728,7 +764,6 @@ metric and 0 recent PWAs, please see `has_recent_pwas`.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "The labels for this counter are `<search-engine-name>.<source>`.
 
 If the search engine is bundled with Fenix `search-engine-name` will be
@@ -744,6 +779,7 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
 
   dimension: metrics__boolean__metrics_search_widget_installed {
     label: "Metrics Search Widget Installed"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.metrics_search_widget_installed ;;
     type: yesno
     group_label: "Metrics"
@@ -761,6 +797,7 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
 
   dimension: metrics__boolean__metrics_start_reason_activity_error {
     label: "Metrics Start Reason Activity Error"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.metrics_start_reason_activity_error ;;
     type: yesno
     group_label: "Metrics"
@@ -781,6 +818,7 @@ once we validate these assumptions.
 
   dimension: metrics__boolean__metrics_start_reason_process_error {
     label: "Metrics Start Reason Process Error"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.metrics_start_reason_process_error ;;
     type: yesno
     group_label: "Metrics"
@@ -801,6 +839,7 @@ once we validate these assumptions.
 
   dimension: metrics__string__metrics_tab_view_setting {
     label: "Metrics Tab View Setting"
+    hidden: no
     sql: ${TABLE}.metrics.string.metrics_tab_view_setting ;;
     type: string
     group_label: "Metrics"
@@ -819,6 +858,7 @@ GRID, LIST
 
   dimension: metrics__counter__metrics_tabs_open_count {
     label: "Metrics Tabs Open Count"
+    hidden: no
     sql: ${TABLE}.metrics.counter.metrics_tabs_open_count ;;
     type: number
     group_label: "Metrics"
@@ -840,6 +880,7 @@ please see `has_open_tabs`.
 
   dimension: metrics__string__metrics_toolbar_position {
     label: "Metrics Toolbar Position"
+    hidden: no
     sql: ${TABLE}.metrics.string.metrics_toolbar_position ;;
     type: string
     group_label: "Metrics"
@@ -857,6 +898,7 @@ please see `has_open_tabs`.
 
   dimension: metrics__counter__metrics_top_sites_count {
     label: "Metrics Top Sites Count"
+    hidden: no
     sql: ${TABLE}.metrics.counter.metrics_top_sites_count ;;
     type: number
     group_label: "Metrics"
@@ -878,6 +920,7 @@ between a failed `top_sites_count` ping and 0 top sites, please see
 
   dimension: metrics__string__metrics_total_uri_count {
     label: "Metrics Total Uri Count"
+    hidden: yes
     sql: ${TABLE}.metrics.string.metrics_total_uri_count ;;
     type: string
     group_label: "Metrics"
@@ -895,6 +938,7 @@ between a failed `top_sites_count` ping and 0 top sites, please see
 
   dimension: metrics__timing_distribution__perf_awesomebar_bookmark_suggestions__sum {
     label: "Perf Awesomebar Bookmark Suggestions Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_bookmark_suggestions.sum ;;
     type: number
     group_label: "Perf Awesomebar"
@@ -912,6 +956,7 @@ between a failed `top_sites_count` ping and 0 top sites, please see
 
   dimension: metrics__timing_distribution__perf_awesomebar_clipboard_suggestions__sum {
     label: "Perf Awesomebar Clipboard Suggestions Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_clipboard_suggestions.sum ;;
     type: number
     group_label: "Perf Awesomebar"
@@ -929,6 +974,7 @@ between a failed `top_sites_count` ping and 0 top sites, please see
 
   dimension: metrics__timing_distribution__perf_awesomebar_history_suggestions__sum {
     label: "Perf Awesomebar History Suggestions Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_history_suggestions.sum ;;
     type: number
     group_label: "Perf Awesomebar"
@@ -946,6 +992,7 @@ between a failed `top_sites_count` ping and 0 top sites, please see
 
   dimension: metrics__timing_distribution__perf_awesomebar_search_engine_suggestions__sum {
     label: "Perf Awesomebar Search Engine Suggestions Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_search_engine_suggestions.sum ;;
     type: number
     group_label: "Perf Awesomebar"
@@ -963,6 +1010,7 @@ between a failed `top_sites_count` ping and 0 top sites, please see
 
   dimension: metrics__timing_distribution__perf_awesomebar_session_suggestions__sum {
     label: "Perf Awesomebar Session Suggestions Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_session_suggestions.sum ;;
     type: number
     group_label: "Perf Awesomebar"
@@ -980,6 +1028,7 @@ between a failed `top_sites_count` ping and 0 top sites, please see
 
   dimension: metrics__timing_distribution__perf_awesomebar_shortcuts_suggestions__sum {
     label: "Perf Awesomebar Shortcuts Suggestions Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_shortcuts_suggestions.sum ;;
     type: number
     group_label: "Perf Awesomebar"
@@ -997,6 +1046,7 @@ between a failed `top_sites_count` ping and 0 top sites, please see
 
   dimension: metrics__timing_distribution__perf_awesomebar_synced_tabs_suggestions__sum {
     label: "Perf Awesomebar Synced Tabs Suggestions Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_synced_tabs_suggestions.sum ;;
     type: number
     group_label: "Perf Awesomebar"
@@ -1014,6 +1064,7 @@ between a failed `top_sites_count` ping and 0 top sites, please see
 
   dimension: metrics__timing_distribution__perf_startup_app_on_create_to_glean_init__sum {
     label: "Perf Startup App On Create To Glean Init Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_app_on_create_to_glean_init.sum ;;
     type: number
     group_label: "Perf Startup"
@@ -1035,6 +1086,7 @@ and Release builds which instead initialize it during
 
   dimension: metrics__timing_distribution__perf_startup_app_on_create_to_megazord_init__sum {
     label: "Perf Startup App On Create To Megazord Init Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_app_on_create_to_megazord_init.sum ;;
     type: number
     group_label: "Perf Startup"
@@ -1054,6 +1106,7 @@ probe until we block for the megazord to complete set up.
 
   dimension: metrics__timing_distribution__perf_startup_app_on_create_to_setup_in_main__sum {
     label: "Perf Startup App On Create To Setup In Main Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_app_on_create_to_setup_in_main.sum ;;
     type: number
     group_label: "Perf Startup"
@@ -1075,6 +1128,7 @@ probe until we block for the megazord to complete set up.
 
   dimension: metrics__timing_distribution__perf_startup_application_on_create__sum {
     label: "Perf Startup Application On Create Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_application_on_create.sum ;;
     type: number
     group_label: "Perf Startup"
@@ -1094,6 +1148,7 @@ not measure the duration of migration code (via
 
   dimension: metrics__timing_distribution__perf_startup_base_bfragment_on_create_view__sum {
     label: "Perf Startup Base Bfragment On Create View Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_base_bfragment_on_create_view.sum ;;
     type: number
     group_label: "Perf Startup"
@@ -1111,6 +1166,7 @@ not measure the duration of migration code (via
 
   dimension: metrics__timing_distribution__perf_startup_base_bfragment_on_view_created__sum {
     label: "Perf Startup Base Bfragment On View Created Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_base_bfragment_on_view_created.sum ;;
     type: number
     group_label: "Perf Startup"
@@ -1128,6 +1184,7 @@ not measure the duration of migration code (via
 
   dimension: metrics__timing_distribution__perf_startup_cold_main_app_to_first_frame__sum {
     label: "Perf Startup Cold Main App To First Frame Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_cold_main_app_to_first_frame.sum ;;
     type: number
     group_label: "Perf Startup"
@@ -1167,6 +1224,7 @@ should be the same but it's noted just in case there are bugs.
 
   dimension: metrics__timing_distribution__perf_startup_cold_unknwn_app_to_first_frame__sum {
     label: "Perf Startup Cold Unknwn App To First Frame Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_cold_unknwn_app_to_first_frame.sum ;;
     type: number
     group_label: "Perf Startup"
@@ -1194,6 +1252,7 @@ should be the same but it's noted just in case there are bugs.
 
   dimension: metrics__timing_distribution__perf_startup_cold_view_app_to_first_frame__sum {
     label: "Perf Startup Cold View App To First Frame Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_cold_view_app_to_first_frame.sum ;;
     type: number
     group_label: "Perf Startup"
@@ -1223,6 +1282,7 @@ should be the same but it's noted just in case there are bugs.
 
   dimension: metrics__timing_distribution__perf_startup_home_activity_on_create__sum {
     label: "Perf Startup Home Activity On Create Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_home_activity_on_create.sum ;;
     type: number
     group_label: "Perf Startup"
@@ -1240,6 +1300,7 @@ should be the same but it's noted just in case there are bugs.
 
   dimension: metrics__timing_distribution__perf_startup_home_activity_on_start__sum {
     label: "Perf Startup Home Activity On Start Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_home_activity_on_start.sum ;;
     type: number
     group_label: "Perf Startup"
@@ -1262,6 +1323,7 @@ data.
 
   dimension: metrics__timing_distribution__perf_startup_home_fragment_on_create_view__sum {
     label: "Perf Startup Home Fragment On Create View Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_home_fragment_on_create_view.sum ;;
     type: number
     group_label: "Perf Startup"
@@ -1279,6 +1341,7 @@ data.
 
   dimension: metrics__timing_distribution__perf_startup_home_fragment_on_view_created__sum {
     label: "Perf Startup Home Fragment On View Created Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_home_fragment_on_view_created.sum ;;
     type: number
     group_label: "Perf Startup"
@@ -1296,6 +1359,7 @@ data.
 
   dimension: metrics__labeled_counter__perf_startup_startup_type {
     label: "Perf Startup Startup Type"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.perf_startup_startup_type ;;
     group_label: "Perf Startup"
     group_item_label: "Startup Type"
@@ -1306,7 +1370,6 @@ data.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Indicates how the browser was started. The label is divided into two
 variables. `state` is how cached the browser is when started. `path` is
 what code path we are expected to take. Together, they create a combined
@@ -1361,6 +1424,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__boolean__preferences_bookmarks_suggestion {
     label: "Preferences Bookmarks Suggestion"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.preferences_bookmarks_suggestion ;;
     type: yesno
     group_label: "Preferences"
@@ -1378,6 +1442,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__boolean__preferences_browsing_history_suggestion {
     label: "Preferences Browsing History Suggestion"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.preferences_browsing_history_suggestion ;;
     type: yesno
     group_label: "Preferences"
@@ -1395,6 +1460,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__boolean__preferences_clipboard_suggestions_enabled {
     label: "Preferences Clipboard Suggestions Enabled"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.preferences_clipboard_suggestions_enabled ;;
     type: yesno
     group_label: "Preferences"
@@ -1412,6 +1478,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__string__preferences_enhanced_tracking_protection {
     label: "Preferences Enhanced Tracking Protection"
+    hidden: no
     sql: ${TABLE}.metrics.string.preferences_enhanced_tracking_protection ;;
     type: string
     group_label: "Preferences"
@@ -1429,6 +1496,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__boolean__preferences_open_links_in_app_enabled {
     label: "Preferences Open Links In App Enabled"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.preferences_open_links_in_app_enabled ;;
     type: yesno
     group_label: "Preferences"
@@ -1446,6 +1514,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__boolean__preferences_open_links_in_private {
     label: "Preferences Open Links In Private"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.preferences_open_links_in_private ;;
     type: yesno
     group_label: "Preferences"
@@ -1463,6 +1532,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__boolean__preferences_private_search_suggestions {
     label: "Preferences Private Search Suggestions"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.preferences_private_search_suggestions ;;
     type: yesno
     group_label: "Preferences"
@@ -1480,6 +1550,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__boolean__preferences_remote_debugging_enabled {
     label: "Preferences Remote Debugging Enabled"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.preferences_remote_debugging_enabled ;;
     type: yesno
     group_label: "Preferences"
@@ -1497,6 +1568,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__boolean__preferences_search_shortcuts_enabled {
     label: "Preferences Search Shortcuts Enabled"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.preferences_search_shortcuts_enabled ;;
     type: yesno
     group_label: "Preferences"
@@ -1514,6 +1586,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__boolean__preferences_search_suggestions_enabled {
     label: "Preferences Search Suggestions Enabled"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.preferences_search_suggestions_enabled ;;
     type: yesno
     group_label: "Preferences"
@@ -1531,6 +1604,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__boolean__preferences_signed_in_sync {
     label: "Preferences Signed In Sync"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.preferences_signed_in_sync ;;
     type: yesno
     group_label: "Preferences"
@@ -1548,6 +1622,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__boolean__preferences_telemetry_enabled {
     label: "Preferences Telemetry Enabled"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.preferences_telemetry_enabled ;;
     type: yesno
     group_label: "Preferences"
@@ -1565,6 +1640,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__string__preferences_toolbar_position_setting {
     label: "Preferences Toolbar Position Setting"
+    hidden: no
     sql: ${TABLE}.metrics.string.preferences_toolbar_position_setting ;;
     type: string
     group_label: "Preferences"
@@ -1582,6 +1658,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__string__preferences_user_theme {
     label: "Preferences User Theme"
+    hidden: no
     sql: ${TABLE}.metrics.string.preferences_user_theme ;;
     type: string
     group_label: "Preferences"
@@ -1599,6 +1676,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__boolean__preferences_voice_search_enabled {
     label: "Preferences Voice Search Enabled"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.preferences_voice_search_enabled ;;
     type: yesno
     group_label: "Preferences"
@@ -1616,6 +1694,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__counter__recent_bookmarks_bookmark_clicked {
     label: "Recent Bookmarks Bookmark Clicked"
+    hidden: no
     sql: ${TABLE}.metrics.counter.recent_bookmarks_bookmark_clicked ;;
     type: number
     group_label: "Recent Bookmarks"
@@ -1635,6 +1714,7 @@ screen.
 
   dimension: metrics__counter__recent_bookmarks_show_all_bookmarks {
     label: "Recent Bookmarks Show All Bookmarks"
+    hidden: no
     sql: ${TABLE}.metrics.counter.recent_bookmarks_show_all_bookmarks ;;
     type: number
     group_label: "Recent Bookmarks"
@@ -1654,6 +1734,7 @@ on the home screen.
 
   dimension: metrics__string__search_default_engine_code {
     label: "Search Default Engine Code"
+    hidden: no
     sql: ${TABLE}.metrics.string.search_default_engine_code ;;
     type: string
     group_label: "Search Default Engine"
@@ -1674,6 +1755,7 @@ value will be \"custom\"
 
   dimension: metrics__string__search_default_engine_name {
     label: "Search Default Engine Name"
+    hidden: no
     sql: ${TABLE}.metrics.string.search_default_engine_name ;;
     type: string
     group_label: "Search Default Engine"
@@ -1694,6 +1776,7 @@ value will be \"custom\"
 
   dimension: metrics__string__search_default_engine_submission_url {
     label: "Search Default Engine Submission Url"
+    hidden: no
     sql: ${TABLE}.metrics.string.search_default_engine_submission_url ;;
     type: string
     group_label: "Search Default Engine"
@@ -1715,6 +1798,7 @@ will be \"custom\"
 
   dimension: metrics__memory_distribution__storage_stats_app_bytes__sum {
     label: "Storage Stats App Bytes Sum"
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.storage_stats_app_bytes.sum ;;
     type: number
     group_label: "Storage Stats"
@@ -1732,6 +1816,7 @@ will be \"custom\"
 
   dimension: metrics__memory_distribution__storage_stats_cache_bytes__sum {
     label: "Storage Stats Cache Bytes Sum"
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.storage_stats_cache_bytes.sum ;;
     type: number
     group_label: "Storage Stats"
@@ -1749,6 +1834,7 @@ will be \"custom\"
 
   dimension: metrics__memory_distribution__storage_stats_data_dir_bytes__sum {
     label: "Storage Stats Data Dir Bytes Sum"
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.storage_stats_data_dir_bytes.sum ;;
     type: number
     group_label: "Storage Stats"
@@ -1766,6 +1852,7 @@ will be \"custom\"
 
   dimension: metrics__timing_distribution__storage_stats_query_stats_duration__sum {
     label: "Storage Stats Query Stats Duration Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.storage_stats_query_stats_duration.sum ;;
     type: number
     group_label: "Storage Stats"
@@ -1783,6 +1870,7 @@ will be \"custom\"
 
   dimension: metrics__memory_distribution__glean_database_size__sum {
     label: "Glean Database Size Sum"
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.glean_database_size.sum ;;
     type: number
     group_label: "Glean Database"
@@ -1800,6 +1888,7 @@ will be \"custom\"
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Label"
@@ -1810,7 +1899,6 @@ will be \"custom\"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set with an invalid label.
 The labels are the `category.name` identifier of the metric.
 "
@@ -1818,6 +1906,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_overflow {
     label: "Glean Error Invalid Overflow"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Overflow"
@@ -1828,7 +1917,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set a value that overflowed.
 The labels are the `category.name` identifier of the metric.
 "
@@ -1836,6 +1924,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_state {
     label: "Glean Error Invalid State"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
     group_label: "Glean Error"
     group_item_label: "Invalid State"
@@ -1846,7 +1935,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a timing metric was used incorrectly.
 The labels are the `category.name` identifier of the metric.
 "
@@ -1854,6 +1942,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     label: "Glean Error Invalid Value"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     group_label: "Glean Error"
     group_item_label: "Invalid Value"
@@ -1864,7 +1953,6 @@ The labels are the `category.name` identifier of the metric.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
@@ -1872,6 +1960,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__glean_error_io {
     label: "Glean Error Io"
+    hidden: no
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
     group_label: "Glean Error"
@@ -1890,6 +1979,7 @@ when writing a pending ping to disk.
 
   dimension: metrics__counter__glean_error_preinit_tasks_overflow {
     label: "Glean Error Preinit Tasks Overflow"
+    hidden: no
     sql: ${TABLE}.metrics.counter.glean_error_preinit_tasks_overflow ;;
     type: number
     group_label: "Glean Error"
@@ -1908,6 +1998,7 @@ Only sent if the buffer overflows.
 
   dimension: metrics__boolean__glean_error_preinit_tasks_timeout {
     label: "Glean Error Preinit Tasks Timeout"
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.glean_error_preinit_tasks_timeout ;;
     type: yesno
     group_label: "Glean Error"
@@ -1924,6 +2015,7 @@ Only sent if the buffer overflows.
 
   dimension: metrics__counter__glean_time_invalid_timezone_offset {
     label: "Glean Time Invalid Timezone Offset"
+    hidden: no
     sql: ${TABLE}.metrics.counter.glean_time_invalid_timezone_offset ;;
     type: number
     group_label: "Glean Time"
@@ -1944,6 +2036,7 @@ If invalid a UTC offset is used (+0h).
 
   dimension: metrics__counter__glean_upload_deleted_pings_after_quota_hit {
     label: "Glean Upload Deleted Pings After Quota Hit"
+    hidden: no
     sql: ${TABLE}.metrics.counter.glean_upload_deleted_pings_after_quota_hit ;;
     type: number
     group_label: "Glean Upload"
@@ -1965,6 +2058,7 @@ deletion request pings are never deleted.
 
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__sum {
     label: "Glean Upload Discarded Exceeding Pings Size Sum"
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.sum ;;
     type: number
     group_label: "Glean Upload"
@@ -1982,6 +2076,7 @@ deletion request pings are never deleted.
 
   dimension: metrics__counter__glean_upload_pending_pings {
     label: "Glean Upload Pending Pings"
+    hidden: no
     sql: ${TABLE}.metrics.counter.glean_upload_pending_pings ;;
     type: number
     group_label: "Glean Upload"
@@ -2000,6 +2095,7 @@ This does not include deletion-request pings.
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
     label: "Glean Upload Pending Pings Directory Size Sum"
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.sum ;;
     type: number
     group_label: "Glean Upload"
@@ -2018,6 +2114,7 @@ This does not include the size of the deletion request pings directory.
 
   dimension: metrics__labeled_counter__glean_upload_ping_upload_failure {
     label: "Glean Upload Ping Upload Failure"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_upload_ping_upload_failure ;;
     group_label: "Glean Upload"
     group_item_label: "Ping Upload Failure"
@@ -2028,7 +2125,6 @@ This does not include the size of the deletion request pings directory.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of ping upload failures, by type of failure.
 This includes failures for all ping types,
 though the counts appear in the next successfully sent `metrics` ping.
@@ -2037,6 +2133,7 @@ though the counts appear in the next successfully sent `metrics` ping.
 
   dimension: metrics__datetime__glean_validation_first_run_hour {
     label: "Glean Validation First Run Hour"
+    hidden: no
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: string
     group_label: "Glean Validation"
@@ -2054,6 +2151,7 @@ though the counts appear in the next successfully sent `metrics` ping.
 
   dimension: metrics__counter__glean_validation_foreground_count {
     label: "Glean Validation Foreground Count"
+    hidden: no
     sql: ${TABLE}.metrics.counter.glean_validation_foreground_count ;;
     type: number
     group_label: "Glean Validation"
@@ -2071,6 +2169,7 @@ though the counts appear in the next successfully sent `metrics` ping.
 
   dimension: metrics__labeled_counter__glean_validation_pings_submitted {
     label: "Glean Validation Pings Submitted"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
     group_label: "Glean Validation"
     group_item_label: "Pings Submitted"
@@ -2081,7 +2180,6 @@ though the counts appear in the next successfully sent `metrics` ping.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "A count of the pings submitted, by ping type.
 
 This metric appears in both the metrics and baseline pings.
@@ -2095,6 +2193,7 @@ This metric appears in both the metrics and baseline pings.
 
   dimension: metrics__string__ping_reason {
     label: "Glean Ping Reason"
+    hidden: yes
     sql: ${TABLE}.metrics.string.ping_reason ;;
     type: string
     group_label: "Glean"
@@ -2114,6 +2213,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__counter__logins_store_read_query_count {
     label: "Logins Store Read Query Count"
+    hidden: no
     sql: ${TABLE}.metrics.counter.logins_store_read_query_count ;;
     type: number
     group_label: "Logins Store"
@@ -2131,6 +2231,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__labeled_counter__logins_store_read_query_error_count {
     label: "Logins Store Read Query Error Count"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.logins_store_read_query_error_count ;;
     group_label: "Logins Store"
     group_item_label: "Read Query Error Count"
@@ -2141,13 +2242,13 @@ documented in the ping's pings.yaml file.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "The total number of errors encountered during read operations on the logins store, labeled by type. It is intended to be used together with `read_query_count` to measure the overall error rate of read operations on the logins store.
 "
   }
 
   dimension: metrics__timing_distribution__logins_store_read_query_time__sum {
     label: "Logins Store Read Query Time Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.sum ;;
     type: number
     group_label: "Logins Store"
@@ -2165,6 +2266,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__counter__logins_store_unlock_count {
     label: "Logins Store Unlock Count"
+    hidden: no
     sql: ${TABLE}.metrics.counter.logins_store_unlock_count ;;
     type: number
     group_label: "Logins Store"
@@ -2182,6 +2284,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__labeled_counter__logins_store_unlock_error_count {
     label: "Logins Store Unlock Error Count"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.logins_store_unlock_error_count ;;
     group_label: "Logins Store"
     group_item_label: "Unlock Error Count"
@@ -2192,13 +2295,13 @@ documented in the ping's pings.yaml file.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "The number of errors encountered when unlocking the logins store, labeled by type. It is intended to be used together with `unlock_count` to measure the overall error rate of unlocking the logins store.
 "
   }
 
   dimension: metrics__timing_distribution__logins_store_unlock_time__sum {
     label: "Logins Store Unlock Time Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.sum ;;
     type: number
     group_label: "Logins Store"
@@ -2216,6 +2319,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__counter__logins_store_write_query_count {
     label: "Logins Store Write Query Count"
+    hidden: no
     sql: ${TABLE}.metrics.counter.logins_store_write_query_count ;;
     type: number
     group_label: "Logins Store"
@@ -2233,6 +2337,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__labeled_counter__logins_store_write_query_error_count {
     label: "Logins Store Write Query Error Count"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.logins_store_write_query_error_count ;;
     group_label: "Logins Store"
     group_item_label: "Write Query Error Count"
@@ -2243,13 +2348,13 @@ documented in the ping's pings.yaml file.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "The total number of errors encountered during write operations on the logins store, labeled by type. It is intended to be used together with `write_query_count` to measure the overall error rate of write operations on the logins store.
 "
   }
 
   dimension: metrics__timing_distribution__logins_store_write_query_time__sum {
     label: "Logins Store Write Query Time Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.sum ;;
     type: number
     group_label: "Logins Store"
@@ -2267,6 +2372,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__labeled_counter__avif_alpha {
     label: "Avif Alpha"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.avif_alpha ;;
     group_label: "Avif"
     group_item_label: "Alpha"
@@ -2277,13 +2383,13 @@ documented in the ping's pings.yaml file.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "AVIF alpha plane.
 "
   }
 
   dimension: metrics__quantity__avif_aom_decode_error {
     label: "Avif Aom Decode Error"
+    hidden: no
     sql: ${TABLE}.metrics.quantity.avif_aom_decode_error ;;
     type: number
     group_label: "Avif"
@@ -2301,6 +2407,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__labeled_counter__avif_bit_depth {
     label: "Avif Bit Depth"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.avif_bit_depth ;;
     group_label: "Avif"
     group_item_label: "Bit Depth"
@@ -2311,13 +2418,13 @@ documented in the ping's pings.yaml file.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Bits per pixel of AVIF image.
 "
   }
 
   dimension: metrics__labeled_counter__avif_cicp_cp {
     label: "Avif Cicp Cp"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.avif_cicp_cp ;;
     group_label: "Avif"
     group_item_label: "Cicp Cp"
@@ -2328,13 +2435,13 @@ documented in the ping's pings.yaml file.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "AVIF CICP colour primaries.
 "
   }
 
   dimension: metrics__labeled_counter__avif_cicp_mc {
     label: "Avif Cicp Mc"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.avif_cicp_mc ;;
     group_label: "Avif"
     group_item_label: "Cicp Mc"
@@ -2345,13 +2452,13 @@ documented in the ping's pings.yaml file.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "AVIF CICP transfer characteristics.
 "
   }
 
   dimension: metrics__labeled_counter__avif_cicp_tc {
     label: "Avif Cicp Tc"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.avif_cicp_tc ;;
     group_label: "Avif"
     group_item_label: "Cicp Tc"
@@ -2362,13 +2469,13 @@ documented in the ping's pings.yaml file.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "AVIF CICP transfer characteristics.
 "
   }
 
   dimension: metrics__labeled_counter__avif_colr {
     label: "Avif Colr"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.avif_colr ;;
     group_label: "Avif"
     group_item_label: "Colr"
@@ -2379,13 +2486,13 @@ documented in the ping's pings.yaml file.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "AVIF colour information type.
 "
   }
 
   dimension: metrics__quantity__avif_dav1d_decode_error {
     label: "Avif Dav1D Decode Error"
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.avif_dav1d_decode_error ;;
     type: number
     group_label: "Avif"
@@ -2403,6 +2510,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__labeled_counter__avif_decode_result {
     label: "Avif Decode Result"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.avif_decode_result ;;
     group_label: "Avif"
     group_item_label: "Decode Result"
@@ -2413,13 +2521,13 @@ documented in the ping's pings.yaml file.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Decode result of AVIF image.
 "
   }
 
   dimension: metrics__labeled_counter__avif_decoder {
     label: "Avif Decoder"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.avif_decoder ;;
     group_label: "Avif"
     group_item_label: "Decoder"
@@ -2430,13 +2538,13 @@ documented in the ping's pings.yaml file.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Decoder of AVIF image.
 "
   }
 
   dimension: metrics__labeled_counter__avif_ispe {
     label: "Avif Ispe"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.avif_ispe ;;
     group_label: "Avif"
     group_item_label: "Ispe"
@@ -2447,13 +2555,13 @@ documented in the ping's pings.yaml file.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "AVIF spatial extents (image size).
 "
   }
 
   dimension: metrics__labeled_counter__avif_pixi {
     label: "Avif Pixi"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.avif_pixi ;;
     group_label: "Avif"
     group_item_label: "Pixi"
@@ -2464,13 +2572,13 @@ documented in the ping's pings.yaml file.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "AVIF pixel information (bits per channel).
 "
   }
 
   dimension: metrics__labeled_counter__avif_yuv_color_space {
     label: "Avif Yuv Color Space"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.avif_yuv_color_space ;;
     group_label: "Avif"
     group_item_label: "Yuv Color Space"
@@ -2481,13 +2589,13 @@ documented in the ping's pings.yaml file.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "YUV color space of AVIF image.
 "
   }
 
   dimension: metrics__string__geckoview_build_id {
     label: "Geckoview Build Id"
+    hidden: no
     sql: ${TABLE}.metrics.string.geckoview_build_id ;;
     type: string
     group_label: "Geckoview"
@@ -2505,6 +2613,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__geckoview_content_process_lifetime__sum {
     label: "Geckoview Content Process Lifetime Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.geckoview_content_process_lifetime.sum ;;
     type: number
     group_label: "Geckoview"
@@ -2522,6 +2631,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__custom_distribution__geckoview_document_site_origins__sum {
     label: "Geckoview Document Site Origins Sum"
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.geckoview_document_site_origins.sum ;;
     type: number
     group_label: "Geckoview"
@@ -2539,6 +2649,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__geckoview_page_load_progress_time__sum {
     label: "Geckoview Page Load Progress Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_progress_time.sum ;;
     type: number
     group_label: "Geckoview"
@@ -2556,6 +2667,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__geckoview_page_load_time__sum {
     label: "Geckoview Page Load Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_time.sum ;;
     type: number
     group_label: "Geckoview"
@@ -2573,6 +2685,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__geckoview_page_reload_time__sum {
     label: "Geckoview Page Reload Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.geckoview_page_reload_time.sum ;;
     type: number
     group_label: "Geckoview"
@@ -2590,6 +2703,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__custom_distribution__geckoview_per_document_site_origins__sum {
     label: "Geckoview Per Document Site Origins Sum"
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.geckoview_per_document_site_origins.sum ;;
     type: number
     group_label: "Geckoview"
@@ -2607,6 +2721,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__geckoview_startup_runtime__sum {
     label: "Geckoview Startup Runtime Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.geckoview_startup_runtime.sum ;;
     type: number
     group_label: "Geckoview"
@@ -2624,6 +2739,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__string__geckoview_version {
     label: "Geckoview Version"
+    hidden: no
     sql: ${TABLE}.metrics.string.geckoview_version ;;
     type: string
     group_label: "Geckoview"
@@ -2641,6 +2757,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__string__gfx_adapter_primary_description {
     label: "Gfx Adapter Primary Description"
+    hidden: no
     sql: ${TABLE}.metrics.string.gfx_adapter_primary_description ;;
     type: string
     group_label: "Gfx Adapter Primary"
@@ -2658,6 +2775,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__string__gfx_adapter_primary_device_id {
     label: "Gfx Adapter Primary Device Id"
+    hidden: no
     sql: ${TABLE}.metrics.string.gfx_adapter_primary_device_id ;;
     type: string
     group_label: "Gfx Adapter Primary"
@@ -2675,6 +2793,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__string__gfx_adapter_primary_device_id_last_seen {
     label: "Gfx Adapter Primary Device Id Last Seen"
+    hidden: yes
     sql: ${TABLE}.metrics.string.gfx_adapter_primary_device_id_last_seen ;;
     type: string
     group_label: "Gfx Adapter Primary"
@@ -2692,6 +2811,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__string__gfx_adapter_primary_driver_date {
     label: "Gfx Adapter Primary Driver Date"
+    hidden: no
     sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_date ;;
     type: string
     group_label: "Gfx Adapter Primary"
@@ -2709,6 +2829,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__string__gfx_adapter_primary_driver_files {
     label: "Gfx Adapter Primary Driver Files"
+    hidden: no
     sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_files ;;
     type: string
     group_label: "Gfx Adapter Primary"
@@ -2726,6 +2847,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__string__gfx_adapter_primary_driver_vendor {
     label: "Gfx Adapter Primary Driver Vendor"
+    hidden: no
     sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_vendor ;;
     type: string
     group_label: "Gfx Adapter Primary"
@@ -2743,6 +2865,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__string__gfx_adapter_primary_driver_version {
     label: "Gfx Adapter Primary Driver Version"
+    hidden: no
     sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_version ;;
     type: string
     group_label: "Gfx Adapter Primary"
@@ -2760,6 +2883,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__quantity__gfx_adapter_primary_ram {
     label: "Gfx Adapter Primary Ram"
+    hidden: no
     sql: ${TABLE}.metrics.quantity.gfx_adapter_primary_ram ;;
     type: number
     group_label: "Gfx Adapter Primary"
@@ -2777,6 +2901,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__string__gfx_adapter_primary_subsystem_id {
     label: "Gfx Adapter Primary Subsystem Id"
+    hidden: no
     sql: ${TABLE}.metrics.string.gfx_adapter_primary_subsystem_id ;;
     type: string
     group_label: "Gfx Adapter Primary"
@@ -2794,6 +2919,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__string__gfx_adapter_primary_vendor_id {
     label: "Gfx Adapter Primary Vendor Id"
+    hidden: no
     sql: ${TABLE}.metrics.string.gfx_adapter_primary_vendor_id ;;
     type: string
     group_label: "Gfx Adapter Primary"
@@ -2811,6 +2937,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__gfx_checkerboard_duration__sum {
     label: "Gfx Checkerboard Duration Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_duration.sum ;;
     type: number
     group_label: "Gfx Checkerboard"
@@ -2828,6 +2955,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__sum {
     label: "Gfx Checkerboard Peak Pixel Count Sum"
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_peak_pixel_count.sum ;;
     type: number
     group_label: "Gfx Checkerboard"
@@ -2845,6 +2973,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__gfx_checkerboard_potential_duration__sum {
     label: "Gfx Checkerboard Potential Duration Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_potential_duration.sum ;;
     type: number
     group_label: "Gfx Checkerboard"
@@ -2862,6 +2991,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__custom_distribution__gfx_checkerboard_severity__sum {
     label: "Gfx Checkerboard Severity Sum"
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_severity.sum ;;
     type: number
     group_label: "Gfx Checkerboard"
@@ -2879,6 +3009,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__gfx_composite_time__sum {
     label: "Gfx Composite Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.gfx_composite_time.sum ;;
     type: number
     group_label: "Gfx"
@@ -2896,6 +3027,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__custom_distribution__gfx_content_frame_time_from_paint__sum {
     label: "Gfx Content Frame Time From Paint Sum"
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_paint.sum ;;
     type: number
     group_label: "Gfx Content Frame Time"
@@ -2913,6 +3045,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__custom_distribution__gfx_content_frame_time_from_vsync__sum {
     label: "Gfx Content Frame Time From Vsync Sum"
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_vsync.sum ;;
     type: number
     group_label: "Gfx Content Frame Time"
@@ -2930,6 +3063,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__labeled_counter__gfx_content_frame_time_reason {
     label: "Gfx Content Frame Time Reason"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.gfx_content_frame_time_reason ;;
     group_label: "Gfx Content Frame Time"
     group_item_label: "Reason"
@@ -2940,13 +3074,13 @@ documented in the ping's pings.yaml file.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "The reason that `gfx.content.frame_time.from_paint` recorded a slow (>200ms) result, if any.
 "
   }
 
   dimension: metrics__custom_distribution__gfx_content_frame_time_with_svg__sum {
     label: "Gfx Content Frame Time With Svg Sum"
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_with_svg.sum ;;
     type: number
     group_label: "Gfx Content Frame Time"
@@ -2964,6 +3098,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__custom_distribution__gfx_content_frame_time_without_resource_upload__sum {
     label: "Gfx Content Frame Time Without Resource Upload Sum"
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_resource_upload.sum ;;
     type: number
     group_label: "Gfx Content Frame Time"
@@ -2981,6 +3116,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__custom_distribution__gfx_content_frame_time_without_upload__sum {
     label: "Gfx Content Frame Time Without Upload Sum"
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_upload.sum ;;
     type: number
     group_label: "Gfx Content Frame Time"
@@ -2998,6 +3134,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__gfx_content_full_paint_time__sum {
     label: "Gfx Content Full Paint Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.gfx_content_full_paint_time.sum ;;
     type: number
     group_label: "Gfx Content"
@@ -3015,6 +3152,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__gfx_content_paint_time__sum {
     label: "Gfx Content Paint Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.gfx_content_paint_time.sum ;;
     type: number
     group_label: "Gfx Content"
@@ -3032,6 +3170,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__quantity__gfx_display_count {
     label: "Gfx Display Count"
+    hidden: no
     sql: ${TABLE}.metrics.quantity.gfx_display_count ;;
     type: number
     group_label: "Gfx Display"
@@ -3049,6 +3188,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__quantity__gfx_display_primary_height {
     label: "Gfx Display Primary Height"
+    hidden: no
     sql: ${TABLE}.metrics.quantity.gfx_display_primary_height ;;
     type: number
     group_label: "Gfx Display"
@@ -3066,6 +3206,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__quantity__gfx_display_primary_width {
     label: "Gfx Display Primary Width"
+    hidden: no
     sql: ${TABLE}.metrics.quantity.gfx_display_primary_width ;;
     type: number
     group_label: "Gfx Display"
@@ -3083,6 +3224,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__string__gfx_feature_webrender {
     label: "Gfx Feature Webrender"
+    hidden: no
     sql: ${TABLE}.metrics.string.gfx_feature_webrender ;;
     type: string
     group_label: "Gfx Feature"
@@ -3099,6 +3241,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__gfx_scroll_present_latency__sum {
     label: "Gfx Scroll Present Latency Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.gfx_scroll_present_latency.sum ;;
     type: number
     group_label: "Gfx"
@@ -3116,6 +3259,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__string__gfx_status_compositor {
     label: "Gfx Status Compositor"
+    hidden: no
     sql: ${TABLE}.metrics.string.gfx_status_compositor ;;
     type: string
     group_label: "Gfx Status"
@@ -3133,6 +3277,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__string__gfx_status_compositor_last_seen {
     label: "Gfx Status Compositor Last Seen"
+    hidden: yes
     sql: ${TABLE}.metrics.string.gfx_status_compositor_last_seen ;;
     type: string
     group_label: "Gfx Status"
@@ -3150,6 +3295,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__gfx_status_framebuild_time__sum {
     label: "Gfx Status Framebuild Time Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.gfx_status_framebuild_time.sum ;;
     type: number
     group_label: "Gfx Status"
@@ -3167,6 +3313,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__boolean__gfx_status_headless {
     label: "Gfx Status Headless"
+    hidden: no
     sql: ${TABLE}.metrics.boolean.gfx_status_headless ;;
     type: yesno
     group_label: "Gfx Status"
@@ -3184,6 +3331,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__string__gfx_status_last_compositor_gecko_version {
     label: "Gfx Status Last Compositor Gecko Version"
+    hidden: no
     sql: ${TABLE}.metrics.string.gfx_status_last_compositor_gecko_version ;;
     type: string
     group_label: "Gfx Status"
@@ -3201,6 +3349,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__gfx_status_sceneswap_time__sum {
     label: "Gfx Status Sceneswap Time Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.gfx_status_sceneswap_time.sum ;;
     type: number
     group_label: "Gfx Status"
@@ -3218,6 +3367,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__gfx_webrender_framebuild_time__sum {
     label: "Gfx Webrender Framebuild Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.gfx_webrender_framebuild_time.sum ;;
     type: number
     group_label: "Gfx Webrender"
@@ -3235,6 +3385,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__gfx_webrender_render_time__sum {
     label: "Gfx Webrender Render Time Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.gfx_webrender_render_time.sum ;;
     type: number
     group_label: "Gfx Webrender"
@@ -3252,6 +3403,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__gfx_webrender_scenebuild_time__sum {
     label: "Gfx Webrender Scenebuild Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.gfx_webrender_scenebuild_time.sum ;;
     type: number
     group_label: "Gfx Webrender"
@@ -3269,6 +3421,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__gfx_webrender_sceneswap_time__sum {
     label: "Gfx Webrender Sceneswap Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.gfx_webrender_sceneswap_time.sum ;;
     type: number
     group_label: "Gfx Webrender"
@@ -3286,6 +3439,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__javascript_gc_compact_time__sum {
     label: "Javascript Gc Compact Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.sum ;;
     type: number
     group_label: "Javascript Gc"
@@ -3303,6 +3457,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__javascript_gc_mark_roots_time__sum {
     label: "Javascript Gc Mark Roots Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.sum ;;
     type: number
     group_label: "Javascript Gc"
@@ -3320,6 +3475,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__javascript_gc_mark_time__sum {
     label: "Javascript Gc Mark Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.sum ;;
     type: number
     group_label: "Javascript Gc"
@@ -3337,6 +3493,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__javascript_gc_minor_time__sum {
     label: "Javascript Gc Minor Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.sum ;;
     type: number
     group_label: "Javascript Gc"
@@ -3354,6 +3511,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__javascript_gc_prepare_time__sum {
     label: "Javascript Gc Prepare Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.sum ;;
     type: number
     group_label: "Javascript Gc"
@@ -3371,6 +3529,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__javascript_gc_slice_time__sum {
     label: "Javascript Gc Slice Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.sum ;;
     type: number
     group_label: "Javascript Gc"
@@ -3388,6 +3547,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__javascript_gc_sweep_time__sum {
     label: "Javascript Gc Sweep Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.sum ;;
     type: number
     group_label: "Javascript Gc"
@@ -3405,6 +3565,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__javascript_gc_total_time__sum {
     label: "Javascript Gc Total Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.sum ;;
     type: number
     group_label: "Javascript Gc"
@@ -3422,6 +3583,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__sum {
     label: "Javascript Pageload Baseline Compile Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -3439,6 +3601,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__javascript_pageload_delazification_time__sum {
     label: "Javascript Pageload Delazification Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -3456,6 +3619,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__javascript_pageload_execution_time__sum {
     label: "Javascript Pageload Execution Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -3473,6 +3637,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__javascript_pageload_gc_time__sum {
     label: "Javascript Pageload Gc Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -3490,6 +3655,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__javascript_pageload_parse_time__sum {
     label: "Javascript Pageload Parse Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -3507,6 +3673,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__javascript_pageload_protect_time__sum {
     label: "Javascript Pageload Protect Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -3524,6 +3691,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__sum {
     label: "Javascript Pageload Xdr Encode Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.sum ;;
     type: number
     group_label: "Javascript Pageload"
@@ -3541,6 +3709,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__custom_distribution__js_baseline_compile_percentage__sum {
     label: "Js Baseline Compile Percentage Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.js_baseline_compile_percentage.sum ;;
     type: number
     group_label: "Js"
@@ -3558,6 +3727,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__js_bytecode_caching_time__sum {
     label: "Js Bytecode Caching Time Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.js_bytecode_caching_time.sum ;;
     type: number
     group_label: "Js"
@@ -3575,6 +3745,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__custom_distribution__js_delazification_percentage__sum {
     label: "Js Delazification Percentage Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.js_delazification_percentage.sum ;;
     type: number
     group_label: "Js"
@@ -3592,6 +3763,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__custom_distribution__js_execution_percentage__sum {
     label: "Js Execution Percentage Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.js_execution_percentage.sum ;;
     type: number
     group_label: "Js"
@@ -3609,6 +3781,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__custom_distribution__js_xdr_encode_percentage__sum {
     label: "Js Xdr Encode Percentage Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.js_xdr_encode_percentage.sum ;;
     type: number
     group_label: "Js"
@@ -3626,6 +3799,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__labeled_counter__media_audio_backend {
     label: "Media Audio Backend"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.media_audio_backend ;;
     group_label: "Media Audio"
     group_item_label: "Backend"
@@ -3636,13 +3810,13 @@ documented in the ping's pings.yaml file.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "The operating system audio backend
 "
   }
 
   dimension: metrics__labeled_counter__media_audio_init_failure {
     label: "Media Audio Init Failure"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
     group_label: "Media"
     group_item_label: "Audio Init Failure"
@@ -3653,13 +3827,13 @@ documented in the ping's pings.yaml file.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Failure occurs when initializing the audio stream.
 "
   }
 
   dimension: metrics__timing_distribution__network_cache_hit_time__sum {
     label: "Network Cache Hit Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.sum ;;
     type: number
     group_label: "Network"
@@ -3677,6 +3851,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__network_dns_end__sum {
     label: "Network Dns End Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.network_dns_end.sum ;;
     type: number
     group_label: "Network"
@@ -3694,6 +3869,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__network_dns_start__sum {
     label: "Network Dns Start Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.network_dns_start.sum ;;
     type: number
     group_label: "Network"
@@ -3711,6 +3887,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__network_first_from_cache__sum {
     label: "Network First From Cache Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.sum ;;
     type: number
     group_label: "Network"
@@ -3728,6 +3905,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__network_font_download_end__sum {
     label: "Network Font Download End Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.sum ;;
     type: number
     group_label: "Network"
@@ -3745,6 +3923,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__network_tcp_connection__sum {
     label: "Network Tcp Connection Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.sum ;;
     type: number
     group_label: "Network"
@@ -3762,6 +3941,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__network_tls_handshake__sum {
     label: "Network Tls Handshake Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.sum ;;
     type: number
     group_label: "Network"
@@ -3779,6 +3959,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__custom_distribution__performance_clone_deserialize_items__sum {
     label: "Performance Clone Deserialize Items Sum"
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.performance_clone_deserialize_items.sum ;;
     type: number
     group_label: "Performance Clone Deserialize"
@@ -3796,6 +3977,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__memory_distribution__performance_clone_deserialize_size__sum {
     label: "Performance Clone Deserialize Size Sum"
+    hidden: no
     sql: ${TABLE}.metrics.memory_distribution.performance_clone_deserialize_size.sum ;;
     type: number
     group_label: "Performance Clone Deserialize"
@@ -3813,6 +3995,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_clone_deserialize_time__sum {
     label: "Performance Clone Deserialize Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.sum ;;
     type: number
     group_label: "Performance Clone Deserialize"
@@ -3830,6 +4013,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__sum {
     label: "Performance Interaction Keypress Present Latency Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.sum ;;
     type: number
     group_label: "Performance Interaction"
@@ -3847,6 +4031,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__sum {
     label: "Performance Interaction Mouseup Click Present Latency Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.sum ;;
     type: number
     group_label: "Performance Interaction"
@@ -3864,6 +4049,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_interaction_tab_switch_composite__sum {
     label: "Performance Interaction Tab Switch Composite Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_interaction_tab_switch_composite.sum ;;
     type: number
     group_label: "Performance Interaction"
@@ -3881,6 +4067,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_page_non_blank_paint__sum {
     label: "Performance Page Non Blank Paint Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.sum ;;
     type: number
     group_label: "Performance Page"
@@ -3898,6 +4085,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_page_total_content_page_load__sum {
     label: "Performance Page Total Content Page Load Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_page_total_content_page_load.sum ;;
     type: number
     group_label: "Performance Page"
@@ -3915,6 +4103,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_pageload_dcl__sum {
     label: "Performance Pageload Dcl Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_dcl.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -3932,6 +4121,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_pageload_dcl_responsestart__sum {
     label: "Performance Pageload Dcl Responsestart Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_dcl_responsestart.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -3949,6 +4139,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_pageload_fcp__sum {
     label: "Performance Pageload Fcp Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -3966,6 +4157,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__sum {
     label: "Performance Pageload Fcp Responsestart Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -3983,6 +4175,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_pageload_load_time__sum {
     label: "Performance Pageload Load Time Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -4000,6 +4193,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__sum {
     label: "Performance Pageload Load Time Responsestart Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time_responsestart.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -4017,6 +4211,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__sum {
     label: "Performance Pageload Req Anim Frame Callback Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.sum ;;
     type: number
     group_label: "Performance Pageload"
@@ -4034,6 +4229,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__sum {
     label: "Performance Responsiveness Req Anim Frame Callback Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_responsiveness_req_anim_frame_callback.sum ;;
     type: number
     group_label: "Performance Responsiveness"
@@ -4051,6 +4247,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_time_dom_complete__sum {
     label: "Performance Time Dom Complete Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.sum ;;
     type: number
     group_label: "Performance Time"
@@ -4068,6 +4265,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__sum {
     label: "Performance Time Dom Content Loaded End Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.sum ;;
     type: number
     group_label: "Performance Time"
@@ -4085,6 +4283,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__sum {
     label: "Performance Time Dom Content Loaded Start Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.sum ;;
     type: number
     group_label: "Performance Time"
@@ -4102,6 +4301,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_time_dom_interactive__sum {
     label: "Performance Time Dom Interactive Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.sum ;;
     type: number
     group_label: "Performance Time"
@@ -4119,6 +4319,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_time_load_event_end__sum {
     label: "Performance Time Load Event End Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.sum ;;
     type: number
     group_label: "Performance Time"
@@ -4136,6 +4337,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_time_load_event_end_no_preload__sum {
     label: "Performance Time Load Event End No Preload Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end_no_preload.sum ;;
     type: number
     group_label: "Performance Time"
@@ -4153,6 +4355,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_time_load_event_end_preload__sum {
     label: "Performance Time Load Event End Preload Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end_preload.sum ;;
     type: number
     group_label: "Performance Time"
@@ -4170,6 +4373,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_time_load_event_start__sum {
     label: "Performance Time Load Event Start Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start.sum ;;
     type: number
     group_label: "Performance Time"
@@ -4187,6 +4391,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_time_load_event_start_no_preload__sum {
     label: "Performance Time Load Event Start No Preload Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start_no_preload.sum ;;
     type: number
     group_label: "Performance Time"
@@ -4204,6 +4409,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_time_load_event_start_preload__sum {
     label: "Performance Time Load Event Start Preload Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start_preload.sum ;;
     type: number
     group_label: "Performance Time"
@@ -4221,6 +4427,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_time_response_start__sum {
     label: "Performance Time Response Start Sum"
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.performance_time_response_start.sum ;;
     type: number
     group_label: "Performance Time"
@@ -4238,6 +4445,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__labeled_counter__crash_metrics_crash_count {
     label: "Crash Metrics Crash Count"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.crash_metrics_crash_count ;;
     group_label: "Crash Metrics"
     group_item_label: "Crash Count"
@@ -4248,7 +4456,6 @@ documented in the ping's pings.yaml file.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "Counts the number of crashes that occur in the application. This measures only the counts of each crash in association with the labeled type of the crash. The labels correspond to the types of crashes handled by lib-crash.
 Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfatal_native_code_crash`
 "
@@ -4256,6 +4463,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
 
   dimension: metrics__counter__places_manager_read_query_count {
     label: "Places Manager Read Query Count"
+    hidden: no
     sql: ${TABLE}.metrics.counter.places_manager_read_query_count ;;
     type: number
     group_label: "Places Manager"
@@ -4273,6 +4481,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
 
   dimension: metrics__labeled_counter__places_manager_read_query_error_count {
     label: "Places Manager Read Query Error Count"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.places_manager_read_query_error_count ;;
     group_label: "Places Manager"
     group_item_label: "Read Query Error Count"
@@ -4283,13 +4492,13 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "The total number of errors encountered during read operations on the places store, labeled by type. It is intended to be used together with `read_query_count` to measure the overall error rate of read operations on the places store.
 "
   }
 
   dimension: metrics__timing_distribution__places_manager_read_query_time__sum {
     label: "Places Manager Read Query Time Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.places_manager_read_query_time.sum ;;
     type: number
     group_label: "Places Manager"
@@ -4307,6 +4516,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
 
   dimension: metrics__timing_distribution__places_manager_scan_query_time__sum {
     label: "Places Manager Scan Query Time Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.places_manager_scan_query_time.sum ;;
     type: number
     group_label: "Places Manager"
@@ -4324,6 +4534,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
 
   dimension: metrics__counter__places_manager_write_query_count {
     label: "Places Manager Write Query Count"
+    hidden: no
     sql: ${TABLE}.metrics.counter.places_manager_write_query_count ;;
     type: number
     group_label: "Places Manager"
@@ -4341,6 +4552,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
 
   dimension: metrics__labeled_counter__places_manager_write_query_error_count {
     label: "Places Manager Write Query Error Count"
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_counter.places_manager_write_query_error_count ;;
     group_label: "Places Manager"
     group_item_label: "Write Query Error Count"
@@ -4351,13 +4563,13 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    hidden: yes
     description: "The total number of errors encountered during write operations on the places store, labeled by type. It is intended to be used together with `write_query_count` to measure the overall error rate of write operations on the places store.
 "
   }
 
   dimension: metrics__timing_distribution__places_manager_write_query_time__sum {
     label: "Places Manager Write Query Time Sum"
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.places_manager_write_query_time.sum ;;
     type: number
     group_label: "Places Manager"
@@ -4375,6 +4587,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
 
   dimension: metrics__boolean__glean_core_migration_successful {
     label: "Glean Core Migration Successful"
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.glean_core_migration_successful ;;
     type: yesno
     group_label: "Glean Core Migration"
@@ -4391,6 +4604,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
 
   dimension: metrics__counter__glean_validation_app_forceclosed_count {
     label: "Glean Validation App Forceclosed Count"
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glean_validation_app_forceclosed_count ;;
     type: number
     group_label: "Glean Validation"
@@ -4407,6 +4621,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
 
   dimension: metrics__counter__glean_validation_baseline_ping_count {
     label: "Glean Validation Baseline Ping Count"
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glean_validation_baseline_ping_count ;;
     type: number
     group_label: "Glean Validation"
@@ -5533,11 +5748,11 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox.metrics"
+    default_value: "mozdata.fenix.metrics"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.org_mozilla_firefox.metrics"
+      value: "mozdata.fenix.metrics"
     }
 
     allowed_value: {
@@ -5575,6 +5790,7 @@ view: metrics__metrics__labeled_counter__avif_alpha {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__avif_alpha
     suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_alpha.key
+    hidden: no
   }
 
   dimension: value {
@@ -5586,11 +5802,13 @@ view: metrics__metrics__labeled_counter__avif_alpha {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -5615,6 +5833,7 @@ view: metrics__metrics__labeled_counter__avif_bit_depth {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__avif_bit_depth
     suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_bit_depth.key
+    hidden: no
   }
 
   dimension: value {
@@ -5626,11 +5845,13 @@ view: metrics__metrics__labeled_counter__avif_bit_depth {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -5655,6 +5876,7 @@ view: metrics__metrics__labeled_counter__avif_cicp_cp {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__avif_cicp_cp
     suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_cicp_cp.key
+    hidden: no
   }
 
   dimension: value {
@@ -5666,11 +5888,13 @@ view: metrics__metrics__labeled_counter__avif_cicp_cp {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -5695,6 +5919,7 @@ view: metrics__metrics__labeled_counter__avif_cicp_mc {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__avif_cicp_mc
     suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_cicp_mc.key
+    hidden: no
   }
 
   dimension: value {
@@ -5706,11 +5931,13 @@ view: metrics__metrics__labeled_counter__avif_cicp_mc {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -5735,6 +5962,7 @@ view: metrics__metrics__labeled_counter__avif_cicp_tc {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__avif_cicp_tc
     suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_cicp_tc.key
+    hidden: no
   }
 
   dimension: value {
@@ -5746,11 +5974,13 @@ view: metrics__metrics__labeled_counter__avif_cicp_tc {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -5775,6 +6005,7 @@ view: metrics__metrics__labeled_counter__avif_colr {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__avif_colr
     suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_colr.key
+    hidden: no
   }
 
   dimension: value {
@@ -5786,11 +6017,13 @@ view: metrics__metrics__labeled_counter__avif_colr {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -5815,6 +6048,7 @@ view: metrics__metrics__labeled_counter__avif_decode_result {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__avif_decode_result
     suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_decode_result.key
+    hidden: no
   }
 
   dimension: value {
@@ -5826,11 +6060,13 @@ view: metrics__metrics__labeled_counter__avif_decode_result {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -5855,6 +6091,7 @@ view: metrics__metrics__labeled_counter__avif_decoder {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__avif_decoder
     suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_decoder.key
+    hidden: no
   }
 
   dimension: value {
@@ -5866,11 +6103,13 @@ view: metrics__metrics__labeled_counter__avif_decoder {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -5895,6 +6134,7 @@ view: metrics__metrics__labeled_counter__avif_ispe {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__avif_ispe
     suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_ispe.key
+    hidden: no
   }
 
   dimension: value {
@@ -5906,11 +6146,13 @@ view: metrics__metrics__labeled_counter__avif_ispe {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -5935,6 +6177,7 @@ view: metrics__metrics__labeled_counter__avif_pixi {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__avif_pixi
     suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_pixi.key
+    hidden: no
   }
 
   dimension: value {
@@ -5946,11 +6189,13 @@ view: metrics__metrics__labeled_counter__avif_pixi {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -5975,6 +6220,7 @@ view: metrics__metrics__labeled_counter__avif_yuv_color_space {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__avif_yuv_color_space
     suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_yuv_color_space.key
+    hidden: no
   }
 
   dimension: value {
@@ -5986,11 +6232,13 @@ view: metrics__metrics__labeled_counter__avif_yuv_color_space {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6015,6 +6263,7 @@ view: metrics__metrics__labeled_counter__browser_search_ad_clicks {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks
     suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks.key
+    hidden: no
   }
 
   dimension: value {
@@ -6026,11 +6275,13 @@ view: metrics__metrics__labeled_counter__browser_search_ad_clicks {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6055,6 +6306,7 @@ view: metrics__metrics__labeled_counter__browser_search_in_content {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_in_content
     suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_in_content.key
+    hidden: no
   }
 
   dimension: value {
@@ -6066,11 +6318,13 @@ view: metrics__metrics__labeled_counter__browser_search_in_content {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6095,6 +6349,7 @@ view: metrics__metrics__labeled_counter__browser_search_with_ads {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_with_ads
     suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_with_ads.key
+    hidden: no
   }
 
   dimension: value {
@@ -6106,11 +6361,13 @@ view: metrics__metrics__labeled_counter__browser_search_with_ads {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6135,6 +6392,7 @@ view: metrics__metrics__labeled_counter__crash_metrics_crash_count {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__crash_metrics_crash_count
     suggest_dimension: suggest__metrics__metrics__labeled_counter__crash_metrics_crash_count.key
+    hidden: no
   }
 
   dimension: value {
@@ -6146,11 +6404,13 @@ view: metrics__metrics__labeled_counter__crash_metrics_crash_count {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6175,6 +6435,7 @@ view: metrics__metrics__labeled_counter__engine_tab_kills {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__engine_tab_kills
     suggest_dimension: suggest__metrics__metrics__labeled_counter__engine_tab_kills.key
+    hidden: no
   }
 
   dimension: value {
@@ -6186,11 +6447,13 @@ view: metrics__metrics__labeled_counter__engine_tab_kills {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6215,6 +6478,7 @@ view: metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__gfx_content_frame_time_reason
     suggest_dimension: suggest__metrics__metrics__labeled_counter__gfx_content_frame_time_reason.key
+    hidden: no
   }
 
   dimension: value {
@@ -6226,11 +6490,13 @@ view: metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6255,6 +6521,7 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label.key
+    hidden: no
   }
 
   dimension: value {
@@ -6266,11 +6533,13 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_label {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6295,6 +6564,7 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_overflow {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow
     suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow.key
+    hidden: no
   }
 
   dimension: value {
@@ -6306,11 +6576,13 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_overflow {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6335,6 +6607,7 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_state {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state
     suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state.key
+    hidden: no
   }
 
   dimension: value {
@@ -6346,11 +6619,13 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_state {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6375,6 +6650,7 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value
     suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value.key
+    hidden: no
   }
 
   dimension: value {
@@ -6386,11 +6662,13 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_value {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6415,6 +6693,7 @@ view: metrics__metrics__labeled_counter__glean_upload_ping_upload_failure {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure
     suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure.key
+    hidden: no
   }
 
   dimension: value {
@@ -6426,11 +6705,13 @@ view: metrics__metrics__labeled_counter__glean_upload_ping_upload_failure {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6455,6 +6736,7 @@ view: metrics__metrics__labeled_counter__glean_validation_pings_submitted {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted
     suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted.key
+    hidden: no
   }
 
   dimension: value {
@@ -6466,11 +6748,13 @@ view: metrics__metrics__labeled_counter__glean_validation_pings_submitted {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6495,6 +6779,7 @@ view: metrics__metrics__labeled_counter__logins_store_read_query_error_count {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_count
     suggest_dimension: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_count.key
+    hidden: no
   }
 
   dimension: value {
@@ -6506,11 +6791,13 @@ view: metrics__metrics__labeled_counter__logins_store_read_query_error_count {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6535,6 +6822,7 @@ view: metrics__metrics__labeled_counter__logins_store_unlock_error_count {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_count
     suggest_dimension: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_count.key
+    hidden: no
   }
 
   dimension: value {
@@ -6546,11 +6834,13 @@ view: metrics__metrics__labeled_counter__logins_store_unlock_error_count {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6575,6 +6865,7 @@ view: metrics__metrics__labeled_counter__logins_store_write_query_error_count {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count
     suggest_dimension: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count.key
+    hidden: no
   }
 
   dimension: value {
@@ -6586,11 +6877,13 @@ view: metrics__metrics__labeled_counter__logins_store_write_query_error_count {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6615,6 +6908,7 @@ view: metrics__metrics__labeled_counter__media_audio_backend {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__media_audio_backend
     suggest_dimension: suggest__metrics__metrics__labeled_counter__media_audio_backend.key
+    hidden: no
   }
 
   dimension: value {
@@ -6626,11 +6920,13 @@ view: metrics__metrics__labeled_counter__media_audio_backend {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6655,6 +6951,7 @@ view: metrics__metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__media_audio_init_failure
     suggest_dimension: suggest__metrics__metrics__labeled_counter__media_audio_init_failure.key
+    hidden: yes
   }
 
   dimension: value {
@@ -6666,11 +6963,13 @@ view: metrics__metrics__labeled_counter__media_audio_init_failure {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
   }
 }
 
@@ -6695,6 +6994,7 @@ view: metrics__metrics__labeled_counter__metrics_search_count {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__metrics_search_count
     suggest_dimension: suggest__metrics__metrics__labeled_counter__metrics_search_count.key
+    hidden: no
   }
 
   dimension: value {
@@ -6706,11 +7006,13 @@ view: metrics__metrics__labeled_counter__metrics_search_count {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6735,6 +7037,7 @@ view: metrics__metrics__labeled_counter__perf_startup_startup_type {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__perf_startup_startup_type
     suggest_dimension: suggest__metrics__metrics__labeled_counter__perf_startup_startup_type.key
+    hidden: no
   }
 
   dimension: value {
@@ -6746,11 +7049,13 @@ view: metrics__metrics__labeled_counter__perf_startup_startup_type {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6775,6 +7080,7 @@ view: metrics__metrics__labeled_counter__places_manager_read_query_error_count {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__places_manager_read_query_error_count
     suggest_dimension: suggest__metrics__metrics__labeled_counter__places_manager_read_query_error_count.key
+    hidden: no
   }
 
   dimension: value {
@@ -6786,11 +7092,13 @@ view: metrics__metrics__labeled_counter__places_manager_read_query_error_count {
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6815,6 +7123,7 @@ view: metrics__metrics__labeled_counter__places_manager_write_query_error_count 
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__places_manager_write_query_error_count
     suggest_dimension: suggest__metrics__metrics__labeled_counter__places_manager_write_query_error_count.key
+    hidden: no
   }
 
   dimension: value {
@@ -6826,11 +7135,13 @@ view: metrics__metrics__labeled_counter__places_manager_write_query_error_count 
   measure: count {
     type: sum
     sql: ${value} ;;
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -6839,7 +7150,7 @@ view: suggest__metrics__metrics__labeled_counter__avif_alpha {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.avif_alpha) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -6858,7 +7169,7 @@ view: suggest__metrics__metrics__labeled_counter__avif_bit_depth {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.avif_bit_depth) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -6877,7 +7188,7 @@ view: suggest__metrics__metrics__labeled_counter__avif_cicp_cp {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.avif_cicp_cp) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -6896,7 +7207,7 @@ view: suggest__metrics__metrics__labeled_counter__avif_cicp_mc {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.avif_cicp_mc) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -6915,7 +7226,7 @@ view: suggest__metrics__metrics__labeled_counter__avif_cicp_tc {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.avif_cicp_tc) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -6934,7 +7245,7 @@ view: suggest__metrics__metrics__labeled_counter__avif_colr {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.avif_colr) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -6953,7 +7264,7 @@ view: suggest__metrics__metrics__labeled_counter__avif_decode_result {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.avif_decode_result) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -6972,7 +7283,7 @@ view: suggest__metrics__metrics__labeled_counter__avif_decoder {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.avif_decoder) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -6991,7 +7302,7 @@ view: suggest__metrics__metrics__labeled_counter__avif_ispe {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.avif_ispe) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7010,7 +7321,7 @@ view: suggest__metrics__metrics__labeled_counter__avif_pixi {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.avif_pixi) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7029,7 +7340,7 @@ view: suggest__metrics__metrics__labeled_counter__avif_yuv_color_space {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.avif_yuv_color_space) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7048,7 +7359,7 @@ view: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.browser_search_ad_clicks) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7067,7 +7378,7 @@ view: suggest__metrics__metrics__labeled_counter__browser_search_in_content {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.browser_search_in_content) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7086,7 +7397,7 @@ view: suggest__metrics__metrics__labeled_counter__browser_search_with_ads {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.browser_search_with_ads) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7105,7 +7416,7 @@ view: suggest__metrics__metrics__labeled_counter__crash_metrics_crash_count {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.crash_metrics_crash_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7124,7 +7435,7 @@ view: suggest__metrics__metrics__labeled_counter__engine_tab_kills {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.engine_tab_kills) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7143,7 +7454,7 @@ view: suggest__metrics__metrics__labeled_counter__gfx_content_frame_time_reason 
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.gfx_content_frame_time_reason) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7162,7 +7473,7 @@ view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7181,7 +7492,7 @@ view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7200,7 +7511,7 @@ view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7219,7 +7530,7 @@ view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7238,7 +7549,7 @@ view: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failu
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.glean_upload_ping_upload_failure) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7257,7 +7568,7 @@ view: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitt
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.glean_validation_pings_submitted) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7276,7 +7587,7 @@ view: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.logins_store_read_query_error_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7295,7 +7606,7 @@ view: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_coun
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.logins_store_unlock_error_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7314,7 +7625,7 @@ view: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.logins_store_write_query_error_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7333,7 +7644,7 @@ view: suggest__metrics__metrics__labeled_counter__media_audio_backend {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.media_audio_backend) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7352,7 +7663,7 @@ view: suggest__metrics__metrics__labeled_counter__media_audio_init_failure {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.media_audio_init_failure) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7371,7 +7682,7 @@ view: suggest__metrics__metrics__labeled_counter__metrics_search_count {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.metrics_search_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7390,7 +7701,7 @@ view: suggest__metrics__metrics__labeled_counter__perf_startup_startup_type {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.perf_startup_startup_type) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7409,7 +7720,7 @@ view: suggest__metrics__metrics__labeled_counter__places_manager_read_query_erro
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.places_manager_read_query_error_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -7428,7 +7739,7 @@ view: suggest__metrics__metrics__labeled_counter__places_manager_write_query_err
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox.metrics as t,
+from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.places_manager_write_query_error_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0

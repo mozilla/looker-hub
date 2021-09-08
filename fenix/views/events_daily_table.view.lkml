@@ -115,5 +115,5 @@ view: events_daily_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.org_mozilla_firefox.events_daily` ;;
+  sql_table_name: `mozdata.fenix.events_daily` ;;
 }
