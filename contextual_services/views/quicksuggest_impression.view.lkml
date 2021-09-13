@@ -222,6 +222,11 @@ view: quicksuggest_impression {
     type: number
   }
 
+  dimension: scenario {
+    sql: ${TABLE}.scenario ;;
+    type: string
+  }
+
   dimension: search_query {
     sql: ${TABLE}.search_query ;;
     type: string

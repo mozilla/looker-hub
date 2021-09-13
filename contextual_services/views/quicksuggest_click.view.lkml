@@ -212,6 +212,11 @@ view: quicksuggest_click {
     type: number
   }
 
+  dimension: scenario {
+    sql: ${TABLE}.scenario ;;
+    type: string
+  }
+
   dimension: version {
     sql: ${TABLE}.version ;;
     type: string
