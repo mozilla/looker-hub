@@ -31,6 +31,11 @@ explore: action {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${action.metrics__labeled_counter__glean_error_invalid_value}) AS action__metrics__labeled_counter__glean_error_invalid_value ON ${action.document_id} = ${action__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: action__metrics__labeled_counter__search_meta_position {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${action.metrics__labeled_counter__search_meta_position}) AS action__metrics__labeled_counter__search_meta_position ON ${action.document_id} = ${action__metrics__labeled_counter__search_meta_position.document_id} ;;
+  }
 }
 
 explore: suggest__action__metrics__labeled_counter__glean_error_invalid_label {
@@ -46,5 +51,9 @@ explore: suggest__action__metrics__labeled_counter__glean_error_invalid_state {
 }
 
 explore: suggest__action__metrics__labeled_counter__glean_error_invalid_value {
+  hidden: yes
+}
+
+explore: suggest__action__metrics__labeled_counter__search_meta_position {
   hidden: yes
 }

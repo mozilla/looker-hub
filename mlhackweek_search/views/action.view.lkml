@@ -1,7 +1,7 @@
 view: action {
   dimension: metrics__string__search_hostname {
     label: "Search Hostname"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_hostname ;;
     type: string
     group_label: "Search"
@@ -19,7 +19,7 @@ view: action {
 
   dimension: metrics__quantity__search_position {
     label: "Search Position"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.search_position ;;
     type: number
     group_label: "Search"
@@ -37,7 +37,7 @@ view: action {
 
   dimension: metrics__string__search_preamble {
     label: "Search Preamble"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_preamble ;;
     type: string
     group_label: "Search"
@@ -55,7 +55,7 @@ view: action {
 
   dimension: metrics__string__search_search_engine {
     label: "Search Search Engine"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_search_engine ;;
     type: string
     group_label: "Search"
@@ -73,7 +73,7 @@ view: action {
 
   dimension: metrics__string__search_search_text {
     label: "Search Search Text"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_search_text ;;
     type: string
     group_label: "Search"
@@ -91,7 +91,7 @@ view: action {
 
   dimension: metrics__quantity__search_selected {
     label: "Search Selected"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.search_selected ;;
     type: number
     group_label: "Search"
@@ -109,7 +109,7 @@ view: action {
 
   dimension: metrics__string__search_session_id {
     label: "Search Session Id"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_session_id ;;
     type: string
     group_label: "Search"
@@ -127,7 +127,7 @@ view: action {
 
   dimension: metrics__string__search_short_description {
     label: "Search Short Description"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_short_description ;;
     type: string
     group_label: "Search"
@@ -165,7 +165,7 @@ First selection contains no data for this field.
 
   dimension: metrics__string__search_title {
     label: "Search Title"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_title ;;
     type: string
     group_label: "Search"
@@ -183,7 +183,7 @@ First selection contains no data for this field.
 
   dimension: metrics__string__search_url {
     label: "Search Url"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_url ;;
     type: string
     group_label: "Search"
@@ -201,7 +201,7 @@ First selection contains no data for this field.
 
   dimension: metrics__datetime__search_url_select_timestamp {
     label: "Search Url Select Timestamp"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.datetime.search_url_select_timestamp ;;
     type: string
     group_label: "Search"
@@ -874,6 +874,49 @@ view: action__metrics__labeled_counter__glean_error_invalid_value {
   }
 }
 
+view: action__metrics__labeled_counter__search_meta_position {
+  label: "Search Meta - Position"
+
+  dimension: document_id {
+    type: string
+    sql: ${action.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${action.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__action__metrics__labeled_counter__search_meta_position
+    suggest_dimension: suggest__action__metrics__labeled_counter__search_meta_position.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${action.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: suggest__action__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
@@ -938,6 +981,25 @@ view: suggest__action__metrics__labeled_counter__glean_error_invalid_value {
     count(*) as n
 from mozdata.mlhackweek_search.action as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__action__metrics__labeled_counter__search_meta_position {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.mlhackweek_search.action as t,
+unnest(metrics.labeled_counter.search_meta_position) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

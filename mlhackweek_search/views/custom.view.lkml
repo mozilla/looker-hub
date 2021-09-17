@@ -1,7 +1,7 @@
 view: custom {
   dimension: metrics__string__search_hostname {
     label: "Search Hostname"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_hostname ;;
     type: string
     group_label: "Search"
@@ -19,7 +19,7 @@ view: custom {
 
   dimension: metrics__quantity__search_position {
     label: "Search Position"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.search_position ;;
     type: number
     group_label: "Search"
@@ -37,7 +37,7 @@ view: custom {
 
   dimension: metrics__string__search_preamble {
     label: "Search Preamble"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_preamble ;;
     type: string
     group_label: "Search"
@@ -55,7 +55,7 @@ view: custom {
 
   dimension: metrics__string__search_search_engine {
     label: "Search Search Engine"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_search_engine ;;
     type: string
     group_label: "Search"
@@ -91,7 +91,7 @@ view: custom {
 
   dimension: metrics__string__search_search_text {
     label: "Search Search Text"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_search_text ;;
     type: string
     group_label: "Search"
@@ -109,7 +109,7 @@ view: custom {
 
   dimension: metrics__quantity__search_selected {
     label: "Search Selected"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.search_selected ;;
     type: number
     group_label: "Search"
@@ -127,7 +127,7 @@ view: custom {
 
   dimension: metrics__string__search_session_id {
     label: "Search Session Id"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_session_id ;;
     type: string
     group_label: "Search"
@@ -145,7 +145,7 @@ view: custom {
 
   dimension: metrics__string__search_short_description {
     label: "Search Short Description"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_short_description ;;
     type: string
     group_label: "Search"
@@ -183,7 +183,7 @@ First selection contains no data for this field.
 
   dimension: metrics__string__search_title {
     label: "Search Title"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_title ;;
     type: string
     group_label: "Search"
@@ -201,7 +201,7 @@ First selection contains no data for this field.
 
   dimension: metrics__string__search_url {
     label: "Search Url"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_url ;;
     type: string
     group_label: "Search"
@@ -219,7 +219,7 @@ First selection contains no data for this field.
 
   dimension: metrics__datetime__search_url_select_timestamp {
     label: "Search Url Select Timestamp"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.datetime.search_url_select_timestamp ;;
     type: string
     group_label: "Search"
