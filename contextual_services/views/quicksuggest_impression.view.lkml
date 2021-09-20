@@ -40,11 +40,6 @@ view: quicksuggest_impression {
     type: string
   }
 
-  dimension: matched_keywords {
-    sql: ${TABLE}.matched_keywords ;;
-    type: string
-  }
-
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
@@ -224,11 +219,6 @@ view: quicksuggest_impression {
 
   dimension: scenario {
     sql: ${TABLE}.scenario ;;
-    type: string
-  }
-
-  dimension: search_query {
-    sql: ${TABLE}.search_query ;;
     type: string
   }
 

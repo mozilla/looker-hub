@@ -1,4 +1,231 @@
 view: metrics {
+  dimension: metrics__boolean__mozilla_products_has_firefox_installed {
+    label: "Mozilla Products Has Firefox Installed"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.mozilla_products_has_firefox_installed ;;
+    type: yesno
+    group_label: "Mozilla Products"
+    group_item_label: "Has Firefox Installed"
+
+    link: {
+      label: "Glean Dictionary reference for Mozilla Products Has Firefox Installed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/mozilla_products_has_firefox_installed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If Firefox is installed on the users's device.
+"
+  }
+
+  dimension: metrics__counter__settings_screen_autocomplete_domain_added {
+    label: "Settings Screen Autocomplete Domain Added"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.settings_screen_autocomplete_domain_added ;;
+    type: number
+    group_label: "Settings Screen"
+    group_item_label: "Autocomplete Domain Added"
+
+    link: {
+      label: "Glean Dictionary reference for Settings Screen Autocomplete Domain Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/settings_screen_autocomplete_domain_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many times a user has added
+a website to the autocomplete list.
+"
+  }
+
+  dimension: metrics__counter__shortcuts_shortcut_added_counter {
+    label: "Shortcuts Shortcut Added Counter"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.shortcuts_shortcut_added_counter ;;
+    type: number
+    group_label: "Shortcuts"
+    group_item_label: "Shortcut Added Counter"
+
+    link: {
+      label: "Glean Dictionary reference for Shortcuts Shortcut Added Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/shortcuts_shortcut_added_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many times a user has added
+a website to shortcuts.
+"
+  }
+
+  dimension: metrics__counter__shortcuts_shortcut_opened_counter {
+    label: "Shortcuts Shortcut Opened Counter"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.shortcuts_shortcut_opened_counter ;;
+    type: number
+    group_label: "Shortcuts"
+    group_item_label: "Shortcut Opened Counter"
+
+    link: {
+      label: "Glean Dictionary reference for Shortcuts Shortcut Opened Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/shortcuts_shortcut_opened_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many times a user has opened
+a website from a shortcut in the home screen.
+"
+  }
+
+  dimension: metrics__labeled_counter__shortcuts_shortcut_removed_counter {
+    label: "Shortcuts Shortcut Removed Counter"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.shortcuts_shortcut_removed_counter ;;
+    group_label: "Shortcuts"
+    group_item_label: "Shortcut Removed Counter"
+
+    link: {
+      label: "Glean Dictionary reference for Shortcuts Shortcut Removed Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/shortcuts_shortcut_removed_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many times a user has removed
+a website from shortcuts.
+It also indicates the screen it was removed from, home or browser.
+"
+  }
+
+  dimension: metrics__quantity__shortcuts_shortcuts_on_home_number {
+    label: "Shortcuts Shortcuts On Home Number"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.shortcuts_shortcuts_on_home_number ;;
+    type: number
+    group_label: "Shortcuts"
+    group_item_label: "Shortcuts On Home Number"
+
+    link: {
+      label: "Glean Dictionary reference for Shortcuts Shortcuts On Home Number"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/shortcuts_shortcuts_on_home_number"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of shortcuts the user has on home screen,
+0, 1, 2, 3 or 4 (maximum)
+"
+  }
+
+  dimension: metrics__boolean__tracking_protection_has_advertising_blocked {
+    label: "Tracking Protection Has Advertising Blocked"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.tracking_protection_has_advertising_blocked ;;
+    type: yesno
+    group_label: "Tracking Protection"
+    group_item_label: "Has Advertising Blocked"
+
+    link: {
+      label: "Glean Dictionary reference for Tracking Protection Has Advertising Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/tracking_protection_has_advertising_blocked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The user has changed the setting for enhanced tracking protection
+at least once.
+"
+  }
+
+  dimension: metrics__boolean__tracking_protection_has_analytics_blocked {
+    label: "Tracking Protection Has Analytics Blocked"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.tracking_protection_has_analytics_blocked ;;
+    type: yesno
+    group_label: "Tracking Protection"
+    group_item_label: "Has Analytics Blocked"
+
+    link: {
+      label: "Glean Dictionary reference for Tracking Protection Has Analytics Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/tracking_protection_has_analytics_blocked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The user has changed the setting for enhanced tracking protection
+at least once.
+"
+  }
+
+  dimension: metrics__boolean__tracking_protection_has_content_blocked {
+    label: "Tracking Protection Has Content Blocked"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.tracking_protection_has_content_blocked ;;
+    type: yesno
+    group_label: "Tracking Protection"
+    group_item_label: "Has Content Blocked"
+
+    link: {
+      label: "Glean Dictionary reference for Tracking Protection Has Content Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/tracking_protection_has_content_blocked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The user has changed the setting for enhanced tracking protection
+at least once.
+"
+  }
+
+  dimension: metrics__boolean__tracking_protection_has_ever_changed_etp {
+    label: "Tracking Protection Has Ever Changed Etp"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.tracking_protection_has_ever_changed_etp ;;
+    type: yesno
+    group_label: "Tracking Protection"
+    group_item_label: "Has Ever Changed Etp"
+
+    link: {
+      label: "Glean Dictionary reference for Tracking Protection Has Ever Changed Etp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/tracking_protection_has_ever_changed_etp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The user has changed the setting for enhanced tracking protection
+at least once.
+"
+  }
+
+  dimension: metrics__boolean__tracking_protection_has_social_blocked {
+    label: "Tracking Protection Has Social Blocked"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.tracking_protection_has_social_blocked ;;
+    type: yesno
+    group_label: "Tracking Protection"
+    group_item_label: "Has Social Blocked"
+
+    link: {
+      label: "Glean Dictionary reference for Tracking Protection Has Social Blocked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/tracking_protection_has_social_blocked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The user has changed the setting for enhanced tracking protection
+at least once.
+"
+  }
+
+  dimension: metrics__counter__tracking_protection_toolbar_shield_clicked {
+    label: "Tracking Protection Toolbar Shield Clicked"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tracking_protection_toolbar_shield_clicked ;;
+    type: number
+    group_label: "Tracking Protection"
+    group_item_label: "Toolbar Shield Clicked"
+
+    link: {
+      label: "Glean Dictionary reference for Tracking Protection Toolbar Shield Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/tracking_protection_toolbar_shield_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many times a user has opened
+the tracking protection settings panel from the toolbar.
+"
+  }
+
   dimension: metrics__memory_distribution__glean_database_size__sum {
     label: "Glean Database Size Sum"
     hidden: no
@@ -750,6 +977,106 @@ documented in the ping's pings.yaml file.
 
   measure: ping_count {
     type: count
+  }
+
+  measure: settings_screen_autocomplete_domain_added {
+    type: sum
+    sql: ${metrics__counter__settings_screen_autocomplete_domain_added} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Settings Screen Autocomplete Domain Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/settings_screen_autocomplete_domain_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: settings_screen_autocomplete_domain_added_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__settings_screen_autocomplete_domain_added: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Settings Screen Autocomplete Domain Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/settings_screen_autocomplete_domain_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: shortcuts_shortcut_added_counter {
+    type: sum
+    sql: ${metrics__counter__shortcuts_shortcut_added_counter} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shortcuts Shortcut Added Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/shortcuts_shortcut_added_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: shortcuts_shortcut_added_counter_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__shortcuts_shortcut_added_counter: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shortcuts Shortcut Added Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/shortcuts_shortcut_added_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: shortcuts_shortcut_opened_counter {
+    type: sum
+    sql: ${metrics__counter__shortcuts_shortcut_opened_counter} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shortcuts Shortcut Opened Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/shortcuts_shortcut_opened_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: shortcuts_shortcut_opened_counter_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__shortcuts_shortcut_opened_counter: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shortcuts Shortcut Opened Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/shortcuts_shortcut_opened_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tracking_protection_toolbar_shield_clicked {
+    type: sum
+    sql: ${metrics__counter__tracking_protection_toolbar_shield_clicked} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tracking Protection Toolbar Shield Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/tracking_protection_toolbar_shield_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tracking_protection_toolbar_shield_clicked_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tracking_protection_toolbar_shield_clicked: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tracking Protection Toolbar Shield Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/tracking_protection_toolbar_shield_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   measure: glean_error_io {

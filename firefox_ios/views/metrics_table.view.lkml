@@ -309,6 +309,24 @@ preference.
     description: "Set to true if the tasks that are queued prior to Glean initialization time out."
   }
 
+  dimension: metrics__boolean__installed_mozilla_products_focus {
+    sql: ${TABLE}.metrics.boolean.installed_mozilla_products_focus ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Installed Mozilla Products Focus"
+    description: "If Focus is installed on the users's device.
+"
+  }
+
+  dimension: metrics__boolean__installed_mozilla_products_klar {
+    sql: ${TABLE}.metrics.boolean.installed_mozilla_products_klar ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Installed Mozilla Products Klar"
+    description: "If Klar is installed on the users's device.
+"
+  }
+
   dimension: metrics__boolean__preferences_block_popups {
     sql: ${TABLE}.metrics.boolean.preferences_block_popups ;;
     type: yesno

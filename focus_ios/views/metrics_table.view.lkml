@@ -272,6 +272,65 @@ view: metrics_table {
     description: "Set to true if the tasks that are queued prior to Glean initialization time out."
   }
 
+  dimension: metrics__boolean__mozilla_products_has_firefox_installed {
+    sql: ${TABLE}.metrics.boolean.mozilla_products_has_firefox_installed ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Mozilla Products Has Firefox Installed"
+    description: "If Firefox is installed on the users's device.
+"
+  }
+
+  dimension: metrics__boolean__tracking_protection_has_advertising_blocked {
+    sql: ${TABLE}.metrics.boolean.tracking_protection_has_advertising_blocked ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Tracking Protection Has Advertising Blocked"
+    description: "The user has changed the setting for enhanced tracking protection
+at least once.
+"
+  }
+
+  dimension: metrics__boolean__tracking_protection_has_analytics_blocked {
+    sql: ${TABLE}.metrics.boolean.tracking_protection_has_analytics_blocked ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Tracking Protection Has Analytics Blocked"
+    description: "The user has changed the setting for enhanced tracking protection
+at least once.
+"
+  }
+
+  dimension: metrics__boolean__tracking_protection_has_content_blocked {
+    sql: ${TABLE}.metrics.boolean.tracking_protection_has_content_blocked ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Tracking Protection Has Content Blocked"
+    description: "The user has changed the setting for enhanced tracking protection
+at least once.
+"
+  }
+
+  dimension: metrics__boolean__tracking_protection_has_ever_changed_etp {
+    sql: ${TABLE}.metrics.boolean.tracking_protection_has_ever_changed_etp ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Tracking Protection Has Ever Changed Etp"
+    description: "The user has changed the setting for enhanced tracking protection
+at least once.
+"
+  }
+
+  dimension: metrics__boolean__tracking_protection_has_social_blocked {
+    sql: ${TABLE}.metrics.boolean.tracking_protection_has_social_blocked ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Tracking Protection Has Social Blocked"
+    description: "The user has changed the setting for enhanced tracking protection
+at least once.
+"
+  }
+
   dimension: metrics__counter__glean_error_io {
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
@@ -333,6 +392,46 @@ This does not include deletion-request pings.
     group_label: "Metrics Counter"
     group_item_label: "Glean Validation Foreground Count"
     description: "On mobile, the number of times the application went to foreground.
+"
+  }
+
+  dimension: metrics__counter__settings_screen_autocomplete_domain_added {
+    sql: ${TABLE}.metrics.counter.settings_screen_autocomplete_domain_added ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Settings Screen Autocomplete Domain Added"
+    description: "A counter that indicates how many times a user has added
+a website to the autocomplete list.
+"
+  }
+
+  dimension: metrics__counter__shortcuts_shortcut_added_counter {
+    sql: ${TABLE}.metrics.counter.shortcuts_shortcut_added_counter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Shortcuts Shortcut Added Counter"
+    description: "A counter that indicates how many times a user has added
+a website to shortcuts.
+"
+  }
+
+  dimension: metrics__counter__shortcuts_shortcut_opened_counter {
+    sql: ${TABLE}.metrics.counter.shortcuts_shortcut_opened_counter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Shortcuts Shortcut Opened Counter"
+    description: "A counter that indicates how many times a user has opened
+a website from a shortcut in the home screen.
+"
+  }
+
+  dimension: metrics__counter__tracking_protection_toolbar_shield_clicked {
+    sql: ${TABLE}.metrics.counter.tracking_protection_toolbar_shield_clicked ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tracking Protection Toolbar Shield Clicked"
+    description: "A counter that indicates how many times a user has opened
+the tracking protection settings panel from the toolbar.
 "
   }
 
@@ -405,6 +504,15 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__shortcuts_shortcut_removed_counter {
+    sql: ${TABLE}.metrics.labeled_counter.shortcuts_shortcut_removed_counter ;;
+    hidden: yes
+    description: "A counter that indicates how many times a user has removed
+a website from shortcuts.
+It also indicates the screen it was removed from, home or browser.
+"
+  }
+
   dimension: metrics__labeled_rate {
     sql: ${TABLE}.metrics.labeled_rate ;;
     hidden: yes
@@ -444,6 +552,16 @@ This metric appears in both the metrics and baseline pings.
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__quantity__shortcuts_shortcuts_on_home_number {
+    sql: ${TABLE}.metrics.quantity.shortcuts_shortcuts_on_home_number ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Shortcuts Shortcuts On Home Number"
+    description: "The number of shortcuts the user has on home screen,
+0, 1, 2, 3 or 4 (maximum)
+"
   }
 
   dimension: metrics__string__ping_reason {
