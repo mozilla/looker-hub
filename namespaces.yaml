@@ -1005,6 +1005,13 @@ mozilla_vpn:
       - channel: release
         table: mozdata.mozilla_vpn.all_subscriptions
       type: table_view
+newtab:
+  connection: bigquery-oauth
+  glean_app: false
+  owners:
+  - mmccorquodale@mozilla.com
+  pretty_name: New Tab
+  spoke: looker-spoke-private
 revenue:
   connection: bigquery-oauth
   glean_app: false

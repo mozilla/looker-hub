@@ -717,6 +717,42 @@ inactive tab section.
 "
   }
 
+  dimension: metrics__boolean__installed_mozilla_products_focus {
+    label: "Installed Mozilla Products Focus"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.installed_mozilla_products_focus ;;
+    type: yesno
+    group_label: "Installed Mozilla Products"
+    group_item_label: "Focus"
+
+    link: {
+      label: "Glean Dictionary reference for Installed Mozilla Products Focus"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/installed_mozilla_products_focus"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If Focus is installed on the users's device.
+"
+  }
+
+  dimension: metrics__boolean__installed_mozilla_products_klar {
+    label: "Installed Mozilla Products Klar"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.installed_mozilla_products_klar ;;
+    type: yesno
+    group_label: "Installed Mozilla Products"
+    group_item_label: "Klar"
+
+    link: {
+      label: "Glean Dictionary reference for Installed Mozilla Products Klar"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/installed_mozilla_products_klar"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If Klar is installed on the users's device.
+"
+  }
+
   dimension: metrics__uuid__legacy_ids_client_id {
     label: "Legacy Ids Client Id"
     hidden: no
