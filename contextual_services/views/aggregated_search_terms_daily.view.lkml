@@ -2,7 +2,7 @@ view: aggregated_search_terms_daily {
   dimension: search_terms {
     sql: ${TABLE}.search_terms ;;
     type: string
-    description: Search terms entered into the urlbar, possibly sanitized.
+    description: "Search terms entered into the urlbar, possibly sanitized."
   }
 
   dimension_group: submission {
