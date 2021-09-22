@@ -1005,6 +1005,11 @@ mozilla_vpn:
       - channel: release
         table: mozdata.mozilla_vpn.all_subscriptions
       type: table_view
+    vat_rates:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.vat_rates
+      type: table_view
 newtab:
   connection: bigquery-oauth
   glean_app: false
