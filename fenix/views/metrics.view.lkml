@@ -239,6 +239,96 @@ manually by the user.
 "
   }
 
+  dimension: metrics__boolean__customize_home_jump_back_in {
+    label: "Customize Home Jump Back In"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.customize_home_jump_back_in ;;
+    type: yesno
+    group_label: "Customize Home"
+    group_item_label: "Jump Back In"
+
+    link: {
+      label: "Glean Dictionary reference for Customize Home Jump Back In"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/customize_home_jump_back_in"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An indication of whether the Jump back in section is enabled to be displayed
+"
+  }
+
+  dimension: metrics__boolean__customize_home_most_visited_sites {
+    label: "Customize Home Most Visited Sites"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.customize_home_most_visited_sites ;;
+    type: yesno
+    group_label: "Customize Home"
+    group_item_label: "Most Visited Sites"
+
+    link: {
+      label: "Glean Dictionary reference for Customize Home Most Visited Sites"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/customize_home_most_visited_sites"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An indication of whether the most visited sites are enabled to be displayed
+"
+  }
+
+  dimension: metrics__boolean__customize_home_pocket {
+    label: "Customize Home Pocket"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.customize_home_pocket ;;
+    type: yesno
+    group_label: "Customize Home"
+    group_item_label: "Pocket"
+
+    link: {
+      label: "Glean Dictionary reference for Customize Home Pocket"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/customize_home_pocket"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An indication of whether Pocket is enabled to be displayed
+"
+  }
+
+  dimension: metrics__boolean__customize_home_recently_saved {
+    label: "Customize Home Recently Saved"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.customize_home_recently_saved ;;
+    type: yesno
+    group_label: "Customize Home"
+    group_item_label: "Recently Saved"
+
+    link: {
+      label: "Glean Dictionary reference for Customize Home Recently Saved"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/customize_home_recently_saved"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An indication of whether the recently saved section is enabled to be displayed
+"
+  }
+
+  dimension: metrics__boolean__customize_home_recently_visited {
+    label: "Customize Home Recently Visited"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.customize_home_recently_visited ;;
+    type: yesno
+    group_label: "Customize Home"
+    group_item_label: "Recently Visited"
+
+    link: {
+      label: "Glean Dictionary reference for Customize Home Recently Visited"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/customize_home_recently_visited"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An indication of whether the Recently visited section is enabled to be displayed
+"
+  }
+
   dimension: metrics__timespan__engine_kill_background_age__value {
     label: "Engine Kill Background Age Value"
     hidden: yes

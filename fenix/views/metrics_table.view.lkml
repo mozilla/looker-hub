@@ -311,6 +311,51 @@ supported for this user.
 "
   }
 
+  dimension: metrics__boolean__customize_home_jump_back_in {
+    sql: ${TABLE}.metrics.boolean.customize_home_jump_back_in ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Customize Home Jump Back In"
+    description: "An indication of whether the Jump back in section is enabled to be displayed
+"
+  }
+
+  dimension: metrics__boolean__customize_home_most_visited_sites {
+    sql: ${TABLE}.metrics.boolean.customize_home_most_visited_sites ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Customize Home Most Visited Sites"
+    description: "An indication of whether the most visited sites are enabled to be displayed
+"
+  }
+
+  dimension: metrics__boolean__customize_home_pocket {
+    sql: ${TABLE}.metrics.boolean.customize_home_pocket ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Customize Home Pocket"
+    description: "An indication of whether Pocket is enabled to be displayed
+"
+  }
+
+  dimension: metrics__boolean__customize_home_recently_saved {
+    sql: ${TABLE}.metrics.boolean.customize_home_recently_saved ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Customize Home Recently Saved"
+    description: "An indication of whether the recently saved section is enabled to be displayed
+"
+  }
+
+  dimension: metrics__boolean__customize_home_recently_visited {
+    sql: ${TABLE}.metrics.boolean.customize_home_recently_visited ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Customize Home Recently Visited"
+    description: "An indication of whether the Recently visited section is enabled to be displayed
+"
+  }
+
   dimension: metrics__boolean__gfx_status_headless {
     sql: ${TABLE}.metrics.boolean.gfx_status_headless ;;
     type: yesno
