@@ -1075,6 +1075,16 @@ pressed
 "
   }
 
+  dimension: metrics__counter__tabs_pull_to_refresh {
+    sql: ${TABLE}.metrics.counter.tabs_pull_to_refresh ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tabs Pull To Refresh"
+    description: "Record the number of times a user pulls down
+on a page to reload.
+"
+  }
+
   dimension: metrics__counter__widget_l_tabs_open_url {
     sql: ${TABLE}.metrics.counter.widget_l_tabs_open_url ;;
     type: number

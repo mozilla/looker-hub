@@ -30,6 +30,17 @@ activity_stream:
       tables:
       - table: mozdata.activity_stream.sessions
       type: ping_view
+awesome_bar:
+  glean_app: false
+  owners:
+  - tbrooks@mozilla.com
+  pretty_name: Awesome Bar
+  spoke: looker-spoke-default
+  views:
+    urlbar_clients_daily:
+      tables:
+      - table: mozdata.telemetry.urlbar_clients_daily
+      type: ping_view
 bergamot:
   explores:
     custom:
