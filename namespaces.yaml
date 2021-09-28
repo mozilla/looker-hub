@@ -176,6 +176,31 @@ experimentation:
       - channel: release
         table: mozdata.telemetry.experiment_unenrollment_overall
       type: table_view
+    experimenter_experiments:
+      tables:
+      - channel: release
+        table: moz-fx-data-experiments.monitoring.experimenter_experiments_v1
+      type: table_view
+    logs:
+      tables:
+      - channel: release
+        table: moz-fx-data-experiments.monitoring.logs
+      type: table_view
+    query_cost:
+      tables:
+      - channel: release
+        table: moz-fx-data-experiments.monitoring.query_cost_v1
+      type: table_view
+    task_monitoring_logs:
+      tables:
+      - channel: release
+        table: moz-fx-data-experiments.monitoring.task_monitoring_logs
+      type: table_view
+    task_profiling_logs:
+      tables:
+      - channel: release
+        table: moz-fx-data-experiments.monitoring.task_profiling_logs
+      type: table_view
 fenix:
   explores:
     activation:
