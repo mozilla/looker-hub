@@ -129,6 +129,53 @@ duet:
       - channel: release
         table: mozdata.telemetry.new_profile
       type: ping_view
+experimentation:
+  glean_app: false
+  owners:
+  - ascholtz@mozilla.com
+  pretty_name: Experimentation
+  spoke: looker-spoke-default
+  views:
+    experiment_cumulative_ad_clicks:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_cumulative_ad_clicks
+      type: table_view
+    experiment_cumulative_search_count:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_cumulative_search_count
+      type: table_view
+    experiment_cumulative_search_with_ads_count:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_cumulative_search_with_ads_count
+      type: table_view
+    experiment_enrollment_cumulative_population_estimate:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_enrollment_cumulative_population_estimate
+      type: table_view
+    experiment_enrollment_daily_active_population:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_enrollment_daily_active_population
+      type: table_view
+    experiment_enrollment_other_events_overall:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_enrollment_other_events_overall
+      type: table_view
+    experiment_enrollment_overall:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_enrollment_overall
+      type: table_view
+    experiment_unenrollment_overall:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.experiment_unenrollment_overall
+      type: table_view
 fenix:
   explores:
     activation:
