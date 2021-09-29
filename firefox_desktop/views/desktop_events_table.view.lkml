@@ -1,0 +1,157 @@
+view: desktop_events_table {
+  dimension: app_name {
+    sql: ${TABLE}.app_name ;;
+    type: string
+  }
+
+  dimension: app_version {
+    sql: ${TABLE}.app_version ;;
+    type: string
+  }
+
+  dimension: build_id {
+    sql: ${TABLE}.build_id ;;
+    type: string
+  }
+
+  dimension: client_id {
+    sql: ${TABLE}.client_id ;;
+    hidden: yes
+  }
+
+  dimension: country {
+    sql: ${TABLE}.country ;;
+    type: string
+    map_layer_name: countries
+  }
+
+  dimension: doc_type {
+    sql: ${TABLE}.doc_type ;;
+    type: string
+  }
+
+  dimension: document_id {
+    sql: ${TABLE}.document_id ;;
+    hidden: yes
+  }
+
+  dimension: event_category {
+    sql: ${TABLE}.event_category ;;
+    type: string
+  }
+
+  dimension: event_map_values {
+    sql: ${TABLE}.event_map_values ;;
+    hidden: yes
+  }
+
+  dimension: event_method {
+    sql: ${TABLE}.event_method ;;
+    type: string
+  }
+
+  dimension: event_object {
+    sql: ${TABLE}.event_object ;;
+    type: string
+  }
+
+  dimension: event_process {
+    sql: ${TABLE}.event_process ;;
+    type: string
+  }
+
+  dimension: event_string_value {
+    sql: ${TABLE}.event_string_value ;;
+    type: string
+  }
+
+  dimension: event_timestamp {
+    sql: ${TABLE}.event_timestamp ;;
+    type: number
+  }
+
+  dimension: experiments {
+    sql: ${TABLE}.experiments ;;
+    hidden: yes
+  }
+
+  dimension: locale {
+    sql: ${TABLE}.locale ;;
+    type: string
+  }
+
+  dimension: normalized_channel {
+    sql: ${TABLE}.normalized_channel ;;
+    type: string
+  }
+
+  dimension: os {
+    sql: ${TABLE}.os ;;
+    type: string
+  }
+
+  dimension: os_version {
+    sql: ${TABLE}.os_version ;;
+    type: string
+  }
+
+  dimension: sample_id {
+    sql: ${TABLE}.sample_id ;;
+    type: number
+  }
+
+  dimension: session_id {
+    sql: ${TABLE}.session_id ;;
+    type: string
+  }
+
+  dimension: subsession_id {
+    sql: ${TABLE}.subsession_id ;;
+    type: string
+  }
+
+  dimension_group: session_start {
+    sql: ${TABLE}.session_start_time ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
+  dimension_group: submission {
+    sql: ${TABLE}.submission_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+  }
+
+  dimension_group: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
+  sql_table_name: `mozdata.telemetry.events` ;;
+}
