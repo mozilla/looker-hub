@@ -679,6 +679,239 @@ firefox_accounts:
       tables:
       - table: mozdata.firefox_accounts.fxa_users_last_seen
       type: growth_accounting_view
+firefox_desktop:
+  explores:
+    baseline:
+      type: glean_ping_explore
+      views:
+        base_view: baseline
+    client_counts:
+      type: client_counts_explore
+      views:
+        base_view: client_counts
+        extended_view: clients_daily_table
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
+    fog_validation:
+      type: glean_ping_explore
+      views:
+        base_view: fog_validation
+    funnel_analysis:
+      type: funnel_analysis_explore
+      views:
+        base_view: funnel_analysis
+    growth_accounting:
+      type: growth_accounting_explore
+      views:
+        base_view: growth_accounting
+    metrics:
+      type: glean_ping_explore
+      views:
+        base_view: metrics
+  glean_app: true
+  owners:
+  - chutten@mozilla.com
+  pretty_name: Firefox for Desktop
+  spoke: looker-spoke-default
+  views:
+    baseline:
+      tables:
+      - table: mozdata.firefox_desktop.baseline
+      type: glean_ping_view
+    baseline_clients_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.baseline_clients_daily
+      type: table_view
+    baseline_clients_first_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.baseline_clients_first_seen
+      type: table_view
+    baseline_clients_last_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.baseline_clients_last_seen
+      type: table_view
+    baseline_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.baseline
+      type: table_view
+    client_counts:
+      tables:
+      - table: mozdata.telemetry.clients_daily
+      type: client_counts_view
+    clients_daily_table:
+      tables:
+      - table: mozdata.telemetry.clients_daily
+      type: table_view
+    clients_last_seen_table:
+      tables:
+      - table: mozdata.telemetry.clients_last_seen
+      type: table_view
+    desktop_events_table:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.events
+      type: table_view
+    events:
+      tables:
+      - base_table: mozdata.telemetry.events
+        events_table_view: desktop_events_table
+      type: events_view
+    events_daily_table:
+      tables:
+      - channel: release
+        table: mozdata.telemetry.events_daily
+      type: table_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.events
+      type: table_view
+    events_unnested_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.events_unnested
+      type: table_view
+    feature_usage_table:
+      tables:
+      - table: mozdata.telemetry.feature_usage
+      type: table_view
+    fog_validation:
+      tables:
+      - table: mozdata.firefox_desktop.fog_validation
+      type: glean_ping_view
+    fog_validation_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.fog_validation
+      type: table_view
+    funnel_analysis:
+      tables:
+      - event_types: mozdata.telemetry.event_types
+        funnel_analysis: events_daily_table
+        step_1: event_types
+        step_2: event_types
+        step_3: event_types
+        step_4: event_types
+      type: funnel_analysis_view
+    growth_accounting:
+      tables:
+      - table: mozdata.telemetry.clients_last_seen
+      type: growth_accounting_view
+    metrics:
+      tables:
+      - table: mozdata.firefox_desktop.metrics
+      type: glean_ping_view
+    metrics_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.metrics
+      type: table_view
+firefox_desktop_background_update:
+  explores:
+    background_update:
+      type: glean_ping_explore
+      views:
+        base_view: background_update
+    baseline:
+      type: glean_ping_explore
+      views:
+        base_view: baseline
+    client_counts:
+      type: client_counts_explore
+      views:
+        base_view: client_counts
+        extended_view: baseline_clients_daily_table
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
+    growth_accounting:
+      type: growth_accounting_explore
+      views:
+        base_view: growth_accounting
+    metrics:
+      type: glean_ping_explore
+      views:
+        base_view: metrics
+  glean_app: true
+  owners:
+  - chutten@mozilla.com
+  pretty_name: Firefox for Desktop Background Update Task
+  spoke: looker-spoke-default
+  views:
+    background_update:
+      tables:
+      - table: mozdata.firefox_desktop_background_update.background_update
+      type: glean_ping_view
+    background_update_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_update.background_update
+      type: table_view
+    baseline:
+      tables:
+      - table: mozdata.firefox_desktop_background_update.baseline
+      type: glean_ping_view
+    baseline_clients_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_update.baseline_clients_daily
+      type: table_view
+    baseline_clients_first_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_update.baseline_clients_first_seen
+      type: table_view
+    baseline_clients_last_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_update.baseline_clients_last_seen
+      type: table_view
+    baseline_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_update.baseline
+      type: table_view
+    client_counts:
+      tables:
+      - table: mozdata.firefox_desktop_background_update.baseline_clients_daily
+      type: client_counts_view
+    events:
+      tables:
+      - base_table: mozdata.firefox_desktop_background_update.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_update.events
+      type: table_view
+    events_unnested_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_update.events_unnested
+      type: table_view
+    growth_accounting:
+      tables:
+      - table: mozdata.firefox_desktop_background_update.baseline_clients_last_seen
+      type: growth_accounting_view
+    metrics:
+      tables:
+      - table: mozdata.firefox_desktop_background_update.metrics
+      type: glean_ping_view
+    metrics_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_update.metrics
+      type: table_view
 firefox_ios:
   explores:
     baseline:
