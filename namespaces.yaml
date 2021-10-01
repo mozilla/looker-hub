@@ -171,6 +171,11 @@ experimentation:
       - channel: release
         table: mozdata.telemetry.experiment_enrollment_overall
       type: table_view
+    experiment_search_aggregates_live:
+      tables:
+      - channel: release
+        table: moz-fx-data-shared-prod.telemetry_derived.experiment_search_aggregates_live_v1
+      type: table_view
     experiment_unenrollment_overall:
       tables:
       - channel: release
