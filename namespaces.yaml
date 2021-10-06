@@ -284,7 +284,7 @@ fenix:
         base_view: tabs_sync
   glean_app: true
   owners:
-  - frank@mozilla.com
+  - dthorn@mozilla.com
   - mdroettboom@mozilla.com
   - vzare@mozilla.com
   pretty_name: Firefox for Android
@@ -944,7 +944,7 @@ firefox_ios:
   glean_app: true
   owners:
   - tlong@mozilla.com
-  - frank@mozilla.com
+  - dthorn@mozilla.com
   - athomas@mozilla.com
   pretty_name: Firefox for iOS
   spoke: looker-spoke-default
