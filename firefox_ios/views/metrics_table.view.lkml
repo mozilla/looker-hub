@@ -540,6 +540,16 @@ default browser onboarding is clicked.
 "
   }
 
+  dimension: metrics__counter__firefox_home_page_jump_back_in_group_opened {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_group_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page Jump Back In Group Opened"
+    description: "Counts the number of times a user taps to open an
+existing group from the Jump Back In section
+"
+  }
+
   dimension: metrics__counter__firefox_home_page_jump_back_in_section_view {
     sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_section_view ;;
     type: number

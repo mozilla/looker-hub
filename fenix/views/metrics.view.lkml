@@ -2339,6 +2339,78 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__counter__logins_store_migration_num_failed {
+    label: "Logins Store Migration Num Failed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.logins_store_migration_num_failed ;;
+    type: number
+    group_label: "Logins Store"
+    group_item_label: "Migration Num Failed"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Num Failed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_migration_num_failed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of login records which failed to migrate
+"
+  }
+
+  dimension: metrics__counter__logins_store_migration_num_processed {
+    label: "Logins Store Migration Num Processed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.logins_store_migration_num_processed ;;
+    type: number
+    group_label: "Logins Store"
+    group_item_label: "Migration Num Processed"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Num Processed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_migration_num_processed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of login records processed by the migration
+"
+  }
+
+  dimension: metrics__counter__logins_store_migration_num_succeeded {
+    label: "Logins Store Migration Num Succeeded"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.logins_store_migration_num_succeeded ;;
+    type: number
+    group_label: "Logins Store"
+    group_item_label: "Migration Num Succeeded"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Num Succeeded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_migration_num_succeeded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of login records successfully migrated
+"
+  }
+
+  dimension: metrics__timespan__logins_store_migration_total_duration__value {
+    label: "Logins Store Migration Total Duration Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.logins_store_migration_total_duration.value ;;
+    type: number
+    group_label: "Logins Store"
+    group_item_label: "Migration Total Duration Value"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Total Duration Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_migration_total_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long the migration tool
+"
+  }
+
   dimension: metrics__counter__logins_store_read_query_count {
     label: "Logins Store Read Query Count"
     hidden: no
@@ -5745,6 +5817,81 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     link: {
       label: "Glean Dictionary reference for Glean Validation Foreground Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_foreground_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_migration_num_failed {
+    type: sum
+    sql: ${metrics__counter__logins_store_migration_num_failed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Num Failed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_migration_num_failed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_migration_num_failed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_store_migration_num_failed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Num Failed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_migration_num_failed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_migration_num_processed {
+    type: sum
+    sql: ${metrics__counter__logins_store_migration_num_processed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Num Processed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_migration_num_processed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_migration_num_processed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_store_migration_num_processed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Num Processed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_migration_num_processed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_migration_num_succeeded {
+    type: sum
+    sql: ${metrics__counter__logins_store_migration_num_succeeded} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Num Succeeded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_migration_num_succeeded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_migration_num_succeeded_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_store_migration_num_succeeded: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Num Succeeded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_store_migration_num_succeeded"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

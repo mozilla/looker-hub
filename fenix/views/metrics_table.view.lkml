@@ -745,6 +745,33 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__logins_store_migration_num_failed {
+    sql: ${TABLE}.metrics.counter.logins_store_migration_num_failed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Store Migration Num Failed"
+    description: "The total number of login records which failed to migrate
+"
+  }
+
+  dimension: metrics__counter__logins_store_migration_num_processed {
+    sql: ${TABLE}.metrics.counter.logins_store_migration_num_processed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Store Migration Num Processed"
+    description: "The total number of login records processed by the migration
+"
+  }
+
+  dimension: metrics__counter__logins_store_migration_num_succeeded {
+    sql: ${TABLE}.metrics.counter.logins_store_migration_num_succeeded ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Store Migration Num Succeeded"
+    description: "The total number of login records successfully migrated
+"
+  }
+
   dimension: metrics__counter__logins_store_read_query_count {
     sql: ${TABLE}.metrics.counter.logins_store_read_query_count ;;
     type: number
@@ -1838,6 +1865,11 @@ will be \"custom\"
     hidden: yes
   }
 
+  dimension: metrics__string_list__logins_store_migration_errors {
+    sql: ${TABLE}.metrics.string_list.logins_store_migration_errors ;;
+    hidden: yes
+  }
+
   dimension: metrics__string_list__metrics_mozilla_products {
     sql: ${TABLE}.metrics.string_list.metrics_mozilla_products ;;
     hidden: yes
@@ -1963,6 +1995,20 @@ will be \"custom\"
     sql: ${TABLE}.metrics.timespan.engine_kill_foreground_age.value ;;
     type: number
     group_label: "Metrics Timespan Engine Kill Foreground Age"
+    group_item_label: "Value"
+  }
+
+  dimension: metrics__timespan__logins_store_migration_total_duration__time_unit {
+    sql: ${TABLE}.metrics.timespan.logins_store_migration_total_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Logins Store Migration Total Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__logins_store_migration_total_duration__value {
+    sql: ${TABLE}.metrics.timespan.logins_store_migration_total_duration.value ;;
+    type: number
+    group_label: "Metrics Timespan Logins Store Migration Total Duration"
     group_item_label: "Value"
   }
 

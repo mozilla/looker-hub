@@ -108,6 +108,28 @@ The key format is `<provider-name>`.
 "
   }
 
+  dimension: metrics__counter__browser_total_uri_count {
+    label: "Browser Total Uri Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_total_uri_count ;;
+    type: number
+    group_label: "Browser"
+    group_item_label: "Total Uri Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Total Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/browser_total_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records count of URIs visited by the user in the current session,
+including page reloads.
+It does not include background page requests and URIs from embedded pages
+but may be incremented without user interaction by website scripts
+that programmatically redirect to a new location.
+"
+  }
+
   dimension: metrics__boolean__mozilla_products_has_fenix_installed {
     label: "Mozilla Products Has Fenix Installed"
     hidden: no
@@ -1192,6 +1214,31 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
 
   measure: ping_count {
     type: count
+  }
+
+  measure: browser_total_uri_count {
+    type: sum
+    sql: ${metrics__counter__browser_total_uri_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Total Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/browser_total_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_total_uri_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_total_uri_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Total Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/browser_total_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   measure: settings_screen_autocomplete_domain_added {

@@ -284,7 +284,7 @@ fenix:
         base_view: tabs_sync
   glean_app: true
   owners:
-  - frank@mozilla.com
+  - dthorn@mozilla.com
   - mdroettboom@mozilla.com
   - vzare@mozilla.com
   pretty_name: Firefox for Android
@@ -393,6 +393,11 @@ fenix:
       tables:
       - table: mozdata.fenix.baseline_clients_daily
       type: client_counts_view
+    clients_last_seen_joined_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.clients_last_seen_joined
+      type: table_view
     creditcards_sync:
       tables:
       - channel: release
@@ -539,6 +544,16 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fenix.metrics
       type: glean_ping_view
+    metrics_clients_daily_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.metrics_clients_daily
+      type: table_view
+    metrics_clients_last_seen_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.metrics_clients_last_seen
+      type: table_view
     metrics_table:
       tables:
       - channel: release
@@ -754,6 +769,11 @@ firefox_desktop:
       tables:
       - table: mozdata.telemetry.clients_daily
       type: table_view
+    clients_last_seen_joined_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.clients_last_seen_joined
+      type: table_view
     clients_last_seen_table:
       tables:
       - table: mozdata.telemetry.clients_last_seen
@@ -813,6 +833,16 @@ firefox_desktop:
       tables:
       - table: mozdata.firefox_desktop.metrics
       type: glean_ping_view
+    metrics_clients_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.metrics_clients_daily
+      type: table_view
+    metrics_clients_last_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.metrics_clients_last_seen
+      type: table_view
     metrics_table:
       tables:
       - channel: null
@@ -889,6 +919,11 @@ firefox_desktop_background_update:
       tables:
       - table: mozdata.firefox_desktop_background_update.baseline_clients_daily
       type: client_counts_view
+    clients_last_seen_joined_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_update.clients_last_seen_joined
+      type: table_view
     events:
       tables:
       - base_table: mozdata.firefox_desktop_background_update.events_unnested
@@ -912,6 +947,16 @@ firefox_desktop_background_update:
       tables:
       - table: mozdata.firefox_desktop_background_update.metrics
       type: glean_ping_view
+    metrics_clients_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_update.metrics_clients_daily
+      type: table_view
+    metrics_clients_last_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_update.metrics_clients_last_seen
+      type: table_view
     metrics_table:
       tables:
       - channel: null
@@ -944,7 +989,7 @@ firefox_ios:
   glean_app: true
   owners:
   - tlong@mozilla.com
-  - frank@mozilla.com
+  - dthorn@mozilla.com
   - athomas@mozilla.com
   pretty_name: Firefox for iOS
   spoke: looker-spoke-default
@@ -998,6 +1043,11 @@ firefox_ios:
       tables:
       - table: mozdata.firefox_ios.baseline_clients_daily
       type: client_counts_view
+    clients_last_seen_joined_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.clients_last_seen_joined
+      type: table_view
     events:
       tables:
       - base_table: mozdata.firefox_ios.events_unnested
@@ -1030,6 +1080,16 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.metrics
       type: glean_ping_view
+    metrics_clients_daily_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.metrics_clients_daily
+      type: table_view
+    metrics_clients_last_seen_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.metrics_clients_last_seen
+      type: table_view
     metrics_table:
       tables:
       - channel: release
@@ -1338,11 +1398,47 @@ newtab:
   - mmccorquodale@mozilla.com
   pretty_name: New Tab
   spoke: looker-spoke-private
+operational_monitoring:
+  explores:
+    fission_histogram:
+      branches: &id001
+      - enabled
+      - disabled
+      type: operational_monitoring_explore
+      views:
+        base_view: fission_histogram
+    fission_scalar:
+      branches: *id001
+      type: operational_monitoring_explore
+      views:
+        base_view: fission_scalar
+  glean_app: false
+  owners:
+  - msamuel@mozilla.com
+  pretty_name: Operational Monitoring
+  spoke: looker-spoke-default
+  views:
+    fission_histogram:
+      tables:
+      - table: moz-fx-data-shared-prod.operational_monitoring.bug_1660366_pref_ongoing_fission_nightly_experiment_nightly_83_100_histogram
+      type: operational_monitoring_histogram_view
+    fission_scalar:
+      tables:
+      - table: moz-fx-data-shared-prod.operational_monitoring.bug_1660366_pref_ongoing_fission_nightly_experiment_nightly_83_100_scalar
+      type: operational_monitoring_scalar_view
+pocket:
+  glean_app: false
+  owners:
+  - kenny@getpocket.com
+  - kirill@getpocket.com
+  pretty_name: Pocket
+  spoke: looker-spoke-default
 revenue:
   connection: bigquery-oauth
   glean_app: false
   owners:
   - akomarzewski@mozilla.com
+  - skahmann@mozilla.com
   pretty_name: Revenue
   spoke: looker-spoke-private
 search:

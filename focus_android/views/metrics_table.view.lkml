@@ -358,6 +358,19 @@ at least once.
 "
   }
 
+  dimension: metrics__counter__browser_total_uri_count {
+    sql: ${TABLE}.metrics.counter.browser_total_uri_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Total Uri Count"
+    description: "Records count of URIs visited by the user in the current session,
+including page reloads.
+It does not include background page requests and URIs from embedded pages
+but may be incremented without user interaction by website scripts
+that programmatically redirect to a new location.
+"
+  }
+
   dimension: metrics__counter__glean_error_io {
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number

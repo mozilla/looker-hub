@@ -472,6 +472,25 @@ default browser onboarding is clicked.
 "
   }
 
+  dimension: metrics__counter__firefox_home_page_jump_back_in_group_opened {
+    label: "Firefox Home Page Jump Back In Group Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_group_opened ;;
+    type: number
+    group_label: "Firefox Home Page"
+    group_item_label: "Jump Back In Group Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Group Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_group_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps to open an
+existing group from the Jump Back In section
+"
+  }
+
   dimension: metrics__counter__firefox_home_page_jump_back_in_section_view {
     label: "Firefox Home Page Jump Back In Section View"
     hidden: no
@@ -3235,6 +3254,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Default Browser Onboarding Go To Settings Pressed"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/default_browser_onboarding_go_to_settings_pressed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_jump_back_in_group_opened {
+    type: sum
+    sql: ${metrics__counter__firefox_home_page_jump_back_in_group_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Group Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_group_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_jump_back_in_group_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__firefox_home_page_jump_back_in_group_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Group Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_group_opened"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
