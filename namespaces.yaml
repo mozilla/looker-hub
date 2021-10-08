@@ -393,6 +393,11 @@ fenix:
       tables:
       - table: mozdata.fenix.baseline_clients_daily
       type: client_counts_view
+    clients_last_seen_joined_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.clients_last_seen_joined
+      type: table_view
     creditcards_sync:
       tables:
       - channel: release
@@ -543,6 +548,11 @@ fenix:
       tables:
       - channel: release
         table: mozdata.fenix.metrics_clients_daily
+      type: table_view
+    metrics_clients_last_seen_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.metrics_clients_last_seen
       type: table_view
     metrics_table:
       tables:
@@ -759,6 +769,11 @@ firefox_desktop:
       tables:
       - table: mozdata.telemetry.clients_daily
       type: table_view
+    clients_last_seen_joined_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.clients_last_seen_joined
+      type: table_view
     clients_last_seen_table:
       tables:
       - table: mozdata.telemetry.clients_last_seen
@@ -822,6 +837,11 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.metrics_clients_daily
+      type: table_view
+    metrics_clients_last_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.metrics_clients_last_seen
       type: table_view
     metrics_table:
       tables:
@@ -899,6 +919,11 @@ firefox_desktop_background_update:
       tables:
       - table: mozdata.firefox_desktop_background_update.baseline_clients_daily
       type: client_counts_view
+    clients_last_seen_joined_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_update.clients_last_seen_joined
+      type: table_view
     events:
       tables:
       - base_table: mozdata.firefox_desktop_background_update.events_unnested
@@ -926,6 +951,11 @@ firefox_desktop_background_update:
       tables:
       - channel: null
         table: mozdata.firefox_desktop_background_update.metrics_clients_daily
+      type: table_view
+    metrics_clients_last_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_update.metrics_clients_last_seen
       type: table_view
     metrics_table:
       tables:
@@ -1013,6 +1043,11 @@ firefox_ios:
       tables:
       - table: mozdata.firefox_ios.baseline_clients_daily
       type: client_counts_view
+    clients_last_seen_joined_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.clients_last_seen_joined
+      type: table_view
     events:
       tables:
       - base_table: mozdata.firefox_ios.events_unnested
@@ -1049,6 +1084,11 @@ firefox_ios:
       tables:
       - channel: release
         table: mozdata.firefox_ios.metrics_clients_daily
+      type: table_view
+    metrics_clients_last_seen_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.metrics_clients_last_seen
       type: table_view
     metrics_table:
       tables:
@@ -1358,6 +1398,34 @@ newtab:
   - mmccorquodale@mozilla.com
   pretty_name: New Tab
   spoke: looker-spoke-private
+operational_monitoring:
+  explores:
+    fission_histogram:
+      branches: &id001
+      - enabled
+      - disabled
+      type: operational_monitoring_explore
+      views:
+        base_view: fission_histogram
+    fission_scalar:
+      branches: *id001
+      type: operational_monitoring_explore
+      views:
+        base_view: fission_scalar
+  glean_app: false
+  owners:
+  - msamuel@mozilla.com
+  pretty_name: Operational Monitoring
+  spoke: looker-spoke-default
+  views:
+    fission_histogram:
+      tables:
+      - table: moz-fx-data-shared-prod.operational_monitoring.bug_1660366_pref_ongoing_fission_nightly_experiment_nightly_83_100_histogram
+      type: operational_monitoring_histogram_view
+    fission_scalar:
+      tables:
+      - table: moz-fx-data-shared-prod.operational_monitoring.bug_1660366_pref_ongoing_fission_nightly_experiment_nightly_83_100_scalar
+      type: operational_monitoring_scalar_view
 revenue:
   connection: bigquery-oauth
   glean_app: false

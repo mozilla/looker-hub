@@ -19,6 +19,11 @@ view: metrics_clients_daily_table {
     type: number
   }
 
+  dimension: normalized_channel {
+    sql: ${TABLE}.normalized_channel ;;
+    type: string
+  }
+
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
