@@ -539,6 +539,11 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fenix.metrics
       type: glean_ping_view
+    metrics_clients_daily_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.metrics_clients_daily
+      type: table_view
     metrics_table:
       tables:
       - channel: release
@@ -813,6 +818,11 @@ firefox_desktop:
       tables:
       - table: mozdata.firefox_desktop.metrics
       type: glean_ping_view
+    metrics_clients_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.metrics_clients_daily
+      type: table_view
     metrics_table:
       tables:
       - channel: null
@@ -912,6 +922,11 @@ firefox_desktop_background_update:
       tables:
       - table: mozdata.firefox_desktop_background_update.metrics
       type: glean_ping_view
+    metrics_clients_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_update.metrics_clients_daily
+      type: table_view
     metrics_table:
       tables:
       - channel: null
@@ -1030,6 +1045,11 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.metrics
       type: glean_ping_view
+    metrics_clients_daily_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.metrics_clients_daily
+      type: table_view
     metrics_table:
       tables:
       - channel: release
