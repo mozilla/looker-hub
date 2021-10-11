@@ -44,6 +44,11 @@ view: urlbar_clients_daily {
     type: string
   }
 
+  dimension: quicksuggest_onboarding_dialog_choice {
+    sql: ${TABLE}.quicksuggest_onboarding_dialog_choice ;;
+    type: string
+  }
+
   dimension: search_region {
     sql: ${TABLE}.search_region ;;
     type: string

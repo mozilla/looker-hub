@@ -1362,6 +1362,11 @@ view: clients_daily_table {
     type: string
   }
 
+  dimension: user_pref_browser_urlbar_quicksuggest_onboarding_dialog_choice {
+    sql: ${TABLE}.user_pref_browser_urlbar_quicksuggest_onboarding_dialog_choice ;;
+    type: string
+  }
+
   dimension: user_pref_browser_urlbar_show_search_suggestions_first {
     sql: ${TABLE}.user_pref_browser_urlbar_show_search_suggestions_first ;;
     type: string
