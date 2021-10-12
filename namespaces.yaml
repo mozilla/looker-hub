@@ -1426,15 +1426,27 @@ operational_monitoring:
       tables:
       - table: moz-fx-data-shared-prod.operational_monitoring.bug_1660366_pref_ongoing_fission_nightly_experiment_nightly_83_100_scalar
       type: operational_monitoring_scalar_view
+pocket:
+  glean_app: false
+  owners:
+  - kenny@getpocket.com
+  - kirill@getpocket.com
+  pretty_name: Pocket
+  spoke: looker-spoke-default
 revenue:
   connection: bigquery-oauth
   glean_app: false
   owners:
   - akomarzewski@mozilla.com
+  - skahmann@mozilla.com
   pretty_name: Revenue
   spoke: looker-spoke-private
 search:
   explores:
+    desktop_search_alert_records:
+      type: ping_explore
+      views:
+        base_view: desktop_search_alert_records
     desktop_search_counts:
       type: ping_explore
       views:
@@ -1450,6 +1462,10 @@ search:
   pretty_name: Search
   spoke: looker-spoke-default
   views:
+    desktop_search_alert_records:
+      tables:
+      - table: mozdata.analysis.desktop_search_alert_records
+      type: ping_view
     mobile_search_clients_engines_sources_daily:
       tables:
       - table: mozdata.search.mobile_search_clients_engines_sources_daily

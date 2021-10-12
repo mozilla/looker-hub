@@ -109,6 +109,20 @@ view: event_types {
     suggest_dimension: event_names.event
   }
 
+  filter: property_name {
+    description: "The event property name."
+    type: string
+    suggest_explore: event_names
+    suggest_dimension: event_names.property_name
+  }
+
+  filter: property_value {
+    description: "The event property value."
+    type: string
+    suggest_explore: event_names
+    suggest_dimension: event_names.property_value
+  }
+
   dimension: match_string {
     hidden: yes
     sql: ${TABLE}.match_string ;;
