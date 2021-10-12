@@ -540,6 +540,16 @@ default browser onboarding is clicked.
 "
   }
 
+  dimension: metrics__counter__firefox_home_page_customize_homepage_button {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_customize_homepage_button ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page Customize Homepage Button"
+    description: "Counts the number of times a user taps to open the
+settings menu to customize the Firefox Homepage
+"
+  }
+
   dimension: metrics__counter__firefox_home_page_jump_back_in_group_opened {
     sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_group_opened ;;
     type: number

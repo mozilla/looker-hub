@@ -472,6 +472,25 @@ default browser onboarding is clicked.
 "
   }
 
+  dimension: metrics__counter__firefox_home_page_customize_homepage_button {
+    label: "Firefox Home Page Customize Homepage Button"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.firefox_home_page_customize_homepage_button ;;
+    type: number
+    group_label: "Firefox Home Page"
+    group_item_label: "Customize Homepage Button"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Customize Homepage Button"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_customize_homepage_button"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps to open the
+settings menu to customize the Firefox Homepage
+"
+  }
+
   dimension: metrics__counter__firefox_home_page_jump_back_in_group_opened {
     label: "Firefox Home Page Jump Back In Group Opened"
     hidden: no
@@ -3254,6 +3273,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Default Browser Onboarding Go To Settings Pressed"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/default_browser_onboarding_go_to_settings_pressed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_customize_homepage_button {
+    type: sum
+    sql: ${metrics__counter__firefox_home_page_customize_homepage_button} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Customize Homepage Button"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_customize_homepage_button"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_customize_homepage_button_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__firefox_home_page_customize_homepage_button: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Customize Homepage Button"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_customize_homepage_button"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
