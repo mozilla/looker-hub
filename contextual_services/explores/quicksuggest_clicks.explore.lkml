@@ -9,4 +9,9 @@ explore: quicksuggest_clicks {
       submission_date: "28 days",
     ]
   }
+
+  join: quicksuggest_click__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${quicksuggest_click.experiments}) AS quicksuggest_click__experiments ;;
+  }
 }

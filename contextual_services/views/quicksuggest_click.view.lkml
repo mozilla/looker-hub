@@ -262,3 +262,17 @@ view: quicksuggest_click {
 
   sql_table_name: `mozdata.contextual_services.quicksuggest_click` ;;
 }
+
+view: quicksuggest_click__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+}

@@ -86,3 +86,15 @@ view: experimenter_experiments {
 
   sql_table_name: `moz-fx-data-experiments.monitoring.experimenter_experiments_v1` ;;
 }
+
+view: experimenter_experiments__branches {
+  dimension: ratio {
+    sql: ${TABLE}.ratio ;;
+    type: number
+  }
+
+  dimension: slug {
+    sql: ${TABLE}.slug ;;
+    type: string
+  }
+}

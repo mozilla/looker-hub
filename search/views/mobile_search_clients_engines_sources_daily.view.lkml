@@ -167,3 +167,15 @@ view: mobile_search_clients_engines_sources_daily {
 
   sql_table_name: `mozdata.search.mobile_search_clients_engines_sources_daily` ;;
 }
+
+view: mobile_search_clients_engines_sources_daily__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}

@@ -117,3 +117,15 @@ view: events_daily_table {
 
   sql_table_name: `mozdata.telemetry.events_daily` ;;
 }
+
+view: events_daily_table__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}

@@ -267,3 +267,17 @@ view: quicksuggest_impression {
 
   sql_table_name: `mozdata.contextual_services.quicksuggest_impression` ;;
 }
+
+view: quicksuggest_impression__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+}

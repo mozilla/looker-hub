@@ -1542,3 +1542,323 @@ view: new_profile {
 
   sql_table_name: `mozdata.telemetry.new_profile` ;;
 }
+
+view: new_profile__environment__addons__active_addons {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__app_disabled {
+    sql: ${TABLE}.value.app_disabled ;;
+    type: yesno
+    group_label: "Value"
+    group_item_label: "App Disabled"
+    description: "True if this add-on cannot be used in the application based on version compatibility, dependencies, and blocklisting. This field is only available after the 'sessionstore-windows-restored' topic is notified."
+  }
+
+  dimension: value__blocklisted {
+    sql: ${TABLE}.value.blocklisted ;;
+    type: yesno
+    group_label: "Value"
+    group_item_label: "Blocklisted"
+    description: "Whether or not the add-on appears in the blocklist. This field is only available after the 'sessionstore-windows-restored' topic is notified."
+  }
+
+  dimension: value__description {
+    sql: ${TABLE}.value.description ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Description"
+  }
+
+  dimension: value__foreign_install {
+    sql: ${TABLE}.value.foreign_install ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Foreign Install"
+  }
+
+  dimension: value__has_binary_components {
+    sql: ${TABLE}.value.has_binary_components ;;
+    type: yesno
+    group_label: "Value"
+    group_item_label: "Has Binary Components"
+    description: "True or false depending on whether the add-on has binary components. This is always false since Firefox 60. This field is only available after the 'sessionstore-windows-restored' topic is notified."
+  }
+
+  dimension: value__install_day {
+    sql: ${TABLE}.value.install_day ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Install Day"
+    description: "The days since epoch that the add-on was first installed. This field is only available after the 'sessionstore-windows-restored' topic is notified."
+  }
+
+  dimension: value__is_system {
+    sql: ${TABLE}.value.is_system ;;
+    type: yesno
+    group_label: "Value"
+    group_item_label: "Is System"
+    description: "Whether or not the add-on is a system add-on. This field is available at startup."
+  }
+
+  dimension: value__is_web_extension {
+    sql: ${TABLE}.value.is_web_extension ;;
+    type: yesno
+    group_label: "Value"
+    group_item_label: "Is Web Extension"
+    description: "Whether or not the add-on is a WebExtension add-on. This field is available at startup."
+  }
+
+  dimension: value__multiprocess_compatible {
+    sql: ${TABLE}.value.multiprocess_compatible ;;
+    type: yesno
+    group_label: "Value"
+    group_item_label: "Multiprocess Compatible"
+    description: "Whether or not the add-on is a compatible with e10s. Since Firefox 61, this is always true. This field is available at startup."
+  }
+
+  dimension: value__name {
+    sql: ${TABLE}.value.name ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Name"
+    description: "The add-on name, limited to 100 characters. This field is only available after the 'sessionstore-windows-restored' topic is notified."
+  }
+
+  dimension: value__scope {
+    sql: ${TABLE}.value.scope ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Scope"
+    description: "Indicates what scope the add-on is installed in, per profile, user, system, or application. This field is available at startup."
+  }
+
+  dimension: value__signed_state {
+    sql: ${TABLE}.value.signed_state ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Signed State"
+    description: "The state of the signature of the add-on. This field is only available after the 'sessionstore-windows-restored' topic is notified."
+  }
+
+  dimension: value__type {
+    sql: ${TABLE}.value.type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Type"
+  }
+
+  dimension: value__update_day {
+    sql: ${TABLE}.value.update_day ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Update Day"
+    description: "The day the add-on was last updated. This field is optional, but available at startup if present."
+  }
+
+  dimension: value__user_disabled {
+    sql: ${TABLE}.value.user_disabled ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "User Disabled"
+  }
+
+  dimension: value__version {
+    sql: ${TABLE}.value.version ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Version"
+  }
+}
+
+view: new_profile__environment__addons__active_gm_plugins {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__apply_background_updates {
+    sql: ${TABLE}.value.apply_background_updates ;;
+    type: number
+    group_label: "Value"
+    group_item_label: "Apply Background Updates"
+    description: "Cast into an integer via mozilla-schema-generator. See bug 1611027."
+  }
+
+  dimension: value__user_disabled {
+    sql: ${TABLE}.value.user_disabled ;;
+    type: yesno
+    group_label: "Value"
+    group_item_label: "User Disabled"
+  }
+
+  dimension: value__version {
+    sql: ${TABLE}.value.version ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Version"
+  }
+}
+
+view: new_profile__environment__addons__active_plugins {
+  dimension: blocklisted {
+    sql: ${TABLE}.blocklisted ;;
+    type: yesno
+  }
+
+  dimension: clicktoplay {
+    sql: ${TABLE}.clicktoplay ;;
+    type: yesno
+  }
+
+  dimension: description {
+    sql: ${TABLE}.description ;;
+    type: string
+  }
+
+  dimension: disabled {
+    sql: ${TABLE}.disabled ;;
+    type: yesno
+  }
+
+  dimension: mime_types {
+    sql: ${TABLE}.mime_types ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: update_day {
+    sql: ${TABLE}.update_day ;;
+    type: number
+  }
+
+  dimension: version {
+    sql: ${TABLE}.version ;;
+    type: string
+  }
+}
+
+view: new_profile__environment__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__enrollment_id {
+    sql: ${TABLE}.value.enrollment_id ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__type {
+    sql: ${TABLE}.value.type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Type"
+  }
+}
+
+view: new_profile__environment__settings__user_prefs {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: new_profile__environment__system__gfx__adapters {
+  dimension: description {
+    sql: ${TABLE}.description ;;
+    type: string
+  }
+
+  dimension: device_id {
+    sql: ${TABLE}.device_id ;;
+    type: string
+  }
+
+  dimension: driver {
+    sql: ${TABLE}.driver ;;
+    type: string
+  }
+
+  dimension: driver_date {
+    sql: ${TABLE}.driver_date ;;
+    type: string
+  }
+
+  dimension: driver_vendor {
+    sql: ${TABLE}.driver_vendor ;;
+    type: string
+  }
+
+  dimension: driver_version {
+    sql: ${TABLE}.driver_version ;;
+    type: string
+  }
+
+  dimension: gpu_active {
+    sql: ${TABLE}.gpu_active ;;
+    type: yesno
+  }
+
+  dimension: ram {
+    sql: ${TABLE}.ram ;;
+    type: number
+  }
+
+  dimension: subsys_id {
+    sql: ${TABLE}.subsys_id ;;
+    type: string
+  }
+
+  dimension: vendor_id {
+    sql: ${TABLE}.vendor_id ;;
+    type: string
+  }
+}
+
+view: new_profile__environment__system__gfx__monitors {
+  dimension: pseudo_display {
+    sql: ${TABLE}.pseudo_display ;;
+    type: yesno
+  }
+
+  dimension: refresh_rate {
+    sql: ${TABLE}.refresh_rate ;;
+    type: number
+  }
+
+  dimension: scale {
+    sql: ${TABLE}.scale ;;
+    type: number
+  }
+
+  dimension: screen_height {
+    sql: ${TABLE}.screen_height ;;
+    type: number
+  }
+
+  dimension: screen_width {
+    sql: ${TABLE}.screen_width ;;
+    type: number
+  }
+}

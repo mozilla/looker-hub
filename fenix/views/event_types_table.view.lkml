@@ -40,3 +40,37 @@ view: event_types_table {
 
   sql_table_name: `mozdata.fenix.event_types` ;;
 }
+
+view: event_types_table__event_properties {
+  dimension: index {
+    sql: ${TABLE}.index ;;
+    type: number
+  }
+
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+}
+
+view: event_types_table__event_properties__value {
+  dimension: index {
+    sql: ${TABLE}.index ;;
+    type: number
+  }
+
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
