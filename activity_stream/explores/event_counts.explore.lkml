@@ -9,4 +9,9 @@ explore: event_counts {
       submission_date: "28 days",
     ]
   }
+
+  join: events__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${events.experiments}) AS events__experiments ;;
+  }
 }

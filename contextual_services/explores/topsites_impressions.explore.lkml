@@ -9,4 +9,9 @@ explore: topsites_impressions {
       submission_date: "28 days",
     ]
   }
+
+  join: topsites_impression__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${topsites_impression.experiments}) AS topsites_impression__experiments ;;
+  }
 }

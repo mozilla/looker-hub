@@ -155,3 +155,43 @@ view: desktop_events_table {
 
   sql_table_name: `mozdata.telemetry.events` ;;
 }
+
+view: desktop_events_table__event_map_values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: desktop_events_table__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__enrollment_id {
+    sql: ${TABLE}.value.enrollment_id ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__type {
+    sql: ${TABLE}.value.type ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Type"
+  }
+}

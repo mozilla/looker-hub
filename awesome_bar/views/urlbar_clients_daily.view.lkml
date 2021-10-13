@@ -106,3 +106,51 @@ view: urlbar_clients_daily {
 
   sql_table_name: `mozdata.telemetry.urlbar_clients_daily` ;;
 }
+
+view: urlbar_clients_daily__count_picked_by_position {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: number
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: urlbar_clients_daily__count_picked_by_type {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: urlbar_clients_daily__urlbar_picked_by_type_by_position {
+  dimension: position {
+    sql: ${TABLE}.position ;;
+    hidden: yes
+  }
+
+  dimension: type {
+    sql: ${TABLE}.type ;;
+    type: string
+  }
+}
+
+view: urlbar_clients_daily__urlbar_picked_by_type_by_position__position {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: number
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}

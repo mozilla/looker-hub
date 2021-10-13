@@ -695,6 +695,11 @@ firefox_accounts:
       - channel: release
         table: mozdata.firefox_accounts.fxa_users_first_seen
       type: table_view
+    fxa_log_device_command_events:
+      tables:
+      - channel: release
+        table: mozdata.firefox_accounts.fxa_log_device_command_events
+      type: table_view
     growth_accounting:
       tables:
       - table: mozdata.firefox_accounts.fxa_users_last_seen
@@ -1473,4 +1478,20 @@ search:
     search_clients_engines_sources_daily:
       tables:
       - table: mozdata.search.search_clients_engines_sources_daily
+      type: ping_view
+sync:
+  explores:
+    sync:
+      type: ping_explore
+      views:
+        base_view: sync
+  glean_app: false
+  owners:
+  - ascholtz@mozilla.com
+  pretty_name: Sync
+  spoke: looker-spoke-default
+  views:
+    sync:
+      tables:
+      - table: mozdata.telemetry.sync
       type: ping_view

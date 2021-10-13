@@ -9,4 +9,9 @@ explore: mobile_search_counts {
       submission_date: "28 days",
     ]
   }
+
+  join: mobile_search_clients_engines_sources_daily__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${mobile_search_clients_engines_sources_daily.experiments}) AS mobile_search_clients_engines_sources_daily__experiments ;;
+  }
 }

@@ -120,3 +120,17 @@ view: impression_stats_flat {
 
   sql_table_name: `mozdata.activity_stream.impression_stats_flat` ;;
 }
+
+view: impression_stats_flat__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+}
