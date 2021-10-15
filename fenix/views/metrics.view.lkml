@@ -2466,7 +2466,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__counter__logins_store_unlock_count {
     label: "Logins Store Unlock Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.logins_store_unlock_count ;;
     type: number
     group_label: "Logins Store"
@@ -7147,7 +7147,7 @@ view: metrics__metrics__labeled_counter__logins_store_unlock_error_count {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_count
     suggest_dimension: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_count.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -7159,13 +7159,13 @@ view: metrics__metrics__labeled_counter__logins_store_unlock_error_count {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
