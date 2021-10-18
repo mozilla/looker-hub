@@ -242,6 +242,10 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: first_session
+    fog_validation:
+      type: glean_ping_explore
+      views:
+        base_view: fog_validation
     funnel_analysis:
       type: funnel_analysis_explore
       views:
@@ -462,6 +466,24 @@ fenix:
         table: mozdata.org_mozilla_firefox_beta.first_session
       - channel: nightly
         table: mozdata.org_mozilla_fenix.first_session
+      type: table_view
+    fog_validation:
+      tables:
+      - channel: release
+        table: mozdata.fenix.fog_validation
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.fog_validation
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.fog_validation
+      type: glean_ping_view
+    fog_validation_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.fog_validation
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.fog_validation
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.fog_validation
       type: table_view
     funnel_analysis:
       tables:
@@ -1178,7 +1200,7 @@ focus_ios:
         base_view: metrics
   glean_app: true
   owners:
-  - jboek@mozilla.com
+  - sarentz@mozilla.com
   - tlong@mozilla.com
   pretty_name: Firefox Focus for iOS
   spoke: looker-spoke-default
@@ -1303,7 +1325,7 @@ klar_ios:
         base_view: metrics
   glean_app: true
   owners:
-  - jboek@mozilla.com
+  - sarentz@mozilla.com
   - tlong@mozilla.com
   pretty_name: Firefox Klar for iOS
   spoke: looker-spoke-default
