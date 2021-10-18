@@ -1775,6 +1775,25 @@ average open tabs per foreground \"session\".
 "
   }
 
+  dimension: metrics__counter__tabs_grouped_tab_search {
+    label: "Tabs Grouped Tab Search"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tabs_grouped_tab_search ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Grouped Tab Search"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Grouped Tab Search"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_grouped_tab_search"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times a user has tapped the search
+icon for grouped tabs in the tab tray.
+"
+  }
+
   dimension: metrics__counter__tabs_new_tab_pressed {
     label: "Tabs New Tab Pressed"
     hidden: no
@@ -4423,6 +4442,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Tabs Cumulative Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_cumulative_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_grouped_tab_search {
+    type: sum
+    sql: ${metrics__counter__tabs_grouped_tab_search} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Grouped Tab Search"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_grouped_tab_search"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_grouped_tab_search_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tabs_grouped_tab_search: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Grouped Tab Search"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_grouped_tab_search"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

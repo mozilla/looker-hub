@@ -302,6 +302,15 @@ supported for this user.
 "
   }
 
+  dimension: metrics__boolean__browser_ui_proton_enabled {
+    sql: ${TABLE}.metrics.boolean.browser_ui_proton_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Browser Ui Proton Enabled"
+    description: "True if the Proton default theme is enabled.
+"
+  }
+
   dimension: metrics__boolean__contextual_menu_long_press_tapped {
     sql: ${TABLE}.metrics.boolean.contextual_menu_long_press_tapped ;;
     type: yesno
@@ -353,6 +362,17 @@ supported for this user.
     group_label: "Metrics Boolean"
     group_item_label: "Customize Home Recently Visited"
     description: "An indication of whether the Recently visited section is enabled to be displayed
+"
+  }
+
+  dimension: metrics__boolean__fog_failed_idle_registration {
+    sql: ${TABLE}.metrics.boolean.fog_failed_idle_registration ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Fog Failed Idle Registration"
+    description: "True if we failed to register with the idle service. Absent otherwise.
+Means IPC probably isn't working well.
+Child-process data will likely be absent, or incomplete.
 "
   }
 
@@ -662,6 +682,16 @@ page reloads. This does not include background page requests and URIs from
 embedded pages or private browsing but may be incremented without user
 interaction by website scripts that programmatically redirect to a new
 location.
+"
+  }
+
+  dimension: metrics__counter__fog_ipc_replay_failures {
+    sql: ${TABLE}.metrics.counter.fog_ipc_replay_failures ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Fog Ipc Replay Failures"
+    description: "The number of times the ipc buffer failed to be replayed in the
+parent process.
 "
   }
 
@@ -1397,6 +1427,18 @@ pr"
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__fog_ipc_buffer_sizes__sum {
+    sql: ${TABLE}.metrics.memory_distribution.fog_ipc_buffer_sizes.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Fog Ipc Buffer Sizes"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__fog_ipc_buffer_sizes__values {
+    sql: ${TABLE}.metrics.memory_distribution.fog_ipc_buffer_sizes.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__memory_distribution__glean_database_size__sum {
     sql: ${TABLE}.metrics.memory_distribution.glean_database_size.sum ;;
     type: number
@@ -1998,6 +2040,20 @@ will be \"custom\"
     group_item_label: "Value"
   }
 
+  dimension: metrics__timespan__fog_initialization__time_unit {
+    sql: ${TABLE}.metrics.timespan.fog_initialization.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Fog Initialization"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__fog_initialization__value {
+    sql: ${TABLE}.metrics.timespan.fog_initialization.value ;;
+    type: number
+    group_label: "Metrics Timespan Fog Initialization"
+    group_item_label: "Value"
+  }
+
   dimension: metrics__timespan__logins_store_migration_total_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.logins_store_migration_total_duration.time_unit ;;
     type: string
@@ -2113,6 +2169,58 @@ will be \"custom\"
 
   dimension: metrics__timing_distribution__engine_tab_kill_foreground_age__values {
     sql: ${TABLE}.metrics.timing_distribution.engine_tab_kill_foreground_age.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Ipc Flush Durations"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fog Ipc Flush Durations"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Ipc Flush Durations"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__range {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Ipc Flush Durations"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fog Ipc Flush Durations"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Ipc Flush Durations"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__values {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.values ;;
     hidden: yes
   }
 
@@ -4349,6 +4457,58 @@ will be \"custom\"
 
   dimension: metrics__timing_distribution__network_tls_handshake__values {
     sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Paint Build Displaylist Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Paint Build Displaylist Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Paint Build Displaylist Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Paint Build Displaylist Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Paint Build Displaylist Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Paint Build Displaylist Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.values ;;
     hidden: yes
   }
 
@@ -7310,6 +7470,18 @@ view: metrics_table__metrics__labeled_rate__value {
   }
 }
 
+view: metrics_table__metrics__memory_distribution__fog_ipc_buffer_sizes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__memory_distribution__glean_database_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -7419,6 +7591,18 @@ view: metrics_table__metrics__timing_distribution__engine_tab_kill_background_ag
 }
 
 view: metrics_table__metrics__timing_distribution__engine_tab_kill_foreground_age__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fog_ipc_flush_durations__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -7935,6 +8119,18 @@ view: metrics_table__metrics__timing_distribution__network_tcp_connection__value
 }
 
 view: metrics_table__metrics__timing_distribution__network_tls_handshake__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__paint_build_displaylist_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

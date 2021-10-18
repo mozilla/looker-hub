@@ -166,6 +166,24 @@ that programmatically redirect to a new location.
 "
   }
 
+  dimension: metrics__string__preferences_user_theme {
+    label: "Preferences User Theme"
+    hidden: no
+    sql: ${TABLE}.metrics.string.preferences_user_theme ;;
+    type: string
+    group_label: "Preferences"
+    group_item_label: "User Theme"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences User Theme"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/preferences_user_theme"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A string that indicates the theme. Can be one of LIGHT, DARK, or FOLLOW DEVICE. Default is FOLLOW DEVICE.
+"
+  }
+
   dimension: metrics__counter__settings_screen_autocomplete_domain_added {
     label: "Settings Screen Autocomplete Domain Added"
     hidden: no

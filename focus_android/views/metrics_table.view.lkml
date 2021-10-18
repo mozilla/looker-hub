@@ -691,6 +691,15 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__string__preferences_user_theme {
+    sql: ${TABLE}.metrics.string.preferences_user_theme ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Preferences User Theme"
+    description: "A string that indicates the theme. Can be one of LIGHT, DARK, or FOLLOW DEVICE. Default is FOLLOW DEVICE.
+"
+  }
+
   dimension: metrics__text {
     sql: ${TABLE}.metrics.text ;;
     hidden: yes

@@ -1085,6 +1085,16 @@ average open tabs per foreground \"session\".
 "
   }
 
+  dimension: metrics__counter__tabs_grouped_tab_search {
+    sql: ${TABLE}.metrics.counter.tabs_grouped_tab_search ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tabs Grouped Tab Search"
+    description: "This counts the number of times a user has tapped the search
+icon for grouped tabs in the tab tray.
+"
+  }
+
   dimension: metrics__counter__tabs_new_tab_pressed {
     sql: ${TABLE}.metrics.counter.tabs_new_tab_pressed ;;
     type: number

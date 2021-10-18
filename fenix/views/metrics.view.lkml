@@ -1996,6 +1996,136 @@ will be \"custom\"
 "
   }
 
+  dimension: metrics__boolean__browser_ui_proton_enabled {
+    label: "Browser Ui Proton Enabled"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.browser_ui_proton_enabled ;;
+    type: yesno
+    group_label: "Browser Ui"
+    group_item_label: "Proton Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Ui Proton Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/browser_ui_proton_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the Proton default theme is enabled.
+"
+  }
+
+  dimension: metrics__boolean__fog_failed_idle_registration {
+    label: "Fog Failed Idle Registration"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.fog_failed_idle_registration ;;
+    type: yesno
+    group_label: "Fog"
+    group_item_label: "Failed Idle Registration"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Failed Idle Registration"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_failed_idle_registration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if we failed to register with the idle service. Absent otherwise.
+Means IPC probably isn't working well.
+Child-process data will likely be absent, or incomplete.
+"
+  }
+
+  dimension: metrics__timespan__fog_initialization__value {
+    label: "Fog Initialization Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.fog_initialization.value ;;
+    type: number
+    group_label: "Fog"
+    group_item_label: "Initialization Value"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Initialization Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_initialization"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time the FOG initialization takes.
+"
+  }
+
+  dimension: metrics__memory_distribution__fog_ipc_buffer_sizes__sum {
+    label: "Fog Ipc Buffer Sizes Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.fog_ipc_buffer_sizes.sum ;;
+    type: number
+    group_label: "Fog Ipc"
+    group_item_label: "Buffer Sizes Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Buffer Sizes Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_ipc_buffer_sizes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number and size of the IPC buffers being received over FOG IPC.
+"
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__sum {
+    label: "Fog Ipc Flush Durations Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.sum ;;
+    type: number
+    group_label: "Fog Ipc"
+    group_item_label: "Flush Durations Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Durations Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_ipc_flush_durations"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The length of time between asking the child processes for their
+IPC buffers and all of them being received by the parent.
+"
+  }
+
+  dimension: metrics__counter__fog_ipc_replay_failures {
+    label: "Fog Ipc Replay Failures"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.fog_ipc_replay_failures ;;
+    type: number
+    group_label: "Fog Ipc"
+    group_item_label: "Replay Failures"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Replay Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_ipc_replay_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times the ipc buffer failed to be replayed in the
+parent process.
+"
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__sum {
+    label: "Paint Build Displaylist Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.sum ;;
+    type: number
+    group_label: "Paint"
+    group_item_label: "Build Displaylist Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Paint Build Displaylist Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/paint_build_displaylist_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time to build a Gecko display list.
+"
+  }
+
   dimension: metrics__memory_distribution__glean_database_size__sum {
     label: "Glean Database Size Sum"
     hidden: no
@@ -5667,6 +5797,31 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     link: {
       label: "Glean Dictionary reference for Recent Bookmarks Show All Bookmarks"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_bookmarks_show_all_bookmarks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_replay_failures {
+    type: sum
+    sql: ${metrics__counter__fog_ipc_replay_failures} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Replay Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_ipc_replay_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_replay_failures_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__fog_ipc_replay_failures: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Replay Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_ipc_replay_failures"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
