@@ -31,6 +31,11 @@ activity_stream:
       - table: mozdata.activity_stream.sessions
       type: ping_view
 awesome_bar:
+  explores:
+    urlbar_clients_daily:
+      type: ping_explore
+      views:
+        base_view: urlbar_clients_daily
   glean_app: false
   owners:
   - tbrooks@mozilla.com

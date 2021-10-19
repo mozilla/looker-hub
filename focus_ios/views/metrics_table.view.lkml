@@ -331,6 +331,19 @@ at least once.
 "
   }
 
+  dimension: metrics__counter__browser_total_uri_count {
+    sql: ${TABLE}.metrics.counter.browser_total_uri_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Total Uri Count"
+    description: "Records count of URIs visited by the user in the current session,
+including page reloads.
+It does not include background page requests and URIs from embedded pages
+but may be incremented without user interaction by website scripts
+that programmatically redirect to a new location.
+"
+  }
+
   dimension: metrics__counter__glean_error_io {
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
@@ -572,6 +585,15 @@ It also indicates the screen it was removed from, home or browser.
     description: "The optional reason the ping was submitted.
 The specific values for reason are specific to each ping, and are
 documented in the ping's pings.yaml file.
+"
+  }
+
+  dimension: metrics__string__preferences_user_theme {
+    sql: ${TABLE}.metrics.string.preferences_user_theme ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Preferences User Theme"
+    description: "A string that indicates the theme. Can be one of \"Light\", \"Dark\", or \"Follow device\". Default is \"Follow device\".
 "
   }
 
