@@ -197,6 +197,11 @@ view: quicksuggest_click {
     type: number
   }
 
+  dimension: provider {
+    sql: ${TABLE}.provider ;;
+    type: string
+  }
+
   dimension: release_channel {
     sql: ${TABLE}.release_channel ;;
     type: string
