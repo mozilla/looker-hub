@@ -212,6 +212,11 @@ view: quicksuggest_impression {
     type: string
   }
 
+  dimension: request_id {
+    sql: ${TABLE}.request_id ;;
+    type: string
+  }
+
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
