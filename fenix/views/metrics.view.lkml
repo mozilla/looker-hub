@@ -253,7 +253,8 @@ manually by the user.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "An indication of whether the Jump back in section is enabled to be displayed
+    description: "An indication of whether the Jump back
+in section is enabled to be displayed
 "
   }
 
@@ -271,7 +272,8 @@ manually by the user.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "An indication of whether the most visited sites are enabled to be displayed
+    description: "An indication of whether the most visited sites
+are enabled to be displayed
 "
   }
 
@@ -307,7 +309,8 @@ manually by the user.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "An indication of whether the recently saved section is enabled to be displayed
+    description: "An indication of whether the recently
+saved section is enabled to be displayed
 "
   }
 
@@ -325,7 +328,8 @@ manually by the user.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "An indication of whether the Recently visited section is enabled to be displayed
+    description: "An indication of whether the Recently
+visited section is enabled to be displayed
 "
   }
 
@@ -1564,7 +1568,8 @@ homescreen because the link was invalid).
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether or not the user has enabled bookmark search suggestions default: true
+    description: "Whether or not the user has enabled bookmark search suggestions
+default: true
 "
   }
 
@@ -1582,7 +1587,8 @@ homescreen because the link was invalid).
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether or not the user has enabled browsing history suggestions. default: true
+    description: "Whether or not the user has enabled browsing history suggestions.
+default: true
 "
   }
 
@@ -1600,7 +1606,8 @@ homescreen because the link was invalid).
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether or not the user has enabled clipboard search suggestions. default: true
+    description: "Whether or not the user has enabled clipboard search suggestions.
+default: true
 "
   }
 
@@ -1618,7 +1625,9 @@ homescreen because the link was invalid).
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "What type of enhanced tracking protection the user has enabled. \"standard,\" \"strict,\" \"custom,\" or \"\" (if disabled) default: \"standard\"
+    description: "What type of enhanced tracking protection the user has enabled.
+\"standard,\" \"strict,\" \"custom,\" or \"\" (if disabled)
+default: \"standard\"
 "
   }
 
@@ -1636,7 +1645,8 @@ homescreen because the link was invalid).
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether or not the user has the open links in apps feature enabled. default: false
+    description: "Whether or not the user has the open links in apps feature enabled.
+default: false
 "
   }
 
@@ -1690,7 +1700,8 @@ homescreen because the link was invalid).
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether or not the user has remote debugging enabled default: false
+    description: "Whether or not the user has remote debugging enabled
+default: false
 "
   }
 
@@ -1708,7 +1719,8 @@ homescreen because the link was invalid).
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether or not the user has enabled search shortcuts. default: true
+    description: "Whether or not the user has enabled search shortcuts.
+default: true
 "
   }
 
@@ -1726,7 +1738,8 @@ homescreen because the link was invalid).
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether or not the user has search suggestions enabled default: true
+    description: "Whether or not the user has search suggestions enabled
+default: true
 "
   }
 
@@ -1744,7 +1757,8 @@ homescreen because the link was invalid).
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether or not the user is signed into FxA default: false
+    description: "Whether or not the user is signed into FxA
+default: false
 "
   }
 
@@ -1762,7 +1776,10 @@ homescreen because the link was invalid).
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether or not the user has telemetry enabled. Note we should never receive a \"false\" value for this since telemetry would not send in that case. default: true
+    description: "Whether or not the user has telemetry enabled. Note we should
+never receive a \"false\" value for this since telemetry would
+not send in that case.
+default: true
 "
   }
 
@@ -1780,7 +1797,8 @@ homescreen because the link was invalid).
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The position of the toolbar default: bottom (defaults to top if the user has accessibility services)
+    description: "The position of the toolbar
+default: bottom (defaults to top if the user has accessibility services)
 "
   }
 
@@ -1798,7 +1816,8 @@ homescreen because the link was invalid).
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The theme the user has enabled. \"light,\" \"dark,\" \"system,\" or \"battery\" default: \"system\" for API 28+, else \"light\"
+    description: "The theme the user has enabled. \"light,\" \"dark,\" \"system,\" or \"battery\"
+default: \"system\" for API 28+, else \"light\"
 "
   }
 
@@ -1816,7 +1835,8 @@ homescreen because the link was invalid).
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether or not the user has enabled the voice search button. default: true
+    description: "Whether or not the user has enabled the voice search button.
+default: true
 "
   }
 
@@ -1938,7 +1958,12 @@ will be \"custom\"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The size of the app's APK and related files as installed: this is expected to be larger than download size. This is the output of [StorageStats.getAppBytes](https://developer.android.com/reference/android/app/usage/StorageStats#getAppBytes()) so see that for details. This value is only available on Android 8+. A similar value may be available on the Google Play dashboard: we can use this value to see if that value is reliable enough.
+    description: "The size of the app's APK and related files as installed: this is expected
+to be larger than download size. This is the output of
+[StorageStats.getAppBytes](https://developer.android.com/reference/android/app/usage/StorageStats#getAppBytes())
+so see that for details. This value is only available on Android 8+. A
+similar value may be available on the Google Play dashboard: we can use
+this value to see if that value is reliable enough.
 "
   }
 
@@ -1956,7 +1981,9 @@ will be \"custom\"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The size of all cached data in the app. This is the output of [StorageStats.getCacheBytes](https://developer.android.com/reference/android/app/usage/StorageStats#getCacheBytes()) so see that for details. This value is only available on Android 8+.
+    description: "The size of all cached data in the app. This is the output of
+[StorageStats.getCacheBytes](https://developer.android.com/reference/android/app/usage/StorageStats#getCacheBytes())
+so see that for details. This value is only available on Android 8+.
 "
   }
 
@@ -1974,7 +2001,11 @@ will be \"custom\"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The size of all data minus `cache_bytes`. This is the output of [StorageStats.getDataBytes](https://developer.android.com/reference/android/app/usage/StorageStats#getDataBytes()) except we subtract the value of `cache_bytes` so the cache is not measured redundantly; see that method for details. This value is only available on Android 8+.
+    description: "The size of all data minus `cache_bytes`. This is the output of
+[StorageStats.getDataBytes](https://developer.android.com/reference/android/app/usage/StorageStats#getDataBytes())
+except we subtract the value of `cache_bytes` so the cache is not measured
+redundantly; see that method for details. This value is only available on
+Android 8+.
 "
   }
 
@@ -1992,7 +2023,10 @@ will be \"custom\"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "How long it took to query the device for the StorageStats that contain the file size information. The docs say it may be expensive so we want to ensure it's not too expensive.  This value is only available on Android 8+.
+    description: "How long it took to query the device for the StorageStats that contain the
+file size information. The docs say it may be expensive so we want to
+ensure it's not too expensive.  This value is only available on Android
+8+.
 "
   }
 
