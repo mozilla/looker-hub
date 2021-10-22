@@ -325,7 +325,8 @@ supported for this user.
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Customize Home Jump Back In"
-    description: "An indication of whether the Jump back in section is enabled to be displayed
+    description: "An indication of whether the Jump back
+in section is enabled to be displayed
 "
   }
 
@@ -334,7 +335,8 @@ supported for this user.
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Customize Home Most Visited Sites"
-    description: "An indication of whether the most visited sites are enabled to be displayed
+    description: "An indication of whether the most visited sites
+are enabled to be displayed
 "
   }
 
@@ -352,7 +354,8 @@ supported for this user.
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Customize Home Recently Saved"
-    description: "An indication of whether the recently saved section is enabled to be displayed
+    description: "An indication of whether the recently
+saved section is enabled to be displayed
 "
   }
 
@@ -361,7 +364,8 @@ supported for this user.
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Customize Home Recently Visited"
-    description: "An indication of whether the Recently visited section is enabled to be displayed
+    description: "An indication of whether the Recently
+visited section is enabled to be displayed
 "
   }
 
@@ -506,7 +510,8 @@ once we validate these assumptions.
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Preferences Bookmarks Suggestion"
-    description: "Whether or not the user has enabled bookmark search suggestions default: true
+    description: "Whether or not the user has enabled bookmark search suggestions
+default: true
 "
   }
 
@@ -515,7 +520,8 @@ once we validate these assumptions.
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Preferences Browsing History Suggestion"
-    description: "Whether or not the user has enabled browsing history suggestions. default: true
+    description: "Whether or not the user has enabled browsing history suggestions.
+default: true
 "
   }
 
@@ -524,7 +530,18 @@ once we validate these assumptions.
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Preferences Clipboard Suggestions Enabled"
-    description: "Whether or not the user has enabled clipboard search suggestions. default: true
+    description: "Whether or not the user has enabled clipboard search suggestions.
+default: true
+"
+  }
+
+  dimension: metrics__boolean__preferences_inactive_tabs_enabled {
+    sql: ${TABLE}.metrics.boolean.preferences_inactive_tabs_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Inactive Tabs Enabled"
+    description: "Whether or not the user has the inactive tabs feature enabled.
+default: true
 "
   }
 
@@ -533,7 +550,8 @@ once we validate these assumptions.
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Preferences Open Links In App Enabled"
-    description: "Whether or not the user has the open links in apps feature enabled. default: false
+    description: "Whether or not the user has the open links in apps feature enabled.
+default: false
 "
   }
 
@@ -560,7 +578,8 @@ once we validate these assumptions.
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Preferences Remote Debugging Enabled"
-    description: "Whether or not the user has remote debugging enabled default: false
+    description: "Whether or not the user has remote debugging enabled
+default: false
 "
   }
 
@@ -569,7 +588,8 @@ once we validate these assumptions.
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Preferences Search Shortcuts Enabled"
-    description: "Whether or not the user has enabled search shortcuts. default: true
+    description: "Whether or not the user has enabled search shortcuts.
+default: true
 "
   }
 
@@ -578,7 +598,8 @@ once we validate these assumptions.
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Preferences Search Suggestions Enabled"
-    description: "Whether or not the user has search suggestions enabled default: true
+    description: "Whether or not the user has search suggestions enabled
+default: true
 "
   }
 
@@ -587,7 +608,8 @@ once we validate these assumptions.
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Preferences Signed In Sync"
-    description: "Whether or not the user is signed into FxA default: false
+    description: "Whether or not the user is signed into FxA
+default: false
 "
   }
 
@@ -596,7 +618,10 @@ once we validate these assumptions.
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Preferences Telemetry Enabled"
-    description: "Whether or not the user has telemetry enabled. Note we should never receive a \"false\" value for this since telemetry would not send in that case. default: true
+    description: "Whether or not the user has telemetry enabled. Note we should
+never receive a \"false\" value for this since telemetry would
+not send in that case.
+default: true
 "
   }
 
@@ -605,7 +630,8 @@ once we validate these assumptions.
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Preferences Voice Search Enabled"
-    description: "Whether or not the user has enabled the voice search button. default: true
+    description: "Whether or not the user has enabled the voice search button.
+default: true
 "
   }
 
@@ -965,6 +991,24 @@ screen.
     description: "A counter that indicates the number of times that a user
 has clicked the show all button for recently saved bookmarks
 on the home screen.
+"
+  }
+
+  dimension: metrics__counter__tabs_tray_close_inactive_tab {
+    sql: ${TABLE}.metrics.counter.tabs_tray_close_inactive_tab ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tabs Tray Close Inactive Tab"
+    description: "A counter that indicates how many INACTIVE tabs a user has closed.
+"
+  }
+
+  dimension: metrics__counter__tabs_tray_open_inactive_tab {
+    sql: ${TABLE}.metrics.counter.tabs_tray_open_inactive_tab ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tabs Tray Open Inactive Tab"
+    description: "A counter that indicates how many INACTIVE tabs a user has opened.
 "
   }
 
@@ -1838,7 +1882,9 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metrics String"
     group_item_label: "Preferences Enhanced Tracking Protection"
-    description: "What type of enhanced tracking protection the user has enabled. \"standard,\" \"strict,\" \"custom,\" or \"\" (if disabled) default: \"standard\"
+    description: "What type of enhanced tracking protection the user has enabled.
+\"standard,\" \"strict,\" \"custom,\" or \"\" (if disabled)
+default: \"standard\"
 "
   }
 
@@ -1847,7 +1893,8 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metrics String"
     group_item_label: "Preferences Toolbar Position Setting"
-    description: "The position of the toolbar default: bottom (defaults to top if the user has accessibility services)
+    description: "The position of the toolbar
+default: bottom (defaults to top if the user has accessibility services)
 "
   }
 
@@ -1856,7 +1903,8 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metrics String"
     group_item_label: "Preferences User Theme"
-    description: "The theme the user has enabled. \"light,\" \"dark,\" \"system,\" or \"battery\" default: \"system\" for API 28+, else \"light\"
+    description: "The theme the user has enabled. \"light,\" \"dark,\" \"system,\" or \"battery\"
+default: \"system\" for API 28+, else \"light\"
 "
   }
 

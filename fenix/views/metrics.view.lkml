@@ -1631,6 +1631,25 @@ default: \"standard\"
 "
   }
 
+  dimension: metrics__boolean__preferences_inactive_tabs_enabled {
+    label: "Preferences Inactive Tabs Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_inactive_tabs_enabled ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Inactive Tabs Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Inactive Tabs Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_inactive_tabs_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not the user has the inactive tabs feature enabled.
+default: true
+"
+  }
+
   dimension: metrics__boolean__preferences_open_links_in_app_enabled {
     label: "Preferences Open Links In App Enabled"
     hidden: no
@@ -2027,6 +2046,42 @@ Android 8+.
 file size information. The docs say it may be expensive so we want to
 ensure it's not too expensive.  This value is only available on Android
 8+.
+"
+  }
+
+  dimension: metrics__counter__tabs_tray_close_inactive_tab {
+    label: "Tabs Tray Close Inactive Tab"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tabs_tray_close_inactive_tab ;;
+    type: number
+    group_label: "Tabs Tray"
+    group_item_label: "Close Inactive Tab"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Tray Close Inactive Tab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_tray_close_inactive_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many INACTIVE tabs a user has closed.
+"
+  }
+
+  dimension: metrics__counter__tabs_tray_open_inactive_tab {
+    label: "Tabs Tray Open Inactive Tab"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tabs_tray_open_inactive_tab ;;
+    type: number
+    group_label: "Tabs Tray"
+    group_item_label: "Open Inactive Tab"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Tray Open Inactive Tab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_tray_open_inactive_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many INACTIVE tabs a user has opened.
 "
   }
 
@@ -5831,6 +5886,56 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     link: {
       label: "Glean Dictionary reference for Recent Bookmarks Show All Bookmarks"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_bookmarks_show_all_bookmarks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_tray_close_inactive_tab {
+    type: sum
+    sql: ${metrics__counter__tabs_tray_close_inactive_tab} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Tray Close Inactive Tab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_tray_close_inactive_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_tray_close_inactive_tab_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tabs_tray_close_inactive_tab: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Tray Close Inactive Tab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_tray_close_inactive_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_tray_open_inactive_tab {
+    type: sum
+    sql: ${metrics__counter__tabs_tray_open_inactive_tab} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Tray Open Inactive Tab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_tray_open_inactive_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_tray_open_inactive_tab_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tabs_tray_open_inactive_tab: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Tray Open Inactive Tab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_tray_open_inactive_tab"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
