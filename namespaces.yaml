@@ -1149,6 +1149,7 @@ focus_android:
   owners:
   - jalmeida@mozilla.com
   - tlong@mozilla.com
+  - loines@mozilla.com
   pretty_name: Firefox Focus for Android
   spoke: looker-spoke-default
   views:
@@ -1207,6 +1208,7 @@ focus_ios:
   owners:
   - sarentz@mozilla.com
   - tlong@mozilla.com
+  - loines@mozilla.com
   pretty_name: Firefox Focus for iOS
   spoke: looker-spoke-default
   views:
