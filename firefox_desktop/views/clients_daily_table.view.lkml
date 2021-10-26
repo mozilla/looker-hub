@@ -747,6 +747,11 @@ view: clients_daily_table {
     type: number
   }
 
+  dimension: scalar_parent_browser_engagement_total_uri_count_normal_and_private_mode_sum {
+    sql: ${TABLE}.scalar_parent_browser_engagement_total_uri_count_normal_and_private_mode_sum ;;
+    type: number
+  }
+
   dimension: scalar_parent_browser_engagement_total_uri_count_sum {
     sql: ${TABLE}.scalar_parent_browser_engagement_total_uri_count_sum ;;
     type: number

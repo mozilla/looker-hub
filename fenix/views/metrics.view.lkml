@@ -2197,6 +2197,42 @@ parent process.
 "
   }
 
+  dimension: metrics__string__geckoview_validation_build_id {
+    label: "Geckoview Validation Build Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.geckoview_validation_build_id ;;
+    type: string
+    group_label: "Geckoview Validation"
+    group_item_label: "Build Id"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Validation Build Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_validation_build_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Buildid of the Gecko engine, example: 20200205124310 Mirror of `geckoview.build_id` for validation of migrated data.
+"
+  }
+
+  dimension: metrics__string__geckoview_validation_version {
+    label: "Geckoview Validation Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.geckoview_validation_version ;;
+    type: string
+    group_label: "Geckoview Validation"
+    group_item_label: "Version"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Validation Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_validation_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of the Gecko engine, example: 74.0a1 Mirror of `geckoview.version` for validation of migrated data.
+"
+  }
+
   dimension: metrics__timing_distribution__paint_build_displaylist_time__sum {
     label: "Paint Build Displaylist Time Sum"
     hidden: no

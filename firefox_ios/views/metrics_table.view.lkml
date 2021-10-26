@@ -293,6 +293,16 @@ preference.
 "
   }
 
+  dimension: metrics__boolean__device_authentication {
+    sql: ${TABLE}.metrics.boolean.device_authentication ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Device Authentication"
+    description: "True if the device support device owner authentication
+with either biometrics or a passcode.
+"
+  }
+
   dimension: metrics__boolean__glean_core_migration_successful {
     sql: ${TABLE}.metrics.boolean.glean_core_migration_successful ;;
     type: yesno
