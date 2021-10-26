@@ -472,6 +472,25 @@ default browser onboarding is clicked.
 "
   }
 
+  dimension: metrics__boolean__device_authentication {
+    label: "Device Authentication"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.device_authentication ;;
+    type: yesno
+    group_label: "Device"
+    group_item_label: "Authentication"
+
+    link: {
+      label: "Glean Dictionary reference for Device Authentication"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/device_authentication"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the device support device owner authentication
+with either biometrics or a passcode.
+"
+  }
+
   dimension: metrics__counter__firefox_home_page_customize_homepage_button {
     label: "Firefox Home Page Customize Homepage Button"
     hidden: no

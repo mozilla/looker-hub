@@ -512,6 +512,24 @@ This metric appears in both the metrics and baseline pings.
     hidden: yes
   }
 
+  dimension: metrics__string__geckoview_validation_build_id {
+    sql: ${TABLE}.metrics.string.geckoview_validation_build_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Geckoview Validation Build Id"
+    description: "The Buildid of the Gecko engine, example: 20200205124310 Mirror of `geckoview.build_id` for validation of migrated data.
+"
+  }
+
+  dimension: metrics__string__geckoview_validation_version {
+    sql: ${TABLE}.metrics.string.geckoview_validation_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Geckoview Validation Version"
+    description: "The version of the Gecko engine, example: 74.0a1 Mirror of `geckoview.version` for validation of migrated data.
+"
+  }
+
   dimension: metrics__string__ping_reason {
     sql: ${TABLE}.metrics.string.ping_reason ;;
     type: string
