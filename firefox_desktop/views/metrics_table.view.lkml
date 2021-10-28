@@ -390,6 +390,15 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__power_total_cpu_time_ms {
+    sql: ${TABLE}.metrics.counter.power_total_cpu_time_ms ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Power Total Cpu Time Ms"
+    description: "Total CPU time used by all processes in ms.
+"
+  }
+
   dimension: metrics__datetime__glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: string

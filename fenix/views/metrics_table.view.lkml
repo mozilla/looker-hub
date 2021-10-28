@@ -972,6 +972,15 @@ between a failed `top_sites_count` ping and 0 top sites, please see
 "
   }
 
+  dimension: metrics__counter__power_total_cpu_time_ms {
+    sql: ${TABLE}.metrics.counter.power_total_cpu_time_ms ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Power Total Cpu Time Ms"
+    description: "Total CPU time used by all processes in ms.
+"
+  }
+
   dimension: metrics__counter__recent_bookmarks_bookmark_clicked {
     sql: ${TABLE}.metrics.counter.recent_bookmarks_bookmark_clicked ;;
     type: number
