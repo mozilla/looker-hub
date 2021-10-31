@@ -296,6 +296,7 @@ fenix:
   - dthorn@mozilla.com
   - mdroettboom@mozilla.com
   - vzare@mozilla.com
+  - ksiegler@mozilla.com
   pretty_name: Firefox for Android
   spoke: looker-spoke-default
   views:
@@ -1141,6 +1142,15 @@ focus_android:
       type: glean_ping_explore
       views:
         base_view: baseline
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
+    events_unnested:
+      type: glean_ping_explore
+      views:
+        base_view: events_unnested
     metrics:
       type: glean_ping_explore
       views:
@@ -1155,35 +1165,63 @@ focus_android:
   views:
     activation:
       tables:
-      - table: mozdata.org_mozilla_focus.activation
+      - channel: release
+        table: mozdata.focus_android.activation
       type: glean_ping_view
     activation_table:
       tables:
-      - channel: null
-        table: mozdata.org_mozilla_focus.activation
+      - channel: release
+        table: mozdata.focus_android.activation
       type: table_view
     baseline:
       tables:
-      - table: mozdata.org_mozilla_focus.baseline
+      - channel: release
+        table: mozdata.focus_android.baseline
       type: glean_ping_view
     baseline_table:
       tables:
-      - channel: null
-        table: mozdata.org_mozilla_focus.baseline
+      - channel: release
+        table: mozdata.focus_android.baseline
       type: table_view
+    events:
+      tables:
+      - base_table: mozdata.focus_android.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
     events_table:
       tables:
-      - channel: null
-        table: mozdata.org_mozilla_focus.events
+      - channel: release
+        table: mozdata.focus_android.events
+      type: table_view
+    events_unnested:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.events_unnested
+      type: glean_ping_view
+    events_unnested_table:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.events_unnested
       type: table_view
     metrics:
       tables:
-      - table: mozdata.org_mozilla_focus.metrics
+      - channel: release
+        table: mozdata.focus_android.metrics
       type: glean_ping_view
+    metrics_clients_daily_table:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.metrics_clients_daily
+      type: table_view
+    metrics_clients_last_seen_table:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.metrics_clients_last_seen
+      type: table_view
     metrics_table:
       tables:
-      - channel: null
-        table: mozdata.org_mozilla_focus.metrics
+      - channel: release
+        table: mozdata.focus_android.metrics
       type: table_view
 focus_ios:
   explores:

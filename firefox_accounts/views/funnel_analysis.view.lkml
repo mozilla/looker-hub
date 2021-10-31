@@ -92,7 +92,7 @@ view: funnel_analysis {
 
 view: event_types {
   derived_table: {
-    sql: SELECT mozfun.event_analysis.aggregate_match_strings( ARRAY_AGG( CONCAT(mozfun.event_analysis.escape_metachars(property_value.value),mozfun.event_analysis.event_index_to_match_string(et.index)))) AS match_string FROM mozdata.firefox_accounts.event_types as et CROSS JOIN UNNEST(event_properties) AS properties CROSS JOIN UNNEST(properties.value) AS property_value WHERE {% condition category %} category {% endcondition %} AND {% condition event %} event {% endcondition %} AND {% condition property_name %} properties.key {% endcondition %} AND {% condition property_value %} property_value.key {% endcondition %} ;;
+    sql: SELECT mozfun.event_analysis.aggregate_match_strings( ARRAY_AGG(CONCAT(COALESCE(mozfun.event_analysis.escape_metachars(property_value.value), ''),mozfun.event_analysis.event_index_to_match_string(et.index)))) AS match_string FROM mozdata.firefox_accounts.event_types as et LEFT JOIN UNNEST(COALESCE(event_properties, [])) AS properties LEFT JOIN UNNEST(properties.value) AS property_value WHERE {% condition category %} category {% endcondition %} AND {% condition event %} event {% endcondition %} AND {% condition property_name %} properties.key {% endcondition %} AND {% condition property_value %} property_value.key {% endcondition %} ;;
   }
 
   filter: category {

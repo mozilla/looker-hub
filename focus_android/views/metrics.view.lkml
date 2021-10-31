@@ -1584,7 +1584,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     }
   }
 
-  sql_table_name: `mozdata.org_mozilla_focus.metrics` ;;
+  sql_table_name: `mozdata.focus_android.metrics` ;;
 }
 
 view: metrics__metrics__labeled_counter__browser_search_ad_clicks {
@@ -2065,7 +2065,7 @@ view: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_focus.metrics as t,
+from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.browser_search_ad_clicks) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -2084,7 +2084,7 @@ view: suggest__metrics__metrics__labeled_counter__browser_search_in_content {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_focus.metrics as t,
+from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.browser_search_in_content) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -2103,7 +2103,7 @@ view: suggest__metrics__metrics__labeled_counter__browser_search_with_ads {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_focus.metrics as t,
+from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.browser_search_with_ads) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -2122,7 +2122,7 @@ view: suggest__metrics__metrics__labeled_counter__crash_metrics_crash_count {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_focus.metrics as t,
+from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.crash_metrics_crash_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -2141,7 +2141,7 @@ view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_focus.metrics as t,
+from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -2160,7 +2160,7 @@ view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_focus.metrics as t,
+from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -2179,7 +2179,7 @@ view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_focus.metrics as t,
+from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -2198,7 +2198,7 @@ view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_focus.metrics as t,
+from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -2217,7 +2217,7 @@ view: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failu
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_focus.metrics as t,
+from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.glean_upload_ping_upload_failure) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -2236,7 +2236,7 @@ view: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitt
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_focus.metrics as t,
+from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.glean_validation_pings_submitted) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -2255,7 +2255,7 @@ view: suggest__metrics__metrics__labeled_counter__shortcuts_shortcut_removed_cou
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_focus.metrics as t,
+from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.shortcuts_shortcut_removed_counter) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
