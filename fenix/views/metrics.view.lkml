@@ -2251,6 +2251,24 @@ parent process.
 "
   }
 
+  dimension: metrics__counter__power_total_cpu_time_ms {
+    label: "Power Total Cpu Time Ms"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_total_cpu_time_ms ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Total Cpu Time Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Cpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_total_cpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total CPU time used by all processes in ms.
+"
+  }
+
   dimension: metrics__memory_distribution__glean_database_size__sum {
     label: "Glean Database Size Sum"
     hidden: no
@@ -5997,6 +6015,31 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     link: {
       label: "Glean Dictionary reference for Fog Ipc Replay Failures"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_ipc_replay_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_cpu_time_ms {
+    type: sum
+    sql: ${metrics__counter__power_total_cpu_time_ms} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Cpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_total_cpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_cpu_time_ms_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_total_cpu_time_ms: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Cpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_total_cpu_time_ms"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
