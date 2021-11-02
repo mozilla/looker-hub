@@ -500,7 +500,27 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  sql_table_name: `mozdata.org_mozilla_focus.activation` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.focus_android.activation"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.focus_android.activation"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_focus_beta.activation"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_focus_nightly.activation"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: activation__metrics__labeled_counter__glean_error_invalid_label {
@@ -680,7 +700,7 @@ view: suggest__activation__metrics__labeled_counter__glean_error_invalid_label {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_focus.activation as t,
+from mozdata.focus_android.activation as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -699,7 +719,7 @@ view: suggest__activation__metrics__labeled_counter__glean_error_invalid_overflo
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_focus.activation as t,
+from mozdata.focus_android.activation as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -718,7 +738,7 @@ view: suggest__activation__metrics__labeled_counter__glean_error_invalid_state {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_focus.activation as t,
+from mozdata.focus_android.activation as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -737,7 +757,7 @@ view: suggest__activation__metrics__labeled_counter__glean_error_invalid_value {
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_focus.activation as t,
+from mozdata.focus_android.activation as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
