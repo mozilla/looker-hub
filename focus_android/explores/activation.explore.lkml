@@ -8,6 +8,7 @@ explore: activation {
 
   always_filter: {
     filters: [
+      channel: "mozdata.focus^_android.activation",
       submission_date: "28 days",
     ]
   }

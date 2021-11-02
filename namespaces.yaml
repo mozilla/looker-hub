@@ -1147,10 +1147,6 @@ focus_android:
       views:
         base_view: events
         extended_view: events_unnested_table
-    events_unnested:
-      type: glean_ping_explore
-      views:
-        base_view: events_unnested
     metrics:
       type: glean_ping_explore
       views:
@@ -1167,21 +1163,37 @@ focus_android:
       tables:
       - channel: release
         table: mozdata.focus_android.activation
+      - channel: beta
+        table: mozdata.org_mozilla_focus_beta.activation
+      - channel: nightly
+        table: mozdata.org_mozilla_focus_nightly.activation
       type: glean_ping_view
     activation_table:
       tables:
       - channel: release
         table: mozdata.focus_android.activation
+      - channel: beta
+        table: mozdata.org_mozilla_focus_beta.activation
+      - channel: nightly
+        table: mozdata.org_mozilla_focus_nightly.activation
       type: table_view
     baseline:
       tables:
       - channel: release
         table: mozdata.focus_android.baseline
+      - channel: beta
+        table: mozdata.org_mozilla_focus_beta.baseline
+      - channel: nightly
+        table: mozdata.org_mozilla_focus_nightly.baseline
       type: glean_ping_view
     baseline_table:
       tables:
       - channel: release
         table: mozdata.focus_android.baseline
+      - channel: beta
+        table: mozdata.org_mozilla_focus_beta.baseline
+      - channel: nightly
+        table: mozdata.org_mozilla_focus_nightly.baseline
       type: table_view
     events:
       tables:
@@ -1192,12 +1204,11 @@ focus_android:
       tables:
       - channel: release
         table: mozdata.focus_android.events
+      - channel: beta
+        table: mozdata.org_mozilla_focus_beta.events
+      - channel: nightly
+        table: mozdata.org_mozilla_focus_nightly.events
       type: table_view
-    events_unnested:
-      tables:
-      - channel: release
-        table: mozdata.focus_android.events_unnested
-      type: glean_ping_view
     events_unnested_table:
       tables:
       - channel: release
@@ -1207,6 +1218,10 @@ focus_android:
       tables:
       - channel: release
         table: mozdata.focus_android.metrics
+      - channel: beta
+        table: mozdata.org_mozilla_focus_beta.metrics
+      - channel: nightly
+        table: mozdata.org_mozilla_focus_nightly.metrics
       type: glean_ping_view
     metrics_clients_daily_table:
       tables:
@@ -1222,6 +1237,10 @@ focus_android:
       tables:
       - channel: release
         table: mozdata.focus_android.metrics
+      - channel: beta
+        table: mozdata.org_mozilla_focus_beta.metrics
+      - channel: nightly
+        table: mozdata.org_mozilla_focus_nightly.metrics
       type: table_view
 focus_ios:
   explores:

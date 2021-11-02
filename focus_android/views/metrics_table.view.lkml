@@ -692,7 +692,27 @@ view: metrics_table {
     ]
   }
 
-  sql_table_name: `mozdata.focus_android.metrics` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.focus_android.metrics"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.focus_android.metrics"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_focus_beta.metrics"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_focus_nightly.metrics"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: metrics_table__events {
