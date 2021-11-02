@@ -1566,7 +1566,27 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     }
   }
 
-  sql_table_name: `mozdata.focus_android.metrics` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.focus_android.metrics"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.focus_android.metrics"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_focus_beta.metrics"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_focus_nightly.metrics"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: metrics__metrics__labeled_counter__browser_search_ad_clicks {
