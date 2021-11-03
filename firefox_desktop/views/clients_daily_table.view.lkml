@@ -1057,6 +1057,11 @@ view: clients_daily_table {
     hidden: yes
   }
 
+  dimension: search_adclicks_urlbar_handoff_sum {
+    sql: ${TABLE}.search_adclicks_urlbar_handoff_sum ;;
+    hidden: yes
+  }
+
   dimension: search_adclicks_urlbar_searchmode_sum {
     sql: ${TABLE}.search_adclicks_urlbar_searchmode_sum ;;
     hidden: yes
@@ -1114,6 +1119,11 @@ view: clients_daily_table {
 
   dimension: search_content_unknown_sum {
     sql: ${TABLE}.search_content_unknown_sum ;;
+    hidden: yes
+  }
+
+  dimension: search_content_urlbar_handoff_sum {
+    sql: ${TABLE}.search_content_urlbar_handoff_sum ;;
     hidden: yes
   }
 
@@ -1187,6 +1197,11 @@ view: clients_daily_table {
     type: number
   }
 
+  dimension: search_count_urlbar_handoff {
+    sql: ${TABLE}.search_count_urlbar_handoff ;;
+    type: number
+  }
+
   dimension: search_count_urlbar_searchmode {
     sql: ${TABLE}.search_count_urlbar_searchmode ;;
     type: number
@@ -1249,6 +1264,11 @@ view: clients_daily_table {
 
   dimension: search_withads_unknown_sum {
     sql: ${TABLE}.search_withads_unknown_sum ;;
+    hidden: yes
+  }
+
+  dimension: search_withads_urlbar_handoff_sum {
+    sql: ${TABLE}.search_withads_urlbar_handoff_sum ;;
     hidden: yes
   }
 
@@ -2092,6 +2112,18 @@ view: clients_daily_table__search_adclicks_unknown_sum {
   }
 }
 
+view: clients_daily_table__search_adclicks_urlbar_handoff_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: clients_daily_table__search_adclicks_urlbar_searchmode_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -2213,6 +2245,18 @@ view: clients_daily_table__search_content_tabhistory_sum {
 }
 
 view: clients_daily_table__search_content_unknown_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__search_content_urlbar_handoff_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -2374,6 +2418,18 @@ view: clients_daily_table__search_withads_tabhistory_sum {
 }
 
 view: clients_daily_table__search_withads_unknown_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__search_withads_urlbar_handoff_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

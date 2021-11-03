@@ -1781,6 +1781,24 @@ default: false
 "
   }
 
+  dimension: metrics__boolean__preferences_studies_enabled {
+    label: "Preferences Studies Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_studies_enabled ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Studies Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Studies Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_studies_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A metric indicating whether or not the user has studies enabled default: true
+"
+  }
+
   dimension: metrics__boolean__preferences_telemetry_enabled {
     label: "Preferences Telemetry Enabled"
     hidden: no

@@ -613,6 +613,15 @@ default: false
 "
   }
 
+  dimension: metrics__boolean__preferences_studies_enabled {
+    sql: ${TABLE}.metrics.boolean.preferences_studies_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Studies Enabled"
+    description: "A metric indicating whether or not the user has studies enabled default: true
+"
+  }
+
   dimension: metrics__boolean__preferences_telemetry_enabled {
     sql: ${TABLE}.metrics.boolean.preferences_telemetry_enabled ;;
     type: yesno
