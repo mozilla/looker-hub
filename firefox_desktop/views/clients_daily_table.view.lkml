@@ -136,6 +136,31 @@ view: clients_daily_table {
     type: number
   }
 
+  dimension: contextual_services_quicksuggest_click_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_click_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_help_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_help_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_impression_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_impression_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_topsites_click_sum {
+    sql: ${TABLE}.contextual_services_topsites_click_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_topsites_impression_sum {
+    sql: ${TABLE}.contextual_services_topsites_impression_sum ;;
+    hidden: yes
+  }
+
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
@@ -1377,6 +1402,11 @@ view: clients_daily_table {
     type: yesno
   }
 
+  dimension: user_pref_browser_newtabpage_enabled {
+    sql: ${TABLE}.user_pref_browser_newtabpage_enabled ;;
+    type: string
+  }
+
   dimension: user_pref_browser_search_region {
     sql: ${TABLE}.user_pref_browser_search_region ;;
     type: string
@@ -1597,6 +1627,66 @@ view: clients_daily_table__active_addons {
 }
 
 view: clients_daily_table__ad_clicks {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__contextual_services_quicksuggest_click_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__contextual_services_quicksuggest_help_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__contextual_services_quicksuggest_impression_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__contextual_services_topsites_click_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__contextual_services_topsites_impression_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

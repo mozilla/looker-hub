@@ -603,6 +603,15 @@ default: true
 "
   }
 
+  dimension: metrics__boolean__preferences_search_term_groups_enabled {
+    sql: ${TABLE}.metrics.boolean.preferences_search_term_groups_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Search Term Groups Enabled"
+    description: "Is search term group in tabs tray on?
+"
+  }
+
   dimension: metrics__boolean__preferences_signed_in_sync {
     sql: ${TABLE}.metrics.boolean.preferences_signed_in_sync ;;
     type: yesno
@@ -641,6 +650,16 @@ default: true
     group_item_label: "Preferences Voice Search Enabled"
     description: "Whether or not the user has enabled the voice search button.
 default: true
+"
+  }
+
+  dimension: metrics__boolean__recent_tabs_section_visible {
+    sql: ${TABLE}.metrics.boolean.recent_tabs_section_visible ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Recent Tabs Section Visible"
+    description: "An indication of whether the recent tabs /
+Jump Back In section is visible on the homepage.
 "
   }
 
@@ -1639,6 +1658,15 @@ pr"
 "
   }
 
+  dimension: metrics__quantity__metrics_inactive_tabs_count {
+    sql: ${TABLE}.metrics.quantity.metrics_inactive_tabs_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Metrics Inactive Tabs Count"
+    description: "How many inactive tabs does the user have.
+"
+  }
+
   dimension: metrics__string__experiments_metrics_active_experiment {
     sql: ${TABLE}.metrics.string.experiments_metrics_active_experiment ;;
     type: string
@@ -1871,6 +1899,15 @@ owned product
     group_item_label: "Metrics Distribution Id"
     description: "A string containing the distribution identifier. This is currently used
 to identify installs from Mozilla Online.
+"
+  }
+
+  dimension: metrics__string__metrics_install_source {
+    sql: ${TABLE}.metrics.string.metrics_install_source ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Metrics Install Source"
+    description: "Used to identify the source the app was installed from.
 "
   }
 
