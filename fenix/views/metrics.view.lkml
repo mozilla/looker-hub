@@ -835,6 +835,42 @@ See recently_used_pwa_count for the actual count.
 "
   }
 
+  dimension: metrics__quantity__metrics_inactive_tabs_count {
+    label: "Metrics Inactive Tabs Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.metrics_inactive_tabs_count ;;
+    type: number
+    group_label: "Metrics"
+    group_item_label: "Inactive Tabs Count"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Inactive Tabs Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_inactive_tabs_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many inactive tabs does the user have.
+"
+  }
+
+  dimension: metrics__string__metrics_install_source {
+    label: "Metrics Install Source"
+    hidden: no
+    sql: ${TABLE}.metrics.string.metrics_install_source ;;
+    type: string
+    group_label: "Metrics"
+    group_item_label: "Install Source"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Install Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_install_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Used to identify the source the app was installed from.
+"
+  }
+
   dimension: metrics__counter__metrics_mobile_bookmarks_count {
     label: "Metrics Mobile Bookmarks Count"
     hidden: no
@@ -1762,6 +1798,24 @@ default: true
 "
   }
 
+  dimension: metrics__boolean__preferences_search_term_groups_enabled {
+    label: "Preferences Search Term Groups Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_search_term_groups_enabled ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Search Term Groups Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Search Term Groups Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_search_term_groups_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Is search term group in tabs tray on?
+"
+  }
+
   dimension: metrics__boolean__preferences_signed_in_sync {
     label: "Preferences Signed In Sync"
     hidden: no
@@ -1914,6 +1968,25 @@ screen.
     description: "A counter that indicates the number of times that a user
 has clicked the show all button for recently saved bookmarks
 on the home screen.
+"
+  }
+
+  dimension: metrics__boolean__recent_tabs_section_visible {
+    label: "Recent Tabs Section Visible"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.recent_tabs_section_visible ;;
+    type: yesno
+    group_label: "Recent Tabs"
+    group_item_label: "Section Visible"
+
+    link: {
+      label: "Glean Dictionary reference for Recent Tabs Section Visible"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_tabs_section_visible"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An indication of whether the recent tabs /
+Jump Back In section is visible on the homepage.
 "
   }
 

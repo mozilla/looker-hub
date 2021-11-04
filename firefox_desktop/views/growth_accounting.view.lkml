@@ -146,6 +146,31 @@ view: growth_accounting {
     type: number
   }
 
+  dimension: contextual_services_quicksuggest_click_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_click_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_help_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_help_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_impression_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_impression_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_topsites_click_sum {
+    sql: ${TABLE}.contextual_services_topsites_click_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_topsites_impression_sum {
+    sql: ${TABLE}.contextual_services_topsites_impression_sum ;;
+    hidden: yes
+  }
+
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
@@ -1505,6 +1530,11 @@ view: growth_accounting {
   dimension: update_enabled {
     sql: ${TABLE}.update_enabled ;;
     type: yesno
+  }
+
+  dimension: user_pref_browser_newtabpage_enabled {
+    sql: ${TABLE}.user_pref_browser_newtabpage_enabled ;;
+    type: string
   }
 
   dimension: user_pref_browser_search_region {
