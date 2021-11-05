@@ -5694,6 +5694,135 @@ view: metrics__metrics__labeled_counter__library_panel_pressed {
   }
 }
 
+view: metrics__metrics__labeled_counter__logins_store_read_query_error_count {
+  label: "Logins Store - Read Query Error Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_count.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__logins_store_unlock_error_count {
+  label: "Logins Store - Unlock Error Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_count.key
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__logins_store_write_query_error_count {
+  label: "Logins Store - Write Query Error Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__pocket_open_story_position {
   label: "Pocket - Open Story Position"
 
@@ -6373,6 +6502,63 @@ view: suggest__metrics__metrics__labeled_counter__library_panel_pressed {
     count(*) as n
 from mozdata.firefox_ios.metrics as t,
 unnest(metrics.labeled_counter.library_panel_pressed) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.logins_store_read_query_error_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.logins_store_unlock_error_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.logins_store_write_query_error_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

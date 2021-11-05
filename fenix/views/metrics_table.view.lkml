@@ -1667,6 +1667,16 @@ pr"
 "
   }
 
+  dimension: metrics__quantity__recent_bookmarks_recent_bookmarks_count {
+    sql: ${TABLE}.metrics.quantity.recent_bookmarks_recent_bookmarks_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Recent Bookmarks Recent Bookmarks Count"
+    description: "The number of bookmarked items appearing in the
+Recently Saved section on the home page.
+"
+  }
+
   dimension: metrics__string__experiments_metrics_active_experiment {
     sql: ${TABLE}.metrics.string.experiments_metrics_active_experiment ;;
     type: string
