@@ -93,6 +93,21 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__library_panel_pressed}) AS metrics__metrics__labeled_counter__library_panel_pressed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__library_panel_pressed.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__logins_store_read_query_error_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__logins_store_read_query_error_count}) AS metrics__metrics__labeled_counter__logins_store_read_query_error_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__logins_store_read_query_error_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__logins_store_unlock_error_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__logins_store_unlock_error_count}) AS metrics__metrics__labeled_counter__logins_store_unlock_error_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__logins_store_unlock_error_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__logins_store_write_query_error_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__logins_store_write_query_error_count}) AS metrics__metrics__labeled_counter__logins_store_write_query_error_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__logins_store_write_query_error_count.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__pocket_open_story_position {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pocket_open_story_position}) AS metrics__metrics__labeled_counter__pocket_open_story_position ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pocket_open_story_position.document_id} ;;
@@ -200,6 +215,18 @@ explore: suggest__metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_i
 }
 
 explore: suggest__metrics__metrics__labeled_counter__library_panel_pressed {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_count {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_count {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count {
   hidden: yes
 }
 

@@ -1951,6 +1951,25 @@ screen.
 "
   }
 
+  dimension: metrics__quantity__recent_bookmarks_recent_bookmarks_count {
+    label: "Recent Bookmarks Recent Bookmarks Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.recent_bookmarks_recent_bookmarks_count ;;
+    type: number
+    group_label: "Recent Bookmarks"
+    group_item_label: "Recent Bookmarks Count"
+
+    link: {
+      label: "Glean Dictionary reference for Recent Bookmarks Recent Bookmarks Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_bookmarks_recent_bookmarks_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of bookmarked items appearing in the
+Recently Saved section on the home page.
+"
+  }
+
   dimension: metrics__counter__recent_bookmarks_show_all_bookmarks {
     label: "Recent Bookmarks Show All Bookmarks"
     hidden: no
