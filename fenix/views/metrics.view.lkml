@@ -850,6 +850,7 @@ See recently_used_pwa_count for the actual count.
     }
 
     description: "How many inactive tabs does the user have.
+Value will be 0 if the feature is disabled.
 "
   }
 
