@@ -194,6 +194,11 @@ view: payload_bytes_error_all {
     type: string
   }
 
+  dimension: x_lb_tags {
+    sql: ${TABLE}.x_lb_tags ;;
+    type: string
+  }
+
   dimension: x_pingsender_version {
     sql: ${TABLE}.x_pingsender_version ;;
     type: string
