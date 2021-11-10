@@ -172,6 +172,13 @@ view: metrics_table {
     group_item_label: "X Foxsec Ip Reputation"
   }
 
+  dimension: metadata__header__x_lb_tags {
+    sql: ${TABLE}.metadata.header.x_lb_tags ;;
+    type: string
+    group_label: "Metadata Header"
+    group_item_label: "X Lb Tags"
+  }
+
   dimension: metadata__header__x_pingsender_version {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
@@ -599,6 +606,48 @@ view: metrics_table {
     group_item_label: "Inactive Tabs Tray Open Recently Closed Tab"
   }
 
+  dimension: metrics__counter__logins_store_migration_num_failed {
+    sql: ${TABLE}.metrics.counter.logins_store_migration_num_failed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Store Migration Num Failed"
+  }
+
+  dimension: metrics__counter__logins_store_migration_num_processed {
+    sql: ${TABLE}.metrics.counter.logins_store_migration_num_processed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Store Migration Num Processed"
+  }
+
+  dimension: metrics__counter__logins_store_migration_num_succeeded {
+    sql: ${TABLE}.metrics.counter.logins_store_migration_num_succeeded ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Store Migration Num Succeeded"
+  }
+
+  dimension: metrics__counter__logins_store_read_query_count {
+    sql: ${TABLE}.metrics.counter.logins_store_read_query_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Store Read Query Count"
+  }
+
+  dimension: metrics__counter__logins_store_unlock_count {
+    sql: ${TABLE}.metrics.counter.logins_store_unlock_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Store Unlock Count"
+  }
+
+  dimension: metrics__counter__logins_store_write_query_count {
+    sql: ${TABLE}.metrics.counter.logins_store_write_query_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Store Write Query Count"
+  }
+
   dimension: metrics__counter__onboarding_sync_screen {
     sql: ${TABLE}.metrics.counter.onboarding_sync_screen ;;
     type: number
@@ -999,6 +1048,21 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__logins_store_read_query_error_count {
+    sql: ${TABLE}.metrics.labeled_counter.logins_store_read_query_error_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__logins_store_unlock_error_count {
+    sql: ${TABLE}.metrics.labeled_counter.logins_store_unlock_error_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__logins_store_write_query_error_count {
+    sql: ${TABLE}.metrics.labeled_counter.logins_store_write_query_error_count ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__pocket_open_story_position {
     sql: ${TABLE}.metrics.labeled_counter.pocket_open_story_position ;;
     hidden: yes
@@ -1141,8 +1205,183 @@ view: metrics_table {
     group_item_label: "Tracking Protection Strength"
   }
 
+  dimension: metrics__string_list__logins_store_migration_errors {
+    sql: ${TABLE}.metrics.string_list.logins_store_migration_errors ;;
+    hidden: yes
+  }
+
   dimension: metrics__text {
     sql: ${TABLE}.metrics.text ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timespan__logins_store_migration_total_duration__time_unit {
+    sql: ${TABLE}.metrics.timespan.logins_store_migration_total_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Logins Store Migration Total Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__logins_store_migration_total_duration__value {
+    sql: ${TABLE}.metrics.timespan.logins_store_migration_total_duration.value ;;
+    type: number
+    group_label: "Metrics Timespan Logins Store Migration Total Duration"
+    group_item_label: "Value"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_read_query_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Read Query Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_read_query_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Logins Store Read Query Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_read_query_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Read Query Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_read_query_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__logins_store_read_query_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Read Query Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_read_query_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Logins Store Read Query Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_read_query_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Read Query Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_read_query_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__logins_store_unlock_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Unlock Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_unlock_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Logins Store Unlock Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_unlock_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Unlock Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_unlock_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__logins_store_unlock_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Unlock Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_unlock_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Logins Store Unlock Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_unlock_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Unlock Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_unlock_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__logins_store_write_query_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Write Query Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_write_query_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Logins Store Write Query Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_write_query_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Write Query Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_write_query_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__logins_store_write_query_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Write Query Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_write_query_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Logins Store Write Query Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_write_query_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Write Query Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_write_query_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.values ;;
     hidden: yes
   }
 
@@ -1434,6 +1673,42 @@ view: metrics_table__metrics__text {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__logins_store_read_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__logins_store_unlock_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__logins_store_write_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

@@ -2497,6 +2497,237 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__counter__logins_store_migration_num_failed {
+    label: "Logins Store Migration Num Failed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.logins_store_migration_num_failed ;;
+    type: number
+    group_label: "Logins Store"
+    group_item_label: "Migration Num Failed"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Num Failed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_migration_num_failed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of login records which failed to migrate
+"
+  }
+
+  dimension: metrics__counter__logins_store_migration_num_processed {
+    label: "Logins Store Migration Num Processed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.logins_store_migration_num_processed ;;
+    type: number
+    group_label: "Logins Store"
+    group_item_label: "Migration Num Processed"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Num Processed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_migration_num_processed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of login records processed by the migration
+"
+  }
+
+  dimension: metrics__counter__logins_store_migration_num_succeeded {
+    label: "Logins Store Migration Num Succeeded"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.logins_store_migration_num_succeeded ;;
+    type: number
+    group_label: "Logins Store"
+    group_item_label: "Migration Num Succeeded"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Num Succeeded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_migration_num_succeeded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of login records successfully migrated
+"
+  }
+
+  dimension: metrics__timespan__logins_store_migration_total_duration__value {
+    label: "Logins Store Migration Total Duration Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.logins_store_migration_total_duration.value ;;
+    type: number
+    group_label: "Logins Store"
+    group_item_label: "Migration Total Duration Value"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Total Duration Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_migration_total_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How long the migration tool
+"
+  }
+
+  dimension: metrics__counter__logins_store_read_query_count {
+    label: "Logins Store Read Query Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.logins_store_read_query_count ;;
+    type: number
+    group_label: "Logins Store"
+    group_item_label: "Read Query Count"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Read Query Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_read_query_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of read operations performed on the logins store. The count only includes operations triggered by the application, not e.g. incidental reads performed as part of a sync. It is intended to be used together with `read_query_error_count` to measure the overall error rate of read operations on the logins store.
+"
+  }
+
+  dimension: metrics__labeled_counter__logins_store_read_query_error_count {
+    label: "Logins Store Read Query Error Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.logins_store_read_query_error_count ;;
+    group_label: "Logins Store"
+    group_item_label: "Read Query Error Count"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Read Query Error Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_read_query_error_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of errors encountered during read operations on the logins store, labeled by type. It is intended to be used together with `read_query_count` to measure the overall error rate of read operations on the logins store.
+"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_read_query_time__sum {
+    label: "Logins Store Read Query Time Sum"
+    hidden: yes
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.sum ;;
+    type: number
+    group_label: "Logins Store"
+    group_item_label: "Read Query Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Read Query Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_read_query_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time taken to execute a read query on the logins store (such as listing all logins, or finding a specific login by id).
+"
+  }
+
+  dimension: metrics__counter__logins_store_unlock_count {
+    label: "Logins Store Unlock Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.logins_store_unlock_count ;;
+    type: number
+    group_label: "Logins Store"
+    group_item_label: "Unlock Count"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Unlock Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_unlock_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times the login store was unlocked. It is intended to be used together with `unlock_error_count` to measure the overall error rate of unlocking the logins store.
+"
+  }
+
+  dimension: metrics__labeled_counter__logins_store_unlock_error_count {
+    label: "Logins Store Unlock Error Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.logins_store_unlock_error_count ;;
+    group_label: "Logins Store"
+    group_item_label: "Unlock Error Count"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Unlock Error Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_unlock_error_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of errors encountered when unlocking the logins store, labeled by type. It is intended to be used together with `unlock_count` to measure the overall error rate of unlocking the logins store.
+"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_unlock_time__sum {
+    label: "Logins Store Unlock Time Sum"
+    hidden: yes
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.sum ;;
+    type: number
+    group_label: "Logins Store"
+    group_item_label: "Unlock Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Unlock Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_unlock_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time taken to open the logins store on startup, or after locking it due to user inactivity.
+"
+  }
+
+  dimension: metrics__counter__logins_store_write_query_count {
+    label: "Logins Store Write Query Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.logins_store_write_query_count ;;
+    type: number
+    group_label: "Logins Store"
+    group_item_label: "Write Query Count"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Write Query Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_write_query_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of write operations performed on the logins store. The count only includes operations triggered by the application, not e.g. incidental writes performed as part of a sync. It is intended to be used together with `write_query_error_count` to measure the overall error rate of write operations on the logins store.
+"
+  }
+
+  dimension: metrics__labeled_counter__logins_store_write_query_error_count {
+    label: "Logins Store Write Query Error Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.logins_store_write_query_error_count ;;
+    group_label: "Logins Store"
+    group_item_label: "Write Query Error Count"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Write Query Error Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_write_query_error_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of errors encountered during write operations on the logins store, labeled by type. It is intended to be used together with `write_query_count` to measure the overall error rate of write operations on the logins store.
+"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_write_query_time__sum {
+    label: "Logins Store Write Query Time Sum"
+    hidden: yes
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.sum ;;
+    type: number
+    group_label: "Logins Store"
+    group_item_label: "Write Query Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Write Query Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_write_query_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time taken to execute a write query on the logins store (such as adding, updating, or deleting a login record).
+"
+  }
+
   dimension: metrics__boolean__glean_core_migration_successful {
     label: "Glean Core Migration Successful"
     hidden: yes
@@ -2720,6 +2951,13 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
+  }
+
+  dimension: metadata__header__x_lb_tags {
+    sql: ${TABLE}.metadata.header.x_lb_tags ;;
+    type: string
+    group_label: "Metadata Header"
+    group_item_label: "X Lb Tags"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -4898,6 +5136,156 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: logins_store_migration_num_failed {
+    type: sum
+    sql: ${metrics__counter__logins_store_migration_num_failed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Num Failed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_migration_num_failed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_migration_num_failed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_store_migration_num_failed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Num Failed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_migration_num_failed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_migration_num_processed {
+    type: sum
+    sql: ${metrics__counter__logins_store_migration_num_processed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Num Processed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_migration_num_processed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_migration_num_processed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_store_migration_num_processed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Num Processed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_migration_num_processed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_migration_num_succeeded {
+    type: sum
+    sql: ${metrics__counter__logins_store_migration_num_succeeded} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Num Succeeded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_migration_num_succeeded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_migration_num_succeeded_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_store_migration_num_succeeded: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Migration Num Succeeded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_migration_num_succeeded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_read_query_count {
+    type: sum
+    sql: ${metrics__counter__logins_store_read_query_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Read Query Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_read_query_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_read_query_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_store_read_query_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Read Query Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_read_query_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_unlock_count {
+    type: sum
+    sql: ${metrics__counter__logins_store_unlock_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Unlock Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_unlock_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_unlock_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_store_unlock_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Unlock Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_unlock_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_write_query_count {
+    type: sum
+    sql: ${metrics__counter__logins_store_write_query_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Write Query Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_write_query_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_store_write_query_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_store_write_query_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Store Write Query Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_store_write_query_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: glean_validation_app_forceclosed_count {
     type: sum
     sql: ${metrics__counter__glean_validation_app_forceclosed_count} ;;
@@ -5659,6 +6047,135 @@ view: metrics__metrics__labeled_counter__library_panel_pressed {
   }
 }
 
+view: metrics__metrics__labeled_counter__logins_store_read_query_error_count {
+  label: "Logins Store - Read Query Error Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_count.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__logins_store_unlock_error_count {
+  label: "Logins Store - Unlock Error Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_count.key
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__logins_store_write_query_error_count {
+  label: "Logins Store - Write Query Error Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__pocket_open_story_position {
   label: "Pocket - Open Story Position"
 
@@ -6338,6 +6855,63 @@ view: suggest__metrics__metrics__labeled_counter__library_panel_pressed {
     count(*) as n
 from mozdata.firefox_ios.metrics as t,
 unnest(metrics.labeled_counter.library_panel_pressed) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.logins_store_read_query_error_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.logins_store_unlock_error_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.logins_store_write_query_error_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

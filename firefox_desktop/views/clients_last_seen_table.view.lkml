@@ -146,6 +146,31 @@ view: clients_last_seen_table {
     type: number
   }
 
+  dimension: contextual_services_quicksuggest_click_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_click_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_help_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_help_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_impression_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_impression_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_topsites_click_sum {
+    sql: ${TABLE}.contextual_services_topsites_click_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_topsites_impression_sum {
+    sql: ${TABLE}.contextual_services_topsites_impression_sum ;;
+    hidden: yes
+  }
+
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
@@ -1187,6 +1212,11 @@ view: clients_last_seen_table {
     hidden: yes
   }
 
+  dimension: search_adclicks_urlbar_handoff_sum {
+    sql: ${TABLE}.search_adclicks_urlbar_handoff_sum ;;
+    hidden: yes
+  }
+
   dimension: search_adclicks_urlbar_searchmode_sum {
     sql: ${TABLE}.search_adclicks_urlbar_searchmode_sum ;;
     hidden: yes
@@ -1244,6 +1274,11 @@ view: clients_last_seen_table {
 
   dimension: search_content_unknown_sum {
     sql: ${TABLE}.search_content_unknown_sum ;;
+    hidden: yes
+  }
+
+  dimension: search_content_urlbar_handoff_sum {
+    sql: ${TABLE}.search_content_urlbar_handoff_sum ;;
     hidden: yes
   }
 
@@ -1317,6 +1352,11 @@ view: clients_last_seen_table {
     type: number
   }
 
+  dimension: search_count_urlbar_handoff {
+    sql: ${TABLE}.search_count_urlbar_handoff ;;
+    type: number
+  }
+
   dimension: search_count_urlbar_searchmode {
     sql: ${TABLE}.search_count_urlbar_searchmode ;;
     type: number
@@ -1379,6 +1419,11 @@ view: clients_last_seen_table {
 
   dimension: search_withads_unknown_sum {
     sql: ${TABLE}.search_withads_unknown_sum ;;
+    hidden: yes
+  }
+
+  dimension: search_withads_urlbar_handoff_sum {
+    sql: ${TABLE}.search_withads_urlbar_handoff_sum ;;
     hidden: yes
   }
 
@@ -1485,6 +1530,11 @@ view: clients_last_seen_table {
   dimension: update_enabled {
     sql: ${TABLE}.update_enabled ;;
     type: yesno
+  }
+
+  dimension: user_pref_browser_newtabpage_enabled {
+    sql: ${TABLE}.user_pref_browser_newtabpage_enabled ;;
+    type: string
   }
 
   dimension: user_pref_browser_search_region {
@@ -1707,6 +1757,66 @@ view: clients_last_seen_table__active_addons {
 }
 
 view: clients_last_seen_table__ad_clicks {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__contextual_services_quicksuggest_click_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__contextual_services_quicksuggest_help_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__contextual_services_quicksuggest_impression_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__contextual_services_topsites_click_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__contextual_services_topsites_impression_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -2244,6 +2354,18 @@ view: clients_last_seen_table__search_adclicks_unknown_sum {
   }
 }
 
+view: clients_last_seen_table__search_adclicks_urlbar_handoff_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: clients_last_seen_table__search_adclicks_urlbar_searchmode_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -2365,6 +2487,18 @@ view: clients_last_seen_table__search_content_tabhistory_sum {
 }
 
 view: clients_last_seen_table__search_content_unknown_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__search_content_urlbar_handoff_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -2526,6 +2660,18 @@ view: clients_last_seen_table__search_withads_tabhistory_sum {
 }
 
 view: clients_last_seen_table__search_withads_unknown_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__search_withads_urlbar_handoff_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

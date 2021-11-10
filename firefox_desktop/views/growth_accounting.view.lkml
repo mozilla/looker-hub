@@ -146,6 +146,31 @@ view: growth_accounting {
     type: number
   }
 
+  dimension: contextual_services_quicksuggest_click_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_click_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_help_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_help_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_impression_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_impression_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_topsites_click_sum {
+    sql: ${TABLE}.contextual_services_topsites_click_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_topsites_impression_sum {
+    sql: ${TABLE}.contextual_services_topsites_impression_sum ;;
+    hidden: yes
+  }
+
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
@@ -1187,6 +1212,11 @@ view: growth_accounting {
     hidden: yes
   }
 
+  dimension: search_adclicks_urlbar_handoff_sum {
+    sql: ${TABLE}.search_adclicks_urlbar_handoff_sum ;;
+    hidden: yes
+  }
+
   dimension: search_adclicks_urlbar_searchmode_sum {
     sql: ${TABLE}.search_adclicks_urlbar_searchmode_sum ;;
     hidden: yes
@@ -1244,6 +1274,11 @@ view: growth_accounting {
 
   dimension: search_content_unknown_sum {
     sql: ${TABLE}.search_content_unknown_sum ;;
+    hidden: yes
+  }
+
+  dimension: search_content_urlbar_handoff_sum {
+    sql: ${TABLE}.search_content_urlbar_handoff_sum ;;
     hidden: yes
   }
 
@@ -1317,6 +1352,11 @@ view: growth_accounting {
     type: number
   }
 
+  dimension: search_count_urlbar_handoff {
+    sql: ${TABLE}.search_count_urlbar_handoff ;;
+    type: number
+  }
+
   dimension: search_count_urlbar_searchmode {
     sql: ${TABLE}.search_count_urlbar_searchmode ;;
     type: number
@@ -1379,6 +1419,11 @@ view: growth_accounting {
 
   dimension: search_withads_unknown_sum {
     sql: ${TABLE}.search_withads_unknown_sum ;;
+    hidden: yes
+  }
+
+  dimension: search_withads_urlbar_handoff_sum {
+    sql: ${TABLE}.search_withads_urlbar_handoff_sum ;;
     hidden: yes
   }
 
@@ -1485,6 +1530,11 @@ view: growth_accounting {
   dimension: update_enabled {
     sql: ${TABLE}.update_enabled ;;
     type: yesno
+  }
+
+  dimension: user_pref_browser_newtabpage_enabled {
+    sql: ${TABLE}.user_pref_browser_newtabpage_enabled ;;
+    type: string
   }
 
   dimension: user_pref_browser_search_region {

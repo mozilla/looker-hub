@@ -1015,6 +1015,13 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     group_item_label: "X Foxsec Ip Reputation"
   }
 
+  dimension: metadata__header__x_lb_tags {
+    sql: ${TABLE}.metadata.header.x_lb_tags ;;
+    type: string
+    group_label: "Metadata Header"
+    group_item_label: "X Lb Tags"
+  }
+
   dimension: metadata__header__x_pingsender_version {
     sql: ${TABLE}.metadata.header.x_pingsender_version ;;
     type: string
