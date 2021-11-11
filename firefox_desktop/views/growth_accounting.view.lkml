@@ -1547,6 +1547,11 @@ view: growth_accounting {
     type: string
   }
 
+  dimension: user_pref_browser_urlbar_quicksuggest_data_collection_enabled {
+    sql: ${TABLE}.user_pref_browser_urlbar_quicksuggest_data_collection_enabled ;;
+    type: string
+  }
+
   dimension: user_pref_browser_urlbar_quicksuggest_onboarding_dialog_choice {
     sql: ${TABLE}.user_pref_browser_urlbar_quicksuggest_onboarding_dialog_choice ;;
     type: string
@@ -1559,6 +1564,11 @@ view: growth_accounting {
 
   dimension: user_pref_browser_urlbar_suggest_quicksuggest {
     sql: ${TABLE}.user_pref_browser_urlbar_suggest_quicksuggest ;;
+    type: string
+  }
+
+  dimension: user_pref_browser_urlbar_suggest_quicksuggest_nonsponsored {
+    sql: ${TABLE}.user_pref_browser_urlbar_suggest_quicksuggest_nonsponsored ;;
     type: string
   }
 

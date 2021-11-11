@@ -1417,6 +1417,11 @@ view: clients_daily_table {
     type: string
   }
 
+  dimension: user_pref_browser_urlbar_quicksuggest_data_collection_enabled {
+    sql: ${TABLE}.user_pref_browser_urlbar_quicksuggest_data_collection_enabled ;;
+    type: string
+  }
+
   dimension: user_pref_browser_urlbar_quicksuggest_onboarding_dialog_choice {
     sql: ${TABLE}.user_pref_browser_urlbar_quicksuggest_onboarding_dialog_choice ;;
     type: string
@@ -1429,6 +1434,11 @@ view: clients_daily_table {
 
   dimension: user_pref_browser_urlbar_suggest_quicksuggest {
     sql: ${TABLE}.user_pref_browser_urlbar_suggest_quicksuggest ;;
+    type: string
+  }
+
+  dimension: user_pref_browser_urlbar_suggest_quicksuggest_nonsponsored {
+    sql: ${TABLE}.user_pref_browser_urlbar_suggest_quicksuggest_nonsponsored ;;
     type: string
   }
 
