@@ -277,6 +277,27 @@ are enabled to be displayed
 "
   }
 
+  dimension: metrics__string__customize_home_opening_screen {
+    label: "Customize Home Opening Screen"
+    hidden: no
+    sql: ${TABLE}.metrics.string.customize_home_opening_screen ;;
+    type: string
+    group_label: "Customize Home"
+    group_item_label: "Opening Screen"
+
+    link: {
+      label: "Glean Dictionary reference for Customize Home Opening Screen"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/customize_home_opening_screen"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "What opening screen preference the user has selected
+under \"Customize Home\".
+\"homepage,\" \"last tab,\" or \"homepage after 4 hours\"
+default: \"homepage after 4 hours\"
+"
+  }
+
   dimension: metrics__boolean__customize_home_pocket {
     label: "Customize Home Pocket"
     hidden: no

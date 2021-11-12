@@ -1686,6 +1686,18 @@ Recently Saved section on the home page.
 "
   }
 
+  dimension: metrics__string__customize_home_opening_screen {
+    sql: ${TABLE}.metrics.string.customize_home_opening_screen ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Customize Home Opening Screen"
+    description: "What opening screen preference the user has selected
+under \"Customize Home\".
+\"homepage,\" \"last tab,\" or \"homepage after 4 hours\"
+default: \"homepage after 4 hours\"
+"
+  }
+
   dimension: metrics__string__experiments_metrics_active_experiment {
     sql: ${TABLE}.metrics.string.experiments_metrics_active_experiment ;;
     type: string

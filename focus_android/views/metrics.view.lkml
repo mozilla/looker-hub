@@ -315,6 +315,23 @@ It also indicates the screen it was removed from, home or browser.
 "
   }
 
+  dimension: metrics__custom_distribution__tab_count_app_backgrounded__sum {
+    label: "Tab Count App Backgrounded Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.tab_count_app_backgrounded.sum ;;
+    type: number
+    group_label: "Tab Count"
+    group_item_label: "App Backgrounded Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Tab Count App Backgrounded Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/tab_count_app_backgrounded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of opened tabs when the app has been send to background."
+  }
+
   dimension: metrics__boolean__tracking_protection_has_advertising_blocked {
     label: "Tracking Protection Has Advertising Blocked"
     hidden: no
