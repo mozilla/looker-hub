@@ -509,6 +509,18 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__custom_distribution__tab_count_app_backgrounded__sum {
+    sql: ${TABLE}.metrics.custom_distribution.tab_count_app_backgrounded.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Tab Count App Backgrounded"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__tab_count_app_backgrounded__values {
+    sql: ${TABLE}.metrics.custom_distribution.tab_count_app_backgrounded.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__datetime__glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: string
@@ -915,6 +927,18 @@ view: metrics_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__tab_count_app_backgrounded__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

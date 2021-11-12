@@ -44,6 +44,11 @@ view: urlbar_clients_daily {
     type: string
   }
 
+  dimension: quicksuggest_data_collection_enabled {
+    sql: ${TABLE}.quicksuggest_data_collection_enabled ;;
+    type: string
+  }
+
   dimension: quicksuggest_onboarding_dialog_choice {
     sql: ${TABLE}.quicksuggest_onboarding_dialog_choice ;;
     type: string
@@ -66,6 +71,11 @@ view: urlbar_clients_daily {
 
   dimension: suggest_quicksuggest {
     sql: ${TABLE}.suggest_quicksuggest ;;
+    type: yesno
+  }
+
+  dimension: suggest_quicksuggest_nonsponsored {
+    sql: ${TABLE}.suggest_quicksuggest_nonsponsored ;;
     type: yesno
   }
 
