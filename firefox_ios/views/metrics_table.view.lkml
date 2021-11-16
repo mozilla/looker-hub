@@ -2003,27 +2003,7 @@ tracking-protection that is enabled. One of:
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.firefox_ios.metrics"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.firefox_ios.metrics"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_ios_firefoxbeta.metrics"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_ios_fennec.metrics"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.firefox_ios.metrics` ;;
 }
 
 view: metrics_table__events {

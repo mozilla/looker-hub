@@ -507,27 +507,7 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.fenix.sync"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.fenix.sync"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_firefox_beta.sync"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix.sync"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.fenix.sync` ;;
 }
 
 view: suggest__sync__metrics__labeled_counter__glean_error_invalid_label {

@@ -8,7 +8,6 @@ explore: startup_timeline {
 
   always_filter: {
     filters: [
-      channel: "mozdata.fenix.startup^_timeline",
       submission_date: "28 days",
     ]
   }

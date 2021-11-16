@@ -479,27 +479,7 @@ and only sent with the activation ping.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.fenix.activation"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.fenix.activation"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_firefox_beta.activation"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix.activation"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.fenix.activation` ;;
 }
 
 view: activation_table__events {

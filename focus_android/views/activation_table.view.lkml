@@ -469,27 +469,7 @@ and only sent with the activation ping.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.focus_android.activation"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.focus_android.activation"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_focus_beta.activation"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_focus_nightly.activation"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.focus_android.activation` ;;
 }
 
 view: activation_table__events {

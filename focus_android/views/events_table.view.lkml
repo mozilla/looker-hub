@@ -459,27 +459,7 @@ The labels are the `category.name` identifier of the metric.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.focus_android.events"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.focus_android.events"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_focus_beta.events"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_focus_nightly.events"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.focus_android.events` ;;
 }
 
 view: events_table__events {
