@@ -545,7 +545,27 @@ the `framework_primary/secondary` metrics.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  sql_table_name: `mozdata.fenix.startup_timeline` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.fenix.startup_timeline"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.fenix.startup_timeline"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.startup_timeline"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.startup_timeline"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: startup_timeline_table__events {

@@ -8,6 +8,7 @@ explore: fog_validation {
 
   always_filter: {
     filters: [
+      channel: "mozdata.fenix.fog^_validation",
       submission_date: "28 days",
     ]
   }

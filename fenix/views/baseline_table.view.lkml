@@ -568,7 +568,27 @@ to indicate \"undetermined\".
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  sql_table_name: `mozdata.fenix.baseline` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.fenix.baseline"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.fenix.baseline"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.baseline"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.baseline"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: baseline_table__events {

@@ -638,7 +638,27 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
-  sql_table_name: `mozdata.fenix.logins_sync` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.fenix.logins_sync"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.fenix.logins_sync"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.logins_sync"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.logins_sync"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: logins_sync__metrics__labeled_counter__glean_error_invalid_label {

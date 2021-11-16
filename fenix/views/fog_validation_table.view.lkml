@@ -483,7 +483,27 @@ The labels are the `category.name` identifier of the metric.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  sql_table_name: `mozdata.fenix.fog_validation` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.fenix.fog_validation"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.fenix.fog_validation"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.fog_validation"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.fog_validation"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: fog_validation_table__events {

@@ -8,6 +8,7 @@ explore: bookmarks_sync {
 
   always_filter: {
     filters: [
+      channel: "mozdata.fenix.bookmarks^_sync",
       submission_date: "28 days",
     ]
   }

@@ -8,6 +8,7 @@ explore: migration {
 
   always_filter: {
     filters: [
+      channel: "mozdata.fenix.migration",
       submission_date: "28 days",
     ]
   }

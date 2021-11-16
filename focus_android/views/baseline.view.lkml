@@ -612,7 +612,27 @@ This metric appears in both the metrics and baseline pings.
     }
   }
 
-  sql_table_name: `mozdata.focus_android.baseline` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.focus_android.baseline"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.focus_android.baseline"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_focus_beta.baseline"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_focus_nightly.baseline"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: baseline__metrics__labeled_counter__glean_error_invalid_label {

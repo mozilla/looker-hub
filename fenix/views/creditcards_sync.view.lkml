@@ -620,7 +620,27 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
-  sql_table_name: `mozdata.fenix.creditcards_sync` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.fenix.creditcards_sync"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.fenix.creditcards_sync"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.creditcards_sync"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.creditcards_sync"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: creditcards_sync__metrics__labeled_counter__creditcards_sync_incoming {

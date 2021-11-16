@@ -6584,7 +6584,27 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     }
   }
 
-  sql_table_name: `mozdata.fenix.metrics` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.fenix.metrics"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.fenix.metrics"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.metrics"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.metrics"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: metrics__metrics__labeled_counter__avif_alpha {

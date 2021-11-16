@@ -620,7 +620,27 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
-  sql_table_name: `mozdata.fenix.addresses_sync` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.fenix.addresses_sync"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.fenix.addresses_sync"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.addresses_sync"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.addresses_sync"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: addresses_sync__metrics__labeled_counter__addresses_sync_incoming {
