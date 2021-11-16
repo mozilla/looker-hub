@@ -145,5 +145,25 @@ view: baseline_clients_first_seen_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.fenix.baseline_clients_first_seen` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.fenix.baseline_clients_first_seen"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.fenix.baseline_clients_first_seen"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.baseline_clients_first_seen"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.baseline_clients_first_seen"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }

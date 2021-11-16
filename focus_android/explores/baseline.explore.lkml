@@ -8,6 +8,7 @@ explore: baseline {
 
   always_filter: {
     filters: [
+      channel: "mozdata.focus^_android.baseline",
       submission_date: "28 days",
     ]
   }

@@ -934,7 +934,27 @@ view: migration_table {
     ]
   }
 
-  sql_table_name: `mozdata.fenix.migration` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.fenix.migration"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.fenix.migration"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.migration"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.migration"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: migration_table__events {

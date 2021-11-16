@@ -8,6 +8,7 @@ explore: installation {
 
   always_filter: {
     filters: [
+      channel: "mozdata.fenix.installation",
       submission_date: "28 days",
     ]
   }

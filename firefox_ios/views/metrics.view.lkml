@@ -510,6 +510,24 @@ settings menu to customize the Firefox Homepage
 "
   }
 
+  dimension: metrics__labeled_counter__firefox_home_page_firefox_homepage_origin {
+    label: "Firefox Home Page Firefox Homepage Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_firefox_homepage_origin ;;
+    group_label: "Firefox Home Page"
+    group_item_label: "Firefox Homepage Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Firefox Homepage Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_firefox_homepage_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a user sees the Firefox Homepage,
+with a home page origin.
+"
+  }
+
   dimension: metrics__counter__firefox_home_page_firefox_homepage_view {
     label: "Firefox Home Page Firefox Homepage View"
     hidden: no
@@ -525,6 +543,25 @@ settings menu to customize the Firefox Homepage
     }
 
     description: "The number of times a user sees the Firefox Homepage
+"
+  }
+
+  dimension: metrics__labeled_counter__firefox_home_page_jump_back_in_group_open_origin {
+    label: "Firefox Home Page Jump Back In Group Open Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_jump_back_in_group_open_origin ;;
+    group_label: "Firefox Home Page"
+    group_item_label: "Jump Back In Group Open Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Group Open Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_group_open_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps to open an
+existing group from the Jump Back In section,
+with a home page origin.
 "
   }
 
@@ -585,6 +622,25 @@ Show All button in the Jump Back In section.
 "
   }
 
+  dimension: metrics__labeled_counter__firefox_home_page_jump_back_in_show_all_origin {
+    label: "Firefox Home Page Jump Back In Show All Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_jump_back_in_show_all_origin ;;
+    group_label: "Firefox Home Page"
+    group_item_label: "Jump Back In Show All Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Show All Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_show_all_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps the
+Show All button in the Jump Back In section,
+with a home page origin.
+"
+  }
+
   dimension: metrics__counter__firefox_home_page_jump_back_in_tab_opened {
     label: "Firefox Home Page Jump Back In Tab Opened"
     hidden: no
@@ -601,6 +657,25 @@ Show All button in the Jump Back In section.
 
     description: "Counts the number of times a user taps to open an
 existing tab from the Jump Back In section
+"
+  }
+
+  dimension: metrics__labeled_counter__firefox_home_page_jump_back_in_tab_opened_origin {
+    label: "Firefox Home Page Jump Back In Tab Opened Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_jump_back_in_tab_opened_origin ;;
+    group_label: "Firefox Home Page"
+    group_item_label: "Jump Back In Tab Opened Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Tab Opened Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_tab_opened_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps to open an
+existing tab from the Jump Back In section,
+with a home page origin.
 "
   }
 
@@ -662,6 +737,44 @@ the Recently Saved section is tapped
 "
   }
 
+  dimension: metrics__labeled_counter__firefox_home_page_recently_saved_bookmark_origin {
+    label: "Firefox Home Page Recently Saved Bookmark Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_recently_saved_bookmark_origin ;;
+    group_label: "Firefox Home Page"
+    group_item_label: "Recently Saved Bookmark Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Recently Saved Bookmark Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_recently_saved_bookmark_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a bookmarked item in
+the Recently Saved section is tapped,
+with a home page origin.
+"
+  }
+
+  dimension: metrics__labeled_counter__firefox_home_page_recently_saved_read_origin {
+    label: "Firefox Home Page Recently Saved Read Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_recently_saved_read_origin ;;
+    group_label: "Firefox Home Page"
+    group_item_label: "Recently Saved Read Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Recently Saved Read Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_recently_saved_read_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a reading list
+item in the Recently Saved section is tapped,
+with a home page origin.
+"
+  }
+
   dimension: metrics__counter__firefox_home_page_recently_saved_reading_item {
     label: "Firefox Home Page Recently Saved Reading Item"
     hidden: no
@@ -697,6 +810,25 @@ item in the Recently Saved section is tapped.
 
     description: "Counts the number of times a user taps the Show All
 button of the Recently Saved Section
+"
+  }
+
+  dimension: metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin {
+    label: "Firefox Home Page Recently Saved Show All Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_recently_saved_show_all_origin ;;
+    group_label: "Firefox Home Page"
+    group_item_label: "Recently Saved Show All Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Recently Saved Show All Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_recently_saved_show_all_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps the Show All
+button of the Recently Saved Section,
+with a home page origin.
 "
   }
 
@@ -1223,6 +1355,24 @@ page action menu
 
     description: "Counts the number of times a user opens
 Pocket article from Firefox home Pocket feed
+"
+  }
+
+  dimension: metrics__labeled_counter__pocket_open_story_origin {
+    label: "Pocket Open Story Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pocket_open_story_origin ;;
+    group_label: "Pocket"
+    group_item_label: "Open Story Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Pocket Open Story Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/pocket_open_story_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records when a user opens Pocket article from
+Firefox Home Pocket feed, with a home page origin.
 "
   }
 
@@ -1850,6 +2000,24 @@ pressed
 "
   }
 
+  dimension: metrics__counter__tabs_normal_and_private_uri_count {
+    label: "Tabs Normal And Private Uri Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tabs_normal_and_private_uri_count ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Normal And Private Uri Count"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Normal And Private Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_normal_and_private_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record the number of URI's visited by the user.
+"
+  }
+
   dimension: metrics__labeled_counter__tabs_open {
     label: "Tabs Open"
     hidden: yes
@@ -1962,6 +2130,24 @@ value of the automatic theme switching slider.
 
     description: "Measures the state of the \"Use System Light/Dark Mode\"
 theme preference.
+"
+  }
+
+  dimension: metrics__labeled_counter__top_site_pressed_tile_origin {
+    label: "Top Site Pressed Tile Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.top_site_pressed_tile_origin ;;
+    group_label: "Top Site"
+    group_item_label: "Pressed Tile Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Top Site Pressed Tile Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/top_site_pressed_tile_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records an event when user taps on top site tile,
+with a home page origin.
 "
   }
 
@@ -4797,6 +4983,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: tabs_normal_and_private_uri_count {
+    type: sum
+    sql: ${metrics__counter__tabs_normal_and_private_uri_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Normal And Private Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_normal_and_private_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_normal_and_private_uri_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tabs_normal_and_private_uri_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Normal And Private Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_normal_and_private_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: tabs_pull_to_refresh {
     type: sum
     sql: ${metrics__counter__tabs_pull_to_refresh} ;;
@@ -5372,7 +5583,27 @@ documented in the ping's pings.yaml file.
     }
   }
 
-  sql_table_name: `mozdata.firefox_ios.metrics` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.firefox_ios.metrics"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.firefox_ios.metrics"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_ios_firefoxbeta.metrics"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_ios_fennec.metrics"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: metrics__metrics__labeled_counter__bookmarks_add {

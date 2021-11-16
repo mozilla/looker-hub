@@ -612,7 +612,27 @@ This metric appears in both the metrics and baseline pings.
     }
   }
 
-  sql_table_name: `mozdata.firefox_ios.baseline` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.firefox_ios.baseline"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.firefox_ios.baseline"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_ios_firefoxbeta.baseline"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_ios_fennec.baseline"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: baseline__metrics__labeled_counter__glean_error_invalid_label {

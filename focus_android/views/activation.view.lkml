@@ -508,7 +508,27 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  sql_table_name: `mozdata.focus_android.activation` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.focus_android.activation"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.focus_android.activation"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_focus_beta.activation"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_focus_nightly.activation"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: activation__metrics__labeled_counter__glean_error_invalid_label {

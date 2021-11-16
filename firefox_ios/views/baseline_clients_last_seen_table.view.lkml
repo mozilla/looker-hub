@@ -175,5 +175,25 @@ view: baseline_clients_last_seen_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.firefox_ios.baseline_clients_last_seen` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.firefox_ios.baseline_clients_last_seen"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.firefox_ios.baseline_clients_last_seen"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_ios_firefoxbeta.baseline_clients_last_seen"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_ios_fennec.baseline_clients_last_seen"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
