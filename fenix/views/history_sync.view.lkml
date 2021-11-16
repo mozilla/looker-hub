@@ -638,27 +638,7 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.fenix.history_sync"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.fenix.history_sync"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_firefox_beta.history_sync"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix.history_sync"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.fenix.history_sync` ;;
 }
 
 view: history_sync__metrics__labeled_counter__glean_error_invalid_label {

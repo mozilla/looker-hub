@@ -8,7 +8,6 @@ explore: metrics {
 
   always_filter: {
     filters: [
-      channel: "mozdata.focus^_android.metrics",
       submission_date: "28 days",
     ]
   }

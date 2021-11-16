@@ -738,27 +738,7 @@ This metric appears in both the metrics and baseline pings.
     }
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.fenix.baseline"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.fenix.baseline"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_firefox_beta.baseline"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix.baseline"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.fenix.baseline` ;;
 }
 
 view: baseline__metrics__labeled_counter__browser_search_ad_clicks {

@@ -655,27 +655,7 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.fenix.bookmarks_sync"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.fenix.bookmarks_sync"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_firefox_beta.bookmarks_sync"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix.bookmarks_sync"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.fenix.bookmarks_sync` ;;
 }
 
 view: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming {

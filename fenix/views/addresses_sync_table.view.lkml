@@ -516,27 +516,7 @@ The labels are the `category.name` identifier of the metric.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.fenix.addresses_sync"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.fenix.addresses_sync"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_firefox_beta.addresses_sync"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix.addresses_sync"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.fenix.addresses_sync` ;;
 }
 
 view: addresses_sync_table__events {

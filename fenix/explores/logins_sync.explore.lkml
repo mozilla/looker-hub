@@ -8,7 +8,6 @@ explore: logins_sync {
 
   always_filter: {
     filters: [
-      channel: "mozdata.fenix.logins^_sync",
       submission_date: "28 days",
     ]
   }

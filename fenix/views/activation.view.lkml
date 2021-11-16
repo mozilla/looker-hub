@@ -527,27 +527,7 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.fenix.activation"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.fenix.activation"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_firefox_beta.activation"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix.activation"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.fenix.activation` ;;
 }
 
 view: activation__metrics__labeled_counter__glean_error_invalid_label {
