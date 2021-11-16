@@ -7,24 +7,6 @@ explore: fission_scalar {
     ]
   }
 
-  aggregate_table: rollup_MAIN_CRASHES {
-    query: {
-      dimensions: [build_id, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_scalar.branch: "enabled, disabled",
-        fission_scalar.percentile_conf: "50",
-        fission_scalar.cores_count: "4",
-        fission_scalar.os: "Windows",
-        fission_scalar.probe: "MAIN_CRASHES",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
-    }
-  }
-
   aggregate_table: rollup_URI_COUNT {
     query: {
       dimensions: [build_id, branch]
@@ -169,6 +151,42 @@ explore: fission_scalar {
     }
   }
 
+  aggregate_table: rollup_MAIN_CRASHES {
+    query: {
+      dimensions: [build_id, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_scalar.branch: "enabled, disabled",
+        fission_scalar.percentile_conf: "50",
+        fission_scalar.cores_count: "4",
+        fission_scalar.os: "Windows",
+        fission_scalar.probe: "MAIN_CRASHES",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CURRENT_DATE() ;;
+    }
+  }
+
+  aggregate_table: rollup_ACTIVE_TICKS {
+    query: {
+      dimensions: [build_id, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_scalar.branch: "enabled, disabled",
+        fission_scalar.percentile_conf: "50",
+        fission_scalar.cores_count: "4",
+        fission_scalar.os: "Windows",
+        fission_scalar.probe: "ACTIVE_TICKS",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CURRENT_DATE() ;;
+    }
+  }
+
   aggregate_table: rollup_GMPLUGIN_CRASHES {
     query: {
       dimensions: [build_id, branch]
@@ -197,24 +215,6 @@ explore: fission_scalar {
         fission_scalar.cores_count: "4",
         fission_scalar.os: "Windows",
         fission_scalar.probe: "SUBSESSION_LENGTH",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
-    }
-  }
-
-  aggregate_table: rollup_ACTIVE_TICKS {
-    query: {
-      dimensions: [build_id, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_scalar.branch: "enabled, disabled",
-        fission_scalar.percentile_conf: "50",
-        fission_scalar.cores_count: "4",
-        fission_scalar.os: "Windows",
-        fission_scalar.probe: "ACTIVE_TICKS",
       ]
     }
 
