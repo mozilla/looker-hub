@@ -870,7 +870,8 @@ See recently_used_pwa_count for the actual count.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "How many inactive tabs does the user have.
+    description: "How many inactive tabs does the user have, checked when the user opens
+the tabs tray.
 Value will be 0 if the feature is disabled.
 "
   }
