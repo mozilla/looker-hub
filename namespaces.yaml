@@ -1733,8 +1733,6 @@ operational_monitoring:
       - explore: fission_scalar
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1660366_pref_ongoing_fission_nightly_experiment_nightly_83_100_scalar
       type: operational_monitoring_dashboard
-  data_functions:
-  - compute_opmon_dimensions
   explores:
     fission_histogram:
       branches: &id001

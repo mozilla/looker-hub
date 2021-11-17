@@ -4,8 +4,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Fx New Window Ms
-    name: Fx New Window Ms
+  - title: Keypress Present Latency Ms
+    name: Keypress Present Latency Ms
     explore: fission_histogram
     type: "looker_line"
     fields: [
@@ -17,9 +17,32 @@
     ]
     pivots: [fission_histogram.branch]
     filters:
-      fission_histogram.probe: FX_NEW_WINDOW_MS
+      fission_histogram.probe: KEYPRESS_PRESENT_LATENCY_MS
     row: 0
     col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: fission_histogram.percentile_conf
+      Cores Count: fission_histogram.cores_count
+      Os: fission_histogram.os
+      
+  - title: Content Frame Time Vsync
+    name: Content Frame Time Vsync
+    explore: fission_histogram
+    type: "looker_line"
+    fields: [
+      fission_histogram.build_id,
+      fission_histogram.branch,
+      fission_histogram.high,
+      fission_histogram.low,
+      fission_histogram.percentile
+    ]
+    pivots: [fission_histogram.branch]
+    filters:
+      fission_histogram.probe: CONTENT_FRAME_TIME_VSYNC
+    row: 0
+    col: 12
     width: 12
     height: 8
     listen:
@@ -41,76 +64,7 @@
     pivots: [fission_histogram.branch]
     filters:
       fission_histogram.probe: GC_MS_CONTENT
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_histogram.percentile_conf
-      Cores Count: fission_histogram.cores_count
-      Os: fission_histogram.os
-      
-  - title: Content Process Count
-    name: Content Process Count
-    explore: fission_histogram
-    type: "looker_line"
-    fields: [
-      fission_histogram.build_id,
-      fission_histogram.branch,
-      fission_histogram.high,
-      fission_histogram.low,
-      fission_histogram.percentile
-    ]
-    pivots: [fission_histogram.branch]
-    filters:
-      fission_histogram.probe: CONTENT_PROCESS_COUNT
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_histogram.percentile_conf
-      Cores Count: fission_histogram.cores_count
-      Os: fission_histogram.os
-      
-  - title: Gc Max Pause 2
-    name: Gc Max Pause 2
-    explore: fission_histogram
-    type: "looker_line"
-    fields: [
-      fission_histogram.build_id,
-      fission_histogram.branch,
-      fission_histogram.high,
-      fission_histogram.low,
-      fission_histogram.percentile
-    ]
-    pivots: [fission_histogram.branch]
-    filters:
-      fission_histogram.probe: GC_MAX_PAUSE_2
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_histogram.percentile_conf
-      Cores Count: fission_histogram.cores_count
-      Os: fission_histogram.os
-      
-  - title: Keypress Present Latency Ms
-    name: Keypress Present Latency Ms
-    explore: fission_histogram
-    type: "looker_line"
-    fields: [
-      fission_histogram.build_id,
-      fission_histogram.branch,
-      fission_histogram.high,
-      fission_histogram.low,
-      fission_histogram.percentile
-    ]
-    pivots: [fission_histogram.branch]
-    filters:
-      fission_histogram.probe: KEYPRESS_PRESENT_LATENCY_MS
-    row: 20
+    row: 1
     col: 0
     width: 12
     height: 8
@@ -133,53 +87,7 @@
     pivots: [fission_histogram.branch]
     filters:
       fission_histogram.probe: CHILD_PROCESS_LAUNCH_MS
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_histogram.percentile_conf
-      Cores Count: fission_histogram.cores_count
-      Os: fission_histogram.os
-      
-  - title: Content Frame Time Vsync
-    name: Content Frame Time Vsync
-    explore: fission_histogram
-    type: "looker_line"
-    fields: [
-      fission_histogram.build_id,
-      fission_histogram.branch,
-      fission_histogram.high,
-      fission_histogram.low,
-      fission_histogram.percentile
-    ]
-    pivots: [fission_histogram.branch]
-    filters:
-      fission_histogram.probe: CONTENT_FRAME_TIME_VSYNC
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_histogram.percentile_conf
-      Cores Count: fission_histogram.cores_count
-      Os: fission_histogram.os
-      
-  - title: Cycle Collector Max Pause
-    name: Cycle Collector Max Pause
-    explore: fission_histogram
-    type: "looker_line"
-    fields: [
-      fission_histogram.build_id,
-      fission_histogram.branch,
-      fission_histogram.high,
-      fission_histogram.low,
-      fission_histogram.percentile
-    ]
-    pivots: [fission_histogram.branch]
-    filters:
-      fission_histogram.probe: CYCLE_COLLECTOR_MAX_PAUSE
-    row: 30
+    row: 1
     col: 12
     width: 12
     height: 8
@@ -202,8 +110,77 @@
     pivots: [fission_histogram.branch]
     filters:
       fission_histogram.probe: MEMORY_UNIQUE_CONTENT_STARTUP
-    row: 40
+    row: 2
     col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: fission_histogram.percentile_conf
+      Cores Count: fission_histogram.cores_count
+      Os: fission_histogram.os
+      
+  - title: Content Process Count
+    name: Content Process Count
+    explore: fission_histogram
+    type: "looker_line"
+    fields: [
+      fission_histogram.build_id,
+      fission_histogram.branch,
+      fission_histogram.high,
+      fission_histogram.low,
+      fission_histogram.percentile
+    ]
+    pivots: [fission_histogram.branch]
+    filters:
+      fission_histogram.probe: CONTENT_PROCESS_COUNT
+    row: 2
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: fission_histogram.percentile_conf
+      Cores Count: fission_histogram.cores_count
+      Os: fission_histogram.os
+      
+  - title: Fx New Window Ms
+    name: Fx New Window Ms
+    explore: fission_histogram
+    type: "looker_line"
+    fields: [
+      fission_histogram.build_id,
+      fission_histogram.branch,
+      fission_histogram.high,
+      fission_histogram.low,
+      fission_histogram.percentile
+    ]
+    pivots: [fission_histogram.branch]
+    filters:
+      fission_histogram.probe: FX_NEW_WINDOW_MS
+    row: 3
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: fission_histogram.percentile_conf
+      Cores Count: fission_histogram.cores_count
+      Os: fission_histogram.os
+      
+  - title: Cycle Collector Max Pause
+    name: Cycle Collector Max Pause
+    explore: fission_histogram
+    type: "looker_line"
+    fields: [
+      fission_histogram.build_id,
+      fission_histogram.branch,
+      fission_histogram.high,
+      fission_histogram.low,
+      fission_histogram.percentile
+    ]
+    pivots: [fission_histogram.branch]
+    filters:
+      fission_histogram.probe: CYCLE_COLLECTOR_MAX_PAUSE
+    row: 3
+    col: 12
     width: 12
     height: 8
     listen:
@@ -225,7 +202,30 @@
     pivots: [fission_histogram.branch]
     filters:
       fission_histogram.probe: LOADED_TAB_COUNT
-    row: 40
+    row: 4
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: fission_histogram.percentile_conf
+      Cores Count: fission_histogram.cores_count
+      Os: fission_histogram.os
+      
+  - title: Gc Max Pause 2
+    name: Gc Max Pause 2
+    explore: fission_histogram
+    type: "looker_line"
+    fields: [
+      fission_histogram.build_id,
+      fission_histogram.branch,
+      fission_histogram.high,
+      fission_histogram.low,
+      fission_histogram.percentile
+    ]
+    pivots: [fission_histogram.branch]
+    filters:
+      fission_histogram.probe: GC_MAX_PAUSE_2
+    row: 4
     col: 12
     width: 12
     height: 8
@@ -248,31 +248,8 @@
     pivots: [fission_histogram.branch]
     filters:
       fission_histogram.probe: GC_SLICE_DURING_IDLE_CONTENT
-    row: 50
+    row: 5
     col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_histogram.percentile_conf
-      Cores Count: fission_histogram.cores_count
-      Os: fission_histogram.os
-      
-  - title: Gc Slice During Idle
-    name: Gc Slice During Idle
-    explore: fission_histogram
-    type: "looker_line"
-    fields: [
-      fission_histogram.build_id,
-      fission_histogram.branch,
-      fission_histogram.high,
-      fission_histogram.low,
-      fission_histogram.percentile
-    ]
-    pivots: [fission_histogram.branch]
-    filters:
-      fission_histogram.probe: GC_SLICE_DURING_IDLE
-    row: 50
-    col: 12
     width: 12
     height: 8
     listen:
@@ -294,54 +271,8 @@
     pivots: [fission_histogram.branch]
     filters:
       fission_histogram.probe: TIME_TO_FIRST_INTERACTION_MS
-    row: 60
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_histogram.percentile_conf
-      Cores Count: fission_histogram.cores_count
-      Os: fission_histogram.os
-      
-  - title: Perf First Contentful Paint Ms
-    name: Perf First Contentful Paint Ms
-    explore: fission_histogram
-    type: "looker_line"
-    fields: [
-      fission_histogram.build_id,
-      fission_histogram.branch,
-      fission_histogram.high,
-      fission_histogram.low,
-      fission_histogram.percentile
-    ]
-    pivots: [fission_histogram.branch]
-    filters:
-      fission_histogram.probe: PERF_FIRST_CONTENTFUL_PAINT_MS
-    row: 60
+    row: 5
     col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_histogram.percentile_conf
-      Cores Count: fission_histogram.cores_count
-      Os: fission_histogram.os
-      
-  - title: Content Process Max
-    name: Content Process Max
-    explore: fission_histogram
-    type: "looker_line"
-    fields: [
-      fission_histogram.build_id,
-      fission_histogram.branch,
-      fission_histogram.high,
-      fission_histogram.low,
-      fission_histogram.percentile
-    ]
-    pivots: [fission_histogram.branch]
-    filters:
-      fission_histogram.probe: CONTENT_PROCESS_MAX
-    row: 70
-    col: 0
     width: 12
     height: 8
     listen:
@@ -363,8 +294,8 @@
     pivots: [fission_histogram.branch]
     filters:
       fission_histogram.probe: PERF_PAGE_LOAD_TIME_MS
-    row: 70
-    col: 12
+    row: 6
+    col: 0
     width: 12
     height: 8
     listen:
@@ -372,8 +303,8 @@
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
       
-  - title: Cycle Collector Max Pause Content
-    name: Cycle Collector Max Pause Content
+  - title: Fx Tab Switch Composite E10S Ms
+    name: Fx Tab Switch Composite E10S Ms
     explore: fission_histogram
     type: "looker_line"
     fields: [
@@ -385,8 +316,31 @@
     ]
     pivots: [fission_histogram.branch]
     filters:
-      fission_histogram.probe: CYCLE_COLLECTOR_MAX_PAUSE_CONTENT
-    row: 80
+      fission_histogram.probe: FX_TAB_SWITCH_COMPOSITE_E10S_MS
+    row: 6
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: fission_histogram.percentile_conf
+      Cores Count: fission_histogram.cores_count
+      Os: fission_histogram.os
+      
+  - title: Perf First Contentful Paint Ms
+    name: Perf First Contentful Paint Ms
+    explore: fission_histogram
+    type: "looker_line"
+    fields: [
+      fission_histogram.build_id,
+      fission_histogram.branch,
+      fission_histogram.high,
+      fission_histogram.low,
+      fission_histogram.percentile
+    ]
+    pivots: [fission_histogram.branch]
+    filters:
+      fission_histogram.probe: PERF_FIRST_CONTENTFUL_PAINT_MS
+    row: 7
     col: 0
     width: 12
     height: 8
@@ -409,53 +363,7 @@
     pivots: [fission_histogram.branch]
     filters:
       fission_histogram.probe: GC_MS
-    row: 80
-    col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_histogram.percentile_conf
-      Cores Count: fission_histogram.cores_count
-      Os: fission_histogram.os
-      
-  - title: Fx Tab Switch Composite E10S Ms
-    name: Fx Tab Switch Composite E10S Ms
-    explore: fission_histogram
-    type: "looker_line"
-    fields: [
-      fission_histogram.build_id,
-      fission_histogram.branch,
-      fission_histogram.high,
-      fission_histogram.low,
-      fission_histogram.percentile
-    ]
-    pivots: [fission_histogram.branch]
-    filters:
-      fission_histogram.probe: FX_TAB_SWITCH_COMPOSITE_E10S_MS
-    row: 90
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_histogram.percentile_conf
-      Cores Count: fission_histogram.cores_count
-      Os: fission_histogram.os
-      
-  - title: Memory Total
-    name: Memory Total
-    explore: fission_histogram
-    type: "looker_line"
-    fields: [
-      fission_histogram.build_id,
-      fission_histogram.branch,
-      fission_histogram.high,
-      fission_histogram.low,
-      fission_histogram.percentile
-    ]
-    pivots: [fission_histogram.branch]
-    filters:
-      fission_histogram.probe: MEMORY_TOTAL
-    row: 90
+    row: 7
     col: 12
     width: 12
     height: 8
@@ -478,7 +386,53 @@
     pivots: [fission_histogram.branch]
     filters:
       fission_histogram.probe: GC_MAX_PAUSE_2_CONTENT
-    row: 100
+    row: 8
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: fission_histogram.percentile_conf
+      Cores Count: fission_histogram.cores_count
+      Os: fission_histogram.os
+      
+  - title: Memory Total
+    name: Memory Total
+    explore: fission_histogram
+    type: "looker_line"
+    fields: [
+      fission_histogram.build_id,
+      fission_histogram.branch,
+      fission_histogram.high,
+      fission_histogram.low,
+      fission_histogram.percentile
+    ]
+    pivots: [fission_histogram.branch]
+    filters:
+      fission_histogram.probe: MEMORY_TOTAL
+    row: 8
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: fission_histogram.percentile_conf
+      Cores Count: fission_histogram.cores_count
+      Os: fission_histogram.os
+      
+  - title: Content Process Max
+    name: Content Process Max
+    explore: fission_histogram
+    type: "looker_line"
+    fields: [
+      fission_histogram.build_id,
+      fission_histogram.branch,
+      fission_histogram.high,
+      fission_histogram.low,
+      fission_histogram.percentile
+    ]
+    pivots: [fission_histogram.branch]
+    filters:
+      fission_histogram.probe: CONTENT_PROCESS_MAX
+    row: 9
     col: 0
     width: 12
     height: 8
@@ -501,7 +455,7 @@
     pivots: [fission_histogram.branch]
     filters:
       fission_histogram.probe: CHECKERBOARD_SEVERITY
-    row: 100
+    row: 9
     col: 12
     width: 12
     height: 8
@@ -510,8 +464,54 @@
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
       
-  - title: Gpu Crashes
-    name: Gpu Crashes
+  - title: Cycle Collector Max Pause Content
+    name: Cycle Collector Max Pause Content
+    explore: fission_histogram
+    type: "looker_line"
+    fields: [
+      fission_histogram.build_id,
+      fission_histogram.branch,
+      fission_histogram.high,
+      fission_histogram.low,
+      fission_histogram.percentile
+    ]
+    pivots: [fission_histogram.branch]
+    filters:
+      fission_histogram.probe: CYCLE_COLLECTOR_MAX_PAUSE_CONTENT
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: fission_histogram.percentile_conf
+      Cores Count: fission_histogram.cores_count
+      Os: fission_histogram.os
+      
+  - title: Gc Slice During Idle
+    name: Gc Slice During Idle
+    explore: fission_histogram
+    type: "looker_line"
+    fields: [
+      fission_histogram.build_id,
+      fission_histogram.branch,
+      fission_histogram.high,
+      fission_histogram.low,
+      fission_histogram.percentile
+    ]
+    pivots: [fission_histogram.branch]
+    filters:
+      fission_histogram.probe: GC_SLICE_DURING_IDLE
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: fission_histogram.percentile_conf
+      Cores Count: fission_histogram.cores_count
+      Os: fission_histogram.os
+      
+  - title: Active Ticks
+    name: Active Ticks
     explore: fission_scalar
     type: "looker_line"
     fields: [
@@ -523,8 +523,8 @@
     ]
     pivots: [fission_scalar.branch]
     filters:
-      fission_scalar.probe: GPU_CRASHES
-    row: 110
+      fission_scalar.probe: ACTIVE_TICKS
+    row: 0
     col: 0
     width: 12
     height: 8
@@ -533,8 +533,8 @@
       Cores Count: fission_scalar.cores_count
       Os: fission_scalar.os
       
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
+  - title: Gmplugin Crashes
+    name: Gmplugin Crashes
     explore: fission_scalar
     type: "looker_line"
     fields: [
@@ -546,8 +546,8 @@
     ]
     pivots: [fission_scalar.branch]
     filters:
-      fission_scalar.probe: SHUTDOWN_HANGS
-    row: 110
+      fission_scalar.probe: GMPLUGIN_CRASHES
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -556,8 +556,8 @@
       Cores Count: fission_scalar.cores_count
       Os: fission_scalar.os
       
-  - title: Content Shutdown Crashes
-    name: Content Shutdown Crashes
+  - title: Subsession Length
+    name: Subsession Length
     explore: fission_scalar
     type: "looker_line"
     fields: [
@@ -569,100 +569,8 @@
     ]
     pivots: [fission_scalar.branch]
     filters:
-      fission_scalar.probe: CONTENT_SHUTDOWN_CRASHES
-    row: 120
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_scalar.percentile_conf
-      Cores Count: fission_scalar.cores_count
-      Os: fission_scalar.os
-      
-  - title: Oom Crashes
-    name: Oom Crashes
-    explore: fission_scalar
-    type: "looker_line"
-    fields: [
-      fission_scalar.build_id,
-      fission_scalar.branch,
-      fission_scalar.high,
-      fission_scalar.low,
-      fission_scalar.percentile
-    ]
-    pivots: [fission_scalar.branch]
-    filters:
-      fission_scalar.probe: OOM_CRASHES
-    row: 120
-    col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_scalar.percentile_conf
-      Cores Count: fission_scalar.cores_count
-      Os: fission_scalar.os
-      
-  - title: Uri Count
-    name: Uri Count
-    explore: fission_scalar
-    type: "looker_line"
-    fields: [
-      fission_scalar.build_id,
-      fission_scalar.branch,
-      fission_scalar.high,
-      fission_scalar.low,
-      fission_scalar.percentile
-    ]
-    pivots: [fission_scalar.branch]
-    filters:
-      fission_scalar.probe: URI_COUNT
-    row: 130
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_scalar.percentile_conf
-      Cores Count: fission_scalar.cores_count
-      Os: fission_scalar.os
-      
-  - title: Content Crashes
-    name: Content Crashes
-    explore: fission_scalar
-    type: "looker_line"
-    fields: [
-      fission_scalar.build_id,
-      fission_scalar.branch,
-      fission_scalar.high,
-      fission_scalar.low,
-      fission_scalar.percentile
-    ]
-    pivots: [fission_scalar.branch]
-    filters:
-      fission_scalar.probe: CONTENT_CRASHES
-    row: 130
-    col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_scalar.percentile_conf
-      Cores Count: fission_scalar.cores_count
-      Os: fission_scalar.os
-      
-  - title: Startup Crashes
-    name: Startup Crashes
-    explore: fission_scalar
-    type: "looker_line"
-    fields: [
-      fission_scalar.build_id,
-      fission_scalar.branch,
-      fission_scalar.high,
-      fission_scalar.low,
-      fission_scalar.percentile
-    ]
-    pivots: [fission_scalar.branch]
-    filters:
-      fission_scalar.probe: STARTUP_CRASHES
-    row: 140
+      fission_scalar.probe: SUBSESSION_LENGTH
+    row: 1
     col: 0
     width: 12
     height: 8
@@ -685,7 +593,7 @@
     pivots: [fission_scalar.branch]
     filters:
       fission_scalar.probe: PLUGIN_CRASHES
-    row: 140
+    row: 1
     col: 12
     width: 12
     height: 8
@@ -694,8 +602,8 @@
       Cores Count: fission_scalar.cores_count
       Os: fission_scalar.os
       
-  - title: Gmplugin Crashes
-    name: Gmplugin Crashes
+  - title: Gpu Crashes
+    name: Gpu Crashes
     explore: fission_scalar
     type: "looker_line"
     fields: [
@@ -707,8 +615,8 @@
     ]
     pivots: [fission_scalar.branch]
     filters:
-      fission_scalar.probe: GMPLUGIN_CRASHES
-    row: 150
+      fission_scalar.probe: GPU_CRASHES
+    row: 2
     col: 0
     width: 12
     height: 8
@@ -717,8 +625,8 @@
       Cores Count: fission_scalar.cores_count
       Os: fission_scalar.os
       
-  - title: Subsession Length
-    name: Subsession Length
+  - title: Content Shutdown Crashes
+    name: Content Shutdown Crashes
     explore: fission_scalar
     type: "looker_line"
     fields: [
@@ -730,8 +638,8 @@
     ]
     pivots: [fission_scalar.branch]
     filters:
-      fission_scalar.probe: SUBSESSION_LENGTH
-    row: 150
+      fission_scalar.probe: CONTENT_SHUTDOWN_CRASHES
+    row: 2
     col: 12
     width: 12
     height: 8
@@ -740,8 +648,8 @@
       Cores Count: fission_scalar.cores_count
       Os: fission_scalar.os
       
-  - title: Active Ticks
-    name: Active Ticks
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
     explore: fission_scalar
     type: "looker_line"
     fields: [
@@ -753,9 +661,32 @@
     ]
     pivots: [fission_scalar.branch]
     filters:
-      fission_scalar.probe: ACTIVE_TICKS
-    row: 160
+      fission_scalar.probe: SHUTDOWN_HANGS
+    row: 3
     col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: fission_scalar.percentile_conf
+      Cores Count: fission_scalar.cores_count
+      Os: fission_scalar.os
+      
+  - title: Oom Crashes
+    name: Oom Crashes
+    explore: fission_scalar
+    type: "looker_line"
+    fields: [
+      fission_scalar.build_id,
+      fission_scalar.branch,
+      fission_scalar.high,
+      fission_scalar.low,
+      fission_scalar.percentile
+    ]
+    pivots: [fission_scalar.branch]
+    filters:
+      fission_scalar.probe: OOM_CRASHES
+    row: 3
+    col: 12
     width: 12
     height: 8
     listen:
@@ -777,7 +708,76 @@
     pivots: [fission_scalar.branch]
     filters:
       fission_scalar.probe: MAIN_CRASHES
-    row: 160
+    row: 4
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: fission_scalar.percentile_conf
+      Cores Count: fission_scalar.cores_count
+      Os: fission_scalar.os
+      
+  - title: Uri Count
+    name: Uri Count
+    explore: fission_scalar
+    type: "looker_line"
+    fields: [
+      fission_scalar.build_id,
+      fission_scalar.branch,
+      fission_scalar.high,
+      fission_scalar.low,
+      fission_scalar.percentile
+    ]
+    pivots: [fission_scalar.branch]
+    filters:
+      fission_scalar.probe: URI_COUNT
+    row: 4
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: fission_scalar.percentile_conf
+      Cores Count: fission_scalar.cores_count
+      Os: fission_scalar.os
+      
+  - title: Startup Crashes
+    name: Startup Crashes
+    explore: fission_scalar
+    type: "looker_line"
+    fields: [
+      fission_scalar.build_id,
+      fission_scalar.branch,
+      fission_scalar.high,
+      fission_scalar.low,
+      fission_scalar.percentile
+    ]
+    pivots: [fission_scalar.branch]
+    filters:
+      fission_scalar.probe: STARTUP_CRASHES
+    row: 5
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: fission_scalar.percentile_conf
+      Cores Count: fission_scalar.cores_count
+      Os: fission_scalar.os
+      
+  - title: Content Crashes
+    name: Content Crashes
+    explore: fission_scalar
+    type: "looker_line"
+    fields: [
+      fission_scalar.build_id,
+      fission_scalar.branch,
+      fission_scalar.high,
+      fission_scalar.low,
+      fission_scalar.percentile
+    ]
+    pivots: [fission_scalar.branch]
+    filters:
+      fission_scalar.probe: CONTENT_CRASHES
+    row: 5
     col: 12
     width: 12
     height: 8
