@@ -174,6 +174,20 @@ view: activation_table {
     description: "DNT (Do Not Track) HTTP header"
   }
 
+  dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
+    type: string
+    group_label: "Metadata Header Parsed X Lb Tags"
+    group_item_label: "Tls Cipher Hex"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_version {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
+    type: string
+    group_label: "Metadata Header Parsed X Lb Tags"
+    group_item_label: "Tls Version"
+  }
+
   dimension: metadata__header__parsed_x_source_tags {
     sql: ${TABLE}.metadata.header.parsed_x_source_tags ;;
     hidden: yes
