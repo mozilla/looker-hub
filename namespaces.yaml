@@ -1775,6 +1775,14 @@ regrets_reporter:
       type: glean_ping_explore
       views:
         base_view: main_events
+    regret_details:
+      type: glean_ping_explore
+      views:
+        base_view: regret_details
+    video_data:
+      type: glean_ping_explore
+      views:
+        base_view: video_data
     video_index:
       type: glean_ping_explore
       views:
@@ -1794,6 +1802,24 @@ regrets_reporter:
       tables:
       - channel: null
         table: mozdata.regrets_reporter_ucs.main_events
+      type: table_view
+    regret_details:
+      tables:
+      - table: mozdata.regrets_reporter_ucs.regret_details
+      type: glean_ping_view
+    regret_details_table:
+      tables:
+      - channel: null
+        table: mozdata.regrets_reporter_ucs.regret_details
+      type: table_view
+    video_data:
+      tables:
+      - table: mozdata.regrets_reporter_ucs.video_data
+      type: glean_ping_view
+    video_data_table:
+      tables:
+      - channel: null
+        table: mozdata.regrets_reporter_ucs.video_data
       type: table_view
     video_index:
       tables:
