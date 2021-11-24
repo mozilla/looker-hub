@@ -14,6 +14,16 @@ view: feature_usage_table {
     type: number
   }
 
+  dimension: activitystream_organic_pocket_clicks {
+    sql: ${TABLE}.activitystream_organic_pocket_clicks ;;
+    type: number
+  }
+
+  dimension: activitystream_organic_topsite_clicks {
+    sql: ${TABLE}.activitystream_organic_topsite_clicks ;;
+    type: number
+  }
+
   dimension: activitystream_pocket_clicks {
     sql: ${TABLE}.activitystream_pocket_clicks ;;
     type: number
@@ -54,6 +64,11 @@ view: feature_usage_table {
     type: yesno
   }
 
+  dimension: activitystream_reported_sponsored_topstories_off {
+    sql: ${TABLE}.activitystream_reported_sponsored_topstories_off ;;
+    type: yesno
+  }
+
   dimension: activitystream_reported_topsites_off {
     sql: ${TABLE}.activitystream_reported_topsites_off ;;
     type: yesno
@@ -71,6 +86,16 @@ view: feature_usage_table {
 
   dimension: activitystream_sessions_newtab {
     sql: ${TABLE}.activitystream_sessions_newtab ;;
+    type: number
+  }
+
+  dimension: activitystream_sponsored_pocket_clicks {
+    sql: ${TABLE}.activitystream_sponsored_pocket_clicks ;;
+    type: number
+  }
+
+  dimension: activitystream_sponsored_topsite_clicks {
+    sql: ${TABLE}.activitystream_sponsored_topsite_clicks ;;
     type: number
   }
 
@@ -305,6 +330,11 @@ view: feature_usage_table {
     type: number
   }
 
+  dimension: newtabpage_disabled {
+    sql: ${TABLE}.newtabpage_disabled ;;
+    type: yesno
+  }
+
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
     type: string
@@ -320,8 +350,18 @@ view: feature_usage_table {
     type: number
   }
 
+  dimension: num_new_tab_topsites_clicks_sponsored {
+    sql: ${TABLE}.num_new_tab_topsites_clicks_sponsored ;;
+    type: number
+  }
+
   dimension: num_passwords_saved {
     sql: ${TABLE}.num_passwords_saved ;;
+    type: number
+  }
+
+  dimension: num_topsites_new_tab_impressions_sponsored {
+    sql: ${TABLE}.num_topsites_new_tab_impressions_sponsored ;;
     type: number
   }
 
