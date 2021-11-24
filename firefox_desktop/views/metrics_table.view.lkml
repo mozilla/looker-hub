@@ -543,6 +543,15 @@ This metric appears in both the metrics and baseline pings.
     hidden: yes
   }
 
+  dimension: metrics__quantity__browser_link_open_newwindow_restriction {
+    sql: ${TABLE}.metrics.quantity.browser_link_open_newwindow_restriction ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Link Open Newwindow Restriction"
+    description: "browser.link.open_newwindow.restriction preference value, that is one of 0, 1, or 2, where 2 is desktop default
+"
+  }
+
   dimension: metrics__string__geckoview_validation_build_id {
     sql: ${TABLE}.metrics.string.geckoview_validation_build_id ;;
     type: string
