@@ -203,7 +203,7 @@ that programmatically redirect to a new location.
 
   dimension: metrics__counter__settings_screen_autocomplete_domain_added {
     label: "Settings Screen Autocomplete Domain Added"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.settings_screen_autocomplete_domain_added ;;
     type: number
     group_label: "Settings Screen"

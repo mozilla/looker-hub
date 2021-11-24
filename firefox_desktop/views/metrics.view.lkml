@@ -1,4 +1,22 @@
 view: metrics {
+  dimension: metrics__quantity__browser_link_open_newwindow_restriction {
+    label: "Browser Link Open Newwindow Restriction"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.browser_link_open_newwindow_restriction ;;
+    type: number
+    group_label: "Browser Link"
+    group_item_label: "Open Newwindow Restriction"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Link Open Newwindow Restriction"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_link_open_newwindow_restriction"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "browser.link.open_newwindow.restriction preference value, that is one of 0, 1, or 2, where 2 is desktop default
+"
+  }
+
   dimension: metrics__boolean__browser_ui_proton_enabled {
     label: "Browser Ui Proton Enabled"
     hidden: yes
