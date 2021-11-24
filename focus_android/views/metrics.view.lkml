@@ -1,4 +1,61 @@
 view: metrics {
+  dimension: metrics__counter__autocomplete_domain_added {
+    label: "Autocomplete Domain Added"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.autocomplete_domain_added ;;
+    type: number
+    group_label: "Autocomplete"
+    group_item_label: "Domain Added"
+
+    link: {
+      label: "Glean Dictionary reference for Autocomplete Domain Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/autocomplete_domain_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many times a user has added
+a website to the autocomplete list.
+"
+  }
+
+  dimension: metrics__counter__autocomplete_domain_removed {
+    label: "Autocomplete Domain Removed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.autocomplete_domain_removed ;;
+    type: number
+    group_label: "Autocomplete"
+    group_item_label: "Domain Removed"
+
+    link: {
+      label: "Glean Dictionary reference for Autocomplete Domain Removed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/autocomplete_domain_removed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many times a user has removed
+a website from the autocomplete list.
+"
+  }
+
+  dimension: metrics__counter__autocomplete_list_order_changed {
+    label: "Autocomplete List Order Changed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.autocomplete_list_order_changed ;;
+    type: number
+    group_label: "Autocomplete"
+    group_item_label: "List Order Changed"
+
+    link: {
+      label: "Glean Dictionary reference for Autocomplete List Order Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/autocomplete_list_order_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many times a user has reordered
+the autocomplete list.
+"
+  }
+
   dimension: metrics__string__browser_default_search_engine {
     label: "Browser Default Search Engine"
     hidden: no
@@ -69,6 +126,25 @@ changes the default browser through the app settings.
 
     description: "The locale that differs from the system locale if a user
 specifically overrides it for the app.
+"
+  }
+
+  dimension: metrics__counter__browser_report_site_issue_counter {
+    label: "Browser Report Site Issue Counter"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_report_site_issue_counter ;;
+    type: number
+    group_label: "Browser"
+    group_item_label: "Report Site Issue Counter"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Report Site Issue Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/browser_report_site_issue_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many times a user has tapped
+the report site issue from browser menu
 "
   }
 
@@ -1288,6 +1364,106 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
 
   measure: ping_count {
     type: count
+  }
+
+  measure: autocomplete_domain_added {
+    type: sum
+    sql: ${metrics__counter__autocomplete_domain_added} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Autocomplete Domain Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/autocomplete_domain_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: autocomplete_domain_added_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__autocomplete_domain_added: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Autocomplete Domain Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/autocomplete_domain_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: autocomplete_domain_removed {
+    type: sum
+    sql: ${metrics__counter__autocomplete_domain_removed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Autocomplete Domain Removed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/autocomplete_domain_removed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: autocomplete_domain_removed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__autocomplete_domain_removed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Autocomplete Domain Removed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/autocomplete_domain_removed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: autocomplete_list_order_changed {
+    type: sum
+    sql: ${metrics__counter__autocomplete_list_order_changed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Autocomplete List Order Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/autocomplete_list_order_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: autocomplete_list_order_changed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__autocomplete_list_order_changed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Autocomplete List Order Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/autocomplete_list_order_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_report_site_issue_counter {
+    type: sum
+    sql: ${metrics__counter__browser_report_site_issue_counter} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Report Site Issue Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/browser_report_site_issue_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_report_site_issue_counter_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_report_site_issue_counter: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Report Site Issue Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/browser_report_site_issue_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   measure: browser_total_uri_count {

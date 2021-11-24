@@ -380,6 +380,46 @@ at least once.
 "
   }
 
+  dimension: metrics__counter__autocomplete_domain_added {
+    sql: ${TABLE}.metrics.counter.autocomplete_domain_added ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Autocomplete Domain Added"
+    description: "A counter that indicates how many times a user has added
+a website to the autocomplete list.
+"
+  }
+
+  dimension: metrics__counter__autocomplete_domain_removed {
+    sql: ${TABLE}.metrics.counter.autocomplete_domain_removed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Autocomplete Domain Removed"
+    description: "A counter that indicates how many times a user has removed
+a website from the autocomplete list.
+"
+  }
+
+  dimension: metrics__counter__autocomplete_list_order_changed {
+    sql: ${TABLE}.metrics.counter.autocomplete_list_order_changed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Autocomplete List Order Changed"
+    description: "A counter that indicates how many times a user has reordered
+the autocomplete list.
+"
+  }
+
+  dimension: metrics__counter__browser_report_site_issue_counter {
+    sql: ${TABLE}.metrics.counter.browser_report_site_issue_counter ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Report Site Issue Counter"
+    description: "A counter that indicates how many times a user has tapped
+the report site issue from browser menu
+"
+  }
+
   dimension: metrics__counter__browser_total_uri_count {
     sql: ${TABLE}.metrics.counter.browser_total_uri_count ;;
     type: number
