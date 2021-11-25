@@ -1,3 +1,19 @@
+accessibility:
+  explores:
+    accessibility_clients:
+      type: ping_explore
+      views:
+        base_view: accessibility_clients
+  glean_app: false
+  owners:
+  - mreschenberg@mozilla.com
+  pretty_name: Accessibility
+  spoke: looker-spoke-default
+  views:
+    accessibility_clients:
+      tables:
+      - table: mozdata.telemetry.accessibility_clients
+      type: ping_view
 activity_stream:
   explores:
     event_counts:
