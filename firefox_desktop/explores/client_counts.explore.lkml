@@ -28,9 +28,9 @@ explore: client_counts {
 
   query: build_breakdown {
     description: "Number of clients per build."
-    dimensions: [submission_date, app_build]
+    dimensions: [submission_date, app_build_id]
     measures: [client_count]
-    pivots: [app_build]
+    pivots: [app_build_id]
     sorts: [
       submission_date: asc,
     ]

@@ -6,10 +6,10 @@ explore: event_counts {
 
   query: all_event_counts {
     description: "Event counts from all events over the past two weeks."
-    dimensions: [submission_date]
+    dimensions: [timestamp_date]
     measures: [event_count]
     filters: [
-      submission_date: "14 days",
+      events.timestamp_date: "14 days",
     ]
   }
 }
