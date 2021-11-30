@@ -29,14 +29,15 @@ view: clients_daily_table {
     type: number
   }
 
-  measure: ad_clicks {
+  dimension: ad_clicks {
+    type: number
     sql: ${TABLE}.ad_clicks ;;
     hidden: yes
   }
 
   measure: ad_clicks_count_all {
+    type: sum
     sql: ${TABLE}.ad_clicks_count_all ;;
-    type: number
   }
 
   dimension: addon_compatibility_check_enabled {
@@ -1043,63 +1044,63 @@ view: clients_daily_table {
   }
 
   measure: search_adclicks_about_home_sum {
+    type: sum
     sql: ${TABLE}.search_adclicks_about_home_sum ;;
-    hidden: yes
   }
 
   measure: search_adclicks_about_newtab_sum {
+    type: sum
     sql: ${TABLE}.search_adclicks_about_newtab_sum ;;
-    hidden: yes
   }
 
   measure: search_adclicks_contextmenu_sum {
+    type: sum
     sql: ${TABLE}.search_adclicks_contextmenu_sum ;;
-    hidden: yes
   }
 
   measure: search_adclicks_reload_sum {
+    type: sum
     sql: ${TABLE}.search_adclicks_reload_sum ;;
-    hidden: yes
   }
 
   measure: search_adclicks_searchbar_sum {
+    type: sum
     sql: ${TABLE}.search_adclicks_searchbar_sum ;;
-    hidden: yes
   }
 
   measure: search_adclicks_system_sum {
+    type: sum
     sql: ${TABLE}.search_adclicks_system_sum ;;
-    hidden: yes
   }
 
   measure: search_adclicks_tabhistory_sum {
+    type: sum
     sql: ${TABLE}.search_adclicks_tabhistory_sum ;;
-    hidden: yes
   }
 
   measure: search_adclicks_unknown_sum {
+    type: sum
     sql: ${TABLE}.search_adclicks_unknown_sum ;;
-    hidden: yes
   }
 
   measure: search_adclicks_urlbar_handoff_sum {
+    type: sum
     sql: ${TABLE}.search_adclicks_urlbar_handoff_sum ;;
-    hidden: yes
   }
 
   measure: search_adclicks_urlbar_searchmode_sum {
+    type: sum
     sql: ${TABLE}.search_adclicks_urlbar_searchmode_sum ;;
-    hidden: yes
   }
 
   measure: search_adclicks_urlbar_sum {
+    type: sum
     sql: ${TABLE}.search_adclicks_urlbar_sum ;;
-    hidden: yes
   }
 
   measure: search_adclicks_webextension_sum {
+    type: sum
     sql: ${TABLE}.search_adclicks_webextension_sum ;;
-    hidden: yes
   }
 
   dimension: search_cohort {
@@ -1169,73 +1170,73 @@ view: clients_daily_table {
 
   measure: search_count_abouthome {
     sql: ${TABLE}.search_count_abouthome ;;
-    type: number
-  }
+    type: sum
+    }
 
   measure: search_count_alias {
     sql: ${TABLE}.search_count_alias ;;
-    type: number
-  }
+    type: sum
+    }
 
   measure: search_count_all {
     sql: ${TABLE}.search_count_all ;;
-    type: number
-  }
+    type: sum
+    }
 
   measure: search_count_contextmenu {
     sql: ${TABLE}.search_count_contextmenu ;;
-    type: number
-  }
+    type: sum
+    }
 
   measure: search_count_newtab {
     sql: ${TABLE}.search_count_newtab ;;
-    type: number
-  }
+    type: sum
+    }
 
   measure: search_count_organic {
     sql: ${TABLE}.search_count_organic ;;
-    type: number
-  }
+    type: sum
+    }
 
   measure: search_count_searchbar {
     sql: ${TABLE}.search_count_searchbar ;;
-    type: number
-  }
+    type: sum
+    }
 
   measure: search_count_system {
     sql: ${TABLE}.search_count_system ;;
-    type: number
-  }
+    type: sum
+    }
 
   measure: search_count_tagged_follow_on {
     sql: ${TABLE}.search_count_tagged_follow_on ;;
-    type: number
-  }
+    type: sum
+    }
 
   measure: search_count_tagged_sap {
     sql: ${TABLE}.search_count_tagged_sap ;;
-    type: number
-  }
+    type: sum
+    }
 
   measure: search_count_urlbar {
     sql: ${TABLE}.search_count_urlbar ;;
-    type: number
-  }
+    type: sum
+    }
 
   measure: search_count_urlbar_handoff {
     sql: ${TABLE}.search_count_urlbar_handoff ;;
-    type: number
-  }
+    type: sum
+    }
 
   measure: search_count_urlbar_searchmode {
     sql: ${TABLE}.search_count_urlbar_searchmode ;;
-    type: number
-  }
+    type: sum
+    }
 
   measure: search_count_webextension {
     sql: ${TABLE}.search_count_webextension ;;
-    type: number
-  }
+    type: sum
+    }
 
   dimension: search_counts {
     sql: ${TABLE}.search_counts ;;
@@ -1248,68 +1249,66 @@ view: clients_daily_table {
   }
 
   measure: search_with_ads_count_all {
+    type: sum
     sql: ${TABLE}.search_with_ads_count_all ;;
-    type: number
   }
 
   measure: search_withads_about_home_sum {
+    type: sum
     sql: ${TABLE}.search_withads_about_home_sum ;;
-    hidden: yes
   }
 
   measure: search_withads_about_newtab_sum {
+    type: sum
     sql: ${TABLE}.search_withads_about_newtab_sum ;;
-    hidden: yes
   }
 
   measure: search_withads_contextmenu_sum {
+    type: sum
     sql: ${TABLE}.search_withads_contextmenu_sum ;;
-    hidden: yes
   }
 
   measure: search_withads_reload_sum {
+    type: sum
     sql: ${TABLE}.search_withads_reload_sum ;;
-    hidden: yes
   }
 
   measure: search_withads_searchbar_sum {
     sql: ${TABLE}.search_withads_searchbar_sum ;;
-    hidden: yes
   }
 
   measure: search_withads_system_sum {
+    type: sum
     sql: ${TABLE}.search_withads_system_sum ;;
-    hidden: yes
   }
 
   measure: search_withads_tabhistory_sum {
+    type: sum
     sql: ${TABLE}.search_withads_tabhistory_sum ;;
-    hidden: yes
   }
 
   dimension: search_withads_unknown_sum {
     sql: ${TABLE}.search_withads_unknown_sum ;;
-    hidden: yes
   }
 
   measure: search_withads_urlbar_handoff_sum {
+    type: sum
     sql: ${TABLE}.search_withads_urlbar_handoff_sum ;;
-    hidden: yes
   }
 
   measure: search_withads_urlbar_searchmode_sum {
+    type: sum
     sql: ${TABLE}.search_withads_urlbar_searchmode_sum ;;
-    hidden: yes
   }
 
   measure: search_withads_urlbar_sum {
+    type: sum
     sql: ${TABLE}.search_withads_urlbar_sum ;;
-    hidden: yes
   }
 
   measure: search_withads_webextension_sum {
+    type: sum
     sql: ${TABLE}.search_withads_webextension_sum ;;
-    hidden: yes
   }
 
   dimension: session_restored_mean {
