@@ -1,4 +1,9 @@
 view: clients_daily_table {
+  dimension: a11y_theme {
+    sql: ${TABLE}.a11y_theme ;;
+    hidden: yes
+  }
+
   dimension: aborts_content_sum {
     sql: ${TABLE}.aborts_content_sum ;;
     type: number
@@ -714,6 +719,16 @@ view: clients_daily_table {
 
   dimension: sandbox_effective_content_process_level {
     sql: ${TABLE}.sandbox_effective_content_process_level ;;
+    type: number
+  }
+
+  dimension: scalar_a11y_hcm_background {
+    sql: ${TABLE}.scalar_a11y_hcm_background ;;
+    type: number
+  }
+
+  dimension: scalar_a11y_hcm_foreground {
+    sql: ${TABLE}.scalar_a11y_hcm_foreground ;;
     type: number
   }
 
@@ -1552,6 +1567,18 @@ view: clients_daily_table {
   }
 
   sql_table_name: `mozdata.telemetry.clients_daily` ;;
+}
+
+view: clients_daily_table__a11y_theme {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
 }
 
 view: clients_daily_table__active_addons {

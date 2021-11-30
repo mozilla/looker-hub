@@ -4,6 +4,11 @@ view: growth_accounting {
     type: string
   }
 
+  dimension: a11y_theme {
+    sql: ${TABLE}.a11y_theme ;;
+    hidden: yes
+  }
+
   dimension: aborts_content_sum {
     sql: ${TABLE}.aborts_content_sum ;;
     type: number
@@ -844,6 +849,16 @@ view: growth_accounting {
 
   dimension: sandbox_effective_content_process_level {
     sql: ${TABLE}.sandbox_effective_content_process_level ;;
+    type: number
+  }
+
+  dimension: scalar_a11y_hcm_background {
+    sql: ${TABLE}.scalar_a11y_hcm_background ;;
+    type: number
+  }
+
+  dimension: scalar_a11y_hcm_foreground {
+    sql: ${TABLE}.scalar_a11y_hcm_foreground ;;
     type: number
   }
 
