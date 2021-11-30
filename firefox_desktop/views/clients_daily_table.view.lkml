@@ -29,12 +29,12 @@ view: clients_daily_table {
     type: number
   }
 
-  dimension: ad_clicks {
+  measure: ad_clicks {
     sql: ${TABLE}.ad_clicks ;;
     hidden: yes
   }
 
-  dimension: ad_clicks_count_all {
+  measure: ad_clicks_count_all {
     sql: ${TABLE}.ad_clicks_count_all ;;
     type: number
   }
@@ -1042,62 +1042,62 @@ view: clients_daily_table {
     hidden: yes
   }
 
-  dimension: search_adclicks_about_home_sum {
+  measure: search_adclicks_about_home_sum {
     sql: ${TABLE}.search_adclicks_about_home_sum ;;
     hidden: yes
   }
 
-  dimension: search_adclicks_about_newtab_sum {
+  measure: search_adclicks_about_newtab_sum {
     sql: ${TABLE}.search_adclicks_about_newtab_sum ;;
     hidden: yes
   }
 
-  dimension: search_adclicks_contextmenu_sum {
+  measure: search_adclicks_contextmenu_sum {
     sql: ${TABLE}.search_adclicks_contextmenu_sum ;;
     hidden: yes
   }
 
-  dimension: search_adclicks_reload_sum {
+  measure: search_adclicks_reload_sum {
     sql: ${TABLE}.search_adclicks_reload_sum ;;
     hidden: yes
   }
 
-  dimension: search_adclicks_searchbar_sum {
+  measure: search_adclicks_searchbar_sum {
     sql: ${TABLE}.search_adclicks_searchbar_sum ;;
     hidden: yes
   }
 
-  dimension: search_adclicks_system_sum {
+  measure: search_adclicks_system_sum {
     sql: ${TABLE}.search_adclicks_system_sum ;;
     hidden: yes
   }
 
-  dimension: search_adclicks_tabhistory_sum {
+  measure: search_adclicks_tabhistory_sum {
     sql: ${TABLE}.search_adclicks_tabhistory_sum ;;
     hidden: yes
   }
 
-  dimension: search_adclicks_unknown_sum {
+  measure: search_adclicks_unknown_sum {
     sql: ${TABLE}.search_adclicks_unknown_sum ;;
     hidden: yes
   }
 
-  dimension: search_adclicks_urlbar_handoff_sum {
+  measure: search_adclicks_urlbar_handoff_sum {
     sql: ${TABLE}.search_adclicks_urlbar_handoff_sum ;;
     hidden: yes
   }
 
-  dimension: search_adclicks_urlbar_searchmode_sum {
+  measure: search_adclicks_urlbar_searchmode_sum {
     sql: ${TABLE}.search_adclicks_urlbar_searchmode_sum ;;
     hidden: yes
   }
 
-  dimension: search_adclicks_urlbar_sum {
+  measure: search_adclicks_urlbar_sum {
     sql: ${TABLE}.search_adclicks_urlbar_sum ;;
     hidden: yes
   }
 
-  dimension: search_adclicks_webextension_sum {
+  measure: search_adclicks_webextension_sum {
     sql: ${TABLE}.search_adclicks_webextension_sum ;;
     hidden: yes
   }
@@ -1167,72 +1167,72 @@ view: clients_daily_table {
     hidden: yes
   }
 
-  dimension: search_count_abouthome {
+  measure: search_count_abouthome {
     sql: ${TABLE}.search_count_abouthome ;;
     type: number
   }
 
-  dimension: search_count_alias {
+  measure: search_count_alias {
     sql: ${TABLE}.search_count_alias ;;
     type: number
   }
 
-  dimension: search_count_all {
+  measure: search_count_all {
     sql: ${TABLE}.search_count_all ;;
     type: number
   }
 
-  dimension: search_count_contextmenu {
+  measure: search_count_contextmenu {
     sql: ${TABLE}.search_count_contextmenu ;;
     type: number
   }
 
-  dimension: search_count_newtab {
+  measure: search_count_newtab {
     sql: ${TABLE}.search_count_newtab ;;
     type: number
   }
 
-  dimension: search_count_organic {
+  measure: search_count_organic {
     sql: ${TABLE}.search_count_organic ;;
     type: number
   }
 
-  dimension: search_count_searchbar {
+  measure: search_count_searchbar {
     sql: ${TABLE}.search_count_searchbar ;;
     type: number
   }
 
-  dimension: search_count_system {
+  measure: search_count_system {
     sql: ${TABLE}.search_count_system ;;
     type: number
   }
 
-  dimension: search_count_tagged_follow_on {
+  measure: search_count_tagged_follow_on {
     sql: ${TABLE}.search_count_tagged_follow_on ;;
     type: number
   }
 
-  dimension: search_count_tagged_sap {
+  measure: search_count_tagged_sap {
     sql: ${TABLE}.search_count_tagged_sap ;;
     type: number
   }
 
-  dimension: search_count_urlbar {
+  measure: search_count_urlbar {
     sql: ${TABLE}.search_count_urlbar ;;
     type: number
   }
 
-  dimension: search_count_urlbar_handoff {
+  measure: search_count_urlbar_handoff {
     sql: ${TABLE}.search_count_urlbar_handoff ;;
     type: number
   }
 
-  dimension: search_count_urlbar_searchmode {
+  measure: search_count_urlbar_searchmode {
     sql: ${TABLE}.search_count_urlbar_searchmode ;;
     type: number
   }
 
-  dimension: search_count_webextension {
+  measure: search_count_webextension {
     sql: ${TABLE}.search_count_webextension ;;
     type: number
   }
@@ -1247,42 +1247,42 @@ view: clients_daily_table {
     hidden: yes
   }
 
-  dimension: search_with_ads_count_all {
+  measure: search_with_ads_count_all {
     sql: ${TABLE}.search_with_ads_count_all ;;
     type: number
   }
 
-  dimension: search_withads_about_home_sum {
+  measure: search_withads_about_home_sum {
     sql: ${TABLE}.search_withads_about_home_sum ;;
     hidden: yes
   }
 
-  dimension: search_withads_about_newtab_sum {
+  measure: search_withads_about_newtab_sum {
     sql: ${TABLE}.search_withads_about_newtab_sum ;;
     hidden: yes
   }
 
-  dimension: search_withads_contextmenu_sum {
+  measure: search_withads_contextmenu_sum {
     sql: ${TABLE}.search_withads_contextmenu_sum ;;
     hidden: yes
   }
 
-  dimension: search_withads_reload_sum {
+  measure: search_withads_reload_sum {
     sql: ${TABLE}.search_withads_reload_sum ;;
     hidden: yes
   }
 
-  dimension: search_withads_searchbar_sum {
+  measure: search_withads_searchbar_sum {
     sql: ${TABLE}.search_withads_searchbar_sum ;;
     hidden: yes
   }
 
-  dimension: search_withads_system_sum {
+  measure: search_withads_system_sum {
     sql: ${TABLE}.search_withads_system_sum ;;
     hidden: yes
   }
 
-  dimension: search_withads_tabhistory_sum {
+  measure: search_withads_tabhistory_sum {
     sql: ${TABLE}.search_withads_tabhistory_sum ;;
     hidden: yes
   }
@@ -1292,22 +1292,22 @@ view: clients_daily_table {
     hidden: yes
   }
 
-  dimension: search_withads_urlbar_handoff_sum {
+  measure: search_withads_urlbar_handoff_sum {
     sql: ${TABLE}.search_withads_urlbar_handoff_sum ;;
     hidden: yes
   }
 
-  dimension: search_withads_urlbar_searchmode_sum {
+  measure: search_withads_urlbar_searchmode_sum {
     sql: ${TABLE}.search_withads_urlbar_searchmode_sum ;;
     hidden: yes
   }
 
-  dimension: search_withads_urlbar_sum {
+  measure: search_withads_urlbar_sum {
     sql: ${TABLE}.search_withads_urlbar_sum ;;
     hidden: yes
   }
 
-  dimension: search_withads_webextension_sum {
+  measure: search_withads_webextension_sum {
     sql: ${TABLE}.search_withads_webextension_sum ;;
     hidden: yes
   }
