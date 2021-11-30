@@ -1169,14 +1169,16 @@ view: clients_daily_table {
     hidden: yes
   }
 
-  dimension: search_count_abouthome {
+  measure: search_count_abouthome {
     sql: ${TABLE}.search_count_abouthome ;;
-    hidden: yes
+    type: average
+    description: "Average Search count via About Home per client."
     }
 
-  dimension: search_count_alias {
+  measure: search_count_alias {
     sql: ${TABLE}.search_count_alias ;;
-    hidden: yes
+    type: average
+    description: "Average Search count via Alias per client."
     }
 
   measure: search_count_all {
@@ -1185,59 +1187,70 @@ view: clients_daily_table {
     description: "Average Search count per client."
     }
 
-  dimension: search_count_contextmenu {
+  measure: search_count_contextmenu {
     sql: ${TABLE}.search_count_contextmenu ;;
-    hidden: yes
+    description: "Average Search count via Context Menu per client."
+    type: average
     }
 
-  dimension: search_count_newtab {
+  measure: search_count_newtab {
     sql: ${TABLE}.search_count_newtab ;;
-    hidden: yes
+    type: average
+    description: "Average Search count via New Tab per client."
     }
 
-  dimension: search_count_organic {
+  measure: search_count_organic {
     sql: ${TABLE}.search_count_organic ;;
-    hidden: yes
+    type: average
+    description: "Average Organic Search count per client."
     }
 
-  dimension: search_count_searchbar {
+  measure: search_count_searchbar {
     sql: ${TABLE}.search_count_searchbar ;;
-    hidden: yes
+    type: average
+    description: "Average Search count via Searchbar per client."
     }
 
-  dimension: search_count_system {
+  measure: search_count_system {
     sql: ${TABLE}.search_count_system ;;
-    hidden: yes
+    type: average
+    description: "Average Search count via System per client."
     }
 
-  dimension: search_count_tagged_follow_on {
+  measure: search_count_tagged_follow_on {
     sql: ${TABLE}.search_count_tagged_follow_on ;;
-    hidden: yes
+    type:  average
+    description: "Average Tagged Follow On Search count per client."
     }
 
-  dimension: search_count_tagged_sap {
+  measure: search_count_tagged_sap {
     sql: ${TABLE}.search_count_tagged_sap ;;
-    hidden: yes
+    type: average
+    description: "Average Tagged Search count per client."
     }
 
-  dimension: search_count_urlbar {
+  measure: search_count_urlbar {
     sql: ${TABLE}.search_count_urlbar ;;
-    hidden: yes
+    type: average
+    description: "Average Search count via Urlbar per client."
     }
 
-  dimension: search_count_urlbar_handoff {
+  measure: search_count_urlbar_handoff {
     sql: ${TABLE}.search_count_urlbar_handoff ;;
-    hidden: yes
+    type: average
+    description: "Average Search count via Urlbar Handoff per client."
     }
 
-  dimension: search_count_urlbar_searchmode {
+  measure: search_count_urlbar_searchmode {
     sql: ${TABLE}.search_count_urlbar_searchmode ;;
-    hidden: yes
+    type:  average
+    description: "Average Search count via Urlbar Searchmode per client."
     }
 
-  dimension: search_count_webextension {
+  measure: search_count_webextension {
     sql: ${TABLE}.search_count_webextension ;;
-    hidden: yes
+    type: average
+    description: "Average Search count via Webextension per client."
     }
 
   dimension: search_counts {
