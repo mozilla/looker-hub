@@ -129,8 +129,8 @@ view: clients_daily_table {
 
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
-    hidden: yes
-  }
+    type: number
+    }
 
   dimension: client_submission_latency_mean {
     sql: ${TABLE}.client_submission_latency_mean ;;
