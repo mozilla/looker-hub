@@ -36,9 +36,10 @@ view: clients_daily_table {
   }
 
   measure: ad_clicks_count_all {
-    type: sum
+    type: average
     sql: ${TABLE}.ad_clicks_count_all ;;
-  }
+    description: "Average Ad Click count per client."
+    }
 
   dimension: addon_compatibility_check_enabled {
     sql: ${TABLE}.addon_compatibility_check_enabled ;;
@@ -129,7 +130,7 @@ view: clients_daily_table {
 
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
-    type: string
+    hidden: yes
     }
 
   dimension: client_submission_latency_mean {
@@ -1180,7 +1181,8 @@ view: clients_daily_table {
 
   measure: search_count_all {
     sql: ${TABLE}.search_count_all ;;
-    type: sum
+    type: average
+    description: "Average Search count per client."
     }
 
   dimension: search_count_contextmenu {
@@ -1249,8 +1251,9 @@ view: clients_daily_table {
   }
 
   measure: search_with_ads_count_all {
-    type: sum
+    type: average
     sql: ${TABLE}.search_with_ads_count_all ;;
+    description: "Average Search w Ads count per client."
   }
 
   dimension: search_withads_about_home_sum {
