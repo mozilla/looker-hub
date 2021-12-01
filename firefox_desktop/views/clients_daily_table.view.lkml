@@ -40,6 +40,11 @@ view: clients_daily_table {
     hidden: yes
   }
 
+  dimension: ad_clicks_count_all {
+    type: number
+    sql: ${TABLE}.ad_clicks_count_all ;;
+  }
+
   measure: avg_ad_clicks_count_all {
     type: average
     sql: ${TABLE}.ad_clicks_count_all ;;
@@ -1190,6 +1195,11 @@ view: clients_daily_table {
     hidden: yes
   }
 
+  dimension: search_count_abouthome {
+    sql: ${TABLE}.search_count_abouthome ;;
+    type: number
+  }
+
   measure: avg_search_count_abouthome {
     sql: ${TABLE}.search_count_abouthome ;;
     type: average
@@ -1200,6 +1210,11 @@ view: clients_daily_table {
     sql: ${TABLE}.search_count_abouthome ;;
     type: sum
     description: "Sum Search count via About Home per client."
+  }
+
+  dimension: search_count_alias {
+    sql: ${TABLE}.search_count_alias ;;
+    type: number
   }
 
   measure: avg_search_count_alias {
@@ -1214,6 +1229,11 @@ view: clients_daily_table {
     description: "Sum Search count via Alias per client."
   }
 
+  dimension: search_count_all {
+    sql: ${TABLE}.search_count_all ;;
+    type: number
+  }
+
   measure: avg_search_count_all {
     sql: ${TABLE}.search_count_all ;;
     type: average
@@ -1224,6 +1244,11 @@ view: clients_daily_table {
     sql: ${TABLE}.search_count_all ;;
     type: sum
     description: "Sum Search count per client."
+  }
+
+  dimension: search_count_contextmenu {
+    sql: ${TABLE}.search_count_contextmenu ;;
+    type: number
   }
 
   measure: avg_search_count_contextmenu {
@@ -1238,6 +1263,11 @@ view: clients_daily_table {
     type: sum
   }
 
+  dimension: search_count_newtab {
+    sql: ${TABLE}.search_count_newtab ;;
+    type: number
+  }
+
   measure: avg_search_count_newtab {
     sql: ${TABLE}.search_count_newtab ;;
     type: average
@@ -1248,6 +1278,11 @@ view: clients_daily_table {
     sql: ${TABLE}.search_count_newtab ;;
     type: sum
     description: "Sum Search count via New Tab per client."
+  }
+
+  dimension: search_count_organic {
+    sql: ${TABLE}.search_count_organic ;;
+    type: number
   }
 
   measure: avg_search_count_organic {
@@ -1262,6 +1297,11 @@ view: clients_daily_table {
     description: "Sum Organic Search count per client."
   }
 
+  dimension: search_count_searchbar {
+    sql: ${TABLE}.search_count_searchbar ;;
+    type: number
+  }
+
   measure: avg_search_count_searchbar {
     sql: ${TABLE}.search_count_searchbar ;;
     type: average
@@ -1272,6 +1312,11 @@ view: clients_daily_table {
     sql: ${TABLE}.search_count_searchbar ;;
     type: sum
     description: "Sum Search count via Searchbar per client."
+  }
+
+  dimension: search_count_system {
+    sql: ${TABLE}.search_count_system ;;
+    type: number
   }
 
   measure: avg_search_count_system {
@@ -1286,16 +1331,26 @@ view: clients_daily_table {
     description: "Sum Search count via System per client."
   }
 
+  dimension: search_count_tagged_follow_on {
+    sql: ${TABLE}.search_count_tagged_follow_on ;;
+    type:  number
+  }
+
   measure: avg_search_count_tagged_follow_on {
     sql: ${TABLE}.search_count_tagged_follow_on ;;
     type:  average
     description: "Average Tagged Follow On Search count per client."
-    }
+  }
 
   measure: sum_search_count_tagged_follow_on {
     sql: ${TABLE}.search_count_tagged_follow_on ;;
     type:  sum
     description: "Sum Tagged Follow On Search count per client."
+  }
+
+  dimension: search_count_tagged_sap {
+    sql: ${TABLE}.search_count_tagged_sap ;;
+    type: number
   }
 
   measure: avg_search_count_tagged_sap {
@@ -1310,6 +1365,11 @@ view: clients_daily_table {
     description: "Sum Tagged Search count per client."
   }
 
+  dimension: search_count_urlbar {
+    sql: ${TABLE}.search_count_urlbar ;;
+    type: number
+  }
+
   measure: avg_search_count_urlbar {
     sql: ${TABLE}.search_count_urlbar ;;
     type: average
@@ -1320,6 +1380,11 @@ view: clients_daily_table {
     sql: ${TABLE}.search_count_urlbar ;;
     type: sum
     description: "Sum Search count via Urlbar per client."
+  }
+
+  dimension: search_count_urlbar_handoff {
+    sql: ${TABLE}.search_count_urlbar_handoff ;;
+    type: number
   }
 
   measure: avg_search_count_urlbar_handoff {
@@ -1334,6 +1399,11 @@ view: clients_daily_table {
     description: "Sum Search count via Urlbar Handoff per client."
   }
 
+  dimension: search_count_urlbar_searchmode {
+    sql: ${TABLE}.search_count_urlbar_searchmode ;;
+    type:  number
+  }
+
   measure: avg_search_count_urlbar_searchmode {
     sql: ${TABLE}.search_count_urlbar_searchmode ;;
     type:  average
@@ -1344,6 +1414,11 @@ view: clients_daily_table {
     sql: ${TABLE}.search_count_urlbar_searchmode ;;
     type:  sum
     description: "Sum Search count via Urlbar Searchmode per client."
+  }
+
+  dimension: search_count_webextension {
+    sql: ${TABLE}.search_count_webextension ;;
+    type: number
   }
 
   measure: avg_search_count_webextension {
@@ -1366,6 +1441,11 @@ view: clients_daily_table {
   dimension: search_with_ads {
     sql: ${TABLE}.search_with_ads ;;
     hidden: yes
+  }
+
+  dimension: search_with_ads_count_all {
+    type: number
+    sql: ${TABLE}.search_with_ads_count_all ;;
   }
 
   measure: avg_search_with_ads_count_all {
