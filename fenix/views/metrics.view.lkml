@@ -2114,6 +2114,34 @@ will be \"custom\"
 "
   }
 
+  dimension: metrics__custom_distribution__search_terms_group_size_distribution__sum {
+    label: "Search Terms Group Size Distribution Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.search_terms_group_size_distribution.sum ;;
+    type: number
+    group_label: "Search Terms"
+    group_item_label: "Group Size Distribution Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Search Terms Group Size Distribution Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/search_terms_group_size_distribution"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The distribution of search term tab group sizes. Rather than reporting
+individual sizes directly as integers, it is currently desired to
+report the sizes according to certain size ranges.
+The \"buckets\" for reporting group sizes will be mapped as follows:
+* 2 tabs -> 1
+* 3-5 tabs -> 2
+* 6-10 tabs -> 3
+* 11+ tabs -> 4
+Where the reported number will be 1, 2, 3, or 4, accordingly.
+As an example, say a user has three groups of sizes 3, 6, and 15. The
+app will report 2, 3, and 4 when this metric is tracked.
+"
+  }
+
   dimension: metrics__memory_distribution__storage_stats_app_bytes__sum {
     label: "Storage Stats App Bytes Sum"
     hidden: no

@@ -1749,18 +1749,37 @@ operational_monitoring:
       - explore: fission_scalar
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1660366_pref_ongoing_fission_nightly_experiment_nightly_83_100_scalar
       type: operational_monitoring_dashboard
+    fission_release_rollout:
+      tables:
+      - explore: fission_release_rollout_histogram
+        table: moz-fx-data-shared-prod.operational_monitoring.bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
+      - explore: fission_release_rollout_scalar
+        table: moz-fx-data-shared-prod.operational_monitoring.bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
+      type: operational_monitoring_dashboard
   data_functions:
   - compute_opmon_dimensions
   explores:
     fission_histogram:
-      branches: &id001
+      branches: &id002
       - enabled
       - disabled
       type: operational_monitoring_explore
       views:
         base_view: fission_histogram
-    fission_scalar:
+    fission_release_rollout_histogram:
+      branches: &id001
+      - enabled
+      - disabled
+      type: operational_monitoring_explore
+      views:
+        base_view: fission_release_rollout_histogram
+    fission_release_rollout_scalar:
       branches: *id001
+      type: operational_monitoring_explore
+      views:
+        base_view: fission_release_rollout_scalar
+    fission_scalar:
+      branches: *id002
       type: operational_monitoring_explore
       views:
         base_view: fission_scalar
@@ -1773,10 +1792,22 @@ operational_monitoring:
     fission_histogram:
       tables:
       - table: moz-fx-data-shared-prod.operational_monitoring.bug_1660366_pref_ongoing_fission_nightly_experiment_nightly_83_100_histogram
+        xaxis: build_id
       type: operational_monitoring_histogram_view
+    fission_release_rollout_histogram:
+      tables:
+      - table: moz-fx-data-shared-prod.operational_monitoring.bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
+        xaxis: submission_date
+      type: operational_monitoring_histogram_view
+    fission_release_rollout_scalar:
+      tables:
+      - table: moz-fx-data-shared-prod.operational_monitoring.bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
+        xaxis: submission_date
+      type: operational_monitoring_scalar_view
     fission_scalar:
       tables:
       - table: moz-fx-data-shared-prod.operational_monitoring.bug_1660366_pref_ongoing_fission_nightly_experiment_nightly_83_100_scalar
+        xaxis: build_id
       type: operational_monitoring_scalar_view
 pocket:
   glean_app: false

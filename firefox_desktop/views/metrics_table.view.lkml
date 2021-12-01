@@ -322,6 +322,36 @@ Child-process data will likely be absent, or incomplete.
     description: "Set to true if the tasks that are queued prior to Glean initialization time out."
   }
 
+  dimension: metrics__counter__browser_engagement_active_ticks {
+    sql: ${TABLE}.metrics.counter.browser_engagement_active_ticks ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Active Ticks"
+    description: "The number of five-second intervals ('ticks') the user was considered
+'active'.
+
+'active' means keyboard or mouse interaction with the application.
+It doesn't take into account whether or not the window has focus or is in
+the foreground, only if it is receiving these interaction events.
+
+Migrated from Telemetry's `browser.engagement.active_ticks`.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_uri_count {
+    sql: ${TABLE}.metrics.counter.browser_engagement_uri_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Engagement Uri Count"
+    description: "The number of total non-unique http(s) URIs visited, including page
+reloads, after the session has been restored. URIs on minimized or
+background tabs may also be counted. Private browsing uris are included.
+
+Migrated from Telemetry's
+`browser.engagement.total_uri_count_normal_and_private_mode`.
+"
+  }
+
   dimension: metrics__counter__fog_ipc_replay_failures {
     sql: ${TABLE}.metrics.counter.fog_ipc_replay_failures ;;
     type: number

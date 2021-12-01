@@ -1,4 +1,52 @@
 view: metrics {
+  dimension: metrics__counter__browser_engagement_active_ticks {
+    label: "Browser Engagement Active Ticks"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_active_ticks ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Active Ticks"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Active Ticks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_active_ticks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of five-second intervals ('ticks') the user was considered
+'active'.
+
+'active' means keyboard or mouse interaction with the application.
+It doesn't take into account whether or not the window has focus or is in
+the foreground, only if it is receiving these interaction events.
+
+Migrated from Telemetry's `browser.engagement.active_ticks`.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_uri_count {
+    label: "Browser Engagement Uri Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_uri_count ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Uri Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of total non-unique http(s) URIs visited, including page
+reloads, after the session has been restored. URIs on minimized or
+background tabs may also be counted. Private browsing uris are included.
+
+Migrated from Telemetry's
+`browser.engagement.total_uri_count_normal_and_private_mode`.
+"
+  }
+
   dimension: metrics__quantity__browser_link_open_newwindow_restriction {
     label: "Browser Link Open Newwindow Restriction"
     hidden: no
@@ -1025,6 +1073,56 @@ documented in the ping's pings.yaml file.
 
   measure: ping_count {
     type: count
+  }
+
+  measure: browser_engagement_active_ticks {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_active_ticks} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Active Ticks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_active_ticks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_active_ticks_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_active_ticks: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Active Ticks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_active_ticks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_uri_count {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_uri_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_uri_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_uri_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   measure: fog_ipc_replay_failures {
