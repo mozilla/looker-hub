@@ -1,9 +1,4 @@
 view: clients_daily_table {
-  dimension: a11y_theme {
-    sql: ${TABLE}.a11y_theme ;;
-    hidden: yes
-  }
-
   dimension: aborts_content_sum {
     sql: ${TABLE}.aborts_content_sum ;;
     type: number
@@ -35,26 +30,13 @@ view: clients_daily_table {
   }
 
   dimension: ad_clicks {
-    type: number
     sql: ${TABLE}.ad_clicks ;;
     hidden: yes
   }
 
   dimension: ad_clicks_count_all {
+    sql: ${TABLE}.ad_clicks_count_all ;;
     type: number
-    sql: ${TABLE}.ad_clicks_count_all ;;
-  }
-
-  measure: avg_ad_clicks_count_all {
-    type: average
-    sql: ${TABLE}.ad_clicks_count_all ;;
-    description: "Average Ad Click count per client."
-    }
-
-  measure: sum_ad_clicks_count_all {
-    type: sum
-    sql: ${TABLE}.ad_clicks_count_all ;;
-    description: "Sum Ad Click count per client."
   }
 
   dimension: addon_compatibility_check_enabled {
@@ -147,7 +129,7 @@ view: clients_daily_table {
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
-    }
+  }
 
   dimension: client_submission_latency_mean {
     sql: ${TABLE}.client_submission_latency_mean ;;
@@ -735,16 +717,6 @@ view: clients_daily_table {
     type: number
   }
 
-  dimension: scalar_a11y_hcm_background {
-    sql: ${TABLE}.scalar_a11y_hcm_background ;;
-    type: number
-  }
-
-  dimension: scalar_a11y_hcm_foreground {
-    sql: ${TABLE}.scalar_a11y_hcm_foreground ;;
-    type: number
-  }
-
   dimension: scalar_combined_webrtc_nicer_stun_retransmits_sum {
     sql: ${TABLE}.scalar_combined_webrtc_nicer_stun_retransmits_sum ;;
     type: number
@@ -1071,63 +1043,63 @@ view: clients_daily_table {
   }
 
   dimension: search_adclicks_about_home_sum {
-    hidden: yes
     sql: ${TABLE}.search_adclicks_about_home_sum ;;
+    hidden: yes
   }
 
   dimension: search_adclicks_about_newtab_sum {
-    hidden: yes
     sql: ${TABLE}.search_adclicks_about_newtab_sum ;;
+    hidden: yes
   }
 
   dimension: search_adclicks_contextmenu_sum {
-    hidden: yes
     sql: ${TABLE}.search_adclicks_contextmenu_sum ;;
+    hidden: yes
   }
 
   dimension: search_adclicks_reload_sum {
-    hidden: yes
     sql: ${TABLE}.search_adclicks_reload_sum ;;
+    hidden: yes
   }
 
   dimension: search_adclicks_searchbar_sum {
-    hidden: yes
     sql: ${TABLE}.search_adclicks_searchbar_sum ;;
+    hidden: yes
   }
 
   dimension: search_adclicks_system_sum {
-    hidden: yes
     sql: ${TABLE}.search_adclicks_system_sum ;;
+    hidden: yes
   }
 
   dimension: search_adclicks_tabhistory_sum {
-    hidden: yes
     sql: ${TABLE}.search_adclicks_tabhistory_sum ;;
+    hidden: yes
   }
 
   dimension: search_adclicks_unknown_sum {
-    hidden: yes
     sql: ${TABLE}.search_adclicks_unknown_sum ;;
+    hidden: yes
   }
 
   dimension: search_adclicks_urlbar_handoff_sum {
-    hidden: yes
     sql: ${TABLE}.search_adclicks_urlbar_handoff_sum ;;
+    hidden: yes
   }
 
   dimension: search_adclicks_urlbar_searchmode_sum {
-    hidden: yes
     sql: ${TABLE}.search_adclicks_urlbar_searchmode_sum ;;
+    hidden: yes
   }
 
   dimension: search_adclicks_urlbar_sum {
-    hidden: yes
     sql: ${TABLE}.search_adclicks_urlbar_sum ;;
+    hidden: yes
   }
 
   dimension: search_adclicks_webextension_sum {
-    hidden: yes
     sql: ${TABLE}.search_adclicks_webextension_sum ;;
+    hidden: yes
   }
 
   dimension: search_cohort {
@@ -1200,33 +1172,9 @@ view: clients_daily_table {
     type: number
   }
 
-  measure: avg_search_count_abouthome {
-    sql: ${TABLE}.search_count_abouthome ;;
-    type: average
-    description: "Average Search count via About Home per client."
-    }
-
-  measure: sum_search_count_abouthome {
-    sql: ${TABLE}.search_count_abouthome ;;
-    type: sum
-    description: "Sum Search count via About Home per client."
-  }
-
   dimension: search_count_alias {
     sql: ${TABLE}.search_count_alias ;;
     type: number
-  }
-
-  measure: avg_search_count_alias {
-    sql: ${TABLE}.search_count_alias ;;
-    type: average
-    description: "Average Search count via Alias per client."
-    }
-
-  measure: sum_search_count_alias {
-    sql: ${TABLE}.search_count_alias ;;
-    type: sum
-    description: "Sum Search count via Alias per client."
   }
 
   dimension: search_count_all {
@@ -1234,33 +1182,9 @@ view: clients_daily_table {
     type: number
   }
 
-  measure: avg_search_count_all {
-    sql: ${TABLE}.search_count_all ;;
-    type: average
-    description: "Average Search count per client."
-    }
-
-  measure: sum_search_count_all {
-    sql: ${TABLE}.search_count_all ;;
-    type: sum
-    description: "Sum Search count per client."
-  }
-
   dimension: search_count_contextmenu {
     sql: ${TABLE}.search_count_contextmenu ;;
     type: number
-  }
-
-  measure: avg_search_count_contextmenu {
-    sql: ${TABLE}.search_count_contextmenu ;;
-    description: "Average Search count via Context Menu per client."
-    type: average
-    }
-
-  measure: sum_search_count_contextmenu {
-    sql: ${TABLE}.search_count_contextmenu ;;
-    description: "Sum Search count via Context Menu per client."
-    type: sum
   }
 
   dimension: search_count_newtab {
@@ -1268,33 +1192,9 @@ view: clients_daily_table {
     type: number
   }
 
-  measure: avg_search_count_newtab {
-    sql: ${TABLE}.search_count_newtab ;;
-    type: average
-    description: "Average Search count via New Tab per client."
-    }
-
-  measure: sum_search_count_newtab {
-    sql: ${TABLE}.search_count_newtab ;;
-    type: sum
-    description: "Sum Search count via New Tab per client."
-  }
-
   dimension: search_count_organic {
     sql: ${TABLE}.search_count_organic ;;
     type: number
-  }
-
-  measure: avg_search_count_organic {
-    sql: ${TABLE}.search_count_organic ;;
-    type: average
-    description: "Average Organic Search count per client."
-    }
-
-  measure: sum_search_count_organic {
-    sql: ${TABLE}.search_count_organic ;;
-    type: sum
-    description: "Sum Organic Search count per client."
   }
 
   dimension: search_count_searchbar {
@@ -1302,50 +1202,14 @@ view: clients_daily_table {
     type: number
   }
 
-  measure: avg_search_count_searchbar {
-    sql: ${TABLE}.search_count_searchbar ;;
-    type: average
-    description: "Average Search count via Searchbar per client."
-    }
-
-  measure: sum_search_count_searchbar {
-    sql: ${TABLE}.search_count_searchbar ;;
-    type: sum
-    description: "Sum Search count via Searchbar per client."
-  }
-
   dimension: search_count_system {
     sql: ${TABLE}.search_count_system ;;
     type: number
   }
 
-  measure: avg_search_count_system {
-    sql: ${TABLE}.search_count_system ;;
-    type: average
-    description: "Average Search count via System per client."
-    }
-
-  measure: sum_search_count_system {
-    sql: ${TABLE}.search_count_system ;;
-    type: sum
-    description: "Sum Search count via System per client."
-  }
-
   dimension: search_count_tagged_follow_on {
     sql: ${TABLE}.search_count_tagged_follow_on ;;
-    type:  number
-  }
-
-  measure: avg_search_count_tagged_follow_on {
-    sql: ${TABLE}.search_count_tagged_follow_on ;;
-    type:  average
-    description: "Average Tagged Follow On Search count per client."
-  }
-
-  measure: sum_search_count_tagged_follow_on {
-    sql: ${TABLE}.search_count_tagged_follow_on ;;
-    type:  sum
-    description: "Sum Tagged Follow On Search count per client."
+    type: number
   }
 
   dimension: search_count_tagged_sap {
@@ -1353,33 +1217,9 @@ view: clients_daily_table {
     type: number
   }
 
-  measure: avg_search_count_tagged_sap {
-    sql: ${TABLE}.search_count_tagged_sap ;;
-    type: average
-    description: "Average Tagged Search count per client."
-    }
-
-  measure: sum_search_count_tagged_sap {
-    sql: ${TABLE}.search_count_tagged_sap ;;
-    type: sum
-    description: "Sum Tagged Search count per client."
-  }
-
   dimension: search_count_urlbar {
     sql: ${TABLE}.search_count_urlbar ;;
     type: number
-  }
-
-  measure: avg_search_count_urlbar {
-    sql: ${TABLE}.search_count_urlbar ;;
-    type: average
-    description: "Average Search count via Urlbar per client."
-    }
-
-  measure: sum_search_count_urlbar {
-    sql: ${TABLE}.search_count_urlbar ;;
-    type: sum
-    description: "Sum Search count via Urlbar per client."
   }
 
   dimension: search_count_urlbar_handoff {
@@ -1387,50 +1227,14 @@ view: clients_daily_table {
     type: number
   }
 
-  measure: avg_search_count_urlbar_handoff {
-    sql: ${TABLE}.search_count_urlbar_handoff ;;
-    type: average
-    description: "Average Search count via Urlbar Handoff per client."
-    }
-
-  measure: sum_search_count_urlbar_handoff {
-    sql: ${TABLE}.search_count_urlbar_handoff ;;
-    type: sum
-    description: "Sum Search count via Urlbar Handoff per client."
-  }
-
   dimension: search_count_urlbar_searchmode {
     sql: ${TABLE}.search_count_urlbar_searchmode ;;
-    type:  number
-  }
-
-  measure: avg_search_count_urlbar_searchmode {
-    sql: ${TABLE}.search_count_urlbar_searchmode ;;
-    type:  average
-    description: "Average Search count via Urlbar Searchmode per client."
-    }
-
-  measure: sum_search_count_urlbar_searchmode {
-    sql: ${TABLE}.search_count_urlbar_searchmode ;;
-    type:  sum
-    description: "Sum Search count via Urlbar Searchmode per client."
+    type: number
   }
 
   dimension: search_count_webextension {
     sql: ${TABLE}.search_count_webextension ;;
     type: number
-  }
-
-  measure: avg_search_count_webextension {
-    sql: ${TABLE}.search_count_webextension ;;
-    type: average
-    description: "Average Search count via Webextension per client."
-    }
-
-  measure: sum_search_count_webextension {
-    sql: ${TABLE}.search_count_webextension ;;
-    type: sum
-    description: "Sum Search count via Webextension per client."
   }
 
   dimension: search_counts {
@@ -1444,80 +1248,68 @@ view: clients_daily_table {
   }
 
   dimension: search_with_ads_count_all {
+    sql: ${TABLE}.search_with_ads_count_all ;;
     type: number
-    sql: ${TABLE}.search_with_ads_count_all ;;
-  }
-
-  measure: avg_search_with_ads_count_all {
-    type: average
-    sql: ${TABLE}.search_with_ads_count_all ;;
-    description: "Average Search w Ads count per client."
-  }
-
-  measure: sum_search_with_ads_count_all {
-    type: sum
-    sql: ${TABLE}.search_with_ads_count_all ;;
-    description: "Sum Search w Ads count per client."
   }
 
   dimension: search_withads_about_home_sum {
-    hidden: yes
     sql: ${TABLE}.search_withads_about_home_sum ;;
+    hidden: yes
   }
 
   dimension: search_withads_about_newtab_sum {
-    hidden: yes
     sql: ${TABLE}.search_withads_about_newtab_sum ;;
+    hidden: yes
   }
 
   dimension: search_withads_contextmenu_sum {
-    hidden: yes
     sql: ${TABLE}.search_withads_contextmenu_sum ;;
+    hidden: yes
   }
 
   dimension: search_withads_reload_sum {
-    hidden: yes
     sql: ${TABLE}.search_withads_reload_sum ;;
+    hidden: yes
   }
 
   dimension: search_withads_searchbar_sum {
-    hidden: yes
     sql: ${TABLE}.search_withads_searchbar_sum ;;
+    hidden: yes
   }
 
   dimension: search_withads_system_sum {
-    hidden: yes
     sql: ${TABLE}.search_withads_system_sum ;;
+    hidden: yes
   }
 
   dimension: search_withads_tabhistory_sum {
-    hidden: yes
     sql: ${TABLE}.search_withads_tabhistory_sum ;;
+    hidden: yes
   }
 
   dimension: search_withads_unknown_sum {
-    hidden: yes
     sql: ${TABLE}.search_withads_unknown_sum ;;
+    hidden: yes
   }
 
   dimension: search_withads_urlbar_handoff_sum {
-    hidden: yes
     sql: ${TABLE}.search_withads_urlbar_handoff_sum ;;
+    hidden: yes
   }
 
   dimension: search_withads_urlbar_searchmode_sum {
-    hidden: yes
     sql: ${TABLE}.search_withads_urlbar_searchmode_sum ;;
+    hidden: yes
   }
 
   dimension: search_withads_urlbar_sum {
-    hidden: yes
     sql: ${TABLE}.search_withads_urlbar_sum ;;
+    hidden: yes
   }
 
   dimension: search_withads_webextension_sum {
-    hidden: yes
     sql: ${TABLE}.search_withads_webextension_sum ;;
+    hidden: yes
   }
 
   dimension: session_restored_mean {
@@ -1760,18 +1552,6 @@ view: clients_daily_table {
   }
 
   sql_table_name: `mozdata.telemetry.clients_daily` ;;
-}
-
-view: clients_daily_table__a11y_theme {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: yesno
-  }
 }
 
 view: clients_daily_table__active_addons {
