@@ -1248,6 +1248,18 @@ on the home screen.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__search_terms_group_size_distribution__sum {
+    sql: ${TABLE}.metrics.custom_distribution.search_terms_group_size_distribution.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Search Terms Group Size Distribution"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__search_terms_group_size_distribution__values {
+    sql: ${TABLE}.metrics.custom_distribution.search_terms_group_size_distribution.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__datetime__glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: string
@@ -7590,6 +7602,18 @@ view: metrics_table__metrics__custom_distribution__js_xdr_encode_percentage__val
 }
 
 view: metrics_table__metrics__custom_distribution__performance_clone_deserialize_items__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__search_terms_group_size_distribution__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

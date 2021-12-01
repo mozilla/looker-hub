@@ -591,6 +591,36 @@ settings menu to customize the Firefox Homepage
 "
   }
 
+  dimension: metrics__counter__firefox_home_page_history_highlights_item_opened {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_item_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page History Highlights Item Opened"
+    description: "Counts the number of times a user taps to open an
+existing tab from the History Highlights section
+"
+  }
+
+  dimension: metrics__counter__firefox_home_page_history_highlights_show_all {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_show_all ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page History Highlights Show All"
+    description: "Counts the number of times a user taps the
+Show All button in the History section
+"
+  }
+
+  dimension: metrics__counter__firefox_home_page_history_highlights_view {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_view ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page History Highlights View"
+    description: "Counts the number of times a user sees the
+History Highlights section on the homepage
+"
+  }
+
   dimension: metrics__counter__firefox_home_page_jump_back_in_group_opened {
     sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_group_opened ;;
     type: number
