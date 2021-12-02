@@ -757,6 +757,14 @@ view: new_profile {
     description: "The CPU family, `null` on failure. Desktop only."
   }
 
+  dimension: environment__system__cpu__is_windows_s_mode {
+    sql: ${TABLE}.environment.system.cpu.is_windows_s_mode ;;
+    type: yesno
+    group_label: "Environment System Cpu"
+    group_item_label: "Is Windows S Mode"
+    description: "Whether or not the system is Windows 10 or 11 in S Mode. S Mode existed prior to us being able to query it, so this is unreliable on Windows versions prior to 1810."
+  }
+
   dimension: environment__system__cpu__l2cache_kb {
     sql: ${TABLE}.environment.system.cpu.l2cache_kb ;;
     type: number
