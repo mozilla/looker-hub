@@ -21,7 +21,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -39,7 +39,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -57,7 +57,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -75,7 +75,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -93,7 +93,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -111,7 +111,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -129,7 +129,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -147,7 +147,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -165,7 +165,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -183,7 +183,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -201,7 +201,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -219,7 +219,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -237,7 +237,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -255,7 +255,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -273,7 +273,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -291,7 +291,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -309,7 +309,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -327,7 +327,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -345,7 +345,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -363,7 +363,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -381,7 +381,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 
@@ -399,7 +399,7 @@ explore: fission_release_rollout_histogram {
     }
 
     materialization: {
-      sql_trigger_value: SELECT CURRENT_DATE() ;;
+      sql_trigger_value: SELECT CAST(DATE_ADD(hrs, -9, CURRENT_TIMESTAMP) AS DATE) ;;
     }
   }
 }

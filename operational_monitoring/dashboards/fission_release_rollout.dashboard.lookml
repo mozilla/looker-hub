@@ -812,36 +812,36 @@
   - title: Cores Count
     name: Cores Count
     type: string_filter
-    default_value: 2
+    default_value: '2'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 2
-      - 4
-      - 6
-      - 8
-      - 1
-      - 3
-      - 12
-      - 10
-      - 16
-      - 24
+      - '2'
+      - '4'
+      - '6'
+      - '8'
+      - '1'
+      - '3'
+      - '12'
+      - '10'
+      - '16'
+      - '24'
       
   - title: Os
     name: Os
     type: string_filter
-    default_value: Windows
+    default_value: 'Windows'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - Windows
-      - Mac
-      - Linux
+      - 'Windows'
+      - 'Mac'
+      - 'Linux'
       
   
