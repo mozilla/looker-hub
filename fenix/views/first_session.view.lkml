@@ -53,6 +53,25 @@ view: first_session {
 "
   }
 
+  dimension: metrics__string__first_session_distribution_id {
+    label: "First Session Distribution Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.first_session_distribution_id ;;
+    type: string
+    group_label: "First Session"
+    group_item_label: "Distribution Id"
+
+    link: {
+      label: "Glean Dictionary reference for First Session Distribution Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_distribution_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A string containing the distribution identifier. This is currently used
+to identify installs from Mozilla Online.
+"
+  }
+
   dimension: metrics__string__first_session_network {
     label: "First Session Network"
     hidden: no

@@ -352,6 +352,18 @@ Migrated from Telemetry's
 "
   }
 
+  dimension: metrics__counter__fog_ipc_flush_failures {
+    sql: ${TABLE}.metrics.counter.fog_ipc_flush_failures ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Fog Ipc Flush Failures"
+    description: "The number of times we failed to flush all non-parent-process data,
+throwing even partial results into the trash.
+If this number is high, we might consider writing custom `MozPromise`-
+handling code instead of using `MozPromise::All`.
+"
+  }
+
   dimension: metrics__counter__fog_ipc_replay_failures {
     sql: ${TABLE}.metrics.counter.fog_ipc_replay_failures ;;
     type: number
@@ -448,6 +460,15 @@ This does not include deletion-request pings.
     group_label: "Metrics Counter"
     group_item_label: "Power Total Cpu Time Ms"
     description: "Total CPU time used by all processes in ms.
+"
+  }
+
+  dimension: metrics__counter__power_total_gpu_time_ms {
+    sql: ${TABLE}.metrics.counter.power_total_gpu_time_ms ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Power Total Gpu Time Ms"
+    description: "Total GPU time used by all processes in ms.
 "
   }
 

@@ -366,6 +366,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__first_session_distribution_id {
+    sql: ${TABLE}.metrics.string.first_session_distribution_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "First Session Distribution Id"
+    description: "A string containing the distribution identifier. This is currently used
+to identify installs from Mozilla Online.
+"
+  }
+
   dimension: metrics__string__first_session_network {
     sql: ${TABLE}.metrics.string.first_session_network ;;
     type: string
