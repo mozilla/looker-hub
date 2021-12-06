@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 view: startup_timeline {
   dimension: metrics__counter__startup_timeline_clock_ticks_per_second {
     label: "Startup Timeline Clock Ticks Per Second"
