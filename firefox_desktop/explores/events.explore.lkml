@@ -20,6 +20,18 @@ explore: event_counts {
     ]
   }
 
+  join: desktop_events_table__event_map_values {
+    view_label: "Events  Event Map Values"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${events.event_map_values}) AS desktop_events_table__event_map_values ;;
+  }
+
+  join: desktop_events_table__experiments {
+    view_label: "Events  Experiments"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${events.experiments}) AS desktop_events_table__experiments ;;
+  }
+
   always_filter: {
     filters: [
       submission_date: "28 days",

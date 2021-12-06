@@ -763,7 +763,7 @@ firefox_desktop:
       type: events_explore
       views:
         base_view: events
-        extended_view: events_unnested_table
+        extended_view: desktop_events_table
     fog_validation:
       type: glean_ping_explore
       views:
