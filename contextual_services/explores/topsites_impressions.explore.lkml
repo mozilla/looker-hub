@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 include: "/looker-hub/contextual_services/views/topsites_impression.view.lkml"
 
 explore: topsites_impressions {
@@ -11,6 +17,7 @@ explore: topsites_impressions {
   }
 
   join: topsites_impression__experiments {
+    view_label: "Topsites Impression  Experiments"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${topsites_impression.experiments}) AS topsites_impression__experiments ;;
   }

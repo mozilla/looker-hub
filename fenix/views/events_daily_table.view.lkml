@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 view: events_daily_table {
   dimension: android_sdk_version {
     sql: ${TABLE}.android_sdk_version ;;

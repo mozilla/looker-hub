@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 include: "/looker-hub/activity_stream/views/sessions.view.lkml"
 
 explore: session_counts {
@@ -11,6 +17,7 @@ explore: session_counts {
   }
 
   join: sessions__experiments {
+    view_label: "Sessions  Experiments"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${sessions.experiments}) AS sessions__experiments ;;
   }
