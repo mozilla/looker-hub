@@ -596,6 +596,11 @@ view: feature_usage_table {
     type: number
   }
 
+  dimension: search_count_urlbar_handoff {
+    sql: ${TABLE}.search_count_urlbar_handoff ;;
+    type: number
+  }
+
   dimension: search_with_ads_count_all {
     sql: ${TABLE}.search_with_ads_count_all ;;
     type: number

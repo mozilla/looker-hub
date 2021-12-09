@@ -55,7 +55,7 @@ Migrated from Telemetry's
 
   dimension: metrics__quantity__browser_link_open_newwindow_restriction {
     label: "Browser Link Open Newwindow Restriction"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.browser_link_open_newwindow_restriction ;;
     type: number
     group_label: "Browser Link"
