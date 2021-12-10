@@ -1816,15 +1816,6 @@ pocket:
   - kirill@getpocket.com
   pretty_name: Pocket
   spoke: looker-spoke-default
-rally_markup_fb_pixel_hunt:
-  explores: {}
-  glean_app: true
-  owners:
-  - than@mozilla.com
-  - jepstein@mozilla.com
-  pretty_name: Rally Facebook Pixel Hunt
-  spoke: looker-spoke-default
-  views: {}
 regrets_reporter:
   explores:
     main_events:
