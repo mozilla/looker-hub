@@ -32,6 +32,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Child Process Launch Ms
     name: Child Process Launch Ms
@@ -55,6 +63,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Content Frame Time Vsync
     name: Content Frame Time Vsync
@@ -78,6 +94,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Content Process Count
     name: Content Process Count
@@ -101,6 +125,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Content Process Max
     name: Content Process Max
@@ -124,6 +156,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Cycle Collector Max Pause
     name: Cycle Collector Max Pause
@@ -147,6 +187,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Cycle Collector Max Pause Content
     name: Cycle Collector Max Pause Content
@@ -170,6 +218,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Fx New Window Ms
     name: Fx New Window Ms
@@ -193,6 +249,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Fx Tab Switch Composite E10S Ms
     name: Fx Tab Switch Composite E10S Ms
@@ -216,6 +280,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Gc Max Pause 2
     name: Gc Max Pause 2
@@ -239,6 +311,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Gc Max Pause 2 Content
     name: Gc Max Pause 2 Content
@@ -262,6 +342,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Gc Ms
     name: Gc Ms
@@ -285,6 +373,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Gc Ms Content
     name: Gc Ms Content
@@ -308,6 +404,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Gc Slice During Idle
     name: Gc Slice During Idle
@@ -331,6 +435,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Gc Slice During Idle Content
     name: Gc Slice During Idle Content
@@ -354,6 +466,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Keypress Present Latency Ms
     name: Keypress Present Latency Ms
@@ -377,6 +497,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Loaded Tab Count
     name: Loaded Tab Count
@@ -400,6 +528,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Memory Total
     name: Memory Total
@@ -423,6 +559,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Memory Unique Content Startup
     name: Memory Unique Content Startup
@@ -446,6 +590,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Perf First Contentful Paint Ms
     name: Perf First Contentful Paint Ms
@@ -469,6 +621,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Perf Page Load Time Ms
     name: Perf Page Load Time Ms
@@ -492,6 +652,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Time To First Interaction Ms
     name: Time To First Interaction Ms
@@ -515,6 +683,14 @@
       Percentile: fission_histogram.percentile_conf
       Cores Count: fission_histogram.cores_count
       Os: fission_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_histogram.percentile: "#ff6a06"
+      enabled - fission_histogram.high: "#ffb380"
+      enabled - fission_histogram.low: "#ffb380"
+      disabled - fission_histogram.percentile: "blue"
+      disabled - fission_histogram.high: "#8cd3ff"
+      disabled - fission_histogram.low: "#8cd3ff"
       
   - title: Active Ticks
     name: Active Ticks
@@ -538,6 +714,14 @@
       Percentile: fission_scalar.percentile_conf
       Cores Count: fission_scalar.cores_count
       Os: fission_scalar.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_scalar.percentile: "#ff6a06"
+      enabled - fission_scalar.high: "#ffb380"
+      enabled - fission_scalar.low: "#ffb380"
+      disabled - fission_scalar.percentile: "blue"
+      disabled - fission_scalar.high: "#8cd3ff"
+      disabled - fission_scalar.low: "#8cd3ff"
       
   - title: Content Crashes
     name: Content Crashes
@@ -561,6 +745,14 @@
       Percentile: fission_scalar.percentile_conf
       Cores Count: fission_scalar.cores_count
       Os: fission_scalar.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_scalar.percentile: "#ff6a06"
+      enabled - fission_scalar.high: "#ffb380"
+      enabled - fission_scalar.low: "#ffb380"
+      disabled - fission_scalar.percentile: "blue"
+      disabled - fission_scalar.high: "#8cd3ff"
+      disabled - fission_scalar.low: "#8cd3ff"
       
   - title: Content Shutdown Crashes
     name: Content Shutdown Crashes
@@ -584,6 +776,14 @@
       Percentile: fission_scalar.percentile_conf
       Cores Count: fission_scalar.cores_count
       Os: fission_scalar.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_scalar.percentile: "#ff6a06"
+      enabled - fission_scalar.high: "#ffb380"
+      enabled - fission_scalar.low: "#ffb380"
+      disabled - fission_scalar.percentile: "blue"
+      disabled - fission_scalar.high: "#8cd3ff"
+      disabled - fission_scalar.low: "#8cd3ff"
       
   - title: Gmplugin Crashes
     name: Gmplugin Crashes
@@ -607,6 +807,14 @@
       Percentile: fission_scalar.percentile_conf
       Cores Count: fission_scalar.cores_count
       Os: fission_scalar.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_scalar.percentile: "#ff6a06"
+      enabled - fission_scalar.high: "#ffb380"
+      enabled - fission_scalar.low: "#ffb380"
+      disabled - fission_scalar.percentile: "blue"
+      disabled - fission_scalar.high: "#8cd3ff"
+      disabled - fission_scalar.low: "#8cd3ff"
       
   - title: Gpu Crashes
     name: Gpu Crashes
@@ -630,6 +838,14 @@
       Percentile: fission_scalar.percentile_conf
       Cores Count: fission_scalar.cores_count
       Os: fission_scalar.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_scalar.percentile: "#ff6a06"
+      enabled - fission_scalar.high: "#ffb380"
+      enabled - fission_scalar.low: "#ffb380"
+      disabled - fission_scalar.percentile: "blue"
+      disabled - fission_scalar.high: "#8cd3ff"
+      disabled - fission_scalar.low: "#8cd3ff"
       
   - title: Main Crashes
     name: Main Crashes
@@ -653,6 +869,14 @@
       Percentile: fission_scalar.percentile_conf
       Cores Count: fission_scalar.cores_count
       Os: fission_scalar.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_scalar.percentile: "#ff6a06"
+      enabled - fission_scalar.high: "#ffb380"
+      enabled - fission_scalar.low: "#ffb380"
+      disabled - fission_scalar.percentile: "blue"
+      disabled - fission_scalar.high: "#8cd3ff"
+      disabled - fission_scalar.low: "#8cd3ff"
       
   - title: Oom Crashes
     name: Oom Crashes
@@ -676,6 +900,14 @@
       Percentile: fission_scalar.percentile_conf
       Cores Count: fission_scalar.cores_count
       Os: fission_scalar.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_scalar.percentile: "#ff6a06"
+      enabled - fission_scalar.high: "#ffb380"
+      enabled - fission_scalar.low: "#ffb380"
+      disabled - fission_scalar.percentile: "blue"
+      disabled - fission_scalar.high: "#8cd3ff"
+      disabled - fission_scalar.low: "#8cd3ff"
       
   - title: Plugin Crashes
     name: Plugin Crashes
@@ -699,6 +931,14 @@
       Percentile: fission_scalar.percentile_conf
       Cores Count: fission_scalar.cores_count
       Os: fission_scalar.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_scalar.percentile: "#ff6a06"
+      enabled - fission_scalar.high: "#ffb380"
+      enabled - fission_scalar.low: "#ffb380"
+      disabled - fission_scalar.percentile: "blue"
+      disabled - fission_scalar.high: "#8cd3ff"
+      disabled - fission_scalar.low: "#8cd3ff"
       
   - title: Shutdown Hangs
     name: Shutdown Hangs
@@ -722,6 +962,14 @@
       Percentile: fission_scalar.percentile_conf
       Cores Count: fission_scalar.cores_count
       Os: fission_scalar.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_scalar.percentile: "#ff6a06"
+      enabled - fission_scalar.high: "#ffb380"
+      enabled - fission_scalar.low: "#ffb380"
+      disabled - fission_scalar.percentile: "blue"
+      disabled - fission_scalar.high: "#8cd3ff"
+      disabled - fission_scalar.low: "#8cd3ff"
       
   - title: Startup Crashes
     name: Startup Crashes
@@ -745,6 +993,14 @@
       Percentile: fission_scalar.percentile_conf
       Cores Count: fission_scalar.cores_count
       Os: fission_scalar.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_scalar.percentile: "#ff6a06"
+      enabled - fission_scalar.high: "#ffb380"
+      enabled - fission_scalar.low: "#ffb380"
+      disabled - fission_scalar.percentile: "blue"
+      disabled - fission_scalar.high: "#8cd3ff"
+      disabled - fission_scalar.low: "#8cd3ff"
       
   - title: Subsession Length
     name: Subsession Length
@@ -768,6 +1024,14 @@
       Percentile: fission_scalar.percentile_conf
       Cores Count: fission_scalar.cores_count
       Os: fission_scalar.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_scalar.percentile: "#ff6a06"
+      enabled - fission_scalar.high: "#ffb380"
+      enabled - fission_scalar.low: "#ffb380"
+      disabled - fission_scalar.percentile: "blue"
+      disabled - fission_scalar.high: "#8cd3ff"
+      disabled - fission_scalar.low: "#8cd3ff"
       
   - title: Uri Count
     name: Uri Count
@@ -791,6 +1055,14 @@
       Percentile: fission_scalar.percentile_conf
       Cores Count: fission_scalar.cores_count
       Os: fission_scalar.os
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_scalar.percentile: "#ff6a06"
+      enabled - fission_scalar.high: "#ffb380"
+      enabled - fission_scalar.low: "#ffb380"
+      disabled - fission_scalar.percentile: "blue"
+      disabled - fission_scalar.high: "#8cd3ff"
+      disabled - fission_scalar.low: "#8cd3ff"
       
   filters:
   - name: Percentile
