@@ -1332,14 +1332,27 @@ focus_ios:
         table: mozdata.org_mozilla_ios_focus.metrics
       type: table_view
 glean_dictionary:
-  explores: {}
+  explores:
+    page_view:
+      type: glean_ping_explore
+      views:
+        base_view: page_view
   glean_app: true
   owners:
   - brizental@mozilla.com
   - glean-team@mozilla.com
   pretty_name: Glean Dictionary
   spoke: looker-spoke-default
-  views: {}
+  views:
+    page_view:
+      tables:
+      - table: mozdata.glean_dictionary.page_view
+      type: glean_ping_view
+    page_view_table:
+      tables:
+      - channel: null
+        table: mozdata.glean_dictionary.page_view
+      type: table_view
 klar_android:
   explores:
     activation:

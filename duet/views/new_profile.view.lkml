@@ -1253,6 +1253,14 @@ view: new_profile {
     description: "Total virtual memory size in MB. This is Windows only. `null` on failure."
   }
 
+  dimension: environment__system__win_package_family_name {
+    sql: ${TABLE}.environment.system.win_package_family_name ;;
+    type: string
+    group_label: "Environment System"
+    group_item_label: "Win Package Family Name"
+    description: "Windows package family name. This is only sent for Mozilla produced MSIX packages."
+  }
+
   dimension: id {
     sql: ${TABLE}.id ;;
     type: string
