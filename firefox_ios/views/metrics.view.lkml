@@ -516,6 +516,26 @@ settings menu to customize the Firefox Homepage
 "
   }
 
+  dimension: metrics__counter__firefox_home_page_cycle_wallpaper_button {
+    label: "Firefox Home Page Cycle Wallpaper Button"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.firefox_home_page_cycle_wallpaper_button ;;
+    type: number
+    group_label: "Firefox Home Page"
+    group_item_label: "Cycle Wallpaper Button"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Cycle Wallpaper Button"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_cycle_wallpaper_button"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user changes the
+wallpaper by double-tapping on the Firefox logo
+on the Firefox Homepage
+"
+  }
+
   dimension: metrics__labeled_counter__firefox_home_page_firefox_homepage_origin {
     label: "Firefox Home Page Firefox Homepage Origin"
     hidden: yes
@@ -3856,6 +3876,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Firefox Home Page Customize Homepage Button"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_customize_homepage_button"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_cycle_wallpaper_button {
+    type: sum
+    sql: ${metrics__counter__firefox_home_page_cycle_wallpaper_button} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Cycle Wallpaper Button"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_cycle_wallpaper_button"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_cycle_wallpaper_button_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__firefox_home_page_cycle_wallpaper_button: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Cycle Wallpaper Button"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_cycle_wallpaper_button"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

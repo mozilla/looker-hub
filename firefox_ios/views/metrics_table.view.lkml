@@ -588,6 +588,17 @@ settings menu to customize the Firefox Homepage
 "
   }
 
+  dimension: metrics__counter__firefox_home_page_cycle_wallpaper_button {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_cycle_wallpaper_button ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page Cycle Wallpaper Button"
+    description: "Counts the number of times a user changes the
+wallpaper by double-tapping on the Firefox logo
+on the Firefox Homepage
+"
+  }
+
   dimension: metrics__counter__firefox_home_page_firefox_homepage_view {
     sql: ${TABLE}.metrics.counter.firefox_home_page_firefox_homepage_view ;;
     type: number

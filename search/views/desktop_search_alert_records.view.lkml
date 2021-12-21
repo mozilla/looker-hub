@@ -61,6 +61,11 @@ view: desktop_search_alert_records {
     type: yesno
   }
 
+  dimension: latest_abnormality_in_days {
+    sql: ${TABLE}.latest_abnormality_in_days ;;
+    type: number
+  }
+
   dimension: metric {
     sql: ${TABLE}.metric ;;
     type: string
