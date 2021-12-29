@@ -83,6 +83,21 @@ bergamot:
       - channel: null
         table: mozdata.org_mozilla_bergamot.custom
       type: table_view
+casa:
+  glean_app: false
+  owners:
+  - anicholson@mozilla.com
+  pretty_name: CASA
+  spoke: looker-spoke-default
+  views:
+    projects:
+      tables:
+      - table: mozdata.casa.projects
+      type: table_view
+    users:
+      tables:
+      - table: mozdata.casa.users
+      type: table_view
 contextual_services:
   connection: bigquery-oauth
   explores:
