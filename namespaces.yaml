@@ -84,11 +84,12 @@ bergamot:
         table: mozdata.org_mozilla_bergamot.custom
       type: table_view
 casa:
+  connection: bigquery-oauth
   glean_app: false
   owners:
   - anicholson@mozilla.com
   pretty_name: CASA
-  spoke: looker-spoke-default
+  spoke: looker-spoke-private
   views:
     projects:
       tables:
