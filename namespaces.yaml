@@ -1607,6 +1607,11 @@ mozilla_vpn:
   pretty_name: Mozilla VPN
   spoke: looker-spoke-default
   views:
+    active_subscriptions_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.active_subscriptions
+      type: table_view
     add_device_events_table:
       tables:
       - channel: release
@@ -1715,6 +1720,11 @@ mozilla_vpn:
       tables:
       - channel: release
         table: mozdata.mozilla_vpn.site_metrics_summary
+      type: table_view
+    subscription_events_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.subscription_events
       type: table_view
     subscriptions:
       tables:
