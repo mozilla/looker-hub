@@ -8,7 +8,6 @@ view: new_profile {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
-    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: application__architecture {
@@ -87,7 +86,6 @@ view: new_profile {
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
-    description: "The document ID specified in the URI when the client sent this message"
     primary_key: yes
   }
 
@@ -125,7 +123,6 @@ view: new_profile {
     type: string
     group_label: "Environment Addons"
     group_item_label: "Persona"
-    description: "The id of the active persona (theme)."
   }
 
   dimension: environment__addons__theme__app_disabled {
@@ -133,7 +130,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment Addons Theme"
     group_item_label: "App Disabled"
-    description: "True if this theme cannot be used in the application based on version compatibility, dependencies, and blocklisting."
   }
 
   dimension: environment__addons__theme__blocklisted {
@@ -141,7 +137,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment Addons Theme"
     group_item_label: "Blocklisted"
-    description: "Whether or not the theme appears in the blocklist."
   }
 
   dimension: environment__addons__theme__description {
@@ -163,7 +158,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment Addons Theme"
     group_item_label: "Has Binary Components"
-    description: "True or false depending on whether the theme has binary components. This is always false since Firefox 60."
   }
 
   dimension: environment__addons__theme__id {
@@ -171,7 +165,6 @@ view: new_profile {
     type: string
     group_label: "Environment Addons Theme"
     group_item_label: "Id"
-    description: "The id of the theme."
   }
 
   dimension: environment__addons__theme__install_day {
@@ -179,7 +172,6 @@ view: new_profile {
     type: number
     group_label: "Environment Addons Theme"
     group_item_label: "Install Day"
-    description: "The days since epoch that the theme was first installed."
   }
 
   dimension: environment__addons__theme__name {
@@ -187,7 +179,6 @@ view: new_profile {
     type: string
     group_label: "Environment Addons Theme"
     group_item_label: "Name"
-    description: "The theme name, limited to 100 characters."
   }
 
   dimension: environment__addons__theme__scope {
@@ -195,7 +186,6 @@ view: new_profile {
     type: number
     group_label: "Environment Addons Theme"
     group_item_label: "Scope"
-    description: "Indicates what scope the theme is installed in, per profile, user, system, or application."
   }
 
   dimension: environment__addons__theme__update_day {
@@ -203,7 +193,6 @@ view: new_profile {
     type: number
     group_label: "Environment Addons Theme"
     group_item_label: "Update Day"
-    description: "The day the theme was last updated."
   }
 
   dimension: environment__addons__theme__user_disabled {
@@ -211,7 +200,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment Addons Theme"
     group_item_label: "User Disabled"
-    description: "Whether or not the user disabled the theme."
   }
 
   dimension: environment__addons__theme__version {
@@ -219,7 +207,6 @@ view: new_profile {
     type: string
     group_label: "Environment Addons Theme"
     group_item_label: "Version"
-    description: "The version of the theme."
   }
 
   dimension: environment__build__application_id {
@@ -227,7 +214,6 @@ view: new_profile {
     type: string
     group_label: "Environment Build"
     group_item_label: "Application Id"
-    description: "The application UUID."
   }
 
   dimension: environment__build__application_name {
@@ -235,7 +221,6 @@ view: new_profile {
     type: string
     group_label: "Environment Build"
     group_item_label: "Application Name"
-    description: "The application name."
   }
 
   dimension: environment__build__architecture {
@@ -243,7 +228,6 @@ view: new_profile {
     type: string
     group_label: "Environment Build"
     group_item_label: "Architecture"
-    description: "The build architecture for the active build."
   }
 
   dimension: environment__build__architectures_in_binary {
@@ -251,7 +235,6 @@ view: new_profile {
     type: string
     group_label: "Environment Build"
     group_item_label: "Architectures In Binary"
-    description: "For Mac universal builds, this is a string containing a list of architectures delimited by '-'. Architecture sets are always in the same order: ppc > i386 > ppc64 > x86_64 > (future additions). This is only available on Mac."
   }
 
   dimension: environment__build__build_id {
@@ -259,7 +242,6 @@ view: new_profile {
     type: string
     group_label: "Environment Build"
     group_item_label: "Build Id"
-    description: "The build ID/date of the application."
   }
 
   dimension: environment__build__display_version {
@@ -267,7 +249,6 @@ view: new_profile {
     type: string
     group_label: "Environment Build"
     group_item_label: "Display Version"
-    description: "The display version of the application."
   }
 
   dimension: environment__build__hotfix_version {
@@ -282,7 +263,6 @@ view: new_profile {
     type: string
     group_label: "Environment Build"
     group_item_label: "Platform Version"
-    description: "The version of the XULRunner platform."
   }
 
   dimension: environment__build__updater_available {
@@ -290,7 +270,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment Build"
     group_item_label: "Updater Available"
-    description: "True if the application was built with the support for the updater component."
   }
 
   dimension: environment__build__vendor {
@@ -298,7 +277,6 @@ view: new_profile {
     type: string
     group_label: "Environment Build"
     group_item_label: "Vendor"
-    description: "The application vendor."
   }
 
   dimension: environment__build__version {
@@ -306,7 +284,6 @@ view: new_profile {
     type: string
     group_label: "Environment Build"
     group_item_label: "Version"
-    description: "The version of the application."
   }
 
   dimension: environment__build__xpcom_abi {
@@ -314,7 +291,6 @@ view: new_profile {
     type: string
     group_label: "Environment Build"
     group_item_label: "Xpcom Abi"
-    description: "A string tag identifying the binary ABI of the current processor and compiler vtable. This is taken from the TARGET_XPCOM_ABI configure variable. It may not be available on all platforms, especially unusual processor or compiler combinations. The result takes the form <processor>-<compilerABI>, for example: x86-msvc, ppc-gcc3, ... . This value should almost always be used in combination with  the 'OS'."
   }
 
   dimension: environment__experiments {
@@ -327,7 +303,6 @@ view: new_profile {
     type: string
     group_label: "Environment Partner"
     group_item_label: "Distribution Id"
-    description: "The value of the `distribution.id` pref that identifies the Firefox distribution."
   }
 
   dimension: environment__partner__distribution_version {
@@ -335,7 +310,6 @@ view: new_profile {
     type: string
     group_label: "Environment Partner"
     group_item_label: "Distribution Version"
-    description: "The value of the `distribution.version` pref."
   }
 
   dimension: environment__partner__distributor {
@@ -343,7 +317,6 @@ view: new_profile {
     type: string
     group_label: "Environment Partner"
     group_item_label: "Distributor"
-    description: "The value of the `app.distributor` pref."
   }
 
   dimension: environment__partner__distributor_channel {
@@ -351,7 +324,6 @@ view: new_profile {
     type: string
     group_label: "Environment Partner"
     group_item_label: "Distributor Channel"
-    description: "The value of the `app.distributor.channel` pref."
   }
 
   dimension: environment__partner__partner_id {
@@ -359,7 +331,6 @@ view: new_profile {
     type: string
     group_label: "Environment Partner"
     group_item_label: "Partner Id"
-    description: "The value of the `mozilla.partner.id` pref."
   }
 
   dimension: environment__partner__partner_names {
@@ -372,7 +343,6 @@ view: new_profile {
     type: number
     group_label: "Environment Profile"
     group_item_label: "Creation Date"
-    description: "The creation date of the user profile as the integer number of days since UNIX epoch."
   }
 
   dimension: environment__profile__first_use_date {
@@ -394,7 +364,6 @@ view: new_profile {
     type: number
     group_label: "Environment Profile"
     group_item_label: "Reset Date"
-    description: "The date the user profile was reset, as the integer number of days since UNIX epoch. This is optional."
   }
 
   dimension: environment__services__account_enabled {
@@ -416,7 +385,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment Settings"
     group_item_label: "Addon Compatibility Check Enabled"
-    description: "Whether application compatibility is respected for add-ons."
   }
 
   dimension: environment__settings__attribution__campaign {
@@ -424,7 +392,6 @@ view: new_profile {
     type: string
     group_label: "Environment Settings Attribution"
     group_item_label: "Campaign"
-    description: "Identifier of the particular campaign that led to the download of the product."
   }
 
   dimension: environment__settings__attribution__content {
@@ -432,7 +399,6 @@ view: new_profile {
     type: string
     group_label: "Environment Settings Attribution"
     group_item_label: "Content"
-    description: "Identifier to indicate the particular link within a campaign."
   }
 
   dimension: environment__settings__attribution__dltoken {
@@ -440,7 +406,6 @@ view: new_profile {
     type: string
     group_label: "Environment Settings Attribution"
     group_item_label: "Dltoken"
-    description: "Unique token created at Firefox download time, see bug 1677497"
   }
 
   dimension: environment__settings__attribution__experiment {
@@ -448,7 +413,6 @@ view: new_profile {
     type: string
     group_label: "Environment Settings Attribution"
     group_item_label: "Experiment"
-    description: "funnel experiment parameters, see bug 1567339"
   }
 
   dimension: environment__settings__attribution__medium {
@@ -456,7 +420,6 @@ view: new_profile {
     type: string
     group_label: "Environment Settings Attribution"
     group_item_label: "Medium"
-    description: "Category of the source, such as 'organic' for a search engine."
   }
 
   dimension: environment__settings__attribution__source {
@@ -464,7 +427,6 @@ view: new_profile {
     type: string
     group_label: "Environment Settings Attribution"
     group_item_label: "Source"
-    description: "Referring partner domain, when install happens via a known partner."
   }
 
   dimension: environment__settings__attribution__ua {
@@ -472,7 +434,6 @@ view: new_profile {
     type: string
     group_label: "Environment Settings Attribution"
     group_item_label: "Ua"
-    description: "derived user agent, see bug 1595063"
   }
 
   dimension: environment__settings__attribution__variation {
@@ -480,7 +441,6 @@ view: new_profile {
     type: string
     group_label: "Environment Settings Attribution"
     group_item_label: "Variation"
-    description: "funnel experiment parameters, see bug 1567339"
   }
 
   dimension: environment__settings__blocklist_enabled {
@@ -488,7 +448,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment Settings"
     group_item_label: "Blocklist Enabled"
-    description: "True if the blocklist is enabled."
   }
 
   dimension: environment__settings__default_private_search_engine {
@@ -531,7 +490,6 @@ view: new_profile {
     type: string
     group_label: "Environment Settings"
     group_item_label: "Default Search Engine"
-    description: "Contains the string identifier or name of the default search engine provider. Deprecated."
   }
 
   dimension: environment__settings__default_search_engine_data__load_path {
@@ -539,7 +497,6 @@ view: new_profile {
     type: string
     group_label: "Environment Settings Default Search Engine Data"
     group_item_label: "Load Path"
-    description: "The anonymized path of the engine xml file, e.g. e.g. jar:[app]/omni.ja!browser/engine.xml (where ‘browser’ is the name of the chrome package, not a folder) [profile]/searchplugins/engine.xml [distribution]/searchplugins/common/engine.xml [other]/engine.xml [other]/addEngineWithDetails [other]/addEngineWithDetails:extensionID [http/https]example.com/engine-name.xml [http/https]example.com/engine-name.xml:extensionID"
   }
 
   dimension: environment__settings__default_search_engine_data__name {
@@ -547,7 +504,6 @@ view: new_profile {
     type: string
     group_label: "Environment Settings Default Search Engine Data"
     group_item_label: "Name"
-    description: "The name of the default search engine."
   }
 
   dimension: environment__settings__default_search_engine_data__origin {
@@ -555,7 +511,6 @@ view: new_profile {
     type: string
     group_label: "Environment Settings Default Search Engine Data"
     group_item_label: "Origin"
-    description: "The origin of the search engine: the value will be default for engines that are built-in or from distribution partners, verified for user-installed engines with valid verification hashes, unverified for non-default engines without verification hash, and invalid for engines with broken verification hashes."
   }
 
   dimension: environment__settings__default_search_engine_data__submission_url {
@@ -563,7 +518,6 @@ view: new_profile {
     type: string
     group_label: "Environment Settings Default Search Engine Data"
     group_item_label: "Submission Url"
-    description: "The HTTP url we would use to search. For privacy, we don’t record this for user-installed engines."
   }
 
   dimension: environment__settings__e10s_cohort {
@@ -578,7 +532,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment Settings"
     group_item_label: "E10S Enabled"
-    description: "True if the E10S is enabled."
   }
 
   dimension: environment__settings__e10s_multi_processes {
@@ -586,7 +539,6 @@ view: new_profile {
     type: number
     group_label: "Environment Settings"
     group_item_label: "E10S Multi Processes"
-    description: "maximum number of processes that will be launched for regular web content"
   }
 
   dimension: environment__settings__fission_enabled {
@@ -594,7 +546,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment Settings"
     group_item_label: "Fission Enabled"
-    description: "whether fission is enabled this session, and subframes can load in a different process"
   }
 
   dimension: environment__settings__intl__accept_languages {
@@ -632,7 +583,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment Settings"
     group_item_label: "Is Default Browser"
-    description: "Identifier to indicate the particular link within a campaign."
   }
 
   dimension: environment__settings__is_in_optout_sample {
@@ -654,7 +604,6 @@ view: new_profile {
     type: string
     group_label: "Environment Settings"
     group_item_label: "Locale"
-    description: "The best locale that the application should be localized to."
   }
 
   dimension: environment__settings__sandbox__content_win32k_lockdown_state {
@@ -662,7 +611,6 @@ view: new_profile {
     type: number
     group_label: "Environment Settings Sandbox"
     group_item_label: "Content Win32K Lockdown State"
-    description: "The status of Win32k Lockdown for Content process."
   }
 
   dimension: environment__settings__sandbox__effective_content_process_level {
@@ -670,7 +618,6 @@ view: new_profile {
     type: number
     group_label: "Environment Settings Sandbox"
     group_item_label: "Effective Content Process Level"
-    description: "The effective sandbox. The values are OS dependent."
   }
 
   dimension: environment__settings__search_cohort {
@@ -685,7 +632,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment Settings"
     group_item_label: "Telemetry Enabled"
-    description: "The state of the `toolkit.telemetry.enabled` pref."
   }
 
   dimension: environment__settings__update__auto_download {
@@ -693,7 +639,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment Settings Update"
     group_item_label: "Auto Download"
-    description: "The state of the `app.update.auto` pref."
   }
 
   dimension: environment__settings__update__background {
@@ -701,7 +646,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment Settings Update"
     group_item_label: "Background"
-    description: "Indicates whether updates may be installed when Firefox is not running."
   }
 
   dimension: environment__settings__update__channel {
@@ -709,7 +653,6 @@ view: new_profile {
     type: string
     group_label: "Environment Settings Update"
     group_item_label: "Channel"
-    description: "The update channel from the defaults only. Does not include the partner bits."
   }
 
   dimension: environment__settings__update__enabled {
@@ -717,13 +660,11 @@ view: new_profile {
     type: yesno
     group_label: "Environment Settings Update"
     group_item_label: "Enabled"
-    description: "The state of the `app.update.enabled` pref."
   }
 
   dimension: environment__settings__user_prefs {
     sql: ${TABLE}.environment.settings.user_prefs ;;
     hidden: yes
-    description: "User preferences - limited to an allowlist defined in `toolkit/components/telemetry/app/TelemetryEnvironment.jsm`"
   }
 
   dimension: environment__system__apple_model_id {
@@ -731,7 +672,6 @@ view: new_profile {
     type: string
     group_label: "Environment System"
     group_item_label: "Apple Model Id"
-    description: "The model IDs for Apple desktop devices. This is Mac only."
   }
 
   dimension: environment__system__cpu__cores {
@@ -739,7 +679,6 @@ view: new_profile {
     type: number
     group_label: "Environment System Cpu"
     group_item_label: "Cores"
-    description: "The number of physical CPU cores. Desktop only, e.g. 4, or `null` on failure."
   }
 
   dimension: environment__system__cpu__count {
@@ -747,7 +686,6 @@ view: new_profile {
     type: number
     group_label: "Environment System Cpu"
     group_item_label: "Count"
-    description: "The number of logical CPUs. Desktop only, e.g. 8, or `null` on failure."
   }
 
   dimension: environment__system__cpu__extensions {
@@ -760,7 +698,6 @@ view: new_profile {
     type: number
     group_label: "Environment System Cpu"
     group_item_label: "Family"
-    description: "The CPU family, `null` on failure. Desktop only."
   }
 
   dimension: environment__system__cpu__is_windows_s_mode {
@@ -768,7 +705,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment System Cpu"
     group_item_label: "Is Windows S Mode"
-    description: "Whether or not the system is Windows 10 or 11 in S Mode. S Mode existed prior to us being able to query it, so this is unreliable on Windows versions prior to 1810."
   }
 
   dimension: environment__system__cpu__l2cache_kb {
@@ -776,7 +712,6 @@ view: new_profile {
     type: number
     group_label: "Environment System Cpu"
     group_item_label: "L2Cache Kb"
-    description: "The CPU L2 cache size in KB. `null` on failure. Desktop only."
   }
 
   dimension: environment__system__cpu__l3cache_kb {
@@ -784,7 +719,6 @@ view: new_profile {
     type: number
     group_label: "Environment System Cpu"
     group_item_label: "L3Cache Kb"
-    description: "The CPU L3 cache size in KB. `null` on failure. Desktop only."
   }
 
   dimension: environment__system__cpu__model {
@@ -792,7 +726,6 @@ view: new_profile {
     type: number
     group_label: "Environment System Cpu"
     group_item_label: "Model"
-    description: "The CPU model, `null` on failure. Desktop only."
   }
 
   dimension: environment__system__cpu__speed_m_hz {
@@ -800,7 +733,6 @@ view: new_profile {
     type: number
     group_label: "Environment System Cpu"
     group_item_label: "Speed M Hz"
-    description: "Only available on Firefox desktop. The CPU clock speed in MHz."
   }
 
   dimension: environment__system__cpu__stepping {
@@ -808,7 +740,6 @@ view: new_profile {
     type: number
     group_label: "Environment System Cpu"
     group_item_label: "Stepping"
-    description: "The CPU stepping, `null` on failure. Desktop only."
   }
 
   dimension: environment__system__cpu__vendor {
@@ -816,7 +747,6 @@ view: new_profile {
     type: string
     group_label: "Environment System Cpu"
     group_item_label: "Vendor"
-    description: "The CPU vendor, e.g. 'GenuineIntel', or `null` on failure. Desktop only."
   }
 
   dimension: environment__system__device__hardware {
@@ -857,7 +787,6 @@ view: new_profile {
     type: string
     group_label: "Environment System Gfx"
     group_item_label: "Content Backend"
-    description: "The name of the content backend."
   }
 
   dimension: environment__system__gfx__d2d_enabled {
@@ -865,7 +794,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment System Gfx"
     group_item_label: "D2D Enabled"
-    description: "Whether or not Direct2D is enabled. This is Windows only."
   }
 
   dimension: environment__system__gfx__d_write_enabled {
@@ -873,7 +801,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment System Gfx"
     group_item_label: "D Write Enabled"
-    description: "Whether or not DirectWrite is enabled. This is Windows only."
   }
 
   dimension: environment__system__gfx__embedded_in_firefox_reality {
@@ -881,7 +808,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment System Gfx"
     group_item_label: "Embedded In Firefox Reality"
-    description: "Whether or not Firefox desktop is embedded by Firefox Reality. This is Windows only."
   }
 
   dimension: environment__system__gfx__features__advanced_layers__no_constant_buffer_offsetting {
@@ -903,7 +829,6 @@ view: new_profile {
     type: string
     group_label: "Environment System Gfx Features"
     group_item_label: "Compositor"
-    description: "The name of the compositor. This is one of 'd3d9', 'd3d11', 'opengl', 'basic', or 'none' ('none' indicates no compositors have been created)."
   }
 
   dimension: environment__system__gfx__features__d2d__status {
@@ -925,7 +850,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment System Gfx Features D3D11"
     group_item_label: "Blacklisted"
-    description: "Indicates whether the d3d11 compositor was blocklisted due to driver bugs. (This field was renamed to blocklisted in bug 1647225)."
   }
 
   dimension: environment__system__gfx__features__d3d11__blocklisted {
@@ -933,7 +857,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment System Gfx Features D3D11"
     group_item_label: "Blocklisted"
-    description: "Indicates whether the d3d11 compositor was blocklisted due to driver bugs. (This field replaces blacklisted as of bug 1647225)."
   }
 
   dimension: environment__system__gfx__features__d3d11__status {
@@ -1044,7 +967,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment System"
     group_item_label: "Has Win Package Id"
-    description: "Is the process running with a package identity (e.g. from an MSIX install)? See bug 1709892. This is Windows only."
   }
 
   dimension: environment__system__hdd__binary__model {
@@ -1052,7 +974,6 @@ view: new_profile {
     type: string
     group_label: "Environment System Hdd Binary"
     group_item_label: "Model"
-    description: "The model of the hdd where the application binaries are located. This is Windows only."
   }
 
   dimension: environment__system__hdd__binary__revision {
@@ -1060,7 +981,6 @@ view: new_profile {
     type: string
     group_label: "Environment System Hdd Binary"
     group_item_label: "Revision"
-    description: "The revision of the hdd where the application binaries are located. This is Windows only."
   }
 
   dimension: environment__system__hdd__binary__type {
@@ -1075,7 +995,6 @@ view: new_profile {
     type: string
     group_label: "Environment System Hdd Profile"
     group_item_label: "Model"
-    description: "The model of the hdd where the profile directory is located. This is Windows only."
   }
 
   dimension: environment__system__hdd__profile__revision {
@@ -1083,7 +1002,6 @@ view: new_profile {
     type: string
     group_label: "Environment System Hdd Profile"
     group_item_label: "Revision"
-    description: "The revision of the hdd where the profile directory is located. This is Windows only."
   }
 
   dimension: environment__system__hdd__profile__type {
@@ -1098,7 +1016,6 @@ view: new_profile {
     type: string
     group_label: "Environment System Hdd System"
     group_item_label: "Model"
-    description: "The model of the hdd where the system files are located. This is Windows only."
   }
 
   dimension: environment__system__hdd__system__revision {
@@ -1106,7 +1023,6 @@ view: new_profile {
     type: string
     group_label: "Environment System Hdd System"
     group_item_label: "Revision"
-    description: "The revision of the hdd where the system files are located. This is Windows only."
   }
 
   dimension: environment__system__hdd__system__type {
@@ -1121,7 +1037,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment System"
     group_item_label: "Is Wow64"
-    description: "The availability of the WoW64 subsystem. This is Windows only."
   }
 
   dimension: environment__system__is_wow_arm64 {
@@ -1136,7 +1051,6 @@ view: new_profile {
     type: number
     group_label: "Environment System"
     group_item_label: "Memory Mb"
-    description: "The machines amount of RAM."
   }
 
   dimension: environment__system__os__has_prefetch {
@@ -1144,7 +1058,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment System Os"
     group_item_label: "Has Prefetch"
-    description: "Whether or not the OS-based prefetch application start-up optimization is set. This is Windows-only. `null` on failure."
   }
 
   dimension: environment__system__os__has_superfetch {
@@ -1152,7 +1065,6 @@ view: new_profile {
     type: yesno
     group_label: "Environment System Os"
     group_item_label: "Has Superfetch"
-    description: "Whether or not the OS-based superfetch application start-up optimization service is running and using the default settings. This is Windows-only. `null` on failure."
   }
 
   dimension: environment__system__os__install_year {
@@ -1160,7 +1072,6 @@ view: new_profile {
     type: number
     group_label: "Environment System Os"
     group_item_label: "Install Year"
-    description: "The year Windows was installed. This is Windows only. `null` on failure."
   }
 
   dimension: environment__system__os__kernel_version {
@@ -1168,7 +1079,6 @@ view: new_profile {
     type: string
     group_label: "Environment System Os"
     group_item_label: "Kernel Version"
-    description: "The kernel version of Android. This is Android only. `null` on failure."
   }
 
   dimension: environment__system__os__locale {
@@ -1176,7 +1086,6 @@ view: new_profile {
     type: string
     group_label: "Environment System Os"
     group_item_label: "Locale"
-    description: "The locale of the OS, e.g. 'en'. This is `null` on failure."
   }
 
   dimension: environment__system__os__name {
@@ -1184,7 +1093,6 @@ view: new_profile {
     type: string
     group_label: "Environment System Os"
     group_item_label: "Name"
-    description: "The name of the OS, e.g. 'Windows_NT'. This is `null` on failure."
   }
 
   dimension: environment__system__os__service_pack_major {
@@ -1192,7 +1100,6 @@ view: new_profile {
     type: number
     group_label: "Environment System Os"
     group_item_label: "Service Pack Major"
-    description: "The Windows service pack major version. This is Windows only. `null` on failure."
   }
 
   dimension: environment__system__os__service_pack_minor {
@@ -1200,7 +1107,6 @@ view: new_profile {
     type: number
     group_label: "Environment System Os"
     group_item_label: "Service Pack Minor"
-    description: "The Windows service pack minor version. This is Windows only. `null` on failure."
   }
 
   dimension: environment__system__os__version {
@@ -1208,7 +1114,6 @@ view: new_profile {
     type: string
     group_label: "Environment System Os"
     group_item_label: "Version"
-    description: "The version of the OS, e.g. '6.1'. This is `null` on failure."
   }
 
   dimension: environment__system__os__windows_build_number {
@@ -1216,7 +1121,6 @@ view: new_profile {
     type: number
     group_label: "Environment System Os"
     group_item_label: "Windows Build Number"
-    description: "The Windows build number. This is Windows only. `null` on failure."
   }
 
   dimension: environment__system__os__windows_ubr {
@@ -1224,25 +1128,21 @@ view: new_profile {
     type: number
     group_label: "Environment System Os"
     group_item_label: "Windows Ubr"
-    description: "The Windows UBR. This is Windows 10 only. `null` on failure."
   }
 
   dimension: environment__system__sec__antispyware {
     sql: ${TABLE}.environment.system.sec.antispyware ;;
     hidden: yes
-    description: "The name of the registered antispyware software. Windows only."
   }
 
   dimension: environment__system__sec__antivirus {
     sql: ${TABLE}.environment.system.sec.antivirus ;;
     hidden: yes
-    description: "The name of the registered antivirus software. Windows only."
   }
 
   dimension: environment__system__sec__firewall {
     sql: ${TABLE}.environment.system.sec.firewall ;;
     hidden: yes
-    description: "The name of the registered firewall software. Windows only."
   }
 
   dimension: environment__system__virtual_max_mb {
@@ -1250,7 +1150,6 @@ view: new_profile {
     type: number
     group_label: "Environment System"
     group_item_label: "Virtual Max Mb"
-    description: "Total virtual memory size in MB. This is Windows only. `null` on failure."
   }
 
   dimension: environment__system__win_package_family_name {
@@ -1258,7 +1157,6 @@ view: new_profile {
     type: string
     group_label: "Environment System"
     group_item_label: "Win Package Family Name"
-    description: "Windows package family name. This is only sent for Mozilla produced MSIX packages."
   }
 
   dimension: id {
@@ -1279,7 +1177,6 @@ view: new_profile {
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
-    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -1287,7 +1184,6 @@ view: new_profile {
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Db Version"
-    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -1295,7 +1191,6 @@ view: new_profile {
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
-    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -1303,7 +1198,6 @@ view: new_profile {
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
-    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -1311,7 +1205,6 @@ view: new_profile {
     type: string
     group_label: "Metadata Header"
     group_item_label: "Date"
-    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -1319,7 +1212,6 @@ view: new_profile {
     type: string
     group_label: "Metadata Header"
     group_item_label: "Dnt"
-    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -1346,7 +1238,6 @@ view: new_profile {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Debug Id"
-    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -1354,7 +1245,6 @@ view: new_profile {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
-    description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -1362,7 +1252,6 @@ view: new_profile {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Lb Tags"
-    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -1370,7 +1259,6 @@ view: new_profile {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
-    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -1378,7 +1266,6 @@ view: new_profile {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
-    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -1386,7 +1273,6 @@ view: new_profile {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
-    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -1394,7 +1280,6 @@ view: new_profile {
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Db Version"
-    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -1402,7 +1287,6 @@ view: new_profile {
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Name"
-    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -1410,7 +1294,6 @@ view: new_profile {
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Organization"
-    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__uri__app_build_id {
@@ -1465,25 +1348,21 @@ view: new_profile {
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
-    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
-    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
-    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
-    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -1496,30 +1375,6 @@ view: new_profile {
     type: string
     group_label: "Payload Processes Parent Scalars"
     group_item_label: "Startup Profile Selection Reason"
-    description: "How the profile was selected during startup. One of the following reasons:
-  unknown:
-    Generally should not happen, set as a default in case no other reason
-    occured.
-  profile-manager:
-    The profile was selected by the profile manager.
-  profile-reset:
-    The profile was selected for reset, normally this would mean a restart.
-  restart:
-    The user restarted the application, the same profile as previous will
-    be used.
-  argument-profile:
-    The profile was selected by the --profile command line argument.
-  argument-p:
-    The profile was selected by the -p command line argument.
-  firstrun-claimed-default:
-    A first run of a dedicated profiles build chose the old default
-    profile to be the default for this install.
-  firstrun-skipped-default:
-    A first run of a dedicated profiles build skipped over the old default
-    profile and created a new profile.
-  restart-claimed-default:
-    A first run of a dedicated profiles build after a restart chose the
-    old defaul…"
   }
 
   dimension: payload__reason {
@@ -1532,7 +1387,6 @@ view: new_profile {
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
-    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension: type {
@@ -1572,7 +1426,6 @@ view: new_profile {
       quarter,
       year,
     ]
-    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: clients {
@@ -1598,7 +1451,6 @@ view: new_profile__environment__addons__active_addons {
     type: yesno
     group_label: "Value"
     group_item_label: "App Disabled"
-    description: "True if this add-on cannot be used in the application based on version compatibility, dependencies, and blocklisting. This field is only available after the 'sessionstore-windows-restored' topic is notified."
   }
 
   dimension: value__blocklisted {
@@ -1606,7 +1458,6 @@ view: new_profile__environment__addons__active_addons {
     type: yesno
     group_label: "Value"
     group_item_label: "Blocklisted"
-    description: "Whether or not the add-on appears in the blocklist. This field is only available after the 'sessionstore-windows-restored' topic is notified."
   }
 
   dimension: value__description {
@@ -1628,7 +1479,6 @@ view: new_profile__environment__addons__active_addons {
     type: yesno
     group_label: "Value"
     group_item_label: "Has Binary Components"
-    description: "True or false depending on whether the add-on has binary components. This is always false since Firefox 60. This field is only available after the 'sessionstore-windows-restored' topic is notified."
   }
 
   dimension: value__install_day {
@@ -1636,7 +1486,6 @@ view: new_profile__environment__addons__active_addons {
     type: number
     group_label: "Value"
     group_item_label: "Install Day"
-    description: "The days since epoch that the add-on was first installed. This field is only available after the 'sessionstore-windows-restored' topic is notified."
   }
 
   dimension: value__is_system {
@@ -1644,7 +1493,6 @@ view: new_profile__environment__addons__active_addons {
     type: yesno
     group_label: "Value"
     group_item_label: "Is System"
-    description: "Whether or not the add-on is a system add-on. This field is available at startup."
   }
 
   dimension: value__is_web_extension {
@@ -1652,7 +1500,6 @@ view: new_profile__environment__addons__active_addons {
     type: yesno
     group_label: "Value"
     group_item_label: "Is Web Extension"
-    description: "Whether or not the add-on is a WebExtension add-on. This field is available at startup."
   }
 
   dimension: value__multiprocess_compatible {
@@ -1660,7 +1507,6 @@ view: new_profile__environment__addons__active_addons {
     type: yesno
     group_label: "Value"
     group_item_label: "Multiprocess Compatible"
-    description: "Whether or not the add-on is a compatible with e10s. Since Firefox 61, this is always true. This field is available at startup."
   }
 
   dimension: value__name {
@@ -1668,7 +1514,6 @@ view: new_profile__environment__addons__active_addons {
     type: string
     group_label: "Value"
     group_item_label: "Name"
-    description: "The add-on name, limited to 100 characters. This field is only available after the 'sessionstore-windows-restored' topic is notified."
   }
 
   dimension: value__scope {
@@ -1676,7 +1521,6 @@ view: new_profile__environment__addons__active_addons {
     type: number
     group_label: "Value"
     group_item_label: "Scope"
-    description: "Indicates what scope the add-on is installed in, per profile, user, system, or application. This field is available at startup."
   }
 
   dimension: value__signed_state {
@@ -1684,7 +1528,6 @@ view: new_profile__environment__addons__active_addons {
     type: number
     group_label: "Value"
     group_item_label: "Signed State"
-    description: "The state of the signature of the add-on. This field is only available after the 'sessionstore-windows-restored' topic is notified."
   }
 
   dimension: value__type {
@@ -1699,7 +1542,6 @@ view: new_profile__environment__addons__active_addons {
     type: number
     group_label: "Value"
     group_item_label: "Update Day"
-    description: "The day the add-on was last updated. This field is optional, but available at startup if present."
   }
 
   dimension: value__user_disabled {
@@ -1728,7 +1570,6 @@ view: new_profile__environment__addons__active_gm_plugins {
     type: number
     group_label: "Value"
     group_item_label: "Apply Background Updates"
-    description: "Cast into an integer via mozilla-schema-generator. See bug 1611027."
   }
 
   dimension: value__user_disabled {
