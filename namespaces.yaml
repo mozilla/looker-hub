@@ -1873,71 +1873,15 @@ pocket:
   pretty_name: Pocket
   spoke: looker-spoke-default
 regrets_reporter:
-  connection: bigquery-oauth
-  explores:
-    main_events:
-      type: glean_ping_explore
-      views:
-        base_view: main_events
-    regret_details:
-      type: glean_ping_explore
-      views:
-        base_view: regret_details
-    video_data:
-      type: glean_ping_explore
-      views:
-        base_view: video_data
-    video_index:
-      type: glean_ping_explore
-      views:
-        base_view: video_index
-  glean_app: true
+  glean_app: false
   owners:
   - jessed@mozillafoundation.org
-  - brandi@mozillafoundation.org
-  - jessed@mozillafoundation.org
   pretty_name: RegretsReporter
-  spoke: looker-spoke-private
+  spoke: looker-spoke-default
   views:
-    main_events:
-      tables:
-      - table: mozdata.regrets_reporter_ucs.main_events
-      type: glean_ping_view
-    main_events_table:
-      tables:
-      - channel: null
-        table: mozdata.regrets_reporter_ucs.main_events
-      type: table_view
-    regret_details:
-      tables:
-      - table: mozdata.regrets_reporter_ucs.regret_details
-      type: glean_ping_view
-    regret_details_table:
-      tables:
-      - channel: null
-        table: mozdata.regrets_reporter_ucs.regret_details
-      type: table_view
     regrets_reporter_summary:
       tables:
       - table: moz-fx-data-shared-prod.regrets_reporter_derived.regrets_reporter_summary_v1
-      type: table_view
-    video_data:
-      tables:
-      - table: mozdata.regrets_reporter_ucs.video_data
-      type: glean_ping_view
-    video_data_table:
-      tables:
-      - channel: null
-        table: mozdata.regrets_reporter_ucs.video_data
-      type: table_view
-    video_index:
-      tables:
-      - table: mozdata.regrets_reporter_ucs.video_index
-      type: glean_ping_view
-    video_index_table:
-      tables:
-      - channel: null
-        table: mozdata.regrets_reporter_ucs.video_index
       type: table_view
 revenue:
   connection: bigquery-oauth
