@@ -206,7 +206,7 @@ parent process.
 
   dimension: metrics__string__geckoview_validation_build_id {
     label: "Geckoview Validation Build Id"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.geckoview_validation_build_id ;;
     type: string
     group_label: "Geckoview Validation"
@@ -224,7 +224,7 @@ parent process.
 
   dimension: metrics__string__geckoview_validation_version {
     label: "Geckoview Validation Version"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.geckoview_validation_version ;;
     type: string
     group_label: "Geckoview Validation"
@@ -441,7 +441,7 @@ Only sent if the buffer overflows.
 
   dimension: metrics__counter__glean_time_invalid_timezone_offset {
     label: "Glean Time Invalid Timezone Offset"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glean_time_invalid_timezone_offset ;;
     type: number
     group_label: "Glean Time"
