@@ -419,7 +419,7 @@ Only sent if the buffer overflows.
 
   dimension: metrics__counter__glean_time_invalid_timezone_offset {
     label: "Glean Time Invalid Timezone Offset"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glean_time_invalid_timezone_offset ;;
     type: number
     group_label: "Glean Time"
