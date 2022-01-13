@@ -45,6 +45,13 @@ view: events_unnested_table {
     group_item_label: "Architecture"
   }
 
+  dimension: client_info__build_date {
+    sql: ${TABLE}.client_info.build_date ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Build Date"
+  }
+
   dimension: client_info__client_id {
     sql: ${TABLE}.client_info.client_id ;;
     hidden: yes

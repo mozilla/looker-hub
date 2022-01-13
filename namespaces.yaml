@@ -1516,6 +1516,10 @@ monitoring:
       type: ping_explore
       views:
         base_view: schema_error_counts
+    stable_table_column_counts:
+      type: ping_explore
+      views:
+        base_view: stable_table_column_counts
     stable_table_sizes:
       type: ping_explore
       views:
@@ -1567,6 +1571,10 @@ monitoring:
     schema_error_counts:
       tables:
       - table: mozdata.monitoring.schema_error_counts
+      type: ping_view
+    stable_table_column_counts:
+      tables:
+      - table: mozdata.monitoring.stable_table_column_counts
       type: ping_view
     stable_table_sizes:
       tables:
