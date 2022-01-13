@@ -84,7 +84,7 @@ bergamot:
         table: mozdata.org_mozilla_bergamot.custom
       type: table_view
 casa:
-  connection: bigquery-oauth
+  connection: bigquery-casa
   glean_app: false
   owners:
   - anicholson@mozilla.com
