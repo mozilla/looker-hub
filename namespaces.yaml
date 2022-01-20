@@ -707,6 +707,11 @@ fenix:
       type: table_view
 firefox_accounts:
   explores:
+    auth_event_counts:
+      type: events_explore
+      views:
+        base_view: auth_events
+        extended_view: fxa_auth_events_table
     event_counts:
       type: events_explore
       views:
@@ -726,6 +731,11 @@ firefox_accounts:
   pretty_name: Firefox Accounts
   spoke: looker-spoke-default
   views:
+    auth_events:
+      tables:
+      - base_table: mozdata.firefox_accounts.fxa_content_auth_events
+        events_table_view: fxa_auth_events_table
+      type: events_view
     events:
       tables:
       - base_table: mozdata.firefox_accounts.fxa_content_auth_oauth_events
@@ -745,6 +755,11 @@ firefox_accounts:
         step_3: event_types
         step_4: event_types
       type: funnel_analysis_view
+    fxa_auth_events_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_accounts.fxa_content_auth_events
+      type: table_view
     fxa_events_table:
       tables:
       - channel: release
