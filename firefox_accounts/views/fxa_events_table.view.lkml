@@ -141,6 +141,11 @@ view: fxa_events_table {
     type: string
   }
 
+  dimension: utm_content {
+    sql: ${TABLE}.utm_content ;;
+    type: string
+  }
+
   dimension: utm_medium {
     sql: ${TABLE}.utm_medium ;;
     type: string
