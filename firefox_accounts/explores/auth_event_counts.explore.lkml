@@ -6,7 +6,7 @@
 
 include: "/looker-hub/firefox_accounts/views/auth_events.view.lkml"
 
-explore: event_counts {
+explore: auth_event_counts {
   view_name: auth_events
   description: "Event counts over time."
 
