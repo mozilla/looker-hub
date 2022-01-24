@@ -6,7 +6,7 @@
 
 include: "/looker-hub/firefox_desktop_background_update/views/events.view.lkml"
 
-explore: events {
+explore: event_counts {
   sql_always_where: ${events.submission_date} >= '2010-01-01' ;;
   view_name: events
   description: "Event counts over time."
