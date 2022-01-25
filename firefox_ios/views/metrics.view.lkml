@@ -2064,6 +2064,63 @@ icon for grouped tabs in the tab tray.
 "
   }
 
+  dimension: metrics__counter__tabs_navigate_tab_back_swipe {
+    label: "Tabs Navigate Tab Back Swipe"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tabs_navigate_tab_back_swipe ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Navigate Tab Back Swipe"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Navigate Tab Back Swipe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_navigate_tab_back_swipe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times a user navigates back in tab
+history by swiping from the left edge of the device to the right.
+"
+  }
+
+  dimension: metrics__counter__tabs_navigate_tab_history_back {
+    label: "Tabs Navigate Tab History Back"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tabs_navigate_tab_history_back ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Navigate Tab History Back"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Navigate Tab History Back"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_navigate_tab_history_back"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times a user taps the back
+button on a tab's toolbar.
+"
+  }
+
+  dimension: metrics__counter__tabs_navigate_tab_history_forward {
+    label: "Tabs Navigate Tab History Forward"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tabs_navigate_tab_history_forward ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Navigate Tab History Forward"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Navigate Tab History Forward"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_navigate_tab_history_forward"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times a user taps the forward
+button on a tab's toolbar.
+"
+  }
+
   dimension: metrics__counter__tabs_new_tab_pressed {
     label: "Tabs New Tab Pressed"
     hidden: no
@@ -2136,6 +2193,25 @@ is opened.
 
     description: "Record the number of times a user pulls down
 on a page to reload.
+"
+  }
+
+  dimension: metrics__counter__tabs_reload_from_url_bar {
+    label: "Tabs Reload From Url Bar"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tabs_reload_from_url_bar ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Reload From Url Bar"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Reload From Url Bar"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_reload_from_url_bar"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times a user taps the reload
+button in the URL bar.
 "
   }
 
@@ -5163,6 +5239,81 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: tabs_navigate_tab_back_swipe {
+    type: sum
+    sql: ${metrics__counter__tabs_navigate_tab_back_swipe} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Navigate Tab Back Swipe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_navigate_tab_back_swipe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_navigate_tab_back_swipe_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tabs_navigate_tab_back_swipe: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Navigate Tab Back Swipe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_navigate_tab_back_swipe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_navigate_tab_history_back {
+    type: sum
+    sql: ${metrics__counter__tabs_navigate_tab_history_back} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Navigate Tab History Back"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_navigate_tab_history_back"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_navigate_tab_history_back_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tabs_navigate_tab_history_back: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Navigate Tab History Back"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_navigate_tab_history_back"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_navigate_tab_history_forward {
+    type: sum
+    sql: ${metrics__counter__tabs_navigate_tab_history_forward} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Navigate Tab History Forward"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_navigate_tab_history_forward"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_navigate_tab_history_forward_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tabs_navigate_tab_history_forward: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Navigate Tab History Forward"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_navigate_tab_history_forward"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: tabs_new_tab_pressed {
     type: sum
     sql: ${metrics__counter__tabs_new_tab_pressed} ;;
@@ -5234,6 +5385,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Tabs Pull To Refresh"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_pull_to_refresh"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_reload_from_url_bar {
+    type: sum
+    sql: ${metrics__counter__tabs_reload_from_url_bar} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Reload From Url Bar"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_reload_from_url_bar"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_reload_from_url_bar_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tabs_reload_from_url_bar: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Reload From Url Bar"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_reload_from_url_bar"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

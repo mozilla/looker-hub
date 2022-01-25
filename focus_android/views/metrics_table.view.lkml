@@ -618,6 +618,20 @@ The key format is `<provider-name>`.
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_search_count {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_search_count ;;
+    hidden: yes
+    description: "The labels for this counter are `<search-engine-name>.<source>`.
+
+If the search engine is bundled with Focus `search-engine-name` will be
+the name of the search engine. If it's a custom search engine (defined:
+https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
+`custom`.
+
+`source` will be: `action`, `suggestion`
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_with_ads {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
     hidden: yes
