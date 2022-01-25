@@ -1245,6 +1245,36 @@ icon for grouped tabs in the tab tray.
 "
   }
 
+  dimension: metrics__counter__tabs_navigate_tab_back_swipe {
+    sql: ${TABLE}.metrics.counter.tabs_navigate_tab_back_swipe ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tabs Navigate Tab Back Swipe"
+    description: "This counts the number of times a user navigates back in tab
+history by swiping from the left edge of the device to the right.
+"
+  }
+
+  dimension: metrics__counter__tabs_navigate_tab_history_back {
+    sql: ${TABLE}.metrics.counter.tabs_navigate_tab_history_back ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tabs Navigate Tab History Back"
+    description: "This counts the number of times a user taps the back
+button on a tab's toolbar.
+"
+  }
+
+  dimension: metrics__counter__tabs_navigate_tab_history_forward {
+    sql: ${TABLE}.metrics.counter.tabs_navigate_tab_history_forward ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tabs Navigate Tab History Forward"
+    description: "This counts the number of times a user taps the forward
+button on a tab's toolbar.
+"
+  }
+
   dimension: metrics__counter__tabs_new_tab_pressed {
     sql: ${TABLE}.metrics.counter.tabs_new_tab_pressed ;;
     type: number
@@ -1271,6 +1301,16 @@ pressed
     group_item_label: "Tabs Pull To Refresh"
     description: "Record the number of times a user pulls down
 on a page to reload.
+"
+  }
+
+  dimension: metrics__counter__tabs_reload_from_url_bar {
+    sql: ${TABLE}.metrics.counter.tabs_reload_from_url_bar ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tabs Reload From Url Bar"
+    description: "This counts the number of times a user taps the reload
+button in the URL bar.
 "
   }
 

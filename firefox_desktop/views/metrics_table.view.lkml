@@ -500,6 +500,13 @@ This does not include deletion-request pings.
     hidden: yes
   }
 
+  dimension: metrics__labeled_boolean__startup_run_from_dmg_install_outcome {
+    sql: ${TABLE}.metrics.labeled_boolean.startup_run_from_dmg_install_outcome ;;
+    hidden: yes
+    description: "The outcome after the app detected that it was running from DMG and should offer to install and relaunch itself.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -955,6 +962,18 @@ view: metrics_table__metrics__jwe {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__startup_run_from_dmg_install_outcome {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
   }
 }
 

@@ -136,6 +136,11 @@ view: all_subscriptions_table {
     type: string
   }
 
+  dimension: promotion_codes {
+    sql: ${TABLE}.promotion_codes ;;
+    hidden: yes
+  }
+
   dimension: provider {
     sql: ${TABLE}.provider ;;
     type: string
