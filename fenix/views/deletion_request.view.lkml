@@ -5,60 +5,6 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: deletion_request {
-  dimension: metrics__uuid__deletion_fxa_device_id {
-    label: "Deletion Fxa Device Id"
-    hidden: yes
-    sql: ${TABLE}.metrics.uuid.deletion_fxa_device_id ;;
-    type: string
-    group_label: "Deletion"
-    group_item_label: "Fxa Device Id"
-
-    link: {
-      label: "Glean Dictionary reference for Deletion Fxa Device Id"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/deletion_fxa_device_id"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The FxA device id.
-"
-  }
-
-  dimension: metrics__string__deletion_sync_device_id {
-    label: "Deletion Sync Device Id"
-    hidden: no
-    sql: ${TABLE}.metrics.string.deletion_sync_device_id ;;
-    type: string
-    group_label: "Deletion"
-    group_item_label: "Sync Device Id"
-
-    link: {
-      label: "Glean Dictionary reference for Deletion Sync Device Id"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/deletion_sync_device_id"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The FxA device id.
-"
-  }
-
-  dimension: metrics__uuid__legacy_ids_client_id {
-    label: "Legacy Ids Client Id"
-    hidden: no
-    sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
-    type: string
-    group_label: "Legacy Ids"
-    group_item_label: "Client Id"
-
-    link: {
-      label: "Glean Dictionary reference for Legacy Ids Client Id"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/legacy_ids_client_id"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The client id from legacy telemetry.
-"
-  }
-
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes
@@ -68,7 +14,7 @@ view: deletion_request {
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Label"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_label"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -86,7 +32,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Overflow"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -104,7 +50,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid State"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_state"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -122,7 +68,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Value"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_error_invalid_value"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -573,21 +519,21 @@ The labels are the `category.name` identifier of the metric.
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.firefox_ios.deletion_request"
+    default_value: "mozdata.fenix.deletion_request"
 
     allowed_value: {
       label: "Release"
-      value: "mozdata.firefox_ios.deletion_request"
+      value: "mozdata.fenix.deletion_request"
     }
 
     allowed_value: {
       label: "Beta"
-      value: "mozdata.org_mozilla_ios_firefoxbeta.deletion_request"
+      value: "mozdata.org_mozilla_firefox_beta.deletion_request"
     }
 
     allowed_value: {
       label: "Nightly"
-      value: "mozdata.org_mozilla_ios_fennec.deletion_request"
+      value: "mozdata.org_mozilla_fenix.deletion_request"
     }
   }
 
@@ -771,7 +717,7 @@ view: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_l
     sql: select
     m.key,
     count(*) as n
-from mozdata.firefox_ios.deletion_request as t,
+from mozdata.fenix.deletion_request as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -790,7 +736,7 @@ view: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_o
     sql: select
     m.key,
     count(*) as n
-from mozdata.firefox_ios.deletion_request as t,
+from mozdata.fenix.deletion_request as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -809,7 +755,7 @@ view: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_s
     sql: select
     m.key,
     count(*) as n
-from mozdata.firefox_ios.deletion_request as t,
+from mozdata.fenix.deletion_request as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -828,7 +774,7 @@ view: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_v
     sql: select
     m.key,
     count(*) as n
-from mozdata.firefox_ios.deletion_request as t,
+from mozdata.fenix.deletion_request as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0

@@ -4,133 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: deletion_request {
-  dimension: metrics__uuid__deletion_fxa_device_id {
-    label: "Deletion Fxa Device Id"
-    hidden: yes
-    sql: ${TABLE}.metrics.uuid.deletion_fxa_device_id ;;
-    type: string
-    group_label: "Deletion"
-    group_item_label: "Fxa Device Id"
-
-    link: {
-      label: "Glean Dictionary reference for Deletion Fxa Device Id"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/deletion_fxa_device_id"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The FxA device id.
-"
-  }
-
-  dimension: metrics__string__deletion_sync_device_id {
-    label: "Deletion Sync Device Id"
-    hidden: no
-    sql: ${TABLE}.metrics.string.deletion_sync_device_id ;;
-    type: string
-    group_label: "Deletion"
-    group_item_label: "Sync Device Id"
-
-    link: {
-      label: "Glean Dictionary reference for Deletion Sync Device Id"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/deletion_sync_device_id"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The FxA device id.
-"
-  }
-
-  dimension: metrics__uuid__legacy_ids_client_id {
-    label: "Legacy Ids Client Id"
-    hidden: no
-    sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
-    type: string
-    group_label: "Legacy Ids"
-    group_item_label: "Client Id"
-
-    link: {
-      label: "Glean Dictionary reference for Legacy Ids Client Id"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/legacy_ids_client_id"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The client id from legacy telemetry.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_label {
-    label: "Glean Error Invalid Label"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
-    group_label: "Glean Error"
-    group_item_label: "Invalid Label"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Label"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_label"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times a metric was set with an invalid label.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    label: "Glean Error Invalid Overflow"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
-    group_label: "Glean Error"
-    group_item_label: "Invalid Overflow"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_overflow"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times a metric was set a value that overflowed.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_state {
-    label: "Glean Error Invalid State"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
-    group_label: "Glean Error"
-    group_item_label: "Invalid State"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Error Invalid State"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_state"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times a timing metric was used incorrectly.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_value {
-    label: "Glean Error Invalid Value"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
-    group_label: "Glean Error"
-    group_item_label: "Invalid Value"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Value"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_value"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times a metric was set to an invalid value.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
+view: deletion_request_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -251,7 +125,6 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.document_id ;;
     hidden: yes
     description: "The document ID specified in the URI when the client sent this message"
-    primary_key: yes
   }
 
   dimension: events {
@@ -427,6 +300,38 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Version"
   }
 
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    hidden: yes
+    description: "Counts the number of times a metric was set with an invalid label.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    hidden: yes
+    description: "Counts the number of times a metric was set a value that overflowed.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    hidden: yes
+    description: "Counts the number of times a timing metric was used incorrectly.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    hidden: yes
+    description: "Counts the number of times a metric was set to an invalid value.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -562,282 +467,60 @@ The labels are the `category.name` identifier of the metric.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  measure: clients {
-    type: count_distinct
-    sql: ${client_info__client_id} ;;
-  }
-
-  measure: ping_count {
-    type: count
-  }
-
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.firefox_ios.deletion_request"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.firefox_ios.deletion_request"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_ios_firefoxbeta.deletion_request"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_ios_fennec.deletion_request"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.glean_dictionary.deletion_request` ;;
 }
 
-view: deletion_request__metrics__labeled_counter__glean_error_invalid_label {
-  label: "Glean Error - Invalid Label"
-
-  dimension: document_id {
+view: deletion_request_table__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
     type: string
-    sql: ${deletion_request.document_id} ;;
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
     hidden: yes
   }
 
-  dimension: document_label_id {
+  dimension: name {
+    sql: ${TABLE}.name ;;
     type: string
-    sql: ${deletion_request.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
   }
 
-  dimension: label {
-    type: string
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: deletion_request_table__events__extra {
+  dimension: key {
     sql: ${TABLE}.key ;;
-    suggest_explore: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_label
-    suggest_dimension: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_label.key
-    hidden: no
+    type: string
   }
 
   dimension: value {
-    type: number
     sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${deletion_request.client_info__client_id} end ;;
-    hidden: no
+    type: string
   }
 }
 
-view: deletion_request__metrics__labeled_counter__glean_error_invalid_overflow {
-  label: "Glean Error - Invalid Overflow"
-
-  dimension: document_id {
-    type: string
-    sql: ${deletion_request.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${deletion_request.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_overflow.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${deletion_request.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: deletion_request__metrics__labeled_counter__glean_error_invalid_state {
-  label: "Glean Error - Invalid State"
-
-  dimension: document_id {
-    type: string
-    sql: ${deletion_request.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${deletion_request.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_state.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${deletion_request.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: deletion_request__metrics__labeled_counter__glean_error_invalid_value {
-  label: "Glean Error - Invalid Value"
-
-  dimension: document_id {
-    type: string
-    sql: ${deletion_request.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${deletion_request.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_value.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${deletion_request.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_label {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.deletion_request as t,
-unnest(metrics.labeled_counter.glean_error_invalid_label) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
+view: deletion_request_table__ping_info__experiments {
   dimension: key {
-    type: string
     sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_overflow {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.deletion_request as t,
-unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
     type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_state {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.deletion_request as t,
-unnest(metrics.labeled_counter.glean_error_invalid_state) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
   }
 
-  dimension: key {
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
     type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_value {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.deletion_request as t,
-unnest(metrics.labeled_counter.glean_error_invalid_value) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
+    group_label: "Value"
+    group_item_label: "Branch"
   }
 
-  dimension: key {
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
     type: string
-    sql: ${TABLE}.key ;;
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }
