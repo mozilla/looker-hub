@@ -19,6 +19,16 @@ explore: metrics {
     ]
   }
 
+  join: metrics__metrics__labeled_counter__avif_a1lx {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_a1lx}) AS metrics__metrics__labeled_counter__avif_a1lx ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_a1lx.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__avif_a1op {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_a1op}) AS metrics__metrics__labeled_counter__avif_a1op ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_a1op.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__avif_alpha {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_alpha}) AS metrics__metrics__labeled_counter__avif_alpha ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_alpha.document_id} ;;
@@ -44,6 +54,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_cicp_tc}) AS metrics__metrics__labeled_counter__avif_cicp_tc ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_cicp_tc.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__avif_clap {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_clap}) AS metrics__metrics__labeled_counter__avif_clap ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_clap.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__avif_colr {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_colr}) AS metrics__metrics__labeled_counter__avif_colr ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_colr.document_id} ;;
@@ -59,14 +74,44 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_decoder}) AS metrics__metrics__labeled_counter__avif_decoder ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_decoder.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__avif_grid {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_grid}) AS metrics__metrics__labeled_counter__avif_grid ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_grid.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__avif_ipro {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_ipro}) AS metrics__metrics__labeled_counter__avif_ipro ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_ipro.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__avif_ispe {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_ispe}) AS metrics__metrics__labeled_counter__avif_ispe ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_ispe.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__avif_lsel {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_lsel}) AS metrics__metrics__labeled_counter__avif_lsel ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_lsel.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__avif_major_brand {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_major_brand}) AS metrics__metrics__labeled_counter__avif_major_brand ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_major_brand.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__avif_pasp {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_pasp}) AS metrics__metrics__labeled_counter__avif_pasp ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_pasp.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__avif_pixi {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_pixi}) AS metrics__metrics__labeled_counter__avif_pixi ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_pixi.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__avif_sequence {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_sequence}) AS metrics__metrics__labeled_counter__avif_sequence ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_sequence.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__avif_yuv_color_space {
@@ -185,6 +230,14 @@ explore: metrics {
   }
 }
 
+explore: suggest__metrics__metrics__labeled_counter__avif_a1lx {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__avif_a1op {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__avif_alpha {
   hidden: yes
 }
@@ -205,6 +258,10 @@ explore: suggest__metrics__metrics__labeled_counter__avif_cicp_tc {
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__avif_clap {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__avif_colr {
   hidden: yes
 }
@@ -217,11 +274,35 @@ explore: suggest__metrics__metrics__labeled_counter__avif_decoder {
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__avif_grid {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__avif_ipro {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__avif_ispe {
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__avif_lsel {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__avif_major_brand {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__avif_pasp {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__avif_pixi {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__avif_sequence {
   hidden: yes
 }
 
