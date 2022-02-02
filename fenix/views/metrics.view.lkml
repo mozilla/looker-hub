@@ -3102,6 +3102,40 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__labeled_counter__avif_a1lx {
+    label: "Avif A1Lx"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_a1lx ;;
+    group_label: "Avif"
+    group_item_label: "A1Lx"
+
+    link: {
+      label: "Glean Dictionary reference for Avif A1Lx"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_a1lx"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AV1LayeredImageIndexingProperty (a1lx).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_a1op {
+    label: "Avif A1Op"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_a1op ;;
+    group_label: "Avif"
+    group_item_label: "A1Op"
+
+    link: {
+      label: "Glean Dictionary reference for Avif A1Op"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_a1op"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF OperatingPointSelectorProperty (a1op).
+"
+  }
+
   dimension: metrics__labeled_counter__avif_alpha {
     label: "Avif Alpha"
     hidden: yes
@@ -3205,6 +3239,23 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__labeled_counter__avif_clap {
+    label: "Avif Clap"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_clap ;;
+    group_label: "Avif"
+    group_item_label: "Clap"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Clap"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_clap"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF CleanApertureBox (clap).
+"
+  }
+
   dimension: metrics__labeled_counter__avif_colr {
     label: "Avif Colr"
     hidden: yes
@@ -3274,6 +3325,40 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__labeled_counter__avif_grid {
+    label: "Avif Grid"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_grid ;;
+    group_label: "Avif"
+    group_item_label: "Grid"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Grid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_grid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF AVIF grid-based image.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_ipro {
+    label: "Avif Ipro"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_ipro ;;
+    group_label: "Avif"
+    group_item_label: "Ipro"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Ipro"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_ipro"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF ItemProtectionBox (ipro).
+"
+  }
+
   dimension: metrics__labeled_counter__avif_ispe {
     label: "Avif Ispe"
     hidden: yes
@@ -3291,6 +3376,57 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__labeled_counter__avif_lsel {
+    label: "Avif Lsel"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_lsel ;;
+    group_label: "Avif"
+    group_item_label: "Lsel"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Lsel"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_lsel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF LayerSelectorProperty (lsel).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_major_brand {
+    label: "Avif Major Brand"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_major_brand ;;
+    group_label: "Avif"
+    group_item_label: "Major Brand"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Major Brand"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_major_brand"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF major brand.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_pasp {
+    label: "Avif Pasp"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_pasp ;;
+    group_label: "Avif"
+    group_item_label: "Pasp"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Pasp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_pasp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF pixel aspect ratio.
+"
+  }
+
   dimension: metrics__labeled_counter__avif_pixi {
     label: "Avif Pixi"
     hidden: yes
@@ -3305,6 +3441,23 @@ documented in the ping's pings.yaml file.
     }
 
     description: "AVIF pixel information (bits per channel).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_sequence {
+    label: "Avif Sequence"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_sequence ;;
+    group_label: "Avif"
+    group_item_label: "Sequence"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Sequence"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_sequence"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF image sequence.
 "
   }
 

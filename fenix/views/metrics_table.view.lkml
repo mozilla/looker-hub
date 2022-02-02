@@ -1318,6 +1318,20 @@ on the home screen.
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__avif_a1lx {
+    sql: ${TABLE}.metrics.labeled_counter.avif_a1lx ;;
+    hidden: yes
+    description: "AV1LayeredImageIndexingProperty (a1lx).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_a1op {
+    sql: ${TABLE}.metrics.labeled_counter.avif_a1op ;;
+    hidden: yes
+    description: "AVIF OperatingPointSelectorProperty (a1op).
+"
+  }
+
   dimension: metrics__labeled_counter__avif_alpha {
     sql: ${TABLE}.metrics.labeled_counter.avif_alpha ;;
     hidden: yes
@@ -1353,6 +1367,13 @@ on the home screen.
 "
   }
 
+  dimension: metrics__labeled_counter__avif_clap {
+    sql: ${TABLE}.metrics.labeled_counter.avif_clap ;;
+    hidden: yes
+    description: "AVIF CleanApertureBox (clap).
+"
+  }
+
   dimension: metrics__labeled_counter__avif_colr {
     sql: ${TABLE}.metrics.labeled_counter.avif_colr ;;
     hidden: yes
@@ -1374,6 +1395,20 @@ on the home screen.
 "
   }
 
+  dimension: metrics__labeled_counter__avif_grid {
+    sql: ${TABLE}.metrics.labeled_counter.avif_grid ;;
+    hidden: yes
+    description: "AVIF AVIF grid-based image.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_ipro {
+    sql: ${TABLE}.metrics.labeled_counter.avif_ipro ;;
+    hidden: yes
+    description: "AVIF ItemProtectionBox (ipro).
+"
+  }
+
   dimension: metrics__labeled_counter__avif_ispe {
     sql: ${TABLE}.metrics.labeled_counter.avif_ispe ;;
     hidden: yes
@@ -1381,10 +1416,38 @@ on the home screen.
 "
   }
 
+  dimension: metrics__labeled_counter__avif_lsel {
+    sql: ${TABLE}.metrics.labeled_counter.avif_lsel ;;
+    hidden: yes
+    description: "AVIF LayerSelectorProperty (lsel).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_major_brand {
+    sql: ${TABLE}.metrics.labeled_counter.avif_major_brand ;;
+    hidden: yes
+    description: "AVIF major brand.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_pasp {
+    sql: ${TABLE}.metrics.labeled_counter.avif_pasp ;;
+    hidden: yes
+    description: "AVIF pixel aspect ratio.
+"
+  }
+
   dimension: metrics__labeled_counter__avif_pixi {
     sql: ${TABLE}.metrics.labeled_counter.avif_pixi ;;
     hidden: yes
     description: "AVIF pixel information (bits per channel).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_sequence {
+    sql: ${TABLE}.metrics.labeled_counter.avif_sequence ;;
+    hidden: yes
+    description: "AVIF image sequence.
 "
   }
 
