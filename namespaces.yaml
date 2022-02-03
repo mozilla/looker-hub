@@ -1792,6 +1792,7 @@ mozilla_vpn:
   - vpn@mozilla.com
   - amarchesini@mozilla.com
   - dthorn@mozilla.com
+  - sbird@mozilla.com
   pretty_name: Mozilla VPN
   spoke: looker-spoke-default
   views:

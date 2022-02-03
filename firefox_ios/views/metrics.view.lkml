@@ -518,7 +518,7 @@ settings menu to customize the Firefox Homepage
 
   dimension: metrics__counter__firefox_home_page_cycle_wallpaper_button {
     label: "Firefox Home Page Cycle Wallpaper Button"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.firefox_home_page_cycle_wallpaper_button ;;
     type: number
     group_label: "Firefox Home Page"
