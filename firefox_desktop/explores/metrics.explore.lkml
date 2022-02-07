@@ -47,6 +47,16 @@ explore: metrics {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__glean_validation_pings_submitted}) AS metrics__metrics__labeled_counter__glean_validation_pings_submitted ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__glean_validation_pings_submitted.document_id} ;;
   }
+
+  join: metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_time_per_process_type_ms}) AS metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_gpu_time_per_process_type_ms}) AS metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms.document_id} ;;
+  }
 }
 
 explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
@@ -70,5 +80,13 @@ explore: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_fa
 }
 
 explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
   hidden: yes
 }
