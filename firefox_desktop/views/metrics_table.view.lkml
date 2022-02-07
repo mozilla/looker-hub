@@ -562,6 +562,20 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_time_per_process_type_ms ;;
+    hidden: yes
+    description: "CPU time used by each process type in ms.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_gpu_time_per_process_type_ms {
+    sql: ${TABLE}.metrics.labeled_counter.power_gpu_time_per_process_type_ms ;;
+    hidden: yes
+    description: "GPU time used by each process type in ms.
+"
+  }
+
   dimension: metrics__labeled_rate {
     sql: ${TABLE}.metrics.labeled_rate ;;
     hidden: yes
