@@ -258,6 +258,40 @@ parent process.
 "
   }
 
+  dimension: metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+    label: "Power Cpu Time Per Process Type Ms"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_time_per_process_type_ms ;;
+    group_label: "Power"
+    group_item_label: "Cpu Time Per Process Type Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Per Process Type Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_cpu_time_per_process_type_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "CPU time used by each process type in ms.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_gpu_time_per_process_type_ms {
+    label: "Power Gpu Time Per Process Type Ms"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_gpu_time_per_process_type_ms ;;
+    group_label: "Power"
+    group_item_label: "Gpu Time Per Process Type Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Per Process Type Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_gpu_time_per_process_type_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "GPU time used by each process type in ms.
+"
+  }
+
   dimension: metrics__counter__power_total_cpu_time_ms {
     label: "Power Total Cpu Time Ms"
     hidden: no
