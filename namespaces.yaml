@@ -62,40 +62,6 @@ awesome_bar:
       tables:
       - table: mozdata.telemetry.urlbar_clients_daily
       type: ping_view
-bergamot:
-  explores:
-    custom:
-      type: glean_ping_explore
-      views:
-        base_view: custom
-    deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: deletion_request
-  glean_app: true
-  owners:
-  - epavlov@mozilla.com
-  pretty_name: Bergamot Translator
-  spoke: looker-spoke-default
-  views:
-    custom:
-      tables:
-      - table: mozdata.org_mozilla_bergamot.custom
-      type: glean_ping_view
-    custom_table:
-      tables:
-      - channel: null
-        table: mozdata.org_mozilla_bergamot.custom
-      type: table_view
-    deletion_request:
-      tables:
-      - table: mozdata.org_mozilla_bergamot.deletion_request
-      type: glean_ping_view
-    deletion_request_table:
-      tables:
-      - channel: null
-        table: mozdata.org_mozilla_bergamot.deletion_request
-      type: table_view
 casa:
   connection: bigquery-casa
   glean_app: false
@@ -1262,6 +1228,14 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.metrics
       type: table_view
+firefox_translations:
+  explores: {}
+  glean_app: true
+  owners:
+  - epavlov@mozilla.com
+  pretty_name: Firefox Translations
+  spoke: looker-spoke-default
+  views: {}
 focus_android:
   explores:
     activation:
