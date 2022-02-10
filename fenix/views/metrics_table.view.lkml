@@ -425,6 +425,17 @@ Child-process data will likely be absent, or incomplete.
 "
   }
 
+  dimension: metrics__boolean__gifft_validation_main_ping_assembling {
+    sql: ${TABLE}.metrics.boolean.gifft_validation_main_ping_assembling ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Gifft Validation Main Ping Assembling"
+    description: "The value `true`, recorded when a Firefox Telemetry \"main\" ping is about
+to be assembled.
+To be used to validate GIFFT.
+"
+  }
+
   dimension: metrics__boolean__glean_core_migration_successful {
     sql: ${TABLE}.metrics.boolean.glean_core_migration_successful ;;
     type: yesno

@@ -2474,6 +2474,26 @@ parent process.
 "
   }
 
+  dimension: metrics__boolean__gifft_validation_main_ping_assembling {
+    label: "Gifft Validation Main Ping Assembling"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.gifft_validation_main_ping_assembling ;;
+    type: yesno
+    group_label: "Gifft Validation"
+    group_item_label: "Main Ping Assembling"
+
+    link: {
+      label: "Glean Dictionary reference for Gifft Validation Main Ping Assembling"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gifft_validation_main_ping_assembling"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value `true`, recorded when a Firefox Telemetry \"main\" ping is about
+to be assembled.
+To be used to validate GIFFT.
+"
+  }
+
   dimension: metrics__timing_distribution__paint_build_displaylist_time__sum {
     label: "Paint Build Displaylist Time Sum"
     hidden: no

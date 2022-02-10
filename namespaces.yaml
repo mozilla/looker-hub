@@ -1229,13 +1229,39 @@ firefox_ios:
         table: mozdata.org_mozilla_ios_fennec.metrics
       type: table_view
 firefox_translations:
-  explores: {}
+  explores:
+    custom:
+      type: glean_ping_explore
+      views:
+        base_view: custom
+    deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: deletion_request
   glean_app: true
   owners:
   - epavlov@mozilla.com
   pretty_name: Firefox Translations
   spoke: looker-spoke-default
-  views: {}
+  views:
+    custom:
+      tables:
+      - table: mozdata.firefox_translations.custom
+      type: glean_ping_view
+    custom_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_translations.custom
+      type: table_view
+    deletion_request:
+      tables:
+      - table: mozdata.firefox_translations.deletion_request
+      type: glean_ping_view
+    deletion_request_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_translations.deletion_request
+      type: table_view
 focus_android:
   explores:
     activation:
