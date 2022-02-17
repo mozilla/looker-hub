@@ -947,13 +947,13 @@ History, Reading List, or Downloads buttons
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts the number of times user opens an inactive tab.
+    description: "Recorded when a user taps on an inactive tab
 "
   }
 
   dimension: metrics__counter__inactive_tabs_tray_open_recently_closed_list {
     label: "Inactive Tabs Tray Open Recently Closed List"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_open_recently_closed_list ;;
     type: number
     group_label: "Inactive Tabs Tray"
@@ -972,7 +972,7 @@ section from inactive tabs tray.
 
   dimension: metrics__counter__inactive_tabs_tray_open_recently_closed_tab {
     label: "Inactive Tabs Tray Open Recently Closed Tab"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_open_recently_closed_tab ;;
     type: number
     group_label: "Inactive Tabs Tray"
