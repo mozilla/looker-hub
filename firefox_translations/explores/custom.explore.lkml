@@ -9,7 +9,7 @@ include: "/looker-hub/firefox_translations/views/custom.view.lkml"
 explore: custom {
   sql_always_where: ${custom.submission_date} >= '2010-01-01' ;;
   view_label: " Custom"
-  description: "Explore for the custom ping. A custom ping, sending time is fully controlled by the application."
+  description: "Explore for the custom ping. Sending time is fully controlled by the application."
   view_name: custom
 
   always_filter: {
