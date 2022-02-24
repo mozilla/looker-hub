@@ -300,6 +300,33 @@ view: custom_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__infobar_outbound_enabled {
+    sql: ${TABLE}.metrics.boolean.infobar_outbound_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Infobar Outbound Enabled"
+    description: "Translation of forms is enabled.
+"
+  }
+
+  dimension: metrics__counter__errors_engine_download {
+    sql: ${TABLE}.metrics.counter.errors_engine_download ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Errors Engine Download"
+    description: "Failed to download translation engine module.
+"
+  }
+
+  dimension: metrics__counter__errors_engine_load {
+    sql: ${TABLE}.metrics.counter.errors_engine_load ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Errors Engine Load"
+    description: "Failed to load translation engine wasm module in memory.
+"
+  }
+
   dimension: metrics__counter__errors_marian {
     sql: ${TABLE}.metrics.counter.errors_marian ;;
     type: number
@@ -324,6 +351,15 @@ view: custom_table {
     group_label: "Metrics Counter"
     group_item_label: "Errors Model Download"
     description: "Failed to download a model for a supported language pair.
+"
+  }
+
+  dimension: metrics__counter__errors_model_load {
+    sql: ${TABLE}.metrics.counter.errors_model_load ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Errors Model Load"
+    description: "Failed to load translation model in memory.
 "
   }
 
@@ -383,6 +419,33 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__quantity__forms_character_count {
+    sql: ${TABLE}.metrics.quantity.forms_character_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Forms Character Count"
+    description: "Total number of characters in all translated fields.
+"
+  }
+
+  dimension: metrics__quantity__forms_field_count {
+    sql: ${TABLE}.metrics.quantity.forms_field_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Forms Field Count"
+    description: "Number of text fields translated.
+"
+  }
+
+  dimension: metrics__quantity__forms_word_count {
+    sql: ${TABLE}.metrics.quantity.forms_word_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Forms Word Count"
+    description: "Total number of words in all translated fields.
 "
   }
 
@@ -626,6 +689,20 @@ and build config was used to produce this build
     sql: ${TABLE}.metrics.timespan.performance_model_load_time_num.value ;;
     type: number
     group_label: "Metrics Timespan Performance Model Load Time Num"
+    group_item_label: "Value"
+  }
+
+  dimension: metrics__timespan__performance_total_usage_time__time_unit {
+    sql: ${TABLE}.metrics.timespan.performance_total_usage_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Performance Total Usage Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__performance_total_usage_time__value {
+    sql: ${TABLE}.metrics.timespan.performance_total_usage_time.value ;;
+    type: number
+    group_label: "Metrics Timespan Performance Total Usage Time"
     group_item_label: "Value"
   }
 

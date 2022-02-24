@@ -5,6 +5,42 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: custom {
+  dimension: metrics__counter__errors_engine_download {
+    label: "Errors Engine Download"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.errors_engine_download ;;
+    type: number
+    group_label: "Errors"
+    group_item_label: "Engine Download"
+
+    link: {
+      label: "Glean Dictionary reference for Errors Engine Download"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_translations/metrics/errors_engine_download"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Failed to download translation engine module.
+"
+  }
+
+  dimension: metrics__counter__errors_engine_load {
+    label: "Errors Engine Load"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.errors_engine_load ;;
+    type: number
+    group_label: "Errors"
+    group_item_label: "Engine Load"
+
+    link: {
+      label: "Glean Dictionary reference for Errors Engine Load"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_translations/metrics/errors_engine_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Failed to load translation engine wasm module in memory.
+"
+  }
+
   dimension: metrics__counter__errors_marian {
     label: "Errors Marian"
     hidden: no
@@ -59,6 +95,24 @@ view: custom {
 "
   }
 
+  dimension: metrics__counter__errors_model_load {
+    label: "Errors Model Load"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.errors_model_load ;;
+    type: number
+    group_label: "Errors"
+    group_item_label: "Model Load"
+
+    link: {
+      label: "Glean Dictionary reference for Errors Model Load"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_translations/metrics/errors_model_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Failed to load translation model in memory.
+"
+  }
+
   dimension: metrics__counter__errors_translation {
     label: "Errors Translation"
     hidden: no
@@ -74,6 +128,78 @@ view: custom {
     }
 
     description: "The translation procedure has failed.
+"
+  }
+
+  dimension: metrics__quantity__forms_character_count {
+    label: "Forms Character Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.forms_character_count ;;
+    type: number
+    group_label: "Forms"
+    group_item_label: "Character Count"
+
+    link: {
+      label: "Glean Dictionary reference for Forms Character Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_translations/metrics/forms_character_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total number of characters in all translated fields.
+"
+  }
+
+  dimension: metrics__quantity__forms_field_count {
+    label: "Forms Field Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.forms_field_count ;;
+    type: number
+    group_label: "Forms"
+    group_item_label: "Field Count"
+
+    link: {
+      label: "Glean Dictionary reference for Forms Field Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_translations/metrics/forms_field_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of text fields translated.
+"
+  }
+
+  dimension: metrics__quantity__forms_word_count {
+    label: "Forms Word Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.forms_word_count ;;
+    type: number
+    group_label: "Forms"
+    group_item_label: "Word Count"
+
+    link: {
+      label: "Glean Dictionary reference for Forms Word Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_translations/metrics/forms_word_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total number of words in all translated fields.
+"
+  }
+
+  dimension: metrics__boolean__infobar_outbound_enabled {
+    label: "Infobar Outbound Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.infobar_outbound_enabled ;;
+    type: yesno
+    group_label: "Infobar"
+    group_item_label: "Outbound Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Infobar Outbound Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_translations/metrics/infobar_outbound_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Translation of forms is enabled.
 "
   }
 
@@ -459,6 +585,24 @@ changing type from string to quantity)
     description: "Time spent on loading a model into memory to start translation.
 (Renamed from model_load_time to model_load_time_num as part of
 changing type from string to quantity)
+"
+  }
+
+  dimension: metrics__timespan__performance_total_usage_time__value {
+    label: "Performance Total Usage Time Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.performance_total_usage_time.value ;;
+    type: number
+    group_label: "Performance"
+    group_item_label: "Total Usage Time Value"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Total Usage Time Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_translations/metrics/performance_total_usage_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Timing from the first event to the last event.
 "
   }
 
@@ -1101,6 +1245,56 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
+  measure: errors_engine_download {
+    type: sum
+    sql: ${metrics__counter__errors_engine_download} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Errors Engine Download"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_translations/metrics/errors_engine_download"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: errors_engine_download_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__errors_engine_download: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Errors Engine Download"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_translations/metrics/errors_engine_download"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: errors_engine_load {
+    type: sum
+    sql: ${metrics__counter__errors_engine_load} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Errors Engine Load"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_translations/metrics/errors_engine_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: errors_engine_load_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__errors_engine_load: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Errors Engine Load"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_translations/metrics/errors_engine_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: errors_marian {
     type: sum
     sql: ${metrics__counter__errors_marian} ;;
@@ -1172,6 +1366,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Errors Model Download"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_translations/metrics/errors_model_download"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: errors_model_load {
+    type: sum
+    sql: ${metrics__counter__errors_model_load} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Errors Model Load"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_translations/metrics/errors_model_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: errors_model_load_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__errors_model_load: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Errors Model Load"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_translations/metrics/errors_model_load"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
