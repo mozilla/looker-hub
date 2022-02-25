@@ -2512,6 +2512,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__power_cpu_time_bogus_values {
+    label: "Power Cpu Time Bogus Values"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_cpu_time_bogus_values ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Cpu Time Bogus Values"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_cpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Impossibly large CPU time values that were discarded.
+"
+  }
+
   dimension: metrics__labeled_counter__power_cpu_time_per_process_type_ms {
     label: "Power Cpu Time Per Process Type Ms"
     hidden: yes
@@ -2526,6 +2544,24 @@ To be used to validate GIFFT.
     }
 
     description: "CPU time used by each process type in ms.
+"
+  }
+
+  dimension: metrics__counter__power_gpu_time_bogus_values {
+    label: "Power Gpu Time Bogus Values"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_gpu_time_bogus_values ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Gpu Time Bogus Values"
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_gpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Impossibly large GPU time values that were discarded.
 "
   }
 
@@ -6561,6 +6597,56 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     link: {
       label: "Glean Dictionary reference for Fog Ipc Replay Failures"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_ipc_replay_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_cpu_time_bogus_values {
+    type: sum
+    sql: ${metrics__counter__power_cpu_time_bogus_values} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_cpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_cpu_time_bogus_values_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_cpu_time_bogus_values: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_cpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_gpu_time_bogus_values {
+    type: sum
+    sql: ${metrics__counter__power_gpu_time_bogus_values} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_gpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_gpu_time_bogus_values_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_gpu_time_bogus_values: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_gpu_time_bogus_values"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
