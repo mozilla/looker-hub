@@ -479,6 +479,24 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__power_cpu_time_bogus_values {
+    sql: ${TABLE}.metrics.counter.power_cpu_time_bogus_values ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Power Cpu Time Bogus Values"
+    description: "Impossibly large CPU time values that were discarded.
+"
+  }
+
+  dimension: metrics__counter__power_gpu_time_bogus_values {
+    sql: ${TABLE}.metrics.counter.power_gpu_time_bogus_values ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Power Gpu Time Bogus Values"
+    description: "Impossibly large GPU time values that were discarded.
+"
+  }
+
   dimension: metrics__counter__power_total_cpu_time_ms {
     sql: ${TABLE}.metrics.counter.power_total_cpu_time_ms ;;
     type: number
