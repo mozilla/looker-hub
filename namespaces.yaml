@@ -2134,6 +2134,11 @@ revenue:
   - skahmann@mozilla.com
   pretty_name: Revenue
   spoke: looker-spoke-private
+  views:
+    stripe_itemized_payout_reconciliation:
+      tables:
+      - table: mozdata.stripe.itemized_payout_reconciliation
+      type: table_view
 search:
   explores:
     desktop_search_alert_records:
