@@ -2028,6 +2028,17 @@ operational_monitoring:
         explore: fission_release_rollout_scalar
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
       type: operational_monitoring_dashboard
+    win32k_lockdown_experiment:
+      tables:
+      - branches: &id003
+        - enabled
+        - disabled
+        explore: win32k_lockdown_experiment_histogram
+        table: moz-fx-data-shared-prod.operational_monitoring.bug_1751039_pref_win32k_experiment_nightly_99_99_histogram
+      - branches: *id003
+        explore: win32k_lockdown_experiment_scalar
+        table: moz-fx-data-shared-prod.operational_monitoring.bug_1751039_pref_win32k_experiment_nightly_99_99_scalar
+      type: operational_monitoring_dashboard
   data_functions:
   - compute_opmon_dimensions
   explores:
@@ -2051,6 +2062,16 @@ operational_monitoring:
       type: operational_monitoring_explore
       views:
         base_view: fission_scalar
+    win32k_lockdown_experiment_histogram:
+      branches: *id003
+      type: operational_monitoring_explore
+      views:
+        base_view: win32k_lockdown_experiment_histogram
+    win32k_lockdown_experiment_scalar:
+      branches: *id003
+      type: operational_monitoring_explore
+      views:
+        base_view: win32k_lockdown_experiment_scalar
   glean_app: false
   owners:
   - msamuel@mozilla.com
@@ -2076,6 +2097,16 @@ operational_monitoring:
       tables:
       - table: moz-fx-data-shared-prod.operational_monitoring.bug_1660366_pref_ongoing_fission_nightly_experiment_nightly_83_100_scalar
         xaxis: build_id
+      type: operational_monitoring_scalar_view
+    win32k_lockdown_experiment_histogram:
+      tables:
+      - table: moz-fx-data-shared-prod.operational_monitoring.bug_1751039_pref_win32k_experiment_nightly_99_99_histogram
+        xaxis: submission_date
+      type: operational_monitoring_histogram_view
+    win32k_lockdown_experiment_scalar:
+      tables:
+      - table: moz-fx-data-shared-prod.operational_monitoring.bug_1751039_pref_win32k_experiment_nightly_99_99_scalar
+        xaxis: submission_date
       type: operational_monitoring_scalar_view
 pocket:
   glean_app: false
@@ -2103,6 +2134,11 @@ revenue:
   - skahmann@mozilla.com
   pretty_name: Revenue
   spoke: looker-spoke-private
+  views:
+    stripe_itemized_payout_reconciliation:
+      tables:
+      - table: mozdata.stripe.itemized_payout_reconciliation
+      type: table_view
 search:
   explores:
     desktop_search_alert_records:
