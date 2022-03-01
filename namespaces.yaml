@@ -1666,6 +1666,26 @@ klar_ios:
       - channel: null
         table: mozdata.org_mozilla_ios_klar.metrics
       type: table_view
+kpi:
+  explores:
+    unified_metrics:
+      type: ping_explore
+      views:
+        base_view: unified_metrics
+  glean_app: false
+  owners:
+  - loines@mozilla.com
+  pretty_name: KPI
+  spoke: looker-spoke-default
+  views:
+    loines_browser_2022_forecasts:
+      tables:
+      - table: mozdata.analysis.loines_browser_2022_forecasts
+      type: table_view
+    unified_metrics:
+      tables:
+      - table: mozdata.telemetry.unified_metrics
+      type: ping_view
 monitoring:
   explores:
     average_ping_sizes:
@@ -1995,6 +2015,7 @@ mozilla_vpn_private:
   glean_app: false
   owners:
   - dthorn@mozilla.com
+  - sbird@mozilla.com
   pretty_name: Mozilla VPN
   spoke: looker-spoke-private
 newtab:
