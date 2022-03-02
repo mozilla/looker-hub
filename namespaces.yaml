@@ -1678,10 +1678,6 @@ kpi:
   pretty_name: KPI
   spoke: looker-spoke-default
   views:
-    loines_browser_2022_forecasts:
-      tables:
-      - table: mozdata.analysis.loines_browser_2022_forecasts
-      type: table_view
     unified_metrics:
       tables:
       - table: mozdata.telemetry.unified_metrics
