@@ -60,7 +60,7 @@ The key format is `<provider-name>`.
 
   dimension: metrics__counter__events_total_uri_count {
     label: "Events Total Uri Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.events_total_uri_count ;;
     type: number
     group_label: "Events"
