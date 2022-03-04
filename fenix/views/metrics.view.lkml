@@ -478,7 +478,7 @@ programmatically redirect to a new location.
 
   dimension: metrics__counter__events_total_uri_count {
     label: "Events Total Uri Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.events_total_uri_count ;;
     type: number
     group_label: "Events"
@@ -1754,7 +1754,7 @@ default: false
 
   dimension: metrics__boolean__preferences_open_links_in_private {
     label: "Preferences Open Links In Private"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.preferences_open_links_in_private ;;
     type: yesno
     group_label: "Preferences"
@@ -1772,7 +1772,7 @@ default: false
 
   dimension: metrics__boolean__preferences_private_search_suggestions {
     label: "Preferences Private Search Suggestions"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.preferences_private_search_suggestions ;;
     type: yesno
     group_label: "Preferences"
@@ -2100,7 +2100,7 @@ value will be \"custom\"
 
   dimension: metrics__string__search_default_engine_submission_url {
     label: "Search Default Engine Submission Url"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_default_engine_submission_url ;;
     type: string
     group_label: "Search Default Engine"
