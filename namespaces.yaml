@@ -306,6 +306,10 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: tabs_sync
+    topsites_impression:
+      type: glean_ping_explore
+      views:
+        base_view: topsites_impression
   glean_app: true
   owners:
   - dthorn@mozilla.com
@@ -705,6 +709,24 @@ fenix:
         table: mozdata.org_mozilla_firefox_beta.tabs_sync
       - channel: nightly
         table: mozdata.org_mozilla_fenix.tabs_sync
+      type: table_view
+    topsites_impression:
+      tables:
+      - channel: release
+        table: mozdata.fenix.topsites_impression
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.topsites_impression
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.topsites_impression
+      type: glean_ping_view
+    topsites_impression_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.topsites_impression
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.topsites_impression
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.topsites_impression
       type: table_view
 firefox_accounts:
   explores:
