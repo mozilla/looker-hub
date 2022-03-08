@@ -1502,6 +1502,13 @@ focus_ios:
       - channel: null
         table: mozdata.org_mozilla_ios_focus.metrics
       type: table_view
+fpa:
+  connection: bigquery-oauth
+  glean_app: false
+  owners:
+  - ngrammater@mozilla.com
+  pretty_name: FP&A
+  spoke: looker-spoke-private
 glean_dictionary:
   explores:
     deletion_request:
