@@ -46,6 +46,11 @@ view: quicksuggest_impression {
     type: string
   }
 
+  dimension: match_type {
+    sql: ${TABLE}.match_type ;;
+    type: string
+  }
+
   dimension: metadata__geo__city {
     sql: ${TABLE}.metadata.geo.city ;;
     type: string
