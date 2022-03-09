@@ -31,42 +31,6 @@ explore: fission_release_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_CONTENT_CRASHES {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_release_rollout_scalar.branch: "enabled, disabled",
-        fission_release_rollout_scalar.percentile_conf: "50",
-        fission_release_rollout_scalar.cores_count: "2",
-        fission_release_rollout_scalar.os: "Windows",
-        fission_release_rollout_scalar.probe: "CONTENT_CRASHES",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_CONTENT_SHUTDOWN_CRASHES {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_release_rollout_scalar.branch: "enabled, disabled",
-        fission_release_rollout_scalar.percentile_conf: "50",
-        fission_release_rollout_scalar.cores_count: "2",
-        fission_release_rollout_scalar.os: "Windows",
-        fission_release_rollout_scalar.probe: "CONTENT_SHUTDOWN_CRASHES",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_GMPLUGIN_CRASHES {
     query: {
       dimensions: [submission_date, branch]
@@ -103,42 +67,6 @@ explore: fission_release_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_MAIN_CRASHES {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_release_rollout_scalar.branch: "enabled, disabled",
-        fission_release_rollout_scalar.percentile_conf: "50",
-        fission_release_rollout_scalar.cores_count: "2",
-        fission_release_rollout_scalar.os: "Windows",
-        fission_release_rollout_scalar.probe: "MAIN_CRASHES",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_OOM_CRASHES {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_release_rollout_scalar.branch: "enabled, disabled",
-        fission_release_rollout_scalar.percentile_conf: "50",
-        fission_release_rollout_scalar.cores_count: "2",
-        fission_release_rollout_scalar.os: "Windows",
-        fission_release_rollout_scalar.probe: "OOM_CRASHES",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_PLUGIN_CRASHES {
     query: {
       dimensions: [submission_date, branch]
@@ -149,42 +77,6 @@ explore: fission_release_rollout_scalar {
         fission_release_rollout_scalar.cores_count: "2",
         fission_release_rollout_scalar.os: "Windows",
         fission_release_rollout_scalar.probe: "PLUGIN_CRASHES",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_SHUTDOWN_HANGS {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_release_rollout_scalar.branch: "enabled, disabled",
-        fission_release_rollout_scalar.percentile_conf: "50",
-        fission_release_rollout_scalar.cores_count: "2",
-        fission_release_rollout_scalar.os: "Windows",
-        fission_release_rollout_scalar.probe: "SHUTDOWN_HANGS",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_STARTUP_CRASHES {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_release_rollout_scalar.branch: "enabled, disabled",
-        fission_release_rollout_scalar.percentile_conf: "50",
-        fission_release_rollout_scalar.cores_count: "2",
-        fission_release_rollout_scalar.os: "Windows",
-        fission_release_rollout_scalar.probe: "STARTUP_CRASHES",
       ]
     }
 

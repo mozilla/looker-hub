@@ -20,8 +20,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "CHECKERBOARD_SEVERITY",
       ]
     }
@@ -38,8 +36,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "CHILD_PROCESS_LAUNCH_MS",
       ]
     }
@@ -56,8 +52,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "CONTENT_FRAME_TIME_VSYNC",
       ]
     }
@@ -74,8 +68,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "CONTENT_PROCESS_COUNT",
       ]
     }
@@ -92,8 +84,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "CONTENT_PROCESS_MAX",
       ]
     }
@@ -110,8 +100,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "CYCLE_COLLECTOR_MAX_PAUSE",
       ]
     }
@@ -128,8 +116,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "CYCLE_COLLECTOR_MAX_PAUSE_CONTENT",
       ]
     }
@@ -146,8 +132,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "FX_NEW_WINDOW_MS",
       ]
     }
@@ -164,8 +148,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "FX_TAB_SWITCH_COMPOSITE_E10S_MS",
       ]
     }
@@ -182,8 +164,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "GC_MAX_PAUSE_2",
       ]
     }
@@ -200,8 +180,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "GC_MAX_PAUSE_2_CONTENT",
       ]
     }
@@ -218,8 +196,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "GC_MS",
       ]
     }
@@ -236,8 +212,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "GC_MS_CONTENT",
       ]
     }
@@ -254,8 +228,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "GC_SLICE_DURING_IDLE",
       ]
     }
@@ -272,8 +244,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "GC_SLICE_DURING_IDLE_CONTENT",
       ]
     }
@@ -290,8 +260,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "KEYPRESS_PRESENT_LATENCY_MS",
       ]
     }
@@ -308,8 +276,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "LOADED_TAB_COUNT",
       ]
     }
@@ -326,8 +292,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "MEMORY_TOTAL",
       ]
     }
@@ -344,8 +308,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "MEMORY_UNIQUE_CONTENT_STARTUP",
       ]
     }
@@ -362,8 +324,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "PERF_FIRST_CONTENTFUL_PAINT_MS",
       ]
     }
@@ -380,8 +340,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "PERF_PAGE_LOAD_TIME_MS",
       ]
     }
@@ -398,8 +356,6 @@ explore: fission_histogram {
       filters: [
         fission_histogram.branch: "enabled, disabled",
         fission_histogram.percentile_conf: "50",
-        fission_histogram.cores_count: "4",
-        fission_histogram.os: "Windows",
         fission_histogram.probe: "TIME_TO_FIRST_INTERACTION_MS",
       ]
     }
