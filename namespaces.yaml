@@ -2074,14 +2074,50 @@ operational_monitoring:
         explore: fission_release_rollout_scalar
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
       type: operational_monitoring_dashboard
-    win32k_lockdown_experiment:
+    tab_unloading_v2_linux:
       tables:
       - branches: &id003
+        - tab-unloading-enabled
+        - tab-unloading-disabled
+        explore: tab_unloading_v2_linux_histogram
+        table: moz-fx-data-shared-prod.operational_monitoring.bug_1751307_pref_tab_unloading_on_low_memory_for_linux_release_97_98_histogram
+      - branches: *id003
+        explore: tab_unloading_v2_linux_scalar
+        table: moz-fx-data-shared-prod.operational_monitoring.bug_1751307_pref_tab_unloading_on_low_memory_for_linux_release_97_98_scalar
+      type: operational_monitoring_dashboard
+    tab_unloading_v2_mac:
+      tables:
+      - branches: &id004
+        - memory-pressure-warning
+        - tab-unloading-and-memory-pressure-warning
+        - memory-pressure-critical
+        - tab-unloading-and-memory-pressure-critical
+        - tab-unloading-and-memory-pressure-disabled
+        explore: tab_unloading_v2_mac_histogram
+        table: moz-fx-data-shared-prod.operational_monitoring.bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
+      - branches: *id004
+        explore: tab_unloading_v2_mac_scalar
+        table: moz-fx-data-shared-prod.operational_monitoring.bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
+      type: operational_monitoring_dashboard
+    tab_unloading_v2_windows:
+      tables:
+      - branches: &id005
+        - tab-unloading-enabled
+        - tab-unloading-disabled
+        explore: tab_unloading_v2_windows_histogram
+        table: moz-fx-data-shared-prod.operational_monitoring.bug_1751309_pref_tab_unloading_on_low_memory_for_windows_release_97_98_histogram
+      - branches: *id005
+        explore: tab_unloading_v2_windows_scalar
+        table: moz-fx-data-shared-prod.operational_monitoring.bug_1751309_pref_tab_unloading_on_low_memory_for_windows_release_97_98_scalar
+      type: operational_monitoring_dashboard
+    win32k_lockdown_experiment:
+      tables:
+      - branches: &id006
         - enabled
         - disabled
         explore: win32k_lockdown_experiment_histogram
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751039_pref_win32k_experiment_nightly_99_99_histogram
-      - branches: *id003
+      - branches: *id006
         explore: win32k_lockdown_experiment_scalar
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751039_pref_win32k_experiment_nightly_99_99_scalar
       type: operational_monitoring_dashboard
@@ -2108,13 +2144,43 @@ operational_monitoring:
       type: operational_monitoring_explore
       views:
         base_view: fission_scalar
-    win32k_lockdown_experiment_histogram:
+    tab_unloading_v2_linux_histogram:
       branches: *id003
+      type: operational_monitoring_explore
+      views:
+        base_view: tab_unloading_v2_linux_histogram
+    tab_unloading_v2_linux_scalar:
+      branches: *id003
+      type: operational_monitoring_explore
+      views:
+        base_view: tab_unloading_v2_linux_scalar
+    tab_unloading_v2_mac_histogram:
+      branches: *id004
+      type: operational_monitoring_explore
+      views:
+        base_view: tab_unloading_v2_mac_histogram
+    tab_unloading_v2_mac_scalar:
+      branches: *id004
+      type: operational_monitoring_explore
+      views:
+        base_view: tab_unloading_v2_mac_scalar
+    tab_unloading_v2_windows_histogram:
+      branches: *id005
+      type: operational_monitoring_explore
+      views:
+        base_view: tab_unloading_v2_windows_histogram
+    tab_unloading_v2_windows_scalar:
+      branches: *id005
+      type: operational_monitoring_explore
+      views:
+        base_view: tab_unloading_v2_windows_scalar
+    win32k_lockdown_experiment_histogram:
+      branches: *id006
       type: operational_monitoring_explore
       views:
         base_view: win32k_lockdown_experiment_histogram
     win32k_lockdown_experiment_scalar:
-      branches: *id003
+      branches: *id006
       type: operational_monitoring_explore
       views:
         base_view: win32k_lockdown_experiment_scalar
@@ -2143,6 +2209,36 @@ operational_monitoring:
       tables:
       - table: moz-fx-data-shared-prod.operational_monitoring.bug_1660366_pref_ongoing_fission_nightly_experiment_nightly_83_100_scalar
         xaxis: build_id
+      type: operational_monitoring_scalar_view
+    tab_unloading_v2_linux_histogram:
+      tables:
+      - table: moz-fx-data-shared-prod.operational_monitoring.bug_1751307_pref_tab_unloading_on_low_memory_for_linux_release_97_98_histogram
+        xaxis: submission_date
+      type: operational_monitoring_histogram_view
+    tab_unloading_v2_linux_scalar:
+      tables:
+      - table: moz-fx-data-shared-prod.operational_monitoring.bug_1751307_pref_tab_unloading_on_low_memory_for_linux_release_97_98_scalar
+        xaxis: submission_date
+      type: operational_monitoring_scalar_view
+    tab_unloading_v2_mac_histogram:
+      tables:
+      - table: moz-fx-data-shared-prod.operational_monitoring.bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
+        xaxis: submission_date
+      type: operational_monitoring_histogram_view
+    tab_unloading_v2_mac_scalar:
+      tables:
+      - table: moz-fx-data-shared-prod.operational_monitoring.bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
+        xaxis: submission_date
+      type: operational_monitoring_scalar_view
+    tab_unloading_v2_windows_histogram:
+      tables:
+      - table: moz-fx-data-shared-prod.operational_monitoring.bug_1751309_pref_tab_unloading_on_low_memory_for_windows_release_97_98_histogram
+        xaxis: submission_date
+      type: operational_monitoring_histogram_view
+    tab_unloading_v2_windows_scalar:
+      tables:
+      - table: moz-fx-data-shared-prod.operational_monitoring.bug_1751309_pref_tab_unloading_on_low_memory_for_windows_release_97_98_scalar
+        xaxis: submission_date
       type: operational_monitoring_scalar_view
     win32k_lockdown_experiment_histogram:
       tables:
