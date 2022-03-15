@@ -723,68 +723,6 @@
       disabled - fission_release_rollout_scalar.high: "#8cd3ff"
       disabled - fission_release_rollout_scalar.low: "#8cd3ff"
       
-  - title: Content Crashes
-    name: Content Crashes
-    explore: fission_release_rollout_scalar
-    type: "looker_line"
-    fields: [
-      fission_release_rollout_scalar.submission_date,
-      fission_release_rollout_scalar.branch,
-      fission_release_rollout_scalar.high,
-      fission_release_rollout_scalar.low,
-      fission_release_rollout_scalar.percentile
-    ]
-    pivots: [fission_release_rollout_scalar.branch]
-    filters:
-      fission_release_rollout_scalar.probe: CONTENT_CRASHES
-    row: 110
-    col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_release_rollout_scalar.percentile_conf
-      Cores Count: fission_release_rollout_scalar.cores_count
-      Os: fission_release_rollout_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - fission_release_rollout_scalar.percentile: "#ff6a06"
-      enabled - fission_release_rollout_scalar.high: "#ffb380"
-      enabled - fission_release_rollout_scalar.low: "#ffb380"
-      disabled - fission_release_rollout_scalar.percentile: "blue"
-      disabled - fission_release_rollout_scalar.high: "#8cd3ff"
-      disabled - fission_release_rollout_scalar.low: "#8cd3ff"
-      
-  - title: Content Shutdown Crashes
-    name: Content Shutdown Crashes
-    explore: fission_release_rollout_scalar
-    type: "looker_line"
-    fields: [
-      fission_release_rollout_scalar.submission_date,
-      fission_release_rollout_scalar.branch,
-      fission_release_rollout_scalar.high,
-      fission_release_rollout_scalar.low,
-      fission_release_rollout_scalar.percentile
-    ]
-    pivots: [fission_release_rollout_scalar.branch]
-    filters:
-      fission_release_rollout_scalar.probe: CONTENT_SHUTDOWN_CRASHES
-    row: 120
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_release_rollout_scalar.percentile_conf
-      Cores Count: fission_release_rollout_scalar.cores_count
-      Os: fission_release_rollout_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - fission_release_rollout_scalar.percentile: "#ff6a06"
-      enabled - fission_release_rollout_scalar.high: "#ffb380"
-      enabled - fission_release_rollout_scalar.low: "#ffb380"
-      disabled - fission_release_rollout_scalar.percentile: "blue"
-      disabled - fission_release_rollout_scalar.high: "#8cd3ff"
-      disabled - fission_release_rollout_scalar.low: "#8cd3ff"
-      
   - title: Gmplugin Crashes
     name: Gmplugin Crashes
     explore: fission_release_rollout_scalar
@@ -799,7 +737,7 @@
     pivots: [fission_release_rollout_scalar.branch]
     filters:
       fission_release_rollout_scalar.probe: GMPLUGIN_CRASHES
-    row: 120
+    row: 110
     col: 12
     width: 12
     height: 8
@@ -830,69 +768,7 @@
     pivots: [fission_release_rollout_scalar.branch]
     filters:
       fission_release_rollout_scalar.probe: GPU_CRASHES
-    row: 130
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_release_rollout_scalar.percentile_conf
-      Cores Count: fission_release_rollout_scalar.cores_count
-      Os: fission_release_rollout_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - fission_release_rollout_scalar.percentile: "#ff6a06"
-      enabled - fission_release_rollout_scalar.high: "#ffb380"
-      enabled - fission_release_rollout_scalar.low: "#ffb380"
-      disabled - fission_release_rollout_scalar.percentile: "blue"
-      disabled - fission_release_rollout_scalar.high: "#8cd3ff"
-      disabled - fission_release_rollout_scalar.low: "#8cd3ff"
-      
-  - title: Main Crashes
-    name: Main Crashes
-    explore: fission_release_rollout_scalar
-    type: "looker_line"
-    fields: [
-      fission_release_rollout_scalar.submission_date,
-      fission_release_rollout_scalar.branch,
-      fission_release_rollout_scalar.high,
-      fission_release_rollout_scalar.low,
-      fission_release_rollout_scalar.percentile
-    ]
-    pivots: [fission_release_rollout_scalar.branch]
-    filters:
-      fission_release_rollout_scalar.probe: MAIN_CRASHES
-    row: 130
-    col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_release_rollout_scalar.percentile_conf
-      Cores Count: fission_release_rollout_scalar.cores_count
-      Os: fission_release_rollout_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - fission_release_rollout_scalar.percentile: "#ff6a06"
-      enabled - fission_release_rollout_scalar.high: "#ffb380"
-      enabled - fission_release_rollout_scalar.low: "#ffb380"
-      disabled - fission_release_rollout_scalar.percentile: "blue"
-      disabled - fission_release_rollout_scalar.high: "#8cd3ff"
-      disabled - fission_release_rollout_scalar.low: "#8cd3ff"
-      
-  - title: Oom Crashes
-    name: Oom Crashes
-    explore: fission_release_rollout_scalar
-    type: "looker_line"
-    fields: [
-      fission_release_rollout_scalar.submission_date,
-      fission_release_rollout_scalar.branch,
-      fission_release_rollout_scalar.high,
-      fission_release_rollout_scalar.low,
-      fission_release_rollout_scalar.percentile
-    ]
-    pivots: [fission_release_rollout_scalar.branch]
-    filters:
-      fission_release_rollout_scalar.probe: OOM_CRASHES
-    row: 140
+    row: 120
     col: 0
     width: 12
     height: 8
@@ -923,69 +799,7 @@
     pivots: [fission_release_rollout_scalar.branch]
     filters:
       fission_release_rollout_scalar.probe: PLUGIN_CRASHES
-    row: 140
-    col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_release_rollout_scalar.percentile_conf
-      Cores Count: fission_release_rollout_scalar.cores_count
-      Os: fission_release_rollout_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - fission_release_rollout_scalar.percentile: "#ff6a06"
-      enabled - fission_release_rollout_scalar.high: "#ffb380"
-      enabled - fission_release_rollout_scalar.low: "#ffb380"
-      disabled - fission_release_rollout_scalar.percentile: "blue"
-      disabled - fission_release_rollout_scalar.high: "#8cd3ff"
-      disabled - fission_release_rollout_scalar.low: "#8cd3ff"
-      
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
-    explore: fission_release_rollout_scalar
-    type: "looker_line"
-    fields: [
-      fission_release_rollout_scalar.submission_date,
-      fission_release_rollout_scalar.branch,
-      fission_release_rollout_scalar.high,
-      fission_release_rollout_scalar.low,
-      fission_release_rollout_scalar.percentile
-    ]
-    pivots: [fission_release_rollout_scalar.branch]
-    filters:
-      fission_release_rollout_scalar.probe: SHUTDOWN_HANGS
-    row: 150
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_release_rollout_scalar.percentile_conf
-      Cores Count: fission_release_rollout_scalar.cores_count
-      Os: fission_release_rollout_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - fission_release_rollout_scalar.percentile: "#ff6a06"
-      enabled - fission_release_rollout_scalar.high: "#ffb380"
-      enabled - fission_release_rollout_scalar.low: "#ffb380"
-      disabled - fission_release_rollout_scalar.percentile: "blue"
-      disabled - fission_release_rollout_scalar.high: "#8cd3ff"
-      disabled - fission_release_rollout_scalar.low: "#8cd3ff"
-      
-  - title: Startup Crashes
-    name: Startup Crashes
-    explore: fission_release_rollout_scalar
-    type: "looker_line"
-    fields: [
-      fission_release_rollout_scalar.submission_date,
-      fission_release_rollout_scalar.branch,
-      fission_release_rollout_scalar.high,
-      fission_release_rollout_scalar.low,
-      fission_release_rollout_scalar.percentile
-    ]
-    pivots: [fission_release_rollout_scalar.branch]
-    filters:
-      fission_release_rollout_scalar.probe: STARTUP_CRASHES
-    row: 150
+    row: 120
     col: 12
     width: 12
     height: 8
@@ -1016,7 +830,7 @@
     pivots: [fission_release_rollout_scalar.branch]
     filters:
       fission_release_rollout_scalar.probe: SUBSESSION_LENGTH
-    row: 160
+    row: 130
     col: 0
     width: 12
     height: 8
@@ -1047,7 +861,7 @@
     pivots: [fission_release_rollout_scalar.branch]
     filters:
       fission_release_rollout_scalar.probe: URI_COUNT
-    row: 160
+    row: 130
     col: 12
     width: 12
     height: 8
