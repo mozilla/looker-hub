@@ -101,6 +101,10 @@ contextual_services:
       type: ping_explore
       views:
         base_view: topsites_impression
+    topsites_impressions_fenix:
+      type: ping_explore
+      views:
+        base_view: topsites_impression_fenix
   glean_app: false
   owners:
   - mmccorquodale@mozilla.com
@@ -127,6 +131,15 @@ contextual_services:
     topsites_impression:
       tables:
       - table: mozdata.contextual_services.topsites_impression
+      type: ping_view
+    topsites_impression_fenix:
+      tables:
+      - channel: release
+        table: mozdata.fenix.topsites_impression
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.topsites_impression
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.topsites_impression
       type: ping_view
 duet:
   glean_app: false
@@ -1507,6 +1520,8 @@ fpa:
   glean_app: false
   owners:
   - ngrammater@mozilla.com
+  - rmiller@mozilla.com
+  - lakshmimurugan@google.com
   pretty_name: FP&A
   spoke: looker-spoke-private
 glean_dictionary:
