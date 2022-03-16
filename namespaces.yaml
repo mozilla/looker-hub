@@ -1507,6 +1507,8 @@ fpa:
   glean_app: false
   owners:
   - ngrammater@mozilla.com
+  - rmiller@mozilla.com
+  - lakshmimurugan@google.com
   pretty_name: FP&A
   spoke: looker-spoke-private
 glean_dictionary:
