@@ -1297,6 +1297,11 @@ firefox_translations:
       - channel: null
         table: mozdata.firefox_translations.deletion_request
       type: table_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_translations.events
+      type: table_view
 focus_android:
   explores:
     activation:
@@ -1549,6 +1554,11 @@ glean_dictionary:
       tables:
       - channel: null
         table: mozdata.glean_dictionary.deletion_request
+      type: table_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.glean_dictionary.events
       type: table_view
     page_view:
       tables:
@@ -1910,6 +1920,11 @@ mozilla_vpn:
       tables:
       - channel: release
         table: mozdata.mozilla_vpn.events_daily
+      type: table_view
+    events_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.events
       type: table_view
     events_unnested_table:
       tables:

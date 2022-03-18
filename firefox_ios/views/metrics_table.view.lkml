@@ -817,6 +817,18 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__history_group_list {
+    sql: ${TABLE}.metrics.counter.history_group_list ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "History Group List"
+    description: "Counts the number of times a user has selected a
+search term group inside the history panel. Selecting
+this item will navigate them to a view containing a list
+of all Site items that appear in that group.
+"
+  }
+
   dimension: metrics__counter__inactive_tabs_tray_inactive_tab_shown {
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_inactive_tab_shown ;;
     type: number
@@ -1619,6 +1631,15 @@ This metric appears in both the metrics and baseline pings.
   the last metrics ping (including the last metrics ping)
 - On the baseline ping, the counts include the number of pings send since
   the last baseline ping (including the last baseline ping)
+"
+  }
+
+  dimension: metrics__labeled_counter__history_selected_item {
+    sql: ${TABLE}.metrics.labeled_counter.history_selected_item ;;
+    hidden: yes
+    description: "Counts the number of times a user selected an item from
+the history panel. This labeled counter will tell apart
+items that appear inside a group, and those that do not.
 "
   }
 
