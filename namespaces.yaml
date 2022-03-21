@@ -2190,6 +2190,17 @@ operational_monitoring:
         explore: win32k_lockdown_experiment_scalar
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751039_pref_win32k_experiment_nightly_99_99_scalar
       type: operational_monitoring_dashboard
+    win32k_lockdown_experiment_v2:
+      tables:
+      - branches: &id007
+        - enabled
+        - disabled
+        explore: win32k_lockdown_experiment_v2_histogram
+        table: moz-fx-data-shared-prod.operational_monitoring.bug_1759171_pref_win32k_experiment_v2_beta_99_100_histogram
+      - branches: *id007
+        explore: win32k_lockdown_experiment_v2_scalar
+        table: moz-fx-data-shared-prod.operational_monitoring.bug_1759171_pref_win32k_experiment_v2_beta_99_100_scalar
+      type: operational_monitoring_dashboard
   data_functions:
   - compute_opmon_dimensions
   explores:
@@ -2253,6 +2264,16 @@ operational_monitoring:
       type: operational_monitoring_explore
       views:
         base_view: win32k_lockdown_experiment_scalar
+    win32k_lockdown_experiment_v2_histogram:
+      branches: *id007
+      type: operational_monitoring_explore
+      views:
+        base_view: win32k_lockdown_experiment_v2_histogram
+    win32k_lockdown_experiment_v2_scalar:
+      branches: *id007
+      type: operational_monitoring_explore
+      views:
+        base_view: win32k_lockdown_experiment_v2_scalar
   glean_app: false
   owners:
   - msamuel@mozilla.com
@@ -2317,6 +2338,16 @@ operational_monitoring:
     win32k_lockdown_experiment_scalar:
       tables:
       - table: moz-fx-data-shared-prod.operational_monitoring.bug_1751039_pref_win32k_experiment_nightly_99_99_scalar
+        xaxis: submission_date
+      type: operational_monitoring_scalar_view
+    win32k_lockdown_experiment_v2_histogram:
+      tables:
+      - table: moz-fx-data-shared-prod.operational_monitoring.bug_1759171_pref_win32k_experiment_v2_beta_99_100_histogram
+        xaxis: submission_date
+      type: operational_monitoring_histogram_view
+    win32k_lockdown_experiment_v2_scalar:
+      tables:
+      - table: moz-fx-data-shared-prod.operational_monitoring.bug_1759171_pref_win32k_experiment_v2_beta_99_100_scalar
         xaxis: submission_date
       type: operational_monitoring_scalar_view
 pocket:
