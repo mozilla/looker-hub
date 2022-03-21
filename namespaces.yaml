@@ -326,7 +326,7 @@ fenix:
   glean_app: true
   owners:
   - dthorn@mozilla.com
-  - mdroettboom@mozilla.com
+  - aplacitelli@mozilla.com
   - vzare@mozilla.com
   - ksiegler@mozilla.com
   pretty_name: Firefox for Android
@@ -1273,6 +1273,11 @@ firefox_translations:
       type: glean_ping_explore
       views:
         base_view: deletion_request
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
   glean_app: true
   owners:
   - epavlov@mozilla.com
@@ -1296,6 +1301,21 @@ firefox_translations:
       tables:
       - channel: null
         table: mozdata.firefox_translations.deletion_request
+      type: table_view
+    events:
+      tables:
+      - base_table: mozdata.firefox_translations.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_translations.events
+      type: table_view
+    events_unnested_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_translations.events_unnested
       type: table_view
 focus_android:
   explores:
@@ -1530,6 +1550,11 @@ glean_dictionary:
       type: glean_ping_explore
       views:
         base_view: deletion_request
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
     page_view:
       type: glean_ping_explore
       views:
@@ -1549,6 +1574,21 @@ glean_dictionary:
       tables:
       - channel: null
         table: mozdata.glean_dictionary.deletion_request
+      type: table_view
+    events:
+      tables:
+      - base_table: mozdata.glean_dictionary.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.glean_dictionary.events
+      type: table_view
+    events_unnested_table:
+      tables:
+      - channel: null
+        table: mozdata.glean_dictionary.events_unnested
       type: table_view
     page_view:
       tables:
@@ -1839,6 +1879,10 @@ mozilla_vpn:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_unnested:
+      type: glean_ping_explore
+      views:
+        base_view: events_unnested
     funnel_analysis:
       type: funnel_analysis_explore
       views:
@@ -1911,6 +1955,16 @@ mozilla_vpn:
       - channel: release
         table: mozdata.mozilla_vpn.events_daily
       type: table_view
+    events_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.events
+      type: table_view
+    events_unnested:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.events_unnested
+      type: glean_ping_view
     events_unnested_table:
       tables:
       - channel: release

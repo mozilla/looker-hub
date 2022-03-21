@@ -933,6 +933,46 @@ History, Reading List, or Downloads buttons
 "
   }
 
+  dimension: metrics__counter__history_group_list {
+    label: "History Group List"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.history_group_list ;;
+    type: number
+    group_label: "History"
+    group_item_label: "Group List"
+
+    link: {
+      label: "Glean Dictionary reference for History Group List"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/history_group_list"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user has selected a
+search term group inside the history panel. Selecting
+this item will navigate them to a view containing a list
+of all Site items that appear in that group.
+"
+  }
+
+  dimension: metrics__labeled_counter__history_selected_item {
+    label: "History Selected Item"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.history_selected_item ;;
+    group_label: "History"
+    group_item_label: "Selected Item"
+
+    link: {
+      label: "Glean Dictionary reference for History Selected Item"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/history_selected_item"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user selected an item from
+the history panel. This labeled counter will tell apart
+items that appear inside a group, and those that do not.
+"
+  }
+
   dimension: metrics__counter__inactive_tabs_tray_inactive_tab_shown {
     label: "Inactive Tabs Tray Inactive Tab Shown"
     hidden: no
@@ -1288,7 +1328,7 @@ onboarding's first screen, the welcome screen.
 
   dimension: metrics__counter__page_action_menu_add_to_reading_list {
     label: "Page Action Menu Add To Reading List"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.page_action_menu_add_to_reading_list ;;
     type: number
     group_label: "Page Action Menu"
@@ -4364,6 +4404,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Firefox Home Page Recently Saved Show All"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_recently_saved_show_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: history_group_list {
+    type: sum
+    sql: ${metrics__counter__history_group_list} ;;
+
+    link: {
+      label: "Glean Dictionary reference for History Group List"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/history_group_list"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: history_group_list_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__history_group_list: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for History Group List"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/history_group_list"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
