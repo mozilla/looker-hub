@@ -1328,7 +1328,7 @@ onboarding's first screen, the welcome screen.
 
   dimension: metrics__counter__page_action_menu_add_to_reading_list {
     label: "Page Action Menu Add To Reading List"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.page_action_menu_add_to_reading_list ;;
     type: number
     group_label: "Page Action Menu"
