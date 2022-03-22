@@ -25,7 +25,7 @@ view: urlbar_clients_daily {
     hidden: yes
   }
 
-  dimension: count_picked_total {
+  measure: count_picked_total {
     sql: ${TABLE}.count_picked_total ;;
     type: number
   }
@@ -129,7 +129,7 @@ view: urlbar_clients_daily__count_picked_by_position {
     type: number
   }
 
-  dimension: value {
+  measure: value {
     sql: ${TABLE}.value ;;
     type: number
   }
@@ -141,7 +141,7 @@ view: urlbar_clients_daily__count_picked_by_type {
     type: string
   }
 
-  dimension: value {
+  measure: value {
     sql: ${TABLE}.value ;;
     type: number
   }
@@ -165,7 +165,7 @@ view: urlbar_clients_daily__urlbar_picked_by_type_by_position__position {
     type: number
   }
 
-  dimension: value {
+  measure: value {
     sql: ${TABLE}.value ;;
     type: number
   }
