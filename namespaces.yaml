@@ -1137,6 +1137,7 @@ firefox_ios:
   - tlong@mozilla.com
   - dthorn@mozilla.com
   - athomas@mozilla.com
+  - darcese@mozilla.com
   pretty_name: Firefox for iOS
   spoke: looker-spoke-default
   views:
@@ -1879,10 +1880,6 @@ mozilla_vpn:
       views:
         base_view: events
         extended_view: events_unnested_table
-    events_unnested:
-      type: glean_ping_explore
-      views:
-        base_view: events_unnested
     funnel_analysis:
       type: funnel_analysis_explore
       views:
@@ -1960,11 +1957,6 @@ mozilla_vpn:
       - channel: release
         table: mozdata.mozilla_vpn.events
       type: table_view
-    events_unnested:
-      tables:
-      - channel: release
-        table: mozdata.mozilla_vpn.events_unnested
-      type: glean_ping_view
     events_unnested_table:
       tables:
       - channel: release
