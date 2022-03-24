@@ -28,6 +28,12 @@ explore: urlbar_clients_daily {
     sql: LEFT JOIN UNNEST(${urlbar_clients_daily.count_picked_by_type}) AS urlbar_clients_daily__count_picked_by_type ;;
   }
 
+  join: urlbar_clients_daily__experiments {
+    view_label: "Urlbar Clients Daily  Experiments"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${urlbar_clients_daily.experiments}) AS urlbar_clients_daily__experiments ;;
+  }
+
   join: urlbar_clients_daily__urlbar_picked_by_type_by_position {
     view_label: "Urlbar Clients Daily  Urlbar Picked By Type By Position"
     relationship: one_to_many

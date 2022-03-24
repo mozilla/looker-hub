@@ -1827,6 +1827,26 @@ with a home page origin.
     hidden: yes
   }
 
+  dimension: metrics__quantity__tabs_normal_tabs_quantity {
+    sql: ${TABLE}.metrics.quantity.tabs_normal_tabs_quantity ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Tabs Normal Tabs Quantity"
+    description: "A snapshot of how many normal tabs a user has opened when he
+closes the application.
+"
+  }
+
+  dimension: metrics__quantity__tabs_private_tabs_quantity {
+    sql: ${TABLE}.metrics.quantity.tabs_private_tabs_quantity ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Tabs Private Tabs Quantity"
+    description: "A snapshot of how many private tabs a user has opened when he
+closes the application.
+"
+  }
+
   dimension: metrics__string__ping_reason {
     sql: ${TABLE}.metrics.string.ping_reason ;;
     type: string
