@@ -309,6 +309,15 @@ view: custom_table {
 "
   }
 
+  dimension: metrics__boolean__infobar_qe_enabled {
+    sql: ${TABLE}.metrics.boolean.infobar_qe_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Infobar Qe Enabled"
+    description: "Quality estimation is enabled.
+"
+  }
+
   dimension: metrics__boolean__quality_is_supervised {
     sql: ${TABLE}.metrics.boolean.quality_is_supervised ;;
     type: yesno

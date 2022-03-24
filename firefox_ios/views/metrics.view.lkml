@@ -2252,6 +2252,25 @@ pressed
 "
   }
 
+  dimension: metrics__quantity__tabs_normal_tabs_quantity {
+    label: "Tabs Normal Tabs Quantity"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.tabs_normal_tabs_quantity ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Normal Tabs Quantity"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Normal Tabs Quantity"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_normal_tabs_quantity"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A snapshot of how many normal tabs a user has opened when he
+closes the application.
+"
+  }
+
   dimension: metrics__labeled_counter__tabs_open {
     label: "Tabs Open"
     hidden: yes
@@ -2268,6 +2287,25 @@ pressed
     description: "The count of tabs opened by the user. Increments the
 appropriate label when either a normal or private tab
 is opened.
+"
+  }
+
+  dimension: metrics__quantity__tabs_private_tabs_quantity {
+    label: "Tabs Private Tabs Quantity"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.tabs_private_tabs_quantity ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Private Tabs Quantity"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Private Tabs Quantity"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_private_tabs_quantity"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A snapshot of how many private tabs a user has opened when he
+closes the application.
 "
   }
 

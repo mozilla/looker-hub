@@ -203,6 +203,24 @@ view: custom {
 "
   }
 
+  dimension: metrics__boolean__infobar_qe_enabled {
+    label: "Infobar Qe Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.infobar_qe_enabled ;;
+    type: yesno
+    group_label: "Infobar"
+    group_item_label: "Qe Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Infobar Qe Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_translations/metrics/infobar_qe_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Quality estimation is enabled.
+"
+  }
+
   dimension: metrics__string__metadata_bergamot_translator_version {
     label: "Metadata Bergamot Translator Version"
     hidden: no

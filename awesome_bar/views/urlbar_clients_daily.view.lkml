@@ -35,6 +35,11 @@ view: urlbar_clients_daily {
     type: string
   }
 
+  dimension: experiments {
+    sql: ${TABLE}.experiments ;;
+    hidden: yes
+  }
+
   dimension: in_navbar {
     sql: ${TABLE}.in_navbar ;;
     type: yesno
@@ -144,6 +149,18 @@ view: urlbar_clients_daily__count_picked_by_type {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+  }
+}
+
+view: urlbar_clients_daily__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
   }
 }
 
