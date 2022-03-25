@@ -7,7 +7,7 @@
 view: win32k_lockdown_experiment_scalar {
   derived_table: {
     sql: SELECT *
-FROM `moz-fx-data-shared-prod.operational_monitoring.bug_1751039_pref_win32k_experiment_nightly_99_99_scalar`
+FROM `moz-fx-data-shared-prod.operational_monitoring.bug_1759171_pref_win32k_experiment_v2_beta_99_100_scalar`
 WHERE agg_type = "SUM" ;;
   }
 
