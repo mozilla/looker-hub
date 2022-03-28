@@ -2127,9 +2127,9 @@ operational_monitoring:
             - '6'
             - '8'
             - '12'
+            - '1'
             - '10'
             - '16'
-            - '1'
             - '3'
             - '32'
           os:
@@ -2140,46 +2140,46 @@ operational_monitoring:
             - Linux
         explore: fission_histogram
         probes:
-        - FX_NEW_WINDOW_MS
-        - GC_MAX_PAUSE_2_CONTENT
-        - GC_MS
-        - CHILD_PROCESS_LAUNCH_MS
-        - GC_MAX_PAUSE_2
-        - CONTENT_PROCESS_COUNT
-        - CYCLE_COLLECTOR_MAX_PAUSE_CONTENT
-        - KEYPRESS_PRESENT_LATENCY_MS
-        - GC_SLICE_DURING_IDLE_CONTENT
-        - MEMORY_UNIQUE_CONTENT_STARTUP
-        - CONTENT_FRAME_TIME_VSYNC
-        - MEMORY_TOTAL
-        - PERF_FIRST_CONTENTFUL_PAINT_MS
-        - FX_TAB_SWITCH_COMPOSITE_E10S_MS
-        - LOADED_TAB_COUNT
-        - CONTENT_PROCESS_MAX
-        - TIME_TO_FIRST_INTERACTION_MS
-        - GC_SLICE_DURING_IDLE
-        - CYCLE_COLLECTOR_MAX_PAUSE
-        - PERF_PAGE_LOAD_TIME_MS
-        - CHECKERBOARD_SEVERITY
-        - GC_MS_CONTENT
+        - time_to_first_interaction_ms
+        - perf_page_load_time_ms
+        - checkerboard_severity
+        - loaded_tab_count
+        - gc_ms
+        - fx_new_window_ms
+        - cycle_collector_max_pause_content
+        - child_process_launch_ms
+        - gc_max_pause_2
+        - gc_ms_content
+        - cycle_collector_max_pause
+        - keypress_present_latency_ms
+        - memory_unique_content_startup
+        - content_process_max
+        - gc_slice_during_idle_content
+        - fx_tab_switch_composite_e10s_ms
+        - content_frame_time_vsync
+        - gc_slice_during_idle
+        - gc_max_pause_2_content
+        - content_process_count
+        - memory_total
+        - perf_first_contentful_paint_ms
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1660366_pref_ongoing_fission_nightly_experiment_nightly_83_100_histogram
         xaxis: build_id
       - branches: *id001
         dimensions: *id002
         explore: fission_scalar
         probes:
-        - CONTENT_CRASHES
-        - OOM_CRASHES
-        - CONTENT_SHUTDOWN_CRASHES
-        - URI_COUNT
-        - SHUTDOWN_HANGS
-        - SUBSESSION_LENGTH
-        - MAIN_CRASHES
-        - GPU_CRASHES
-        - ACTIVE_TICKS
-        - PLUGIN_CRASHES
-        - STARTUP_CRASHES
-        - GMPLUGIN_CRASHES
+        - startup_crashes
+        - uri_count
+        - active_ticks
+        - gmplugin_crashes
+        - shutdown_hangs
+        - oom_crashes
+        - plugin_crashes
+        - content_shutdown_crashes
+        - gpu_crashes
+        - content_crashes
+        - main_crashes
+        - subsession_length
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1660366_pref_ongoing_fission_nightly_experiment_nightly_83_100_scalar
         xaxis: build_id
       type: operational_monitoring_dashboard
@@ -2472,8 +2472,8 @@ operational_monitoring:
           - '8'
           - '12'
           - '10'
-          - '16'
           - '1'
+          - '16'
           - '3'
           - '32'
         os:
@@ -2483,28 +2483,28 @@ operational_monitoring:
           - Mac
           - Linux
       probes:
-      - FX_NEW_WINDOW_MS
-      - GC_MAX_PAUSE_2_CONTENT
-      - GC_MS
-      - CHILD_PROCESS_LAUNCH_MS
-      - GC_MAX_PAUSE_2
-      - CONTENT_PROCESS_COUNT
-      - CYCLE_COLLECTOR_MAX_PAUSE_CONTENT
-      - KEYPRESS_PRESENT_LATENCY_MS
-      - GC_SLICE_DURING_IDLE_CONTENT
-      - MEMORY_UNIQUE_CONTENT_STARTUP
-      - CONTENT_FRAME_TIME_VSYNC
-      - MEMORY_TOTAL
-      - PERF_FIRST_CONTENTFUL_PAINT_MS
-      - FX_TAB_SWITCH_COMPOSITE_E10S_MS
-      - LOADED_TAB_COUNT
-      - CONTENT_PROCESS_MAX
-      - TIME_TO_FIRST_INTERACTION_MS
-      - GC_SLICE_DURING_IDLE
-      - CYCLE_COLLECTOR_MAX_PAUSE
-      - PERF_PAGE_LOAD_TIME_MS
-      - CHECKERBOARD_SEVERITY
-      - GC_MS_CONTENT
+      - time_to_first_interaction_ms
+      - perf_page_load_time_ms
+      - checkerboard_severity
+      - loaded_tab_count
+      - gc_ms
+      - fx_new_window_ms
+      - cycle_collector_max_pause_content
+      - child_process_launch_ms
+      - gc_max_pause_2
+      - gc_ms_content
+      - cycle_collector_max_pause
+      - keypress_present_latency_ms
+      - memory_unique_content_startup
+      - content_process_max
+      - gc_slice_during_idle_content
+      - fx_tab_switch_composite_e10s_ms
+      - content_frame_time_vsync
+      - gc_slice_during_idle
+      - gc_max_pause_2_content
+      - content_process_count
+      - memory_total
+      - perf_first_contentful_paint_ms
       type: operational_monitoring_explore
       views:
         base_view: fission_histogram
@@ -2582,18 +2582,18 @@ operational_monitoring:
       branches: *id001
       dimensions: *id002
       probes:
-      - CONTENT_CRASHES
-      - OOM_CRASHES
-      - CONTENT_SHUTDOWN_CRASHES
-      - URI_COUNT
-      - SHUTDOWN_HANGS
-      - SUBSESSION_LENGTH
-      - MAIN_CRASHES
-      - GPU_CRASHES
-      - ACTIVE_TICKS
-      - PLUGIN_CRASHES
-      - STARTUP_CRASHES
-      - GMPLUGIN_CRASHES
+      - startup_crashes
+      - uri_count
+      - active_ticks
+      - gmplugin_crashes
+      - shutdown_hangs
+      - oom_crashes
+      - plugin_crashes
+      - content_shutdown_crashes
+      - gpu_crashes
+      - content_crashes
+      - main_crashes
+      - subsession_length
       type: operational_monitoring_explore
       views:
         base_view: fission_scalar

@@ -492,6 +492,24 @@ and build config was used to produce this build
 "
   }
 
+  dimension: metrics__string__metadata_model_version {
+    label: "Metadata Model Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.metadata_model_version ;;
+    type: string
+    group_label: "Metadata"
+    group_item_label: "Model Version"
+
+    link: {
+      label: "Glean Dictionary reference for Metadata Model Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_translations/metrics/metadata_model_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Version of translation model
+"
+  }
+
   dimension: metrics__quantity__metadata_system_memory {
     label: "Metadata System Memory"
     hidden: no
