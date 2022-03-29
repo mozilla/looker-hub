@@ -13,16 +13,14 @@ explore: fission_release_rollout_histogram {
     ]
   }
 
-  aggregate_table: rollup_FX_NEW_WINDOW_MS {
+  aggregate_table: rollup_checkerboard_severity {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "FX_NEW_WINDOW_MS",
+        fission_release_rollout_histogram.probe: "checkerboard_severity",
       ]
     }
 
@@ -31,16 +29,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_GC_MAX_PAUSE_2_CONTENT {
+  aggregate_table: rollup_content_frame_time_vsync {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "GC_MAX_PAUSE_2_CONTENT",
+        fission_release_rollout_histogram.probe: "content_frame_time_vsync",
       ]
     }
 
@@ -49,16 +45,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_GC_MS {
+  aggregate_table: rollup_fx_tab_switch_composite_e10s_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "GC_MS",
+        fission_release_rollout_histogram.probe: "fx_tab_switch_composite_e10s_ms",
       ]
     }
 
@@ -67,16 +61,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_CHILD_PROCESS_LAUNCH_MS {
+  aggregate_table: rollup_cycle_collector_max_pause_content {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "CHILD_PROCESS_LAUNCH_MS",
+        fission_release_rollout_histogram.probe: "cycle_collector_max_pause_content",
       ]
     }
 
@@ -85,16 +77,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_GC_MAX_PAUSE_2 {
+  aggregate_table: rollup_time_to_first_interaction_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "GC_MAX_PAUSE_2",
+        fission_release_rollout_histogram.probe: "time_to_first_interaction_ms",
       ]
     }
 
@@ -103,16 +93,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_CONTENT_PROCESS_COUNT {
+  aggregate_table: rollup_perf_first_contentful_paint_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "CONTENT_PROCESS_COUNT",
+        fission_release_rollout_histogram.probe: "perf_first_contentful_paint_ms",
       ]
     }
 
@@ -121,16 +109,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_CYCLE_COLLECTOR_MAX_PAUSE_CONTENT {
+  aggregate_table: rollup_gc_slice_during_idle_content {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "CYCLE_COLLECTOR_MAX_PAUSE_CONTENT",
+        fission_release_rollout_histogram.probe: "gc_slice_during_idle_content",
       ]
     }
 
@@ -139,16 +125,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_KEYPRESS_PRESENT_LATENCY_MS {
+  aggregate_table: rollup_loaded_tab_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "KEYPRESS_PRESENT_LATENCY_MS",
+        fission_release_rollout_histogram.probe: "loaded_tab_count",
       ]
     }
 
@@ -157,16 +141,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_GC_SLICE_DURING_IDLE_CONTENT {
+  aggregate_table: rollup_content_process_max {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "GC_SLICE_DURING_IDLE_CONTENT",
+        fission_release_rollout_histogram.probe: "content_process_max",
       ]
     }
 
@@ -175,16 +157,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_MEMORY_UNIQUE_CONTENT_STARTUP {
+  aggregate_table: rollup_fx_new_window_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "MEMORY_UNIQUE_CONTENT_STARTUP",
+        fission_release_rollout_histogram.probe: "fx_new_window_ms",
       ]
     }
 
@@ -193,16 +173,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_CONTENT_FRAME_TIME_VSYNC {
+  aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "CONTENT_FRAME_TIME_VSYNC",
+        fission_release_rollout_histogram.probe: "gc_ms",
       ]
     }
 
@@ -211,16 +189,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_MEMORY_TOTAL {
+  aggregate_table: rollup_gc_max_pause_2_content {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "MEMORY_TOTAL",
+        fission_release_rollout_histogram.probe: "gc_max_pause_2_content",
       ]
     }
 
@@ -229,16 +205,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_PERF_FIRST_CONTENTFUL_PAINT_MS {
+  aggregate_table: rollup_child_process_launch_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "PERF_FIRST_CONTENTFUL_PAINT_MS",
+        fission_release_rollout_histogram.probe: "child_process_launch_ms",
       ]
     }
 
@@ -247,16 +221,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_FX_TAB_SWITCH_COMPOSITE_E10S_MS {
+  aggregate_table: rollup_perf_page_load_time_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "FX_TAB_SWITCH_COMPOSITE_E10S_MS",
+        fission_release_rollout_histogram.probe: "perf_page_load_time_ms",
       ]
     }
 
@@ -265,16 +237,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_LOADED_TAB_COUNT {
+  aggregate_table: rollup_gc_ms_content {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "LOADED_TAB_COUNT",
+        fission_release_rollout_histogram.probe: "gc_ms_content",
       ]
     }
 
@@ -283,16 +253,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_CONTENT_PROCESS_MAX {
+  aggregate_table: rollup_gc_max_pause_2 {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "CONTENT_PROCESS_MAX",
+        fission_release_rollout_histogram.probe: "gc_max_pause_2",
       ]
     }
 
@@ -301,16 +269,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_TIME_TO_FIRST_INTERACTION_MS {
+  aggregate_table: rollup_content_process_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "TIME_TO_FIRST_INTERACTION_MS",
+        fission_release_rollout_histogram.probe: "content_process_count",
       ]
     }
 
@@ -319,16 +285,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_GC_SLICE_DURING_IDLE {
+  aggregate_table: rollup_memory_total {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "GC_SLICE_DURING_IDLE",
+        fission_release_rollout_histogram.probe: "memory_total",
       ]
     }
 
@@ -337,16 +301,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_CYCLE_COLLECTOR_MAX_PAUSE {
+  aggregate_table: rollup_memory_unique_content_startup {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "CYCLE_COLLECTOR_MAX_PAUSE",
+        fission_release_rollout_histogram.probe: "memory_unique_content_startup",
       ]
     }
 
@@ -355,16 +317,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_PERF_PAGE_LOAD_TIME_MS {
+  aggregate_table: rollup_keypress_present_latency_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "PERF_PAGE_LOAD_TIME_MS",
+        fission_release_rollout_histogram.probe: "keypress_present_latency_ms",
       ]
     }
 
@@ -373,16 +333,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_CHECKERBOARD_SEVERITY {
+  aggregate_table: rollup_cycle_collector_max_pause {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "CHECKERBOARD_SEVERITY",
+        fission_release_rollout_histogram.probe: "cycle_collector_max_pause",
       ]
     }
 
@@ -391,16 +349,14 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_GC_MS_CONTENT {
+  aggregate_table: rollup_gc_slice_during_idle {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_histogram.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "GC_MS_CONTENT",
+        fission_release_rollout_histogram.probe: "gc_slice_during_idle",
       ]
     }
 

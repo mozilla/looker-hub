@@ -13,16 +13,14 @@ explore: fission_release_rollout_scalar {
     ]
   }
 
-  aggregate_table: rollup_CONTENT_CRASHES {
+  aggregate_table: rollup_content_shutdown_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_scalar.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_scalar.percentile_conf: "50",
-        fission_release_rollout_scalar.cores_count: "2",
-        fission_release_rollout_scalar.os: "Windows",
-        fission_release_rollout_scalar.probe: "CONTENT_CRASHES",
+        fission_release_rollout_scalar.probe: "content_shutdown_crashes",
       ]
     }
 
@@ -31,16 +29,14 @@ explore: fission_release_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_OOM_CRASHES {
+  aggregate_table: rollup_uri_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_scalar.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_scalar.percentile_conf: "50",
-        fission_release_rollout_scalar.cores_count: "2",
-        fission_release_rollout_scalar.os: "Windows",
-        fission_release_rollout_scalar.probe: "OOM_CRASHES",
+        fission_release_rollout_scalar.probe: "uri_count",
       ]
     }
 
@@ -49,16 +45,14 @@ explore: fission_release_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_CONTENT_SHUTDOWN_CRASHES {
+  aggregate_table: rollup_content_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_scalar.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_scalar.percentile_conf: "50",
-        fission_release_rollout_scalar.cores_count: "2",
-        fission_release_rollout_scalar.os: "Windows",
-        fission_release_rollout_scalar.probe: "CONTENT_SHUTDOWN_CRASHES",
+        fission_release_rollout_scalar.probe: "content_crashes",
       ]
     }
 
@@ -67,16 +61,14 @@ explore: fission_release_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_URI_COUNT {
+  aggregate_table: rollup_startup_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_scalar.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_scalar.percentile_conf: "50",
-        fission_release_rollout_scalar.cores_count: "2",
-        fission_release_rollout_scalar.os: "Windows",
-        fission_release_rollout_scalar.probe: "URI_COUNT",
+        fission_release_rollout_scalar.probe: "startup_crashes",
       ]
     }
 
@@ -85,16 +77,14 @@ explore: fission_release_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_SHUTDOWN_HANGS {
+  aggregate_table: rollup_plugin_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_scalar.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_scalar.percentile_conf: "50",
-        fission_release_rollout_scalar.cores_count: "2",
-        fission_release_rollout_scalar.os: "Windows",
-        fission_release_rollout_scalar.probe: "SHUTDOWN_HANGS",
+        fission_release_rollout_scalar.probe: "plugin_crashes",
       ]
     }
 
@@ -103,16 +93,14 @@ explore: fission_release_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_SUBSESSION_LENGTH {
+  aggregate_table: rollup_gmplugin_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_scalar.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_scalar.percentile_conf: "50",
-        fission_release_rollout_scalar.cores_count: "2",
-        fission_release_rollout_scalar.os: "Windows",
-        fission_release_rollout_scalar.probe: "SUBSESSION_LENGTH",
+        fission_release_rollout_scalar.probe: "gmplugin_crashes",
       ]
     }
 
@@ -121,16 +109,14 @@ explore: fission_release_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_MAIN_CRASHES {
+  aggregate_table: rollup_subsession_length {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_scalar.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_scalar.percentile_conf: "50",
-        fission_release_rollout_scalar.cores_count: "2",
-        fission_release_rollout_scalar.os: "Windows",
-        fission_release_rollout_scalar.probe: "MAIN_CRASHES",
+        fission_release_rollout_scalar.probe: "subsession_length",
       ]
     }
 
@@ -139,16 +125,14 @@ explore: fission_release_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_GPU_CRASHES {
+  aggregate_table: rollup_gpu_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_scalar.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_scalar.percentile_conf: "50",
-        fission_release_rollout_scalar.cores_count: "2",
-        fission_release_rollout_scalar.os: "Windows",
-        fission_release_rollout_scalar.probe: "GPU_CRASHES",
+        fission_release_rollout_scalar.probe: "gpu_crashes",
       ]
     }
 
@@ -157,16 +141,14 @@ explore: fission_release_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_ACTIVE_TICKS {
+  aggregate_table: rollup_oom_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_scalar.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_scalar.percentile_conf: "50",
-        fission_release_rollout_scalar.cores_count: "2",
-        fission_release_rollout_scalar.os: "Windows",
-        fission_release_rollout_scalar.probe: "ACTIVE_TICKS",
+        fission_release_rollout_scalar.probe: "oom_crashes",
       ]
     }
 
@@ -175,16 +157,14 @@ explore: fission_release_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_PLUGIN_CRASHES {
+  aggregate_table: rollup_main_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_scalar.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_scalar.percentile_conf: "50",
-        fission_release_rollout_scalar.cores_count: "2",
-        fission_release_rollout_scalar.os: "Windows",
-        fission_release_rollout_scalar.probe: "PLUGIN_CRASHES",
+        fission_release_rollout_scalar.probe: "main_crashes",
       ]
     }
 
@@ -193,16 +173,14 @@ explore: fission_release_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_STARTUP_CRASHES {
+  aggregate_table: rollup_active_ticks {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_scalar.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_scalar.percentile_conf: "50",
-        fission_release_rollout_scalar.cores_count: "2",
-        fission_release_rollout_scalar.os: "Windows",
-        fission_release_rollout_scalar.probe: "STARTUP_CRASHES",
+        fission_release_rollout_scalar.probe: "active_ticks",
       ]
     }
 
@@ -211,16 +189,14 @@ explore: fission_release_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_GMPLUGIN_CRASHES {
+  aggregate_table: rollup_shutdown_hangs {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         fission_release_rollout_scalar.branch: "fission-enabled, fission-disabled",
         fission_release_rollout_scalar.percentile_conf: "50",
-        fission_release_rollout_scalar.cores_count: "2",
-        fission_release_rollout_scalar.os: "Windows",
-        fission_release_rollout_scalar.probe: "GMPLUGIN_CRASHES",
+        fission_release_rollout_scalar.probe: "shutdown_hangs",
       ]
     }
 
