@@ -2263,53 +2263,54 @@ operational_monitoring:
         dimensions: &id006 {}
         explore: tab_unloading_v2_linux_histogram
         probes:
-        - js_pageload_execution_ms
-        - gc_max_pause_2_content
-        - gc_non_incremental
-        - gc_ms_content
-        - tab_unload_to_reload
-        - gc_slice_during_idle
         - js_pageload_baseline_compile_ms
-        - checkerboard_severity
-        - gc_mark_rate_2
-        - fx_new_window_ms
-        - perf_first_contentful_paint_ms
-        - memory_total
-        - cycle_collector_max_pause
-        - opened_tab_count
-        - fx_tab_switch_composite_e10s_ms
-        - gc_budget_overrun
-        - gc_reason_2
-        - content_process_max
-        - gc_max_pause_2
-        - gc_ms
-        - js_pageload_xdr_encoding_ms
-        - gc_slice_during_idle_content
-        - perf_page_load_time_ms
-        - content_frame_time_vsync
-        - js_pageload_protect_ms
-        - cycle_collector_max_pause_content
-        - js_pageload_parse_ms
-        - js_pageload_delazification_ms
         - child_process_launch_ms
+        - content_process_max
+        - js_pageload_protect_ms
+        - js_pageload_parse_ms
+        - perf_page_load_time_ms
+        - fx_new_window_ms
+        - opened_tab_count
+        - perf_first_contentful_paint_ms
+        - cycle_collector_max_pause_content
+        - memory_total
+        - js_pageload_xdr_encoding_ms
+        - gc_max_pause_2
+        - cycle_collector_max_pause
+        - gc_slice_during_idle
+        - content_frame_time_vsync
+        - gc_non_incremental
+        - gc_max_pause_2_content
         - memory_unique_content_startup
+        - fx_tab_switch_composite_e10s_ms
+        - checkerboard_severity
+        - gc_reason_2
+        - tab_unload_to_reload
+        - gc_mark_rate_2
+        - js_pageload_execution_ms
+        - gc_ms
+        - js_pageload_delazification_ms
+        - gc_budget_overrun
+        - gc_slice_during_idle_content
+        - gc_ms_content
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751307_pref_tab_unloading_on_low_memory_for_linux_release_97_98_histogram
         xaxis: submission_date
       - branches: *id005
         dimensions: *id006
         explore: tab_unloading_v2_linux_scalar
         probes:
-        - oom_crashes
-        - tab_unload_count
-        - tab_reload_count
-        - concurrent_pinned_tab_count
         - main_crashes
-        - concurrent_opened_tab_count
-        - content_crashes
-        - subsession_length
-        - tab_open_event_count
-        - tab_pinned_event_count
         - shutdown_hangs
+        - concurrent_opened_tab_count
+        - tab_pinned_event_count
+        - concurrent_pinned_tab_count
+        - tab_reload_count
+        - subsession_length
+        - memory_pressure_count
+        - tab_unload_count
+        - oom_crashes
+        - content_crashes
+        - tab_open_event_count
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751307_pref_tab_unloading_on_low_memory_for_linux_release_97_98_scalar
         xaxis: submission_date
       type: operational_monitoring_dashboard
@@ -2324,53 +2325,54 @@ operational_monitoring:
         dimensions: &id008 {}
         explore: tab_unloading_v2_mac_histogram
         probes:
-        - FX_NEW_WINDOW_MS
-        - GC_MAX_PAUSE_2_CONTENT
-        - GC_MS
-        - OPENED_TAB_COUNT
-        - TAB_UNLOAD_TO_RELOAD
-        - CHILD_PROCESS_LAUNCH_MS
-        - GC_MAX_PAUSE_2
-        - CYCLE_COLLECTOR_MAX_PAUSE_CONTENT
-        - JS_PAGELOAD_XDR_ENCODING_MS
-        - GC_BUDGET_OVERRUN
-        - GC_SLICE_DURING_IDLE_CONTENT
-        - JS_PAGELOAD_PARSE_MS
-        - GC_MARK_RATE_2
-        - JS_PAGELOAD_DELAZIFICATION_MS
-        - MEMORY_UNIQUE_CONTENT_STARTUP
-        - GC_REASON_2
-        - CONTENT_FRAME_TIME_VSYNC
-        - MEMORY_TOTAL
-        - PERF_FIRST_CONTENTFUL_PAINT_MS
-        - FX_TAB_SWITCH_COMPOSITE_E10S_MS
-        - JS_PAGELOAD_PROTECT_MS
-        - CONTENT_PROCESS_MAX
-        - GC_SLICE_DURING_IDLE
-        - CYCLE_COLLECTOR_MAX_PAUSE
-        - PERF_PAGE_LOAD_TIME_MS
-        - GC_NON_INCREMENTAL
-        - JS_PAGELOAD_BASELINE_COMPILE_MS
-        - CHECKERBOARD_SEVERITY
-        - JS_PAGELOAD_EXECUTION_MS
-        - GC_MS_CONTENT
+        - tab_unload_to_reload
+        - gc_budget_overrun
+        - gc_non_incremental
+        - gc_mark_rate_2
+        - js_pageload_parse_ms
+        - js_pageload_protect_ms
+        - gc_slice_during_idle_content
+        - gc_ms_content
+        - gc_max_pause_2_content
+        - gc_max_pause_2
+        - gc_reason_2
+        - fx_new_window_ms
+        - memory_total
+        - perf_first_contentful_paint_ms
+        - perf_page_load_time_ms
+        - content_frame_time_vsync
+        - opened_tab_count
+        - content_process_max
+        - gc_slice_during_idle
+        - child_process_launch_ms
+        - js_pageload_baseline_compile_ms
+        - cycle_collector_max_pause_content
+        - memory_unique_content_startup
+        - js_pageload_xdr_encoding_ms
+        - js_pageload_delazification_ms
+        - js_pageload_execution_ms
+        - gc_ms
+        - fx_tab_switch_composite_e10s_ms
+        - cycle_collector_max_pause
+        - checkerboard_severity
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
         xaxis: submission_date
       - branches: *id007
         dimensions: *id008
         explore: tab_unloading_v2_mac_scalar
         probes:
-        - CONTENT_CRASHES
-        - TAB_RELOAD_COUNT
-        - OOM_CRASHES
-        - TAB_OPEN_EVENT_COUNT
-        - SHUTDOWN_HANGS
-        - SUBSESSION_LENGTH
-        - MAIN_CRASHES
-        - TAB_UNLOAD_COUNT
-        - CONCURRENT_OPENED_TAB_COUNT
-        - TAB_PINNED_EVENT_COUNT
-        - CONCURRENT_PINNED_TAB_COUNT
+        - tab_pinned_event_count
+        - main_crashes
+        - concurrent_pinned_tab_count
+        - tab_reload_count
+        - subsession_length
+        - oom_crashes
+        - tab_open_event_count
+        - memory_pressure_count
+        - shutdown_hangs
+        - content_crashes
+        - tab_unload_count
+        - concurrent_opened_tab_count
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
         xaxis: submission_date
       type: operational_monitoring_dashboard
@@ -2382,53 +2384,54 @@ operational_monitoring:
         dimensions: &id010 {}
         explore: tab_unloading_v2_windows_histogram
         probes:
-        - FX_NEW_WINDOW_MS
-        - GC_MAX_PAUSE_2_CONTENT
-        - GC_MS
-        - OPENED_TAB_COUNT
-        - TAB_UNLOAD_TO_RELOAD
-        - CHILD_PROCESS_LAUNCH_MS
-        - GC_MAX_PAUSE_2
-        - CYCLE_COLLECTOR_MAX_PAUSE_CONTENT
-        - JS_PAGELOAD_XDR_ENCODING_MS
-        - GC_BUDGET_OVERRUN
-        - GC_SLICE_DURING_IDLE_CONTENT
-        - JS_PAGELOAD_PARSE_MS
-        - GC_MARK_RATE_2
-        - JS_PAGELOAD_DELAZIFICATION_MS
-        - MEMORY_UNIQUE_CONTENT_STARTUP
-        - GC_REASON_2
-        - CONTENT_FRAME_TIME_VSYNC
-        - MEMORY_TOTAL
-        - PERF_FIRST_CONTENTFUL_PAINT_MS
-        - FX_TAB_SWITCH_COMPOSITE_E10S_MS
-        - JS_PAGELOAD_PROTECT_MS
-        - CONTENT_PROCESS_MAX
-        - GC_SLICE_DURING_IDLE
-        - CYCLE_COLLECTOR_MAX_PAUSE
-        - PERF_PAGE_LOAD_TIME_MS
-        - GC_NON_INCREMENTAL
-        - JS_PAGELOAD_BASELINE_COMPILE_MS
-        - CHECKERBOARD_SEVERITY
-        - JS_PAGELOAD_EXECUTION_MS
-        - GC_MS_CONTENT
+        - fx_new_window_ms
+        - gc_mark_rate_2
+        - tab_unload_to_reload
+        - gc_ms_content
+        - js_pageload_delazification_ms
+        - memory_unique_content_startup
+        - checkerboard_severity
+        - gc_ms
+        - js_pageload_xdr_encoding_ms
+        - gc_max_pause_2_content
+        - gc_budget_overrun
+        - gc_slice_during_idle_content
+        - gc_reason_2
+        - js_pageload_protect_ms
+        - gc_max_pause_2
+        - perf_page_load_time_ms
+        - cycle_collector_max_pause_content
+        - js_pageload_execution_ms
+        - js_pageload_baseline_compile_ms
+        - perf_first_contentful_paint_ms
+        - js_pageload_parse_ms
+        - cycle_collector_max_pause
+        - gc_non_incremental
+        - gc_slice_during_idle
+        - content_process_max
+        - memory_total
+        - fx_tab_switch_composite_e10s_ms
+        - opened_tab_count
+        - content_frame_time_vsync
+        - child_process_launch_ms
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751309_pref_tab_unloading_on_low_memory_for_windows_release_97_98_histogram
         xaxis: submission_date
       - branches: *id009
         dimensions: *id010
         explore: tab_unloading_v2_windows_scalar
         probes:
-        - CONTENT_CRASHES
-        - TAB_RELOAD_COUNT
-        - OOM_CRASHES
-        - TAB_OPEN_EVENT_COUNT
-        - SHUTDOWN_HANGS
-        - SUBSESSION_LENGTH
-        - MAIN_CRASHES
-        - TAB_UNLOAD_COUNT
-        - CONCURRENT_OPENED_TAB_COUNT
-        - TAB_PINNED_EVENT_COUNT
-        - CONCURRENT_PINNED_TAB_COUNT
+        - tab_open_event_count
+        - memory_pressure_count
+        - tab_pinned_event_count
+        - tab_reload_count
+        - tab_unload_count
+        - content_crashes
+        - oom_crashes
+        - concurrent_opened_tab_count
+        - shutdown_hangs
+        - main_crashes
+        - subsession_length
+        - concurrent_pinned_tab_count
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751309_pref_tab_unloading_on_low_memory_for_windows_release_97_98_scalar
         xaxis: submission_date
       type: operational_monitoring_dashboard
@@ -2629,36 +2632,36 @@ operational_monitoring:
       branches: *id005
       dimensions: &id017 {}
       probes:
-      - js_pageload_execution_ms
-      - gc_max_pause_2_content
-      - gc_non_incremental
-      - gc_ms_content
-      - tab_unload_to_reload
-      - gc_slice_during_idle
       - js_pageload_baseline_compile_ms
-      - checkerboard_severity
-      - gc_mark_rate_2
-      - fx_new_window_ms
-      - perf_first_contentful_paint_ms
-      - memory_total
-      - cycle_collector_max_pause
-      - opened_tab_count
-      - fx_tab_switch_composite_e10s_ms
-      - gc_budget_overrun
-      - gc_reason_2
-      - content_process_max
-      - gc_max_pause_2
-      - gc_ms
-      - js_pageload_xdr_encoding_ms
-      - gc_slice_during_idle_content
-      - perf_page_load_time_ms
-      - content_frame_time_vsync
-      - js_pageload_protect_ms
-      - cycle_collector_max_pause_content
-      - js_pageload_parse_ms
-      - js_pageload_delazification_ms
       - child_process_launch_ms
+      - content_process_max
+      - js_pageload_protect_ms
+      - js_pageload_parse_ms
+      - perf_page_load_time_ms
+      - fx_new_window_ms
+      - opened_tab_count
+      - perf_first_contentful_paint_ms
+      - cycle_collector_max_pause_content
+      - memory_total
+      - js_pageload_xdr_encoding_ms
+      - gc_max_pause_2
+      - cycle_collector_max_pause
+      - gc_slice_during_idle
+      - content_frame_time_vsync
+      - gc_non_incremental
+      - gc_max_pause_2_content
       - memory_unique_content_startup
+      - fx_tab_switch_composite_e10s_ms
+      - checkerboard_severity
+      - gc_reason_2
+      - tab_unload_to_reload
+      - gc_mark_rate_2
+      - js_pageload_execution_ms
+      - gc_ms
+      - js_pageload_delazification_ms
+      - gc_budget_overrun
+      - gc_slice_during_idle_content
+      - gc_ms_content
       type: operational_monitoring_explore
       views:
         base_view: tab_unloading_v2_linux_histogram
@@ -2667,17 +2670,18 @@ operational_monitoring:
       branches: *id005
       dimensions: *id006
       probes:
-      - oom_crashes
-      - tab_unload_count
-      - tab_reload_count
-      - concurrent_pinned_tab_count
       - main_crashes
-      - concurrent_opened_tab_count
-      - content_crashes
-      - subsession_length
-      - tab_open_event_count
-      - tab_pinned_event_count
       - shutdown_hangs
+      - concurrent_opened_tab_count
+      - tab_pinned_event_count
+      - concurrent_pinned_tab_count
+      - tab_reload_count
+      - subsession_length
+      - memory_pressure_count
+      - tab_unload_count
+      - oom_crashes
+      - content_crashes
+      - tab_open_event_count
       type: operational_monitoring_explore
       views:
         base_view: tab_unloading_v2_linux_scalar
@@ -2686,36 +2690,36 @@ operational_monitoring:
       branches: *id007
       dimensions: &id018 {}
       probes:
-      - FX_NEW_WINDOW_MS
-      - GC_MAX_PAUSE_2_CONTENT
-      - GC_MS
-      - OPENED_TAB_COUNT
-      - TAB_UNLOAD_TO_RELOAD
-      - CHILD_PROCESS_LAUNCH_MS
-      - GC_MAX_PAUSE_2
-      - CYCLE_COLLECTOR_MAX_PAUSE_CONTENT
-      - JS_PAGELOAD_XDR_ENCODING_MS
-      - GC_BUDGET_OVERRUN
-      - GC_SLICE_DURING_IDLE_CONTENT
-      - JS_PAGELOAD_PARSE_MS
-      - GC_MARK_RATE_2
-      - JS_PAGELOAD_DELAZIFICATION_MS
-      - MEMORY_UNIQUE_CONTENT_STARTUP
-      - GC_REASON_2
-      - CONTENT_FRAME_TIME_VSYNC
-      - MEMORY_TOTAL
-      - PERF_FIRST_CONTENTFUL_PAINT_MS
-      - FX_TAB_SWITCH_COMPOSITE_E10S_MS
-      - JS_PAGELOAD_PROTECT_MS
-      - CONTENT_PROCESS_MAX
-      - GC_SLICE_DURING_IDLE
-      - CYCLE_COLLECTOR_MAX_PAUSE
-      - PERF_PAGE_LOAD_TIME_MS
-      - GC_NON_INCREMENTAL
-      - JS_PAGELOAD_BASELINE_COMPILE_MS
-      - CHECKERBOARD_SEVERITY
-      - JS_PAGELOAD_EXECUTION_MS
-      - GC_MS_CONTENT
+      - tab_unload_to_reload
+      - gc_budget_overrun
+      - gc_non_incremental
+      - gc_mark_rate_2
+      - js_pageload_parse_ms
+      - js_pageload_protect_ms
+      - gc_slice_during_idle_content
+      - gc_ms_content
+      - gc_max_pause_2_content
+      - gc_max_pause_2
+      - gc_reason_2
+      - fx_new_window_ms
+      - memory_total
+      - perf_first_contentful_paint_ms
+      - perf_page_load_time_ms
+      - content_frame_time_vsync
+      - opened_tab_count
+      - content_process_max
+      - gc_slice_during_idle
+      - child_process_launch_ms
+      - js_pageload_baseline_compile_ms
+      - cycle_collector_max_pause_content
+      - memory_unique_content_startup
+      - js_pageload_xdr_encoding_ms
+      - js_pageload_delazification_ms
+      - js_pageload_execution_ms
+      - gc_ms
+      - fx_tab_switch_composite_e10s_ms
+      - cycle_collector_max_pause
+      - checkerboard_severity
       type: operational_monitoring_explore
       views:
         base_view: tab_unloading_v2_mac_histogram
@@ -2724,17 +2728,18 @@ operational_monitoring:
       branches: *id007
       dimensions: *id008
       probes:
-      - CONTENT_CRASHES
-      - TAB_RELOAD_COUNT
-      - OOM_CRASHES
-      - TAB_OPEN_EVENT_COUNT
-      - SHUTDOWN_HANGS
-      - SUBSESSION_LENGTH
-      - MAIN_CRASHES
-      - TAB_UNLOAD_COUNT
-      - CONCURRENT_OPENED_TAB_COUNT
-      - TAB_PINNED_EVENT_COUNT
-      - CONCURRENT_PINNED_TAB_COUNT
+      - tab_pinned_event_count
+      - main_crashes
+      - concurrent_pinned_tab_count
+      - tab_reload_count
+      - subsession_length
+      - oom_crashes
+      - tab_open_event_count
+      - memory_pressure_count
+      - shutdown_hangs
+      - content_crashes
+      - tab_unload_count
+      - concurrent_opened_tab_count
       type: operational_monitoring_explore
       views:
         base_view: tab_unloading_v2_mac_scalar
@@ -2743,36 +2748,36 @@ operational_monitoring:
       branches: *id009
       dimensions: &id019 {}
       probes:
-      - FX_NEW_WINDOW_MS
-      - GC_MAX_PAUSE_2_CONTENT
-      - GC_MS
-      - OPENED_TAB_COUNT
-      - TAB_UNLOAD_TO_RELOAD
-      - CHILD_PROCESS_LAUNCH_MS
-      - GC_MAX_PAUSE_2
-      - CYCLE_COLLECTOR_MAX_PAUSE_CONTENT
-      - JS_PAGELOAD_XDR_ENCODING_MS
-      - GC_BUDGET_OVERRUN
-      - GC_SLICE_DURING_IDLE_CONTENT
-      - JS_PAGELOAD_PARSE_MS
-      - GC_MARK_RATE_2
-      - JS_PAGELOAD_DELAZIFICATION_MS
-      - MEMORY_UNIQUE_CONTENT_STARTUP
-      - GC_REASON_2
-      - CONTENT_FRAME_TIME_VSYNC
-      - MEMORY_TOTAL
-      - PERF_FIRST_CONTENTFUL_PAINT_MS
-      - FX_TAB_SWITCH_COMPOSITE_E10S_MS
-      - JS_PAGELOAD_PROTECT_MS
-      - CONTENT_PROCESS_MAX
-      - GC_SLICE_DURING_IDLE
-      - CYCLE_COLLECTOR_MAX_PAUSE
-      - PERF_PAGE_LOAD_TIME_MS
-      - GC_NON_INCREMENTAL
-      - JS_PAGELOAD_BASELINE_COMPILE_MS
-      - CHECKERBOARD_SEVERITY
-      - JS_PAGELOAD_EXECUTION_MS
-      - GC_MS_CONTENT
+      - fx_new_window_ms
+      - gc_mark_rate_2
+      - tab_unload_to_reload
+      - gc_ms_content
+      - js_pageload_delazification_ms
+      - memory_unique_content_startup
+      - checkerboard_severity
+      - gc_ms
+      - js_pageload_xdr_encoding_ms
+      - gc_max_pause_2_content
+      - gc_budget_overrun
+      - gc_slice_during_idle_content
+      - gc_reason_2
+      - js_pageload_protect_ms
+      - gc_max_pause_2
+      - perf_page_load_time_ms
+      - cycle_collector_max_pause_content
+      - js_pageload_execution_ms
+      - js_pageload_baseline_compile_ms
+      - perf_first_contentful_paint_ms
+      - js_pageload_parse_ms
+      - cycle_collector_max_pause
+      - gc_non_incremental
+      - gc_slice_during_idle
+      - content_process_max
+      - memory_total
+      - fx_tab_switch_composite_e10s_ms
+      - opened_tab_count
+      - content_frame_time_vsync
+      - child_process_launch_ms
       type: operational_monitoring_explore
       views:
         base_view: tab_unloading_v2_windows_histogram
@@ -2781,17 +2786,18 @@ operational_monitoring:
       branches: *id009
       dimensions: *id010
       probes:
-      - CONTENT_CRASHES
-      - TAB_RELOAD_COUNT
-      - OOM_CRASHES
-      - TAB_OPEN_EVENT_COUNT
-      - SHUTDOWN_HANGS
-      - SUBSESSION_LENGTH
-      - MAIN_CRASHES
-      - TAB_UNLOAD_COUNT
-      - CONCURRENT_OPENED_TAB_COUNT
-      - TAB_PINNED_EVENT_COUNT
-      - CONCURRENT_PINNED_TAB_COUNT
+      - tab_open_event_count
+      - memory_pressure_count
+      - tab_pinned_event_count
+      - tab_reload_count
+      - tab_unload_count
+      - content_crashes
+      - oom_crashes
+      - concurrent_opened_tab_count
+      - shutdown_hangs
+      - main_crashes
+      - subsession_length
+      - concurrent_pinned_tab_count
       type: operational_monitoring_explore
       views:
         base_view: tab_unloading_v2_windows_scalar

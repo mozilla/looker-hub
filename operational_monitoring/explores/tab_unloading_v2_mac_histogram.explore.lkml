@@ -13,14 +13,14 @@ explore: tab_unloading_v2_mac_histogram {
     ]
   }
 
-  aggregate_table: rollup_FX_NEW_WINDOW_MS {
+  aggregate_table: rollup_tab_unload_to_reload {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "FX_NEW_WINDOW_MS",
+        tab_unloading_v2_mac_histogram.probe: "tab_unload_to_reload",
       ]
     }
 
@@ -29,14 +29,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_GC_MAX_PAUSE_2_CONTENT {
+  aggregate_table: rollup_gc_budget_overrun {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "GC_MAX_PAUSE_2_CONTENT",
+        tab_unloading_v2_mac_histogram.probe: "gc_budget_overrun",
       ]
     }
 
@@ -45,14 +45,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_GC_MS {
+  aggregate_table: rollup_gc_non_incremental {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "GC_MS",
+        tab_unloading_v2_mac_histogram.probe: "gc_non_incremental",
       ]
     }
 
@@ -61,14 +61,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_OPENED_TAB_COUNT {
+  aggregate_table: rollup_gc_mark_rate_2 {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "OPENED_TAB_COUNT",
+        tab_unloading_v2_mac_histogram.probe: "gc_mark_rate_2",
       ]
     }
 
@@ -77,14 +77,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_TAB_UNLOAD_TO_RELOAD {
+  aggregate_table: rollup_js_pageload_parse_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "TAB_UNLOAD_TO_RELOAD",
+        tab_unloading_v2_mac_histogram.probe: "js_pageload_parse_ms",
       ]
     }
 
@@ -93,14 +93,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_CHILD_PROCESS_LAUNCH_MS {
+  aggregate_table: rollup_js_pageload_protect_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "CHILD_PROCESS_LAUNCH_MS",
+        tab_unloading_v2_mac_histogram.probe: "js_pageload_protect_ms",
       ]
     }
 
@@ -109,14 +109,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_GC_MAX_PAUSE_2 {
+  aggregate_table: rollup_gc_slice_during_idle_content {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "GC_MAX_PAUSE_2",
+        tab_unloading_v2_mac_histogram.probe: "gc_slice_during_idle_content",
       ]
     }
 
@@ -125,14 +125,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_CYCLE_COLLECTOR_MAX_PAUSE_CONTENT {
+  aggregate_table: rollup_gc_ms_content {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "CYCLE_COLLECTOR_MAX_PAUSE_CONTENT",
+        tab_unloading_v2_mac_histogram.probe: "gc_ms_content",
       ]
     }
 
@@ -141,14 +141,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_JS_PAGELOAD_XDR_ENCODING_MS {
+  aggregate_table: rollup_gc_max_pause_2_content {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "JS_PAGELOAD_XDR_ENCODING_MS",
+        tab_unloading_v2_mac_histogram.probe: "gc_max_pause_2_content",
       ]
     }
 
@@ -157,14 +157,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_GC_BUDGET_OVERRUN {
+  aggregate_table: rollup_gc_max_pause_2 {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "GC_BUDGET_OVERRUN",
+        tab_unloading_v2_mac_histogram.probe: "gc_max_pause_2",
       ]
     }
 
@@ -173,14 +173,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_GC_SLICE_DURING_IDLE_CONTENT {
+  aggregate_table: rollup_gc_reason_2 {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "GC_SLICE_DURING_IDLE_CONTENT",
+        tab_unloading_v2_mac_histogram.probe: "gc_reason_2",
       ]
     }
 
@@ -189,14 +189,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_JS_PAGELOAD_PARSE_MS {
+  aggregate_table: rollup_fx_new_window_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "JS_PAGELOAD_PARSE_MS",
+        tab_unloading_v2_mac_histogram.probe: "fx_new_window_ms",
       ]
     }
 
@@ -205,14 +205,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_GC_MARK_RATE_2 {
+  aggregate_table: rollup_memory_total {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "GC_MARK_RATE_2",
+        tab_unloading_v2_mac_histogram.probe: "memory_total",
       ]
     }
 
@@ -221,14 +221,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_JS_PAGELOAD_DELAZIFICATION_MS {
+  aggregate_table: rollup_perf_first_contentful_paint_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "JS_PAGELOAD_DELAZIFICATION_MS",
+        tab_unloading_v2_mac_histogram.probe: "perf_first_contentful_paint_ms",
       ]
     }
 
@@ -237,14 +237,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_MEMORY_UNIQUE_CONTENT_STARTUP {
+  aggregate_table: rollup_perf_page_load_time_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "MEMORY_UNIQUE_CONTENT_STARTUP",
+        tab_unloading_v2_mac_histogram.probe: "perf_page_load_time_ms",
       ]
     }
 
@@ -253,14 +253,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_GC_REASON_2 {
+  aggregate_table: rollup_content_frame_time_vsync {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "GC_REASON_2",
+        tab_unloading_v2_mac_histogram.probe: "content_frame_time_vsync",
       ]
     }
 
@@ -269,14 +269,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_CONTENT_FRAME_TIME_VSYNC {
+  aggregate_table: rollup_opened_tab_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "CONTENT_FRAME_TIME_VSYNC",
+        tab_unloading_v2_mac_histogram.probe: "opened_tab_count",
       ]
     }
 
@@ -285,14 +285,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_MEMORY_TOTAL {
+  aggregate_table: rollup_content_process_max {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "MEMORY_TOTAL",
+        tab_unloading_v2_mac_histogram.probe: "content_process_max",
       ]
     }
 
@@ -301,14 +301,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_PERF_FIRST_CONTENTFUL_PAINT_MS {
+  aggregate_table: rollup_gc_slice_during_idle {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "PERF_FIRST_CONTENTFUL_PAINT_MS",
+        tab_unloading_v2_mac_histogram.probe: "gc_slice_during_idle",
       ]
     }
 
@@ -317,14 +317,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_FX_TAB_SWITCH_COMPOSITE_E10S_MS {
+  aggregate_table: rollup_child_process_launch_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "FX_TAB_SWITCH_COMPOSITE_E10S_MS",
+        tab_unloading_v2_mac_histogram.probe: "child_process_launch_ms",
       ]
     }
 
@@ -333,14 +333,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_JS_PAGELOAD_PROTECT_MS {
+  aggregate_table: rollup_js_pageload_baseline_compile_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "JS_PAGELOAD_PROTECT_MS",
+        tab_unloading_v2_mac_histogram.probe: "js_pageload_baseline_compile_ms",
       ]
     }
 
@@ -349,14 +349,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_CONTENT_PROCESS_MAX {
+  aggregate_table: rollup_cycle_collector_max_pause_content {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "CONTENT_PROCESS_MAX",
+        tab_unloading_v2_mac_histogram.probe: "cycle_collector_max_pause_content",
       ]
     }
 
@@ -365,14 +365,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_GC_SLICE_DURING_IDLE {
+  aggregate_table: rollup_memory_unique_content_startup {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "GC_SLICE_DURING_IDLE",
+        tab_unloading_v2_mac_histogram.probe: "memory_unique_content_startup",
       ]
     }
 
@@ -381,14 +381,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_CYCLE_COLLECTOR_MAX_PAUSE {
+  aggregate_table: rollup_js_pageload_xdr_encoding_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "CYCLE_COLLECTOR_MAX_PAUSE",
+        tab_unloading_v2_mac_histogram.probe: "js_pageload_xdr_encoding_ms",
       ]
     }
 
@@ -397,14 +397,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_PERF_PAGE_LOAD_TIME_MS {
+  aggregate_table: rollup_js_pageload_delazification_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "PERF_PAGE_LOAD_TIME_MS",
+        tab_unloading_v2_mac_histogram.probe: "js_pageload_delazification_ms",
       ]
     }
 
@@ -413,14 +413,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_GC_NON_INCREMENTAL {
+  aggregate_table: rollup_js_pageload_execution_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "GC_NON_INCREMENTAL",
+        tab_unloading_v2_mac_histogram.probe: "js_pageload_execution_ms",
       ]
     }
 
@@ -429,14 +429,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_JS_PAGELOAD_BASELINE_COMPILE_MS {
+  aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "JS_PAGELOAD_BASELINE_COMPILE_MS",
+        tab_unloading_v2_mac_histogram.probe: "gc_ms",
       ]
     }
 
@@ -445,14 +445,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_CHECKERBOARD_SEVERITY {
+  aggregate_table: rollup_fx_tab_switch_composite_e10s_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "CHECKERBOARD_SEVERITY",
+        tab_unloading_v2_mac_histogram.probe: "fx_tab_switch_composite_e10s_ms",
       ]
     }
 
@@ -461,14 +461,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_JS_PAGELOAD_EXECUTION_MS {
+  aggregate_table: rollup_cycle_collector_max_pause {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "JS_PAGELOAD_EXECUTION_MS",
+        tab_unloading_v2_mac_histogram.probe: "cycle_collector_max_pause",
       ]
     }
 
@@ -477,14 +477,14 @@ explore: tab_unloading_v2_mac_histogram {
     }
   }
 
-  aggregate_table: rollup_GC_MS_CONTENT {
+  aggregate_table: rollup_checkerboard_severity {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_mac_histogram.branch: "memory-pressure-warning, tab-unloading-and-memory-pressure-warning, memory-pressure-critical, tab-unloading-and-memory-pressure-critical, tab-unloading-and-memory-pressure-disabled",
         tab_unloading_v2_mac_histogram.percentile_conf: "50",
-        tab_unloading_v2_mac_histogram.probe: "GC_MS_CONTENT",
+        tab_unloading_v2_mac_histogram.probe: "checkerboard_severity",
       ]
     }
 
