@@ -710,6 +710,15 @@ and build config was used to produce this build
 "
   }
 
+  dimension: metrics__string__metadata_model_version {
+    sql: ${TABLE}.metrics.string.metadata_model_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Metadata Model Version"
+    description: "Version of translation model
+"
+  }
+
   dimension: metrics__string__metadata_to_lang {
     sql: ${TABLE}.metrics.string.metadata_to_lang ;;
     type: string

@@ -13,7 +13,7 @@ explore: fission_scalar {
     ]
   }
 
-  aggregate_table: rollup_CONTENT_CRASHES {
+  aggregate_table: rollup_startup_crashes {
     query: {
       dimensions: [build_id, branch]
       measures: [low, high, percentile]
@@ -22,7 +22,7 @@ explore: fission_scalar {
         fission_scalar.percentile_conf: "50",
         fission_scalar.cores_count: "4",
         fission_scalar.os: "Windows",
-        fission_scalar.probe: "CONTENT_CRASHES",
+        fission_scalar.probe: "startup_crashes",
       ]
     }
 
@@ -31,7 +31,7 @@ explore: fission_scalar {
     }
   }
 
-  aggregate_table: rollup_OOM_CRASHES {
+  aggregate_table: rollup_uri_count {
     query: {
       dimensions: [build_id, branch]
       measures: [low, high, percentile]
@@ -40,7 +40,7 @@ explore: fission_scalar {
         fission_scalar.percentile_conf: "50",
         fission_scalar.cores_count: "4",
         fission_scalar.os: "Windows",
-        fission_scalar.probe: "OOM_CRASHES",
+        fission_scalar.probe: "uri_count",
       ]
     }
 
@@ -49,7 +49,7 @@ explore: fission_scalar {
     }
   }
 
-  aggregate_table: rollup_CONTENT_SHUTDOWN_CRASHES {
+  aggregate_table: rollup_active_ticks {
     query: {
       dimensions: [build_id, branch]
       measures: [low, high, percentile]
@@ -58,7 +58,7 @@ explore: fission_scalar {
         fission_scalar.percentile_conf: "50",
         fission_scalar.cores_count: "4",
         fission_scalar.os: "Windows",
-        fission_scalar.probe: "CONTENT_SHUTDOWN_CRASHES",
+        fission_scalar.probe: "active_ticks",
       ]
     }
 
@@ -67,7 +67,7 @@ explore: fission_scalar {
     }
   }
 
-  aggregate_table: rollup_URI_COUNT {
+  aggregate_table: rollup_gmplugin_crashes {
     query: {
       dimensions: [build_id, branch]
       measures: [low, high, percentile]
@@ -76,7 +76,7 @@ explore: fission_scalar {
         fission_scalar.percentile_conf: "50",
         fission_scalar.cores_count: "4",
         fission_scalar.os: "Windows",
-        fission_scalar.probe: "URI_COUNT",
+        fission_scalar.probe: "gmplugin_crashes",
       ]
     }
 
@@ -85,7 +85,7 @@ explore: fission_scalar {
     }
   }
 
-  aggregate_table: rollup_SHUTDOWN_HANGS {
+  aggregate_table: rollup_shutdown_hangs {
     query: {
       dimensions: [build_id, branch]
       measures: [low, high, percentile]
@@ -94,7 +94,7 @@ explore: fission_scalar {
         fission_scalar.percentile_conf: "50",
         fission_scalar.cores_count: "4",
         fission_scalar.os: "Windows",
-        fission_scalar.probe: "SHUTDOWN_HANGS",
+        fission_scalar.probe: "shutdown_hangs",
       ]
     }
 
@@ -103,7 +103,7 @@ explore: fission_scalar {
     }
   }
 
-  aggregate_table: rollup_SUBSESSION_LENGTH {
+  aggregate_table: rollup_oom_crashes {
     query: {
       dimensions: [build_id, branch]
       measures: [low, high, percentile]
@@ -112,7 +112,7 @@ explore: fission_scalar {
         fission_scalar.percentile_conf: "50",
         fission_scalar.cores_count: "4",
         fission_scalar.os: "Windows",
-        fission_scalar.probe: "SUBSESSION_LENGTH",
+        fission_scalar.probe: "oom_crashes",
       ]
     }
 
@@ -121,7 +121,7 @@ explore: fission_scalar {
     }
   }
 
-  aggregate_table: rollup_MAIN_CRASHES {
+  aggregate_table: rollup_plugin_crashes {
     query: {
       dimensions: [build_id, branch]
       measures: [low, high, percentile]
@@ -130,7 +130,7 @@ explore: fission_scalar {
         fission_scalar.percentile_conf: "50",
         fission_scalar.cores_count: "4",
         fission_scalar.os: "Windows",
-        fission_scalar.probe: "MAIN_CRASHES",
+        fission_scalar.probe: "plugin_crashes",
       ]
     }
 
@@ -139,7 +139,7 @@ explore: fission_scalar {
     }
   }
 
-  aggregate_table: rollup_GPU_CRASHES {
+  aggregate_table: rollup_content_shutdown_crashes {
     query: {
       dimensions: [build_id, branch]
       measures: [low, high, percentile]
@@ -148,7 +148,7 @@ explore: fission_scalar {
         fission_scalar.percentile_conf: "50",
         fission_scalar.cores_count: "4",
         fission_scalar.os: "Windows",
-        fission_scalar.probe: "GPU_CRASHES",
+        fission_scalar.probe: "content_shutdown_crashes",
       ]
     }
 
@@ -157,7 +157,7 @@ explore: fission_scalar {
     }
   }
 
-  aggregate_table: rollup_ACTIVE_TICKS {
+  aggregate_table: rollup_gpu_crashes {
     query: {
       dimensions: [build_id, branch]
       measures: [low, high, percentile]
@@ -166,7 +166,7 @@ explore: fission_scalar {
         fission_scalar.percentile_conf: "50",
         fission_scalar.cores_count: "4",
         fission_scalar.os: "Windows",
-        fission_scalar.probe: "ACTIVE_TICKS",
+        fission_scalar.probe: "gpu_crashes",
       ]
     }
 
@@ -175,7 +175,7 @@ explore: fission_scalar {
     }
   }
 
-  aggregate_table: rollup_PLUGIN_CRASHES {
+  aggregate_table: rollup_content_crashes {
     query: {
       dimensions: [build_id, branch]
       measures: [low, high, percentile]
@@ -184,7 +184,7 @@ explore: fission_scalar {
         fission_scalar.percentile_conf: "50",
         fission_scalar.cores_count: "4",
         fission_scalar.os: "Windows",
-        fission_scalar.probe: "PLUGIN_CRASHES",
+        fission_scalar.probe: "content_crashes",
       ]
     }
 
@@ -193,7 +193,7 @@ explore: fission_scalar {
     }
   }
 
-  aggregate_table: rollup_STARTUP_CRASHES {
+  aggregate_table: rollup_main_crashes {
     query: {
       dimensions: [build_id, branch]
       measures: [low, high, percentile]
@@ -202,7 +202,7 @@ explore: fission_scalar {
         fission_scalar.percentile_conf: "50",
         fission_scalar.cores_count: "4",
         fission_scalar.os: "Windows",
-        fission_scalar.probe: "STARTUP_CRASHES",
+        fission_scalar.probe: "main_crashes",
       ]
     }
 
@@ -211,7 +211,7 @@ explore: fission_scalar {
     }
   }
 
-  aggregate_table: rollup_GMPLUGIN_CRASHES {
+  aggregate_table: rollup_subsession_length {
     query: {
       dimensions: [build_id, branch]
       measures: [low, high, percentile]
@@ -220,7 +220,7 @@ explore: fission_scalar {
         fission_scalar.percentile_conf: "50",
         fission_scalar.cores_count: "4",
         fission_scalar.os: "Windows",
-        fission_scalar.probe: "GMPLUGIN_CRASHES",
+        fission_scalar.probe: "subsession_length",
       ]
     }
 
