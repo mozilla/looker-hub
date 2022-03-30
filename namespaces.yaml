@@ -2193,8 +2193,8 @@ operational_monitoring:
     fission_release_rollout:
       tables:
       - branches: &id003
-        - fission-enabled
-        - fission-disabled
+        - enabled
+        - disabled
         dimensions: &id004
           cores_count:
             default: '2'
@@ -2208,7 +2208,7 @@ operational_monitoring:
             - '10'
             - '3'
             - '16'
-            - '20'
+            - '24'
           os:
             default: Windows
             options:
@@ -2217,46 +2217,46 @@ operational_monitoring:
             - Linux
         explore: fission_release_rollout_histogram
         probes:
-        - cycle_collector_max_pause
         - checkerboard_severity
-        - perf_page_load_time_ms
-        - content_process_max
-        - fx_new_window_ms
-        - memory_unique_content_startup
-        - gc_ms_content
         - memory_total
-        - keypress_present_latency_ms
-        - content_process_count
-        - gc_max_pause_2
-        - loaded_tab_count
-        - gc_slice_during_idle
         - gc_slice_during_idle_content
-        - cycle_collector_max_pause_content
-        - time_to_first_interaction_ms
-        - fx_tab_switch_composite_e10s_ms
-        - content_frame_time_vsync
-        - perf_first_contentful_paint_ms
-        - gc_max_pause_2_content
+        - cycle_collector_max_pause
+        - content_process_max
         - gc_ms
+        - perf_page_load_time_ms
+        - memory_unique_content_startup
+        - gc_max_pause_2_content
         - child_process_launch_ms
+        - loaded_tab_count
+        - content_process_count
+        - gc_slice_during_idle
+        - fx_new_window_ms
+        - content_frame_time_vsync
+        - gc_max_pause_2
+        - cycle_collector_max_pause_content
+        - fx_tab_switch_composite_e10s_ms
+        - time_to_first_interaction_ms
+        - keypress_present_latency_ms
+        - perf_first_contentful_paint_ms
+        - gc_ms_content
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
         xaxis: submission_date
       - branches: *id003
         dimensions: *id004
         explore: fission_release_rollout_scalar
         probes:
-        - uri_count
-        - gpu_crashes
-        - oom_crashes
-        - plugin_crashes
-        - gmplugin_crashes
         - active_ticks
-        - main_crashes
-        - content_shutdown_crashes
-        - content_crashes
+        - gpu_crashes
+        - plugin_crashes
         - shutdown_hangs
-        - startup_crashes
         - subsession_length
+        - content_crashes
+        - startup_crashes
+        - oom_crashes
+        - content_shutdown_crashes
+        - gmplugin_crashes
+        - main_crashes
+        - uri_count
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
         xaxis: submission_date
       type: operational_monitoring_dashboard
@@ -2566,7 +2566,7 @@ operational_monitoring:
           - '10'
           - '3'
           - '16'
-          - '20'
+          - '24'
         os:
           default: Windows
           options:
@@ -2574,28 +2574,28 @@ operational_monitoring:
           - Mac
           - Linux
       probes:
-      - cycle_collector_max_pause
       - checkerboard_severity
-      - perf_page_load_time_ms
-      - content_process_max
-      - fx_new_window_ms
-      - memory_unique_content_startup
-      - gc_ms_content
       - memory_total
-      - keypress_present_latency_ms
-      - content_process_count
-      - gc_max_pause_2
-      - loaded_tab_count
-      - gc_slice_during_idle
       - gc_slice_during_idle_content
-      - cycle_collector_max_pause_content
-      - time_to_first_interaction_ms
-      - fx_tab_switch_composite_e10s_ms
-      - content_frame_time_vsync
-      - perf_first_contentful_paint_ms
-      - gc_max_pause_2_content
+      - cycle_collector_max_pause
+      - content_process_max
       - gc_ms
+      - perf_page_load_time_ms
+      - memory_unique_content_startup
+      - gc_max_pause_2_content
       - child_process_launch_ms
+      - loaded_tab_count
+      - content_process_count
+      - gc_slice_during_idle
+      - fx_new_window_ms
+      - content_frame_time_vsync
+      - gc_max_pause_2
+      - cycle_collector_max_pause_content
+      - fx_tab_switch_composite_e10s_ms
+      - time_to_first_interaction_ms
+      - keypress_present_latency_ms
+      - perf_first_contentful_paint_ms
+      - gc_ms_content
       type: operational_monitoring_explore
       views:
         base_view: fission_release_rollout_histogram
@@ -2604,18 +2604,18 @@ operational_monitoring:
       branches: *id003
       dimensions: *id004
       probes:
-      - uri_count
-      - gpu_crashes
-      - oom_crashes
-      - plugin_crashes
-      - gmplugin_crashes
       - active_ticks
-      - main_crashes
-      - content_shutdown_crashes
-      - content_crashes
+      - gpu_crashes
+      - plugin_crashes
       - shutdown_hangs
-      - startup_crashes
       - subsession_length
+      - content_crashes
+      - startup_crashes
+      - oom_crashes
+      - content_shutdown_crashes
+      - gmplugin_crashes
+      - main_crashes
+      - uri_count
       type: operational_monitoring_explore
       views:
         base_view: fission_release_rollout_scalar
