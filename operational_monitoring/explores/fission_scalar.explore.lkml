@@ -13,60 +13,6 @@ explore: fission_scalar {
     ]
   }
 
-  aggregate_table: rollup_startup_crashes {
-    query: {
-      dimensions: [build_id, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_scalar.branch: "enabled, disabled",
-        fission_scalar.percentile_conf: "50",
-        fission_scalar.cores_count: "4",
-        fission_scalar.os: "Windows",
-        fission_scalar.probe: "startup_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_uri_count {
-    query: {
-      dimensions: [build_id, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_scalar.branch: "enabled, disabled",
-        fission_scalar.percentile_conf: "50",
-        fission_scalar.cores_count: "4",
-        fission_scalar.os: "Windows",
-        fission_scalar.probe: "uri_count",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_active_ticks {
-    query: {
-      dimensions: [build_id, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_scalar.branch: "enabled, disabled",
-        fission_scalar.percentile_conf: "50",
-        fission_scalar.cores_count: "4",
-        fission_scalar.os: "Windows",
-        fission_scalar.probe: "active_ticks",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_gmplugin_crashes {
     query: {
       dimensions: [build_id, branch]
@@ -77,78 +23,6 @@ explore: fission_scalar {
         fission_scalar.cores_count: "4",
         fission_scalar.os: "Windows",
         fission_scalar.probe: "gmplugin_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_shutdown_hangs {
-    query: {
-      dimensions: [build_id, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_scalar.branch: "enabled, disabled",
-        fission_scalar.percentile_conf: "50",
-        fission_scalar.cores_count: "4",
-        fission_scalar.os: "Windows",
-        fission_scalar.probe: "shutdown_hangs",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_oom_crashes {
-    query: {
-      dimensions: [build_id, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_scalar.branch: "enabled, disabled",
-        fission_scalar.percentile_conf: "50",
-        fission_scalar.cores_count: "4",
-        fission_scalar.os: "Windows",
-        fission_scalar.probe: "oom_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_plugin_crashes {
-    query: {
-      dimensions: [build_id, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_scalar.branch: "enabled, disabled",
-        fission_scalar.percentile_conf: "50",
-        fission_scalar.cores_count: "4",
-        fission_scalar.os: "Windows",
-        fission_scalar.probe: "plugin_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_content_shutdown_crashes {
-    query: {
-      dimensions: [build_id, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_scalar.branch: "enabled, disabled",
-        fission_scalar.percentile_conf: "50",
-        fission_scalar.cores_count: "4",
-        fission_scalar.os: "Windows",
-        fission_scalar.probe: "content_shutdown_crashes",
       ]
     }
 
@@ -175,24 +49,6 @@ explore: fission_scalar {
     }
   }
 
-  aggregate_table: rollup_content_crashes {
-    query: {
-      dimensions: [build_id, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_scalar.branch: "enabled, disabled",
-        fission_scalar.percentile_conf: "50",
-        fission_scalar.cores_count: "4",
-        fission_scalar.os: "Windows",
-        fission_scalar.probe: "content_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_main_crashes {
     query: {
       dimensions: [build_id, branch]
@@ -211,6 +67,42 @@ explore: fission_scalar {
     }
   }
 
+  aggregate_table: rollup_startup_crashes {
+    query: {
+      dimensions: [build_id, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_scalar.branch: "enabled, disabled",
+        fission_scalar.percentile_conf: "50",
+        fission_scalar.cores_count: "4",
+        fission_scalar.os: "Windows",
+        fission_scalar.probe: "startup_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_crashes {
+    query: {
+      dimensions: [build_id, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_scalar.branch: "enabled, disabled",
+        fission_scalar.percentile_conf: "50",
+        fission_scalar.cores_count: "4",
+        fission_scalar.os: "Windows",
+        fission_scalar.probe: "content_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
   aggregate_table: rollup_subsession_length {
     query: {
       dimensions: [build_id, branch]
@@ -221,6 +113,114 @@ explore: fission_scalar {
         fission_scalar.cores_count: "4",
         fission_scalar.os: "Windows",
         fission_scalar.probe: "subsession_length",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_plugin_crashes {
+    query: {
+      dimensions: [build_id, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_scalar.branch: "enabled, disabled",
+        fission_scalar.percentile_conf: "50",
+        fission_scalar.cores_count: "4",
+        fission_scalar.os: "Windows",
+        fission_scalar.probe: "plugin_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_active_ticks {
+    query: {
+      dimensions: [build_id, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_scalar.branch: "enabled, disabled",
+        fission_scalar.percentile_conf: "50",
+        fission_scalar.cores_count: "4",
+        fission_scalar.os: "Windows",
+        fission_scalar.probe: "active_ticks",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_uri_count {
+    query: {
+      dimensions: [build_id, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_scalar.branch: "enabled, disabled",
+        fission_scalar.percentile_conf: "50",
+        fission_scalar.cores_count: "4",
+        fission_scalar.os: "Windows",
+        fission_scalar.probe: "uri_count",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_shutdown_crashes {
+    query: {
+      dimensions: [build_id, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_scalar.branch: "enabled, disabled",
+        fission_scalar.percentile_conf: "50",
+        fission_scalar.cores_count: "4",
+        fission_scalar.os: "Windows",
+        fission_scalar.probe: "content_shutdown_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_oom_crashes {
+    query: {
+      dimensions: [build_id, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_scalar.branch: "enabled, disabled",
+        fission_scalar.percentile_conf: "50",
+        fission_scalar.cores_count: "4",
+        fission_scalar.os: "Windows",
+        fission_scalar.probe: "oom_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_shutdown_hangs {
+    query: {
+      dimensions: [build_id, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_scalar.branch: "enabled, disabled",
+        fission_scalar.percentile_conf: "50",
+        fission_scalar.cores_count: "4",
+        fission_scalar.os: "Windows",
+        fission_scalar.probe: "shutdown_hangs",
       ]
     }
 

@@ -7424,6 +7424,58 @@ will be \"custom\"
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Rasterize Glyphs Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Rasterize Glyphs Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Rasterize Glyphs Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Rasterize Glyphs Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Rasterize Glyphs Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Rasterize Glyphs Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__url {
     sql: ${TABLE}.metrics.url ;;
     hidden: yes
@@ -9108,6 +9160,18 @@ view: metrics_table__metrics__timing_distribution__places_manager_write_query_ti
 }
 
 view: metrics_table__metrics__timing_distribution__storage_stats_query_stats_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__wr_rasterize_glyphs_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

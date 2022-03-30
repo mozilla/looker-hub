@@ -13,30 +13,14 @@ explore: win32k_lockdown_experiment_scalar {
     ]
   }
 
-  aggregate_table: rollup_startup_crashes {
+  aggregate_table: rollup_content_shutdown_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         win32k_lockdown_experiment_scalar.branch: "enabled, disabled",
         win32k_lockdown_experiment_scalar.percentile_conf: "50",
-        win32k_lockdown_experiment_scalar.probe: "startup_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_plugin_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        win32k_lockdown_experiment_scalar.branch: "enabled, disabled",
-        win32k_lockdown_experiment_scalar.percentile_conf: "50",
-        win32k_lockdown_experiment_scalar.probe: "plugin_crashes",
+        win32k_lockdown_experiment_scalar.probe: "content_shutdown_crashes",
       ]
     }
 
@@ -77,22 +61,6 @@ explore: win32k_lockdown_experiment_scalar {
     }
   }
 
-  aggregate_table: rollup_gpu_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        win32k_lockdown_experiment_scalar.branch: "enabled, disabled",
-        win32k_lockdown_experiment_scalar.percentile_conf: "50",
-        win32k_lockdown_experiment_scalar.probe: "gpu_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_content_crashes {
     query: {
       dimensions: [submission_date, branch]
@@ -101,6 +69,22 @@ explore: win32k_lockdown_experiment_scalar {
         win32k_lockdown_experiment_scalar.branch: "enabled, disabled",
         win32k_lockdown_experiment_scalar.percentile_conf: "50",
         win32k_lockdown_experiment_scalar.probe: "content_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_gpu_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        win32k_lockdown_experiment_scalar.branch: "enabled, disabled",
+        win32k_lockdown_experiment_scalar.percentile_conf: "50",
+        win32k_lockdown_experiment_scalar.probe: "gpu_crashes",
       ]
     }
 
@@ -125,14 +109,14 @@ explore: win32k_lockdown_experiment_scalar {
     }
   }
 
-  aggregate_table: rollup_shutdown_hangs {
+  aggregate_table: rollup_startup_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         win32k_lockdown_experiment_scalar.branch: "enabled, disabled",
         win32k_lockdown_experiment_scalar.percentile_conf: "50",
-        win32k_lockdown_experiment_scalar.probe: "shutdown_hangs",
+        win32k_lockdown_experiment_scalar.probe: "startup_crashes",
       ]
     }
 
@@ -141,14 +125,30 @@ explore: win32k_lockdown_experiment_scalar {
     }
   }
 
-  aggregate_table: rollup_content_shutdown_crashes {
+  aggregate_table: rollup_plugin_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         win32k_lockdown_experiment_scalar.branch: "enabled, disabled",
         win32k_lockdown_experiment_scalar.percentile_conf: "50",
-        win32k_lockdown_experiment_scalar.probe: "content_shutdown_crashes",
+        win32k_lockdown_experiment_scalar.probe: "plugin_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_shutdown_hangs {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        win32k_lockdown_experiment_scalar.branch: "enabled, disabled",
+        win32k_lockdown_experiment_scalar.percentile_conf: "50",
+        win32k_lockdown_experiment_scalar.probe: "shutdown_hangs",
       ]
     }
 
