@@ -356,6 +356,15 @@ supported for this user.
 "
   }
 
+  dimension: metrics__boolean__customize_home_contile {
+    sql: ${TABLE}.metrics.boolean.customize_home_contile ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Customize Home Contile"
+    description: "An indication of whether Contile is enabled to be displayed
+"
+  }
+
   dimension: metrics__boolean__customize_home_jump_back_in {
     sql: ${TABLE}.metrics.boolean.customize_home_jump_back_in ;;
     type: yesno
@@ -1132,6 +1141,15 @@ between a failed `top_sites_count` ping and 0 top sites, please see
 "
   }
 
+  dimension: metrics__counter__power_total_thread_wakeups {
+    sql: ${TABLE}.metrics.counter.power_total_thread_wakeups ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Power Total Thread Wakeups"
+    description: "How many times threads woke up and could have woken up a CPU core.
+"
+  }
+
   dimension: metrics__counter__recent_bookmarks_bookmark_clicked {
     sql: ${TABLE}.metrics.counter.recent_bookmarks_bookmark_clicked ;;
     type: number
@@ -1712,6 +1730,13 @@ pr"
     sql: ${TABLE}.metrics.labeled_counter.power_gpu_time_per_process_type_ms ;;
     hidden: yes
     description: "GPU time used by each process type in ms.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_process_type {
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_process_type ;;
+    hidden: yes
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by process type.
 "
   }
 

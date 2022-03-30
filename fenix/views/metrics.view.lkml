@@ -245,6 +245,24 @@ manually by the user.
 "
   }
 
+  dimension: metrics__boolean__customize_home_contile {
+    label: "Customize Home Contile"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.customize_home_contile ;;
+    type: yesno
+    group_label: "Customize Home"
+    group_item_label: "Contile"
+
+    link: {
+      label: "Glean Dictionary reference for Customize Home Contile"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/customize_home_contile"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An indication of whether Contile is enabled to be displayed
+"
+  }
+
   dimension: metrics__boolean__customize_home_jump_back_in {
     label: "Customize Home Jump Back In"
     hidden: no
@@ -2652,6 +2670,41 @@ To be used to validate GIFFT.
     }
 
     description: "Total GPU time used by all processes in ms.
+"
+  }
+
+  dimension: metrics__counter__power_total_thread_wakeups {
+    label: "Power Total Thread Wakeups"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_total_thread_wakeups ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Total Thread Wakeups"
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Thread Wakeups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_total_thread_wakeups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_process_type {
+    label: "Power Wakeups Per Process Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_process_type ;;
+    group_label: "Power"
+    group_item_label: "Wakeups Per Process Type"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Process Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_wakeups_per_process_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by process type.
 "
   }
 
@@ -6802,6 +6855,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Power Total Gpu Time Ms"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_total_gpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_thread_wakeups {
+    type: sum
+    sql: ${metrics__counter__power_total_thread_wakeups} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Thread Wakeups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_total_thread_wakeups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_thread_wakeups_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_total_thread_wakeups: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Thread Wakeups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_total_thread_wakeups"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
