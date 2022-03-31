@@ -515,6 +515,15 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__power_total_thread_wakeups {
+    sql: ${TABLE}.metrics.counter.power_total_thread_wakeups ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Power Total Thread Wakeups"
+    description: "How many times threads woke up and could have woken up a CPU core.
+"
+  }
+
   dimension: metrics__datetime__glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: string
@@ -602,6 +611,13 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.labeled_counter.power_gpu_time_per_process_type_ms ;;
     hidden: yes
     description: "GPU time used by each process type in ms.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_process_type {
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_process_type ;;
+    hidden: yes
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by process type.
 "
   }
 

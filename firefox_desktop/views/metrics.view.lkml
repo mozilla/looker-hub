@@ -409,6 +409,41 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__power_total_thread_wakeups {
+    label: "Power Total Thread Wakeups"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_total_thread_wakeups ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Total Thread Wakeups"
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Thread Wakeups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_total_thread_wakeups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_process_type {
+    label: "Power Wakeups Per Process Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_process_type ;;
+    group_label: "Power"
+    group_item_label: "Wakeups Per Process Type"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Process Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_wakeups_per_process_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by process type.
+"
+  }
+
   dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__sum {
     label: "Wr Rasterize Glyphs Time Sum"
     hidden: yes
@@ -1457,6 +1492,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Power Total Gpu Time Ms"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_total_gpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_thread_wakeups {
+    type: sum
+    sql: ${metrics__counter__power_total_thread_wakeups} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Thread Wakeups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_total_thread_wakeups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_thread_wakeups_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_total_thread_wakeups: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Thread Wakeups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_total_thread_wakeups"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
