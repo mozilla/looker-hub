@@ -13,7 +13,7 @@ explore: fission_release_rollout_histogram {
     ]
   }
 
-  aggregate_table: rollup_checkerboard_severity {
+  aggregate_table: rollup_gc_max_pause_2 {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
@@ -22,79 +22,7 @@ explore: fission_release_rollout_histogram {
         fission_release_rollout_histogram.percentile_conf: "50",
         fission_release_rollout_histogram.cores_count: "2",
         fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "checkerboard_severity",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_memory_total {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_release_rollout_histogram.branch: "enabled, disabled",
-        fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "memory_total",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_gc_slice_during_idle_content {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_release_rollout_histogram.branch: "enabled, disabled",
-        fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "gc_slice_during_idle_content",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_cycle_collector_max_pause {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_release_rollout_histogram.branch: "enabled, disabled",
-        fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "cycle_collector_max_pause",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_content_process_max {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_release_rollout_histogram.branch: "enabled, disabled",
-        fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "content_process_max",
+        fission_release_rollout_histogram.probe: "gc_max_pause_2",
       ]
     }
 
@@ -121,6 +49,42 @@ explore: fission_release_rollout_histogram {
     }
   }
 
+  aggregate_table: rollup_perf_first_contentful_paint_ms {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_release_rollout_histogram.branch: "enabled, disabled",
+        fission_release_rollout_histogram.percentile_conf: "50",
+        fission_release_rollout_histogram.cores_count: "2",
+        fission_release_rollout_histogram.os: "Windows",
+        fission_release_rollout_histogram.probe: "perf_first_contentful_paint_ms",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_memory_total {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_release_rollout_histogram.branch: "enabled, disabled",
+        fission_release_rollout_histogram.percentile_conf: "50",
+        fission_release_rollout_histogram.cores_count: "2",
+        fission_release_rollout_histogram.os: "Windows",
+        fission_release_rollout_histogram.probe: "memory_total",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
   aggregate_table: rollup_perf_page_load_time_ms {
     query: {
       dimensions: [submission_date, branch]
@@ -139,7 +103,7 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_memory_unique_content_startup {
+  aggregate_table: rollup_gc_ms_content {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
@@ -148,115 +112,7 @@ explore: fission_release_rollout_histogram {
         fission_release_rollout_histogram.percentile_conf: "50",
         fission_release_rollout_histogram.cores_count: "2",
         fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "memory_unique_content_startup",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_gc_max_pause_2_content {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_release_rollout_histogram.branch: "enabled, disabled",
-        fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "gc_max_pause_2_content",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_child_process_launch_ms {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_release_rollout_histogram.branch: "enabled, disabled",
-        fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "child_process_launch_ms",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_loaded_tab_count {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_release_rollout_histogram.branch: "enabled, disabled",
-        fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "loaded_tab_count",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_content_process_count {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_release_rollout_histogram.branch: "enabled, disabled",
-        fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "content_process_count",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_gc_slice_during_idle {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_release_rollout_histogram.branch: "enabled, disabled",
-        fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "gc_slice_during_idle",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_fx_new_window_ms {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_release_rollout_histogram.branch: "enabled, disabled",
-        fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "fx_new_window_ms",
+        fission_release_rollout_histogram.probe: "gc_ms_content",
       ]
     }
 
@@ -283,7 +139,7 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_gc_max_pause_2 {
+  aggregate_table: rollup_checkerboard_severity {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
@@ -292,25 +148,7 @@ explore: fission_release_rollout_histogram {
         fission_release_rollout_histogram.percentile_conf: "50",
         fission_release_rollout_histogram.cores_count: "2",
         fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "gc_max_pause_2",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_cycle_collector_max_pause_content {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        fission_release_rollout_histogram.branch: "enabled, disabled",
-        fission_release_rollout_histogram.percentile_conf: "50",
-        fission_release_rollout_histogram.cores_count: "2",
-        fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "cycle_collector_max_pause_content",
+        fission_release_rollout_histogram.probe: "checkerboard_severity",
       ]
     }
 
@@ -355,6 +193,114 @@ explore: fission_release_rollout_histogram {
     }
   }
 
+  aggregate_table: rollup_fx_new_window_ms {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_release_rollout_histogram.branch: "enabled, disabled",
+        fission_release_rollout_histogram.percentile_conf: "50",
+        fission_release_rollout_histogram.cores_count: "2",
+        fission_release_rollout_histogram.os: "Windows",
+        fission_release_rollout_histogram.probe: "fx_new_window_ms",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_loaded_tab_count {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_release_rollout_histogram.branch: "enabled, disabled",
+        fission_release_rollout_histogram.percentile_conf: "50",
+        fission_release_rollout_histogram.cores_count: "2",
+        fission_release_rollout_histogram.os: "Windows",
+        fission_release_rollout_histogram.probe: "loaded_tab_count",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_cycle_collector_max_pause_content {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_release_rollout_histogram.branch: "enabled, disabled",
+        fission_release_rollout_histogram.percentile_conf: "50",
+        fission_release_rollout_histogram.cores_count: "2",
+        fission_release_rollout_histogram.os: "Windows",
+        fission_release_rollout_histogram.probe: "cycle_collector_max_pause_content",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_child_process_launch_ms {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_release_rollout_histogram.branch: "enabled, disabled",
+        fission_release_rollout_histogram.percentile_conf: "50",
+        fission_release_rollout_histogram.cores_count: "2",
+        fission_release_rollout_histogram.os: "Windows",
+        fission_release_rollout_histogram.probe: "child_process_launch_ms",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_gc_max_pause_2_content {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_release_rollout_histogram.branch: "enabled, disabled",
+        fission_release_rollout_histogram.percentile_conf: "50",
+        fission_release_rollout_histogram.cores_count: "2",
+        fission_release_rollout_histogram.os: "Windows",
+        fission_release_rollout_histogram.probe: "gc_max_pause_2_content",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_gc_slice_during_idle {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_release_rollout_histogram.branch: "enabled, disabled",
+        fission_release_rollout_histogram.percentile_conf: "50",
+        fission_release_rollout_histogram.cores_count: "2",
+        fission_release_rollout_histogram.os: "Windows",
+        fission_release_rollout_histogram.probe: "gc_slice_during_idle",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
   aggregate_table: rollup_keypress_present_latency_ms {
     query: {
       dimensions: [submission_date, branch]
@@ -373,7 +319,7 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_perf_first_contentful_paint_ms {
+  aggregate_table: rollup_content_process_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
@@ -382,7 +328,7 @@ explore: fission_release_rollout_histogram {
         fission_release_rollout_histogram.percentile_conf: "50",
         fission_release_rollout_histogram.cores_count: "2",
         fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "perf_first_contentful_paint_ms",
+        fission_release_rollout_histogram.probe: "content_process_count",
       ]
     }
 
@@ -391,7 +337,7 @@ explore: fission_release_rollout_histogram {
     }
   }
 
-  aggregate_table: rollup_gc_ms_content {
+  aggregate_table: rollup_cycle_collector_max_pause {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
@@ -400,7 +346,61 @@ explore: fission_release_rollout_histogram {
         fission_release_rollout_histogram.percentile_conf: "50",
         fission_release_rollout_histogram.cores_count: "2",
         fission_release_rollout_histogram.os: "Windows",
-        fission_release_rollout_histogram.probe: "gc_ms_content",
+        fission_release_rollout_histogram.probe: "cycle_collector_max_pause",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_gc_slice_during_idle_content {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_release_rollout_histogram.branch: "enabled, disabled",
+        fission_release_rollout_histogram.percentile_conf: "50",
+        fission_release_rollout_histogram.cores_count: "2",
+        fission_release_rollout_histogram.os: "Windows",
+        fission_release_rollout_histogram.probe: "gc_slice_during_idle_content",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_memory_unique_content_startup {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_release_rollout_histogram.branch: "enabled, disabled",
+        fission_release_rollout_histogram.percentile_conf: "50",
+        fission_release_rollout_histogram.cores_count: "2",
+        fission_release_rollout_histogram.os: "Windows",
+        fission_release_rollout_histogram.probe: "memory_unique_content_startup",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_process_max {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        fission_release_rollout_histogram.branch: "enabled, disabled",
+        fission_release_rollout_histogram.percentile_conf: "50",
+        fission_release_rollout_histogram.cores_count: "2",
+        fission_release_rollout_histogram.os: "Windows",
+        fission_release_rollout_histogram.probe: "content_process_max",
       ]
     }
 
