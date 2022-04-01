@@ -26,6 +26,11 @@ view: event_aggregates {
     type: string
   }
 
+  dimension: form_factor {
+    sql: ${TABLE}.form_factor ;;
+    type: string
+  }
+
   dimension: position {
     sql: ${TABLE}.position ;;
     type: number
