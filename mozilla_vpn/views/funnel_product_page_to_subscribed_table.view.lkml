@@ -176,6 +176,26 @@ view: funnel_product_page_to_subscribed_table {
     type: string
   }
 
+  dimension: promotion_code {
+    sql: ${TABLE}.promotion_code ;;
+    type: string
+  }
+
+  dimension: subscribe_coupon_fail {
+    sql: ${TABLE}.subscribe_coupon_fail ;;
+    type: number
+  }
+
+  dimension: subscribe_coupon_submit {
+    sql: ${TABLE}.subscribe_coupon_submit ;;
+    type: number
+  }
+
+  dimension: subscribe_coupon_success {
+    sql: ${TABLE}.subscribe_coupon_success ;;
+    type: number
+  }
+
   dimension: total_acquisition_process_start {
     sql: ${TABLE}.total_acquisition_process_start ;;
     type: number

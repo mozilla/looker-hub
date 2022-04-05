@@ -29,22 +29,6 @@ explore: tab_unloading_v2_windows_scalar {
     }
   }
 
-  aggregate_table: rollup_main_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tab_unloading_v2_windows_scalar.branch: "tab-unloading-enabled, tab-unloading-disabled",
-        tab_unloading_v2_windows_scalar.percentile_conf: "50",
-        tab_unloading_v2_windows_scalar.probe: "main_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_oom_crashes {
     query: {
       dimensions: [submission_date, branch]
@@ -53,22 +37,6 @@ explore: tab_unloading_v2_windows_scalar {
         tab_unloading_v2_windows_scalar.branch: "tab-unloading-enabled, tab-unloading-disabled",
         tab_unloading_v2_windows_scalar.percentile_conf: "50",
         tab_unloading_v2_windows_scalar.probe: "oom_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_shutdown_hangs {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tab_unloading_v2_windows_scalar.branch: "tab-unloading-enabled, tab-unloading-disabled",
-        tab_unloading_v2_windows_scalar.percentile_conf: "50",
-        tab_unloading_v2_windows_scalar.probe: "shutdown_hangs",
       ]
     }
 
@@ -93,38 +61,6 @@ explore: tab_unloading_v2_windows_scalar {
     }
   }
 
-  aggregate_table: rollup_concurrent_opened_tab_count {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tab_unloading_v2_windows_scalar.branch: "tab-unloading-enabled, tab-unloading-disabled",
-        tab_unloading_v2_windows_scalar.percentile_conf: "50",
-        tab_unloading_v2_windows_scalar.probe: "concurrent_opened_tab_count",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_concurrent_pinned_tab_count {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tab_unloading_v2_windows_scalar.branch: "tab-unloading-enabled, tab-unloading-disabled",
-        tab_unloading_v2_windows_scalar.percentile_conf: "50",
-        tab_unloading_v2_windows_scalar.probe: "concurrent_pinned_tab_count",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_subsession_length {
     query: {
       dimensions: [submission_date, branch]
@@ -133,22 +69,6 @@ explore: tab_unloading_v2_windows_scalar {
         tab_unloading_v2_windows_scalar.branch: "tab-unloading-enabled, tab-unloading-disabled",
         tab_unloading_v2_windows_scalar.percentile_conf: "50",
         tab_unloading_v2_windows_scalar.probe: "subsession_length",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_tab_unload_count {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tab_unloading_v2_windows_scalar.branch: "tab-unloading-enabled, tab-unloading-disabled",
-        tab_unloading_v2_windows_scalar.percentile_conf: "50",
-        tab_unloading_v2_windows_scalar.probe: "tab_unload_count",
       ]
     }
 
@@ -173,14 +93,30 @@ explore: tab_unloading_v2_windows_scalar {
     }
   }
 
-  aggregate_table: rollup_tab_reload_count {
+  aggregate_table: rollup_concurrent_pinned_tab_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_v2_windows_scalar.branch: "tab-unloading-enabled, tab-unloading-disabled",
         tab_unloading_v2_windows_scalar.percentile_conf: "50",
-        tab_unloading_v2_windows_scalar.probe: "tab_reload_count",
+        tab_unloading_v2_windows_scalar.probe: "concurrent_pinned_tab_count",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_concurrent_opened_tab_count {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tab_unloading_v2_windows_scalar.branch: "tab-unloading-enabled, tab-unloading-disabled",
+        tab_unloading_v2_windows_scalar.percentile_conf: "50",
+        tab_unloading_v2_windows_scalar.probe: "concurrent_opened_tab_count",
       ]
     }
 
@@ -197,6 +133,70 @@ explore: tab_unloading_v2_windows_scalar {
         tab_unloading_v2_windows_scalar.branch: "tab-unloading-enabled, tab-unloading-disabled",
         tab_unloading_v2_windows_scalar.percentile_conf: "50",
         tab_unloading_v2_windows_scalar.probe: "tab_pinned_event_count",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_tab_reload_count {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tab_unloading_v2_windows_scalar.branch: "tab-unloading-enabled, tab-unloading-disabled",
+        tab_unloading_v2_windows_scalar.percentile_conf: "50",
+        tab_unloading_v2_windows_scalar.probe: "tab_reload_count",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_main_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tab_unloading_v2_windows_scalar.branch: "tab-unloading-enabled, tab-unloading-disabled",
+        tab_unloading_v2_windows_scalar.percentile_conf: "50",
+        tab_unloading_v2_windows_scalar.probe: "main_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_tab_unload_count {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tab_unloading_v2_windows_scalar.branch: "tab-unloading-enabled, tab-unloading-disabled",
+        tab_unloading_v2_windows_scalar.percentile_conf: "50",
+        tab_unloading_v2_windows_scalar.probe: "tab_unload_count",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_shutdown_hangs {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tab_unloading_v2_windows_scalar.branch: "tab-unloading-enabled, tab-unloading-disabled",
+        tab_unloading_v2_windows_scalar.percentile_conf: "50",
+        tab_unloading_v2_windows_scalar.probe: "shutdown_hangs",
       ]
     }
 
