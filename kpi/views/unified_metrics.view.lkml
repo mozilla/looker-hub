@@ -86,6 +86,11 @@ view: unified_metrics {
     type: string
   }
 
+  dimension: normalized_os_version {
+    sql: ${TABLE}.normalized_os_version ;;
+    type: string
+  }
+
   dimension: organic_search_count {
     sql: ${TABLE}.organic_search_count ;;
     type: number
