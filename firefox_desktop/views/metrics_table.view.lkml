@@ -541,7 +541,7 @@ This does not include deletion-request pings.
   dimension: metrics__labeled_boolean__startup_run_from_dmg_install_outcome {
     sql: ${TABLE}.metrics.labeled_boolean.startup_run_from_dmg_install_outcome ;;
     hidden: yes
-    description: "The outcome after the app detected that it was running from DMG and should offer to install and relaunch itself.
+    description: "The outcome after the app detected that it was running from DMG or an app translocated location and should offer to install and relaunch itself.
 "
   }
 
