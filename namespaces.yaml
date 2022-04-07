@@ -2237,46 +2237,46 @@ operational_monitoring:
             - Linux
         explore: fission_release_rollout_histogram
         probes:
-        - memory_unique_content_startup
-        - perf_first_contentful_paint_ms
-        - loaded_tab_count
-        - gc_slice_during_idle_content
-        - cycle_collector_max_pause_content
-        - time_to_first_interaction_ms
-        - gc_slice_during_idle
-        - checkerboard_severity
-        - fx_tab_switch_composite_e10s_ms
-        - cycle_collector_max_pause
         - content_frame_time_vsync
-        - memory_total
+        - checkerboard_severity
+        - loaded_tab_count
+        - memory_unique_content_startup
         - gc_max_pause_2
-        - perf_page_load_time_ms
+        - gc_ms
+        - time_to_first_interaction_ms
+        - keypress_present_latency_ms
+        - content_process_count
+        - fx_tab_switch_composite_e10s_ms
+        - gc_ms_content
+        - gc_slice_during_idle
+        - cycle_collector_max_pause_content
         - gc_max_pause_2_content
         - content_process_max
-        - fx_new_window_ms
-        - content_process_count
-        - gc_ms
+        - cycle_collector_max_pause
+        - perf_first_contentful_paint_ms
         - child_process_launch_ms
-        - keypress_present_latency_ms
-        - gc_ms_content
+        - perf_page_load_time_ms
+        - fx_new_window_ms
+        - memory_total
+        - gc_slice_during_idle_content
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
         xaxis: submission_date
       - branches: *id003
         dimensions: *id004
         explore: fission_release_rollout_scalar
         probes:
-        - main_crashes
-        - content_shutdown_crashes
-        - oom_crashes
-        - plugin_crashes
-        - subsession_length
-        - shutdown_hangs
         - gmplugin_crashes
         - gpu_crashes
         - startup_crashes
-        - active_ticks
+        - shutdown_hangs
+        - main_crashes
         - uri_count
         - content_crashes
+        - oom_crashes
+        - plugin_crashes
+        - subsession_length
+        - content_shutdown_crashes
+        - active_ticks
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
         xaxis: submission_date
       type: operational_monitoring_dashboard
@@ -2288,54 +2288,54 @@ operational_monitoring:
         dimensions: &id006 {}
         explore: tab_unloading_v2_linux_histogram
         probes:
-        - js_pageload_protect_ms
-        - gc_reason_2
-        - memory_unique_content_startup
-        - perf_first_contentful_paint_ms
-        - gc_non_incremental
-        - js_pageload_delazification_ms
-        - gc_slice_during_idle_content
-        - cycle_collector_max_pause_content
-        - gc_budget_overrun
-        - tab_unload_to_reload
-        - gc_mark_rate_2
-        - gc_slice_during_idle
-        - checkerboard_severity
-        - fx_tab_switch_composite_e10s_ms
-        - cycle_collector_max_pause
         - content_frame_time_vsync
-        - memory_total
-        - gc_max_pause_2
-        - opened_tab_count
-        - perf_page_load_time_ms
         - js_pageload_xdr_encoding_ms
+        - checkerboard_severity
+        - gc_mark_rate_2
+        - js_pageload_parse_ms
+        - js_pageload_protect_ms
+        - memory_unique_content_startup
+        - gc_max_pause_2
+        - gc_ms
+        - js_pageload_delazification_ms
+        - js_pageload_execution_ms
+        - gc_reason_2
+        - js_pageload_baseline_compile_ms
+        - fx_tab_switch_composite_e10s_ms
+        - gc_slice_during_idle_content
+        - gc_ms_content
+        - gc_slice_during_idle
+        - cycle_collector_max_pause_content
+        - gc_non_incremental
         - gc_max_pause_2_content
         - content_process_max
-        - fx_new_window_ms
-        - js_pageload_parse_ms
-        - gc_ms
+        - opened_tab_count
+        - tab_unload_to_reload
+        - perf_first_contentful_paint_ms
         - child_process_launch_ms
-        - js_pageload_execution_ms
-        - gc_ms_content
-        - js_pageload_baseline_compile_ms
+        - perf_page_load_time_ms
+        - fx_new_window_ms
+        - memory_total
+        - gc_budget_overrun
+        - cycle_collector_max_pause
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751307_pref_tab_unloading_on_low_memory_for_linux_release_97_98_histogram
         xaxis: submission_date
       - branches: *id005
         dimensions: *id006
         explore: tab_unloading_v2_linux_scalar
         probes:
-        - main_crashes
+        - tab_open_event_count
+        - memory_pressure_count
+        - concurrent_pinned_tab_count
         - tab_unload_count
-        - tab_pinned_event_count
+        - tab_reload_count
+        - main_crashes
+        - shutdown_hangs
+        - content_crashes
         - oom_crashes
         - subsession_length
+        - tab_pinned_event_count
         - concurrent_opened_tab_count
-        - concurrent_pinned_tab_count
-        - shutdown_hangs
-        - tab_reload_count
-        - memory_pressure_count
-        - tab_open_event_count
-        - content_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751307_pref_tab_unloading_on_low_memory_for_linux_release_97_98_scalar
         xaxis: submission_date
       type: operational_monitoring_dashboard
@@ -2350,54 +2350,54 @@ operational_monitoring:
         dimensions: &id008 {}
         explore: tab_unloading_v2_mac_histogram
         probes:
-        - js_pageload_protect_ms
-        - gc_reason_2
-        - memory_unique_content_startup
-        - perf_first_contentful_paint_ms
-        - gc_non_incremental
-        - js_pageload_delazification_ms
-        - gc_slice_during_idle_content
-        - cycle_collector_max_pause_content
-        - gc_budget_overrun
-        - tab_unload_to_reload
-        - gc_mark_rate_2
-        - gc_slice_during_idle
-        - checkerboard_severity
-        - fx_tab_switch_composite_e10s_ms
-        - cycle_collector_max_pause
         - content_frame_time_vsync
-        - memory_total
-        - gc_max_pause_2
-        - opened_tab_count
-        - perf_page_load_time_ms
         - js_pageload_xdr_encoding_ms
+        - checkerboard_severity
+        - gc_mark_rate_2
+        - js_pageload_parse_ms
+        - js_pageload_protect_ms
+        - memory_unique_content_startup
+        - gc_max_pause_2
+        - gc_ms
+        - js_pageload_delazification_ms
+        - js_pageload_execution_ms
+        - gc_reason_2
+        - js_pageload_baseline_compile_ms
+        - fx_tab_switch_composite_e10s_ms
+        - gc_slice_during_idle_content
+        - gc_ms_content
+        - gc_slice_during_idle
+        - cycle_collector_max_pause_content
+        - gc_non_incremental
         - gc_max_pause_2_content
         - content_process_max
-        - fx_new_window_ms
-        - js_pageload_parse_ms
-        - gc_ms
+        - opened_tab_count
+        - tab_unload_to_reload
+        - perf_first_contentful_paint_ms
         - child_process_launch_ms
-        - js_pageload_execution_ms
-        - gc_ms_content
-        - js_pageload_baseline_compile_ms
+        - perf_page_load_time_ms
+        - fx_new_window_ms
+        - memory_total
+        - gc_budget_overrun
+        - cycle_collector_max_pause
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
         xaxis: submission_date
       - branches: *id007
         dimensions: *id008
         explore: tab_unloading_v2_mac_scalar
         probes:
-        - main_crashes
+        - tab_open_event_count
+        - memory_pressure_count
+        - concurrent_pinned_tab_count
         - tab_unload_count
-        - tab_pinned_event_count
+        - tab_reload_count
+        - main_crashes
+        - shutdown_hangs
+        - content_crashes
         - oom_crashes
         - subsession_length
+        - tab_pinned_event_count
         - concurrent_opened_tab_count
-        - concurrent_pinned_tab_count
-        - shutdown_hangs
-        - tab_reload_count
-        - memory_pressure_count
-        - tab_open_event_count
-        - content_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
         xaxis: submission_date
       type: operational_monitoring_dashboard
@@ -2409,54 +2409,54 @@ operational_monitoring:
         dimensions: &id010 {}
         explore: tab_unloading_v2_windows_histogram
         probes:
-        - js_pageload_protect_ms
-        - gc_reason_2
-        - memory_unique_content_startup
-        - perf_first_contentful_paint_ms
-        - gc_non_incremental
-        - js_pageload_delazification_ms
-        - gc_slice_during_idle_content
-        - cycle_collector_max_pause_content
-        - gc_budget_overrun
-        - tab_unload_to_reload
-        - gc_mark_rate_2
-        - gc_slice_during_idle
-        - checkerboard_severity
-        - fx_tab_switch_composite_e10s_ms
-        - cycle_collector_max_pause
         - content_frame_time_vsync
-        - memory_total
-        - gc_max_pause_2
-        - opened_tab_count
-        - perf_page_load_time_ms
         - js_pageload_xdr_encoding_ms
+        - checkerboard_severity
+        - gc_mark_rate_2
+        - js_pageload_parse_ms
+        - js_pageload_protect_ms
+        - memory_unique_content_startup
+        - gc_max_pause_2
+        - gc_ms
+        - js_pageload_delazification_ms
+        - js_pageload_execution_ms
+        - gc_reason_2
+        - js_pageload_baseline_compile_ms
+        - fx_tab_switch_composite_e10s_ms
+        - gc_slice_during_idle_content
+        - gc_ms_content
+        - gc_slice_during_idle
+        - cycle_collector_max_pause_content
+        - gc_non_incremental
         - gc_max_pause_2_content
         - content_process_max
-        - fx_new_window_ms
-        - js_pageload_parse_ms
-        - gc_ms
+        - opened_tab_count
+        - tab_unload_to_reload
+        - perf_first_contentful_paint_ms
         - child_process_launch_ms
-        - js_pageload_execution_ms
-        - gc_ms_content
-        - js_pageload_baseline_compile_ms
+        - perf_page_load_time_ms
+        - fx_new_window_ms
+        - memory_total
+        - gc_budget_overrun
+        - cycle_collector_max_pause
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751309_pref_tab_unloading_on_low_memory_for_windows_release_97_98_histogram
         xaxis: submission_date
       - branches: *id009
         dimensions: *id010
         explore: tab_unloading_v2_windows_scalar
         probes:
-        - main_crashes
+        - tab_open_event_count
+        - memory_pressure_count
+        - concurrent_pinned_tab_count
         - tab_unload_count
-        - tab_pinned_event_count
+        - tab_reload_count
+        - main_crashes
+        - shutdown_hangs
+        - content_crashes
         - oom_crashes
         - subsession_length
+        - tab_pinned_event_count
         - concurrent_opened_tab_count
-        - concurrent_pinned_tab_count
-        - shutdown_hangs
-        - tab_reload_count
-        - memory_pressure_count
-        - tab_open_event_count
-        - content_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751309_pref_tab_unloading_on_low_memory_for_windows_release_97_98_scalar
         xaxis: submission_date
       type: operational_monitoring_dashboard
@@ -2475,15 +2475,15 @@ operational_monitoring:
         dimensions: *id012
         explore: win32k_lockdown_experiment_scalar
         probes:
+        - startup_crashes
+        - content_shutdown_crashes
+        - oom_crashes
+        - plugin_crashes
+        - shutdown_hangs
         - main_crashes
         - gpu_crashes
-        - startup_crashes
-        - oom_crashes
-        - content_shutdown_crashes
-        - plugin_crashes
-        - content_crashes
-        - shutdown_hangs
         - gmplugin_crashes
+        - content_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751039_pref_win32k_experiment_nightly_99_99_scalar
         xaxis: submission_date
       type: operational_monitoring_dashboard
@@ -2502,15 +2502,15 @@ operational_monitoring:
         dimensions: *id014
         explore: win32k_lockdown_experiment_v2_scalar
         probes:
+        - startup_crashes
+        - content_shutdown_crashes
+        - oom_crashes
+        - plugin_crashes
+        - shutdown_hangs
         - main_crashes
         - gpu_crashes
-        - startup_crashes
-        - oom_crashes
-        - content_shutdown_crashes
-        - plugin_crashes
-        - content_crashes
-        - shutdown_hangs
         - gmplugin_crashes
+        - content_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1759171_pref_win32k_experiment_v2_beta_99_100_scalar
         xaxis: submission_date
       type: operational_monitoring_dashboard
@@ -2594,28 +2594,28 @@ operational_monitoring:
           - Mac
           - Linux
       probes:
-      - memory_unique_content_startup
-      - perf_first_contentful_paint_ms
-      - loaded_tab_count
-      - gc_slice_during_idle_content
-      - cycle_collector_max_pause_content
-      - time_to_first_interaction_ms
-      - gc_slice_during_idle
-      - checkerboard_severity
-      - fx_tab_switch_composite_e10s_ms
-      - cycle_collector_max_pause
       - content_frame_time_vsync
-      - memory_total
+      - checkerboard_severity
+      - loaded_tab_count
+      - memory_unique_content_startup
       - gc_max_pause_2
-      - perf_page_load_time_ms
+      - gc_ms
+      - time_to_first_interaction_ms
+      - keypress_present_latency_ms
+      - content_process_count
+      - fx_tab_switch_composite_e10s_ms
+      - gc_ms_content
+      - gc_slice_during_idle
+      - cycle_collector_max_pause_content
       - gc_max_pause_2_content
       - content_process_max
-      - fx_new_window_ms
-      - content_process_count
-      - gc_ms
+      - cycle_collector_max_pause
+      - perf_first_contentful_paint_ms
       - child_process_launch_ms
-      - keypress_present_latency_ms
-      - gc_ms_content
+      - perf_page_load_time_ms
+      - fx_new_window_ms
+      - memory_total
+      - gc_slice_during_idle_content
       type: operational_monitoring_explore
       views:
         base_view: fission_release_rollout_histogram
@@ -2624,18 +2624,18 @@ operational_monitoring:
       branches: *id003
       dimensions: *id004
       probes:
-      - main_crashes
-      - content_shutdown_crashes
-      - oom_crashes
-      - plugin_crashes
-      - subsession_length
-      - shutdown_hangs
       - gmplugin_crashes
       - gpu_crashes
       - startup_crashes
-      - active_ticks
+      - shutdown_hangs
+      - main_crashes
       - uri_count
       - content_crashes
+      - oom_crashes
+      - plugin_crashes
+      - subsession_length
+      - content_shutdown_crashes
+      - active_ticks
       type: operational_monitoring_explore
       views:
         base_view: fission_release_rollout_scalar
@@ -2664,36 +2664,36 @@ operational_monitoring:
       branches: *id005
       dimensions: &id017 {}
       probes:
-      - js_pageload_protect_ms
-      - gc_reason_2
-      - memory_unique_content_startup
-      - perf_first_contentful_paint_ms
-      - gc_non_incremental
-      - js_pageload_delazification_ms
-      - gc_slice_during_idle_content
-      - cycle_collector_max_pause_content
-      - gc_budget_overrun
-      - tab_unload_to_reload
-      - gc_mark_rate_2
-      - gc_slice_during_idle
-      - checkerboard_severity
-      - fx_tab_switch_composite_e10s_ms
-      - cycle_collector_max_pause
       - content_frame_time_vsync
-      - memory_total
-      - gc_max_pause_2
-      - opened_tab_count
-      - perf_page_load_time_ms
       - js_pageload_xdr_encoding_ms
+      - checkerboard_severity
+      - gc_mark_rate_2
+      - js_pageload_parse_ms
+      - js_pageload_protect_ms
+      - memory_unique_content_startup
+      - gc_max_pause_2
+      - gc_ms
+      - js_pageload_delazification_ms
+      - js_pageload_execution_ms
+      - gc_reason_2
+      - js_pageload_baseline_compile_ms
+      - fx_tab_switch_composite_e10s_ms
+      - gc_slice_during_idle_content
+      - gc_ms_content
+      - gc_slice_during_idle
+      - cycle_collector_max_pause_content
+      - gc_non_incremental
       - gc_max_pause_2_content
       - content_process_max
-      - fx_new_window_ms
-      - js_pageload_parse_ms
-      - gc_ms
+      - opened_tab_count
+      - tab_unload_to_reload
+      - perf_first_contentful_paint_ms
       - child_process_launch_ms
-      - js_pageload_execution_ms
-      - gc_ms_content
-      - js_pageload_baseline_compile_ms
+      - perf_page_load_time_ms
+      - fx_new_window_ms
+      - memory_total
+      - gc_budget_overrun
+      - cycle_collector_max_pause
       type: operational_monitoring_explore
       views:
         base_view: tab_unloading_v2_linux_histogram
@@ -2702,18 +2702,18 @@ operational_monitoring:
       branches: *id005
       dimensions: *id006
       probes:
-      - main_crashes
+      - tab_open_event_count
+      - memory_pressure_count
+      - concurrent_pinned_tab_count
       - tab_unload_count
-      - tab_pinned_event_count
+      - tab_reload_count
+      - main_crashes
+      - shutdown_hangs
+      - content_crashes
       - oom_crashes
       - subsession_length
+      - tab_pinned_event_count
       - concurrent_opened_tab_count
-      - concurrent_pinned_tab_count
-      - shutdown_hangs
-      - tab_reload_count
-      - memory_pressure_count
-      - tab_open_event_count
-      - content_crashes
       type: operational_monitoring_explore
       views:
         base_view: tab_unloading_v2_linux_scalar
@@ -2722,36 +2722,36 @@ operational_monitoring:
       branches: *id007
       dimensions: &id018 {}
       probes:
-      - js_pageload_protect_ms
-      - gc_reason_2
-      - memory_unique_content_startup
-      - perf_first_contentful_paint_ms
-      - gc_non_incremental
-      - js_pageload_delazification_ms
-      - gc_slice_during_idle_content
-      - cycle_collector_max_pause_content
-      - gc_budget_overrun
-      - tab_unload_to_reload
-      - gc_mark_rate_2
-      - gc_slice_during_idle
-      - checkerboard_severity
-      - fx_tab_switch_composite_e10s_ms
-      - cycle_collector_max_pause
       - content_frame_time_vsync
-      - memory_total
-      - gc_max_pause_2
-      - opened_tab_count
-      - perf_page_load_time_ms
       - js_pageload_xdr_encoding_ms
+      - checkerboard_severity
+      - gc_mark_rate_2
+      - js_pageload_parse_ms
+      - js_pageload_protect_ms
+      - memory_unique_content_startup
+      - gc_max_pause_2
+      - gc_ms
+      - js_pageload_delazification_ms
+      - js_pageload_execution_ms
+      - gc_reason_2
+      - js_pageload_baseline_compile_ms
+      - fx_tab_switch_composite_e10s_ms
+      - gc_slice_during_idle_content
+      - gc_ms_content
+      - gc_slice_during_idle
+      - cycle_collector_max_pause_content
+      - gc_non_incremental
       - gc_max_pause_2_content
       - content_process_max
-      - fx_new_window_ms
-      - js_pageload_parse_ms
-      - gc_ms
+      - opened_tab_count
+      - tab_unload_to_reload
+      - perf_first_contentful_paint_ms
       - child_process_launch_ms
-      - js_pageload_execution_ms
-      - gc_ms_content
-      - js_pageload_baseline_compile_ms
+      - perf_page_load_time_ms
+      - fx_new_window_ms
+      - memory_total
+      - gc_budget_overrun
+      - cycle_collector_max_pause
       type: operational_monitoring_explore
       views:
         base_view: tab_unloading_v2_mac_histogram
@@ -2760,18 +2760,18 @@ operational_monitoring:
       branches: *id007
       dimensions: *id008
       probes:
-      - main_crashes
+      - tab_open_event_count
+      - memory_pressure_count
+      - concurrent_pinned_tab_count
       - tab_unload_count
-      - tab_pinned_event_count
+      - tab_reload_count
+      - main_crashes
+      - shutdown_hangs
+      - content_crashes
       - oom_crashes
       - subsession_length
+      - tab_pinned_event_count
       - concurrent_opened_tab_count
-      - concurrent_pinned_tab_count
-      - shutdown_hangs
-      - tab_reload_count
-      - memory_pressure_count
-      - tab_open_event_count
-      - content_crashes
       type: operational_monitoring_explore
       views:
         base_view: tab_unloading_v2_mac_scalar
@@ -2780,36 +2780,36 @@ operational_monitoring:
       branches: *id009
       dimensions: &id019 {}
       probes:
-      - js_pageload_protect_ms
-      - gc_reason_2
-      - memory_unique_content_startup
-      - perf_first_contentful_paint_ms
-      - gc_non_incremental
-      - js_pageload_delazification_ms
-      - gc_slice_during_idle_content
-      - cycle_collector_max_pause_content
-      - gc_budget_overrun
-      - tab_unload_to_reload
-      - gc_mark_rate_2
-      - gc_slice_during_idle
-      - checkerboard_severity
-      - fx_tab_switch_composite_e10s_ms
-      - cycle_collector_max_pause
       - content_frame_time_vsync
-      - memory_total
-      - gc_max_pause_2
-      - opened_tab_count
-      - perf_page_load_time_ms
       - js_pageload_xdr_encoding_ms
+      - checkerboard_severity
+      - gc_mark_rate_2
+      - js_pageload_parse_ms
+      - js_pageload_protect_ms
+      - memory_unique_content_startup
+      - gc_max_pause_2
+      - gc_ms
+      - js_pageload_delazification_ms
+      - js_pageload_execution_ms
+      - gc_reason_2
+      - js_pageload_baseline_compile_ms
+      - fx_tab_switch_composite_e10s_ms
+      - gc_slice_during_idle_content
+      - gc_ms_content
+      - gc_slice_during_idle
+      - cycle_collector_max_pause_content
+      - gc_non_incremental
       - gc_max_pause_2_content
       - content_process_max
-      - fx_new_window_ms
-      - js_pageload_parse_ms
-      - gc_ms
+      - opened_tab_count
+      - tab_unload_to_reload
+      - perf_first_contentful_paint_ms
       - child_process_launch_ms
-      - js_pageload_execution_ms
-      - gc_ms_content
-      - js_pageload_baseline_compile_ms
+      - perf_page_load_time_ms
+      - fx_new_window_ms
+      - memory_total
+      - gc_budget_overrun
+      - cycle_collector_max_pause
       type: operational_monitoring_explore
       views:
         base_view: tab_unloading_v2_windows_histogram
@@ -2818,18 +2818,18 @@ operational_monitoring:
       branches: *id009
       dimensions: *id010
       probes:
-      - main_crashes
+      - tab_open_event_count
+      - memory_pressure_count
+      - concurrent_pinned_tab_count
       - tab_unload_count
-      - tab_pinned_event_count
+      - tab_reload_count
+      - main_crashes
+      - shutdown_hangs
+      - content_crashes
       - oom_crashes
       - subsession_length
+      - tab_pinned_event_count
       - concurrent_opened_tab_count
-      - concurrent_pinned_tab_count
-      - shutdown_hangs
-      - tab_reload_count
-      - memory_pressure_count
-      - tab_open_event_count
-      - content_crashes
       type: operational_monitoring_explore
       views:
         base_view: tab_unloading_v2_windows_scalar
@@ -2847,15 +2847,15 @@ operational_monitoring:
       branches: *id011
       dimensions: *id012
       probes:
+      - startup_crashes
+      - content_shutdown_crashes
+      - oom_crashes
+      - plugin_crashes
+      - shutdown_hangs
       - main_crashes
       - gpu_crashes
-      - startup_crashes
-      - oom_crashes
-      - content_shutdown_crashes
-      - plugin_crashes
-      - content_crashes
-      - shutdown_hangs
       - gmplugin_crashes
+      - content_crashes
       type: operational_monitoring_explore
       views:
         base_view: win32k_lockdown_experiment_scalar
@@ -2873,15 +2873,15 @@ operational_monitoring:
       branches: *id013
       dimensions: *id014
       probes:
+      - startup_crashes
+      - content_shutdown_crashes
+      - oom_crashes
+      - plugin_crashes
+      - shutdown_hangs
       - main_crashes
       - gpu_crashes
-      - startup_crashes
-      - oom_crashes
-      - content_shutdown_crashes
-      - plugin_crashes
-      - content_crashes
-      - shutdown_hangs
       - gmplugin_crashes
+      - content_crashes
       type: operational_monitoring_explore
       views:
         base_view: win32k_lockdown_experiment_v2_scalar
