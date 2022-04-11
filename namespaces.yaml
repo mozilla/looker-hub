@@ -3051,6 +3051,17 @@ search:
       tables:
       - table: mozdata.search.search_clients_engines_sources_daily
       type: ping_view
+shared:
+  glean_app: false
+  owners:
+  - anicholson@mozilla.com
+  pretty name: Shared
+  spoke: looker-spoke-default
+  views:
+    countries:
+      tables:
+      - table: mozdata.static.country_codes_v1
+      type: table_view
 sync:
   explores:
     sync:

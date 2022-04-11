@@ -106,6 +106,11 @@ view: fxa_content_auth_stdout_events_table {
     type: string
   }
 
+  dimension: payment_provider {
+    sql: ${TABLE}.payment_provider ;;
+    type: string
+  }
+
   dimension: plan_id {
     sql: ${TABLE}.plan_id ;;
     type: string
@@ -118,6 +123,11 @@ view: fxa_content_auth_stdout_events_table {
 
   dimension: promotion_code {
     sql: ${TABLE}.promotion_code ;;
+    type: string
+  }
+
+  dimension: selected_plan {
+    sql: ${TABLE}.selected_plan ;;
     type: string
   }
 
