@@ -13,22 +13,6 @@ explore: win32k_lockdown_experiment_v2_scalar {
     ]
   }
 
-  aggregate_table: rollup_main_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        win32k_lockdown_experiment_v2_scalar.branch: "enabled, disabled",
-        win32k_lockdown_experiment_v2_scalar.percentile_conf: "50",
-        win32k_lockdown_experiment_v2_scalar.probe: "main_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_gmplugin_crashes {
     query: {
       dimensions: [submission_date, branch]
@@ -61,6 +45,22 @@ explore: win32k_lockdown_experiment_v2_scalar {
     }
   }
 
+  aggregate_table: rollup_startup_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        win32k_lockdown_experiment_v2_scalar.branch: "enabled, disabled",
+        win32k_lockdown_experiment_v2_scalar.percentile_conf: "50",
+        win32k_lockdown_experiment_v2_scalar.probe: "startup_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
   aggregate_table: rollup_content_crashes {
     query: {
       dimensions: [submission_date, branch]
@@ -69,54 +69,6 @@ explore: win32k_lockdown_experiment_v2_scalar {
         win32k_lockdown_experiment_v2_scalar.branch: "enabled, disabled",
         win32k_lockdown_experiment_v2_scalar.percentile_conf: "50",
         win32k_lockdown_experiment_v2_scalar.probe: "content_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_oom_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        win32k_lockdown_experiment_v2_scalar.branch: "enabled, disabled",
-        win32k_lockdown_experiment_v2_scalar.percentile_conf: "50",
-        win32k_lockdown_experiment_v2_scalar.probe: "oom_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_plugin_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        win32k_lockdown_experiment_v2_scalar.branch: "enabled, disabled",
-        win32k_lockdown_experiment_v2_scalar.percentile_conf: "50",
-        win32k_lockdown_experiment_v2_scalar.probe: "plugin_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_shutdown_hangs {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        win32k_lockdown_experiment_v2_scalar.branch: "enabled, disabled",
-        win32k_lockdown_experiment_v2_scalar.percentile_conf: "50",
-        win32k_lockdown_experiment_v2_scalar.probe: "shutdown_hangs",
       ]
     }
 
@@ -141,14 +93,62 @@ explore: win32k_lockdown_experiment_v2_scalar {
     }
   }
 
-  aggregate_table: rollup_startup_crashes {
+  aggregate_table: rollup_plugin_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         win32k_lockdown_experiment_v2_scalar.branch: "enabled, disabled",
         win32k_lockdown_experiment_v2_scalar.percentile_conf: "50",
-        win32k_lockdown_experiment_v2_scalar.probe: "startup_crashes",
+        win32k_lockdown_experiment_v2_scalar.probe: "plugin_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_main_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        win32k_lockdown_experiment_v2_scalar.branch: "enabled, disabled",
+        win32k_lockdown_experiment_v2_scalar.percentile_conf: "50",
+        win32k_lockdown_experiment_v2_scalar.probe: "main_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_shutdown_hangs {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        win32k_lockdown_experiment_v2_scalar.branch: "enabled, disabled",
+        win32k_lockdown_experiment_v2_scalar.percentile_conf: "50",
+        win32k_lockdown_experiment_v2_scalar.probe: "shutdown_hangs",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_oom_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        win32k_lockdown_experiment_v2_scalar.branch: "enabled, disabled",
+        win32k_lockdown_experiment_v2_scalar.percentile_conf: "50",
+        win32k_lockdown_experiment_v2_scalar.probe: "oom_crashes",
       ]
     }
 
