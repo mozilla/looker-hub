@@ -244,6 +244,21 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_process_type}) AS metrics__metrics__labeled_counter__power_wakeups_per_process_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_process_type.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened}) AS metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown}) AS metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__tabs_tray_access_point {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tabs_tray_access_point}) AS metrics__metrics__labeled_counter__tabs_tray_access_point ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tabs_tray_access_point.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__wallpapers_new_wallpaper_applied {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__wallpapers_new_wallpaper_applied}) AS metrics__metrics__labeled_counter__wallpapers_new_wallpaper_applied ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__wallpapers_new_wallpaper_applied.document_id} ;;
@@ -427,6 +442,18 @@ explore: suggest__metrics__metrics__labeled_counter__power_gpu_time_per_process_
 }
 
 explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_process_type {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__tabs_tray_access_point {
   hidden: yes
 }
 
