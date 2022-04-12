@@ -3055,7 +3055,7 @@ shared:
   glean_app: false
   owners:
   - anicholson@mozilla.com
-  pretty name: Shared
+  pretty_name: Shared
   spoke: looker-spoke-default
   views:
     countries:
