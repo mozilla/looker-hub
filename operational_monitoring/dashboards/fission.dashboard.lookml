@@ -21,7 +21,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: perf_page_load_time_ms
     row: 0
@@ -52,7 +54,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: memory_total
     row: 0
@@ -83,7 +87,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: content_frame_time_vsync
     row: 10
@@ -114,7 +120,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: content_process_max
     row: 10
@@ -145,7 +153,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: child_process_launch_ms
     row: 20
@@ -176,7 +186,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: gc_max_pause_2_content
     row: 20
@@ -207,7 +219,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: checkerboard_severity
     row: 30
@@ -238,7 +252,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: gc_ms_content
     row: 30
@@ -269,7 +285,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: cycle_collector_max_pause
     row: 40
@@ -300,7 +318,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: fx_new_window_ms
     row: 40
@@ -331,7 +351,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: memory_unique_content_startup
     row: 50
@@ -362,7 +384,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: gc_slice_during_idle_content
     row: 50
@@ -393,7 +417,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: gc_ms
     row: 60
@@ -424,7 +450,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: gc_max_pause_2
     row: 60
@@ -455,7 +483,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: loaded_tab_count
     row: 70
@@ -486,7 +516,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: cycle_collector_max_pause_content
     row: 70
@@ -517,7 +549,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: content_process_count
     row: 80
@@ -548,7 +582,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: fx_tab_switch_composite_e10s_ms
     row: 80
@@ -579,7 +615,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: perf_first_contentful_paint_ms
     row: 90
@@ -610,7 +648,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: gc_slice_during_idle
     row: 90
@@ -641,7 +681,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: time_to_first_interaction_ms
     row: 100
@@ -672,7 +714,9 @@
       fission_histogram.low,
       fission_histogram.percentile
     ]
-    pivots: [fission_histogram.branch]
+    pivots: [
+      fission_histogram.branch
+    ]
     filters:
       fission_histogram.probe: keypress_present_latency_ms
     row: 100
@@ -703,7 +747,9 @@
       fission_scalar.low,
       fission_scalar.percentile
     ]
-    pivots: [fission_scalar.branch]
+    pivots: [
+      fission_scalar.branch
+    ]
     filters:
       fission_scalar.probe: active_ticks
     row: 110
@@ -734,7 +780,9 @@
       fission_scalar.low,
       fission_scalar.percentile
     ]
-    pivots: [fission_scalar.branch]
+    pivots: [
+      fission_scalar.branch
+    ]
     filters:
       fission_scalar.probe: content_shutdown_crashes
     row: 110
@@ -765,7 +813,9 @@
       fission_scalar.low,
       fission_scalar.percentile
     ]
-    pivots: [fission_scalar.branch]
+    pivots: [
+      fission_scalar.branch
+    ]
     filters:
       fission_scalar.probe: oom_crashes
     row: 120
@@ -796,7 +846,9 @@
       fission_scalar.low,
       fission_scalar.percentile
     ]
-    pivots: [fission_scalar.branch]
+    pivots: [
+      fission_scalar.branch
+    ]
     filters:
       fission_scalar.probe: shutdown_hangs
     row: 120
@@ -827,7 +879,9 @@
       fission_scalar.low,
       fission_scalar.percentile
     ]
-    pivots: [fission_scalar.branch]
+    pivots: [
+      fission_scalar.branch
+    ]
     filters:
       fission_scalar.probe: uri_count
     row: 130
@@ -858,7 +912,9 @@
       fission_scalar.low,
       fission_scalar.percentile
     ]
-    pivots: [fission_scalar.branch]
+    pivots: [
+      fission_scalar.branch
+    ]
     filters:
       fission_scalar.probe: gmplugin_crashes
     row: 130
@@ -889,7 +945,9 @@
       fission_scalar.low,
       fission_scalar.percentile
     ]
-    pivots: [fission_scalar.branch]
+    pivots: [
+      fission_scalar.branch
+    ]
     filters:
       fission_scalar.probe: subsession_length
     row: 140
@@ -920,7 +978,9 @@
       fission_scalar.low,
       fission_scalar.percentile
     ]
-    pivots: [fission_scalar.branch]
+    pivots: [
+      fission_scalar.branch
+    ]
     filters:
       fission_scalar.probe: content_crashes
     row: 140
@@ -951,7 +1011,9 @@
       fission_scalar.low,
       fission_scalar.percentile
     ]
-    pivots: [fission_scalar.branch]
+    pivots: [
+      fission_scalar.branch
+    ]
     filters:
       fission_scalar.probe: gpu_crashes
     row: 150
@@ -982,7 +1044,9 @@
       fission_scalar.low,
       fission_scalar.percentile
     ]
-    pivots: [fission_scalar.branch]
+    pivots: [
+      fission_scalar.branch
+    ]
     filters:
       fission_scalar.probe: plugin_crashes
     row: 150
@@ -1013,7 +1077,9 @@
       fission_scalar.low,
       fission_scalar.percentile
     ]
-    pivots: [fission_scalar.branch]
+    pivots: [
+      fission_scalar.branch
+    ]
     filters:
       fission_scalar.probe: main_crashes
     row: 160
@@ -1044,7 +1110,9 @@
       fission_scalar.low,
       fission_scalar.percentile
     ]
-    pivots: [fission_scalar.branch]
+    pivots: [
+      fission_scalar.branch
+    ]
     filters:
       fission_scalar.probe: startup_crashes
     row: 160

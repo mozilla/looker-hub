@@ -21,7 +21,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: content_frame_time_vsync
     row: 0
@@ -50,7 +52,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: js_pageload_xdr_encoding_ms
     row: 0
@@ -79,7 +83,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: checkerboard_severity
     row: 10
@@ -108,7 +114,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: gc_mark_rate_2
     row: 10
@@ -137,7 +145,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: js_pageload_parse_ms
     row: 20
@@ -166,7 +176,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: js_pageload_protect_ms
     row: 20
@@ -195,7 +207,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: memory_unique_content_startup
     row: 30
@@ -224,7 +238,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: gc_max_pause_2
     row: 30
@@ -253,7 +269,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: gc_ms
     row: 40
@@ -282,7 +300,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: js_pageload_delazification_ms
     row: 40
@@ -311,7 +331,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: js_pageload_execution_ms
     row: 50
@@ -340,7 +362,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: gc_reason_2
     row: 50
@@ -369,7 +393,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: js_pageload_baseline_compile_ms
     row: 60
@@ -398,7 +424,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: fx_tab_switch_composite_e10s_ms
     row: 60
@@ -427,7 +455,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: gc_slice_during_idle_content
     row: 70
@@ -456,7 +486,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: gc_ms_content
     row: 70
@@ -485,7 +517,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: gc_slice_during_idle
     row: 80
@@ -514,7 +548,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: cycle_collector_max_pause_content
     row: 80
@@ -543,7 +579,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: gc_non_incremental
     row: 90
@@ -572,7 +610,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: gc_max_pause_2_content
     row: 90
@@ -601,7 +641,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: content_process_max
     row: 100
@@ -630,7 +672,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: opened_tab_count
     row: 100
@@ -659,7 +703,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: tab_unload_to_reload
     row: 110
@@ -688,7 +734,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: perf_first_contentful_paint_ms
     row: 110
@@ -717,7 +765,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: child_process_launch_ms
     row: 120
@@ -746,7 +796,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: perf_page_load_time_ms
     row: 120
@@ -775,7 +827,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: fx_new_window_ms
     row: 130
@@ -804,7 +858,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: memory_total
     row: 130
@@ -833,7 +889,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: gc_budget_overrun
     row: 140
@@ -862,7 +920,9 @@
       tab_unloading_v2_linux_histogram.low,
       tab_unloading_v2_linux_histogram.percentile
     ]
-    pivots: [tab_unloading_v2_linux_histogram.branch]
+    pivots: [
+      tab_unloading_v2_linux_histogram.branch
+    ]
     filters:
       tab_unloading_v2_linux_histogram.probe: cycle_collector_max_pause
     row: 140
@@ -891,7 +951,9 @@
       tab_unloading_v2_linux_scalar.low,
       tab_unloading_v2_linux_scalar.percentile
     ]
-    pivots: [tab_unloading_v2_linux_scalar.branch]
+    pivots: [
+      tab_unloading_v2_linux_scalar.branch
+    ]
     filters:
       tab_unloading_v2_linux_scalar.probe: tab_open_event_count
     row: 150
@@ -920,7 +982,9 @@
       tab_unloading_v2_linux_scalar.low,
       tab_unloading_v2_linux_scalar.percentile
     ]
-    pivots: [tab_unloading_v2_linux_scalar.branch]
+    pivots: [
+      tab_unloading_v2_linux_scalar.branch
+    ]
     filters:
       tab_unloading_v2_linux_scalar.probe: memory_pressure_count
     row: 150
@@ -949,7 +1013,9 @@
       tab_unloading_v2_linux_scalar.low,
       tab_unloading_v2_linux_scalar.percentile
     ]
-    pivots: [tab_unloading_v2_linux_scalar.branch]
+    pivots: [
+      tab_unloading_v2_linux_scalar.branch
+    ]
     filters:
       tab_unloading_v2_linux_scalar.probe: concurrent_pinned_tab_count
     row: 160
@@ -978,7 +1044,9 @@
       tab_unloading_v2_linux_scalar.low,
       tab_unloading_v2_linux_scalar.percentile
     ]
-    pivots: [tab_unloading_v2_linux_scalar.branch]
+    pivots: [
+      tab_unloading_v2_linux_scalar.branch
+    ]
     filters:
       tab_unloading_v2_linux_scalar.probe: tab_unload_count
     row: 160
@@ -1007,7 +1075,9 @@
       tab_unloading_v2_linux_scalar.low,
       tab_unloading_v2_linux_scalar.percentile
     ]
-    pivots: [tab_unloading_v2_linux_scalar.branch]
+    pivots: [
+      tab_unloading_v2_linux_scalar.branch
+    ]
     filters:
       tab_unloading_v2_linux_scalar.probe: tab_reload_count
     row: 170
@@ -1036,7 +1106,9 @@
       tab_unloading_v2_linux_scalar.low,
       tab_unloading_v2_linux_scalar.percentile
     ]
-    pivots: [tab_unloading_v2_linux_scalar.branch]
+    pivots: [
+      tab_unloading_v2_linux_scalar.branch
+    ]
     filters:
       tab_unloading_v2_linux_scalar.probe: main_crashes
     row: 170
@@ -1065,7 +1137,9 @@
       tab_unloading_v2_linux_scalar.low,
       tab_unloading_v2_linux_scalar.percentile
     ]
-    pivots: [tab_unloading_v2_linux_scalar.branch]
+    pivots: [
+      tab_unloading_v2_linux_scalar.branch
+    ]
     filters:
       tab_unloading_v2_linux_scalar.probe: shutdown_hangs
     row: 180
@@ -1094,7 +1168,9 @@
       tab_unloading_v2_linux_scalar.low,
       tab_unloading_v2_linux_scalar.percentile
     ]
-    pivots: [tab_unloading_v2_linux_scalar.branch]
+    pivots: [
+      tab_unloading_v2_linux_scalar.branch
+    ]
     filters:
       tab_unloading_v2_linux_scalar.probe: content_crashes
     row: 180
@@ -1123,7 +1199,9 @@
       tab_unloading_v2_linux_scalar.low,
       tab_unloading_v2_linux_scalar.percentile
     ]
-    pivots: [tab_unloading_v2_linux_scalar.branch]
+    pivots: [
+      tab_unloading_v2_linux_scalar.branch
+    ]
     filters:
       tab_unloading_v2_linux_scalar.probe: oom_crashes
     row: 190
@@ -1152,7 +1230,9 @@
       tab_unloading_v2_linux_scalar.low,
       tab_unloading_v2_linux_scalar.percentile
     ]
-    pivots: [tab_unloading_v2_linux_scalar.branch]
+    pivots: [
+      tab_unloading_v2_linux_scalar.branch
+    ]
     filters:
       tab_unloading_v2_linux_scalar.probe: subsession_length
     row: 190
@@ -1181,7 +1261,9 @@
       tab_unloading_v2_linux_scalar.low,
       tab_unloading_v2_linux_scalar.percentile
     ]
-    pivots: [tab_unloading_v2_linux_scalar.branch]
+    pivots: [
+      tab_unloading_v2_linux_scalar.branch
+    ]
     filters:
       tab_unloading_v2_linux_scalar.probe: tab_pinned_event_count
     row: 200
@@ -1210,7 +1292,9 @@
       tab_unloading_v2_linux_scalar.low,
       tab_unloading_v2_linux_scalar.percentile
     ]
-    pivots: [tab_unloading_v2_linux_scalar.branch]
+    pivots: [
+      tab_unloading_v2_linux_scalar.branch
+    ]
     filters:
       tab_unloading_v2_linux_scalar.probe: concurrent_opened_tab_count
     row: 200
