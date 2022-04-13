@@ -1155,6 +1155,7 @@
       - '95'
       - '99'
 
+  
   - title: Cores Count
     name: Cores Count
     type: string_filter
@@ -1176,6 +1177,8 @@
       - '10'
       - '1'
       
+  
+  
   - title: Os
     name: Os
     type: string_filter
@@ -1197,4 +1200,5 @@
       - '10'
       - '16'
       
+  
   
