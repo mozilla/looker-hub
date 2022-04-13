@@ -21,7 +21,9 @@
       win32k_lockdown_experiment_histogram.low,
       win32k_lockdown_experiment_histogram.percentile
     ]
-    pivots: [win32k_lockdown_experiment_histogram.branch]
+    pivots: [
+      win32k_lockdown_experiment_histogram.branch
+    ]
     filters:
       win32k_lockdown_experiment_histogram.probe: content_process_count
     row: 0
@@ -50,7 +52,9 @@
       win32k_lockdown_experiment_scalar.low,
       win32k_lockdown_experiment_scalar.percentile
     ]
-    pivots: [win32k_lockdown_experiment_scalar.branch]
+    pivots: [
+      win32k_lockdown_experiment_scalar.branch
+    ]
     filters:
       win32k_lockdown_experiment_scalar.probe: startup_crashes
     row: 0
@@ -79,7 +83,9 @@
       win32k_lockdown_experiment_scalar.low,
       win32k_lockdown_experiment_scalar.percentile
     ]
-    pivots: [win32k_lockdown_experiment_scalar.branch]
+    pivots: [
+      win32k_lockdown_experiment_scalar.branch
+    ]
     filters:
       win32k_lockdown_experiment_scalar.probe: content_shutdown_crashes
     row: 10
@@ -108,7 +114,9 @@
       win32k_lockdown_experiment_scalar.low,
       win32k_lockdown_experiment_scalar.percentile
     ]
-    pivots: [win32k_lockdown_experiment_scalar.branch]
+    pivots: [
+      win32k_lockdown_experiment_scalar.branch
+    ]
     filters:
       win32k_lockdown_experiment_scalar.probe: oom_crashes
     row: 10
@@ -137,7 +145,9 @@
       win32k_lockdown_experiment_scalar.low,
       win32k_lockdown_experiment_scalar.percentile
     ]
-    pivots: [win32k_lockdown_experiment_scalar.branch]
+    pivots: [
+      win32k_lockdown_experiment_scalar.branch
+    ]
     filters:
       win32k_lockdown_experiment_scalar.probe: plugin_crashes
     row: 20
@@ -166,7 +176,9 @@
       win32k_lockdown_experiment_scalar.low,
       win32k_lockdown_experiment_scalar.percentile
     ]
-    pivots: [win32k_lockdown_experiment_scalar.branch]
+    pivots: [
+      win32k_lockdown_experiment_scalar.branch
+    ]
     filters:
       win32k_lockdown_experiment_scalar.probe: shutdown_hangs
     row: 20
@@ -195,7 +207,9 @@
       win32k_lockdown_experiment_scalar.low,
       win32k_lockdown_experiment_scalar.percentile
     ]
-    pivots: [win32k_lockdown_experiment_scalar.branch]
+    pivots: [
+      win32k_lockdown_experiment_scalar.branch
+    ]
     filters:
       win32k_lockdown_experiment_scalar.probe: main_crashes
     row: 30
@@ -224,7 +238,9 @@
       win32k_lockdown_experiment_scalar.low,
       win32k_lockdown_experiment_scalar.percentile
     ]
-    pivots: [win32k_lockdown_experiment_scalar.branch]
+    pivots: [
+      win32k_lockdown_experiment_scalar.branch
+    ]
     filters:
       win32k_lockdown_experiment_scalar.probe: gpu_crashes
     row: 30
@@ -253,7 +269,9 @@
       win32k_lockdown_experiment_scalar.low,
       win32k_lockdown_experiment_scalar.percentile
     ]
-    pivots: [win32k_lockdown_experiment_scalar.branch]
+    pivots: [
+      win32k_lockdown_experiment_scalar.branch
+    ]
     filters:
       win32k_lockdown_experiment_scalar.probe: gmplugin_crashes
     row: 40
@@ -282,7 +300,9 @@
       win32k_lockdown_experiment_scalar.low,
       win32k_lockdown_experiment_scalar.percentile
     ]
-    pivots: [win32k_lockdown_experiment_scalar.branch]
+    pivots: [
+      win32k_lockdown_experiment_scalar.branch
+    ]
     filters:
       win32k_lockdown_experiment_scalar.probe: content_crashes
     row: 40

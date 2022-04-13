@@ -2166,6 +2166,7 @@ operational_monitoring:
             - '10'
             - '16'
         explore: fission_histogram
+        group_by_dimension: null
         probes:
         - perf_page_load_time_ms
         - memory_total
@@ -2194,6 +2195,7 @@ operational_monitoring:
       - branches: *id001
         dimensions: *id002
         explore: fission_scalar
+        group_by_dimension: null
         probes:
         - active_ticks
         - content_shutdown_crashes
@@ -2236,57 +2238,99 @@ operational_monitoring:
             - Mac
             - Linux
         explore: fission_release_rollout_histogram
+        group_by_dimension: null
         probes:
-        - time_to_first_interaction_ms
-        - loaded_tab_count
-        - gc_max_pause_2_content
-        - child_process_launch_ms
-        - gc_slice_during_idle
-        - content_frame_time_vsync
-        - gc_max_pause_2
-        - content_process_count
-        - fx_new_window_ms
+        - memory_unique_content_startup
         - gc_ms
-        - cycle_collector_max_pause_content
-        - perf_first_contentful_paint_ms
+        - gc_max_pause_2_content
         - memory_total
-        - checkerboard_severity
-        - gc_ms_content
-        - perf_page_load_time_ms
+        - gc_slice_during_idle
+        - gc_slice_during_idle_content
         - content_process_max
         - keypress_present_latency_ms
-        - fx_tab_switch_composite_e10s_ms
-        - memory_unique_content_startup
+        - perf_page_load_time_ms
         - cycle_collector_max_pause
-        - gc_slice_during_idle_content
+        - perf_first_contentful_paint_ms
+        - child_process_launch_ms
+        - fx_new_window_ms
+        - loaded_tab_count
+        - fx_tab_switch_composite_e10s_ms
+        - content_process_count
+        - cycle_collector_max_pause_content
+        - time_to_first_interaction_ms
+        - content_frame_time_vsync
+        - gc_ms_content
+        - checkerboard_severity
+        - gc_max_pause_2
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
         xaxis: submission_date
       - branches: *id003
         dimensions: *id004
         explore: fission_release_rollout_scalar
+        group_by_dimension: null
         probes:
-        - oom_crashes
-        - shutdown_hangs
-        - main_crashes
-        - gpu_crashes
-        - subsession_length
-        - uri_count
-        - content_shutdown_crashes
-        - content_crashes
-        - startup_crashes
-        - plugin_crashes
-        - active_ticks
         - gmplugin_crashes
+        - active_ticks
+        - gpu_crashes
+        - content_crashes
+        - shutdown_hangs
+        - oom_crashes
+        - uri_count
+        - plugin_crashes
+        - startup_crashes
+        - main_crashes
+        - content_shutdown_crashes
+        - subsession_length
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
+        xaxis: submission_date
+      type: operational_monitoring_dashboard
+    mission_control_desktop_nightly:
+      tables:
+      - branches: &id005
+        - active
+        dimensions: &id006
+          build:
+            default: '20220405'
+            options:
+            - '20220405'
+            - '20220406'
+            - '20220407'
+            - '20220408'
+            - '20220404'
+            - '20220409'
+            - '20220410'
+            - '20220411'
+            - '20220403'
+            - '20220412'
+          os:
+            default: Windows
+            options:
+            - Windows
+            - Linux
+            - Mac
+        explore: mission_control_desktop_nightly_histogram
+        group_by_dimension: build
+        probes: []
+        table: moz-fx-data-shared-prod.operational_monitoring.mission_control_desktop_nightly_histogram
+        xaxis: submission_date
+      - branches: *id005
+        dimensions: *id006
+        explore: mission_control_desktop_nightly_scalar
+        group_by_dimension: build
+        probes:
+        - main_crashes
+        - oom_crashes
+        table: moz-fx-data-shared-prod.operational_monitoring.mission_control_desktop_nightly_scalar
         xaxis: submission_date
       type: operational_monitoring_dashboard
     tab_unloading_v2_linux:
       tables:
-      - branches: &id005
+      - branches: &id007
         - tab-unloading-enabled
         - tab-unloading-disabled
-        dimensions: &id006 {}
+        dimensions: &id008 {}
         explore: tab_unloading_v2_linux_histogram
+        group_by_dimension: null
         probes:
         - content_frame_time_vsync
         - js_pageload_xdr_encoding_ms
@@ -2320,9 +2364,10 @@ operational_monitoring:
         - cycle_collector_max_pause
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751307_pref_tab_unloading_on_low_memory_for_linux_release_97_98_histogram
         xaxis: submission_date
-      - branches: *id005
-        dimensions: *id006
+      - branches: *id007
+        dimensions: *id008
         explore: tab_unloading_v2_linux_scalar
+        group_by_dimension: null
         probes:
         - tab_open_event_count
         - memory_pressure_count
@@ -2341,14 +2386,15 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     tab_unloading_v2_mac:
       tables:
-      - branches: &id007
+      - branches: &id009
         - memory-pressure-warning
         - tab-unloading-and-memory-pressure-warning
         - memory-pressure-critical
         - tab-unloading-and-memory-pressure-critical
         - tab-unloading-and-memory-pressure-disabled
-        dimensions: &id008 {}
+        dimensions: &id010 {}
         explore: tab_unloading_v2_mac_histogram
+        group_by_dimension: null
         probes:
         - content_frame_time_vsync
         - js_pageload_xdr_encoding_ms
@@ -2382,9 +2428,10 @@ operational_monitoring:
         - cycle_collector_max_pause
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
         xaxis: submission_date
-      - branches: *id007
-        dimensions: *id008
+      - branches: *id009
+        dimensions: *id010
         explore: tab_unloading_v2_mac_scalar
+        group_by_dimension: null
         probes:
         - tab_open_event_count
         - memory_pressure_count
@@ -2403,11 +2450,12 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     tab_unloading_v2_windows:
       tables:
-      - branches: &id009
+      - branches: &id011
         - tab-unloading-enabled
         - tab-unloading-disabled
-        dimensions: &id010 {}
+        dimensions: &id012 {}
         explore: tab_unloading_v2_windows_histogram
+        group_by_dimension: null
         probes:
         - content_frame_time_vsync
         - js_pageload_xdr_encoding_ms
@@ -2441,9 +2489,10 @@ operational_monitoring:
         - cycle_collector_max_pause
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751309_pref_tab_unloading_on_low_memory_for_windows_release_97_98_histogram
         xaxis: submission_date
-      - branches: *id009
-        dimensions: *id010
+      - branches: *id011
+        dimensions: *id012
         explore: tab_unloading_v2_windows_scalar
+        group_by_dimension: null
         probes:
         - tab_open_event_count
         - memory_pressure_count
@@ -2462,18 +2511,20 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     win32k_lockdown_experiment:
       tables:
-      - branches: &id011
+      - branches: &id013
         - enabled
         - disabled
-        dimensions: &id012 {}
+        dimensions: &id014 {}
         explore: win32k_lockdown_experiment_histogram
+        group_by_dimension: null
         probes:
         - content_process_count
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751039_pref_win32k_experiment_nightly_99_99_histogram
         xaxis: submission_date
-      - branches: *id011
-        dimensions: *id012
+      - branches: *id013
+        dimensions: *id014
         explore: win32k_lockdown_experiment_scalar
+        group_by_dimension: null
         probes:
         - startup_crashes
         - content_shutdown_crashes
@@ -2489,35 +2540,37 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     win32k_lockdown_experiment_v2:
       tables:
-      - branches: &id013
+      - branches: &id015
         - enabled
         - disabled
-        dimensions: &id014 {}
+        dimensions: &id016 {}
         explore: win32k_lockdown_experiment_v2_histogram
+        group_by_dimension: null
         probes:
         - content_process_count
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1759171_pref_win32k_experiment_v2_beta_99_100_histogram
         xaxis: submission_date
-      - branches: *id013
-        dimensions: *id014
+      - branches: *id015
+        dimensions: *id016
         explore: win32k_lockdown_experiment_v2_scalar
+        group_by_dimension: null
         probes:
-        - plugin_crashes
-        - oom_crashes
-        - shutdown_hangs
-        - content_crashes
         - startup_crashes
+        - content_crashes
+        - shutdown_hangs
+        - oom_crashes
         - main_crashes
-        - gpu_crashes
         - gmplugin_crashes
         - content_shutdown_crashes
+        - gpu_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1759171_pref_win32k_experiment_v2_beta_99_100_scalar
         xaxis: submission_date
       type: operational_monitoring_dashboard
   explores:
     fission_histogram:
       branches: *id001
-      dimensions: &id015
+      dimensions: &id017
         cores_count:
           default: Windows
           options:
@@ -2573,7 +2626,7 @@ operational_monitoring:
       xaxis: build_id
     fission_release_rollout_histogram:
       branches: *id003
-      dimensions: &id016
+      dimensions: &id018
         cores_count:
           default: '2'
           options:
@@ -2594,28 +2647,28 @@ operational_monitoring:
           - Mac
           - Linux
       probes:
-      - time_to_first_interaction_ms
-      - loaded_tab_count
-      - gc_max_pause_2_content
-      - child_process_launch_ms
-      - gc_slice_during_idle
-      - content_frame_time_vsync
-      - gc_max_pause_2
-      - content_process_count
-      - fx_new_window_ms
+      - memory_unique_content_startup
       - gc_ms
-      - cycle_collector_max_pause_content
-      - perf_first_contentful_paint_ms
+      - gc_max_pause_2_content
       - memory_total
-      - checkerboard_severity
-      - gc_ms_content
-      - perf_page_load_time_ms
+      - gc_slice_during_idle
+      - gc_slice_during_idle_content
       - content_process_max
       - keypress_present_latency_ms
-      - fx_tab_switch_composite_e10s_ms
-      - memory_unique_content_startup
+      - perf_page_load_time_ms
       - cycle_collector_max_pause
-      - gc_slice_during_idle_content
+      - perf_first_contentful_paint_ms
+      - child_process_launch_ms
+      - fx_new_window_ms
+      - loaded_tab_count
+      - fx_tab_switch_composite_e10s_ms
+      - content_process_count
+      - cycle_collector_max_pause_content
+      - time_to_first_interaction_ms
+      - content_frame_time_vsync
+      - gc_ms_content
+      - checkerboard_severity
+      - gc_max_pause_2
       type: operational_monitoring_explore
       views:
         base_view: fission_release_rollout_histogram
@@ -2624,18 +2677,18 @@ operational_monitoring:
       branches: *id003
       dimensions: *id004
       probes:
-      - oom_crashes
-      - shutdown_hangs
-      - main_crashes
-      - gpu_crashes
-      - subsession_length
-      - uri_count
-      - content_shutdown_crashes
-      - content_crashes
-      - startup_crashes
-      - plugin_crashes
-      - active_ticks
       - gmplugin_crashes
+      - active_ticks
+      - gpu_crashes
+      - content_crashes
+      - shutdown_hangs
+      - oom_crashes
+      - uri_count
+      - plugin_crashes
+      - startup_crashes
+      - main_crashes
+      - content_shutdown_crashes
+      - subsession_length
       type: operational_monitoring_explore
       views:
         base_view: fission_release_rollout_scalar
@@ -2660,9 +2713,27 @@ operational_monitoring:
       views:
         base_view: fission_scalar
       xaxis: build_id
-    tab_unloading_v2_linux_histogram:
+    mission_control_desktop_nightly_histogram:
       branches: *id005
-      dimensions: &id017 {}
+      dimensions: &id019 {}
+      probes: []
+      type: operational_monitoring_explore
+      views:
+        base_view: mission_control_desktop_nightly_histogram
+      xaxis: submission_date
+    mission_control_desktop_nightly_scalar:
+      branches: *id005
+      dimensions: *id006
+      probes:
+      - main_crashes
+      - oom_crashes
+      type: operational_monitoring_explore
+      views:
+        base_view: mission_control_desktop_nightly_scalar
+      xaxis: submission_date
+    tab_unloading_v2_linux_histogram:
+      branches: *id007
+      dimensions: &id020 {}
       probes:
       - content_frame_time_vsync
       - js_pageload_xdr_encoding_ms
@@ -2699,8 +2770,8 @@ operational_monitoring:
         base_view: tab_unloading_v2_linux_histogram
       xaxis: submission_date
     tab_unloading_v2_linux_scalar:
-      branches: *id005
-      dimensions: *id006
+      branches: *id007
+      dimensions: *id008
       probes:
       - tab_open_event_count
       - memory_pressure_count
@@ -2719,8 +2790,8 @@ operational_monitoring:
         base_view: tab_unloading_v2_linux_scalar
       xaxis: submission_date
     tab_unloading_v2_mac_histogram:
-      branches: *id007
-      dimensions: &id018 {}
+      branches: *id009
+      dimensions: &id021 {}
       probes:
       - content_frame_time_vsync
       - js_pageload_xdr_encoding_ms
@@ -2757,8 +2828,8 @@ operational_monitoring:
         base_view: tab_unloading_v2_mac_histogram
       xaxis: submission_date
     tab_unloading_v2_mac_scalar:
-      branches: *id007
-      dimensions: *id008
+      branches: *id009
+      dimensions: *id010
       probes:
       - tab_open_event_count
       - memory_pressure_count
@@ -2777,8 +2848,8 @@ operational_monitoring:
         base_view: tab_unloading_v2_mac_scalar
       xaxis: submission_date
     tab_unloading_v2_windows_histogram:
-      branches: *id009
-      dimensions: &id019 {}
+      branches: *id011
+      dimensions: &id022 {}
       probes:
       - content_frame_time_vsync
       - js_pageload_xdr_encoding_ms
@@ -2815,8 +2886,8 @@ operational_monitoring:
         base_view: tab_unloading_v2_windows_histogram
       xaxis: submission_date
     tab_unloading_v2_windows_scalar:
-      branches: *id009
-      dimensions: *id010
+      branches: *id011
+      dimensions: *id012
       probes:
       - tab_open_event_count
       - memory_pressure_count
@@ -2835,8 +2906,8 @@ operational_monitoring:
         base_view: tab_unloading_v2_windows_scalar
       xaxis: submission_date
     win32k_lockdown_experiment_histogram:
-      branches: *id011
-      dimensions: &id020 {}
+      branches: *id013
+      dimensions: &id023 {}
       probes:
       - content_process_count
       type: operational_monitoring_explore
@@ -2844,8 +2915,8 @@ operational_monitoring:
         base_view: win32k_lockdown_experiment_histogram
       xaxis: submission_date
     win32k_lockdown_experiment_scalar:
-      branches: *id011
-      dimensions: *id012
+      branches: *id013
+      dimensions: *id014
       probes:
       - startup_crashes
       - content_shutdown_crashes
@@ -2861,8 +2932,8 @@ operational_monitoring:
         base_view: win32k_lockdown_experiment_scalar
       xaxis: submission_date
     win32k_lockdown_experiment_v2_histogram:
-      branches: *id013
-      dimensions: &id021 {}
+      branches: *id015
+      dimensions: &id024 {}
       probes:
       - content_process_count
       type: operational_monitoring_explore
@@ -2870,18 +2941,18 @@ operational_monitoring:
         base_view: win32k_lockdown_experiment_v2_histogram
       xaxis: submission_date
     win32k_lockdown_experiment_v2_scalar:
-      branches: *id013
-      dimensions: *id014
+      branches: *id015
+      dimensions: *id016
       probes:
-      - plugin_crashes
-      - oom_crashes
-      - shutdown_hangs
-      - content_crashes
       - startup_crashes
+      - content_crashes
+      - shutdown_hangs
+      - oom_crashes
       - main_crashes
-      - gpu_crashes
       - gmplugin_crashes
       - content_shutdown_crashes
+      - gpu_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: win32k_lockdown_experiment_v2_scalar
@@ -2894,13 +2965,13 @@ operational_monitoring:
   views:
     fission_histogram:
       tables:
-      - dimensions: *id015
+      - dimensions: *id017
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1660366_pref_ongoing_fission_nightly_experiment_nightly_83_100_histogram
         xaxis: build_id
       type: operational_monitoring_histogram_view
     fission_release_rollout_histogram:
       tables:
-      - dimensions: *id016
+      - dimensions: *id018
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
         xaxis: submission_date
       type: operational_monitoring_histogram_view
@@ -2916,63 +2987,75 @@ operational_monitoring:
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1660366_pref_ongoing_fission_nightly_experiment_nightly_83_100_scalar
         xaxis: build_id
       type: operational_monitoring_scalar_view
+    mission_control_desktop_nightly_histogram:
+      tables:
+      - dimensions: *id019
+        table: moz-fx-data-shared-prod.operational_monitoring.mission_control_desktop_nightly_histogram
+        xaxis: submission_date
+      type: operational_monitoring_histogram_view
+    mission_control_desktop_nightly_scalar:
+      tables:
+      - dimensions: *id006
+        table: moz-fx-data-shared-prod.operational_monitoring.mission_control_desktop_nightly_scalar
+        xaxis: submission_date
+      type: operational_monitoring_scalar_view
     tab_unloading_v2_linux_histogram:
       tables:
-      - dimensions: *id017
+      - dimensions: *id020
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751307_pref_tab_unloading_on_low_memory_for_linux_release_97_98_histogram
         xaxis: submission_date
       type: operational_monitoring_histogram_view
     tab_unloading_v2_linux_scalar:
       tables:
-      - dimensions: *id006
+      - dimensions: *id008
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751307_pref_tab_unloading_on_low_memory_for_linux_release_97_98_scalar
         xaxis: submission_date
       type: operational_monitoring_scalar_view
     tab_unloading_v2_mac_histogram:
       tables:
-      - dimensions: *id018
+      - dimensions: *id021
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
         xaxis: submission_date
       type: operational_monitoring_histogram_view
     tab_unloading_v2_mac_scalar:
       tables:
-      - dimensions: *id008
+      - dimensions: *id010
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
         xaxis: submission_date
       type: operational_monitoring_scalar_view
     tab_unloading_v2_windows_histogram:
       tables:
-      - dimensions: *id019
+      - dimensions: *id022
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751309_pref_tab_unloading_on_low_memory_for_windows_release_97_98_histogram
         xaxis: submission_date
       type: operational_monitoring_histogram_view
     tab_unloading_v2_windows_scalar:
       tables:
-      - dimensions: *id010
+      - dimensions: *id012
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751309_pref_tab_unloading_on_low_memory_for_windows_release_97_98_scalar
         xaxis: submission_date
       type: operational_monitoring_scalar_view
     win32k_lockdown_experiment_histogram:
       tables:
-      - dimensions: *id020
+      - dimensions: *id023
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751039_pref_win32k_experiment_nightly_99_99_histogram
         xaxis: submission_date
       type: operational_monitoring_histogram_view
     win32k_lockdown_experiment_scalar:
       tables:
-      - dimensions: *id012
+      - dimensions: *id014
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1751039_pref_win32k_experiment_nightly_99_99_scalar
         xaxis: submission_date
       type: operational_monitoring_scalar_view
     win32k_lockdown_experiment_v2_histogram:
       tables:
-      - dimensions: *id021
+      - dimensions: *id024
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1759171_pref_win32k_experiment_v2_beta_99_100_histogram
         xaxis: submission_date
       type: operational_monitoring_histogram_view
     win32k_lockdown_experiment_v2_scalar:
       tables:
-      - dimensions: *id014
+      - dimensions: *id016
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1759171_pref_win32k_experiment_v2_beta_99_100_scalar
         xaxis: submission_date
       type: operational_monitoring_scalar_view
