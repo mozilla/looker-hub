@@ -10,66 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Gc Ms
-    name: Gc Ms
-    explore: mission_control_desktop_nightly_histogram
-    type: "looker_line"
-    fields: [
-      mission_control_desktop_nightly_histogram.submission_date,
-      mission_control_desktop_nightly_histogram.branch,
-      mission_control_desktop_nightly_histogram.high,
-      mission_control_desktop_nightly_histogram.low,
-      mission_control_desktop_nightly_histogram.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_histogram.branch
-    ]
-    filters:
-      mission_control_desktop_nightly_histogram.probe: gc_ms
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: mission_control_desktop_nightly_histogram.percentile_conf
-      Build: mission_control_desktop_nightly_histogram.build
-      Os: mission_control_desktop_nightly_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      active - mission_control_desktop_nightly_histogram.percentile: "#ff6a06"
-      active - mission_control_desktop_nightly_histogram.high: "#ffb380"
-      active - mission_control_desktop_nightly_histogram.low: "#ffb380"
-      
-  - title: Gc Ms - By build
-    name: Gc Ms - By build
-    explore: mission_control_desktop_nightly_histogram
-    type: "looker_line"
-    fields: [
-      mission_control_desktop_nightly_histogram.submission_date,
-      mission_control_desktop_nightly_histogram.branch,
-      mission_control_desktop_nightly_histogram.high,
-      mission_control_desktop_nightly_histogram.low,
-      mission_control_desktop_nightly_histogram.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_histogram.branch, mission_control_desktop_nightly_histogram.build 
-    ]
-    filters:
-      mission_control_desktop_nightly_histogram.probe: gc_ms
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: mission_control_desktop_nightly_histogram.percentile_conf
-      Build: mission_control_desktop_nightly_histogram.build
-      Os: mission_control_desktop_nightly_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      active - mission_control_desktop_nightly_histogram.percentile: "#ff6a06"
-      active - mission_control_desktop_nightly_histogram.high: "#ffb380"
-      active - mission_control_desktop_nightly_histogram.low: "#ffb380"
-      
   - title: Fx Tab Switch Composite E10S Ms
     name: Fx Tab Switch Composite E10S Ms
     explore: mission_control_desktop_nightly_histogram
@@ -86,7 +26,7 @@
     ]
     filters:
       mission_control_desktop_nightly_histogram.probe: fx_tab_switch_composite_e10s_ms
-    row: 10
+    row: 0
     col: 0
     width: 12
     height: 8
@@ -116,6 +56,66 @@
     ]
     filters:
       mission_control_desktop_nightly_histogram.probe: fx_tab_switch_composite_e10s_ms
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: mission_control_desktop_nightly_histogram.percentile_conf
+      Build: mission_control_desktop_nightly_histogram.build
+      Os: mission_control_desktop_nightly_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      active - mission_control_desktop_nightly_histogram.percentile: "#ff6a06"
+      active - mission_control_desktop_nightly_histogram.high: "#ffb380"
+      active - mission_control_desktop_nightly_histogram.low: "#ffb380"
+      
+  - title: Gc Ms
+    name: Gc Ms
+    explore: mission_control_desktop_nightly_histogram
+    type: "looker_line"
+    fields: [
+      mission_control_desktop_nightly_histogram.submission_date,
+      mission_control_desktop_nightly_histogram.branch,
+      mission_control_desktop_nightly_histogram.high,
+      mission_control_desktop_nightly_histogram.low,
+      mission_control_desktop_nightly_histogram.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_histogram.branch
+    ]
+    filters:
+      mission_control_desktop_nightly_histogram.probe: gc_ms
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: mission_control_desktop_nightly_histogram.percentile_conf
+      Build: mission_control_desktop_nightly_histogram.build
+      Os: mission_control_desktop_nightly_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      active - mission_control_desktop_nightly_histogram.percentile: "#ff6a06"
+      active - mission_control_desktop_nightly_histogram.high: "#ffb380"
+      active - mission_control_desktop_nightly_histogram.low: "#ffb380"
+      
+  - title: Gc Ms - By build
+    name: Gc Ms - By build
+    explore: mission_control_desktop_nightly_histogram
+    type: "looker_line"
+    fields: [
+      mission_control_desktop_nightly_histogram.submission_date,
+      mission_control_desktop_nightly_histogram.branch,
+      mission_control_desktop_nightly_histogram.high,
+      mission_control_desktop_nightly_histogram.low,
+      mission_control_desktop_nightly_histogram.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_histogram.branch, mission_control_desktop_nightly_histogram.build 
+    ]
+    filters:
+      mission_control_desktop_nightly_histogram.probe: gc_ms
     row: 10
     col: 12
     width: 12
@@ -277,23 +277,23 @@
   - title: Build
     name: Build
     type: string_filter
-    default_value: '20220331,20220401,20220402,20220403,20220404,20220405,20220406,20220407,20220408,20220411'
+    default_value: '20220315,20220316,20220317,20220318,20220320,20220321,20220322,20220323,20220324,20220329'
     allow_multiple_values: true
     required: true
     ui_config:
       type: advanced
       display: inline
       options:
-      - '20220331'
-      - '20220401'
-      - '20220402'
-      - '20220403'
-      - '20220404'
-      - '20220405'
-      - '20220406'
-      - '20220407'
-      - '20220408'
-      - '20220411'
+      - '20220315'
+      - '20220316'
+      - '20220317'
+      - '20220318'
+      - '20220320'
+      - '20220321'
+      - '20220322'
+      - '20220323'
+      - '20220324'
+      - '20220329'
       
     
   

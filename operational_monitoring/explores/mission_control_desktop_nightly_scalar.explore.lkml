@@ -20,7 +20,7 @@ explore: mission_control_desktop_nightly_scalar {
       filters: [
         mission_control_desktop_nightly_scalar.branch: "active",
         mission_control_desktop_nightly_scalar.percentile_conf: "50",
-        mission_control_desktop_nightly_scalar.build: "20220401",
+        mission_control_desktop_nightly_scalar.build: "20220329",
         mission_control_desktop_nightly_scalar.os: "Windows",
         mission_control_desktop_nightly_scalar.probe: "oom_crashes",
       ]
@@ -38,7 +38,7 @@ explore: mission_control_desktop_nightly_scalar {
       filters: [
         mission_control_desktop_nightly_scalar.branch: "active",
         mission_control_desktop_nightly_scalar.percentile_conf: "50",
-        mission_control_desktop_nightly_scalar.build: "20220401",
+        mission_control_desktop_nightly_scalar.build: "20220329",
         mission_control_desktop_nightly_scalar.os: "Windows",
         mission_control_desktop_nightly_scalar.probe: "main_crashes",
       ]

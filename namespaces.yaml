@@ -2290,18 +2290,18 @@ operational_monitoring:
         - active
         dimensions: &id006
           build:
-            default: '20220401'
+            default: '20220329'
             options:
-            - '20220401'
-            - '20220404'
-            - '20220403'
-            - '20220405'
-            - '20220406'
-            - '20220407'
-            - '20220402'
-            - '20220331'
-            - '20220408'
-            - '20220411'
+            - '20220329'
+            - '20220322'
+            - '20220316'
+            - '20220318'
+            - '20220317'
+            - '20220321'
+            - '20220323'
+            - '20220315'
+            - '20220320'
+            - '20220324'
           os:
             default: Windows
             options:
@@ -2311,8 +2311,8 @@ operational_monitoring:
         explore: mission_control_desktop_nightly_histogram
         group_by_dimension: build
         probes:
-        - gc_ms
         - fx_tab_switch_composite_e10s_ms
+        - gc_ms
         table: moz-fx-data-shared-prod.operational_monitoring.mission_control_desktop_nightly_histogram
         xaxis: submission_date
       - branches: *id005
@@ -2719,18 +2719,18 @@ operational_monitoring:
       branches: *id005
       dimensions: &id019
         build:
-          default: '20220404'
+          default: '20220329'
           options:
-          - '20220404'
-          - '20220406'
-          - '20220405'
-          - '20220401'
-          - '20220403'
-          - '20220407'
-          - '20220331'
-          - '20220408'
-          - '20220410'
-          - '20220402'
+          - '20220329'
+          - '20220315'
+          - '20220322'
+          - '20220317'
+          - '20220316'
+          - '20220324'
+          - '20220323'
+          - '20220321'
+          - '20220318'
+          - '20220328'
         os:
           default: Windows
           options:
@@ -2738,8 +2738,8 @@ operational_monitoring:
           - Mac
           - Linux
       probes:
-      - gc_ms
       - fx_tab_switch_composite_e10s_ms
+      - gc_ms
       type: operational_monitoring_explore
       views:
         base_view: mission_control_desktop_nightly_histogram

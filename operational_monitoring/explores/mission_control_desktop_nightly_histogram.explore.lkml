@@ -13,16 +13,16 @@ explore: mission_control_desktop_nightly_histogram {
     ]
   }
 
-  aggregate_table: rollup_gc_ms {
+  aggregate_table: rollup_fx_tab_switch_composite_e10s_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         mission_control_desktop_nightly_histogram.branch: "active",
         mission_control_desktop_nightly_histogram.percentile_conf: "50",
-        mission_control_desktop_nightly_histogram.build: "20220404",
+        mission_control_desktop_nightly_histogram.build: "20220329",
         mission_control_desktop_nightly_histogram.os: "Windows",
-        mission_control_desktop_nightly_histogram.probe: "gc_ms",
+        mission_control_desktop_nightly_histogram.probe: "fx_tab_switch_composite_e10s_ms",
       ]
     }
 
@@ -31,16 +31,16 @@ explore: mission_control_desktop_nightly_histogram {
     }
   }
 
-  aggregate_table: rollup_fx_tab_switch_composite_e10s_ms {
+  aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         mission_control_desktop_nightly_histogram.branch: "active",
         mission_control_desktop_nightly_histogram.percentile_conf: "50",
-        mission_control_desktop_nightly_histogram.build: "20220404",
+        mission_control_desktop_nightly_histogram.build: "20220329",
         mission_control_desktop_nightly_histogram.os: "Windows",
-        mission_control_desktop_nightly_histogram.probe: "fx_tab_switch_composite_e10s_ms",
+        mission_control_desktop_nightly_histogram.probe: "gc_ms",
       ]
     }
 
