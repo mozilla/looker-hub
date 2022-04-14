@@ -17,9 +17,19 @@ view: mission_control_desktop_nightly_histogram {
     type: string
   }
 
+  dimension: build {
+    sql: ${TABLE}.build ;;
+    type: string
+  }
+
+  dimension: os {
+    sql: ${TABLE}.os ;;
+    type: string
+  }
+
   dimension: probe {
     sql: ${TABLE}.probe ;;
-    type: number
+    type: string
   }
 
   parameter: percentile_conf {
