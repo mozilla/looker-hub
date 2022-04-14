@@ -2240,27 +2240,27 @@ operational_monitoring:
         explore: fission_release_rollout_histogram
         group_by_dimension: null
         probes:
-        - memory_unique_content_startup
-        - gc_ms
-        - gc_max_pause_2_content
-        - memory_total
-        - gc_slice_during_idle
-        - gc_slice_during_idle_content
-        - content_process_max
-        - keypress_present_latency_ms
-        - perf_page_load_time_ms
-        - cycle_collector_max_pause
-        - perf_first_contentful_paint_ms
-        - child_process_launch_ms
-        - fx_new_window_ms
-        - loaded_tab_count
-        - fx_tab_switch_composite_e10s_ms
-        - content_process_count
-        - cycle_collector_max_pause_content
-        - time_to_first_interaction_ms
-        - content_frame_time_vsync
         - gc_ms_content
+        - perf_page_load_time_ms
+        - gc_ms
+        - memory_total
+        - gc_max_pause_2_content
+        - cycle_collector_max_pause
+        - content_process_max
+        - gc_slice_during_idle
+        - cycle_collector_max_pause_content
+        - keypress_present_latency_ms
+        - content_frame_time_vsync
+        - loaded_tab_count
+        - fx_new_window_ms
+        - memory_unique_content_startup
+        - fx_tab_switch_composite_e10s_ms
+        - time_to_first_interaction_ms
+        - perf_first_contentful_paint_ms
+        - content_process_count
         - checkerboard_severity
+        - child_process_launch_ms
+        - gc_slice_during_idle_content
         - gc_max_pause_2
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
         xaxis: submission_date
@@ -2269,18 +2269,18 @@ operational_monitoring:
         explore: fission_release_rollout_scalar
         group_by_dimension: null
         probes:
-        - gmplugin_crashes
         - active_ticks
-        - gpu_crashes
         - content_crashes
-        - shutdown_hangs
         - oom_crashes
-        - uri_count
+        - subsession_length
+        - gpu_crashes
         - plugin_crashes
+        - shutdown_hangs
+        - content_shutdown_crashes
         - startup_crashes
         - main_crashes
-        - content_shutdown_crashes
-        - subsession_length
+        - uri_count
+        - gmplugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
         xaxis: submission_date
       type: operational_monitoring_dashboard
@@ -2290,18 +2290,18 @@ operational_monitoring:
         - active
         dimensions: &id006
           build:
-            default: '20220405'
+            default: '20220401'
             options:
-            - '20220405'
-            - '20220406'
-            - '20220407'
-            - '20220408'
-            - '20220404'
-            - '20220409'
-            - '20220410'
-            - '20220411'
-            - '20220403'
-            - '20220412'
+            - '20220401'
+            - '20220331'
+            - '20220330'
+            - '20220402'
+            - '20220329'
+            - '20220328'
+            - '20220327'
+            - '20220326'
+            - '20220325'
+            - '20220322'
           os:
             default: Windows
             options:
@@ -2310,7 +2310,9 @@ operational_monitoring:
             - Mac
         explore: mission_control_desktop_nightly_histogram
         group_by_dimension: build
-        probes: []
+        probes:
+        - gc_ms
+        - fx_tab_switch_composite_e10s_ms
         table: moz-fx-data-shared-prod.operational_monitoring.mission_control_desktop_nightly_histogram
         xaxis: submission_date
       - branches: *id005
@@ -2318,8 +2320,8 @@ operational_monitoring:
         explore: mission_control_desktop_nightly_scalar
         group_by_dimension: build
         probes:
-        - main_crashes
         - oom_crashes
+        - main_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.mission_control_desktop_nightly_scalar
         xaxis: submission_date
       type: operational_monitoring_dashboard
@@ -2555,15 +2557,15 @@ operational_monitoring:
         explore: win32k_lockdown_experiment_v2_scalar
         group_by_dimension: null
         probes:
-        - startup_crashes
-        - content_crashes
-        - shutdown_hangs
-        - oom_crashes
-        - main_crashes
-        - gmplugin_crashes
-        - content_shutdown_crashes
-        - gpu_crashes
         - plugin_crashes
+        - content_crashes
+        - content_shutdown_crashes
+        - oom_crashes
+        - startup_crashes
+        - main_crashes
+        - shutdown_hangs
+        - gmplugin_crashes
+        - gpu_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1759171_pref_win32k_experiment_v2_beta_99_100_scalar
         xaxis: submission_date
       type: operational_monitoring_dashboard
@@ -2647,27 +2649,27 @@ operational_monitoring:
           - Mac
           - Linux
       probes:
-      - memory_unique_content_startup
-      - gc_ms
-      - gc_max_pause_2_content
-      - memory_total
-      - gc_slice_during_idle
-      - gc_slice_during_idle_content
-      - content_process_max
-      - keypress_present_latency_ms
-      - perf_page_load_time_ms
-      - cycle_collector_max_pause
-      - perf_first_contentful_paint_ms
-      - child_process_launch_ms
-      - fx_new_window_ms
-      - loaded_tab_count
-      - fx_tab_switch_composite_e10s_ms
-      - content_process_count
-      - cycle_collector_max_pause_content
-      - time_to_first_interaction_ms
-      - content_frame_time_vsync
       - gc_ms_content
+      - perf_page_load_time_ms
+      - gc_ms
+      - memory_total
+      - gc_max_pause_2_content
+      - cycle_collector_max_pause
+      - content_process_max
+      - gc_slice_during_idle
+      - cycle_collector_max_pause_content
+      - keypress_present_latency_ms
+      - content_frame_time_vsync
+      - loaded_tab_count
+      - fx_new_window_ms
+      - memory_unique_content_startup
+      - fx_tab_switch_composite_e10s_ms
+      - time_to_first_interaction_ms
+      - perf_first_contentful_paint_ms
+      - content_process_count
       - checkerboard_severity
+      - child_process_launch_ms
+      - gc_slice_during_idle_content
       - gc_max_pause_2
       type: operational_monitoring_explore
       views:
@@ -2677,18 +2679,18 @@ operational_monitoring:
       branches: *id003
       dimensions: *id004
       probes:
-      - gmplugin_crashes
       - active_ticks
-      - gpu_crashes
       - content_crashes
-      - shutdown_hangs
       - oom_crashes
-      - uri_count
+      - subsession_length
+      - gpu_crashes
       - plugin_crashes
+      - shutdown_hangs
+      - content_shutdown_crashes
       - startup_crashes
       - main_crashes
-      - content_shutdown_crashes
-      - subsession_length
+      - uri_count
+      - gmplugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: fission_release_rollout_scalar
@@ -2715,8 +2717,29 @@ operational_monitoring:
       xaxis: build_id
     mission_control_desktop_nightly_histogram:
       branches: *id005
-      dimensions: &id019 {}
-      probes: []
+      dimensions: &id019
+        build:
+          default: '20220331'
+          options:
+          - '20220331'
+          - '20220401'
+          - '20220330'
+          - '20220402'
+          - '20220329'
+          - '20211105'
+          - '20220328'
+          - '20220327'
+          - '20220326'
+          - '20220325'
+        os:
+          default: Windows
+          options:
+          - Windows
+          - Mac
+          - Linux
+      probes:
+      - gc_ms
+      - fx_tab_switch_composite_e10s_ms
       type: operational_monitoring_explore
       views:
         base_view: mission_control_desktop_nightly_histogram
@@ -2725,8 +2748,8 @@ operational_monitoring:
       branches: *id005
       dimensions: *id006
       probes:
-      - main_crashes
       - oom_crashes
+      - main_crashes
       type: operational_monitoring_explore
       views:
         base_view: mission_control_desktop_nightly_scalar
@@ -2944,15 +2967,15 @@ operational_monitoring:
       branches: *id015
       dimensions: *id016
       probes:
-      - startup_crashes
-      - content_crashes
-      - shutdown_hangs
-      - oom_crashes
-      - main_crashes
-      - gmplugin_crashes
-      - content_shutdown_crashes
-      - gpu_crashes
       - plugin_crashes
+      - content_crashes
+      - content_shutdown_crashes
+      - oom_crashes
+      - startup_crashes
+      - main_crashes
+      - shutdown_hangs
+      - gmplugin_crashes
+      - gpu_crashes
       type: operational_monitoring_explore
       views:
         base_view: win32k_lockdown_experiment_v2_scalar
