@@ -97,7 +97,7 @@
   - title: Build
     name: Build
     type: string_filter
-    default_value: 
+    default_value: '20220403,20220404,20220405,20220406,20220407,20220408,20220409,20220410,20220411,20220412'
     allow_multiple_values: true
     required: true
     ui_config:
