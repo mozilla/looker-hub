@@ -2092,6 +2092,97 @@ on the home screen.
 "
   }
 
+  dimension: metrics__counter__recent_synced_tabs_latest_synced_tab_is_stale {
+    label: "Recent Synced Tabs Latest Synced Tab Is Stale"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.recent_synced_tabs_latest_synced_tab_is_stale ;;
+    type: number
+    group_label: "Recent Synced Tabs"
+    group_item_label: "Latest Synced Tab Is Stale"
+
+    link: {
+      label: "Glean Dictionary reference for Recent Synced Tabs Latest Synced Tab Is Stale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_latest_synced_tab_is_stale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often the loading placeholder is shown and the resulting tab
+is the same as it was before the load.
+"
+  }
+
+  dimension: metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened {
+    label: "Recent Synced Tabs Recent Synced Tab Opened"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.recent_synced_tabs_recent_synced_tab_opened ;;
+    group_label: "Recent Synced Tabs"
+    group_item_label: "Recent Synced Tab Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Recent Synced Tabs Recent Synced Tab Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_recent_synced_tab_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a recent synced tab is opened, labeled by the
+device type the tab originates from.
+"
+  }
+
+  dimension: metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown {
+    label: "Recent Synced Tabs Recent Synced Tab Shown"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.recent_synced_tabs_recent_synced_tab_shown ;;
+    group_label: "Recent Synced Tabs"
+    group_item_label: "Recent Synced Tab Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Recent Synced Tabs Recent Synced Tab Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_recent_synced_tab_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts impressions of a recent synced tab on the homepage, labeled by the
+device type the tab originates from.
+"
+  }
+
+  dimension: metrics__timing_distribution__recent_synced_tabs_recent_synced_tab_time_to_load__sum {
+    label: "Recent Synced Tabs Recent Synced Tab Time To Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.recent_synced_tabs_recent_synced_tab_time_to_load.sum ;;
+    type: number
+    group_label: "Recent Synced Tabs"
+    group_item_label: "Recent Synced Tab Time To Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Recent Synced Tabs Recent Synced Tab Time To Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_recent_synced_tab_time_to_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures the amount of time between the beginning of a sync and the end.
+"
+  }
+
+  dimension: metrics__counter__recent_synced_tabs_show_all_synced_tabs_clicked {
+    label: "Recent Synced Tabs Show All Synced Tabs Clicked"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.recent_synced_tabs_show_all_synced_tabs_clicked ;;
+    type: number
+    group_label: "Recent Synced Tabs"
+    group_item_label: "Show All Synced Tabs Clicked"
+
+    link: {
+      label: "Glean Dictionary reference for Recent Synced Tabs Show All Synced Tabs Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_show_all_synced_tabs_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times \"show all synced tabs\" button has been clicked.
+"
+  }
+
   dimension: metrics__boolean__recent_tabs_section_visible {
     label: "Recent Tabs Section Visible"
     hidden: no
@@ -2286,6 +2377,23 @@ Android 8+.
 file size information. The docs say it may be expensive so we want to
 ensure it's not too expensive.  This value is only available on Android
 8+.
+"
+  }
+
+  dimension: metrics__labeled_counter__tabs_tray_access_point {
+    label: "Tabs Tray Access Point"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tabs_tray_access_point ;;
+    group_label: "Tabs Tray"
+    group_item_label: "Access Point"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Tray Access Point"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_tray_access_point"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The area that the tabs tray was accessed from.
 "
   }
 
@@ -5739,7 +5847,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
-    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: client_info__android_sdk_version {
@@ -5747,7 +5854,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "Android Sdk Version"
-    description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
   dimension: client_info__app_build {
@@ -5755,7 +5861,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "App Build"
-    description: "The build identifier generated by the CI system (e.g. \"1234/A\"). For language bindings that provide automatic detection for this value, (e.g. Android/Kotlin), in the unlikely event that the build identifier can not be retrieved from the OS, it is set to \"inaccessible\". For other language bindings, if the value was not provided through configuration, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__app_channel {
@@ -5763,7 +5868,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "App Channel"
-    description: "The channel the application is being distributed on."
   }
 
   dimension: client_info__app_display_version {
@@ -5771,7 +5875,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "App Display Version"
-    description: "The user visible version string (e.g. \"1.0.3\").  In the unlikely event that the display version can not be retrieved, it is set to \"inaccessible\"."
   }
 
   dimension: client_info__architecture {
@@ -5779,7 +5882,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "Architecture"
-    description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
   }
 
   dimension: client_info__build_date {
@@ -5787,13 +5889,11 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "Build Date"
-    description: "The date & time the application was built"
   }
 
   dimension: client_info__client_id {
     sql: ${TABLE}.client_info.client_id ;;
     hidden: yes
-    description: "A UUID uniquely identifying the client."
   }
 
   dimension: client_info__device_manufacturer {
@@ -5801,7 +5901,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
-    description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__device_model {
@@ -5809,7 +5908,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "Device Model"
-    description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__first_run_date {
@@ -5817,7 +5915,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "First Run Date"
-    description: "The date of the first run of the application."
   }
 
   dimension: client_info__locale {
@@ -5825,7 +5922,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "Locale"
-    description: "The locale of the application during initialization (e.g. \"es-ES\"). If the locale can't be determined on the system, the value is [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers), to indicate \"undetermined\"."
   }
 
   dimension: client_info__os {
@@ -5833,7 +5929,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "Os"
-    description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
   dimension: client_info__os_version {
@@ -5841,7 +5936,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
-    description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -5849,13 +5943,11 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
-    description: "The version of the Glean SDK"
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
-    description: "The document ID specified in the URI when the client sent this message"
     primary_key: yes
   }
 
@@ -5877,7 +5969,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
-    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -5885,7 +5976,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Db Version"
-    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -5893,7 +5983,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
-    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -5901,7 +5990,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
-    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -5909,7 +5997,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Header"
     group_item_label: "Date"
-    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -5917,7 +6004,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Header"
     group_item_label: "Dnt"
-    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -5944,7 +6030,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Debug Id"
-    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -5952,7 +6037,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
-    description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -5960,7 +6044,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Lb Tags"
-    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -5968,7 +6051,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
-    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -5976,7 +6058,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
-    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -5984,7 +6065,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
-    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -5992,7 +6072,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Db Version"
-    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -6000,7 +6079,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Name"
-    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -6008,7 +6086,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Organization"
-    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -6035,25 +6112,21 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
-    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
-    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
-    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
-    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -6104,7 +6177,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
-    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metadata__header__parsed {
@@ -6164,7 +6236,6 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
       quarter,
       year,
     ]
-    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: clients {
@@ -6672,6 +6743,56 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Recent Bookmarks Show All Bookmarks"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_bookmarks_show_all_bookmarks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: recent_synced_tabs_latest_synced_tab_is_stale {
+    type: sum
+    sql: ${metrics__counter__recent_synced_tabs_latest_synced_tab_is_stale} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Recent Synced Tabs Latest Synced Tab Is Stale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_latest_synced_tab_is_stale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: recent_synced_tabs_latest_synced_tab_is_stale_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__recent_synced_tabs_latest_synced_tab_is_stale: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Recent Synced Tabs Latest Synced Tab Is Stale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_latest_synced_tab_is_stale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: recent_synced_tabs_show_all_synced_tabs_clicked {
+    type: sum
+    sql: ${metrics__counter__recent_synced_tabs_show_all_synced_tabs_clicked} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Recent Synced Tabs Show All Synced Tabs Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_show_all_synced_tabs_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: recent_synced_tabs_show_all_synced_tabs_clicked_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__recent_synced_tabs_show_all_synced_tabs_clicked: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Recent Synced Tabs Show All Synced Tabs Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_show_all_synced_tabs_clicked"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
