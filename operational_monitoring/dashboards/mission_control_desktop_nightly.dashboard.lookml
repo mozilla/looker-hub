@@ -130,66 +130,6 @@
       active - mission_control_desktop_nightly_histogram.high: "#ffb380"
       active - mission_control_desktop_nightly_histogram.low: "#ffb380"
       
-  - title: Oom Crashes
-    name: Oom Crashes
-    explore: mission_control_desktop_nightly_scalar
-    type: "looker_line"
-    fields: [
-      mission_control_desktop_nightly_scalar.submission_date,
-      mission_control_desktop_nightly_scalar.branch,
-      mission_control_desktop_nightly_scalar.high,
-      mission_control_desktop_nightly_scalar.low,
-      mission_control_desktop_nightly_scalar.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_scalar.branch
-    ]
-    filters:
-      mission_control_desktop_nightly_scalar.probe: oom_crashes
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
-      Build: mission_control_desktop_nightly_scalar.build
-      Os: mission_control_desktop_nightly_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      active - mission_control_desktop_nightly_scalar.percentile: "#ff6a06"
-      active - mission_control_desktop_nightly_scalar.high: "#ffb380"
-      active - mission_control_desktop_nightly_scalar.low: "#ffb380"
-      
-  - title: Oom Crashes - By build
-    name: Oom Crashes - By build
-    explore: mission_control_desktop_nightly_scalar
-    type: "looker_line"
-    fields: [
-      mission_control_desktop_nightly_scalar.submission_date,
-      mission_control_desktop_nightly_scalar.branch,
-      mission_control_desktop_nightly_scalar.high,
-      mission_control_desktop_nightly_scalar.low,
-      mission_control_desktop_nightly_scalar.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_scalar.branch, mission_control_desktop_nightly_scalar.build 
-    ]
-    filters:
-      mission_control_desktop_nightly_scalar.probe: oom_crashes
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
-      Build: mission_control_desktop_nightly_scalar.build
-      Os: mission_control_desktop_nightly_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      active - mission_control_desktop_nightly_scalar.percentile: "#ff6a06"
-      active - mission_control_desktop_nightly_scalar.high: "#ffb380"
-      active - mission_control_desktop_nightly_scalar.low: "#ffb380"
-      
   - title: Main Crashes
     name: Main Crashes
     explore: mission_control_desktop_nightly_scalar
@@ -206,7 +146,7 @@
     ]
     filters:
       mission_control_desktop_nightly_scalar.probe: main_crashes
-    row: 30
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -236,6 +176,66 @@
     ]
     filters:
       mission_control_desktop_nightly_scalar.probe: main_crashes
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
+      Build: mission_control_desktop_nightly_scalar.build
+      Os: mission_control_desktop_nightly_scalar.os
+    y_axes: [{type: log}]
+    series_colors:
+      active - mission_control_desktop_nightly_scalar.percentile: "#ff6a06"
+      active - mission_control_desktop_nightly_scalar.high: "#ffb380"
+      active - mission_control_desktop_nightly_scalar.low: "#ffb380"
+      
+  - title: Oom Crashes
+    name: Oom Crashes
+    explore: mission_control_desktop_nightly_scalar
+    type: "looker_line"
+    fields: [
+      mission_control_desktop_nightly_scalar.submission_date,
+      mission_control_desktop_nightly_scalar.branch,
+      mission_control_desktop_nightly_scalar.high,
+      mission_control_desktop_nightly_scalar.low,
+      mission_control_desktop_nightly_scalar.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_scalar.branch
+    ]
+    filters:
+      mission_control_desktop_nightly_scalar.probe: oom_crashes
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
+      Build: mission_control_desktop_nightly_scalar.build
+      Os: mission_control_desktop_nightly_scalar.os
+    y_axes: [{type: log}]
+    series_colors:
+      active - mission_control_desktop_nightly_scalar.percentile: "#ff6a06"
+      active - mission_control_desktop_nightly_scalar.high: "#ffb380"
+      active - mission_control_desktop_nightly_scalar.low: "#ffb380"
+      
+  - title: Oom Crashes - By build
+    name: Oom Crashes - By build
+    explore: mission_control_desktop_nightly_scalar
+    type: "looker_line"
+    fields: [
+      mission_control_desktop_nightly_scalar.submission_date,
+      mission_control_desktop_nightly_scalar.branch,
+      mission_control_desktop_nightly_scalar.high,
+      mission_control_desktop_nightly_scalar.low,
+      mission_control_desktop_nightly_scalar.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_scalar.branch, mission_control_desktop_nightly_scalar.build 
+    ]
+    filters:
+      mission_control_desktop_nightly_scalar.probe: oom_crashes
     row: 30
     col: 12
     width: 12

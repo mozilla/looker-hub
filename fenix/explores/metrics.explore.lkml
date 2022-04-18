@@ -229,6 +229,31 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__places_manager_write_query_error_count}) AS metrics__metrics__labeled_counter__places_manager_write_query_error_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__places_manager_write_query_error_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_content_background}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_parent_active}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_time_per_process_type_ms}) AS metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms.document_id} ;;
@@ -242,6 +267,31 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__power_wakeups_per_process_type {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_process_type}) AS metrics__metrics__labeled_counter__power_wakeups_per_process_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_process_type.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_content_background}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_content_foreground}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_gpu_process}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_parent_active}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_parent_inactive}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened {
@@ -433,6 +483,26 @@ explore: suggest__metrics__metrics__labeled_counter__places_manager_write_query_
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
   hidden: yes
 }
@@ -442,6 +512,26 @@ explore: suggest__metrics__metrics__labeled_counter__power_gpu_time_per_process_
 }
 
 explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_process_type {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
   hidden: yes
 }
 
