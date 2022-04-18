@@ -826,6 +826,10 @@ firefox_accounts:
       - channel: release
         table: mozdata.firefox_accounts.fxa_log_device_command_events
       type: table_view
+    fxa_users_services_daily_table:
+      tables:
+      - table: mozdata.firefox_accounts.fxa_users_services_daily
+      type: table_view
     growth_accounting:
       tables:
       - table: mozdata.firefox_accounts.fxa_users_last_seen
@@ -1848,6 +1852,18 @@ monitoring:
       tables:
       - table: mozdata.monitoring.column_size
       type: ping_view
+    distinct_docids_notes:
+      tables:
+      - table: mozdata.static.monitoring_distinct_docids_notes_v1
+      type: table_view
+    missing_columns_notes:
+      tables:
+      - table: mozdata.static.monitoring_missing_columns_notes_v1
+      type: table_view
+    missing_document_namespaces_notes:
+      tables:
+      - table: mozdata.static.monitoring_missing_document_namespaces_notes_v1
+      type: table_view
     payload_bytes_decoded_all:
       tables:
       - table: mozdata.monitoring.payload_bytes_decoded_all
@@ -1860,6 +1876,10 @@ monitoring:
       tables:
       - table: mozdata.monitoring.schema_error_counts
       type: ping_view
+    schema_errors_notes:
+      tables:
+      - table: mozdata.static.monitoring_schema_errors_notes_v1
+      type: table_view
     stable_table_column_counts:
       tables:
       - table: mozdata.monitoring.stable_table_column_counts
@@ -3161,12 +3181,17 @@ shared:
   glean_app: false
   owners:
   - anicholson@mozilla.com
+  - ascholtz@mozilla.com
   pretty_name: Shared
   spoke: looker-spoke-default
   views:
     countries:
       tables:
       - table: mozdata.static.country_codes_v1
+      type: table_view
+    data_incidents:
+      tables:
+      - table: mozdata.static.data_incidents_v1
       type: table_view
 sync:
   explores:
