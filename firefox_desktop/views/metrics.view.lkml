@@ -320,6 +320,91 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
+    label: "Power Cpu Ms Per Thread Content Background"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_content_background ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Content Background"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Content Background"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_cpu_ms_per_thread_content_background"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
+    label: "Power Cpu Ms Per Thread Content Foreground"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_content_foreground ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Content Foreground"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Content Foreground"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_cpu_ms_per_thread_content_foreground"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
+    label: "Power Cpu Ms Per Thread Gpu Process"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_gpu_process ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Gpu Process"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Gpu Process"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_cpu_ms_per_thread_gpu_process"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
+    label: "Power Cpu Ms Per Thread Parent Active"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_parent_active ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Parent Active"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Parent Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_cpu_ms_per_thread_parent_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
+    label: "Power Cpu Ms Per Thread Parent Inactive"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_parent_inactive ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Parent Inactive"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Parent Inactive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_cpu_ms_per_thread_parent_inactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
   dimension: metrics__counter__power_cpu_time_bogus_values {
     label: "Power Cpu Time Bogus Values"
     hidden: no
@@ -458,6 +543,91 @@ To be used to validate GIFFT.
     }
 
     description: "How many times threads woke up and could have woken up a CPU core. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_content_background {
+    label: "Power Wakeups Per Thread Content Background"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_content_background ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Content Background"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Content Background"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_wakeups_per_thread_content_background"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
+    label: "Power Wakeups Per Thread Content Foreground"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_content_foreground ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Content Foreground"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Content Foreground"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_wakeups_per_thread_content_foreground"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
+    label: "Power Wakeups Per Thread Gpu Process"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_gpu_process ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Gpu Process"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Gpu Process"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_wakeups_per_thread_gpu_process"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_parent_active {
+    label: "Power Wakeups Per Thread Parent Active"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_parent_active ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Parent Active"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Parent Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_wakeups_per_thread_parent_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+    label: "Power Wakeups Per Thread Parent Inactive"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_parent_inactive ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Parent Inactive"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Parent Inactive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_wakeups_per_thread_parent_inactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
 "
   }
 
