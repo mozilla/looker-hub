@@ -10,6 +10,11 @@ view: schema_errors_notes {
     type: string
   }
 
+  dimension: document_namespace {
+    sql: ${TABLE}.document_namespace ;;
+    type: string
+  }
+
   dimension: document_type {
     sql: ${TABLE}.document_type ;;
     type: string
