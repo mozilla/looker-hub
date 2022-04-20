@@ -2260,28 +2260,28 @@ operational_monitoring:
         explore: fission_release_rollout_histogram
         group_by_dimension: null
         probes:
-        - gc_max_pause_2_content
-        - time_to_first_interaction_ms
-        - content_process_max
-        - gc_ms
-        - cycle_collector_max_pause
-        - loaded_tab_count
-        - gc_slice_during_idle
-        - memory_total
-        - fx_new_window_ms
-        - content_frame_time_vsync
-        - checkerboard_severity
-        - keypress_present_latency_ms
-        - gc_max_pause_2
-        - perf_page_load_time_ms
-        - gc_ms_content
-        - perf_first_contentful_paint_ms
-        - gc_slice_during_idle_content
-        - fx_tab_switch_composite_e10s_ms
-        - content_process_count
-        - memory_unique_content_startup
         - cycle_collector_max_pause_content
         - child_process_launch_ms
+        - gc_slice_during_idle_content
+        - content_process_max
+        - checkerboard_severity
+        - gc_ms
+        - gc_ms_content
+        - fx_tab_switch_composite_e10s_ms
+        - content_process_count
+        - gc_slice_during_idle
+        - gc_max_pause_2_content
+        - loaded_tab_count
+        - time_to_first_interaction_ms
+        - gc_max_pause_2
+        - cycle_collector_max_pause
+        - keypress_present_latency_ms
+        - memory_unique_content_startup
+        - perf_first_contentful_paint_ms
+        - content_frame_time_vsync
+        - fx_new_window_ms
+        - memory_total
+        - perf_page_load_time_ms
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
         xaxis: submission_date
       - branches: *id003
@@ -2289,18 +2289,18 @@ operational_monitoring:
         explore: fission_release_rollout_scalar
         group_by_dimension: null
         probes:
-        - shutdown_hangs
-        - plugin_crashes
-        - uri_count
-        - subsession_length
         - active_ticks
-        - gmplugin_crashes
-        - content_shutdown_crashes
-        - oom_crashes
-        - content_crashes
         - gpu_crashes
-        - main_crashes
+        - uri_count
+        - content_crashes
         - startup_crashes
+        - oom_crashes
+        - subsession_length
+        - plugin_crashes
+        - main_crashes
+        - shutdown_hangs
+        - content_shutdown_crashes
+        - gmplugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
         xaxis: submission_date
       type: operational_monitoring_dashboard
@@ -2315,8 +2315,8 @@ operational_monitoring:
             - '20220329'
             - '20220322'
             - '20220316'
-            - '20220318'
             - '20220317'
+            - '20220318'
             - '20220321'
             - '20220323'
             - '20220315'
@@ -2331,8 +2331,8 @@ operational_monitoring:
         explore: mission_control_desktop_nightly_histogram
         group_by_dimension: build
         probes:
-        - fx_tab_switch_composite_e10s_ms
         - gc_ms
+        - fx_tab_switch_composite_e10s_ms
         table: moz-fx-data-shared-prod.operational_monitoring.mission_control_desktop_nightly_histogram
         xaxis: submission_date
       - branches: *id005
@@ -2669,28 +2669,28 @@ operational_monitoring:
           - Mac
           - Linux
       probes:
-      - gc_max_pause_2_content
-      - time_to_first_interaction_ms
-      - content_process_max
-      - gc_ms
-      - cycle_collector_max_pause
-      - loaded_tab_count
-      - gc_slice_during_idle
-      - memory_total
-      - fx_new_window_ms
-      - content_frame_time_vsync
-      - checkerboard_severity
-      - keypress_present_latency_ms
-      - gc_max_pause_2
-      - perf_page_load_time_ms
-      - gc_ms_content
-      - perf_first_contentful_paint_ms
-      - gc_slice_during_idle_content
-      - fx_tab_switch_composite_e10s_ms
-      - content_process_count
-      - memory_unique_content_startup
       - cycle_collector_max_pause_content
       - child_process_launch_ms
+      - gc_slice_during_idle_content
+      - content_process_max
+      - checkerboard_severity
+      - gc_ms
+      - gc_ms_content
+      - fx_tab_switch_composite_e10s_ms
+      - content_process_count
+      - gc_slice_during_idle
+      - gc_max_pause_2_content
+      - loaded_tab_count
+      - time_to_first_interaction_ms
+      - gc_max_pause_2
+      - cycle_collector_max_pause
+      - keypress_present_latency_ms
+      - memory_unique_content_startup
+      - perf_first_contentful_paint_ms
+      - content_frame_time_vsync
+      - fx_new_window_ms
+      - memory_total
+      - perf_page_load_time_ms
       type: operational_monitoring_explore
       views:
         base_view: fission_release_rollout_histogram
@@ -2699,18 +2699,18 @@ operational_monitoring:
       branches: *id003
       dimensions: *id004
       probes:
-      - shutdown_hangs
-      - plugin_crashes
-      - uri_count
-      - subsession_length
       - active_ticks
-      - gmplugin_crashes
-      - content_shutdown_crashes
-      - oom_crashes
-      - content_crashes
       - gpu_crashes
-      - main_crashes
+      - uri_count
+      - content_crashes
       - startup_crashes
+      - oom_crashes
+      - subsession_length
+      - plugin_crashes
+      - main_crashes
+      - shutdown_hangs
+      - content_shutdown_crashes
+      - gmplugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: fission_release_rollout_scalar
@@ -2749,8 +2749,8 @@ operational_monitoring:
           - '20220316'
           - '20220323'
           - '20220321'
-          - '20220318'
           - '20220404'
+          - '20220318'
         os:
           default: Windows
           options:
@@ -2758,8 +2758,8 @@ operational_monitoring:
           - Mac
           - Linux
       probes:
-      - fx_tab_switch_composite_e10s_ms
       - gc_ms
+      - fx_tab_switch_composite_e10s_ms
       type: operational_monitoring_explore
       views:
         base_view: mission_control_desktop_nightly_histogram
@@ -3114,6 +3114,17 @@ pocket:
       tables:
       - table: moz-fx-data-shared-prod.pocket_derived.twice_weekly_active_user_counts_history_v1
       type: table_view
+rally_citp_search_engine_usage:
+  explores: {}
+  glean_app: true
+  owners:
+  - than@mozilla.com
+  - jepstein@mozilla.com
+  - betling@mozilla.com
+  - rhelmer@mozilla.com
+  pretty_name: Search Engine Usage and Result Quality
+  spoke: looker-spoke-default
+  views: {}
 regrets_reporter:
   glean_app: false
   owners:
