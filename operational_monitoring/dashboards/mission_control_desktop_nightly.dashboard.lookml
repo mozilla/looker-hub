@@ -10,66 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Fx Tab Switch Composite E10S Ms
-    name: Fx Tab Switch Composite E10S Ms
-    explore: mission_control_desktop_nightly_histogram
-    type: "looker_line"
-    fields: [
-      mission_control_desktop_nightly_histogram.submission_date,
-      mission_control_desktop_nightly_histogram.branch,
-      mission_control_desktop_nightly_histogram.high,
-      mission_control_desktop_nightly_histogram.low,
-      mission_control_desktop_nightly_histogram.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_histogram.branch
-    ]
-    filters:
-      mission_control_desktop_nightly_histogram.probe: fx_tab_switch_composite_e10s_ms
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: mission_control_desktop_nightly_histogram.percentile_conf
-      Build: mission_control_desktop_nightly_histogram.build
-      Os: mission_control_desktop_nightly_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      active - mission_control_desktop_nightly_histogram.percentile: "#ff6a06"
-      active - mission_control_desktop_nightly_histogram.high: "#ffb380"
-      active - mission_control_desktop_nightly_histogram.low: "#ffb380"
-      
-  - title: Fx Tab Switch Composite E10S Ms - By build
-    name: Fx Tab Switch Composite E10S Ms - By build
-    explore: mission_control_desktop_nightly_histogram
-    type: "looker_line"
-    fields: [
-      mission_control_desktop_nightly_histogram.submission_date,
-      mission_control_desktop_nightly_histogram.branch,
-      mission_control_desktop_nightly_histogram.high,
-      mission_control_desktop_nightly_histogram.low,
-      mission_control_desktop_nightly_histogram.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_histogram.branch, mission_control_desktop_nightly_histogram.build 
-    ]
-    filters:
-      mission_control_desktop_nightly_histogram.probe: fx_tab_switch_composite_e10s_ms
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: mission_control_desktop_nightly_histogram.percentile_conf
-      Build: mission_control_desktop_nightly_histogram.build
-      Os: mission_control_desktop_nightly_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      active - mission_control_desktop_nightly_histogram.percentile: "#ff6a06"
-      active - mission_control_desktop_nightly_histogram.high: "#ffb380"
-      active - mission_control_desktop_nightly_histogram.low: "#ffb380"
-      
   - title: Gc Ms
     name: Gc Ms
     explore: mission_control_desktop_nightly_histogram
@@ -86,7 +26,7 @@
     ]
     filters:
       mission_control_desktop_nightly_histogram.probe: gc_ms
-    row: 10
+    row: 0
     col: 0
     width: 12
     height: 8
@@ -116,6 +56,66 @@
     ]
     filters:
       mission_control_desktop_nightly_histogram.probe: gc_ms
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: mission_control_desktop_nightly_histogram.percentile_conf
+      Build: mission_control_desktop_nightly_histogram.build
+      Os: mission_control_desktop_nightly_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      active - mission_control_desktop_nightly_histogram.percentile: "#ff6a06"
+      active - mission_control_desktop_nightly_histogram.high: "#ffb380"
+      active - mission_control_desktop_nightly_histogram.low: "#ffb380"
+      
+  - title: Fx Tab Switch Composite E10S Ms
+    name: Fx Tab Switch Composite E10S Ms
+    explore: mission_control_desktop_nightly_histogram
+    type: "looker_line"
+    fields: [
+      mission_control_desktop_nightly_histogram.submission_date,
+      mission_control_desktop_nightly_histogram.branch,
+      mission_control_desktop_nightly_histogram.high,
+      mission_control_desktop_nightly_histogram.low,
+      mission_control_desktop_nightly_histogram.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_histogram.branch
+    ]
+    filters:
+      mission_control_desktop_nightly_histogram.probe: fx_tab_switch_composite_e10s_ms
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: mission_control_desktop_nightly_histogram.percentile_conf
+      Build: mission_control_desktop_nightly_histogram.build
+      Os: mission_control_desktop_nightly_histogram.os
+    y_axes: [{type: log}]
+    series_colors:
+      active - mission_control_desktop_nightly_histogram.percentile: "#ff6a06"
+      active - mission_control_desktop_nightly_histogram.high: "#ffb380"
+      active - mission_control_desktop_nightly_histogram.low: "#ffb380"
+      
+  - title: Fx Tab Switch Composite E10S Ms - By build
+    name: Fx Tab Switch Composite E10S Ms - By build
+    explore: mission_control_desktop_nightly_histogram
+    type: "looker_line"
+    fields: [
+      mission_control_desktop_nightly_histogram.submission_date,
+      mission_control_desktop_nightly_histogram.branch,
+      mission_control_desktop_nightly_histogram.high,
+      mission_control_desktop_nightly_histogram.low,
+      mission_control_desktop_nightly_histogram.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_histogram.branch, mission_control_desktop_nightly_histogram.build 
+    ]
+    filters:
+      mission_control_desktop_nightly_histogram.probe: fx_tab_switch_composite_e10s_ms
     row: 10
     col: 12
     width: 12
