@@ -10,6 +10,11 @@ view: fxa_content_auth_stdout_events_table {
     type: string
   }
 
+  dimension: checkout_type {
+    sql: ${TABLE}.checkout_type ;;
+    type: string
+  }
+
   dimension: connect_device_flow {
     sql: ${TABLE}.connect_device_flow ;;
     type: string
@@ -123,11 +128,6 @@ view: fxa_content_auth_stdout_events_table {
 
   dimension: promotion_code {
     sql: ${TABLE}.promotion_code ;;
-    type: string
-  }
-
-  dimension: selected_plan {
-    sql: ${TABLE}.selected_plan ;;
     type: string
   }
 

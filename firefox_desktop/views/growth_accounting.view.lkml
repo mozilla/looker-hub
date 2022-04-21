@@ -157,13 +157,63 @@ view: growth_accounting {
     type: number
   }
 
+  dimension: contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_block_nonsponsored_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_block_nonsponsored_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_block_sponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_block_sponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_block_sponsored_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_block_sponsored_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_click_sponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_click_sponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
   dimension: contextual_services_quicksuggest_click_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_click_sum ;;
     hidden: yes
   }
 
+  dimension: contextual_services_quicksuggest_help_nonsponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_help_nonsponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_help_sponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_help_sponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
   dimension: contextual_services_quicksuggest_help_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_help_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_impression_sponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_impression_sponsored_bestmatch_sum ;;
     hidden: yes
   }
 

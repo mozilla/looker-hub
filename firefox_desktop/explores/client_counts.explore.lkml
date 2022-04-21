@@ -60,16 +60,76 @@ explore: client_counts {
     sql: LEFT JOIN UNNEST(${client_counts.ad_clicks}) AS clients_daily_table__ad_clicks ;;
   }
 
+  join: clients_daily_table__contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum {
+    view_label: "Client Counts  Contextual Services Quicksuggest Block Nonsponsored Bestmatch Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum}) AS clients_daily_table__contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum ;;
+  }
+
+  join: clients_daily_table__contextual_services_quicksuggest_block_nonsponsored_sum {
+    view_label: "Client Counts  Contextual Services Quicksuggest Block Nonsponsored Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_block_nonsponsored_sum}) AS clients_daily_table__contextual_services_quicksuggest_block_nonsponsored_sum ;;
+  }
+
+  join: clients_daily_table__contextual_services_quicksuggest_block_sponsored_bestmatch_sum {
+    view_label: "Client Counts  Contextual Services Quicksuggest Block Sponsored Bestmatch Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_block_sponsored_bestmatch_sum}) AS clients_daily_table__contextual_services_quicksuggest_block_sponsored_bestmatch_sum ;;
+  }
+
+  join: clients_daily_table__contextual_services_quicksuggest_block_sponsored_sum {
+    view_label: "Client Counts  Contextual Services Quicksuggest Block Sponsored Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_block_sponsored_sum}) AS clients_daily_table__contextual_services_quicksuggest_block_sponsored_sum ;;
+  }
+
+  join: clients_daily_table__contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum {
+    view_label: "Client Counts  Contextual Services Quicksuggest Click Nonsponsored Bestmatch Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum}) AS clients_daily_table__contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum ;;
+  }
+
+  join: clients_daily_table__contextual_services_quicksuggest_click_sponsored_bestmatch_sum {
+    view_label: "Client Counts  Contextual Services Quicksuggest Click Sponsored Bestmatch Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_click_sponsored_bestmatch_sum}) AS clients_daily_table__contextual_services_quicksuggest_click_sponsored_bestmatch_sum ;;
+  }
+
   join: clients_daily_table__contextual_services_quicksuggest_click_sum {
     view_label: "Client Counts  Contextual Services Quicksuggest Click Sum"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_click_sum}) AS clients_daily_table__contextual_services_quicksuggest_click_sum ;;
   }
 
+  join: clients_daily_table__contextual_services_quicksuggest_help_nonsponsored_bestmatch_sum {
+    view_label: "Client Counts  Contextual Services Quicksuggest Help Nonsponsored Bestmatch Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_help_nonsponsored_bestmatch_sum}) AS clients_daily_table__contextual_services_quicksuggest_help_nonsponsored_bestmatch_sum ;;
+  }
+
+  join: clients_daily_table__contextual_services_quicksuggest_help_sponsored_bestmatch_sum {
+    view_label: "Client Counts  Contextual Services Quicksuggest Help Sponsored Bestmatch Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_help_sponsored_bestmatch_sum}) AS clients_daily_table__contextual_services_quicksuggest_help_sponsored_bestmatch_sum ;;
+  }
+
   join: clients_daily_table__contextual_services_quicksuggest_help_sum {
     view_label: "Client Counts  Contextual Services Quicksuggest Help Sum"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_help_sum}) AS clients_daily_table__contextual_services_quicksuggest_help_sum ;;
+  }
+
+  join: clients_daily_table__contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum {
+    view_label: "Client Counts  Contextual Services Quicksuggest Impression Nonsponsored Bestmatch Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum}) AS clients_daily_table__contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum ;;
+  }
+
+  join: clients_daily_table__contextual_services_quicksuggest_impression_sponsored_bestmatch_sum {
+    view_label: "Client Counts  Contextual Services Quicksuggest Impression Sponsored Bestmatch Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_impression_sponsored_bestmatch_sum}) AS clients_daily_table__contextual_services_quicksuggest_impression_sponsored_bestmatch_sum ;;
   }
 
   join: clients_daily_table__contextual_services_quicksuggest_impression_sum {
