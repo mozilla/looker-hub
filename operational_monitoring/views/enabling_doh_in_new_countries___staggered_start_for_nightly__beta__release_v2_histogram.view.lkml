@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: doh_enablment_to_new_countries_-_staggered_start_for_nightly_beta_and_release_v3_histogram {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram ;;
+view: enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_histogram ;;
 
   dimension: submission_date {
     type: date

@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/pref_off_network.cookie.samesite.schemeful_in_firefox_96_histogram.view.lkml"
+include: "/looker-hub/operational_monitoring/views/pref_off_network_cookie_samesite_schemeful_in_firefox_96_histogram.view.lkml"
 
-explore: pref_off_network.cookie.samesite.schemeful_in_firefox_96_histogram {
+explore: pref_off_network_cookie_samesite_schemeful_in_firefox_96_histogram {
   always_filter: {
     filters: [
       branch: "active",
@@ -18,9 +18,9 @@ explore: pref_off_network.cookie.samesite.schemeful_in_firefox_96_histogram {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_histogram.branch: "active",
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_histogram.percentile_conf: "50",
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_histogram.probe: "gc_ms",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_histogram.branch: "active",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_histogram.percentile_conf: "50",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_histogram.probe: "gc_ms",
       ]
     }
 
@@ -34,9 +34,9 @@ explore: pref_off_network.cookie.samesite.schemeful_in_firefox_96_histogram {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_histogram.branch: "active",
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_histogram.percentile_conf: "50",
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_histogram.probe: "memory_total",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_histogram.branch: "active",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_histogram.percentile_conf: "50",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_histogram.probe: "memory_total",
       ]
     }
 

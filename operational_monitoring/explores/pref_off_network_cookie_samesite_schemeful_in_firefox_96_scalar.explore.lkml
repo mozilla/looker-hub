@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar.view.lkml"
+include: "/looker-hub/operational_monitoring/views/pref_off_network_cookie_samesite_schemeful_in_firefox_96_scalar.view.lkml"
 
-explore: pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar {
+explore: pref_off_network_cookie_samesite_schemeful_in_firefox_96_scalar {
   always_filter: {
     filters: [
       branch: "active",
@@ -18,9 +18,9 @@ explore: pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar.branch: "active",
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar.percentile_conf: "50",
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar.probe: "content_crashes",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_scalar.branch: "active",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_scalar.percentile_conf: "50",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_scalar.probe: "content_crashes",
       ]
     }
 
@@ -34,9 +34,9 @@ explore: pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar.branch: "active",
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar.percentile_conf: "50",
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar.probe: "startup_crashes",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_scalar.branch: "active",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_scalar.percentile_conf: "50",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_scalar.probe: "startup_crashes",
       ]
     }
 
@@ -50,9 +50,9 @@ explore: pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar.branch: "active",
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar.percentile_conf: "50",
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar.probe: "shutdown_hangs",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_scalar.branch: "active",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_scalar.percentile_conf: "50",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_scalar.probe: "shutdown_hangs",
       ]
     }
 
@@ -66,9 +66,9 @@ explore: pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar.branch: "active",
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar.percentile_conf: "50",
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar.probe: "main_crashes",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_scalar.branch: "active",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_scalar.percentile_conf: "50",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_scalar.probe: "main_crashes",
       ]
     }
 
@@ -82,9 +82,9 @@ explore: pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar.branch: "active",
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar.percentile_conf: "50",
-        pref_off_network.cookie.samesite.schemeful_in_firefox_96_scalar.probe: "oom_crashes",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_scalar.branch: "active",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_scalar.percentile_conf: "50",
+        pref_off_network_cookie_samesite_schemeful_in_firefox_96_scalar.probe: "oom_crashes",
       ]
     }
 

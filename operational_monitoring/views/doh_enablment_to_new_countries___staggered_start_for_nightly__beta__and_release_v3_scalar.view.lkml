@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: enabling_doh_in_new_countries_-_staggered_start_for_nightly_beta_release_v2_scalar {
+view: doh_enablment_to_new_countries___staggered_start_for_nightly__beta__and_release_v3_scalar {
   derived_table: {
     sql: SELECT *
-FROM `moz-fx-data-shared-prod.operational_monitoring.bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_scalar`
+FROM `moz-fx-data-shared-prod.operational_monitoring.bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar`
 WHERE agg_type = "SUM" ;;
   }
 
