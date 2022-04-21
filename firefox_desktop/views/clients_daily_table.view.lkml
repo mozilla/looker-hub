@@ -175,13 +175,63 @@ view: clients_daily_table {
     type: number
   }
 
+  dimension: contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_block_nonsponsored_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_block_nonsponsored_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_block_sponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_block_sponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_block_sponsored_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_block_sponsored_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_click_sponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_click_sponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
   dimension: contextual_services_quicksuggest_click_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_click_sum ;;
     hidden: yes
   }
 
+  dimension: contextual_services_quicksuggest_help_nonsponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_help_nonsponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_help_sponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_help_sponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
   dimension: contextual_services_quicksuggest_help_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_help_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_impression_sponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_impression_sponsored_bestmatch_sum ;;
     hidden: yes
   }
 
@@ -1709,6 +1759,78 @@ view: clients_daily_table__ad_clicks {
   }
 }
 
+view: clients_daily_table__contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__contextual_services_quicksuggest_block_nonsponsored_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__contextual_services_quicksuggest_block_sponsored_bestmatch_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__contextual_services_quicksuggest_block_sponsored_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__contextual_services_quicksuggest_click_sponsored_bestmatch_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: clients_daily_table__contextual_services_quicksuggest_click_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -1721,7 +1843,55 @@ view: clients_daily_table__contextual_services_quicksuggest_click_sum {
   }
 }
 
+view: clients_daily_table__contextual_services_quicksuggest_help_nonsponsored_bestmatch_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__contextual_services_quicksuggest_help_sponsored_bestmatch_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: clients_daily_table__contextual_services_quicksuggest_help_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__contextual_services_quicksuggest_impression_sponsored_bestmatch_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

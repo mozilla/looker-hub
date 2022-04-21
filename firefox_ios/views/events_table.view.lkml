@@ -300,6 +300,16 @@ view: events_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__counter__firefox_home_page_history_highlights_item_opened {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_item_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page History Highlights Item Opened"
+    description: "Counts the number of times a user taps to open an
+existing tab from the History Highlights section
+"
+  }
+
   dimension: metrics__jwe {
     sql: ${TABLE}.metrics.jwe ;;
     hidden: yes
