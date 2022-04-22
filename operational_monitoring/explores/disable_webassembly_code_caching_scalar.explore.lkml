@@ -9,7 +9,7 @@ include: "/looker-hub/operational_monitoring/views/disable_webassembly_code_cach
 explore: disable_webassembly_code_caching_scalar {
   always_filter: {
     filters: [
-      branch: "active",
+      branch: "preference-disabled",
     ]
   }
 
@@ -18,7 +18,7 @@ explore: disable_webassembly_code_caching_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        disable_webassembly_code_caching_scalar.branch: "active",
+        disable_webassembly_code_caching_scalar.branch: "preference-disabled",
         disable_webassembly_code_caching_scalar.percentile_conf: "50",
         disable_webassembly_code_caching_scalar.probe: "shutdown_hangs",
       ]
@@ -34,7 +34,7 @@ explore: disable_webassembly_code_caching_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        disable_webassembly_code_caching_scalar.branch: "active",
+        disable_webassembly_code_caching_scalar.branch: "preference-disabled",
         disable_webassembly_code_caching_scalar.percentile_conf: "50",
         disable_webassembly_code_caching_scalar.probe: "oom_crashes",
       ]
@@ -50,7 +50,7 @@ explore: disable_webassembly_code_caching_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        disable_webassembly_code_caching_scalar.branch: "active",
+        disable_webassembly_code_caching_scalar.branch: "preference-disabled",
         disable_webassembly_code_caching_scalar.percentile_conf: "50",
         disable_webassembly_code_caching_scalar.probe: "startup_crashes",
       ]
@@ -66,7 +66,7 @@ explore: disable_webassembly_code_caching_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        disable_webassembly_code_caching_scalar.branch: "active",
+        disable_webassembly_code_caching_scalar.branch: "preference-disabled",
         disable_webassembly_code_caching_scalar.percentile_conf: "50",
         disable_webassembly_code_caching_scalar.probe: "main_crashes",
       ]
@@ -82,7 +82,7 @@ explore: disable_webassembly_code_caching_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        disable_webassembly_code_caching_scalar.branch: "active",
+        disable_webassembly_code_caching_scalar.branch: "preference-disabled",
         disable_webassembly_code_caching_scalar.percentile_conf: "50",
         disable_webassembly_code_caching_scalar.probe: "content_crashes",
       ]

@@ -34,9 +34,12 @@
       Percentile: enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.percentile: "#ff6a06"
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.high: "#ffb380"
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.low: "#ffb380"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.percentile: "#ff6a06"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.high: "#ffb380"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.low: "#ffb380"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.percentile: "blue"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.high: "#8cd3ff"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.low: "#8cd3ff"
       
   - title: Memory Total
     name: Memory Total
@@ -62,37 +65,12 @@
       Percentile: enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.percentile: "#ff6a06"
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.high: "#ffb380"
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.low: "#ffb380"
-      
-  - title: Content Crashes
-    name: Content Crashes
-    explore: enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar
-    type: "looker_line"
-    fields: [
-      enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.submission_date,
-      enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.branch,
-      enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.high,
-      enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.low,
-      enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile
-    ]
-    pivots: [
-      enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.branch
-    ]
-    filters:
-      enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.probe: content_crashes
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile: "#ff6a06"
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.high: "#ffb380"
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.low: "#ffb380"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.percentile: "#ff6a06"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.high: "#ffb380"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.low: "#ffb380"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.percentile: "blue"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.high: "#8cd3ff"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_histogram.low: "#8cd3ff"
       
   - title: Startup Crashes
     name: Startup Crashes
@@ -111,19 +89,22 @@
     filters:
       enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.probe: startup_crashes
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     listen:
       Percentile: enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile: "#ff6a06"
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.high: "#ffb380"
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.low: "#ffb380"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile: "#ff6a06"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.high: "#ffb380"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.low: "#ffb380"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile: "blue"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.high: "#8cd3ff"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.low: "#8cd3ff"
       
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
+  - title: Oom Crashes
+    name: Oom Crashes
     explore: enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar
     type: "looker_line"
     fields: [
@@ -137,18 +118,21 @@
       enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.branch
     ]
     filters:
-      enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.probe: shutdown_hangs
-    row: 20
-    col: 0
+      enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.probe: oom_crashes
+    row: 10
+    col: 12
     width: 12
     height: 8
     listen:
       Percentile: enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile: "#ff6a06"
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.high: "#ffb380"
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.low: "#ffb380"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile: "#ff6a06"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.high: "#ffb380"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.low: "#ffb380"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile: "blue"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.high: "#8cd3ff"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.low: "#8cd3ff"
       
   - title: Main Crashes
     name: Main Crashes
@@ -167,19 +151,22 @@
     filters:
       enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.probe: main_crashes
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     listen:
       Percentile: enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile: "#ff6a06"
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.high: "#ffb380"
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.low: "#ffb380"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile: "#ff6a06"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.high: "#ffb380"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.low: "#ffb380"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile: "blue"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.high: "#8cd3ff"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.low: "#8cd3ff"
       
-  - title: Oom Crashes
-    name: Oom Crashes
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
     explore: enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar
     type: "looker_line"
     fields: [
@@ -193,7 +180,38 @@
       enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.branch
     ]
     filters:
-      enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.probe: oom_crashes
+      enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.probe: shutdown_hangs
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile: "#ff6a06"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.high: "#ffb380"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.low: "#ffb380"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile: "blue"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.high: "#8cd3ff"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.low: "#8cd3ff"
+      
+  - title: Content Crashes
+    name: Content Crashes
+    explore: enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar
+    type: "looker_line"
+    fields: [
+      enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.submission_date,
+      enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.branch,
+      enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.high,
+      enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.low,
+      enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile
+    ]
+    pivots: [
+      enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.branch
+    ]
+    filters:
+      enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.probe: content_crashes
     row: 30
     col: 0
     width: 12
@@ -202,9 +220,12 @@
       Percentile: enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile: "#ff6a06"
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.high: "#ffb380"
-      active - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.low: "#ffb380"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile: "#ff6a06"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.high: "#ffb380"
+      enabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.low: "#ffb380"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile: "blue"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.high: "#8cd3ff"
+      disabled - enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.low: "#8cd3ff"
       
   filters:
   - name: Percentile

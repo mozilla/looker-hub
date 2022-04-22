@@ -34,9 +34,12 @@
       Percentile: initial_rollout_of_tcp_histogram.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - initial_rollout_of_tcp_histogram.percentile: "#ff6a06"
-      active - initial_rollout_of_tcp_histogram.high: "#ffb380"
-      active - initial_rollout_of_tcp_histogram.low: "#ffb380"
+      enabled - initial_rollout_of_tcp_histogram.percentile: "#ff6a06"
+      enabled - initial_rollout_of_tcp_histogram.high: "#ffb380"
+      enabled - initial_rollout_of_tcp_histogram.low: "#ffb380"
+      disabled - initial_rollout_of_tcp_histogram.percentile: "blue"
+      disabled - initial_rollout_of_tcp_histogram.high: "#8cd3ff"
+      disabled - initial_rollout_of_tcp_histogram.low: "#8cd3ff"
       
   - title: Memory Total
     name: Memory Total
@@ -62,37 +65,12 @@
       Percentile: initial_rollout_of_tcp_histogram.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - initial_rollout_of_tcp_histogram.percentile: "#ff6a06"
-      active - initial_rollout_of_tcp_histogram.high: "#ffb380"
-      active - initial_rollout_of_tcp_histogram.low: "#ffb380"
-      
-  - title: Content Crashes
-    name: Content Crashes
-    explore: initial_rollout_of_tcp_scalar
-    type: "looker_line"
-    fields: [
-      initial_rollout_of_tcp_scalar.submission_date,
-      initial_rollout_of_tcp_scalar.branch,
-      initial_rollout_of_tcp_scalar.high,
-      initial_rollout_of_tcp_scalar.low,
-      initial_rollout_of_tcp_scalar.percentile
-    ]
-    pivots: [
-      initial_rollout_of_tcp_scalar.branch
-    ]
-    filters:
-      initial_rollout_of_tcp_scalar.probe: content_crashes
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: initial_rollout_of_tcp_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      active - initial_rollout_of_tcp_scalar.percentile: "#ff6a06"
-      active - initial_rollout_of_tcp_scalar.high: "#ffb380"
-      active - initial_rollout_of_tcp_scalar.low: "#ffb380"
+      enabled - initial_rollout_of_tcp_histogram.percentile: "#ff6a06"
+      enabled - initial_rollout_of_tcp_histogram.high: "#ffb380"
+      enabled - initial_rollout_of_tcp_histogram.low: "#ffb380"
+      disabled - initial_rollout_of_tcp_histogram.percentile: "blue"
+      disabled - initial_rollout_of_tcp_histogram.high: "#8cd3ff"
+      disabled - initial_rollout_of_tcp_histogram.low: "#8cd3ff"
       
   - title: Startup Crashes
     name: Startup Crashes
@@ -111,19 +89,22 @@
     filters:
       initial_rollout_of_tcp_scalar.probe: startup_crashes
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     listen:
       Percentile: initial_rollout_of_tcp_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - initial_rollout_of_tcp_scalar.percentile: "#ff6a06"
-      active - initial_rollout_of_tcp_scalar.high: "#ffb380"
-      active - initial_rollout_of_tcp_scalar.low: "#ffb380"
+      enabled - initial_rollout_of_tcp_scalar.percentile: "#ff6a06"
+      enabled - initial_rollout_of_tcp_scalar.high: "#ffb380"
+      enabled - initial_rollout_of_tcp_scalar.low: "#ffb380"
+      disabled - initial_rollout_of_tcp_scalar.percentile: "blue"
+      disabled - initial_rollout_of_tcp_scalar.high: "#8cd3ff"
+      disabled - initial_rollout_of_tcp_scalar.low: "#8cd3ff"
       
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
+  - title: Oom Crashes
+    name: Oom Crashes
     explore: initial_rollout_of_tcp_scalar
     type: "looker_line"
     fields: [
@@ -137,18 +118,21 @@
       initial_rollout_of_tcp_scalar.branch
     ]
     filters:
-      initial_rollout_of_tcp_scalar.probe: shutdown_hangs
-    row: 20
-    col: 0
+      initial_rollout_of_tcp_scalar.probe: oom_crashes
+    row: 10
+    col: 12
     width: 12
     height: 8
     listen:
       Percentile: initial_rollout_of_tcp_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - initial_rollout_of_tcp_scalar.percentile: "#ff6a06"
-      active - initial_rollout_of_tcp_scalar.high: "#ffb380"
-      active - initial_rollout_of_tcp_scalar.low: "#ffb380"
+      enabled - initial_rollout_of_tcp_scalar.percentile: "#ff6a06"
+      enabled - initial_rollout_of_tcp_scalar.high: "#ffb380"
+      enabled - initial_rollout_of_tcp_scalar.low: "#ffb380"
+      disabled - initial_rollout_of_tcp_scalar.percentile: "blue"
+      disabled - initial_rollout_of_tcp_scalar.high: "#8cd3ff"
+      disabled - initial_rollout_of_tcp_scalar.low: "#8cd3ff"
       
   - title: Main Crashes
     name: Main Crashes
@@ -167,19 +151,22 @@
     filters:
       initial_rollout_of_tcp_scalar.probe: main_crashes
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     listen:
       Percentile: initial_rollout_of_tcp_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - initial_rollout_of_tcp_scalar.percentile: "#ff6a06"
-      active - initial_rollout_of_tcp_scalar.high: "#ffb380"
-      active - initial_rollout_of_tcp_scalar.low: "#ffb380"
+      enabled - initial_rollout_of_tcp_scalar.percentile: "#ff6a06"
+      enabled - initial_rollout_of_tcp_scalar.high: "#ffb380"
+      enabled - initial_rollout_of_tcp_scalar.low: "#ffb380"
+      disabled - initial_rollout_of_tcp_scalar.percentile: "blue"
+      disabled - initial_rollout_of_tcp_scalar.high: "#8cd3ff"
+      disabled - initial_rollout_of_tcp_scalar.low: "#8cd3ff"
       
-  - title: Oom Crashes
-    name: Oom Crashes
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
     explore: initial_rollout_of_tcp_scalar
     type: "looker_line"
     fields: [
@@ -193,7 +180,38 @@
       initial_rollout_of_tcp_scalar.branch
     ]
     filters:
-      initial_rollout_of_tcp_scalar.probe: oom_crashes
+      initial_rollout_of_tcp_scalar.probe: shutdown_hangs
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: initial_rollout_of_tcp_scalar.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - initial_rollout_of_tcp_scalar.percentile: "#ff6a06"
+      enabled - initial_rollout_of_tcp_scalar.high: "#ffb380"
+      enabled - initial_rollout_of_tcp_scalar.low: "#ffb380"
+      disabled - initial_rollout_of_tcp_scalar.percentile: "blue"
+      disabled - initial_rollout_of_tcp_scalar.high: "#8cd3ff"
+      disabled - initial_rollout_of_tcp_scalar.low: "#8cd3ff"
+      
+  - title: Content Crashes
+    name: Content Crashes
+    explore: initial_rollout_of_tcp_scalar
+    type: "looker_line"
+    fields: [
+      initial_rollout_of_tcp_scalar.submission_date,
+      initial_rollout_of_tcp_scalar.branch,
+      initial_rollout_of_tcp_scalar.high,
+      initial_rollout_of_tcp_scalar.low,
+      initial_rollout_of_tcp_scalar.percentile
+    ]
+    pivots: [
+      initial_rollout_of_tcp_scalar.branch
+    ]
+    filters:
+      initial_rollout_of_tcp_scalar.probe: content_crashes
     row: 30
     col: 0
     width: 12
@@ -202,9 +220,12 @@
       Percentile: initial_rollout_of_tcp_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - initial_rollout_of_tcp_scalar.percentile: "#ff6a06"
-      active - initial_rollout_of_tcp_scalar.high: "#ffb380"
-      active - initial_rollout_of_tcp_scalar.low: "#ffb380"
+      enabled - initial_rollout_of_tcp_scalar.percentile: "#ff6a06"
+      enabled - initial_rollout_of_tcp_scalar.high: "#ffb380"
+      enabled - initial_rollout_of_tcp_scalar.low: "#ffb380"
+      disabled - initial_rollout_of_tcp_scalar.percentile: "blue"
+      disabled - initial_rollout_of_tcp_scalar.high: "#8cd3ff"
+      disabled - initial_rollout_of_tcp_scalar.low: "#8cd3ff"
       
   filters:
   - name: Percentile

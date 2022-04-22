@@ -34,9 +34,12 @@
       Percentile: yandex_sponsored_tile_rollout_histogram.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - yandex_sponsored_tile_rollout_histogram.percentile: "#ff6a06"
-      active - yandex_sponsored_tile_rollout_histogram.high: "#ffb380"
-      active - yandex_sponsored_tile_rollout_histogram.low: "#ffb380"
+      enabled - yandex_sponsored_tile_rollout_histogram.percentile: "#ff6a06"
+      enabled - yandex_sponsored_tile_rollout_histogram.high: "#ffb380"
+      enabled - yandex_sponsored_tile_rollout_histogram.low: "#ffb380"
+      disabled - yandex_sponsored_tile_rollout_histogram.percentile: "blue"
+      disabled - yandex_sponsored_tile_rollout_histogram.high: "#8cd3ff"
+      disabled - yandex_sponsored_tile_rollout_histogram.low: "#8cd3ff"
       
   - title: Memory Total
     name: Memory Total
@@ -62,37 +65,12 @@
       Percentile: yandex_sponsored_tile_rollout_histogram.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - yandex_sponsored_tile_rollout_histogram.percentile: "#ff6a06"
-      active - yandex_sponsored_tile_rollout_histogram.high: "#ffb380"
-      active - yandex_sponsored_tile_rollout_histogram.low: "#ffb380"
-      
-  - title: Content Crashes
-    name: Content Crashes
-    explore: yandex_sponsored_tile_rollout_scalar
-    type: "looker_line"
-    fields: [
-      yandex_sponsored_tile_rollout_scalar.submission_date,
-      yandex_sponsored_tile_rollout_scalar.branch,
-      yandex_sponsored_tile_rollout_scalar.high,
-      yandex_sponsored_tile_rollout_scalar.low,
-      yandex_sponsored_tile_rollout_scalar.percentile
-    ]
-    pivots: [
-      yandex_sponsored_tile_rollout_scalar.branch
-    ]
-    filters:
-      yandex_sponsored_tile_rollout_scalar.probe: content_crashes
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: yandex_sponsored_tile_rollout_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      active - yandex_sponsored_tile_rollout_scalar.percentile: "#ff6a06"
-      active - yandex_sponsored_tile_rollout_scalar.high: "#ffb380"
-      active - yandex_sponsored_tile_rollout_scalar.low: "#ffb380"
+      enabled - yandex_sponsored_tile_rollout_histogram.percentile: "#ff6a06"
+      enabled - yandex_sponsored_tile_rollout_histogram.high: "#ffb380"
+      enabled - yandex_sponsored_tile_rollout_histogram.low: "#ffb380"
+      disabled - yandex_sponsored_tile_rollout_histogram.percentile: "blue"
+      disabled - yandex_sponsored_tile_rollout_histogram.high: "#8cd3ff"
+      disabled - yandex_sponsored_tile_rollout_histogram.low: "#8cd3ff"
       
   - title: Startup Crashes
     name: Startup Crashes
@@ -111,19 +89,22 @@
     filters:
       yandex_sponsored_tile_rollout_scalar.probe: startup_crashes
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     listen:
       Percentile: yandex_sponsored_tile_rollout_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - yandex_sponsored_tile_rollout_scalar.percentile: "#ff6a06"
-      active - yandex_sponsored_tile_rollout_scalar.high: "#ffb380"
-      active - yandex_sponsored_tile_rollout_scalar.low: "#ffb380"
+      enabled - yandex_sponsored_tile_rollout_scalar.percentile: "#ff6a06"
+      enabled - yandex_sponsored_tile_rollout_scalar.high: "#ffb380"
+      enabled - yandex_sponsored_tile_rollout_scalar.low: "#ffb380"
+      disabled - yandex_sponsored_tile_rollout_scalar.percentile: "blue"
+      disabled - yandex_sponsored_tile_rollout_scalar.high: "#8cd3ff"
+      disabled - yandex_sponsored_tile_rollout_scalar.low: "#8cd3ff"
       
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
+  - title: Oom Crashes
+    name: Oom Crashes
     explore: yandex_sponsored_tile_rollout_scalar
     type: "looker_line"
     fields: [
@@ -137,18 +118,21 @@
       yandex_sponsored_tile_rollout_scalar.branch
     ]
     filters:
-      yandex_sponsored_tile_rollout_scalar.probe: shutdown_hangs
-    row: 20
-    col: 0
+      yandex_sponsored_tile_rollout_scalar.probe: oom_crashes
+    row: 10
+    col: 12
     width: 12
     height: 8
     listen:
       Percentile: yandex_sponsored_tile_rollout_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - yandex_sponsored_tile_rollout_scalar.percentile: "#ff6a06"
-      active - yandex_sponsored_tile_rollout_scalar.high: "#ffb380"
-      active - yandex_sponsored_tile_rollout_scalar.low: "#ffb380"
+      enabled - yandex_sponsored_tile_rollout_scalar.percentile: "#ff6a06"
+      enabled - yandex_sponsored_tile_rollout_scalar.high: "#ffb380"
+      enabled - yandex_sponsored_tile_rollout_scalar.low: "#ffb380"
+      disabled - yandex_sponsored_tile_rollout_scalar.percentile: "blue"
+      disabled - yandex_sponsored_tile_rollout_scalar.high: "#8cd3ff"
+      disabled - yandex_sponsored_tile_rollout_scalar.low: "#8cd3ff"
       
   - title: Main Crashes
     name: Main Crashes
@@ -167,19 +151,22 @@
     filters:
       yandex_sponsored_tile_rollout_scalar.probe: main_crashes
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     listen:
       Percentile: yandex_sponsored_tile_rollout_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - yandex_sponsored_tile_rollout_scalar.percentile: "#ff6a06"
-      active - yandex_sponsored_tile_rollout_scalar.high: "#ffb380"
-      active - yandex_sponsored_tile_rollout_scalar.low: "#ffb380"
+      enabled - yandex_sponsored_tile_rollout_scalar.percentile: "#ff6a06"
+      enabled - yandex_sponsored_tile_rollout_scalar.high: "#ffb380"
+      enabled - yandex_sponsored_tile_rollout_scalar.low: "#ffb380"
+      disabled - yandex_sponsored_tile_rollout_scalar.percentile: "blue"
+      disabled - yandex_sponsored_tile_rollout_scalar.high: "#8cd3ff"
+      disabled - yandex_sponsored_tile_rollout_scalar.low: "#8cd3ff"
       
-  - title: Oom Crashes
-    name: Oom Crashes
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
     explore: yandex_sponsored_tile_rollout_scalar
     type: "looker_line"
     fields: [
@@ -193,7 +180,38 @@
       yandex_sponsored_tile_rollout_scalar.branch
     ]
     filters:
-      yandex_sponsored_tile_rollout_scalar.probe: oom_crashes
+      yandex_sponsored_tile_rollout_scalar.probe: shutdown_hangs
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: yandex_sponsored_tile_rollout_scalar.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - yandex_sponsored_tile_rollout_scalar.percentile: "#ff6a06"
+      enabled - yandex_sponsored_tile_rollout_scalar.high: "#ffb380"
+      enabled - yandex_sponsored_tile_rollout_scalar.low: "#ffb380"
+      disabled - yandex_sponsored_tile_rollout_scalar.percentile: "blue"
+      disabled - yandex_sponsored_tile_rollout_scalar.high: "#8cd3ff"
+      disabled - yandex_sponsored_tile_rollout_scalar.low: "#8cd3ff"
+      
+  - title: Content Crashes
+    name: Content Crashes
+    explore: yandex_sponsored_tile_rollout_scalar
+    type: "looker_line"
+    fields: [
+      yandex_sponsored_tile_rollout_scalar.submission_date,
+      yandex_sponsored_tile_rollout_scalar.branch,
+      yandex_sponsored_tile_rollout_scalar.high,
+      yandex_sponsored_tile_rollout_scalar.low,
+      yandex_sponsored_tile_rollout_scalar.percentile
+    ]
+    pivots: [
+      yandex_sponsored_tile_rollout_scalar.branch
+    ]
+    filters:
+      yandex_sponsored_tile_rollout_scalar.probe: content_crashes
     row: 30
     col: 0
     width: 12
@@ -202,9 +220,12 @@
       Percentile: yandex_sponsored_tile_rollout_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - yandex_sponsored_tile_rollout_scalar.percentile: "#ff6a06"
-      active - yandex_sponsored_tile_rollout_scalar.high: "#ffb380"
-      active - yandex_sponsored_tile_rollout_scalar.low: "#ffb380"
+      enabled - yandex_sponsored_tile_rollout_scalar.percentile: "#ff6a06"
+      enabled - yandex_sponsored_tile_rollout_scalar.high: "#ffb380"
+      enabled - yandex_sponsored_tile_rollout_scalar.low: "#ffb380"
+      disabled - yandex_sponsored_tile_rollout_scalar.percentile: "blue"
+      disabled - yandex_sponsored_tile_rollout_scalar.high: "#8cd3ff"
+      disabled - yandex_sponsored_tile_rollout_scalar.low: "#8cd3ff"
       
   filters:
   - name: Percentile

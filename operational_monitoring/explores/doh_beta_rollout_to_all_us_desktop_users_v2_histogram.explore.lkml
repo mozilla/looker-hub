@@ -9,7 +9,7 @@ include: "/looker-hub/operational_monitoring/views/doh_beta_rollout_to_all_us_de
 explore: doh_beta_rollout_to_all_us_desktop_users_v2_histogram {
   always_filter: {
     filters: [
-      branch: "active",
+      branch: "enabled, disabled",
     ]
   }
 
@@ -18,7 +18,7 @@ explore: doh_beta_rollout_to_all_us_desktop_users_v2_histogram {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        doh_beta_rollout_to_all_us_desktop_users_v2_histogram.branch: "active",
+        doh_beta_rollout_to_all_us_desktop_users_v2_histogram.branch: "enabled, disabled",
         doh_beta_rollout_to_all_us_desktop_users_v2_histogram.percentile_conf: "50",
         doh_beta_rollout_to_all_us_desktop_users_v2_histogram.probe: "gc_ms",
       ]
@@ -34,7 +34,7 @@ explore: doh_beta_rollout_to_all_us_desktop_users_v2_histogram {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        doh_beta_rollout_to_all_us_desktop_users_v2_histogram.branch: "active",
+        doh_beta_rollout_to_all_us_desktop_users_v2_histogram.branch: "enabled, disabled",
         doh_beta_rollout_to_all_us_desktop_users_v2_histogram.percentile_conf: "50",
         doh_beta_rollout_to_all_us_desktop_users_v2_histogram.probe: "memory_total",
       ]

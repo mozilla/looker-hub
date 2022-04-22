@@ -9,7 +9,7 @@ include: "/looker-hub/operational_monitoring/views/initial_rollout_of_tcp_histog
 explore: initial_rollout_of_tcp_histogram {
   always_filter: {
     filters: [
-      branch: "active",
+      branch: "enabled, disabled",
     ]
   }
 
@@ -18,7 +18,7 @@ explore: initial_rollout_of_tcp_histogram {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        initial_rollout_of_tcp_histogram.branch: "active",
+        initial_rollout_of_tcp_histogram.branch: "enabled, disabled",
         initial_rollout_of_tcp_histogram.percentile_conf: "50",
         initial_rollout_of_tcp_histogram.probe: "gc_ms",
       ]
@@ -34,7 +34,7 @@ explore: initial_rollout_of_tcp_histogram {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        initial_rollout_of_tcp_histogram.branch: "active",
+        initial_rollout_of_tcp_histogram.branch: "enabled, disabled",
         initial_rollout_of_tcp_histogram.percentile_conf: "50",
         initial_rollout_of_tcp_histogram.probe: "memory_total",
       ]

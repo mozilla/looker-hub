@@ -9,7 +9,7 @@ include: "/looker-hub/operational_monitoring/views/fission_release_rollout_histo
 explore: fission_release_rollout_histogram {
   always_filter: {
     filters: [
-      branch: "active",
+      branch: "enabled, disabled",
     ]
   }
 
@@ -18,7 +18,7 @@ explore: fission_release_rollout_histogram {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        fission_release_rollout_histogram.branch: "active",
+        fission_release_rollout_histogram.branch: "enabled, disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
         fission_release_rollout_histogram.probe: "gc_ms",
       ]
@@ -34,7 +34,7 @@ explore: fission_release_rollout_histogram {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        fission_release_rollout_histogram.branch: "active",
+        fission_release_rollout_histogram.branch: "enabled, disabled",
         fission_release_rollout_histogram.percentile_conf: "50",
         fission_release_rollout_histogram.probe: "memory_total",
       ]

@@ -9,7 +9,7 @@ include: "/looker-hub/operational_monitoring/views/doh_enablment_to_new_countrie
 explore: doh_enablment_to_new_countries___staggered_start_for_nightly__beta__and_release_v3_histogram {
   always_filter: {
     filters: [
-      branch: "active",
+      branch: "enabled, disabled",
     ]
   }
 
@@ -18,7 +18,7 @@ explore: doh_enablment_to_new_countries___staggered_start_for_nightly__beta__and
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        doh_enablment_to_new_countries___staggered_start_for_nightly__beta__and_release_v3_histogram.branch: "active",
+        doh_enablment_to_new_countries___staggered_start_for_nightly__beta__and_release_v3_histogram.branch: "enabled, disabled",
         doh_enablment_to_new_countries___staggered_start_for_nightly__beta__and_release_v3_histogram.percentile_conf: "50",
         doh_enablment_to_new_countries___staggered_start_for_nightly__beta__and_release_v3_histogram.probe: "gc_ms",
       ]
@@ -34,7 +34,7 @@ explore: doh_enablment_to_new_countries___staggered_start_for_nightly__beta__and
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        doh_enablment_to_new_countries___staggered_start_for_nightly__beta__and_release_v3_histogram.branch: "active",
+        doh_enablment_to_new_countries___staggered_start_for_nightly__beta__and_release_v3_histogram.branch: "enabled, disabled",
         doh_enablment_to_new_countries___staggered_start_for_nightly__beta__and_release_v3_histogram.percentile_conf: "50",
         doh_enablment_to_new_countries___staggered_start_for_nightly__beta__and_release_v3_histogram.probe: "memory_total",
       ]

@@ -34,9 +34,9 @@
       Percentile: disable_webassembly_code_caching_histogram.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - disable_webassembly_code_caching_histogram.percentile: "#ff6a06"
-      active - disable_webassembly_code_caching_histogram.high: "#ffb380"
-      active - disable_webassembly_code_caching_histogram.low: "#ffb380"
+      preference-disabled - disable_webassembly_code_caching_histogram.percentile: "#ff6a06"
+      preference-disabled - disable_webassembly_code_caching_histogram.high: "#ffb380"
+      preference-disabled - disable_webassembly_code_caching_histogram.low: "#ffb380"
       
   - title: Gc Ms
     name: Gc Ms
@@ -62,9 +62,9 @@
       Percentile: disable_webassembly_code_caching_histogram.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - disable_webassembly_code_caching_histogram.percentile: "#ff6a06"
-      active - disable_webassembly_code_caching_histogram.high: "#ffb380"
-      active - disable_webassembly_code_caching_histogram.low: "#ffb380"
+      preference-disabled - disable_webassembly_code_caching_histogram.percentile: "#ff6a06"
+      preference-disabled - disable_webassembly_code_caching_histogram.high: "#ffb380"
+      preference-disabled - disable_webassembly_code_caching_histogram.low: "#ffb380"
       
   - title: Shutdown Hangs
     name: Shutdown Hangs
@@ -90,9 +90,9 @@
       Percentile: disable_webassembly_code_caching_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - disable_webassembly_code_caching_scalar.percentile: "#ff6a06"
-      active - disable_webassembly_code_caching_scalar.high: "#ffb380"
-      active - disable_webassembly_code_caching_scalar.low: "#ffb380"
+      preference-disabled - disable_webassembly_code_caching_scalar.percentile: "#ff6a06"
+      preference-disabled - disable_webassembly_code_caching_scalar.high: "#ffb380"
+      preference-disabled - disable_webassembly_code_caching_scalar.low: "#ffb380"
       
   - title: Oom Crashes
     name: Oom Crashes
@@ -118,9 +118,9 @@
       Percentile: disable_webassembly_code_caching_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - disable_webassembly_code_caching_scalar.percentile: "#ff6a06"
-      active - disable_webassembly_code_caching_scalar.high: "#ffb380"
-      active - disable_webassembly_code_caching_scalar.low: "#ffb380"
+      preference-disabled - disable_webassembly_code_caching_scalar.percentile: "#ff6a06"
+      preference-disabled - disable_webassembly_code_caching_scalar.high: "#ffb380"
+      preference-disabled - disable_webassembly_code_caching_scalar.low: "#ffb380"
       
   - title: Startup Crashes
     name: Startup Crashes
@@ -146,9 +146,9 @@
       Percentile: disable_webassembly_code_caching_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - disable_webassembly_code_caching_scalar.percentile: "#ff6a06"
-      active - disable_webassembly_code_caching_scalar.high: "#ffb380"
-      active - disable_webassembly_code_caching_scalar.low: "#ffb380"
+      preference-disabled - disable_webassembly_code_caching_scalar.percentile: "#ff6a06"
+      preference-disabled - disable_webassembly_code_caching_scalar.high: "#ffb380"
+      preference-disabled - disable_webassembly_code_caching_scalar.low: "#ffb380"
       
   - title: Main Crashes
     name: Main Crashes
@@ -174,9 +174,9 @@
       Percentile: disable_webassembly_code_caching_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - disable_webassembly_code_caching_scalar.percentile: "#ff6a06"
-      active - disable_webassembly_code_caching_scalar.high: "#ffb380"
-      active - disable_webassembly_code_caching_scalar.low: "#ffb380"
+      preference-disabled - disable_webassembly_code_caching_scalar.percentile: "#ff6a06"
+      preference-disabled - disable_webassembly_code_caching_scalar.high: "#ffb380"
+      preference-disabled - disable_webassembly_code_caching_scalar.low: "#ffb380"
       
   - title: Content Crashes
     name: Content Crashes
@@ -202,9 +202,9 @@
       Percentile: disable_webassembly_code_caching_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - disable_webassembly_code_caching_scalar.percentile: "#ff6a06"
-      active - disable_webassembly_code_caching_scalar.high: "#ffb380"
-      active - disable_webassembly_code_caching_scalar.low: "#ffb380"
+      preference-disabled - disable_webassembly_code_caching_scalar.percentile: "#ff6a06"
+      preference-disabled - disable_webassembly_code_caching_scalar.high: "#ffb380"
+      preference-disabled - disable_webassembly_code_caching_scalar.low: "#ffb380"
       
   filters:
   - name: Percentile

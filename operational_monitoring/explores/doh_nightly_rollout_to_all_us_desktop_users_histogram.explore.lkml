@@ -9,7 +9,7 @@ include: "/looker-hub/operational_monitoring/views/doh_nightly_rollout_to_all_us
 explore: doh_nightly_rollout_to_all_us_desktop_users_histogram {
   always_filter: {
     filters: [
-      branch: "active",
+      branch: "enabled, disabled",
     ]
   }
 
@@ -18,7 +18,7 @@ explore: doh_nightly_rollout_to_all_us_desktop_users_histogram {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        doh_nightly_rollout_to_all_us_desktop_users_histogram.branch: "active",
+        doh_nightly_rollout_to_all_us_desktop_users_histogram.branch: "enabled, disabled",
         doh_nightly_rollout_to_all_us_desktop_users_histogram.percentile_conf: "50",
         doh_nightly_rollout_to_all_us_desktop_users_histogram.probe: "gc_ms",
       ]
@@ -34,7 +34,7 @@ explore: doh_nightly_rollout_to_all_us_desktop_users_histogram {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        doh_nightly_rollout_to_all_us_desktop_users_histogram.branch: "active",
+        doh_nightly_rollout_to_all_us_desktop_users_histogram.branch: "enabled, disabled",
         doh_nightly_rollout_to_all_us_desktop_users_histogram.percentile_conf: "50",
         doh_nightly_rollout_to_all_us_desktop_users_histogram.probe: "memory_total",
       ]

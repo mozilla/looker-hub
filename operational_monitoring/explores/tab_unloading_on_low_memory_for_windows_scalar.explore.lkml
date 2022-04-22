@@ -13,22 +13,6 @@ explore: tab_unloading_on_low_memory_for_windows_scalar {
     ]
   }
 
-  aggregate_table: rollup_content_shutdown_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tab_unloading_on_low_memory_for_windows_scalar.branch: "tab-unloading-disabled, tab-unloading-enabled",
-        tab_unloading_on_low_memory_for_windows_scalar.percentile_conf: "50",
-        tab_unloading_on_low_memory_for_windows_scalar.probe: "content_shutdown_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_gpu_crashes {
     query: {
       dimensions: [submission_date, branch]
@@ -45,14 +29,78 @@ explore: tab_unloading_on_low_memory_for_windows_scalar {
     }
   }
 
-  aggregate_table: rollup_content_crashes {
+  aggregate_table: rollup_startup_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_on_low_memory_for_windows_scalar.branch: "tab-unloading-disabled, tab-unloading-enabled",
         tab_unloading_on_low_memory_for_windows_scalar.percentile_conf: "50",
-        tab_unloading_on_low_memory_for_windows_scalar.probe: "content_crashes",
+        tab_unloading_on_low_memory_for_windows_scalar.probe: "startup_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_shutdown_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tab_unloading_on_low_memory_for_windows_scalar.branch: "tab-unloading-disabled, tab-unloading-enabled",
+        tab_unloading_on_low_memory_for_windows_scalar.percentile_conf: "50",
+        tab_unloading_on_low_memory_for_windows_scalar.probe: "content_shutdown_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_gmplugin_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tab_unloading_on_low_memory_for_windows_scalar.branch: "tab-unloading-disabled, tab-unloading-enabled",
+        tab_unloading_on_low_memory_for_windows_scalar.percentile_conf: "50",
+        tab_unloading_on_low_memory_for_windows_scalar.probe: "gmplugin_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_oom_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tab_unloading_on_low_memory_for_windows_scalar.branch: "tab-unloading-disabled, tab-unloading-enabled",
+        tab_unloading_on_low_memory_for_windows_scalar.percentile_conf: "50",
+        tab_unloading_on_low_memory_for_windows_scalar.probe: "oom_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_main_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tab_unloading_on_low_memory_for_windows_scalar.branch: "tab-unloading-disabled, tab-unloading-enabled",
+        tab_unloading_on_low_memory_for_windows_scalar.percentile_conf: "50",
+        tab_unloading_on_low_memory_for_windows_scalar.probe: "main_crashes",
       ]
     }
 
@@ -93,62 +141,14 @@ explore: tab_unloading_on_low_memory_for_windows_scalar {
     }
   }
 
-  aggregate_table: rollup_oom_crashes {
+  aggregate_table: rollup_content_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tab_unloading_on_low_memory_for_windows_scalar.branch: "tab-unloading-disabled, tab-unloading-enabled",
         tab_unloading_on_low_memory_for_windows_scalar.percentile_conf: "50",
-        tab_unloading_on_low_memory_for_windows_scalar.probe: "oom_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_startup_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tab_unloading_on_low_memory_for_windows_scalar.branch: "tab-unloading-disabled, tab-unloading-enabled",
-        tab_unloading_on_low_memory_for_windows_scalar.percentile_conf: "50",
-        tab_unloading_on_low_memory_for_windows_scalar.probe: "startup_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_main_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tab_unloading_on_low_memory_for_windows_scalar.branch: "tab-unloading-disabled, tab-unloading-enabled",
-        tab_unloading_on_low_memory_for_windows_scalar.percentile_conf: "50",
-        tab_unloading_on_low_memory_for_windows_scalar.probe: "main_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_gmplugin_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tab_unloading_on_low_memory_for_windows_scalar.branch: "tab-unloading-disabled, tab-unloading-enabled",
-        tab_unloading_on_low_memory_for_windows_scalar.percentile_conf: "50",
-        tab_unloading_on_low_memory_for_windows_scalar.probe: "gmplugin_crashes",
+        tab_unloading_on_low_memory_for_windows_scalar.probe: "content_crashes",
       ]
     }
 

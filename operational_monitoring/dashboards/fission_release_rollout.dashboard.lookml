@@ -34,9 +34,12 @@
       Percentile: fission_release_rollout_histogram.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - fission_release_rollout_histogram.percentile: "#ff6a06"
-      active - fission_release_rollout_histogram.high: "#ffb380"
-      active - fission_release_rollout_histogram.low: "#ffb380"
+      enabled - fission_release_rollout_histogram.percentile: "#ff6a06"
+      enabled - fission_release_rollout_histogram.high: "#ffb380"
+      enabled - fission_release_rollout_histogram.low: "#ffb380"
+      disabled - fission_release_rollout_histogram.percentile: "blue"
+      disabled - fission_release_rollout_histogram.high: "#8cd3ff"
+      disabled - fission_release_rollout_histogram.low: "#8cd3ff"
       
   - title: Memory Total
     name: Memory Total
@@ -62,37 +65,12 @@
       Percentile: fission_release_rollout_histogram.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - fission_release_rollout_histogram.percentile: "#ff6a06"
-      active - fission_release_rollout_histogram.high: "#ffb380"
-      active - fission_release_rollout_histogram.low: "#ffb380"
-      
-  - title: Content Crashes
-    name: Content Crashes
-    explore: fission_release_rollout_scalar
-    type: "looker_line"
-    fields: [
-      fission_release_rollout_scalar.submission_date,
-      fission_release_rollout_scalar.branch,
-      fission_release_rollout_scalar.high,
-      fission_release_rollout_scalar.low,
-      fission_release_rollout_scalar.percentile
-    ]
-    pivots: [
-      fission_release_rollout_scalar.branch
-    ]
-    filters:
-      fission_release_rollout_scalar.probe: content_crashes
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: fission_release_rollout_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      active - fission_release_rollout_scalar.percentile: "#ff6a06"
-      active - fission_release_rollout_scalar.high: "#ffb380"
-      active - fission_release_rollout_scalar.low: "#ffb380"
+      enabled - fission_release_rollout_histogram.percentile: "#ff6a06"
+      enabled - fission_release_rollout_histogram.high: "#ffb380"
+      enabled - fission_release_rollout_histogram.low: "#ffb380"
+      disabled - fission_release_rollout_histogram.percentile: "blue"
+      disabled - fission_release_rollout_histogram.high: "#8cd3ff"
+      disabled - fission_release_rollout_histogram.low: "#8cd3ff"
       
   - title: Startup Crashes
     name: Startup Crashes
@@ -111,19 +89,22 @@
     filters:
       fission_release_rollout_scalar.probe: startup_crashes
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     listen:
       Percentile: fission_release_rollout_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - fission_release_rollout_scalar.percentile: "#ff6a06"
-      active - fission_release_rollout_scalar.high: "#ffb380"
-      active - fission_release_rollout_scalar.low: "#ffb380"
+      enabled - fission_release_rollout_scalar.percentile: "#ff6a06"
+      enabled - fission_release_rollout_scalar.high: "#ffb380"
+      enabled - fission_release_rollout_scalar.low: "#ffb380"
+      disabled - fission_release_rollout_scalar.percentile: "blue"
+      disabled - fission_release_rollout_scalar.high: "#8cd3ff"
+      disabled - fission_release_rollout_scalar.low: "#8cd3ff"
       
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
+  - title: Oom Crashes
+    name: Oom Crashes
     explore: fission_release_rollout_scalar
     type: "looker_line"
     fields: [
@@ -137,18 +118,21 @@
       fission_release_rollout_scalar.branch
     ]
     filters:
-      fission_release_rollout_scalar.probe: shutdown_hangs
-    row: 20
-    col: 0
+      fission_release_rollout_scalar.probe: oom_crashes
+    row: 10
+    col: 12
     width: 12
     height: 8
     listen:
       Percentile: fission_release_rollout_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - fission_release_rollout_scalar.percentile: "#ff6a06"
-      active - fission_release_rollout_scalar.high: "#ffb380"
-      active - fission_release_rollout_scalar.low: "#ffb380"
+      enabled - fission_release_rollout_scalar.percentile: "#ff6a06"
+      enabled - fission_release_rollout_scalar.high: "#ffb380"
+      enabled - fission_release_rollout_scalar.low: "#ffb380"
+      disabled - fission_release_rollout_scalar.percentile: "blue"
+      disabled - fission_release_rollout_scalar.high: "#8cd3ff"
+      disabled - fission_release_rollout_scalar.low: "#8cd3ff"
       
   - title: Main Crashes
     name: Main Crashes
@@ -167,19 +151,22 @@
     filters:
       fission_release_rollout_scalar.probe: main_crashes
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     listen:
       Percentile: fission_release_rollout_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - fission_release_rollout_scalar.percentile: "#ff6a06"
-      active - fission_release_rollout_scalar.high: "#ffb380"
-      active - fission_release_rollout_scalar.low: "#ffb380"
+      enabled - fission_release_rollout_scalar.percentile: "#ff6a06"
+      enabled - fission_release_rollout_scalar.high: "#ffb380"
+      enabled - fission_release_rollout_scalar.low: "#ffb380"
+      disabled - fission_release_rollout_scalar.percentile: "blue"
+      disabled - fission_release_rollout_scalar.high: "#8cd3ff"
+      disabled - fission_release_rollout_scalar.low: "#8cd3ff"
       
-  - title: Oom Crashes
-    name: Oom Crashes
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
     explore: fission_release_rollout_scalar
     type: "looker_line"
     fields: [
@@ -193,7 +180,38 @@
       fission_release_rollout_scalar.branch
     ]
     filters:
-      fission_release_rollout_scalar.probe: oom_crashes
+      fission_release_rollout_scalar.probe: shutdown_hangs
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: fission_release_rollout_scalar.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - fission_release_rollout_scalar.percentile: "#ff6a06"
+      enabled - fission_release_rollout_scalar.high: "#ffb380"
+      enabled - fission_release_rollout_scalar.low: "#ffb380"
+      disabled - fission_release_rollout_scalar.percentile: "blue"
+      disabled - fission_release_rollout_scalar.high: "#8cd3ff"
+      disabled - fission_release_rollout_scalar.low: "#8cd3ff"
+      
+  - title: Content Crashes
+    name: Content Crashes
+    explore: fission_release_rollout_scalar
+    type: "looker_line"
+    fields: [
+      fission_release_rollout_scalar.submission_date,
+      fission_release_rollout_scalar.branch,
+      fission_release_rollout_scalar.high,
+      fission_release_rollout_scalar.low,
+      fission_release_rollout_scalar.percentile
+    ]
+    pivots: [
+      fission_release_rollout_scalar.branch
+    ]
+    filters:
+      fission_release_rollout_scalar.probe: content_crashes
     row: 30
     col: 0
     width: 12
@@ -202,9 +220,12 @@
       Percentile: fission_release_rollout_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - fission_release_rollout_scalar.percentile: "#ff6a06"
-      active - fission_release_rollout_scalar.high: "#ffb380"
-      active - fission_release_rollout_scalar.low: "#ffb380"
+      enabled - fission_release_rollout_scalar.percentile: "#ff6a06"
+      enabled - fission_release_rollout_scalar.high: "#ffb380"
+      enabled - fission_release_rollout_scalar.low: "#ffb380"
+      disabled - fission_release_rollout_scalar.percentile: "blue"
+      disabled - fission_release_rollout_scalar.high: "#8cd3ff"
+      disabled - fission_release_rollout_scalar.low: "#8cd3ff"
       
   filters:
   - name: Percentile

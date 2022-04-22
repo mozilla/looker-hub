@@ -5,7 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: disable_webassembly_code_caching_histogram {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram ;;
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.disable_webassembly_code_caching_histogram ;;
 
   dimension: submission_date {
     type: date

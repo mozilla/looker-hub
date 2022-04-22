@@ -9,7 +9,7 @@ include: "/looker-hub/operational_monitoring/views/yandex_sponsored_tile_rollout
 explore: yandex_sponsored_tile_rollout_histogram {
   always_filter: {
     filters: [
-      branch: "active",
+      branch: "enabled, disabled",
     ]
   }
 
@@ -18,7 +18,7 @@ explore: yandex_sponsored_tile_rollout_histogram {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        yandex_sponsored_tile_rollout_histogram.branch: "active",
+        yandex_sponsored_tile_rollout_histogram.branch: "enabled, disabled",
         yandex_sponsored_tile_rollout_histogram.percentile_conf: "50",
         yandex_sponsored_tile_rollout_histogram.probe: "gc_ms",
       ]
@@ -34,7 +34,7 @@ explore: yandex_sponsored_tile_rollout_histogram {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        yandex_sponsored_tile_rollout_histogram.branch: "active",
+        yandex_sponsored_tile_rollout_histogram.branch: "enabled, disabled",
         yandex_sponsored_tile_rollout_histogram.percentile_conf: "50",
         yandex_sponsored_tile_rollout_histogram.probe: "memory_total",
       ]

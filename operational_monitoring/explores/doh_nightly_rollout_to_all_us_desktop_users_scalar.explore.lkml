@@ -9,24 +9,8 @@ include: "/looker-hub/operational_monitoring/views/doh_nightly_rollout_to_all_us
 explore: doh_nightly_rollout_to_all_us_desktop_users_scalar {
   always_filter: {
     filters: [
-      branch: "active",
+      branch: "enabled, disabled",
     ]
-  }
-
-  aggregate_table: rollup_content_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        doh_nightly_rollout_to_all_us_desktop_users_scalar.branch: "active",
-        doh_nightly_rollout_to_all_us_desktop_users_scalar.percentile_conf: "50",
-        doh_nightly_rollout_to_all_us_desktop_users_scalar.probe: "content_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
   }
 
   aggregate_table: rollup_startup_crashes {
@@ -34,41 +18,9 @@ explore: doh_nightly_rollout_to_all_us_desktop_users_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        doh_nightly_rollout_to_all_us_desktop_users_scalar.branch: "active",
+        doh_nightly_rollout_to_all_us_desktop_users_scalar.branch: "enabled, disabled",
         doh_nightly_rollout_to_all_us_desktop_users_scalar.percentile_conf: "50",
         doh_nightly_rollout_to_all_us_desktop_users_scalar.probe: "startup_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_shutdown_hangs {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        doh_nightly_rollout_to_all_us_desktop_users_scalar.branch: "active",
-        doh_nightly_rollout_to_all_us_desktop_users_scalar.percentile_conf: "50",
-        doh_nightly_rollout_to_all_us_desktop_users_scalar.probe: "shutdown_hangs",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_main_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        doh_nightly_rollout_to_all_us_desktop_users_scalar.branch: "active",
-        doh_nightly_rollout_to_all_us_desktop_users_scalar.percentile_conf: "50",
-        doh_nightly_rollout_to_all_us_desktop_users_scalar.probe: "main_crashes",
       ]
     }
 
@@ -82,9 +34,57 @@ explore: doh_nightly_rollout_to_all_us_desktop_users_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        doh_nightly_rollout_to_all_us_desktop_users_scalar.branch: "active",
+        doh_nightly_rollout_to_all_us_desktop_users_scalar.branch: "enabled, disabled",
         doh_nightly_rollout_to_all_us_desktop_users_scalar.percentile_conf: "50",
         doh_nightly_rollout_to_all_us_desktop_users_scalar.probe: "oom_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_main_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        doh_nightly_rollout_to_all_us_desktop_users_scalar.branch: "enabled, disabled",
+        doh_nightly_rollout_to_all_us_desktop_users_scalar.percentile_conf: "50",
+        doh_nightly_rollout_to_all_us_desktop_users_scalar.probe: "main_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_shutdown_hangs {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        doh_nightly_rollout_to_all_us_desktop_users_scalar.branch: "enabled, disabled",
+        doh_nightly_rollout_to_all_us_desktop_users_scalar.percentile_conf: "50",
+        doh_nightly_rollout_to_all_us_desktop_users_scalar.probe: "shutdown_hangs",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        doh_nightly_rollout_to_all_us_desktop_users_scalar.branch: "enabled, disabled",
+        doh_nightly_rollout_to_all_us_desktop_users_scalar.percentile_conf: "50",
+        doh_nightly_rollout_to_all_us_desktop_users_scalar.probe: "content_crashes",
       ]
     }
 
