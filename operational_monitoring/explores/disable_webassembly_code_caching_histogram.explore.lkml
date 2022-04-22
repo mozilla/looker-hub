@@ -9,7 +9,7 @@ include: "/looker-hub/operational_monitoring/views/disable_webassembly_code_cach
 explore: disable_webassembly_code_caching_histogram {
   always_filter: {
     filters: [
-      branch: "active",
+      branch: "preference-disabled",
     ]
   }
 
@@ -18,7 +18,7 @@ explore: disable_webassembly_code_caching_histogram {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        disable_webassembly_code_caching_histogram.branch: "active",
+        disable_webassembly_code_caching_histogram.branch: "preference-disabled",
         disable_webassembly_code_caching_histogram.percentile_conf: "50",
         disable_webassembly_code_caching_histogram.probe: "memory_total",
       ]
@@ -34,7 +34,7 @@ explore: disable_webassembly_code_caching_histogram {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        disable_webassembly_code_caching_histogram.branch: "active",
+        disable_webassembly_code_caching_histogram.branch: "preference-disabled",
         disable_webassembly_code_caching_histogram.percentile_conf: "50",
         disable_webassembly_code_caching_histogram.probe: "gc_ms",
       ]

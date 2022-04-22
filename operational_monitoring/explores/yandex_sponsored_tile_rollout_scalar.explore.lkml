@@ -9,24 +9,8 @@ include: "/looker-hub/operational_monitoring/views/yandex_sponsored_tile_rollout
 explore: yandex_sponsored_tile_rollout_scalar {
   always_filter: {
     filters: [
-      branch: "active",
+      branch: "enabled, disabled",
     ]
-  }
-
-  aggregate_table: rollup_content_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        yandex_sponsored_tile_rollout_scalar.branch: "active",
-        yandex_sponsored_tile_rollout_scalar.percentile_conf: "50",
-        yandex_sponsored_tile_rollout_scalar.probe: "content_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
   }
 
   aggregate_table: rollup_startup_crashes {
@@ -34,41 +18,9 @@ explore: yandex_sponsored_tile_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        yandex_sponsored_tile_rollout_scalar.branch: "active",
+        yandex_sponsored_tile_rollout_scalar.branch: "enabled, disabled",
         yandex_sponsored_tile_rollout_scalar.percentile_conf: "50",
         yandex_sponsored_tile_rollout_scalar.probe: "startup_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_shutdown_hangs {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        yandex_sponsored_tile_rollout_scalar.branch: "active",
-        yandex_sponsored_tile_rollout_scalar.percentile_conf: "50",
-        yandex_sponsored_tile_rollout_scalar.probe: "shutdown_hangs",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_main_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        yandex_sponsored_tile_rollout_scalar.branch: "active",
-        yandex_sponsored_tile_rollout_scalar.percentile_conf: "50",
-        yandex_sponsored_tile_rollout_scalar.probe: "main_crashes",
       ]
     }
 
@@ -82,9 +34,57 @@ explore: yandex_sponsored_tile_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        yandex_sponsored_tile_rollout_scalar.branch: "active",
+        yandex_sponsored_tile_rollout_scalar.branch: "enabled, disabled",
         yandex_sponsored_tile_rollout_scalar.percentile_conf: "50",
         yandex_sponsored_tile_rollout_scalar.probe: "oom_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_main_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        yandex_sponsored_tile_rollout_scalar.branch: "enabled, disabled",
+        yandex_sponsored_tile_rollout_scalar.percentile_conf: "50",
+        yandex_sponsored_tile_rollout_scalar.probe: "main_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_shutdown_hangs {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        yandex_sponsored_tile_rollout_scalar.branch: "enabled, disabled",
+        yandex_sponsored_tile_rollout_scalar.percentile_conf: "50",
+        yandex_sponsored_tile_rollout_scalar.probe: "shutdown_hangs",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        yandex_sponsored_tile_rollout_scalar.branch: "enabled, disabled",
+        yandex_sponsored_tile_rollout_scalar.percentile_conf: "50",
+        yandex_sponsored_tile_rollout_scalar.probe: "content_crashes",
       ]
     }
 

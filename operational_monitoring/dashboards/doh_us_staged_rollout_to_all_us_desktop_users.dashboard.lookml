@@ -34,9 +34,12 @@
       Percentile: doh_us_staged_rollout_to_all_us_desktop_users_histogram.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - doh_us_staged_rollout_to_all_us_desktop_users_histogram.percentile: "#ff6a06"
-      active - doh_us_staged_rollout_to_all_us_desktop_users_histogram.high: "#ffb380"
-      active - doh_us_staged_rollout_to_all_us_desktop_users_histogram.low: "#ffb380"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_histogram.percentile: "#ff6a06"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_histogram.high: "#ffb380"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_histogram.low: "#ffb380"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_histogram.percentile: "blue"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_histogram.high: "#8cd3ff"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_histogram.low: "#8cd3ff"
       
   - title: Memory Total
     name: Memory Total
@@ -62,37 +65,12 @@
       Percentile: doh_us_staged_rollout_to_all_us_desktop_users_histogram.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - doh_us_staged_rollout_to_all_us_desktop_users_histogram.percentile: "#ff6a06"
-      active - doh_us_staged_rollout_to_all_us_desktop_users_histogram.high: "#ffb380"
-      active - doh_us_staged_rollout_to_all_us_desktop_users_histogram.low: "#ffb380"
-      
-  - title: Content Crashes
-    name: Content Crashes
-    explore: doh_us_staged_rollout_to_all_us_desktop_users_scalar
-    type: "looker_line"
-    fields: [
-      doh_us_staged_rollout_to_all_us_desktop_users_scalar.submission_date,
-      doh_us_staged_rollout_to_all_us_desktop_users_scalar.branch,
-      doh_us_staged_rollout_to_all_us_desktop_users_scalar.high,
-      doh_us_staged_rollout_to_all_us_desktop_users_scalar.low,
-      doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile
-    ]
-    pivots: [
-      doh_us_staged_rollout_to_all_us_desktop_users_scalar.branch
-    ]
-    filters:
-      doh_us_staged_rollout_to_all_us_desktop_users_scalar.probe: content_crashes
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      active - doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile: "#ff6a06"
-      active - doh_us_staged_rollout_to_all_us_desktop_users_scalar.high: "#ffb380"
-      active - doh_us_staged_rollout_to_all_us_desktop_users_scalar.low: "#ffb380"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_histogram.percentile: "#ff6a06"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_histogram.high: "#ffb380"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_histogram.low: "#ffb380"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_histogram.percentile: "blue"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_histogram.high: "#8cd3ff"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_histogram.low: "#8cd3ff"
       
   - title: Startup Crashes
     name: Startup Crashes
@@ -111,19 +89,22 @@
     filters:
       doh_us_staged_rollout_to_all_us_desktop_users_scalar.probe: startup_crashes
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     listen:
       Percentile: doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile: "#ff6a06"
-      active - doh_us_staged_rollout_to_all_us_desktop_users_scalar.high: "#ffb380"
-      active - doh_us_staged_rollout_to_all_us_desktop_users_scalar.low: "#ffb380"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile: "#ff6a06"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.high: "#ffb380"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.low: "#ffb380"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile: "blue"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.high: "#8cd3ff"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.low: "#8cd3ff"
       
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
+  - title: Oom Crashes
+    name: Oom Crashes
     explore: doh_us_staged_rollout_to_all_us_desktop_users_scalar
     type: "looker_line"
     fields: [
@@ -137,18 +118,21 @@
       doh_us_staged_rollout_to_all_us_desktop_users_scalar.branch
     ]
     filters:
-      doh_us_staged_rollout_to_all_us_desktop_users_scalar.probe: shutdown_hangs
-    row: 20
-    col: 0
+      doh_us_staged_rollout_to_all_us_desktop_users_scalar.probe: oom_crashes
+    row: 10
+    col: 12
     width: 12
     height: 8
     listen:
       Percentile: doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile: "#ff6a06"
-      active - doh_us_staged_rollout_to_all_us_desktop_users_scalar.high: "#ffb380"
-      active - doh_us_staged_rollout_to_all_us_desktop_users_scalar.low: "#ffb380"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile: "#ff6a06"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.high: "#ffb380"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.low: "#ffb380"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile: "blue"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.high: "#8cd3ff"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.low: "#8cd3ff"
       
   - title: Main Crashes
     name: Main Crashes
@@ -167,19 +151,22 @@
     filters:
       doh_us_staged_rollout_to_all_us_desktop_users_scalar.probe: main_crashes
     row: 20
-    col: 12
+    col: 0
     width: 12
     height: 8
     listen:
       Percentile: doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile: "#ff6a06"
-      active - doh_us_staged_rollout_to_all_us_desktop_users_scalar.high: "#ffb380"
-      active - doh_us_staged_rollout_to_all_us_desktop_users_scalar.low: "#ffb380"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile: "#ff6a06"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.high: "#ffb380"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.low: "#ffb380"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile: "blue"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.high: "#8cd3ff"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.low: "#8cd3ff"
       
-  - title: Oom Crashes
-    name: Oom Crashes
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
     explore: doh_us_staged_rollout_to_all_us_desktop_users_scalar
     type: "looker_line"
     fields: [
@@ -193,7 +180,38 @@
       doh_us_staged_rollout_to_all_us_desktop_users_scalar.branch
     ]
     filters:
-      doh_us_staged_rollout_to_all_us_desktop_users_scalar.probe: oom_crashes
+      doh_us_staged_rollout_to_all_us_desktop_users_scalar.probe: shutdown_hangs
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile: "#ff6a06"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.high: "#ffb380"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.low: "#ffb380"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile: "blue"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.high: "#8cd3ff"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.low: "#8cd3ff"
+      
+  - title: Content Crashes
+    name: Content Crashes
+    explore: doh_us_staged_rollout_to_all_us_desktop_users_scalar
+    type: "looker_line"
+    fields: [
+      doh_us_staged_rollout_to_all_us_desktop_users_scalar.submission_date,
+      doh_us_staged_rollout_to_all_us_desktop_users_scalar.branch,
+      doh_us_staged_rollout_to_all_us_desktop_users_scalar.high,
+      doh_us_staged_rollout_to_all_us_desktop_users_scalar.low,
+      doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile
+    ]
+    pivots: [
+      doh_us_staged_rollout_to_all_us_desktop_users_scalar.branch
+    ]
+    filters:
+      doh_us_staged_rollout_to_all_us_desktop_users_scalar.probe: content_crashes
     row: 30
     col: 0
     width: 12
@@ -202,9 +220,12 @@
       Percentile: doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile_conf
     y_axes: [{type: log}]
     series_colors:
-      active - doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile: "#ff6a06"
-      active - doh_us_staged_rollout_to_all_us_desktop_users_scalar.high: "#ffb380"
-      active - doh_us_staged_rollout_to_all_us_desktop_users_scalar.low: "#ffb380"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile: "#ff6a06"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.high: "#ffb380"
+      enabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.low: "#ffb380"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.percentile: "blue"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.high: "#8cd3ff"
+      disabled - doh_us_staged_rollout_to_all_us_desktop_users_scalar.low: "#8cd3ff"
       
   filters:
   - name: Percentile

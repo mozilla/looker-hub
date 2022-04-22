@@ -9,7 +9,7 @@ include: "/looker-hub/operational_monitoring/views/disable_cookie_samesite_lax_a
 explore: disable_cookie_samesite_lax_and_samesite_nonerequiressecure_in_firefox_96_histogram {
   always_filter: {
     filters: [
-      branch: "active",
+      branch: "enabled, disabled",
     ]
   }
 
@@ -18,7 +18,7 @@ explore: disable_cookie_samesite_lax_and_samesite_nonerequiressecure_in_firefox_
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        disable_cookie_samesite_lax_and_samesite_nonerequiressecure_in_firefox_96_histogram.branch: "active",
+        disable_cookie_samesite_lax_and_samesite_nonerequiressecure_in_firefox_96_histogram.branch: "enabled, disabled",
         disable_cookie_samesite_lax_and_samesite_nonerequiressecure_in_firefox_96_histogram.percentile_conf: "50",
         disable_cookie_samesite_lax_and_samesite_nonerequiressecure_in_firefox_96_histogram.probe: "gc_ms",
       ]
@@ -34,7 +34,7 @@ explore: disable_cookie_samesite_lax_and_samesite_nonerequiressecure_in_firefox_
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        disable_cookie_samesite_lax_and_samesite_nonerequiressecure_in_firefox_96_histogram.branch: "active",
+        disable_cookie_samesite_lax_and_samesite_nonerequiressecure_in_firefox_96_histogram.branch: "enabled, disabled",
         disable_cookie_samesite_lax_and_samesite_nonerequiressecure_in_firefox_96_histogram.percentile_conf: "50",
         disable_cookie_samesite_lax_and_samesite_nonerequiressecure_in_firefox_96_histogram.probe: "memory_total",
       ]

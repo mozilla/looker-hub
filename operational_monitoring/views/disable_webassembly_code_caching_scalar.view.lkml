@@ -7,7 +7,7 @@
 view: disable_webassembly_code_caching_scalar {
   derived_table: {
     sql: SELECT *
-FROM `moz-fx-data-shared-prod.operational_monitoring.bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar`
+FROM `moz-fx-data-shared-prod.operational_monitoring.disable_webassembly_code_caching_scalar`
 WHERE agg_type = "SUM" ;;
   }
 
