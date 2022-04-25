@@ -13,6 +13,22 @@ explore: doh_us_staged_rollout_to_all_us_desktop_users_histogram {
     ]
   }
 
+  aggregate_table: rollup_content_process_count {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        doh_us_staged_rollout_to_all_us_desktop_users_histogram.branch: "enabled, disabled",
+        doh_us_staged_rollout_to_all_us_desktop_users_histogram.percentile_conf: "50",
+        doh_us_staged_rollout_to_all_us_desktop_users_histogram.probe: "content_process_count",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
   aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]

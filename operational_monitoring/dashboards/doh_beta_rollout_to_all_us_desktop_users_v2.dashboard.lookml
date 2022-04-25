@@ -10,6 +10,37 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Content Process Count
+    name: Content Process Count
+    explore: doh_beta_rollout_to_all_us_desktop_users_v2_histogram
+    type: "looker_line"
+    fields: [
+      doh_beta_rollout_to_all_us_desktop_users_v2_histogram.submission_date,
+      doh_beta_rollout_to_all_us_desktop_users_v2_histogram.branch,
+      doh_beta_rollout_to_all_us_desktop_users_v2_histogram.high,
+      doh_beta_rollout_to_all_us_desktop_users_v2_histogram.low,
+      doh_beta_rollout_to_all_us_desktop_users_v2_histogram.percentile
+    ]
+    pivots: [
+      doh_beta_rollout_to_all_us_desktop_users_v2_histogram.branch
+    ]
+    filters:
+      doh_beta_rollout_to_all_us_desktop_users_v2_histogram.probe: content_process_count
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: doh_beta_rollout_to_all_us_desktop_users_v2_histogram.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_histogram.percentile: "#ff6a06"
+      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_histogram.high: "#ffb380"
+      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_histogram.low: "#ffb380"
+      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_histogram.percentile: "blue"
+      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_histogram.high: "#8cd3ff"
+      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_histogram.low: "#8cd3ff"
+      
   - title: Gc Ms
     name: Gc Ms
     explore: doh_beta_rollout_to_all_us_desktop_users_v2_histogram
@@ -27,7 +58,7 @@
     filters:
       doh_beta_rollout_to_all_us_desktop_users_v2_histogram.probe: gc_ms
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     listen:
@@ -57,8 +88,8 @@
     ]
     filters:
       doh_beta_rollout_to_all_us_desktop_users_v2_histogram.probe: memory_total
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     listen:
@@ -72,8 +103,8 @@
       disabled - doh_beta_rollout_to_all_us_desktop_users_v2_histogram.high: "#8cd3ff"
       disabled - doh_beta_rollout_to_all_us_desktop_users_v2_histogram.low: "#8cd3ff"
       
-  - title: Startup Crashes
-    name: Startup Crashes
+  - title: Content Crashes
+    name: Content Crashes
     explore: doh_beta_rollout_to_all_us_desktop_users_v2_scalar
     type: "looker_line"
     fields: [
@@ -87,38 +118,7 @@
       doh_beta_rollout_to_all_us_desktop_users_v2_scalar.branch
     ]
     filters:
-      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.probe: startup_crashes
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile: "#ff6a06"
-      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high: "#ffb380"
-      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low: "#ffb380"
-      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile: "blue"
-      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high: "#8cd3ff"
-      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low: "#8cd3ff"
-      
-  - title: Oom Crashes
-    name: Oom Crashes
-    explore: doh_beta_rollout_to_all_us_desktop_users_v2_scalar
-    type: "looker_line"
-    fields: [
-      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.submission_date,
-      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.branch,
-      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high,
-      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low,
-      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile
-    ]
-    pivots: [
-      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.branch
-    ]
-    filters:
-      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.probe: oom_crashes
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.probe: content_crashes
     row: 10
     col: 12
     width: 12
@@ -165,6 +165,161 @@
       disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high: "#8cd3ff"
       disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low: "#8cd3ff"
       
+  - title: Gmplugin Crashes
+    name: Gmplugin Crashes
+    explore: doh_beta_rollout_to_all_us_desktop_users_v2_scalar
+    type: "looker_line"
+    fields: [
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.submission_date,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.branch,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile
+    ]
+    pivots: [
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.branch
+    ]
+    filters:
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.probe: gmplugin_crashes
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile: "#ff6a06"
+      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high: "#ffb380"
+      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low: "#ffb380"
+      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile: "blue"
+      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high: "#8cd3ff"
+      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low: "#8cd3ff"
+      
+  - title: Oom Crashes
+    name: Oom Crashes
+    explore: doh_beta_rollout_to_all_us_desktop_users_v2_scalar
+    type: "looker_line"
+    fields: [
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.submission_date,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.branch,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile
+    ]
+    pivots: [
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.branch
+    ]
+    filters:
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.probe: oom_crashes
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile: "#ff6a06"
+      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high: "#ffb380"
+      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low: "#ffb380"
+      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile: "blue"
+      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high: "#8cd3ff"
+      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low: "#8cd3ff"
+      
+  - title: Content Shutdown Crashes
+    name: Content Shutdown Crashes
+    explore: doh_beta_rollout_to_all_us_desktop_users_v2_scalar
+    type: "looker_line"
+    fields: [
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.submission_date,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.branch,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile
+    ]
+    pivots: [
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.branch
+    ]
+    filters:
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.probe: content_shutdown_crashes
+    row: 30
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile: "#ff6a06"
+      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high: "#ffb380"
+      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low: "#ffb380"
+      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile: "blue"
+      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high: "#8cd3ff"
+      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low: "#8cd3ff"
+      
+  - title: Plugin Crashes
+    name: Plugin Crashes
+    explore: doh_beta_rollout_to_all_us_desktop_users_v2_scalar
+    type: "looker_line"
+    fields: [
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.submission_date,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.branch,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile
+    ]
+    pivots: [
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.branch
+    ]
+    filters:
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.probe: plugin_crashes
+    row: 40
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile: "#ff6a06"
+      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high: "#ffb380"
+      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low: "#ffb380"
+      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile: "blue"
+      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high: "#8cd3ff"
+      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low: "#8cd3ff"
+      
+  - title: Gpu Crashes
+    name: Gpu Crashes
+    explore: doh_beta_rollout_to_all_us_desktop_users_v2_scalar
+    type: "looker_line"
+    fields: [
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.submission_date,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.branch,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low,
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile
+    ]
+    pivots: [
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.branch
+    ]
+    filters:
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.probe: gpu_crashes
+    row: 40
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile: "#ff6a06"
+      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high: "#ffb380"
+      enabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low: "#ffb380"
+      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.percentile: "blue"
+      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high: "#8cd3ff"
+      disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low: "#8cd3ff"
+      
   - title: Shutdown Hangs
     name: Shutdown Hangs
     explore: doh_beta_rollout_to_all_us_desktop_users_v2_scalar
@@ -181,8 +336,8 @@
     ]
     filters:
       doh_beta_rollout_to_all_us_desktop_users_v2_scalar.probe: shutdown_hangs
-    row: 20
-    col: 12
+    row: 50
+    col: 0
     width: 12
     height: 8
     listen:
@@ -196,8 +351,8 @@
       disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.high: "#8cd3ff"
       disabled - doh_beta_rollout_to_all_us_desktop_users_v2_scalar.low: "#8cd3ff"
       
-  - title: Content Crashes
-    name: Content Crashes
+  - title: Startup Crashes
+    name: Startup Crashes
     explore: doh_beta_rollout_to_all_us_desktop_users_v2_scalar
     type: "looker_line"
     fields: [
@@ -211,9 +366,9 @@
       doh_beta_rollout_to_all_us_desktop_users_v2_scalar.branch
     ]
     filters:
-      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.probe: content_crashes
-    row: 30
-    col: 0
+      doh_beta_rollout_to_all_us_desktop_users_v2_scalar.probe: startup_crashes
+    row: 50
+    col: 12
     width: 12
     height: 8
     listen:

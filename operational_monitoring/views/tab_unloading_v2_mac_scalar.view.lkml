@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: tab_unloading_on_low_memory_for_windows_scalar {
+view: tab_unloading_v2_mac_scalar {
   derived_table: {
     sql: SELECT *
-FROM `moz-fx-data-shared-prod.operational_monitoring.bug_1751309_pref_tab_unloading_on_low_memory_for_windows_release_97_98_scalar`
+FROM `moz-fx-data-shared-prod.operational_monitoring.bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar`
 WHERE agg_type = "SUM" ;;
   }
 

@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: tab_unloading_on_low_memory_for_macos_histogram {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram ;;
+view: tab_unloading_v2_windows_histogram {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.bug_1751309_pref_tab_unloading_on_low_memory_for_windows_release_97_98_histogram ;;
 
   dimension: submission_date {
     type: date

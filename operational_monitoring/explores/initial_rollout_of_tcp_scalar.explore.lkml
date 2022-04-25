@@ -13,30 +13,14 @@ explore: initial_rollout_of_tcp_scalar {
     ]
   }
 
-  aggregate_table: rollup_startup_crashes {
+  aggregate_table: rollup_content_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         initial_rollout_of_tcp_scalar.branch: "enabled, disabled",
         initial_rollout_of_tcp_scalar.percentile_conf: "50",
-        initial_rollout_of_tcp_scalar.probe: "startup_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_oom_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        initial_rollout_of_tcp_scalar.branch: "enabled, disabled",
-        initial_rollout_of_tcp_scalar.percentile_conf: "50",
-        initial_rollout_of_tcp_scalar.probe: "oom_crashes",
+        initial_rollout_of_tcp_scalar.probe: "content_crashes",
       ]
     }
 
@@ -61,6 +45,86 @@ explore: initial_rollout_of_tcp_scalar {
     }
   }
 
+  aggregate_table: rollup_gmplugin_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        initial_rollout_of_tcp_scalar.branch: "enabled, disabled",
+        initial_rollout_of_tcp_scalar.percentile_conf: "50",
+        initial_rollout_of_tcp_scalar.probe: "gmplugin_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_oom_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        initial_rollout_of_tcp_scalar.branch: "enabled, disabled",
+        initial_rollout_of_tcp_scalar.percentile_conf: "50",
+        initial_rollout_of_tcp_scalar.probe: "oom_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_shutdown_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        initial_rollout_of_tcp_scalar.branch: "enabled, disabled",
+        initial_rollout_of_tcp_scalar.percentile_conf: "50",
+        initial_rollout_of_tcp_scalar.probe: "content_shutdown_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_plugin_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        initial_rollout_of_tcp_scalar.branch: "enabled, disabled",
+        initial_rollout_of_tcp_scalar.percentile_conf: "50",
+        initial_rollout_of_tcp_scalar.probe: "plugin_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_gpu_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        initial_rollout_of_tcp_scalar.branch: "enabled, disabled",
+        initial_rollout_of_tcp_scalar.percentile_conf: "50",
+        initial_rollout_of_tcp_scalar.probe: "gpu_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
   aggregate_table: rollup_shutdown_hangs {
     query: {
       dimensions: [submission_date, branch]
@@ -77,14 +141,14 @@ explore: initial_rollout_of_tcp_scalar {
     }
   }
 
-  aggregate_table: rollup_content_crashes {
+  aggregate_table: rollup_startup_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         initial_rollout_of_tcp_scalar.branch: "enabled, disabled",
         initial_rollout_of_tcp_scalar.percentile_conf: "50",
-        initial_rollout_of_tcp_scalar.probe: "content_crashes",
+        initial_rollout_of_tcp_scalar.probe: "startup_crashes",
       ]
     }
 

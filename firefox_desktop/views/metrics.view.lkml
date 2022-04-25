@@ -633,7 +633,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__sum {
     label: "Wr Rasterize Glyphs Time Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.sum ;;
     type: number
     group_label: "Wr"
@@ -2233,7 +2233,7 @@ view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_backgro
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background
     suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background.key
-    hidden: yes
+    hidden: no
   }
 
   dimension: value {
@@ -2245,13 +2245,13 @@ view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_backgro
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -2276,7 +2276,7 @@ view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foregro
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground
     suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground.key
-    hidden: yes
+    hidden: no
   }
 
   dimension: value {
@@ -2288,13 +2288,13 @@ view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foregro
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -2319,7 +2319,7 @@ view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process
     suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process.key
-    hidden: yes
+    hidden: no
   }
 
   dimension: value {
@@ -2331,13 +2331,13 @@ view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -2362,7 +2362,7 @@ view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active
     suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active.key
-    hidden: yes
+    hidden: no
   }
 
   dimension: value {
@@ -2374,13 +2374,13 @@ view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -2405,7 +2405,7 @@ view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive
     suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive.key
-    hidden: yes
+    hidden: no
   }
 
   dimension: value {
@@ -2417,13 +2417,13 @@ view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -2577,7 +2577,7 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_backgr
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background
     suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background.key
-    hidden: yes
+    hidden: no
   }
 
   dimension: value {
@@ -2589,13 +2589,13 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_backgr
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -2620,7 +2620,7 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foregr
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground
     suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground.key
-    hidden: yes
+    hidden: no
   }
 
   dimension: value {
@@ -2632,13 +2632,13 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foregr
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -2663,7 +2663,7 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process
     suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process.key
-    hidden: yes
+    hidden: no
   }
 
   dimension: value {
@@ -2675,13 +2675,13 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -2706,7 +2706,7 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active 
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active
     suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active.key
-    hidden: yes
+    hidden: no
   }
 
   dimension: value {
@@ -2718,13 +2718,13 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -2749,7 +2749,7 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactiv
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive
     suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive.key
-    hidden: yes
+    hidden: no
   }
 
   dimension: value {
@@ -2761,13 +2761,13 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactiv
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
