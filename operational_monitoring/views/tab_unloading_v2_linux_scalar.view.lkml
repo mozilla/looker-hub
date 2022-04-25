@@ -4,8 +4,12 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: tab_unloading_on_low_memory_for_linux_histogram {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.bug_1751307_pref_tab_unloading_on_low_memory_for_linux_release_97_98_histogram ;;
+view: tab_unloading_v2_linux_scalar {
+  derived_table: {
+    sql: SELECT *
+FROM `moz-fx-data-shared-prod.operational_monitoring.bug_1751307_pref_tab_unloading_on_low_memory_for_linux_release_97_98_scalar`
+WHERE agg_type = "SUM" ;;
+  }
 
   dimension: submission_date {
     type: date
@@ -32,13 +36,13 @@ view: tab_unloading_on_low_memory_for_linux_histogram {
     type: number
     sql: `moz-fx-data-shared-prod`.udf_js.jackknife_percentile_ci(
     {% parameter percentile_conf %},
-    STRUCT(
-        mozfun.hist.merge(
-          ARRAY_AGG(
-            ${TABLE}.histogram IGNORE NULLS
-          )
-        ).values AS values
-    )
+    STRUCT<values ARRAY<STRUCT<key FLOAT64, value FLOAT64>>>(mozfun.map.sum(
+        ARRAY_AGG(
+            STRUCT<key FLOAT64, value FLOAT64>(
+                SAFE_CAST(COALESCE(${TABLE}.value, 0.0) AS FLOAT64), 1
+            )
+        )
+    ))
 ).percentile ;;
   }
 
@@ -46,13 +50,13 @@ view: tab_unloading_on_low_memory_for_linux_histogram {
     type: number
     sql: `moz-fx-data-shared-prod`.udf_js.jackknife_percentile_ci(
     {% parameter percentile_conf %},
-    STRUCT(
-        mozfun.hist.merge(
-          ARRAY_AGG(
-            ${TABLE}.histogram IGNORE NULLS
-          )
-        ).values AS values
-    )
+    STRUCT<values ARRAY<STRUCT<key FLOAT64, value FLOAT64>>>(mozfun.map.sum(
+        ARRAY_AGG(
+            STRUCT<key FLOAT64, value FLOAT64>(
+                SAFE_CAST(COALESCE(${TABLE}.value, 0.0) AS FLOAT64), 1
+            )
+        )
+    ))
 ).low ;;
   }
 
@@ -60,13 +64,13 @@ view: tab_unloading_on_low_memory_for_linux_histogram {
     type: number
     sql: `moz-fx-data-shared-prod`.udf_js.jackknife_percentile_ci(
     {% parameter percentile_conf %},
-    STRUCT(
-        mozfun.hist.merge(
-          ARRAY_AGG(
-            ${TABLE}.histogram IGNORE NULLS
-          )
-        ).values AS values
-    )
+    STRUCT<values ARRAY<STRUCT<key FLOAT64, value FLOAT64>>>(mozfun.map.sum(
+        ARRAY_AGG(
+            STRUCT<key FLOAT64, value FLOAT64>(
+                SAFE_CAST(COALESCE(${TABLE}.value, 0.0) AS FLOAT64), 1
+            )
+        )
+    ))
 ).high ;;
   }
 }

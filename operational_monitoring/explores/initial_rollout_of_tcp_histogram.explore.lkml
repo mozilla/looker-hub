@@ -13,6 +13,22 @@ explore: initial_rollout_of_tcp_histogram {
     ]
   }
 
+  aggregate_table: rollup_content_process_count {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        initial_rollout_of_tcp_histogram.branch: "enabled, disabled",
+        initial_rollout_of_tcp_histogram.percentile_conf: "50",
+        initial_rollout_of_tcp_histogram.probe: "content_process_count",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
   aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]

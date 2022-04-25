@@ -13,6 +13,22 @@ explore: disable_cookie_samesite_lax_and_samesite_nonerequiressecure_in_firefox_
     ]
   }
 
+  aggregate_table: rollup_content_process_count {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        disable_cookie_samesite_lax_and_samesite_nonerequiressecure_in_firefox_96_histogram.branch: "enabled, disabled",
+        disable_cookie_samesite_lax_and_samesite_nonerequiressecure_in_firefox_96_histogram.percentile_conf: "50",
+        disable_cookie_samesite_lax_and_samesite_nonerequiressecure_in_firefox_96_histogram.probe: "content_process_count",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
   aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]

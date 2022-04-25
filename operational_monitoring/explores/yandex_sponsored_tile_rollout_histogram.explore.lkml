@@ -13,6 +13,22 @@ explore: yandex_sponsored_tile_rollout_histogram {
     ]
   }
 
+  aggregate_table: rollup_content_process_count {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        yandex_sponsored_tile_rollout_histogram.branch: "enabled, disabled",
+        yandex_sponsored_tile_rollout_histogram.percentile_conf: "50",
+        yandex_sponsored_tile_rollout_histogram.probe: "content_process_count",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
   aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]

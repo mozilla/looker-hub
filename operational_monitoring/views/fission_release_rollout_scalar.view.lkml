@@ -21,6 +21,16 @@ WHERE agg_type = "SUM" ;;
     type: string
   }
 
+  dimension: cores_count {
+    sql: ${TABLE}.cores_count ;;
+    type: string
+  }
+
+  dimension: os {
+    sql: ${TABLE}.os ;;
+    type: string
+  }
+
   dimension: probe {
     sql: ${TABLE}.probe ;;
     type: string

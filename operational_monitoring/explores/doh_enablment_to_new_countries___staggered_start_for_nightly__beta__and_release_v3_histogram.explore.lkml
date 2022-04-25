@@ -13,6 +13,22 @@ explore: doh_enablment_to_new_countries___staggered_start_for_nightly__beta__and
     ]
   }
 
+  aggregate_table: rollup_content_process_count {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        doh_enablment_to_new_countries___staggered_start_for_nightly__beta__and_release_v3_histogram.branch: "enabled, disabled",
+        doh_enablment_to_new_countries___staggered_start_for_nightly__beta__and_release_v3_histogram.percentile_conf: "50",
+        doh_enablment_to_new_countries___staggered_start_for_nightly__beta__and_release_v3_histogram.probe: "content_process_count",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
   aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]

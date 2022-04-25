@@ -13,30 +13,14 @@ explore: enabling_doh_in_new_countries___staggered_start_for_nightly__beta__rele
     ]
   }
 
-  aggregate_table: rollup_startup_crashes {
+  aggregate_table: rollup_content_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.branch: "enabled, disabled",
         enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile_conf: "50",
-        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.probe: "startup_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_oom_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.branch: "enabled, disabled",
-        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile_conf: "50",
-        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.probe: "oom_crashes",
+        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.probe: "content_crashes",
       ]
     }
 
@@ -61,6 +45,86 @@ explore: enabling_doh_in_new_countries___staggered_start_for_nightly__beta__rele
     }
   }
 
+  aggregate_table: rollup_gmplugin_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.branch: "enabled, disabled",
+        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile_conf: "50",
+        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.probe: "gmplugin_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_oom_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.branch: "enabled, disabled",
+        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile_conf: "50",
+        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.probe: "oom_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_shutdown_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.branch: "enabled, disabled",
+        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile_conf: "50",
+        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.probe: "content_shutdown_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_plugin_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.branch: "enabled, disabled",
+        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile_conf: "50",
+        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.probe: "plugin_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_gpu_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.branch: "enabled, disabled",
+        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile_conf: "50",
+        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.probe: "gpu_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
   aggregate_table: rollup_shutdown_hangs {
     query: {
       dimensions: [submission_date, branch]
@@ -77,14 +141,14 @@ explore: enabling_doh_in_new_countries___staggered_start_for_nightly__beta__rele
     }
   }
 
-  aggregate_table: rollup_content_crashes {
+  aggregate_table: rollup_startup_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.branch: "enabled, disabled",
         enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.percentile_conf: "50",
-        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.probe: "content_crashes",
+        enabling_doh_in_new_countries___staggered_start_for_nightly__beta__release_v2_scalar.probe: "startup_crashes",
       ]
     }
 
