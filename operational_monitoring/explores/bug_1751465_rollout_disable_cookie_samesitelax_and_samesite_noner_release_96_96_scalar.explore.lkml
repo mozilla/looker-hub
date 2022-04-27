@@ -13,14 +13,14 @@ explore: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_relea
     ]
   }
 
-  aggregate_table: rollup_content_crashes {
+  aggregate_table: rollup_startup_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch: "enabled, disabled",
         bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile_conf: "50",
-        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: "content_crashes",
+        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: "startup_crashes",
       ]
     }
 
@@ -45,38 +45,6 @@ explore: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_relea
     }
   }
 
-  aggregate_table: rollup_gmplugin_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch: "enabled, disabled",
-        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile_conf: "50",
-        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: "gmplugin_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_oom_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch: "enabled, disabled",
-        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile_conf: "50",
-        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: "oom_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_content_shutdown_crashes {
     query: {
       dimensions: [submission_date, branch]
@@ -85,22 +53,6 @@ explore: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_relea
         bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch: "enabled, disabled",
         bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile_conf: "50",
         bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: "content_shutdown_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_plugin_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch: "enabled, disabled",
-        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile_conf: "50",
-        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: "plugin_crashes",
       ]
     }
 
@@ -125,6 +77,22 @@ explore: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_relea
     }
   }
 
+  aggregate_table: rollup_plugin_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch: "enabled, disabled",
+        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile_conf: "50",
+        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: "plugin_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
   aggregate_table: rollup_shutdown_hangs {
     query: {
       dimensions: [submission_date, branch]
@@ -141,14 +109,46 @@ explore: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_relea
     }
   }
 
-  aggregate_table: rollup_startup_crashes {
+  aggregate_table: rollup_gmplugin_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch: "enabled, disabled",
         bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile_conf: "50",
-        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: "startup_crashes",
+        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: "gmplugin_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch: "enabled, disabled",
+        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile_conf: "50",
+        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: "content_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_oom_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch: "enabled, disabled",
+        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile_conf: "50",
+        bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: "oom_crashes",
       ]
     }
 

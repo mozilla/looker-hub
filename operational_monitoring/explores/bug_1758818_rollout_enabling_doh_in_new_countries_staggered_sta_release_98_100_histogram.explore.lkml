@@ -29,22 +29,6 @@ explore: bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release
     }
   }
 
-  aggregate_table: rollup_gc_ms {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_histogram.branch: "enabled, disabled",
-        bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_histogram.percentile_conf: "50",
-        bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_histogram.probe: "gc_ms",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_memory_total {
     query: {
       dimensions: [submission_date, branch]
@@ -53,6 +37,22 @@ explore: bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release
         bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_histogram.branch: "enabled, disabled",
         bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_histogram.percentile_conf: "50",
         bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_histogram.probe: "memory_total",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_gc_ms {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_histogram.branch: "enabled, disabled",
+        bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_histogram.percentile_conf: "50",
+        bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_histogram.probe: "gc_ms",
       ]
     }
 

@@ -41,37 +41,6 @@
       disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.high: "#8cd3ff"
       disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.low: "#8cd3ff"
       
-  - title: Gc Ms
-    name: Gc Ms
-    explore: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram
-    type: "looker_line"
-    fields: [
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.submission_date,
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.branch,
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.high,
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.low,
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.percentile
-    ]
-    pivots: [
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.branch
-    ]
-    filters:
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.probe: gc_ms
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.percentile: "#ff6a06"
-      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.high: "#ffb380"
-      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.low: "#ffb380"
-      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.percentile: "blue"
-      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.high: "#8cd3ff"
-      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.low: "#8cd3ff"
-      
   - title: Memory Total
     name: Memory Total
     explore: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram
@@ -88,6 +57,37 @@
     ]
     filters:
       bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.probe: memory_total
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.percentile: "#ff6a06"
+      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.high: "#ffb380"
+      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.low: "#ffb380"
+      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.percentile: "blue"
+      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.high: "#8cd3ff"
+      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.low: "#8cd3ff"
+      
+  - title: Gc Ms
+    name: Gc Ms
+    explore: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram
+    type: "looker_line"
+    fields: [
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.submission_date,
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.branch,
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.high,
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.low,
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.percentile
+    ]
+    pivots: [
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.branch
+    ]
+    filters:
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.probe: gc_ms
     row: 10
     col: 0
     width: 12
@@ -103,8 +103,8 @@
       disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.high: "#8cd3ff"
       disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_histogram.low: "#8cd3ff"
       
-  - title: Content Crashes
-    name: Content Crashes
+  - title: Startup Crashes
+    name: Startup Crashes
     explore: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar
     type: "looker_line"
     fields: [
@@ -118,7 +118,7 @@
       bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.branch
     ]
     filters:
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.probe: content_crashes
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.probe: startup_crashes
     row: 10
     col: 12
     width: 12
@@ -165,68 +165,6 @@
       disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high: "#8cd3ff"
       disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low: "#8cd3ff"
       
-  - title: Gmplugin Crashes
-    name: Gmplugin Crashes
-    explore: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar
-    type: "looker_line"
-    fields: [
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.submission_date,
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.branch,
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high,
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low,
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile
-    ]
-    pivots: [
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.branch
-    ]
-    filters:
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.probe: gmplugin_crashes
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile: "#ff6a06"
-      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high: "#ffb380"
-      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low: "#ffb380"
-      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile: "blue"
-      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high: "#8cd3ff"
-      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low: "#8cd3ff"
-      
-  - title: Oom Crashes
-    name: Oom Crashes
-    explore: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar
-    type: "looker_line"
-    fields: [
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.submission_date,
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.branch,
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high,
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low,
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile
-    ]
-    pivots: [
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.branch
-    ]
-    filters:
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.probe: oom_crashes
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile: "#ff6a06"
-      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high: "#ffb380"
-      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low: "#ffb380"
-      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile: "blue"
-      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high: "#8cd3ff"
-      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low: "#8cd3ff"
-      
   - title: Content Shutdown Crashes
     name: Content Shutdown Crashes
     explore: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar
@@ -243,39 +181,8 @@
     ]
     filters:
       bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.probe: content_shutdown_crashes
-    row: 30
+    row: 20
     col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile: "#ff6a06"
-      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high: "#ffb380"
-      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low: "#ffb380"
-      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile: "blue"
-      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high: "#8cd3ff"
-      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low: "#8cd3ff"
-      
-  - title: Plugin Crashes
-    name: Plugin Crashes
-    explore: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar
-    type: "looker_line"
-    fields: [
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.submission_date,
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.branch,
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high,
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low,
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile
-    ]
-    pivots: [
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.branch
-    ]
-    filters:
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.probe: plugin_crashes
-    row: 40
-    col: 0
     width: 12
     height: 8
     listen:
@@ -305,7 +212,38 @@
     ]
     filters:
       bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.probe: gpu_crashes
-    row: 40
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile: "#ff6a06"
+      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high: "#ffb380"
+      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low: "#ffb380"
+      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile: "blue"
+      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high: "#8cd3ff"
+      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low: "#8cd3ff"
+      
+  - title: Plugin Crashes
+    name: Plugin Crashes
+    explore: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar
+    type: "looker_line"
+    fields: [
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.submission_date,
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.branch,
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high,
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low,
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile
+    ]
+    pivots: [
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.branch
+    ]
+    filters:
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.probe: plugin_crashes
+    row: 30
     col: 12
     width: 12
     height: 8
@@ -336,6 +274,68 @@
     ]
     filters:
       bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.probe: shutdown_hangs
+    row: 40
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile: "#ff6a06"
+      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high: "#ffb380"
+      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low: "#ffb380"
+      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile: "blue"
+      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high: "#8cd3ff"
+      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low: "#8cd3ff"
+      
+  - title: Gmplugin Crashes
+    name: Gmplugin Crashes
+    explore: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar
+    type: "looker_line"
+    fields: [
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.submission_date,
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.branch,
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high,
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low,
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile
+    ]
+    pivots: [
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.branch
+    ]
+    filters:
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.probe: gmplugin_crashes
+    row: 40
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile: "#ff6a06"
+      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high: "#ffb380"
+      enabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low: "#ffb380"
+      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile: "blue"
+      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high: "#8cd3ff"
+      disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low: "#8cd3ff"
+      
+  - title: Content Crashes
+    name: Content Crashes
+    explore: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar
+    type: "looker_line"
+    fields: [
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.submission_date,
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.branch,
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high,
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low,
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.percentile
+    ]
+    pivots: [
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.branch
+    ]
+    filters:
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.probe: content_crashes
     row: 50
     col: 0
     width: 12
@@ -351,8 +351,8 @@
       disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.high: "#8cd3ff"
       disabled - bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.low: "#8cd3ff"
       
-  - title: Startup Crashes
-    name: Startup Crashes
+  - title: Oom Crashes
+    name: Oom Crashes
     explore: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar
     type: "looker_line"
     fields: [
@@ -366,7 +366,7 @@
       bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.branch
     ]
     filters:
-      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.probe: startup_crashes
+      bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar.probe: oom_crashes
     row: 50
     col: 12
     width: 12
