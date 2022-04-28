@@ -10,6 +10,37 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Gc Ms
+    name: Gc Ms
+    explore: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram
+    type: "looker_line"
+    fields: [
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.submission_date,
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.branch,
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.high,
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.low,
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.percentile
+    ]
+    pivots: [
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.branch
+    ]
+    filters:
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.probe: gc_ms
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.percentile: "#ff6a06"
+      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.high: "#ffb380"
+      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.low: "#ffb380"
+      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.percentile: "blue"
+      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.high: "#8cd3ff"
+      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.low: "#8cd3ff"
+      
   - title: Content Process Count
     name: Content Process Count
     explore: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram
@@ -27,7 +58,7 @@
     filters:
       bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.probe: content_process_count
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     listen:
@@ -57,37 +88,6 @@
     ]
     filters:
       bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.probe: memory_total
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.percentile: "#ff6a06"
-      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.high: "#ffb380"
-      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.low: "#ffb380"
-      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.percentile: "blue"
-      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.high: "#8cd3ff"
-      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.low: "#8cd3ff"
-      
-  - title: Gc Ms
-    name: Gc Ms
-    explore: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram
-    type: "looker_line"
-    fields: [
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.submission_date,
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.branch,
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.high,
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.low,
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.percentile
-    ]
-    pivots: [
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.branch
-    ]
-    filters:
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.probe: gc_ms
     row: 10
     col: 0
     width: 12
@@ -103,8 +103,8 @@
       disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.high: "#8cd3ff"
       disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_histogram.low: "#8cd3ff"
       
-  - title: Startup Crashes
-    name: Startup Crashes
+  - title: Gpu Crashes
+    name: Gpu Crashes
     explore: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar
     type: "looker_line"
     fields: [
@@ -118,7 +118,7 @@
       bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch
     ]
     filters:
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: startup_crashes
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: gpu_crashes
     row: 10
     col: 12
     width: 12
@@ -165,8 +165,8 @@
       disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high: "#8cd3ff"
       disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low: "#8cd3ff"
       
-  - title: Content Shutdown Crashes
-    name: Content Shutdown Crashes
+  - title: Gmplugin Crashes
+    name: Gmplugin Crashes
     explore: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar
     type: "looker_line"
     fields: [
@@ -180,40 +180,9 @@
       bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch
     ]
     filters:
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: content_shutdown_crashes
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: gmplugin_crashes
     row: 20
     col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile: "#ff6a06"
-      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high: "#ffb380"
-      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low: "#ffb380"
-      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile: "blue"
-      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high: "#8cd3ff"
-      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low: "#8cd3ff"
-      
-  - title: Gpu Crashes
-    name: Gpu Crashes
-    explore: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar
-    type: "looker_line"
-    fields: [
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.submission_date,
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch,
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high,
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low,
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile
-    ]
-    pivots: [
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch
-    ]
-    filters:
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: gpu_crashes
-    row: 30
-    col: 0
     width: 12
     height: 8
     listen:
@@ -244,7 +213,69 @@
     filters:
       bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: plugin_crashes
     row: 30
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile: "#ff6a06"
+      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high: "#ffb380"
+      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low: "#ffb380"
+      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile: "blue"
+      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high: "#8cd3ff"
+      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low: "#8cd3ff"
+      
+  - title: Startup Crashes
+    name: Startup Crashes
+    explore: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar
+    type: "looker_line"
+    fields: [
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.submission_date,
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch,
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high,
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low,
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile
+    ]
+    pivots: [
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch
+    ]
+    filters:
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: startup_crashes
+    row: 30
     col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile: "#ff6a06"
+      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high: "#ffb380"
+      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low: "#ffb380"
+      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile: "blue"
+      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high: "#8cd3ff"
+      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low: "#8cd3ff"
+      
+  - title: Content Shutdown Crashes
+    name: Content Shutdown Crashes
+    explore: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar
+    type: "looker_line"
+    fields: [
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.submission_date,
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch,
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high,
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low,
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile
+    ]
+    pivots: [
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch
+    ]
+    filters:
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: content_shutdown_crashes
+    row: 40
+    col: 0
     width: 12
     height: 8
     listen:
@@ -275,69 +306,7 @@
     filters:
       bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: shutdown_hangs
     row: 40
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile: "#ff6a06"
-      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high: "#ffb380"
-      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low: "#ffb380"
-      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile: "blue"
-      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high: "#8cd3ff"
-      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low: "#8cd3ff"
-      
-  - title: Gmplugin Crashes
-    name: Gmplugin Crashes
-    explore: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar
-    type: "looker_line"
-    fields: [
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.submission_date,
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch,
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high,
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low,
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile
-    ]
-    pivots: [
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch
-    ]
-    filters:
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: gmplugin_crashes
-    row: 40
     col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile: "#ff6a06"
-      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high: "#ffb380"
-      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low: "#ffb380"
-      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile: "blue"
-      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high: "#8cd3ff"
-      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low: "#8cd3ff"
-      
-  - title: Content Crashes
-    name: Content Crashes
-    explore: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar
-    type: "looker_line"
-    fields: [
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.submission_date,
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch,
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high,
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low,
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile
-    ]
-    pivots: [
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch
-    ]
-    filters:
-      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: content_crashes
-    row: 50
-    col: 0
     width: 12
     height: 8
     listen:
@@ -367,6 +336,37 @@
     ]
     filters:
       bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: oom_crashes
+    row: 50
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile: "#ff6a06"
+      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high: "#ffb380"
+      enabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low: "#ffb380"
+      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile: "blue"
+      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high: "#8cd3ff"
+      disabled - bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low: "#8cd3ff"
+      
+  - title: Content Crashes
+    name: Content Crashes
+    explore: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar
+    type: "looker_line"
+    fields: [
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.submission_date,
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch,
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.high,
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.low,
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile
+    ]
+    pivots: [
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.branch
+    ]
+    filters:
+      bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.probe: content_crashes
     row: 50
     col: 12
     width: 12
