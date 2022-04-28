@@ -13,6 +13,22 @@ explore: sync_after_tab_change_rollout_5_histogram {
     ]
   }
 
+  aggregate_table: rollup_gc_ms {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        sync_after_tab_change_rollout_5_histogram.branch: "enabled, disabled",
+        sync_after_tab_change_rollout_5_histogram.percentile_conf: "50",
+        sync_after_tab_change_rollout_5_histogram.probe: "gc_ms",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
   aggregate_table: rollup_content_process_count {
     query: {
       dimensions: [submission_date, branch]
@@ -37,22 +53,6 @@ explore: sync_after_tab_change_rollout_5_histogram {
         sync_after_tab_change_rollout_5_histogram.branch: "enabled, disabled",
         sync_after_tab_change_rollout_5_histogram.percentile_conf: "50",
         sync_after_tab_change_rollout_5_histogram.probe: "memory_total",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_gc_ms {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        sync_after_tab_change_rollout_5_histogram.branch: "enabled, disabled",
-        sync_after_tab_change_rollout_5_histogram.percentile_conf: "50",
-        sync_after_tab_change_rollout_5_histogram.probe: "gc_ms",
       ]
     }
 
