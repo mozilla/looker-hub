@@ -1538,6 +1538,11 @@ view: clients_daily_table {
     type: string
   }
 
+  dimension: user_pref_browser_urlbar_suggest_bestmatch {
+    sql: ${TABLE}.user_pref_browser_urlbar_suggest_bestmatch ;;
+    type: string
+  }
+
   dimension: user_pref_browser_urlbar_suggest_quicksuggest {
     sql: ${TABLE}.user_pref_browser_urlbar_suggest_quicksuggest ;;
     type: string

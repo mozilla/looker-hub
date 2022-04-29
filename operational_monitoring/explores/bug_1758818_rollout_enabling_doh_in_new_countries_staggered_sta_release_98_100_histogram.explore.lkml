@@ -13,14 +13,14 @@ explore: bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release
     ]
   }
 
-  aggregate_table: rollup_memory_total {
+  aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_histogram.branch: "enabled, disabled",
         bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_histogram.percentile_conf: "50",
-        bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_histogram.probe: "memory_total",
+        bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_histogram.probe: "gc_ms",
       ]
     }
 
@@ -45,14 +45,14 @@ explore: bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release
     }
   }
 
-  aggregate_table: rollup_gc_ms {
+  aggregate_table: rollup_memory_total {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_histogram.branch: "enabled, disabled",
         bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_histogram.percentile_conf: "50",
-        bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_histogram.probe: "gc_ms",
+        bug_1758818_rollout_enabling_doh_in_new_countries_staggered_sta_release_98_100_histogram.probe: "memory_total",
       ]
     }
 
