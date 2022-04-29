@@ -36,6 +36,13 @@ view: desktop_events_table {
     group_item_label: "Minor Version"
   }
 
+  dimension: browser_version_info__patch_revision {
+    sql: ${TABLE}.browser_version_info.patch_revision ;;
+    type: number
+    group_label: "Browser Version Info"
+    group_item_label: "Patch Revision"
+  }
+
   dimension: browser_version_info__version {
     sql: ${TABLE}.browser_version_info.version ;;
     type: string

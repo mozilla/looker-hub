@@ -13,7 +13,7 @@ explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar {
     ]
   }
 
-  aggregate_table: rollup_main_crashes {
+  aggregate_table: rollup_uri_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
@@ -22,25 +22,7 @@ explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar {
         bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf: "50",
         bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count: "2",
         bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os: "Windows",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.probe: "main_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_startup_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch: "enabled, disabled",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf: "50",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count: "2",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os: "Windows",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.probe: "startup_crashes",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.probe: "uri_count",
       ]
     }
 
@@ -85,7 +67,7 @@ explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar {
     }
   }
 
-  aggregate_table: rollup_uri_count {
+  aggregate_table: rollup_main_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
@@ -94,61 +76,7 @@ explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar {
         bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf: "50",
         bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count: "2",
         bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os: "Windows",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.probe: "uri_count",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_plugin_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch: "enabled, disabled",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf: "50",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count: "2",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os: "Windows",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.probe: "plugin_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_content_shutdown_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch: "enabled, disabled",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf: "50",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count: "2",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os: "Windows",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.probe: "content_shutdown_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_oom_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch: "enabled, disabled",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf: "50",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count: "2",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os: "Windows",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.probe: "oom_crashes",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.probe: "main_crashes",
       ]
     }
 
@@ -193,7 +121,7 @@ explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar {
     }
   }
 
-  aggregate_table: rollup_active_ticks {
+  aggregate_table: rollup_oom_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
@@ -202,7 +130,43 @@ explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar {
         bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf: "50",
         bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count: "2",
         bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os: "Windows",
-        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.probe: "active_ticks",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.probe: "oom_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_startup_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch: "enabled, disabled",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf: "50",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count: "2",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os: "Windows",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.probe: "startup_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_shutdown_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch: "enabled, disabled",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf: "50",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count: "2",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os: "Windows",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.probe: "content_shutdown_crashes",
       ]
     }
 
@@ -221,6 +185,42 @@ explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar {
         bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count: "2",
         bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os: "Windows",
         bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.probe: "subsession_length",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_active_ticks {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch: "enabled, disabled",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf: "50",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count: "2",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os: "Windows",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.probe: "active_ticks",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_plugin_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch: "enabled, disabled",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf: "50",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count: "2",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os: "Windows",
+        bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.probe: "plugin_crashes",
       ]
     }
 
