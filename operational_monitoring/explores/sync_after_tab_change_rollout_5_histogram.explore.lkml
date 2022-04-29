@@ -13,14 +13,14 @@ explore: sync_after_tab_change_rollout_5_histogram {
     ]
   }
 
-  aggregate_table: rollup_memory_total {
+  aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         sync_after_tab_change_rollout_5_histogram.branch: "enabled, disabled",
         sync_after_tab_change_rollout_5_histogram.percentile_conf: "50",
-        sync_after_tab_change_rollout_5_histogram.probe: "memory_total",
+        sync_after_tab_change_rollout_5_histogram.probe: "gc_ms",
       ]
     }
 
@@ -45,14 +45,14 @@ explore: sync_after_tab_change_rollout_5_histogram {
     }
   }
 
-  aggregate_table: rollup_gc_ms {
+  aggregate_table: rollup_memory_total {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         sync_after_tab_change_rollout_5_histogram.branch: "enabled, disabled",
         sync_after_tab_change_rollout_5_histogram.percentile_conf: "50",
-        sync_after_tab_change_rollout_5_histogram.probe: "gc_ms",
+        sync_after_tab_change_rollout_5_histogram.probe: "memory_total",
       ]
     }
 
