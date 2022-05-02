@@ -10,37 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Gc Ms
-    name: Gc Ms
-    explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram
-    type: "looker_line"
-    fields: [
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.submission_date,
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.branch,
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.high,
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.low,
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.percentile
-    ]
-    pivots: [
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.branch
-    ]
-    filters:
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.probe: gc_ms
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.percentile: "#ff6a06"
-      enabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.high: "#ffb380"
-      enabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.low: "#ffb380"
-      disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.percentile: "blue"
-      disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.high: "#8cd3ff"
-      disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.low: "#8cd3ff"
-      
   - title: Content Process Count
     name: Content Process Count
     explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram
@@ -57,6 +26,37 @@
     ]
     filters:
       bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.probe: content_process_count
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.percentile: "#ff6a06"
+      enabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.high: "#ffb380"
+      enabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.low: "#ffb380"
+      disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.percentile: "blue"
+      disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.high: "#8cd3ff"
+      disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.low: "#8cd3ff"
+      
+  - title: Gc Ms
+    name: Gc Ms
+    explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram
+    type: "looker_line"
+    fields: [
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.submission_date,
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.branch,
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.high,
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.low,
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.percentile
+    ]
+    pivots: [
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.branch
+    ]
+    filters:
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.probe: gc_ms
     row: 0
     col: 12
     width: 12
@@ -103,6 +103,37 @@
       disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.high: "#8cd3ff"
       disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.low: "#8cd3ff"
       
+  - title: Gpu Crashes
+    name: Gpu Crashes
+    explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar
+    type: "looker_line"
+    fields: [
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.submission_date,
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch,
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.high,
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.low,
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile
+    ]
+    pivots: [
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch
+    ]
+    filters:
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: gpu_crashes
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    listen:
+      Percentile: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile: "#ff6a06"
+      enabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.high: "#ffb380"
+      enabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.low: "#ffb380"
+      disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile: "blue"
+      disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.high: "#8cd3ff"
+      disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.low: "#8cd3ff"
+      
   - title: Main Crashes
     name: Main Crashes
     explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar
@@ -119,7 +150,38 @@
     ]
     filters:
       bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: main_crashes
-    row: 10
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    listen:
+      Percentile: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile_conf
+    y_axes: [{type: log}]
+    series_colors:
+      enabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile: "#ff6a06"
+      enabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.high: "#ffb380"
+      enabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.low: "#ffb380"
+      disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile: "blue"
+      disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.high: "#8cd3ff"
+      disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.low: "#8cd3ff"
+      
+  - title: Plugin Crashes
+    name: Plugin Crashes
+    explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar
+    type: "looker_line"
+    fields: [
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.submission_date,
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch,
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.high,
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.low,
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile
+    ]
+    pivots: [
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch
+    ]
+    filters:
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: plugin_crashes
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -150,68 +212,6 @@
     ]
     filters:
       bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: content_shutdown_crashes
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    listen:
-      Percentile: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile: "#ff6a06"
-      enabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.high: "#ffb380"
-      enabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.low: "#ffb380"
-      disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile: "blue"
-      disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.high: "#8cd3ff"
-      disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.low: "#8cd3ff"
-      
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
-    explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar
-    type: "looker_line"
-    fields: [
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.submission_date,
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch,
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.high,
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.low,
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile
-    ]
-    pivots: [
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch
-    ]
-    filters:
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: shutdown_hangs
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    listen:
-      Percentile: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile: "#ff6a06"
-      enabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.high: "#ffb380"
-      enabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.low: "#ffb380"
-      disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile: "blue"
-      disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.high: "#8cd3ff"
-      disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.low: "#8cd3ff"
-      
-  - title: Plugin Crashes
-    name: Plugin Crashes
-    explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar
-    type: "looker_line"
-    fields: [
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.submission_date,
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch,
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.high,
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.low,
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile
-    ]
-    pivots: [
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch
-    ]
-    filters:
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: plugin_crashes
     row: 30
     col: 0
     width: 12
@@ -227,8 +227,8 @@
       disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.high: "#8cd3ff"
       disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.low: "#8cd3ff"
       
-  - title: Gmplugin Crashes
-    name: Gmplugin Crashes
+  - title: Startup Crashes
+    name: Startup Crashes
     explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar
     type: "looker_line"
     fields: [
@@ -242,7 +242,7 @@
       bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch
     ]
     filters:
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: gmplugin_crashes
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: startup_crashes
     row: 30
     col: 12
     width: 12
@@ -320,8 +320,8 @@
       disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.high: "#8cd3ff"
       disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.low: "#8cd3ff"
       
-  - title: Gpu Crashes
-    name: Gpu Crashes
+  - title: Gmplugin Crashes
+    name: Gmplugin Crashes
     explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar
     type: "looker_line"
     fields: [
@@ -335,7 +335,7 @@
       bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch
     ]
     filters:
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: gpu_crashes
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: gmplugin_crashes
     row: 50
     col: 0
     width: 12
@@ -351,8 +351,8 @@
       disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.high: "#8cd3ff"
       disabled - bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.low: "#8cd3ff"
       
-  - title: Startup Crashes
-    name: Startup Crashes
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
     explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar
     type: "looker_line"
     fields: [
@@ -366,7 +366,7 @@
       bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch
     ]
     filters:
-      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: startup_crashes
+      bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: shutdown_hangs
     row: 50
     col: 12
     width: 12

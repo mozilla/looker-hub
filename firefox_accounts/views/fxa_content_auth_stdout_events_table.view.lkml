@@ -136,6 +136,11 @@ view: fxa_content_auth_stdout_events_table {
     type: string
   }
 
+  dimension: source_country {
+    sql: ${TABLE}.source_country ;;
+    type: string
+  }
+
   dimension: sync_active_devices_day {
     sql: ${TABLE}.sync_active_devices_day ;;
     type: string
