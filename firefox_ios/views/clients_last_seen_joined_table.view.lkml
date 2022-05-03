@@ -116,6 +116,11 @@ view: clients_last_seen_joined_table {
     type: yesno
   }
 
+  dimension: isp {
+    sql: ${TABLE}.isp ;;
+    type: string
+  }
+
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string

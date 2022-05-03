@@ -3144,8 +3144,10 @@ when writing a pending ping to disk.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The number of tasks queued in the pre-initialization buffer.
-Only sent if the buffer overflows.
+    description: "The number of tasks that overflowed the pre-initialization buffer.
+Only sent if the buffer ever overflows.
+
+In Version 0 this reported the total number of tasks enqueued.
 "
   }
 

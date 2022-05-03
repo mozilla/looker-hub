@@ -76,6 +76,11 @@ view: baseline_clients_daily_table {
     type: yesno
   }
 
+  dimension: isp {
+    sql: ${TABLE}.isp ;;
+    type: string
+  }
+
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
