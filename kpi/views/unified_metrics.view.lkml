@@ -25,6 +25,46 @@ view: unified_metrics {
     type: string
   }
 
+  dimension: app_version {
+    sql: ${TABLE}.app_version ;;
+    type: string
+  }
+
+  dimension: attribution_campaign {
+    sql: ${TABLE}.attribution_campaign ;;
+    type: string
+  }
+
+  dimension: attribution_content {
+    sql: ${TABLE}.attribution_content ;;
+    type: string
+  }
+
+  dimension: attribution_experiment {
+    sql: ${TABLE}.attribution_experiment ;;
+    type: string
+  }
+
+  dimension: attribution_medium {
+    sql: ${TABLE}.attribution_medium ;;
+    type: string
+  }
+
+  dimension: attribution_source {
+    sql: ${TABLE}.attribution_source ;;
+    type: string
+  }
+
+  dimension: attribution_variation {
+    sql: ${TABLE}.attribution_variation ;;
+    type: string
+  }
+
+  dimension: city {
+    sql: ${TABLE}.city ;;
+    type: string
+  }
+
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
@@ -48,6 +88,11 @@ view: unified_metrics {
 
   dimension: device_model {
     sql: ${TABLE}.device_model ;;
+    type: string
+  }
+
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
     type: string
   }
 
@@ -93,6 +138,21 @@ view: unified_metrics {
 
   dimension: organic_search_count {
     sql: ${TABLE}.organic_search_count ;;
+    type: number
+  }
+
+  dimension: os_version_major {
+    sql: ${TABLE}.os_version_major ;;
+    type: number
+  }
+
+  dimension: os_version_minor {
+    sql: ${TABLE}.os_version_minor ;;
+    type: number
+  }
+
+  dimension: os_version_patch {
+    sql: ${TABLE}.os_version_patch ;;
     type: number
   }
 
