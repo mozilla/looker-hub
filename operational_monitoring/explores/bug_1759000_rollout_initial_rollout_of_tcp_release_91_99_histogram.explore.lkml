@@ -29,30 +29,14 @@ explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram {
     }
   }
 
-  aggregate_table: rollup_gc_ms {
+  aggregate_table: rollup_child_process_launch_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.branch: "enabled, disabled",
         bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.percentile_conf: "50",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.probe: "gc_ms",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_memory_total {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.branch: "enabled, disabled",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.percentile_conf: "50",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.probe: "memory_total",
+        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.probe: "child_process_launch_ms",
       ]
     }
 
