@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 view: desktop_search_alert_records {
   dimension: __index_level_0__ {
     sql: ${TABLE}.__index_level_0__ ;;
@@ -53,6 +59,11 @@ view: desktop_search_alert_records {
   dimension: is_holiday {
     sql: ${TABLE}.is_holiday ;;
     type: yesno
+  }
+
+  dimension: latest_abnormality_in_days {
+    sql: ${TABLE}.latest_abnormality_in_days ;;
+    type: number
   }
 
   dimension: metric {

@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 include: "/looker-hub/fenix/views/metrics.view.lkml"
 
 explore: metrics {
@@ -11,6 +17,16 @@ explore: metrics {
       channel: "mozdata.fenix.metrics",
       submission_date: "28 days",
     ]
+  }
+
+  join: metrics__metrics__labeled_counter__avif_a1lx {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_a1lx}) AS metrics__metrics__labeled_counter__avif_a1lx ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_a1lx.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__avif_a1op {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_a1op}) AS metrics__metrics__labeled_counter__avif_a1op ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_a1op.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__avif_alpha {
@@ -38,6 +54,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_cicp_tc}) AS metrics__metrics__labeled_counter__avif_cicp_tc ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_cicp_tc.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__avif_clap {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_clap}) AS metrics__metrics__labeled_counter__avif_clap ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_clap.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__avif_colr {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_colr}) AS metrics__metrics__labeled_counter__avif_colr ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_colr.document_id} ;;
@@ -53,14 +74,44 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_decoder}) AS metrics__metrics__labeled_counter__avif_decoder ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_decoder.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__avif_grid {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_grid}) AS metrics__metrics__labeled_counter__avif_grid ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_grid.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__avif_ipro {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_ipro}) AS metrics__metrics__labeled_counter__avif_ipro ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_ipro.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__avif_ispe {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_ispe}) AS metrics__metrics__labeled_counter__avif_ispe ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_ispe.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__avif_lsel {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_lsel}) AS metrics__metrics__labeled_counter__avif_lsel ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_lsel.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__avif_major_brand {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_major_brand}) AS metrics__metrics__labeled_counter__avif_major_brand ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_major_brand.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__avif_pasp {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_pasp}) AS metrics__metrics__labeled_counter__avif_pasp ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_pasp.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__avif_pixi {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_pixi}) AS metrics__metrics__labeled_counter__avif_pixi ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_pixi.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__avif_sequence {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_sequence}) AS metrics__metrics__labeled_counter__avif_sequence ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_sequence.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__avif_yuv_color_space {
@@ -128,6 +179,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__glean_validation_pings_submitted}) AS metrics__metrics__labeled_counter__glean_validation_pings_submitted ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__glean_validation_pings_submitted.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__gmp_update_xml_fetch_result}) AS metrics__metrics__labeled_counter__gmp_update_xml_fetch_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__gmp_update_xml_fetch_result.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__logins_store_read_query_error_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__logins_store_read_query_error_count}) AS metrics__metrics__labeled_counter__logins_store_read_query_error_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__logins_store_read_query_error_count.document_id} ;;
@@ -172,6 +228,99 @@ explore: metrics {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__places_manager_write_query_error_count}) AS metrics__metrics__labeled_counter__places_manager_write_query_error_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__places_manager_write_query_error_count.document_id} ;;
   }
+
+  join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_content_background}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_parent_active}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_time_per_process_type_ms}) AS metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_gpu_time_per_process_type_ms}) AS metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_wakeups_per_process_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_process_type}) AS metrics__metrics__labeled_counter__power_wakeups_per_process_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_process_type.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_content_background}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_content_foreground}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_gpu_process}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_parent_active}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_parent_inactive}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened}) AS metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown}) AS metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__tabs_tray_access_point {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tabs_tray_access_point}) AS metrics__metrics__labeled_counter__tabs_tray_access_point ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tabs_tray_access_point.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__wallpapers_new_wallpaper_applied {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__wallpapers_new_wallpaper_applied}) AS metrics__metrics__labeled_counter__wallpapers_new_wallpaper_applied ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__wallpapers_new_wallpaper_applied.document_id} ;;
+  }
+}
+
+explore: suggest__metrics__metrics__labeled_counter__avif_a1lx {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__avif_a1op {
+  hidden: yes
 }
 
 explore: suggest__metrics__metrics__labeled_counter__avif_alpha {
@@ -194,6 +343,10 @@ explore: suggest__metrics__metrics__labeled_counter__avif_cicp_tc {
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__avif_clap {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__avif_colr {
   hidden: yes
 }
@@ -206,11 +359,35 @@ explore: suggest__metrics__metrics__labeled_counter__avif_decoder {
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__avif_grid {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__avif_ipro {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__avif_ispe {
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__avif_lsel {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__avif_major_brand {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__avif_pasp {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__avif_pixi {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__avif_sequence {
   hidden: yes
 }
 
@@ -266,6 +443,10 @@ explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_subm
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_count {
   hidden: yes
 }
@@ -299,5 +480,73 @@ explore: suggest__metrics__metrics__labeled_counter__places_manager_read_query_e
 }
 
 explore: suggest__metrics__metrics__labeled_counter__places_manager_write_query_error_count {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_process_type {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__tabs_tray_access_point {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__wallpapers_new_wallpaper_applied {
   hidden: yes
 }

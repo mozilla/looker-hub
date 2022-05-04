@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 view: fxa_events_table {
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
@@ -132,6 +138,11 @@ view: fxa_events_table {
 
   dimension: utm_campaign {
     sql: ${TABLE}.utm_campaign ;;
+    type: string
+  }
+
+  dimension: utm_content {
+    sql: ${TABLE}.utm_content ;;
     type: string
   }
 

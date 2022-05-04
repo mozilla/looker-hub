@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 view: metrics {
   dimension: metrics__boolean__addons_has_enabled_addons {
     label: "Addons Has Enabled Addons"
@@ -239,6 +245,24 @@ manually by the user.
 "
   }
 
+  dimension: metrics__boolean__customize_home_contile {
+    label: "Customize Home Contile"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.customize_home_contile ;;
+    type: yesno
+    group_label: "Customize Home"
+    group_item_label: "Contile"
+
+    link: {
+      label: "Glean Dictionary reference for Customize Home Contile"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/customize_home_contile"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An indication of whether Contile is enabled to be displayed
+"
+  }
+
   dimension: metrics__boolean__customize_home_jump_back_in {
     label: "Customize Home Jump Back In"
     hidden: no
@@ -274,6 +298,27 @@ in section is enabled to be displayed
 
     description: "An indication of whether the most visited sites
 are enabled to be displayed
+"
+  }
+
+  dimension: metrics__string__customize_home_opening_screen {
+    label: "Customize Home Opening Screen"
+    hidden: no
+    sql: ${TABLE}.metrics.string.customize_home_opening_screen ;;
+    type: string
+    group_label: "Customize Home"
+    group_item_label: "Opening Screen"
+
+    link: {
+      label: "Glean Dictionary reference for Customize Home Opening Screen"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/customize_home_opening_screen"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "What opening screen preference the user has selected
+under \"Customize Home\".
+\"homepage,\" \"last tab,\" or \"homepage after 4 hours\"
+default: \"homepage after 4 hours\"
 "
   }
 
@@ -330,6 +375,43 @@ saved section is enabled to be displayed
 
     description: "An indication of whether the Recently
 visited section is enabled to be displayed
+"
+  }
+
+  dimension: metrics__counter__downloads_downloaded_pdf_open_count {
+    label: "Downloads Downloaded Pdf Open Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.downloads_downloaded_pdf_open_count ;;
+    type: number
+    group_label: "Downloads"
+    group_item_label: "Downloaded Pdf Open Count"
+
+    link: {
+      label: "Glean Dictionary reference for Downloads Downloaded Pdf Open Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/downloads_downloaded_pdf_open_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many times open button has been clicked
+for a downloaded pdf.
+"
+  }
+
+  dimension: metrics__counter__downloads_pdf_download_count {
+    label: "Downloads Pdf Download Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.downloads_pdf_download_count ;;
+    type: number
+    group_label: "Downloads"
+    group_item_label: "Pdf Download Count"
+
+    link: {
+      label: "Glean Dictionary reference for Downloads Pdf Download Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/downloads_pdf_download_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many times a pdf has been downloaded.
 "
   }
 
@@ -451,7 +533,7 @@ programmatically redirect to a new location.
 
   dimension: metrics__counter__events_total_uri_count {
     label: "Events Total Uri Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.events_total_uri_count ;;
     type: number
     group_label: "Events"
@@ -486,6 +568,24 @@ location.
     }
 
     description: "Records the branch name of the active experiment, if the client is enrolled in the `fenix-test-2019-08-05` experiment. This is intended to validate that the service-experiments library properly matches clients to experiments and can take action based on a multi-branched experiment. This is done by recording the experiment branch name in this string metric which allows the experiment to be transparent and unobtrusive to the user.
+"
+  }
+
+  dimension: metrics__counter__home_screen_home_screen_view_count {
+    label: "Home Screen Home Screen View Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.home_screen_home_screen_view_count ;;
+    type: number
+    group_label: "Home Screen"
+    group_item_label: "Home Screen View Count"
+
+    link: {
+      label: "Glean Dictionary reference for Home Screen Home Screen View Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/home_screen_home_screen_view_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times the home screen was displayed to the user.
 "
   }
 
@@ -849,7 +949,8 @@ See recently_used_pwa_count for the actual count.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "How many inactive tabs does the user have.
+    description: "How many inactive tabs does the user have, checked when the user opens
+the tabs tray.
 Value will be 0 if the feature is disabled.
 "
   }
@@ -1708,7 +1809,7 @@ default: false
 
   dimension: metrics__boolean__preferences_open_links_in_private {
     label: "Preferences Open Links In Private"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.preferences_open_links_in_private ;;
     type: yesno
     group_label: "Preferences"
@@ -1726,7 +1827,7 @@ default: false
 
   dimension: metrics__boolean__preferences_private_search_suggestions {
     label: "Preferences Private Search Suggestions"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.preferences_private_search_suggestions ;;
     type: yesno
     group_label: "Preferences"
@@ -1991,6 +2092,97 @@ on the home screen.
 "
   }
 
+  dimension: metrics__counter__recent_synced_tabs_latest_synced_tab_is_stale {
+    label: "Recent Synced Tabs Latest Synced Tab Is Stale"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.recent_synced_tabs_latest_synced_tab_is_stale ;;
+    type: number
+    group_label: "Recent Synced Tabs"
+    group_item_label: "Latest Synced Tab Is Stale"
+
+    link: {
+      label: "Glean Dictionary reference for Recent Synced Tabs Latest Synced Tab Is Stale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_latest_synced_tab_is_stale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often the loading placeholder is shown and the resulting tab
+is the same as it was before the load.
+"
+  }
+
+  dimension: metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened {
+    label: "Recent Synced Tabs Recent Synced Tab Opened"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.recent_synced_tabs_recent_synced_tab_opened ;;
+    group_label: "Recent Synced Tabs"
+    group_item_label: "Recent Synced Tab Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Recent Synced Tabs Recent Synced Tab Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_recent_synced_tab_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a recent synced tab is opened, labeled by the
+device type the tab originates from.
+"
+  }
+
+  dimension: metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown {
+    label: "Recent Synced Tabs Recent Synced Tab Shown"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.recent_synced_tabs_recent_synced_tab_shown ;;
+    group_label: "Recent Synced Tabs"
+    group_item_label: "Recent Synced Tab Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Recent Synced Tabs Recent Synced Tab Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_recent_synced_tab_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts impressions of a recent synced tab on the homepage, labeled by the
+device type the tab originates from.
+"
+  }
+
+  dimension: metrics__timing_distribution__recent_synced_tabs_recent_synced_tab_time_to_load__sum {
+    label: "Recent Synced Tabs Recent Synced Tab Time To Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.recent_synced_tabs_recent_synced_tab_time_to_load.sum ;;
+    type: number
+    group_label: "Recent Synced Tabs"
+    group_item_label: "Recent Synced Tab Time To Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Recent Synced Tabs Recent Synced Tab Time To Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_recent_synced_tab_time_to_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures the amount of time between the beginning of a sync and the end.
+"
+  }
+
+  dimension: metrics__counter__recent_synced_tabs_show_all_synced_tabs_clicked {
+    label: "Recent Synced Tabs Show All Synced Tabs Clicked"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.recent_synced_tabs_show_all_synced_tabs_clicked ;;
+    type: number
+    group_label: "Recent Synced Tabs"
+    group_item_label: "Show All Synced Tabs Clicked"
+
+    link: {
+      label: "Glean Dictionary reference for Recent Synced Tabs Show All Synced Tabs Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_show_all_synced_tabs_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times \"show all synced tabs\" button has been clicked.
+"
+  }
+
   dimension: metrics__boolean__recent_tabs_section_visible {
     label: "Recent Tabs Section Visible"
     hidden: no
@@ -2054,7 +2246,7 @@ value will be \"custom\"
 
   dimension: metrics__string__search_default_engine_submission_url {
     label: "Search Default Engine Submission Url"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.search_default_engine_submission_url ;;
     type: string
     group_label: "Search Default Engine"
@@ -2071,6 +2263,34 @@ URL we use to build the search query for the search engine. For example:
 https://mysearchengine.com/?query=%s. If it's a custom search engine
 (defined: https://github.com/mozilla-mobile/fenix/issues/1607) the value
 will be \"custom\"
+"
+  }
+
+  dimension: metrics__custom_distribution__search_terms_group_size_distribution__sum {
+    label: "Search Terms Group Size Distribution Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.search_terms_group_size_distribution.sum ;;
+    type: number
+    group_label: "Search Terms"
+    group_item_label: "Group Size Distribution Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Search Terms Group Size Distribution Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/search_terms_group_size_distribution"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The distribution of search term tab group sizes. Rather than reporting
+individual sizes directly as integers, it is currently desired to
+report the sizes according to certain size ranges.
+The \"buckets\" for reporting group sizes will be mapped as follows:
+* 2 tabs -> 1
+* 3-5 tabs -> 2
+* 6-10 tabs -> 3
+* 11+ tabs -> 4
+Where the reported number will be 1, 2, 3, or 4, accordingly.
+As an example, say a user has three groups of sizes 3, 6, and 15. The
+app will report 2, 3, and 4 when this metric is tracked.
 "
   }
 
@@ -2160,6 +2380,23 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
+  dimension: metrics__labeled_counter__tabs_tray_access_point {
+    label: "Tabs Tray Access Point"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tabs_tray_access_point ;;
+    group_label: "Tabs Tray"
+    group_item_label: "Access Point"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Tray Access Point"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_tray_access_point"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The area that the tabs tray was accessed from.
+"
+  }
+
   dimension: metrics__counter__tabs_tray_close_inactive_tab {
     label: "Tabs Tray Close Inactive Tab"
     hidden: no
@@ -2193,6 +2430,41 @@ ensure it's not too expensive.  This value is only available on Android
     }
 
     description: "A counter that indicates how many INACTIVE tabs a user has opened.
+"
+  }
+
+  dimension: metrics__boolean__wallpapers_discovered_wallpaper_feature {
+    label: "Wallpapers Discovered Wallpaper Feature"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.wallpapers_discovered_wallpaper_feature ;;
+    type: yesno
+    group_label: "Wallpapers"
+    group_item_label: "Discovered Wallpaper Feature"
+
+    link: {
+      label: "Glean Dictionary reference for Wallpapers Discovered Wallpaper Feature"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/wallpapers_discovered_wallpaper_feature"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not the user has discovered the wallpaper feature.
+"
+  }
+
+  dimension: metrics__labeled_counter__wallpapers_new_wallpaper_applied {
+    label: "Wallpapers New Wallpaper Applied"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.wallpapers_new_wallpaper_applied ;;
+    group_label: "Wallpapers"
+    group_item_label: "New Wallpaper Applied"
+
+    link: {
+      label: "Glean Dictionary reference for Wallpapers New Wallpaper Applied"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/wallpapers_new_wallpaper_applied"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many and which type of wallpapers were applied.
 "
   }
 
@@ -2289,6 +2561,27 @@ IPC buffers and all of them being received by the parent.
 "
   }
 
+  dimension: metrics__counter__fog_ipc_flush_failures {
+    label: "Fog Ipc Flush Failures"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.fog_ipc_flush_failures ;;
+    type: number
+    group_label: "Fog Ipc"
+    group_item_label: "Flush Failures"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_ipc_flush_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we failed to flush all non-parent-process data,
+throwing even partial results into the trash.
+If this number is high, we might consider writing custom `MozPromise`-
+handling code instead of using `MozPromise::All`.
+"
+  }
+
   dimension: metrics__counter__fog_ipc_replay_failures {
     label: "Fog Ipc Replay Failures"
     hidden: no
@@ -2310,7 +2603,7 @@ parent process.
 
   dimension: metrics__string__geckoview_validation_build_id {
     label: "Geckoview Validation Build Id"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.geckoview_validation_build_id ;;
     type: string
     group_label: "Geckoview Validation"
@@ -2328,7 +2621,7 @@ parent process.
 
   dimension: metrics__string__geckoview_validation_version {
     label: "Geckoview Validation Version"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.geckoview_validation_version ;;
     type: string
     group_label: "Geckoview Validation"
@@ -2341,6 +2634,43 @@ parent process.
     }
 
     description: "The version of the Gecko engine, example: 74.0a1 Mirror of `geckoview.version` for validation of migrated data.
+"
+  }
+
+  dimension: metrics__boolean__gifft_validation_main_ping_assembling {
+    label: "Gifft Validation Main Ping Assembling"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.gifft_validation_main_ping_assembling ;;
+    type: yesno
+    group_label: "Gifft Validation"
+    group_item_label: "Main Ping Assembling"
+
+    link: {
+      label: "Glean Dictionary reference for Gifft Validation Main Ping Assembling"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gifft_validation_main_ping_assembling"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value `true`, recorded when a Firefox Telemetry \"main\" ping is about
+to be assembled.
+To be used to validate GIFFT.
+"
+  }
+
+  dimension: metrics__labeled_counter__gmp_update_xml_fetch_result {
+    label: "Gmp Update Xml Fetch Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.gmp_update_xml_fetch_result ;;
+    group_label: "Gmp"
+    group_item_label: "Update Xml Fetch Result"
+
+    link: {
+      label: "Glean Dictionary reference for Gmp Update Xml Fetch Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gmp_update_xml_fetch_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The result of Gecko fetching an update.xml from Balrog. This captures 3 different data points: success or failure of the request, if cert pinning or content signatures were used to verify the result, and the reason for failure, if the request failed.
 "
   }
 
@@ -2362,6 +2692,161 @@ parent process.
 "
   }
 
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
+    label: "Power Cpu Ms Per Thread Content Background"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_content_background ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Content Background"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Content Background"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_cpu_ms_per_thread_content_background"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
+    label: "Power Cpu Ms Per Thread Content Foreground"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_content_foreground ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Content Foreground"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Content Foreground"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_cpu_ms_per_thread_content_foreground"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
+    label: "Power Cpu Ms Per Thread Gpu Process"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_gpu_process ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Gpu Process"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Gpu Process"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_cpu_ms_per_thread_gpu_process"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
+    label: "Power Cpu Ms Per Thread Parent Active"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_parent_active ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Parent Active"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Parent Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_cpu_ms_per_thread_parent_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
+    label: "Power Cpu Ms Per Thread Parent Inactive"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_parent_inactive ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Parent Inactive"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Parent Inactive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_cpu_ms_per_thread_parent_inactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__counter__power_cpu_time_bogus_values {
+    label: "Power Cpu Time Bogus Values"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_cpu_time_bogus_values ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Cpu Time Bogus Values"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_cpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Impossibly large CPU time values that were discarded.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+    label: "Power Cpu Time Per Process Type Ms"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_time_per_process_type_ms ;;
+    group_label: "Power"
+    group_item_label: "Cpu Time Per Process Type Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Per Process Type Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_cpu_time_per_process_type_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "CPU time used by each process type in ms.
+"
+  }
+
+  dimension: metrics__counter__power_gpu_time_bogus_values {
+    label: "Power Gpu Time Bogus Values"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_gpu_time_bogus_values ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Gpu Time Bogus Values"
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_gpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Impossibly large GPU time values that were discarded.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_gpu_time_per_process_type_ms {
+    label: "Power Gpu Time Per Process Type Ms"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_gpu_time_per_process_type_ms ;;
+    group_label: "Power"
+    group_item_label: "Gpu Time Per Process Type Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Per Process Type Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_gpu_time_per_process_type_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "GPU time used by each process type in ms.
+"
+  }
+
   dimension: metrics__counter__power_total_cpu_time_ms {
     label: "Power Total Cpu Time Ms"
     hidden: no
@@ -2377,6 +2862,162 @@ parent process.
     }
 
     description: "Total CPU time used by all processes in ms.
+"
+  }
+
+  dimension: metrics__counter__power_total_gpu_time_ms {
+    label: "Power Total Gpu Time Ms"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_total_gpu_time_ms ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Total Gpu Time Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Gpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_total_gpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total GPU time used by all processes in ms.
+"
+  }
+
+  dimension: metrics__counter__power_total_thread_wakeups {
+    label: "Power Total Thread Wakeups"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_total_thread_wakeups ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Total Thread Wakeups"
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Thread Wakeups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_total_thread_wakeups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_process_type {
+    label: "Power Wakeups Per Process Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_process_type ;;
+    group_label: "Power"
+    group_item_label: "Wakeups Per Process Type"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Process Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_wakeups_per_process_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_content_background {
+    label: "Power Wakeups Per Thread Content Background"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_content_background ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Content Background"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Content Background"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_wakeups_per_thread_content_background"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
+    label: "Power Wakeups Per Thread Content Foreground"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_content_foreground ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Content Foreground"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Content Foreground"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_wakeups_per_thread_content_foreground"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
+    label: "Power Wakeups Per Thread Gpu Process"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_gpu_process ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Gpu Process"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Gpu Process"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_wakeups_per_thread_gpu_process"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_parent_active {
+    label: "Power Wakeups Per Thread Parent Active"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_parent_active ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Parent Active"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Parent Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_wakeups_per_thread_parent_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+    label: "Power Wakeups Per Thread Parent Inactive"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_parent_inactive ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Parent Inactive"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Parent Inactive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_wakeups_per_thread_parent_inactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__sum {
+    label: "Wr Rasterize Glyphs Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Rasterize Glyphs Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Rasterize Glyphs Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/wr_rasterize_glyphs_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time to rasterize glyphs for consumption by WebRender.
 "
   }
 
@@ -2503,8 +3144,10 @@ when writing a pending ping to disk.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The number of tasks queued in the pre-initialization buffer.
-Only sent if the buffer overflows.
+    description: "The number of tasks that overflowed the pre-initialization buffer.
+Only sent if the buffer ever overflows.
+
+In Version 0 this reported the total number of tasks enqueued.
 "
   }
 
@@ -2527,7 +3170,7 @@ Only sent if the buffer overflows.
 
   dimension: metrics__counter__glean_time_invalid_timezone_offset {
     label: "Glean Time Invalid Timezone Offset"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glean_time_invalid_timezone_offset ;;
     type: number
     group_label: "Glean Time"
@@ -2954,6 +3597,40 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__labeled_counter__avif_a1lx {
+    label: "Avif A1Lx"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_a1lx ;;
+    group_label: "Avif"
+    group_item_label: "A1Lx"
+
+    link: {
+      label: "Glean Dictionary reference for Avif A1Lx"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_a1lx"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AV1LayeredImageIndexingProperty (a1lx).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_a1op {
+    label: "Avif A1Op"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_a1op ;;
+    group_label: "Avif"
+    group_item_label: "A1Op"
+
+    link: {
+      label: "Glean Dictionary reference for Avif A1Op"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_a1op"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF OperatingPointSelectorProperty (a1op).
+"
+  }
+
   dimension: metrics__labeled_counter__avif_alpha {
     label: "Avif Alpha"
     hidden: yes
@@ -3057,6 +3734,23 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__labeled_counter__avif_clap {
+    label: "Avif Clap"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_clap ;;
+    group_label: "Avif"
+    group_item_label: "Clap"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Clap"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_clap"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF CleanApertureBox (clap).
+"
+  }
+
   dimension: metrics__labeled_counter__avif_colr {
     label: "Avif Colr"
     hidden: yes
@@ -3126,6 +3820,40 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__labeled_counter__avif_grid {
+    label: "Avif Grid"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_grid ;;
+    group_label: "Avif"
+    group_item_label: "Grid"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Grid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_grid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF AVIF grid-based image.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_ipro {
+    label: "Avif Ipro"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_ipro ;;
+    group_label: "Avif"
+    group_item_label: "Ipro"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Ipro"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_ipro"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF ItemProtectionBox (ipro).
+"
+  }
+
   dimension: metrics__labeled_counter__avif_ispe {
     label: "Avif Ispe"
     hidden: yes
@@ -3143,6 +3871,57 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__labeled_counter__avif_lsel {
+    label: "Avif Lsel"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_lsel ;;
+    group_label: "Avif"
+    group_item_label: "Lsel"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Lsel"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_lsel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF LayerSelectorProperty (lsel).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_major_brand {
+    label: "Avif Major Brand"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_major_brand ;;
+    group_label: "Avif"
+    group_item_label: "Major Brand"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Major Brand"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_major_brand"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF major brand.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_pasp {
+    label: "Avif Pasp"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_pasp ;;
+    group_label: "Avif"
+    group_item_label: "Pasp"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Pasp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_pasp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF pixel aspect ratio.
+"
+  }
+
   dimension: metrics__labeled_counter__avif_pixi {
     label: "Avif Pixi"
     hidden: yes
@@ -3157,6 +3936,23 @@ documented in the ping's pings.yaml file.
     }
 
     description: "AVIF pixel information (bits per channel).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_sequence {
+    label: "Avif Sequence"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_sequence ;;
+    group_label: "Avif"
+    group_item_label: "Sequence"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Sequence"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_sequence"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF image sequence.
 "
   }
 
@@ -5041,7 +5837,7 @@ documented in the ping's pings.yaml file.
     }
 
     description: "Counts the number of crashes that occur in the application. This measures only the counts of each crash in association with the labeled type of the crash. The labels correspond to the types of crashes handled by lib-crash.
-Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfatal_native_code_crash`
+Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_code_crash` replaced by `main_proc_native_code_crash`, `fg_proc_native_code_crash` and `bg_proc_native_code_crash`.
 "
   }
 
@@ -5223,6 +6019,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: client_info__android_sdk_version {
@@ -5230,6 +6027,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "Android Sdk Version"
+    description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
   dimension: client_info__app_build {
@@ -5237,6 +6035,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "App Build"
+    description: "The build identifier generated by the CI system (e.g. \"1234/A\"). For language bindings that provide automatic detection for this value, (e.g. Android/Kotlin), in the unlikely event that the build identifier can not be retrieved from the OS, it is set to \"inaccessible\". For other language bindings, if the value was not provided through configuration, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__app_channel {
@@ -5244,6 +6043,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "App Channel"
+    description: "The channel the application is being distributed on."
   }
 
   dimension: client_info__app_display_version {
@@ -5251,6 +6051,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "App Display Version"
+    description: "The user visible version string (e.g. \"1.0.3\").  In the unlikely event that the display version can not be retrieved, it is set to \"inaccessible\"."
   }
 
   dimension: client_info__architecture {
@@ -5258,11 +6059,21 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "Architecture"
+    description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
+  }
+
+  dimension: client_info__build_date {
+    sql: ${TABLE}.client_info.build_date ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Build Date"
+    description: "The date & time the application was built"
   }
 
   dimension: client_info__client_id {
     sql: ${TABLE}.client_info.client_id ;;
     hidden: yes
+    description: "A UUID uniquely identifying the client."
   }
 
   dimension: client_info__device_manufacturer {
@@ -5270,6 +6081,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
+    description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__device_model {
@@ -5277,6 +6089,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "Device Model"
+    description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__first_run_date {
@@ -5284,6 +6097,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "First Run Date"
+    description: "The date of the first run of the application."
   }
 
   dimension: client_info__locale {
@@ -5291,6 +6105,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "Locale"
+    description: "The locale of the application during initialization (e.g. \"es-ES\"). If the locale can't be determined on the system, the value is [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers), to indicate \"undetermined\"."
   }
 
   dimension: client_info__os {
@@ -5298,6 +6113,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "Os"
+    description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
   dimension: client_info__os_version {
@@ -5305,6 +6121,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
+    description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -5312,11 +6129,13 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
+    description: "The version of the Glean SDK"
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    description: "The document ID specified in the URI when the client sent this message"
     primary_key: yes
   }
 
@@ -5338,6 +6157,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -5345,6 +6165,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Db Version"
+    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -5352,6 +6173,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
+    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -5359,6 +6181,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
+    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -5366,6 +6189,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Header"
     group_item_label: "Date"
+    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -5373,6 +6197,21 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Header"
     group_item_label: "Dnt"
+    description: "DNT (Do Not Track) HTTP header"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
+    type: string
+    group_label: "Metadata Header Parsed X Lb Tags"
+    group_item_label: "Tls Cipher Hex"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_version {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
+    type: string
+    group_label: "Metadata Header Parsed X Lb Tags"
+    group_item_label: "Tls Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -5385,6 +6224,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Debug Id"
+    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -5392,6 +6232,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
+    description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -5399,6 +6240,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Lb Tags"
+    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -5406,6 +6248,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
+    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -5413,6 +6256,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
+    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -5420,6 +6264,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
+    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -5427,6 +6272,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Db Version"
+    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -5434,6 +6280,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Name"
+    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -5441,6 +6288,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Organization"
+    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -5467,21 +6315,25 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -5532,6 +6384,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metadata__header__parsed {
@@ -5591,6 +6444,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
       quarter,
       year,
     ]
+    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: clients {
@@ -5727,6 +6581,56 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     }
   }
 
+  measure: downloads_downloaded_pdf_open_count {
+    type: sum
+    sql: ${metrics__counter__downloads_downloaded_pdf_open_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Downloads Downloaded Pdf Open Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/downloads_downloaded_pdf_open_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: downloads_downloaded_pdf_open_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__downloads_downloaded_pdf_open_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Downloads Downloaded Pdf Open Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/downloads_downloaded_pdf_open_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: downloads_pdf_download_count {
+    type: sum
+    sql: ${metrics__counter__downloads_pdf_download_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Downloads Pdf Download Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/downloads_pdf_download_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: downloads_pdf_download_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__downloads_pdf_download_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Downloads Pdf Download Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/downloads_pdf_download_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: events_normal_and_private_uri_count {
     type: sum
     sql: ${metrics__counter__events_normal_and_private_uri_count} ;;
@@ -5773,6 +6677,31 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     link: {
       label: "Glean Dictionary reference for Events Total Uri Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_total_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: home_screen_home_screen_view_count {
+    type: sum
+    sql: ${metrics__counter__home_screen_home_screen_view_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Home Screen Home Screen View Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/home_screen_home_screen_view_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: home_screen_home_screen_view_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__home_screen_home_screen_view_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Home Screen Home Screen View Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/home_screen_home_screen_view_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -6027,6 +6956,56 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     }
   }
 
+  measure: recent_synced_tabs_latest_synced_tab_is_stale {
+    type: sum
+    sql: ${metrics__counter__recent_synced_tabs_latest_synced_tab_is_stale} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Recent Synced Tabs Latest Synced Tab Is Stale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_latest_synced_tab_is_stale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: recent_synced_tabs_latest_synced_tab_is_stale_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__recent_synced_tabs_latest_synced_tab_is_stale: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Recent Synced Tabs Latest Synced Tab Is Stale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_latest_synced_tab_is_stale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: recent_synced_tabs_show_all_synced_tabs_clicked {
+    type: sum
+    sql: ${metrics__counter__recent_synced_tabs_show_all_synced_tabs_clicked} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Recent Synced Tabs Show All Synced Tabs Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_show_all_synced_tabs_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: recent_synced_tabs_show_all_synced_tabs_clicked_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__recent_synced_tabs_show_all_synced_tabs_clicked: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Recent Synced Tabs Show All Synced Tabs Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_show_all_synced_tabs_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: tabs_tray_close_inactive_tab {
     type: sum
     sql: ${metrics__counter__tabs_tray_close_inactive_tab} ;;
@@ -6077,6 +7056,31 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     }
   }
 
+  measure: fog_ipc_flush_failures {
+    type: sum
+    sql: ${metrics__counter__fog_ipc_flush_failures} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_ipc_flush_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_flush_failures_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__fog_ipc_flush_failures: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_ipc_flush_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: fog_ipc_replay_failures {
     type: sum
     sql: ${metrics__counter__fog_ipc_replay_failures} ;;
@@ -6102,6 +7106,56 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     }
   }
 
+  measure: power_cpu_time_bogus_values {
+    type: sum
+    sql: ${metrics__counter__power_cpu_time_bogus_values} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_cpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_cpu_time_bogus_values_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_cpu_time_bogus_values: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_cpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_gpu_time_bogus_values {
+    type: sum
+    sql: ${metrics__counter__power_gpu_time_bogus_values} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_gpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_gpu_time_bogus_values_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_gpu_time_bogus_values: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_gpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: power_total_cpu_time_ms {
     type: sum
     sql: ${metrics__counter__power_total_cpu_time_ms} ;;
@@ -6123,6 +7177,56 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     link: {
       label: "Glean Dictionary reference for Power Total Cpu Time Ms"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_total_cpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_gpu_time_ms {
+    type: sum
+    sql: ${metrics__counter__power_total_gpu_time_ms} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Gpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_total_gpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_gpu_time_ms_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_total_gpu_time_ms: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Gpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_total_gpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_thread_wakeups {
+    type: sum
+    sql: ${metrics__counter__power_total_thread_wakeups} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Thread Wakeups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_total_thread_wakeups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_thread_wakeups_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_total_thread_wakeups: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Thread Wakeups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_total_thread_wakeups"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -6550,6 +7654,92 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
   sql_table_name: `{% parameter channel %}` ;;
 }
 
+view: metrics__metrics__labeled_counter__avif_a1lx {
+  label: "Avif - A1Lx"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_a1lx
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_a1lx.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_a1op {
+  label: "Avif - A1Op"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_a1op
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_a1op.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__avif_alpha {
   label: "Avif - Alpha"
 
@@ -6765,6 +7955,49 @@ view: metrics__metrics__labeled_counter__avif_cicp_tc {
   }
 }
 
+view: metrics__metrics__labeled_counter__avif_clap {
+  label: "Avif - Clap"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_clap
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_clap.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__avif_colr {
   label: "Avif - Colr"
 
@@ -6894,6 +8127,92 @@ view: metrics__metrics__labeled_counter__avif_decoder {
   }
 }
 
+view: metrics__metrics__labeled_counter__avif_grid {
+  label: "Avif - Grid"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_grid
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_grid.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_ipro {
+  label: "Avif - Ipro"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_ipro
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_ipro.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__avif_ispe {
   label: "Avif - Ispe"
 
@@ -6937,6 +8256,135 @@ view: metrics__metrics__labeled_counter__avif_ispe {
   }
 }
 
+view: metrics__metrics__labeled_counter__avif_lsel {
+  label: "Avif - Lsel"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_lsel
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_lsel.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_major_brand {
+  label: "Avif - Major Brand"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_major_brand
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_major_brand.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_pasp {
+  label: "Avif - Pasp"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_pasp
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_pasp.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__avif_pixi {
   label: "Avif - Pixi"
 
@@ -6958,6 +8406,49 @@ view: metrics__metrics__labeled_counter__avif_pixi {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__avif_pixi
     suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_pixi.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_sequence {
+  label: "Avif - Sequence"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_sequence
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_sequence.key
     hidden: no
   }
 
@@ -7539,6 +9030,49 @@ view: metrics__metrics__labeled_counter__glean_validation_pings_submitted {
   }
 }
 
+view: metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
+  label: "Gmp - Update Xml Fetch Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__logins_store_read_query_error_count {
   label: "Logins Store - Read Query Error Count"
 
@@ -7926,6 +9460,775 @@ view: metrics__metrics__labeled_counter__places_manager_write_query_error_count 
   }
 }
 
+view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
+  label: "Power Cpu Ms Per Thread - Content Background"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
+  label: "Power Cpu Ms Per Thread - Content Foreground"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
+  label: "Power Cpu Ms Per Thread - Gpu Process"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
+  label: "Power Cpu Ms Per Thread - Parent Active"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
+  label: "Power Cpu Ms Per Thread - Parent Inactive"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+  label: "Power - Cpu Time Per Process Type Ms"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
+  label: "Power - Gpu Time Per Process Type Ms"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_process_type {
+  label: "Power - Wakeups Per Process Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_process_type
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_process_type.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background {
+  label: "Power Wakeups Per Thread - Content Background"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
+  label: "Power Wakeups Per Thread - Content Foreground"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
+  label: "Power Wakeups Per Thread - Gpu Process"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active {
+  label: "Power Wakeups Per Thread - Parent Active"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+  label: "Power Wakeups Per Thread - Parent Inactive"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened {
+  label: "Recent Synced Tabs - Recent Synced Tab Opened"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown {
+  label: "Recent Synced Tabs - Recent Synced Tab Shown"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__tabs_tray_access_point {
+  label: "Tabs Tray - Access Point"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__tabs_tray_access_point
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__tabs_tray_access_point.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__wallpapers_new_wallpaper_applied {
+  label: "Wallpapers - New Wallpaper Applied"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__wallpapers_new_wallpaper_applied
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__wallpapers_new_wallpaper_applied.key
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_a1lx {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.avif_a1lx) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_a1op {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.avif_a1op) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__avif_alpha {
   derived_table: {
     sql: select
@@ -8021,6 +10324,25 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__avif_clap {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.avif_clap) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__avif_colr {
   derived_table: {
     sql: select
@@ -8078,6 +10400,44 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__avif_grid {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.avif_grid) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_ipro {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.avif_ipro) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__avif_ispe {
   derived_table: {
     sql: select
@@ -8097,6 +10457,63 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__avif_lsel {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.avif_lsel) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_major_brand {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.avif_major_brand) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_pasp {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.avif_pasp) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__avif_pixi {
   derived_table: {
     sql: select
@@ -8104,6 +10521,25 @@ view: suggest__metrics__metrics__labeled_counter__avif_pixi {
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.avif_pixi) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_sequence {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.avif_sequence) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -8363,6 +10799,25 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.gmp_update_xml_fetch_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__logins_store_read_query_error_count {
   derived_table: {
     sql: select
@@ -8522,6 +10977,329 @@ view: suggest__metrics__metrics__labeled_counter__places_manager_write_query_err
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.places_manager_write_query_error_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_ms_per_thread_content_background) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_ms_per_thread_content_foreground) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_ms_per_thread_gpu_process) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_ms_per_thread_parent_active) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_ms_per_thread_parent_inactive) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_time_per_process_type_ms) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.power_gpu_time_per_process_type_ms) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_process_type {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.power_wakeups_per_process_type) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.power_wakeups_per_thread_content_background) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.power_wakeups_per_thread_content_foreground) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.power_wakeups_per_thread_gpu_process) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.power_wakeups_per_thread_parent_active) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.power_wakeups_per_thread_parent_inactive) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.recent_synced_tabs_recent_synced_tab_opened) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_shown {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.recent_synced_tabs_recent_synced_tab_shown) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__tabs_tray_access_point {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.tabs_tray_access_point) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__wallpapers_new_wallpaper_applied {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.wallpapers_new_wallpaper_applied) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 include: "events_daily_table.view.lkml"
 
 view: funnel_analysis {
@@ -68,24 +74,28 @@ view: funnel_analysis {
   measure: fraction_completed_step_1 {
     description: "Of the user-days that completed Step 1, the fraction that completed step 1."
     type: number
+    value_format: "0.00%"
     sql: SAFE_DIVIDE(${count_completed_step_1}, ${count_completed_step_1}) ;;
   }
 
   measure: fraction_completed_step_2 {
     description: "Of the user-days that completed Step 1, the fraction that completed step 2."
     type: number
+    value_format: "0.00%"
     sql: SAFE_DIVIDE(${count_completed_step_2}, ${count_completed_step_1}) ;;
   }
 
   measure: fraction_completed_step_3 {
     description: "Of the user-days that completed Step 1, the fraction that completed step 3."
     type: number
+    value_format: "0.00%"
     sql: SAFE_DIVIDE(${count_completed_step_3}, ${count_completed_step_1}) ;;
   }
 
   measure: fraction_completed_step_4 {
     description: "Of the user-days that completed Step 1, the fraction that completed step 4."
     type: number
+    value_format: "0.00%"
     sql: SAFE_DIVIDE(${count_completed_step_4}, ${count_completed_step_1}) ;;
   }
 }

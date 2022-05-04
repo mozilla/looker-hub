@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 view: topsites_click {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
@@ -78,6 +84,20 @@ view: topsites_click {
     type: string
     group_label: "Metadata Header"
     group_item_label: "Dnt"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
+    type: string
+    group_label: "Metadata Header Parsed X Lb Tags"
+    group_item_label: "Tls Cipher Hex"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_version {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
+    type: string
+    group_label: "Metadata Header Parsed X Lb Tags"
+    group_item_label: "Tls Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {

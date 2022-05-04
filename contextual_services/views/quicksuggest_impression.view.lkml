@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 view: quicksuggest_impression {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
@@ -37,6 +43,11 @@ view: quicksuggest_impression {
 
   dimension: locale {
     sql: ${TABLE}.locale ;;
+    type: string
+  }
+
+  dimension: match_type {
+    sql: ${TABLE}.match_type ;;
     type: string
   }
 
@@ -90,6 +101,20 @@ view: quicksuggest_impression {
     group_item_label: "Dnt"
   }
 
+  dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
+    type: string
+    group_label: "Metadata Header Parsed X Lb Tags"
+    group_item_label: "Tls Cipher Hex"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_version {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
+    type: string
+    group_label: "Metadata Header Parsed X Lb Tags"
+    group_item_label: "Tls Version"
+  }
+
   dimension: metadata__header__parsed_x_source_tags {
     sql: ${TABLE}.metadata.header.parsed_x_source_tags ;;
     hidden: yes
@@ -107,6 +132,13 @@ view: quicksuggest_impression {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
+  }
+
+  dimension: metadata__header__x_lb_tags {
+    sql: ${TABLE}.metadata.header.x_lb_tags ;;
+    type: string
+    group_label: "Metadata Header"
+    group_item_label: "X Lb Tags"
   }
 
   dimension: metadata__header__x_pingsender_version {

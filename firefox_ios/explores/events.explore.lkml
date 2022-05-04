@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 include: "/looker-hub/firefox_ios/views/events.view.lkml"
 
 explore: event_counts {
@@ -12,6 +18,18 @@ explore: event_counts {
     filters: [
       submission_date: "14 days",
     ]
+  }
+
+  join: events_unnested_table__event_extra {
+    view_label: "Events  Event Extra"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${events.event_extra}) AS events_unnested_table__event_extra ;;
+  }
+
+  join: events_unnested_table__ping_info__experiments {
+    view_label: "Events  Ping Info  Experiments"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${events.ping_info__experiments}) AS events_unnested_table__ping_info__experiments ;;
   }
 
   always_filter: {

@@ -1,4 +1,101 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 view: metrics {
+  dimension: metrics__counter__browser_engagement_active_ticks {
+    label: "Browser Engagement Active Ticks"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_active_ticks ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Active Ticks"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Active Ticks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_active_ticks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of five-second intervals ('ticks') the user was considered
+'active'.
+
+'active' means keyboard or mouse interaction with the application.
+It doesn't take into account whether or not the window has focus or is in
+the foreground, only if it is receiving these interaction events.
+
+Migrated from Telemetry's `browser.engagement.active_ticks`.
+"
+  }
+
+  dimension: metrics__counter__browser_engagement_uri_count {
+    label: "Browser Engagement Uri Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_engagement_uri_count ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Uri Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of total non-unique http(s) URIs visited, including page
+reloads, after the session has been restored. URIs on minimized or
+background tabs may also be counted. Private browsing uris are included.
+
+Migrated from Telemetry's
+`browser.engagement.total_uri_count_normal_and_private_mode`.
+"
+  }
+
+  dimension: metrics__quantity__browser_link_open_newwindow_restriction {
+    label: "Browser Link Open Newwindow Restriction"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.browser_link_open_newwindow_restriction ;;
+    type: number
+    group_label: "Browser Link"
+    group_item_label: "Open Newwindow Restriction"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Link Open Newwindow Restriction"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_link_open_newwindow_restriction"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "browser.link.open_newwindow.restriction preference value, that is one of 0, 1, or 2, where 2 is desktop default
+"
+  }
+
+  dimension: metrics__uuid__legacy_telemetry_client_id {
+    label: "Legacy Telemetry Client Id"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
+    type: string
+    group_label: "Legacy Telemetry"
+    group_item_label: "Client Id"
+
+    link: {
+      label: "Glean Dictionary reference for Legacy Telemetry Client Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/legacy_telemetry_client_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The client_id according to Telemetry.
+Might not always have a value due to being too early for it to have
+loaded.
+Value may be the canary client id `c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0`
+in pings near when the data upload pref is disabled (if Telemetry gets
+to go first), or between when a client_id has been removed and when it
+has been regenerated.
+Does not need to be sent in the Glean \"deletion-request\" ping.
+"
+  }
+
   dimension: metrics__boolean__browser_ui_proton_enabled {
     label: "Browser Ui Proton Enabled"
     hidden: yes
@@ -92,6 +189,27 @@ IPC buffers and all of them being received by the parent.
 "
   }
 
+  dimension: metrics__counter__fog_ipc_flush_failures {
+    label: "Fog Ipc Flush Failures"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.fog_ipc_flush_failures ;;
+    type: number
+    group_label: "Fog Ipc"
+    group_item_label: "Flush Failures"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_ipc_flush_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we failed to flush all non-parent-process data,
+throwing even partial results into the trash.
+If this number is high, we might consider writing custom `MozPromise`-
+handling code instead of using `MozPromise::All`.
+"
+  }
+
   dimension: metrics__counter__fog_ipc_replay_failures {
     label: "Fog Ipc Replay Failures"
     hidden: no
@@ -113,7 +231,7 @@ parent process.
 
   dimension: metrics__string__geckoview_validation_build_id {
     label: "Geckoview Validation Build Id"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.geckoview_validation_build_id ;;
     type: string
     group_label: "Geckoview Validation"
@@ -131,7 +249,7 @@ parent process.
 
   dimension: metrics__string__geckoview_validation_version {
     label: "Geckoview Validation Version"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.geckoview_validation_version ;;
     type: string
     group_label: "Geckoview Validation"
@@ -144,6 +262,43 @@ parent process.
     }
 
     description: "The version of the Gecko engine, example: 74.0a1 Mirror of `geckoview.version` for validation of migrated data.
+"
+  }
+
+  dimension: metrics__boolean__gifft_validation_main_ping_assembling {
+    label: "Gifft Validation Main Ping Assembling"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.gifft_validation_main_ping_assembling ;;
+    type: yesno
+    group_label: "Gifft Validation"
+    group_item_label: "Main Ping Assembling"
+
+    link: {
+      label: "Glean Dictionary reference for Gifft Validation Main Ping Assembling"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/gifft_validation_main_ping_assembling"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value `true`, recorded when a Firefox Telemetry \"main\" ping is about
+to be assembled.
+To be used to validate GIFFT.
+"
+  }
+
+  dimension: metrics__labeled_counter__gmp_update_xml_fetch_result {
+    label: "Gmp Update Xml Fetch Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.gmp_update_xml_fetch_result ;;
+    group_label: "Gmp"
+    group_item_label: "Update Xml Fetch Result"
+
+    link: {
+      label: "Glean Dictionary reference for Gmp Update Xml Fetch Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/gmp_update_xml_fetch_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The result of Gecko fetching an update.xml from Balrog. This captures 3 different data points: success or failure of the request, if cert pinning or content signatures were used to verify the result, and the reason for failure, if the request failed.
 "
   }
 
@@ -165,6 +320,161 @@ parent process.
 "
   }
 
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
+    label: "Power Cpu Ms Per Thread Content Background"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_content_background ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Content Background"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Content Background"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_cpu_ms_per_thread_content_background"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
+    label: "Power Cpu Ms Per Thread Content Foreground"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_content_foreground ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Content Foreground"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Content Foreground"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_cpu_ms_per_thread_content_foreground"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
+    label: "Power Cpu Ms Per Thread Gpu Process"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_gpu_process ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Gpu Process"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Gpu Process"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_cpu_ms_per_thread_gpu_process"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
+    label: "Power Cpu Ms Per Thread Parent Active"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_parent_active ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Parent Active"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Parent Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_cpu_ms_per_thread_parent_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
+    label: "Power Cpu Ms Per Thread Parent Inactive"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_parent_inactive ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Parent Inactive"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Parent Inactive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_cpu_ms_per_thread_parent_inactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__counter__power_cpu_time_bogus_values {
+    label: "Power Cpu Time Bogus Values"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_cpu_time_bogus_values ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Cpu Time Bogus Values"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_cpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Impossibly large CPU time values that were discarded.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+    label: "Power Cpu Time Per Process Type Ms"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_time_per_process_type_ms ;;
+    group_label: "Power"
+    group_item_label: "Cpu Time Per Process Type Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Per Process Type Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_cpu_time_per_process_type_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "CPU time used by each process type in ms.
+"
+  }
+
+  dimension: metrics__counter__power_gpu_time_bogus_values {
+    label: "Power Gpu Time Bogus Values"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_gpu_time_bogus_values ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Gpu Time Bogus Values"
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_gpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Impossibly large GPU time values that were discarded.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_gpu_time_per_process_type_ms {
+    label: "Power Gpu Time Per Process Type Ms"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_gpu_time_per_process_type_ms ;;
+    group_label: "Power"
+    group_item_label: "Gpu Time Per Process Type Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Per Process Type Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_gpu_time_per_process_type_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "GPU time used by each process type in ms.
+"
+  }
+
   dimension: metrics__counter__power_total_cpu_time_ms {
     label: "Power Total Cpu Time Ms"
     hidden: no
@@ -180,6 +490,162 @@ parent process.
     }
 
     description: "Total CPU time used by all processes in ms.
+"
+  }
+
+  dimension: metrics__counter__power_total_gpu_time_ms {
+    label: "Power Total Gpu Time Ms"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_total_gpu_time_ms ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Total Gpu Time Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Gpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_total_gpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total GPU time used by all processes in ms.
+"
+  }
+
+  dimension: metrics__counter__power_total_thread_wakeups {
+    label: "Power Total Thread Wakeups"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_total_thread_wakeups ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Total Thread Wakeups"
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Thread Wakeups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_total_thread_wakeups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_process_type {
+    label: "Power Wakeups Per Process Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_process_type ;;
+    group_label: "Power"
+    group_item_label: "Wakeups Per Process Type"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Process Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_wakeups_per_process_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_content_background {
+    label: "Power Wakeups Per Thread Content Background"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_content_background ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Content Background"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Content Background"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_wakeups_per_thread_content_background"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
+    label: "Power Wakeups Per Thread Content Foreground"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_content_foreground ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Content Foreground"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Content Foreground"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_wakeups_per_thread_content_foreground"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
+    label: "Power Wakeups Per Thread Gpu Process"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_gpu_process ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Gpu Process"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Gpu Process"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_wakeups_per_thread_gpu_process"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_parent_active {
+    label: "Power Wakeups Per Thread Parent Active"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_parent_active ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Parent Active"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Parent Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_wakeups_per_thread_parent_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+    label: "Power Wakeups Per Thread Parent Inactive"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_parent_inactive ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Parent Inactive"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Parent Inactive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_wakeups_per_thread_parent_inactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__sum {
+    label: "Wr Rasterize Glyphs Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Rasterize Glyphs Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Rasterize Glyphs Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/wr_rasterize_glyphs_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time to rasterize glyphs for consumption by WebRender.
 "
   }
 
@@ -306,8 +772,10 @@ when writing a pending ping to disk.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The number of tasks queued in the pre-initialization buffer.
-Only sent if the buffer overflows.
+    description: "The number of tasks that overflowed the pre-initialization buffer.
+Only sent if the buffer ever overflows.
+
+In Version 0 this reported the total number of tasks enqueued.
 "
   }
 
@@ -330,7 +798,7 @@ Only sent if the buffer overflows.
 
   dimension: metrics__counter__glean_time_invalid_timezone_offset {
     label: "Glean Time Invalid Timezone Offset"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glean_time_invalid_timezone_offset ;;
     type: number
     group_label: "Glean Time"
@@ -580,6 +1048,7 @@ documented in the ping's pings.yaml file.
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: client_info__android_sdk_version {
@@ -587,6 +1056,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "Android Sdk Version"
+    description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
   dimension: client_info__app_build {
@@ -594,6 +1064,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "App Build"
+    description: "The build identifier generated by the CI system (e.g. \"1234/A\"). For language bindings that provide automatic detection for this value, (e.g. Android/Kotlin), in the unlikely event that the build identifier can not be retrieved from the OS, it is set to \"inaccessible\". For other language bindings, if the value was not provided through configuration, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__app_channel {
@@ -601,6 +1072,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "App Channel"
+    description: "The channel the application is being distributed on."
   }
 
   dimension: client_info__app_display_version {
@@ -608,6 +1080,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "App Display Version"
+    description: "The user visible version string (e.g. \"1.0.3\").  In the unlikely event that the display version can not be retrieved, it is set to \"inaccessible\"."
   }
 
   dimension: client_info__architecture {
@@ -615,11 +1088,21 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "Architecture"
+    description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
+  }
+
+  dimension: client_info__build_date {
+    sql: ${TABLE}.client_info.build_date ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Build Date"
+    description: "The date & time the application was built"
   }
 
   dimension: client_info__client_id {
     sql: ${TABLE}.client_info.client_id ;;
     hidden: yes
+    description: "A UUID uniquely identifying the client."
   }
 
   dimension: client_info__device_manufacturer {
@@ -627,6 +1110,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
+    description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__device_model {
@@ -634,6 +1118,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "Device Model"
+    description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__first_run_date {
@@ -641,6 +1126,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "First Run Date"
+    description: "The date of the first run of the application."
   }
 
   dimension: client_info__locale {
@@ -648,6 +1134,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "Locale"
+    description: "The locale of the application during initialization (e.g. \"es-ES\"). If the locale can't be determined on the system, the value is [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers), to indicate \"undetermined\"."
   }
 
   dimension: client_info__os {
@@ -655,6 +1142,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "Os"
+    description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
   dimension: client_info__os_version {
@@ -662,6 +1150,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
+    description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -669,11 +1158,13 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
+    description: "The version of the Glean SDK"
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    description: "The document ID specified in the URI when the client sent this message"
     primary_key: yes
   }
 
@@ -695,6 +1186,7 @@ documented in the ping's pings.yaml file.
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -702,6 +1194,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Db Version"
+    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -709,6 +1202,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
+    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -716,6 +1210,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
+    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -723,6 +1218,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Header"
     group_item_label: "Date"
+    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -730,6 +1226,21 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Header"
     group_item_label: "Dnt"
+    description: "DNT (Do Not Track) HTTP header"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
+    type: string
+    group_label: "Metadata Header Parsed X Lb Tags"
+    group_item_label: "Tls Cipher Hex"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_version {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
+    type: string
+    group_label: "Metadata Header Parsed X Lb Tags"
+    group_item_label: "Tls Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -742,6 +1253,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Debug Id"
+    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -749,6 +1261,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
+    description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -756,6 +1269,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Lb Tags"
+    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -763,6 +1277,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
+    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -770,6 +1285,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
+    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -777,6 +1293,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
+    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -784,6 +1301,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Db Version"
+    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -791,6 +1309,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Name"
+    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -798,6 +1317,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Organization"
+    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -824,21 +1344,25 @@ documented in the ping's pings.yaml file.
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -889,6 +1413,7 @@ documented in the ping's pings.yaml file.
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metadata__header__parsed {
@@ -948,6 +1473,7 @@ documented in the ping's pings.yaml file.
       quarter,
       year,
     ]
+    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: clients {
@@ -957,6 +1483,81 @@ documented in the ping's pings.yaml file.
 
   measure: ping_count {
     type: count
+  }
+
+  measure: browser_engagement_active_ticks {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_active_ticks} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Active Ticks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_active_ticks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_active_ticks_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_active_ticks: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Active Ticks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_active_ticks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_uri_count {
+    type: sum
+    sql: ${metrics__counter__browser_engagement_uri_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_engagement_uri_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_engagement_uri_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_flush_failures {
+    type: sum
+    sql: ${metrics__counter__fog_ipc_flush_failures} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_ipc_flush_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_flush_failures_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__fog_ipc_flush_failures: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_ipc_flush_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   measure: fog_ipc_replay_failures {
@@ -984,6 +1585,56 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: power_cpu_time_bogus_values {
+    type: sum
+    sql: ${metrics__counter__power_cpu_time_bogus_values} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_cpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_cpu_time_bogus_values_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_cpu_time_bogus_values: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_cpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_gpu_time_bogus_values {
+    type: sum
+    sql: ${metrics__counter__power_gpu_time_bogus_values} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_gpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_gpu_time_bogus_values_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_gpu_time_bogus_values: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_gpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: power_total_cpu_time_ms {
     type: sum
     sql: ${metrics__counter__power_total_cpu_time_ms} ;;
@@ -1005,6 +1656,56 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Power Total Cpu Time Ms"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_total_cpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_gpu_time_ms {
+    type: sum
+    sql: ${metrics__counter__power_total_gpu_time_ms} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Gpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_total_gpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_gpu_time_ms_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_total_gpu_time_ms: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Gpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_total_gpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_thread_wakeups {
+    type: sum
+    sql: ${metrics__counter__power_total_thread_wakeups} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Thread Wakeups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_total_thread_wakeups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_thread_wakeups_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_total_thread_wakeups: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Thread Wakeups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_total_thread_wakeups"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -1470,6 +2171,608 @@ view: metrics__metrics__labeled_counter__glean_validation_pings_submitted {
   }
 }
 
+view: metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
+  label: "Gmp - Update Xml Fetch Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
+  label: "Power Cpu Ms Per Thread - Content Background"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
+  label: "Power Cpu Ms Per Thread - Content Foreground"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
+  label: "Power Cpu Ms Per Thread - Gpu Process"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
+  label: "Power Cpu Ms Per Thread - Parent Active"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
+  label: "Power Cpu Ms Per Thread - Parent Inactive"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+  label: "Power - Cpu Time Per Process Type Ms"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
+  label: "Power - Gpu Time Per Process Type Ms"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_process_type {
+  label: "Power - Wakeups Per Process Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_process_type
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_process_type.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background {
+  label: "Power Wakeups Per Thread - Content Background"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
+  label: "Power Wakeups Per Thread - Content Foreground"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
+  label: "Power Wakeups Per Thread - Gpu Process"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active {
+  label: "Power Wakeups Per Thread - Parent Active"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+  label: "Power Wakeups Per Thread - Parent Inactive"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
@@ -1572,6 +2875,272 @@ view: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitt
     count(*) as n
 from mozdata.firefox_desktop.metrics as t,
 unnest(metrics.labeled_counter.glean_validation_pings_submitted) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.gmp_update_xml_fetch_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_ms_per_thread_content_background) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_ms_per_thread_content_foreground) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_ms_per_thread_gpu_process) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_ms_per_thread_parent_active) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_ms_per_thread_parent_inactive) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_time_per_process_type_ms) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.power_gpu_time_per_process_type_ms) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_process_type {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.power_wakeups_per_process_type) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.power_wakeups_per_thread_content_background) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.power_wakeups_per_thread_content_foreground) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.power_wakeups_per_thread_gpu_process) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.power_wakeups_per_thread_parent_active) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.power_wakeups_per_thread_parent_inactive) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

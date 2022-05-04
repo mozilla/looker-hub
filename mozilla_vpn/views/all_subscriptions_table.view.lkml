@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 view: all_subscriptions_table {
   dimension: billing_grace_period {
     sql: ${TABLE}.billing_grace_period ;;
@@ -128,6 +134,11 @@ view: all_subscriptions_table {
   dimension: product_name {
     sql: ${TABLE}.product_name ;;
     type: string
+  }
+
+  dimension: promotion_codes {
+    sql: ${TABLE}.promotion_codes ;;
+    hidden: yes
   }
 
   dimension: provider {

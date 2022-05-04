@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 include: "/looker-hub/klar_android/views/metrics.view.lkml"
 
 explore: metrics {
@@ -20,6 +26,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__browser_search_in_content {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_in_content}) AS metrics__metrics__labeled_counter__browser_search_in_content ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_in_content.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_search_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_search_count}) AS metrics__metrics__labeled_counter__browser_search_search_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_search_count.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__browser_search_with_ads {
@@ -73,6 +84,10 @@ explore: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__browser_search_in_content {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__browser_search_search_count {
   hidden: yes
 }
 

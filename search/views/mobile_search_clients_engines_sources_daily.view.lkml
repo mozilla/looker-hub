@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 view: mobile_search_clients_engines_sources_daily {
   dimension: ad_click {
     sql: ${TABLE}.ad_click ;;
@@ -17,6 +23,41 @@ view: mobile_search_clients_engines_sources_daily {
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
     type: string
+  }
+
+  dimension: browser_version_info__is_major_release {
+    sql: ${TABLE}.browser_version_info.is_major_release ;;
+    type: yesno
+    group_label: "Browser Version Info"
+    group_item_label: "Is Major Release"
+  }
+
+  dimension: browser_version_info__major_version {
+    sql: ${TABLE}.browser_version_info.major_version ;;
+    type: number
+    group_label: "Browser Version Info"
+    group_item_label: "Major Version"
+  }
+
+  dimension: browser_version_info__minor_version {
+    sql: ${TABLE}.browser_version_info.minor_version ;;
+    type: number
+    group_label: "Browser Version Info"
+    group_item_label: "Minor Version"
+  }
+
+  dimension: browser_version_info__patch_revision {
+    sql: ${TABLE}.browser_version_info.patch_revision ;;
+    type: number
+    group_label: "Browser Version Info"
+    group_item_label: "Patch Revision"
+  }
+
+  dimension: browser_version_info__version {
+    sql: ${TABLE}.browser_version_info.version ;;
+    type: string
+    group_label: "Browser Version Info"
+    group_item_label: "Version"
   }
 
   dimension: channel {

@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 view: baseline_clients_first_seen_table {
   dimension: android_sdk_version {
     sql: ${TABLE}.android_sdk_version ;;
@@ -68,6 +74,11 @@ view: baseline_clients_first_seen_table {
   dimension: is_new_profile {
     sql: ${TABLE}.is_new_profile ;;
     type: yesno
+  }
+
+  dimension: isp {
+    sql: ${TABLE}.isp ;;
+    type: string
   }
 
   dimension: locale {

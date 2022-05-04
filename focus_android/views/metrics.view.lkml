@@ -1,4 +1,67 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 view: metrics {
+  dimension: metrics__counter__autocomplete_domain_added {
+    label: "Autocomplete Domain Added"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.autocomplete_domain_added ;;
+    type: number
+    group_label: "Autocomplete"
+    group_item_label: "Domain Added"
+
+    link: {
+      label: "Glean Dictionary reference for Autocomplete Domain Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/autocomplete_domain_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many times a user has added
+a website to the autocomplete list.
+"
+  }
+
+  dimension: metrics__counter__autocomplete_domain_removed {
+    label: "Autocomplete Domain Removed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.autocomplete_domain_removed ;;
+    type: number
+    group_label: "Autocomplete"
+    group_item_label: "Domain Removed"
+
+    link: {
+      label: "Glean Dictionary reference for Autocomplete Domain Removed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/autocomplete_domain_removed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many times a user has removed
+a website from the autocomplete list.
+"
+  }
+
+  dimension: metrics__counter__autocomplete_list_order_changed {
+    label: "Autocomplete List Order Changed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.autocomplete_list_order_changed ;;
+    type: number
+    group_label: "Autocomplete"
+    group_item_label: "List Order Changed"
+
+    link: {
+      label: "Glean Dictionary reference for Autocomplete List Order Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/autocomplete_list_order_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many times a user has reordered
+the autocomplete list.
+"
+  }
+
   dimension: metrics__string__browser_default_search_engine {
     label: "Browser Default Search Engine"
     hidden: no
@@ -72,6 +135,25 @@ specifically overrides it for the app.
 "
   }
 
+  dimension: metrics__counter__browser_report_site_issue_counter {
+    label: "Browser Report Site Issue Counter"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_report_site_issue_counter ;;
+    type: number
+    group_label: "Browser"
+    group_item_label: "Report Site Issue Counter"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Report Site Issue Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/browser_report_site_issue_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many times a user has tapped
+the report site issue from browser menu
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
     label: "Browser Search Ad Clicks"
     hidden: yes
@@ -104,6 +186,30 @@ The key format is `<provider-name>`.
     }
 
     description: "Records the type of interaction a user has on SERP pages.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_search_count {
+    label: "Browser Search Search Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_search_count ;;
+    group_label: "Browser Search"
+    group_item_label: "Search Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Search Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/browser_search_search_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The labels for this counter are `<search-engine-name>.<source>`.
+
+If the search engine is bundled with Focus `search-engine-name` will be
+the name of the search engine. If it's a custom search engine (defined:
+https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
+`custom`.
+
+`source` will be: `action`, `suggestion`
 "
   }
 
@@ -203,7 +309,7 @@ that programmatically redirect to a new location.
 
   dimension: metrics__counter__settings_screen_autocomplete_domain_added {
     label: "Settings Screen Autocomplete Domain Added"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.settings_screen_autocomplete_domain_added ;;
     type: number
     group_label: "Settings Screen"
@@ -313,6 +419,23 @@ It also indicates the screen it was removed from, home or browser.
     description: "The number of shortcuts the user has on home screen,
 0, 1, 2, 3 or 4 (maximum)
 "
+  }
+
+  dimension: metrics__custom_distribution__tab_count_app_backgrounded__sum {
+    label: "Tab Count App Backgrounded Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.tab_count_app_backgrounded.sum ;;
+    type: number
+    group_label: "Tab Count"
+    group_item_label: "App Backgrounded Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Tab Count App Backgrounded Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/tab_count_app_backgrounded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of opened tabs when the app has been send to background."
   }
 
   dimension: metrics__boolean__tracking_protection_has_advertising_blocked {
@@ -552,8 +675,10 @@ when writing a pending ping to disk.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The number of tasks queued in the pre-initialization buffer.
-Only sent if the buffer overflows.
+    description: "The number of tasks that overflowed the pre-initialization buffer.
+Only sent if the buffer ever overflows.
+
+In Version 0 this reported the total number of tasks enqueued.
 "
   }
 
@@ -576,7 +701,7 @@ Only sent if the buffer overflows.
 
   dimension: metrics__counter__glean_time_invalid_timezone_offset {
     label: "Glean Time Invalid Timezone Offset"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glean_time_invalid_timezone_offset ;;
     type: number
     group_label: "Glean Time"
@@ -786,7 +911,7 @@ documented in the ping's pings.yaml file.
     }
 
     description: "Counts the number of crashes that occur in the application. This measures only the counts of each crash in association with the labeled type of the crash. The labels correspond to the types of crashes handled by lib-crash.
-Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfatal_native_code_crash`
+Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_code_crash` replaced by `main_proc_native_code_crash`, `fg_proc_native_code_crash` and `bg_proc_native_code_crash`.
 "
   }
 
@@ -844,6 +969,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: client_info__android_sdk_version {
@@ -851,6 +977,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "Android Sdk Version"
+    description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
   dimension: client_info__app_build {
@@ -858,6 +985,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "App Build"
+    description: "The build identifier generated by the CI system (e.g. \"1234/A\"). For language bindings that provide automatic detection for this value, (e.g. Android/Kotlin), in the unlikely event that the build identifier can not be retrieved from the OS, it is set to \"inaccessible\". For other language bindings, if the value was not provided through configuration, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__app_channel {
@@ -865,6 +993,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "App Channel"
+    description: "The channel the application is being distributed on."
   }
 
   dimension: client_info__app_display_version {
@@ -872,6 +1001,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "App Display Version"
+    description: "The user visible version string (e.g. \"1.0.3\").  In the unlikely event that the display version can not be retrieved, it is set to \"inaccessible\"."
   }
 
   dimension: client_info__architecture {
@@ -879,11 +1009,21 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "Architecture"
+    description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
+  }
+
+  dimension: client_info__build_date {
+    sql: ${TABLE}.client_info.build_date ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Build Date"
+    description: "The date & time the application was built"
   }
 
   dimension: client_info__client_id {
     sql: ${TABLE}.client_info.client_id ;;
     hidden: yes
+    description: "A UUID uniquely identifying the client."
   }
 
   dimension: client_info__device_manufacturer {
@@ -891,6 +1031,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
+    description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__device_model {
@@ -898,6 +1039,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "Device Model"
+    description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__first_run_date {
@@ -905,6 +1047,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "First Run Date"
+    description: "The date of the first run of the application."
   }
 
   dimension: client_info__locale {
@@ -912,6 +1055,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "Locale"
+    description: "The locale of the application during initialization (e.g. \"es-ES\"). If the locale can't be determined on the system, the value is [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers), to indicate \"undetermined\"."
   }
 
   dimension: client_info__os {
@@ -919,6 +1063,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "Os"
+    description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
   dimension: client_info__os_version {
@@ -926,6 +1071,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
+    description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -933,11 +1079,13 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
+    description: "The version of the Glean SDK"
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    description: "The document ID specified in the URI when the client sent this message"
     primary_key: yes
   }
 
@@ -959,6 +1107,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -966,6 +1115,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Db Version"
+    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -973,6 +1123,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
+    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -980,6 +1131,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
+    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -987,6 +1139,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Header"
     group_item_label: "Date"
+    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -994,6 +1147,21 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Header"
     group_item_label: "Dnt"
+    description: "DNT (Do Not Track) HTTP header"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
+    type: string
+    group_label: "Metadata Header Parsed X Lb Tags"
+    group_item_label: "Tls Cipher Hex"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_version {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
+    type: string
+    group_label: "Metadata Header Parsed X Lb Tags"
+    group_item_label: "Tls Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -1006,6 +1174,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Debug Id"
+    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -1013,6 +1182,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
+    description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -1020,6 +1190,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Lb Tags"
+    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -1027,6 +1198,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
+    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -1034,6 +1206,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
+    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -1041,6 +1214,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
+    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -1048,6 +1222,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Db Version"
+    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -1055,6 +1230,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Name"
+    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -1062,6 +1238,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Organization"
+    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -1088,21 +1265,25 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -1153,6 +1334,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metadata__header__parsed {
@@ -1212,6 +1394,7 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
       quarter,
       year,
     ]
+    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: clients {
@@ -1221,6 +1404,106 @@ Deprecated: `native_code_crash` replaced by `fatal_native_code_crash` and `nonfa
 
   measure: ping_count {
     type: count
+  }
+
+  measure: autocomplete_domain_added {
+    type: sum
+    sql: ${metrics__counter__autocomplete_domain_added} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Autocomplete Domain Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/autocomplete_domain_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: autocomplete_domain_added_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__autocomplete_domain_added: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Autocomplete Domain Added"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/autocomplete_domain_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: autocomplete_domain_removed {
+    type: sum
+    sql: ${metrics__counter__autocomplete_domain_removed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Autocomplete Domain Removed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/autocomplete_domain_removed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: autocomplete_domain_removed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__autocomplete_domain_removed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Autocomplete Domain Removed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/autocomplete_domain_removed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: autocomplete_list_order_changed {
+    type: sum
+    sql: ${metrics__counter__autocomplete_list_order_changed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Autocomplete List Order Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/autocomplete_list_order_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: autocomplete_list_order_changed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__autocomplete_list_order_changed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Autocomplete List Order Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/autocomplete_list_order_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_report_site_issue_counter {
+    type: sum
+    sql: ${metrics__counter__browser_report_site_issue_counter} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Report Site Issue Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/browser_report_site_issue_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_report_site_issue_counter_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_report_site_issue_counter: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Report Site Issue Counter"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/browser_report_site_issue_counter"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   measure: browser_total_uri_count {
@@ -1682,6 +1965,49 @@ view: metrics__metrics__labeled_counter__browser_search_in_content {
   }
 }
 
+view: metrics__metrics__labeled_counter__browser_search_search_count {
+  label: "Browser Search - Search Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_search_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_search_count.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__browser_search_with_ads {
   label: "Browser Search - With Ads"
 
@@ -2095,6 +2421,25 @@ view: suggest__metrics__metrics__labeled_counter__browser_search_in_content {
     count(*) as n
 from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.browser_search_in_content) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__browser_search_search_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.browser_search_search_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

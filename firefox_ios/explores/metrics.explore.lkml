@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 include: "/looker-hub/firefox_ios/views/metrics.view.lkml"
 
 explore: metrics {
@@ -48,6 +54,41 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_with_ads}) AS metrics__metrics__labeled_counter__browser_search_with_ads ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_with_ads.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__firefox_home_page_firefox_homepage_origin {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__firefox_home_page_firefox_homepage_origin}) AS metrics__metrics__labeled_counter__firefox_home_page_firefox_homepage_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__firefox_home_page_firefox_homepage_origin.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_group_open_origin {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__firefox_home_page_jump_back_in_group_open_origin}) AS metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_group_open_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_group_open_origin.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_show_all_origin {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__firefox_home_page_jump_back_in_show_all_origin}) AS metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_show_all_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_show_all_origin.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_tab_opened_origin {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__firefox_home_page_jump_back_in_tab_opened_origin}) AS metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_tab_opened_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_tab_opened_origin.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__firefox_home_page_recently_saved_bookmark_origin {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__firefox_home_page_recently_saved_bookmark_origin}) AS metrics__metrics__labeled_counter__firefox_home_page_recently_saved_bookmark_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__firefox_home_page_recently_saved_bookmark_origin.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__firefox_home_page_recently_saved_read_origin {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__firefox_home_page_recently_saved_read_origin}) AS metrics__metrics__labeled_counter__firefox_home_page_recently_saved_read_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__firefox_home_page_recently_saved_read_origin.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin}) AS metrics__metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__firefox_home_page_your_library {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__firefox_home_page_your_library}) AS metrics__metrics__labeled_counter__firefox_home_page_your_library ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__firefox_home_page_your_library.document_id} ;;
@@ -83,6 +124,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__glean_validation_pings_submitted}) AS metrics__metrics__labeled_counter__glean_validation_pings_submitted ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__glean_validation_pings_submitted.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__history_selected_item {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__history_selected_item}) AS metrics__metrics__labeled_counter__history_selected_item ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__history_selected_item.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray}) AS metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray.document_id} ;;
@@ -106,6 +152,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__logins_store_write_query_error_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__logins_store_write_query_error_count}) AS metrics__metrics__labeled_counter__logins_store_write_query_error_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__logins_store_write_query_error_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pocket_open_story_origin {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pocket_open_story_origin}) AS metrics__metrics__labeled_counter__pocket_open_story_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pocket_open_story_origin.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__pocket_open_story_position {
@@ -152,6 +203,11 @@ explore: metrics {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tabs_open}) AS metrics__metrics__labeled_counter__tabs_open ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tabs_open.document_id} ;;
   }
+
+  join: metrics__metrics__labeled_counter__top_site_pressed_tile_origin {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__top_site_pressed_tile_origin}) AS metrics__metrics__labeled_counter__top_site_pressed_tile_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__top_site_pressed_tile_origin.document_id} ;;
+  }
 }
 
 explore: suggest__metrics__metrics__labeled_counter__bookmarks_add {
@@ -179,6 +235,34 @@ explore: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__browser_search_with_ads {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_firefox_homepage_origin {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_group_open_origin {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_show_all_origin {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_tab_opened_origin {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_bookmark_origin {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_read_origin {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin {
   hidden: yes
 }
 
@@ -210,6 +294,10 @@ explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_subm
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__history_selected_item {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
   hidden: yes
 }
@@ -227,6 +315,10 @@ explore: suggest__metrics__metrics__labeled_counter__logins_store_unlock_error_c
 }
 
 explore: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__pocket_open_story_origin {
   hidden: yes
 }
 
@@ -263,5 +355,9 @@ explore: suggest__metrics__metrics__labeled_counter__tabs_close_all {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__tabs_open {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__top_site_pressed_tile_origin {
   hidden: yes
 }

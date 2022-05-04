@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 view: urlbar_clients_daily {
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
@@ -29,6 +35,11 @@ view: urlbar_clients_daily {
     type: string
   }
 
+  dimension: experiments {
+    sql: ${TABLE}.experiments ;;
+    hidden: yes
+  }
+
   dimension: in_navbar {
     sql: ${TABLE}.in_navbar ;;
     type: yesno
@@ -41,6 +52,11 @@ view: urlbar_clients_daily {
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
+    type: string
+  }
+
+  dimension: quicksuggest_data_collection_enabled {
+    sql: ${TABLE}.quicksuggest_data_collection_enabled ;;
     type: string
   }
 
@@ -66,6 +82,11 @@ view: urlbar_clients_daily {
 
   dimension: suggest_quicksuggest {
     sql: ${TABLE}.suggest_quicksuggest ;;
+    type: yesno
+  }
+
+  dimension: suggest_quicksuggest_nonsponsored {
+    sql: ${TABLE}.suggest_quicksuggest_nonsponsored ;;
     type: yesno
   }
 
@@ -128,6 +149,18 @@ view: urlbar_clients_daily__count_picked_by_type {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
+  }
+}
+
+view: urlbar_clients_daily__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
   }
 }
 

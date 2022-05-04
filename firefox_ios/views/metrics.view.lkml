@@ -1,3 +1,9 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 view: metrics {
   dimension: metrics__counter__app_opened_as_default_browser {
     label: "App Opened As Default Browser"
@@ -510,6 +516,44 @@ settings menu to customize the Firefox Homepage
 "
   }
 
+  dimension: metrics__counter__firefox_home_page_cycle_wallpaper_button {
+    label: "Firefox Home Page Cycle Wallpaper Button"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.firefox_home_page_cycle_wallpaper_button ;;
+    type: number
+    group_label: "Firefox Home Page"
+    group_item_label: "Cycle Wallpaper Button"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Cycle Wallpaper Button"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_cycle_wallpaper_button"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user changes the
+wallpaper by double-tapping on the Firefox logo
+on the Firefox Homepage
+"
+  }
+
+  dimension: metrics__labeled_counter__firefox_home_page_firefox_homepage_origin {
+    label: "Firefox Home Page Firefox Homepage Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_firefox_homepage_origin ;;
+    group_label: "Firefox Home Page"
+    group_item_label: "Firefox Homepage Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Firefox Homepage Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_firefox_homepage_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times a user sees the Firefox Homepage,
+with a home page origin.
+"
+  }
+
   dimension: metrics__counter__firefox_home_page_firefox_homepage_view {
     label: "Firefox Home Page Firefox Homepage View"
     hidden: no
@@ -525,6 +569,82 @@ settings menu to customize the Firefox Homepage
     }
 
     description: "The number of times a user sees the Firefox Homepage
+"
+  }
+
+  dimension: metrics__counter__firefox_home_page_history_highlights_item_opened {
+    label: "Firefox Home Page History Highlights Item Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_item_opened ;;
+    type: number
+    group_label: "Firefox Home Page"
+    group_item_label: "History Highlights Item Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page History Highlights Item Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_history_highlights_item_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps to open an
+existing tab from the History Highlights section
+"
+  }
+
+  dimension: metrics__counter__firefox_home_page_history_highlights_show_all {
+    label: "Firefox Home Page History Highlights Show All"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_show_all ;;
+    type: number
+    group_label: "Firefox Home Page"
+    group_item_label: "History Highlights Show All"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page History Highlights Show All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_history_highlights_show_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps the
+Show All button in the History section
+"
+  }
+
+  dimension: metrics__counter__firefox_home_page_history_highlights_view {
+    label: "Firefox Home Page History Highlights View"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_view ;;
+    type: number
+    group_label: "Firefox Home Page"
+    group_item_label: "History Highlights View"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page History Highlights View"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_history_highlights_view"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user sees the
+History Highlights section on the homepage
+"
+  }
+
+  dimension: metrics__labeled_counter__firefox_home_page_jump_back_in_group_open_origin {
+    label: "Firefox Home Page Jump Back In Group Open Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_jump_back_in_group_open_origin ;;
+    group_label: "Firefox Home Page"
+    group_item_label: "Jump Back In Group Open Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Group Open Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_group_open_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps to open an
+existing group from the Jump Back In section,
+with a home page origin.
 "
   }
 
@@ -585,6 +705,25 @@ Show All button in the Jump Back In section.
 "
   }
 
+  dimension: metrics__labeled_counter__firefox_home_page_jump_back_in_show_all_origin {
+    label: "Firefox Home Page Jump Back In Show All Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_jump_back_in_show_all_origin ;;
+    group_label: "Firefox Home Page"
+    group_item_label: "Jump Back In Show All Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Show All Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_show_all_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps the
+Show All button in the Jump Back In section,
+with a home page origin.
+"
+  }
+
   dimension: metrics__counter__firefox_home_page_jump_back_in_tab_opened {
     label: "Firefox Home Page Jump Back In Tab Opened"
     hidden: no
@@ -601,6 +740,25 @@ Show All button in the Jump Back In section.
 
     description: "Counts the number of times a user taps to open an
 existing tab from the Jump Back In section
+"
+  }
+
+  dimension: metrics__labeled_counter__firefox_home_page_jump_back_in_tab_opened_origin {
+    label: "Firefox Home Page Jump Back In Tab Opened Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_jump_back_in_tab_opened_origin ;;
+    group_label: "Firefox Home Page"
+    group_item_label: "Jump Back In Tab Opened Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Tab Opened Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_tab_opened_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps to open an
+existing tab from the Jump Back In section,
+with a home page origin.
 "
   }
 
@@ -662,6 +820,44 @@ the Recently Saved section is tapped
 "
   }
 
+  dimension: metrics__labeled_counter__firefox_home_page_recently_saved_bookmark_origin {
+    label: "Firefox Home Page Recently Saved Bookmark Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_recently_saved_bookmark_origin ;;
+    group_label: "Firefox Home Page"
+    group_item_label: "Recently Saved Bookmark Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Recently Saved Bookmark Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_recently_saved_bookmark_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a bookmarked item in
+the Recently Saved section is tapped,
+with a home page origin.
+"
+  }
+
+  dimension: metrics__labeled_counter__firefox_home_page_recently_saved_read_origin {
+    label: "Firefox Home Page Recently Saved Read Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_recently_saved_read_origin ;;
+    group_label: "Firefox Home Page"
+    group_item_label: "Recently Saved Read Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Recently Saved Read Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_recently_saved_read_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a reading list
+item in the Recently Saved section is tapped,
+with a home page origin.
+"
+  }
+
   dimension: metrics__counter__firefox_home_page_recently_saved_reading_item {
     label: "Firefox Home Page Recently Saved Reading Item"
     hidden: no
@@ -700,6 +896,25 @@ button of the Recently Saved Section
 "
   }
 
+  dimension: metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin {
+    label: "Firefox Home Page Recently Saved Show All Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_recently_saved_show_all_origin ;;
+    group_label: "Firefox Home Page"
+    group_item_label: "Recently Saved Show All Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Recently Saved Show All Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_recently_saved_show_all_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps the Show All
+button of the Recently Saved Section,
+with a home page origin.
+"
+  }
+
   dimension: metrics__labeled_counter__firefox_home_page_your_library {
     label: "Firefox Home Page Your Library"
     hidden: yes
@@ -718,6 +933,100 @@ History, Reading List, or Downloads buttons
 "
   }
 
+  dimension: metrics__counter__history_group_list {
+    label: "History Group List"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.history_group_list ;;
+    type: number
+    group_label: "History"
+    group_item_label: "Group List"
+
+    link: {
+      label: "Glean Dictionary reference for History Group List"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/history_group_list"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user has selected a
+search term group inside the history panel. Selecting
+this item will navigate them to a view containing a list
+of all Site items that appear in that group.
+"
+  }
+
+  dimension: metrics__labeled_counter__history_selected_item {
+    label: "History Selected Item"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.history_selected_item ;;
+    group_label: "History"
+    group_item_label: "Selected Item"
+
+    link: {
+      label: "Glean Dictionary reference for History Selected Item"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/history_selected_item"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user selected an item from
+the history panel. This labeled counter will tell apart
+items that appear inside a group, and those that do not.
+"
+  }
+
+  dimension: metrics__counter__inactive_tabs_tray_inactive_tab_shown {
+    label: "Inactive Tabs Tray Inactive Tab Shown"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.inactive_tabs_tray_inactive_tab_shown ;;
+    type: number
+    group_label: "Inactive Tabs Tray"
+    group_item_label: "Inactive Tab Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Inactive Tab Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_inactive_tab_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded when a user is shown inactive tab view
+"
+  }
+
+  dimension: metrics__counter__inactive_tabs_tray_inactive_tab_swipe_close {
+    label: "Inactive Tabs Tray Inactive Tab Swipe Close"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.inactive_tabs_tray_inactive_tab_swipe_close ;;
+    type: number
+    group_label: "Inactive Tabs Tray"
+    group_item_label: "Inactive Tab Swipe Close"
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Inactive Tab Swipe Close"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_inactive_tab_swipe_close"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded when a user swipes to close an inactive tab
+"
+  }
+
+  dimension: metrics__counter__inactive_tabs_tray_inactive_tabs_close_all_btn {
+    label: "Inactive Tabs Tray Inactive Tabs Close All Btn"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.inactive_tabs_tray_inactive_tabs_close_all_btn ;;
+    type: number
+    group_label: "Inactive Tabs Tray"
+    group_item_label: "Inactive Tabs Close All Btn"
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Inactive Tabs Close All Btn"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_inactive_tabs_close_all_btn"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded when a user taps on close all inactive tabs button
+"
+  }
+
   dimension: metrics__counter__inactive_tabs_tray_open_inactive_tab {
     label: "Inactive Tabs Tray Open Inactive Tab"
     hidden: no
@@ -732,13 +1041,13 @@ History, Reading List, or Downloads buttons
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts the number of times user opens an inactive tab.
+    description: "Recorded when a user taps on an inactive tab
 "
   }
 
   dimension: metrics__counter__inactive_tabs_tray_open_recently_closed_list {
     label: "Inactive Tabs Tray Open Recently Closed List"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_open_recently_closed_list ;;
     type: number
     group_label: "Inactive Tabs Tray"
@@ -757,7 +1066,7 @@ section from inactive tabs tray.
 
   dimension: metrics__counter__inactive_tabs_tray_open_recently_closed_tab {
     label: "Inactive Tabs Tray Open Recently Closed Tab"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.inactive_tabs_tray_open_recently_closed_tab ;;
     type: number
     group_label: "Inactive Tabs Tray"
@@ -1019,7 +1328,7 @@ onboarding's first screen, the welcome screen.
 
   dimension: metrics__counter__page_action_menu_add_to_reading_list {
     label: "Page Action Menu Add To Reading List"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.page_action_menu_add_to_reading_list ;;
     type: number
     group_label: "Page Action Menu"
@@ -1223,6 +1532,24 @@ page action menu
 
     description: "Counts the number of times a user opens
 Pocket article from Firefox home Pocket feed
+"
+  }
+
+  dimension: metrics__labeled_counter__pocket_open_story_origin {
+    label: "Pocket Open Story Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pocket_open_story_origin ;;
+    group_label: "Pocket"
+    group_item_label: "Open Story Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Pocket Open Story Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/pocket_open_story_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records when a user opens Pocket article from
+Firefox Home Pocket feed, with a home page origin.
 "
   }
 
@@ -1831,6 +2158,63 @@ icon for grouped tabs in the tab tray.
 "
   }
 
+  dimension: metrics__counter__tabs_navigate_tab_back_swipe {
+    label: "Tabs Navigate Tab Back Swipe"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tabs_navigate_tab_back_swipe ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Navigate Tab Back Swipe"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Navigate Tab Back Swipe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_navigate_tab_back_swipe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times a user navigates back in tab
+history by swiping from the left edge of the device to the right.
+"
+  }
+
+  dimension: metrics__counter__tabs_navigate_tab_history_back {
+    label: "Tabs Navigate Tab History Back"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tabs_navigate_tab_history_back ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Navigate Tab History Back"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Navigate Tab History Back"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_navigate_tab_history_back"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times a user taps the back
+button on a tab's toolbar.
+"
+  }
+
+  dimension: metrics__counter__tabs_navigate_tab_history_forward {
+    label: "Tabs Navigate Tab History Forward"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tabs_navigate_tab_history_forward ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Navigate Tab History Forward"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Navigate Tab History Forward"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_navigate_tab_history_forward"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times a user taps the forward
+button on a tab's toolbar.
+"
+  }
+
   dimension: metrics__counter__tabs_new_tab_pressed {
     label: "Tabs New Tab Pressed"
     hidden: no
@@ -1847,6 +2231,43 @@ icon for grouped tabs in the tab tray.
 
     description: "Counts the number of times the add new tab button is
 pressed
+"
+  }
+
+  dimension: metrics__counter__tabs_normal_and_private_uri_count {
+    label: "Tabs Normal And Private Uri Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tabs_normal_and_private_uri_count ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Normal And Private Uri Count"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Normal And Private Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_normal_and_private_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record the number of URI's visited by the user.
+"
+  }
+
+  dimension: metrics__quantity__tabs_normal_tabs_quantity {
+    label: "Tabs Normal Tabs Quantity"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.tabs_normal_tabs_quantity ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Normal Tabs Quantity"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Normal Tabs Quantity"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_normal_tabs_quantity"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A snapshot of how many normal tabs a user has opened when he
+closes the application.
 "
   }
 
@@ -1869,6 +2290,25 @@ is opened.
 "
   }
 
+  dimension: metrics__quantity__tabs_private_tabs_quantity {
+    label: "Tabs Private Tabs Quantity"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.tabs_private_tabs_quantity ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Private Tabs Quantity"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Private Tabs Quantity"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_private_tabs_quantity"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A snapshot of how many private tabs a user has opened when he
+closes the application.
+"
+  }
+
   dimension: metrics__counter__tabs_pull_to_refresh {
     label: "Tabs Pull To Refresh"
     hidden: no
@@ -1885,6 +2325,25 @@ is opened.
 
     description: "Record the number of times a user pulls down
 on a page to reload.
+"
+  }
+
+  dimension: metrics__counter__tabs_reload_from_url_bar {
+    label: "Tabs Reload From Url Bar"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tabs_reload_from_url_bar ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Reload From Url Bar"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Reload From Url Bar"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_reload_from_url_bar"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times a user taps the reload
+button in the URL bar.
 "
   }
 
@@ -1962,6 +2421,24 @@ value of the automatic theme switching slider.
 
     description: "Measures the state of the \"Use System Light/Dark Mode\"
 theme preference.
+"
+  }
+
+  dimension: metrics__labeled_counter__top_site_pressed_tile_origin {
+    label: "Top Site Pressed Tile Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.top_site_pressed_tile_origin ;;
+    group_label: "Top Site"
+    group_item_label: "Pressed Tile Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Top Site Pressed Tile Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/top_site_pressed_tile_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records an event when user taps on top site tile,
+with a home page origin.
 "
   }
 
@@ -2277,8 +2754,10 @@ when writing a pending ping to disk.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The number of tasks queued in the pre-initialization buffer.
-Only sent if the buffer overflows.
+    description: "The number of tasks that overflowed the pre-initialization buffer.
+Only sent if the buffer ever overflows.
+
+In Version 0 this reported the total number of tasks enqueued.
 "
   }
 
@@ -2301,7 +2780,7 @@ Only sent if the buffer overflows.
 
   dimension: metrics__counter__glean_time_invalid_timezone_offset {
     label: "Glean Time Invalid Timezone Offset"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.glean_time_invalid_timezone_offset ;;
     type: number
     group_label: "Glean Time"
@@ -2782,6 +3261,7 @@ documented in the ping's pings.yaml file.
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: client_info__android_sdk_version {
@@ -2789,6 +3269,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "Android Sdk Version"
+    description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
   dimension: client_info__app_build {
@@ -2796,6 +3277,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "App Build"
+    description: "The build identifier generated by the CI system (e.g. \"1234/A\"). For language bindings that provide automatic detection for this value, (e.g. Android/Kotlin), in the unlikely event that the build identifier can not be retrieved from the OS, it is set to \"inaccessible\". For other language bindings, if the value was not provided through configuration, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__app_channel {
@@ -2803,6 +3285,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "App Channel"
+    description: "The channel the application is being distributed on."
   }
 
   dimension: client_info__app_display_version {
@@ -2810,6 +3293,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "App Display Version"
+    description: "The user visible version string (e.g. \"1.0.3\").  In the unlikely event that the display version can not be retrieved, it is set to \"inaccessible\"."
   }
 
   dimension: client_info__architecture {
@@ -2817,11 +3301,21 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "Architecture"
+    description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
+  }
+
+  dimension: client_info__build_date {
+    sql: ${TABLE}.client_info.build_date ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Build Date"
+    description: "The date & time the application was built"
   }
 
   dimension: client_info__client_id {
     sql: ${TABLE}.client_info.client_id ;;
     hidden: yes
+    description: "A UUID uniquely identifying the client."
   }
 
   dimension: client_info__device_manufacturer {
@@ -2829,6 +3323,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
+    description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__device_model {
@@ -2836,6 +3331,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "Device Model"
+    description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__first_run_date {
@@ -2843,6 +3339,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "First Run Date"
+    description: "The date of the first run of the application."
   }
 
   dimension: client_info__locale {
@@ -2850,6 +3347,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "Locale"
+    description: "The locale of the application during initialization (e.g. \"es-ES\"). If the locale can't be determined on the system, the value is [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers), to indicate \"undetermined\"."
   }
 
   dimension: client_info__os {
@@ -2857,6 +3355,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "Os"
+    description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
   dimension: client_info__os_version {
@@ -2864,6 +3363,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
+    description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -2871,11 +3371,13 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
+    description: "The version of the Glean SDK"
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    description: "The document ID specified in the URI when the client sent this message"
     primary_key: yes
   }
 
@@ -2897,6 +3399,7 @@ documented in the ping's pings.yaml file.
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -2904,6 +3407,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Db Version"
+    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -2911,6 +3415,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
+    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -2918,6 +3423,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
+    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -2925,6 +3431,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Header"
     group_item_label: "Date"
+    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -2932,6 +3439,21 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Header"
     group_item_label: "Dnt"
+    description: "DNT (Do Not Track) HTTP header"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
+    type: string
+    group_label: "Metadata Header Parsed X Lb Tags"
+    group_item_label: "Tls Cipher Hex"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_version {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
+    type: string
+    group_label: "Metadata Header Parsed X Lb Tags"
+    group_item_label: "Tls Version"
   }
 
   dimension: metadata__header__parsed_x_source_tags {
@@ -2944,6 +3466,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Debug Id"
+    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -2951,6 +3474,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
+    description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -2958,6 +3482,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Lb Tags"
+    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -2965,6 +3490,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
+    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -2972,6 +3498,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
+    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -2979,6 +3506,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
+    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -2986,6 +3514,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Db Version"
+    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -2993,6 +3522,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Name"
+    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -3000,6 +3530,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Organization"
+    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -3026,21 +3557,25 @@ documented in the ping's pings.yaml file.
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -3091,6 +3626,7 @@ documented in the ping's pings.yaml file.
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metadata__header__parsed {
@@ -3150,6 +3686,7 @@ documented in the ping's pings.yaml file.
       quarter,
       year,
     ]
+    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: clients {
@@ -3561,6 +4098,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: firefox_home_page_cycle_wallpaper_button {
+    type: sum
+    sql: ${metrics__counter__firefox_home_page_cycle_wallpaper_button} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Cycle Wallpaper Button"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_cycle_wallpaper_button"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_cycle_wallpaper_button_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__firefox_home_page_cycle_wallpaper_button: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Cycle Wallpaper Button"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_cycle_wallpaper_button"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: firefox_home_page_firefox_homepage_view {
     type: sum
     sql: ${metrics__counter__firefox_home_page_firefox_homepage_view} ;;
@@ -3582,6 +4144,81 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Firefox Home Page Firefox Homepage View"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_firefox_homepage_view"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_history_highlights_item_opened {
+    type: sum
+    sql: ${metrics__counter__firefox_home_page_history_highlights_item_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page History Highlights Item Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_history_highlights_item_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_history_highlights_item_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__firefox_home_page_history_highlights_item_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page History Highlights Item Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_history_highlights_item_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_history_highlights_show_all {
+    type: sum
+    sql: ${metrics__counter__firefox_home_page_history_highlights_show_all} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page History Highlights Show All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_history_highlights_show_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_history_highlights_show_all_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__firefox_home_page_history_highlights_show_all: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page History Highlights Show All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_history_highlights_show_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_history_highlights_view {
+    type: sum
+    sql: ${metrics__counter__firefox_home_page_history_highlights_view} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page History Highlights View"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_history_highlights_view"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_history_highlights_view_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__firefox_home_page_history_highlights_view: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page History Highlights View"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_history_highlights_view"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -3807,6 +4444,106 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Firefox Home Page Recently Saved Show All"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_recently_saved_show_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: history_group_list {
+    type: sum
+    sql: ${metrics__counter__history_group_list} ;;
+
+    link: {
+      label: "Glean Dictionary reference for History Group List"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/history_group_list"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: history_group_list_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__history_group_list: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for History Group List"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/history_group_list"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: inactive_tabs_tray_inactive_tab_shown {
+    type: sum
+    sql: ${metrics__counter__inactive_tabs_tray_inactive_tab_shown} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Inactive Tab Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_inactive_tab_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: inactive_tabs_tray_inactive_tab_shown_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__inactive_tabs_tray_inactive_tab_shown: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Inactive Tab Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_inactive_tab_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: inactive_tabs_tray_inactive_tab_swipe_close {
+    type: sum
+    sql: ${metrics__counter__inactive_tabs_tray_inactive_tab_swipe_close} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Inactive Tab Swipe Close"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_inactive_tab_swipe_close"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: inactive_tabs_tray_inactive_tab_swipe_close_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__inactive_tabs_tray_inactive_tab_swipe_close: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Inactive Tab Swipe Close"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_inactive_tab_swipe_close"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: inactive_tabs_tray_inactive_tabs_close_all_btn {
+    type: sum
+    sql: ${metrics__counter__inactive_tabs_tray_inactive_tabs_close_all_btn} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Inactive Tabs Close All Btn"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_inactive_tabs_close_all_btn"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: inactive_tabs_tray_inactive_tabs_close_all_btn_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__inactive_tabs_tray_inactive_tabs_close_all_btn: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Inactive Tabs Tray Inactive Tabs Close All Btn"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_inactive_tabs_close_all_btn"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -4736,6 +5473,81 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: tabs_navigate_tab_back_swipe {
+    type: sum
+    sql: ${metrics__counter__tabs_navigate_tab_back_swipe} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Navigate Tab Back Swipe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_navigate_tab_back_swipe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_navigate_tab_back_swipe_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tabs_navigate_tab_back_swipe: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Navigate Tab Back Swipe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_navigate_tab_back_swipe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_navigate_tab_history_back {
+    type: sum
+    sql: ${metrics__counter__tabs_navigate_tab_history_back} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Navigate Tab History Back"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_navigate_tab_history_back"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_navigate_tab_history_back_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tabs_navigate_tab_history_back: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Navigate Tab History Back"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_navigate_tab_history_back"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_navigate_tab_history_forward {
+    type: sum
+    sql: ${metrics__counter__tabs_navigate_tab_history_forward} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Navigate Tab History Forward"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_navigate_tab_history_forward"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_navigate_tab_history_forward_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tabs_navigate_tab_history_forward: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Navigate Tab History Forward"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_navigate_tab_history_forward"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: tabs_new_tab_pressed {
     type: sum
     sql: ${metrics__counter__tabs_new_tab_pressed} ;;
@@ -4761,6 +5573,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: tabs_normal_and_private_uri_count {
+    type: sum
+    sql: ${metrics__counter__tabs_normal_and_private_uri_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Normal And Private Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_normal_and_private_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_normal_and_private_uri_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tabs_normal_and_private_uri_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Normal And Private Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_normal_and_private_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: tabs_pull_to_refresh {
     type: sum
     sql: ${metrics__counter__tabs_pull_to_refresh} ;;
@@ -4782,6 +5619,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Tabs Pull To Refresh"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_pull_to_refresh"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_reload_from_url_bar {
+    type: sum
+    sql: ${metrics__counter__tabs_reload_from_url_bar} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Reload From Url Bar"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_reload_from_url_bar"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_reload_from_url_bar_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tabs_reload_from_url_bar: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Reload From Url Bar"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_reload_from_url_bar"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -5660,6 +6522,307 @@ view: metrics__metrics__labeled_counter__browser_search_with_ads {
   }
 }
 
+view: metrics__metrics__labeled_counter__firefox_home_page_firefox_homepage_origin {
+  label: "Firefox Home Page - Firefox Homepage Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_firefox_homepage_origin
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_firefox_homepage_origin.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_group_open_origin {
+  label: "Firefox Home Page - Jump Back In Group Open Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_group_open_origin
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_group_open_origin.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_show_all_origin {
+  label: "Firefox Home Page - Jump Back In Show All Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_show_all_origin
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_show_all_origin.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_tab_opened_origin {
+  label: "Firefox Home Page - Jump Back In Tab Opened Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_tab_opened_origin
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_tab_opened_origin.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__firefox_home_page_recently_saved_bookmark_origin {
+  label: "Firefox Home Page - Recently Saved Bookmark Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_bookmark_origin
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_bookmark_origin.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__firefox_home_page_recently_saved_read_origin {
+  label: "Firefox Home Page - Recently Saved Read Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_read_origin
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_read_origin.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin {
+  label: "Firefox Home Page - Recently Saved Show All Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__firefox_home_page_your_library {
   label: "Firefox Home Page - Your Library"
 
@@ -5961,6 +7124,49 @@ view: metrics__metrics__labeled_counter__glean_validation_pings_submitted {
   }
 }
 
+view: metrics__metrics__labeled_counter__history_selected_item {
+  label: "History - Selected Item"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__history_selected_item
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__history_selected_item.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
   label: "Inactive Tabs Tray - Toggle Inactive Tab Tray"
 
@@ -6154,6 +7360,49 @@ view: metrics__metrics__labeled_counter__logins_store_write_query_error_count {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count
     suggest_dimension: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error_count.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pocket_open_story_origin {
+  label: "Pocket - Open Story Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pocket_open_story_origin
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pocket_open_story_origin.key
     hidden: no
   }
 
@@ -6563,6 +7812,49 @@ view: metrics__metrics__labeled_counter__tabs_open {
   }
 }
 
+view: metrics__metrics__labeled_counter__top_site_pressed_tile_origin {
+  label: "Top Site - Pressed Tile Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__top_site_pressed_tile_origin
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__top_site_pressed_tile_origin.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__bookmarks_add {
   derived_table: {
     sql: select
@@ -6684,6 +7976,139 @@ view: suggest__metrics__metrics__labeled_counter__browser_search_with_ads {
     count(*) as n
 from mozdata.firefox_ios.metrics as t,
 unnest(metrics.labeled_counter.browser_search_with_ads) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__firefox_home_page_firefox_homepage_origin {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.firefox_home_page_firefox_homepage_origin) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_group_open_origin {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.firefox_home_page_jump_back_in_group_open_origin) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_show_all_origin {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.firefox_home_page_jump_back_in_show_all_origin) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__firefox_home_page_jump_back_in_tab_opened_origin {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.firefox_home_page_jump_back_in_tab_opened_origin) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_bookmark_origin {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.firefox_home_page_recently_saved_bookmark_origin) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_read_origin {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.firefox_home_page_recently_saved_read_origin) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.firefox_home_page_recently_saved_show_all_origin) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -6829,6 +8254,25 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__history_selected_item {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.history_selected_item) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
   derived_table: {
     sql: select
@@ -6912,6 +8356,25 @@ view: suggest__metrics__metrics__labeled_counter__logins_store_write_query_error
     count(*) as n
 from mozdata.firefox_ios.metrics as t,
 unnest(metrics.labeled_counter.logins_store_write_query_error_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__pocket_open_story_origin {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.pocket_open_story_origin) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -7083,6 +8546,25 @@ view: suggest__metrics__metrics__labeled_counter__tabs_open {
     count(*) as n
 from mozdata.firefox_ios.metrics as t,
 unnest(metrics.labeled_counter.tabs_open) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__top_site_pressed_tile_origin {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.top_site_pressed_tile_origin) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

@@ -1,7 +1,18 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
 view: clients_last_seen_table {
   dimension: _sample_id_string {
     sql: ${TABLE}._sample_id_string ;;
     type: string
+  }
+
+  dimension: a11y_theme {
+    sql: ${TABLE}.a11y_theme ;;
+    hidden: yes
   }
 
   dimension: aborts_content_sum {
@@ -146,13 +157,63 @@ view: clients_last_seen_table {
     type: number
   }
 
+  dimension: contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_block_nonsponsored_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_block_nonsponsored_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_block_sponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_block_sponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_block_sponsored_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_block_sponsored_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_click_sponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_click_sponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
   dimension: contextual_services_quicksuggest_click_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_click_sum ;;
     hidden: yes
   }
 
+  dimension: contextual_services_quicksuggest_help_nonsponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_help_nonsponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_help_sponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_help_sponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
   dimension: contextual_services_quicksuggest_help_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_help_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_impression_sponsored_bestmatch_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_impression_sponsored_bestmatch_sum ;;
     hidden: yes
   }
 
@@ -844,6 +905,16 @@ view: clients_last_seen_table {
 
   dimension: sandbox_effective_content_process_level {
     sql: ${TABLE}.sandbox_effective_content_process_level ;;
+    type: number
+  }
+
+  dimension: scalar_a11y_hcm_background {
+    sql: ${TABLE}.scalar_a11y_hcm_background ;;
+    type: number
+  }
+
+  dimension: scalar_a11y_hcm_foreground {
+    sql: ${TABLE}.scalar_a11y_hcm_foreground ;;
     type: number
   }
 
@@ -1547,6 +1618,11 @@ view: clients_last_seen_table {
     type: string
   }
 
+  dimension: user_pref_browser_urlbar_quicksuggest_data_collection_enabled {
+    sql: ${TABLE}.user_pref_browser_urlbar_quicksuggest_data_collection_enabled ;;
+    type: string
+  }
+
   dimension: user_pref_browser_urlbar_quicksuggest_onboarding_dialog_choice {
     sql: ${TABLE}.user_pref_browser_urlbar_quicksuggest_onboarding_dialog_choice ;;
     type: string
@@ -1557,8 +1633,18 @@ view: clients_last_seen_table {
     type: string
   }
 
+  dimension: user_pref_browser_urlbar_suggest_bestmatch {
+    sql: ${TABLE}.user_pref_browser_urlbar_suggest_bestmatch ;;
+    type: string
+  }
+
   dimension: user_pref_browser_urlbar_suggest_quicksuggest {
     sql: ${TABLE}.user_pref_browser_urlbar_suggest_quicksuggest ;;
+    type: string
+  }
+
+  dimension: user_pref_browser_urlbar_suggest_quicksuggest_nonsponsored {
+    sql: ${TABLE}.user_pref_browser_urlbar_suggest_quicksuggest_nonsponsored ;;
     type: string
   }
 
@@ -1674,6 +1760,18 @@ view: clients_last_seen_table {
   sql_table_name: `mozdata.telemetry.clients_last_seen` ;;
 }
 
+view: clients_last_seen_table__a11y_theme {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: clients_last_seen_table__active_addons {
   dimension: addon_id {
     sql: ${TABLE}.addon_id ;;
@@ -1768,6 +1866,78 @@ view: clients_last_seen_table__ad_clicks {
   }
 }
 
+view: clients_last_seen_table__contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__contextual_services_quicksuggest_block_nonsponsored_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__contextual_services_quicksuggest_block_sponsored_bestmatch_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__contextual_services_quicksuggest_block_sponsored_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__contextual_services_quicksuggest_click_sponsored_bestmatch_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: clients_last_seen_table__contextual_services_quicksuggest_click_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -1780,7 +1950,55 @@ view: clients_last_seen_table__contextual_services_quicksuggest_click_sum {
   }
 }
 
+view: clients_last_seen_table__contextual_services_quicksuggest_help_nonsponsored_bestmatch_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__contextual_services_quicksuggest_help_sponsored_bestmatch_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: clients_last_seen_table__contextual_services_quicksuggest_help_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__contextual_services_quicksuggest_impression_sponsored_bestmatch_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
