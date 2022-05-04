@@ -13,7 +13,7 @@
   - title: Gc Ms
     name: Gc Ms
     explore: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.submission_date,
       bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.branch,
@@ -30,18 +30,19 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.submission_date
+    field_y: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.low
+    ci_upper: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.percentile: "#ff6a06"
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.high: "#ffb380"
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.low: "#ffb380"
-      
+    active: "#3FE1B0"
   - title: Memory Total
     name: Memory Total
     explore: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.submission_date,
       bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.branch,
@@ -58,18 +59,19 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.submission_date
+    field_y: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.low
+    ci_upper: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.percentile: "#ff6a06"
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.high: "#ffb380"
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_histogram.low: "#ffb380"
-      
+    active: "#3FE1B0"
   - title: Content Crashes
     name: Content Crashes
     explore: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.submission_date,
       bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.branch,
@@ -86,18 +88,19 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.submission_date
+    field_y: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.low
+    ci_upper: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.percentile: "#ff6a06"
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.high: "#ffb380"
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.low: "#ffb380"
-      
+    active: "#3FE1B0"
   - title: Startup Crashes
     name: Startup Crashes
     explore: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.submission_date,
       bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.branch,
@@ -114,18 +117,19 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.submission_date
+    field_y: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.low
+    ci_upper: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.percentile: "#ff6a06"
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.high: "#ffb380"
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.low: "#ffb380"
-      
+    active: "#3FE1B0"
   - title: Shutdown Hangs
     name: Shutdown Hangs
     explore: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.submission_date,
       bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.branch,
@@ -142,18 +146,19 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.submission_date
+    field_y: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.low
+    ci_upper: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.percentile: "#ff6a06"
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.high: "#ffb380"
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.low: "#ffb380"
-      
+    active: "#3FE1B0"
   - title: Main Crashes
     name: Main Crashes
     explore: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.submission_date,
       bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.branch,
@@ -170,18 +175,19 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.submission_date
+    field_y: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.low
+    ci_upper: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.percentile: "#ff6a06"
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.high: "#ffb380"
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.low: "#ffb380"
-      
+    active: "#3FE1B0"
   - title: Oom Crashes
     name: Oom Crashes
     explore: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.submission_date,
       bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.branch,
@@ -198,14 +204,15 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.submission_date
+    field_y: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.low
+    ci_upper: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.percentile: "#ff6a06"
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.high: "#ffb380"
-      active - bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.low: "#ffb380"
-      
+    active: "#3FE1B0"
   filters:
   - name: Percentile
     title: Percentile

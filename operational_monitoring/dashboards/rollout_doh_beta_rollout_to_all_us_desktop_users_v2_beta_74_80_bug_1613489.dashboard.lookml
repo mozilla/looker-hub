@@ -13,7 +13,7 @@
   - title: Gc Ms
     name: Gc Ms
     explore: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.submission_date,
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.branch,
@@ -30,21 +30,20 @@
     col: 0
     width: 12
     height: 8
+    field_x: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.submission_date
+    field_y: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.percentile
+    log_scale: true
+    ci_lower: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.low
+    ci_upper: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.high
+    show_grid: true
     listen:
       Percentile: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.percentile: "#ff6a06"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.high: "#ffb380"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.low: "#ffb380"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.percentile: "blue"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.high: "#8cd3ff"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Memory Total
     name: Memory Total
     explore: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.submission_date,
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.branch,
@@ -61,21 +60,20 @@
     col: 12
     width: 12
     height: 8
+    field_x: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.submission_date
+    field_y: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.percentile
+    log_scale: true
+    ci_lower: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.low
+    ci_upper: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.high
+    show_grid: true
     listen:
       Percentile: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.percentile: "#ff6a06"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.high: "#ffb380"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.low: "#ffb380"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.percentile: "blue"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.high: "#8cd3ff"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Content Process Count
     name: Content Process Count
     explore: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.submission_date,
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.branch,
@@ -92,21 +90,20 @@
     col: 0
     width: 12
     height: 8
+    field_x: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.submission_date
+    field_y: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.percentile
+    log_scale: true
+    ci_lower: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.low
+    ci_upper: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.high
+    show_grid: true
     listen:
       Percentile: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.percentile: "#ff6a06"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.high: "#ffb380"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.low: "#ffb380"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.percentile: "blue"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.high: "#8cd3ff"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Main Crashes
     name: Main Crashes
     explore: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.submission_date,
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.branch,
@@ -123,21 +120,20 @@
     col: 12
     width: 12
     height: 8
+    field_x: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.submission_date
+    field_y: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile
+    log_scale: true
+    ci_lower: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low
+    ci_upper: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high
+    show_grid: true
     listen:
       Percentile: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile: "#ff6a06"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high: "#ffb380"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low: "#ffb380"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile: "blue"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high: "#8cd3ff"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Shutdown Hangs
     name: Shutdown Hangs
     explore: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.submission_date,
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.branch,
@@ -154,21 +150,20 @@
     col: 0
     width: 12
     height: 8
+    field_x: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.submission_date
+    field_y: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile
+    log_scale: true
+    ci_lower: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low
+    ci_upper: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high
+    show_grid: true
     listen:
       Percentile: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile: "#ff6a06"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high: "#ffb380"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low: "#ffb380"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile: "blue"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high: "#8cd3ff"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Startup Crashes
     name: Startup Crashes
     explore: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.submission_date,
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.branch,
@@ -185,21 +180,20 @@
     col: 12
     width: 12
     height: 8
+    field_x: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.submission_date
+    field_y: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile
+    log_scale: true
+    ci_lower: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low
+    ci_upper: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high
+    show_grid: true
     listen:
       Percentile: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile: "#ff6a06"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high: "#ffb380"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low: "#ffb380"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile: "blue"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high: "#8cd3ff"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Gpu Crashes
     name: Gpu Crashes
     explore: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.submission_date,
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.branch,
@@ -216,21 +210,20 @@
     col: 0
     width: 12
     height: 8
+    field_x: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.submission_date
+    field_y: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile
+    log_scale: true
+    ci_lower: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low
+    ci_upper: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high
+    show_grid: true
     listen:
       Percentile: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile: "#ff6a06"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high: "#ffb380"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low: "#ffb380"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile: "blue"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high: "#8cd3ff"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Content Shutdown Crashes
     name: Content Shutdown Crashes
     explore: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.submission_date,
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.branch,
@@ -247,21 +240,20 @@
     col: 12
     width: 12
     height: 8
+    field_x: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.submission_date
+    field_y: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile
+    log_scale: true
+    ci_lower: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low
+    ci_upper: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high
+    show_grid: true
     listen:
       Percentile: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile: "#ff6a06"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high: "#ffb380"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low: "#ffb380"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile: "blue"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high: "#8cd3ff"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Gmplugin Crashes
     name: Gmplugin Crashes
     explore: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.submission_date,
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.branch,
@@ -278,21 +270,20 @@
     col: 0
     width: 12
     height: 8
+    field_x: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.submission_date
+    field_y: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile
+    log_scale: true
+    ci_lower: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low
+    ci_upper: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high
+    show_grid: true
     listen:
       Percentile: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile: "#ff6a06"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high: "#ffb380"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low: "#ffb380"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile: "blue"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high: "#8cd3ff"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Content Crashes
     name: Content Crashes
     explore: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.submission_date,
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.branch,
@@ -309,21 +300,20 @@
     col: 12
     width: 12
     height: 8
+    field_x: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.submission_date
+    field_y: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile
+    log_scale: true
+    ci_lower: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low
+    ci_upper: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high
+    show_grid: true
     listen:
       Percentile: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile: "#ff6a06"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high: "#ffb380"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low: "#ffb380"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile: "blue"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high: "#8cd3ff"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Oom Crashes
     name: Oom Crashes
     explore: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.submission_date,
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.branch,
@@ -340,21 +330,20 @@
     col: 0
     width: 12
     height: 8
+    field_x: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.submission_date
+    field_y: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile
+    log_scale: true
+    ci_lower: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low
+    ci_upper: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high
+    show_grid: true
     listen:
       Percentile: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile: "#ff6a06"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high: "#ffb380"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low: "#ffb380"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile: "blue"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high: "#8cd3ff"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Plugin Crashes
     name: Plugin Crashes
     explore: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.submission_date,
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.branch,
@@ -371,17 +360,16 @@
     col: 12
     width: 12
     height: 8
+    field_x: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.submission_date
+    field_y: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile
+    log_scale: true
+    ci_lower: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low
+    ci_upper: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high
+    show_grid: true
     listen:
       Percentile: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile: "#ff6a06"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high: "#ffb380"
-      enabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low: "#ffb380"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.percentile: "blue"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.high: "#8cd3ff"
-      disabled - rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   filters:
   - name: Percentile
     title: Percentile
