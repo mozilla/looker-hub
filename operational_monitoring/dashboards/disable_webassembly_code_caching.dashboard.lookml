@@ -13,7 +13,7 @@
   - title: Memory Total
     name: Memory Total
     explore: disable_webassembly_code_caching_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       disable_webassembly_code_caching_histogram.submission_date,
       disable_webassembly_code_caching_histogram.branch,
@@ -30,18 +30,19 @@
     col: 0
     width: 12
     height: 8
+    field_x: disable_webassembly_code_caching_histogram.submission_date
+    field_y: disable_webassembly_code_caching_histogram.percentile
+    log_scale: true
+    ci_lower: disable_webassembly_code_caching_histogram.low
+    ci_upper: disable_webassembly_code_caching_histogram.high
+    show_grid: true
     listen:
       Percentile: disable_webassembly_code_caching_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      preference-disabled - disable_webassembly_code_caching_histogram.percentile: "#ff6a06"
-      preference-disabled - disable_webassembly_code_caching_histogram.high: "#ffb380"
-      preference-disabled - disable_webassembly_code_caching_histogram.low: "#ffb380"
-      
+    preference-disabled: "#3FE1B0"
   - title: Gc Ms
     name: Gc Ms
     explore: disable_webassembly_code_caching_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       disable_webassembly_code_caching_histogram.submission_date,
       disable_webassembly_code_caching_histogram.branch,
@@ -58,18 +59,19 @@
     col: 12
     width: 12
     height: 8
+    field_x: disable_webassembly_code_caching_histogram.submission_date
+    field_y: disable_webassembly_code_caching_histogram.percentile
+    log_scale: true
+    ci_lower: disable_webassembly_code_caching_histogram.low
+    ci_upper: disable_webassembly_code_caching_histogram.high
+    show_grid: true
     listen:
       Percentile: disable_webassembly_code_caching_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      preference-disabled - disable_webassembly_code_caching_histogram.percentile: "#ff6a06"
-      preference-disabled - disable_webassembly_code_caching_histogram.high: "#ffb380"
-      preference-disabled - disable_webassembly_code_caching_histogram.low: "#ffb380"
-      
+    preference-disabled: "#3FE1B0"
   - title: Shutdown Hangs
     name: Shutdown Hangs
     explore: disable_webassembly_code_caching_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       disable_webassembly_code_caching_scalar.submission_date,
       disable_webassembly_code_caching_scalar.branch,
@@ -86,18 +88,19 @@
     col: 0
     width: 12
     height: 8
+    field_x: disable_webassembly_code_caching_scalar.submission_date
+    field_y: disable_webassembly_code_caching_scalar.percentile
+    log_scale: true
+    ci_lower: disable_webassembly_code_caching_scalar.low
+    ci_upper: disable_webassembly_code_caching_scalar.high
+    show_grid: true
     listen:
       Percentile: disable_webassembly_code_caching_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      preference-disabled - disable_webassembly_code_caching_scalar.percentile: "#ff6a06"
-      preference-disabled - disable_webassembly_code_caching_scalar.high: "#ffb380"
-      preference-disabled - disable_webassembly_code_caching_scalar.low: "#ffb380"
-      
+    preference-disabled: "#3FE1B0"
   - title: Oom Crashes
     name: Oom Crashes
     explore: disable_webassembly_code_caching_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       disable_webassembly_code_caching_scalar.submission_date,
       disable_webassembly_code_caching_scalar.branch,
@@ -114,18 +117,19 @@
     col: 12
     width: 12
     height: 8
+    field_x: disable_webassembly_code_caching_scalar.submission_date
+    field_y: disable_webassembly_code_caching_scalar.percentile
+    log_scale: true
+    ci_lower: disable_webassembly_code_caching_scalar.low
+    ci_upper: disable_webassembly_code_caching_scalar.high
+    show_grid: true
     listen:
       Percentile: disable_webassembly_code_caching_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      preference-disabled - disable_webassembly_code_caching_scalar.percentile: "#ff6a06"
-      preference-disabled - disable_webassembly_code_caching_scalar.high: "#ffb380"
-      preference-disabled - disable_webassembly_code_caching_scalar.low: "#ffb380"
-      
+    preference-disabled: "#3FE1B0"
   - title: Startup Crashes
     name: Startup Crashes
     explore: disable_webassembly_code_caching_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       disable_webassembly_code_caching_scalar.submission_date,
       disable_webassembly_code_caching_scalar.branch,
@@ -142,18 +146,19 @@
     col: 0
     width: 12
     height: 8
+    field_x: disable_webassembly_code_caching_scalar.submission_date
+    field_y: disable_webassembly_code_caching_scalar.percentile
+    log_scale: true
+    ci_lower: disable_webassembly_code_caching_scalar.low
+    ci_upper: disable_webassembly_code_caching_scalar.high
+    show_grid: true
     listen:
       Percentile: disable_webassembly_code_caching_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      preference-disabled - disable_webassembly_code_caching_scalar.percentile: "#ff6a06"
-      preference-disabled - disable_webassembly_code_caching_scalar.high: "#ffb380"
-      preference-disabled - disable_webassembly_code_caching_scalar.low: "#ffb380"
-      
+    preference-disabled: "#3FE1B0"
   - title: Main Crashes
     name: Main Crashes
     explore: disable_webassembly_code_caching_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       disable_webassembly_code_caching_scalar.submission_date,
       disable_webassembly_code_caching_scalar.branch,
@@ -170,18 +175,19 @@
     col: 12
     width: 12
     height: 8
+    field_x: disable_webassembly_code_caching_scalar.submission_date
+    field_y: disable_webassembly_code_caching_scalar.percentile
+    log_scale: true
+    ci_lower: disable_webassembly_code_caching_scalar.low
+    ci_upper: disable_webassembly_code_caching_scalar.high
+    show_grid: true
     listen:
       Percentile: disable_webassembly_code_caching_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      preference-disabled - disable_webassembly_code_caching_scalar.percentile: "#ff6a06"
-      preference-disabled - disable_webassembly_code_caching_scalar.high: "#ffb380"
-      preference-disabled - disable_webassembly_code_caching_scalar.low: "#ffb380"
-      
+    preference-disabled: "#3FE1B0"
   - title: Content Crashes
     name: Content Crashes
     explore: disable_webassembly_code_caching_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       disable_webassembly_code_caching_scalar.submission_date,
       disable_webassembly_code_caching_scalar.branch,
@@ -198,14 +204,15 @@
     col: 0
     width: 12
     height: 8
+    field_x: disable_webassembly_code_caching_scalar.submission_date
+    field_y: disable_webassembly_code_caching_scalar.percentile
+    log_scale: true
+    ci_lower: disable_webassembly_code_caching_scalar.low
+    ci_upper: disable_webassembly_code_caching_scalar.high
+    show_grid: true
     listen:
       Percentile: disable_webassembly_code_caching_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      preference-disabled - disable_webassembly_code_caching_scalar.percentile: "#ff6a06"
-      preference-disabled - disable_webassembly_code_caching_scalar.high: "#ffb380"
-      preference-disabled - disable_webassembly_code_caching_scalar.low: "#ffb380"
-      
+    preference-disabled: "#3FE1B0"
   filters:
   - name: Percentile
     title: Percentile

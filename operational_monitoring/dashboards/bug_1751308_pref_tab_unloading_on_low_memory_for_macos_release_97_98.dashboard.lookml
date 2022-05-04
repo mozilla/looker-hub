@@ -13,7 +13,7 @@
   - title: Cycle Collector Max Pause Content
     name: Cycle Collector Max Pause Content
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -30,21 +30,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Js Pageload Delazification Ms
     name: Js Pageload Delazification Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -61,21 +63,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Gc Mark Rate 2
     name: Gc Mark Rate 2
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -92,21 +96,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Memory Unique Content Startup
     name: Memory Unique Content Startup
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -123,21 +129,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Js Pageload Parse Ms
     name: Js Pageload Parse Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -154,21 +162,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Perf First Contentful Paint Ms
     name: Perf First Contentful Paint Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -185,21 +195,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Checkerboard Severity
     name: Checkerboard Severity
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -216,21 +228,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Opened Tab Count
     name: Opened Tab Count
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -247,21 +261,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Js Pageload Xdr Encoding Ms
     name: Js Pageload Xdr Encoding Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -278,21 +294,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Gc Budget Overrun
     name: Gc Budget Overrun
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -309,21 +327,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Content Process Max
     name: Content Process Max
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -340,21 +360,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Fx New Window Ms
     name: Fx New Window Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -371,21 +393,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Child Process Launch Ms
     name: Child Process Launch Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -402,21 +426,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Js Pageload Execution Ms
     name: Js Pageload Execution Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -433,21 +459,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Gc Max Pause 2
     name: Gc Max Pause 2
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -464,21 +492,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Perf Page Load Time Ms
     name: Perf Page Load Time Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -495,21 +525,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Gc Ms Content
     name: Gc Ms Content
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -526,21 +558,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Gc Slice During Idle Content
     name: Gc Slice During Idle Content
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -557,21 +591,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Gc Non Incremental
     name: Gc Non Incremental
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -588,21 +624,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Fx Tab Switch Composite E10S Ms
     name: Fx Tab Switch Composite E10S Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -619,21 +657,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Gc Ms
     name: Gc Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -650,21 +690,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Gc Slice During Idle
     name: Gc Slice During Idle
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -681,21 +723,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Gc Max Pause 2 Content
     name: Gc Max Pause 2 Content
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -712,21 +756,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Content Process Count
     name: Content Process Count
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -743,21 +789,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Tab Unload To Reload
     name: Tab Unload To Reload
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -774,21 +822,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Js Pageload Baseline Compile Ms
     name: Js Pageload Baseline Compile Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -805,21 +855,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Content Frame Time Vsync
     name: Content Frame Time Vsync
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -836,21 +888,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Js Pageload Protect Ms
     name: Js Pageload Protect Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -867,21 +921,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Gc Reason 2
     name: Gc Reason 2
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -898,21 +954,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Memory Total
     name: Memory Total
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -929,21 +987,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Cycle Collector Max Pause
     name: Cycle Collector Max Pause
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.branch,
@@ -960,21 +1020,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Concurrent Opened Tab Count
     name: Concurrent Opened Tab Count
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.branch,
@@ -991,21 +1053,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Gmplugin Crashes
     name: Gmplugin Crashes
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.branch,
@@ -1022,21 +1086,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Main Crashes
     name: Main Crashes
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.branch,
@@ -1053,21 +1119,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Memory Pressure Count
     name: Memory Pressure Count
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.branch,
@@ -1084,21 +1152,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Tab Unload Count
     name: Tab Unload Count
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.branch,
@@ -1115,21 +1185,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Concurrent Pinned Tab Count
     name: Concurrent Pinned Tab Count
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.branch,
@@ -1146,21 +1218,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Subsession Length
     name: Subsession Length
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.branch,
@@ -1177,21 +1251,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Plugin Crashes
     name: Plugin Crashes
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.branch,
@@ -1208,21 +1284,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Content Shutdown Crashes
     name: Content Shutdown Crashes
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.branch,
@@ -1239,21 +1317,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Tab Pinned Event Count
     name: Tab Pinned Event Count
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.branch,
@@ -1270,21 +1350,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Startup Crashes
     name: Startup Crashes
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.branch,
@@ -1301,21 +1383,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Shutdown Hangs
     name: Shutdown Hangs
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.branch,
@@ -1332,21 +1416,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Content Crashes
     name: Content Crashes
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.branch,
@@ -1363,21 +1449,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Tab Reload Count
     name: Tab Reload Count
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.branch,
@@ -1394,21 +1482,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Gpu Crashes
     name: Gpu Crashes
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.branch,
@@ -1425,21 +1515,23 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Oom Crashes
     name: Oom Crashes
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.branch,
@@ -1456,21 +1548,23 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   - title: Tab Open Event Count
     name: Tab Open Event Count
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date,
       bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.branch,
@@ -1487,17 +1581,19 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
+    field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
+    ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "#ff6a06"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#ffb380"
-      memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#ffb380"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile: "blue"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high: "#8cd3ff"
-      tab-unloading-and-memory-pressure-warning - bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low: "#8cd3ff"
-      
+    memory-pressure-warning: "#3FE1B0"
+    tab-unloading-and-memory-pressure-warning: "#0060E0"
+    memory-pressure-critical: "#9059FF"
+    tab-unloading-and-memory-pressure-critical: "#B933E1"
+    tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
   filters:
   - name: Percentile
     title: Percentile

@@ -13,7 +13,7 @@
   - title: Content Process Count
     name: Content Process Count
     explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.submission_date,
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.branch,
@@ -30,21 +30,20 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.percentile: "#ff6a06"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.high: "#ffb380"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.low: "#ffb380"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.percentile: "blue"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.high: "#8cd3ff"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Child Process Launch Ms
     name: Child Process Launch Ms
     explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.submission_date,
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.branch,
@@ -61,21 +60,20 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.percentile: "#ff6a06"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.high: "#ffb380"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.low: "#ffb380"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.percentile: "blue"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.high: "#8cd3ff"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Content Shutdown Crashes
     name: Content Shutdown Crashes
     explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date,
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch,
@@ -92,21 +90,20 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "#ff6a06"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#ffb380"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#ffb380"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "blue"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#8cd3ff"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Gmplugin Crashes
     name: Gmplugin Crashes
     explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date,
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch,
@@ -123,21 +120,20 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "#ff6a06"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#ffb380"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#ffb380"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "blue"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#8cd3ff"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Search With Ads Count
     name: Search With Ads Count
     explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date,
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch,
@@ -154,21 +150,20 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "#ff6a06"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#ffb380"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#ffb380"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "blue"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#8cd3ff"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Search Count
     name: Search Count
     explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date,
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch,
@@ -185,21 +180,20 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "#ff6a06"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#ffb380"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#ffb380"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "blue"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#8cd3ff"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Content Crashes
     name: Content Crashes
     explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date,
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch,
@@ -216,21 +210,20 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "#ff6a06"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#ffb380"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#ffb380"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "blue"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#8cd3ff"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Gpu Crashes
     name: Gpu Crashes
     explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date,
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch,
@@ -247,21 +240,20 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "#ff6a06"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#ffb380"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#ffb380"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "blue"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#8cd3ff"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Shutdown Hangs
     name: Shutdown Hangs
     explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date,
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch,
@@ -278,21 +270,20 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "#ff6a06"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#ffb380"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#ffb380"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "blue"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#8cd3ff"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Oom Crashes
     name: Oom Crashes
     explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date,
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch,
@@ -309,21 +300,20 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "#ff6a06"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#ffb380"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#ffb380"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "blue"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#8cd3ff"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Startup Crashes
     name: Startup Crashes
     explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date,
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch,
@@ -340,21 +330,20 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "#ff6a06"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#ffb380"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#ffb380"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "blue"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#8cd3ff"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Plugin Crashes
     name: Plugin Crashes
     explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date,
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch,
@@ -371,21 +360,20 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "#ff6a06"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#ffb380"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#ffb380"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "blue"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#8cd3ff"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Main Crashes
     name: Main Crashes
     explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date,
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch,
@@ -402,21 +390,20 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "#ff6a06"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#ffb380"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#ffb380"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "blue"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#8cd3ff"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Ad Clicks Count
     name: Ad Clicks Count
     explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date,
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch,
@@ -433,17 +420,16 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "#ff6a06"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#ffb380"
-      enabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#ffb380"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile: "blue"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.high: "#8cd3ff"
-      disabled - bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   filters:
   - name: Percentile
     title: Percentile

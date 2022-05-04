@@ -13,7 +13,7 @@
   - title: Content Process Max
     name: Content Process Max
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -30,23 +30,22 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Gc Slice During Idle
     name: Gc Slice During Idle
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -63,23 +62,22 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Memory Total
     name: Memory Total
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -96,23 +94,22 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Gc Max Pause 2 Content
     name: Gc Max Pause 2 Content
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -129,23 +126,22 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Cycle Collector Max Pause
     name: Cycle Collector Max Pause
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -162,23 +158,22 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Perf First Contentful Paint Ms
     name: Perf First Contentful Paint Ms
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -195,23 +190,22 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Memory Unique Content Startup
     name: Memory Unique Content Startup
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -228,23 +222,22 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Content Frame Time Vsync
     name: Content Frame Time Vsync
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -261,23 +254,22 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Child Process Launch Ms
     name: Child Process Launch Ms
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -294,23 +286,22 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Content Process Count
     name: Content Process Count
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -327,23 +318,22 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Gc Max Pause 2
     name: Gc Max Pause 2
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -360,23 +350,22 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Gc Slice During Idle Content
     name: Gc Slice During Idle Content
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -393,23 +382,22 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Perf Page Load Time Ms
     name: Perf Page Load Time Ms
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -426,23 +414,22 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Loaded Tab Count
     name: Loaded Tab Count
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -459,23 +446,22 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Keypress Present Latency Ms
     name: Keypress Present Latency Ms
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -492,23 +478,22 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Cycle Collector Max Pause Content
     name: Cycle Collector Max Pause Content
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -525,23 +510,22 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Time To First Interaction Ms
     name: Time To First Interaction Ms
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -558,23 +542,22 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Gc Ms
     name: Gc Ms
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -591,23 +574,22 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Checkerboard Severity
     name: Checkerboard Severity
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -624,23 +606,22 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Fx New Window Ms
     name: Fx New Window Ms
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -657,23 +638,22 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Gc Ms Content
     name: Gc Ms Content
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -690,23 +670,22 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Fx Tab Switch Composite E10S Ms
     name: Fx Tab Switch Composite E10S Ms
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.branch,
@@ -723,23 +702,22 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Uri Count
     name: Uri Count
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch,
@@ -756,23 +734,22 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Oom Crashes
     name: Oom Crashes
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch,
@@ -789,23 +766,22 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Main Crashes
     name: Main Crashes
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch,
@@ -822,23 +798,22 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Startup Crashes
     name: Startup Crashes
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch,
@@ -855,23 +830,22 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Content Shutdown Crashes
     name: Content Shutdown Crashes
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch,
@@ -888,23 +862,22 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Active Ticks
     name: Active Ticks
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch,
@@ -921,23 +894,22 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Subsession Length
     name: Subsession Length
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch,
@@ -954,23 +926,22 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Plugin Crashes
     name: Plugin Crashes
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch,
@@ -987,23 +958,22 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Shutdown Hangs
     name: Shutdown Hangs
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch,
@@ -1020,23 +990,22 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Gpu Crashes
     name: Gpu Crashes
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch,
@@ -1053,23 +1022,22 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Gmplugin Crashes
     name: Gmplugin Crashes
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch,
@@ -1086,23 +1054,22 @@
     col: 0
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Content Crashes
     name: Content Crashes
     explore: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar
-    type: "looker_line"
+    type: "ci-line-chart"
     fields: [
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date,
       bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.branch,
@@ -1119,19 +1086,18 @@
     col: 12
     width: 12
     height: 8
+    field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
+    field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
+    log_scale: true
+    ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
+    ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
+    show_grid: true
     listen:
       Percentile: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile_conf
       Cores Count: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.cores_count
       Os: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.os
-    y_axes: [{type: log}]
-    series_colors:
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "#ff6a06"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#ffb380"
-      enabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#ffb380"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile: "blue"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high: "#8cd3ff"
-      disabled - bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low: "#8cd3ff"
-      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   filters:
   - name: Percentile
     title: Percentile
