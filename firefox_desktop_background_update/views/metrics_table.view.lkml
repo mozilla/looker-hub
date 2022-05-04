@@ -323,8 +323,10 @@ when writing a pending ping to disk.
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Glean Error Preinit Tasks Overflow"
-    description: "The number of tasks queued in the pre-initialization buffer.
-Only sent if the buffer overflows.
+    description: "The number of tasks that overflowed the pre-initialization buffer.
+Only sent if the buffer ever overflows.
+
+In Version 0 this reported the total number of tasks enqueued.
 "
   }
 

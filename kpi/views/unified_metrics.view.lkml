@@ -20,11 +20,6 @@ view: unified_metrics {
     type: number
   }
 
-  dimension: app_display_version {
-    sql: ${TABLE}.app_display_version ;;
-    type: string
-  }
-
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
     type: string
@@ -83,6 +78,11 @@ view: unified_metrics {
 
   dimension: days_since_first_seen {
     sql: ${TABLE}.days_since_first_seen ;;
+    type: number
+  }
+
+  dimension: days_since_seen {
+    sql: ${TABLE}.days_since_seen ;;
     type: number
   }
 
