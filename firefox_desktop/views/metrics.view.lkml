@@ -229,6 +229,31 @@ parent process.
 "
   }
 
+  dimension: metrics__counter__fog_ipc_shutdown_registration_failures {
+    label: "Fog Ipc Shutdown Registration Failures"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.fog_ipc_shutdown_registration_failures ;;
+    type: number
+    group_label: "Fog Ipc"
+    group_item_label: "Shutdown Registration Failures"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Shutdown Registration Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_ipc_shutdown_registration_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we tried to register shutdown flush routines for
+content child processes, and failed (probably because there was no main
+thread).
+As a result there may be data loss from content child processes.
+Large or rising number of clients experiencing this indicates we should
+perhaps refactor content child shutdown in FOG to try harder to register
+flush operations.
+Will likely be obsoleted by bug 1641989.
+"
+  }
+
   dimension: metrics__string__geckoview_validation_build_id {
     label: "Geckoview Validation Build Id"
     hidden: yes
@@ -1581,6 +1606,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Fog Ipc Replay Failures"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_ipc_replay_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_shutdown_registration_failures {
+    type: sum
+    sql: ${metrics__counter__fog_ipc_shutdown_registration_failures} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Shutdown Registration Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_ipc_shutdown_registration_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_shutdown_registration_failures_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__fog_ipc_shutdown_registration_failures: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Shutdown Registration Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_ipc_shutdown_registration_failures"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

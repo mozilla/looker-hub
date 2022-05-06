@@ -845,6 +845,22 @@ parent process.
 "
   }
 
+  dimension: metrics__counter__fog_ipc_shutdown_registration_failures {
+    sql: ${TABLE}.metrics.counter.fog_ipc_shutdown_registration_failures ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Fog Ipc Shutdown Registration Failures"
+    description: "The number of times we tried to register shutdown flush routines for
+content child processes, and failed (probably because there was no main
+thread).
+As a result there may be data loss from content child processes.
+Large or rising number of clients experiencing this indicates we should
+perhaps refactor content child shutdown in FOG to try harder to register
+flush operations.
+Will likely be obsoleted by bug 1641989.
+"
+  }
+
   dimension: metrics__counter__glean_error_io {
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
