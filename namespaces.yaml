@@ -3231,7 +3231,10 @@ operational_monitoring:
     tcp_rollout:
       tables:
       - branches: &id049
-        - active
+        - control
+        - opt-in
+        - opt-out
+        - pref-does-not-exist
         dimensions: &id050 {}
         explore: tcp_rollout_histogram
         group_by_dimension: null
@@ -3244,20 +3247,20 @@ operational_monitoring:
         explore: tcp_rollout_scalar
         group_by_dimension: null
         probes:
-        - gmplugin_crashes
-        - tagged_follow_on_search_count
-        - gpu_crashes
-        - content_shutdown_crashes
-        - organic_search_count
-        - plugin_crashes
-        - content_crashes
-        - shutdown_hangs
-        - search_with_ads
         - tagged_search_count
+        - plugin_crashes
+        - content_shutdown_crashes
+        - gmplugin_crashes
+        - content_crashes
+        - search_with_ads
         - main_crashes
-        - startup_crashes
+        - shutdown_hangs
         - ad_click
         - oom_crashes
+        - startup_crashes
+        - organic_search_count
+        - tagged_follow_on_search_count
+        - gpu_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_scalar
         xaxis: submission_date
       title: Tcp Rollout
@@ -4144,20 +4147,20 @@ operational_monitoring:
       branches: *id049
       dimensions: *id050
       probes:
-      - gmplugin_crashes
-      - tagged_follow_on_search_count
-      - gpu_crashes
-      - content_shutdown_crashes
-      - organic_search_count
-      - plugin_crashes
-      - content_crashes
-      - shutdown_hangs
-      - search_with_ads
       - tagged_search_count
+      - plugin_crashes
+      - content_shutdown_crashes
+      - gmplugin_crashes
+      - content_crashes
+      - search_with_ads
       - main_crashes
-      - startup_crashes
+      - shutdown_hangs
       - ad_click
       - oom_crashes
+      - startup_crashes
+      - organic_search_count
+      - tagged_follow_on_search_count
+      - gpu_crashes
       type: operational_monitoring_explore
       views:
         base_view: tcp_rollout_scalar
