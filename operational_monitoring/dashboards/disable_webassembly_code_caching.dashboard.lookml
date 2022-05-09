@@ -32,7 +32,7 @@
     height: 8
     field_x: disable_webassembly_code_caching_histogram.submission_date
     field_y: disable_webassembly_code_caching_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: disable_webassembly_code_caching_histogram.low
     ci_upper: disable_webassembly_code_caching_histogram.high
     show_grid: true
@@ -61,7 +61,7 @@
     height: 8
     field_x: disable_webassembly_code_caching_histogram.submission_date
     field_y: disable_webassembly_code_caching_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: disable_webassembly_code_caching_histogram.low
     ci_upper: disable_webassembly_code_caching_histogram.high
     show_grid: true
@@ -90,7 +90,7 @@
     height: 8
     field_x: disable_webassembly_code_caching_scalar.submission_date
     field_y: disable_webassembly_code_caching_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: disable_webassembly_code_caching_scalar.low
     ci_upper: disable_webassembly_code_caching_scalar.high
     show_grid: true
@@ -119,7 +119,7 @@
     height: 8
     field_x: disable_webassembly_code_caching_scalar.submission_date
     field_y: disable_webassembly_code_caching_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: disable_webassembly_code_caching_scalar.low
     ci_upper: disable_webassembly_code_caching_scalar.high
     show_grid: true
@@ -148,7 +148,7 @@
     height: 8
     field_x: disable_webassembly_code_caching_scalar.submission_date
     field_y: disable_webassembly_code_caching_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: disable_webassembly_code_caching_scalar.low
     ci_upper: disable_webassembly_code_caching_scalar.high
     show_grid: true
@@ -177,7 +177,7 @@
     height: 8
     field_x: disable_webassembly_code_caching_scalar.submission_date
     field_y: disable_webassembly_code_caching_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: disable_webassembly_code_caching_scalar.low
     ci_upper: disable_webassembly_code_caching_scalar.high
     show_grid: true
@@ -206,7 +206,7 @@
     height: 8
     field_x: disable_webassembly_code_caching_scalar.submission_date
     field_y: disable_webassembly_code_caching_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: disable_webassembly_code_caching_scalar.low
     ci_upper: disable_webassembly_code_caching_scalar.high
     show_grid: true

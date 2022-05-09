@@ -32,7 +32,7 @@
     height: 8
     field_x: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.submission_date
     field_y: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.low
     ci_upper: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.high
     show_grid: true
@@ -62,7 +62,7 @@
     height: 8
     field_x: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.submission_date
     field_y: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.low
     ci_upper: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.high
     show_grid: true
@@ -92,7 +92,7 @@
     height: 8
     field_x: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.submission_date
     field_y: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.low
     ci_upper: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.high
     show_grid: true
@@ -122,7 +122,7 @@
     height: 8
     field_x: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.submission_date
     field_y: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.low
     ci_upper: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.high
     show_grid: true
@@ -152,7 +152,7 @@
     height: 8
     field_x: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.submission_date
     field_y: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.low
     ci_upper: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.high
     show_grid: true
@@ -182,7 +182,7 @@
     height: 8
     field_x: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.submission_date
     field_y: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.low
     ci_upper: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.high
     show_grid: true
@@ -212,7 +212,7 @@
     height: 8
     field_x: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.submission_date
     field_y: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.low
     ci_upper: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.high
     show_grid: true
@@ -242,7 +242,7 @@
     height: 8
     field_x: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.submission_date
     field_y: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.low
     ci_upper: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.high
     show_grid: true
@@ -272,7 +272,7 @@
     height: 8
     field_x: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.submission_date
     field_y: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.low
     ci_upper: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.high
     show_grid: true
@@ -302,7 +302,7 @@
     height: 8
     field_x: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.submission_date
     field_y: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.low
     ci_upper: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.high
     show_grid: true
@@ -332,7 +332,7 @@
     height: 8
     field_x: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.submission_date
     field_y: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.low
     ci_upper: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.high
     show_grid: true
@@ -362,7 +362,7 @@
     height: 8
     field_x: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.submission_date
     field_y: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.low
     ci_upper: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_scalar.high
     show_grid: true
