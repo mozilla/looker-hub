@@ -3294,7 +3294,26 @@ operational_monitoring:
         - opt-in
         - opt-out
         - pref-does-not-exist
-        dimensions: &id054 {}
+        dimensions: &id054
+          country:
+            default: DE
+            options:
+            - DE
+            - US
+            - FR
+            - CN
+            - IN
+            - BR
+            - PL
+            - IT
+            - RU
+            - ES
+          os:
+            default: Windows
+            options:
+            - Windows
+            - Mac
+            - Linux
         explore: tcp_rollout_histogram
         group_by_dimension: null
         probes:
@@ -3306,19 +3325,22 @@ operational_monitoring:
         explore: tcp_rollout_scalar
         group_by_dimension: null
         probes:
-        - gmplugin_crashes
-        - content_shutdown_crashes
         - plugin_crashes
-        - tagged_follow_on_search_count
-        - search_with_ads
-        - organic_search_count
-        - main_crashes
-        - tagged_search_count
-        - gpu_crashes
+        - ad_click_organic
         - oom_crashes
         - startup_crashes
-        - content_crashes
+        - search_with_ads_organic
+        - gmplugin_crashes
+        - content_shutdown_crashes
+        - tagged_search_count
+        - sap
+        - search_with_ads
         - ad_click
+        - content_crashes
+        - main_crashes
+        - organic_search_count
+        - tagged_follow_on_search_count
+        - gpu_crashes
         - shutdown_hangs
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_scalar
         xaxis: submission_date
@@ -4247,7 +4269,26 @@ operational_monitoring:
       xaxis: submission_date
     tcp_rollout_histogram:
       branches: *id053
-      dimensions: &id081 {}
+      dimensions: &id081
+        country:
+          default: DE
+          options:
+          - DE
+          - US
+          - FR
+          - CN
+          - IN
+          - BR
+          - PL
+          - IT
+          - RU
+          - ES
+        os:
+          default: Windows
+          options:
+          - Windows
+          - Mac
+          - Linux
       probes:
       - content_process_count
       type: operational_monitoring_explore
@@ -4258,19 +4299,22 @@ operational_monitoring:
       branches: *id053
       dimensions: *id054
       probes:
-      - gmplugin_crashes
-      - content_shutdown_crashes
       - plugin_crashes
-      - tagged_follow_on_search_count
-      - search_with_ads
-      - organic_search_count
-      - main_crashes
-      - tagged_search_count
-      - gpu_crashes
+      - ad_click_organic
       - oom_crashes
       - startup_crashes
-      - content_crashes
+      - search_with_ads_organic
+      - gmplugin_crashes
+      - content_shutdown_crashes
+      - tagged_search_count
+      - sap
+      - search_with_ads
       - ad_click
+      - content_crashes
+      - main_crashes
+      - organic_search_count
+      - tagged_follow_on_search_count
+      - gpu_crashes
       - shutdown_hangs
       type: operational_monitoring_explore
       views:

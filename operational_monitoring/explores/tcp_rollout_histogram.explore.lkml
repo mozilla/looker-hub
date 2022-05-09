@@ -20,6 +20,8 @@ explore: tcp_rollout_histogram {
       filters: [
         tcp_rollout_histogram.branch: "opt-in, opt-out, pref-does-not-exist",
         tcp_rollout_histogram.percentile_conf: "50",
+        tcp_rollout_histogram.country: "DE",
+        tcp_rollout_histogram.os: "Windows",
         tcp_rollout_histogram.probe: "content_process_count",
       ]
     }
