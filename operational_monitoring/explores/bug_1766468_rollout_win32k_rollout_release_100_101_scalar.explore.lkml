@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.view.lkml"
+include: "/looker-hub/operational_monitoring/views/bug_1766468_rollout_win32k_rollout_release_100_101_scalar.view.lkml"
 
-explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar {
+explore: bug_1766468_rollout_win32k_rollout_release_100_101_scalar {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -18,9 +18,9 @@ explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch: "enabled, disabled",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf: "50",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.probe: "gmplugin_crashes",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.branch: "enabled, disabled",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.percentile_conf: "50",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.probe: "gmplugin_crashes",
       ]
     }
 
@@ -34,9 +34,9 @@ explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch: "enabled, disabled",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf: "50",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.probe: "content_shutdown_crashes",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.branch: "enabled, disabled",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.percentile_conf: "50",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.probe: "content_shutdown_crashes",
       ]
     }
 
@@ -50,9 +50,9 @@ explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch: "enabled, disabled",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf: "50",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.probe: "plugin_crashes",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.branch: "enabled, disabled",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.percentile_conf: "50",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.probe: "plugin_crashes",
       ]
     }
 
@@ -66,9 +66,9 @@ explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch: "enabled, disabled",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf: "50",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.probe: "main_crashes",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.branch: "enabled, disabled",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.percentile_conf: "50",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.probe: "main_crashes",
       ]
     }
 
@@ -82,9 +82,9 @@ explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch: "enabled, disabled",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf: "50",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.probe: "gpu_crashes",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.branch: "enabled, disabled",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.percentile_conf: "50",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.probe: "gpu_crashes",
       ]
     }
 
@@ -98,9 +98,9 @@ explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch: "enabled, disabled",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf: "50",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.probe: "oom_crashes",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.branch: "enabled, disabled",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.percentile_conf: "50",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.probe: "oom_crashes",
       ]
     }
 
@@ -114,9 +114,9 @@ explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch: "enabled, disabled",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf: "50",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.probe: "startup_crashes",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.branch: "enabled, disabled",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.percentile_conf: "50",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.probe: "startup_crashes",
       ]
     }
 
@@ -130,9 +130,9 @@ explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch: "enabled, disabled",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf: "50",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.probe: "content_crashes",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.branch: "enabled, disabled",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.percentile_conf: "50",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.probe: "content_crashes",
       ]
     }
 
@@ -146,9 +146,9 @@ explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch: "enabled, disabled",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf: "50",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.probe: "shutdown_hangs",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.branch: "enabled, disabled",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.percentile_conf: "50",
+        bug_1766468_rollout_win32k_rollout_release_100_101_scalar.probe: "shutdown_hangs",
       ]
     }
 
