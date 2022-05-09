@@ -9,7 +9,7 @@ include: "/looker-hub/operational_monitoring/views/tcp_rollout_histogram.view.lk
 explore: tcp_rollout_histogram {
   always_filter: {
     filters: [
-      branch: "control, opt-in, opt-out, pref-does-not-exist",
+      branch: "opt-in, opt-out, pref-does-not-exist",
     ]
   }
 
@@ -18,7 +18,7 @@ explore: tcp_rollout_histogram {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_histogram.branch: "control, opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_histogram.branch: "opt-in, opt-out, pref-does-not-exist",
         tcp_rollout_histogram.percentile_conf: "50",
         tcp_rollout_histogram.probe: "content_process_count",
       ]

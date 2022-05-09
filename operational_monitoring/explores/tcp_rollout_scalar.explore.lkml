@@ -9,34 +9,18 @@ include: "/looker-hub/operational_monitoring/views/tcp_rollout_scalar.view.lkml"
 explore: tcp_rollout_scalar {
   always_filter: {
     filters: [
-      branch: "control, opt-in, opt-out, pref-does-not-exist",
+      branch: "opt-in, opt-out, pref-does-not-exist",
     ]
   }
 
-  aggregate_table: rollup_tagged_search_count {
+  aggregate_table: rollup_gmplugin_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "control, opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
         tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.probe: "tagged_search_count",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_plugin_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tcp_rollout_scalar.branch: "control, opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.probe: "plugin_crashes",
+        tcp_rollout_scalar.probe: "gmplugin_crashes",
       ]
     }
 
@@ -50,7 +34,7 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "control, opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
         tcp_rollout_scalar.percentile_conf: "50",
         tcp_rollout_scalar.probe: "content_shutdown_crashes",
       ]
@@ -61,14 +45,14 @@ explore: tcp_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_gmplugin_crashes {
+  aggregate_table: rollup_plugin_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "control, opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
         tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.probe: "gmplugin_crashes",
+        tcp_rollout_scalar.probe: "plugin_crashes",
       ]
     }
 
@@ -77,14 +61,14 @@ explore: tcp_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_content_crashes {
+  aggregate_table: rollup_tagged_follow_on_search_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "control, opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
         tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.probe: "content_crashes",
+        tcp_rollout_scalar.probe: "tagged_follow_on_search_count",
       ]
     }
 
@@ -98,9 +82,25 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "control, opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
         tcp_rollout_scalar.percentile_conf: "50",
         tcp_rollout_scalar.probe: "search_with_ads",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_organic_search_count {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.percentile_conf: "50",
+        tcp_rollout_scalar.probe: "organic_search_count",
       ]
     }
 
@@ -114,7 +114,7 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "control, opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
         tcp_rollout_scalar.percentile_conf: "50",
         tcp_rollout_scalar.probe: "main_crashes",
       ]
@@ -125,14 +125,14 @@ explore: tcp_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_shutdown_hangs {
+  aggregate_table: rollup_tagged_search_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "control, opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
         tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.probe: "shutdown_hangs",
+        tcp_rollout_scalar.probe: "tagged_search_count",
       ]
     }
 
@@ -141,14 +141,14 @@ explore: tcp_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_ad_click {
+  aggregate_table: rollup_gpu_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "control, opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
         tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.probe: "ad_click",
+        tcp_rollout_scalar.probe: "gpu_crashes",
       ]
     }
 
@@ -162,7 +162,7 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "control, opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
         tcp_rollout_scalar.percentile_conf: "50",
         tcp_rollout_scalar.probe: "oom_crashes",
       ]
@@ -178,7 +178,7 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "control, opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
         tcp_rollout_scalar.percentile_conf: "50",
         tcp_rollout_scalar.probe: "startup_crashes",
       ]
@@ -189,14 +189,14 @@ explore: tcp_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_organic_search_count {
+  aggregate_table: rollup_content_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "control, opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
         tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.probe: "organic_search_count",
+        tcp_rollout_scalar.probe: "content_crashes",
       ]
     }
 
@@ -205,14 +205,14 @@ explore: tcp_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_tagged_follow_on_search_count {
+  aggregate_table: rollup_ad_click {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "control, opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
         tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.probe: "tagged_follow_on_search_count",
+        tcp_rollout_scalar.probe: "ad_click",
       ]
     }
 
@@ -221,14 +221,14 @@ explore: tcp_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_gpu_crashes {
+  aggregate_table: rollup_shutdown_hangs {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "control, opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
         tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.probe: "gpu_crashes",
+        tcp_rollout_scalar.probe: "shutdown_hangs",
       ]
     }
 

@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.view.lkml"
+include: "/looker-hub/operational_monitoring/views/sync_after_tab_change_rollout_15_histogram.view.lkml"
 
-explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram {
+explore: sync_after_tab_change_rollout_15_histogram {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -18,9 +18,9 @@ explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_hist
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.branch: "enabled, disabled",
-        bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.percentile_conf: "50",
-        bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.probe: "content_process_count",
+        sync_after_tab_change_rollout_15_histogram.branch: "enabled, disabled",
+        sync_after_tab_change_rollout_15_histogram.percentile_conf: "50",
+        sync_after_tab_change_rollout_15_histogram.probe: "content_process_count",
       ]
     }
 
@@ -34,9 +34,9 @@ explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_hist
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.branch: "enabled, disabled",
-        bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.percentile_conf: "50",
-        bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.probe: "memory_total",
+        sync_after_tab_change_rollout_15_histogram.branch: "enabled, disabled",
+        sync_after_tab_change_rollout_15_histogram.percentile_conf: "50",
+        sync_after_tab_change_rollout_15_histogram.probe: "memory_total",
       ]
     }
 
@@ -50,9 +50,9 @@ explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_hist
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.branch: "enabled, disabled",
-        bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.percentile_conf: "50",
-        bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.probe: "gc_ms",
+        sync_after_tab_change_rollout_15_histogram.branch: "enabled, disabled",
+        sync_after_tab_change_rollout_15_histogram.percentile_conf: "50",
+        sync_after_tab_change_rollout_15_histogram.probe: "gc_ms",
       ]
     }
 
