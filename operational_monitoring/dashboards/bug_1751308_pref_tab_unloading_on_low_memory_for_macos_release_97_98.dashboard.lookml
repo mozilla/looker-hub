@@ -32,7 +32,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -65,7 +65,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -98,7 +98,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -131,7 +131,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -164,7 +164,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -197,7 +197,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -230,7 +230,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -263,7 +263,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -296,7 +296,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -329,7 +329,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -362,7 +362,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -395,7 +395,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -428,7 +428,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -461,7 +461,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -494,7 +494,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -527,7 +527,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -560,7 +560,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -593,7 +593,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -626,7 +626,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -659,7 +659,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -692,7 +692,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -725,7 +725,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -758,7 +758,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -791,7 +791,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -824,7 +824,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -857,7 +857,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -890,7 +890,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -923,7 +923,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -956,7 +956,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -989,7 +989,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -1022,7 +1022,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram.high
     show_grid: true
@@ -1055,7 +1055,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
     show_grid: true
@@ -1088,7 +1088,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
     show_grid: true
@@ -1121,7 +1121,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
     show_grid: true
@@ -1154,7 +1154,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
     show_grid: true
@@ -1187,7 +1187,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
     show_grid: true
@@ -1220,7 +1220,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
     show_grid: true
@@ -1253,7 +1253,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
     show_grid: true
@@ -1286,7 +1286,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
     show_grid: true
@@ -1319,7 +1319,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
     show_grid: true
@@ -1352,7 +1352,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
     show_grid: true
@@ -1385,7 +1385,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
     show_grid: true
@@ -1418,7 +1418,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
     show_grid: true
@@ -1451,7 +1451,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
     show_grid: true
@@ -1484,7 +1484,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
     show_grid: true
@@ -1517,7 +1517,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
     show_grid: true
@@ -1550,7 +1550,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
     show_grid: true
@@ -1583,7 +1583,7 @@
     height: 8
     field_x: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.submission_date
     field_y: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.low
     ci_upper: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar.high
     show_grid: true

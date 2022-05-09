@@ -32,7 +32,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_histogram.submission_date
     field_y: mission_control_desktop_nightly_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_histogram.low
     ci_upper: mission_control_desktop_nightly_histogram.high
     show_grid: true
@@ -63,7 +63,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_histogram.submission_date
     field_y: mission_control_desktop_nightly_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_histogram.low
     ci_upper: mission_control_desktop_nightly_histogram.high
     show_grid: true
@@ -94,7 +94,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_histogram.submission_date
     field_y: mission_control_desktop_nightly_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_histogram.low
     ci_upper: mission_control_desktop_nightly_histogram.high
     show_grid: true
@@ -125,7 +125,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_histogram.submission_date
     field_y: mission_control_desktop_nightly_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_histogram.low
     ci_upper: mission_control_desktop_nightly_histogram.high
     show_grid: true
@@ -156,7 +156,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_histogram.submission_date
     field_y: mission_control_desktop_nightly_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_histogram.low
     ci_upper: mission_control_desktop_nightly_histogram.high
     show_grid: true
@@ -187,7 +187,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_histogram.submission_date
     field_y: mission_control_desktop_nightly_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_histogram.low
     ci_upper: mission_control_desktop_nightly_histogram.high
     show_grid: true
@@ -218,7 +218,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_scalar.submission_date
     field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_scalar.low
     ci_upper: mission_control_desktop_nightly_scalar.high
     show_grid: true
@@ -249,7 +249,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_scalar.submission_date
     field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_scalar.low
     ci_upper: mission_control_desktop_nightly_scalar.high
     show_grid: true
@@ -280,7 +280,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_scalar.submission_date
     field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_scalar.low
     ci_upper: mission_control_desktop_nightly_scalar.high
     show_grid: true
@@ -311,7 +311,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_scalar.submission_date
     field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_scalar.low
     ci_upper: mission_control_desktop_nightly_scalar.high
     show_grid: true
@@ -342,7 +342,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_scalar.submission_date
     field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_scalar.low
     ci_upper: mission_control_desktop_nightly_scalar.high
     show_grid: true
@@ -373,7 +373,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_scalar.submission_date
     field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_scalar.low
     ci_upper: mission_control_desktop_nightly_scalar.high
     show_grid: true
@@ -404,7 +404,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_scalar.submission_date
     field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_scalar.low
     ci_upper: mission_control_desktop_nightly_scalar.high
     show_grid: true
@@ -435,7 +435,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_scalar.submission_date
     field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_scalar.low
     ci_upper: mission_control_desktop_nightly_scalar.high
     show_grid: true
@@ -466,7 +466,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_scalar.submission_date
     field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_scalar.low
     ci_upper: mission_control_desktop_nightly_scalar.high
     show_grid: true
@@ -497,7 +497,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_scalar.submission_date
     field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_scalar.low
     ci_upper: mission_control_desktop_nightly_scalar.high
     show_grid: true
@@ -528,7 +528,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_scalar.submission_date
     field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_scalar.low
     ci_upper: mission_control_desktop_nightly_scalar.high
     show_grid: true
@@ -559,7 +559,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_scalar.submission_date
     field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_scalar.low
     ci_upper: mission_control_desktop_nightly_scalar.high
     show_grid: true
@@ -590,7 +590,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_scalar.submission_date
     field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_scalar.low
     ci_upper: mission_control_desktop_nightly_scalar.high
     show_grid: true
@@ -621,7 +621,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_scalar.submission_date
     field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_scalar.low
     ci_upper: mission_control_desktop_nightly_scalar.high
     show_grid: true
@@ -652,7 +652,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_scalar.submission_date
     field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_scalar.low
     ci_upper: mission_control_desktop_nightly_scalar.high
     show_grid: true
@@ -683,7 +683,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_scalar.submission_date
     field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_scalar.low
     ci_upper: mission_control_desktop_nightly_scalar.high
     show_grid: true
@@ -714,7 +714,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_scalar.submission_date
     field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_scalar.low
     ci_upper: mission_control_desktop_nightly_scalar.high
     show_grid: true
@@ -745,7 +745,7 @@
     height: 8
     field_x: mission_control_desktop_nightly_scalar.submission_date
     field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: mission_control_desktop_nightly_scalar.low
     ci_upper: mission_control_desktop_nightly_scalar.high
     show_grid: true

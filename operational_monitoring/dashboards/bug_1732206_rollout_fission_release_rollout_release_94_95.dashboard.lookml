@@ -32,7 +32,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -64,7 +64,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -96,7 +96,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -128,7 +128,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -160,7 +160,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -192,7 +192,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -224,7 +224,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -256,7 +256,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -288,7 +288,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -320,7 +320,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -352,7 +352,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -384,7 +384,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -416,7 +416,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -448,7 +448,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -480,7 +480,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -512,7 +512,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -544,7 +544,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -576,7 +576,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -608,7 +608,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -640,7 +640,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -672,7 +672,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -704,7 +704,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_histogram.high
     show_grid: true
@@ -736,7 +736,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
     show_grid: true
@@ -768,7 +768,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
     show_grid: true
@@ -800,7 +800,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
     show_grid: true
@@ -832,7 +832,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
     show_grid: true
@@ -864,7 +864,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
     show_grid: true
@@ -896,7 +896,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
     show_grid: true
@@ -928,7 +928,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
     show_grid: true
@@ -960,7 +960,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
     show_grid: true
@@ -992,7 +992,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
     show_grid: true
@@ -1024,7 +1024,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
     show_grid: true
@@ -1056,7 +1056,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
     show_grid: true
@@ -1088,7 +1088,7 @@
     height: 8
     field_x: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.submission_date
     field_y: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.low
     ci_upper: bug_1732206_rollout_fission_release_rollout_release_94_95_scalar.high
     show_grid: true
