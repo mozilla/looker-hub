@@ -100,8 +100,8 @@
       Percentile: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_histogram.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
-  - title: Startup Crashes
-    name: Startup Crashes
+  - title: Main Crashes
+    name: Main Crashes
     explore: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar
     type: "ci-line-chart"
     fields: [
@@ -115,68 +115,8 @@
       bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch
     ]
     filters:
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: startup_crashes
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: main_crashes
     row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.submission_date
-    field_y: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile
-    log_scale: false
-    ci_lower: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.low
-    ci_upper: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.high
-    show_grid: true
-    listen:
-      Percentile: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Content Crashes
-    name: Content Crashes
-    explore: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar
-    type: "ci-line-chart"
-    fields: [
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.submission_date,
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch,
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.high,
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.low,
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile
-    ]
-    pivots: [
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch
-    ]
-    filters:
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: content_crashes
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.submission_date
-    field_y: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile
-    log_scale: false
-    ci_lower: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.low
-    ci_upper: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.high
-    show_grid: true
-    listen:
-      Percentile: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Gmplugin Crashes
-    name: Gmplugin Crashes
-    explore: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar
-    type: "ci-line-chart"
-    fields: [
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.submission_date,
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch,
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.high,
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.low,
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile
-    ]
-    pivots: [
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch
-    ]
-    filters:
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: gmplugin_crashes
-    row: 20
     col: 12
     width: 12
     height: 8
@@ -206,6 +146,66 @@
     ]
     filters:
       bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: oom_crashes
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.submission_date
+    field_y: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile
+    log_scale: false
+    ci_lower: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.low
+    ci_upper: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.high
+    show_grid: true
+    listen:
+      Percentile: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Gpu Crashes
+    name: Gpu Crashes
+    explore: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar
+    type: "ci-line-chart"
+    fields: [
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.submission_date,
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch,
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.high,
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.low,
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile
+    ]
+    pivots: [
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch
+    ]
+    filters:
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: gpu_crashes
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.submission_date
+    field_y: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile
+    log_scale: false
+    ci_lower: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.low
+    ci_upper: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.high
+    show_grid: true
+    listen:
+      Percentile: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
+    explore: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar
+    type: "ci-line-chart"
+    fields: [
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.submission_date,
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch,
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.high,
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.low,
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile
+    ]
+    pivots: [
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch
+    ]
+    filters:
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: shutdown_hangs
     row: 30
     col: 0
     width: 12
@@ -220,8 +220,8 @@
       Percentile: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
-  - title: Plugin Crashes
-    name: Plugin Crashes
+  - title: Gmplugin Crashes
+    name: Gmplugin Crashes
     explore: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar
     type: "ci-line-chart"
     fields: [
@@ -235,7 +235,7 @@
       bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch
     ]
     filters:
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: plugin_crashes
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: gmplugin_crashes
     row: 30
     col: 12
     width: 12
@@ -280,8 +280,8 @@
       Percentile: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
-  - title: Gpu Crashes
-    name: Gpu Crashes
+  - title: Startup Crashes
+    name: Startup Crashes
     explore: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar
     type: "ci-line-chart"
     fields: [
@@ -295,7 +295,7 @@
       bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch
     ]
     filters:
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: gpu_crashes
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: startup_crashes
     row: 40
     col: 12
     width: 12
@@ -310,8 +310,8 @@
       Percentile: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
+  - title: Content Crashes
+    name: Content Crashes
     explore: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar
     type: "ci-line-chart"
     fields: [
@@ -325,7 +325,7 @@
       bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch
     ]
     filters:
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: shutdown_hangs
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: content_crashes
     row: 50
     col: 0
     width: 12
@@ -340,8 +340,8 @@
       Percentile: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
-  - title: Main Crashes
-    name: Main Crashes
+  - title: Plugin Crashes
+    name: Plugin Crashes
     explore: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar
     type: "ci-line-chart"
     fields: [
@@ -355,7 +355,7 @@
       bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch
     ]
     filters:
-      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: main_crashes
+      bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: plugin_crashes
     row: 50
     col: 12
     width: 12

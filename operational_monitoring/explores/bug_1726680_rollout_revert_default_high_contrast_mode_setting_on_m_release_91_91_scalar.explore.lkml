@@ -13,46 +13,14 @@ explore: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_rele
     ]
   }
 
-  aggregate_table: rollup_startup_crashes {
+  aggregate_table: rollup_main_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch: "enabled, disabled",
         bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf: "50",
-        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: "startup_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_content_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch: "enabled, disabled",
-        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf: "50",
-        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: "content_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_gmplugin_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch: "enabled, disabled",
-        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf: "50",
-        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: "gmplugin_crashes",
+        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: "main_crashes",
       ]
     }
 
@@ -69,38 +37,6 @@ explore: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_rele
         bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch: "enabled, disabled",
         bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf: "50",
         bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: "oom_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_plugin_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch: "enabled, disabled",
-        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf: "50",
-        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: "plugin_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_content_shutdown_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch: "enabled, disabled",
-        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf: "50",
-        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: "content_shutdown_crashes",
       ]
     }
 
@@ -141,14 +77,78 @@ explore: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_rele
     }
   }
 
-  aggregate_table: rollup_main_crashes {
+  aggregate_table: rollup_gmplugin_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch: "enabled, disabled",
         bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf: "50",
-        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: "main_crashes",
+        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: "gmplugin_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_shutdown_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch: "enabled, disabled",
+        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf: "50",
+        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: "content_shutdown_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_startup_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch: "enabled, disabled",
+        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf: "50",
+        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: "startup_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch: "enabled, disabled",
+        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf: "50",
+        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: "content_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_plugin_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.branch: "enabled, disabled",
+        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf: "50",
+        bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.probe: "plugin_crashes",
       ]
     }
 

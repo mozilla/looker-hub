@@ -7638,6 +7638,58 @@ will be \"custom\"
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__wr_framebuild_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Framebuild Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Framebuild Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Framebuild Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Framebuild Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Framebuild Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Framebuild Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.bucket_count ;;
     type: number
@@ -7687,6 +7739,110 @@ will be \"custom\"
 
   dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__values {
     sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Scenebuild Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Scenebuild Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Scenebuild Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Scenebuild Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Scenebuild Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Scenebuild Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Sceneswap Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Sceneswap Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Sceneswap Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Sceneswap Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Sceneswap Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Sceneswap Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.values ;;
     hidden: yes
   }
 
@@ -9397,7 +9553,43 @@ view: metrics_table__metrics__timing_distribution__storage_stats_query_stats_dur
   }
 }
 
+view: metrics_table__metrics__timing_distribution__wr_framebuild_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__wr_rasterize_glyphs_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__wr_scenebuild_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__wr_sceneswap_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
