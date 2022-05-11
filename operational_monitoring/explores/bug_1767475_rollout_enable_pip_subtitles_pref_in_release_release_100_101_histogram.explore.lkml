@@ -13,14 +13,14 @@ explore: bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_10
     ]
   }
 
-  aggregate_table: rollup_content_process_count {
+  aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_histogram.branch: "enabled, disabled",
         bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_histogram.percentile_conf: "50",
-        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_histogram.probe: "content_process_count",
+        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_histogram.probe: "gc_ms",
       ]
     }
 
@@ -45,14 +45,14 @@ explore: bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_10
     }
   }
 
-  aggregate_table: rollup_gc_ms {
+  aggregate_table: rollup_content_process_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_histogram.branch: "enabled, disabled",
         bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_histogram.percentile_conf: "50",
-        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_histogram.probe: "gc_ms",
+        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_histogram.probe: "content_process_count",
       ]
     }
 
