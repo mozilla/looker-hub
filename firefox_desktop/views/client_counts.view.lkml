@@ -46,12 +46,6 @@ view: client_counts {
   measure: client_count {
     type: number
     description: "The number of clients, determined by whether they sent a baseline ping on the day in question."
-    sql: {% if client_counts.submission_date._is_selected or client_counts.days_since_first_seen._is_selected %}
-                -- This query is grouping on a dimension known to have 1 row per-client
-                COUNT(*)
-              {% else %}
-                -- This query is not grouping on a dimension that is known to have 1 row per-client
-                COUNT(DISTINCT client_id)
-              {% endif %} ;;
+    sql: COUNT(DISTINCT client_id) ;;
   }
 }

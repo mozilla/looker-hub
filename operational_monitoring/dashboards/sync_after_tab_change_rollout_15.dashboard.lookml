@@ -100,8 +100,8 @@
       Percentile: sync_after_tab_change_rollout_15_histogram.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
-  - title: Startup Crashes
-    name: Startup Crashes
+  - title: Main Crashes
+    name: Main Crashes
     explore: sync_after_tab_change_rollout_15_scalar
     type: "ci-line-chart"
     fields: [
@@ -115,68 +115,8 @@
       sync_after_tab_change_rollout_15_scalar.branch
     ]
     filters:
-      sync_after_tab_change_rollout_15_scalar.probe: startup_crashes
+      sync_after_tab_change_rollout_15_scalar.probe: main_crashes
     row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: sync_after_tab_change_rollout_15_scalar.submission_date
-    field_y: sync_after_tab_change_rollout_15_scalar.percentile
-    log_scale: false
-    ci_lower: sync_after_tab_change_rollout_15_scalar.low
-    ci_upper: sync_after_tab_change_rollout_15_scalar.high
-    show_grid: true
-    listen:
-      Percentile: sync_after_tab_change_rollout_15_scalar.percentile_conf
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Content Crashes
-    name: Content Crashes
-    explore: sync_after_tab_change_rollout_15_scalar
-    type: "ci-line-chart"
-    fields: [
-      sync_after_tab_change_rollout_15_scalar.submission_date,
-      sync_after_tab_change_rollout_15_scalar.branch,
-      sync_after_tab_change_rollout_15_scalar.high,
-      sync_after_tab_change_rollout_15_scalar.low,
-      sync_after_tab_change_rollout_15_scalar.percentile
-    ]
-    pivots: [
-      sync_after_tab_change_rollout_15_scalar.branch
-    ]
-    filters:
-      sync_after_tab_change_rollout_15_scalar.probe: content_crashes
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: sync_after_tab_change_rollout_15_scalar.submission_date
-    field_y: sync_after_tab_change_rollout_15_scalar.percentile
-    log_scale: false
-    ci_lower: sync_after_tab_change_rollout_15_scalar.low
-    ci_upper: sync_after_tab_change_rollout_15_scalar.high
-    show_grid: true
-    listen:
-      Percentile: sync_after_tab_change_rollout_15_scalar.percentile_conf
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Gmplugin Crashes
-    name: Gmplugin Crashes
-    explore: sync_after_tab_change_rollout_15_scalar
-    type: "ci-line-chart"
-    fields: [
-      sync_after_tab_change_rollout_15_scalar.submission_date,
-      sync_after_tab_change_rollout_15_scalar.branch,
-      sync_after_tab_change_rollout_15_scalar.high,
-      sync_after_tab_change_rollout_15_scalar.low,
-      sync_after_tab_change_rollout_15_scalar.percentile
-    ]
-    pivots: [
-      sync_after_tab_change_rollout_15_scalar.branch
-    ]
-    filters:
-      sync_after_tab_change_rollout_15_scalar.probe: gmplugin_crashes
-    row: 20
     col: 12
     width: 12
     height: 8
@@ -206,6 +146,66 @@
     ]
     filters:
       sync_after_tab_change_rollout_15_scalar.probe: oom_crashes
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: sync_after_tab_change_rollout_15_scalar.submission_date
+    field_y: sync_after_tab_change_rollout_15_scalar.percentile
+    log_scale: false
+    ci_lower: sync_after_tab_change_rollout_15_scalar.low
+    ci_upper: sync_after_tab_change_rollout_15_scalar.high
+    show_grid: true
+    listen:
+      Percentile: sync_after_tab_change_rollout_15_scalar.percentile_conf
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Gpu Crashes
+    name: Gpu Crashes
+    explore: sync_after_tab_change_rollout_15_scalar
+    type: "ci-line-chart"
+    fields: [
+      sync_after_tab_change_rollout_15_scalar.submission_date,
+      sync_after_tab_change_rollout_15_scalar.branch,
+      sync_after_tab_change_rollout_15_scalar.high,
+      sync_after_tab_change_rollout_15_scalar.low,
+      sync_after_tab_change_rollout_15_scalar.percentile
+    ]
+    pivots: [
+      sync_after_tab_change_rollout_15_scalar.branch
+    ]
+    filters:
+      sync_after_tab_change_rollout_15_scalar.probe: gpu_crashes
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: sync_after_tab_change_rollout_15_scalar.submission_date
+    field_y: sync_after_tab_change_rollout_15_scalar.percentile
+    log_scale: false
+    ci_lower: sync_after_tab_change_rollout_15_scalar.low
+    ci_upper: sync_after_tab_change_rollout_15_scalar.high
+    show_grid: true
+    listen:
+      Percentile: sync_after_tab_change_rollout_15_scalar.percentile_conf
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
+    explore: sync_after_tab_change_rollout_15_scalar
+    type: "ci-line-chart"
+    fields: [
+      sync_after_tab_change_rollout_15_scalar.submission_date,
+      sync_after_tab_change_rollout_15_scalar.branch,
+      sync_after_tab_change_rollout_15_scalar.high,
+      sync_after_tab_change_rollout_15_scalar.low,
+      sync_after_tab_change_rollout_15_scalar.percentile
+    ]
+    pivots: [
+      sync_after_tab_change_rollout_15_scalar.branch
+    ]
+    filters:
+      sync_after_tab_change_rollout_15_scalar.probe: shutdown_hangs
     row: 30
     col: 0
     width: 12
@@ -220,8 +220,8 @@
       Percentile: sync_after_tab_change_rollout_15_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
-  - title: Plugin Crashes
-    name: Plugin Crashes
+  - title: Gmplugin Crashes
+    name: Gmplugin Crashes
     explore: sync_after_tab_change_rollout_15_scalar
     type: "ci-line-chart"
     fields: [
@@ -235,7 +235,7 @@
       sync_after_tab_change_rollout_15_scalar.branch
     ]
     filters:
-      sync_after_tab_change_rollout_15_scalar.probe: plugin_crashes
+      sync_after_tab_change_rollout_15_scalar.probe: gmplugin_crashes
     row: 30
     col: 12
     width: 12
@@ -280,8 +280,8 @@
       Percentile: sync_after_tab_change_rollout_15_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
-  - title: Gpu Crashes
-    name: Gpu Crashes
+  - title: Startup Crashes
+    name: Startup Crashes
     explore: sync_after_tab_change_rollout_15_scalar
     type: "ci-line-chart"
     fields: [
@@ -295,7 +295,7 @@
       sync_after_tab_change_rollout_15_scalar.branch
     ]
     filters:
-      sync_after_tab_change_rollout_15_scalar.probe: gpu_crashes
+      sync_after_tab_change_rollout_15_scalar.probe: startup_crashes
     row: 40
     col: 12
     width: 12
@@ -310,8 +310,8 @@
       Percentile: sync_after_tab_change_rollout_15_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
+  - title: Content Crashes
+    name: Content Crashes
     explore: sync_after_tab_change_rollout_15_scalar
     type: "ci-line-chart"
     fields: [
@@ -325,7 +325,7 @@
       sync_after_tab_change_rollout_15_scalar.branch
     ]
     filters:
-      sync_after_tab_change_rollout_15_scalar.probe: shutdown_hangs
+      sync_after_tab_change_rollout_15_scalar.probe: content_crashes
     row: 50
     col: 0
     width: 12
@@ -340,8 +340,8 @@
       Percentile: sync_after_tab_change_rollout_15_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
-  - title: Main Crashes
-    name: Main Crashes
+  - title: Plugin Crashes
+    name: Plugin Crashes
     explore: sync_after_tab_change_rollout_15_scalar
     type: "ci-line-chart"
     fields: [
@@ -355,7 +355,7 @@
       sync_after_tab_change_rollout_15_scalar.branch
     ]
     filters:
-      sync_after_tab_change_rollout_15_scalar.probe: main_crashes
+      sync_after_tab_change_rollout_15_scalar.probe: plugin_crashes
     row: 50
     col: 12
     width: 12
