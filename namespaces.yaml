@@ -78,6 +78,21 @@ casa:
       tables:
       - table: mozdata.casa.users
       type: table_view
+combined_browser_metrics:
+  glean_app: false
+  owners:
+  - gkaberere@mozilla.com
+  - lvargas@mozilla.com
+  - mhirose@mozilla.com
+  - anicholson@mozilla.com
+  - kignasiak@mozilla.com
+  pretty_name: Combined Browser Metrics
+  spoke: looker-spoke-default
+  views:
+    active_users_aggregates:
+      tables:
+      - table: moz-fx-data-shared-prod.telemetry.active_users_aggregates
+      type: table_view
 contextual_services:
   connection: bigquery-oauth
   explores:
@@ -4984,3 +4999,26 @@ sync:
       tables:
       - table: mozdata.telemetry.sync
       type: ping_view
+websites:
+  glean_app: false
+  owners:
+  - kignasiak@mozilla.com
+  pretty_name: Websites
+  spoke: looker-spoke-default
+  views:
+    blogs_daily_summary:
+      tables:
+      - table: moz-fx-data-marketing-prod.ga_derived.blogs_daily_summary_v1
+      type: table_view
+    moz_org_landing_page_metrics:
+      tables:
+      - table: moz-fx-data-marketing-prod.ga_derived.www_site_landing_page_metrics_v1
+      type: table_view
+    moz_org_metrics_summary:
+      tables:
+      - table: moz-fx-data-marketing-prod.ga_derived.www_site_metrics_summary_v1
+      type: table_view
+    moz_org_page_metrics:
+      tables:
+      - table: moz-fx-data-marketing-prod.ga_derived.www_site_page_metrics_v1
+      type: table_view
