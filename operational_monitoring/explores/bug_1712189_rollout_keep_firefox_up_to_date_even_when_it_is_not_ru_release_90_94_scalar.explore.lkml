@@ -13,70 +13,6 @@ explore: bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_rele
     ]
   }
 
-  aggregate_table: rollup_main_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.branch: "enabled, disabled",
-        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.percentile_conf: "50",
-        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.probe: "main_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_oom_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.branch: "enabled, disabled",
-        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.percentile_conf: "50",
-        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.probe: "oom_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_gpu_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.branch: "enabled, disabled",
-        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.percentile_conf: "50",
-        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.probe: "gpu_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_shutdown_hangs {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.branch: "enabled, disabled",
-        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.percentile_conf: "50",
-        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.probe: "shutdown_hangs",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_gmplugin_crashes {
     query: {
       dimensions: [submission_date, branch]
@@ -85,38 +21,6 @@ explore: bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_rele
         bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.branch: "enabled, disabled",
         bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.percentile_conf: "50",
         bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.probe: "gmplugin_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_content_shutdown_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.branch: "enabled, disabled",
-        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.percentile_conf: "50",
-        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.probe: "content_shutdown_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_startup_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.branch: "enabled, disabled",
-        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.percentile_conf: "50",
-        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.probe: "startup_crashes",
       ]
     }
 
@@ -141,6 +45,86 @@ explore: bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_rele
     }
   }
 
+  aggregate_table: rollup_content_shutdown_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.branch: "enabled, disabled",
+        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.percentile_conf: "50",
+        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.probe: "content_shutdown_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_gpu_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.branch: "enabled, disabled",
+        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.percentile_conf: "50",
+        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.probe: "gpu_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_startup_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.branch: "enabled, disabled",
+        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.percentile_conf: "50",
+        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.probe: "startup_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_shutdown_hangs {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.branch: "enabled, disabled",
+        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.percentile_conf: "50",
+        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.probe: "shutdown_hangs",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_oom_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.branch: "enabled, disabled",
+        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.percentile_conf: "50",
+        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.probe: "oom_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
   aggregate_table: rollup_plugin_crashes {
     query: {
       dimensions: [submission_date, branch]
@@ -149,6 +133,22 @@ explore: bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_rele
         bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.branch: "enabled, disabled",
         bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.percentile_conf: "50",
         bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.probe: "plugin_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_main_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.branch: "enabled, disabled",
+        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.percentile_conf: "50",
+        bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.probe: "main_crashes",
       ]
     }
 
