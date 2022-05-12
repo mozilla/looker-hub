@@ -10,6 +10,36 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Content Process Count
+    name: Content Process Count
+    explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram
+    type: "ci-line-chart"
+    fields: [
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.submission_date,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.branch,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.high,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.low,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.percentile
+    ]
+    pivots: [
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.branch
+    ]
+    filters:
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.probe: content_process_count
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.submission_date
+    field_y: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.percentile
+    log_scale: false
+    ci_lower: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.low
+    ci_upper: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.high
+    show_grid: true
+    listen:
+      Percentile: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.percentile_conf
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
   - title: Gc Ms
     name: Gc Ms
     explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram
@@ -27,7 +57,7 @@
     filters:
       bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.probe: gc_ms
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.submission_date
@@ -56,36 +86,6 @@
     ]
     filters:
       bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.probe: memory_total
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.submission_date
-    field_y: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.percentile
-    log_scale: false
-    ci_lower: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.low
-    ci_upper: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.high
-    show_grid: true
-    listen:
-      Percentile: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.percentile_conf
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Content Process Count
-    name: Content Process Count
-    explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram
-    type: "ci-line-chart"
-    fields: [
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.submission_date,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.branch,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.high,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.low,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.percentile
-    ]
-    pivots: [
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.branch
-    ]
-    filters:
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.probe: content_process_count
     row: 10
     col: 0
     width: 12
@@ -98,126 +98,6 @@
     show_grid: true
     listen:
       Percentile: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.percentile_conf
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Main Crashes
-    name: Main Crashes
-    explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar
-    type: "ci-line-chart"
-    fields: [
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
-    ]
-    pivots: [
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch
-    ]
-    filters:
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.probe: main_crashes
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date
-    field_y: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
-    log_scale: false
-    ci_lower: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low
-    ci_upper: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high
-    show_grid: true
-    listen:
-      Percentile: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile_conf
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Oom Crashes
-    name: Oom Crashes
-    explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar
-    type: "ci-line-chart"
-    fields: [
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
-    ]
-    pivots: [
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch
-    ]
-    filters:
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.probe: oom_crashes
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date
-    field_y: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
-    log_scale: false
-    ci_lower: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low
-    ci_upper: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high
-    show_grid: true
-    listen:
-      Percentile: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile_conf
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Gpu Crashes
-    name: Gpu Crashes
-    explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar
-    type: "ci-line-chart"
-    fields: [
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
-    ]
-    pivots: [
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch
-    ]
-    filters:
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.probe: gpu_crashes
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date
-    field_y: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
-    log_scale: false
-    ci_lower: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low
-    ci_upper: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high
-    show_grid: true
-    listen:
-      Percentile: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile_conf
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
-    explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar
-    type: "ci-line-chart"
-    fields: [
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
-    ]
-    pivots: [
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch
-    ]
-    filters:
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.probe: shutdown_hangs
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date
-    field_y: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
-    log_scale: false
-    ci_lower: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low
-    ci_upper: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high
-    show_grid: true
-    listen:
-      Percentile: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
   - title: Gmplugin Crashes
@@ -236,67 +116,7 @@
     ]
     filters:
       bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.probe: gmplugin_crashes
-    row: 30
-    col: 12
-    width: 12
-    height: 8
-    field_x: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date
-    field_y: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
-    log_scale: false
-    ci_lower: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low
-    ci_upper: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high
-    show_grid: true
-    listen:
-      Percentile: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile_conf
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Content Shutdown Crashes
-    name: Content Shutdown Crashes
-    explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar
-    type: "ci-line-chart"
-    fields: [
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
-    ]
-    pivots: [
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch
-    ]
-    filters:
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.probe: content_shutdown_crashes
-    row: 40
-    col: 0
-    width: 12
-    height: 8
-    field_x: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date
-    field_y: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
-    log_scale: false
-    ci_lower: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low
-    ci_upper: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high
-    show_grid: true
-    listen:
-      Percentile: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile_conf
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Startup Crashes
-    name: Startup Crashes
-    explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar
-    type: "ci-line-chart"
-    fields: [
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low,
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
-    ]
-    pivots: [
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch
-    ]
-    filters:
-      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.probe: startup_crashes
-    row: 40
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -326,8 +146,158 @@
     ]
     filters:
       bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.probe: content_crashes
-    row: 50
+    row: 20
     col: 0
+    width: 12
+    height: 8
+    field_x: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date
+    field_y: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
+    log_scale: false
+    ci_lower: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low
+    ci_upper: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high
+    show_grid: true
+    listen:
+      Percentile: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile_conf
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Content Shutdown Crashes
+    name: Content Shutdown Crashes
+    explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar
+    type: "ci-line-chart"
+    fields: [
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
+    ]
+    pivots: [
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch
+    ]
+    filters:
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.probe: content_shutdown_crashes
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date
+    field_y: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
+    log_scale: false
+    ci_lower: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low
+    ci_upper: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high
+    show_grid: true
+    listen:
+      Percentile: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile_conf
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Gpu Crashes
+    name: Gpu Crashes
+    explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar
+    type: "ci-line-chart"
+    fields: [
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
+    ]
+    pivots: [
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch
+    ]
+    filters:
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.probe: gpu_crashes
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date
+    field_y: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
+    log_scale: false
+    ci_lower: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low
+    ci_upper: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high
+    show_grid: true
+    listen:
+      Percentile: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile_conf
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Startup Crashes
+    name: Startup Crashes
+    explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar
+    type: "ci-line-chart"
+    fields: [
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
+    ]
+    pivots: [
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch
+    ]
+    filters:
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.probe: startup_crashes
+    row: 30
+    col: 12
+    width: 12
+    height: 8
+    field_x: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date
+    field_y: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
+    log_scale: false
+    ci_lower: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low
+    ci_upper: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high
+    show_grid: true
+    listen:
+      Percentile: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile_conf
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
+    explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar
+    type: "ci-line-chart"
+    fields: [
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
+    ]
+    pivots: [
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch
+    ]
+    filters:
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.probe: shutdown_hangs
+    row: 40
+    col: 0
+    width: 12
+    height: 8
+    field_x: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date
+    field_y: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
+    log_scale: false
+    ci_lower: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low
+    ci_upper: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high
+    show_grid: true
+    listen:
+      Percentile: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile_conf
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Oom Crashes
+    name: Oom Crashes
+    explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar
+    type: "ci-line-chart"
+    fields: [
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
+    ]
+    pivots: [
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch
+    ]
+    filters:
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.probe: oom_crashes
+    row: 40
+    col: 12
     width: 12
     height: 8
     field_x: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date
@@ -356,6 +326,36 @@
     ]
     filters:
       bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.probe: plugin_crashes
+    row: 50
+    col: 0
+    width: 12
+    height: 8
+    field_x: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date
+    field_y: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
+    log_scale: false
+    ci_lower: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low
+    ci_upper: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high
+    show_grid: true
+    listen:
+      Percentile: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile_conf
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Main Crashes
+    name: Main Crashes
+    explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar
+    type: "ci-line-chart"
+    fields: [
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.submission_date,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.high,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.low,
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.percentile
+    ]
+    pivots: [
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.branch
+    ]
+    filters:
+      bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_scalar.probe: main_crashes
     row: 50
     col: 12
     width: 12
