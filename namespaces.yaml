@@ -5010,6 +5010,10 @@ websites:
       tables:
       - table: moz-fx-data-marketing-prod.ga_derived.blogs_daily_summary_v1
       type: table_view
+    blogs_landing_page_summary:
+      tables:
+      - table: moz-fx-data-marketing-prod.ga_derived.blogs_landing_page_summary_v1
+      type: table_view
     moz_org_landing_page_metrics:
       tables:
       - table: moz-fx-data-marketing-prod.ga_derived.www_site_landing_page_metrics_v1
