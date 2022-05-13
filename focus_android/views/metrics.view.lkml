@@ -289,6 +289,24 @@ that programmatically redirect to a new location.
 "
   }
 
+  dimension: metrics__timespan__nimbus_experiments_nimbus_initial_fetch__value {
+    label: "Nimbus Experiments Nimbus Initial Fetch Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.nimbus_experiments_nimbus_initial_fetch.value ;;
+    type: number
+    group_label: "Nimbus Experiments"
+    group_item_label: "Nimbus Initial Fetch Value"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Experiments Nimbus Initial Fetch Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/nimbus_experiments_nimbus_initial_fetch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures the time spent to download the nimbus experiments
+"
+  }
+
   dimension: metrics__string__preferences_user_theme {
     label: "Preferences User Theme"
     hidden: no
