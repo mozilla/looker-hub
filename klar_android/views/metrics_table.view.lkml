@@ -817,6 +817,20 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__timespan__nimbus_experiments_nimbus_initial_fetch__time_unit {
+    sql: ${TABLE}.metrics.timespan.nimbus_experiments_nimbus_initial_fetch.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Nimbus Experiments Nimbus Initial Fetch"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__nimbus_experiments_nimbus_initial_fetch__value {
+    sql: ${TABLE}.metrics.timespan.nimbus_experiments_nimbus_initial_fetch.value ;;
+    type: number
+    group_label: "Metrics Timespan Nimbus Experiments Nimbus Initial Fetch"
+    group_item_label: "Value"
+  }
+
   dimension: metrics__url {
     sql: ${TABLE}.metrics.url ;;
     hidden: yes

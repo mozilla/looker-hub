@@ -156,6 +156,21 @@ view: active_users_aggregates {
     type: number
   }
 
+  dimension_group: first_seen {
+    sql: ${TABLE}.first_seen_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+  }
+
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
