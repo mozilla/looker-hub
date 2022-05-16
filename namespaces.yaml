@@ -93,6 +93,10 @@ combined_browser_metrics:
       tables:
       - table: moz-fx-data-shared-prod.telemetry.active_users_aggregates
       type: table_view
+    cohort_daily_statistics:
+      tables:
+      - table: moz-fx-data-shared-prod.telemetry.cohort_daily_statistics
+      type: table_view
 contextual_services:
   connection: bigquery-oauth
   explores:
@@ -1911,6 +1915,21 @@ kpi:
       tables:
       - table: mozdata.telemetry.unified_metrics
       type: ping_view
+marketing:
+  glean_app: false
+  owners:
+  - kignasiak@mozilla.com
+  pretty_name: Marketing
+  spoke: looker-spoke-default
+  views:
+    acoustic_contacts:
+      tables:
+      - table: moz-fx-data-marketing-prod.acoustic.contact_v1
+      type: table_view
+    acoustic_email_events:
+      tables:
+      - table: moz-fx-data-marketing-prod.acoustic.raw_recipient_v1
+      type: table_view
 monitoring:
   explores:
     average_ping_sizes:
