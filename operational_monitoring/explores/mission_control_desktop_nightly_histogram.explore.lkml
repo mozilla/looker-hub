@@ -20,7 +20,7 @@ explore: mission_control_desktop_nightly_histogram {
       filters: [
         mission_control_desktop_nightly_histogram.branch: "active",
         mission_control_desktop_nightly_histogram.percentile_conf: "50",
-        mission_control_desktop_nightly_histogram.build: "20220427",
+        mission_control_desktop_nightly_histogram.build: "20220504",
         mission_control_desktop_nightly_histogram.os: "Windows",
         mission_control_desktop_nightly_histogram.probe: "content_process_count",
       ]
@@ -38,7 +38,7 @@ explore: mission_control_desktop_nightly_histogram {
       filters: [
         mission_control_desktop_nightly_histogram.branch: "active",
         mission_control_desktop_nightly_histogram.percentile_conf: "50",
-        mission_control_desktop_nightly_histogram.build: "20220427",
+        mission_control_desktop_nightly_histogram.build: "20220504",
         mission_control_desktop_nightly_histogram.os: "Windows",
         mission_control_desktop_nightly_histogram.probe: "fx_tab_switch_composite_e10s_ms",
       ]
@@ -56,7 +56,7 @@ explore: mission_control_desktop_nightly_histogram {
       filters: [
         mission_control_desktop_nightly_histogram.branch: "active",
         mission_control_desktop_nightly_histogram.percentile_conf: "50",
-        mission_control_desktop_nightly_histogram.build: "20220427",
+        mission_control_desktop_nightly_histogram.build: "20220504",
         mission_control_desktop_nightly_histogram.os: "Windows",
         mission_control_desktop_nightly_histogram.probe: "gc_ms",
       ]
