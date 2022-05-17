@@ -13,22 +13,6 @@ explore: bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_10
     ]
   }
 
-  aggregate_table: rollup_memory_total {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_histogram.branch: "enabled, disabled",
-        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_histogram.percentile_conf: "50",
-        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_histogram.probe: "memory_total",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_content_process_count {
     query: {
       dimensions: [submission_date, branch]
@@ -37,6 +21,22 @@ explore: bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_10
         bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_histogram.branch: "enabled, disabled",
         bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_histogram.percentile_conf: "50",
         bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_histogram.probe: "content_process_count",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_memory_total {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_histogram.branch: "enabled, disabled",
+        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_histogram.percentile_conf: "50",
+        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_histogram.probe: "memory_total",
       ]
     }
 

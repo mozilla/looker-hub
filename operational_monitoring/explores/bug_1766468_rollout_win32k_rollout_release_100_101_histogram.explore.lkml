@@ -13,22 +13,6 @@ explore: bug_1766468_rollout_win32k_rollout_release_100_101_histogram {
     ]
   }
 
-  aggregate_table: rollup_memory_total {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1766468_rollout_win32k_rollout_release_100_101_histogram.branch: "enabled, disabled",
-        bug_1766468_rollout_win32k_rollout_release_100_101_histogram.percentile_conf: "50",
-        bug_1766468_rollout_win32k_rollout_release_100_101_histogram.probe: "memory_total",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_content_process_count {
     query: {
       dimensions: [submission_date, branch]
@@ -37,6 +21,22 @@ explore: bug_1766468_rollout_win32k_rollout_release_100_101_histogram {
         bug_1766468_rollout_win32k_rollout_release_100_101_histogram.branch: "enabled, disabled",
         bug_1766468_rollout_win32k_rollout_release_100_101_histogram.percentile_conf: "50",
         bug_1766468_rollout_win32k_rollout_release_100_101_histogram.probe: "content_process_count",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_memory_total {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1766468_rollout_win32k_rollout_release_100_101_histogram.branch: "enabled, disabled",
+        bug_1766468_rollout_win32k_rollout_release_100_101_histogram.percentile_conf: "50",
+        bug_1766468_rollout_win32k_rollout_release_100_101_histogram.probe: "memory_total",
       ]
     }
 
