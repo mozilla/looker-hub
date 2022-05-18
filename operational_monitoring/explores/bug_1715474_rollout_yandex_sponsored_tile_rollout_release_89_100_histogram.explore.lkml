@@ -13,14 +13,14 @@ explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histog
     ]
   }
 
-  aggregate_table: rollup_content_process_count {
+  aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.branch: "enabled, disabled",
         bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.percentile_conf: "50",
-        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.probe: "content_process_count",
+        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.probe: "gc_ms",
       ]
     }
 
@@ -45,14 +45,14 @@ explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histog
     }
   }
 
-  aggregate_table: rollup_gc_ms {
+  aggregate_table: rollup_content_process_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.branch: "enabled, disabled",
         bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.percentile_conf: "50",
-        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.probe: "gc_ms",
+        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.probe: "content_process_count",
       ]
     }
 
