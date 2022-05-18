@@ -370,6 +370,7 @@
       Percentile: firefox_suggest_by_merino_nightly_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+  
   filters:
   - name: Percentile
     title: Percentile

@@ -370,6 +370,7 @@
       Percentile: bug_1726680_rollout_revert_default_high_contrast_mode_setting_on_m_release_91_91_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+  
   filters:
   - name: Percentile
     title: Percentile

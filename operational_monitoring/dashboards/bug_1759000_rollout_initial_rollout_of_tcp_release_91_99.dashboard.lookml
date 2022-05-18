@@ -370,6 +370,63 @@
       Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+  
+  - title: Alerts
+    name: Alerts
+    model: operational_monitoring
+    explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts
+    type: looker_grid
+    fields: [bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts.submission_date,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts.probe, bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts.percentile,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts.message, bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts.branch, bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts.errors]
+    sorts: [bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts.submission_date
+        desc]
+    limit: 500
+    show_view_names: false
+    show_row_numbers: true
+    transpose: false
+    truncate_text: true
+    hide_totals: false
+    hide_row_totals: false
+    size_to_fit: true
+    table_theme: white
+    limit_displayed_rows: false
+    enable_conditional_formatting: false
+    header_text_alignment: left
+    header_font_size: 12
+    rows_font_size: 12
+    conditional_formatting_include_totals: false
+    conditional_formatting_include_nulls: false
+    x_axis_gridlines: false
+    y_axis_gridlines: true
+    show_y_axis_labels: true
+    show_y_axis_ticks: true
+    y_axis_tick_density: default
+    y_axis_tick_density_custom: 5
+    show_x_axis_label: true
+    show_x_axis_ticks: true
+    y_axis_scale_mode: linear
+    x_axis_reversed: false
+    y_axis_reversed: false
+    plot_size_by_field: false
+    trellis: ''
+    stacking: ''
+    legend_position: center
+    point_style: none
+    show_value_labels: false
+    label_density: 25
+    x_axis_scale: auto
+    y_axis_combined: true
+    show_null_points: true
+    interpolation: linear
+    defaults_version: 1
+    series_types: {}
+    listen: {}
+    row: (60,)
+    col: 0
+    width: 24
+    height: 6
+  
   filters:
   - name: Percentile
     title: Percentile

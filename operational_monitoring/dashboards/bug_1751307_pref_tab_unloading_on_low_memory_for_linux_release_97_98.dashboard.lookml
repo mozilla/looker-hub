@@ -1450,6 +1450,7 @@
       Percentile: bug_1751307_pref_tab_unloading_on_low_memory_for_linux_release_97_98_scalar.percentile_conf
     tab-unloading-enabled: "#3FE1B0"
     tab-unloading-disabled: "#0060E0"
+  
   filters:
   - name: Percentile
     title: Percentile

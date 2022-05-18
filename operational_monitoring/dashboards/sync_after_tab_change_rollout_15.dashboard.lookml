@@ -370,6 +370,7 @@
       Percentile: sync_after_tab_change_rollout_15_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+  
   filters:
   - name: Percentile
     title: Percentile

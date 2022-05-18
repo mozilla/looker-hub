@@ -3025,6 +3025,8 @@ operational_monitoring:
         - oom_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar
         xaxis: submission_date
+      - explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts
+        table: moz-fx-data-shared-prod.operational_monitoring.bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts
       title: Initial Rollout Of Tcp
       type: operational_monitoring_dashboard
     bug_1759171_pref_win32k_experiment_v2_beta_99_100:
@@ -4113,6 +4115,10 @@ operational_monitoring:
       views:
         base_view: bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar
       xaxis: submission_date
+    bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts:
+      type: operational_monitoring_alerting_explore
+      views:
+        base_view: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts
     bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram:
       branches: *id031
       dimensions: &id076 {}
@@ -4756,6 +4762,10 @@ operational_monitoring:
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1758988_rollout_doh_enablment_to_new_countries_staggered_st_release_98_100_scalar
         xaxis: submission_date
       type: operational_monitoring_scalar_view
+    bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts:
+      tables:
+      - table: moz-fx-data-shared-prod.operational_monitoring.bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts
+      type: operational_monitoring_alerting_view
     bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram:
       tables:
       - dimensions: *id076

@@ -370,6 +370,7 @@
       Percentile: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+  
   filters:
   - name: Percentile
     title: Percentile

@@ -213,6 +213,7 @@
     listen:
       Percentile: bug_1725376_rollout_https_rr_rollout_release_91_91_scalar.percentile_conf
     active: "#3FE1B0"
+  
   filters:
   - name: Percentile
     title: Percentile

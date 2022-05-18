@@ -1450,6 +1450,7 @@
       Percentile: bug_1751309_pref_tab_unloading_on_low_memory_for_windows_release_97_98_scalar.percentile_conf
     tab-unloading-enabled: "#3FE1B0"
     tab-unloading-disabled: "#0060E0"
+  
   filters:
   - name: Percentile
     title: Percentile
