@@ -86,6 +86,11 @@ view: active_users_aggregates {
     type: string
   }
 
+  dimension: first_seen_year {
+    sql: ${TABLE}.first_seen_year ;;
+    type: number
+  }
+
   dimension: is_default_browser {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno
@@ -154,21 +159,6 @@ view: active_users_aggregates {
   dimension: wau {
     sql: ${TABLE}.wau ;;
     type: number
-  }
-
-  dimension_group: first_seen {
-    sql: ${TABLE}.first_seen_date ;;
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    convert_tz: no
-    datatype: date
   }
 
   dimension_group: submission {

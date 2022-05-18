@@ -310,6 +310,37 @@ changes the default browser through the app settings.
 "
   }
 
+  dimension: metrics__boolean__browser_ui_proton_enabled {
+    sql: ${TABLE}.metrics.boolean.browser_ui_proton_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Browser Ui Proton Enabled"
+    description: "True if the Proton default theme is enabled.
+"
+  }
+
+  dimension: metrics__boolean__fog_failed_idle_registration {
+    sql: ${TABLE}.metrics.boolean.fog_failed_idle_registration ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Fog Failed Idle Registration"
+    description: "True if we failed to register with the idle service. Absent otherwise.
+Means IPC probably isn't working well.
+Child-process data will likely be absent, or incomplete.
+"
+  }
+
+  dimension: metrics__boolean__gifft_validation_main_ping_assembling {
+    sql: ${TABLE}.metrics.boolean.gifft_validation_main_ping_assembling ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Gifft Validation Main Ping Assembling"
+    description: "The value `true`, recorded when a Firefox Telemetry \"main\" ping is about
+to be assembled.
+To be used to validate GIFFT.
+"
+  }
+
   dimension: metrics__boolean__glean_core_migration_successful {
     sql: ${TABLE}.metrics.boolean.glean_core_migration_successful ;;
     type: yesno
@@ -447,6 +478,44 @@ that programmatically redirect to a new location.
 "
   }
 
+  dimension: metrics__counter__fog_ipc_flush_failures {
+    sql: ${TABLE}.metrics.counter.fog_ipc_flush_failures ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Fog Ipc Flush Failures"
+    description: "The number of times we failed to flush all non-parent-process data,
+throwing even partial results into the trash.
+If this number is high, we might consider writing custom `MozPromise`-
+handling code instead of using `MozPromise::All`.
+"
+  }
+
+  dimension: metrics__counter__fog_ipc_replay_failures {
+    sql: ${TABLE}.metrics.counter.fog_ipc_replay_failures ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Fog Ipc Replay Failures"
+    description: "The number of times the ipc buffer failed to be replayed in the
+parent process.
+"
+  }
+
+  dimension: metrics__counter__fog_ipc_shutdown_registration_failures {
+    sql: ${TABLE}.metrics.counter.fog_ipc_shutdown_registration_failures ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Fog Ipc Shutdown Registration Failures"
+    description: "The number of times we tried to register shutdown flush routines for
+content child processes, and failed (probably because there was no main
+thread).
+As a result there may be data loss from content child processes.
+Large or rising number of clients experiencing this indicates we should
+perhaps refactor content child shutdown in FOG to try harder to register
+flush operations.
+Will likely be obsoleted by bug 1641989.
+"
+  }
+
   dimension: metrics__counter__glean_error_io {
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
@@ -529,6 +598,51 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__power_cpu_time_bogus_values {
+    sql: ${TABLE}.metrics.counter.power_cpu_time_bogus_values ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Power Cpu Time Bogus Values"
+    description: "Impossibly large CPU time values that were discarded.
+"
+  }
+
+  dimension: metrics__counter__power_gpu_time_bogus_values {
+    sql: ${TABLE}.metrics.counter.power_gpu_time_bogus_values ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Power Gpu Time Bogus Values"
+    description: "Impossibly large GPU time values that were discarded.
+"
+  }
+
+  dimension: metrics__counter__power_total_cpu_time_ms {
+    sql: ${TABLE}.metrics.counter.power_total_cpu_time_ms ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Power Total Cpu Time Ms"
+    description: "Total CPU time used by all processes in ms.
+"
+  }
+
+  dimension: metrics__counter__power_total_gpu_time_ms {
+    sql: ${TABLE}.metrics.counter.power_total_gpu_time_ms ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Power Total Gpu Time Ms"
+    description: "Total GPU time used by all processes in ms.
+"
+  }
+
+  dimension: metrics__counter__power_total_thread_wakeups {
+    sql: ${TABLE}.metrics.counter.power_total_thread_wakeups ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Power Total Thread Wakeups"
+    description: "How many times threads woke up and could have woken up a CPU core.
+"
+  }
+
   dimension: metrics__counter__settings_screen_autocomplete_domain_added {
     sql: ${TABLE}.metrics.counter.settings_screen_autocomplete_domain_added ;;
     type: number
@@ -577,6 +691,18 @@ a website from a shortcut in the home screen.
     description: "A counter that indicates how many times a user has opened
 the tracking protection settings panel from the toolbar.
 "
+  }
+
+  dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__sum {
+    sql: ${TABLE}.metrics.custom_distribution.power_battery_percentage_when_user_active.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Power Battery Percentage When User Active"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__values {
+    sql: ${TABLE}.metrics.custom_distribution.power_battery_percentage_when_user_active.values ;;
+    hidden: yes
   }
 
   dimension: metrics__custom_distribution__tab_count_app_backgrounded__sum {
@@ -705,6 +831,104 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__gmp_update_xml_fetch_result {
+    sql: ${TABLE}.metrics.labeled_counter.gmp_update_xml_fetch_result ;;
+    hidden: yes
+    description: "The result of Gecko fetching an update.xml from Balrog. This captures 3 different data points: success or failure of the request, if cert pinning or content signatures were used to verify the result, and the reason for failure, if the request failed.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_content_background ;;
+    hidden: yes
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_content_foreground ;;
+    hidden: yes
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_gpu_process ;;
+    hidden: yes
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_parent_active ;;
+    hidden: yes
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_parent_inactive ;;
+    hidden: yes
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_time_per_process_type_ms ;;
+    hidden: yes
+    description: "CPU time used by each process type in ms.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_gpu_time_per_process_type_ms {
+    sql: ${TABLE}.metrics.labeled_counter.power_gpu_time_per_process_type_ms ;;
+    hidden: yes
+    description: "GPU time used by each process type in ms.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_process_type {
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_process_type ;;
+    hidden: yes
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_content_background {
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_content_background ;;
+    hidden: yes
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_content_foreground ;;
+    hidden: yes
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_gpu_process ;;
+    hidden: yes
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_parent_active {
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_parent_active ;;
+    hidden: yes
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_parent_inactive ;;
+    hidden: yes
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
   dimension: metrics__labeled_counter__shortcuts_shortcut_removed_counter {
     sql: ${TABLE}.metrics.labeled_counter.shortcuts_shortcut_removed_counter ;;
     hidden: yes
@@ -716,6 +940,18 @@ It also indicates the screen it was removed from, home or browser.
 
   dimension: metrics__labeled_rate {
     sql: ${TABLE}.metrics.labeled_rate ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__fog_ipc_buffer_sizes__sum {
+    sql: ${TABLE}.metrics.memory_distribution.fog_ipc_buffer_sizes.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Fog Ipc Buffer Sizes"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__fog_ipc_buffer_sizes__values {
+    sql: ${TABLE}.metrics.memory_distribution.fog_ipc_buffer_sizes.values ;;
     hidden: yes
   }
 
@@ -792,6 +1028,24 @@ specifically overrides it for the app.
 "
   }
 
+  dimension: metrics__string__geckoview_validation_build_id {
+    sql: ${TABLE}.metrics.string.geckoview_validation_build_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Geckoview Validation Build Id"
+    description: "The Buildid of the Gecko engine, example: 20200205124310 Mirror of `geckoview.build_id` for validation of migrated data.
+"
+  }
+
+  dimension: metrics__string__geckoview_validation_version {
+    sql: ${TABLE}.metrics.string.geckoview_validation_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Geckoview Validation Version"
+    description: "The version of the Gecko engine, example: 74.0a1 Mirror of `geckoview.version` for validation of migrated data.
+"
+  }
+
   dimension: metrics__string__ping_reason {
     sql: ${TABLE}.metrics.string.ping_reason ;;
     type: string
@@ -817,6 +1071,20 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__timespan__fog_initialization__time_unit {
+    sql: ${TABLE}.metrics.timespan.fog_initialization.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Fog Initialization"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__fog_initialization__value {
+    sql: ${TABLE}.metrics.timespan.fog_initialization.value ;;
+    type: number
+    group_label: "Metrics Timespan Fog Initialization"
+    group_item_label: "Value"
+  }
+
   dimension: metrics__timespan__nimbus_experiments_nimbus_initial_fetch__time_unit {
     sql: ${TABLE}.metrics.timespan.nimbus_experiments_nimbus_initial_fetch.time_unit ;;
     type: string
@@ -829,6 +1097,318 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timespan Nimbus Experiments Nimbus Initial Fetch"
     group_item_label: "Value"
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Ipc Flush Durations"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fog Ipc Flush Durations"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Ipc Flush Durations"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__range {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Ipc Flush Durations"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fog Ipc Flush Durations"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Ipc Flush Durations"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__values {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Paint Build Displaylist Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Paint Build Displaylist Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Paint Build Displaylist Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Paint Build Displaylist Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Paint Build Displaylist Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Paint Build Displaylist Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Framebuild Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Framebuild Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Framebuild Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Framebuild Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Framebuild Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Framebuild Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Rasterize Glyphs Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Rasterize Glyphs Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Rasterize Glyphs Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Rasterize Glyphs Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Rasterize Glyphs Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Rasterize Glyphs Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Scenebuild Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Scenebuild Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Scenebuild Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Scenebuild Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Scenebuild Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Scenebuild Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Sceneswap Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Sceneswap Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Sceneswap Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Sceneswap Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Sceneswap Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Sceneswap Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.values ;;
+    hidden: yes
   }
 
   dimension: metrics__url {
@@ -1028,6 +1608,18 @@ view: metrics_table__events__extra {
   }
 }
 
+view: metrics_table__metrics__custom_distribution__power_battery_percentage_when_user_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__tab_count_app_backgrounded__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -1085,6 +1677,18 @@ view: metrics_table__metrics__labeled_rate__value {
   }
 }
 
+view: metrics_table__metrics__memory_distribution__fog_ipc_buffer_sizes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__memory_distribution__glean_database_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -1130,6 +1734,78 @@ view: metrics_table__metrics__text {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fog_ipc_flush_durations__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__paint_build_displaylist_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__wr_framebuild_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__wr_rasterize_glyphs_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__wr_scenebuild_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__wr_sceneswap_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
