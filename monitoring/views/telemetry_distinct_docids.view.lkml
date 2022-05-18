@@ -10,6 +10,12 @@ view: telemetry_distinct_docids {
     type: number
   }
 
+  dimension: decoded_nondistinct {
+    sql: ${TABLE}.decoded_nondistinct ;;
+    type: number
+    description: "Non-distinct count of submissions in the decoded table"
+  }
+
   dimension: doc_type {
     sql: ${TABLE}.doc_type ;;
     type: string
@@ -18,6 +24,17 @@ view: telemetry_distinct_docids {
   dimension: live {
     sql: ${TABLE}.live ;;
     type: number
+  }
+
+  dimension: live_nondistinct {
+    sql: ${TABLE}.live_nondistinct ;;
+    type: number
+    description: "Non-distinct count of submissions in the live table"
+  }
+
+  dimension: namespace {
+    sql: ${TABLE}.namespace ;;
+    type: string
   }
 
   dimension: stable {

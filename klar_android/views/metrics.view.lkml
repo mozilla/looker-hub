@@ -570,6 +570,656 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__boolean__browser_ui_proton_enabled {
+    label: "Browser Ui Proton Enabled"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.browser_ui_proton_enabled ;;
+    type: yesno
+    group_label: "Browser Ui"
+    group_item_label: "Proton Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Ui Proton Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/browser_ui_proton_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the Proton default theme is enabled.
+"
+  }
+
+  dimension: metrics__boolean__fog_failed_idle_registration {
+    label: "Fog Failed Idle Registration"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.fog_failed_idle_registration ;;
+    type: yesno
+    group_label: "Fog"
+    group_item_label: "Failed Idle Registration"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Failed Idle Registration"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fog_failed_idle_registration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if we failed to register with the idle service. Absent otherwise.
+Means IPC probably isn't working well.
+Child-process data will likely be absent, or incomplete.
+"
+  }
+
+  dimension: metrics__timespan__fog_initialization__value {
+    label: "Fog Initialization Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.fog_initialization.value ;;
+    type: number
+    group_label: "Fog"
+    group_item_label: "Initialization Value"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Initialization Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fog_initialization"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time the FOG initialization takes.
+"
+  }
+
+  dimension: metrics__memory_distribution__fog_ipc_buffer_sizes__sum {
+    label: "Fog Ipc Buffer Sizes Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.fog_ipc_buffer_sizes.sum ;;
+    type: number
+    group_label: "Fog Ipc"
+    group_item_label: "Buffer Sizes Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Buffer Sizes Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fog_ipc_buffer_sizes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number and size of the IPC buffers being received over FOG IPC.
+"
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__sum {
+    label: "Fog Ipc Flush Durations Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.sum ;;
+    type: number
+    group_label: "Fog Ipc"
+    group_item_label: "Flush Durations Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Durations Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fog_ipc_flush_durations"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The length of time between asking the child processes for their
+IPC buffers and all of them being received by the parent.
+"
+  }
+
+  dimension: metrics__counter__fog_ipc_flush_failures {
+    label: "Fog Ipc Flush Failures"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.fog_ipc_flush_failures ;;
+    type: number
+    group_label: "Fog Ipc"
+    group_item_label: "Flush Failures"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fog_ipc_flush_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we failed to flush all non-parent-process data,
+throwing even partial results into the trash.
+If this number is high, we might consider writing custom `MozPromise`-
+handling code instead of using `MozPromise::All`.
+"
+  }
+
+  dimension: metrics__counter__fog_ipc_replay_failures {
+    label: "Fog Ipc Replay Failures"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.fog_ipc_replay_failures ;;
+    type: number
+    group_label: "Fog Ipc"
+    group_item_label: "Replay Failures"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Replay Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fog_ipc_replay_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times the ipc buffer failed to be replayed in the
+parent process.
+"
+  }
+
+  dimension: metrics__counter__fog_ipc_shutdown_registration_failures {
+    label: "Fog Ipc Shutdown Registration Failures"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.fog_ipc_shutdown_registration_failures ;;
+    type: number
+    group_label: "Fog Ipc"
+    group_item_label: "Shutdown Registration Failures"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Shutdown Registration Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fog_ipc_shutdown_registration_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we tried to register shutdown flush routines for
+content child processes, and failed (probably because there was no main
+thread).
+As a result there may be data loss from content child processes.
+Large or rising number of clients experiencing this indicates we should
+perhaps refactor content child shutdown in FOG to try harder to register
+flush operations.
+Will likely be obsoleted by bug 1641989.
+"
+  }
+
+  dimension: metrics__string__geckoview_validation_build_id {
+    label: "Geckoview Validation Build Id"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.geckoview_validation_build_id ;;
+    type: string
+    group_label: "Geckoview Validation"
+    group_item_label: "Build Id"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Validation Build Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/geckoview_validation_build_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Buildid of the Gecko engine, example: 20200205124310 Mirror of `geckoview.build_id` for validation of migrated data.
+"
+  }
+
+  dimension: metrics__string__geckoview_validation_version {
+    label: "Geckoview Validation Version"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.geckoview_validation_version ;;
+    type: string
+    group_label: "Geckoview Validation"
+    group_item_label: "Version"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Validation Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/geckoview_validation_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of the Gecko engine, example: 74.0a1 Mirror of `geckoview.version` for validation of migrated data.
+"
+  }
+
+  dimension: metrics__boolean__gifft_validation_main_ping_assembling {
+    label: "Gifft Validation Main Ping Assembling"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.gifft_validation_main_ping_assembling ;;
+    type: yesno
+    group_label: "Gifft Validation"
+    group_item_label: "Main Ping Assembling"
+
+    link: {
+      label: "Glean Dictionary reference for Gifft Validation Main Ping Assembling"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gifft_validation_main_ping_assembling"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value `true`, recorded when a Firefox Telemetry \"main\" ping is about
+to be assembled.
+To be used to validate GIFFT.
+"
+  }
+
+  dimension: metrics__labeled_counter__gmp_update_xml_fetch_result {
+    label: "Gmp Update Xml Fetch Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.gmp_update_xml_fetch_result ;;
+    group_label: "Gmp"
+    group_item_label: "Update Xml Fetch Result"
+
+    link: {
+      label: "Glean Dictionary reference for Gmp Update Xml Fetch Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gmp_update_xml_fetch_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The result of Gecko fetching an update.xml from Balrog. This captures 3 different data points: success or failure of the request, if cert pinning or content signatures were used to verify the result, and the reason for failure, if the request failed.
+"
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__sum {
+    label: "Paint Build Displaylist Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.sum ;;
+    type: number
+    group_label: "Paint"
+    group_item_label: "Build Displaylist Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Paint Build Displaylist Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/paint_build_displaylist_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time to build a Gecko display list.
+"
+  }
+
+  dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__sum {
+    label: "Power Battery Percentage When User Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.power_battery_percentage_when_user_active.sum ;;
+    type: number
+    group_label: "Power Battery"
+    group_item_label: "Percentage When User Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Power Battery Percentage When User Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_battery_percentage_when_user_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records how many percent of battery was available for each period of user activity.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
+    label: "Power Cpu Ms Per Thread Content Background"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_content_background ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Content Background"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Content Background"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_cpu_ms_per_thread_content_background"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
+    label: "Power Cpu Ms Per Thread Content Foreground"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_content_foreground ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Content Foreground"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Content Foreground"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_cpu_ms_per_thread_content_foreground"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
+    label: "Power Cpu Ms Per Thread Gpu Process"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_gpu_process ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Gpu Process"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Gpu Process"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_cpu_ms_per_thread_gpu_process"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
+    label: "Power Cpu Ms Per Thread Parent Active"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_parent_active ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Parent Active"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Parent Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_cpu_ms_per_thread_parent_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
+    label: "Power Cpu Ms Per Thread Parent Inactive"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_parent_inactive ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Parent Inactive"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Parent Inactive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_cpu_ms_per_thread_parent_inactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__counter__power_cpu_time_bogus_values {
+    label: "Power Cpu Time Bogus Values"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_cpu_time_bogus_values ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Cpu Time Bogus Values"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_cpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Impossibly large CPU time values that were discarded.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+    label: "Power Cpu Time Per Process Type Ms"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_time_per_process_type_ms ;;
+    group_label: "Power"
+    group_item_label: "Cpu Time Per Process Type Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Per Process Type Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_cpu_time_per_process_type_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "CPU time used by each process type in ms.
+"
+  }
+
+  dimension: metrics__counter__power_gpu_time_bogus_values {
+    label: "Power Gpu Time Bogus Values"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_gpu_time_bogus_values ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Gpu Time Bogus Values"
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_gpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Impossibly large GPU time values that were discarded.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_gpu_time_per_process_type_ms {
+    label: "Power Gpu Time Per Process Type Ms"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_gpu_time_per_process_type_ms ;;
+    group_label: "Power"
+    group_item_label: "Gpu Time Per Process Type Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Per Process Type Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_gpu_time_per_process_type_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "GPU time used by each process type in ms.
+"
+  }
+
+  dimension: metrics__counter__power_total_cpu_time_ms {
+    label: "Power Total Cpu Time Ms"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_total_cpu_time_ms ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Total Cpu Time Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Cpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_total_cpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total CPU time used by all processes in ms.
+"
+  }
+
+  dimension: metrics__counter__power_total_gpu_time_ms {
+    label: "Power Total Gpu Time Ms"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_total_gpu_time_ms ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Total Gpu Time Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Gpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_total_gpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total GPU time used by all processes in ms.
+"
+  }
+
+  dimension: metrics__counter__power_total_thread_wakeups {
+    label: "Power Total Thread Wakeups"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_total_thread_wakeups ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Total Thread Wakeups"
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Thread Wakeups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_total_thread_wakeups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_process_type {
+    label: "Power Wakeups Per Process Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_process_type ;;
+    group_label: "Power"
+    group_item_label: "Wakeups Per Process Type"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Process Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_wakeups_per_process_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_content_background {
+    label: "Power Wakeups Per Thread Content Background"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_content_background ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Content Background"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Content Background"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_wakeups_per_thread_content_background"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
+    label: "Power Wakeups Per Thread Content Foreground"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_content_foreground ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Content Foreground"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Content Foreground"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_wakeups_per_thread_content_foreground"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
+    label: "Power Wakeups Per Thread Gpu Process"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_gpu_process ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Gpu Process"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Gpu Process"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_wakeups_per_thread_gpu_process"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_parent_active {
+    label: "Power Wakeups Per Thread Parent Active"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_parent_active ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Parent Active"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Parent Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_wakeups_per_thread_parent_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+    label: "Power Wakeups Per Thread Parent Inactive"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_parent_inactive ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Parent Inactive"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Parent Inactive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_wakeups_per_thread_parent_inactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__sum {
+    label: "Wr Framebuild Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Framebuild Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Framebuild Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/wr_framebuild_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time to rasterize glyphs for consumption by WebRender.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__sum {
+    label: "Wr Rasterize Glyphs Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Rasterize Glyphs Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Rasterize Glyphs Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/wr_rasterize_glyphs_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time to rasterize glyphs for consumption by WebRender.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__sum {
+    label: "Wr Scenebuild Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Scenebuild Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Scenebuild Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/wr_scenebuild_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebRender scene build time.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__sum {
+    label: "Wr Sceneswap Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Sceneswap Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Sceneswap Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/wr_sceneswap_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebRender scene swap time.
+"
+  }
+
   dimension: metrics__memory_distribution__glean_database_size__sum {
     label: "Glean Database Size Sum"
     hidden: no
@@ -1670,6 +2320,206 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Tracking Protection Toolbar Shield Clicked"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/tracking_protection_toolbar_shield_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_flush_failures {
+    type: sum
+    sql: ${metrics__counter__fog_ipc_flush_failures} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fog_ipc_flush_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_flush_failures_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__fog_ipc_flush_failures: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fog_ipc_flush_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_replay_failures {
+    type: sum
+    sql: ${metrics__counter__fog_ipc_replay_failures} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Replay Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fog_ipc_replay_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_replay_failures_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__fog_ipc_replay_failures: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Replay Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fog_ipc_replay_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_shutdown_registration_failures {
+    type: sum
+    sql: ${metrics__counter__fog_ipc_shutdown_registration_failures} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Shutdown Registration Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fog_ipc_shutdown_registration_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_shutdown_registration_failures_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__fog_ipc_shutdown_registration_failures: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Shutdown Registration Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fog_ipc_shutdown_registration_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_cpu_time_bogus_values {
+    type: sum
+    sql: ${metrics__counter__power_cpu_time_bogus_values} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_cpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_cpu_time_bogus_values_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_cpu_time_bogus_values: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_cpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_gpu_time_bogus_values {
+    type: sum
+    sql: ${metrics__counter__power_gpu_time_bogus_values} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_gpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_gpu_time_bogus_values_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_gpu_time_bogus_values: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_gpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_cpu_time_ms {
+    type: sum
+    sql: ${metrics__counter__power_total_cpu_time_ms} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Cpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_total_cpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_cpu_time_ms_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_total_cpu_time_ms: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Cpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_total_cpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_gpu_time_ms {
+    type: sum
+    sql: ${metrics__counter__power_total_gpu_time_ms} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Gpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_total_gpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_gpu_time_ms_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_total_gpu_time_ms: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Gpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_total_gpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_thread_wakeups {
+    type: sum
+    sql: ${metrics__counter__power_total_thread_wakeups} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Thread Wakeups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_total_thread_wakeups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_thread_wakeups_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_total_thread_wakeups: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Thread Wakeups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_total_thread_wakeups"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
