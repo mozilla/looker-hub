@@ -13,14 +13,14 @@ explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_hist
     ]
   }
 
-  aggregate_table: rollup_content_process_count {
+  aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.branch: "enabled, disabled",
         bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.percentile_conf: "50",
-        bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.probe: "content_process_count",
+        bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.probe: "gc_ms",
       ]
     }
 
@@ -45,14 +45,14 @@ explore: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_hist
     }
   }
 
-  aggregate_table: rollup_gc_ms {
+  aggregate_table: rollup_content_process_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.branch: "enabled, disabled",
         bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.percentile_conf: "50",
-        bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.probe: "gc_ms",
+        bug_1762636_rollout_disable_webassembly_code_caching_release_98_99_histogram.probe: "content_process_count",
       ]
     }
 

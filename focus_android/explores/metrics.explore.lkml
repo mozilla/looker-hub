@@ -74,6 +74,76 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__glean_validation_pings_submitted}) AS metrics__metrics__labeled_counter__glean_validation_pings_submitted ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__glean_validation_pings_submitted.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__gmp_update_xml_fetch_result}) AS metrics__metrics__labeled_counter__gmp_update_xml_fetch_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__gmp_update_xml_fetch_result.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_content_background}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_parent_active}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_time_per_process_type_ms}) AS metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_gpu_time_per_process_type_ms}) AS metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_wakeups_per_process_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_process_type}) AS metrics__metrics__labeled_counter__power_wakeups_per_process_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_process_type.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_content_background}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_content_foreground}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_gpu_process}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_parent_active}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_parent_inactive}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__shortcuts_shortcut_removed_counter}) AS metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter.document_id} ;;
@@ -121,6 +191,62 @@ explore: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_fa
 }
 
 explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_process_type {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
   hidden: yes
 }
 
