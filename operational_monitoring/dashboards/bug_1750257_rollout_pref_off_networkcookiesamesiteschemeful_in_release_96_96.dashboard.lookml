@@ -213,6 +213,7 @@
     listen:
       Percentile: bug_1750257_rollout_pref_off_networkcookiesamesiteschemeful_in_release_96_96_scalar.percentile_conf
     active: "#3FE1B0"
+  
   filters:
   - name: Percentile
     title: Percentile

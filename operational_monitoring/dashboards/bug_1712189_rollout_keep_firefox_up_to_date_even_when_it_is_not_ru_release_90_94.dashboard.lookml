@@ -370,6 +370,7 @@
       Percentile: bug_1712189_rollout_keep_firefox_up_to_date_even_when_it_is_not_ru_release_90_94_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+  
   filters:
   - name: Percentile
     title: Percentile

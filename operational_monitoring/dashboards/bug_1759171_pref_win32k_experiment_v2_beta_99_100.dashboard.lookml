@@ -310,6 +310,7 @@
       Percentile: bug_1759171_pref_win32k_experiment_v2_beta_99_100_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+  
   filters:
   - name: Percentile
     title: Percentile

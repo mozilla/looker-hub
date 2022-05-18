@@ -370,6 +370,7 @@
       Percentile: bug_1766468_rollout_win32k_rollout_release_100_101_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+  
   filters:
   - name: Percentile
     title: Percentile

@@ -1594,6 +1594,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+  
   filters:
   - name: Percentile
     title: Percentile

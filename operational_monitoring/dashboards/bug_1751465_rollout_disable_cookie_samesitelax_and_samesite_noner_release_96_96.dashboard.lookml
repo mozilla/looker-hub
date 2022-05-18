@@ -370,6 +370,7 @@
       Percentile: bug_1751465_rollout_disable_cookie_samesitelax_and_samesite_noner_release_96_96_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+  
   filters:
   - name: Percentile
     title: Percentile
