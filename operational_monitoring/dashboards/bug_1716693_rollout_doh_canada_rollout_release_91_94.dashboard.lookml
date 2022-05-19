@@ -32,7 +32,7 @@
     height: 8
     field_x: bug_1716693_rollout_doh_canada_rollout_release_91_94_histogram.submission_date
     field_y: bug_1716693_rollout_doh_canada_rollout_release_91_94_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1716693_rollout_doh_canada_rollout_release_91_94_histogram.low
     ci_upper: bug_1716693_rollout_doh_canada_rollout_release_91_94_histogram.high
     show_grid: true
@@ -61,7 +61,7 @@
     height: 8
     field_x: bug_1716693_rollout_doh_canada_rollout_release_91_94_histogram.submission_date
     field_y: bug_1716693_rollout_doh_canada_rollout_release_91_94_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1716693_rollout_doh_canada_rollout_release_91_94_histogram.low
     ci_upper: bug_1716693_rollout_doh_canada_rollout_release_91_94_histogram.high
     show_grid: true
@@ -90,7 +90,7 @@
     height: 8
     field_x: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.submission_date
     field_y: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.low
     ci_upper: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.high
     show_grid: true
@@ -119,7 +119,7 @@
     height: 8
     field_x: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.submission_date
     field_y: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.low
     ci_upper: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.high
     show_grid: true
@@ -148,7 +148,7 @@
     height: 8
     field_x: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.submission_date
     field_y: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.low
     ci_upper: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.high
     show_grid: true
@@ -177,7 +177,7 @@
     height: 8
     field_x: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.submission_date
     field_y: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.low
     ci_upper: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.high
     show_grid: true
@@ -206,13 +206,14 @@
     height: 8
     field_x: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.submission_date
     field_y: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.low
     ci_upper: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.high
     show_grid: true
     listen:
       Percentile: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.percentile_conf
     active: "#3FE1B0"
+  
   filters:
   - name: Percentile
     title: Percentile

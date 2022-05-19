@@ -2717,6 +2717,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__sum {
+    label: "Power Battery Percentage When User Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.power_battery_percentage_when_user_active.sum ;;
+    type: number
+    group_label: "Power Battery"
+    group_item_label: "Percentage When User Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Power Battery Percentage When User Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/power_battery_percentage_when_user_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records how many percent of battery was available for each period of user activity.
+"
+  }
+
   dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
     label: "Power Cpu Ms Per Thread Content Background"
     hidden: yes
@@ -3028,6 +3046,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__wr_framebuild_time__sum {
+    label: "Wr Framebuild Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Framebuild Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Framebuild Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/wr_framebuild_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time to rasterize glyphs for consumption by WebRender.
+"
+  }
+
   dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__sum {
     label: "Wr Rasterize Glyphs Time Sum"
     hidden: no
@@ -3043,6 +3079,42 @@ To be used to validate GIFFT.
     }
 
     description: "The time to rasterize glyphs for consumption by WebRender.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__sum {
+    label: "Wr Scenebuild Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Scenebuild Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Scenebuild Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/wr_scenebuild_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebRender scene build time.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__sum {
+    label: "Wr Sceneswap Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Sceneswap Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Sceneswap Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/wr_sceneswap_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebRender scene swap time.
 "
   }
 

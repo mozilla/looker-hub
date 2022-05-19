@@ -32,7 +32,7 @@
     height: 8
     field_x: sync_after_tab_change_rollout_5_histogram.submission_date
     field_y: sync_after_tab_change_rollout_5_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: sync_after_tab_change_rollout_5_histogram.low
     ci_upper: sync_after_tab_change_rollout_5_histogram.high
     show_grid: true
@@ -62,7 +62,7 @@
     height: 8
     field_x: sync_after_tab_change_rollout_5_histogram.submission_date
     field_y: sync_after_tab_change_rollout_5_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: sync_after_tab_change_rollout_5_histogram.low
     ci_upper: sync_after_tab_change_rollout_5_histogram.high
     show_grid: true
@@ -92,7 +92,7 @@
     height: 8
     field_x: sync_after_tab_change_rollout_5_histogram.submission_date
     field_y: sync_after_tab_change_rollout_5_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: sync_after_tab_change_rollout_5_histogram.low
     ci_upper: sync_after_tab_change_rollout_5_histogram.high
     show_grid: true
@@ -122,7 +122,7 @@
     height: 8
     field_x: sync_after_tab_change_rollout_5_scalar.submission_date
     field_y: sync_after_tab_change_rollout_5_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: sync_after_tab_change_rollout_5_scalar.low
     ci_upper: sync_after_tab_change_rollout_5_scalar.high
     show_grid: true
@@ -152,7 +152,7 @@
     height: 8
     field_x: sync_after_tab_change_rollout_5_scalar.submission_date
     field_y: sync_after_tab_change_rollout_5_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: sync_after_tab_change_rollout_5_scalar.low
     ci_upper: sync_after_tab_change_rollout_5_scalar.high
     show_grid: true
@@ -182,7 +182,7 @@
     height: 8
     field_x: sync_after_tab_change_rollout_5_scalar.submission_date
     field_y: sync_after_tab_change_rollout_5_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: sync_after_tab_change_rollout_5_scalar.low
     ci_upper: sync_after_tab_change_rollout_5_scalar.high
     show_grid: true
@@ -212,7 +212,7 @@
     height: 8
     field_x: sync_after_tab_change_rollout_5_scalar.submission_date
     field_y: sync_after_tab_change_rollout_5_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: sync_after_tab_change_rollout_5_scalar.low
     ci_upper: sync_after_tab_change_rollout_5_scalar.high
     show_grid: true
@@ -242,7 +242,7 @@
     height: 8
     field_x: sync_after_tab_change_rollout_5_scalar.submission_date
     field_y: sync_after_tab_change_rollout_5_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: sync_after_tab_change_rollout_5_scalar.low
     ci_upper: sync_after_tab_change_rollout_5_scalar.high
     show_grid: true
@@ -272,7 +272,7 @@
     height: 8
     field_x: sync_after_tab_change_rollout_5_scalar.submission_date
     field_y: sync_after_tab_change_rollout_5_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: sync_after_tab_change_rollout_5_scalar.low
     ci_upper: sync_after_tab_change_rollout_5_scalar.high
     show_grid: true
@@ -302,7 +302,7 @@
     height: 8
     field_x: sync_after_tab_change_rollout_5_scalar.submission_date
     field_y: sync_after_tab_change_rollout_5_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: sync_after_tab_change_rollout_5_scalar.low
     ci_upper: sync_after_tab_change_rollout_5_scalar.high
     show_grid: true
@@ -332,7 +332,7 @@
     height: 8
     field_x: sync_after_tab_change_rollout_5_scalar.submission_date
     field_y: sync_after_tab_change_rollout_5_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: sync_after_tab_change_rollout_5_scalar.low
     ci_upper: sync_after_tab_change_rollout_5_scalar.high
     show_grid: true
@@ -362,7 +362,7 @@
     height: 8
     field_x: sync_after_tab_change_rollout_5_scalar.submission_date
     field_y: sync_after_tab_change_rollout_5_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: sync_after_tab_change_rollout_5_scalar.low
     ci_upper: sync_after_tab_change_rollout_5_scalar.high
     show_grid: true
@@ -370,6 +370,7 @@
       Percentile: sync_after_tab_change_rollout_5_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+  
   filters:
   - name: Percentile
     title: Percentile

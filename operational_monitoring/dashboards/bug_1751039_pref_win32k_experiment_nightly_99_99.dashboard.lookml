@@ -32,7 +32,7 @@
     height: 8
     field_x: bug_1751039_pref_win32k_experiment_nightly_99_99_histogram.submission_date
     field_y: bug_1751039_pref_win32k_experiment_nightly_99_99_histogram.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751039_pref_win32k_experiment_nightly_99_99_histogram.low
     ci_upper: bug_1751039_pref_win32k_experiment_nightly_99_99_histogram.high
     show_grid: true
@@ -62,7 +62,7 @@
     height: 8
     field_x: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.submission_date
     field_y: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.low
     ci_upper: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.high
     show_grid: true
@@ -92,7 +92,7 @@
     height: 8
     field_x: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.submission_date
     field_y: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.low
     ci_upper: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.high
     show_grid: true
@@ -122,7 +122,7 @@
     height: 8
     field_x: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.submission_date
     field_y: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.low
     ci_upper: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.high
     show_grid: true
@@ -152,7 +152,7 @@
     height: 8
     field_x: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.submission_date
     field_y: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.low
     ci_upper: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.high
     show_grid: true
@@ -182,7 +182,7 @@
     height: 8
     field_x: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.submission_date
     field_y: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.low
     ci_upper: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.high
     show_grid: true
@@ -212,7 +212,7 @@
     height: 8
     field_x: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.submission_date
     field_y: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.low
     ci_upper: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.high
     show_grid: true
@@ -242,7 +242,7 @@
     height: 8
     field_x: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.submission_date
     field_y: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.low
     ci_upper: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.high
     show_grid: true
@@ -272,7 +272,7 @@
     height: 8
     field_x: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.submission_date
     field_y: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.low
     ci_upper: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.high
     show_grid: true
@@ -302,7 +302,7 @@
     height: 8
     field_x: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.submission_date
     field_y: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.percentile
-    log_scale: true
+    log_scale: false
     ci_lower: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.low
     ci_upper: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.high
     show_grid: true
@@ -310,6 +310,7 @@
       Percentile: bug_1751039_pref_win32k_experiment_nightly_99_99_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+  
   filters:
   - name: Percentile
     title: Percentile

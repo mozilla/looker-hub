@@ -29,22 +29,6 @@ explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histog
     }
   }
 
-  aggregate_table: rollup_content_process_count {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.branch: "enabled, disabled",
-        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.percentile_conf: "50",
-        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.probe: "content_process_count",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_memory_total {
     query: {
       dimensions: [submission_date, branch]
@@ -53,6 +37,22 @@ explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histog
         bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.branch: "enabled, disabled",
         bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.percentile_conf: "50",
         bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.probe: "memory_total",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_process_count {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.branch: "enabled, disabled",
+        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.percentile_conf: "50",
+        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_histogram.probe: "content_process_count",
       ]
     }
 

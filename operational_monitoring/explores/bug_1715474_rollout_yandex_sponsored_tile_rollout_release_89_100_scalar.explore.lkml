@@ -13,14 +13,14 @@ explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar
     ]
   }
 
-  aggregate_table: rollup_content_shutdown_crashes {
+  aggregate_table: rollup_main_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch: "enabled, disabled",
         bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile_conf: "50",
-        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: "content_shutdown_crashes",
+        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: "main_crashes",
       ]
     }
 
@@ -45,46 +45,14 @@ explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar
     }
   }
 
-  aggregate_table: rollup_gmplugin_crashes {
+  aggregate_table: rollup_content_shutdown_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch: "enabled, disabled",
         bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile_conf: "50",
-        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: "gmplugin_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_oom_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch: "enabled, disabled",
-        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile_conf: "50",
-        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: "oom_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_content_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch: "enabled, disabled",
-        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile_conf: "50",
-        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: "content_crashes",
+        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: "content_shutdown_crashes",
       ]
     }
 
@@ -125,14 +93,30 @@ explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar
     }
   }
 
-  aggregate_table: rollup_main_crashes {
+  aggregate_table: rollup_gmplugin_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch: "enabled, disabled",
         bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile_conf: "50",
-        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: "main_crashes",
+        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: "gmplugin_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch: "enabled, disabled",
+        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile_conf: "50",
+        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: "content_crashes",
       ]
     }
 
@@ -149,6 +133,22 @@ explore: bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar
         bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch: "enabled, disabled",
         bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile_conf: "50",
         bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: "startup_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_oom_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.branch: "enabled, disabled",
+        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.percentile_conf: "50",
+        bug_1715474_rollout_yandex_sponsored_tile_rollout_release_89_100_scalar.probe: "oom_crashes",
       ]
     }
 
