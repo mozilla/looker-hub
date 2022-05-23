@@ -13,62 +13,14 @@ explore: bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_10
     ]
   }
 
-  aggregate_table: rollup_plugin_crashes {
+  aggregate_table: rollup_gpu_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.branch: "enabled, disabled",
         bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.percentile_conf: "50",
-        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.probe: "plugin_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_gmplugin_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.branch: "enabled, disabled",
-        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.percentile_conf: "50",
-        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.probe: "gmplugin_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_content_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.branch: "enabled, disabled",
-        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.percentile_conf: "50",
-        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.probe: "content_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_content_shutdown_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.branch: "enabled, disabled",
-        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.percentile_conf: "50",
-        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.probe: "content_shutdown_crashes",
+        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.probe: "gpu_crashes",
       ]
     }
 
@@ -93,14 +45,46 @@ explore: bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_10
     }
   }
 
-  aggregate_table: rollup_main_crashes {
+  aggregate_table: rollup_oom_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.branch: "enabled, disabled",
         bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.percentile_conf: "50",
-        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.probe: "main_crashes",
+        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.probe: "oom_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_shutdown_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.branch: "enabled, disabled",
+        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.percentile_conf: "50",
+        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.probe: "content_shutdown_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.branch: "enabled, disabled",
+        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.percentile_conf: "50",
+        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.probe: "content_crashes",
       ]
     }
 
@@ -125,14 +109,14 @@ explore: bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_10
     }
   }
 
-  aggregate_table: rollup_gpu_crashes {
+  aggregate_table: rollup_main_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.branch: "enabled, disabled",
         bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.percentile_conf: "50",
-        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.probe: "gpu_crashes",
+        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.probe: "main_crashes",
       ]
     }
 
@@ -141,14 +125,30 @@ explore: bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_10
     }
   }
 
-  aggregate_table: rollup_oom_crashes {
+  aggregate_table: rollup_plugin_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.branch: "enabled, disabled",
         bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.percentile_conf: "50",
-        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.probe: "oom_crashes",
+        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.probe: "plugin_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_gmplugin_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.branch: "enabled, disabled",
+        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.percentile_conf: "50",
+        bug_1767475_rollout_enable_pip_subtitles_pref_in_release_release_100_101_scalar.probe: "gmplugin_crashes",
       ]
     }
 
