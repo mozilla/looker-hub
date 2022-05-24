@@ -76,8 +76,8 @@ view: active_users_aggregates {
     type: yesno
   }
 
-  dimension: locale {
-    sql: ${TABLE}.locale ;;
+  dimension: language_name {
+    sql: ${TABLE}.language_name ;;
     type: string
   }
 
