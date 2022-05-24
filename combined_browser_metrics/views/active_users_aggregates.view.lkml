@@ -25,19 +25,9 @@ view: active_users_aggregates {
     type: string
   }
 
-  dimension: attribution_campaign {
-    sql: ${TABLE}.attribution_campaign ;;
-    type: string
-  }
-
-  dimension: attribution_content {
-    sql: ${TABLE}.attribution_content ;;
-    type: string
-  }
-
-  dimension: attribution_experiment {
-    sql: ${TABLE}.attribution_experiment ;;
-    type: string
+  dimension: attributed {
+    sql: ${TABLE}.attributed ;;
+    type: yesno
   }
 
   dimension: attribution_medium {
@@ -47,11 +37,6 @@ view: active_users_aggregates {
 
   dimension: attribution_source {
     sql: ${TABLE}.attribution_source ;;
-    type: string
-  }
-
-  dimension: attribution_variation {
-    sql: ${TABLE}.attribution_variation ;;
     type: string
   }
 
@@ -74,11 +59,6 @@ view: active_users_aggregates {
   dimension: dau {
     sql: ${TABLE}.dau ;;
     type: number
-  }
-
-  dimension: device_model {
-    sql: ${TABLE}.device_model ;;
-    type: string
   }
 
   dimension: distribution_id {
@@ -159,21 +139,6 @@ view: active_users_aggregates {
   dimension: wau {
     sql: ${TABLE}.wau ;;
     type: number
-  }
-
-  dimension_group: first_seen {
-    sql: ${TABLE}.first_seen_date ;;
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    convert_tz: no
-    datatype: date
   }
 
   dimension_group: submission {

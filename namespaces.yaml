@@ -63,13 +63,85 @@ awesome_bar:
       - table: mozdata.telemetry.urlbar_clients_daily
       type: ping_view
 bedrock:
-  explores: {}
+  explores:
+    deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: deletion_request
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
+    interaction:
+      type: glean_ping_explore
+      views:
+        base_view: interaction
+    non_interaction:
+      type: glean_ping_explore
+      views:
+        base_view: non_interaction
+    page_view:
+      type: glean_ping_explore
+      views:
+        base_view: page_view
   glean_app: true
   owners:
   - agibson@mozilla.com
   pretty_name: www.mozilla.org
   spoke: looker-spoke-default
-  views: {}
+  views:
+    deletion_request:
+      tables:
+      - table: mozdata.bedrock.deletion_request
+      type: glean_ping_view
+    deletion_request_table:
+      tables:
+      - channel: null
+        table: mozdata.bedrock.deletion_request
+      type: table_view
+    events:
+      tables:
+      - base_table: mozdata.bedrock.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.bedrock.events
+      type: table_view
+    events_unnested_table:
+      tables:
+      - channel: null
+        table: mozdata.bedrock.events_unnested
+      type: table_view
+    interaction:
+      tables:
+      - table: mozdata.bedrock.interaction
+      type: glean_ping_view
+    interaction_table:
+      tables:
+      - channel: null
+        table: mozdata.bedrock.interaction
+      type: table_view
+    non_interaction:
+      tables:
+      - table: mozdata.bedrock.non_interaction
+      type: glean_ping_view
+    non_interaction_table:
+      tables:
+      - channel: null
+        table: mozdata.bedrock.non_interaction
+      type: table_view
+    page_view:
+      tables:
+      - table: mozdata.bedrock.page_view
+      type: glean_ping_view
+    page_view_table:
+      tables:
+      - channel: null
+        table: mozdata.bedrock.page_view
+      type: table_view
 casa:
   connection: bigquery-casa
   glean_app: false
