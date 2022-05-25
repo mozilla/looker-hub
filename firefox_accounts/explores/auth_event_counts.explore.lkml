@@ -7,15 +7,22 @@
 include: "/looker-hub/firefox_accounts/views/auth_events.view.lkml"
 
 explore: auth_event_counts {
+  sql_always_where: ${auth_events.timestamp_date} >= '2010-01-01' ;;
   view_name: auth_events
   description: "Event counts over time."
 
+  always_filter: {
+    filters: [
+      timestamp_date: "28 days",
+    ]
+  }
+
   query: all_event_counts {
     description: "Event counts from all events over the past two weeks."
-    dimensions: [submission_date]
+    dimensions: [timestamp_date]
     measures: [event_count]
     filters: [
-      submission_date: "14 days",
+      timestamp_date: "14 days",
     ]
   }
 }
