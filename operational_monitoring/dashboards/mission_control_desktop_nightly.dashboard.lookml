@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Fx Tab Switch Composite E10S Ms
-    name: Fx Tab Switch Composite E10S Ms
+  - title: Gc Ms
+    name: Gc Ms
     explore: mission_control_desktop_nightly_histogram
     type: "ci-line-chart"
     fields: [
@@ -25,7 +25,7 @@
       mission_control_desktop_nightly_histogram.branch
     ]
     filters:
-      mission_control_desktop_nightly_histogram.probe: fx_tab_switch_composite_e10s_ms
+      mission_control_desktop_nightly_histogram.probe: gc_ms
     row: 0
     col: 0
     width: 12
@@ -41,8 +41,8 @@
       Build: mission_control_desktop_nightly_histogram.build
       Os: mission_control_desktop_nightly_histogram.os
     active: "#3FE1B0"
-  - title: Fx Tab Switch Composite E10S Ms - By build
-    name: Fx Tab Switch Composite E10S Ms - By build
+  - title: Gc Ms - By build
+    name: Gc Ms - By build
     explore: mission_control_desktop_nightly_histogram
     type: "ci-line-chart"
     fields: [
@@ -56,7 +56,7 @@
       mission_control_desktop_nightly_histogram.branch, mission_control_desktop_nightly_histogram.build 
     ]
     filters:
-      mission_control_desktop_nightly_histogram.probe: fx_tab_switch_composite_e10s_ms
+      mission_control_desktop_nightly_histogram.probe: gc_ms
     row: 0
     col: 12
     width: 12
@@ -134,8 +134,8 @@
       Build: mission_control_desktop_nightly_histogram.build
       Os: mission_control_desktop_nightly_histogram.os
     active: "#3FE1B0"
-  - title: Gc Ms
-    name: Gc Ms
+  - title: Fx Tab Switch Composite E10S Ms
+    name: Fx Tab Switch Composite E10S Ms
     explore: mission_control_desktop_nightly_histogram
     type: "ci-line-chart"
     fields: [
@@ -149,7 +149,7 @@
       mission_control_desktop_nightly_histogram.branch
     ]
     filters:
-      mission_control_desktop_nightly_histogram.probe: gc_ms
+      mission_control_desktop_nightly_histogram.probe: fx_tab_switch_composite_e10s_ms
     row: 20
     col: 0
     width: 12
@@ -165,8 +165,8 @@
       Build: mission_control_desktop_nightly_histogram.build
       Os: mission_control_desktop_nightly_histogram.os
     active: "#3FE1B0"
-  - title: Gc Ms - By build
-    name: Gc Ms - By build
+  - title: Fx Tab Switch Composite E10S Ms - By build
+    name: Fx Tab Switch Composite E10S Ms - By build
     explore: mission_control_desktop_nightly_histogram
     type: "ci-line-chart"
     fields: [
@@ -180,7 +180,7 @@
       mission_control_desktop_nightly_histogram.branch, mission_control_desktop_nightly_histogram.build 
     ]
     filters:
-      mission_control_desktop_nightly_histogram.probe: gc_ms
+      mission_control_desktop_nightly_histogram.probe: fx_tab_switch_composite_e10s_ms
     row: 20
     col: 12
     width: 12
@@ -195,192 +195,6 @@
       Percentile: mission_control_desktop_nightly_histogram.percentile_conf
       Build: mission_control_desktop_nightly_histogram.build
       Os: mission_control_desktop_nightly_histogram.os
-    active: "#3FE1B0"
-  - title: Startup Crashes
-    name: Startup Crashes
-    explore: mission_control_desktop_nightly_scalar
-    type: "ci-line-chart"
-    fields: [
-      mission_control_desktop_nightly_scalar.submission_date,
-      mission_control_desktop_nightly_scalar.branch,
-      mission_control_desktop_nightly_scalar.high,
-      mission_control_desktop_nightly_scalar.low,
-      mission_control_desktop_nightly_scalar.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_scalar.branch
-    ]
-    filters:
-      mission_control_desktop_nightly_scalar.probe: startup_crashes
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: mission_control_desktop_nightly_scalar.submission_date
-    field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: false
-    ci_lower: mission_control_desktop_nightly_scalar.low
-    ci_upper: mission_control_desktop_nightly_scalar.high
-    show_grid: true
-    listen:
-      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
-      Build: mission_control_desktop_nightly_scalar.build
-      Os: mission_control_desktop_nightly_scalar.os
-    active: "#3FE1B0"
-  - title: Startup Crashes - By build
-    name: Startup Crashes - By build
-    explore: mission_control_desktop_nightly_scalar
-    type: "ci-line-chart"
-    fields: [
-      mission_control_desktop_nightly_scalar.submission_date,
-      mission_control_desktop_nightly_scalar.branch,
-      mission_control_desktop_nightly_scalar.high,
-      mission_control_desktop_nightly_scalar.low,
-      mission_control_desktop_nightly_scalar.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_scalar.branch, mission_control_desktop_nightly_scalar.build 
-    ]
-    filters:
-      mission_control_desktop_nightly_scalar.probe: startup_crashes
-    row: 30
-    col: 12
-    width: 12
-    height: 8
-    field_x: mission_control_desktop_nightly_scalar.submission_date
-    field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: false
-    ci_lower: mission_control_desktop_nightly_scalar.low
-    ci_upper: mission_control_desktop_nightly_scalar.high
-    show_grid: true
-    listen:
-      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
-      Build: mission_control_desktop_nightly_scalar.build
-      Os: mission_control_desktop_nightly_scalar.os
-    active: "#3FE1B0"
-  - title: Content Crashes
-    name: Content Crashes
-    explore: mission_control_desktop_nightly_scalar
-    type: "ci-line-chart"
-    fields: [
-      mission_control_desktop_nightly_scalar.submission_date,
-      mission_control_desktop_nightly_scalar.branch,
-      mission_control_desktop_nightly_scalar.high,
-      mission_control_desktop_nightly_scalar.low,
-      mission_control_desktop_nightly_scalar.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_scalar.branch
-    ]
-    filters:
-      mission_control_desktop_nightly_scalar.probe: content_crashes
-    row: 40
-    col: 0
-    width: 12
-    height: 8
-    field_x: mission_control_desktop_nightly_scalar.submission_date
-    field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: false
-    ci_lower: mission_control_desktop_nightly_scalar.low
-    ci_upper: mission_control_desktop_nightly_scalar.high
-    show_grid: true
-    listen:
-      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
-      Build: mission_control_desktop_nightly_scalar.build
-      Os: mission_control_desktop_nightly_scalar.os
-    active: "#3FE1B0"
-  - title: Content Crashes - By build
-    name: Content Crashes - By build
-    explore: mission_control_desktop_nightly_scalar
-    type: "ci-line-chart"
-    fields: [
-      mission_control_desktop_nightly_scalar.submission_date,
-      mission_control_desktop_nightly_scalar.branch,
-      mission_control_desktop_nightly_scalar.high,
-      mission_control_desktop_nightly_scalar.low,
-      mission_control_desktop_nightly_scalar.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_scalar.branch, mission_control_desktop_nightly_scalar.build 
-    ]
-    filters:
-      mission_control_desktop_nightly_scalar.probe: content_crashes
-    row: 40
-    col: 12
-    width: 12
-    height: 8
-    field_x: mission_control_desktop_nightly_scalar.submission_date
-    field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: false
-    ci_lower: mission_control_desktop_nightly_scalar.low
-    ci_upper: mission_control_desktop_nightly_scalar.high
-    show_grid: true
-    listen:
-      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
-      Build: mission_control_desktop_nightly_scalar.build
-      Os: mission_control_desktop_nightly_scalar.os
-    active: "#3FE1B0"
-  - title: Gmplugin Crashes
-    name: Gmplugin Crashes
-    explore: mission_control_desktop_nightly_scalar
-    type: "ci-line-chart"
-    fields: [
-      mission_control_desktop_nightly_scalar.submission_date,
-      mission_control_desktop_nightly_scalar.branch,
-      mission_control_desktop_nightly_scalar.high,
-      mission_control_desktop_nightly_scalar.low,
-      mission_control_desktop_nightly_scalar.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_scalar.branch
-    ]
-    filters:
-      mission_control_desktop_nightly_scalar.probe: gmplugin_crashes
-    row: 50
-    col: 0
-    width: 12
-    height: 8
-    field_x: mission_control_desktop_nightly_scalar.submission_date
-    field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: false
-    ci_lower: mission_control_desktop_nightly_scalar.low
-    ci_upper: mission_control_desktop_nightly_scalar.high
-    show_grid: true
-    listen:
-      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
-      Build: mission_control_desktop_nightly_scalar.build
-      Os: mission_control_desktop_nightly_scalar.os
-    active: "#3FE1B0"
-  - title: Gmplugin Crashes - By build
-    name: Gmplugin Crashes - By build
-    explore: mission_control_desktop_nightly_scalar
-    type: "ci-line-chart"
-    fields: [
-      mission_control_desktop_nightly_scalar.submission_date,
-      mission_control_desktop_nightly_scalar.branch,
-      mission_control_desktop_nightly_scalar.high,
-      mission_control_desktop_nightly_scalar.low,
-      mission_control_desktop_nightly_scalar.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_scalar.branch, mission_control_desktop_nightly_scalar.build 
-    ]
-    filters:
-      mission_control_desktop_nightly_scalar.probe: gmplugin_crashes
-    row: 50
-    col: 12
-    width: 12
-    height: 8
-    field_x: mission_control_desktop_nightly_scalar.submission_date
-    field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: false
-    ci_lower: mission_control_desktop_nightly_scalar.low
-    ci_upper: mission_control_desktop_nightly_scalar.high
-    show_grid: true
-    listen:
-      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
-      Build: mission_control_desktop_nightly_scalar.build
-      Os: mission_control_desktop_nightly_scalar.os
     active: "#3FE1B0"
   - title: Shutdown Hangs
     name: Shutdown Hangs
@@ -398,7 +212,7 @@
     ]
     filters:
       mission_control_desktop_nightly_scalar.probe: shutdown_hangs
-    row: 60
+    row: 30
     col: 0
     width: 12
     height: 8
@@ -429,255 +243,7 @@
     ]
     filters:
       mission_control_desktop_nightly_scalar.probe: shutdown_hangs
-    row: 60
-    col: 12
-    width: 12
-    height: 8
-    field_x: mission_control_desktop_nightly_scalar.submission_date
-    field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: false
-    ci_lower: mission_control_desktop_nightly_scalar.low
-    ci_upper: mission_control_desktop_nightly_scalar.high
-    show_grid: true
-    listen:
-      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
-      Build: mission_control_desktop_nightly_scalar.build
-      Os: mission_control_desktop_nightly_scalar.os
-    active: "#3FE1B0"
-  - title: Gpu Crashes
-    name: Gpu Crashes
-    explore: mission_control_desktop_nightly_scalar
-    type: "ci-line-chart"
-    fields: [
-      mission_control_desktop_nightly_scalar.submission_date,
-      mission_control_desktop_nightly_scalar.branch,
-      mission_control_desktop_nightly_scalar.high,
-      mission_control_desktop_nightly_scalar.low,
-      mission_control_desktop_nightly_scalar.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_scalar.branch
-    ]
-    filters:
-      mission_control_desktop_nightly_scalar.probe: gpu_crashes
-    row: 70
-    col: 0
-    width: 12
-    height: 8
-    field_x: mission_control_desktop_nightly_scalar.submission_date
-    field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: false
-    ci_lower: mission_control_desktop_nightly_scalar.low
-    ci_upper: mission_control_desktop_nightly_scalar.high
-    show_grid: true
-    listen:
-      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
-      Build: mission_control_desktop_nightly_scalar.build
-      Os: mission_control_desktop_nightly_scalar.os
-    active: "#3FE1B0"
-  - title: Gpu Crashes - By build
-    name: Gpu Crashes - By build
-    explore: mission_control_desktop_nightly_scalar
-    type: "ci-line-chart"
-    fields: [
-      mission_control_desktop_nightly_scalar.submission_date,
-      mission_control_desktop_nightly_scalar.branch,
-      mission_control_desktop_nightly_scalar.high,
-      mission_control_desktop_nightly_scalar.low,
-      mission_control_desktop_nightly_scalar.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_scalar.branch, mission_control_desktop_nightly_scalar.build 
-    ]
-    filters:
-      mission_control_desktop_nightly_scalar.probe: gpu_crashes
-    row: 70
-    col: 12
-    width: 12
-    height: 8
-    field_x: mission_control_desktop_nightly_scalar.submission_date
-    field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: false
-    ci_lower: mission_control_desktop_nightly_scalar.low
-    ci_upper: mission_control_desktop_nightly_scalar.high
-    show_grid: true
-    listen:
-      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
-      Build: mission_control_desktop_nightly_scalar.build
-      Os: mission_control_desktop_nightly_scalar.os
-    active: "#3FE1B0"
-  - title: Oom Crashes
-    name: Oom Crashes
-    explore: mission_control_desktop_nightly_scalar
-    type: "ci-line-chart"
-    fields: [
-      mission_control_desktop_nightly_scalar.submission_date,
-      mission_control_desktop_nightly_scalar.branch,
-      mission_control_desktop_nightly_scalar.high,
-      mission_control_desktop_nightly_scalar.low,
-      mission_control_desktop_nightly_scalar.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_scalar.branch
-    ]
-    filters:
-      mission_control_desktop_nightly_scalar.probe: oom_crashes
-    row: 80
-    col: 0
-    width: 12
-    height: 8
-    field_x: mission_control_desktop_nightly_scalar.submission_date
-    field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: false
-    ci_lower: mission_control_desktop_nightly_scalar.low
-    ci_upper: mission_control_desktop_nightly_scalar.high
-    show_grid: true
-    listen:
-      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
-      Build: mission_control_desktop_nightly_scalar.build
-      Os: mission_control_desktop_nightly_scalar.os
-    active: "#3FE1B0"
-  - title: Oom Crashes - By build
-    name: Oom Crashes - By build
-    explore: mission_control_desktop_nightly_scalar
-    type: "ci-line-chart"
-    fields: [
-      mission_control_desktop_nightly_scalar.submission_date,
-      mission_control_desktop_nightly_scalar.branch,
-      mission_control_desktop_nightly_scalar.high,
-      mission_control_desktop_nightly_scalar.low,
-      mission_control_desktop_nightly_scalar.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_scalar.branch, mission_control_desktop_nightly_scalar.build 
-    ]
-    filters:
-      mission_control_desktop_nightly_scalar.probe: oom_crashes
-    row: 80
-    col: 12
-    width: 12
-    height: 8
-    field_x: mission_control_desktop_nightly_scalar.submission_date
-    field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: false
-    ci_lower: mission_control_desktop_nightly_scalar.low
-    ci_upper: mission_control_desktop_nightly_scalar.high
-    show_grid: true
-    listen:
-      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
-      Build: mission_control_desktop_nightly_scalar.build
-      Os: mission_control_desktop_nightly_scalar.os
-    active: "#3FE1B0"
-  - title: Plugin Crashes
-    name: Plugin Crashes
-    explore: mission_control_desktop_nightly_scalar
-    type: "ci-line-chart"
-    fields: [
-      mission_control_desktop_nightly_scalar.submission_date,
-      mission_control_desktop_nightly_scalar.branch,
-      mission_control_desktop_nightly_scalar.high,
-      mission_control_desktop_nightly_scalar.low,
-      mission_control_desktop_nightly_scalar.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_scalar.branch
-    ]
-    filters:
-      mission_control_desktop_nightly_scalar.probe: plugin_crashes
-    row: 90
-    col: 0
-    width: 12
-    height: 8
-    field_x: mission_control_desktop_nightly_scalar.submission_date
-    field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: false
-    ci_lower: mission_control_desktop_nightly_scalar.low
-    ci_upper: mission_control_desktop_nightly_scalar.high
-    show_grid: true
-    listen:
-      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
-      Build: mission_control_desktop_nightly_scalar.build
-      Os: mission_control_desktop_nightly_scalar.os
-    active: "#3FE1B0"
-  - title: Plugin Crashes - By build
-    name: Plugin Crashes - By build
-    explore: mission_control_desktop_nightly_scalar
-    type: "ci-line-chart"
-    fields: [
-      mission_control_desktop_nightly_scalar.submission_date,
-      mission_control_desktop_nightly_scalar.branch,
-      mission_control_desktop_nightly_scalar.high,
-      mission_control_desktop_nightly_scalar.low,
-      mission_control_desktop_nightly_scalar.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_scalar.branch, mission_control_desktop_nightly_scalar.build 
-    ]
-    filters:
-      mission_control_desktop_nightly_scalar.probe: plugin_crashes
-    row: 90
-    col: 12
-    width: 12
-    height: 8
-    field_x: mission_control_desktop_nightly_scalar.submission_date
-    field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: false
-    ci_lower: mission_control_desktop_nightly_scalar.low
-    ci_upper: mission_control_desktop_nightly_scalar.high
-    show_grid: true
-    listen:
-      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
-      Build: mission_control_desktop_nightly_scalar.build
-      Os: mission_control_desktop_nightly_scalar.os
-    active: "#3FE1B0"
-  - title: Content Shutdown Crashes
-    name: Content Shutdown Crashes
-    explore: mission_control_desktop_nightly_scalar
-    type: "ci-line-chart"
-    fields: [
-      mission_control_desktop_nightly_scalar.submission_date,
-      mission_control_desktop_nightly_scalar.branch,
-      mission_control_desktop_nightly_scalar.high,
-      mission_control_desktop_nightly_scalar.low,
-      mission_control_desktop_nightly_scalar.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_scalar.branch
-    ]
-    filters:
-      mission_control_desktop_nightly_scalar.probe: content_shutdown_crashes
-    row: 100
-    col: 0
-    width: 12
-    height: 8
-    field_x: mission_control_desktop_nightly_scalar.submission_date
-    field_y: mission_control_desktop_nightly_scalar.percentile
-    log_scale: false
-    ci_lower: mission_control_desktop_nightly_scalar.low
-    ci_upper: mission_control_desktop_nightly_scalar.high
-    show_grid: true
-    listen:
-      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
-      Build: mission_control_desktop_nightly_scalar.build
-      Os: mission_control_desktop_nightly_scalar.os
-    active: "#3FE1B0"
-  - title: Content Shutdown Crashes - By build
-    name: Content Shutdown Crashes - By build
-    explore: mission_control_desktop_nightly_scalar
-    type: "ci-line-chart"
-    fields: [
-      mission_control_desktop_nightly_scalar.submission_date,
-      mission_control_desktop_nightly_scalar.branch,
-      mission_control_desktop_nightly_scalar.high,
-      mission_control_desktop_nightly_scalar.low,
-      mission_control_desktop_nightly_scalar.percentile
-    ]
-    pivots: [
-      mission_control_desktop_nightly_scalar.branch, mission_control_desktop_nightly_scalar.build 
-    ]
-    filters:
-      mission_control_desktop_nightly_scalar.probe: content_shutdown_crashes
-    row: 100
+    row: 30
     col: 12
     width: 12
     height: 8
@@ -708,7 +274,7 @@
     ]
     filters:
       mission_control_desktop_nightly_scalar.probe: main_crashes
-    row: 110
+    row: 40
     col: 0
     width: 12
     height: 8
@@ -739,6 +305,440 @@
     ]
     filters:
       mission_control_desktop_nightly_scalar.probe: main_crashes
+    row: 40
+    col: 12
+    width: 12
+    height: 8
+    field_x: mission_control_desktop_nightly_scalar.submission_date
+    field_y: mission_control_desktop_nightly_scalar.percentile
+    log_scale: false
+    ci_lower: mission_control_desktop_nightly_scalar.low
+    ci_upper: mission_control_desktop_nightly_scalar.high
+    show_grid: true
+    listen:
+      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
+      Build: mission_control_desktop_nightly_scalar.build
+      Os: mission_control_desktop_nightly_scalar.os
+    active: "#3FE1B0"
+  - title: Plugin Crashes
+    name: Plugin Crashes
+    explore: mission_control_desktop_nightly_scalar
+    type: "ci-line-chart"
+    fields: [
+      mission_control_desktop_nightly_scalar.submission_date,
+      mission_control_desktop_nightly_scalar.branch,
+      mission_control_desktop_nightly_scalar.high,
+      mission_control_desktop_nightly_scalar.low,
+      mission_control_desktop_nightly_scalar.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_scalar.branch
+    ]
+    filters:
+      mission_control_desktop_nightly_scalar.probe: plugin_crashes
+    row: 50
+    col: 0
+    width: 12
+    height: 8
+    field_x: mission_control_desktop_nightly_scalar.submission_date
+    field_y: mission_control_desktop_nightly_scalar.percentile
+    log_scale: false
+    ci_lower: mission_control_desktop_nightly_scalar.low
+    ci_upper: mission_control_desktop_nightly_scalar.high
+    show_grid: true
+    listen:
+      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
+      Build: mission_control_desktop_nightly_scalar.build
+      Os: mission_control_desktop_nightly_scalar.os
+    active: "#3FE1B0"
+  - title: Plugin Crashes - By build
+    name: Plugin Crashes - By build
+    explore: mission_control_desktop_nightly_scalar
+    type: "ci-line-chart"
+    fields: [
+      mission_control_desktop_nightly_scalar.submission_date,
+      mission_control_desktop_nightly_scalar.branch,
+      mission_control_desktop_nightly_scalar.high,
+      mission_control_desktop_nightly_scalar.low,
+      mission_control_desktop_nightly_scalar.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_scalar.branch, mission_control_desktop_nightly_scalar.build 
+    ]
+    filters:
+      mission_control_desktop_nightly_scalar.probe: plugin_crashes
+    row: 50
+    col: 12
+    width: 12
+    height: 8
+    field_x: mission_control_desktop_nightly_scalar.submission_date
+    field_y: mission_control_desktop_nightly_scalar.percentile
+    log_scale: false
+    ci_lower: mission_control_desktop_nightly_scalar.low
+    ci_upper: mission_control_desktop_nightly_scalar.high
+    show_grid: true
+    listen:
+      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
+      Build: mission_control_desktop_nightly_scalar.build
+      Os: mission_control_desktop_nightly_scalar.os
+    active: "#3FE1B0"
+  - title: Gmplugin Crashes
+    name: Gmplugin Crashes
+    explore: mission_control_desktop_nightly_scalar
+    type: "ci-line-chart"
+    fields: [
+      mission_control_desktop_nightly_scalar.submission_date,
+      mission_control_desktop_nightly_scalar.branch,
+      mission_control_desktop_nightly_scalar.high,
+      mission_control_desktop_nightly_scalar.low,
+      mission_control_desktop_nightly_scalar.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_scalar.branch
+    ]
+    filters:
+      mission_control_desktop_nightly_scalar.probe: gmplugin_crashes
+    row: 60
+    col: 0
+    width: 12
+    height: 8
+    field_x: mission_control_desktop_nightly_scalar.submission_date
+    field_y: mission_control_desktop_nightly_scalar.percentile
+    log_scale: false
+    ci_lower: mission_control_desktop_nightly_scalar.low
+    ci_upper: mission_control_desktop_nightly_scalar.high
+    show_grid: true
+    listen:
+      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
+      Build: mission_control_desktop_nightly_scalar.build
+      Os: mission_control_desktop_nightly_scalar.os
+    active: "#3FE1B0"
+  - title: Gmplugin Crashes - By build
+    name: Gmplugin Crashes - By build
+    explore: mission_control_desktop_nightly_scalar
+    type: "ci-line-chart"
+    fields: [
+      mission_control_desktop_nightly_scalar.submission_date,
+      mission_control_desktop_nightly_scalar.branch,
+      mission_control_desktop_nightly_scalar.high,
+      mission_control_desktop_nightly_scalar.low,
+      mission_control_desktop_nightly_scalar.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_scalar.branch, mission_control_desktop_nightly_scalar.build 
+    ]
+    filters:
+      mission_control_desktop_nightly_scalar.probe: gmplugin_crashes
+    row: 60
+    col: 12
+    width: 12
+    height: 8
+    field_x: mission_control_desktop_nightly_scalar.submission_date
+    field_y: mission_control_desktop_nightly_scalar.percentile
+    log_scale: false
+    ci_lower: mission_control_desktop_nightly_scalar.low
+    ci_upper: mission_control_desktop_nightly_scalar.high
+    show_grid: true
+    listen:
+      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
+      Build: mission_control_desktop_nightly_scalar.build
+      Os: mission_control_desktop_nightly_scalar.os
+    active: "#3FE1B0"
+  - title: Oom Crashes
+    name: Oom Crashes
+    explore: mission_control_desktop_nightly_scalar
+    type: "ci-line-chart"
+    fields: [
+      mission_control_desktop_nightly_scalar.submission_date,
+      mission_control_desktop_nightly_scalar.branch,
+      mission_control_desktop_nightly_scalar.high,
+      mission_control_desktop_nightly_scalar.low,
+      mission_control_desktop_nightly_scalar.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_scalar.branch
+    ]
+    filters:
+      mission_control_desktop_nightly_scalar.probe: oom_crashes
+    row: 70
+    col: 0
+    width: 12
+    height: 8
+    field_x: mission_control_desktop_nightly_scalar.submission_date
+    field_y: mission_control_desktop_nightly_scalar.percentile
+    log_scale: false
+    ci_lower: mission_control_desktop_nightly_scalar.low
+    ci_upper: mission_control_desktop_nightly_scalar.high
+    show_grid: true
+    listen:
+      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
+      Build: mission_control_desktop_nightly_scalar.build
+      Os: mission_control_desktop_nightly_scalar.os
+    active: "#3FE1B0"
+  - title: Oom Crashes - By build
+    name: Oom Crashes - By build
+    explore: mission_control_desktop_nightly_scalar
+    type: "ci-line-chart"
+    fields: [
+      mission_control_desktop_nightly_scalar.submission_date,
+      mission_control_desktop_nightly_scalar.branch,
+      mission_control_desktop_nightly_scalar.high,
+      mission_control_desktop_nightly_scalar.low,
+      mission_control_desktop_nightly_scalar.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_scalar.branch, mission_control_desktop_nightly_scalar.build 
+    ]
+    filters:
+      mission_control_desktop_nightly_scalar.probe: oom_crashes
+    row: 70
+    col: 12
+    width: 12
+    height: 8
+    field_x: mission_control_desktop_nightly_scalar.submission_date
+    field_y: mission_control_desktop_nightly_scalar.percentile
+    log_scale: false
+    ci_lower: mission_control_desktop_nightly_scalar.low
+    ci_upper: mission_control_desktop_nightly_scalar.high
+    show_grid: true
+    listen:
+      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
+      Build: mission_control_desktop_nightly_scalar.build
+      Os: mission_control_desktop_nightly_scalar.os
+    active: "#3FE1B0"
+  - title: Content Shutdown Crashes
+    name: Content Shutdown Crashes
+    explore: mission_control_desktop_nightly_scalar
+    type: "ci-line-chart"
+    fields: [
+      mission_control_desktop_nightly_scalar.submission_date,
+      mission_control_desktop_nightly_scalar.branch,
+      mission_control_desktop_nightly_scalar.high,
+      mission_control_desktop_nightly_scalar.low,
+      mission_control_desktop_nightly_scalar.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_scalar.branch
+    ]
+    filters:
+      mission_control_desktop_nightly_scalar.probe: content_shutdown_crashes
+    row: 80
+    col: 0
+    width: 12
+    height: 8
+    field_x: mission_control_desktop_nightly_scalar.submission_date
+    field_y: mission_control_desktop_nightly_scalar.percentile
+    log_scale: false
+    ci_lower: mission_control_desktop_nightly_scalar.low
+    ci_upper: mission_control_desktop_nightly_scalar.high
+    show_grid: true
+    listen:
+      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
+      Build: mission_control_desktop_nightly_scalar.build
+      Os: mission_control_desktop_nightly_scalar.os
+    active: "#3FE1B0"
+  - title: Content Shutdown Crashes - By build
+    name: Content Shutdown Crashes - By build
+    explore: mission_control_desktop_nightly_scalar
+    type: "ci-line-chart"
+    fields: [
+      mission_control_desktop_nightly_scalar.submission_date,
+      mission_control_desktop_nightly_scalar.branch,
+      mission_control_desktop_nightly_scalar.high,
+      mission_control_desktop_nightly_scalar.low,
+      mission_control_desktop_nightly_scalar.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_scalar.branch, mission_control_desktop_nightly_scalar.build 
+    ]
+    filters:
+      mission_control_desktop_nightly_scalar.probe: content_shutdown_crashes
+    row: 80
+    col: 12
+    width: 12
+    height: 8
+    field_x: mission_control_desktop_nightly_scalar.submission_date
+    field_y: mission_control_desktop_nightly_scalar.percentile
+    log_scale: false
+    ci_lower: mission_control_desktop_nightly_scalar.low
+    ci_upper: mission_control_desktop_nightly_scalar.high
+    show_grid: true
+    listen:
+      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
+      Build: mission_control_desktop_nightly_scalar.build
+      Os: mission_control_desktop_nightly_scalar.os
+    active: "#3FE1B0"
+  - title: Gpu Crashes
+    name: Gpu Crashes
+    explore: mission_control_desktop_nightly_scalar
+    type: "ci-line-chart"
+    fields: [
+      mission_control_desktop_nightly_scalar.submission_date,
+      mission_control_desktop_nightly_scalar.branch,
+      mission_control_desktop_nightly_scalar.high,
+      mission_control_desktop_nightly_scalar.low,
+      mission_control_desktop_nightly_scalar.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_scalar.branch
+    ]
+    filters:
+      mission_control_desktop_nightly_scalar.probe: gpu_crashes
+    row: 90
+    col: 0
+    width: 12
+    height: 8
+    field_x: mission_control_desktop_nightly_scalar.submission_date
+    field_y: mission_control_desktop_nightly_scalar.percentile
+    log_scale: false
+    ci_lower: mission_control_desktop_nightly_scalar.low
+    ci_upper: mission_control_desktop_nightly_scalar.high
+    show_grid: true
+    listen:
+      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
+      Build: mission_control_desktop_nightly_scalar.build
+      Os: mission_control_desktop_nightly_scalar.os
+    active: "#3FE1B0"
+  - title: Gpu Crashes - By build
+    name: Gpu Crashes - By build
+    explore: mission_control_desktop_nightly_scalar
+    type: "ci-line-chart"
+    fields: [
+      mission_control_desktop_nightly_scalar.submission_date,
+      mission_control_desktop_nightly_scalar.branch,
+      mission_control_desktop_nightly_scalar.high,
+      mission_control_desktop_nightly_scalar.low,
+      mission_control_desktop_nightly_scalar.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_scalar.branch, mission_control_desktop_nightly_scalar.build 
+    ]
+    filters:
+      mission_control_desktop_nightly_scalar.probe: gpu_crashes
+    row: 90
+    col: 12
+    width: 12
+    height: 8
+    field_x: mission_control_desktop_nightly_scalar.submission_date
+    field_y: mission_control_desktop_nightly_scalar.percentile
+    log_scale: false
+    ci_lower: mission_control_desktop_nightly_scalar.low
+    ci_upper: mission_control_desktop_nightly_scalar.high
+    show_grid: true
+    listen:
+      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
+      Build: mission_control_desktop_nightly_scalar.build
+      Os: mission_control_desktop_nightly_scalar.os
+    active: "#3FE1B0"
+  - title: Startup Crashes
+    name: Startup Crashes
+    explore: mission_control_desktop_nightly_scalar
+    type: "ci-line-chart"
+    fields: [
+      mission_control_desktop_nightly_scalar.submission_date,
+      mission_control_desktop_nightly_scalar.branch,
+      mission_control_desktop_nightly_scalar.high,
+      mission_control_desktop_nightly_scalar.low,
+      mission_control_desktop_nightly_scalar.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_scalar.branch
+    ]
+    filters:
+      mission_control_desktop_nightly_scalar.probe: startup_crashes
+    row: 100
+    col: 0
+    width: 12
+    height: 8
+    field_x: mission_control_desktop_nightly_scalar.submission_date
+    field_y: mission_control_desktop_nightly_scalar.percentile
+    log_scale: false
+    ci_lower: mission_control_desktop_nightly_scalar.low
+    ci_upper: mission_control_desktop_nightly_scalar.high
+    show_grid: true
+    listen:
+      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
+      Build: mission_control_desktop_nightly_scalar.build
+      Os: mission_control_desktop_nightly_scalar.os
+    active: "#3FE1B0"
+  - title: Startup Crashes - By build
+    name: Startup Crashes - By build
+    explore: mission_control_desktop_nightly_scalar
+    type: "ci-line-chart"
+    fields: [
+      mission_control_desktop_nightly_scalar.submission_date,
+      mission_control_desktop_nightly_scalar.branch,
+      mission_control_desktop_nightly_scalar.high,
+      mission_control_desktop_nightly_scalar.low,
+      mission_control_desktop_nightly_scalar.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_scalar.branch, mission_control_desktop_nightly_scalar.build 
+    ]
+    filters:
+      mission_control_desktop_nightly_scalar.probe: startup_crashes
+    row: 100
+    col: 12
+    width: 12
+    height: 8
+    field_x: mission_control_desktop_nightly_scalar.submission_date
+    field_y: mission_control_desktop_nightly_scalar.percentile
+    log_scale: false
+    ci_lower: mission_control_desktop_nightly_scalar.low
+    ci_upper: mission_control_desktop_nightly_scalar.high
+    show_grid: true
+    listen:
+      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
+      Build: mission_control_desktop_nightly_scalar.build
+      Os: mission_control_desktop_nightly_scalar.os
+    active: "#3FE1B0"
+  - title: Content Crashes
+    name: Content Crashes
+    explore: mission_control_desktop_nightly_scalar
+    type: "ci-line-chart"
+    fields: [
+      mission_control_desktop_nightly_scalar.submission_date,
+      mission_control_desktop_nightly_scalar.branch,
+      mission_control_desktop_nightly_scalar.high,
+      mission_control_desktop_nightly_scalar.low,
+      mission_control_desktop_nightly_scalar.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_scalar.branch
+    ]
+    filters:
+      mission_control_desktop_nightly_scalar.probe: content_crashes
+    row: 110
+    col: 0
+    width: 12
+    height: 8
+    field_x: mission_control_desktop_nightly_scalar.submission_date
+    field_y: mission_control_desktop_nightly_scalar.percentile
+    log_scale: false
+    ci_lower: mission_control_desktop_nightly_scalar.low
+    ci_upper: mission_control_desktop_nightly_scalar.high
+    show_grid: true
+    listen:
+      Percentile: mission_control_desktop_nightly_scalar.percentile_conf
+      Build: mission_control_desktop_nightly_scalar.build
+      Os: mission_control_desktop_nightly_scalar.os
+    active: "#3FE1B0"
+  - title: Content Crashes - By build
+    name: Content Crashes - By build
+    explore: mission_control_desktop_nightly_scalar
+    type: "ci-line-chart"
+    fields: [
+      mission_control_desktop_nightly_scalar.submission_date,
+      mission_control_desktop_nightly_scalar.branch,
+      mission_control_desktop_nightly_scalar.high,
+      mission_control_desktop_nightly_scalar.low,
+      mission_control_desktop_nightly_scalar.percentile
+    ]
+    pivots: [
+      mission_control_desktop_nightly_scalar.branch, mission_control_desktop_nightly_scalar.build 
+    ]
+    filters:
+      mission_control_desktop_nightly_scalar.probe: content_crashes
     row: 110
     col: 12
     width: 12
@@ -782,7 +782,7 @@
   - title: Build
     name: Build
     type: string_filter
-    default_value: '20211105,20220421,20220424,20220425,20220426,20220427,20220428,20220503,20220504,20220517'
+    default_value: '20211105,20220421,20220425,20220426,20220427,20220428,20220503,20220504,20220517,20220518'
     allow_multiple_values: true
     required: true
     ui_config:
@@ -791,7 +791,6 @@
       options:
       - '20211105'
       - '20220421'
-      - '20220424'
       - '20220425'
       - '20220426'
       - '20220427'
@@ -799,6 +798,7 @@
       - '20220503'
       - '20220504'
       - '20220517'
+      - '20220518'
       
     
   
@@ -813,8 +813,8 @@
       display: inline
       options:
       - 'Windows'
-      - 'Linux'
       - 'Mac'
+      - 'Linux'
       
   
   
