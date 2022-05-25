@@ -227,6 +227,7 @@ view: fxa_content_auth_stdout_events_table {
       quarter,
       year,
     ]
+    tags: ["time_partitioning_field"]
   }
 
   sql_table_name: `mozdata.firefox_accounts.fxa_content_auth_stdout_events` ;;

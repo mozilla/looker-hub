@@ -904,16 +904,19 @@ firefox_accounts:
       tables:
       - channel: release
         table: mozdata.firefox_accounts.fxa_content_auth_events
+        time_partitioning_field: timestamp
       type: table_view
     fxa_content_auth_stdout_events_table:
       tables:
       - channel: release
         table: mozdata.firefox_accounts.fxa_content_auth_stdout_events
+        time_partitioning_field: timestamp
       type: table_view
     fxa_events_table:
       tables:
       - channel: release
         table: mozdata.firefox_accounts.fxa_content_auth_oauth_events
+        time_partitioning_field: timestamp
       type: table_view
     fxa_first_seen_table:
       tables:

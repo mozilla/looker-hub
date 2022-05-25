@@ -11,15 +11,6 @@ explore: event_counts {
   view_name: events
   description: "Event counts over time."
 
-  query: all_event_counts {
-    description: "Event counts from all events over the past two weeks."
-    dimensions: [submission_date]
-    measures: [event_count]
-    filters: [
-      submission_date: "14 days",
-    ]
-  }
-
   join: events_unnested_table__event_extra {
     view_label: "Events  Event Extra"
     relationship: one_to_many
@@ -35,6 +26,15 @@ explore: event_counts {
   always_filter: {
     filters: [
       submission_date: "28 days",
+    ]
+  }
+
+  query: all_event_counts {
+    description: "Event counts from all events over the past two weeks."
+    dimensions: [submission_date]
+    measures: [event_count]
+    filters: [
+      submission_date: "14 days",
     ]
   }
 }
