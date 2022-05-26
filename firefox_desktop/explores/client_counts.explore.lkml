@@ -32,16 +32,6 @@ explore: client_counts {
     ]
   }
 
-  query: build_breakdown {
-    description: "Number of clients per build."
-    dimensions: [submission_date, app_build]
-    measures: [client_count]
-    pivots: [app_build]
-    sorts: [
-      submission_date: asc,
-    ]
-  }
-
   join: clients_daily_table__a11y_theme {
     view_label: "Client Counts  A11Y Theme"
     relationship: one_to_many
