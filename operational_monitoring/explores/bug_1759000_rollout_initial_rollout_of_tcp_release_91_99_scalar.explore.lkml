@@ -13,22 +13,6 @@ explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar {
     ]
   }
 
-  aggregate_table: rollup_shutdown_hangs {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch: "enabled, disabled",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf: "50",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.probe: "shutdown_hangs",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_main_crashes {
     query: {
       dimensions: [submission_date, branch]
@@ -109,6 +93,22 @@ explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar {
     }
   }
 
+  aggregate_table: rollup_shutdown_hangs {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch: "enabled, disabled",
+        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf: "50",
+        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.probe: "shutdown_hangs",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
   aggregate_table: rollup_gpu_crashes {
     query: {
       dimensions: [submission_date, branch]
@@ -125,22 +125,6 @@ explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar {
     }
   }
 
-  aggregate_table: rollup_startup_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch: "enabled, disabled",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf: "50",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.probe: "startup_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_content_crashes {
     query: {
       dimensions: [submission_date, branch]
@@ -149,6 +133,22 @@ explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar {
         bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch: "enabled, disabled",
         bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf: "50",
         bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.probe: "content_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_startup_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.branch: "enabled, disabled",
+        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.percentile_conf: "50",
+        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_scalar.probe: "startup_crashes",
       ]
     }
 
