@@ -13,14 +13,14 @@ explore: firefox_suggest_by_merino_nightly_scalar {
     ]
   }
 
-  aggregate_table: rollup_main_crashes {
+  aggregate_table: rollup_shutdown_hangs {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         firefox_suggest_by_merino_nightly_scalar.branch: "enabled, disabled",
         firefox_suggest_by_merino_nightly_scalar.percentile_conf: "50",
-        firefox_suggest_by_merino_nightly_scalar.probe: "main_crashes",
+        firefox_suggest_by_merino_nightly_scalar.probe: "shutdown_hangs",
       ]
     }
 
@@ -29,14 +29,14 @@ explore: firefox_suggest_by_merino_nightly_scalar {
     }
   }
 
-  aggregate_table: rollup_plugin_crashes {
+  aggregate_table: rollup_startup_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         firefox_suggest_by_merino_nightly_scalar.branch: "enabled, disabled",
         firefox_suggest_by_merino_nightly_scalar.percentile_conf: "50",
-        firefox_suggest_by_merino_nightly_scalar.probe: "plugin_crashes",
+        firefox_suggest_by_merino_nightly_scalar.probe: "startup_crashes",
       ]
     }
 
@@ -53,6 +53,22 @@ explore: firefox_suggest_by_merino_nightly_scalar {
         firefox_suggest_by_merino_nightly_scalar.branch: "enabled, disabled",
         firefox_suggest_by_merino_nightly_scalar.percentile_conf: "50",
         firefox_suggest_by_merino_nightly_scalar.probe: "gmplugin_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_main_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        firefox_suggest_by_merino_nightly_scalar.branch: "enabled, disabled",
+        firefox_suggest_by_merino_nightly_scalar.percentile_conf: "50",
+        firefox_suggest_by_merino_nightly_scalar.probe: "main_crashes",
       ]
     }
 
@@ -93,22 +109,6 @@ explore: firefox_suggest_by_merino_nightly_scalar {
     }
   }
 
-  aggregate_table: rollup_shutdown_hangs {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        firefox_suggest_by_merino_nightly_scalar.branch: "enabled, disabled",
-        firefox_suggest_by_merino_nightly_scalar.percentile_conf: "50",
-        firefox_suggest_by_merino_nightly_scalar.probe: "shutdown_hangs",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_gpu_crashes {
     query: {
       dimensions: [submission_date, branch]
@@ -125,14 +125,14 @@ explore: firefox_suggest_by_merino_nightly_scalar {
     }
   }
 
-  aggregate_table: rollup_content_crashes {
+  aggregate_table: rollup_plugin_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         firefox_suggest_by_merino_nightly_scalar.branch: "enabled, disabled",
         firefox_suggest_by_merino_nightly_scalar.percentile_conf: "50",
-        firefox_suggest_by_merino_nightly_scalar.probe: "content_crashes",
+        firefox_suggest_by_merino_nightly_scalar.probe: "plugin_crashes",
       ]
     }
 
@@ -141,14 +141,14 @@ explore: firefox_suggest_by_merino_nightly_scalar {
     }
   }
 
-  aggregate_table: rollup_startup_crashes {
+  aggregate_table: rollup_content_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         firefox_suggest_by_merino_nightly_scalar.branch: "enabled, disabled",
         firefox_suggest_by_merino_nightly_scalar.percentile_conf: "50",
-        firefox_suggest_by_merino_nightly_scalar.probe: "startup_crashes",
+        firefox_suggest_by_merino_nightly_scalar.probe: "content_crashes",
       ]
     }
 
