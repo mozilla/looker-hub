@@ -158,7 +158,12 @@ view: baseline_clients_daily_table {
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_focus_beta.baseline_clients_daily"
+    default_value: "mozdata.focus_android.baseline_clients_daily"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.focus_android.baseline_clients_daily"
+    }
 
     allowed_value: {
       label: "Beta"
