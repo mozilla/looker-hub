@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: baseline_clients_last_seen_table {
+view: clients_last_seen_joined_table {
   dimension: android_sdk_version {
     sql: ${TABLE}.android_sdk_version ;;
     type: string
@@ -66,6 +66,11 @@ view: baseline_clients_last_seen_table {
     type: number
   }
 
+  dimension: days_sent_metrics_ping_bits {
+    sql: ${TABLE}.days_sent_metrics_ping_bits ;;
+    type: number
+  }
+
   dimension: days_since_created_profile {
     sql: ${TABLE}.days_since_created_profile ;;
     type: number
@@ -114,6 +119,11 @@ view: baseline_clients_last_seen_table {
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
+  }
+
+  dimension: n_metrics_ping {
+    sql: ${TABLE}.n_metrics_ping ;;
+    type: number
   }
 
   dimension: normalized_channel {
@@ -186,25 +196,5 @@ view: baseline_clients_last_seen_table {
     datatype: date
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.focus_android.baseline_clients_last_seen"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.focus_android.baseline_clients_last_seen"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_focus_beta.baseline_clients_last_seen"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_focus_nightly.baseline_clients_last_seen"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.focus_android.clients_last_seen_joined` ;;
 }

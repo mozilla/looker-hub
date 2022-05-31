@@ -158,7 +158,12 @@ view: baseline_clients_first_seen_table {
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_focus_beta.baseline_clients_first_seen"
+    default_value: "mozdata.focus_android.baseline_clients_first_seen"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.focus_android.baseline_clients_first_seen"
+    }
 
     allowed_value: {
       label: "Beta"
