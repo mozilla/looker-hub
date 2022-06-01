@@ -56,6 +56,11 @@ view: desktop_search_alert_records {
     type: number
   }
 
+  dimension: engine {
+    sql: ${TABLE}.engine ;;
+    type: string
+  }
+
   dimension: is_holiday {
     sql: ${TABLE}.is_holiday ;;
     type: yesno

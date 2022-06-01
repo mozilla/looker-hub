@@ -13,14 +13,14 @@ explore: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogr
     ]
   }
 
-  aggregate_table: rollup_gc_ms {
+  aggregate_table: rollup_content_process_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.branch: "enabled, disabled",
         bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.percentile_conf: "50",
-        bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.probe: "gc_ms",
+        bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.probe: "content_process_count",
       ]
     }
 
@@ -45,14 +45,14 @@ explore: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogr
     }
   }
 
-  aggregate_table: rollup_content_process_count {
+  aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.branch: "enabled, disabled",
         bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.percentile_conf: "50",
-        bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.probe: "content_process_count",
+        bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.probe: "gc_ms",
       ]
     }
 

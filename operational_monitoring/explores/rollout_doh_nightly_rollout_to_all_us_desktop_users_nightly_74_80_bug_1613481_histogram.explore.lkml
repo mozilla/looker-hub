@@ -13,14 +13,14 @@ explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1
     ]
   }
 
-  aggregate_table: rollup_gc_ms {
+  aggregate_table: rollup_content_process_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_histogram.branch: "enabled, disabled",
         rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_histogram.percentile_conf: "50",
-        rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_histogram.probe: "gc_ms",
+        rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_histogram.probe: "content_process_count",
       ]
     }
 
@@ -45,14 +45,14 @@ explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1
     }
   }
 
-  aggregate_table: rollup_content_process_count {
+  aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_histogram.branch: "enabled, disabled",
         rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_histogram.percentile_conf: "50",
-        rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_histogram.probe: "content_process_count",
+        rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_histogram.probe: "gc_ms",
       ]
     }
 

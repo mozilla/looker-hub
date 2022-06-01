@@ -71,6 +71,11 @@ view: unified_metrics {
     map_layer_name: countries
   }
 
+  dimension: days_created_profile_bits {
+    sql: ${TABLE}.days_created_profile_bits ;;
+    type: number
+  }
+
   dimension: days_seen_bits {
     sql: ${TABLE}.days_seen_bits ;;
     type: number
