@@ -2151,9 +2151,13 @@ marketing:
   pretty_name: Marketing
   spoke: looker-spoke-default
   views:
-    acoustic_contacts:
+    acoustic_contact_change_events:
       tables:
       - table: moz-fx-data-marketing-prod.acoustic.contact_v1
+      type: table_view
+    acoustic_contact_current_snapshot:
+      tables:
+      - table: moz-fx-data-marketing-prod.acoustic.contact_current_snapshot_v1
       type: table_view
     acoustic_email_events:
       tables:
