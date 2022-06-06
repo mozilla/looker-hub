@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: acoustic_contacts {
+view: acoustic_contact_current_snapshot {
   dimension: basket_token {
     sql: ${TABLE}.basket_token ;;
     type: string
@@ -225,5 +225,5 @@ view: acoustic_contacts {
     datatype: date
   }
 
-  sql_table_name: `moz-fx-data-marketing-prod.acoustic.contact_v1` ;;
+  sql_table_name: `moz-fx-data-marketing-prod.acoustic.contact_current_snapshot_v1` ;;
 }
