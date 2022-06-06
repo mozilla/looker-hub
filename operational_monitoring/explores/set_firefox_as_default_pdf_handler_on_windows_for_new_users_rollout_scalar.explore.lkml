@@ -13,30 +13,14 @@ explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_sca
     ]
   }
 
-  aggregate_table: rollup_content_shutdown_crashes {
+  aggregate_table: rollup_content_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.branch: "enabled, disabled",
         set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.percentile_conf: "50",
-        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.probe: "content_shutdown_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_oom_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.branch: "enabled, disabled",
-        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.percentile_conf: "50",
-        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.probe: "oom_crashes",
+        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.probe: "content_crashes",
       ]
     }
 
@@ -61,6 +45,22 @@ explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_sca
     }
   }
 
+  aggregate_table: rollup_content_shutdown_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.branch: "enabled, disabled",
+        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.percentile_conf: "50",
+        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.probe: "content_shutdown_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
   aggregate_table: rollup_plugin_crashes {
     query: {
       dimensions: [submission_date, branch]
@@ -77,14 +77,14 @@ explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_sca
     }
   }
 
-  aggregate_table: rollup_main_crashes {
+  aggregate_table: rollup_oom_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.branch: "enabled, disabled",
         set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.percentile_conf: "50",
-        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.probe: "main_crashes",
+        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.probe: "oom_crashes",
       ]
     }
 
@@ -109,22 +109,6 @@ explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_sca
     }
   }
 
-  aggregate_table: rollup_content_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.branch: "enabled, disabled",
-        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.percentile_conf: "50",
-        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.probe: "content_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_shutdown_hangs {
     query: {
       dimensions: [submission_date, branch]
@@ -133,6 +117,22 @@ explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_sca
         set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.branch: "enabled, disabled",
         set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.percentile_conf: "50",
         set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.probe: "shutdown_hangs",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_main_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.branch: "enabled, disabled",
+        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.percentile_conf: "50",
+        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.probe: "main_crashes",
       ]
     }
 
