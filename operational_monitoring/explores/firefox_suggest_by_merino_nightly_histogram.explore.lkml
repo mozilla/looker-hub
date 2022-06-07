@@ -13,22 +13,6 @@ explore: firefox_suggest_by_merino_nightly_histogram {
     ]
   }
 
-  aggregate_table: rollup_memory_total {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        firefox_suggest_by_merino_nightly_histogram.branch: "enabled, disabled",
-        firefox_suggest_by_merino_nightly_histogram.percentile_conf: "50",
-        firefox_suggest_by_merino_nightly_histogram.probe: "memory_total",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]
@@ -37,6 +21,22 @@ explore: firefox_suggest_by_merino_nightly_histogram {
         firefox_suggest_by_merino_nightly_histogram.branch: "enabled, disabled",
         firefox_suggest_by_merino_nightly_histogram.percentile_conf: "50",
         firefox_suggest_by_merino_nightly_histogram.probe: "gc_ms",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_memory_total {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        firefox_suggest_by_merino_nightly_histogram.branch: "enabled, disabled",
+        firefox_suggest_by_merino_nightly_histogram.percentile_conf: "50",
+        firefox_suggest_by_merino_nightly_histogram.probe: "memory_total",
       ]
     }
 
