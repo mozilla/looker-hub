@@ -13,14 +13,14 @@ explore: firefox_suggest_by_merino_nightly_histogram {
     ]
   }
 
-  aggregate_table: rollup_memory_total {
+  aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         firefox_suggest_by_merino_nightly_histogram.branch: "enabled, disabled",
         firefox_suggest_by_merino_nightly_histogram.percentile_conf: "50",
-        firefox_suggest_by_merino_nightly_histogram.probe: "memory_total",
+        firefox_suggest_by_merino_nightly_histogram.probe: "gc_ms",
       ]
     }
 
@@ -45,14 +45,14 @@ explore: firefox_suggest_by_merino_nightly_histogram {
     }
   }
 
-  aggregate_table: rollup_gc_ms {
+  aggregate_table: rollup_memory_total {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         firefox_suggest_by_merino_nightly_histogram.branch: "enabled, disabled",
         firefox_suggest_by_merino_nightly_histogram.percentile_conf: "50",
-        firefox_suggest_by_merino_nightly_histogram.probe: "gc_ms",
+        firefox_suggest_by_merino_nightly_histogram.probe: "memory_total",
       ]
     }
 

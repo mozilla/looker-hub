@@ -13,14 +13,14 @@ explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_his
     ]
   }
 
-  aggregate_table: rollup_memory_total {
+  aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_histogram.branch: "enabled, disabled",
         set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_histogram.percentile_conf: "50",
-        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_histogram.probe: "memory_total",
+        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_histogram.probe: "gc_ms",
       ]
     }
 
@@ -45,14 +45,14 @@ explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_his
     }
   }
 
-  aggregate_table: rollup_gc_ms {
+  aggregate_table: rollup_memory_total {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_histogram.branch: "enabled, disabled",
         set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_histogram.percentile_conf: "50",
-        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_histogram.probe: "gc_ms",
+        set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_histogram.probe: "memory_total",
       ]
     }
 
