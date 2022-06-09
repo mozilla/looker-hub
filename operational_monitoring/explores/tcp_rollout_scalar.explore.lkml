@@ -13,7 +13,7 @@ explore: tcp_rollout_scalar {
     ]
   }
 
-  aggregate_table: rollup_content_shutdown_crashes {
+  aggregate_table: rollup_plugin_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
@@ -22,25 +22,7 @@ explore: tcp_rollout_scalar {
         tcp_rollout_scalar.percentile_conf: "50",
         tcp_rollout_scalar.country: "US",
         tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "content_shutdown_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_tagged_follow_on_search_count {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "tagged_follow_on_search_count",
+        tcp_rollout_scalar.probe: "plugin_crashes",
       ]
     }
 
@@ -67,7 +49,7 @@ explore: tcp_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_organic_search_count {
+  aggregate_table: rollup_content_shutdown_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
@@ -76,43 +58,7 @@ explore: tcp_rollout_scalar {
         tcp_rollout_scalar.percentile_conf: "50",
         tcp_rollout_scalar.country: "US",
         tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "organic_search_count",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_tagged_search_count {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "tagged_search_count",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_gpu_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "gpu_crashes",
+        tcp_rollout_scalar.probe: "content_shutdown_crashes",
       ]
     }
 
@@ -139,7 +85,7 @@ explore: tcp_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_sap {
+  aggregate_table: rollup_tagged_search_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
@@ -148,7 +94,7 @@ explore: tcp_rollout_scalar {
         tcp_rollout_scalar.percentile_conf: "50",
         tcp_rollout_scalar.country: "US",
         tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "sap",
+        tcp_rollout_scalar.probe: "tagged_search_count",
       ]
     }
 
@@ -157,7 +103,7 @@ explore: tcp_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_oom_crashes {
+  aggregate_table: rollup_gmplugin_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
@@ -166,25 +112,7 @@ explore: tcp_rollout_scalar {
         tcp_rollout_scalar.percentile_conf: "50",
         tcp_rollout_scalar.country: "US",
         tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "oom_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_search_with_ads_organic {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "search_with_ads_organic",
+        tcp_rollout_scalar.probe: "gmplugin_crashes",
       ]
     }
 
@@ -203,6 +131,42 @@ explore: tcp_rollout_scalar {
         tcp_rollout_scalar.country: "US",
         tcp_rollout_scalar.os: "Windows",
         tcp_rollout_scalar.probe: "main_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_organic_search_count {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.percentile_conf: "50",
+        tcp_rollout_scalar.country: "US",
+        tcp_rollout_scalar.os: "Windows",
+        tcp_rollout_scalar.probe: "organic_search_count",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_oom_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.percentile_conf: "50",
+        tcp_rollout_scalar.country: "US",
+        tcp_rollout_scalar.os: "Windows",
+        tcp_rollout_scalar.probe: "oom_crashes",
       ]
     }
 
@@ -247,7 +211,7 @@ explore: tcp_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_gmplugin_crashes {
+  aggregate_table: rollup_ad_click {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
@@ -256,7 +220,61 @@ explore: tcp_rollout_scalar {
         tcp_rollout_scalar.percentile_conf: "50",
         tcp_rollout_scalar.country: "US",
         tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "gmplugin_crashes",
+        tcp_rollout_scalar.probe: "ad_click",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_tagged_follow_on_search_count {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.percentile_conf: "50",
+        tcp_rollout_scalar.country: "US",
+        tcp_rollout_scalar.os: "Windows",
+        tcp_rollout_scalar.probe: "tagged_follow_on_search_count",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_sap {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.percentile_conf: "50",
+        tcp_rollout_scalar.country: "US",
+        tcp_rollout_scalar.os: "Windows",
+        tcp_rollout_scalar.probe: "sap",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_search_with_ads_organic {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
+        tcp_rollout_scalar.percentile_conf: "50",
+        tcp_rollout_scalar.country: "US",
+        tcp_rollout_scalar.os: "Windows",
+        tcp_rollout_scalar.probe: "search_with_ads_organic",
       ]
     }
 
@@ -283,7 +301,7 @@ explore: tcp_rollout_scalar {
     }
   }
 
-  aggregate_table: rollup_plugin_crashes {
+  aggregate_table: rollup_gpu_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
@@ -292,25 +310,7 @@ explore: tcp_rollout_scalar {
         tcp_rollout_scalar.percentile_conf: "50",
         tcp_rollout_scalar.country: "US",
         tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "plugin_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_ad_click {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "ad_click",
+        tcp_rollout_scalar.probe: "gpu_crashes",
       ]
     }
 

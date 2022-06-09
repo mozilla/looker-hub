@@ -13,14 +13,14 @@ explore: sync_after_tab_change_rollout_15_scalar {
     ]
   }
 
-  aggregate_table: rollup_content_shutdown_crashes {
+  aggregate_table: rollup_plugin_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         sync_after_tab_change_rollout_15_scalar.branch: "enabled, disabled",
         sync_after_tab_change_rollout_15_scalar.percentile_conf: "50",
-        sync_after_tab_change_rollout_15_scalar.probe: "content_shutdown_crashes",
+        sync_after_tab_change_rollout_15_scalar.probe: "plugin_crashes",
       ]
     }
 
@@ -45,14 +45,14 @@ explore: sync_after_tab_change_rollout_15_scalar {
     }
   }
 
-  aggregate_table: rollup_gpu_crashes {
+  aggregate_table: rollup_content_shutdown_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         sync_after_tab_change_rollout_15_scalar.branch: "enabled, disabled",
         sync_after_tab_change_rollout_15_scalar.percentile_conf: "50",
-        sync_after_tab_change_rollout_15_scalar.probe: "gpu_crashes",
+        sync_after_tab_change_rollout_15_scalar.probe: "content_shutdown_crashes",
       ]
     }
 
@@ -77,14 +77,14 @@ explore: sync_after_tab_change_rollout_15_scalar {
     }
   }
 
-  aggregate_table: rollup_oom_crashes {
+  aggregate_table: rollup_gmplugin_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         sync_after_tab_change_rollout_15_scalar.branch: "enabled, disabled",
         sync_after_tab_change_rollout_15_scalar.percentile_conf: "50",
-        sync_after_tab_change_rollout_15_scalar.probe: "oom_crashes",
+        sync_after_tab_change_rollout_15_scalar.probe: "gmplugin_crashes",
       ]
     }
 
@@ -109,6 +109,22 @@ explore: sync_after_tab_change_rollout_15_scalar {
     }
   }
 
+  aggregate_table: rollup_oom_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        sync_after_tab_change_rollout_15_scalar.branch: "enabled, disabled",
+        sync_after_tab_change_rollout_15_scalar.percentile_conf: "50",
+        sync_after_tab_change_rollout_15_scalar.probe: "oom_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
   aggregate_table: rollup_startup_crashes {
     query: {
       dimensions: [submission_date, branch]
@@ -125,30 +141,14 @@ explore: sync_after_tab_change_rollout_15_scalar {
     }
   }
 
-  aggregate_table: rollup_gmplugin_crashes {
+  aggregate_table: rollup_gpu_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         sync_after_tab_change_rollout_15_scalar.branch: "enabled, disabled",
         sync_after_tab_change_rollout_15_scalar.percentile_conf: "50",
-        sync_after_tab_change_rollout_15_scalar.probe: "gmplugin_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_plugin_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        sync_after_tab_change_rollout_15_scalar.branch: "enabled, disabled",
-        sync_after_tab_change_rollout_15_scalar.percentile_conf: "50",
-        sync_after_tab_change_rollout_15_scalar.probe: "plugin_crashes",
+        sync_after_tab_change_rollout_15_scalar.probe: "gpu_crashes",
       ]
     }
 
