@@ -1166,6 +1166,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__wr_gpu_wait_time__sum {
+    label: "Wr Gpu Wait Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Gpu Wait Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Gpu Wait Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/wr_gpu_wait_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent waiting for the GPU to complete previously issued drawing commands.
+"
+  }
+
   dimension: metrics__timing_distribution__wr_rasterize_blobs_time__sum {
     label: "Wr Rasterize Blobs Time Sum"
     hidden: no
@@ -1202,6 +1220,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__wr_renderer_time__sum {
+    label: "Wr Renderer Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Renderer Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Renderer Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/wr_renderer_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebRender renderer time.
+"
+  }
+
   dimension: metrics__timing_distribution__wr_scenebuild_time__sum {
     label: "Wr Scenebuild Time Sum"
     hidden: no
@@ -1235,6 +1271,24 @@ To be used to validate GIFFT.
     }
 
     description: "WebRender scene swap time.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_texture_cache_update_time__sum {
+    label: "Wr Texture Cache Update Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_texture_cache_update_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Texture Cache Update Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Texture Cache Update Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/wr_texture_cache_update_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken by WebRender to update the texture cache.
 "
   }
 

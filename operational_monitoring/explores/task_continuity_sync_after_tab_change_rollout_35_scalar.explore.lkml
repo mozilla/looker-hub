@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/firefox_suggest_by_merino_nightly_scalar.view.lkml"
+include: "/looker-hub/operational_monitoring/views/task_continuity_sync_after_tab_change_rollout_35_scalar.view.lkml"
 
-explore: firefox_suggest_by_merino_nightly_scalar {
+explore: task_continuity_sync_after_tab_change_rollout_35_scalar {
   always_filter: {
     filters: [
       branch: "enabled, disabled",
@@ -18,9 +18,9 @@ explore: firefox_suggest_by_merino_nightly_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        firefox_suggest_by_merino_nightly_scalar.branch: "enabled, disabled",
-        firefox_suggest_by_merino_nightly_scalar.percentile_conf: "50",
-        firefox_suggest_by_merino_nightly_scalar.probe: "content_shutdown_crashes",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.branch: "enabled, disabled",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.percentile_conf: "50",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.probe: "content_shutdown_crashes",
       ]
     }
 
@@ -34,9 +34,9 @@ explore: firefox_suggest_by_merino_nightly_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        firefox_suggest_by_merino_nightly_scalar.branch: "enabled, disabled",
-        firefox_suggest_by_merino_nightly_scalar.percentile_conf: "50",
-        firefox_suggest_by_merino_nightly_scalar.probe: "oom_crashes",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.branch: "enabled, disabled",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.percentile_conf: "50",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.probe: "oom_crashes",
       ]
     }
 
@@ -50,9 +50,9 @@ explore: firefox_suggest_by_merino_nightly_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        firefox_suggest_by_merino_nightly_scalar.branch: "enabled, disabled",
-        firefox_suggest_by_merino_nightly_scalar.percentile_conf: "50",
-        firefox_suggest_by_merino_nightly_scalar.probe: "gmplugin_crashes",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.branch: "enabled, disabled",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.percentile_conf: "50",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.probe: "gmplugin_crashes",
       ]
     }
 
@@ -66,9 +66,9 @@ explore: firefox_suggest_by_merino_nightly_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        firefox_suggest_by_merino_nightly_scalar.branch: "enabled, disabled",
-        firefox_suggest_by_merino_nightly_scalar.percentile_conf: "50",
-        firefox_suggest_by_merino_nightly_scalar.probe: "plugin_crashes",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.branch: "enabled, disabled",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.percentile_conf: "50",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.probe: "plugin_crashes",
       ]
     }
 
@@ -82,9 +82,9 @@ explore: firefox_suggest_by_merino_nightly_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        firefox_suggest_by_merino_nightly_scalar.branch: "enabled, disabled",
-        firefox_suggest_by_merino_nightly_scalar.percentile_conf: "50",
-        firefox_suggest_by_merino_nightly_scalar.probe: "content_crashes",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.branch: "enabled, disabled",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.percentile_conf: "50",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.probe: "content_crashes",
       ]
     }
 
@@ -98,9 +98,9 @@ explore: firefox_suggest_by_merino_nightly_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        firefox_suggest_by_merino_nightly_scalar.branch: "enabled, disabled",
-        firefox_suggest_by_merino_nightly_scalar.percentile_conf: "50",
-        firefox_suggest_by_merino_nightly_scalar.probe: "main_crashes",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.branch: "enabled, disabled",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.percentile_conf: "50",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.probe: "main_crashes",
       ]
     }
 
@@ -114,9 +114,9 @@ explore: firefox_suggest_by_merino_nightly_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        firefox_suggest_by_merino_nightly_scalar.branch: "enabled, disabled",
-        firefox_suggest_by_merino_nightly_scalar.percentile_conf: "50",
-        firefox_suggest_by_merino_nightly_scalar.probe: "gpu_crashes",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.branch: "enabled, disabled",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.percentile_conf: "50",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.probe: "gpu_crashes",
       ]
     }
 
@@ -130,9 +130,9 @@ explore: firefox_suggest_by_merino_nightly_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        firefox_suggest_by_merino_nightly_scalar.branch: "enabled, disabled",
-        firefox_suggest_by_merino_nightly_scalar.percentile_conf: "50",
-        firefox_suggest_by_merino_nightly_scalar.probe: "startup_crashes",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.branch: "enabled, disabled",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.percentile_conf: "50",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.probe: "startup_crashes",
       ]
     }
 
@@ -146,9 +146,9 @@ explore: firefox_suggest_by_merino_nightly_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        firefox_suggest_by_merino_nightly_scalar.branch: "enabled, disabled",
-        firefox_suggest_by_merino_nightly_scalar.percentile_conf: "50",
-        firefox_suggest_by_merino_nightly_scalar.probe: "shutdown_hangs",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.branch: "enabled, disabled",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.percentile_conf: "50",
+        task_continuity_sync_after_tab_change_rollout_35_scalar.probe: "shutdown_hangs",
       ]
     }
 

@@ -31,6 +31,11 @@ view: event_aggregates {
     type: string
   }
 
+  dimension: match_type {
+    sql: ${TABLE}.match_type ;;
+    type: string
+  }
+
   dimension: position {
     sql: ${TABLE}.position ;;
     type: number
