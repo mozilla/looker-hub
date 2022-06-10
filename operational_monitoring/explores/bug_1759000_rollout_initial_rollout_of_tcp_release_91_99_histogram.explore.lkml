@@ -13,14 +13,14 @@ explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram {
     ]
   }
 
-  aggregate_table: rollup_content_process_count {
+  aggregate_table: rollup_memory_total {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.branch: "enabled, disabled",
         bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.percentile_conf: "50",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.probe: "content_process_count",
+        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.probe: "memory_total",
       ]
     }
 
@@ -45,14 +45,14 @@ explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram {
     }
   }
 
-  aggregate_table: rollup_memory_total {
+  aggregate_table: rollup_content_process_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.branch: "enabled, disabled",
         bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.percentile_conf: "50",
-        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.probe: "memory_total",
+        bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_histogram.probe: "content_process_count",
       ]
     }
 

@@ -13,14 +13,14 @@ explore: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug
     ]
   }
 
-  aggregate_table: rollup_content_process_count {
+  aggregate_table: rollup_memory_total {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.branch: "enabled, disabled",
         rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.percentile_conf: "50",
-        rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.probe: "content_process_count",
+        rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.probe: "memory_total",
       ]
     }
 
@@ -45,14 +45,14 @@ explore: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug
     }
   }
 
-  aggregate_table: rollup_memory_total {
+  aggregate_table: rollup_content_process_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.branch: "enabled, disabled",
         rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.percentile_conf: "50",
-        rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.probe: "memory_total",
+        rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_histogram.probe: "content_process_count",
       ]
     }
 
