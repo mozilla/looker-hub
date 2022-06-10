@@ -10,36 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Gc Ms
-    name: Gc Ms
-    explore: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram
-    type: "ci-line-chart"
-    fields: [
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.submission_date,
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.branch,
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.high,
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.low,
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.percentile
-    ]
-    pivots: [
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.branch
-    ]
-    filters:
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.probe: gc_ms
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.submission_date
-    field_y: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.percentile
-    log_scale: false
-    ci_lower: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.low
-    ci_upper: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.high
-    show_grid: true
-    listen:
-      Percentile: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.percentile_conf
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
   - title: Content Process Count
     name: Content Process Count
     explore: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram
@@ -56,6 +26,36 @@
     ]
     filters:
       bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.probe: content_process_count
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.submission_date
+    field_y: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.percentile
+    log_scale: false
+    ci_lower: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.low
+    ci_upper: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.high
+    show_grid: true
+    listen:
+      Percentile: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.percentile_conf
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Gc Ms
+    name: Gc Ms
+    explore: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram
+    type: "ci-line-chart"
+    fields: [
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.submission_date,
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.branch,
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.high,
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.low,
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.percentile
+    ]
+    pivots: [
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.branch
+    ]
+    filters:
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.probe: gc_ms
     row: 0
     col: 12
     width: 12
@@ -100,66 +100,6 @@
       Percentile: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_histogram.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
-  - title: Plugin Crashes
-    name: Plugin Crashes
-    explore: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar
-    type: "ci-line-chart"
-    fields: [
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.submission_date,
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.branch,
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.high,
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.low,
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.percentile
-    ]
-    pivots: [
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.branch
-    ]
-    filters:
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.probe: plugin_crashes
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.submission_date
-    field_y: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.percentile
-    log_scale: false
-    ci_lower: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.low
-    ci_upper: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.high
-    show_grid: true
-    listen:
-      Percentile: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.percentile_conf
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Content Crashes
-    name: Content Crashes
-    explore: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar
-    type: "ci-line-chart"
-    fields: [
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.submission_date,
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.branch,
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.high,
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.low,
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.percentile
-    ]
-    pivots: [
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.branch
-    ]
-    filters:
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.probe: content_crashes
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.submission_date
-    field_y: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.percentile
-    log_scale: false
-    ci_lower: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.low
-    ci_upper: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.high
-    show_grid: true
-    listen:
-      Percentile: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.percentile_conf
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
   - title: Content Shutdown Crashes
     name: Content Shutdown Crashes
     explore: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar
@@ -176,7 +116,7 @@
     ]
     filters:
       bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.probe: content_shutdown_crashes
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -190,8 +130,8 @@
       Percentile: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
+  - title: Oom Crashes
+    name: Oom Crashes
     explore: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar
     type: "ci-line-chart"
     fields: [
@@ -205,8 +145,8 @@
       bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.branch
     ]
     filters:
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.probe: shutdown_hangs
-    row: 30
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.probe: oom_crashes
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -236,6 +176,66 @@
     ]
     filters:
       bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.probe: gmplugin_crashes
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.submission_date
+    field_y: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.percentile
+    log_scale: false
+    ci_lower: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.low
+    ci_upper: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.high
+    show_grid: true
+    listen:
+      Percentile: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.percentile_conf
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Plugin Crashes
+    name: Plugin Crashes
+    explore: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar
+    type: "ci-line-chart"
+    fields: [
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.submission_date,
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.branch,
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.high,
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.low,
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.percentile
+    ]
+    pivots: [
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.branch
+    ]
+    filters:
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.probe: plugin_crashes
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.submission_date
+    field_y: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.percentile
+    log_scale: false
+    ci_lower: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.low
+    ci_upper: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.high
+    show_grid: true
+    listen:
+      Percentile: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.percentile_conf
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Content Crashes
+    name: Content Crashes
+    explore: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar
+    type: "ci-line-chart"
+    fields: [
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.submission_date,
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.branch,
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.high,
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.low,
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.percentile
+    ]
+    pivots: [
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.branch
+    ]
+    filters:
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.probe: content_crashes
     row: 30
     col: 12
     width: 12
@@ -280,8 +280,8 @@
       Percentile: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
-  - title: Oom Crashes
-    name: Oom Crashes
+  - title: Gpu Crashes
+    name: Gpu Crashes
     explore: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar
     type: "ci-line-chart"
     fields: [
@@ -295,7 +295,7 @@
       bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.branch
     ]
     filters:
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.probe: oom_crashes
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.probe: gpu_crashes
     row: 40
     col: 12
     width: 12
@@ -340,8 +340,8 @@
       Percentile: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
-  - title: Gpu Crashes
-    name: Gpu Crashes
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
     explore: bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar
     type: "ci-line-chart"
     fields: [
@@ -355,7 +355,7 @@
       bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.branch
     ]
     filters:
-      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.probe: gpu_crashes
+      bug_1766618_rollout_disable_websocket_over_http2_release_91_100_scalar.probe: shutdown_hangs
     row: 50
     col: 12
     width: 12

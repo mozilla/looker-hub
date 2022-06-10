@@ -7702,6 +7702,58 @@ will be \"custom\"
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__wr_gpu_wait_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Gpu Wait Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_gpu_wait_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Gpu Wait Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__wr_gpu_wait_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Gpu Wait Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_gpu_wait_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_gpu_wait_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Gpu Wait Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__wr_gpu_wait_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Gpu Wait Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__wr_gpu_wait_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Gpu Wait Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_gpu_wait_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__wr_rasterize_blobs_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_blobs_time.bucket_count ;;
     type: number
@@ -7806,6 +7858,58 @@ will be \"custom\"
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__wr_renderer_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Renderer Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Renderer Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Renderer Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Renderer Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Renderer Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Renderer Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__wr_scenebuild_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.bucket_count ;;
     type: number
@@ -7907,6 +8011,58 @@ will be \"custom\"
 
   dimension: metrics__timing_distribution__wr_sceneswap_time__values {
     sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_texture_cache_update_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_texture_cache_update_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Texture Cache Update Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_texture_cache_update_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.wr_texture_cache_update_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Texture Cache Update Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__wr_texture_cache_update_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_texture_cache_update_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Texture Cache Update Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_texture_cache_update_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.wr_texture_cache_update_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_texture_cache_update_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.wr_texture_cache_update_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Texture Cache Update Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__wr_texture_cache_update_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.wr_texture_cache_update_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Texture Cache Update Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__wr_texture_cache_update_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_texture_cache_update_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Texture Cache Update Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_texture_cache_update_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.wr_texture_cache_update_time.values ;;
     hidden: yes
   }
 
@@ -9641,6 +9797,18 @@ view: metrics_table__metrics__timing_distribution__wr_framebuild_time__values {
   }
 }
 
+view: metrics_table__metrics__timing_distribution__wr_gpu_wait_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__wr_rasterize_blobs_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -9665,6 +9833,18 @@ view: metrics_table__metrics__timing_distribution__wr_rasterize_glyphs_time__val
   }
 }
 
+view: metrics_table__metrics__timing_distribution__wr_renderer_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__wr_scenebuild_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -9678,6 +9858,18 @@ view: metrics_table__metrics__timing_distribution__wr_scenebuild_time__values {
 }
 
 view: metrics_table__metrics__timing_distribution__wr_sceneswap_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__wr_texture_cache_update_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
