@@ -4,12 +4,12 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/tcp_rollout_scalar.view.lkml"
+include: "/looker-hub/operational_monitoring/views/tcp_rollout_phase_2_scalar.view.lkml"
 
-explore: tcp_rollout_scalar {
+explore: tcp_rollout_phase_2_scalar {
   always_filter: {
     filters: [
-      branch: "opt-in, opt-out, pref-does-not-exist",
+      branch: "enabled, disabled",
     ]
   }
 
@@ -18,11 +18,11 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "shutdown_hangs",
+        tcp_rollout_phase_2_scalar.branch: "enabled, disabled",
+        tcp_rollout_phase_2_scalar.percentile_conf: "50",
+        tcp_rollout_phase_2_scalar.country: "RO",
+        tcp_rollout_phase_2_scalar.os: "Windows",
+        tcp_rollout_phase_2_scalar.probe: "shutdown_hangs",
       ]
     }
 
@@ -36,11 +36,11 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "sap",
+        tcp_rollout_phase_2_scalar.branch: "enabled, disabled",
+        tcp_rollout_phase_2_scalar.percentile_conf: "50",
+        tcp_rollout_phase_2_scalar.country: "RO",
+        tcp_rollout_phase_2_scalar.os: "Windows",
+        tcp_rollout_phase_2_scalar.probe: "sap",
       ]
     }
 
@@ -54,11 +54,11 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "oom_crashes",
+        tcp_rollout_phase_2_scalar.branch: "enabled, disabled",
+        tcp_rollout_phase_2_scalar.percentile_conf: "50",
+        tcp_rollout_phase_2_scalar.country: "RO",
+        tcp_rollout_phase_2_scalar.os: "Windows",
+        tcp_rollout_phase_2_scalar.probe: "oom_crashes",
       ]
     }
 
@@ -72,11 +72,11 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "tagged_search_count",
+        tcp_rollout_phase_2_scalar.branch: "enabled, disabled",
+        tcp_rollout_phase_2_scalar.percentile_conf: "50",
+        tcp_rollout_phase_2_scalar.country: "RO",
+        tcp_rollout_phase_2_scalar.os: "Windows",
+        tcp_rollout_phase_2_scalar.probe: "tagged_search_count",
       ]
     }
 
@@ -90,11 +90,11 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "main_crashes",
+        tcp_rollout_phase_2_scalar.branch: "enabled, disabled",
+        tcp_rollout_phase_2_scalar.percentile_conf: "50",
+        tcp_rollout_phase_2_scalar.country: "RO",
+        tcp_rollout_phase_2_scalar.os: "Windows",
+        tcp_rollout_phase_2_scalar.probe: "main_crashes",
       ]
     }
 
@@ -108,11 +108,11 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "startup_crashes",
+        tcp_rollout_phase_2_scalar.branch: "enabled, disabled",
+        tcp_rollout_phase_2_scalar.percentile_conf: "50",
+        tcp_rollout_phase_2_scalar.country: "RO",
+        tcp_rollout_phase_2_scalar.os: "Windows",
+        tcp_rollout_phase_2_scalar.probe: "startup_crashes",
       ]
     }
 
@@ -126,11 +126,11 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "gmplugin_crashes",
+        tcp_rollout_phase_2_scalar.branch: "enabled, disabled",
+        tcp_rollout_phase_2_scalar.percentile_conf: "50",
+        tcp_rollout_phase_2_scalar.country: "RO",
+        tcp_rollout_phase_2_scalar.os: "Windows",
+        tcp_rollout_phase_2_scalar.probe: "gmplugin_crashes",
       ]
     }
 
@@ -144,11 +144,11 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "content_shutdown_crashes",
+        tcp_rollout_phase_2_scalar.branch: "enabled, disabled",
+        tcp_rollout_phase_2_scalar.percentile_conf: "50",
+        tcp_rollout_phase_2_scalar.country: "RO",
+        tcp_rollout_phase_2_scalar.os: "Windows",
+        tcp_rollout_phase_2_scalar.probe: "content_shutdown_crashes",
       ]
     }
 
@@ -162,11 +162,11 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "plugin_crashes",
+        tcp_rollout_phase_2_scalar.branch: "enabled, disabled",
+        tcp_rollout_phase_2_scalar.percentile_conf: "50",
+        tcp_rollout_phase_2_scalar.country: "RO",
+        tcp_rollout_phase_2_scalar.os: "Windows",
+        tcp_rollout_phase_2_scalar.probe: "plugin_crashes",
       ]
     }
 
@@ -180,11 +180,11 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "tagged_follow_on_search_count",
+        tcp_rollout_phase_2_scalar.branch: "enabled, disabled",
+        tcp_rollout_phase_2_scalar.percentile_conf: "50",
+        tcp_rollout_phase_2_scalar.country: "RO",
+        tcp_rollout_phase_2_scalar.os: "Windows",
+        tcp_rollout_phase_2_scalar.probe: "tagged_follow_on_search_count",
       ]
     }
 
@@ -198,11 +198,11 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "gpu_crashes",
+        tcp_rollout_phase_2_scalar.branch: "enabled, disabled",
+        tcp_rollout_phase_2_scalar.percentile_conf: "50",
+        tcp_rollout_phase_2_scalar.country: "RO",
+        tcp_rollout_phase_2_scalar.os: "Windows",
+        tcp_rollout_phase_2_scalar.probe: "gpu_crashes",
       ]
     }
 
@@ -216,11 +216,11 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "search_with_ads",
+        tcp_rollout_phase_2_scalar.branch: "enabled, disabled",
+        tcp_rollout_phase_2_scalar.percentile_conf: "50",
+        tcp_rollout_phase_2_scalar.country: "RO",
+        tcp_rollout_phase_2_scalar.os: "Windows",
+        tcp_rollout_phase_2_scalar.probe: "search_with_ads",
       ]
     }
 
@@ -234,11 +234,11 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "search_with_ads_organic",
+        tcp_rollout_phase_2_scalar.branch: "enabled, disabled",
+        tcp_rollout_phase_2_scalar.percentile_conf: "50",
+        tcp_rollout_phase_2_scalar.country: "RO",
+        tcp_rollout_phase_2_scalar.os: "Windows",
+        tcp_rollout_phase_2_scalar.probe: "search_with_ads_organic",
       ]
     }
 
@@ -252,11 +252,11 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "ad_click_organic",
+        tcp_rollout_phase_2_scalar.branch: "enabled, disabled",
+        tcp_rollout_phase_2_scalar.percentile_conf: "50",
+        tcp_rollout_phase_2_scalar.country: "RO",
+        tcp_rollout_phase_2_scalar.os: "Windows",
+        tcp_rollout_phase_2_scalar.probe: "ad_click_organic",
       ]
     }
 
@@ -270,11 +270,11 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "ad_click",
+        tcp_rollout_phase_2_scalar.branch: "enabled, disabled",
+        tcp_rollout_phase_2_scalar.percentile_conf: "50",
+        tcp_rollout_phase_2_scalar.country: "RO",
+        tcp_rollout_phase_2_scalar.os: "Windows",
+        tcp_rollout_phase_2_scalar.probe: "ad_click",
       ]
     }
 
@@ -288,11 +288,11 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "content_crashes",
+        tcp_rollout_phase_2_scalar.branch: "enabled, disabled",
+        tcp_rollout_phase_2_scalar.percentile_conf: "50",
+        tcp_rollout_phase_2_scalar.country: "RO",
+        tcp_rollout_phase_2_scalar.os: "Windows",
+        tcp_rollout_phase_2_scalar.probe: "content_crashes",
       ]
     }
 
@@ -306,11 +306,11 @@ explore: tcp_rollout_scalar {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
-        tcp_rollout_scalar.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_scalar.percentile_conf: "50",
-        tcp_rollout_scalar.country: "US",
-        tcp_rollout_scalar.os: "Windows",
-        tcp_rollout_scalar.probe: "organic_search_count",
+        tcp_rollout_phase_2_scalar.branch: "enabled, disabled",
+        tcp_rollout_phase_2_scalar.percentile_conf: "50",
+        tcp_rollout_phase_2_scalar.country: "RO",
+        tcp_rollout_phase_2_scalar.os: "Windows",
+        tcp_rollout_phase_2_scalar.probe: "organic_search_count",
       ]
     }
 
