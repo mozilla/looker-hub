@@ -5465,7 +5465,7 @@ search_private:
   - skahmann@mozilla.com
   - wbrahic@mozilla.com
   - ctroy@mozilla.com
-  pretty_name: Search
+  pretty_name: Search Private
   spoke: looker-spoke-private
   views:
     search_term_sanitization_job_metadata_daily:
