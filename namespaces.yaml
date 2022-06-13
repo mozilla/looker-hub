@@ -5392,6 +5392,17 @@ pocket:
       tables:
       - table: moz-fx-data-shared-prod.pocket_derived.twice_weekly_active_user_counts_history_v1
       type: table_view
+rally_citp_search_engine_usage:
+  explores: {}
+  glean_app: true
+  owners:
+  - than@mozilla.com
+  - jepstein@mozilla.com
+  - betling@mozilla.com
+  - rhelmer@mozilla.com
+  pretty_name: Search Engine Usage and Result Quality
+  spoke: looker-spoke-default
+  views: {}
 regrets_reporter:
   glean_app: false
   owners:
@@ -5436,7 +5447,6 @@ search:
   - xluo@mozilla.com
   - skahmann@mozilla.com
   - wbrahic@mozilla.com
-  - ctroy@mozilla.com
   pretty_name: Search
   spoke: looker-spoke-default
   views:
@@ -5456,22 +5466,6 @@ search:
       tables:
       - table: mozdata.search.search_clients_engines_sources_daily
       type: ping_view
-search_private:
-  connection: bigquery-oauth
-  glean_app: false
-  owners:
-  - mmccorquodale@mozilla.com
-  - xluo@mozilla.com
-  - skahmann@mozilla.com
-  - wbrahic@mozilla.com
-  - ctroy@mozilla.com
-  pretty_name: Search
-  spoke: looker-spoke-private
-  views:
-    search_term_sanitization_job_metadata_daily:
-      tables:
-      - table: mozdata.search_terms_unsanitized_analysis.prototype_sanitation_job_metadata
-      type: table_view
 shared:
   glean_app: false
   owners:
