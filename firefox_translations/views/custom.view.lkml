@@ -524,7 +524,8 @@ and build config was used to produce this build
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Translation source language.
+    description: "Translation source language
+(it can be set manually and different from detected_lang).
 "
   }
 
