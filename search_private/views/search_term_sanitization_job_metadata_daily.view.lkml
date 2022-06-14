@@ -49,12 +49,12 @@ view: search_term_sanitization_job_metadata_daily {
 
   dimension: sum_uppercase_chars_all_search_terms {
     sql: ${TABLE}.sum_uppercase_chars_all_search_terms ;;
-    type: string
+    type: number
   }
 
   dimension: sum_words_all_search_terms {
     sql: ${TABLE}.sum_words_all_search_terms ;;
-    type: string
+    type: number
   }
 
   dimension: total_sanitized_search_terms {
