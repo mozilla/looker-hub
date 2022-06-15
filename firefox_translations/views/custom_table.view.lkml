@@ -691,6 +691,15 @@ multiplied by 1000.
 "
   }
 
+  dimension: metrics__string__metadata_detected_lang {
+    sql: ${TABLE}.metrics.string.metadata_detected_lang ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Metadata Detected Lang"
+    description: "Translation source language that was automatically detected.
+"
+  }
+
   dimension: metrics__string__metadata_extension_build_id {
     sql: ${TABLE}.metrics.string.metadata_extension_build_id ;;
     type: string
@@ -724,7 +733,8 @@ and build config was used to produce this build
     type: string
     group_label: "Metrics String"
     group_item_label: "Metadata From Lang"
-    description: "Translation source language.
+    description: "Translation source language
+(it can be set manually and different from detected_lang).
 "
   }
 
