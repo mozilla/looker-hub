@@ -13,14 +13,14 @@ explore: task_continuity_sync_after_tab_change_rollout_35_histogram {
     ]
   }
 
-  aggregate_table: rollup_gc_ms {
+  aggregate_table: rollup_content_process_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         task_continuity_sync_after_tab_change_rollout_35_histogram.branch: "enabled, disabled",
         task_continuity_sync_after_tab_change_rollout_35_histogram.percentile_conf: "50",
-        task_continuity_sync_after_tab_change_rollout_35_histogram.probe: "gc_ms",
+        task_continuity_sync_after_tab_change_rollout_35_histogram.probe: "content_process_count",
       ]
     }
 
@@ -45,14 +45,14 @@ explore: task_continuity_sync_after_tab_change_rollout_35_histogram {
     }
   }
 
-  aggregate_table: rollup_content_process_count {
+  aggregate_table: rollup_gc_ms {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         task_continuity_sync_after_tab_change_rollout_35_histogram.branch: "enabled, disabled",
         task_continuity_sync_after_tab_change_rollout_35_histogram.percentile_conf: "50",
-        task_continuity_sync_after_tab_change_rollout_35_histogram.probe: "content_process_count",
+        task_continuity_sync_after_tab_change_rollout_35_histogram.probe: "gc_ms",
       ]
     }
 

@@ -455,6 +455,24 @@ view: custom {
 "
   }
 
+  dimension: metrics__string__metadata_detected_lang {
+    label: "Metadata Detected Lang"
+    hidden: no
+    sql: ${TABLE}.metrics.string.metadata_detected_lang ;;
+    type: string
+    group_label: "Metadata"
+    group_item_label: "Detected Lang"
+
+    link: {
+      label: "Glean Dictionary reference for Metadata Detected Lang"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_translations/metrics/metadata_detected_lang"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Translation source language that was automatically detected.
+"
+  }
+
   dimension: metrics__string__metadata_extension_build_id {
     label: "Metadata Extension Build Id"
     hidden: no
