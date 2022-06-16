@@ -43,39 +43,6 @@
     opt-in: "#3FE1B0"
     opt-out: "#0060E0"
     pref-does-not-exist: "#9059FF"
-  - title: Oom Crashes
-    name: Oom Crashes
-    explore: tcp_rollout_scalar
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_scalar.submission_date,
-      tcp_rollout_scalar.branch,
-      tcp_rollout_scalar.high,
-      tcp_rollout_scalar.low,
-      tcp_rollout_scalar.percentile
-    ]
-    pivots: [
-      tcp_rollout_scalar.branch
-    ]
-    filters:
-      tcp_rollout_scalar.probe: oom_crashes
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: tcp_rollout_scalar.submission_date
-    field_y: tcp_rollout_scalar.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_scalar.low
-    ci_upper: tcp_rollout_scalar.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_scalar.percentile_conf
-      Country: tcp_rollout_scalar.country
-      Os: tcp_rollout_scalar.os
-    opt-in: "#3FE1B0"
-    opt-out: "#0060E0"
-    pref-does-not-exist: "#9059FF"
   - title: Search With Ads
     name: Search With Ads
     explore: tcp_rollout_scalar
@@ -92,8 +59,8 @@
     ]
     filters:
       tcp_rollout_scalar.probe: search_with_ads
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: tcp_rollout_scalar.submission_date
@@ -126,73 +93,7 @@
     filters:
       tcp_rollout_scalar.probe: gpu_crashes
     row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: tcp_rollout_scalar.submission_date
-    field_y: tcp_rollout_scalar.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_scalar.low
-    ci_upper: tcp_rollout_scalar.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_scalar.percentile_conf
-      Country: tcp_rollout_scalar.country
-      Os: tcp_rollout_scalar.os
-    opt-in: "#3FE1B0"
-    opt-out: "#0060E0"
-    pref-does-not-exist: "#9059FF"
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
-    explore: tcp_rollout_scalar
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_scalar.submission_date,
-      tcp_rollout_scalar.branch,
-      tcp_rollout_scalar.high,
-      tcp_rollout_scalar.low,
-      tcp_rollout_scalar.percentile
-    ]
-    pivots: [
-      tcp_rollout_scalar.branch
-    ]
-    filters:
-      tcp_rollout_scalar.probe: shutdown_hangs
-    row: 20
     col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout_scalar.submission_date
-    field_y: tcp_rollout_scalar.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_scalar.low
-    ci_upper: tcp_rollout_scalar.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_scalar.percentile_conf
-      Country: tcp_rollout_scalar.country
-      Os: tcp_rollout_scalar.os
-    opt-in: "#3FE1B0"
-    opt-out: "#0060E0"
-    pref-does-not-exist: "#9059FF"
-  - title: Plugin Crashes
-    name: Plugin Crashes
-    explore: tcp_rollout_scalar
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_scalar.submission_date,
-      tcp_rollout_scalar.branch,
-      tcp_rollout_scalar.high,
-      tcp_rollout_scalar.low,
-      tcp_rollout_scalar.percentile
-    ]
-    pivots: [
-      tcp_rollout_scalar.branch
-    ]
-    filters:
-      tcp_rollout_scalar.probe: plugin_crashes
-    row: 20
-    col: 12
     width: 12
     height: 8
     field_x: tcp_rollout_scalar.submission_date
@@ -224,40 +125,7 @@
     ]
     filters:
       tcp_rollout_scalar.probe: gmplugin_crashes
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout_scalar.submission_date
-    field_y: tcp_rollout_scalar.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_scalar.low
-    ci_upper: tcp_rollout_scalar.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_scalar.percentile_conf
-      Country: tcp_rollout_scalar.country
-      Os: tcp_rollout_scalar.os
-    opt-in: "#3FE1B0"
-    opt-out: "#0060E0"
-    pref-does-not-exist: "#9059FF"
-  - title: Startup Crashes
-    name: Startup Crashes
-    explore: tcp_rollout_scalar
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_scalar.submission_date,
-      tcp_rollout_scalar.branch,
-      tcp_rollout_scalar.high,
-      tcp_rollout_scalar.low,
-      tcp_rollout_scalar.percentile
-    ]
-    pivots: [
-      tcp_rollout_scalar.branch
-    ]
-    filters:
-      tcp_rollout_scalar.probe: startup_crashes
-    row: 30
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -290,7 +158,73 @@
     ]
     filters:
       tcp_rollout_scalar.probe: content_crashes
-    row: 40
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: tcp_rollout_scalar.submission_date
+    field_y: tcp_rollout_scalar.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_scalar.low
+    ci_upper: tcp_rollout_scalar.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_scalar.percentile_conf
+      Country: tcp_rollout_scalar.country
+      Os: tcp_rollout_scalar.os
+    opt-in: "#3FE1B0"
+    opt-out: "#0060E0"
+    pref-does-not-exist: "#9059FF"
+  - title: Main Crashes
+    name: Main Crashes
+    explore: tcp_rollout_scalar
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_scalar.submission_date,
+      tcp_rollout_scalar.branch,
+      tcp_rollout_scalar.high,
+      tcp_rollout_scalar.low,
+      tcp_rollout_scalar.percentile
+    ]
+    pivots: [
+      tcp_rollout_scalar.branch
+    ]
+    filters:
+      tcp_rollout_scalar.probe: main_crashes
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: tcp_rollout_scalar.submission_date
+    field_y: tcp_rollout_scalar.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_scalar.low
+    ci_upper: tcp_rollout_scalar.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_scalar.percentile_conf
+      Country: tcp_rollout_scalar.country
+      Os: tcp_rollout_scalar.os
+    opt-in: "#3FE1B0"
+    opt-out: "#0060E0"
+    pref-does-not-exist: "#9059FF"
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
+    explore: tcp_rollout_scalar
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_scalar.submission_date,
+      tcp_rollout_scalar.branch,
+      tcp_rollout_scalar.high,
+      tcp_rollout_scalar.low,
+      tcp_rollout_scalar.percentile
+    ]
+    pivots: [
+      tcp_rollout_scalar.branch
+    ]
+    filters:
+      tcp_rollout_scalar.probe: shutdown_hangs
+    row: 30
     col: 0
     width: 12
     height: 8
@@ -323,6 +257,72 @@
     ]
     filters:
       tcp_rollout_scalar.probe: tagged_search_count
+    row: 30
+    col: 12
+    width: 12
+    height: 8
+    field_x: tcp_rollout_scalar.submission_date
+    field_y: tcp_rollout_scalar.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_scalar.low
+    ci_upper: tcp_rollout_scalar.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_scalar.percentile_conf
+      Country: tcp_rollout_scalar.country
+      Os: tcp_rollout_scalar.os
+    opt-in: "#3FE1B0"
+    opt-out: "#0060E0"
+    pref-does-not-exist: "#9059FF"
+  - title: Tagged Follow On Search Count
+    name: Tagged Follow On Search Count
+    explore: tcp_rollout_scalar
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_scalar.submission_date,
+      tcp_rollout_scalar.branch,
+      tcp_rollout_scalar.high,
+      tcp_rollout_scalar.low,
+      tcp_rollout_scalar.percentile
+    ]
+    pivots: [
+      tcp_rollout_scalar.branch
+    ]
+    filters:
+      tcp_rollout_scalar.probe: tagged_follow_on_search_count
+    row: 40
+    col: 0
+    width: 12
+    height: 8
+    field_x: tcp_rollout_scalar.submission_date
+    field_y: tcp_rollout_scalar.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_scalar.low
+    ci_upper: tcp_rollout_scalar.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_scalar.percentile_conf
+      Country: tcp_rollout_scalar.country
+      Os: tcp_rollout_scalar.os
+    opt-in: "#3FE1B0"
+    opt-out: "#0060E0"
+    pref-does-not-exist: "#9059FF"
+  - title: Organic Search Count
+    name: Organic Search Count
+    explore: tcp_rollout_scalar
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_scalar.submission_date,
+      tcp_rollout_scalar.branch,
+      tcp_rollout_scalar.high,
+      tcp_rollout_scalar.low,
+      tcp_rollout_scalar.percentile
+    ]
+    pivots: [
+      tcp_rollout_scalar.branch
+    ]
+    filters:
+      tcp_rollout_scalar.probe: organic_search_count
     row: 40
     col: 12
     width: 12
@@ -340,8 +340,8 @@
     opt-in: "#3FE1B0"
     opt-out: "#0060E0"
     pref-does-not-exist: "#9059FF"
-  - title: Sap
-    name: Sap
+  - title: Ad Click Organic
+    name: Ad Click Organic
     explore: tcp_rollout_scalar
     type: "ci-line-chart"
     fields: [
@@ -355,7 +355,7 @@
       tcp_rollout_scalar.branch
     ]
     filters:
-      tcp_rollout_scalar.probe: sap
+      tcp_rollout_scalar.probe: ad_click_organic
     row: 50
     col: 0
     width: 12
@@ -406,8 +406,8 @@
     opt-in: "#3FE1B0"
     opt-out: "#0060E0"
     pref-does-not-exist: "#9059FF"
-  - title: Tagged Follow On Search Count
-    name: Tagged Follow On Search Count
+  - title: Sap
+    name: Sap
     explore: tcp_rollout_scalar
     type: "ci-line-chart"
     fields: [
@@ -421,7 +421,7 @@
       tcp_rollout_scalar.branch
     ]
     filters:
-      tcp_rollout_scalar.probe: tagged_follow_on_search_count
+      tcp_rollout_scalar.probe: sap
     row: 60
     col: 0
     width: 12
@@ -439,8 +439,8 @@
     opt-in: "#3FE1B0"
     opt-out: "#0060E0"
     pref-does-not-exist: "#9059FF"
-  - title: Ad Click
-    name: Ad Click
+  - title: Plugin Crashes
+    name: Plugin Crashes
     explore: tcp_rollout_scalar
     type: "ci-line-chart"
     fields: [
@@ -454,9 +454,42 @@
       tcp_rollout_scalar.branch
     ]
     filters:
-      tcp_rollout_scalar.probe: ad_click
+      tcp_rollout_scalar.probe: plugin_crashes
     row: 60
     col: 12
+    width: 12
+    height: 8
+    field_x: tcp_rollout_scalar.submission_date
+    field_y: tcp_rollout_scalar.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_scalar.low
+    ci_upper: tcp_rollout_scalar.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_scalar.percentile_conf
+      Country: tcp_rollout_scalar.country
+      Os: tcp_rollout_scalar.os
+    opt-in: "#3FE1B0"
+    opt-out: "#0060E0"
+    pref-does-not-exist: "#9059FF"
+  - title: Oom Crashes
+    name: Oom Crashes
+    explore: tcp_rollout_scalar
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_scalar.submission_date,
+      tcp_rollout_scalar.branch,
+      tcp_rollout_scalar.high,
+      tcp_rollout_scalar.low,
+      tcp_rollout_scalar.percentile
+    ]
+    pivots: [
+      tcp_rollout_scalar.branch
+    ]
+    filters:
+      tcp_rollout_scalar.probe: oom_crashes
+    row: 70
+    col: 0
     width: 12
     height: 8
     field_x: tcp_rollout_scalar.submission_date
@@ -489,39 +522,6 @@
     filters:
       tcp_rollout_scalar.probe: content_shutdown_crashes
     row: 70
-    col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout_scalar.submission_date
-    field_y: tcp_rollout_scalar.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_scalar.low
-    ci_upper: tcp_rollout_scalar.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_scalar.percentile_conf
-      Country: tcp_rollout_scalar.country
-      Os: tcp_rollout_scalar.os
-    opt-in: "#3FE1B0"
-    opt-out: "#0060E0"
-    pref-does-not-exist: "#9059FF"
-  - title: Organic Search Count
-    name: Organic Search Count
-    explore: tcp_rollout_scalar
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_scalar.submission_date,
-      tcp_rollout_scalar.branch,
-      tcp_rollout_scalar.high,
-      tcp_rollout_scalar.low,
-      tcp_rollout_scalar.percentile
-    ]
-    pivots: [
-      tcp_rollout_scalar.branch
-    ]
-    filters:
-      tcp_rollout_scalar.probe: organic_search_count
-    row: 70
     col: 12
     width: 12
     height: 8
@@ -538,8 +538,8 @@
     opt-in: "#3FE1B0"
     opt-out: "#0060E0"
     pref-does-not-exist: "#9059FF"
-  - title: Main Crashes
-    name: Main Crashes
+  - title: Ad Click
+    name: Ad Click
     explore: tcp_rollout_scalar
     type: "ci-line-chart"
     fields: [
@@ -553,7 +553,7 @@
       tcp_rollout_scalar.branch
     ]
     filters:
-      tcp_rollout_scalar.probe: main_crashes
+      tcp_rollout_scalar.probe: ad_click
     row: 80
     col: 0
     width: 12
@@ -571,8 +571,8 @@
     opt-in: "#3FE1B0"
     opt-out: "#0060E0"
     pref-does-not-exist: "#9059FF"
-  - title: Ad Click Organic
-    name: Ad Click Organic
+  - title: Startup Crashes
+    name: Startup Crashes
     explore: tcp_rollout_scalar
     type: "ci-line-chart"
     fields: [
@@ -586,7 +586,7 @@
       tcp_rollout_scalar.branch
     ]
     filters:
-      tcp_rollout_scalar.probe: ad_click_organic
+      tcp_rollout_scalar.probe: startup_crashes
     row: 80
     col: 12
     width: 12
