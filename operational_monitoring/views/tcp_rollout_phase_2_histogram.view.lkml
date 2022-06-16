@@ -17,6 +17,17 @@ view: tcp_rollout_phase_2_histogram {
     type: string
   }
 
+  dimension: country {
+    sql: ${TABLE}.country ;;
+    type: string
+    map_layer_name: countries
+  }
+
+  dimension: os {
+    sql: ${TABLE}.os ;;
+    type: string
+  }
+
   dimension: probe {
     sql: ${TABLE}.probe ;;
     type: string
