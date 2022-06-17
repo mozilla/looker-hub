@@ -20,7 +20,7 @@ explore: tcp_rollout_phase_2_histogram {
       filters: [
         tcp_rollout_phase_2_histogram.branch: "enabled, disabled",
         tcp_rollout_phase_2_histogram.percentile_conf: "50",
-        tcp_rollout_phase_2_histogram.country: "US",
+        tcp_rollout_phase_2_histogram.country: "CN",
         tcp_rollout_phase_2_histogram.os: "Windows",
         tcp_rollout_phase_2_histogram.probe: "content_process_count",
       ]
