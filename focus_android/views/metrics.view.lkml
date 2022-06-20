@@ -3335,6 +3335,49 @@ view: metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
   }
 }
 
+view: metrics__metrics__labeled_counter__perf_startup_startup_type {
+  label: "Perf Startup - Startup Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__perf_startup_startup_type
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__perf_startup_startup_type.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
   label: "Power Cpu Ms Per Thread - Content Background"
 
@@ -4153,6 +4196,25 @@ view: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
     count(*) as n
 from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.gmp_update_xml_fetch_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__perf_startup_startup_type {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.perf_startup_startup_type) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

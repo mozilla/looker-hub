@@ -36,6 +36,11 @@ view: event_aggregates {
     type: string
   }
 
+  dimension: normalized_os {
+    sql: ${TABLE}.normalized_os ;;
+    type: string
+  }
+
   dimension: position {
     sql: ${TABLE}.position ;;
     type: number
