@@ -253,6 +253,48 @@ that programmatically redirect to a new location.
 "
   }
 
+  dimension: metrics__boolean__metrics_start_reason_activity_error {
+    label: "Metrics Start Reason Activity Error"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.metrics_start_reason_activity_error ;;
+    type: yesno
+    group_label: "Metrics"
+    group_item_label: "Start Reason Activity Error"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Start Reason Activity Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/metrics_start_reason_activity_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The `AppStartReasonProvider.ActivityLifecycleCallbacks.onActivityCreated`
+was unexpectedly called twice. We can use this metric to validate our
+assumptions about how these APIs are called. This probe can be removed
+once we validate these assumptions.
+"
+  }
+
+  dimension: metrics__boolean__metrics_start_reason_process_error {
+    label: "Metrics Start Reason Process Error"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.metrics_start_reason_process_error ;;
+    type: yesno
+    group_label: "Metrics"
+    group_item_label: "Start Reason Process Error"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Start Reason Process Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/metrics_start_reason_process_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The `AppStartReasonProvider.ProcessLifecycleObserver.onCreate` was
+unexpectedly called twice. We can use this metric to validate our
+assumptions about how these APIs are called. This probe can be removed
+once we validate these assumptions.
+"
+  }
+
   dimension: metrics__boolean__mozilla_products_has_fenix_installed {
     label: "Mozilla Products Has Fenix Installed"
     hidden: no
@@ -304,6 +346,70 @@ that programmatically redirect to a new location.
     }
 
     description: "Measures the time spent to download the nimbus experiments
+"
+  }
+
+  dimension: metrics__labeled_counter__perf_startup_startup_type {
+    label: "Perf Startup Startup Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.perf_startup_startup_type ;;
+    group_label: "Perf Startup"
+    group_item_label: "Startup Type"
+
+    link: {
+      label: "Glean Dictionary reference for Perf Startup Startup Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/perf_startup_startup_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates how the browser was started. The label is divided into two
+variables. `state` is how cached the browser is when started. `path` is
+what code path we are expected to take. Together, they create a combined
+label: `state_path`. For brevity, the specific states are documented in
+the [Fenix perf
+glossary](https://wiki.mozilla.org/index.php?title=Performance/Fenix/Glossary).
+<br><br>
+This implementation is intended to be simple, not comprehensive. We list
+the implications below.
+
+<br><br>
+These ways of opening the app undesirably adds events to our primary
+buckets (non-`unknown` cases):
+<br>- App switcher cold/warm: `cold/warm_` + duplicates path from
+previous launch
+<br>- An Intent is sent internally that's uses `ACTION_MAIN` or
+`ACTION_VIEW` could be: `*_main/view` (unknown if this ever happens)
+<br>- A command-line launch uses `ACTION_MAIN` or `ACTION_VIEW` could be:
+`*_main/view`
+
+<br><br>
+These ways of opening the app undesirably do not add their events to our
+primary buckets:
+<br>- Close and reopen the app very quickly: no event is recorded.
+
+<br><br>
+These ways of opening the app don't affect our primary buckets:
+<br>- App switcher hot: `hot_unknown`
+<br>- PWA (all states): `unknown_unknown`
+<br>- Custom tab: `unknown_view`
+<br>- Cold start where a service or other non-activity starts the process
+(not manually tested) - this seems to happen if you have the homescreen
+widget: `unknown_*`
+<br>- Another activity is drawn before MainActivity or CustomTabActivity
+(e.g. widget voice
+search): `unknown_*`
+
+<br>
+In addition to the events above, the `unknown` state may be chosen when we
+were unable to determine a cause due to implementation details or the API
+was used incorrectly. We may be able to record the events listed above
+into different buckets but we kept the implementation simple for now.
+<br><br>
+N.B.: for implementation simplicity, we duplicate the logic in app that
+determines `path` so it's not perfectly accurate. In one way, we record we
+is intended to happen rather than what actually happened (e.g. the user
+may click a link so we record VIEW but the app does a MAIN by going to the
+homescreen because the link was invalid).
 "
   }
 

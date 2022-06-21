@@ -7916,6 +7916,49 @@ view: metrics__metrics__labeled_counter__top_sites_pressed_tile_origin {
   }
 }
 
+view: metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper {
+  label: "Wallpaper Analytics - Themed Wallpaper"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__bookmarks_add {
   derived_table: {
     sql: select
@@ -8645,6 +8688,25 @@ view: suggest__metrics__metrics__labeled_counter__top_sites_pressed_tile_origin 
     count(*) as n
 from mozdata.firefox_ios.metrics as t,
 unnest(metrics.labeled_counter.top_sites_pressed_tile_origin) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.wallpaper_analytics_themed_wallpaper) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
