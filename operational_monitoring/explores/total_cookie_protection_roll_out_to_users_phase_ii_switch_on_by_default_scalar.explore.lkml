@@ -29,22 +29,6 @@ explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
     }
   }
 
-  aggregate_table: rollup_content_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.branch: "enabled, disabled",
-        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.percentile_conf: "50",
-        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.probe: "content_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
   aggregate_table: rollup_gpu_crashes {
     query: {
       dimensions: [submission_date, branch]
@@ -53,6 +37,70 @@ explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
         total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.branch: "enabled, disabled",
         total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.percentile_conf: "50",
         total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.probe: "gpu_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_shutdown_hangs {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.branch: "enabled, disabled",
+        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.percentile_conf: "50",
+        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.probe: "shutdown_hangs",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_gmplugin_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.branch: "enabled, disabled",
+        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.percentile_conf: "50",
+        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.probe: "gmplugin_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_shutdown_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.branch: "enabled, disabled",
+        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.percentile_conf: "50",
+        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.probe: "content_shutdown_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.branch: "enabled, disabled",
+        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.percentile_conf: "50",
+        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.probe: "content_crashes",
       ]
     }
 
@@ -85,54 +133,6 @@ explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
         total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.branch: "enabled, disabled",
         total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.percentile_conf: "50",
         total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.probe: "plugin_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_content_shutdown_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.branch: "enabled, disabled",
-        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.percentile_conf: "50",
-        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.probe: "content_shutdown_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_gmplugin_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.branch: "enabled, disabled",
-        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.percentile_conf: "50",
-        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.probe: "gmplugin_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_shutdown_hangs {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.branch: "enabled, disabled",
-        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.percentile_conf: "50",
-        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_scalar.probe: "shutdown_hangs",
       ]
     }
 

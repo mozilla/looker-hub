@@ -357,6 +357,30 @@ To be used to validate GIFFT.
     description: "Set to true if the tasks that are queued prior to Glean initialization time out."
   }
 
+  dimension: metrics__boolean__metrics_start_reason_activity_error {
+    sql: ${TABLE}.metrics.boolean.metrics_start_reason_activity_error ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Metrics Start Reason Activity Error"
+    description: "The `AppStartReasonProvider.ActivityLifecycleCallbacks.onActivityCreated`
+was unexpectedly called twice. We can use this metric to validate our
+assumptions about how these APIs are called. This probe can be removed
+once we validate these assumptions.
+"
+  }
+
+  dimension: metrics__boolean__metrics_start_reason_process_error {
+    sql: ${TABLE}.metrics.boolean.metrics_start_reason_process_error ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Metrics Start Reason Process Error"
+    description: "The `AppStartReasonProvider.ProcessLifecycleObserver.onCreate` was
+unexpectedly called twice. We can use this metric to validate our
+assumptions about how these APIs are called. This probe can be removed
+once we validate these assumptions.
+"
+  }
+
   dimension: metrics__boolean__mozilla_products_has_fenix_installed {
     sql: ${TABLE}.metrics.boolean.mozilla_products_has_fenix_installed ;;
     type: yesno
@@ -836,6 +860,35 @@ This metric appears in both the metrics and baseline pings.
     hidden: yes
     description: "The result of Gecko fetching an update.xml from Balrog. This captures 3 different data points: success or failure of the request, if cert pinning or content signatures were used to verify the result, and the reason for failure, if the request failed.
 "
+  }
+
+  dimension: metrics__labeled_counter__perf_startup_startup_type {
+    sql: ${TABLE}.metrics.labeled_counter.perf_startup_startup_type ;;
+    hidden: yes
+    description: "Indicates how the browser was started. The label is divided into two
+variables. `state` is how cached the browser is when started. `path` is
+what code path we are expected to take. Together, they create a combined
+label: `state_path`. For brevity, the specific states are documented in
+the [Fenix perf
+glossary](https://wiki.mozilla.org/index.php?title=Performance/Fenix/Glossary).
+<br><br>
+This implementation is intended to be simple, not comprehensive. We list
+the implications below.
+
+<br><br>
+These ways of opening the app undesirably adds events to our primary
+buckets (non-`unknown` cases):
+<br>- App switcher cold/warm: `cold/warm_` + duplicates path from
+previous launch
+<br>- An Intent is sent internally that's uses `ACTION_MAIN` or
+`ACTION_VIEW` could be: `*_main/view` (unknown if this ever happens)
+<br>- A command-line launch uses `ACTION_MAIN` or `ACTION_VIEW` could be:
+`*_main/view`
+
+<br><br>
+These ways of opening the app undesirably do not add their events to our
+primary buckets:
+<br>- Close and reopen "
   }
 
   dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
