@@ -71,6 +71,24 @@ Migrated from Telemetry's
 "
   }
 
+  dimension: metrics__timespan__extensions_startup_cache_load_time__value {
+    label: "Extensions Startup Cache Load Time Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.extensions_startup_cache_load_time.value ;;
+    type: number
+    group_label: "Extensions"
+    group_item_label: "Startup Cache Load Time Value"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Startup Cache Load Time Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_startup_cache_load_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time to load and deserialize the extensions startupCache data.
+"
+  }
+
   dimension: metrics__uuid__legacy_telemetry_client_id {
     label: "Legacy Telemetry Client Id"
     hidden: no

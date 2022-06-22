@@ -940,6 +940,20 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timespan__extensions_startup_cache_load_time__time_unit {
+    sql: ${TABLE}.metrics.timespan.extensions_startup_cache_load_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Extensions Startup Cache Load Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__extensions_startup_cache_load_time__value {
+    sql: ${TABLE}.metrics.timespan.extensions_startup_cache_load_time.value ;;
+    type: number
+    group_label: "Metrics Timespan Extensions Startup Cache Load Time"
+    group_item_label: "Value"
+  }
+
   dimension: metrics__timespan__fog_initialization__time_unit {
     sql: ${TABLE}.metrics.timespan.fog_initialization.time_unit ;;
     type: string
