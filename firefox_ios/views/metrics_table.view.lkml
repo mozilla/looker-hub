@@ -1796,6 +1796,14 @@ with a home page origin.
 "
   }
 
+  dimension: metrics__labeled_counter__wallpaper_analytics_themed_wallpaper {
+    sql: ${TABLE}.metrics.labeled_counter.wallpaper_analytics_themed_wallpaper ;;
+    hidden: yes
+    description: "Recorded when the user enters the background. This reports
+the currently selected wallpaper if it's not the default.
+"
+  }
+
   dimension: metrics__labeled_rate {
     sql: ${TABLE}.metrics.labeled_rate ;;
     hidden: yes

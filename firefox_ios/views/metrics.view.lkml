@@ -2500,6 +2500,24 @@ tracking-protection that is enabled. One of:
 "
   }
 
+  dimension: metrics__labeled_counter__wallpaper_analytics_themed_wallpaper {
+    label: "Wallpaper Analytics Themed Wallpaper"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.wallpaper_analytics_themed_wallpaper ;;
+    group_label: "Wallpaper Analytics"
+    group_item_label: "Themed Wallpaper"
+
+    link: {
+      label: "Glean Dictionary reference for Wallpaper Analytics Themed Wallpaper"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/wallpaper_analytics_themed_wallpaper"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded when the user enters the background. This reports
+the currently selected wallpaper if it's not the default.
+"
+  }
+
   dimension: metrics__counter__widget_l_tabs_open_url {
     label: "Widget L Tabs Open Url"
     hidden: no
