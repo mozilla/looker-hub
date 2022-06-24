@@ -13,14 +13,14 @@ explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
     ]
   }
 
-  aggregate_table: rollup_memory_total {
+  aggregate_table: rollup_content_process_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_histogram.branch: "enabled, disabled",
         total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_histogram.percentile_conf: "50",
-        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_histogram.probe: "memory_total",
+        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_histogram.probe: "content_process_count",
       ]
     }
 
@@ -45,14 +45,14 @@ explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
     }
   }
 
-  aggregate_table: rollup_content_process_count {
+  aggregate_table: rollup_memory_total {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_histogram.branch: "enabled, disabled",
         total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_histogram.percentile_conf: "50",
-        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_histogram.probe: "content_process_count",
+        total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_histogram.probe: "memory_total",
       ]
     }
 

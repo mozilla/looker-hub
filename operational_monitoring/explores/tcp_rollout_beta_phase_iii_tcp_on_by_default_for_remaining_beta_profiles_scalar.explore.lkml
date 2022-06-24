@@ -13,62 +13,14 @@ explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profile
     ]
   }
 
-  aggregate_table: rollup_content_shutdown_crashes {
+  aggregate_table: rollup_content_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.branch: "enabled, disabled",
         tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.percentile_conf: "50",
-        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.probe: "content_shutdown_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_main_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.branch: "enabled, disabled",
-        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.percentile_conf: "50",
-        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.probe: "main_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_plugin_crashes {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.branch: "enabled, disabled",
-        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.percentile_conf: "50",
-        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.probe: "plugin_crashes",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_shutdown_hangs {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.branch: "enabled, disabled",
-        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.percentile_conf: "50",
-        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.probe: "shutdown_hangs",
+        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.probe: "content_crashes",
       ]
     }
 
@@ -93,14 +45,30 @@ explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profile
     }
   }
 
-  aggregate_table: rollup_gmplugin_crashes {
+  aggregate_table: rollup_shutdown_hangs {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.branch: "enabled, disabled",
         tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.percentile_conf: "50",
-        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.probe: "gmplugin_crashes",
+        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.probe: "shutdown_hangs",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_main_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.branch: "enabled, disabled",
+        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.percentile_conf: "50",
+        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.probe: "main_crashes",
       ]
     }
 
@@ -125,14 +93,14 @@ explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profile
     }
   }
 
-  aggregate_table: rollup_gpu_crashes {
+  aggregate_table: rollup_gmplugin_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.branch: "enabled, disabled",
         tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.percentile_conf: "50",
-        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.probe: "gpu_crashes",
+        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.probe: "gmplugin_crashes",
       ]
     }
 
@@ -141,14 +109,46 @@ explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profile
     }
   }
 
-  aggregate_table: rollup_content_crashes {
+  aggregate_table: rollup_plugin_crashes {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.branch: "enabled, disabled",
         tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.percentile_conf: "50",
-        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.probe: "content_crashes",
+        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.probe: "plugin_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_content_shutdown_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.branch: "enabled, disabled",
+        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.percentile_conf: "50",
+        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.probe: "content_shutdown_crashes",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
+  aggregate_table: rollup_gpu_crashes {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.branch: "enabled, disabled",
+        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.percentile_conf: "50",
+        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_scalar.probe: "gpu_crashes",
       ]
     }
 
