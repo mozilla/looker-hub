@@ -20,7 +20,7 @@ explore: telemetry_alerts_prototype_histogram {
       filters: [
         telemetry_alerts_prototype_histogram.branch: "active",
         telemetry_alerts_prototype_histogram.percentile_conf: "50",
-        telemetry_alerts_prototype_histogram.build: "20220620",
+        telemetry_alerts_prototype_histogram.build: "20220608",
         telemetry_alerts_prototype_histogram.os: "Windows",
         telemetry_alerts_prototype_histogram.probe: "gc_ms",
       ]
@@ -38,7 +38,7 @@ explore: telemetry_alerts_prototype_histogram {
       filters: [
         telemetry_alerts_prototype_histogram.branch: "active",
         telemetry_alerts_prototype_histogram.percentile_conf: "50",
-        telemetry_alerts_prototype_histogram.build: "20220620",
+        telemetry_alerts_prototype_histogram.build: "20220608",
         telemetry_alerts_prototype_histogram.os: "Windows",
         telemetry_alerts_prototype_histogram.probe: "content_process_count",
       ]
@@ -56,7 +56,7 @@ explore: telemetry_alerts_prototype_histogram {
       filters: [
         telemetry_alerts_prototype_histogram.branch: "active",
         telemetry_alerts_prototype_histogram.percentile_conf: "50",
-        telemetry_alerts_prototype_histogram.build: "20220620",
+        telemetry_alerts_prototype_histogram.build: "20220608",
         telemetry_alerts_prototype_histogram.os: "Windows",
         telemetry_alerts_prototype_histogram.probe: "checkerboard_severity",
       ]

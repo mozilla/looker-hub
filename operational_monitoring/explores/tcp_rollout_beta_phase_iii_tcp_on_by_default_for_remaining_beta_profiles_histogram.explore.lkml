@@ -13,14 +13,14 @@ explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profile
     ]
   }
 
-  aggregate_table: rollup_memory_total {
+  aggregate_table: rollup_content_process_count {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_histogram.branch: "enabled, disabled",
         tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_histogram.percentile_conf: "50",
-        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_histogram.probe: "memory_total",
+        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_histogram.probe: "content_process_count",
       ]
     }
 
@@ -45,14 +45,14 @@ explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profile
     }
   }
 
-  aggregate_table: rollup_content_process_count {
+  aggregate_table: rollup_memory_total {
     query: {
       dimensions: [submission_date, branch]
       measures: [low, high, percentile]
       filters: [
         tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_histogram.branch: "enabled, disabled",
         tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_histogram.percentile_conf: "50",
-        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_histogram.probe: "content_process_count",
+        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_histogram.probe: "memory_total",
       ]
     }
 

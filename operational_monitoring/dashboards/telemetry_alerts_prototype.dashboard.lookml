@@ -103,68 +103,6 @@
       Build: telemetry_alerts_prototype_histogram.build
       Os: telemetry_alerts_prototype_histogram.os
     active: "#3FE1B0"
-  - title: Content Shutdown Crashes
-    name: Content Shutdown Crashes
-    explore: telemetry_alerts_prototype_scalar
-    type: "ci-line-chart"
-    fields: [
-      telemetry_alerts_prototype_scalar.submission_date,
-      telemetry_alerts_prototype_scalar.branch,
-      telemetry_alerts_prototype_scalar.high,
-      telemetry_alerts_prototype_scalar.low,
-      telemetry_alerts_prototype_scalar.percentile
-    ]
-    pivots: [
-      telemetry_alerts_prototype_scalar.branch
-    ]
-    filters:
-      telemetry_alerts_prototype_scalar.probe: content_shutdown_crashes
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
-    field_y: telemetry_alerts_prototype_scalar.percentile
-    log_scale: false
-    ci_lower: telemetry_alerts_prototype_scalar.low
-    ci_upper: telemetry_alerts_prototype_scalar.high
-    show_grid: true
-    listen:
-      Percentile: telemetry_alerts_prototype_scalar.percentile_conf
-      Build: telemetry_alerts_prototype_scalar.build
-      Os: telemetry_alerts_prototype_scalar.os
-    active: "#3FE1B0"
-  - title: Main Crashes
-    name: Main Crashes
-    explore: telemetry_alerts_prototype_scalar
-    type: "ci-line-chart"
-    fields: [
-      telemetry_alerts_prototype_scalar.submission_date,
-      telemetry_alerts_prototype_scalar.branch,
-      telemetry_alerts_prototype_scalar.high,
-      telemetry_alerts_prototype_scalar.low,
-      telemetry_alerts_prototype_scalar.percentile
-    ]
-    pivots: [
-      telemetry_alerts_prototype_scalar.branch
-    ]
-    filters:
-      telemetry_alerts_prototype_scalar.probe: main_crashes
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
-    field_y: telemetry_alerts_prototype_scalar.percentile
-    log_scale: false
-    ci_lower: telemetry_alerts_prototype_scalar.low
-    ci_upper: telemetry_alerts_prototype_scalar.high
-    show_grid: true
-    listen:
-      Percentile: telemetry_alerts_prototype_scalar.percentile_conf
-      Build: telemetry_alerts_prototype_scalar.build
-      Os: telemetry_alerts_prototype_scalar.os
-    active: "#3FE1B0"
   - title: Plugin Crashes
     name: Plugin Crashes
     explore: telemetry_alerts_prototype_scalar
@@ -181,7 +119,7 @@
     ]
     filters:
       telemetry_alerts_prototype_scalar.probe: plugin_crashes
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -212,8 +150,39 @@
     ]
     filters:
       telemetry_alerts_prototype_scalar.probe: shutdown_hangs
-    row: 30
+    row: 20
     col: 0
+    width: 12
+    height: 8
+    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_y: telemetry_alerts_prototype_scalar.percentile
+    log_scale: false
+    ci_lower: telemetry_alerts_prototype_scalar.low
+    ci_upper: telemetry_alerts_prototype_scalar.high
+    show_grid: true
+    listen:
+      Percentile: telemetry_alerts_prototype_scalar.percentile_conf
+      Build: telemetry_alerts_prototype_scalar.build
+      Os: telemetry_alerts_prototype_scalar.os
+    active: "#3FE1B0"
+  - title: Main Crashes
+    name: Main Crashes
+    explore: telemetry_alerts_prototype_scalar
+    type: "ci-line-chart"
+    fields: [
+      telemetry_alerts_prototype_scalar.submission_date,
+      telemetry_alerts_prototype_scalar.branch,
+      telemetry_alerts_prototype_scalar.high,
+      telemetry_alerts_prototype_scalar.low,
+      telemetry_alerts_prototype_scalar.percentile
+    ]
+    pivots: [
+      telemetry_alerts_prototype_scalar.branch
+    ]
+    filters:
+      telemetry_alerts_prototype_scalar.probe: main_crashes
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: telemetry_alerts_prototype_scalar.submission_date
@@ -243,6 +212,37 @@
     ]
     filters:
       telemetry_alerts_prototype_scalar.probe: startup_crashes
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_y: telemetry_alerts_prototype_scalar.percentile
+    log_scale: false
+    ci_lower: telemetry_alerts_prototype_scalar.low
+    ci_upper: telemetry_alerts_prototype_scalar.high
+    show_grid: true
+    listen:
+      Percentile: telemetry_alerts_prototype_scalar.percentile_conf
+      Build: telemetry_alerts_prototype_scalar.build
+      Os: telemetry_alerts_prototype_scalar.os
+    active: "#3FE1B0"
+  - title: Oom Crashes
+    name: Oom Crashes
+    explore: telemetry_alerts_prototype_scalar
+    type: "ci-line-chart"
+    fields: [
+      telemetry_alerts_prototype_scalar.submission_date,
+      telemetry_alerts_prototype_scalar.branch,
+      telemetry_alerts_prototype_scalar.high,
+      telemetry_alerts_prototype_scalar.low,
+      telemetry_alerts_prototype_scalar.percentile
+    ]
+    pivots: [
+      telemetry_alerts_prototype_scalar.branch
+    ]
+    filters:
+      telemetry_alerts_prototype_scalar.probe: oom_crashes
     row: 30
     col: 12
     width: 12
@@ -289,8 +289,8 @@
       Build: telemetry_alerts_prototype_scalar.build
       Os: telemetry_alerts_prototype_scalar.os
     active: "#3FE1B0"
-  - title: Oom Crashes
-    name: Oom Crashes
+  - title: Content Shutdown Crashes
+    name: Content Shutdown Crashes
     explore: telemetry_alerts_prototype_scalar
     type: "ci-line-chart"
     fields: [
@@ -304,40 +304,9 @@
       telemetry_alerts_prototype_scalar.branch
     ]
     filters:
-      telemetry_alerts_prototype_scalar.probe: oom_crashes
+      telemetry_alerts_prototype_scalar.probe: content_shutdown_crashes
     row: 40
     col: 12
-    width: 12
-    height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
-    field_y: telemetry_alerts_prototype_scalar.percentile
-    log_scale: false
-    ci_lower: telemetry_alerts_prototype_scalar.low
-    ci_upper: telemetry_alerts_prototype_scalar.high
-    show_grid: true
-    listen:
-      Percentile: telemetry_alerts_prototype_scalar.percentile_conf
-      Build: telemetry_alerts_prototype_scalar.build
-      Os: telemetry_alerts_prototype_scalar.os
-    active: "#3FE1B0"
-  - title: Gpu Crashes
-    name: Gpu Crashes
-    explore: telemetry_alerts_prototype_scalar
-    type: "ci-line-chart"
-    fields: [
-      telemetry_alerts_prototype_scalar.submission_date,
-      telemetry_alerts_prototype_scalar.branch,
-      telemetry_alerts_prototype_scalar.high,
-      telemetry_alerts_prototype_scalar.low,
-      telemetry_alerts_prototype_scalar.percentile
-    ]
-    pivots: [
-      telemetry_alerts_prototype_scalar.branch
-    ]
-    filters:
-      telemetry_alerts_prototype_scalar.probe: gpu_crashes
-    row: 50
-    col: 0
     width: 12
     height: 8
     field_x: telemetry_alerts_prototype_scalar.submission_date
@@ -367,6 +336,37 @@
     ]
     filters:
       telemetry_alerts_prototype_scalar.probe: content_crashes
+    row: 50
+    col: 0
+    width: 12
+    height: 8
+    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_y: telemetry_alerts_prototype_scalar.percentile
+    log_scale: false
+    ci_lower: telemetry_alerts_prototype_scalar.low
+    ci_upper: telemetry_alerts_prototype_scalar.high
+    show_grid: true
+    listen:
+      Percentile: telemetry_alerts_prototype_scalar.percentile_conf
+      Build: telemetry_alerts_prototype_scalar.build
+      Os: telemetry_alerts_prototype_scalar.os
+    active: "#3FE1B0"
+  - title: Gpu Crashes
+    name: Gpu Crashes
+    explore: telemetry_alerts_prototype_scalar
+    type: "ci-line-chart"
+    fields: [
+      telemetry_alerts_prototype_scalar.submission_date,
+      telemetry_alerts_prototype_scalar.branch,
+      telemetry_alerts_prototype_scalar.high,
+      telemetry_alerts_prototype_scalar.low,
+      telemetry_alerts_prototype_scalar.percentile
+    ]
+    pivots: [
+      telemetry_alerts_prototype_scalar.branch
+    ]
+    filters:
+      telemetry_alerts_prototype_scalar.probe: gpu_crashes
     row: 50
     col: 12
     width: 12
@@ -466,23 +466,23 @@
   - title: Build
     name: Build
     type: string_filter
-    default_value: '20220620'
+    default_value: '20220614'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - '20220620'
-      - '20220619'
-      - '20220621'
-      - '20220618'
-      - '20220617'
-      - '20220622'
-      - '20220616'
-      - '20220615'
       - '20220614'
+      - '20220608'
+      - '20220607'
+      - '20220606'
+      - '20220602'
+      - '20220601'
       - '20220613'
+      - '20220609'
+      - '20220615'
+      - '20220612'
       
   
   
