@@ -13,6 +13,22 @@ explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profile
     ]
   }
 
+  aggregate_table: rollup_memory_total {
+    query: {
+      dimensions: [submission_date, branch]
+      measures: [low, high, percentile]
+      filters: [
+        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_histogram.branch: "enabled, disabled",
+        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_histogram.percentile_conf: "50",
+        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_histogram.probe: "memory_total",
+      ]
+    }
+
+    materialization: {
+      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
+    }
+  }
+
   aggregate_table: rollup_content_process_count {
     query: {
       dimensions: [submission_date, branch]
@@ -37,22 +53,6 @@ explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profile
         tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_histogram.branch: "enabled, disabled",
         tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_histogram.percentile_conf: "50",
         tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_histogram.probe: "gc_ms",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_memory_total {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_histogram.branch: "enabled, disabled",
-        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_histogram.percentile_conf: "50",
-        tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_histogram.probe: "memory_total",
       ]
     }
 
