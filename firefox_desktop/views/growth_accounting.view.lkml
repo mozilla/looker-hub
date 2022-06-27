@@ -1128,6 +1128,11 @@ view: growth_accounting {
     type: number
   }
 
+  dimension: scalar_parent_urlbar_picked_autofill_about_sum {
+    sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_about_sum ;;
+    hidden: yes
+  }
+
   dimension: scalar_parent_urlbar_picked_autofill_adaptive_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_adaptive_sum ;;
     hidden: yes
@@ -1135,6 +1140,16 @@ view: growth_accounting {
 
   dimension: scalar_parent_urlbar_picked_autofill_origin_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_origin_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_urlbar_picked_autofill_other_sum {
+    sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_other_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_urlbar_picked_autofill_preloaded_sum {
+    sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_preloaded_sum ;;
     hidden: yes
   }
 

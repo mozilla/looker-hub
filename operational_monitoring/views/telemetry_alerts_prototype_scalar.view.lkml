@@ -11,18 +11,13 @@ FROM `moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype_
 WHERE agg_type = "SUM" ;;
   }
 
-  dimension: submission_date {
+  dimension: build_id {
     type: date
-    sql: ${TABLE}.submission_date ;;
+    sql: PARSE_DATE('%Y%m%d', CAST(${TABLE}.build_id AS STRING)) ;;
   }
 
   dimension: branch {
     sql: ${TABLE}.branch ;;
-    type: string
-  }
-
-  dimension: build {
-    sql: ${TABLE}.build ;;
     type: string
   }
 
