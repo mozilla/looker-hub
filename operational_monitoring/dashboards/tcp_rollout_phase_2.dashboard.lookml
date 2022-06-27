@@ -42,8 +42,8 @@
       Os: tcp_rollout_phase_2_histogram.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
-  - title: Content Crashes
-    name: Content Crashes
+  - title: Ad Click Organic
+    name: Ad Click Organic
     explore: tcp_rollout_phase_2_scalar
     type: "ci-line-chart"
     fields: [
@@ -57,7 +57,7 @@
       tcp_rollout_phase_2_scalar.branch
     ]
     filters:
-      tcp_rollout_phase_2_scalar.probe: content_crashes
+      tcp_rollout_phase_2_scalar.probe: ad_click_organic
     row: 0
     col: 12
     width: 12
@@ -74,8 +74,8 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
-  - title: Startup Crashes
-    name: Startup Crashes
+  - title: Sap
+    name: Sap
     explore: tcp_rollout_phase_2_scalar
     type: "ci-line-chart"
     fields: [
@@ -89,136 +89,8 @@
       tcp_rollout_phase_2_scalar.branch
     ]
     filters:
-      tcp_rollout_phase_2_scalar.probe: startup_crashes
+      tcp_rollout_phase_2_scalar.probe: sap
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout_phase_2_scalar.submission_date
-    field_y: tcp_rollout_phase_2_scalar.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_phase_2_scalar.low
-    ci_upper: tcp_rollout_phase_2_scalar.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_phase_2_scalar.percentile_conf
-      Country: tcp_rollout_phase_2_scalar.country
-      Os: tcp_rollout_phase_2_scalar.os
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
-    explore: tcp_rollout_phase_2_scalar
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_phase_2_scalar.submission_date,
-      tcp_rollout_phase_2_scalar.branch,
-      tcp_rollout_phase_2_scalar.high,
-      tcp_rollout_phase_2_scalar.low,
-      tcp_rollout_phase_2_scalar.percentile
-    ]
-    pivots: [
-      tcp_rollout_phase_2_scalar.branch
-    ]
-    filters:
-      tcp_rollout_phase_2_scalar.probe: shutdown_hangs
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: tcp_rollout_phase_2_scalar.submission_date
-    field_y: tcp_rollout_phase_2_scalar.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_phase_2_scalar.low
-    ci_upper: tcp_rollout_phase_2_scalar.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_phase_2_scalar.percentile_conf
-      Country: tcp_rollout_phase_2_scalar.country
-      Os: tcp_rollout_phase_2_scalar.os
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Main Crashes
-    name: Main Crashes
-    explore: tcp_rollout_phase_2_scalar
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_phase_2_scalar.submission_date,
-      tcp_rollout_phase_2_scalar.branch,
-      tcp_rollout_phase_2_scalar.high,
-      tcp_rollout_phase_2_scalar.low,
-      tcp_rollout_phase_2_scalar.percentile
-    ]
-    pivots: [
-      tcp_rollout_phase_2_scalar.branch
-    ]
-    filters:
-      tcp_rollout_phase_2_scalar.probe: main_crashes
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout_phase_2_scalar.submission_date
-    field_y: tcp_rollout_phase_2_scalar.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_phase_2_scalar.low
-    ci_upper: tcp_rollout_phase_2_scalar.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_phase_2_scalar.percentile_conf
-      Country: tcp_rollout_phase_2_scalar.country
-      Os: tcp_rollout_phase_2_scalar.os
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Oom Crashes
-    name: Oom Crashes
-    explore: tcp_rollout_phase_2_scalar
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_phase_2_scalar.submission_date,
-      tcp_rollout_phase_2_scalar.branch,
-      tcp_rollout_phase_2_scalar.high,
-      tcp_rollout_phase_2_scalar.low,
-      tcp_rollout_phase_2_scalar.percentile
-    ]
-    pivots: [
-      tcp_rollout_phase_2_scalar.branch
-    ]
-    filters:
-      tcp_rollout_phase_2_scalar.probe: oom_crashes
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: tcp_rollout_phase_2_scalar.submission_date
-    field_y: tcp_rollout_phase_2_scalar.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_phase_2_scalar.low
-    ci_upper: tcp_rollout_phase_2_scalar.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_phase_2_scalar.percentile_conf
-      Country: tcp_rollout_phase_2_scalar.country
-      Os: tcp_rollout_phase_2_scalar.os
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Search With Ads
-    name: Search With Ads
-    explore: tcp_rollout_phase_2_scalar
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_phase_2_scalar.submission_date,
-      tcp_rollout_phase_2_scalar.branch,
-      tcp_rollout_phase_2_scalar.high,
-      tcp_rollout_phase_2_scalar.low,
-      tcp_rollout_phase_2_scalar.percentile
-    ]
-    pivots: [
-      tcp_rollout_phase_2_scalar.branch
-    ]
-    filters:
-      tcp_rollout_phase_2_scalar.probe: search_with_ads
-    row: 30
     col: 0
     width: 12
     height: 8
@@ -250,71 +122,7 @@
     ]
     filters:
       tcp_rollout_phase_2_scalar.probe: gmplugin_crashes
-    row: 30
-    col: 12
-    width: 12
-    height: 8
-    field_x: tcp_rollout_phase_2_scalar.submission_date
-    field_y: tcp_rollout_phase_2_scalar.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_phase_2_scalar.low
-    ci_upper: tcp_rollout_phase_2_scalar.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_phase_2_scalar.percentile_conf
-      Country: tcp_rollout_phase_2_scalar.country
-      Os: tcp_rollout_phase_2_scalar.os
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Ad Click Organic
-    name: Ad Click Organic
-    explore: tcp_rollout_phase_2_scalar
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_phase_2_scalar.submission_date,
-      tcp_rollout_phase_2_scalar.branch,
-      tcp_rollout_phase_2_scalar.high,
-      tcp_rollout_phase_2_scalar.low,
-      tcp_rollout_phase_2_scalar.percentile
-    ]
-    pivots: [
-      tcp_rollout_phase_2_scalar.branch
-    ]
-    filters:
-      tcp_rollout_phase_2_scalar.probe: ad_click_organic
-    row: 40
-    col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout_phase_2_scalar.submission_date
-    field_y: tcp_rollout_phase_2_scalar.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_phase_2_scalar.low
-    ci_upper: tcp_rollout_phase_2_scalar.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_phase_2_scalar.percentile_conf
-      Country: tcp_rollout_phase_2_scalar.country
-      Os: tcp_rollout_phase_2_scalar.os
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Sap
-    name: Sap
-    explore: tcp_rollout_phase_2_scalar
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_phase_2_scalar.submission_date,
-      tcp_rollout_phase_2_scalar.branch,
-      tcp_rollout_phase_2_scalar.high,
-      tcp_rollout_phase_2_scalar.low,
-      tcp_rollout_phase_2_scalar.percentile
-    ]
-    pivots: [
-      tcp_rollout_phase_2_scalar.branch
-    ]
-    filters:
-      tcp_rollout_phase_2_scalar.probe: sap
-    row: 40
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -346,7 +154,7 @@
     ]
     filters:
       tcp_rollout_phase_2_scalar.probe: ad_click
-    row: 50
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -362,8 +170,8 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
-  - title: Plugin Crashes
-    name: Plugin Crashes
+  - title: Content Crashes
+    name: Content Crashes
     explore: tcp_rollout_phase_2_scalar
     type: "ci-line-chart"
     fields: [
@@ -377,8 +185,8 @@
       tcp_rollout_phase_2_scalar.branch
     ]
     filters:
-      tcp_rollout_phase_2_scalar.probe: plugin_crashes
-    row: 50
+      tcp_rollout_phase_2_scalar.probe: content_crashes
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -410,6 +218,198 @@
     ]
     filters:
       tcp_rollout_phase_2_scalar.probe: organic_search_count
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: tcp_rollout_phase_2_scalar.submission_date
+    field_y: tcp_rollout_phase_2_scalar.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_phase_2_scalar.low
+    ci_upper: tcp_rollout_phase_2_scalar.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_phase_2_scalar.percentile_conf
+      Country: tcp_rollout_phase_2_scalar.country
+      Os: tcp_rollout_phase_2_scalar.os
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Search With Ads Organic
+    name: Search With Ads Organic
+    explore: tcp_rollout_phase_2_scalar
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_phase_2_scalar.submission_date,
+      tcp_rollout_phase_2_scalar.branch,
+      tcp_rollout_phase_2_scalar.high,
+      tcp_rollout_phase_2_scalar.low,
+      tcp_rollout_phase_2_scalar.percentile
+    ]
+    pivots: [
+      tcp_rollout_phase_2_scalar.branch
+    ]
+    filters:
+      tcp_rollout_phase_2_scalar.probe: search_with_ads_organic
+    row: 30
+    col: 12
+    width: 12
+    height: 8
+    field_x: tcp_rollout_phase_2_scalar.submission_date
+    field_y: tcp_rollout_phase_2_scalar.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_phase_2_scalar.low
+    ci_upper: tcp_rollout_phase_2_scalar.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_phase_2_scalar.percentile_conf
+      Country: tcp_rollout_phase_2_scalar.country
+      Os: tcp_rollout_phase_2_scalar.os
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
+    explore: tcp_rollout_phase_2_scalar
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_phase_2_scalar.submission_date,
+      tcp_rollout_phase_2_scalar.branch,
+      tcp_rollout_phase_2_scalar.high,
+      tcp_rollout_phase_2_scalar.low,
+      tcp_rollout_phase_2_scalar.percentile
+    ]
+    pivots: [
+      tcp_rollout_phase_2_scalar.branch
+    ]
+    filters:
+      tcp_rollout_phase_2_scalar.probe: shutdown_hangs
+    row: 40
+    col: 0
+    width: 12
+    height: 8
+    field_x: tcp_rollout_phase_2_scalar.submission_date
+    field_y: tcp_rollout_phase_2_scalar.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_phase_2_scalar.low
+    ci_upper: tcp_rollout_phase_2_scalar.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_phase_2_scalar.percentile_conf
+      Country: tcp_rollout_phase_2_scalar.country
+      Os: tcp_rollout_phase_2_scalar.os
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Plugin Crashes
+    name: Plugin Crashes
+    explore: tcp_rollout_phase_2_scalar
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_phase_2_scalar.submission_date,
+      tcp_rollout_phase_2_scalar.branch,
+      tcp_rollout_phase_2_scalar.high,
+      tcp_rollout_phase_2_scalar.low,
+      tcp_rollout_phase_2_scalar.percentile
+    ]
+    pivots: [
+      tcp_rollout_phase_2_scalar.branch
+    ]
+    filters:
+      tcp_rollout_phase_2_scalar.probe: plugin_crashes
+    row: 40
+    col: 12
+    width: 12
+    height: 8
+    field_x: tcp_rollout_phase_2_scalar.submission_date
+    field_y: tcp_rollout_phase_2_scalar.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_phase_2_scalar.low
+    ci_upper: tcp_rollout_phase_2_scalar.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_phase_2_scalar.percentile_conf
+      Country: tcp_rollout_phase_2_scalar.country
+      Os: tcp_rollout_phase_2_scalar.os
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Main Crashes
+    name: Main Crashes
+    explore: tcp_rollout_phase_2_scalar
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_phase_2_scalar.submission_date,
+      tcp_rollout_phase_2_scalar.branch,
+      tcp_rollout_phase_2_scalar.high,
+      tcp_rollout_phase_2_scalar.low,
+      tcp_rollout_phase_2_scalar.percentile
+    ]
+    pivots: [
+      tcp_rollout_phase_2_scalar.branch
+    ]
+    filters:
+      tcp_rollout_phase_2_scalar.probe: main_crashes
+    row: 50
+    col: 0
+    width: 12
+    height: 8
+    field_x: tcp_rollout_phase_2_scalar.submission_date
+    field_y: tcp_rollout_phase_2_scalar.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_phase_2_scalar.low
+    ci_upper: tcp_rollout_phase_2_scalar.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_phase_2_scalar.percentile_conf
+      Country: tcp_rollout_phase_2_scalar.country
+      Os: tcp_rollout_phase_2_scalar.os
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Gpu Crashes
+    name: Gpu Crashes
+    explore: tcp_rollout_phase_2_scalar
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_phase_2_scalar.submission_date,
+      tcp_rollout_phase_2_scalar.branch,
+      tcp_rollout_phase_2_scalar.high,
+      tcp_rollout_phase_2_scalar.low,
+      tcp_rollout_phase_2_scalar.percentile
+    ]
+    pivots: [
+      tcp_rollout_phase_2_scalar.branch
+    ]
+    filters:
+      tcp_rollout_phase_2_scalar.probe: gpu_crashes
+    row: 50
+    col: 12
+    width: 12
+    height: 8
+    field_x: tcp_rollout_phase_2_scalar.submission_date
+    field_y: tcp_rollout_phase_2_scalar.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_phase_2_scalar.low
+    ci_upper: tcp_rollout_phase_2_scalar.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_phase_2_scalar.percentile_conf
+      Country: tcp_rollout_phase_2_scalar.country
+      Os: tcp_rollout_phase_2_scalar.os
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Startup Crashes
+    name: Startup Crashes
+    explore: tcp_rollout_phase_2_scalar
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_phase_2_scalar.submission_date,
+      tcp_rollout_phase_2_scalar.branch,
+      tcp_rollout_phase_2_scalar.high,
+      tcp_rollout_phase_2_scalar.low,
+      tcp_rollout_phase_2_scalar.percentile
+    ]
+    pivots: [
+      tcp_rollout_phase_2_scalar.branch
+    ]
+    filters:
+      tcp_rollout_phase_2_scalar.probe: startup_crashes
     row: 60
     col: 0
     width: 12
@@ -458,8 +458,8 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
-  - title: Content Shutdown Crashes
-    name: Content Shutdown Crashes
+  - title: Search With Ads
+    name: Search With Ads
     explore: tcp_rollout_phase_2_scalar
     type: "ci-line-chart"
     fields: [
@@ -473,72 +473,8 @@
       tcp_rollout_phase_2_scalar.branch
     ]
     filters:
-      tcp_rollout_phase_2_scalar.probe: content_shutdown_crashes
+      tcp_rollout_phase_2_scalar.probe: search_with_ads
     row: 70
-    col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout_phase_2_scalar.submission_date
-    field_y: tcp_rollout_phase_2_scalar.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_phase_2_scalar.low
-    ci_upper: tcp_rollout_phase_2_scalar.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_phase_2_scalar.percentile_conf
-      Country: tcp_rollout_phase_2_scalar.country
-      Os: tcp_rollout_phase_2_scalar.os
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Search With Ads Organic
-    name: Search With Ads Organic
-    explore: tcp_rollout_phase_2_scalar
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_phase_2_scalar.submission_date,
-      tcp_rollout_phase_2_scalar.branch,
-      tcp_rollout_phase_2_scalar.high,
-      tcp_rollout_phase_2_scalar.low,
-      tcp_rollout_phase_2_scalar.percentile
-    ]
-    pivots: [
-      tcp_rollout_phase_2_scalar.branch
-    ]
-    filters:
-      tcp_rollout_phase_2_scalar.probe: search_with_ads_organic
-    row: 70
-    col: 12
-    width: 12
-    height: 8
-    field_x: tcp_rollout_phase_2_scalar.submission_date
-    field_y: tcp_rollout_phase_2_scalar.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_phase_2_scalar.low
-    ci_upper: tcp_rollout_phase_2_scalar.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_phase_2_scalar.percentile_conf
-      Country: tcp_rollout_phase_2_scalar.country
-      Os: tcp_rollout_phase_2_scalar.os
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-  - title: Gpu Crashes
-    name: Gpu Crashes
-    explore: tcp_rollout_phase_2_scalar
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_phase_2_scalar.submission_date,
-      tcp_rollout_phase_2_scalar.branch,
-      tcp_rollout_phase_2_scalar.high,
-      tcp_rollout_phase_2_scalar.low,
-      tcp_rollout_phase_2_scalar.percentile
-    ]
-    pivots: [
-      tcp_rollout_phase_2_scalar.branch
-    ]
-    filters:
-      tcp_rollout_phase_2_scalar.probe: gpu_crashes
-    row: 80
     col: 0
     width: 12
     height: 8
@@ -570,6 +506,70 @@
     ]
     filters:
       tcp_rollout_phase_2_scalar.probe: tagged_search_count
+    row: 70
+    col: 12
+    width: 12
+    height: 8
+    field_x: tcp_rollout_phase_2_scalar.submission_date
+    field_y: tcp_rollout_phase_2_scalar.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_phase_2_scalar.low
+    ci_upper: tcp_rollout_phase_2_scalar.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_phase_2_scalar.percentile_conf
+      Country: tcp_rollout_phase_2_scalar.country
+      Os: tcp_rollout_phase_2_scalar.os
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Content Shutdown Crashes
+    name: Content Shutdown Crashes
+    explore: tcp_rollout_phase_2_scalar
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_phase_2_scalar.submission_date,
+      tcp_rollout_phase_2_scalar.branch,
+      tcp_rollout_phase_2_scalar.high,
+      tcp_rollout_phase_2_scalar.low,
+      tcp_rollout_phase_2_scalar.percentile
+    ]
+    pivots: [
+      tcp_rollout_phase_2_scalar.branch
+    ]
+    filters:
+      tcp_rollout_phase_2_scalar.probe: content_shutdown_crashes
+    row: 80
+    col: 0
+    width: 12
+    height: 8
+    field_x: tcp_rollout_phase_2_scalar.submission_date
+    field_y: tcp_rollout_phase_2_scalar.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_phase_2_scalar.low
+    ci_upper: tcp_rollout_phase_2_scalar.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_phase_2_scalar.percentile_conf
+      Country: tcp_rollout_phase_2_scalar.country
+      Os: tcp_rollout_phase_2_scalar.os
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+  - title: Oom Crashes
+    name: Oom Crashes
+    explore: tcp_rollout_phase_2_scalar
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_phase_2_scalar.submission_date,
+      tcp_rollout_phase_2_scalar.branch,
+      tcp_rollout_phase_2_scalar.high,
+      tcp_rollout_phase_2_scalar.low,
+      tcp_rollout_phase_2_scalar.percentile
+    ]
+    pivots: [
+      tcp_rollout_phase_2_scalar.branch
+    ]
+    filters:
+      tcp_rollout_phase_2_scalar.probe: oom_crashes
     row: 80
     col: 12
     width: 12

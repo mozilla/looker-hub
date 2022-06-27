@@ -170,10 +170,28 @@ explore: client_counts {
     sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_telemetry_event_counts_sum}) AS clients_daily_table__scalar_parent_telemetry_event_counts_sum ;;
   }
 
+  join: clients_daily_table__scalar_parent_urlbar_picked_autofill_adaptive_sum {
+    view_label: "Client Counts  Scalar Parent Urlbar Picked Autofill Adaptive Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_autofill_adaptive_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_autofill_adaptive_sum ;;
+  }
+
+  join: clients_daily_table__scalar_parent_urlbar_picked_autofill_origin_sum {
+    view_label: "Client Counts  Scalar Parent Urlbar Picked Autofill Origin Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_autofill_origin_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_autofill_origin_sum ;;
+  }
+
   join: clients_daily_table__scalar_parent_urlbar_picked_autofill_sum {
     view_label: "Client Counts  Scalar Parent Urlbar Picked Autofill Sum"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_autofill_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_autofill_sum ;;
+  }
+
+  join: clients_daily_table__scalar_parent_urlbar_picked_autofill_url_sum {
+    view_label: "Client Counts  Scalar Parent Urlbar Picked Autofill Url Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_autofill_url_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_autofill_url_sum ;;
   }
 
   join: clients_daily_table__scalar_parent_urlbar_picked_bookmark_sum {
