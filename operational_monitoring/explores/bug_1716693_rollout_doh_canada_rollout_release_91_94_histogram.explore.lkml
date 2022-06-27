@@ -12,36 +12,4 @@ explore: bug_1716693_rollout_doh_canada_rollout_release_91_94_histogram {
       branch: "active",
     ]
   }
-
-  aggregate_table: rollup_gc_ms {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1716693_rollout_doh_canada_rollout_release_91_94_histogram.branch: "active",
-        bug_1716693_rollout_doh_canada_rollout_release_91_94_histogram.percentile_conf: "50",
-        bug_1716693_rollout_doh_canada_rollout_release_91_94_histogram.probe: "gc_ms",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_memory_total {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1716693_rollout_doh_canada_rollout_release_91_94_histogram.branch: "active",
-        bug_1716693_rollout_doh_canada_rollout_release_91_94_histogram.percentile_conf: "50",
-        bug_1716693_rollout_doh_canada_rollout_release_91_94_histogram.probe: "memory_total",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
 }

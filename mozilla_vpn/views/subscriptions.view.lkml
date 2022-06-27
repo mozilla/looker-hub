@@ -317,6 +317,20 @@ view: subscriptions {
     ]
   }
 
+  dimension_group: trial_start {
+    sql: ${TABLE}.trial_start ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
   dimension_group: user_registration {
     sql: ${TABLE}.user_registration_date ;;
     type: time

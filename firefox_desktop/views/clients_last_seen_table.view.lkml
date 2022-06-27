@@ -1128,6 +1128,11 @@ view: clients_last_seen_table {
     type: number
   }
 
+  dimension: scalar_parent_urlbar_picked_autofill_about_sum {
+    sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_about_sum ;;
+    hidden: yes
+  }
+
   dimension: scalar_parent_urlbar_picked_autofill_adaptive_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_adaptive_sum ;;
     hidden: yes
@@ -1135,6 +1140,16 @@ view: clients_last_seen_table {
 
   dimension: scalar_parent_urlbar_picked_autofill_origin_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_origin_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_urlbar_picked_autofill_other_sum {
+    sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_other_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_urlbar_picked_autofill_preloaded_sum {
+    sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_preloaded_sum ;;
     hidden: yes
   }
 
@@ -2173,6 +2188,18 @@ view: clients_last_seen_table__scalar_parent_telemetry_event_counts_sum {
   }
 }
 
+view: clients_last_seen_table__scalar_parent_urlbar_picked_autofill_about_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: clients_last_seen_table__scalar_parent_urlbar_picked_autofill_adaptive_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -2186,6 +2213,30 @@ view: clients_last_seen_table__scalar_parent_urlbar_picked_autofill_adaptive_sum
 }
 
 view: clients_last_seen_table__scalar_parent_urlbar_picked_autofill_origin_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__scalar_parent_urlbar_picked_autofill_other_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__scalar_parent_urlbar_picked_autofill_preloaded_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

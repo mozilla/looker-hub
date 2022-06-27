@@ -12,20 +12,4 @@ explore: bug_1751039_pref_win32k_experiment_nightly_99_99_histogram {
       branch: "enabled, disabled",
     ]
   }
-
-  aggregate_table: rollup_content_process_count {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        bug_1751039_pref_win32k_experiment_nightly_99_99_histogram.branch: "enabled, disabled",
-        bug_1751039_pref_win32k_experiment_nightly_99_99_histogram.percentile_conf: "50",
-        bug_1751039_pref_win32k_experiment_nightly_99_99_histogram.probe: "content_process_count",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
 }

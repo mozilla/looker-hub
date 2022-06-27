@@ -12,11 +12,6 @@ view: telemetry_alerts_prototype_alerts {
     type: string
   }
 
-  dimension: build {
-    sql: ${TABLE}.build ;;
-    type: string
-  }
-
   dimension: message {
     sql: ${TABLE}.message ;;
     type: string

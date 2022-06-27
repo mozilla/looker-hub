@@ -12,22 +12,4 @@ explore: tcp_rollout_histogram {
       branch: "opt-in, opt-out, pref-does-not-exist",
     ]
   }
-
-  aggregate_table: rollup_content_process_count {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        tcp_rollout_histogram.branch: "opt-in, opt-out, pref-does-not-exist",
-        tcp_rollout_histogram.percentile_conf: "50",
-        tcp_rollout_histogram.country: "US",
-        tcp_rollout_histogram.os: "Windows",
-        tcp_rollout_histogram.probe: "content_process_count",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
 }
