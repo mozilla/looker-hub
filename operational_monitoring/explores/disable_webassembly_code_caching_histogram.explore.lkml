@@ -12,36 +12,4 @@ explore: disable_webassembly_code_caching_histogram {
       branch: "preference-disabled",
     ]
   }
-
-  aggregate_table: rollup_memory_total {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        disable_webassembly_code_caching_histogram.branch: "preference-disabled",
-        disable_webassembly_code_caching_histogram.percentile_conf: "50",
-        disable_webassembly_code_caching_histogram.probe: "memory_total",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-
-  aggregate_table: rollup_gc_ms {
-    query: {
-      dimensions: [submission_date, branch]
-      measures: [low, high, percentile]
-      filters: [
-        disable_webassembly_code_caching_histogram.branch: "preference-disabled",
-        disable_webassembly_code_caching_histogram.percentile_conf: "50",
-        disable_webassembly_code_caching_histogram.probe: "gc_ms",
-      ]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
 }

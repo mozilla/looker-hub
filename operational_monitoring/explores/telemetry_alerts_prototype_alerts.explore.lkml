@@ -6,21 +6,4 @@
 
 include: "/looker-hub/operational_monitoring/views/telemetry_alerts_prototype_alerts.view.lkml"
 
-explore: telemetry_alerts_prototype_alerts {
-  aggregate_table: rollup_alerts {
-    query: {
-      dimensions: [
-        submission_date,
-        branch,
-        percentile,
-        probe,
-        message,
-      ]
-      measures: [errors]
-    }
-
-    materialization: {
-      sql_trigger_value: SELECT CAST(TIMESTAMP_SUB(CURRENT_TIMESTAMP, INTERVAL 9 HOUR) AS DATE) ;;
-    }
-  }
-}
+explore: telemetry_alerts_prototype_alerts {}
