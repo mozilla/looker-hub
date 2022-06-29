@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: newtab_table {
+view: temp_clients_sync_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -300,6 +300,27 @@ view: newtab_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__labeled_counter__clients_sync_failure_reason {
+    sql: ${TABLE}.metrics.labeled_counter.clients_sync_failure_reason ;;
+    hidden: yes
+    description: "Records why the clients sync failed.
+"
+  }
+
+  dimension: metrics__labeled_counter__clients_sync_incoming {
+    sql: ${TABLE}.metrics.labeled_counter.clients_sync_incoming ;;
+    hidden: yes
+    description: "Records incoming clients record counts. `applied` is the number of incoming records that were successfully stored or updated in the local database. `failed_to_apply` is the number of records that were ignored due to errors. `reconciled` is the number of merged records.
+"
+  }
+
+  dimension: metrics__labeled_counter__clients_sync_outgoing {
+    sql: ${TABLE}.metrics.labeled_counter.clients_sync_outgoing ;;
+    hidden: yes
+    description: "Records outgoing clients record counts. `uploaded` is the number of records that were successfully sent to the server. `failed_to_upload` is the number of records that weren't uploaded, and will be retried on the next sync.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -332,57 +353,12 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
-  dimension: metrics__string__newtab_locale {
-    sql: ${TABLE}.metrics.string.newtab_locale ;;
+  dimension: metrics__string__clients_sync_uid {
+    sql: ${TABLE}.metrics.string.clients_sync_uid ;;
     type: string
     group_label: "Metrics String"
-    group_item_label: "Newtab Locale"
-    description: "The application's locale as of when newtab's TelemetryFeed was init. Comes from `Services.local.appLocaleAsBCP47`. Looks like `en-US`.
-"
-  }
-
-  dimension: metrics__string__search_engine_default_engine_id {
-    sql: ${TABLE}.metrics.string.search_engine_default_engine_id ;;
-    type: string
-    group_label: "Metrics String"
-    group_item_label: "Search Engine Default Engine Id"
-    description: "The telemetry id of the search engine.
-For application provided engines, this is either supplied by the
-configuration or from the first part of the associated WebExtension Id.
-For other engines, this is `other-<extensionName>`.
-"
-  }
-
-  dimension: metrics__string__search_engine_private_engine_id {
-    sql: ${TABLE}.metrics.string.search_engine_private_engine_id ;;
-    type: string
-    group_label: "Metrics String"
-    group_item_label: "Search Engine Private Engine Id"
-    description: "The telemetry id of the search engine.
-For application provided engines, this is either supplied by the
-configuration or from the first part of the associated WebExtension Id.
-For other engines, this is `other-<extensionName>`.
-If this string is an empty string (`\"\"`), this means that one or both of
-the preferences `browser.search.separatePrivateDefault` and
-`browser.search.separatePrivateDefault.ui.enabled` are set to false.
-It is possible that the user selects the same private engine as for the
-default engine, and hence both versions of these fields will be filled in.
-"
-  }
-
-  dimension: metrics__uuid__legacy_telemetry_client_id {
-    sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
-    type: string
-    group_label: "Metrics Uuid"
-    group_item_label: "Legacy Telemetry Client Id"
-    description: "The client_id according to Telemetry.
-Might not always have a value due to being too early for it to have
-loaded.
-Value may be the canary client id `c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0`
-in pings near when the data upload pref is disabled (if Telemetry gets
-to go first), or between when a client_id has been removed and when it
-has been regenerated.
-Does not need to be sent in the Glean \"deletion-request\" ping.
+    group_item_label: "Clients Sync Uid"
+    description: "The user's hashed Firefox Account ID.
 "
   }
 
@@ -521,10 +497,30 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  sql_table_name: `mozdata.firefox_desktop.newtab` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.firefox_ios.temp_clients_sync"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.firefox_ios.temp_clients_sync"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_ios_firefoxbeta.temp_clients_sync"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_ios_fennec.temp_clients_sync"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
-view: newtab_table__events {
+view: temp_clients_sync_table__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
@@ -546,7 +542,7 @@ view: newtab_table__events {
   }
 }
 
-view: newtab_table__events__extra {
+view: temp_clients_sync_table__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -558,7 +554,7 @@ view: newtab_table__events__extra {
   }
 }
 
-view: newtab_table__ping_info__experiments {
+view: temp_clients_sync_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

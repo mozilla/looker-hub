@@ -4,56 +4,74 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: fog_validation {
-  dimension: metrics__uuid__fog_validation_legacy_telemetry_client_id {
-    label: "Fog Validation Legacy Telemetry Client Id"
+view: temp_clients_sync {
+  dimension: metrics__labeled_counter__clients_sync_failure_reason {
+    label: "Clients Sync Failure Reason"
     hidden: yes
-    sql: ${TABLE}.metrics.uuid.fog_validation_legacy_telemetry_client_id ;;
-    type: string
-    group_label: "Fog Validation"
-    group_item_label: "Legacy Telemetry Client Id"
+    sql: ${TABLE}.metrics.labeled_counter.clients_sync_failure_reason ;;
+    group_label: "Clients Sync"
+    group_item_label: "Failure Reason"
 
     link: {
-      label: "Glean Dictionary reference for Fog Validation Legacy Telemetry Client Id"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_validation_legacy_telemetry_client_id"
+      label: "Glean Dictionary reference for Clients Sync Failure Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/clients_sync_failure_reason"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The Telemetry client_id. To be sent only in the \"fog-validation\" ping."
+    description: "Records why the clients sync failed.
+"
   }
 
-  dimension: metrics__string__fog_validation_os_version {
-    label: "Fog Validation Os Version"
+  dimension: metrics__labeled_counter__clients_sync_incoming {
+    label: "Clients Sync Incoming"
     hidden: yes
-    sql: ${TABLE}.metrics.string.fog_validation_os_version ;;
-    type: string
-    group_label: "Fog Validation"
-    group_item_label: "Os Version"
+    sql: ${TABLE}.metrics.labeled_counter.clients_sync_incoming ;;
+    group_label: "Clients Sync"
+    group_item_label: "Incoming"
 
     link: {
-      label: "Glean Dictionary reference for Fog Validation Os Version"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_validation_os_version"
+      label: "Glean Dictionary reference for Clients Sync Incoming"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/clients_sync_incoming"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The version of the OS running Firefox, as detected by Gecko. To be sent only in the \"fog-validation\" ping."
+    description: "Records incoming clients record counts. `applied` is the number of incoming records that were successfully stored or updated in the local database. `failed_to_apply` is the number of records that were ignored due to errors. `reconciled` is the number of merged records.
+"
   }
 
-  dimension: metrics__boolean__fog_validation_profile_disk_is_ssd {
-    label: "Fog Validation Profile Disk Is Ssd"
+  dimension: metrics__labeled_counter__clients_sync_outgoing {
+    label: "Clients Sync Outgoing"
     hidden: yes
-    sql: ${TABLE}.metrics.boolean.fog_validation_profile_disk_is_ssd ;;
-    type: yesno
-    group_label: "Fog Validation"
-    group_item_label: "Profile Disk Is Ssd"
+    sql: ${TABLE}.metrics.labeled_counter.clients_sync_outgoing ;;
+    group_label: "Clients Sync"
+    group_item_label: "Outgoing"
 
     link: {
-      label: "Glean Dictionary reference for Fog Validation Profile Disk Is Ssd"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_validation_profile_disk_is_ssd"
+      label: "Glean Dictionary reference for Clients Sync Outgoing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/clients_sync_outgoing"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "True iff the type of the disk the current Firefox profile is stored on is an SSD. (Windows only)."
+    description: "Records outgoing clients record counts. `uploaded` is the number of records that were successfully sent to the server. `failed_to_upload` is the number of records that weren't uploaded, and will be retried on the next sync.
+"
+  }
+
+  dimension: metrics__string__clients_sync_uid {
+    label: "Clients Sync Uid"
+    hidden: no
+    sql: ${TABLE}.metrics.string.clients_sync_uid ;;
+    type: string
+    group_label: "Clients Sync"
+    group_item_label: "Uid"
+
+    link: {
+      label: "Glean Dictionary reference for Clients Sync Uid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/clients_sync_uid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The user's hashed Firefox Account ID.
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -65,7 +83,7 @@ view: fog_validation {
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Label"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_label"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -83,7 +101,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Overflow"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -101,7 +119,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid State"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_state"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -119,7 +137,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Value"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_value"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -568,187 +586,92 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  sql_table_name: `mozdata.firefox_desktop.fog_validation` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.firefox_ios.temp_clients_sync"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.firefox_ios.temp_clients_sync"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_ios_firefoxbeta.temp_clients_sync"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_ios_fennec.temp_clients_sync"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
-view: fog_validation__metrics__labeled_counter__glean_error_invalid_label {
-  label: "Glean Error - Invalid Label"
-
-  dimension: document_id {
-    type: string
-    sql: ${fog_validation.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${fog_validation.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__fog_validation__metrics__labeled_counter__glean_error_invalid_label
-    suggest_dimension: suggest__fog_validation__metrics__labeled_counter__glean_error_invalid_label.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${fog_validation.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: fog_validation__metrics__labeled_counter__glean_error_invalid_overflow {
-  label: "Glean Error - Invalid Overflow"
-
-  dimension: document_id {
-    type: string
-    sql: ${fog_validation.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${fog_validation.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__fog_validation__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__fog_validation__metrics__labeled_counter__glean_error_invalid_overflow.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${fog_validation.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: fog_validation__metrics__labeled_counter__glean_error_invalid_state {
-  label: "Glean Error - Invalid State"
-
-  dimension: document_id {
-    type: string
-    sql: ${fog_validation.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${fog_validation.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__fog_validation__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__fog_validation__metrics__labeled_counter__glean_error_invalid_state.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${fog_validation.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: fog_validation__metrics__labeled_counter__glean_error_invalid_value {
-  label: "Glean Error - Invalid Value"
-
-  dimension: document_id {
-    type: string
-    sql: ${fog_validation.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${fog_validation.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__fog_validation__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__fog_validation__metrics__labeled_counter__glean_error_invalid_value.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${fog_validation.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: suggest__fog_validation__metrics__labeled_counter__glean_error_invalid_label {
+view: suggest__temp_clients_sync__metrics__labeled_counter__clients_sync_failure_reason {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.firefox_desktop.fog_validation as t,
+from mozdata.firefox_ios.temp_clients_sync as t,
+unnest(metrics.labeled_counter.clients_sync_failure_reason) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__temp_clients_sync__metrics__labeled_counter__clients_sync_incoming {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.temp_clients_sync as t,
+unnest(metrics.labeled_counter.clients_sync_incoming) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__temp_clients_sync__metrics__labeled_counter__clients_sync_outgoing {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.temp_clients_sync as t,
+unnest(metrics.labeled_counter.clients_sync_outgoing) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_label {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.temp_clients_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -762,12 +685,12 @@ order by n desc ;;
   }
 }
 
-view: suggest__fog_validation__metrics__labeled_counter__glean_error_invalid_overflow {
+view: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_overflow {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.firefox_desktop.fog_validation as t,
+from mozdata.firefox_ios.temp_clients_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -781,12 +704,12 @@ order by n desc ;;
   }
 }
 
-view: suggest__fog_validation__metrics__labeled_counter__glean_error_invalid_state {
+view: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_state {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.firefox_desktop.fog_validation as t,
+from mozdata.firefox_ios.temp_clients_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -800,12 +723,12 @@ order by n desc ;;
   }
 }
 
-view: suggest__fog_validation__metrics__labeled_counter__glean_error_invalid_value {
+view: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_value {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.firefox_desktop.fog_validation as t,
+from mozdata.firefox_ios.temp_clients_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -816,5 +739,306 @@ order by n desc ;;
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
+  }
+}
+
+view: temp_clients_sync__metrics__labeled_counter__clients_sync_failure_reason {
+  label: "Clients Sync - Failure Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${temp_clients_sync.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${temp_clients_sync.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__temp_clients_sync__metrics__labeled_counter__clients_sync_failure_reason
+    suggest_dimension: suggest__temp_clients_sync__metrics__labeled_counter__clients_sync_failure_reason.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${temp_clients_sync.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: temp_clients_sync__metrics__labeled_counter__clients_sync_incoming {
+  label: "Clients Sync - Incoming"
+
+  dimension: document_id {
+    type: string
+    sql: ${temp_clients_sync.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${temp_clients_sync.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__temp_clients_sync__metrics__labeled_counter__clients_sync_incoming
+    suggest_dimension: suggest__temp_clients_sync__metrics__labeled_counter__clients_sync_incoming.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${temp_clients_sync.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: temp_clients_sync__metrics__labeled_counter__clients_sync_outgoing {
+  label: "Clients Sync - Outgoing"
+
+  dimension: document_id {
+    type: string
+    sql: ${temp_clients_sync.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${temp_clients_sync.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__temp_clients_sync__metrics__labeled_counter__clients_sync_outgoing
+    suggest_dimension: suggest__temp_clients_sync__metrics__labeled_counter__clients_sync_outgoing.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${temp_clients_sync.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: temp_clients_sync__metrics__labeled_counter__glean_error_invalid_label {
+  label: "Glean Error - Invalid Label"
+
+  dimension: document_id {
+    type: string
+    sql: ${temp_clients_sync.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${temp_clients_sync.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_label
+    suggest_dimension: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_label.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${temp_clients_sync.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: temp_clients_sync__metrics__labeled_counter__glean_error_invalid_overflow {
+  label: "Glean Error - Invalid Overflow"
+
+  dimension: document_id {
+    type: string
+    sql: ${temp_clients_sync.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${temp_clients_sync.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_overflow
+    suggest_dimension: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_overflow.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${temp_clients_sync.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: temp_clients_sync__metrics__labeled_counter__glean_error_invalid_state {
+  label: "Glean Error - Invalid State"
+
+  dimension: document_id {
+    type: string
+    sql: ${temp_clients_sync.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${temp_clients_sync.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_state
+    suggest_dimension: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_state.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${temp_clients_sync.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: temp_clients_sync__metrics__labeled_counter__glean_error_invalid_value {
+  label: "Glean Error - Invalid Value"
+
+  dimension: document_id {
+    type: string
+    sql: ${temp_clients_sync.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${temp_clients_sync.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_value
+    suggest_dimension: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_value.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${temp_clients_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
