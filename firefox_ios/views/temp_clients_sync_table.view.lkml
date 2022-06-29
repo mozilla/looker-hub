@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: baseline_table {
+view: temp_clients_sync_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -300,12 +300,24 @@ view: baseline_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__datetime__glean_validation_first_run_hour {
-    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
-    type: string
-    group_label: "Metrics Datetime"
-    group_item_label: "Glean Validation First Run Hour"
-    description: "The hour of the first run of the application.
+  dimension: metrics__labeled_counter__clients_sync_failure_reason {
+    sql: ${TABLE}.metrics.labeled_counter.clients_sync_failure_reason ;;
+    hidden: yes
+    description: "Records why the clients sync failed.
+"
+  }
+
+  dimension: metrics__labeled_counter__clients_sync_incoming {
+    sql: ${TABLE}.metrics.labeled_counter.clients_sync_incoming ;;
+    hidden: yes
+    description: "Records incoming clients record counts. `applied` is the number of incoming records that were successfully stored or updated in the local database. `failed_to_apply` is the number of records that were ignored due to errors. `reconciled` is the number of merged records.
+"
+  }
+
+  dimension: metrics__labeled_counter__clients_sync_outgoing {
+    sql: ${TABLE}.metrics.labeled_counter.clients_sync_outgoing ;;
+    hidden: yes
+    description: "Records outgoing clients record counts. `uploaded` is the number of records that were successfully sent to the server. `failed_to_upload` is the number of records that weren't uploaded, and will be retried on the next sync.
 "
   }
 
@@ -341,44 +353,13 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
-  dimension: metrics__labeled_counter__glean_validation_pings_submitted {
-    sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
-    hidden: yes
-    description: "A count of the pings submitted, by ping type.
-
-This metric appears in both the metrics and baseline pings.
-
-- On the metrics ping, the counts include the number of pings sent since
-  the last metrics ping (including the last metrics ping)
-- On the baseline ping, the counts include the number of pings send since
-  the last baseline ping (including the last baseline ping)
-"
-  }
-
-  dimension: metrics__string__glean_baseline_locale {
-    sql: ${TABLE}.metrics.string.glean_baseline_locale ;;
+  dimension: metrics__string__clients_sync_uid {
+    sql: ${TABLE}.metrics.string.clients_sync_uid ;;
     type: string
     group_label: "Metrics String"
-    group_item_label: "Glean Baseline Locale"
-    description: "The locale of the application during initialization (e.g. \"es-ES\").
-If the locale can't be determined on the system, the value is
-[\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers),
-to indicate \"undetermined\".
+    group_item_label: "Clients Sync Uid"
+    description: "The user's hashed Firefox Account ID.
 "
-  }
-
-  dimension: metrics__timespan__glean_baseline_duration__time_unit {
-    sql: ${TABLE}.metrics.timespan.glean_baseline_duration.time_unit ;;
-    type: string
-    group_label: "Metrics Timespan Glean Baseline Duration"
-    group_item_label: "Time Unit"
-  }
-
-  dimension: metrics__timespan__glean_baseline_duration__value {
-    sql: ${TABLE}.metrics.timespan.glean_baseline_duration.value ;;
-    type: number
-    group_label: "Metrics Timespan Glean Baseline Duration"
-    group_item_label: "Value"
   }
 
   dimension: normalized_app_name {
@@ -516,10 +497,30 @@ to indicate \"undetermined\".
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  sql_table_name: `mozdata.mozilla_vpn_android.baseline` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.firefox_ios.temp_clients_sync"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.firefox_ios.temp_clients_sync"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_ios_firefoxbeta.temp_clients_sync"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_ios_fennec.temp_clients_sync"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
-view: baseline_table__events {
+view: temp_clients_sync_table__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
@@ -541,7 +542,7 @@ view: baseline_table__events {
   }
 }
 
-view: baseline_table__events__extra {
+view: temp_clients_sync_table__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -553,7 +554,7 @@ view: baseline_table__events__extra {
   }
 }
 
-view: baseline_table__ping_info__experiments {
+view: temp_clients_sync_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

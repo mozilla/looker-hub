@@ -41,6 +41,63 @@ view: metrics {
 "
   }
 
+  dimension: metrics__counter__addresses_deleted {
+    label: "Addresses Deleted"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.addresses_deleted ;;
+    type: number
+    group_label: "Addresses"
+    group_item_label: "Deleted"
+
+    link: {
+      label: "Glean Dictionary reference for Addresses Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of the number of addresses that have been deleted by
+the user.
+"
+  }
+
+  dimension: metrics__counter__addresses_saved {
+    label: "Addresses Saved"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.addresses_saved ;;
+    type: number
+    group_label: "Addresses"
+    group_item_label: "Saved"
+
+    link: {
+      label: "Glean Dictionary reference for Addresses Saved"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_saved"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of the number of addresses that have been saved
+manually by the user.
+"
+  }
+
+  dimension: metrics__counter__addresses_updated {
+    label: "Addresses Updated"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.addresses_updated ;;
+    type: number
+    group_label: "Addresses"
+    group_item_label: "Updated"
+
+    link: {
+      label: "Glean Dictionary reference for Addresses Updated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_updated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of the number of addresses that have been updated
+manually by the user.
+"
+  }
+
   dimension: metrics__boolean__android_autofill_enabled {
     label: "Android Autofill Enabled"
     hidden: no
@@ -6623,6 +6680,81 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
 
   measure: ping_count {
     type: count
+  }
+
+  measure: addresses_deleted {
+    type: sum
+    sql: ${metrics__counter__addresses_deleted} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Addresses Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: addresses_deleted_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__addresses_deleted: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Addresses Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: addresses_saved {
+    type: sum
+    sql: ${metrics__counter__addresses_saved} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Addresses Saved"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_saved"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: addresses_saved_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__addresses_saved: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Addresses Saved"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_saved"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: addresses_updated {
+    type: sum
+    sql: ${metrics__counter__addresses_updated} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Addresses Updated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_updated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: addresses_updated_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__addresses_updated: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Addresses Updated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_updated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   measure: credit_cards_autofill_card {

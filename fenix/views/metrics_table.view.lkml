@@ -728,6 +728,36 @@ Jump Back In section is visible on the homepage.
 "
   }
 
+  dimension: metrics__counter__addresses_deleted {
+    sql: ${TABLE}.metrics.counter.addresses_deleted ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Addresses Deleted"
+    description: "A counter of the number of addresses that have been deleted by
+the user.
+"
+  }
+
+  dimension: metrics__counter__addresses_saved {
+    sql: ${TABLE}.metrics.counter.addresses_saved ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Addresses Saved"
+    description: "A counter of the number of addresses that have been saved
+manually by the user.
+"
+  }
+
+  dimension: metrics__counter__addresses_updated {
+    sql: ${TABLE}.metrics.counter.addresses_updated ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Addresses Updated"
+    description: "A counter of the number of addresses that have been updated
+manually by the user.
+"
+  }
+
   dimension: metrics__counter__credit_cards_autofill_card {
     sql: ${TABLE}.metrics.counter.credit_cards_autofill_card ;;
     type: number

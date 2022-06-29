@@ -4,7 +4,76 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: deletion_request {
+view: temp_rust_tabs_sync {
+  dimension: metrics__labeled_counter__rust_tabs_sync_failure_reason {
+    label: "Rust Tabs Sync Failure Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.rust_tabs_sync_failure_reason ;;
+    group_label: "Rust Tabs Sync"
+    group_item_label: "Failure Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Rust Tabs Sync Failure Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/rust_tabs_sync_failure_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records why the tabs sync failed.
+"
+  }
+
+  dimension: metrics__labeled_counter__rust_tabs_sync_incoming {
+    label: "Rust Tabs Sync Incoming"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.rust_tabs_sync_incoming ;;
+    group_label: "Rust Tabs Sync"
+    group_item_label: "Incoming"
+
+    link: {
+      label: "Glean Dictionary reference for Rust Tabs Sync Incoming"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/rust_tabs_sync_incoming"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records incoming tabs record counts. `applied` is the number of incoming records that were successfully stored or updated in the local database. `failed_to_apply` is the number of records that were ignored due to errors. `reconciled` is the number of merged records.
+"
+  }
+
+  dimension: metrics__labeled_counter__rust_tabs_sync_outgoing {
+    label: "Rust Tabs Sync Outgoing"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.rust_tabs_sync_outgoing ;;
+    group_label: "Rust Tabs Sync"
+    group_item_label: "Outgoing"
+
+    link: {
+      label: "Glean Dictionary reference for Rust Tabs Sync Outgoing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/rust_tabs_sync_outgoing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records outgoing tabs record counts. `uploaded` is the number of records that were successfully sent to the server. `failed_to_upload` is the number of records that weren't uploaded, and will be retried on the next sync.
+"
+  }
+
+  dimension: metrics__string__rust_tabs_sync_uid {
+    label: "Rust Tabs Sync Uid"
+    hidden: no
+    sql: ${TABLE}.metrics.string.rust_tabs_sync_uid ;;
+    type: string
+    group_label: "Rust Tabs Sync"
+    group_item_label: "Uid"
+
+    link: {
+      label: "Glean Dictionary reference for Rust Tabs Sync Uid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/rust_tabs_sync_uid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The user's hashed Firefox Account ID.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes
@@ -14,7 +83,7 @@ view: deletion_request {
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Label"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn_android/metrics/glean_error_invalid_label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_label"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -32,7 +101,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Overflow"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn_android/metrics/glean_error_invalid_overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -50,7 +119,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid State"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn_android/metrics/glean_error_invalid_state"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -68,7 +137,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Value"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn_android/metrics/glean_error_invalid_value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_error_invalid_value"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -517,187 +586,35 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  sql_table_name: `mozdata.mozilla_vpn_android.deletion_request` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.firefox_ios.temp_rust_tabs_sync"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.firefox_ios.temp_rust_tabs_sync"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_ios_firefoxbeta.temp_rust_tabs_sync"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_ios_fennec.temp_rust_tabs_sync"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
-view: deletion_request__metrics__labeled_counter__glean_error_invalid_label {
-  label: "Glean Error - Invalid Label"
-
-  dimension: document_id {
-    type: string
-    sql: ${deletion_request.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${deletion_request.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_label
-    suggest_dimension: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_label.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${deletion_request.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: deletion_request__metrics__labeled_counter__glean_error_invalid_overflow {
-  label: "Glean Error - Invalid Overflow"
-
-  dimension: document_id {
-    type: string
-    sql: ${deletion_request.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${deletion_request.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_overflow.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${deletion_request.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: deletion_request__metrics__labeled_counter__glean_error_invalid_state {
-  label: "Glean Error - Invalid State"
-
-  dimension: document_id {
-    type: string
-    sql: ${deletion_request.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${deletion_request.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_state.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${deletion_request.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: deletion_request__metrics__labeled_counter__glean_error_invalid_value {
-  label: "Glean Error - Invalid Value"
-
-  dimension: document_id {
-    type: string
-    sql: ${deletion_request.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${deletion_request.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_value.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${deletion_request.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_label {
+view: suggest__temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.mozilla_vpn_android.deletion_request as t,
+from mozdata.firefox_ios.temp_rust_tabs_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -711,12 +628,12 @@ order by n desc ;;
   }
 }
 
-view: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_overflow {
+view: suggest__temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_overflow {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.mozilla_vpn_android.deletion_request as t,
+from mozdata.firefox_ios.temp_rust_tabs_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -730,12 +647,12 @@ order by n desc ;;
   }
 }
 
-view: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_state {
+view: suggest__temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_state {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.mozilla_vpn_android.deletion_request as t,
+from mozdata.firefox_ios.temp_rust_tabs_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -749,12 +666,12 @@ order by n desc ;;
   }
 }
 
-view: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_value {
+view: suggest__temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_value {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.mozilla_vpn_android.deletion_request as t,
+from mozdata.firefox_ios.temp_rust_tabs_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -765,5 +682,363 @@ order by n desc ;;
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_failure_reason {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.temp_rust_tabs_sync as t,
+unnest(metrics.labeled_counter.rust_tabs_sync_failure_reason) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_incoming {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.temp_rust_tabs_sync as t,
+unnest(metrics.labeled_counter.rust_tabs_sync_incoming) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_outgoing {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.temp_rust_tabs_sync as t,
+unnest(metrics.labeled_counter.rust_tabs_sync_outgoing) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_label {
+  label: "Glean Error - Invalid Label"
+
+  dimension: document_id {
+    type: string
+    sql: ${temp_rust_tabs_sync.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${temp_rust_tabs_sync.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_label
+    suggest_dimension: suggest__temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_label.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${temp_rust_tabs_sync.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_overflow {
+  label: "Glean Error - Invalid Overflow"
+
+  dimension: document_id {
+    type: string
+    sql: ${temp_rust_tabs_sync.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${temp_rust_tabs_sync.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_overflow
+    suggest_dimension: suggest__temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_overflow.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${temp_rust_tabs_sync.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_state {
+  label: "Glean Error - Invalid State"
+
+  dimension: document_id {
+    type: string
+    sql: ${temp_rust_tabs_sync.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${temp_rust_tabs_sync.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_state
+    suggest_dimension: suggest__temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_state.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${temp_rust_tabs_sync.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_value {
+  label: "Glean Error - Invalid Value"
+
+  dimension: document_id {
+    type: string
+    sql: ${temp_rust_tabs_sync.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${temp_rust_tabs_sync.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_value
+    suggest_dimension: suggest__temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_value.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${temp_rust_tabs_sync.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_failure_reason {
+  label: "Rust Tabs Sync - Failure Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${temp_rust_tabs_sync.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${temp_rust_tabs_sync.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_failure_reason
+    suggest_dimension: suggest__temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_failure_reason.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${temp_rust_tabs_sync.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_incoming {
+  label: "Rust Tabs Sync - Incoming"
+
+  dimension: document_id {
+    type: string
+    sql: ${temp_rust_tabs_sync.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${temp_rust_tabs_sync.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_incoming
+    suggest_dimension: suggest__temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_incoming.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${temp_rust_tabs_sync.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_outgoing {
+  label: "Rust Tabs Sync - Outgoing"
+
+  dimension: document_id {
+    type: string
+    sql: ${temp_rust_tabs_sync.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${temp_rust_tabs_sync.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_outgoing
+    suggest_dimension: suggest__temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_outgoing.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${temp_rust_tabs_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }
