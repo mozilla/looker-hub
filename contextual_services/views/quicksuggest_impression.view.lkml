@@ -36,6 +36,11 @@ view: quicksuggest_impression {
     hidden: yes
   }
 
+  dimension: improve_suggest_experience_checked {
+    sql: ${TABLE}.improve_suggest_experience_checked ;;
+    type: yesno
+  }
+
   dimension: is_clicked {
     sql: ${TABLE}.is_clicked ;;
     type: yesno

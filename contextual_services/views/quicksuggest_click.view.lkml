@@ -36,6 +36,11 @@ view: quicksuggest_click {
     hidden: yes
   }
 
+  dimension: improve_suggest_experience_checked {
+    sql: ${TABLE}.improve_suggest_experience_checked ;;
+    type: yesno
+  }
+
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
