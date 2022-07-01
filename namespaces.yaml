@@ -4158,14 +4158,14 @@ operational_monitoring:
         explore: telemetry_alerts_prototype_histogram
         group_by_dimension: null
         probes:
+        - gc_ms
         - memory_total
         - gc_ms_content
-        - perf_first_contentful_paint_ms
         - js_pageload_execution_ms
-        - gc_ms
-        - content_process_count
-        - gc_budget_overrun
+        - perf_first_contentful_paint_ms
         - checkerboard_severity
+        - gc_budget_overrun
+        - content_process_count
         table: moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype_histogram
         xaxis: build_id
       - branches: *id075
@@ -4173,17 +4173,17 @@ operational_monitoring:
         explore: telemetry_alerts_prototype_scalar
         group_by_dimension: null
         probes:
-        - gmplugin_crashes
-        - content_shutdown_crashes
-        - startup_crashes
-        - content_crashes
-        - main_crashes
-        - subsession_length
-        - shutdown_hangs
-        - gpu_crashes
         - plugin_crashes
         - oom_crashes
+        - gpu_crashes
+        - main_crashes
+        - gmplugin_crashes
+        - shutdown_hangs
+        - subsession_length
         - active_ticks
+        - content_crashes
+        - content_shutdown_crashes
+        - startup_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype_scalar
         xaxis: build_id
       - explore: telemetry_alerts_prototype_alerts
@@ -5550,14 +5550,14 @@ operational_monitoring:
           - Mac
           - Linux
       probes:
+      - gc_ms
       - memory_total
       - gc_ms_content
-      - perf_first_contentful_paint_ms
       - js_pageload_execution_ms
-      - gc_ms
-      - content_process_count
-      - gc_budget_overrun
+      - perf_first_contentful_paint_ms
       - checkerboard_severity
+      - gc_budget_overrun
+      - content_process_count
       type: operational_monitoring_explore
       views:
         base_view: telemetry_alerts_prototype_histogram
@@ -5566,17 +5566,17 @@ operational_monitoring:
       branches: *id075
       dimensions: *id076
       probes:
-      - gmplugin_crashes
-      - content_shutdown_crashes
-      - startup_crashes
-      - content_crashes
-      - main_crashes
-      - subsession_length
-      - shutdown_hangs
-      - gpu_crashes
       - plugin_crashes
       - oom_crashes
+      - gpu_crashes
+      - main_crashes
+      - gmplugin_crashes
+      - shutdown_hangs
+      - subsession_length
       - active_ticks
+      - content_crashes
+      - content_shutdown_crashes
+      - startup_crashes
       type: operational_monitoring_explore
       views:
         base_view: telemetry_alerts_prototype_scalar

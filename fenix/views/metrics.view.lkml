@@ -3631,7 +3631,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__counter__logins_store_migration_num_failed {
     label: "Logins Store Migration Num Failed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.logins_store_migration_num_failed ;;
     type: number
     group_label: "Logins Store"
@@ -3649,7 +3649,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__counter__logins_store_migration_num_processed {
     label: "Logins Store Migration Num Processed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.logins_store_migration_num_processed ;;
     type: number
     group_label: "Logins Store"
@@ -3667,7 +3667,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__counter__logins_store_migration_num_succeeded {
     label: "Logins Store Migration Num Succeeded"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.logins_store_migration_num_succeeded ;;
     type: number
     group_label: "Logins Store"
@@ -3685,7 +3685,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timespan__logins_store_migration_total_duration__value {
     label: "Logins Store Migration Total Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.logins_store_migration_total_duration.value ;;
     type: number
     group_label: "Logins Store"
