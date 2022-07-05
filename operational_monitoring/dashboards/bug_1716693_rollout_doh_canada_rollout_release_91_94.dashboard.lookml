@@ -39,6 +39,7 @@
     listen:
       Percentile: bug_1716693_rollout_doh_canada_rollout_release_91_94_histogram.percentile_conf
     active: "#3FE1B0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total
     explore: bug_1716693_rollout_doh_canada_rollout_release_91_94_histogram
@@ -68,6 +69,7 @@
     listen:
       Percentile: bug_1716693_rollout_doh_canada_rollout_release_91_94_histogram.percentile_conf
     active: "#3FE1B0"
+    defaults_version: 0
   - title: Content Crashes
     name: Content Crashes
     explore: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar
@@ -97,6 +99,7 @@
     listen:
       Percentile: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.percentile_conf
     active: "#3FE1B0"
+    defaults_version: 0
   - title: Startup Crashes
     name: Startup Crashes
     explore: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar
@@ -126,6 +129,7 @@
     listen:
       Percentile: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.percentile_conf
     active: "#3FE1B0"
+    defaults_version: 0
   - title: Shutdown Hangs
     name: Shutdown Hangs
     explore: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar
@@ -155,6 +159,7 @@
     listen:
       Percentile: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.percentile_conf
     active: "#3FE1B0"
+    defaults_version: 0
   - title: Main Crashes
     name: Main Crashes
     explore: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar
@@ -184,6 +189,7 @@
     listen:
       Percentile: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.percentile_conf
     active: "#3FE1B0"
+    defaults_version: 0
   - title: Oom Crashes
     name: Oom Crashes
     explore: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar
@@ -213,6 +219,7 @@
     listen:
       Percentile: bug_1716693_rollout_doh_canada_rollout_release_91_94_scalar.percentile_conf
     active: "#3FE1B0"
+    defaults_version: 0
   
   filters:
   - name: Percentile

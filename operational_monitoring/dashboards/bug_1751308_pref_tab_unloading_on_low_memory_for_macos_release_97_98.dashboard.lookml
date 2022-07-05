@@ -43,6 +43,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Js Pageload Delazification Ms
     name: Js Pageload Delazification Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -76,6 +77,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Gc Mark Rate 2
     name: Gc Mark Rate 2
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -109,6 +111,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Memory Unique Content Startup
     name: Memory Unique Content Startup
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -142,6 +145,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Js Pageload Parse Ms
     name: Js Pageload Parse Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -175,6 +179,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Perf First Contentful Paint Ms
     name: Perf First Contentful Paint Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -208,6 +213,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Checkerboard Severity
     name: Checkerboard Severity
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -241,6 +247,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Opened Tab Count
     name: Opened Tab Count
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -274,6 +281,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Js Pageload Xdr Encoding Ms
     name: Js Pageload Xdr Encoding Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -307,6 +315,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Gc Budget Overrun
     name: Gc Budget Overrun
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -340,6 +349,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Content Process Max
     name: Content Process Max
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -373,6 +383,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Fx New Window Ms
     name: Fx New Window Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -406,6 +417,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Child Process Launch Ms
     name: Child Process Launch Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -439,6 +451,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Js Pageload Execution Ms
     name: Js Pageload Execution Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -472,6 +485,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Gc Max Pause 2
     name: Gc Max Pause 2
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -505,6 +519,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Perf Page Load Time Ms
     name: Perf Page Load Time Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -538,6 +553,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Gc Ms Content
     name: Gc Ms Content
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -571,6 +587,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Gc Slice During Idle Content
     name: Gc Slice During Idle Content
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -604,6 +621,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Gc Non Incremental
     name: Gc Non Incremental
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -637,6 +655,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Fx Tab Switch Composite E10S Ms
     name: Fx Tab Switch Composite E10S Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -670,6 +689,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Gc Ms
     name: Gc Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -703,6 +723,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Gc Slice During Idle
     name: Gc Slice During Idle
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -736,6 +757,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Gc Max Pause 2 Content
     name: Gc Max Pause 2 Content
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -769,6 +791,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Content Process Count
     name: Content Process Count
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -802,6 +825,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Tab Unload To Reload
     name: Tab Unload To Reload
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -835,6 +859,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Js Pageload Baseline Compile Ms
     name: Js Pageload Baseline Compile Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -868,6 +893,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Content Frame Time Vsync
     name: Content Frame Time Vsync
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -901,6 +927,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Js Pageload Protect Ms
     name: Js Pageload Protect Ms
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -934,6 +961,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Gc Reason 2
     name: Gc Reason 2
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -967,6 +995,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -1000,6 +1029,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Cycle Collector Max Pause
     name: Cycle Collector Max Pause
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_histogram
@@ -1033,6 +1063,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Concurrent Opened Tab Count
     name: Concurrent Opened Tab Count
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
@@ -1066,6 +1097,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Gmplugin Crashes
     name: Gmplugin Crashes
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
@@ -1099,6 +1131,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Main Crashes
     name: Main Crashes
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
@@ -1132,6 +1165,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Memory Pressure Count
     name: Memory Pressure Count
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
@@ -1165,6 +1199,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Tab Unload Count
     name: Tab Unload Count
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
@@ -1198,6 +1233,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Concurrent Pinned Tab Count
     name: Concurrent Pinned Tab Count
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
@@ -1231,6 +1267,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Subsession Length
     name: Subsession Length
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
@@ -1264,6 +1301,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Plugin Crashes
     name: Plugin Crashes
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
@@ -1297,6 +1335,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Content Shutdown Crashes
     name: Content Shutdown Crashes
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
@@ -1330,6 +1369,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Tab Pinned Event Count
     name: Tab Pinned Event Count
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
@@ -1363,6 +1403,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Startup Crashes
     name: Startup Crashes
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
@@ -1396,6 +1437,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Shutdown Hangs
     name: Shutdown Hangs
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
@@ -1429,6 +1471,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Content Crashes
     name: Content Crashes
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
@@ -1462,6 +1505,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Tab Reload Count
     name: Tab Reload Count
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
@@ -1495,6 +1539,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Gpu Crashes
     name: Gpu Crashes
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
@@ -1528,6 +1573,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Oom Crashes
     name: Oom Crashes
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
@@ -1561,6 +1607,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   - title: Tab Open Event Count
     name: Tab Open Event Count
     explore: bug_1751308_pref_tab_unloading_on_low_memory_for_macos_release_97_98_scalar
@@ -1594,6 +1641,7 @@
     memory-pressure-critical: "#9059FF"
     tab-unloading-and-memory-pressure-critical: "#B933E1"
     tab-unloading-and-memory-pressure-disabled: "#FF2A8A"
+    defaults_version: 0
   
   filters:
   - name: Percentile

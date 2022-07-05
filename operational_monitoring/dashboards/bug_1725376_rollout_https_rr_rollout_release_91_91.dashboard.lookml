@@ -39,6 +39,7 @@
     listen:
       Percentile: bug_1725376_rollout_https_rr_rollout_release_91_91_histogram.percentile_conf
     active: "#3FE1B0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total
     explore: bug_1725376_rollout_https_rr_rollout_release_91_91_histogram
@@ -68,6 +69,7 @@
     listen:
       Percentile: bug_1725376_rollout_https_rr_rollout_release_91_91_histogram.percentile_conf
     active: "#3FE1B0"
+    defaults_version: 0
   - title: Content Crashes
     name: Content Crashes
     explore: bug_1725376_rollout_https_rr_rollout_release_91_91_scalar
@@ -97,6 +99,7 @@
     listen:
       Percentile: bug_1725376_rollout_https_rr_rollout_release_91_91_scalar.percentile_conf
     active: "#3FE1B0"
+    defaults_version: 0
   - title: Startup Crashes
     name: Startup Crashes
     explore: bug_1725376_rollout_https_rr_rollout_release_91_91_scalar
@@ -126,6 +129,7 @@
     listen:
       Percentile: bug_1725376_rollout_https_rr_rollout_release_91_91_scalar.percentile_conf
     active: "#3FE1B0"
+    defaults_version: 0
   - title: Shutdown Hangs
     name: Shutdown Hangs
     explore: bug_1725376_rollout_https_rr_rollout_release_91_91_scalar
@@ -155,6 +159,7 @@
     listen:
       Percentile: bug_1725376_rollout_https_rr_rollout_release_91_91_scalar.percentile_conf
     active: "#3FE1B0"
+    defaults_version: 0
   - title: Main Crashes
     name: Main Crashes
     explore: bug_1725376_rollout_https_rr_rollout_release_91_91_scalar
@@ -184,6 +189,7 @@
     listen:
       Percentile: bug_1725376_rollout_https_rr_rollout_release_91_91_scalar.percentile_conf
     active: "#3FE1B0"
+    defaults_version: 0
   - title: Oom Crashes
     name: Oom Crashes
     explore: bug_1725376_rollout_https_rr_rollout_release_91_91_scalar
@@ -213,6 +219,7 @@
     listen:
       Percentile: bug_1725376_rollout_https_rr_rollout_release_91_91_scalar.percentile_conf
     active: "#3FE1B0"
+    defaults_version: 0
   
   filters:
   - name: Percentile

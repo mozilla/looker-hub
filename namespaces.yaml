@@ -4222,13 +4222,13 @@ operational_monitoring:
         explore: telemetry_alerts_prototype_histogram
         group_by_dimension: null
         probes:
-        - gc_ms
-        - gc_ms_content
-        - content_process_count
-        - js_pageload_execution_ms
+        - memory_total
         - gc_budget_overrun
         - perf_first_contentful_paint_ms
-        - memory_total
+        - js_pageload_execution_ms
+        - content_process_count
+        - gc_ms_content
+        - gc_ms
         - checkerboard_severity
         table: moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype_histogram
         xaxis: build_id
@@ -4238,16 +4238,16 @@ operational_monitoring:
         group_by_dimension: null
         probes:
         - main_crashes
-        - plugin_crashes
-        - startup_crashes
-        - gpu_crashes
-        - subsession_length
-        - gmplugin_crashes
         - shutdown_hangs
-        - active_ticks
-        - content_shutdown_crashes
         - oom_crashes
         - content_crashes
+        - active_ticks
+        - plugin_crashes
+        - gpu_crashes
+        - startup_crashes
+        - content_shutdown_crashes
+        - subsession_length
+        - gmplugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype_scalar
         xaxis: build_id
       - explore: telemetry_alerts_prototype_alerts
@@ -5670,13 +5670,13 @@ operational_monitoring:
           - Mac
           - Linux
       probes:
-      - gc_ms
-      - gc_ms_content
-      - content_process_count
-      - js_pageload_execution_ms
+      - memory_total
       - gc_budget_overrun
       - perf_first_contentful_paint_ms
-      - memory_total
+      - js_pageload_execution_ms
+      - content_process_count
+      - gc_ms_content
+      - gc_ms
       - checkerboard_severity
       type: operational_monitoring_explore
       views:
@@ -5687,16 +5687,16 @@ operational_monitoring:
       dimensions: *id080
       probes:
       - main_crashes
-      - plugin_crashes
-      - startup_crashes
-      - gpu_crashes
-      - subsession_length
-      - gmplugin_crashes
       - shutdown_hangs
-      - active_ticks
-      - content_shutdown_crashes
       - oom_crashes
       - content_crashes
+      - active_ticks
+      - plugin_crashes
+      - gpu_crashes
+      - startup_crashes
+      - content_shutdown_crashes
+      - subsession_length
+      - gmplugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: telemetry_alerts_prototype_scalar

@@ -42,6 +42,7 @@
       Os: tcp_rollout_phase_2_histogram.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Search With Ads
     name: Search With Ads
     explore: tcp_rollout_phase_2_scalar
@@ -74,6 +75,7 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Plugin Crashes
     name: Plugin Crashes
     explore: tcp_rollout_phase_2_scalar
@@ -106,6 +108,7 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Search With Ads Organic
     name: Search With Ads Organic
     explore: tcp_rollout_phase_2_scalar
@@ -138,6 +141,7 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Shutdown Hangs
     name: Shutdown Hangs
     explore: tcp_rollout_phase_2_scalar
@@ -170,6 +174,7 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Organic Search Count
     name: Organic Search Count
     explore: tcp_rollout_phase_2_scalar
@@ -202,6 +207,7 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Content Shutdown Crashes
     name: Content Shutdown Crashes
     explore: tcp_rollout_phase_2_scalar
@@ -234,6 +240,7 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Startup Crashes
     name: Startup Crashes
     explore: tcp_rollout_phase_2_scalar
@@ -266,6 +273,7 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Ad Click
     name: Ad Click
     explore: tcp_rollout_phase_2_scalar
@@ -298,6 +306,7 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Ad Click Organic
     name: Ad Click Organic
     explore: tcp_rollout_phase_2_scalar
@@ -330,6 +339,7 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Oom Crashes
     name: Oom Crashes
     explore: tcp_rollout_phase_2_scalar
@@ -362,6 +372,7 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Gpu Crashes
     name: Gpu Crashes
     explore: tcp_rollout_phase_2_scalar
@@ -394,6 +405,7 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Content Crashes
     name: Content Crashes
     explore: tcp_rollout_phase_2_scalar
@@ -426,6 +438,7 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Tagged Follow On Search Count
     name: Tagged Follow On Search Count
     explore: tcp_rollout_phase_2_scalar
@@ -458,6 +471,7 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Gmplugin Crashes
     name: Gmplugin Crashes
     explore: tcp_rollout_phase_2_scalar
@@ -490,6 +504,7 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Sap
     name: Sap
     explore: tcp_rollout_phase_2_scalar
@@ -522,6 +537,7 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Tagged Search Count
     name: Tagged Search Count
     explore: tcp_rollout_phase_2_scalar
@@ -554,6 +570,7 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Main Crashes
     name: Main Crashes
     explore: tcp_rollout_phase_2_scalar
@@ -586,6 +603,7 @@
       Os: tcp_rollout_phase_2_scalar.os
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   
   filters:
   - name: Percentile
