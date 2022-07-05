@@ -30,7 +30,7 @@
     col: 0
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_histogram.submission_date
+    field_x: telemetry_alerts_prototype_histogram.build_id
     field_y: telemetry_alerts_prototype_histogram.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_histogram.low
@@ -61,7 +61,7 @@
     col: 12
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_histogram.submission_date
+    field_x: telemetry_alerts_prototype_histogram.build_id
     field_y: telemetry_alerts_prototype_histogram.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_histogram.low
@@ -92,7 +92,7 @@
     col: 0
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_histogram.submission_date
+    field_x: telemetry_alerts_prototype_histogram.build_id
     field_y: telemetry_alerts_prototype_histogram.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_histogram.low
@@ -123,7 +123,7 @@
     col: 12
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_histogram.submission_date
+    field_x: telemetry_alerts_prototype_histogram.build_id
     field_y: telemetry_alerts_prototype_histogram.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_histogram.low
@@ -154,7 +154,7 @@
     col: 0
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_histogram.submission_date
+    field_x: telemetry_alerts_prototype_histogram.build_id
     field_y: telemetry_alerts_prototype_histogram.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_histogram.low
@@ -185,7 +185,7 @@
     col: 12
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_histogram.submission_date
+    field_x: telemetry_alerts_prototype_histogram.build_id
     field_y: telemetry_alerts_prototype_histogram.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_histogram.low
@@ -216,7 +216,7 @@
     col: 0
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_histogram.submission_date
+    field_x: telemetry_alerts_prototype_histogram.build_id
     field_y: telemetry_alerts_prototype_histogram.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_histogram.low
@@ -247,7 +247,7 @@
     col: 12
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_histogram.submission_date
+    field_x: telemetry_alerts_prototype_histogram.build_id
     field_y: telemetry_alerts_prototype_histogram.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_histogram.low
@@ -278,7 +278,7 @@
     col: 0
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_x: telemetry_alerts_prototype_scalar.build_id
     field_y: telemetry_alerts_prototype_scalar.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_scalar.low
@@ -309,7 +309,7 @@
     col: 12
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_x: telemetry_alerts_prototype_scalar.build_id
     field_y: telemetry_alerts_prototype_scalar.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_scalar.low
@@ -340,7 +340,7 @@
     col: 0
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_x: telemetry_alerts_prototype_scalar.build_id
     field_y: telemetry_alerts_prototype_scalar.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_scalar.low
@@ -371,7 +371,7 @@
     col: 12
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_x: telemetry_alerts_prototype_scalar.build_id
     field_y: telemetry_alerts_prototype_scalar.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_scalar.low
@@ -402,7 +402,7 @@
     col: 0
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_x: telemetry_alerts_prototype_scalar.build_id
     field_y: telemetry_alerts_prototype_scalar.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_scalar.low
@@ -433,7 +433,7 @@
     col: 12
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_x: telemetry_alerts_prototype_scalar.build_id
     field_y: telemetry_alerts_prototype_scalar.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_scalar.low
@@ -464,7 +464,7 @@
     col: 0
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_x: telemetry_alerts_prototype_scalar.build_id
     field_y: telemetry_alerts_prototype_scalar.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_scalar.low
@@ -495,7 +495,7 @@
     col: 12
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_x: telemetry_alerts_prototype_scalar.build_id
     field_y: telemetry_alerts_prototype_scalar.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_scalar.low
@@ -526,7 +526,7 @@
     col: 0
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_x: telemetry_alerts_prototype_scalar.build_id
     field_y: telemetry_alerts_prototype_scalar.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_scalar.low
@@ -557,7 +557,7 @@
     col: 12
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_x: telemetry_alerts_prototype_scalar.build_id
     field_y: telemetry_alerts_prototype_scalar.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_scalar.low
@@ -588,7 +588,7 @@
     col: 0
     width: 12
     height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_x: telemetry_alerts_prototype_scalar.build_id
     field_y: telemetry_alerts_prototype_scalar.percentile
     log_scale: false
     ci_lower: telemetry_alerts_prototype_scalar.low
