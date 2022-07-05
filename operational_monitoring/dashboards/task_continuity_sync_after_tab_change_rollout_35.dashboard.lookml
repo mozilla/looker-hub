@@ -40,6 +40,7 @@
       Percentile: task_continuity_sync_after_tab_change_rollout_35_histogram.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total
     explore: task_continuity_sync_after_tab_change_rollout_35_histogram
@@ -70,6 +71,7 @@
       Percentile: task_continuity_sync_after_tab_change_rollout_35_histogram.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Content Process Count
     name: Content Process Count
     explore: task_continuity_sync_after_tab_change_rollout_35_histogram
@@ -100,6 +102,7 @@
       Percentile: task_continuity_sync_after_tab_change_rollout_35_histogram.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Plugin Crashes
     name: Plugin Crashes
     explore: task_continuity_sync_after_tab_change_rollout_35_scalar
@@ -130,6 +133,7 @@
       Percentile: task_continuity_sync_after_tab_change_rollout_35_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Shutdown Hangs
     name: Shutdown Hangs
     explore: task_continuity_sync_after_tab_change_rollout_35_scalar
@@ -160,6 +164,7 @@
       Percentile: task_continuity_sync_after_tab_change_rollout_35_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Content Shutdown Crashes
     name: Content Shutdown Crashes
     explore: task_continuity_sync_after_tab_change_rollout_35_scalar
@@ -190,6 +195,7 @@
       Percentile: task_continuity_sync_after_tab_change_rollout_35_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Startup Crashes
     name: Startup Crashes
     explore: task_continuity_sync_after_tab_change_rollout_35_scalar
@@ -220,6 +226,7 @@
       Percentile: task_continuity_sync_after_tab_change_rollout_35_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Oom Crashes
     name: Oom Crashes
     explore: task_continuity_sync_after_tab_change_rollout_35_scalar
@@ -250,6 +257,7 @@
       Percentile: task_continuity_sync_after_tab_change_rollout_35_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Gpu Crashes
     name: Gpu Crashes
     explore: task_continuity_sync_after_tab_change_rollout_35_scalar
@@ -280,6 +288,7 @@
       Percentile: task_continuity_sync_after_tab_change_rollout_35_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Content Crashes
     name: Content Crashes
     explore: task_continuity_sync_after_tab_change_rollout_35_scalar
@@ -310,6 +319,7 @@
       Percentile: task_continuity_sync_after_tab_change_rollout_35_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Gmplugin Crashes
     name: Gmplugin Crashes
     explore: task_continuity_sync_after_tab_change_rollout_35_scalar
@@ -340,6 +350,7 @@
       Percentile: task_continuity_sync_after_tab_change_rollout_35_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Main Crashes
     name: Main Crashes
     explore: task_continuity_sync_after_tab_change_rollout_35_scalar
@@ -370,6 +381,7 @@
       Percentile: task_continuity_sync_after_tab_change_rollout_35_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   
   filters:
   - name: Percentile

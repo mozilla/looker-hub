@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Gc Ms
-    name: Gc Ms
+  - title: Memory Total
+    name: Memory Total
     explore: telemetry_alerts_prototype_histogram
     type: "ci-line-chart"
     fields: [
@@ -25,7 +25,7 @@
       telemetry_alerts_prototype_histogram.branch
     ]
     filters:
-      telemetry_alerts_prototype_histogram.probe: gc_ms
+      telemetry_alerts_prototype_histogram.probe: memory_total
     row: 0
     col: 0
     width: 12
@@ -40,8 +40,9 @@
       Percentile: telemetry_alerts_prototype_histogram.percentile_conf
       Os: telemetry_alerts_prototype_histogram.os
     active: "#3FE1B0"
-  - title: Gc Ms Content
-    name: Gc Ms Content
+    defaults_version: 0
+  - title: Gc Budget Overrun
+    name: Gc Budget Overrun
     explore: telemetry_alerts_prototype_histogram
     type: "ci-line-chart"
     fields: [
@@ -55,7 +56,7 @@
       telemetry_alerts_prototype_histogram.branch
     ]
     filters:
-      telemetry_alerts_prototype_histogram.probe: gc_ms_content
+      telemetry_alerts_prototype_histogram.probe: gc_budget_overrun
     row: 0
     col: 12
     width: 12
@@ -70,8 +71,9 @@
       Percentile: telemetry_alerts_prototype_histogram.percentile_conf
       Os: telemetry_alerts_prototype_histogram.os
     active: "#3FE1B0"
-  - title: Content Process Count
-    name: Content Process Count
+    defaults_version: 0
+  - title: Perf First Contentful Paint Ms
+    name: Perf First Contentful Paint Ms
     explore: telemetry_alerts_prototype_histogram
     type: "ci-line-chart"
     fields: [
@@ -85,7 +87,7 @@
       telemetry_alerts_prototype_histogram.branch
     ]
     filters:
-      telemetry_alerts_prototype_histogram.probe: content_process_count
+      telemetry_alerts_prototype_histogram.probe: perf_first_contentful_paint_ms
     row: 10
     col: 0
     width: 12
@@ -100,6 +102,7 @@
       Percentile: telemetry_alerts_prototype_histogram.percentile_conf
       Os: telemetry_alerts_prototype_histogram.os
     active: "#3FE1B0"
+    defaults_version: 0
   - title: Js Pageload Execution Ms
     name: Js Pageload Execution Ms
     explore: telemetry_alerts_prototype_histogram
@@ -130,8 +133,9 @@
       Percentile: telemetry_alerts_prototype_histogram.percentile_conf
       Os: telemetry_alerts_prototype_histogram.os
     active: "#3FE1B0"
-  - title: Gc Budget Overrun
-    name: Gc Budget Overrun
+    defaults_version: 0
+  - title: Content Process Count
+    name: Content Process Count
     explore: telemetry_alerts_prototype_histogram
     type: "ci-line-chart"
     fields: [
@@ -145,7 +149,7 @@
       telemetry_alerts_prototype_histogram.branch
     ]
     filters:
-      telemetry_alerts_prototype_histogram.probe: gc_budget_overrun
+      telemetry_alerts_prototype_histogram.probe: content_process_count
     row: 20
     col: 0
     width: 12
@@ -160,8 +164,9 @@
       Percentile: telemetry_alerts_prototype_histogram.percentile_conf
       Os: telemetry_alerts_prototype_histogram.os
     active: "#3FE1B0"
-  - title: Perf First Contentful Paint Ms
-    name: Perf First Contentful Paint Ms
+    defaults_version: 0
+  - title: Gc Ms Content
+    name: Gc Ms Content
     explore: telemetry_alerts_prototype_histogram
     type: "ci-line-chart"
     fields: [
@@ -175,7 +180,7 @@
       telemetry_alerts_prototype_histogram.branch
     ]
     filters:
-      telemetry_alerts_prototype_histogram.probe: perf_first_contentful_paint_ms
+      telemetry_alerts_prototype_histogram.probe: gc_ms_content
     row: 20
     col: 12
     width: 12
@@ -190,8 +195,9 @@
       Percentile: telemetry_alerts_prototype_histogram.percentile_conf
       Os: telemetry_alerts_prototype_histogram.os
     active: "#3FE1B0"
-  - title: Memory Total
-    name: Memory Total
+    defaults_version: 0
+  - title: Gc Ms
+    name: Gc Ms
     explore: telemetry_alerts_prototype_histogram
     type: "ci-line-chart"
     fields: [
@@ -205,7 +211,7 @@
       telemetry_alerts_prototype_histogram.branch
     ]
     filters:
-      telemetry_alerts_prototype_histogram.probe: memory_total
+      telemetry_alerts_prototype_histogram.probe: gc_ms
     row: 30
     col: 0
     width: 12
@@ -220,6 +226,7 @@
       Percentile: telemetry_alerts_prototype_histogram.percentile_conf
       Os: telemetry_alerts_prototype_histogram.os
     active: "#3FE1B0"
+    defaults_version: 0
   - title: Checkerboard Severity
     name: Checkerboard Severity
     explore: telemetry_alerts_prototype_histogram
@@ -250,6 +257,7 @@
       Percentile: telemetry_alerts_prototype_histogram.percentile_conf
       Os: telemetry_alerts_prototype_histogram.os
     active: "#3FE1B0"
+    defaults_version: 0
   - title: Main Crashes
     name: Main Crashes
     explore: telemetry_alerts_prototype_scalar
@@ -280,156 +288,7 @@
       Percentile: telemetry_alerts_prototype_scalar.percentile_conf
       Os: telemetry_alerts_prototype_scalar.os
     active: "#3FE1B0"
-  - title: Plugin Crashes
-    name: Plugin Crashes
-    explore: telemetry_alerts_prototype_scalar
-    type: "ci-line-chart"
-    fields: [
-      telemetry_alerts_prototype_scalar.build_id,
-      telemetry_alerts_prototype_scalar.branch,
-      telemetry_alerts_prototype_scalar.high,
-      telemetry_alerts_prototype_scalar.low,
-      telemetry_alerts_prototype_scalar.percentile
-    ]
-    pivots: [
-      telemetry_alerts_prototype_scalar.branch
-    ]
-    filters:
-      telemetry_alerts_prototype_scalar.probe: plugin_crashes
-    row: 40
-    col: 12
-    width: 12
-    height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
-    field_y: telemetry_alerts_prototype_scalar.percentile
-    log_scale: false
-    ci_lower: telemetry_alerts_prototype_scalar.low
-    ci_upper: telemetry_alerts_prototype_scalar.high
-    show_grid: true
-    listen:
-      Percentile: telemetry_alerts_prototype_scalar.percentile_conf
-      Os: telemetry_alerts_prototype_scalar.os
-    active: "#3FE1B0"
-  - title: Startup Crashes
-    name: Startup Crashes
-    explore: telemetry_alerts_prototype_scalar
-    type: "ci-line-chart"
-    fields: [
-      telemetry_alerts_prototype_scalar.build_id,
-      telemetry_alerts_prototype_scalar.branch,
-      telemetry_alerts_prototype_scalar.high,
-      telemetry_alerts_prototype_scalar.low,
-      telemetry_alerts_prototype_scalar.percentile
-    ]
-    pivots: [
-      telemetry_alerts_prototype_scalar.branch
-    ]
-    filters:
-      telemetry_alerts_prototype_scalar.probe: startup_crashes
-    row: 50
-    col: 0
-    width: 12
-    height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
-    field_y: telemetry_alerts_prototype_scalar.percentile
-    log_scale: false
-    ci_lower: telemetry_alerts_prototype_scalar.low
-    ci_upper: telemetry_alerts_prototype_scalar.high
-    show_grid: true
-    listen:
-      Percentile: telemetry_alerts_prototype_scalar.percentile_conf
-      Os: telemetry_alerts_prototype_scalar.os
-    active: "#3FE1B0"
-  - title: Gpu Crashes
-    name: Gpu Crashes
-    explore: telemetry_alerts_prototype_scalar
-    type: "ci-line-chart"
-    fields: [
-      telemetry_alerts_prototype_scalar.build_id,
-      telemetry_alerts_prototype_scalar.branch,
-      telemetry_alerts_prototype_scalar.high,
-      telemetry_alerts_prototype_scalar.low,
-      telemetry_alerts_prototype_scalar.percentile
-    ]
-    pivots: [
-      telemetry_alerts_prototype_scalar.branch
-    ]
-    filters:
-      telemetry_alerts_prototype_scalar.probe: gpu_crashes
-    row: 50
-    col: 12
-    width: 12
-    height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
-    field_y: telemetry_alerts_prototype_scalar.percentile
-    log_scale: false
-    ci_lower: telemetry_alerts_prototype_scalar.low
-    ci_upper: telemetry_alerts_prototype_scalar.high
-    show_grid: true
-    listen:
-      Percentile: telemetry_alerts_prototype_scalar.percentile_conf
-      Os: telemetry_alerts_prototype_scalar.os
-    active: "#3FE1B0"
-  - title: Subsession Length
-    name: Subsession Length
-    explore: telemetry_alerts_prototype_scalar
-    type: "ci-line-chart"
-    fields: [
-      telemetry_alerts_prototype_scalar.build_id,
-      telemetry_alerts_prototype_scalar.branch,
-      telemetry_alerts_prototype_scalar.high,
-      telemetry_alerts_prototype_scalar.low,
-      telemetry_alerts_prototype_scalar.percentile
-    ]
-    pivots: [
-      telemetry_alerts_prototype_scalar.branch
-    ]
-    filters:
-      telemetry_alerts_prototype_scalar.probe: subsession_length
-    row: 60
-    col: 0
-    width: 12
-    height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
-    field_y: telemetry_alerts_prototype_scalar.percentile
-    log_scale: false
-    ci_lower: telemetry_alerts_prototype_scalar.low
-    ci_upper: telemetry_alerts_prototype_scalar.high
-    show_grid: true
-    listen:
-      Percentile: telemetry_alerts_prototype_scalar.percentile_conf
-      Os: telemetry_alerts_prototype_scalar.os
-    active: "#3FE1B0"
-  - title: Gmplugin Crashes
-    name: Gmplugin Crashes
-    explore: telemetry_alerts_prototype_scalar
-    type: "ci-line-chart"
-    fields: [
-      telemetry_alerts_prototype_scalar.build_id,
-      telemetry_alerts_prototype_scalar.branch,
-      telemetry_alerts_prototype_scalar.high,
-      telemetry_alerts_prototype_scalar.low,
-      telemetry_alerts_prototype_scalar.percentile
-    ]
-    pivots: [
-      telemetry_alerts_prototype_scalar.branch
-    ]
-    filters:
-      telemetry_alerts_prototype_scalar.probe: gmplugin_crashes
-    row: 60
-    col: 12
-    width: 12
-    height: 8
-    field_x: telemetry_alerts_prototype_scalar.submission_date
-    field_y: telemetry_alerts_prototype_scalar.percentile
-    log_scale: false
-    ci_lower: telemetry_alerts_prototype_scalar.low
-    ci_upper: telemetry_alerts_prototype_scalar.high
-    show_grid: true
-    listen:
-      Percentile: telemetry_alerts_prototype_scalar.percentile_conf
-      Os: telemetry_alerts_prototype_scalar.os
-    active: "#3FE1B0"
+    defaults_version: 0
   - title: Shutdown Hangs
     name: Shutdown Hangs
     explore: telemetry_alerts_prototype_scalar
@@ -446,7 +305,38 @@
     ]
     filters:
       telemetry_alerts_prototype_scalar.probe: shutdown_hangs
-    row: 70
+    row: 40
+    col: 12
+    width: 12
+    height: 8
+    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_y: telemetry_alerts_prototype_scalar.percentile
+    log_scale: false
+    ci_lower: telemetry_alerts_prototype_scalar.low
+    ci_upper: telemetry_alerts_prototype_scalar.high
+    show_grid: true
+    listen:
+      Percentile: telemetry_alerts_prototype_scalar.percentile_conf
+      Os: telemetry_alerts_prototype_scalar.os
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Oom Crashes
+    name: Oom Crashes
+    explore: telemetry_alerts_prototype_scalar
+    type: "ci-line-chart"
+    fields: [
+      telemetry_alerts_prototype_scalar.build_id,
+      telemetry_alerts_prototype_scalar.branch,
+      telemetry_alerts_prototype_scalar.high,
+      telemetry_alerts_prototype_scalar.low,
+      telemetry_alerts_prototype_scalar.percentile
+    ]
+    pivots: [
+      telemetry_alerts_prototype_scalar.branch
+    ]
+    filters:
+      telemetry_alerts_prototype_scalar.probe: oom_crashes
+    row: 50
     col: 0
     width: 12
     height: 8
@@ -460,6 +350,38 @@
       Percentile: telemetry_alerts_prototype_scalar.percentile_conf
       Os: telemetry_alerts_prototype_scalar.os
     active: "#3FE1B0"
+    defaults_version: 0
+  - title: Content Crashes
+    name: Content Crashes
+    explore: telemetry_alerts_prototype_scalar
+    type: "ci-line-chart"
+    fields: [
+      telemetry_alerts_prototype_scalar.build_id,
+      telemetry_alerts_prototype_scalar.branch,
+      telemetry_alerts_prototype_scalar.high,
+      telemetry_alerts_prototype_scalar.low,
+      telemetry_alerts_prototype_scalar.percentile
+    ]
+    pivots: [
+      telemetry_alerts_prototype_scalar.branch
+    ]
+    filters:
+      telemetry_alerts_prototype_scalar.probe: content_crashes
+    row: 50
+    col: 12
+    width: 12
+    height: 8
+    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_y: telemetry_alerts_prototype_scalar.percentile
+    log_scale: false
+    ci_lower: telemetry_alerts_prototype_scalar.low
+    ci_upper: telemetry_alerts_prototype_scalar.high
+    show_grid: true
+    listen:
+      Percentile: telemetry_alerts_prototype_scalar.percentile_conf
+      Os: telemetry_alerts_prototype_scalar.os
+    active: "#3FE1B0"
+    defaults_version: 0
   - title: Active Ticks
     name: Active Ticks
     explore: telemetry_alerts_prototype_scalar
@@ -476,6 +398,99 @@
     ]
     filters:
       telemetry_alerts_prototype_scalar.probe: active_ticks
+    row: 60
+    col: 0
+    width: 12
+    height: 8
+    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_y: telemetry_alerts_prototype_scalar.percentile
+    log_scale: false
+    ci_lower: telemetry_alerts_prototype_scalar.low
+    ci_upper: telemetry_alerts_prototype_scalar.high
+    show_grid: true
+    listen:
+      Percentile: telemetry_alerts_prototype_scalar.percentile_conf
+      Os: telemetry_alerts_prototype_scalar.os
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Plugin Crashes
+    name: Plugin Crashes
+    explore: telemetry_alerts_prototype_scalar
+    type: "ci-line-chart"
+    fields: [
+      telemetry_alerts_prototype_scalar.build_id,
+      telemetry_alerts_prototype_scalar.branch,
+      telemetry_alerts_prototype_scalar.high,
+      telemetry_alerts_prototype_scalar.low,
+      telemetry_alerts_prototype_scalar.percentile
+    ]
+    pivots: [
+      telemetry_alerts_prototype_scalar.branch
+    ]
+    filters:
+      telemetry_alerts_prototype_scalar.probe: plugin_crashes
+    row: 60
+    col: 12
+    width: 12
+    height: 8
+    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_y: telemetry_alerts_prototype_scalar.percentile
+    log_scale: false
+    ci_lower: telemetry_alerts_prototype_scalar.low
+    ci_upper: telemetry_alerts_prototype_scalar.high
+    show_grid: true
+    listen:
+      Percentile: telemetry_alerts_prototype_scalar.percentile_conf
+      Os: telemetry_alerts_prototype_scalar.os
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Gpu Crashes
+    name: Gpu Crashes
+    explore: telemetry_alerts_prototype_scalar
+    type: "ci-line-chart"
+    fields: [
+      telemetry_alerts_prototype_scalar.build_id,
+      telemetry_alerts_prototype_scalar.branch,
+      telemetry_alerts_prototype_scalar.high,
+      telemetry_alerts_prototype_scalar.low,
+      telemetry_alerts_prototype_scalar.percentile
+    ]
+    pivots: [
+      telemetry_alerts_prototype_scalar.branch
+    ]
+    filters:
+      telemetry_alerts_prototype_scalar.probe: gpu_crashes
+    row: 70
+    col: 0
+    width: 12
+    height: 8
+    field_x: telemetry_alerts_prototype_scalar.submission_date
+    field_y: telemetry_alerts_prototype_scalar.percentile
+    log_scale: false
+    ci_lower: telemetry_alerts_prototype_scalar.low
+    ci_upper: telemetry_alerts_prototype_scalar.high
+    show_grid: true
+    listen:
+      Percentile: telemetry_alerts_prototype_scalar.percentile_conf
+      Os: telemetry_alerts_prototype_scalar.os
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Startup Crashes
+    name: Startup Crashes
+    explore: telemetry_alerts_prototype_scalar
+    type: "ci-line-chart"
+    fields: [
+      telemetry_alerts_prototype_scalar.build_id,
+      telemetry_alerts_prototype_scalar.branch,
+      telemetry_alerts_prototype_scalar.high,
+      telemetry_alerts_prototype_scalar.low,
+      telemetry_alerts_prototype_scalar.percentile
+    ]
+    pivots: [
+      telemetry_alerts_prototype_scalar.branch
+    ]
+    filters:
+      telemetry_alerts_prototype_scalar.probe: startup_crashes
     row: 70
     col: 12
     width: 12
@@ -490,6 +505,7 @@
       Percentile: telemetry_alerts_prototype_scalar.percentile_conf
       Os: telemetry_alerts_prototype_scalar.os
     active: "#3FE1B0"
+    defaults_version: 0
   - title: Content Shutdown Crashes
     name: Content Shutdown Crashes
     explore: telemetry_alerts_prototype_scalar
@@ -520,8 +536,9 @@
       Percentile: telemetry_alerts_prototype_scalar.percentile_conf
       Os: telemetry_alerts_prototype_scalar.os
     active: "#3FE1B0"
-  - title: Oom Crashes
-    name: Oom Crashes
+    defaults_version: 0
+  - title: Subsession Length
+    name: Subsession Length
     explore: telemetry_alerts_prototype_scalar
     type: "ci-line-chart"
     fields: [
@@ -535,7 +552,7 @@
       telemetry_alerts_prototype_scalar.branch
     ]
     filters:
-      telemetry_alerts_prototype_scalar.probe: oom_crashes
+      telemetry_alerts_prototype_scalar.probe: subsession_length
     row: 80
     col: 12
     width: 12
@@ -550,8 +567,9 @@
       Percentile: telemetry_alerts_prototype_scalar.percentile_conf
       Os: telemetry_alerts_prototype_scalar.os
     active: "#3FE1B0"
-  - title: Content Crashes
-    name: Content Crashes
+    defaults_version: 0
+  - title: Gmplugin Crashes
+    name: Gmplugin Crashes
     explore: telemetry_alerts_prototype_scalar
     type: "ci-line-chart"
     fields: [
@@ -565,7 +583,7 @@
       telemetry_alerts_prototype_scalar.branch
     ]
     filters:
-      telemetry_alerts_prototype_scalar.probe: content_crashes
+      telemetry_alerts_prototype_scalar.probe: gmplugin_crashes
     row: 90
     col: 0
     width: 12
@@ -580,6 +598,7 @@
       Percentile: telemetry_alerts_prototype_scalar.percentile_conf
       Os: telemetry_alerts_prototype_scalar.os
     active: "#3FE1B0"
+    defaults_version: 0
   
   - title: Alerts
     name: Alerts

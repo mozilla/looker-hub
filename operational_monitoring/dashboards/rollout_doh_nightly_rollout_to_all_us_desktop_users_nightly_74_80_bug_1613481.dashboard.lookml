@@ -40,6 +40,7 @@
       Percentile: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_histogram.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total
     explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_histogram
@@ -70,6 +71,7 @@
       Percentile: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_histogram.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Content Process Count
     name: Content Process Count
     explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_histogram
@@ -100,6 +102,7 @@
       Percentile: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_histogram.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Plugin Crashes
     name: Plugin Crashes
     explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_scalar
@@ -130,6 +133,7 @@
       Percentile: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Shutdown Hangs
     name: Shutdown Hangs
     explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_scalar
@@ -160,6 +164,7 @@
       Percentile: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Content Shutdown Crashes
     name: Content Shutdown Crashes
     explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_scalar
@@ -190,6 +195,7 @@
       Percentile: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Startup Crashes
     name: Startup Crashes
     explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_scalar
@@ -220,6 +226,7 @@
       Percentile: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Oom Crashes
     name: Oom Crashes
     explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_scalar
@@ -250,6 +257,7 @@
       Percentile: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Gpu Crashes
     name: Gpu Crashes
     explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_scalar
@@ -280,6 +288,7 @@
       Percentile: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Content Crashes
     name: Content Crashes
     explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_scalar
@@ -310,6 +319,7 @@
       Percentile: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Gmplugin Crashes
     name: Gmplugin Crashes
     explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_scalar
@@ -340,6 +350,7 @@
       Percentile: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Main Crashes
     name: Main Crashes
     explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_scalar
@@ -370,6 +381,7 @@
       Percentile: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   
   filters:
   - name: Percentile

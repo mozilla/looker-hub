@@ -39,6 +39,7 @@
     listen:
       Percentile: disable_webassembly_code_caching_histogram.percentile_conf
     preference-disabled: "#3FE1B0"
+    defaults_version: 0
   - title: Gc Ms
     name: Gc Ms
     explore: disable_webassembly_code_caching_histogram
@@ -68,6 +69,7 @@
     listen:
       Percentile: disable_webassembly_code_caching_histogram.percentile_conf
     preference-disabled: "#3FE1B0"
+    defaults_version: 0
   - title: Shutdown Hangs
     name: Shutdown Hangs
     explore: disable_webassembly_code_caching_scalar
@@ -97,6 +99,7 @@
     listen:
       Percentile: disable_webassembly_code_caching_scalar.percentile_conf
     preference-disabled: "#3FE1B0"
+    defaults_version: 0
   - title: Oom Crashes
     name: Oom Crashes
     explore: disable_webassembly_code_caching_scalar
@@ -126,6 +129,7 @@
     listen:
       Percentile: disable_webassembly_code_caching_scalar.percentile_conf
     preference-disabled: "#3FE1B0"
+    defaults_version: 0
   - title: Startup Crashes
     name: Startup Crashes
     explore: disable_webassembly_code_caching_scalar
@@ -155,6 +159,7 @@
     listen:
       Percentile: disable_webassembly_code_caching_scalar.percentile_conf
     preference-disabled: "#3FE1B0"
+    defaults_version: 0
   - title: Main Crashes
     name: Main Crashes
     explore: disable_webassembly_code_caching_scalar
@@ -184,6 +189,7 @@
     listen:
       Percentile: disable_webassembly_code_caching_scalar.percentile_conf
     preference-disabled: "#3FE1B0"
+    defaults_version: 0
   - title: Content Crashes
     name: Content Crashes
     explore: disable_webassembly_code_caching_scalar
@@ -213,6 +219,7 @@
     listen:
       Percentile: disable_webassembly_code_caching_scalar.percentile_conf
     preference-disabled: "#3FE1B0"
+    defaults_version: 0
   
   filters:
   - name: Percentile

@@ -40,6 +40,7 @@
       Percentile: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_histogram.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Memory Total
     name: Memory Total
     explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_histogram
@@ -70,6 +71,7 @@
       Percentile: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_histogram.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Content Process Count
     name: Content Process Count
     explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_histogram
@@ -100,6 +102,7 @@
       Percentile: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_histogram.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Plugin Crashes
     name: Plugin Crashes
     explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar
@@ -130,6 +133,7 @@
       Percentile: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Shutdown Hangs
     name: Shutdown Hangs
     explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar
@@ -160,6 +164,7 @@
       Percentile: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Content Shutdown Crashes
     name: Content Shutdown Crashes
     explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar
@@ -190,6 +195,7 @@
       Percentile: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Startup Crashes
     name: Startup Crashes
     explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar
@@ -220,6 +226,7 @@
       Percentile: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Oom Crashes
     name: Oom Crashes
     explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar
@@ -250,6 +257,7 @@
       Percentile: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Gpu Crashes
     name: Gpu Crashes
     explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar
@@ -280,6 +288,7 @@
       Percentile: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Content Crashes
     name: Content Crashes
     explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar
@@ -310,6 +319,7 @@
       Percentile: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Gmplugin Crashes
     name: Gmplugin Crashes
     explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar
@@ -340,6 +350,7 @@
       Percentile: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   - title: Main Crashes
     name: Main Crashes
     explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar
@@ -370,6 +381,7 @@
       Percentile: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_scalar.percentile_conf
     enabled: "#3FE1B0"
     disabled: "#0060E0"
+    defaults_version: 0
   
   filters:
   - name: Percentile
