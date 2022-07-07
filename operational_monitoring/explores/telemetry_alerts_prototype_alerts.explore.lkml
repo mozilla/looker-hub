@@ -6,4 +6,6 @@
 
 include: "/looker-hub/operational_monitoring/views/telemetry_alerts_prototype_alerts.view.lkml"
 
-explore: telemetry_alerts_prototype_alerts {}
+explore: telemetry_alerts_prototype_alerts {
+  hidden: yes
+}
