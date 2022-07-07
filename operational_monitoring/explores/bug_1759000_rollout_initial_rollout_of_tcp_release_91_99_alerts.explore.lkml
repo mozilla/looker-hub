@@ -6,4 +6,6 @@
 
 include: "/looker-hub/operational_monitoring/views/bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts.view.lkml"
 
-explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts {}
+explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts {
+  hidden: yes
+}
