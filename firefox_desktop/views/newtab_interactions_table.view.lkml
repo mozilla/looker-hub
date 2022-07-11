@@ -70,11 +70,6 @@ view: newtab_interactions_table {
     type: yesno
   }
 
-  dimension: is_sponsored_topsite_interaction {
-    sql: ${TABLE}.is_sponsored_topsite_interaction ;;
-    type: yesno
-  }
-
   dimension: is_tagged_search_ad_click {
     sql: ${TABLE}.is_tagged_search_ad_click ;;
     type: yesno
