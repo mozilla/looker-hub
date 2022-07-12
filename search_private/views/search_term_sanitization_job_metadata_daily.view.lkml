@@ -10,25 +10,25 @@ view: search_term_sanitization_job_metadata_daily {
     type: string
   }
 
+  dimension: contained_at {
+    sql: ${TABLE}.contained_at ;;
+    type: number
+  }
+
+  dimension: contained_name {
+    sql: ${TABLE}.contained_name ;;
+    type: number
+  }
+
+  dimension: contained_numbers {
+    sql: ${TABLE}.contained_numbers ;;
+    type: number
+  }
+
   dimension: failure_reason {
     sql: ${TABLE}.failure_reason ;;
     type: string
     description: "The reason a job failed, if it failed."
-  }
-
-  dimension: sanitized_contained_at {
-    sql: ${TABLE}.sanitized_contained_at ;;
-    type: number
-  }
-
-  dimension: sanitized_contained_name {
-    sql: ${TABLE}.sanitized_contained_name ;;
-    type: number
-  }
-
-  dimension: sanitized_contained_numbers {
-    sql: ${TABLE}.sanitized_contained_numbers ;;
-    type: number
   }
 
   dimension: status {
@@ -57,13 +57,13 @@ view: search_term_sanitization_job_metadata_daily {
     type: string
   }
 
-  dimension: total_sanitized_search_terms {
-    sql: ${TABLE}.total_sanitized_search_terms ;;
+  dimension: total_search_terms_analyzed {
+    sql: ${TABLE}.total_search_terms_analyzed ;;
     type: number
   }
 
-  dimension: total_search_terms_analyzed {
-    sql: ${TABLE}.total_search_terms_analyzed ;;
+  dimension: total_search_terms_removed_by_sanitization_job {
+    sql: ${TABLE}.total_search_terms_removed_by_sanitization_job ;;
     type: number
   }
 
