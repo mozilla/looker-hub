@@ -31,6 +31,11 @@ view: search_term_sanitization_job_metadata_daily {
     description: "The reason a job failed, if it failed."
   }
 
+  dimension: implementation_notes {
+    sql: ${TABLE}.implementation_notes ;;
+    type: string
+  }
+
   dimension: status {
     sql: ${TABLE}.status ;;
     type: string
