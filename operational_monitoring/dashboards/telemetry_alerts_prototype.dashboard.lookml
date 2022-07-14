@@ -123,7 +123,7 @@
   - name: Probe
     title: Probe
     type: field_filter
-    default_value: 'main_crashes'
+    default_value: 'plugin_crashes'
     allow_multiple_values: true
     required: true
     ui_config:
