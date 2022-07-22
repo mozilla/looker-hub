@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Oom Crashes
-    name: Oom Crashes
+  - title: Startup Crashes
+    name: Startup Crashes
     explore: rally_first_prompt_for_users_without_an_enrolled_study
     type: "ci-line-chart"
     fields: [
@@ -25,7 +25,7 @@
       rally_first_prompt_for_users_without_an_enrolled_study.branch
     ]
     filters:
-      rally_first_prompt_for_users_without_an_enrolled_study.probe: oom_crashes
+      rally_first_prompt_for_users_without_an_enrolled_study.probe: startup_crashes
     row: 0
     col: 0
     width: 12
@@ -42,8 +42,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Process Count
-    name: Content Process Count
+  - title: Plugin Crashes
+    name: Plugin Crashes
     explore: rally_first_prompt_for_users_without_an_enrolled_study
     type: "ci-line-chart"
     fields: [
@@ -57,7 +57,7 @@
       rally_first_prompt_for_users_without_an_enrolled_study.branch
     ]
     filters:
-      rally_first_prompt_for_users_without_an_enrolled_study.probe: content_process_count
+      rally_first_prompt_for_users_without_an_enrolled_study.probe: plugin_crashes
     row: 0
     col: 12
     width: 12
@@ -106,70 +106,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Shutdown Crashes
-    name: Content Shutdown Crashes
-    explore: rally_first_prompt_for_users_without_an_enrolled_study
-    type: "ci-line-chart"
-    fields: [
-      rally_first_prompt_for_users_without_an_enrolled_study.submission_date,
-      rally_first_prompt_for_users_without_an_enrolled_study.branch,
-      rally_first_prompt_for_users_without_an_enrolled_study.high,
-      rally_first_prompt_for_users_without_an_enrolled_study.low,
-      rally_first_prompt_for_users_without_an_enrolled_study.percentile
-    ]
-    pivots: [
-      rally_first_prompt_for_users_without_an_enrolled_study.branch
-    ]
-    filters:
-      rally_first_prompt_for_users_without_an_enrolled_study.probe: content_shutdown_crashes
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: rally_first_prompt_for_users_without_an_enrolled_study.submission_date
-    field_y: rally_first_prompt_for_users_without_an_enrolled_study.percentile
-    log_scale: false
-    ci_lower: rally_first_prompt_for_users_without_an_enrolled_study.low
-    ci_upper: rally_first_prompt_for_users_without_an_enrolled_study.high
-    show_grid: true
-    listen:
-      Percentile: rally_first_prompt_for_users_without_an_enrolled_study.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Gpu Crashes
-    name: Gpu Crashes
-    explore: rally_first_prompt_for_users_without_an_enrolled_study
-    type: "ci-line-chart"
-    fields: [
-      rally_first_prompt_for_users_without_an_enrolled_study.submission_date,
-      rally_first_prompt_for_users_without_an_enrolled_study.branch,
-      rally_first_prompt_for_users_without_an_enrolled_study.high,
-      rally_first_prompt_for_users_without_an_enrolled_study.low,
-      rally_first_prompt_for_users_without_an_enrolled_study.percentile
-    ]
-    pivots: [
-      rally_first_prompt_for_users_without_an_enrolled_study.branch
-    ]
-    filters:
-      rally_first_prompt_for_users_without_an_enrolled_study.probe: gpu_crashes
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: rally_first_prompt_for_users_without_an_enrolled_study.submission_date
-    field_y: rally_first_prompt_for_users_without_an_enrolled_study.percentile
-    log_scale: false
-    ci_lower: rally_first_prompt_for_users_without_an_enrolled_study.low
-    ci_upper: rally_first_prompt_for_users_without_an_enrolled_study.high
-    show_grid: true
-    listen:
-      Percentile: rally_first_prompt_for_users_without_an_enrolled_study.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Content Crashes
     name: Content Crashes
     explore: rally_first_prompt_for_users_without_an_enrolled_study
@@ -186,7 +122,7 @@
     ]
     filters:
       rally_first_prompt_for_users_without_an_enrolled_study.probe: content_crashes
-    row: 20
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -218,6 +154,70 @@
     ]
     filters:
       rally_first_prompt_for_users_without_an_enrolled_study.probe: gmplugin_crashes
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: rally_first_prompt_for_users_without_an_enrolled_study.submission_date
+    field_y: rally_first_prompt_for_users_without_an_enrolled_study.percentile
+    log_scale: false
+    ci_lower: rally_first_prompt_for_users_without_an_enrolled_study.low
+    ci_upper: rally_first_prompt_for_users_without_an_enrolled_study.high
+    show_grid: true
+    listen:
+      Percentile: rally_first_prompt_for_users_without_an_enrolled_study.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Oom Crashes
+    name: Oom Crashes
+    explore: rally_first_prompt_for_users_without_an_enrolled_study
+    type: "ci-line-chart"
+    fields: [
+      rally_first_prompt_for_users_without_an_enrolled_study.submission_date,
+      rally_first_prompt_for_users_without_an_enrolled_study.branch,
+      rally_first_prompt_for_users_without_an_enrolled_study.high,
+      rally_first_prompt_for_users_without_an_enrolled_study.low,
+      rally_first_prompt_for_users_without_an_enrolled_study.percentile
+    ]
+    pivots: [
+      rally_first_prompt_for_users_without_an_enrolled_study.branch
+    ]
+    filters:
+      rally_first_prompt_for_users_without_an_enrolled_study.probe: oom_crashes
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: rally_first_prompt_for_users_without_an_enrolled_study.submission_date
+    field_y: rally_first_prompt_for_users_without_an_enrolled_study.percentile
+    log_scale: false
+    ci_lower: rally_first_prompt_for_users_without_an_enrolled_study.low
+    ci_upper: rally_first_prompt_for_users_without_an_enrolled_study.high
+    show_grid: true
+    listen:
+      Percentile: rally_first_prompt_for_users_without_an_enrolled_study.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Content Shutdown Crashes
+    name: Content Shutdown Crashes
+    explore: rally_first_prompt_for_users_without_an_enrolled_study
+    type: "ci-line-chart"
+    fields: [
+      rally_first_prompt_for_users_without_an_enrolled_study.submission_date,
+      rally_first_prompt_for_users_without_an_enrolled_study.branch,
+      rally_first_prompt_for_users_without_an_enrolled_study.high,
+      rally_first_prompt_for_users_without_an_enrolled_study.low,
+      rally_first_prompt_for_users_without_an_enrolled_study.percentile
+    ]
+    pivots: [
+      rally_first_prompt_for_users_without_an_enrolled_study.branch
+    ]
+    filters:
+      rally_first_prompt_for_users_without_an_enrolled_study.probe: content_shutdown_crashes
     row: 30
     col: 0
     width: 12
@@ -234,8 +234,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Plugin Crashes
-    name: Plugin Crashes
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
     explore: rally_first_prompt_for_users_without_an_enrolled_study
     type: "ci-line-chart"
     fields: [
@@ -249,7 +249,7 @@
       rally_first_prompt_for_users_without_an_enrolled_study.branch
     ]
     filters:
-      rally_first_prompt_for_users_without_an_enrolled_study.probe: plugin_crashes
+      rally_first_prompt_for_users_without_an_enrolled_study.probe: shutdown_hangs
     row: 30
     col: 12
     width: 12
@@ -298,8 +298,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Startup Crashes
-    name: Startup Crashes
+  - title: Gpu Crashes
+    name: Gpu Crashes
     explore: rally_first_prompt_for_users_without_an_enrolled_study
     type: "ci-line-chart"
     fields: [
@@ -313,7 +313,7 @@
       rally_first_prompt_for_users_without_an_enrolled_study.branch
     ]
     filters:
-      rally_first_prompt_for_users_without_an_enrolled_study.probe: startup_crashes
+      rally_first_prompt_for_users_without_an_enrolled_study.probe: gpu_crashes
     row: 40
     col: 12
     width: 12
@@ -330,8 +330,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
+  - title: Content Process Count
+    name: Content Process Count
     explore: rally_first_prompt_for_users_without_an_enrolled_study
     type: "ci-line-chart"
     fields: [
@@ -345,7 +345,7 @@
       rally_first_prompt_for_users_without_an_enrolled_study.branch
     ]
     filters:
-      rally_first_prompt_for_users_without_an_enrolled_study.probe: shutdown_hangs
+      rally_first_prompt_for_users_without_an_enrolled_study.probe: content_process_count
     row: 50
     col: 0
     width: 12

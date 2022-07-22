@@ -123,7 +123,7 @@
   - name: Probe
     title: Probe
     type: field_filter
-    default_value: 'perf_first_contentful_paint_ms'
+    default_value: 'startup_crashes'
     allow_multiple_values: true
     required: true
     ui_config:

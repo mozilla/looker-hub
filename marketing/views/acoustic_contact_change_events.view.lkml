@@ -28,6 +28,7 @@ view: acoustic_contact_change_events {
   dimension: email_id {
     sql: ${TABLE}.email_id ;;
     type: string
+    description: "key to connect to rt_newsletters  and rt_mofo_contact relational databases"
   }
 
   dimension: email_lang {
