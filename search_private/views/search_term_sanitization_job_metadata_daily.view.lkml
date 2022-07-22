@@ -28,7 +28,6 @@ view: search_term_sanitization_job_metadata_daily {
   dimension: failure_reason {
     sql: ${TABLE}.failure_reason ;;
     type: string
-    description: "The reason a job failed, if it failed."
   }
 
   dimension: implementation_notes {
@@ -44,7 +43,6 @@ view: search_term_sanitization_job_metadata_daily {
   dimension: sum_chars_all_search_terms {
     sql: ${TABLE}.sum_chars_all_search_terms ;;
     type: number
-    description: "The sum of all the characters in all the search terms run in this job"
   }
 
   dimension: sum_terms_containing_us_census_surname {
@@ -54,12 +52,12 @@ view: search_term_sanitization_job_metadata_daily {
 
   dimension: sum_uppercase_chars_all_search_terms {
     sql: ${TABLE}.sum_uppercase_chars_all_search_terms ;;
-    type: string
+    type: number
   }
 
   dimension: sum_words_all_search_terms {
     sql: ${TABLE}.sum_words_all_search_terms ;;
-    type: string
+    type: number
   }
 
   dimension: total_search_terms_analyzed {
@@ -100,5 +98,5 @@ view: search_term_sanitization_job_metadata_daily {
     ]
   }
 
-  sql_table_name: `mozdata.search_terms_unsanitized_analysis.prototype_sanitation_job_metadata` ;;
+  sql_table_name: `moz-fx-data-shared-prod.search_terms_derived.sanitization_job_metadata_v2` ;;
 }
