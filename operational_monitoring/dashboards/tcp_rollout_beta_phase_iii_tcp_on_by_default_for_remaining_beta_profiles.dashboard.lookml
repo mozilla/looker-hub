@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Gpu Crashes
-    name: Gpu Crashes
+  - title: Gmplugin Crashes
+    name: Gmplugin Crashes
     explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
     type: "ci-line-chart"
     fields: [
@@ -25,136 +25,8 @@
       tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
     ]
     filters:
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: gpu_crashes
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: gmplugin_crashes
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
-    field_y: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low
-    ci_upper: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Content Crashes
-    name: Content Crashes
-    explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
-    ]
-    pivots: [
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
-    ]
-    filters:
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: content_crashes
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
-    field_y: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low
-    ci_upper: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Content Process Count
-    name: Content Process Count
-    explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
-    ]
-    pivots: [
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
-    ]
-    filters:
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: content_process_count
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
-    field_y: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low
-    ci_upper: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Oom Crashes
-    name: Oom Crashes
-    explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
-    ]
-    pivots: [
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
-    ]
-    filters:
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: oom_crashes
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
-    field_y: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low
-    ci_upper: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total
-    explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
-    ]
-    pivots: [
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
-    ]
-    filters:
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: memory_total
-    row: 20
     col: 0
     width: 12
     height: 8
@@ -186,6 +58,134 @@
     ]
     filters:
       tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: startup_crashes
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
+    field_y: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low
+    ci_upper: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
+    explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
+    ]
+    pivots: [
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
+    ]
+    filters:
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: shutdown_hangs
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
+    field_y: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low
+    ci_upper: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Main Crashes
+    name: Main Crashes
+    explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
+    ]
+    pivots: [
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
+    ]
+    filters:
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: main_crashes
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
+    field_y: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low
+    ci_upper: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Content Process Count
+    name: Content Process Count
+    explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
+    ]
+    pivots: [
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
+    ]
+    filters:
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: content_process_count
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
+    field_y: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low
+    ci_upper: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total
+    explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
+    ]
+    pivots: [
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
+    ]
+    filters:
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: memory_total
     row: 20
     col: 12
     width: 12
@@ -234,70 +234,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Gc Ms
-    name: Gc Ms
-    explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
-    ]
-    pivots: [
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
-    ]
-    filters:
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: gc_ms
-    row: 30
-    col: 12
-    width: 12
-    height: 8
-    field_x: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
-    field_y: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low
-    ci_upper: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
-    explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
-    ]
-    pivots: [
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
-    ]
-    filters:
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: shutdown_hangs
-    row: 40
-    col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
-    field_y: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low
-    ci_upper: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Plugin Crashes
     name: Plugin Crashes
     explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
@@ -314,6 +250,70 @@
     ]
     filters:
       tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: plugin_crashes
+    row: 30
+    col: 12
+    width: 12
+    height: 8
+    field_x: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
+    field_y: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low
+    ci_upper: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Gpu Crashes
+    name: Gpu Crashes
+    explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
+    ]
+    pivots: [
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
+    ]
+    filters:
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: gpu_crashes
+    row: 40
+    col: 0
+    width: 12
+    height: 8
+    field_x: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
+    field_y: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low
+    ci_upper: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Gc Ms
+    name: Gc Ms
+    explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.high,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.low,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.percentile
+    ]
+    pivots: [
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
+    ]
+    filters:
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: gc_ms
     row: 40
     col: 12
     width: 12
@@ -330,8 +330,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Gmplugin Crashes
-    name: Gmplugin Crashes
+  - title: Oom Crashes
+    name: Oom Crashes
     explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
     type: "ci-line-chart"
     fields: [
@@ -345,7 +345,7 @@
       tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
     ]
     filters:
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: gmplugin_crashes
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: oom_crashes
     row: 50
     col: 0
     width: 12
@@ -362,8 +362,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Main Crashes
-    name: Main Crashes
+  - title: Content Crashes
+    name: Content Crashes
     explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
     type: "ci-line-chart"
     fields: [
@@ -377,7 +377,7 @@
       tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
     ]
     filters:
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: main_crashes
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.probe: content_crashes
     row: 50
     col: 12
     width: 12
