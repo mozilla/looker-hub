@@ -82,6 +82,25 @@ a website to the autocomplete list.
 "
   }
 
+  dimension: metrics__counter__settings_screen_set_as_default_browser_pressed {
+    label: "Settings Screen Set As Default Browser Pressed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.settings_screen_set_as_default_browser_pressed ;;
+    type: number
+    group_label: "Settings Screen"
+    group_item_label: "Set As Default Browser Pressed"
+
+    link: {
+      label: "Glean Dictionary reference for Settings Screen Set As Default Browser Pressed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/settings_screen_set_as_default_browser_pressed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times setting as default
+browser menu option is tapped.
+"
+  }
+
   dimension: metrics__counter__shortcuts_shortcut_added_counter {
     label: "Shortcuts Shortcut Added Counter"
     hidden: no
@@ -1103,6 +1122,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Settings Screen Autocomplete Domain Added"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/settings_screen_autocomplete_domain_added"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: settings_screen_set_as_default_browser_pressed {
+    type: sum
+    sql: ${metrics__counter__settings_screen_set_as_default_browser_pressed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Settings Screen Set As Default Browser Pressed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/settings_screen_set_as_default_browser_pressed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: settings_screen_set_as_default_browser_pressed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__settings_screen_set_as_default_browser_pressed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Settings Screen Set As Default Browser Pressed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/settings_screen_set_as_default_browser_pressed"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
