@@ -66,6 +66,11 @@ view: event_aggregates {
     type: string
   }
 
+  dimension: suggest_data_sharing_enabled {
+    sql: ${TABLE}.suggest_data_sharing_enabled ;;
+    type: yesno
+  }
+
   dimension: user_count {
     sql: ${TABLE}.user_count ;;
     type: number
