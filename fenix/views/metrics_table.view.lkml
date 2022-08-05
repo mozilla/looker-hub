@@ -1781,6 +1781,13 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
 "
   }
 
+  dimension: metrics__labeled_counter__netwerk_early_hints {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_early_hints ;;
+    hidden: yes
+    description: "Counts the different type of resources that are sent for early hints.
+"
+  }
+
   dimension: metrics__labeled_counter__perf_startup_startup_type {
     sql: ${TABLE}.metrics.labeled_counter.perf_startup_startup_type ;;
     hidden: yes

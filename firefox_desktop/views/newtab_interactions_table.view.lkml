@@ -45,49 +45,14 @@ view: newtab_interactions_table {
     hidden: yes
   }
 
-  dimension: is_follow_on_search_ad_click {
-    sql: ${TABLE}.is_follow_on_search_ad_click ;;
-    type: yesno
+  dimension: follow_on_search_ad_clicks {
+    sql: ${TABLE}.follow_on_search_ad_clicks ;;
+    type: number
   }
 
-  dimension: is_follow_on_search_ad_impression {
-    sql: ${TABLE}.is_follow_on_search_ad_impression ;;
-    type: yesno
-  }
-
-  dimension: is_search_issued {
-    sql: ${TABLE}.is_search_issued ;;
-    type: yesno
-  }
-
-  dimension: is_sponsored_topsite_click {
-    sql: ${TABLE}.is_sponsored_topsite_click ;;
-    type: yesno
-  }
-
-  dimension: is_sponsored_topsite_impression {
-    sql: ${TABLE}.is_sponsored_topsite_impression ;;
-    type: yesno
-  }
-
-  dimension: is_tagged_search_ad_click {
-    sql: ${TABLE}.is_tagged_search_ad_click ;;
-    type: yesno
-  }
-
-  dimension: is_tagged_search_ad_impression {
-    sql: ${TABLE}.is_tagged_search_ad_impression ;;
-    type: yesno
-  }
-
-  dimension: is_topsite_click {
-    sql: ${TABLE}.is_topsite_click ;;
-    type: yesno
-  }
-
-  dimension: is_topsite_impression {
-    sql: ${TABLE}.is_topsite_impression ;;
-    type: yesno
+  dimension: follow_on_search_ad_impressions {
+    sql: ${TABLE}.follow_on_search_ad_impressions ;;
+    type: number
   }
 
   dimension: newtab_open_source {
@@ -130,21 +95,67 @@ view: newtab_interactions_table {
     type: string
   }
 
+  dimension: searches {
+    sql: ${TABLE}.searches ;;
+    type: number
+  }
+
+  dimension: sponsored_topsite_clicks {
+    sql: ${TABLE}.sponsored_topsite_clicks ;;
+    type: number
+  }
+
+  dimension: sponsored_topsite_impressions {
+    sql: ${TABLE}.sponsored_topsite_impressions ;;
+    type: number
+  }
+
+  dimension: tagged_follow_on_search_ad_clicks {
+    sql: ${TABLE}.tagged_follow_on_search_ad_clicks ;;
+    type: number
+  }
+
+  dimension: tagged_follow_on_search_ad_impressions {
+    sql: ${TABLE}.tagged_follow_on_search_ad_impressions ;;
+    type: number
+  }
+
+  dimension: tagged_search_ad_clicks {
+    sql: ${TABLE}.tagged_search_ad_clicks ;;
+    type: number
+  }
+
+  dimension: tagged_search_ad_impressions {
+    sql: ${TABLE}.tagged_search_ad_impressions ;;
+    type: number
+  }
+
+  dimension: topsite_clicks {
+    sql: ${TABLE}.topsite_clicks ;;
+    type: number
+  }
+
+  dimension: topsite_impressions {
+    sql: ${TABLE}.topsite_impressions ;;
+    type: number
+  }
+
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
     timeframes: [
       raw,
-      time,
       date,
       week,
       month,
       quarter,
       year,
     ]
+    convert_tz: no
+    datatype: date
   }
 
-  sql_table_name: `mozdata.analysis.newtab_interactions` ;;
+  sql_table_name: `mozdata.telemetry.newtab_interactions` ;;
 }
 
 view: newtab_interactions_table__experiments {

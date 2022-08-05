@@ -637,6 +637,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__netwerk_early_hints {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_early_hints ;;
+    hidden: yes
+    description: "Counts the different type of resources that are sent for early hints.
+"
+  }
+
   dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
     sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_content_background ;;
     hidden: yes

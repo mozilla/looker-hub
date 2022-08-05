@@ -456,6 +456,16 @@ a website to the autocomplete list.
 "
   }
 
+  dimension: metrics__counter__settings_screen_set_as_default_browser_pressed {
+    sql: ${TABLE}.metrics.counter.settings_screen_set_as_default_browser_pressed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Settings Screen Set As Default Browser Pressed"
+    description: "Counts the number of times setting as default
+browser menu option is tapped.
+"
+  }
+
   dimension: metrics__counter__shortcuts_shortcut_added_counter {
     sql: ${TABLE}.metrics.counter.shortcuts_shortcut_added_counter ;;
     type: number

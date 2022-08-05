@@ -214,6 +214,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__metrics_search_count}) AS metrics__metrics__labeled_counter__metrics_search_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__metrics_search_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__netwerk_early_hints {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_early_hints}) AS metrics__metrics__labeled_counter__netwerk_early_hints ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_early_hints.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__perf_startup_startup_type {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__perf_startup_startup_type}) AS metrics__metrics__labeled_counter__perf_startup_startup_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__perf_startup_startup_type.document_id} ;;
@@ -468,6 +473,10 @@ explore: suggest__metrics__metrics__labeled_counter__media_audio_init_failure {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__metrics_search_count {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__netwerk_early_hints {
   hidden: yes
 }
 

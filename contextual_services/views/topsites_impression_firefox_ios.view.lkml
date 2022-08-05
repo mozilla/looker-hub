@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: metrics_table {
+view: topsites_impression_firefox_ios {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -125,6 +125,7 @@ view: metrics_table {
     sql: ${TABLE}.document_id ;;
     hidden: yes
     description: "The document ID specified in the URI when the client sent this message"
+    primary_key: yes
   }
 
   dimension: events {
@@ -300,216 +301,6 @@ view: metrics_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__boolean__glean_error_preinit_tasks_timeout {
-    sql: ${TABLE}.metrics.boolean.glean_error_preinit_tasks_timeout ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Glean Error Preinit Tasks Timeout"
-    description: "Set to true if the tasks that are queued prior to Glean initialization time out."
-  }
-
-  dimension: metrics__boolean__mozilla_products_has_firefox_installed {
-    sql: ${TABLE}.metrics.boolean.mozilla_products_has_firefox_installed ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Mozilla Products Has Firefox Installed"
-    description: "If Firefox is installed on the users's device.
-"
-  }
-
-  dimension: metrics__boolean__tracking_protection_has_advertising_blocked {
-    sql: ${TABLE}.metrics.boolean.tracking_protection_has_advertising_blocked ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Tracking Protection Has Advertising Blocked"
-    description: "The user has changed the setting for enhanced tracking protection
-at least once.
-"
-  }
-
-  dimension: metrics__boolean__tracking_protection_has_analytics_blocked {
-    sql: ${TABLE}.metrics.boolean.tracking_protection_has_analytics_blocked ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Tracking Protection Has Analytics Blocked"
-    description: "The user has changed the setting for enhanced tracking protection
-at least once.
-"
-  }
-
-  dimension: metrics__boolean__tracking_protection_has_content_blocked {
-    sql: ${TABLE}.metrics.boolean.tracking_protection_has_content_blocked ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Tracking Protection Has Content Blocked"
-    description: "The user has changed the setting for enhanced tracking protection
-at least once.
-"
-  }
-
-  dimension: metrics__boolean__tracking_protection_has_ever_changed_etp {
-    sql: ${TABLE}.metrics.boolean.tracking_protection_has_ever_changed_etp ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Tracking Protection Has Ever Changed Etp"
-    description: "The user has changed the setting for enhanced tracking protection
-at least once.
-"
-  }
-
-  dimension: metrics__boolean__tracking_protection_has_social_blocked {
-    sql: ${TABLE}.metrics.boolean.tracking_protection_has_social_blocked ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Tracking Protection Has Social Blocked"
-    description: "The user has changed the setting for enhanced tracking protection
-at least once.
-"
-  }
-
-  dimension: metrics__counter__browser_total_uri_count {
-    sql: ${TABLE}.metrics.counter.browser_total_uri_count ;;
-    type: number
-    group_label: "Metrics Counter"
-    group_item_label: "Browser Total Uri Count"
-    description: "Records count of URIs visited by the user in the current session,
-including page reloads.
-It does not include background page requests and URIs from embedded pages
-but may be incremented without user interaction by website scripts
-that programmatically redirect to a new location.
-"
-  }
-
-  dimension: metrics__counter__glean_error_io {
-    sql: ${TABLE}.metrics.counter.glean_error_io ;;
-    type: number
-    group_label: "Metrics Counter"
-    group_item_label: "Glean Error Io"
-    description: "The number of times we encountered an IO error
-when writing a pending ping to disk.
-"
-  }
-
-  dimension: metrics__counter__glean_error_preinit_tasks_overflow {
-    sql: ${TABLE}.metrics.counter.glean_error_preinit_tasks_overflow ;;
-    type: number
-    group_label: "Metrics Counter"
-    group_item_label: "Glean Error Preinit Tasks Overflow"
-    description: "The number of tasks that overflowed the pre-initialization buffer.
-Only sent if the buffer ever overflows.
-
-In Version 0 this reported the total number of tasks enqueued.
-"
-  }
-
-  dimension: metrics__counter__glean_time_invalid_timezone_offset {
-    sql: ${TABLE}.metrics.counter.glean_time_invalid_timezone_offset ;;
-    type: number
-    group_label: "Metrics Counter"
-    group_item_label: "Glean Time Invalid Timezone Offset"
-    description: "Counts the number of times we encountered an invalid timezone offset
-when trying to get the current time.
-A timezone offset is invalid if it is outside [-24h, +24h].
-If invalid a UTC offset is used (+0h).
-"
-  }
-
-  dimension: metrics__counter__glean_upload_deleted_pings_after_quota_hit {
-    sql: ${TABLE}.metrics.counter.glean_upload_deleted_pings_after_quota_hit ;;
-    type: number
-    group_label: "Metrics Counter"
-    group_item_label: "Glean Upload Deleted Pings After Quota Hit"
-    description: "The number of pings deleted after the quota
-for the size of the pending pings directory or number of files is hit.
-Since quota is only calculated for the pending pings directory,
-and deletion request ping live in a different directory,
-deletion request pings are never deleted.
-"
-  }
-
-  dimension: metrics__counter__glean_upload_pending_pings {
-    sql: ${TABLE}.metrics.counter.glean_upload_pending_pings ;;
-    type: number
-    group_label: "Metrics Counter"
-    group_item_label: "Glean Upload Pending Pings"
-    description: "The total number of pending pings at startup.
-This does not include deletion-request pings.
-"
-  }
-
-  dimension: metrics__counter__glean_validation_foreground_count {
-    sql: ${TABLE}.metrics.counter.glean_validation_foreground_count ;;
-    type: number
-    group_label: "Metrics Counter"
-    group_item_label: "Glean Validation Foreground Count"
-    description: "On mobile, the number of times the application went to foreground.
-"
-  }
-
-  dimension: metrics__counter__settings_screen_autocomplete_domain_added {
-    sql: ${TABLE}.metrics.counter.settings_screen_autocomplete_domain_added ;;
-    type: number
-    group_label: "Metrics Counter"
-    group_item_label: "Settings Screen Autocomplete Domain Added"
-    description: "A counter that indicates how many times a user has added
-a website to the autocomplete list.
-"
-  }
-
-  dimension: metrics__counter__settings_screen_set_as_default_browser_pressed {
-    sql: ${TABLE}.metrics.counter.settings_screen_set_as_default_browser_pressed ;;
-    type: number
-    group_label: "Metrics Counter"
-    group_item_label: "Settings Screen Set As Default Browser Pressed"
-    description: "Counts the number of times setting as default
-browser menu option is tapped.
-"
-  }
-
-  dimension: metrics__counter__shortcuts_shortcut_added_counter {
-    sql: ${TABLE}.metrics.counter.shortcuts_shortcut_added_counter ;;
-    type: number
-    group_label: "Metrics Counter"
-    group_item_label: "Shortcuts Shortcut Added Counter"
-    description: "A counter that indicates how many times a user has added
-a website to shortcuts.
-"
-  }
-
-  dimension: metrics__counter__shortcuts_shortcut_opened_counter {
-    sql: ${TABLE}.metrics.counter.shortcuts_shortcut_opened_counter ;;
-    type: number
-    group_label: "Metrics Counter"
-    group_item_label: "Shortcuts Shortcut Opened Counter"
-    description: "A counter that indicates how many times a user has opened
-a website from a shortcut in the home screen.
-"
-  }
-
-  dimension: metrics__counter__tracking_protection_toolbar_shield_clicked {
-    sql: ${TABLE}.metrics.counter.tracking_protection_toolbar_shield_clicked ;;
-    type: number
-    group_label: "Metrics Counter"
-    group_item_label: "Tracking Protection Toolbar Shield Clicked"
-    description: "A counter that indicates how many times a user has opened
-the tracking protection settings panel from the toolbar.
-"
-  }
-
-  dimension: metrics__datetime__glean_validation_first_run_hour {
-    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
-    type: string
-    group_label: "Metrics Datetime"
-    group_item_label: "Glean Validation First Run Hour"
-    description: "The hour of the first run of the application.
-"
-  }
-
-  dimension: metrics__jwe {
-    sql: ${TABLE}.metrics.jwe ;;
-    hidden: yes
-  }
-
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -542,117 +333,82 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
-  dimension: metrics__labeled_counter__glean_upload_ping_upload_failure {
-    sql: ${TABLE}.metrics.labeled_counter.glean_upload_ping_upload_failure ;;
-    hidden: yes
-    description: "Counts the number of ping upload failures, by type of failure.
-This includes failures for all ping types,
-though the counts appear in the next successfully sent `metrics` ping.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_validation_pings_submitted {
-    sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
-    hidden: yes
-    description: "A count of the pings submitted, by ping type.
-
-This metric appears in both the metrics and baseline pings.
-
-- On the metrics ping, the counts include the number of pings sent since
-  the last metrics ping (including the last metrics ping)
-- On the baseline ping, the counts include the number of pings send since
-  the last baseline ping (including the last baseline ping)
-"
-  }
-
-  dimension: metrics__labeled_counter__shortcuts_shortcut_removed_counter {
-    sql: ${TABLE}.metrics.labeled_counter.shortcuts_shortcut_removed_counter ;;
-    hidden: yes
-    description: "A counter that indicates how many times a user has removed
-a website from shortcuts.
-It also indicates the screen it was removed from, home or browser.
-"
-  }
-
-  dimension: metrics__labeled_rate {
-    sql: ${TABLE}.metrics.labeled_rate ;;
-    hidden: yes
-  }
-
-  dimension: metrics__memory_distribution__glean_database_size__sum {
-    sql: ${TABLE}.metrics.memory_distribution.glean_database_size.sum ;;
-    type: number
-    group_label: "Metrics Memory Distribution Glean Database Size"
-    group_item_label: "Sum"
-  }
-
-  dimension: metrics__memory_distribution__glean_database_size__values {
-    sql: ${TABLE}.metrics.memory_distribution.glean_database_size.values ;;
-    hidden: yes
-  }
-
-  dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__sum {
-    sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.sum ;;
-    type: number
-    group_label: "Metrics Memory Distribution Glean Upload Discarded Exceeding Pings Size"
-    group_item_label: "Sum"
-  }
-
-  dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__values {
-    sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.values ;;
-    hidden: yes
-  }
-
-  dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
-    sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.sum ;;
-    type: number
-    group_label: "Metrics Memory Distribution Glean Upload Pending Pings Directory Size"
-    group_item_label: "Sum"
-  }
-
-  dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
-    sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.values ;;
-    hidden: yes
-  }
-
-  dimension: metrics__quantity__shortcuts_shortcuts_on_home_number {
-    sql: ${TABLE}.metrics.quantity.shortcuts_shortcuts_on_home_number ;;
+  dimension: metrics__quantity__top_site_contile_tile_id {
+    sql: ${TABLE}.metrics.quantity.top_site_contile_tile_id ;;
     type: number
     group_label: "Metrics Quantity"
-    group_item_label: "Shortcuts Shortcuts On Home Number"
-    description: "The number of shortcuts the user has on home screen,
-0, 1, 2, 3 or 4 (maximum)
+    group_item_label: "Top Site Contile Tile Id"
+    description: "A unique identifier provided by the AdM for the sponsored TopSites tile
 "
   }
 
-  dimension: metrics__string__ping_reason {
-    sql: ${TABLE}.metrics.string.ping_reason ;;
+  dimension: metrics__quantity__top_sites_contile_tile_id {
+    sql: ${TABLE}.metrics.quantity.top_sites_contile_tile_id ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Top Sites Contile Tile Id"
+    description: "A unique identifier provided by the AdM for the sponsored TopSites tile
+"
+  }
+
+  dimension: metrics__string__top_site_contile_advertiser {
+    sql: ${TABLE}.metrics.string.top_site_contile_advertiser ;;
     type: string
     group_label: "Metrics String"
-    group_item_label: "Ping Reason"
-    description: "The optional reason the ping was submitted.
-The specific values for reason are specific to each ping, and are
-documented in the ping's pings.yaml file.
+    group_item_label: "Top Site Contile Advertiser"
+    description: "Advertiser brand for the sponsored TopSites tile
 "
   }
 
-  dimension: metrics__string__preferences_user_theme {
-    sql: ${TABLE}.metrics.string.preferences_user_theme ;;
+  dimension: metrics__string__top_sites_contile_advertiser {
+    sql: ${TABLE}.metrics.string.top_sites_contile_advertiser ;;
     type: string
     group_label: "Metrics String"
-    group_item_label: "Preferences User Theme"
-    description: "A string that indicates the theme. Can be one of \"Light\", \"Dark\", or \"Follow device\". Default is \"Follow device\".
+    group_item_label: "Top Sites Contile Advertiser"
+    description: "Advertiser brand for the sponsored TopSites tile
 "
   }
 
-  dimension: metrics__text {
-    sql: ${TABLE}.metrics.text ;;
-    hidden: yes
+  dimension: metrics__url2__top_site_contile_reporting_url {
+    sql: ${TABLE}.metrics.url2.top_site_contile_reporting_url ;;
+    type: string
+    group_label: "Metrics Url2"
+    group_item_label: "Top Site Contile Reporting Url"
+    description: "The AdM reporting endpoint (impression_url for “impression” event,
+click_url for “click” event).
+"
   }
 
-  dimension: metrics__url {
-    sql: ${TABLE}.metrics.url ;;
-    hidden: yes
+  dimension: metrics__url2__top_sites_contile_reporting_url {
+    sql: ${TABLE}.metrics.url2.top_sites_contile_reporting_url ;;
+    type: string
+    group_label: "Metrics Url2"
+    group_item_label: "Top Sites Contile Reporting Url"
+    description: "The AdM reporting endpoint (impression_url for “impression” event,
+click_url for “click” event).
+"
+  }
+
+  dimension: metrics__uuid__top_site_context_id {
+    sql: ${TABLE}.metrics.uuid.top_site_context_id ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Top Site Context Id"
+    description: "A UUID that is unjoinable with other browser metrics. This ID will not be
+shared with AdM, only for internal uses. This ID is shared across all
+contextual services features.
+"
+  }
+
+  dimension: metrics__uuid__top_sites_context_id {
+    sql: ${TABLE}.metrics.uuid.top_sites_context_id ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Top Sites Context Id"
+    description: "A UUID that is unjoinable with other browser metrics. This ID will not be
+shared with AdM, only for internal uses. This ID is shared across all
+contextual services features.
+"
   }
 
   dimension: normalized_app_name {
@@ -790,10 +546,39 @@ documented in the ping's pings.yaml file.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  sql_table_name: `mozdata.org_mozilla_ios_klar.metrics` ;;
+  measure: clients {
+    type: count_distinct
+    sql: ${client_info__client_id} ;;
+  }
+
+  measure: ping_count {
+    type: count
+  }
+
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.org_mozilla_ios_firefox.topsites_impression"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.org_mozilla_ios_firefox.topsites_impression"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_ios_firefoxbeta.topsites_impression"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_ios_fennec.topsites_impression"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
-view: metrics_table__events {
+view: topsites_impression_firefox_ios__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
@@ -815,7 +600,7 @@ view: metrics_table__events {
   }
 }
 
-view: metrics_table__events__extra {
+view: topsites_impression_firefox_ios__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -827,112 +612,7 @@ view: metrics_table__events__extra {
   }
 }
 
-view: metrics_table__metrics__jwe {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: metrics_table__metrics__labeled_rate {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-}
-
-view: metrics_table__metrics__labeled_rate__value {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__denominator {
-    sql: ${TABLE}.value.denominator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Denominator"
-  }
-
-  dimension: value__numerator {
-    sql: ${TABLE}.value.numerator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Numerator"
-  }
-}
-
-view: metrics_table__metrics__memory_distribution__glean_database_size__values {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: number
-  }
-}
-
-view: metrics_table__metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__values {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: number
-  }
-}
-
-view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: number
-  }
-}
-
-view: metrics_table__metrics__text {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: metrics_table__metrics__url {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: metrics_table__ping_info__experiments {
+view: topsites_impression_firefox_ios__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
