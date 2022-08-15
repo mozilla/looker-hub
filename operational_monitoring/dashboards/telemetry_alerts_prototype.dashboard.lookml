@@ -123,7 +123,7 @@
   - name: Probe
     title: Probe
     type: field_filter
-    default_value: 'checkerboard_severity'
+    default_value: 'shutdown_hangs'
     allow_multiple_values: true
     required: true
     ui_config:
