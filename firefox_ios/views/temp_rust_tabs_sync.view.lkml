@@ -74,6 +74,24 @@ view: temp_rust_tabs_sync {
 "
   }
 
+  dimension: metrics__uuid__sync_sync_uuid {
+    label: "Sync Sync Uuid"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
+    type: string
+    group_label: "Sync"
+    group_item_label: "Sync Uuid"
+
+    link: {
+      label: "Glean Dictionary reference for Sync Sync Uuid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/sync_sync_uuid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Unique identifier for this sync, used to correlate together individual pings for data types that were synchronized together (history, bookmarks, logins, and tabs). If a data type is synchronized by itself via the legacy 'sync' API (as opposed to the Sync Manager), then this field will not be set on the corresponding ping.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes

@@ -2637,15 +2637,6 @@ mozilla_vpn_android:
       type: glean_ping_explore
       views:
         base_view: deletion_request
-    events:
-      type: events_explore
-      views:
-        base_view: events
-        extended_view: events_unnested_table
-    events_unnested:
-      type: glean_ping_explore
-      views:
-        base_view: events_unnested
     main:
       type: glean_ping_explore
       views:
@@ -2682,25 +2673,10 @@ mozilla_vpn_android:
       - channel: release
         table: mozdata.mozilla_vpn_android.deletion_request
       type: table_view
-    events:
-      tables:
-      - base_table: mozdata.mozilla_vpn_android.events_unnested
-        events_table_view: events_unnested_table
-      type: events_view
     events_table:
       tables:
       - channel: release
         table: mozdata.mozilla_vpn_android.events
-      type: table_view
-    events_unnested:
-      tables:
-      - channel: release
-        table: mozdata.mozilla_vpn_android.events_unnested
-      type: glean_ping_view
-    events_unnested_table:
-      tables:
-      - channel: release
-        table: mozdata.mozilla_vpn_android.events_unnested
       type: table_view
     main:
       tables:
@@ -3328,17 +3304,17 @@ operational_monitoring:
         group_by_dimension: null
         probes:
         - content_crashes
-        - memory_total
-        - content_shutdown_crashes
-        - gmplugin_crashes
-        - gc_ms
-        - plugin_crashes
-        - content_process_count
-        - oom_crashes
-        - main_crashes
         - shutdown_hangs
-        - gpu_crashes
+        - main_crashes
+        - gc_ms
         - startup_crashes
+        - memory_total
+        - content_process_count
+        - gmplugin_crashes
+        - gpu_crashes
+        - content_shutdown_crashes
+        - oom_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
         xaxis: submission_date
       - explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts
@@ -3484,17 +3460,17 @@ operational_monitoring:
         group_by_dimension: null
         probes:
         - content_crashes
-        - memory_total
-        - content_shutdown_crashes
-        - gmplugin_crashes
-        - gc_ms
-        - plugin_crashes
-        - content_process_count
-        - oom_crashes
-        - main_crashes
         - shutdown_hangs
-        - gpu_crashes
+        - main_crashes
+        - gc_ms
         - startup_crashes
+        - memory_total
+        - content_process_count
+        - gmplugin_crashes
+        - gpu_crashes
+        - content_shutdown_crashes
+        - oom_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_suggest_by_merino_nightly
         xaxis: submission_date
       title: Firefox Suggest By Merino   Nightly
@@ -3515,8 +3491,8 @@ operational_monitoring:
             - '20220627'
             - '20220523'
             - '20220608'
-            - '20220518'
             - '20220607'
+            - '20220518'
             - '20220606'
           os:
             default: Windows
@@ -3528,17 +3504,17 @@ operational_monitoring:
         group_by_dimension: build
         probes:
         - content_crashes
+        - shutdown_hangs
+        - main_crashes
+        - gc_ms
+        - startup_crashes
+        - content_process_count
+        - gmplugin_crashes
+        - gpu_crashes
         - fx_tab_switch_composite_e10s_ms
         - content_shutdown_crashes
-        - gmplugin_crashes
-        - gc_ms
-        - plugin_crashes
-        - content_process_count
         - oom_crashes
-        - main_crashes
-        - shutdown_hangs
-        - gpu_crashes
-        - startup_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.mission_control_desktop_nightly
         xaxis: submission_date
       title: Mission Control Desktop Nightly
@@ -3634,17 +3610,17 @@ operational_monitoring:
         group_by_dimension: null
         probes:
         - content_crashes
-        - memory_total
-        - content_shutdown_crashes
-        - gmplugin_crashes
-        - gc_ms
-        - plugin_crashes
-        - content_process_count
-        - oom_crashes
-        - main_crashes
         - shutdown_hangs
-        - gpu_crashes
+        - main_crashes
+        - gc_ms
         - startup_crashes
+        - memory_total
+        - content_process_count
+        - gmplugin_crashes
+        - gpu_crashes
+        - content_shutdown_crashes
+        - oom_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489
         xaxis: submission_date
       title: Doh Beta Rollout To All Us Desktop Users V2
@@ -3660,17 +3636,17 @@ operational_monitoring:
         group_by_dimension: null
         probes:
         - content_crashes
-        - memory_total
-        - content_shutdown_crashes
-        - gmplugin_crashes
-        - gc_ms
-        - plugin_crashes
-        - content_process_count
-        - oom_crashes
-        - main_crashes
         - shutdown_hangs
-        - gpu_crashes
+        - main_crashes
+        - gc_ms
         - startup_crashes
+        - memory_total
+        - content_process_count
+        - gmplugin_crashes
+        - gpu_crashes
+        - content_shutdown_crashes
+        - oom_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
         xaxis: submission_date
       title: Doh Nightly Rollout To All Us Desktop Users
@@ -3686,17 +3662,17 @@ operational_monitoring:
         group_by_dimension: null
         probes:
         - content_crashes
-        - memory_total
-        - content_shutdown_crashes
-        - gmplugin_crashes
-        - gc_ms
-        - plugin_crashes
-        - content_process_count
-        - oom_crashes
-        - main_crashes
         - shutdown_hangs
-        - gpu_crashes
+        - main_crashes
+        - gc_ms
         - startup_crashes
+        - memory_total
+        - content_process_count
+        - gmplugin_crashes
+        - gpu_crashes
+        - content_shutdown_crashes
+        - oom_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331
         xaxis: submission_date
       title: Doh Us Staged Rollout To All Us Desktop Users
@@ -3712,17 +3688,17 @@ operational_monitoring:
         group_by_dimension: null
         probes:
         - content_crashes
-        - memory_total
-        - content_shutdown_crashes
-        - gmplugin_crashes
-        - gc_ms
-        - plugin_crashes
-        - content_process_count
-        - oom_crashes
-        - main_crashes
         - shutdown_hangs
-        - gpu_crashes
+        - main_crashes
+        - gc_ms
         - startup_crashes
+        - memory_total
+        - content_process_count
+        - gmplugin_crashes
+        - gpu_crashes
+        - content_shutdown_crashes
+        - oom_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout
         xaxis: submission_date
       title: Set Firefox As Default Pdf Handler On Windows For New Users   Rollout
@@ -3816,17 +3792,17 @@ operational_monitoring:
         group_by_dimension: null
         probes:
         - content_crashes
-        - memory_total
-        - content_shutdown_crashes
-        - gmplugin_crashes
-        - gc_ms
-        - plugin_crashes
-        - content_process_count
-        - oom_crashes
-        - main_crashes
         - shutdown_hangs
-        - gpu_crashes
+        - main_crashes
+        - gc_ms
         - startup_crashes
+        - memory_total
+        - content_process_count
+        - gmplugin_crashes
+        - gpu_crashes
+        - content_shutdown_crashes
+        - oom_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.task_continuity_sync_after_tab_change_rollout_40
         xaxis: submission_date
       title: 'Task Continuity   Sync After Tab Change Rollout 40 '
@@ -3842,17 +3818,17 @@ operational_monitoring:
         group_by_dimension: null
         probes:
         - content_crashes
-        - memory_total
-        - content_shutdown_crashes
-        - gmplugin_crashes
-        - gc_ms
-        - plugin_crashes
-        - content_process_count
-        - oom_crashes
-        - main_crashes
         - shutdown_hangs
-        - gpu_crashes
+        - main_crashes
+        - gc_ms
         - startup_crashes
+        - memory_total
+        - content_process_count
+        - gmplugin_crashes
+        - gpu_crashes
+        - content_shutdown_crashes
+        - oom_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.task_continuity_sync_after_tab_change_rollout_60
         xaxis: submission_date
       title: 'Task Continuity   Sync After Tab Change Rollout 60 '
@@ -3921,17 +3897,17 @@ operational_monitoring:
         group_by_dimension: null
         probes:
         - content_crashes
-        - memory_total
-        - content_shutdown_crashes
-        - gmplugin_crashes
-        - gc_ms
-        - plugin_crashes
-        - content_process_count
-        - oom_crashes
-        - main_crashes
         - shutdown_hangs
-        - gpu_crashes
+        - main_crashes
+        - gc_ms
         - startup_crashes
+        - memory_total
+        - content_process_count
+        - gmplugin_crashes
+        - gpu_crashes
+        - content_shutdown_crashes
+        - oom_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles
         xaxis: submission_date
       title: 'Tcp Rollout  Aurora Phase Iii  Tcp On By Default For 100  Aurora Profiles '
@@ -3947,17 +3923,17 @@ operational_monitoring:
         group_by_dimension: null
         probes:
         - content_crashes
-        - memory_total
-        - content_shutdown_crashes
-        - gmplugin_crashes
-        - gc_ms
-        - plugin_crashes
-        - content_process_count
-        - oom_crashes
-        - main_crashes
         - shutdown_hangs
-        - gpu_crashes
+        - main_crashes
+        - gc_ms
         - startup_crashes
+        - memory_total
+        - content_process_count
+        - gmplugin_crashes
+        - gpu_crashes
+        - content_shutdown_crashes
+        - oom_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
         xaxis: submission_date
       title: 'Tcp Rollout  Beta Phase Iii  Tcp On By Default For Remaining Beta Profiles '
@@ -3992,23 +3968,23 @@ operational_monitoring:
         group_by_dimension: null
         probes:
         - content_crashes
-        - search_with_ads
-        - organic_search_count
-        - ad_click_organic
-        - content_shutdown_crashes
-        - gmplugin_crashes
-        - tagged_search_count
-        - plugin_crashes
-        - ad_click
-        - content_process_count
-        - oom_crashes
-        - main_crashes
-        - search_with_ads_organic
-        - tagged_follow_on_search_count
         - shutdown_hangs
-        - gpu_crashes
+        - main_crashes
+        - tagged_search_count
+        - tagged_follow_on_search_count
+        - organic_search_count
+        - search_with_ads_organic
         - sap
         - startup_crashes
+        - content_process_count
+        - gmplugin_crashes
+        - gpu_crashes
+        - search_with_ads
+        - ad_click
+        - ad_click_organic
+        - content_shutdown_crashes
+        - oom_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_2
         xaxis: submission_date
       title: Tcp Rollout Phase 2
@@ -4024,17 +4000,17 @@ operational_monitoring:
         group_by_dimension: null
         probes:
         - content_crashes
-        - memory_total
-        - content_shutdown_crashes
-        - gmplugin_crashes
-        - gc_ms
-        - plugin_crashes
-        - content_process_count
-        - oom_crashes
-        - main_crashes
         - shutdown_hangs
-        - gpu_crashes
+        - main_crashes
+        - gc_ms
         - startup_crashes
+        - memory_total
+        - content_process_count
+        - gmplugin_crashes
+        - gpu_crashes
+        - content_shutdown_crashes
+        - oom_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
         xaxis: submission_date
       title: 'Tcp Rollout  Phase Iii  Tcp On By Default For 50  Existing Release Profiles '
@@ -4050,17 +4026,17 @@ operational_monitoring:
         group_by_dimension: null
         probes:
         - content_crashes
-        - memory_total
-        - content_shutdown_crashes
-        - gmplugin_crashes
-        - gc_ms
-        - plugin_crashes
-        - content_process_count
-        - oom_crashes
-        - main_crashes
         - shutdown_hangs
-        - gpu_crashes
+        - main_crashes
+        - gc_ms
         - startup_crashes
+        - memory_total
+        - content_process_count
+        - gmplugin_crashes
+        - gpu_crashes
+        - content_shutdown_crashes
+        - oom_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles
         xaxis: submission_date
       title: 'Tcp Rollout  Phase Iii  Tcp On By Default For 95  Existing Esr Profiles '
@@ -4076,17 +4052,17 @@ operational_monitoring:
         group_by_dimension: null
         probes:
         - content_crashes
-        - memory_total
-        - content_shutdown_crashes
-        - gmplugin_crashes
-        - gc_ms
-        - plugin_crashes
-        - content_process_count
-        - oom_crashes
-        - main_crashes
         - shutdown_hangs
-        - gpu_crashes
+        - main_crashes
+        - gc_ms
         - startup_crashes
+        - memory_total
+        - content_process_count
+        - gmplugin_crashes
+        - gpu_crashes
+        - content_shutdown_crashes
+        - oom_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles
         xaxis: submission_date
       title: 'Tcp Rollout  Phase Iii  Tcp On By Default For 95  Existing Release Profiles '
@@ -4106,25 +4082,25 @@ operational_monitoring:
         explore: telemetry_alerts_prototype
         group_by_dimension: null
         probes:
+        - shutdown_hangs
+        - perf_first_contentful_paint_ms
+        - js_pageload_execution_ms
+        - subsession_length
+        - content_crashes
+        - main_crashes
+        - gc_ms
+        - gc_budget_overrun
+        - active_ticks
+        - content_process_count
         - checkerboard_severity
         - memory_total
-        - content_process_count
-        - subsession_length
-        - gpu_crashes
-        - perf_first_contentful_paint_ms
-        - plugin_crashes
-        - gc_budget_overrun
-        - js_pageload_execution_ms
-        - gc_ms_content
         - gmplugin_crashes
-        - oom_crashes
-        - active_ticks
-        - content_crashes
         - content_shutdown_crashes
-        - gc_ms
-        - main_crashes
-        - shutdown_hangs
+        - oom_crashes
+        - gc_ms_content
         - startup_crashes
+        - gpu_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype
         xaxis: build_id
       - explore: telemetry_alerts_prototype_alerts
@@ -4142,17 +4118,17 @@ operational_monitoring:
         group_by_dimension: null
         probes:
         - content_crashes
-        - memory_total
-        - content_shutdown_crashes
-        - gmplugin_crashes
-        - gc_ms
-        - plugin_crashes
-        - content_process_count
-        - oom_crashes
-        - main_crashes
         - shutdown_hangs
-        - gpu_crashes
+        - main_crashes
+        - gc_ms
         - startup_crashes
+        - memory_total
+        - content_process_count
+        - gmplugin_crashes
+        - gpu_crashes
+        - content_shutdown_crashes
+        - oom_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
         xaxis: submission_date
       title: 'Total Cookie Protection Beta Roll Out  Phase Ii  Switch On To New Users '
@@ -4168,17 +4144,17 @@ operational_monitoring:
         group_by_dimension: null
         probes:
         - content_crashes
-        - memory_total
-        - content_shutdown_crashes
-        - gmplugin_crashes
-        - gc_ms
-        - plugin_crashes
-        - content_process_count
-        - oom_crashes
-        - main_crashes
         - shutdown_hangs
-        - gpu_crashes
+        - main_crashes
+        - gc_ms
         - startup_crashes
+        - memory_total
+        - content_process_count
+        - gmplugin_crashes
+        - gpu_crashes
+        - content_shutdown_crashes
+        - oom_crashes
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
         xaxis: submission_date
       title: 'Total Cookie Protection Roll Out  Phase Ii  Switch On By Default To
@@ -4625,17 +4601,17 @@ operational_monitoring:
       dimensions: *id032
       probes:
       - content_crashes
-      - memory_total
-      - content_shutdown_crashes
-      - gmplugin_crashes
-      - gc_ms
-      - plugin_crashes
-      - content_process_count
-      - oom_crashes
-      - main_crashes
       - shutdown_hangs
-      - gpu_crashes
+      - main_crashes
+      - gc_ms
       - startup_crashes
+      - memory_total
+      - content_process_count
+      - gmplugin_crashes
+      - gpu_crashes
+      - content_shutdown_crashes
+      - oom_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
@@ -4747,17 +4723,17 @@ operational_monitoring:
       dimensions: *id044
       probes:
       - content_crashes
-      - memory_total
-      - content_shutdown_crashes
-      - gmplugin_crashes
-      - gc_ms
-      - plugin_crashes
-      - content_process_count
-      - oom_crashes
-      - main_crashes
       - shutdown_hangs
-      - gpu_crashes
+      - main_crashes
+      - gc_ms
       - startup_crashes
+      - memory_total
+      - content_process_count
+      - gmplugin_crashes
+      - gpu_crashes
+      - content_shutdown_crashes
+      - oom_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: firefox_suggest_by_merino_nightly
@@ -4767,17 +4743,17 @@ operational_monitoring:
       dimensions: *id046
       probes:
       - content_crashes
+      - shutdown_hangs
+      - main_crashes
+      - gc_ms
+      - startup_crashes
+      - content_process_count
+      - gmplugin_crashes
+      - gpu_crashes
       - fx_tab_switch_composite_e10s_ms
       - content_shutdown_crashes
-      - gmplugin_crashes
-      - gc_ms
-      - plugin_crashes
-      - content_process_count
       - oom_crashes
-      - main_crashes
-      - shutdown_hangs
-      - gpu_crashes
-      - startup_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: mission_control_desktop_nightly
@@ -4847,17 +4823,17 @@ operational_monitoring:
       dimensions: *id054
       probes:
       - content_crashes
-      - memory_total
-      - content_shutdown_crashes
-      - gmplugin_crashes
-      - gc_ms
-      - plugin_crashes
-      - content_process_count
-      - oom_crashes
-      - main_crashes
       - shutdown_hangs
-      - gpu_crashes
+      - main_crashes
+      - gc_ms
       - startup_crashes
+      - memory_total
+      - content_process_count
+      - gmplugin_crashes
+      - gpu_crashes
+      - content_shutdown_crashes
+      - oom_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489
@@ -4867,17 +4843,17 @@ operational_monitoring:
       dimensions: *id056
       probes:
       - content_crashes
-      - memory_total
-      - content_shutdown_crashes
-      - gmplugin_crashes
-      - gc_ms
-      - plugin_crashes
-      - content_process_count
-      - oom_crashes
-      - main_crashes
       - shutdown_hangs
-      - gpu_crashes
+      - main_crashes
+      - gc_ms
       - startup_crashes
+      - memory_total
+      - content_process_count
+      - gmplugin_crashes
+      - gpu_crashes
+      - content_shutdown_crashes
+      - oom_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
@@ -4887,17 +4863,17 @@ operational_monitoring:
       dimensions: *id058
       probes:
       - content_crashes
-      - memory_total
-      - content_shutdown_crashes
-      - gmplugin_crashes
-      - gc_ms
-      - plugin_crashes
-      - content_process_count
-      - oom_crashes
-      - main_crashes
       - shutdown_hangs
-      - gpu_crashes
+      - main_crashes
+      - gc_ms
       - startup_crashes
+      - memory_total
+      - content_process_count
+      - gmplugin_crashes
+      - gpu_crashes
+      - content_shutdown_crashes
+      - oom_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331
@@ -4907,17 +4883,17 @@ operational_monitoring:
       dimensions: *id060
       probes:
       - content_crashes
-      - memory_total
-      - content_shutdown_crashes
-      - gmplugin_crashes
-      - gc_ms
-      - plugin_crashes
-      - content_process_count
-      - oom_crashes
-      - main_crashes
       - shutdown_hangs
-      - gpu_crashes
+      - main_crashes
+      - gc_ms
       - startup_crashes
+      - memory_total
+      - content_process_count
+      - gmplugin_crashes
+      - gpu_crashes
+      - content_shutdown_crashes
+      - oom_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout
@@ -4987,17 +4963,17 @@ operational_monitoring:
       dimensions: *id068
       probes:
       - content_crashes
-      - memory_total
-      - content_shutdown_crashes
-      - gmplugin_crashes
-      - gc_ms
-      - plugin_crashes
-      - content_process_count
-      - oom_crashes
-      - main_crashes
       - shutdown_hangs
-      - gpu_crashes
+      - main_crashes
+      - gc_ms
       - startup_crashes
+      - memory_total
+      - content_process_count
+      - gmplugin_crashes
+      - gpu_crashes
+      - content_shutdown_crashes
+      - oom_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: task_continuity_sync_after_tab_change_rollout_40
@@ -5007,17 +4983,17 @@ operational_monitoring:
       dimensions: *id070
       probes:
       - content_crashes
-      - memory_total
-      - content_shutdown_crashes
-      - gmplugin_crashes
-      - gc_ms
-      - plugin_crashes
-      - content_process_count
-      - oom_crashes
-      - main_crashes
       - shutdown_hangs
-      - gpu_crashes
+      - main_crashes
+      - gc_ms
       - startup_crashes
+      - memory_total
+      - content_process_count
+      - gmplugin_crashes
+      - gpu_crashes
+      - content_shutdown_crashes
+      - oom_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: task_continuity_sync_after_tab_change_rollout_60
@@ -5053,17 +5029,17 @@ operational_monitoring:
       dimensions: *id074
       probes:
       - content_crashes
-      - memory_total
-      - content_shutdown_crashes
-      - gmplugin_crashes
-      - gc_ms
-      - plugin_crashes
-      - content_process_count
-      - oom_crashes
-      - main_crashes
       - shutdown_hangs
-      - gpu_crashes
+      - main_crashes
+      - gc_ms
       - startup_crashes
+      - memory_total
+      - content_process_count
+      - gmplugin_crashes
+      - gpu_crashes
+      - content_shutdown_crashes
+      - oom_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles
@@ -5073,17 +5049,17 @@ operational_monitoring:
       dimensions: *id076
       probes:
       - content_crashes
-      - memory_total
-      - content_shutdown_crashes
-      - gmplugin_crashes
-      - gc_ms
-      - plugin_crashes
-      - content_process_count
-      - oom_crashes
-      - main_crashes
       - shutdown_hangs
-      - gpu_crashes
+      - main_crashes
+      - gc_ms
       - startup_crashes
+      - memory_total
+      - content_process_count
+      - gmplugin_crashes
+      - gpu_crashes
+      - content_shutdown_crashes
+      - oom_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
@@ -5093,23 +5069,23 @@ operational_monitoring:
       dimensions: *id078
       probes:
       - content_crashes
-      - search_with_ads
-      - organic_search_count
-      - ad_click_organic
-      - content_shutdown_crashes
-      - gmplugin_crashes
-      - tagged_search_count
-      - plugin_crashes
-      - ad_click
-      - content_process_count
-      - oom_crashes
-      - main_crashes
-      - search_with_ads_organic
-      - tagged_follow_on_search_count
       - shutdown_hangs
-      - gpu_crashes
+      - main_crashes
+      - tagged_search_count
+      - tagged_follow_on_search_count
+      - organic_search_count
+      - search_with_ads_organic
       - sap
       - startup_crashes
+      - content_process_count
+      - gmplugin_crashes
+      - gpu_crashes
+      - search_with_ads
+      - ad_click
+      - ad_click_organic
+      - content_shutdown_crashes
+      - oom_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: tcp_rollout_phase_2
@@ -5119,17 +5095,17 @@ operational_monitoring:
       dimensions: *id080
       probes:
       - content_crashes
-      - memory_total
-      - content_shutdown_crashes
-      - gmplugin_crashes
-      - gc_ms
-      - plugin_crashes
-      - content_process_count
-      - oom_crashes
-      - main_crashes
       - shutdown_hangs
-      - gpu_crashes
+      - main_crashes
+      - gc_ms
       - startup_crashes
+      - memory_total
+      - content_process_count
+      - gmplugin_crashes
+      - gpu_crashes
+      - content_shutdown_crashes
+      - oom_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
@@ -5139,17 +5115,17 @@ operational_monitoring:
       dimensions: *id082
       probes:
       - content_crashes
-      - memory_total
-      - content_shutdown_crashes
-      - gmplugin_crashes
-      - gc_ms
-      - plugin_crashes
-      - content_process_count
-      - oom_crashes
-      - main_crashes
       - shutdown_hangs
-      - gpu_crashes
+      - main_crashes
+      - gc_ms
       - startup_crashes
+      - memory_total
+      - content_process_count
+      - gmplugin_crashes
+      - gpu_crashes
+      - content_shutdown_crashes
+      - oom_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles
@@ -5159,17 +5135,17 @@ operational_monitoring:
       dimensions: *id084
       probes:
       - content_crashes
-      - memory_total
-      - content_shutdown_crashes
-      - gmplugin_crashes
-      - gc_ms
-      - plugin_crashes
-      - content_process_count
-      - oom_crashes
-      - main_crashes
       - shutdown_hangs
-      - gpu_crashes
+      - main_crashes
+      - gc_ms
       - startup_crashes
+      - memory_total
+      - content_process_count
+      - gmplugin_crashes
+      - gpu_crashes
+      - content_shutdown_crashes
+      - oom_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles
@@ -5178,25 +5154,25 @@ operational_monitoring:
       branches: *id085
       dimensions: *id086
       probes:
+      - shutdown_hangs
+      - perf_first_contentful_paint_ms
+      - js_pageload_execution_ms
+      - subsession_length
+      - content_crashes
+      - main_crashes
+      - gc_ms
+      - gc_budget_overrun
+      - active_ticks
+      - content_process_count
       - checkerboard_severity
       - memory_total
-      - content_process_count
-      - subsession_length
-      - gpu_crashes
-      - perf_first_contentful_paint_ms
-      - plugin_crashes
-      - gc_budget_overrun
-      - js_pageload_execution_ms
-      - gc_ms_content
       - gmplugin_crashes
-      - oom_crashes
-      - active_ticks
-      - content_crashes
       - content_shutdown_crashes
-      - gc_ms
-      - main_crashes
-      - shutdown_hangs
+      - oom_crashes
+      - gc_ms_content
       - startup_crashes
+      - gpu_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: telemetry_alerts_prototype
@@ -5210,17 +5186,17 @@ operational_monitoring:
       dimensions: *id088
       probes:
       - content_crashes
-      - memory_total
-      - content_shutdown_crashes
-      - gmplugin_crashes
-      - gc_ms
-      - plugin_crashes
-      - content_process_count
-      - oom_crashes
-      - main_crashes
       - shutdown_hangs
-      - gpu_crashes
+      - main_crashes
+      - gc_ms
       - startup_crashes
+      - memory_total
+      - content_process_count
+      - gmplugin_crashes
+      - gpu_crashes
+      - content_shutdown_crashes
+      - oom_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
@@ -5230,17 +5206,17 @@ operational_monitoring:
       dimensions: *id090
       probes:
       - content_crashes
-      - memory_total
-      - content_shutdown_crashes
-      - gmplugin_crashes
-      - gc_ms
-      - plugin_crashes
-      - content_process_count
-      - oom_crashes
-      - main_crashes
       - shutdown_hangs
-      - gpu_crashes
+      - main_crashes
+      - gc_ms
       - startup_crashes
+      - memory_total
+      - content_process_count
+      - gmplugin_crashes
+      - gpu_crashes
+      - content_shutdown_crashes
+      - oom_crashes
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
