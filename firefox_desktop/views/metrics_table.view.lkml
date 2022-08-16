@@ -644,6 +644,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_editing {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing ;;
+    hidden: yes
+    description: "Counts the number of times some PDF editing features are used.
+"
+  }
+
   dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
     sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_content_background ;;
     hidden: yes

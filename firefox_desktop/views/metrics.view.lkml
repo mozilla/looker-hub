@@ -114,6 +114,23 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_editing {
+    label: "Pdfjs Editing"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing ;;
+    group_label: "Pdfjs"
+    group_item_label: "Editing"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_editing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times some PDF editing features are used.
+"
+  }
+
   dimension: metrics__string__search_engine_default_display_name {
     label: "Search Engine Default Display Name"
     hidden: no
