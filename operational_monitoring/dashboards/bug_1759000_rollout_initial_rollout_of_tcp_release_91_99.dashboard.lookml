@@ -10,6 +10,38 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Gpu Crashes
+    name: Gpu Crashes
+    explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
+    type: "ci-line-chart"
+    fields: [
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
+    ]
+    pivots: [
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
+    ]
+    filters:
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.probe: gpu_crashes
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
+    log_scale: false
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high
+    show_grid: true
+    listen:
+      Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Content Crashes
     name: Content Crashes
     explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
@@ -27,71 +59,7 @@
     filters:
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.probe: content_crashes
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
-    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
-    log_scale: false
-    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low
-    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high
-    show_grid: true
-    listen:
-      Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
-    explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
-    type: "ci-line-chart"
-    fields: [
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
-    ]
-    pivots: [
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
-    ]
-    filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.probe: shutdown_hangs
-    row: 0
     col: 12
-    width: 12
-    height: 8
-    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
-    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
-    log_scale: false
-    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low
-    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high
-    show_grid: true
-    listen:
-      Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Startup Crashes
-    name: Startup Crashes
-    explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
-    type: "ci-line-chart"
-    fields: [
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
-    ]
-    pivots: [
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
-    ]
-    filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.probe: startup_crashes
-    row: 10
-    col: 0
     width: 12
     height: 8
     field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
@@ -123,6 +91,38 @@
     filters:
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.probe: oom_crashes
     row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
+    log_scale: false
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high
+    show_grid: true
+    listen:
+      Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Main Crashes
+    name: Main Crashes
+    explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
+    type: "ci-line-chart"
+    fields: [
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
+    ]
+    pivots: [
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
+    ]
+    filters:
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.probe: main_crashes
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -138,8 +138,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Gmplugin Crashes
-    name: Gmplugin Crashes
+  - title: Memory Total
+    name: Memory Total
     explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
     type: "ci-line-chart"
     fields: [
@@ -153,7 +153,7 @@
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
     ]
     filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.probe: gmplugin_crashes
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.probe: memory_total
     row: 20
     col: 0
     width: 12
@@ -202,8 +202,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Process Count
-    name: Content Process Count
+  - title: Gmplugin Crashes
+    name: Gmplugin Crashes
     explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
     type: "ci-line-chart"
     fields: [
@@ -217,41 +217,9 @@
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
     ]
     filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.probe: content_process_count
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.probe: gmplugin_crashes
     row: 30
     col: 0
-    width: 12
-    height: 8
-    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
-    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
-    log_scale: false
-    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low
-    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high
-    show_grid: true
-    listen:
-      Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Main Crashes
-    name: Main Crashes
-    explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
-    type: "ci-line-chart"
-    fields: [
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
-    ]
-    pivots: [
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
-    ]
-    filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.probe: main_crashes
-    row: 30
-    col: 12
     width: 12
     height: 8
     field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
@@ -282,7 +250,103 @@
     ]
     filters:
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.probe: gc_ms
+    row: 30
+    col: 12
+    width: 12
+    height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
+    log_scale: false
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high
+    show_grid: true
+    listen:
+      Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Content Process Count
+    name: Content Process Count
+    explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
+    type: "ci-line-chart"
+    fields: [
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
+    ]
+    pivots: [
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
+    ]
+    filters:
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.probe: content_process_count
     row: 40
+    col: 0
+    width: 12
+    height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
+    log_scale: false
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high
+    show_grid: true
+    listen:
+      Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
+    explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
+    type: "ci-line-chart"
+    fields: [
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
+    ]
+    pivots: [
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
+    ]
+    filters:
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.probe: shutdown_hangs
+    row: 40
+    col: 12
+    width: 12
+    height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
+    log_scale: false
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high
+    show_grid: true
+    listen:
+      Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Startup Crashes
+    name: Startup Crashes
+    explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
+    type: "ci-line-chart"
+    fields: [
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
+    ]
+    pivots: [
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
+    ]
+    filters:
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.probe: startup_crashes
+    row: 50
     col: 0
     width: 12
     height: 8
@@ -314,70 +378,6 @@
     ]
     filters:
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.probe: content_shutdown_crashes
-    row: 40
-    col: 12
-    width: 12
-    height: 8
-    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
-    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
-    log_scale: false
-    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low
-    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high
-    show_grid: true
-    listen:
-      Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total
-    explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
-    type: "ci-line-chart"
-    fields: [
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
-    ]
-    pivots: [
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
-    ]
-    filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.probe: memory_total
-    row: 50
-    col: 0
-    width: 12
-    height: 8
-    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
-    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
-    log_scale: false
-    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low
-    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high
-    show_grid: true
-    listen:
-      Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Gpu Crashes
-    name: Gpu Crashes
-    explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
-    type: "ci-line-chart"
-    fields: [
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.high,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.low,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.percentile
-    ]
-    pivots: [
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
-    ]
-    filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.probe: gpu_crashes
     row: 50
     col: 12
     width: 12
