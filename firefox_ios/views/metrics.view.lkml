@@ -269,6 +269,24 @@ preference.
 "
   }
 
+  dimension: metrics__timing_distribution__awesomebar_query_time__sum {
+    label: "Awesomebar Query Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.sum ;;
+    type: number
+    group_label: "Awesomebar"
+    group_item_label: "Query Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Awesomebar Query Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/awesomebar_query_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time a query against awesomebar took. This helps us understand the performance of the awesomebar in querying history and bookmarks. The query time will also help us verify that we are **not** introducing any performance regressions.
+"
+  }
+
   dimension: metrics__labeled_counter__bookmarks_add {
     label: "Bookmarks Add"
     hidden: yes
