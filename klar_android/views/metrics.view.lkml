@@ -1361,6 +1361,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__wr_renderer_time_no_sc__sum {
+    label: "Wr Renderer Time No Sc Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time_no_sc.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Renderer Time No Sc Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Renderer Time No Sc Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/wr_renderer_time_no_sc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebRender renderer time excluding frames in which shader compilation took place.
+"
+  }
+
   dimension: metrics__timing_distribution__wr_scenebuild_time__sum {
     label: "Wr Scenebuild Time Sum"
     hidden: no

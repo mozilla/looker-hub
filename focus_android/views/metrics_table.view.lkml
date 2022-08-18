@@ -1523,6 +1523,58 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__wr_renderer_time_no_sc__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time_no_sc.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Renderer Time No Sc"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time_no_sc__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time_no_sc.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Renderer Time No Sc"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time_no_sc__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time_no_sc.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Renderer Time No Sc"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time_no_sc__range {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time_no_sc.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time_no_sc__sum {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time_no_sc.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Renderer Time No Sc"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time_no_sc__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time_no_sc.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Wr Renderer Time No Sc"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time_no_sc__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time_no_sc.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Renderer Time No Sc"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time_no_sc__values {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time_no_sc.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__wr_scenebuild_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.bucket_count ;;
     type: number
@@ -2182,6 +2234,18 @@ view: metrics_table__metrics__timing_distribution__wr_rasterize_glyphs_time__val
 }
 
 view: metrics_table__metrics__timing_distribution__wr_renderer_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__wr_renderer_time_no_sc__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
