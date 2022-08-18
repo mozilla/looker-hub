@@ -369,6 +369,18 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: baseline
+    baseline_clients_daily:
+      type: glean_ping_explore
+      views:
+        base_view: baseline_clients_daily
+    baseline_clients_first_seen:
+      type: glean_ping_explore
+      views:
+        base_view: baseline_clients_first_seen
+    baseline_clients_last_seen:
+      type: glean_ping_explore
+      views:
+        base_view: baseline_clients_last_seen
     bookmarks_sync:
       type: glean_ping_explore
       views:
@@ -391,6 +403,10 @@ fenix:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_unnested:
+      type: glean_ping_explore
+      views:
+        base_view: events_unnested
     first_session:
       type: glean_ping_explore
       views:
@@ -497,6 +513,11 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fenix.baseline
       type: glean_ping_view
+    baseline_clients_daily:
+      tables:
+      - channel: release
+        table: mozdata.fenix.baseline_clients_daily
+      type: glean_ping_view
     baseline_clients_daily_table:
       tables:
       - channel: release
@@ -506,6 +527,11 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fenix.baseline_clients_daily
       type: table_view
+    baseline_clients_first_seen:
+      tables:
+      - channel: release
+        table: mozdata.fenix.baseline_clients_first_seen
+      type: glean_ping_view
     baseline_clients_first_seen_table:
       tables:
       - channel: release
@@ -515,6 +541,11 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fenix.baseline_clients_first_seen
       type: table_view
+    baseline_clients_last_seen:
+      tables:
+      - channel: release
+        table: mozdata.fenix.baseline_clients_last_seen
+      type: glean_ping_view
     baseline_clients_last_seen_table:
       tables:
       - channel: release
@@ -620,6 +651,11 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fenix.events
       type: table_view
+    events_unnested:
+      tables:
+      - channel: release
+        table: mozdata.fenix.events_unnested
+      type: glean_ping_view
     events_unnested_table:
       tables:
       - channel: release
@@ -1269,6 +1305,18 @@ firefox_ios:
       type: glean_ping_explore
       views:
         base_view: baseline
+    baseline_clients_daily:
+      type: glean_ping_explore
+      views:
+        base_view: baseline_clients_daily
+    baseline_clients_first_seen:
+      type: glean_ping_explore
+      views:
+        base_view: baseline_clients_first_seen
+    baseline_clients_last_seen:
+      type: glean_ping_explore
+      views:
+        base_view: baseline_clients_last_seen
     client_counts:
       type: client_counts_explore
       views:
@@ -1283,6 +1331,10 @@ firefox_ios:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_unnested:
+      type: glean_ping_explore
+      views:
+        base_view: events_unnested
     first_session:
       type: glean_ping_explore
       views:
@@ -1345,6 +1397,11 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.baseline
       type: glean_ping_view
+    baseline_clients_daily:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.baseline_clients_daily
+      type: glean_ping_view
     baseline_clients_daily_table:
       tables:
       - channel: release
@@ -1354,6 +1411,11 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.baseline_clients_daily
       type: table_view
+    baseline_clients_first_seen:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.baseline_clients_first_seen
+      type: glean_ping_view
     baseline_clients_first_seen_table:
       tables:
       - channel: release
@@ -1363,6 +1425,11 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.baseline_clients_first_seen
       type: table_view
+    baseline_clients_last_seen:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.baseline_clients_last_seen
+      type: glean_ping_view
     baseline_clients_last_seen_table:
       tables:
       - channel: release
@@ -1422,6 +1489,11 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.events
       type: table_view
+    events_unnested:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.events_unnested
+      type: glean_ping_view
     events_unnested_table:
       tables:
       - channel: release
@@ -1685,6 +1757,18 @@ focus_android:
       type: glean_ping_explore
       views:
         base_view: baseline
+    baseline_clients_daily:
+      type: glean_ping_explore
+      views:
+        base_view: baseline_clients_daily
+    baseline_clients_first_seen:
+      type: glean_ping_explore
+      views:
+        base_view: baseline_clients_first_seen
+    baseline_clients_last_seen:
+      type: glean_ping_explore
+      views:
+        base_view: baseline_clients_last_seen
     client_counts:
       type: client_counts_explore
       views:
@@ -1699,6 +1783,10 @@ focus_android:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_unnested:
+      type: glean_ping_explore
+      views:
+        base_view: events_unnested
     fog_validation:
       type: glean_ping_explore
       views:
@@ -1746,6 +1834,11 @@ focus_android:
       - channel: nightly
         table: mozdata.org_mozilla_focus_nightly.baseline
       type: glean_ping_view
+    baseline_clients_daily:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.baseline_clients_daily
+      type: glean_ping_view
     baseline_clients_daily_table:
       tables:
       - channel: release
@@ -1755,6 +1848,11 @@ focus_android:
       - channel: nightly
         table: mozdata.org_mozilla_focus_nightly.baseline_clients_daily
       type: table_view
+    baseline_clients_first_seen:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.baseline_clients_first_seen
+      type: glean_ping_view
     baseline_clients_first_seen_table:
       tables:
       - channel: release
@@ -1764,6 +1862,11 @@ focus_android:
       - channel: nightly
         table: mozdata.org_mozilla_focus_nightly.baseline_clients_first_seen
       type: table_view
+    baseline_clients_last_seen:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.baseline_clients_last_seen
+      type: glean_ping_view
     baseline_clients_last_seen_table:
       tables:
       - channel: release
@@ -1823,6 +1926,11 @@ focus_android:
       - channel: nightly
         table: mozdata.org_mozilla_focus_nightly.events
       type: table_view
+    events_unnested:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.events_unnested
+      type: glean_ping_view
     events_unnested_table:
       tables:
       - channel: release
@@ -2395,15 +2503,27 @@ monitoring:
       type: ping_view
 mozilla_vpn:
   explores:
+    deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: deletion_request
     events:
       type: events_explore
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_unnested:
+      type: glean_ping_explore
+      views:
+        base_view: events_unnested
     funnel_analysis:
       type: funnel_analysis_explore
       views:
         base_view: funnel_analysis
+    main:
+      type: glean_ping_explore
+      views:
+        base_view: main
   glean_app: true
   owners:
   - vpn@mozilla.com
@@ -2438,6 +2558,11 @@ mozilla_vpn:
       - channel: release
         table: mozdata.mozilla_vpn.channel_group_proportions
       type: table_view
+    deletion_request:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.deletion_request
+      type: glean_ping_view
     deletion_request_table:
       tables:
       - channel: release
@@ -2473,6 +2598,11 @@ mozilla_vpn:
       - channel: release
         table: mozdata.mozilla_vpn.events
       type: table_view
+    events_unnested:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.events_unnested
+      type: glean_ping_view
     events_unnested_table:
       tables:
       - channel: release
@@ -2522,6 +2652,11 @@ mozilla_vpn:
       - channel: release
         table: mozdata.mozilla_vpn.login_flows
       type: table_view
+    main:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.main
+      type: glean_ping_view
     main_table:
       tables:
       - channel: release
