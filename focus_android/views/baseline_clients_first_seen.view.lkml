@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: baseline_clients_last_seen {
+view: baseline_clients_first_seen {
   dimension: android_sdk_version {
     sql: ${TABLE}.android_sdk_version ;;
     type: string
@@ -46,16 +46,6 @@ view: baseline_clients_last_seen {
     map_layer_name: countries
   }
 
-  dimension: days_created_profile_bits {
-    sql: ${TABLE}.days_created_profile_bits ;;
-    type: number
-  }
-
-  dimension: days_seen_bits {
-    sql: ${TABLE}.days_seen_bits ;;
-    type: number
-  }
-
   dimension: days_seen_session_end_bits {
     sql: ${TABLE}.days_seen_session_end_bits ;;
     type: number
@@ -63,26 +53,6 @@ view: baseline_clients_last_seen {
 
   dimension: days_seen_session_start_bits {
     sql: ${TABLE}.days_seen_session_start_bits ;;
-    type: number
-  }
-
-  dimension: days_since_created_profile {
-    sql: ${TABLE}.days_since_created_profile ;;
-    type: number
-  }
-
-  dimension: days_since_seen {
-    sql: ${TABLE}.days_since_seen ;;
-    type: number
-  }
-
-  dimension: days_since_seen_session_end {
-    sql: ${TABLE}.days_since_seen_session_end ;;
-    type: number
-  }
-
-  dimension: days_since_seen_session_start {
-    sql: ${TABLE}.days_since_seen_session_start ;;
     type: number
   }
 
@@ -191,5 +161,5 @@ view: baseline_clients_last_seen {
     sql: ${client_id} ;;
   }
 
-  sql_table_name: `mozdata.firefox_ios.baseline_clients_last_seen` ;;
+  sql_table_name: `mozdata.focus_android.baseline_clients_first_seen` ;;
 }

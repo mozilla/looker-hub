@@ -191,5 +191,5 @@ view: baseline_clients_last_seen {
     sql: ${client_id} ;;
   }
 
-  sql_table_name: `mozdata.firefox_ios.baseline_clients_last_seen` ;;
+  sql_table_name: `mozdata.focus_android.baseline_clients_last_seen` ;;
 }
