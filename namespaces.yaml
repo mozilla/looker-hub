@@ -2375,6 +2375,10 @@ marketing:
       tables:
       - table: moz-fx-data-marketing-prod.acoustic.raw_recipient_v1
       type: table_view
+    firefox_for_families_forecasted_expectations:
+      tables:
+      - table: mozdata.analysis.marketing_firefox_for_families_forecasted_expectations
+      type: table_view
 monitoring:
   explores:
     average_ping_sizes:
