@@ -10,6 +10,11 @@ view: firefox_for_families_forecasted_expectations {
     type: string
   }
 
+  dimension: Date {
+    sql: ${TABLE}.Date ;;
+    type: string
+  }
+
   dimension: Metric {
     sql: ${TABLE}.Metric ;;
     type: string
@@ -17,23 +22,7 @@ view: firefox_for_families_forecasted_expectations {
 
   dimension: Value {
     sql: ${TABLE}.Value ;;
-    type: number
-  }
-
-  dimension_group: Date {
-    sql: ${TABLE}.Date ;;
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    convert_tz: no
-    datatype: date
-    description: "%m/%d/%E4Y"
+    type: string
   }
 
   sql_table_name: `mozdata.analysis.marketing_firefox_for_families_forecasted_expectations` ;;
