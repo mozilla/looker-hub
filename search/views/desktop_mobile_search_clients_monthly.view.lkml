@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: firefox_products_search_clients_engines_sources_daily {
+view: desktop_mobile_search_clients_monthly {
   dimension: ad_click {
     sql: ${TABLE}.ad_click ;;
     type: number
@@ -19,6 +19,11 @@ view: firefox_products_search_clients_engines_sources_daily {
     sql: ${TABLE}.country ;;
     type: string
     map_layer_name: countries
+  }
+
+  dimension: days_of_use {
+    sql: ${TABLE}.days_of_use ;;
+    type: number
   }
 
   dimension: device {
@@ -51,11 +56,6 @@ view: firefox_products_search_clients_engines_sources_daily {
     type: number
   }
 
-  dimension: source {
-    sql: ${TABLE}.source ;;
-    type: string
-  }
-
   dimension: tagged_follow_on {
     sql: ${TABLE}.tagged_follow_on ;;
     type: number
@@ -66,8 +66,8 @@ view: firefox_products_search_clients_engines_sources_daily {
     type: number
   }
 
-  dimension_group: submission {
-    sql: ${TABLE}.submission_date ;;
+  dimension_group: submission_month {
+    sql: ${TABLE}.submission_month ;;
     type: time
     timeframes: [
       raw,
@@ -81,5 +81,5 @@ view: firefox_products_search_clients_engines_sources_daily {
     datatype: date
   }
 
-  sql_table_name: `mozdata.search.firefox_products_search_clients_engines_sources_daily` ;;
+  sql_table_name: `mozdata.search.desktop_mobile_search_clients_monthly` ;;
 }

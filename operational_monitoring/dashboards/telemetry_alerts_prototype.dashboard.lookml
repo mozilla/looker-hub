@@ -123,7 +123,7 @@
   - name: Probe
     title: Probe
     type: field_filter
-    default_value: 'gc_ms'
+    default_value: 'content_process_count'
     allow_multiple_values: true
     required: true
     ui_config:
