@@ -123,7 +123,7 @@
   - name: Probe
     title: Probe
     type: field_filter
-    default_value: 'startup_crashes'
+    default_value: 'gc_ms'
     allow_multiple_values: true
     required: true
     ui_config:
