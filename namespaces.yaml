@@ -769,6 +769,11 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fenix.logins_sync
       type: table_view
+    marketing_attributable_metrics_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.marketing_attributable_metrics
+      type: table_view
     metrics:
       tables:
       - channel: release
