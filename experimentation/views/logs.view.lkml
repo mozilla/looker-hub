@@ -40,6 +40,16 @@ view: logs {
     type: string
   }
 
+  dimension: metric {
+    sql: ${TABLE}.metric ;;
+    type: string
+  }
+
+  dimension: statistic {
+    sql: ${TABLE}.statistic ;;
+    type: string
+  }
+
   dimension_group: timestamp {
     sql: ${TABLE}.timestamp ;;
     type: time

@@ -61,6 +61,62 @@ contextual services features.
 "
   }
 
+  dimension: metrics__uuid__top_sites_context_id {
+    label: "Top Sites Context Id"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.top_sites_context_id ;;
+    type: string
+    group_label: "Top Sites"
+    group_item_label: "Context Id"
+
+    link: {
+      label: "Glean Dictionary reference for Top Sites Context Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/top_sites_context_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A UUID that is unjoinable with other browser metrics. This ID will not be
+shared with AdM, only for internal uses. This ID is shared across all
+contextual services features.
+"
+  }
+
+  dimension: metrics__string__top_sites_contile_advertiser {
+    label: "Top Sites Contile Advertiser"
+    hidden: no
+    sql: ${TABLE}.metrics.string.top_sites_contile_advertiser ;;
+    type: string
+    group_label: "Top Sites"
+    group_item_label: "Contile Advertiser"
+
+    link: {
+      label: "Glean Dictionary reference for Top Sites Contile Advertiser"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/top_sites_contile_advertiser"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Advertiser brand for the sponsored TopSites tile
+"
+  }
+
+  dimension: metrics__quantity__top_sites_contile_tile_id {
+    label: "Top Sites Contile Tile Id"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.top_sites_contile_tile_id ;;
+    type: number
+    group_label: "Top Sites"
+    group_item_label: "Contile Tile Id"
+
+    link: {
+      label: "Glean Dictionary reference for Top Sites Contile Tile Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/top_sites_contile_tile_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A unique identifier provided by the AdM for the sponsored TopSites tile
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes

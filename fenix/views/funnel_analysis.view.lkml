@@ -12,25 +12,45 @@ view: funnel_analysis {
   dimension: completed_step_1 {
     type: yesno
     description: "Whether the user completed step 1 on the associated day."
-    sql: REGEXP_CONTAINS(${TABLE}.events, mozfun.event_analysis.create_funnel_regex([${step_1.match_string}],True)) ;;
+    sql: REGEXP_CONTAINS(
+    ${TABLE}.events, mozfun.event_analysis.create_funnel_regex(
+        [${step_1.match_string}],
+        True
+    )
+) ;;
   }
 
   dimension: completed_step_2 {
     type: yesno
     description: "Whether the user completed step 2 on the associated day."
-    sql: REGEXP_CONTAINS(${TABLE}.events, mozfun.event_analysis.create_funnel_regex([${step_1.match_string},${step_2.match_string}],True)) ;;
+    sql: REGEXP_CONTAINS(
+    ${TABLE}.events, mozfun.event_analysis.create_funnel_regex(
+        [${step_1.match_string}, ${step_2.match_string}],
+        True
+    )
+) ;;
   }
 
   dimension: completed_step_3 {
     type: yesno
     description: "Whether the user completed step 3 on the associated day."
-    sql: REGEXP_CONTAINS(${TABLE}.events, mozfun.event_analysis.create_funnel_regex([${step_1.match_string},${step_2.match_string},${step_3.match_string}],True)) ;;
+    sql: REGEXP_CONTAINS(
+    ${TABLE}.events, mozfun.event_analysis.create_funnel_regex(
+        [${step_1.match_string}, ${step_2.match_string}, ${step_3.match_string}],
+        True
+    )
+) ;;
   }
 
   dimension: completed_step_4 {
     type: yesno
     description: "Whether the user completed step 4 on the associated day."
-    sql: REGEXP_CONTAINS(${TABLE}.events, mozfun.event_analysis.create_funnel_regex([${step_1.match_string},${step_2.match_string},${step_3.match_string},${step_4.match_string}],True)) ;;
+    sql: REGEXP_CONTAINS(
+    ${TABLE}.events, mozfun.event_analysis.create_funnel_regex(
+        [${step_1.match_string}, ${step_2.match_string}, ${step_3.match_string}, ${step_4.match_string}],
+        True
+    )
+) ;;
   }
 
   measure: count_completed_step_1 {
@@ -102,7 +122,28 @@ view: funnel_analysis {
 
 view: event_types {
   derived_table: {
-    sql: SELECT mozfun.event_analysis.aggregate_match_strings( ARRAY_AGG(CONCAT(COALESCE(mozfun.event_analysis.escape_metachars(property_value.value), ''),mozfun.event_analysis.event_index_to_match_string(et.index)))) AS match_string FROM `mozdata.fenix.event_types` as et LEFT JOIN UNNEST(COALESCE(event_properties, [])) AS properties LEFT JOIN UNNEST(properties.value) AS property_value WHERE {% condition category %} category {% endcondition %} AND {% condition event %} event {% endcondition %} AND {% condition property_name %} properties.key {% endcondition %} AND {% condition property_value %} property_value.key {% endcondition %} ;;
+    sql: SELECT
+  mozfun.event_analysis.aggregate_match_strings(
+    ARRAY_AGG(
+      DISTINCT CONCAT(
+        {% if _filters['property_name'] or _filters['property_value'] -%}
+        COALESCE(mozfun.event_analysis.escape_metachars(property_value.value), ''),
+        {% endif -%}
+        mozfun.event_analysis.event_index_to_match_string(et.index)
+      )
+    )
+  ) AS match_string
+FROM
+  `mozdata.fenix.event_types` AS et
+LEFT JOIN
+  UNNEST(COALESCE(event_properties, [])) AS properties
+LEFT JOIN
+  UNNEST(properties.value) AS property_value
+WHERE
+  {% condition category %} category {% endcondition %}
+  AND {% condition event %} event {% endcondition %}
+  AND {% condition property_name %} properties.key {% endcondition %}
+  AND {% condition property_value %} property_value.key {% endcondition %} ;;
   }
 
   filter: category {

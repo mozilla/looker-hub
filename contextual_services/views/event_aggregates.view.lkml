@@ -31,6 +31,16 @@ view: event_aggregates {
     type: string
   }
 
+  dimension: match_type {
+    sql: ${TABLE}.match_type ;;
+    type: string
+  }
+
+  dimension: normalized_os {
+    sql: ${TABLE}.normalized_os ;;
+    type: string
+  }
+
   dimension: position {
     sql: ${TABLE}.position ;;
     type: number
@@ -54,6 +64,11 @@ view: event_aggregates {
   dimension: subdivision1 {
     sql: ${TABLE}.subdivision1 ;;
     type: string
+  }
+
+  dimension: suggest_data_sharing_enabled {
+    sql: ${TABLE}.suggest_data_sharing_enabled ;;
+    type: yesno
   }
 
   dimension: user_count {

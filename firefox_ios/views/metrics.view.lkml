@@ -269,6 +269,24 @@ preference.
 "
   }
 
+  dimension: metrics__timing_distribution__awesomebar_query_time__sum {
+    label: "Awesomebar Query Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.sum ;;
+    type: number
+    group_label: "Awesomebar"
+    group_item_label: "Query Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Awesomebar Query Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/awesomebar_query_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time a query against awesomebar took. This helps us understand the performance of the awesomebar in querying history and bookmarks. The query time will also help us verify that we are **not** introducing any performance regressions.
+"
+  }
+
   dimension: metrics__labeled_counter__bookmarks_add {
     label: "Bookmarks Add"
     hidden: yes
@@ -762,6 +780,25 @@ with a home page origin.
 "
   }
 
+  dimension: metrics__counter__firefox_home_page_jump_back_in_tile_view {
+    label: "Firefox Home Page Jump Back In Tile View"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_tile_view ;;
+    type: number
+    group_label: "Firefox Home Page"
+    group_item_label: "Jump Back In Tile View"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Tile View"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_tile_view"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user sees a Jump Back In tile
+in the Jump Back In section on the homepage
+"
+  }
+
   dimension: metrics__counter__firefox_home_page_open_from_awesomebar {
     label: "Firefox Home Page Open From Awesomebar"
     hidden: no
@@ -798,6 +835,24 @@ from awesomebar.
     description: "Counts when user opens Firefox Home from
 bottom right hamburger menu Home button
 and New Tab button.
+"
+  }
+
+  dimension: metrics__boolean__firefox_home_page_pocket_stories_visible {
+    label: "Firefox Home Page Pocket Stories Visible"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.firefox_home_page_pocket_stories_visible ;;
+    type: yesno
+    group_label: "Firefox Home Page"
+    group_item_label: "Pocket Stories Visible"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Pocket Stories Visible"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_pocket_stories_visible"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures the state of the show Pocket stories preference.
 "
   }
 
@@ -912,6 +967,101 @@ button of the Recently Saved Section
     description: "Counts the number of times a user taps the Show All
 button of the Recently Saved Section,
 with a home page origin.
+"
+  }
+
+  dimension: metrics__counter__firefox_home_page_synced_tab_opened {
+    label: "Firefox Home Page Synced Tab Opened"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.firefox_home_page_synced_tab_opened ;;
+    type: number
+    group_label: "Firefox Home Page"
+    group_item_label: "Synced Tab Opened"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Synced Tab Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_synced_tab_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps to open a
+synced tab from the Jump Back In section
+"
+  }
+
+  dimension: metrics__labeled_counter__firefox_home_page_synced_tab_opened_origin {
+    label: "Firefox Home Page Synced Tab Opened Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_synced_tab_opened_origin ;;
+    group_label: "Firefox Home Page"
+    group_item_label: "Synced Tab Opened Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Synced Tab Opened Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_synced_tab_opened_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps to open a
+synced tab from the Jump Back In section,
+with a home page origin.
+"
+  }
+
+  dimension: metrics__counter__firefox_home_page_synced_tab_show_all {
+    label: "Firefox Home Page Synced Tab Show All"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.firefox_home_page_synced_tab_show_all ;;
+    type: number
+    group_label: "Firefox Home Page"
+    group_item_label: "Synced Tab Show All"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Synced Tab Show All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_synced_tab_show_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps the
+Show All button of Synced Tab in the Jump Back In section.
+"
+  }
+
+  dimension: metrics__labeled_counter__firefox_home_page_synced_tab_show_all_origin {
+    label: "Firefox Home Page Synced Tab Show All Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_synced_tab_show_all_origin ;;
+    group_label: "Firefox Home Page"
+    group_item_label: "Synced Tab Show All Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Synced Tab Show All Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_synced_tab_show_all_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps the
+Show All button of Synced Tab in the Jump Back In section,
+with a home page origin.
+"
+  }
+
+  dimension: metrics__counter__firefox_home_page_synced_tab_tile_view {
+    label: "Firefox Home Page Synced Tab Tile View"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.firefox_home_page_synced_tab_tile_view ;;
+    type: number
+    group_label: "Firefox Home Page"
+    group_item_label: "Synced Tab Tile View"
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Synced Tab Tile View"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_synced_tab_tile_view"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user sees the
+Synced Tab tile on the homepage
 "
   }
 
@@ -1171,6 +1321,25 @@ inactive tab section.
     description: "Counts the number of times a specific library panel
 button is tapped for Bookmarks, History, Reading List,
 Downloads and Synced tabs
+"
+  }
+
+  dimension: metrics__counter__migration_image_sd_cache_cleanup {
+    label: "Migration Image Sd Cache Cleanup"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.migration_image_sd_cache_cleanup ;;
+    type: number
+    group_label: "Migration"
+    group_item_label: "Image Sd Cache Cleanup"
+
+    link: {
+      label: "Glean Dictionary reference for Migration Image Sd Cache Cleanup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/migration_image_sd_cache_cleanup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user runs the
+sd web image library cache cleanup
 "
   }
 
@@ -2442,6 +2611,24 @@ with a home page origin.
 "
   }
 
+  dimension: metrics__labeled_counter__top_sites_pressed_tile_origin {
+    label: "Top Sites Pressed Tile Origin"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.top_sites_pressed_tile_origin ;;
+    group_label: "Top Sites"
+    group_item_label: "Pressed Tile Origin"
+
+    link: {
+      label: "Glean Dictionary reference for Top Sites Pressed Tile Origin"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/top_sites_pressed_tile_origin"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records an event when user taps on top site tile,
+with a home page origin.
+"
+  }
+
   dimension: metrics__boolean__tracking_protection_enabled {
     label: "Tracking Protection Enabled"
     hidden: no
@@ -2479,6 +2666,24 @@ preference.
 tracking-protection that is enabled. One of:
 * basic
 * strict
+"
+  }
+
+  dimension: metrics__labeled_counter__wallpaper_analytics_themed_wallpaper {
+    label: "Wallpaper Analytics Themed Wallpaper"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.wallpaper_analytics_themed_wallpaper ;;
+    group_label: "Wallpaper Analytics"
+    group_item_label: "Themed Wallpaper"
+
+    link: {
+      label: "Glean Dictionary reference for Wallpaper Analytics Themed Wallpaper"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/wallpaper_analytics_themed_wallpaper"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded when the user enters the background. This reports
+the currently selected wallpaper if it's not the default.
 "
   }
 
@@ -2978,7 +3183,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__counter__logins_store_migration_num_failed {
     label: "Logins Store Migration Num Failed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.logins_store_migration_num_failed ;;
     type: number
     group_label: "Logins Store"
@@ -2996,7 +3201,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__counter__logins_store_migration_num_processed {
     label: "Logins Store Migration Num Processed"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.logins_store_migration_num_processed ;;
     type: number
     group_label: "Logins Store"
@@ -3014,7 +3219,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__counter__logins_store_migration_num_succeeded {
     label: "Logins Store Migration Num Succeeded"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.logins_store_migration_num_succeeded ;;
     type: number
     group_label: "Logins Store"
@@ -3032,7 +3237,7 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timespan__logins_store_migration_total_duration__value {
     label: "Logins Store Migration Total Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.logins_store_migration_total_duration.value ;;
     type: number
     group_label: "Logins Store"
@@ -4323,6 +4528,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: firefox_home_page_jump_back_in_tile_view {
+    type: sum
+    sql: ${metrics__counter__firefox_home_page_jump_back_in_tile_view} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Tile View"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_tile_view"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_jump_back_in_tile_view_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__firefox_home_page_jump_back_in_tile_view: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Jump Back In Tile View"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_jump_back_in_tile_view"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: firefox_home_page_open_from_awesomebar {
     type: sum
     sql: ${metrics__counter__firefox_home_page_open_from_awesomebar} ;;
@@ -4444,6 +4674,81 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Firefox Home Page Recently Saved Show All"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_recently_saved_show_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_synced_tab_opened {
+    type: sum
+    sql: ${metrics__counter__firefox_home_page_synced_tab_opened} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Synced Tab Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_synced_tab_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_synced_tab_opened_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__firefox_home_page_synced_tab_opened: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Synced Tab Opened"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_synced_tab_opened"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_synced_tab_show_all {
+    type: sum
+    sql: ${metrics__counter__firefox_home_page_synced_tab_show_all} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Synced Tab Show All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_synced_tab_show_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_synced_tab_show_all_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__firefox_home_page_synced_tab_show_all: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Synced Tab Show All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_synced_tab_show_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_synced_tab_tile_view {
+    type: sum
+    sql: ${metrics__counter__firefox_home_page_synced_tab_tile_view} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Synced Tab Tile View"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_synced_tab_tile_view"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: firefox_home_page_synced_tab_tile_view_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__firefox_home_page_synced_tab_tile_view: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Firefox Home Page Synced Tab Tile View"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_synced_tab_tile_view"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -4619,6 +4924,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Inactive Tabs Tray Open Recently Closed Tab"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_open_recently_closed_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: migration_image_sd_cache_cleanup {
+    type: sum
+    sql: ${metrics__counter__migration_image_sd_cache_cleanup} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Migration Image Sd Cache Cleanup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/migration_image_sd_cache_cleanup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: migration_image_sd_cache_cleanup_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__migration_image_sd_cache_cleanup: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Migration Image Sd Cache Cleanup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/migration_image_sd_cache_cleanup"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -6823,6 +7153,92 @@ view: metrics__metrics__labeled_counter__firefox_home_page_recently_saved_show_a
   }
 }
 
+view: metrics__metrics__labeled_counter__firefox_home_page_synced_tab_opened_origin {
+  label: "Firefox Home Page - Synced Tab Opened Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_synced_tab_opened_origin
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_synced_tab_opened_origin.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__firefox_home_page_synced_tab_show_all_origin {
+  label: "Firefox Home Page - Synced Tab Show All Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_synced_tab_show_all_origin
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_synced_tab_show_all_origin.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__firefox_home_page_your_library {
   label: "Firefox Home Page - Your Library"
 
@@ -7855,6 +8271,92 @@ view: metrics__metrics__labeled_counter__top_site_pressed_tile_origin {
   }
 }
 
+view: metrics__metrics__labeled_counter__top_sites_pressed_tile_origin {
+  label: "Top Sites - Pressed Tile Origin"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__top_sites_pressed_tile_origin
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__top_sites_pressed_tile_origin.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper {
+  label: "Wallpaper Analytics - Themed Wallpaper"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__bookmarks_add {
   derived_table: {
     sql: select
@@ -8109,6 +8611,44 @@ view: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_sav
     count(*) as n
 from mozdata.firefox_ios.metrics as t,
 unnest(metrics.labeled_counter.firefox_home_page_recently_saved_show_all_origin) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__firefox_home_page_synced_tab_opened_origin {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.firefox_home_page_synced_tab_opened_origin) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__firefox_home_page_synced_tab_show_all_origin {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.firefox_home_page_synced_tab_show_all_origin) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -8565,6 +9105,44 @@ view: suggest__metrics__metrics__labeled_counter__top_site_pressed_tile_origin {
     count(*) as n
 from mozdata.firefox_ios.metrics as t,
 unnest(metrics.labeled_counter.top_site_pressed_tile_origin) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__top_sites_pressed_tile_origin {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.top_sites_pressed_tile_origin) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.metrics as t,
+unnest(metrics.labeled_counter.wallpaper_analytics_themed_wallpaper) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

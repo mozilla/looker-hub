@@ -141,6 +141,11 @@ view: all_subscriptions_table {
     hidden: yes
   }
 
+  dimension: promotion_discounts_amount {
+    sql: ${TABLE}.promotion_discounts_amount ;;
+    type: number
+  }
+
   dimension: provider {
     sql: ${TABLE}.provider ;;
     type: string
@@ -305,6 +310,20 @@ view: all_subscriptions_table {
 
   dimension_group: trial_end {
     sql: ${TABLE}.trial_end ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
+  dimension_group: trial_start {
+    sql: ${TABLE}.trial_start ;;
     type: time
     timeframes: [
       raw,

@@ -53,6 +53,31 @@ Migrated from Telemetry's
 "
   }
 
+  dimension: metrics__uuid__legacy_telemetry_client_id {
+    label: "Legacy Telemetry Client Id"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
+    type: string
+    group_label: "Legacy Telemetry"
+    group_item_label: "Client Id"
+
+    link: {
+      label: "Glean Dictionary reference for Legacy Telemetry Client Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/legacy_telemetry_client_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The client_id according to Telemetry.
+Might not always have a value due to being too early for it to have
+loaded.
+Value may be the canary client id `c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0`
+in pings near when the data upload pref is disabled (if Telemetry gets
+to go first), or between when a client_id has been removed and when it
+has been regenerated.
+Does not need to be sent in the Glean \"deletion-request\" ping.
+"
+  }
+
   dimension: metrics__timespan__glean_baseline_duration__value {
     label: "Glean Baseline Duration Value"
     hidden: no

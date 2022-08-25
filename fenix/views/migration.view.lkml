@@ -79,7 +79,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_addons_any_failures {
     label: "Migration Addons Any Failures"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.migration_addons_any_failures ;;
     type: yesno
     group_label: "Migration Addons"
@@ -97,7 +97,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_addons_failed_addons {
     label: "Migration Addons Failed Addons"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_addons_failed_addons ;;
     type: number
     group_label: "Migration Addons"
@@ -115,7 +115,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_addons_failure_reason {
     label: "Migration Addons Failure Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_addons_failure_reason ;;
     type: number
     group_label: "Migration Addons"
@@ -133,7 +133,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_addons_migrated_addons {
     label: "Migration Addons Migrated Addons"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_addons_migrated_addons ;;
     type: number
     group_label: "Migration Addons"
@@ -151,7 +151,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_addons_success_reason {
     label: "Migration Addons Success Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_addons_success_reason ;;
     type: number
     group_label: "Migration Addons"
@@ -169,7 +169,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_addons_total_duration__value {
     label: "Migration Addons Total Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.migration_addons_total_duration.value ;;
     type: number
     group_label: "Migration Addons"
@@ -187,7 +187,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_bookmarks_any_failures {
     label: "Migration Bookmarks Any Failures"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.migration_bookmarks_any_failures ;;
     type: yesno
     group_label: "Migration Bookmarks"
@@ -205,7 +205,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_bookmarks_detected {
     label: "Migration Bookmarks Detected"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_bookmarks_detected ;;
     type: number
     group_label: "Migration Bookmarks"
@@ -223,7 +223,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_bookmarks_duration__value {
     label: "Migration Bookmarks Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.migration_bookmarks_duration.value ;;
     type: number
     group_label: "Migration Bookmarks"
@@ -241,7 +241,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_bookmarks_failure_reason {
     label: "Migration Bookmarks Failure Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_bookmarks_failure_reason ;;
     type: number
     group_label: "Migration Bookmarks"
@@ -276,7 +276,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_bookmarks_success_reason {
     label: "Migration Bookmarks Success Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_bookmarks_success_reason ;;
     type: number
     group_label: "Migration Bookmarks"
@@ -294,7 +294,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_bookmarks_total_duration__value {
     label: "Migration Bookmarks Total Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.migration_bookmarks_total_duration.value ;;
     type: number
     group_label: "Migration Bookmarks"
@@ -312,7 +312,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_fxa_any_failures {
     label: "Migration Fxa Any Failures"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.migration_fxa_any_failures ;;
     type: yesno
     group_label: "Migration Fxa"
@@ -330,7 +330,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__migration_fxa_bad_auth_state {
     label: "Migration Fxa Bad Auth State"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.migration_fxa_bad_auth_state ;;
     type: string
     group_label: "Migration Fxa"
@@ -348,7 +348,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_fxa_failure_reason {
     label: "Migration Fxa Failure Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_fxa_failure_reason ;;
     type: number
     group_label: "Migration Fxa"
@@ -384,7 +384,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_fxa_has_custom_idp_server {
     label: "Migration Fxa Has Custom Idp Server"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.migration_fxa_has_custom_idp_server ;;
     type: yesno
     group_label: "Migration Fxa"
@@ -402,7 +402,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_fxa_has_custom_token_server {
     label: "Migration Fxa Has Custom Token Server"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.migration_fxa_has_custom_token_server ;;
     type: yesno
     group_label: "Migration Fxa"
@@ -420,7 +420,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_fxa_success_reason {
     label: "Migration Fxa Success Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_fxa_success_reason ;;
     type: number
     group_label: "Migration Fxa"
@@ -438,7 +438,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_fxa_total_duration__value {
     label: "Migration Fxa Total Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.migration_fxa_total_duration.value ;;
     type: number
     group_label: "Migration Fxa"
@@ -456,7 +456,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__migration_fxa_unsupported_account_version {
     label: "Migration Fxa Unsupported Account Version"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.migration_fxa_unsupported_account_version ;;
     type: string
     group_label: "Migration Fxa"
@@ -474,7 +474,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__migration_fxa_unsupported_pickle_version {
     label: "Migration Fxa Unsupported Pickle Version"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.migration_fxa_unsupported_pickle_version ;;
     type: string
     group_label: "Migration Fxa"
@@ -492,7 +492,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__migration_fxa_unsupported_state_version {
     label: "Migration Fxa Unsupported State Version"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.migration_fxa_unsupported_state_version ;;
     type: string
     group_label: "Migration Fxa"
@@ -510,7 +510,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_gecko_any_failures {
     label: "Migration Gecko Any Failures"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.migration_gecko_any_failures ;;
     type: yesno
     group_label: "Migration Gecko"
@@ -528,7 +528,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_gecko_failure_reason {
     label: "Migration Gecko Failure Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_gecko_failure_reason ;;
     type: number
     group_label: "Migration Gecko"
@@ -546,7 +546,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_gecko_success_reason {
     label: "Migration Gecko Success Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_gecko_success_reason ;;
     type: number
     group_label: "Migration Gecko"
@@ -564,7 +564,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_gecko_total_duration__value {
     label: "Migration Gecko Total Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.migration_gecko_total_duration.value ;;
     type: number
     group_label: "Migration Gecko"
@@ -582,7 +582,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_history_any_failures {
     label: "Migration History Any Failures"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.migration_history_any_failures ;;
     type: yesno
     group_label: "Migration History"
@@ -600,7 +600,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_history_detected {
     label: "Migration History Detected"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_history_detected ;;
     type: number
     group_label: "Migration History"
@@ -618,7 +618,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_history_duration__value {
     label: "Migration History Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.migration_history_duration.value ;;
     type: number
     group_label: "Migration History"
@@ -636,7 +636,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_history_failure_reason {
     label: "Migration History Failure Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_history_failure_reason ;;
     type: number
     group_label: "Migration History"
@@ -671,7 +671,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_history_success_reason {
     label: "Migration History Success Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_history_success_reason ;;
     type: number
     group_label: "Migration History"
@@ -689,7 +689,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_history_total_duration__value {
     label: "Migration History Total Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.migration_history_total_duration.value ;;
     type: number
     group_label: "Migration History"
@@ -707,7 +707,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_logins_any_failures {
     label: "Migration Logins Any Failures"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.migration_logins_any_failures ;;
     type: yesno
     group_label: "Migration Logins"
@@ -725,7 +725,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_logins_detected {
     label: "Migration Logins Detected"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_logins_detected ;;
     type: number
     group_label: "Migration Logins"
@@ -760,7 +760,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_logins_failure_reason {
     label: "Migration Logins Failure Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_logins_failure_reason ;;
     type: number
     group_label: "Migration Logins"
@@ -778,7 +778,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_logins_success_reason {
     label: "Migration Logins Success Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_logins_success_reason ;;
     type: number
     group_label: "Migration Logins"
@@ -796,7 +796,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_logins_total_duration__value {
     label: "Migration Logins Total Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.migration_logins_total_duration.value ;;
     type: number
     group_label: "Migration Logins"
@@ -814,7 +814,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_logins_unsupported_db_version {
     label: "Migration Logins Unsupported Db Version"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_logins_unsupported_db_version ;;
     type: number
     group_label: "Migration Logins"
@@ -832,7 +832,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_open_tabs_any_failures {
     label: "Migration Open Tabs Any Failures"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.migration_open_tabs_any_failures ;;
     type: yesno
     group_label: "Migration Open Tabs"
@@ -850,7 +850,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_open_tabs_detected {
     label: "Migration Open Tabs Detected"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_open_tabs_detected ;;
     type: number
     group_label: "Migration Open Tabs"
@@ -868,7 +868,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_open_tabs_failure_reason {
     label: "Migration Open Tabs Failure Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_open_tabs_failure_reason ;;
     type: number
     group_label: "Migration Open Tabs"
@@ -886,7 +886,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_open_tabs_migrated {
     label: "Migration Open Tabs Migrated"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_open_tabs_migrated ;;
     type: number
     group_label: "Migration Open Tabs"
@@ -904,7 +904,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_open_tabs_success_reason {
     label: "Migration Open Tabs Success Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_open_tabs_success_reason ;;
     type: number
     group_label: "Migration Open Tabs"
@@ -922,7 +922,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_open_tabs_total_duration__value {
     label: "Migration Open Tabs Total Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.migration_open_tabs_total_duration.value ;;
     type: number
     group_label: "Migration Open Tabs"
@@ -940,7 +940,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_pinned_sites_any_failures {
     label: "Migration Pinned Sites Any Failures"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.migration_pinned_sites_any_failures ;;
     type: yesno
     group_label: "Migration Pinned Sites"
@@ -958,7 +958,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_pinned_sites_detected_pinned_sites {
     label: "Migration Pinned Sites Detected Pinned Sites"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_pinned_sites_detected_pinned_sites ;;
     type: number
     group_label: "Migration Pinned Sites"
@@ -976,7 +976,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_pinned_sites_failure_reason {
     label: "Migration Pinned Sites Failure Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_pinned_sites_failure_reason ;;
     type: number
     group_label: "Migration Pinned Sites"
@@ -994,7 +994,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_pinned_sites_migrated_pinned_sites {
     label: "Migration Pinned Sites Migrated Pinned Sites"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_pinned_sites_migrated_pinned_sites ;;
     type: number
     group_label: "Migration Pinned Sites"
@@ -1012,7 +1012,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_pinned_sites_success_reason {
     label: "Migration Pinned Sites Success Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_pinned_sites_success_reason ;;
     type: number
     group_label: "Migration Pinned Sites"
@@ -1030,7 +1030,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_pinned_sites_total_duration__value {
     label: "Migration Pinned Sites Total Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.migration_pinned_sites_total_duration.value ;;
     type: number
     group_label: "Migration Pinned Sites"
@@ -1048,7 +1048,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_search_any_failures {
     label: "Migration Search Any Failures"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.migration_search_any_failures ;;
     type: yesno
     group_label: "Migration Search"
@@ -1066,7 +1066,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_search_failure_reason {
     label: "Migration Search Failure Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_search_failure_reason ;;
     type: number
     group_label: "Migration Search"
@@ -1084,7 +1084,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_search_success_reason {
     label: "Migration Search Success Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_search_success_reason ;;
     type: number
     group_label: "Migration Search"
@@ -1102,7 +1102,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_search_total_duration__value {
     label: "Migration Search Total Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.migration_search_total_duration.value ;;
     type: number
     group_label: "Migration Search"
@@ -1120,7 +1120,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_settings_any_failures {
     label: "Migration Settings Any Failures"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.migration_settings_any_failures ;;
     type: yesno
     group_label: "Migration Settings"
@@ -1138,7 +1138,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_settings_failure_reason {
     label: "Migration Settings Failure Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_settings_failure_reason ;;
     type: number
     group_label: "Migration Settings"
@@ -1156,7 +1156,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_settings_success_reason {
     label: "Migration Settings Success Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_settings_success_reason ;;
     type: number
     group_label: "Migration Settings"
@@ -1174,7 +1174,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_settings_telemetry_enabled {
     label: "Migration Settings Telemetry Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.migration_settings_telemetry_enabled ;;
     type: yesno
     group_label: "Migration Settings"
@@ -1192,7 +1192,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_settings_total_duration__value {
     label: "Migration Settings Total Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.migration_settings_total_duration.value ;;
     type: number
     group_label: "Migration Settings"
@@ -1210,7 +1210,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__boolean__migration_telemetry_identifiers_any_failures {
     label: "Migration Telemetry Identifiers Any Failures"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.migration_telemetry_identifiers_any_failures ;;
     type: yesno
     group_label: "Migration Telemetry Identifiers"
@@ -1228,7 +1228,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_telemetry_identifiers_failure_reason {
     label: "Migration Telemetry Identifiers Failure Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_telemetry_identifiers_failure_reason ;;
     type: number
     group_label: "Migration Telemetry Identifiers"
@@ -1246,7 +1246,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__uuid__migration_telemetry_identifiers_fennec_client_id {
     label: "Migration Telemetry Identifiers Fennec Client Id"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.migration_telemetry_identifiers_fennec_client_id ;;
     type: string
     group_label: "Migration Telemetry Identifiers"
@@ -1264,7 +1264,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__datetime__migration_telemetry_identifiers_fennec_profile_creation_date {
     label: "Migration Telemetry Identifiers Fennec Profile Creation Date"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.datetime.migration_telemetry_identifiers_fennec_profile_creation_date ;;
     type: string
     group_label: "Migration Telemetry Identifiers"
@@ -1282,7 +1282,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__migration_telemetry_identifiers_success_reason {
     label: "Migration Telemetry Identifiers Success Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.migration_telemetry_identifiers_success_reason ;;
     type: number
     group_label: "Migration Telemetry Identifiers"
@@ -1300,7 +1300,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__timespan__migration_telemetry_identifiers_total_duration__value {
     label: "Migration Telemetry Identifiers Total Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.migration_telemetry_identifiers_total_duration.value ;;
     type: number
     group_label: "Migration Telemetry Identifiers"
@@ -2671,7 +2671,7 @@ view: migration__metrics__labeled_counter__migration_bookmarks_migrated {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__migration__metrics__labeled_counter__migration_bookmarks_migrated
     suggest_dimension: suggest__migration__metrics__labeled_counter__migration_bookmarks_migrated.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -2683,13 +2683,13 @@ view: migration__metrics__labeled_counter__migration_bookmarks_migrated {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${migration.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -2714,7 +2714,7 @@ view: migration__metrics__labeled_counter__migration_history_migrated {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__migration__metrics__labeled_counter__migration_history_migrated
     suggest_dimension: suggest__migration__metrics__labeled_counter__migration_history_migrated.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -2726,13 +2726,13 @@ view: migration__metrics__labeled_counter__migration_history_migrated {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${migration.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -2757,7 +2757,7 @@ view: migration__metrics__labeled_counter__migration_logins_failure_counts {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__migration__metrics__labeled_counter__migration_logins_failure_counts
     suggest_dimension: suggest__migration__metrics__labeled_counter__migration_logins_failure_counts.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -2769,13 +2769,13 @@ view: migration__metrics__labeled_counter__migration_logins_failure_counts {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${migration.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 

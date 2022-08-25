@@ -339,6 +339,15 @@ with either biometrics or a passcode.
 "
   }
 
+  dimension: metrics__boolean__firefox_home_page_pocket_stories_visible {
+    sql: ${TABLE}.metrics.boolean.firefox_home_page_pocket_stories_visible ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Firefox Home Page Pocket Stories Visible"
+    description: "Measures the state of the show Pocket stories preference.
+"
+  }
+
   dimension: metrics__boolean__glean_core_migration_successful {
     sql: ${TABLE}.metrics.boolean.glean_core_migration_successful ;;
     type: yesno
@@ -686,6 +695,16 @@ existing tab from the Jump Back In section
 "
   }
 
+  dimension: metrics__counter__firefox_home_page_jump_back_in_tile_view {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_tile_view ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page Jump Back In Tile View"
+    description: "Counts the number of times a user sees a Jump Back In tile
+in the Jump Back In section on the homepage
+"
+  }
+
   dimension: metrics__counter__firefox_home_page_open_from_awesomebar {
     sql: ${TABLE}.metrics.counter.firefox_home_page_open_from_awesomebar ;;
     type: number
@@ -734,6 +753,36 @@ item in the Recently Saved section is tapped.
     group_item_label: "Firefox Home Page Recently Saved Show All"
     description: "Counts the number of times a user taps the Show All
 button of the Recently Saved Section
+"
+  }
+
+  dimension: metrics__counter__firefox_home_page_synced_tab_opened {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_synced_tab_opened ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page Synced Tab Opened"
+    description: "Counts the number of times a user taps to open a
+synced tab from the Jump Back In section
+"
+  }
+
+  dimension: metrics__counter__firefox_home_page_synced_tab_show_all {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_synced_tab_show_all ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page Synced Tab Show All"
+    description: "Counts the number of times a user taps the
+Show All button of Synced Tab in the Jump Back In section.
+"
+  }
+
+  dimension: metrics__counter__firefox_home_page_synced_tab_tile_view {
+    sql: ${TABLE}.metrics.counter.firefox_home_page_synced_tab_tile_view ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Firefox Home Page Synced Tab Tile View"
+    description: "Counts the number of times a user sees the
+Synced Tab tile on the homepage
 "
   }
 
@@ -938,6 +987,16 @@ default browser card is clicked.
     group_label: "Metrics Counter"
     group_item_label: "Logins Store Write Query Count"
     description: "The total number of write operations performed on the logins store. The count only includes operations triggered by the application, not e.g. incidental writes performed as part of a sync. It is intended to be used together with `write_query_error_count` to measure the overall error rate of write operations on the logins store.
+"
+  }
+
+  dimension: metrics__counter__migration_image_sd_cache_cleanup {
+    sql: ${TABLE}.metrics.counter.migration_image_sd_cache_cleanup ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Migration Image Sd Cache Cleanup"
+    description: "Counts the number of times a user runs the
+sd web image library cache cleanup
 "
   }
 
@@ -1573,6 +1632,24 @@ with a home page origin.
 "
   }
 
+  dimension: metrics__labeled_counter__firefox_home_page_synced_tab_opened_origin {
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_synced_tab_opened_origin ;;
+    hidden: yes
+    description: "Counts the number of times a user taps to open a
+synced tab from the Jump Back In section,
+with a home page origin.
+"
+  }
+
+  dimension: metrics__labeled_counter__firefox_home_page_synced_tab_show_all_origin {
+    sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_synced_tab_show_all_origin ;;
+    hidden: yes
+    description: "Counts the number of times a user taps the
+Show All button of Synced Tab in the Jump Back In section,
+with a home page origin.
+"
+  }
+
   dimension: metrics__labeled_counter__firefox_home_page_your_library {
     sql: ${TABLE}.metrics.labeled_counter.firefox_home_page_your_library ;;
     hidden: yes
@@ -1788,6 +1865,22 @@ with a home page origin.
 "
   }
 
+  dimension: metrics__labeled_counter__top_sites_pressed_tile_origin {
+    sql: ${TABLE}.metrics.labeled_counter.top_sites_pressed_tile_origin ;;
+    hidden: yes
+    description: "Records an event when user taps on top site tile,
+with a home page origin.
+"
+  }
+
+  dimension: metrics__labeled_counter__wallpaper_analytics_themed_wallpaper {
+    sql: ${TABLE}.metrics.labeled_counter.wallpaper_analytics_themed_wallpaper ;;
+    hidden: yes
+    description: "Recorded when the user enters the background. This reports
+the currently selected wallpaper if it's not the default.
+"
+  }
+
   dimension: metrics__labeled_rate {
     sql: ${TABLE}.metrics.labeled_rate ;;
     hidden: yes
@@ -1962,6 +2055,58 @@ tracking-protection that is enabled. One of:
     type: number
     group_label: "Metrics Timespan Logins Store Migration Total Duration"
     group_item_label: "Value"
+  }
+
+  dimension: metrics__timing_distribution__awesomebar_query_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Awesomebar Query Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__awesomebar_query_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Awesomebar Query Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__awesomebar_query_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Awesomebar Query Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__awesomebar_query_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__awesomebar_query_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Awesomebar Query Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__awesomebar_query_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Awesomebar Query Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__awesomebar_query_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Awesomebar Query Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__awesomebar_query_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.values ;;
+    hidden: yes
   }
 
   dimension: metrics__timing_distribution__logins_store_read_query_time__bucket_count {
@@ -2416,6 +2561,18 @@ view: metrics_table__metrics__text {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__awesomebar_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

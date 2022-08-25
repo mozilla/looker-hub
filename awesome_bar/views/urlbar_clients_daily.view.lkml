@@ -30,6 +30,12 @@ view: urlbar_clients_daily {
     type: number
   }
 
+  dimension: country {
+    sql: ${TABLE}.country ;;
+    type: string
+    map_layer_name: countries
+  }
+
   dimension: default_search_engine {
     sql: ${TABLE}.default_search_engine ;;
     type: string

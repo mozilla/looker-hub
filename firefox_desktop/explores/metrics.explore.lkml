@@ -53,6 +53,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__gmp_update_xml_fetch_result}) AS metrics__metrics__labeled_counter__gmp_update_xml_fetch_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__gmp_update_xml_fetch_result.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__netwerk_early_hints {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_early_hints}) AS metrics__metrics__labeled_counter__netwerk_early_hints ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_early_hints.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pdfjs_editing {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_editing}) AS metrics__metrics__labeled_counter__pdfjs_editing ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_editing.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_content_background}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background.document_id} ;;
@@ -144,6 +154,14 @@ explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_subm
 }
 
 explore: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__netwerk_early_hints {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing {
   hidden: yes
 }
 

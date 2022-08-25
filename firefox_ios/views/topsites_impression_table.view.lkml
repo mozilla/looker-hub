@@ -341,11 +341,29 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__top_sites_contile_tile_id {
+    sql: ${TABLE}.metrics.quantity.top_sites_contile_tile_id ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Top Sites Contile Tile Id"
+    description: "A unique identifier provided by the AdM for the sponsored TopSites tile
+"
+  }
+
   dimension: metrics__string__top_site_contile_advertiser {
     sql: ${TABLE}.metrics.string.top_site_contile_advertiser ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Top Site Contile Advertiser"
+    description: "Advertiser brand for the sponsored TopSites tile
+"
+  }
+
+  dimension: metrics__string__top_sites_contile_advertiser {
+    sql: ${TABLE}.metrics.string.top_sites_contile_advertiser ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Top Sites Contile Advertiser"
     description: "Advertiser brand for the sponsored TopSites tile
 "
   }
@@ -360,11 +378,32 @@ click_url for “click” event).
 "
   }
 
+  dimension: metrics__url2__top_sites_contile_reporting_url {
+    sql: ${TABLE}.metrics.url2.top_sites_contile_reporting_url ;;
+    type: string
+    group_label: "Metrics Url2"
+    group_item_label: "Top Sites Contile Reporting Url"
+    description: "The AdM reporting endpoint (impression_url for “impression” event,
+click_url for “click” event).
+"
+  }
+
   dimension: metrics__uuid__top_site_context_id {
     sql: ${TABLE}.metrics.uuid.top_site_context_id ;;
     type: string
     group_label: "Metrics Uuid"
     group_item_label: "Top Site Context Id"
+    description: "A UUID that is unjoinable with other browser metrics. This ID will not be
+shared with AdM, only for internal uses. This ID is shared across all
+contextual services features.
+"
+  }
+
+  dimension: metrics__uuid__top_sites_context_id {
+    sql: ${TABLE}.metrics.uuid.top_sites_context_id ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Top Sites Context Id"
     description: "A UUID that is unjoinable with other browser metrics. This ID will not be
 shared with AdM, only for internal uses. This ID is shared across all
 contextual services features.

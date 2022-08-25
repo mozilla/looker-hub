@@ -1,114 +1,118 @@
-view: baseline_clients_daily {
-  sql_table_name: `moz-fx-data-shared-prod.org_mozilla_ios_firefox.baseline_clients_daily`
-    ;;
 
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
+view: baseline_clients_daily {
   dimension: android_sdk_version {
-    type: string
     sql: ${TABLE}.android_sdk_version ;;
+    type: string
   }
 
   dimension: app_build {
-    type: string
     sql: ${TABLE}.app_build ;;
+    type: string
   }
 
   dimension: app_channel {
-    type: string
     sql: ${TABLE}.app_channel ;;
+    type: string
   }
 
   dimension: app_display_version {
-    type: string
     sql: ${TABLE}.app_display_version ;;
+    type: string
   }
 
   dimension: architecture {
-    type: string
     sql: ${TABLE}.architecture ;;
+    type: string
   }
 
   dimension: city {
-    type: string
     sql: ${TABLE}.city ;;
+    type: string
   }
 
   dimension: client_id {
-    type: string
     sql: ${TABLE}.client_id ;;
+    hidden: yes
   }
 
   dimension: country {
+    sql: ${TABLE}.country ;;
     type: string
     map_layer_name: countries
-    sql: ${TABLE}.country ;;
   }
 
   dimension: days_seen_session_end_bits {
-    type: number
     sql: ${TABLE}.days_seen_session_end_bits ;;
+    type: number
   }
 
   dimension: days_seen_session_start_bits {
-    type: number
     sql: ${TABLE}.days_seen_session_start_bits ;;
+    type: number
   }
 
   dimension: device_manufacturer {
-    type: string
     sql: ${TABLE}.device_manufacturer ;;
+    type: string
   }
 
   dimension: device_model {
-    type: string
     sql: ${TABLE}.device_model ;;
+    type: string
   }
 
   dimension: durations {
-    type: number
     sql: ${TABLE}.durations ;;
+    type: number
   }
 
-  dimension_group: first_run {
-    type: time
-    timeframes: [
-      raw,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    convert_tz: no
-    datatype: date
-    sql: ${TABLE}.first_run_date ;;
+  dimension: is_new_profile {
+    sql: ${TABLE}.is_new_profile ;;
+    type: yesno
+  }
+
+  dimension: isp {
+    sql: ${TABLE}.isp ;;
+    type: string
   }
 
   dimension: locale {
-    type: string
     sql: ${TABLE}.locale ;;
+    type: string
   }
 
   dimension: normalized_channel {
-    type: string
     sql: ${TABLE}.normalized_channel ;;
+    type: string
   }
 
   dimension: normalized_os {
-    type: string
     sql: ${TABLE}.normalized_os ;;
+    type: string
   }
 
   dimension: normalized_os_version {
-    type: string
     sql: ${TABLE}.normalized_os_version ;;
+    type: string
   }
 
   dimension: sample_id {
-    type: number
     sql: ${TABLE}.sample_id ;;
+    type: number
   }
 
-  dimension_group: submission {
+  dimension: telemetry_sdk_build {
+    sql: ${TABLE}.telemetry_sdk_build ;;
+    type: string
+  }
+
+  dimension_group: first_run {
+    sql: ${TABLE}.first_run_date ;;
     type: time
     timeframes: [
       raw,
@@ -116,16 +120,46 @@ view: baseline_clients_daily {
       week,
       month,
       quarter,
-      year
+      year,
     ]
     convert_tz: no
     datatype: date
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.first_seen_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+  }
+
+  dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
   }
 
-  dimension: telemetry_sdk_build {
-    type: string
-    sql: ${TABLE}.telemetry_sdk_build ;;
+  measure: clients {
+    type: count_distinct
+    sql: ${client_id} ;;
   }
 
+  sql_table_name: `mozdata.firefox_ios.baseline_clients_daily` ;;
 }

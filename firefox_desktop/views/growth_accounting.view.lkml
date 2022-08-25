@@ -1098,8 +1098,68 @@ view: growth_accounting {
     hidden: yes
   }
 
+  dimension: scalar_parent_urlbar_impression_autofill_about_sum {
+    sql: ${TABLE}.scalar_parent_urlbar_impression_autofill_about_sum ;;
+    type: number
+  }
+
+  dimension: scalar_parent_urlbar_impression_autofill_adaptive_sum {
+    sql: ${TABLE}.scalar_parent_urlbar_impression_autofill_adaptive_sum ;;
+    type: number
+  }
+
+  dimension: scalar_parent_urlbar_impression_autofill_origin_sum {
+    sql: ${TABLE}.scalar_parent_urlbar_impression_autofill_origin_sum ;;
+    type: number
+  }
+
+  dimension: scalar_parent_urlbar_impression_autofill_other_sum {
+    sql: ${TABLE}.scalar_parent_urlbar_impression_autofill_other_sum ;;
+    type: number
+  }
+
+  dimension: scalar_parent_urlbar_impression_autofill_preloaded_sum {
+    sql: ${TABLE}.scalar_parent_urlbar_impression_autofill_preloaded_sum ;;
+    type: number
+  }
+
+  dimension: scalar_parent_urlbar_impression_autofill_url_sum {
+    sql: ${TABLE}.scalar_parent_urlbar_impression_autofill_url_sum ;;
+    type: number
+  }
+
+  dimension: scalar_parent_urlbar_picked_autofill_about_sum {
+    sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_about_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_urlbar_picked_autofill_adaptive_sum {
+    sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_adaptive_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_urlbar_picked_autofill_origin_sum {
+    sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_origin_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_urlbar_picked_autofill_other_sum {
+    sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_other_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_urlbar_picked_autofill_preloaded_sum {
+    sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_preloaded_sum ;;
+    hidden: yes
+  }
+
   dimension: scalar_parent_urlbar_picked_autofill_sum {
     sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_urlbar_picked_autofill_url_sum {
+    sql: ${TABLE}.scalar_parent_urlbar_picked_autofill_url_sum ;;
     hidden: yes
   }
 

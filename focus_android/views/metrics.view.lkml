@@ -253,6 +253,66 @@ that programmatically redirect to a new location.
 "
   }
 
+  dimension: metrics__boolean__metrics_search_widget_installed {
+    label: "Metrics Search Widget Installed"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.metrics_search_widget_installed ;;
+    type: yesno
+    group_label: "Metrics"
+    group_item_label: "Search Widget Installed"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Search Widget Installed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/metrics_search_widget_installed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not the search widget is installed
+"
+  }
+
+  dimension: metrics__boolean__metrics_start_reason_activity_error {
+    label: "Metrics Start Reason Activity Error"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.metrics_start_reason_activity_error ;;
+    type: yesno
+    group_label: "Metrics"
+    group_item_label: "Start Reason Activity Error"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Start Reason Activity Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/metrics_start_reason_activity_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The `AppStartReasonProvider.ActivityLifecycleCallbacks.onActivityCreated`
+was unexpectedly called twice. We can use this metric to validate our
+assumptions about how these APIs are called. This probe can be removed
+once we validate these assumptions.
+"
+  }
+
+  dimension: metrics__boolean__metrics_start_reason_process_error {
+    label: "Metrics Start Reason Process Error"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.metrics_start_reason_process_error ;;
+    type: yesno
+    group_label: "Metrics"
+    group_item_label: "Start Reason Process Error"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Start Reason Process Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/metrics_start_reason_process_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The `AppStartReasonProvider.ProcessLifecycleObserver.onCreate` was
+unexpectedly called twice. We can use this metric to validate our
+assumptions about how these APIs are called. This probe can be removed
+once we validate these assumptions.
+"
+  }
+
   dimension: metrics__boolean__mozilla_products_has_fenix_installed {
     label: "Mozilla Products Has Fenix Installed"
     hidden: no
@@ -304,6 +364,70 @@ that programmatically redirect to a new location.
     }
 
     description: "Measures the time spent to download the nimbus experiments
+"
+  }
+
+  dimension: metrics__labeled_counter__perf_startup_startup_type {
+    label: "Perf Startup Startup Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.perf_startup_startup_type ;;
+    group_label: "Perf Startup"
+    group_item_label: "Startup Type"
+
+    link: {
+      label: "Glean Dictionary reference for Perf Startup Startup Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/perf_startup_startup_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates how the browser was started. The label is divided into two
+variables. `state` is how cached the browser is when started. `path` is
+what code path we are expected to take. Together, they create a combined
+label: `state_path`. For brevity, the specific states are documented in
+the [Fenix perf
+glossary](https://wiki.mozilla.org/index.php?title=Performance/Fenix/Glossary).
+<br><br>
+This implementation is intended to be simple, not comprehensive. We list
+the implications below.
+
+<br><br>
+These ways of opening the app undesirably adds events to our primary
+buckets (non-`unknown` cases):
+<br>- App switcher cold/warm: `cold/warm_` + duplicates path from
+previous launch
+<br>- An Intent is sent internally that's uses `ACTION_MAIN` or
+`ACTION_VIEW` could be: `*_main/view` (unknown if this ever happens)
+<br>- A command-line launch uses `ACTION_MAIN` or `ACTION_VIEW` could be:
+`*_main/view`
+
+<br><br>
+These ways of opening the app undesirably do not add their events to our
+primary buckets:
+<br>- Close and reopen the app very quickly: no event is recorded.
+
+<br><br>
+These ways of opening the app don't affect our primary buckets:
+<br>- App switcher hot: `hot_unknown`
+<br>- PWA (all states): `unknown_unknown`
+<br>- Custom tab: `unknown_view`
+<br>- Cold start where a service or other non-activity starts the process
+(not manually tested) - this seems to happen if you have the homescreen
+widget: `unknown_*`
+<br>- Another activity is drawn before MainActivity or CustomTabActivity
+(e.g. widget voice
+search): `unknown_*`
+
+<br>
+In addition to the events above, the `unknown` state may be chosen when we
+were unable to determine a cause due to implementation details or the API
+was used incorrectly. We may be able to record the events listed above
+into different buckets but we kept the implementation simple for now.
+<br><br>
+N.B.: for implementation simplicity, we duplicate the logic in app that
+determines `path` so it's not perfectly accurate. In one way, we record we
+is intended to happen rather than what actually happened (e.g. the user
+may click a link so we record VIEW but the app does a MAIN by going to the
+homescreen because the link was invalid).
 "
   }
 
@@ -801,6 +925,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__netwerk_early_hints {
+    label: "Netwerk Early Hints"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_early_hints ;;
+    group_label: "Netwerk"
+    group_item_label: "Early Hints"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk Early Hints"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/netwerk_early_hints"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the different type of resources that are sent for early hints.
+"
+  }
+
   dimension: metrics__timing_distribution__paint_build_displaylist_time__sum {
     label: "Paint Build Displaylist Time Sum"
     hidden: no
@@ -1166,6 +1307,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__wr_gpu_wait_time__sum {
+    label: "Wr Gpu Wait Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Gpu Wait Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Gpu Wait Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/wr_gpu_wait_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent waiting for the GPU to complete previously issued drawing commands.
+"
+  }
+
   dimension: metrics__timing_distribution__wr_rasterize_blobs_time__sum {
     label: "Wr Rasterize Blobs Time Sum"
     hidden: no
@@ -1202,6 +1361,42 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__wr_renderer_time__sum {
+    label: "Wr Renderer Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Renderer Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Renderer Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/wr_renderer_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebRender renderer time.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time_no_sc__sum {
+    label: "Wr Renderer Time No Sc Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time_no_sc.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Renderer Time No Sc Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Renderer Time No Sc Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/wr_renderer_time_no_sc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebRender renderer time excluding frames in which shader compilation took place.
+"
+  }
+
   dimension: metrics__timing_distribution__wr_scenebuild_time__sum {
     label: "Wr Scenebuild Time Sum"
     hidden: no
@@ -1235,6 +1430,60 @@ To be used to validate GIFFT.
     }
 
     description: "WebRender scene swap time.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_texture_cache_update_time__sum {
+    label: "Wr Texture Cache Update Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_texture_cache_update_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Texture Cache Update Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Texture Cache Update Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/wr_texture_cache_update_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken by WebRender to update the texture cache.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_time_to_frame_build__sum {
+    label: "Wr Time To Frame Build Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_time_to_frame_build.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Time To Frame Build Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Time To Frame Build Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/wr_time_to_frame_build"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time elapsed between the construction of a transaction and the associated frame build beginning.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_time_to_render_start__sum {
+    label: "Wr Time To Render Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_time_to_render_start.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Time To Render Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Time To Render Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/wr_time_to_render_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time elapsed between the construction of a frame and the start of rendering.
 "
   }
 
@@ -1655,6 +1904,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: client_info__android_sdk_version {
@@ -1662,6 +1912,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "Android Sdk Version"
+    description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
   dimension: client_info__app_build {
@@ -1669,6 +1920,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "App Build"
+    description: "The build identifier generated by the CI system (e.g. \"1234/A\"). For language bindings that provide automatic detection for this value, (e.g. Android/Kotlin), in the unlikely event that the build identifier can not be retrieved from the OS, it is set to \"inaccessible\". For other language bindings, if the value was not provided through configuration, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__app_channel {
@@ -1676,6 +1928,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "App Channel"
+    description: "The channel the application is being distributed on."
   }
 
   dimension: client_info__app_display_version {
@@ -1683,6 +1936,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "App Display Version"
+    description: "The user visible version string (e.g. \"1.0.3\").  In the unlikely event that the display version can not be retrieved, it is set to \"inaccessible\"."
   }
 
   dimension: client_info__architecture {
@@ -1690,6 +1944,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "Architecture"
+    description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
   }
 
   dimension: client_info__build_date {
@@ -1697,11 +1952,13 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "Build Date"
+    description: "The date & time the application was built"
   }
 
   dimension: client_info__client_id {
     sql: ${TABLE}.client_info.client_id ;;
     hidden: yes
+    description: "A UUID uniquely identifying the client."
   }
 
   dimension: client_info__device_manufacturer {
@@ -1709,6 +1966,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
+    description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__device_model {
@@ -1716,6 +1974,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "Device Model"
+    description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__first_run_date {
@@ -1723,6 +1982,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "First Run Date"
+    description: "The date of the first run of the application."
   }
 
   dimension: client_info__locale {
@@ -1730,6 +1990,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "Locale"
+    description: "The locale of the application during initialization (e.g. \"es-ES\"). If the locale can't be determined on the system, the value is [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers), to indicate \"undetermined\"."
   }
 
   dimension: client_info__os {
@@ -1737,6 +1998,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "Os"
+    description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
   dimension: client_info__os_version {
@@ -1744,6 +2006,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
+    description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -1751,11 +2014,13 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
+    description: "The version of the Glean SDK"
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    description: "The document ID specified in the URI when the client sent this message"
     primary_key: yes
   }
 
@@ -1777,6 +2042,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -1784,6 +2050,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Db Version"
+    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -1791,6 +2058,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
+    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -1798,6 +2066,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
+    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -1805,6 +2074,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Header"
     group_item_label: "Date"
+    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -1812,6 +2082,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Header"
     group_item_label: "Dnt"
+    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -1838,6 +2109,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Debug Id"
+    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -1845,6 +2117,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
+    description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -1852,6 +2125,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Lb Tags"
+    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -1859,6 +2133,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
+    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -1866,6 +2141,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
+    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -1873,6 +2149,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
+    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -1880,6 +2157,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Db Version"
+    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -1887,6 +2165,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Name"
+    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -1894,6 +2173,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Organization"
+    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -1920,21 +2200,25 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -1985,6 +2269,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metadata__header__parsed {
@@ -2044,6 +2329,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
       quarter,
       year,
     ]
+    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: clients {
@@ -3244,6 +3530,92 @@ view: metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
   }
 }
 
+view: metrics__metrics__labeled_counter__netwerk_early_hints {
+  label: "Netwerk - Early Hints"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__netwerk_early_hints
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__netwerk_early_hints.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__perf_startup_startup_type {
+  label: "Perf Startup - Startup Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__perf_startup_startup_type
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__perf_startup_startup_type.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
   label: "Power Cpu Ms Per Thread - Content Background"
 
@@ -4062,6 +4434,44 @@ view: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
     count(*) as n
 from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.gmp_update_xml_fetch_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__netwerk_early_hints {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.netwerk_early_hints) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__perf_startup_startup_type {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.perf_startup_startup_type) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

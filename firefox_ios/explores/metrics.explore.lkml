@@ -89,6 +89,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin}) AS metrics__metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__firefox_home_page_synced_tab_opened_origin {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__firefox_home_page_synced_tab_opened_origin}) AS metrics__metrics__labeled_counter__firefox_home_page_synced_tab_opened_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__firefox_home_page_synced_tab_opened_origin.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__firefox_home_page_synced_tab_show_all_origin {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__firefox_home_page_synced_tab_show_all_origin}) AS metrics__metrics__labeled_counter__firefox_home_page_synced_tab_show_all_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__firefox_home_page_synced_tab_show_all_origin.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__firefox_home_page_your_library {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__firefox_home_page_your_library}) AS metrics__metrics__labeled_counter__firefox_home_page_your_library ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__firefox_home_page_your_library.document_id} ;;
@@ -208,6 +218,16 @@ explore: metrics {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__top_site_pressed_tile_origin}) AS metrics__metrics__labeled_counter__top_site_pressed_tile_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__top_site_pressed_tile_origin.document_id} ;;
   }
+
+  join: metrics__metrics__labeled_counter__top_sites_pressed_tile_origin {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__top_sites_pressed_tile_origin}) AS metrics__metrics__labeled_counter__top_sites_pressed_tile_origin ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__top_sites_pressed_tile_origin.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__wallpaper_analytics_themed_wallpaper}) AS metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper.document_id} ;;
+  }
 }
 
 explore: suggest__metrics__metrics__labeled_counter__bookmarks_add {
@@ -263,6 +283,14 @@ explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_
 }
 
 explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_recently_saved_show_all_origin {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_synced_tab_opened_origin {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_synced_tab_show_all_origin {
   hidden: yes
 }
 
@@ -359,5 +387,13 @@ explore: suggest__metrics__metrics__labeled_counter__tabs_open {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__top_site_pressed_tile_origin {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__top_sites_pressed_tile_origin {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper {
   hidden: yes
 }
