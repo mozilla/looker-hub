@@ -1038,6 +1038,10 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: newtab
+    pseudo_main:
+      type: glean_ping_explore
+      views:
+        base_view: pseudo_main
   glean_app: true
   owners:
   - chutten@mozilla.com
@@ -1176,6 +1180,15 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.newtab
+      type: table_view
+    pseudo_main:
+      tables:
+      - table: mozdata.firefox_desktop.pseudo_main
+      type: glean_ping_view
+    pseudo_main_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.pseudo_main
       type: table_view
 firefox_desktop_background_update:
   explores:
@@ -5734,6 +5747,10 @@ search_private:
     sanitization_job_languages:
       tables:
       - table: moz-fx-data-shared-prod.search_terms.sanitization_job_languages
+      type: table_view
+    search_term_data_validation_reports:
+      tables:
+      - table: moz-fx-data-shared-prod.search_terms_derived.search_term_data_validation_reports_v1
       type: table_view
     search_term_sanitization_job_metadata_daily:
       tables:
