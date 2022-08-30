@@ -5716,6 +5716,10 @@ search:
   pretty_name: Search
   spoke: looker-spoke-default
   views:
+    desktop_crashes_daily:
+      tables:
+      - table: mozdata.telemetry.crashes_daily
+      type: table_view
     desktop_mobile_search_clients_monthly:
       tables:
       - table: mozdata.search.desktop_mobile_search_clients_monthly
