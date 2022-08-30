@@ -55,6 +55,41 @@ view: unified_metrics {
     type: string
   }
 
+  dimension: browser_version_info__is_major_release {
+    sql: ${TABLE}.browser_version_info.is_major_release ;;
+    type: yesno
+    group_label: "Browser Version Info"
+    group_item_label: "Is Major Release"
+  }
+
+  dimension: browser_version_info__major_version {
+    sql: ${TABLE}.browser_version_info.major_version ;;
+    type: number
+    group_label: "Browser Version Info"
+    group_item_label: "Major Version"
+  }
+
+  dimension: browser_version_info__minor_version {
+    sql: ${TABLE}.browser_version_info.minor_version ;;
+    type: number
+    group_label: "Browser Version Info"
+    group_item_label: "Minor Version"
+  }
+
+  dimension: browser_version_info__patch_revision {
+    sql: ${TABLE}.browser_version_info.patch_revision ;;
+    type: number
+    group_label: "Browser Version Info"
+    group_item_label: "Patch Revision"
+  }
+
+  dimension: browser_version_info__version {
+    sql: ${TABLE}.browser_version_info.version ;;
+    type: string
+    group_label: "Browser Version Info"
+    group_item_label: "Version"
+  }
+
   dimension: city {
     sql: ${TABLE}.city ;;
     type: string
