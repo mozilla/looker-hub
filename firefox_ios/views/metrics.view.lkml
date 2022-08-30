@@ -1533,6 +1533,25 @@ in the page action menu
 "
   }
 
+  dimension: metrics__counter__page_action_menu_create_new_tab {
+    label: "Page Action Menu Create New Tab"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.page_action_menu_create_new_tab ;;
+    type: number
+    group_label: "Page Action Menu"
+    group_item_label: "Create New Tab"
+
+    link: {
+      label: "Glean Dictionary reference for Page Action Menu Create New Tab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/page_action_menu_create_new_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user creates a new tab from the
+page action menu.
+"
+  }
+
   dimension: metrics__counter__page_action_menu_find_in_page {
     label: "Page Action Menu Find In Page"
     hidden: no
@@ -1682,6 +1701,44 @@ in the page action menu
 
     description: "Counts the number of times a user taps Share Page With in the
 page action menu
+"
+  }
+
+  dimension: metrics__counter__page_action_menu_view_downloads_panel {
+    label: "Page Action Menu View Downloads Panel"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.page_action_menu_view_downloads_panel ;;
+    type: number
+    group_label: "Page Action Menu"
+    group_item_label: "View Downloads Panel"
+
+    link: {
+      label: "Glean Dictionary reference for Page Action Menu View Downloads Panel"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/page_action_menu_view_downloads_panel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user navigates to the downloads panel
+from the page action menu.
+"
+  }
+
+  dimension: metrics__counter__page_action_menu_view_history_panel {
+    label: "Page Action Menu View History Panel"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.page_action_menu_view_history_panel ;;
+    type: number
+    group_label: "Page Action Menu"
+    group_item_label: "View History Panel"
+
+    link: {
+      label: "Glean Dictionary reference for Page Action Menu View History Panel"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/page_action_menu_view_history_panel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user navigates to the history panel
+from the page action menu.
 "
   }
 
@@ -5203,6 +5260,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: page_action_menu_create_new_tab {
+    type: sum
+    sql: ${metrics__counter__page_action_menu_create_new_tab} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Page Action Menu Create New Tab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/page_action_menu_create_new_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: page_action_menu_create_new_tab_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__page_action_menu_create_new_tab: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Page Action Menu Create New Tab"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/page_action_menu_create_new_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: page_action_menu_find_in_page {
     type: sum
     sql: ${metrics__counter__page_action_menu_find_in_page} ;;
@@ -5399,6 +5481,56 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Page Action Menu Share Page With"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/page_action_menu_share_page_with"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: page_action_menu_view_downloads_panel {
+    type: sum
+    sql: ${metrics__counter__page_action_menu_view_downloads_panel} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Page Action Menu View Downloads Panel"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/page_action_menu_view_downloads_panel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: page_action_menu_view_downloads_panel_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__page_action_menu_view_downloads_panel: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Page Action Menu View Downloads Panel"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/page_action_menu_view_downloads_panel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: page_action_menu_view_history_panel {
+    type: sum
+    sql: ${metrics__counter__page_action_menu_view_history_panel} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Page Action Menu View History Panel"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/page_action_menu_view_history_panel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: page_action_menu_view_history_panel_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__page_action_menu_view_history_panel: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Page Action Menu View History Panel"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/page_action_menu_view_history_panel"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
