@@ -17,11 +17,6 @@ view: task_continuity_sync_after_tab_change_rollout_35 {
     type: string
   }
 
-  dimension: probe {
-    sql: ${TABLE}.probe ;;
-    type: string
-  }
-
   parameter: percentile_conf {
     type: number
     label: "Percentile"

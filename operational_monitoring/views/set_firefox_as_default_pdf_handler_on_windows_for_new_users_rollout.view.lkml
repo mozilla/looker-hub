@@ -17,11 +17,6 @@ view: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout {
     type: string
   }
 
-  dimension: probe {
-    sql: ${TABLE}.probe ;;
-    type: string
-  }
-
   parameter: percentile_conf {
     type: number
     label: "Percentile"

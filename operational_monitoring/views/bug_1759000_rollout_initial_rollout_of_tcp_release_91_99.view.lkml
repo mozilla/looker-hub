@@ -17,11 +17,6 @@ view: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99 {
     type: string
   }
 
-  dimension: probe {
-    sql: ${TABLE}.probe ;;
-    type: string
-  }
-
   parameter: percentile_conf {
     type: number
     label: "Percentile"

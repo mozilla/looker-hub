@@ -17,11 +17,6 @@ view: bug_1762636_rollout_disable_webassembly_code_caching_release_98_99 {
     type: string
   }
 
-  dimension: probe {
-    sql: ${TABLE}.probe ;;
-    type: string
-  }
-
   parameter: percentile_conf {
     type: number
     label: "Percentile"

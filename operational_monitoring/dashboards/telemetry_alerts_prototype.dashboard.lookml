@@ -123,7 +123,7 @@
   - name: Probe
     title: Probe
     type: field_filter
-    default_value: 'subsession_length'
+    default_value: 'active_ticks'
     allow_multiple_values: true
     required: true
     ui_config:
