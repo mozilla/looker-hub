@@ -17,11 +17,6 @@ view: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles {
     type: string
   }
 
-  dimension: probe {
-    sql: ${TABLE}.probe ;;
-    type: string
-  }
-
   parameter: percentile_conf {
     type: number
     label: "Percentile"
