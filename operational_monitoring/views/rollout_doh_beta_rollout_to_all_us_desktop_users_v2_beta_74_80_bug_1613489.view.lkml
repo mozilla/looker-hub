@@ -17,6 +17,11 @@ view: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489
     type: string
   }
 
+  dimension: probe {
+    sql: ${TABLE}.probe ;;
+    type: string
+  }
+
   parameter: percentile_conf {
     type: number
     label: "Percentile"

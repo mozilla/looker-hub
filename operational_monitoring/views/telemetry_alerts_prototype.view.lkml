@@ -22,6 +22,11 @@ view: telemetry_alerts_prototype {
     type: string
   }
 
+  dimension: probe {
+    sql: ${TABLE}.probe ;;
+    type: string
+  }
+
   parameter: percentile_conf {
     type: number
     label: "Percentile"

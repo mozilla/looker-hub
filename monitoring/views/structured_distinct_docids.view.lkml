@@ -13,6 +13,7 @@ view: structured_distinct_docids {
   dimension: decoded_nondistinct {
     sql: ${TABLE}.decoded_nondistinct ;;
     type: number
+    description: "Non-distinct count of submissions in the decoded table"
   }
 
   dimension: doc_type {
@@ -28,6 +29,7 @@ view: structured_distinct_docids {
   dimension: live_nondistinct {
     sql: ${TABLE}.live_nondistinct ;;
     type: number
+    description: "Non-distinct count of submissions in the live table"
   }
 
   dimension: namespace {
