@@ -17,11 +17,6 @@ view: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users {
     type: string
   }
 
-  dimension: probe {
-    sql: ${TABLE}.probe ;;
-    type: string
-  }
-
   parameter: percentile_conf {
     type: number
     label: "Percentile"

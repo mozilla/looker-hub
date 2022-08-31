@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search With Ads
-    name: Search With Ads
+  - title: Tagged Search Count
+    name: Tagged Search Count
     explore: tcp_rollout_phase_2
     type: "ci-line-chart"
     fields: [
@@ -25,7 +25,7 @@
       tcp_rollout_phase_2.branch
     ]
     filters:
-      tcp_rollout_phase_2.probe: search_with_ads
+      tcp_rollout_phase_2.probe: tagged_search_count
     row: 0
     col: 0
     width: 12
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
+  - title: Content Shutdown Crashes
+    name: Content Shutdown Crashes
     explore: tcp_rollout_phase_2
     type: "ci-line-chart"
     fields: [
@@ -59,7 +59,7 @@
       tcp_rollout_phase_2.branch
     ]
     filters:
-      tcp_rollout_phase_2.probe: shutdown_hangs
+      tcp_rollout_phase_2.probe: content_shutdown_crashes
     row: 0
     col: 12
     width: 12
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Follow On Search Count
-    name: Tagged Follow On Search Count
+  - title: Content Process Count
+    name: Content Process Count
     explore: tcp_rollout_phase_2
     type: "ci-line-chart"
     fields: [
@@ -93,7 +93,7 @@
       tcp_rollout_phase_2.branch
     ]
     filters:
-      tcp_rollout_phase_2.probe: tagged_follow_on_search_count
+      tcp_rollout_phase_2.probe: content_process_count
     row: 10
     col: 0
     width: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Search Count
-    name: Tagged Search Count
+  - title: Startup Crashes
+    name: Startup Crashes
     explore: tcp_rollout_phase_2
     type: "ci-line-chart"
     fields: [
@@ -127,7 +127,7 @@
       tcp_rollout_phase_2.branch
     ]
     filters:
-      tcp_rollout_phase_2.probe: tagged_search_count
+      tcp_rollout_phase_2.probe: startup_crashes
     row: 10
     col: 12
     width: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Crashes
-    name: Content Crashes
+  - title: Search With Ads Organic
+    name: Search With Ads Organic
     explore: tcp_rollout_phase_2
     type: "ci-line-chart"
     fields: [
@@ -195,7 +195,7 @@
       tcp_rollout_phase_2.branch
     ]
     filters:
-      tcp_rollout_phase_2.probe: content_crashes
+      tcp_rollout_phase_2.probe: search_with_ads_organic
     row: 20
     col: 12
     width: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Click
-    name: Ad Click
+  - title: Tagged Follow On Search Count
+    name: Tagged Follow On Search Count
     explore: tcp_rollout_phase_2
     type: "ci-line-chart"
     fields: [
@@ -229,7 +229,7 @@
       tcp_rollout_phase_2.branch
     ]
     filters:
-      tcp_rollout_phase_2.probe: ad_click
+      tcp_rollout_phase_2.probe: tagged_follow_on_search_count
     row: 30
     col: 0
     width: 12
@@ -248,8 +248,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Process Count
-    name: Content Process Count
+  - title: Content Crashes
+    name: Content Crashes
     explore: tcp_rollout_phase_2
     type: "ci-line-chart"
     fields: [
@@ -263,43 +263,9 @@
       tcp_rollout_phase_2.branch
     ]
     filters:
-      tcp_rollout_phase_2.probe: content_process_count
+      tcp_rollout_phase_2.probe: content_crashes
     row: 30
     col: 12
-    width: 12
-    height: 8
-    field_x: tcp_rollout_phase_2.submission_date
-    field_y: tcp_rollout_phase_2.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_phase_2.low
-    ci_upper: tcp_rollout_phase_2.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_phase_2.percentile_conf
-      Country: tcp_rollout_phase_2.country
-      Os: tcp_rollout_phase_2.os
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Content Shutdown Crashes
-    name: Content Shutdown Crashes
-    explore: tcp_rollout_phase_2
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_phase_2.submission_date,
-      tcp_rollout_phase_2.branch,
-      tcp_rollout_phase_2.high,
-      tcp_rollout_phase_2.low,
-      tcp_rollout_phase_2.percentile
-    ]
-    pivots: [
-      tcp_rollout_phase_2.branch
-    ]
-    filters:
-      tcp_rollout_phase_2.probe: content_shutdown_crashes
-    row: 40
-    col: 0
     width: 12
     height: 8
     field_x: tcp_rollout_phase_2.submission_date
@@ -333,6 +299,40 @@
     filters:
       tcp_rollout_phase_2.probe: gmplugin_crashes
     row: 40
+    col: 0
+    width: 12
+    height: 8
+    field_x: tcp_rollout_phase_2.submission_date
+    field_y: tcp_rollout_phase_2.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_phase_2.low
+    ci_upper: tcp_rollout_phase_2.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_phase_2.percentile_conf
+      Country: tcp_rollout_phase_2.country
+      Os: tcp_rollout_phase_2.os
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Sap
+    name: Sap
+    explore: tcp_rollout_phase_2
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_phase_2.submission_date,
+      tcp_rollout_phase_2.branch,
+      tcp_rollout_phase_2.high,
+      tcp_rollout_phase_2.low,
+      tcp_rollout_phase_2.percentile
+    ]
+    pivots: [
+      tcp_rollout_phase_2.branch
+    ]
+    filters:
+      tcp_rollout_phase_2.probe: sap
+    row: 40
     col: 12
     width: 12
     height: 8
@@ -350,8 +350,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Main Crashes
-    name: Main Crashes
+  - title: Gpu Crashes
+    name: Gpu Crashes
     explore: tcp_rollout_phase_2
     type: "ci-line-chart"
     fields: [
@@ -365,7 +365,7 @@
       tcp_rollout_phase_2.branch
     ]
     filters:
-      tcp_rollout_phase_2.probe: main_crashes
+      tcp_rollout_phase_2.probe: gpu_crashes
     row: 50
     col: 0
     width: 12
@@ -418,8 +418,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Startup Crashes
-    name: Startup Crashes
+  - title: Ad Click
+    name: Ad Click
     explore: tcp_rollout_phase_2
     type: "ci-line-chart"
     fields: [
@@ -433,7 +433,7 @@
       tcp_rollout_phase_2.branch
     ]
     filters:
-      tcp_rollout_phase_2.probe: startup_crashes
+      tcp_rollout_phase_2.probe: ad_click
     row: 60
     col: 0
     width: 12
@@ -452,8 +452,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Gpu Crashes
-    name: Gpu Crashes
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
     explore: tcp_rollout_phase_2
     type: "ci-line-chart"
     fields: [
@@ -467,7 +467,7 @@
       tcp_rollout_phase_2.branch
     ]
     filters:
-      tcp_rollout_phase_2.probe: gpu_crashes
+      tcp_rollout_phase_2.probe: shutdown_hangs
     row: 60
     col: 12
     width: 12
@@ -486,8 +486,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Sap
-    name: Sap
+  - title: Oom Crashes
+    name: Oom Crashes
     explore: tcp_rollout_phase_2
     type: "ci-line-chart"
     fields: [
@@ -501,7 +501,7 @@
       tcp_rollout_phase_2.branch
     ]
     filters:
-      tcp_rollout_phase_2.probe: sap
+      tcp_rollout_phase_2.probe: oom_crashes
     row: 70
     col: 0
     width: 12
@@ -520,8 +520,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search With Ads Organic
-    name: Search With Ads Organic
+  - title: Search With Ads
+    name: Search With Ads
     explore: tcp_rollout_phase_2
     type: "ci-line-chart"
     fields: [
@@ -535,7 +535,7 @@
       tcp_rollout_phase_2.branch
     ]
     filters:
-      tcp_rollout_phase_2.probe: search_with_ads_organic
+      tcp_rollout_phase_2.probe: search_with_ads
     row: 70
     col: 12
     width: 12
@@ -588,8 +588,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Oom Crashes
-    name: Oom Crashes
+  - title: Main Crashes
+    name: Main Crashes
     explore: tcp_rollout_phase_2
     type: "ci-line-chart"
     fields: [
@@ -603,7 +603,7 @@
       tcp_rollout_phase_2.branch
     ]
     filters:
-      tcp_rollout_phase_2.probe: oom_crashes
+      tcp_rollout_phase_2.probe: main_crashes
     row: 80
     col: 12
     width: 12
