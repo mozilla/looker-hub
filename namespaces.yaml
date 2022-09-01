@@ -4122,24 +4122,24 @@ operational_monitoring:
         explore: tcp_rollout_phase_2
         group_by_dimension: null
         probes:
-        - tagged_follow_on_search_count
         - ad_click_organic
-        - startup_crashes
-        - oom_crashes
-        - content_process_count
-        - main_crashes
         - content_crashes
-        - shutdown_hangs
-        - ad_click
-        - tagged_search_count
-        - organic_search_count
-        - sap
+        - tagged_follow_on_search_count
         - gmplugin_crashes
+        - main_crashes
         - search_with_ads_organic
         - search_with_ads
-        - plugin_crashes
+        - startup_crashes
+        - organic_search_count
+        - content_process_count
         - gpu_crashes
+        - tagged_search_count
+        - ad_click
         - content_shutdown_crashes
+        - sap
+        - oom_crashes
+        - shutdown_hangs
+        - plugin_crashes
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_2
         xaxis: submission_date
       title: Tcp Rollout Phase 2
@@ -5223,24 +5223,24 @@ operational_monitoring:
       branches: *id077
       dimensions: *id078
       probes:
-      - tagged_follow_on_search_count
       - ad_click_organic
-      - startup_crashes
-      - oom_crashes
-      - content_process_count
-      - main_crashes
       - content_crashes
-      - shutdown_hangs
-      - ad_click
-      - tagged_search_count
-      - organic_search_count
-      - sap
+      - tagged_follow_on_search_count
       - gmplugin_crashes
+      - main_crashes
       - search_with_ads_organic
       - search_with_ads
-      - plugin_crashes
+      - startup_crashes
+      - organic_search_count
+      - content_process_count
       - gpu_crashes
+      - tagged_search_count
+      - ad_click
       - content_shutdown_crashes
+      - sap
+      - oom_crashes
+      - shutdown_hangs
+      - plugin_crashes
       type: operational_monitoring_explore
       views:
         base_view: tcp_rollout_phase_2
