@@ -27,6 +27,11 @@ view: mission_control_desktop_nightly {
     type: string
   }
 
+  dimension: probe {
+    sql: ${TABLE}.probe ;;
+    type: string
+  }
+
   parameter: percentile_conf {
     type: number
     label: "Percentile"

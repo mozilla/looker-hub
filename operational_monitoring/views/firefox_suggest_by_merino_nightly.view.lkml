@@ -17,6 +17,11 @@ view: firefox_suggest_by_merino_nightly {
     type: string
   }
 
+  dimension: probe {
+    sql: ${TABLE}.probe ;;
+    type: string
+  }
+
   parameter: percentile_conf {
     type: number
     label: "Percentile"

@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: desktop_crashes_daily {
+view: crashes_daily {
   dimension: application_name {
     sql: ${TABLE}.application_name ;;
     type: string

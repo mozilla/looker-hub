@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Organic Search Count
-    name: Organic Search Count
+  - title: Tagged Follow On Search Count
+    name: Tagged Follow On Search Count
     explore: tcp_rollout
     type: "ci-line-chart"
     fields: [
@@ -25,218 +25,8 @@
       tcp_rollout.branch
     ]
     filters:
-      tcp_rollout.probe: organic_search_count
+      tcp_rollout.probe: tagged_follow_on_search_count
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout.submission_date
-    field_y: tcp_rollout.percentile
-    log_scale: false
-    ci_lower: tcp_rollout.low
-    ci_upper: tcp_rollout.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout.percentile_conf
-      Country: tcp_rollout.country
-      Os: tcp_rollout.os
-      
-    opt-in: "#3FE1B0"
-    opt-out: "#0060E0"
-    pref-does-not-exist: "#9059FF"
-    defaults_version: 0
-  - title: Search With Ads
-    name: Search With Ads
-    explore: tcp_rollout
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout.submission_date,
-      tcp_rollout.branch,
-      tcp_rollout.high,
-      tcp_rollout.low,
-      tcp_rollout.percentile
-    ]
-    pivots: [
-      tcp_rollout.branch
-    ]
-    filters:
-      tcp_rollout.probe: search_with_ads
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: tcp_rollout.submission_date
-    field_y: tcp_rollout.percentile
-    log_scale: false
-    ci_lower: tcp_rollout.low
-    ci_upper: tcp_rollout.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout.percentile_conf
-      Country: tcp_rollout.country
-      Os: tcp_rollout.os
-      
-    opt-in: "#3FE1B0"
-    opt-out: "#0060E0"
-    pref-does-not-exist: "#9059FF"
-    defaults_version: 0
-  - title: Gmplugin Crashes
-    name: Gmplugin Crashes
-    explore: tcp_rollout
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout.submission_date,
-      tcp_rollout.branch,
-      tcp_rollout.high,
-      tcp_rollout.low,
-      tcp_rollout.percentile
-    ]
-    pivots: [
-      tcp_rollout.branch
-    ]
-    filters:
-      tcp_rollout.probe: gmplugin_crashes
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout.submission_date
-    field_y: tcp_rollout.percentile
-    log_scale: false
-    ci_lower: tcp_rollout.low
-    ci_upper: tcp_rollout.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout.percentile_conf
-      Country: tcp_rollout.country
-      Os: tcp_rollout.os
-      
-    opt-in: "#3FE1B0"
-    opt-out: "#0060E0"
-    pref-does-not-exist: "#9059FF"
-    defaults_version: 0
-  - title: Main Crashes
-    name: Main Crashes
-    explore: tcp_rollout
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout.submission_date,
-      tcp_rollout.branch,
-      tcp_rollout.high,
-      tcp_rollout.low,
-      tcp_rollout.percentile
-    ]
-    pivots: [
-      tcp_rollout.branch
-    ]
-    filters:
-      tcp_rollout.probe: main_crashes
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: tcp_rollout.submission_date
-    field_y: tcp_rollout.percentile
-    log_scale: false
-    ci_lower: tcp_rollout.low
-    ci_upper: tcp_rollout.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout.percentile_conf
-      Country: tcp_rollout.country
-      Os: tcp_rollout.os
-      
-    opt-in: "#3FE1B0"
-    opt-out: "#0060E0"
-    pref-does-not-exist: "#9059FF"
-    defaults_version: 0
-  - title: Oom Crashes
-    name: Oom Crashes
-    explore: tcp_rollout
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout.submission_date,
-      tcp_rollout.branch,
-      tcp_rollout.high,
-      tcp_rollout.low,
-      tcp_rollout.percentile
-    ]
-    pivots: [
-      tcp_rollout.branch
-    ]
-    filters:
-      tcp_rollout.probe: oom_crashes
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout.submission_date
-    field_y: tcp_rollout.percentile
-    log_scale: false
-    ci_lower: tcp_rollout.low
-    ci_upper: tcp_rollout.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout.percentile_conf
-      Country: tcp_rollout.country
-      Os: tcp_rollout.os
-      
-    opt-in: "#3FE1B0"
-    opt-out: "#0060E0"
-    pref-does-not-exist: "#9059FF"
-    defaults_version: 0
-  - title: Startup Crashes
-    name: Startup Crashes
-    explore: tcp_rollout
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout.submission_date,
-      tcp_rollout.branch,
-      tcp_rollout.high,
-      tcp_rollout.low,
-      tcp_rollout.percentile
-    ]
-    pivots: [
-      tcp_rollout.branch
-    ]
-    filters:
-      tcp_rollout.probe: startup_crashes
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: tcp_rollout.submission_date
-    field_y: tcp_rollout.percentile
-    log_scale: false
-    ci_lower: tcp_rollout.low
-    ci_upper: tcp_rollout.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout.percentile_conf
-      Country: tcp_rollout.country
-      Os: tcp_rollout.os
-      
-    opt-in: "#3FE1B0"
-    opt-out: "#0060E0"
-    pref-does-not-exist: "#9059FF"
-    defaults_version: 0
-  - title: Plugin Crashes
-    name: Plugin Crashes
-    explore: tcp_rollout
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout.submission_date,
-      tcp_rollout.branch,
-      tcp_rollout.high,
-      tcp_rollout.low,
-      tcp_rollout.percentile
-    ]
-    pivots: [
-      tcp_rollout.branch
-    ]
-    filters:
-      tcp_rollout.probe: plugin_crashes
-    row: 30
     col: 0
     width: 12
     height: 8
@@ -271,6 +61,216 @@
     ]
     filters:
       tcp_rollout.probe: ad_click_organic
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: tcp_rollout.submission_date
+    field_y: tcp_rollout.percentile
+    log_scale: false
+    ci_lower: tcp_rollout.low
+    ci_upper: tcp_rollout.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout.percentile_conf
+      Country: tcp_rollout.country
+      Os: tcp_rollout.os
+      
+    opt-in: "#3FE1B0"
+    opt-out: "#0060E0"
+    pref-does-not-exist: "#9059FF"
+    defaults_version: 0
+  - title: Startup Crashes
+    name: Startup Crashes
+    explore: tcp_rollout
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout.submission_date,
+      tcp_rollout.branch,
+      tcp_rollout.high,
+      tcp_rollout.low,
+      tcp_rollout.percentile
+    ]
+    pivots: [
+      tcp_rollout.branch
+    ]
+    filters:
+      tcp_rollout.probe: startup_crashes
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: tcp_rollout.submission_date
+    field_y: tcp_rollout.percentile
+    log_scale: false
+    ci_lower: tcp_rollout.low
+    ci_upper: tcp_rollout.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout.percentile_conf
+      Country: tcp_rollout.country
+      Os: tcp_rollout.os
+      
+    opt-in: "#3FE1B0"
+    opt-out: "#0060E0"
+    pref-does-not-exist: "#9059FF"
+    defaults_version: 0
+  - title: Oom Crashes
+    name: Oom Crashes
+    explore: tcp_rollout
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout.submission_date,
+      tcp_rollout.branch,
+      tcp_rollout.high,
+      tcp_rollout.low,
+      tcp_rollout.percentile
+    ]
+    pivots: [
+      tcp_rollout.branch
+    ]
+    filters:
+      tcp_rollout.probe: oom_crashes
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: tcp_rollout.submission_date
+    field_y: tcp_rollout.percentile
+    log_scale: false
+    ci_lower: tcp_rollout.low
+    ci_upper: tcp_rollout.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout.percentile_conf
+      Country: tcp_rollout.country
+      Os: tcp_rollout.os
+      
+    opt-in: "#3FE1B0"
+    opt-out: "#0060E0"
+    pref-does-not-exist: "#9059FF"
+    defaults_version: 0
+  - title: Content Process Count
+    name: Content Process Count
+    explore: tcp_rollout
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout.submission_date,
+      tcp_rollout.branch,
+      tcp_rollout.high,
+      tcp_rollout.low,
+      tcp_rollout.percentile
+    ]
+    pivots: [
+      tcp_rollout.branch
+    ]
+    filters:
+      tcp_rollout.probe: content_process_count
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: tcp_rollout.submission_date
+    field_y: tcp_rollout.percentile
+    log_scale: false
+    ci_lower: tcp_rollout.low
+    ci_upper: tcp_rollout.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout.percentile_conf
+      Country: tcp_rollout.country
+      Os: tcp_rollout.os
+      
+    opt-in: "#3FE1B0"
+    opt-out: "#0060E0"
+    pref-does-not-exist: "#9059FF"
+    defaults_version: 0
+  - title: Main Crashes
+    name: Main Crashes
+    explore: tcp_rollout
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout.submission_date,
+      tcp_rollout.branch,
+      tcp_rollout.high,
+      tcp_rollout.low,
+      tcp_rollout.percentile
+    ]
+    pivots: [
+      tcp_rollout.branch
+    ]
+    filters:
+      tcp_rollout.probe: main_crashes
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: tcp_rollout.submission_date
+    field_y: tcp_rollout.percentile
+    log_scale: false
+    ci_lower: tcp_rollout.low
+    ci_upper: tcp_rollout.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout.percentile_conf
+      Country: tcp_rollout.country
+      Os: tcp_rollout.os
+      
+    opt-in: "#3FE1B0"
+    opt-out: "#0060E0"
+    pref-does-not-exist: "#9059FF"
+    defaults_version: 0
+  - title: Content Crashes
+    name: Content Crashes
+    explore: tcp_rollout
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout.submission_date,
+      tcp_rollout.branch,
+      tcp_rollout.high,
+      tcp_rollout.low,
+      tcp_rollout.percentile
+    ]
+    pivots: [
+      tcp_rollout.branch
+    ]
+    filters:
+      tcp_rollout.probe: content_crashes
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: tcp_rollout.submission_date
+    field_y: tcp_rollout.percentile
+    log_scale: false
+    ci_lower: tcp_rollout.low
+    ci_upper: tcp_rollout.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout.percentile_conf
+      Country: tcp_rollout.country
+      Os: tcp_rollout.os
+      
+    opt-in: "#3FE1B0"
+    opt-out: "#0060E0"
+    pref-does-not-exist: "#9059FF"
+    defaults_version: 0
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
+    explore: tcp_rollout
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout.submission_date,
+      tcp_rollout.branch,
+      tcp_rollout.high,
+      tcp_rollout.low,
+      tcp_rollout.percentile
+    ]
+    pivots: [
+      tcp_rollout.branch
+    ]
+    filters:
+      tcp_rollout.probe: shutdown_hangs
     row: 30
     col: 12
     width: 12
@@ -290,8 +290,8 @@
     opt-out: "#0060E0"
     pref-does-not-exist: "#9059FF"
     defaults_version: 0
-  - title: Tagged Follow On Search Count
-    name: Tagged Follow On Search Count
+  - title: Ad Click
+    name: Ad Click
     explore: tcp_rollout
     type: "ci-line-chart"
     fields: [
@@ -305,7 +305,7 @@
       tcp_rollout.branch
     ]
     filters:
-      tcp_rollout.probe: tagged_follow_on_search_count
+      tcp_rollout.probe: ad_click
     row: 40
     col: 0
     width: 12
@@ -360,6 +360,41 @@
     opt-out: "#0060E0"
     pref-does-not-exist: "#9059FF"
     defaults_version: 0
+  - title: Organic Search Count
+    name: Organic Search Count
+    explore: tcp_rollout
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout.submission_date,
+      tcp_rollout.branch,
+      tcp_rollout.high,
+      tcp_rollout.low,
+      tcp_rollout.percentile
+    ]
+    pivots: [
+      tcp_rollout.branch
+    ]
+    filters:
+      tcp_rollout.probe: organic_search_count
+    row: 50
+    col: 0
+    width: 12
+    height: 8
+    field_x: tcp_rollout.submission_date
+    field_y: tcp_rollout.percentile
+    log_scale: false
+    ci_lower: tcp_rollout.low
+    ci_upper: tcp_rollout.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout.percentile_conf
+      Country: tcp_rollout.country
+      Os: tcp_rollout.os
+      
+    opt-in: "#3FE1B0"
+    opt-out: "#0060E0"
+    pref-does-not-exist: "#9059FF"
+    defaults_version: 0
   - title: Sap
     name: Sap
     explore: tcp_rollout
@@ -377,6 +412,41 @@
     filters:
       tcp_rollout.probe: sap
     row: 50
+    col: 12
+    width: 12
+    height: 8
+    field_x: tcp_rollout.submission_date
+    field_y: tcp_rollout.percentile
+    log_scale: false
+    ci_lower: tcp_rollout.low
+    ci_upper: tcp_rollout.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout.percentile_conf
+      Country: tcp_rollout.country
+      Os: tcp_rollout.os
+      
+    opt-in: "#3FE1B0"
+    opt-out: "#0060E0"
+    pref-does-not-exist: "#9059FF"
+    defaults_version: 0
+  - title: Gmplugin Crashes
+    name: Gmplugin Crashes
+    explore: tcp_rollout
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout.submission_date,
+      tcp_rollout.branch,
+      tcp_rollout.high,
+      tcp_rollout.low,
+      tcp_rollout.percentile
+    ]
+    pivots: [
+      tcp_rollout.branch
+    ]
+    filters:
+      tcp_rollout.probe: gmplugin_crashes
+    row: 60
     col: 0
     width: 12
     height: 8
@@ -411,7 +481,7 @@
     ]
     filters:
       tcp_rollout.probe: search_with_ads_organic
-    row: 50
+    row: 60
     col: 12
     width: 12
     height: 8
@@ -430,8 +500,8 @@
     opt-out: "#0060E0"
     pref-does-not-exist: "#9059FF"
     defaults_version: 0
-  - title: Ad Click
-    name: Ad Click
+  - title: Search With Ads
+    name: Search With Ads
     explore: tcp_rollout
     type: "ci-line-chart"
     fields: [
@@ -445,8 +515,8 @@
       tcp_rollout.branch
     ]
     filters:
-      tcp_rollout.probe: ad_click
-    row: 60
+      tcp_rollout.probe: search_with_ads
+    row: 70
     col: 0
     width: 12
     height: 8
@@ -465,8 +535,8 @@
     opt-out: "#0060E0"
     pref-does-not-exist: "#9059FF"
     defaults_version: 0
-  - title: Content Process Count
-    name: Content Process Count
+  - title: Plugin Crashes
+    name: Plugin Crashes
     explore: tcp_rollout
     type: "ci-line-chart"
     fields: [
@@ -480,8 +550,8 @@
       tcp_rollout.branch
     ]
     filters:
-      tcp_rollout.probe: content_process_count
-    row: 60
+      tcp_rollout.probe: plugin_crashes
+    row: 70
     col: 12
     width: 12
     height: 8
@@ -516,43 +586,8 @@
     ]
     filters:
       tcp_rollout.probe: gpu_crashes
-    row: 70
+    row: 80
     col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout.submission_date
-    field_y: tcp_rollout.percentile
-    log_scale: false
-    ci_lower: tcp_rollout.low
-    ci_upper: tcp_rollout.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout.percentile_conf
-      Country: tcp_rollout.country
-      Os: tcp_rollout.os
-      
-    opt-in: "#3FE1B0"
-    opt-out: "#0060E0"
-    pref-does-not-exist: "#9059FF"
-    defaults_version: 0
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
-    explore: tcp_rollout
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout.submission_date,
-      tcp_rollout.branch,
-      tcp_rollout.high,
-      tcp_rollout.low,
-      tcp_rollout.percentile
-    ]
-    pivots: [
-      tcp_rollout.branch
-    ]
-    filters:
-      tcp_rollout.probe: shutdown_hangs
-    row: 70
-    col: 12
     width: 12
     height: 8
     field_x: tcp_rollout.submission_date
@@ -586,41 +621,6 @@
     ]
     filters:
       tcp_rollout.probe: content_shutdown_crashes
-    row: 80
-    col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout.submission_date
-    field_y: tcp_rollout.percentile
-    log_scale: false
-    ci_lower: tcp_rollout.low
-    ci_upper: tcp_rollout.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout.percentile_conf
-      Country: tcp_rollout.country
-      Os: tcp_rollout.os
-      
-    opt-in: "#3FE1B0"
-    opt-out: "#0060E0"
-    pref-does-not-exist: "#9059FF"
-    defaults_version: 0
-  - title: Content Crashes
-    name: Content Crashes
-    explore: tcp_rollout
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout.submission_date,
-      tcp_rollout.branch,
-      tcp_rollout.high,
-      tcp_rollout.low,
-      tcp_rollout.percentile
-    ]
-    pivots: [
-      tcp_rollout.branch
-    ]
-    filters:
-      tcp_rollout.probe: content_crashes
     row: 80
     col: 12
     width: 12
