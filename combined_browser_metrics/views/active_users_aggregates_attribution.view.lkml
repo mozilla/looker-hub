@@ -15,6 +15,12 @@ view: active_users_aggregates_attribution {
     type: number
   }
 
+  dimension: adjust_network {
+    sql: ${TABLE}.adjust_network ;;
+    type: string
+    description: "The type of source of a client installation"
+  }
+
   dimension: app_name {
     sql: ${TABLE}.app_name ;;
     type: string
@@ -74,6 +80,12 @@ view: active_users_aggregates_attribution {
   dimension: first_seen_year {
     sql: ${TABLE}.first_seen_year ;;
     type: number
+  }
+
+  dimension: install_source {
+    sql: ${TABLE}.install_source ;;
+    type: string
+    description: "The source of a client installation"
   }
 
   dimension: is_default_browser {
