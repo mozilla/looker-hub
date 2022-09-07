@@ -18,6 +18,16 @@ explore: metrics {
     ]
   }
 
+  join: metrics__metrics__labeled_counter__browser_search_ad_clicks {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_ad_clicks}) AS metrics__metrics__labeled_counter__browser_search_ad_clicks ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_ad_clicks.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__browser_search_with_ads {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_with_ads}) AS metrics__metrics__labeled_counter__browser_search_with_ads ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_with_ads.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__glean_error_invalid_label}) AS metrics__metrics__labeled_counter__glean_error_invalid_label ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -52,6 +62,14 @@ explore: metrics {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__shortcuts_shortcut_removed_counter}) AS metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter.document_id} ;;
   }
+}
+
+explore: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__browser_search_with_ads {
+  hidden: yes
 }
 
 explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
