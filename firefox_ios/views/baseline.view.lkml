@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: baseline {
+  dimension: metrics__counter__tabs_normal_and_private_uri_count {
+    label: "Tabs Normal And Private Uri Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tabs_normal_and_private_uri_count ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Normal And Private Uri Count"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Normal And Private Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_normal_and_private_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record the number of URI's visited by the user.
+"
+  }
+
   dimension: metrics__timespan__glean_baseline_duration__value {
     label: "Glean Baseline Duration Value"
     hidden: no
@@ -613,6 +631,31 @@ This metric appears in both the metrics and baseline pings.
 
   measure: ping_count {
     type: count
+  }
+
+  measure: tabs_normal_and_private_uri_count {
+    type: sum
+    sql: ${metrics__counter__tabs_normal_and_private_uri_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Normal And Private Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_normal_and_private_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_normal_and_private_uri_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tabs_normal_and_private_uri_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Normal And Private Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_normal_and_private_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   measure: glean_validation_metrics_ping_count {

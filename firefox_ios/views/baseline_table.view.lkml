@@ -308,6 +308,15 @@ view: baseline_table {
     description: "The number of metrics pings sent during the lifetime of this baseline ping."
   }
 
+  dimension: metrics__counter__tabs_normal_and_private_uri_count {
+    sql: ${TABLE}.metrics.counter.tabs_normal_and_private_uri_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tabs Normal And Private Uri Count"
+    description: "Record the number of URI's visited by the user.
+"
+  }
+
   dimension: metrics__datetime__glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: string
