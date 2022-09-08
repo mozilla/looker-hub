@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Startup Crashes
-    name: Startup Crashes
+  - title: Main Crashes
+    name: Main Crashes
     explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
     type: "ci-line-chart"
     fields: [
@@ -25,105 +25,9 @@
       rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.branch
     ]
     filters:
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: startup_crashes
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: main_crashes
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.submission_date
-    field_y: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.percentile
-    log_scale: false
-    ci_lower: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.low
-    ci_upper: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.high
-    show_grid: true
-    listen:
-      Percentile: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Oom Crashes
-    name: Oom Crashes
-    explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
-    type: "ci-line-chart"
-    fields: [
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.submission_date,
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.branch,
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.high,
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.low,
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.percentile
-    ]
-    pivots: [
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.branch
-    ]
-    filters:
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: oom_crashes
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.submission_date
-    field_y: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.percentile
-    log_scale: false
-    ci_lower: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.low
-    ci_upper: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.high
-    show_grid: true
-    listen:
-      Percentile: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
-    explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
-    type: "ci-line-chart"
-    fields: [
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.submission_date,
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.branch,
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.high,
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.low,
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.percentile
-    ]
-    pivots: [
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.branch
-    ]
-    filters:
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: shutdown_hangs
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.submission_date
-    field_y: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.percentile
-    log_scale: false
-    ci_lower: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.low
-    ci_upper: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.high
-    show_grid: true
-    listen:
-      Percentile: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Gc Ms
-    name: Gc Ms
-    explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
-    type: "ci-line-chart"
-    fields: [
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.submission_date,
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.branch,
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.high,
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.low,
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.percentile
-    ]
-    pivots: [
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.branch
-    ]
-    filters:
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: gc_ms
-    row: 10
-    col: 12
     width: 12
     height: 8
     field_x: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.submission_date
@@ -154,8 +58,8 @@
     ]
     filters:
       rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: plugin_crashes
-    row: 20
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.submission_date
@@ -170,8 +74,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Gpu Crashes
-    name: Gpu Crashes
+  - title: Oom Crashes
+    name: Oom Crashes
     explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
     type: "ci-line-chart"
     fields: [
@@ -185,9 +89,9 @@
       rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.branch
     ]
     filters:
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: gpu_crashes
-    row: 20
-    col: 12
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: oom_crashes
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.submission_date
@@ -218,8 +122,72 @@
     ]
     filters:
       rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: memory_total
-    row: 30
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.submission_date
+    field_y: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.percentile
+    log_scale: false
+    ci_lower: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.low
+    ci_upper: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.high
+    show_grid: true
+    listen:
+      Percentile: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Gmplugin Crashes
+    name: Gmplugin Crashes
+    explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
+    type: "ci-line-chart"
+    fields: [
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.submission_date,
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.branch,
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.high,
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.low,
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.percentile
+    ]
+    pivots: [
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.branch
+    ]
+    filters:
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: gmplugin_crashes
+    row: 20
     col: 0
+    width: 12
+    height: 8
+    field_x: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.submission_date
+    field_y: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.percentile
+    log_scale: false
+    ci_lower: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.low
+    ci_upper: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.high
+    show_grid: true
+    listen:
+      Percentile: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Content Process Count
+    name: Content Process Count
+    explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
+    type: "ci-line-chart"
+    fields: [
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.submission_date,
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.branch,
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.high,
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.low,
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.percentile
+    ]
+    pivots: [
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.branch
+    ]
+    filters:
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: content_process_count
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.submission_date
@@ -251,7 +219,7 @@
     filters:
       rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: content_crashes
     row: 30
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.submission_date
@@ -266,8 +234,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Main Crashes
-    name: Main Crashes
+  - title: Startup Crashes
+    name: Startup Crashes
     explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
     type: "ci-line-chart"
     fields: [
@@ -281,9 +249,9 @@
       rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.branch
     ]
     filters:
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: main_crashes
-    row: 40
-    col: 0
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: startup_crashes
+    row: 30
+    col: 12
     width: 12
     height: 8
     field_x: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.submission_date
@@ -315,6 +283,38 @@
     filters:
       rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: content_shutdown_crashes
     row: 40
+    col: 0
+    width: 12
+    height: 8
+    field_x: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.submission_date
+    field_y: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.percentile
+    log_scale: false
+    ci_lower: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.low
+    ci_upper: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.high
+    show_grid: true
+    listen:
+      Percentile: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Gc Ms
+    name: Gc Ms
+    explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
+    type: "ci-line-chart"
+    fields: [
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.submission_date,
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.branch,
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.high,
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.low,
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.percentile
+    ]
+    pivots: [
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.branch
+    ]
+    filters:
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: gc_ms
+    row: 40
     col: 12
     width: 12
     height: 8
@@ -330,8 +330,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Process Count
-    name: Content Process Count
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
     explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
     type: "ci-line-chart"
     fields: [
@@ -345,7 +345,7 @@
       rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.branch
     ]
     filters:
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: content_process_count
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: shutdown_hangs
     row: 50
     col: 0
     width: 12
@@ -362,8 +362,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Gmplugin Crashes
-    name: Gmplugin Crashes
+  - title: Gpu Crashes
+    name: Gpu Crashes
     explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
     type: "ci-line-chart"
     fields: [
@@ -377,7 +377,7 @@
       rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.branch
     ]
     filters:
-      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: gmplugin_crashes
+      rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481.probe: gpu_crashes
     row: 50
     col: 12
     width: 12
