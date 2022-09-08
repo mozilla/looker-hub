@@ -27,6 +27,42 @@ that programmatically redirect to a new location.
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_ad_clicks {
+    label: "Browser Search Ad Clicks"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
+    group_label: "Browser Search"
+    group_item_label: "Ad Clicks"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Ad Clicks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/browser_search_ad_clicks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records clicks of adverts on SERP pages.
+The key format is ‘<provider-name>’.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_with_ads {
+    label: "Browser Search With Ads"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
+    group_label: "Browser Search"
+    group_item_label: "With Ads"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search With Ads"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/browser_search_with_ads"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records counts of SERP pages with adverts displayed.
+The key format is ‘<provider-name>’.
+"
+  }
+
   dimension: metrics__boolean__mozilla_products_has_firefox_installed {
     label: "Mozilla Products Has Firefox Installed"
     hidden: no

@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Startup Crashes
-    name: Startup Crashes
+  - title: Main Crashes
+    name: Main Crashes
     explore: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
     type: "ci-line-chart"
     fields: [
@@ -25,7 +25,7 @@
       total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch
     ]
     filters:
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: startup_crashes
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: main_crashes
     row: 0
     col: 0
     width: 12
@@ -42,8 +42,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Gc Ms
-    name: Gc Ms
+  - title: Plugin Crashes
+    name: Plugin Crashes
     explore: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
     type: "ci-line-chart"
     fields: [
@@ -57,9 +57,41 @@
       total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch
     ]
     filters:
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: gc_ms
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: plugin_crashes
     row: 0
     col: 12
+    width: 12
+    height: 8
+    field_x: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.submission_date
+    field_y: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile
+    log_scale: false
+    ci_lower: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.low
+    ci_upper: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.high
+    show_grid: true
+    listen:
+      Percentile: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Oom Crashes
+    name: Oom Crashes
+    explore: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
+    type: "ci-line-chart"
+    fields: [
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.submission_date,
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch,
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.high,
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.low,
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile
+    ]
+    pivots: [
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch
+    ]
+    filters:
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: oom_crashes
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.submission_date
@@ -90,38 +122,6 @@
     ]
     filters:
       total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: memory_total
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.submission_date
-    field_y: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile
-    log_scale: false
-    ci_lower: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.low
-    ci_upper: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.high
-    show_grid: true
-    listen:
-      Percentile: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Content Process Count
-    name: Content Process Count
-    explore: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
-    type: "ci-line-chart"
-    fields: [
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.submission_date,
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch,
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.high,
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.low,
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile
-    ]
-    pivots: [
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch
-    ]
-    filters:
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: content_process_count
     row: 10
     col: 12
     width: 12
@@ -170,8 +170,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Gpu Crashes
-    name: Gpu Crashes
+  - title: Content Process Count
+    name: Content Process Count
     explore: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
     type: "ci-line-chart"
     fields: [
@@ -185,72 +185,8 @@
       total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch
     ]
     filters:
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: gpu_crashes
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: content_process_count
     row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.submission_date
-    field_y: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile
-    log_scale: false
-    ci_lower: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.low
-    ci_upper: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.high
-    show_grid: true
-    listen:
-      Percentile: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Oom Crashes
-    name: Oom Crashes
-    explore: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
-    type: "ci-line-chart"
-    fields: [
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.submission_date,
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch,
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.high,
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.low,
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile
-    ]
-    pivots: [
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch
-    ]
-    filters:
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: oom_crashes
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.submission_date
-    field_y: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile
-    log_scale: false
-    ci_lower: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.low
-    ci_upper: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.high
-    show_grid: true
-    listen:
-      Percentile: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Plugin Crashes
-    name: Plugin Crashes
-    explore: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
-    type: "ci-line-chart"
-    fields: [
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.submission_date,
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch,
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.high,
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.low,
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile
-    ]
-    pivots: [
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch
-    ]
-    filters:
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: plugin_crashes
-    row: 30
     col: 12
     width: 12
     height: 8
@@ -282,7 +218,7 @@
     ]
     filters:
       total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: content_crashes
-    row: 40
+    row: 30
     col: 0
     width: 12
     height: 8
@@ -298,8 +234,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
+  - title: Startup Crashes
+    name: Startup Crashes
     explore: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
     type: "ci-line-chart"
     fields: [
@@ -313,41 +249,9 @@
       total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch
     ]
     filters:
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: shutdown_hangs
-    row: 40
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: startup_crashes
+    row: 30
     col: 12
-    width: 12
-    height: 8
-    field_x: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.submission_date
-    field_y: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile
-    log_scale: false
-    ci_lower: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.low
-    ci_upper: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.high
-    show_grid: true
-    listen:
-      Percentile: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Main Crashes
-    name: Main Crashes
-    explore: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
-    type: "ci-line-chart"
-    fields: [
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.submission_date,
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch,
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.high,
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.low,
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile
-    ]
-    pivots: [
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch
-    ]
-    filters:
-      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: main_crashes
-    row: 50
-    col: 0
     width: 12
     height: 8
     field_x: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.submission_date
@@ -378,6 +282,102 @@
     ]
     filters:
       total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: content_shutdown_crashes
+    row: 40
+    col: 0
+    width: 12
+    height: 8
+    field_x: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.submission_date
+    field_y: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile
+    log_scale: false
+    ci_lower: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.low
+    ci_upper: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.high
+    show_grid: true
+    listen:
+      Percentile: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Gc Ms
+    name: Gc Ms
+    explore: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
+    type: "ci-line-chart"
+    fields: [
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.submission_date,
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch,
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.high,
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.low,
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile
+    ]
+    pivots: [
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch
+    ]
+    filters:
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: gc_ms
+    row: 40
+    col: 12
+    width: 12
+    height: 8
+    field_x: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.submission_date
+    field_y: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile
+    log_scale: false
+    ci_lower: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.low
+    ci_upper: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.high
+    show_grid: true
+    listen:
+      Percentile: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
+    explore: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
+    type: "ci-line-chart"
+    fields: [
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.submission_date,
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch,
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.high,
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.low,
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile
+    ]
+    pivots: [
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch
+    ]
+    filters:
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: shutdown_hangs
+    row: 50
+    col: 0
+    width: 12
+    height: 8
+    field_x: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.submission_date
+    field_y: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile
+    log_scale: false
+    ci_lower: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.low
+    ci_upper: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.high
+    show_grid: true
+    listen:
+      Percentile: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Gpu Crashes
+    name: Gpu Crashes
+    explore: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
+    type: "ci-line-chart"
+    fields: [
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.submission_date,
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch,
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.high,
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.low,
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.percentile
+    ]
+    pivots: [
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.branch
+    ]
+    filters:
+      total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users.probe: gpu_crashes
     row: 50
     col: 12
     width: 12
