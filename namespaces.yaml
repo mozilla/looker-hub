@@ -999,6 +999,7 @@ firefox_accounts:
       - table: mozdata.firefox_accounts.fxa_users_services_daily
       type: table_view
     growth_accounting:
+      identifier_field: user_id
       tables:
       - table: mozdata.firefox_accounts.fxa_users_last_seen
       type: growth_accounting_view
