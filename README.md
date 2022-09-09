@@ -12,4 +12,4 @@ This is the base branch. All generated branches are derived from this branch dir
 
 `base` branch contains some pre-defined `looker-hub` content which should remain and be unchanged after generation. If the generate command overwrites any files found in the `base` branch it exits with an error exit code prior to pushing the changes to this repo.
 
-More detailed description of the lookml generate process can be found [here](https://github.com/mozilla/lookml-generator#generate_command_explained).
+More detailed description of the lookml generate process can be found [here](https://github.com/mozilla/lookml-generator#generate-command-explained---high-level-explanation).
