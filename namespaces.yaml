@@ -2406,6 +2406,16 @@ marketing:
       tables:
       - table: mozdata.analysis.marketing_firefox_for_families_forecasted_expectations
       type: table_view
+mdn_yari:
+  explores: {}
+  glean_app: true
+  owners:
+  - gsleigh@mozilla.com
+  - tlong@mozilla.com
+  - glean-team@mozilla.com
+  pretty_name: Mozilla Developer Network
+  spoke: looker-spoke-default
+  views: {}
 monitoring:
   explores:
     average_ping_sizes:
