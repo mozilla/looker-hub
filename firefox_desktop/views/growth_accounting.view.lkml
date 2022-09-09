@@ -1768,7 +1768,7 @@ view: growth_accounting {
   }
 
   dimension: client_id_day {
-    sql: CONCAT(CAST(${TABLE}.submission_date AS STRING), client_id) ;;
+    sql: CONCAT(CAST(${TABLE}.submission_date AS STRING), ${client_id}) ;;
     type: string
     hidden: yes
     primary_key: yes

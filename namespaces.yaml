@@ -999,6 +999,7 @@ firefox_accounts:
       - table: mozdata.firefox_accounts.fxa_users_services_daily
       type: table_view
     growth_accounting:
+      identifier_field: user_id
       tables:
       - table: mozdata.firefox_accounts.fxa_users_last_seen
       type: growth_accounting_view
@@ -2405,6 +2406,16 @@ marketing:
       tables:
       - table: mozdata.analysis.marketing_firefox_for_families_forecasted_expectations
       type: table_view
+mdn_yari:
+  explores: {}
+  glean_app: true
+  owners:
+  - gsleigh@mozilla.com
+  - tlong@mozilla.com
+  - glean-team@mozilla.com
+  pretty_name: Mozilla Developer Network
+  spoke: looker-spoke-default
+  views: {}
 monitoring:
   explores:
     average_ping_sizes:
