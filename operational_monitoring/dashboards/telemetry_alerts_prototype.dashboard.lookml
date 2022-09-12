@@ -123,7 +123,7 @@
   - name: Probe
     title: Probe
     type: field_filter
-    default_value: 'oom_crashes'
+    default_value: 'gpu_crashes'
     allow_multiple_values: true
     required: true
     ui_config:
