@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Gpu Crashes
-    name: Gpu Crashes
+  - title: Main Crashes
+    name: Main Crashes
     explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
     type: "ci-line-chart"
     fields: [
@@ -25,7 +25,7 @@
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
     ]
     filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.probe: gpu_crashes
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.probe: main_crashes
     row: 0
     col: 0
     width: 12
@@ -74,8 +74,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Crashes
-    name: Content Crashes
+  - title: Gmplugin Crashes
+    name: Gmplugin Crashes
     explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
     type: "ci-line-chart"
     fields: [
@@ -89,72 +89,8 @@
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
     ]
     filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.probe: content_crashes
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.probe: gmplugin_crashes
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date
-    field_y: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.low
-    ci_upper: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total
-    explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date,
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch,
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.high,
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.low,
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.percentile
-    ]
-    pivots: [
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
-    ]
-    filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.probe: memory_total
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date
-    field_y: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.low
-    ci_upper: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
-    explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date,
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch,
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.high,
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.low,
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.percentile
-    ]
-    pivots: [
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
-    ]
-    filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.probe: shutdown_hangs
-    row: 20
     col: 0
     width: 12
     height: 8
@@ -186,6 +122,70 @@
     ]
     filters:
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.probe: gc_ms
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date
+    field_y: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.low
+    ci_upper: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Plugin Crashes
+    name: Plugin Crashes
+    explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date,
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch,
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.high,
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.low,
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.percentile
+    ]
+    pivots: [
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
+    ]
+    filters:
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.probe: plugin_crashes
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date
+    field_y: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.low
+    ci_upper: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Startup Crashes
+    name: Startup Crashes
+    explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date,
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch,
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.high,
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.low,
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.percentile
+    ]
+    pivots: [
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
+    ]
+    filters:
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.probe: startup_crashes
     row: 20
     col: 12
     width: 12
@@ -202,8 +202,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Gmplugin Crashes
-    name: Gmplugin Crashes
+  - title: Gpu Crashes
+    name: Gpu Crashes
     explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
     type: "ci-line-chart"
     fields: [
@@ -217,7 +217,7 @@
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
     ]
     filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.probe: gmplugin_crashes
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.probe: gpu_crashes
     row: 30
     col: 0
     width: 12
@@ -234,8 +234,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Main Crashes
-    name: Main Crashes
+  - title: Memory Total
+    name: Memory Total
     explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
     type: "ci-line-chart"
     fields: [
@@ -249,7 +249,7 @@
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
     ]
     filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.probe: main_crashes
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.probe: memory_total
     row: 30
     col: 12
     width: 12
@@ -298,8 +298,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Startup Crashes
-    name: Startup Crashes
+  - title: Content Crashes
+    name: Content Crashes
     explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
     type: "ci-line-chart"
     fields: [
@@ -313,9 +313,41 @@
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
     ]
     filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.probe: startup_crashes
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.probe: content_crashes
     row: 40
     col: 12
+    width: 12
+    height: 8
+    field_x: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date
+    field_y: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.percentile
+    log_scale: false
+    ci_lower: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.low
+    ci_upper: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.high
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
+    explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date,
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch,
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.high,
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.low,
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.percentile
+    ]
+    pivots: [
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
+    ]
+    filters:
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.probe: shutdown_hangs
+    row: 50
+    col: 0
     width: 12
     height: 8
     field_x: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date
@@ -346,38 +378,6 @@
     ]
     filters:
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.probe: content_shutdown_crashes
-    row: 50
-    col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date
-    field_y: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.percentile
-    log_scale: false
-    ci_lower: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.low
-    ci_upper: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.high
-    show_grid: true
-    listen:
-      Percentile: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Plugin Crashes
-    name: Plugin Crashes
-    explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date,
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch,
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.high,
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.low,
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.percentile
-    ]
-    pivots: [
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
-    ]
-    filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.probe: plugin_crashes
     row: 50
     col: 12
     width: 12

@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Gpu Crashes
-    name: Gpu Crashes
+  - title: Main Crashes
+    name: Main Crashes
     explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
     type: "ci-line-chart"
     fields: [
@@ -25,7 +25,7 @@
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
     ]
     filters:
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.probe: gpu_crashes
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.probe: main_crashes
     row: 0
     col: 0
     width: 12
@@ -74,8 +74,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Crashes
-    name: Content Crashes
+  - title: Gmplugin Crashes
+    name: Gmplugin Crashes
     explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
     type: "ci-line-chart"
     fields: [
@@ -89,72 +89,8 @@
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
     ]
     filters:
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.probe: content_crashes
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.probe: gmplugin_crashes
     row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date
-    field_y: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.percentile
-    log_scale: false
-    ci_lower: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.low
-    ci_upper: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.high
-    show_grid: true
-    listen:
-      Percentile: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total
-    explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
-    type: "ci-line-chart"
-    fields: [
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date,
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch,
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.high,
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.low,
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.percentile
-    ]
-    pivots: [
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
-    ]
-    filters:
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.probe: memory_total
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date
-    field_y: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.percentile
-    log_scale: false
-    ci_lower: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.low
-    ci_upper: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.high
-    show_grid: true
-    listen:
-      Percentile: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
-    explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
-    type: "ci-line-chart"
-    fields: [
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date,
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch,
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.high,
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.low,
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.percentile
-    ]
-    pivots: [
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
-    ]
-    filters:
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.probe: shutdown_hangs
-    row: 20
     col: 0
     width: 12
     height: 8
@@ -186,6 +122,70 @@
     ]
     filters:
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.probe: gc_ms
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date
+    field_y: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.percentile
+    log_scale: false
+    ci_lower: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.low
+    ci_upper: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.high
+    show_grid: true
+    listen:
+      Percentile: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Plugin Crashes
+    name: Plugin Crashes
+    explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
+    type: "ci-line-chart"
+    fields: [
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date,
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch,
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.high,
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.low,
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.percentile
+    ]
+    pivots: [
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
+    ]
+    filters:
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.probe: plugin_crashes
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date
+    field_y: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.percentile
+    log_scale: false
+    ci_lower: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.low
+    ci_upper: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.high
+    show_grid: true
+    listen:
+      Percentile: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Startup Crashes
+    name: Startup Crashes
+    explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
+    type: "ci-line-chart"
+    fields: [
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date,
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch,
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.high,
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.low,
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.percentile
+    ]
+    pivots: [
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
+    ]
+    filters:
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.probe: startup_crashes
     row: 20
     col: 12
     width: 12
@@ -202,8 +202,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Gmplugin Crashes
-    name: Gmplugin Crashes
+  - title: Gpu Crashes
+    name: Gpu Crashes
     explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
     type: "ci-line-chart"
     fields: [
@@ -217,7 +217,7 @@
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
     ]
     filters:
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.probe: gmplugin_crashes
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.probe: gpu_crashes
     row: 30
     col: 0
     width: 12
@@ -234,8 +234,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Main Crashes
-    name: Main Crashes
+  - title: Memory Total
+    name: Memory Total
     explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
     type: "ci-line-chart"
     fields: [
@@ -249,7 +249,7 @@
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
     ]
     filters:
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.probe: main_crashes
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.probe: memory_total
     row: 30
     col: 12
     width: 12
@@ -298,8 +298,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Startup Crashes
-    name: Startup Crashes
+  - title: Content Crashes
+    name: Content Crashes
     explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
     type: "ci-line-chart"
     fields: [
@@ -313,9 +313,41 @@
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
     ]
     filters:
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.probe: startup_crashes
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.probe: content_crashes
     row: 40
     col: 12
+    width: 12
+    height: 8
+    field_x: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date
+    field_y: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.percentile
+    log_scale: false
+    ci_lower: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.low
+    ci_upper: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.high
+    show_grid: true
+    listen:
+      Percentile: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Shutdown Hangs
+    name: Shutdown Hangs
+    explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
+    type: "ci-line-chart"
+    fields: [
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date,
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch,
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.high,
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.low,
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.percentile
+    ]
+    pivots: [
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
+    ]
+    filters:
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.probe: shutdown_hangs
+    row: 50
+    col: 0
     width: 12
     height: 8
     field_x: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date
@@ -346,38 +378,6 @@
     ]
     filters:
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.probe: content_shutdown_crashes
-    row: 50
-    col: 0
-    width: 12
-    height: 8
-    field_x: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date
-    field_y: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.percentile
-    log_scale: false
-    ci_lower: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.low
-    ci_upper: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.high
-    show_grid: true
-    listen:
-      Percentile: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Plugin Crashes
-    name: Plugin Crashes
-    explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
-    type: "ci-line-chart"
-    fields: [
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date,
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch,
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.high,
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.low,
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.percentile
-    ]
-    pivots: [
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
-    ]
-    filters:
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.probe: plugin_crashes
     row: 50
     col: 12
     width: 12
