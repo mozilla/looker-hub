@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Content Crashes
-    name: Content Crashes
+  - title: Startup Crashes
+    name: Startup Crashes
     explore: task_continuity_sync_after_tab_change_rollout_40
     type: "ci-line-chart"
     fields: [
@@ -25,7 +25,7 @@
       task_continuity_sync_after_tab_change_rollout_40.branch
     ]
     filters:
-      task_continuity_sync_after_tab_change_rollout_40.probe: content_crashes
+      task_continuity_sync_after_tab_change_rollout_40.probe: startup_crashes
     row: 0
     col: 0
     width: 12
@@ -74,6 +74,38 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Content Shutdown Crashes
+    name: Content Shutdown Crashes
+    explore: task_continuity_sync_after_tab_change_rollout_40
+    type: "ci-line-chart"
+    fields: [
+      task_continuity_sync_after_tab_change_rollout_40.submission_date,
+      task_continuity_sync_after_tab_change_rollout_40.branch,
+      task_continuity_sync_after_tab_change_rollout_40.high,
+      task_continuity_sync_after_tab_change_rollout_40.low,
+      task_continuity_sync_after_tab_change_rollout_40.percentile
+    ]
+    pivots: [
+      task_continuity_sync_after_tab_change_rollout_40.branch
+    ]
+    filters:
+      task_continuity_sync_after_tab_change_rollout_40.probe: content_shutdown_crashes
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: task_continuity_sync_after_tab_change_rollout_40.submission_date
+    field_y: task_continuity_sync_after_tab_change_rollout_40.percentile
+    log_scale: false
+    ci_lower: task_continuity_sync_after_tab_change_rollout_40.low
+    ci_upper: task_continuity_sync_after_tab_change_rollout_40.high
+    show_grid: true
+    listen:
+      Percentile: task_continuity_sync_after_tab_change_rollout_40.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Main Crashes
     name: Main Crashes
     explore: task_continuity_sync_after_tab_change_rollout_40
@@ -91,7 +123,7 @@
     filters:
       task_continuity_sync_after_tab_change_rollout_40.probe: main_crashes
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: task_continuity_sync_after_tab_change_rollout_40.submission_date
@@ -122,72 +154,8 @@
     ]
     filters:
       task_continuity_sync_after_tab_change_rollout_40.probe: gmplugin_crashes
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: task_continuity_sync_after_tab_change_rollout_40.submission_date
-    field_y: task_continuity_sync_after_tab_change_rollout_40.percentile
-    log_scale: false
-    ci_lower: task_continuity_sync_after_tab_change_rollout_40.low
-    ci_upper: task_continuity_sync_after_tab_change_rollout_40.high
-    show_grid: true
-    listen:
-      Percentile: task_continuity_sync_after_tab_change_rollout_40.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Gc Ms
-    name: Gc Ms
-    explore: task_continuity_sync_after_tab_change_rollout_40
-    type: "ci-line-chart"
-    fields: [
-      task_continuity_sync_after_tab_change_rollout_40.submission_date,
-      task_continuity_sync_after_tab_change_rollout_40.branch,
-      task_continuity_sync_after_tab_change_rollout_40.high,
-      task_continuity_sync_after_tab_change_rollout_40.low,
-      task_continuity_sync_after_tab_change_rollout_40.percentile
-    ]
-    pivots: [
-      task_continuity_sync_after_tab_change_rollout_40.branch
-    ]
-    filters:
-      task_continuity_sync_after_tab_change_rollout_40.probe: gc_ms
     row: 20
     col: 0
-    width: 12
-    height: 8
-    field_x: task_continuity_sync_after_tab_change_rollout_40.submission_date
-    field_y: task_continuity_sync_after_tab_change_rollout_40.percentile
-    log_scale: false
-    ci_lower: task_continuity_sync_after_tab_change_rollout_40.low
-    ci_upper: task_continuity_sync_after_tab_change_rollout_40.high
-    show_grid: true
-    listen:
-      Percentile: task_continuity_sync_after_tab_change_rollout_40.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total
-    explore: task_continuity_sync_after_tab_change_rollout_40
-    type: "ci-line-chart"
-    fields: [
-      task_continuity_sync_after_tab_change_rollout_40.submission_date,
-      task_continuity_sync_after_tab_change_rollout_40.branch,
-      task_continuity_sync_after_tab_change_rollout_40.high,
-      task_continuity_sync_after_tab_change_rollout_40.low,
-      task_continuity_sync_after_tab_change_rollout_40.percentile
-    ]
-    pivots: [
-      task_continuity_sync_after_tab_change_rollout_40.branch
-    ]
-    filters:
-      task_continuity_sync_after_tab_change_rollout_40.probe: memory_total
-    row: 20
-    col: 12
     width: 12
     height: 8
     field_x: task_continuity_sync_after_tab_change_rollout_40.submission_date
@@ -218,6 +186,38 @@
     ]
     filters:
       task_continuity_sync_after_tab_change_rollout_40.probe: plugin_crashes
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: task_continuity_sync_after_tab_change_rollout_40.submission_date
+    field_y: task_continuity_sync_after_tab_change_rollout_40.percentile
+    log_scale: false
+    ci_lower: task_continuity_sync_after_tab_change_rollout_40.low
+    ci_upper: task_continuity_sync_after_tab_change_rollout_40.high
+    show_grid: true
+    listen:
+      Percentile: task_continuity_sync_after_tab_change_rollout_40.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Content Crashes
+    name: Content Crashes
+    explore: task_continuity_sync_after_tab_change_rollout_40
+    type: "ci-line-chart"
+    fields: [
+      task_continuity_sync_after_tab_change_rollout_40.submission_date,
+      task_continuity_sync_after_tab_change_rollout_40.branch,
+      task_continuity_sync_after_tab_change_rollout_40.high,
+      task_continuity_sync_after_tab_change_rollout_40.low,
+      task_continuity_sync_after_tab_change_rollout_40.percentile
+    ]
+    pivots: [
+      task_continuity_sync_after_tab_change_rollout_40.branch
+    ]
+    filters:
+      task_continuity_sync_after_tab_change_rollout_40.probe: content_crashes
     row: 30
     col: 0
     width: 12
@@ -234,8 +234,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Shutdown Crashes
-    name: Content Shutdown Crashes
+  - title: Gc Ms
+    name: Gc Ms
     explore: task_continuity_sync_after_tab_change_rollout_40
     type: "ci-line-chart"
     fields: [
@@ -249,9 +249,41 @@
       task_continuity_sync_after_tab_change_rollout_40.branch
     ]
     filters:
-      task_continuity_sync_after_tab_change_rollout_40.probe: content_shutdown_crashes
+      task_continuity_sync_after_tab_change_rollout_40.probe: gc_ms
     row: 30
     col: 12
+    width: 12
+    height: 8
+    field_x: task_continuity_sync_after_tab_change_rollout_40.submission_date
+    field_y: task_continuity_sync_after_tab_change_rollout_40.percentile
+    log_scale: false
+    ci_lower: task_continuity_sync_after_tab_change_rollout_40.low
+    ci_upper: task_continuity_sync_after_tab_change_rollout_40.high
+    show_grid: true
+    listen:
+      Percentile: task_continuity_sync_after_tab_change_rollout_40.percentile_conf
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total
+    explore: task_continuity_sync_after_tab_change_rollout_40
+    type: "ci-line-chart"
+    fields: [
+      task_continuity_sync_after_tab_change_rollout_40.submission_date,
+      task_continuity_sync_after_tab_change_rollout_40.branch,
+      task_continuity_sync_after_tab_change_rollout_40.high,
+      task_continuity_sync_after_tab_change_rollout_40.low,
+      task_continuity_sync_after_tab_change_rollout_40.percentile
+    ]
+    pivots: [
+      task_continuity_sync_after_tab_change_rollout_40.branch
+    ]
+    filters:
+      task_continuity_sync_after_tab_change_rollout_40.probe: memory_total
+    row: 40
+    col: 0
     width: 12
     height: 8
     field_x: task_continuity_sync_after_tab_change_rollout_40.submission_date
@@ -283,7 +315,7 @@
     filters:
       task_continuity_sync_after_tab_change_rollout_40.probe: gpu_crashes
     row: 40
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: task_continuity_sync_after_tab_change_rollout_40.submission_date
@@ -314,38 +346,6 @@
     ]
     filters:
       task_continuity_sync_after_tab_change_rollout_40.probe: content_process_count
-    row: 40
-    col: 12
-    width: 12
-    height: 8
-    field_x: task_continuity_sync_after_tab_change_rollout_40.submission_date
-    field_y: task_continuity_sync_after_tab_change_rollout_40.percentile
-    log_scale: false
-    ci_lower: task_continuity_sync_after_tab_change_rollout_40.low
-    ci_upper: task_continuity_sync_after_tab_change_rollout_40.high
-    show_grid: true
-    listen:
-      Percentile: task_continuity_sync_after_tab_change_rollout_40.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Startup Crashes
-    name: Startup Crashes
-    explore: task_continuity_sync_after_tab_change_rollout_40
-    type: "ci-line-chart"
-    fields: [
-      task_continuity_sync_after_tab_change_rollout_40.submission_date,
-      task_continuity_sync_after_tab_change_rollout_40.branch,
-      task_continuity_sync_after_tab_change_rollout_40.high,
-      task_continuity_sync_after_tab_change_rollout_40.low,
-      task_continuity_sync_after_tab_change_rollout_40.percentile
-    ]
-    pivots: [
-      task_continuity_sync_after_tab_change_rollout_40.branch
-    ]
-    filters:
-      task_continuity_sync_after_tab_change_rollout_40.probe: startup_crashes
     row: 50
     col: 0
     width: 12
