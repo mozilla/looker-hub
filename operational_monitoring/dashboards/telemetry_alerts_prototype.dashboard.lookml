@@ -10,16 +10,19 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Probe
-    name: Probe
+  - title: Metric
+    name: Metric_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
     explore: telemetry_alerts_prototype
     type: "ci-line-chart"
     fields: [
       telemetry_alerts_prototype.build_id,
       telemetry_alerts_prototype.branch,
-      telemetry_alerts_prototype.high,
-      telemetry_alerts_prototype.low,
-      telemetry_alerts_prototype.percentile
+      telemetry_alerts_prototype.upper,
+      telemetry_alerts_prototype.lower,
+      telemetry_alerts_prototype.point
     ]
     pivots: [
       telemetry_alerts_prototype.branch
@@ -29,15 +32,15 @@
     width: 12
     height: 8
     field_x: telemetry_alerts_prototype.build_id
-    field_y: telemetry_alerts_prototype.percentile
+    field_y: telemetry_alerts_prototype.point
     log_scale: false
-    ci_lower: telemetry_alerts_prototype.low
-    ci_upper: telemetry_alerts_prototype.high
+    ci_lower: telemetry_alerts_prototype.lower
+    ci_upper: telemetry_alerts_prototype.upper
     show_grid: true
     listen:
-      Percentile: telemetry_alerts_prototype.percentile_conf
+      Percentile: telemetry_alerts_prototype.parameter
       Os: telemetry_alerts_prototype.os
-      Probe: telemetry_alerts_prototype.probe
+      Metric: telemetry_alerts_prototype.metric
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -48,7 +51,7 @@
     explore: telemetry_alerts_prototype_alerts
     type: looker_grid
     fields: [telemetry_alerts_prototype_alerts.submission_date,
-      telemetry_alerts_prototype_alerts.probe, telemetry_alerts_prototype_alerts.percentile,
+      telemetry_alerts_prototype_alerts.metric, telemetry_alerts_prototype_alerts.statistic, telemetry_alerts_prototype_alerts.percentile,
       telemetry_alerts_prototype_alerts.message, telemetry_alerts_prototype_alerts.branch, telemetry_alerts_prototype_alerts.errors]
     sorts: [telemetry_alerts_prototype_alerts.submission_date
         desc]
@@ -101,30 +104,23 @@
   filters:
   - name: Percentile
     title: Percentile
-    type: number_filter
+    type: field_filter
     default_value: '50'
     allow_multiple_values: false
     required: true
     ui_config:
-      type: dropdown_menu
+      type: slider
       display: inline
-      options:
-      - '10'
-      - '20'
-      - '30'
-      - '40'
-      - '50'
-      - '60'
-      - '70'
-      - '80'
-      - '90'
-      - '95'
-      - '99'
-  - name: Probe
-    title: Probe
+      options: []
+    model: operational_monitoring
+    explore: telemetry_alerts_prototype
+    listens_to_filters: []
+    field: telemetry_alerts_prototype.parameter
+  - name: Metric
+    title: Metric
     type: field_filter
-    default_value: 'subsession_length'
-    allow_multiple_values: true
+    default_value: 'perf_first_contentful_paint_ms'
+    allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
@@ -132,21 +128,34 @@
     model: operational_monitoring
     explore: telemetry_alerts_prototype
     listens_to_filters: []
-    field: telemetry_alerts_prototype.probe
+    field: telemetry_alerts_prototype.metric
+  - name: Statistic
+    title: Statistic
+    type: field_filter
+    default_value: 'percentile'
+    allow_multiple_values: false
+    required: true
+    ui_config:
+      type: dropdown_menu
+      display: popover
+    model: operational_monitoring
+    explore: telemetry_alerts_prototype
+    listens_to_filters: []
+    field: telemetry_alerts_prototype.statistic
   
   - title: Os
     name: Os
     type: string_filter
-    default_value: 'Windows'
+    default_value: 'Linux'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'Windows'
-      - 'Mac'
       - 'Linux'
+      - 'Mac'
+      - 'Windows'
       
   
   

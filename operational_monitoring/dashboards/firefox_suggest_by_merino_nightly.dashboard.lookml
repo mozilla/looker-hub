@@ -11,385 +11,433 @@
 
   elements:
   - title: Gpu Crashes
-    name: Gpu Crashes
+    name: Gpu Crashes_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
     explore: firefox_suggest_by_merino_nightly
     type: "ci-line-chart"
     fields: [
       firefox_suggest_by_merino_nightly.submission_date,
       firefox_suggest_by_merino_nightly.branch,
-      firefox_suggest_by_merino_nightly.high,
-      firefox_suggest_by_merino_nightly.low,
-      firefox_suggest_by_merino_nightly.percentile
+      firefox_suggest_by_merino_nightly.upper,
+      firefox_suggest_by_merino_nightly.lower,
+      firefox_suggest_by_merino_nightly.point
     ]
     pivots: [
       firefox_suggest_by_merino_nightly.branch
     ]
     filters:
-      firefox_suggest_by_merino_nightly.probe: gpu_crashes
+      firefox_suggest_by_merino_nightly.metric: gpu_crashes
+      firefox_suggest_by_merino_nightly.statistic: percentile
     row: 0
     col: 0
     width: 12
     height: 8
     field_x: firefox_suggest_by_merino_nightly.submission_date
-    field_y: firefox_suggest_by_merino_nightly.percentile
+    field_y: firefox_suggest_by_merino_nightly.point
     log_scale: false
-    ci_lower: firefox_suggest_by_merino_nightly.low
-    ci_upper: firefox_suggest_by_merino_nightly.high
+    ci_lower: firefox_suggest_by_merino_nightly.lower
+    ci_upper: firefox_suggest_by_merino_nightly.upper
     show_grid: true
     listen:
-      Percentile: firefox_suggest_by_merino_nightly.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Shutdown Hangs
-    name: Shutdown Hangs
-    explore: firefox_suggest_by_merino_nightly
-    type: "ci-line-chart"
-    fields: [
-      firefox_suggest_by_merino_nightly.submission_date,
-      firefox_suggest_by_merino_nightly.branch,
-      firefox_suggest_by_merino_nightly.high,
-      firefox_suggest_by_merino_nightly.low,
-      firefox_suggest_by_merino_nightly.percentile
-    ]
-    pivots: [
-      firefox_suggest_by_merino_nightly.branch
-    ]
-    filters:
-      firefox_suggest_by_merino_nightly.probe: shutdown_hangs
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: firefox_suggest_by_merino_nightly.submission_date
-    field_y: firefox_suggest_by_merino_nightly.percentile
-    log_scale: false
-    ci_lower: firefox_suggest_by_merino_nightly.low
-    ci_upper: firefox_suggest_by_merino_nightly.high
-    show_grid: true
-    listen:
-      Percentile: firefox_suggest_by_merino_nightly.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Oom Crashes
-    name: Oom Crashes
-    explore: firefox_suggest_by_merino_nightly
-    type: "ci-line-chart"
-    fields: [
-      firefox_suggest_by_merino_nightly.submission_date,
-      firefox_suggest_by_merino_nightly.branch,
-      firefox_suggest_by_merino_nightly.high,
-      firefox_suggest_by_merino_nightly.low,
-      firefox_suggest_by_merino_nightly.percentile
-    ]
-    pivots: [
-      firefox_suggest_by_merino_nightly.branch
-    ]
-    filters:
-      firefox_suggest_by_merino_nightly.probe: oom_crashes
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: firefox_suggest_by_merino_nightly.submission_date
-    field_y: firefox_suggest_by_merino_nightly.percentile
-    log_scale: false
-    ci_lower: firefox_suggest_by_merino_nightly.low
-    ci_upper: firefox_suggest_by_merino_nightly.high
-    show_grid: true
-    listen:
-      Percentile: firefox_suggest_by_merino_nightly.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Content Shutdown Crashes
-    name: Content Shutdown Crashes
-    explore: firefox_suggest_by_merino_nightly
-    type: "ci-line-chart"
-    fields: [
-      firefox_suggest_by_merino_nightly.submission_date,
-      firefox_suggest_by_merino_nightly.branch,
-      firefox_suggest_by_merino_nightly.high,
-      firefox_suggest_by_merino_nightly.low,
-      firefox_suggest_by_merino_nightly.percentile
-    ]
-    pivots: [
-      firefox_suggest_by_merino_nightly.branch
-    ]
-    filters:
-      firefox_suggest_by_merino_nightly.probe: content_shutdown_crashes
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: firefox_suggest_by_merino_nightly.submission_date
-    field_y: firefox_suggest_by_merino_nightly.percentile
-    log_scale: false
-    ci_lower: firefox_suggest_by_merino_nightly.low
-    ci_upper: firefox_suggest_by_merino_nightly.high
-    show_grid: true
-    listen:
-      Percentile: firefox_suggest_by_merino_nightly.percentile_conf
+      Percentile: firefox_suggest_by_merino_nightly.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
   - title: Plugin Crashes
-    name: Plugin Crashes
+    name: Plugin Crashes_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
     explore: firefox_suggest_by_merino_nightly
     type: "ci-line-chart"
     fields: [
       firefox_suggest_by_merino_nightly.submission_date,
       firefox_suggest_by_merino_nightly.branch,
-      firefox_suggest_by_merino_nightly.high,
-      firefox_suggest_by_merino_nightly.low,
-      firefox_suggest_by_merino_nightly.percentile
+      firefox_suggest_by_merino_nightly.upper,
+      firefox_suggest_by_merino_nightly.lower,
+      firefox_suggest_by_merino_nightly.point
     ]
     pivots: [
       firefox_suggest_by_merino_nightly.branch
     ]
     filters:
-      firefox_suggest_by_merino_nightly.probe: plugin_crashes
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: firefox_suggest_by_merino_nightly.submission_date
-    field_y: firefox_suggest_by_merino_nightly.percentile
-    log_scale: false
-    ci_lower: firefox_suggest_by_merino_nightly.low
-    ci_upper: firefox_suggest_by_merino_nightly.high
-    show_grid: true
-    listen:
-      Percentile: firefox_suggest_by_merino_nightly.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Startup Crashes
-    name: Startup Crashes
-    explore: firefox_suggest_by_merino_nightly
-    type: "ci-line-chart"
-    fields: [
-      firefox_suggest_by_merino_nightly.submission_date,
-      firefox_suggest_by_merino_nightly.branch,
-      firefox_suggest_by_merino_nightly.high,
-      firefox_suggest_by_merino_nightly.low,
-      firefox_suggest_by_merino_nightly.percentile
-    ]
-    pivots: [
-      firefox_suggest_by_merino_nightly.branch
-    ]
-    filters:
-      firefox_suggest_by_merino_nightly.probe: startup_crashes
-    row: 20
+      firefox_suggest_by_merino_nightly.metric: plugin_crashes
+      firefox_suggest_by_merino_nightly.statistic: percentile
+    row: 0
     col: 12
     width: 12
     height: 8
     field_x: firefox_suggest_by_merino_nightly.submission_date
-    field_y: firefox_suggest_by_merino_nightly.percentile
+    field_y: firefox_suggest_by_merino_nightly.point
     log_scale: false
-    ci_lower: firefox_suggest_by_merino_nightly.low
-    ci_upper: firefox_suggest_by_merino_nightly.high
+    ci_lower: firefox_suggest_by_merino_nightly.lower
+    ci_upper: firefox_suggest_by_merino_nightly.upper
     show_grid: true
     listen:
-      Percentile: firefox_suggest_by_merino_nightly.percentile_conf
+      Percentile: firefox_suggest_by_merino_nightly.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Gc Ms
-    name: Gc Ms
+  - title: Oom Crashes
+    name: Oom Crashes_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
     explore: firefox_suggest_by_merino_nightly
     type: "ci-line-chart"
     fields: [
       firefox_suggest_by_merino_nightly.submission_date,
       firefox_suggest_by_merino_nightly.branch,
-      firefox_suggest_by_merino_nightly.high,
-      firefox_suggest_by_merino_nightly.low,
-      firefox_suggest_by_merino_nightly.percentile
+      firefox_suggest_by_merino_nightly.upper,
+      firefox_suggest_by_merino_nightly.lower,
+      firefox_suggest_by_merino_nightly.point
     ]
     pivots: [
       firefox_suggest_by_merino_nightly.branch
     ]
     filters:
-      firefox_suggest_by_merino_nightly.probe: gc_ms
-    row: 30
+      firefox_suggest_by_merino_nightly.metric: oom_crashes
+      firefox_suggest_by_merino_nightly.statistic: percentile
+    row: 10
     col: 0
     width: 12
     height: 8
     field_x: firefox_suggest_by_merino_nightly.submission_date
-    field_y: firefox_suggest_by_merino_nightly.percentile
+    field_y: firefox_suggest_by_merino_nightly.point
     log_scale: false
-    ci_lower: firefox_suggest_by_merino_nightly.low
-    ci_upper: firefox_suggest_by_merino_nightly.high
+    ci_lower: firefox_suggest_by_merino_nightly.lower
+    ci_upper: firefox_suggest_by_merino_nightly.upper
     show_grid: true
     listen:
-      Percentile: firefox_suggest_by_merino_nightly.percentile_conf
+      Percentile: firefox_suggest_by_merino_nightly.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
   - title: Content Crashes
-    name: Content Crashes
+    name: Content Crashes_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
     explore: firefox_suggest_by_merino_nightly
     type: "ci-line-chart"
     fields: [
       firefox_suggest_by_merino_nightly.submission_date,
       firefox_suggest_by_merino_nightly.branch,
-      firefox_suggest_by_merino_nightly.high,
-      firefox_suggest_by_merino_nightly.low,
-      firefox_suggest_by_merino_nightly.percentile
+      firefox_suggest_by_merino_nightly.upper,
+      firefox_suggest_by_merino_nightly.lower,
+      firefox_suggest_by_merino_nightly.point
     ]
     pivots: [
       firefox_suggest_by_merino_nightly.branch
     ]
     filters:
-      firefox_suggest_by_merino_nightly.probe: content_crashes
-    row: 30
+      firefox_suggest_by_merino_nightly.metric: content_crashes
+      firefox_suggest_by_merino_nightly.statistic: percentile
+    row: 10
     col: 12
     width: 12
     height: 8
     field_x: firefox_suggest_by_merino_nightly.submission_date
-    field_y: firefox_suggest_by_merino_nightly.percentile
+    field_y: firefox_suggest_by_merino_nightly.point
     log_scale: false
-    ci_lower: firefox_suggest_by_merino_nightly.low
-    ci_upper: firefox_suggest_by_merino_nightly.high
+    ci_lower: firefox_suggest_by_merino_nightly.lower
+    ci_upper: firefox_suggest_by_merino_nightly.upper
     show_grid: true
     listen:
-      Percentile: firefox_suggest_by_merino_nightly.percentile_conf
+      Percentile: firefox_suggest_by_merino_nightly.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Gc Ms
+    name: Gc Ms_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: firefox_suggest_by_merino_nightly
+    type: "ci-line-chart"
+    fields: [
+      firefox_suggest_by_merino_nightly.submission_date,
+      firefox_suggest_by_merino_nightly.branch,
+      firefox_suggest_by_merino_nightly.upper,
+      firefox_suggest_by_merino_nightly.lower,
+      firefox_suggest_by_merino_nightly.point
+    ]
+    pivots: [
+      firefox_suggest_by_merino_nightly.branch
+    ]
+    filters:
+      firefox_suggest_by_merino_nightly.metric: gc_ms
+      firefox_suggest_by_merino_nightly.statistic: percentile
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: firefox_suggest_by_merino_nightly.submission_date
+    field_y: firefox_suggest_by_merino_nightly.point
+    log_scale: false
+    ci_lower: firefox_suggest_by_merino_nightly.lower
+    ci_upper: firefox_suggest_by_merino_nightly.upper
+    show_grid: true
+    listen:
+      Percentile: firefox_suggest_by_merino_nightly.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
   - title: Main Crashes
-    name: Main Crashes
+    name: Main Crashes_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
     explore: firefox_suggest_by_merino_nightly
     type: "ci-line-chart"
     fields: [
       firefox_suggest_by_merino_nightly.submission_date,
       firefox_suggest_by_merino_nightly.branch,
-      firefox_suggest_by_merino_nightly.high,
-      firefox_suggest_by_merino_nightly.low,
-      firefox_suggest_by_merino_nightly.percentile
+      firefox_suggest_by_merino_nightly.upper,
+      firefox_suggest_by_merino_nightly.lower,
+      firefox_suggest_by_merino_nightly.point
     ]
     pivots: [
       firefox_suggest_by_merino_nightly.branch
     ]
     filters:
-      firefox_suggest_by_merino_nightly.probe: main_crashes
-    row: 40
-    col: 0
-    width: 12
-    height: 8
-    field_x: firefox_suggest_by_merino_nightly.submission_date
-    field_y: firefox_suggest_by_merino_nightly.percentile
-    log_scale: false
-    ci_lower: firefox_suggest_by_merino_nightly.low
-    ci_upper: firefox_suggest_by_merino_nightly.high
-    show_grid: true
-    listen:
-      Percentile: firefox_suggest_by_merino_nightly.percentile_conf
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Gmplugin Crashes
-    name: Gmplugin Crashes
-    explore: firefox_suggest_by_merino_nightly
-    type: "ci-line-chart"
-    fields: [
-      firefox_suggest_by_merino_nightly.submission_date,
-      firefox_suggest_by_merino_nightly.branch,
-      firefox_suggest_by_merino_nightly.high,
-      firefox_suggest_by_merino_nightly.low,
-      firefox_suggest_by_merino_nightly.percentile
-    ]
-    pivots: [
-      firefox_suggest_by_merino_nightly.branch
-    ]
-    filters:
-      firefox_suggest_by_merino_nightly.probe: gmplugin_crashes
-    row: 40
+      firefox_suggest_by_merino_nightly.metric: main_crashes
+      firefox_suggest_by_merino_nightly.statistic: percentile
+    row: 20
     col: 12
     width: 12
     height: 8
     field_x: firefox_suggest_by_merino_nightly.submission_date
-    field_y: firefox_suggest_by_merino_nightly.percentile
+    field_y: firefox_suggest_by_merino_nightly.point
     log_scale: false
-    ci_lower: firefox_suggest_by_merino_nightly.low
-    ci_upper: firefox_suggest_by_merino_nightly.high
+    ci_lower: firefox_suggest_by_merino_nightly.lower
+    ci_upper: firefox_suggest_by_merino_nightly.upper
     show_grid: true
     listen:
-      Percentile: firefox_suggest_by_merino_nightly.percentile_conf
+      Percentile: firefox_suggest_by_merino_nightly.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
   - title: Memory Total
-    name: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
     explore: firefox_suggest_by_merino_nightly
     type: "ci-line-chart"
     fields: [
       firefox_suggest_by_merino_nightly.submission_date,
       firefox_suggest_by_merino_nightly.branch,
-      firefox_suggest_by_merino_nightly.high,
-      firefox_suggest_by_merino_nightly.low,
-      firefox_suggest_by_merino_nightly.percentile
+      firefox_suggest_by_merino_nightly.upper,
+      firefox_suggest_by_merino_nightly.lower,
+      firefox_suggest_by_merino_nightly.point
     ]
     pivots: [
       firefox_suggest_by_merino_nightly.branch
     ]
     filters:
-      firefox_suggest_by_merino_nightly.probe: memory_total
-    row: 50
+      firefox_suggest_by_merino_nightly.metric: memory_total
+      firefox_suggest_by_merino_nightly.statistic: percentile
+    row: 30
     col: 0
     width: 12
     height: 8
     field_x: firefox_suggest_by_merino_nightly.submission_date
-    field_y: firefox_suggest_by_merino_nightly.percentile
+    field_y: firefox_suggest_by_merino_nightly.point
     log_scale: false
-    ci_lower: firefox_suggest_by_merino_nightly.low
-    ci_upper: firefox_suggest_by_merino_nightly.high
+    ci_lower: firefox_suggest_by_merino_nightly.lower
+    ci_upper: firefox_suggest_by_merino_nightly.upper
     show_grid: true
     listen:
-      Percentile: firefox_suggest_by_merino_nightly.percentile_conf
+      Percentile: firefox_suggest_by_merino_nightly.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
   - title: Content Process Count
-    name: Content Process Count
+    name: Content Process Count_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
     explore: firefox_suggest_by_merino_nightly
     type: "ci-line-chart"
     fields: [
       firefox_suggest_by_merino_nightly.submission_date,
       firefox_suggest_by_merino_nightly.branch,
-      firefox_suggest_by_merino_nightly.high,
-      firefox_suggest_by_merino_nightly.low,
-      firefox_suggest_by_merino_nightly.percentile
+      firefox_suggest_by_merino_nightly.upper,
+      firefox_suggest_by_merino_nightly.lower,
+      firefox_suggest_by_merino_nightly.point
     ]
     pivots: [
       firefox_suggest_by_merino_nightly.branch
     ]
     filters:
-      firefox_suggest_by_merino_nightly.probe: content_process_count
+      firefox_suggest_by_merino_nightly.metric: content_process_count
+      firefox_suggest_by_merino_nightly.statistic: percentile
+    row: 30
+    col: 12
+    width: 12
+    height: 8
+    field_x: firefox_suggest_by_merino_nightly.submission_date
+    field_y: firefox_suggest_by_merino_nightly.point
+    log_scale: false
+    ci_lower: firefox_suggest_by_merino_nightly.lower
+    ci_upper: firefox_suggest_by_merino_nightly.upper
+    show_grid: true
+    listen:
+      Percentile: firefox_suggest_by_merino_nightly.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Shutdown Hangs
+    name: Shutdown Hangs_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: firefox_suggest_by_merino_nightly
+    type: "ci-line-chart"
+    fields: [
+      firefox_suggest_by_merino_nightly.submission_date,
+      firefox_suggest_by_merino_nightly.branch,
+      firefox_suggest_by_merino_nightly.upper,
+      firefox_suggest_by_merino_nightly.lower,
+      firefox_suggest_by_merino_nightly.point
+    ]
+    pivots: [
+      firefox_suggest_by_merino_nightly.branch
+    ]
+    filters:
+      firefox_suggest_by_merino_nightly.metric: shutdown_hangs
+      firefox_suggest_by_merino_nightly.statistic: percentile
+    row: 40
+    col: 0
+    width: 12
+    height: 8
+    field_x: firefox_suggest_by_merino_nightly.submission_date
+    field_y: firefox_suggest_by_merino_nightly.point
+    log_scale: false
+    ci_lower: firefox_suggest_by_merino_nightly.lower
+    ci_upper: firefox_suggest_by_merino_nightly.upper
+    show_grid: true
+    listen:
+      Percentile: firefox_suggest_by_merino_nightly.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Content Shutdown Crashes
+    name: Content Shutdown Crashes_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: firefox_suggest_by_merino_nightly
+    type: "ci-line-chart"
+    fields: [
+      firefox_suggest_by_merino_nightly.submission_date,
+      firefox_suggest_by_merino_nightly.branch,
+      firefox_suggest_by_merino_nightly.upper,
+      firefox_suggest_by_merino_nightly.lower,
+      firefox_suggest_by_merino_nightly.point
+    ]
+    pivots: [
+      firefox_suggest_by_merino_nightly.branch
+    ]
+    filters:
+      firefox_suggest_by_merino_nightly.metric: content_shutdown_crashes
+      firefox_suggest_by_merino_nightly.statistic: percentile
+    row: 40
+    col: 12
+    width: 12
+    height: 8
+    field_x: firefox_suggest_by_merino_nightly.submission_date
+    field_y: firefox_suggest_by_merino_nightly.point
+    log_scale: false
+    ci_lower: firefox_suggest_by_merino_nightly.lower
+    ci_upper: firefox_suggest_by_merino_nightly.upper
+    show_grid: true
+    listen:
+      Percentile: firefox_suggest_by_merino_nightly.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Startup Crashes
+    name: Startup Crashes_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: firefox_suggest_by_merino_nightly
+    type: "ci-line-chart"
+    fields: [
+      firefox_suggest_by_merino_nightly.submission_date,
+      firefox_suggest_by_merino_nightly.branch,
+      firefox_suggest_by_merino_nightly.upper,
+      firefox_suggest_by_merino_nightly.lower,
+      firefox_suggest_by_merino_nightly.point
+    ]
+    pivots: [
+      firefox_suggest_by_merino_nightly.branch
+    ]
+    filters:
+      firefox_suggest_by_merino_nightly.metric: startup_crashes
+      firefox_suggest_by_merino_nightly.statistic: percentile
+    row: 50
+    col: 0
+    width: 12
+    height: 8
+    field_x: firefox_suggest_by_merino_nightly.submission_date
+    field_y: firefox_suggest_by_merino_nightly.point
+    log_scale: false
+    ci_lower: firefox_suggest_by_merino_nightly.lower
+    ci_upper: firefox_suggest_by_merino_nightly.upper
+    show_grid: true
+    listen:
+      Percentile: firefox_suggest_by_merino_nightly.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Gmplugin Crashes
+    name: Gmplugin Crashes_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: firefox_suggest_by_merino_nightly
+    type: "ci-line-chart"
+    fields: [
+      firefox_suggest_by_merino_nightly.submission_date,
+      firefox_suggest_by_merino_nightly.branch,
+      firefox_suggest_by_merino_nightly.upper,
+      firefox_suggest_by_merino_nightly.lower,
+      firefox_suggest_by_merino_nightly.point
+    ]
+    pivots: [
+      firefox_suggest_by_merino_nightly.branch
+    ]
+    filters:
+      firefox_suggest_by_merino_nightly.metric: gmplugin_crashes
+      firefox_suggest_by_merino_nightly.statistic: percentile
     row: 50
     col: 12
     width: 12
     height: 8
     field_x: firefox_suggest_by_merino_nightly.submission_date
-    field_y: firefox_suggest_by_merino_nightly.percentile
+    field_y: firefox_suggest_by_merino_nightly.point
     log_scale: false
-    ci_lower: firefox_suggest_by_merino_nightly.low
-    ci_upper: firefox_suggest_by_merino_nightly.high
+    ci_lower: firefox_suggest_by_merino_nightly.lower
+    ci_upper: firefox_suggest_by_merino_nightly.upper
     show_grid: true
     listen:
-      Percentile: firefox_suggest_by_merino_nightly.percentile_conf
+      Percentile: firefox_suggest_by_merino_nightly.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -398,23 +446,16 @@
   filters:
   - name: Percentile
     title: Percentile
-    type: number_filter
+    type: field_filter
     default_value: '50'
     allow_multiple_values: false
     required: true
     ui_config:
-      type: dropdown_menu
+      type: slider
       display: inline
-      options:
-      - '10'
-      - '20'
-      - '30'
-      - '40'
-      - '50'
-      - '60'
-      - '70'
-      - '80'
-      - '90'
-      - '95'
-      - '99'
+      options: []
+    model: operational_monitoring
+    explore: firefox_suggest_by_merino_nightly
+    listens_to_filters: []
+    field: firefox_suggest_by_merino_nightly.parameter
   

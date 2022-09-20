@@ -5,7 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99 {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.bug_1759000_rollout_initial_rollout_of_tcp_release_91_99 ;;
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_statistics ;;
 
   dimension: submission_date {
     type: date
@@ -17,56 +17,33 @@ view: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99 {
     type: string
   }
 
-  dimension: probe {
-    sql: ${TABLE}.probe ;;
+  dimension: lower {
+    sql: ${TABLE}.lower ;;
+    type: number
+  }
+
+  dimension: metric {
+    sql: ${TABLE}.metric ;;
     type: string
   }
 
-  parameter: percentile_conf {
+  dimension: parameter {
+    sql: ${TABLE}.parameter ;;
     type: number
-    label: "Percentile"
-    default_value: "50.0"
   }
 
-  measure: percentile {
+  dimension: point {
+    sql: ${TABLE}.point ;;
     type: number
-    sql: `moz-fx-data-shared-prod`.udf_js.jackknife_percentile_ci(
-    {% parameter percentile_conf %},
-    STRUCT(
-        mozfun.hist.merge(
-          ARRAY_AGG(
-            ${TABLE}.value IGNORE NULLS
-          )
-        ).values AS values
-    )
-).percentile ;;
   }
 
-  measure: low {
-    type: number
-    sql: `moz-fx-data-shared-prod`.udf_js.jackknife_percentile_ci(
-    {% parameter percentile_conf %},
-    STRUCT(
-        mozfun.hist.merge(
-          ARRAY_AGG(
-            ${TABLE}.value IGNORE NULLS
-          )
-        ).values AS values
-    )
-).low ;;
+  dimension: statistic {
+    sql: ${TABLE}.statistic ;;
+    type: string
   }
 
-  measure: high {
+  dimension: upper {
+    sql: ${TABLE}.upper ;;
     type: number
-    sql: `moz-fx-data-shared-prod`.udf_js.jackknife_percentile_ci(
-    {% parameter percentile_conf %},
-    STRUCT(
-        mozfun.hist.merge(
-          ARRAY_AGG(
-            ${TABLE}.value IGNORE NULLS
-          )
-        ).values AS values
-    )
-).high ;;
   }
 }
