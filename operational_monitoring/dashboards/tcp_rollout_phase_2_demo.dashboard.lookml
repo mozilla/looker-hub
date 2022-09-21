@@ -78,6 +78,43 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Perf First Contentful Paint Ms
+    name: Perf First Contentful Paint Ms_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: tcp_rollout_phase_2_demo
+    type: "ci-line-chart"
+    fields: [
+      tcp_rollout_phase_2_demo.submission_date,
+      tcp_rollout_phase_2_demo.branch,
+      tcp_rollout_phase_2_demo.upper,
+      tcp_rollout_phase_2_demo.lower,
+      tcp_rollout_phase_2_demo.point
+    ]
+    pivots: [
+      tcp_rollout_phase_2_demo.branch
+    ]
+    filters:
+      tcp_rollout_phase_2_demo.metric: perf_first_contentful_paint_ms
+      tcp_rollout_phase_2_demo.statistic: percentile
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: tcp_rollout_phase_2_demo.submission_date
+    field_y: tcp_rollout_phase_2_demo.point
+    log_scale: false
+    ci_lower: tcp_rollout_phase_2_demo.lower
+    ci_upper: tcp_rollout_phase_2_demo.upper
+    show_grid: true
+    listen:
+      Percentile: tcp_rollout_phase_2_demo.parameter
+      Os: tcp_rollout_phase_2_demo.os
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Ad Click
     name: Ad Click_sum
     note_state: expanded
@@ -97,7 +134,7 @@
       tcp_rollout_phase_2_demo.metric: ad_click
       tcp_rollout_phase_2_demo.statistic: sum
     row: 10
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: tcp_rollout_phase_2_demo.submission_date
@@ -130,42 +167,6 @@
     filters:
       tcp_rollout_phase_2_demo.metric: ad_click
       tcp_rollout_phase_2_demo.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: tcp_rollout_phase_2_demo.submission_date
-    field_y: tcp_rollout_phase_2_demo.point
-    log_scale: false
-    ci_lower: tcp_rollout_phase_2_demo.lower
-    ci_upper: tcp_rollout_phase_2_demo.upper
-    show_grid: true
-    listen:
-      Os: tcp_rollout_phase_2_demo.os
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Perf First Contentful Paint Ms
-    name: Perf First Contentful Paint Ms_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: tcp_rollout_phase_2_demo
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_phase_2_demo.submission_date,
-      tcp_rollout_phase_2_demo.branch,
-      tcp_rollout_phase_2_demo.upper,
-      tcp_rollout_phase_2_demo.lower,
-      tcp_rollout_phase_2_demo.point
-    ]
-    pivots: [
-      tcp_rollout_phase_2_demo.branch
-    ]
-    filters:
-      tcp_rollout_phase_2_demo.metric: perf_first_contentful_paint_ms
-      tcp_rollout_phase_2_demo.statistic: percentile
     row: 20
     col: 0
     width: 12
@@ -177,7 +178,6 @@
     ci_upper: tcp_rollout_phase_2_demo.upper
     show_grid: true
     listen:
-      Percentile: tcp_rollout_phase_2_demo.parameter
       Os: tcp_rollout_phase_2_demo.os
       
     enabled: "#3FE1B0"

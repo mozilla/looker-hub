@@ -1018,6 +1018,10 @@ firefox_desktop:
       views:
         base_view: client_counts
         extended_view: clients_daily_table
+    default_browser:
+      type: ping_explore
+      views:
+        base_view: default_browser
     deletion_request:
       type: glean_ping_explore
       views:
@@ -1102,6 +1106,10 @@ firefox_desktop:
       tables:
       - table: mozdata.telemetry.crashes_daily
       type: table_view
+    default_browser:
+      tables:
+      - table: mozdata.default_browser_agent.default_browser
+      type: ping_view
     deletion_request:
       tables:
       - table: mozdata.firefox_desktop.deletion_request
@@ -3004,12 +3012,12 @@ operational_monitoring:
           statistic: sum
         - metric: search_with_ads
           statistic: mean
+        - metric: perf_first_contentful_paint_ms
+          statistic: percentile
         - metric: ad_click
           statistic: sum
         - metric: ad_click
           statistic: mean
-        - metric: perf_first_contentful_paint_ms
-          statistic: percentile
         - metric: daily_active_clients
           statistic: sum
         - metric: tagged_search_count
