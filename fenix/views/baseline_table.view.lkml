@@ -300,6 +300,19 @@ view: baseline_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__counter__events_normal_and_private_uri_count {
+    sql: ${TABLE}.metrics.counter.events_normal_and_private_uri_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Events Normal And Private Uri Count"
+    description: "A counter of URIs visited by the user in the current session, including
+page reloads. This includes private browsing.  This does not include
+background page requests and URIs from embedded pages but may be
+incremented without user interaction by website scripts that
+programmatically redirect to a new location.
+"
+  }
+
   dimension: metrics__counter__events_total_uri_count {
     sql: ${TABLE}.metrics.counter.events_total_uri_count ;;
     type: number

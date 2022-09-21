@@ -300,6 +300,60 @@ view: newtab_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__newtab_search_enabled {
+    sql: ${TABLE}.metrics.boolean.newtab_search_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Newtab Search Enabled"
+    description: "Whether the search input is enabled on the newtab. Corresponds to the value of the `browser.newtabpage.activity-stream.showSearch` pref.
+"
+  }
+
+  dimension: metrics__boolean__pocket_enabled {
+    sql: ${TABLE}.metrics.boolean.pocket_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Pocket Enabled"
+    description: "Whether Pocket is enabled on the newtab. AKA the \"Recommended by Pocket\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.feeds.section.topstories` pref.
+"
+  }
+
+  dimension: metrics__boolean__pocket_is_signed_in {
+    sql: ${TABLE}.metrics.boolean.pocket_is_signed_in ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Pocket Is Signed In"
+    description: "Whether the Firefox user is signed in to Pocket. Does not correspond to a pref, so its value is resampled at newtab's component init and whenever there is a Discovery Stream user event.
+"
+  }
+
+  dimension: metrics__boolean__pocket_sponsored_stories_enabled {
+    sql: ${TABLE}.metrics.boolean.pocket_sponsored_stories_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Pocket Sponsored Stories Enabled"
+    description: "Whether Pocket sponsored stories are enabled on the newtab. Corresponds to the value of the `browser.newtabpage.activity-stream.showSponsored` pref. Can be `true` even if pocket.enabled is `false`.
+"
+  }
+
+  dimension: metrics__boolean__topsites_enabled {
+    sql: ${TABLE}.metrics.boolean.topsites_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Topsites Enabled"
+    description: "Whether \"topsites\" is enabled on the newtab. AKA the \"Shortcuts\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.feeds.topsites` pref.
+"
+  }
+
+  dimension: metrics__boolean__topsites_sponsored_enabled {
+    sql: ${TABLE}.metrics.boolean.topsites_sponsored_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Topsites Sponsored Enabled"
+    description: "Whether sponsored topsites are enabled on the newtab. AKA the \"Sponsored Shortcuts\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.showSponsoredTopSites` pref. Can be `true` even if topsites.enabled is `false`.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -332,12 +386,30 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__newtab_homepage_category {
+    sql: ${TABLE}.metrics.string.newtab_homepage_category ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Newtab Homepage Category"
+    description: "The current setting of the home page. One of [\"enabled\", \"disabled\", \"extension\"] or any value from SiteClassifier like \"known-hijacker\" or \"social-media\". Similar to Activity Stream's PAGE_TAKEOVER_DATA event's `home_url_category`. Sampled once after newtab init.
+"
+  }
+
   dimension: metrics__string__newtab_locale {
     sql: ${TABLE}.metrics.string.newtab_locale ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Newtab Locale"
     description: "The application's locale as of when newtab's TelemetryFeed was init. Comes from `Services.local.appLocaleAsBCP47`. Looks like `en-US`.
+"
+  }
+
+  dimension: metrics__string__newtab_newtab_category {
+    sql: ${TABLE}.metrics.string.newtab_newtab_category ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Newtab Newtab Category"
+    description: "The current setting of the newtab page. One of [\"enabled\", \"disabled\", \"extension\"] or any value from SiteClassifier like \"known-hijacker\" or \"social-media\". Similar to Activity Stream's PAGE_TAKEOVER_DATA event's `newtab_url_category`. Sampled once after newtab init.
 "
   }
 

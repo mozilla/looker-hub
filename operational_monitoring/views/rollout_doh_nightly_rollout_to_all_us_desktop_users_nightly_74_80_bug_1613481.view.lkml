@@ -5,7 +5,7 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481 {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481 ;;
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_statistics ;;
 
   dimension: submission_date {
     type: date
@@ -17,56 +17,33 @@ view: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613
     type: string
   }
 
-  dimension: probe {
-    sql: ${TABLE}.probe ;;
+  dimension: metric {
+    sql: ${TABLE}.metric ;;
     type: string
   }
 
-  parameter: percentile_conf {
+  dimension: parameter {
+    sql: ${TABLE}.parameter ;;
     type: number
-    label: "Percentile"
-    default_value: "50.0"
   }
 
-  measure: percentile {
-    type: number
-    sql: `moz-fx-data-shared-prod`.udf_js.jackknife_percentile_ci(
-    {% parameter percentile_conf %},
-    STRUCT(
-        mozfun.hist.merge(
-          ARRAY_AGG(
-            ${TABLE}.value IGNORE NULLS
-          )
-        ).values AS values
-    )
-).percentile ;;
+  dimension: statistic {
+    sql: ${TABLE}.statistic ;;
+    type: string
   }
 
-  measure: low {
-    type: number
-    sql: `moz-fx-data-shared-prod`.udf_js.jackknife_percentile_ci(
-    {% parameter percentile_conf %},
-    STRUCT(
-        mozfun.hist.merge(
-          ARRAY_AGG(
-            ${TABLE}.value IGNORE NULLS
-          )
-        ).values AS values
-    )
-).low ;;
+  measure: point {
+    type: sum
+    sql: ${TABLE}.point ;;
   }
 
-  measure: high {
-    type: number
-    sql: `moz-fx-data-shared-prod`.udf_js.jackknife_percentile_ci(
-    {% parameter percentile_conf %},
-    STRUCT(
-        mozfun.hist.merge(
-          ARRAY_AGG(
-            ${TABLE}.value IGNORE NULLS
-          )
-        ).values AS values
-    )
-).high ;;
+  measure: upper {
+    type: sum
+    sql: ${TABLE}.upper ;;
+  }
+
+  measure: lower {
+    type: sum
+    sql: ${TABLE}.lower ;;
   }
 }

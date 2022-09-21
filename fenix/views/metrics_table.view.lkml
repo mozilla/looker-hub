@@ -2017,6 +2017,18 @@ device type the tab originates from.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__places_manager_db_size_after_maintenance__sum {
+    sql: ${TABLE}.metrics.memory_distribution.places_manager_db_size_after_maintenance.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Places Manager Db Size After Maintenance"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__places_manager_db_size_after_maintenance__values {
+    sql: ${TABLE}.metrics.memory_distribution.places_manager_db_size_after_maintenance.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__memory_distribution__storage_stats_app_bytes__sum {
     sql: ${TABLE}.metrics.memory_distribution.storage_stats_app_bytes.sum ;;
     type: number
@@ -2431,6 +2443,22 @@ documented in the ping's pings.yaml file.
     description: "What type of enhanced tracking protection the user has enabled.
 \"standard,\" \"strict,\" \"custom,\" or \"\" (if disabled)
 default: \"standard\"
+"
+  }
+
+  dimension: metrics__string__preferences_etp_custom_cookies_selection {
+    sql: ${TABLE}.metrics.string.preferences_etp_custom_cookies_selection ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Preferences Etp Custom Cookies Selection"
+    description: "The option user has selected in the \"Custom\" mode of the
+Enhanced Tracking Protection settings.
+Possible values:
+- total-protection for “Isolate cross-site cookies”
+- social for “Cross-site and social media trackers”
+- unvisited for “Cookies from unvisited sites”
+- third-party for “All third-party cookies..”
+- all for “All cookies..”
 "
   }
 
@@ -7498,6 +7526,58 @@ will be \"custom\"
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__places_manager_scan_query_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.places_manager_scan_query_time.bucket_count ;;
     type: number
@@ -8785,6 +8865,18 @@ view: metrics_table__metrics__memory_distribution__performance_clone_deserialize
   }
 }
 
+view: metrics_table__metrics__memory_distribution__places_manager_db_size_after_maintenance__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__memory_distribution__storage_stats_app_bytes__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -9938,6 +10030,18 @@ view: metrics_table__metrics__timing_distribution__performance_time_response_sta
 }
 
 view: metrics_table__metrics__timing_distribution__places_manager_read_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_manager_run_maintenance_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

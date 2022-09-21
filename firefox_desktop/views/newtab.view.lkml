@@ -30,6 +30,24 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__string__newtab_homepage_category {
+    label: "Newtab Homepage Category"
+    hidden: no
+    sql: ${TABLE}.metrics.string.newtab_homepage_category ;;
+    type: string
+    group_label: "Newtab"
+    group_item_label: "Homepage Category"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Homepage Category"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_homepage_category"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The current setting of the home page. One of [\"enabled\", \"disabled\", \"extension\"] or any value from SiteClassifier like \"known-hijacker\" or \"social-media\". Similar to Activity Stream's PAGE_TAKEOVER_DATA event's `home_url_category`. Sampled once after newtab init.
+"
+  }
+
   dimension: metrics__string__newtab_locale {
     label: "Newtab Locale"
     hidden: no
@@ -45,6 +63,96 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
     }
 
     description: "The application's locale as of when newtab's TelemetryFeed was init. Comes from `Services.local.appLocaleAsBCP47`. Looks like `en-US`.
+"
+  }
+
+  dimension: metrics__string__newtab_newtab_category {
+    label: "Newtab Newtab Category"
+    hidden: no
+    sql: ${TABLE}.metrics.string.newtab_newtab_category ;;
+    type: string
+    group_label: "Newtab"
+    group_item_label: "Newtab Category"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Newtab Category"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_newtab_category"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The current setting of the newtab page. One of [\"enabled\", \"disabled\", \"extension\"] or any value from SiteClassifier like \"known-hijacker\" or \"social-media\". Similar to Activity Stream's PAGE_TAKEOVER_DATA event's `newtab_url_category`. Sampled once after newtab init.
+"
+  }
+
+  dimension: metrics__boolean__newtab_search_enabled {
+    label: "Newtab Search Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.newtab_search_enabled ;;
+    type: yesno
+    group_label: "Newtab Search"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Search Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_search_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the search input is enabled on the newtab. Corresponds to the value of the `browser.newtabpage.activity-stream.showSearch` pref.
+"
+  }
+
+  dimension: metrics__boolean__pocket_enabled {
+    label: "Pocket Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.pocket_enabled ;;
+    type: yesno
+    group_label: "Pocket"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Pocket Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pocket_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether Pocket is enabled on the newtab. AKA the \"Recommended by Pocket\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.feeds.section.topstories` pref.
+"
+  }
+
+  dimension: metrics__boolean__pocket_is_signed_in {
+    label: "Pocket Is Signed In"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.pocket_is_signed_in ;;
+    type: yesno
+    group_label: "Pocket"
+    group_item_label: "Is Signed In"
+
+    link: {
+      label: "Glean Dictionary reference for Pocket Is Signed In"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pocket_is_signed_in"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the Firefox user is signed in to Pocket. Does not correspond to a pref, so its value is resampled at newtab's component init and whenever there is a Discovery Stream user event.
+"
+  }
+
+  dimension: metrics__boolean__pocket_sponsored_stories_enabled {
+    label: "Pocket Sponsored Stories Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.pocket_sponsored_stories_enabled ;;
+    type: yesno
+    group_label: "Pocket"
+    group_item_label: "Sponsored Stories Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Pocket Sponsored Stories Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pocket_sponsored_stories_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether Pocket sponsored stories are enabled on the newtab. Corresponds to the value of the `browser.newtabpage.activity-stream.showSponsored` pref. Can be `true` even if pocket.enabled is `false`.
 "
   }
 
@@ -92,6 +200,42 @@ the preferences `browser.search.separatePrivateDefault` and
 `browser.search.separatePrivateDefault.ui.enabled` are set to false.
 It is possible that the user selects the same private engine as for the
 default engine, and hence both versions of these fields will be filled in.
+"
+  }
+
+  dimension: metrics__boolean__topsites_enabled {
+    label: "Topsites Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.topsites_enabled ;;
+    type: yesno
+    group_label: "Topsites"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Topsites Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/topsites_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether \"topsites\" is enabled on the newtab. AKA the \"Shortcuts\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.feeds.topsites` pref.
+"
+  }
+
+  dimension: metrics__boolean__topsites_sponsored_enabled {
+    label: "Topsites Sponsored Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.topsites_sponsored_enabled ;;
+    type: yesno
+    group_label: "Topsites"
+    group_item_label: "Sponsored Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Topsites Sponsored Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/topsites_sponsored_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether sponsored topsites are enabled on the newtab. AKA the \"Sponsored Shortcuts\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.showSponsoredTopSites` pref. Can be `true` even if topsites.enabled is `false`.
 "
   }
 

@@ -58,6 +58,28 @@ The key format is `<provider-name>`.
 "
   }
 
+  dimension: metrics__counter__events_normal_and_private_uri_count {
+    label: "Events Normal And Private Uri Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.events_normal_and_private_uri_count ;;
+    type: number
+    group_label: "Events"
+    group_item_label: "Normal And Private Uri Count"
+
+    link: {
+      label: "Glean Dictionary reference for Events Normal And Private Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_normal_and_private_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of URIs visited by the user in the current session, including
+page reloads. This includes private browsing.  This does not include
+background page requests and URIs from embedded pages but may be
+incremented without user interaction by website scripts that
+programmatically redirect to a new location.
+"
+  }
+
   dimension: metrics__counter__events_total_uri_count {
     label: "Events Total Uri Count"
     hidden: yes
@@ -714,6 +736,31 @@ This metric appears in both the metrics and baseline pings.
 
   measure: ping_count {
     type: count
+  }
+
+  measure: events_normal_and_private_uri_count {
+    type: sum
+    sql: ${metrics__counter__events_normal_and_private_uri_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Events Normal And Private Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_normal_and_private_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: events_normal_and_private_uri_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__events_normal_and_private_uri_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Events Normal And Private Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_normal_and_private_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   measure: events_total_uri_count {

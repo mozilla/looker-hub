@@ -644,6 +644,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_buttons {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_buttons ;;
+    hidden: yes
+    description: "Counts the number of times some actions are executed in the PDF viewer.
+"
+  }
+
   dimension: metrics__labeled_counter__pdfjs_editing {
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing ;;
     hidden: yes

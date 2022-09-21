@@ -1100,6 +1100,16 @@ in the page action menu
 "
   }
 
+  dimension: metrics__counter__page_action_menu_create_new_tab {
+    sql: ${TABLE}.metrics.counter.page_action_menu_create_new_tab ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Page Action Menu Create New Tab"
+    description: "Counts the number of times a user creates a new tab from the
+page action menu.
+"
+  }
+
   dimension: metrics__counter__page_action_menu_find_in_page {
     sql: ${TABLE}.metrics.counter.page_action_menu_find_in_page ;;
     type: number
@@ -1177,6 +1187,26 @@ in the page action menu
     group_item_label: "Page Action Menu Share Page With"
     description: "Counts the number of times a user taps Share Page With in the
 page action menu
+"
+  }
+
+  dimension: metrics__counter__page_action_menu_view_downloads_panel {
+    sql: ${TABLE}.metrics.counter.page_action_menu_view_downloads_panel ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Page Action Menu View Downloads Panel"
+    description: "Counts the number of times a user navigates to the downloads panel
+from the page action menu.
+"
+  }
+
+  dimension: metrics__counter__page_action_menu_view_history_panel {
+    sql: ${TABLE}.metrics.counter.page_action_menu_view_history_panel ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Page Action Menu View History Panel"
+    description: "Counts the number of times a user navigates to the history panel
+from the page action menu.
 "
   }
 

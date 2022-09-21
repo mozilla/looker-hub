@@ -908,9 +908,19 @@ view: clients_daily_table {
     type: number
   }
 
+  dimension: scalar_parent_browser_ui_interaction_content_context_sum {
+    sql: ${TABLE}.scalar_parent_browser_ui_interaction_content_context_sum ;;
+    hidden: yes
+  }
+
   dimension: scalar_parent_browser_ui_interaction_preferences_pane_home_sum {
     sql: ${TABLE}.scalar_parent_browser_ui_interaction_preferences_pane_home_sum ;;
     hidden: yes
+  }
+
+  dimension: scalar_parent_browser_ui_interaction_textrecognition_error_sum {
+    sql: ${TABLE}.scalar_parent_browser_ui_interaction_textrecognition_error_sum ;;
+    type: number
   }
 
   dimension: scalar_parent_devtools_accessibility_node_inspected_count_sum {
@@ -1538,6 +1548,36 @@ view: clients_daily_table {
     type: yesno
   }
 
+  dimension: text_recognition_api_performance_count_sum {
+    sql: ${TABLE}.text_recognition_api_performance_count_sum ;;
+    type: number
+  }
+
+  dimension: text_recognition_api_performance_sum {
+    sql: ${TABLE}.text_recognition_api_performance_sum ;;
+    type: number
+  }
+
+  dimension: text_recognition_interaction_timing_count_sum {
+    sql: ${TABLE}.text_recognition_interaction_timing_count_sum ;;
+    type: number
+  }
+
+  dimension: text_recognition_interaction_timing_sum {
+    sql: ${TABLE}.text_recognition_interaction_timing_sum ;;
+    type: number
+  }
+
+  dimension: text_recognition_text_length_count_sum {
+    sql: ${TABLE}.text_recognition_text_length_count_sum ;;
+    type: number
+  }
+
+  dimension: text_recognition_text_length_sum {
+    sql: ${TABLE}.text_recognition_text_length_sum ;;
+    type: number
+  }
+
   dimension: timezone_offset {
     sql: ${TABLE}.timezone_offset ;;
     type: number
@@ -2024,6 +2064,18 @@ view: clients_daily_table__experiments {
 }
 
 view: clients_daily_table__scalar_content_telemetry_event_counts_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__scalar_parent_browser_ui_interaction_content_context_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

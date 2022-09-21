@@ -1863,6 +1863,31 @@ default: \"standard\"
 "
   }
 
+  dimension: metrics__string__preferences_etp_custom_cookies_selection {
+    label: "Preferences Etp Custom Cookies Selection"
+    hidden: no
+    sql: ${TABLE}.metrics.string.preferences_etp_custom_cookies_selection ;;
+    type: string
+    group_label: "Preferences"
+    group_item_label: "Etp Custom Cookies Selection"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Etp Custom Cookies Selection"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/preferences_etp_custom_cookies_selection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The option user has selected in the \"Custom\" mode of the
+Enhanced Tracking Protection settings.
+Possible values:
+- total-protection for “Isolate cross-site cookies”
+- social for “Cross-site and social media trackers”
+- unvisited for “Cookies from unvisited sites”
+- third-party for “All third-party cookies..”
+- all for “All cookies..”
+"
+  }
+
   dimension: metrics__boolean__preferences_inactive_tabs_enabled {
     label: "Preferences Inactive Tabs Enabled"
     hidden: no
@@ -6175,6 +6200,24 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
 "
   }
 
+  dimension: metrics__memory_distribution__places_manager_db_size_after_maintenance__sum {
+    label: "Places Manager Db Size After Maintenance Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.places_manager_db_size_after_maintenance.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Db Size After Maintenance Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager Db Size After Maintenance Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_db_size_after_maintenance"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of the db after executing `run_maintenance()`
+"
+  }
+
   dimension: metrics__counter__places_manager_read_query_count {
     label: "Places Manager Read Query Count"
     hidden: no
@@ -6226,6 +6269,23 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
 
     description: "The time taken to execute a read query on the places store.
 "
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_time__sum {
+    label: "Places Manager Run Maintenance Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_time.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Run Maintenance Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager Run Maintenance Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_run_maintenance_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to execute `run_maintenance()`"
   }
 
   dimension: metrics__timing_distribution__places_manager_scan_query_time__sum {
