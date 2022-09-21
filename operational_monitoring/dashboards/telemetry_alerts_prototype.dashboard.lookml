@@ -107,9 +107,8 @@
     allow_multiple_values: false
     required: true
     ui_config:
-      type: slider
-      display: inline
-      options: []
+      type: advanced
+      display: popover
     model: operational_monitoring
     explore: telemetry_alerts_prototype
     listens_to_filters: []
@@ -117,7 +116,7 @@
   - name: Metric
     title: Metric
     type: field_filter
-    default_value: 'active_ticks'
+    default_value: 'gc_budget_overrun'
     allow_multiple_values: false
     required: true
     ui_config:
