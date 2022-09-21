@@ -12,9 +12,6 @@
   elements:
   - title: Metric
     name: Metric_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
     explore: telemetry_alerts_prototype
     type: "ci-line-chart"
     fields: [
@@ -41,6 +38,7 @@
       Percentile: telemetry_alerts_prototype.parameter
       Os: telemetry_alerts_prototype.os
       Metric: telemetry_alerts_prototype.metric
+      Statistic: telemetry_alerts_prototype.statistic
       
     active: "#3FE1B0"
     defaults_version: 0
@@ -51,7 +49,7 @@
     explore: telemetry_alerts_prototype_alerts
     type: looker_grid
     fields: [telemetry_alerts_prototype_alerts.submission_date,
-      telemetry_alerts_prototype_alerts.metric, telemetry_alerts_prototype_alerts.statistic, telemetry_alerts_prototype_alerts.percentile,
+      telemetry_alerts_prototype_alerts.metric, telemetry_alerts_prototype_alerts.statistic, telemetry_alerts_prototype_alerts.parameter,
       telemetry_alerts_prototype_alerts.message, telemetry_alerts_prototype_alerts.branch, telemetry_alerts_prototype_alerts.errors]
     sorts: [telemetry_alerts_prototype_alerts.submission_date
         desc]
@@ -140,7 +138,7 @@
       display: popover
     model: operational_monitoring
     explore: telemetry_alerts_prototype
-    listens_to_filters: []
+    listens_to_filters: [Metric]
     field: telemetry_alerts_prototype.statistic
   
   - title: Os

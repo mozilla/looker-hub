@@ -2934,12 +2934,46 @@ newtab:
   spoke: looker-spoke-private
 operational_monitoring:
   dashboards:
-    telemetry_alerts_prototype:
+    tcp_rollout_phase_2_demo:
       tables:
       - branches: &id001
+        - enabled
+        - disabled
+        compact_visualization: false
+        dimensions: &id002
+          os:
+            default: Windows
+            options:
+            - Windows
+        explore: tcp_rollout_phase_2_demo
+        group_by_dimension: null
+        summaries: &id003
+        - metric: daily_active_clients
+          statistic: sum
+        - metric: search_with_ads
+          statistic: sum
+        - metric: search_with_ads
+          statistic: mean
+        - metric: perf_first_contentful_paint_ms
+          statistic: percentile
+        - metric: tagged_search_count
+          statistic: sum
+        - metric: tagged_search_count
+          statistic: mean
+        - metric: ad_click
+          statistic: sum
+        - metric: ad_click
+          statistic: mean
+        table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_2_demo_statistics
+        xaxis: submission_date
+      title: Tcp Rollout Phase 2 Demo
+      type: operational_monitoring_dashboard
+    telemetry_alerts_prototype:
+      tables:
+      - branches: &id004
         - active
         compact_visualization: true
-        dimensions: &id002
+        dimensions: &id005
           os:
             default: Mac
             options:
@@ -2948,7 +2982,7 @@ operational_monitoring:
             - Linux
         explore: telemetry_alerts_prototype
         group_by_dimension: null
-        summaries: &id003
+        summaries: &id006
         - metric: active_ticks
           statistic: percentile
         - metric: js_pageload_execution_ms
@@ -2978,10 +3012,18 @@ operational_monitoring:
       title: Telemetry Alerts Prototype
       type: operational_monitoring_dashboard
   explores:
-    telemetry_alerts_prototype:
+    tcp_rollout_phase_2_demo:
       branches: *id001
       dimensions: *id002
       summaries: *id003
+      type: operational_monitoring_explore
+      views:
+        base_view: tcp_rollout_phase_2_demo
+      xaxis: submission_date
+    telemetry_alerts_prototype:
+      branches: *id004
+      dimensions: *id005
+      summaries: *id006
       type: operational_monitoring_explore
       views:
         base_view: telemetry_alerts_prototype
@@ -2996,9 +3038,15 @@ operational_monitoring:
   pretty_name: Operational Monitoring
   spoke: looker-spoke-default
   views:
-    telemetry_alerts_prototype:
+    tcp_rollout_phase_2_demo:
       tables:
       - dimensions: *id002
+        table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_2_demo_statistics
+        xaxis: submission_date
+      type: operational_monitoring_view
+    telemetry_alerts_prototype:
+      tables:
+      - dimensions: *id005
         table: moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype_statistics
         xaxis: build_id
       type: operational_monitoring_view
