@@ -17,11 +17,6 @@ view: telemetry_alerts_prototype {
     type: string
   }
 
-  dimension: lower {
-    sql: ${TABLE}.lower ;;
-    type: number
-  }
-
   dimension: metric {
     sql: ${TABLE}.metric ;;
     type: string
@@ -37,18 +32,23 @@ view: telemetry_alerts_prototype {
     type: number
   }
 
-  dimension: point {
-    sql: ${TABLE}.point ;;
-    type: number
-  }
-
   dimension: statistic {
     sql: ${TABLE}.statistic ;;
     type: string
   }
 
-  dimension: upper {
+  measure: point {
+    type: sum
+    sql: ${TABLE}.point ;;
+  }
+
+  measure: upper {
+    type: sum
     sql: ${TABLE}.upper ;;
-    type: number
+  }
+
+  measure: lower {
+    type: sum
+    sql: ${TABLE}.lower ;;
   }
 }

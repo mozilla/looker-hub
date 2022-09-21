@@ -2934,149 +2934,43 @@ newtab:
   spoke: looker-spoke-private
 operational_monitoring:
   dashboards:
-    bug_1759000_rollout_initial_rollout_of_tcp_release_91_99:
-      tables:
-      - branches: &id001
-        - enabled
-        - disabled
-        compact_visualization: false
-        dimensions: &id002 {}
-        explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
-        group_by_dimension: null
-        summaries: &id003
-        - metric: tab_unload_to_reload
-          statistic: percentile
-        - metric: cycle_collector_max_pause
-          statistic: percentile
-        - metric: gc_max_pause_2_content
-          statistic: percentile
-        - metric: gc_max_pause_2
-          statistic: percentile
-        - metric: content_frame_time_vsync
-          statistic: percentile
-        - metric: content_process_count
-          statistic: percentile
-        - metric: shutdown_hangs
-          statistic: percentile
-        - metric: gmplugin_crashes
-          statistic: percentile
-        - metric: fx_tab_switch_composite_e10s_ms
-          statistic: percentile
-        - metric: tab_unload_count
-          statistic: percentile
-        - metric: gc_mark_rate_2
-          statistic: percentile
-        - metric: content_shutdown_crashes
-          statistic: percentile
-        - metric: gc_budget_overrun
-          statistic: percentile
-        - metric: gpu_crashes
-          statistic: percentile
-        - metric: plugin_crashes
-          statistic: percentile
-        - metric: startup_crashes
-          statistic: percentile
-        - metric: content_crashes
-          statistic: percentile
-        - metric: cycle_collector_max_pause_content
-          statistic: percentile
-        - metric: tab_reload_count
-          statistic: percentile
-        - metric: child_process_launch_ms
-          statistic: percentile
-        - metric: content_process_max
-          statistic: percentile
-        - metric: checkerboard_severity
-          statistic: percentile
-        - metric: oom_crashes
-          statistic: percentile
-        - metric: gc_reason_2
-          statistic: percentile
-        - metric: fx_new_window_ms
-          statistic: percentile
-        - metric: main_crashes
-          statistic: percentile
-        table: moz-fx-data-shared-prod.operational_monitoring.bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_statistics
-        xaxis: submission_date
-      - explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts
-        table: moz-fx-data-shared-prod.operational_monitoring.bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts
-      title: Initial Rollout Of Tcp
-      type: operational_monitoring_dashboard
-    firefox_suggest_by_merino_nightly:
-      tables:
-      - branches: &id004
-        - enabled
-        - disabled
-        compact_visualization: false
-        dimensions: &id005 {}
-        explore: firefox_suggest_by_merino_nightly
-        group_by_dimension: null
-        summaries: &id006
-        - metric: gpu_crashes
-          statistic: percentile
-        - metric: plugin_crashes
-          statistic: percentile
-        - metric: oom_crashes
-          statistic: percentile
-        - metric: content_crashes
-          statistic: percentile
-        - metric: gc_ms
-          statistic: percentile
-        - metric: main_crashes
-          statistic: percentile
-        - metric: memory_total
-          statistic: percentile
-        - metric: content_process_count
-          statistic: percentile
-        - metric: shutdown_hangs
-          statistic: percentile
-        - metric: content_shutdown_crashes
-          statistic: percentile
-        - metric: startup_crashes
-          statistic: percentile
-        - metric: gmplugin_crashes
-          statistic: percentile
-        table: moz-fx-data-shared-prod.operational_monitoring.firefox_suggest_by_merino_nightly_statistics
-        xaxis: submission_date
-      title: Firefox Suggest By Merino   Nightly
-      type: operational_monitoring_dashboard
     telemetry_alerts_prototype:
       tables:
-      - branches: &id007
+      - branches: &id001
         - active
         compact_visualization: true
-        dimensions: &id008
+        dimensions: &id002
           os:
-            default: Linux
+            default: Mac
             options:
-            - Linux
             - Mac
             - Windows
+            - Linux
         explore: telemetry_alerts_prototype
         group_by_dimension: null
-        summaries: &id009
-        - metric: perf_first_contentful_paint_ms
-          statistic: percentile
-        - metric: gc_ms
-          statistic: percentile
+        summaries: &id003
         - metric: active_ticks
           statistic: percentile
         - metric: js_pageload_execution_ms
           statistic: percentile
-        - metric: gc_ms_content
-          statistic: percentile
         - metric: main_crashes
           statistic: sum
-        - metric: checkerboard_severity
-          statistic: percentile
         - metric: memory_total
-          statistic: percentile
-        - metric: subsession_length
-          statistic: percentile
-        - metric: gc_budget_overrun
           statistic: percentile
         - metric: oom_crashes
           statistic: sum
+        - metric: subsession_length
+          statistic: percentile
+        - metric: perf_first_contentful_paint_ms
+          statistic: percentile
+        - metric: gc_ms
+          statistic: percentile
+        - metric: checkerboard_severity
+          statistic: percentile
+        - metric: gc_ms_content
+          statistic: percentile
+        - metric: gc_budget_overrun
+          statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype_statistics
         xaxis: build_id
       - explore: telemetry_alerts_prototype_alerts
@@ -3084,30 +2978,10 @@ operational_monitoring:
       title: Telemetry Alerts Prototype
       type: operational_monitoring_dashboard
   explores:
-    bug_1759000_rollout_initial_rollout_of_tcp_release_91_99:
+    telemetry_alerts_prototype:
       branches: *id001
       dimensions: *id002
       summaries: *id003
-      type: operational_monitoring_explore
-      views:
-        base_view: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
-      xaxis: submission_date
-    bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts:
-      type: operational_monitoring_alerting_explore
-      views:
-        base_view: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts
-    firefox_suggest_by_merino_nightly:
-      branches: *id004
-      dimensions: *id005
-      summaries: *id006
-      type: operational_monitoring_explore
-      views:
-        base_view: firefox_suggest_by_merino_nightly
-      xaxis: submission_date
-    telemetry_alerts_prototype:
-      branches: *id007
-      dimensions: *id008
-      summaries: *id009
       type: operational_monitoring_explore
       views:
         base_view: telemetry_alerts_prototype
@@ -3122,25 +2996,9 @@ operational_monitoring:
   pretty_name: Operational Monitoring
   spoke: looker-spoke-default
   views:
-    bug_1759000_rollout_initial_rollout_of_tcp_release_91_99:
-      tables:
-      - dimensions: *id002
-        table: moz-fx-data-shared-prod.operational_monitoring.bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_statistics
-        xaxis: submission_date
-      type: operational_monitoring_view
-    bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts:
-      tables:
-      - table: moz-fx-data-shared-prod.operational_monitoring.bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_alerts
-      type: operational_monitoring_alerting_view
-    firefox_suggest_by_merino_nightly:
-      tables:
-      - dimensions: *id005
-        table: moz-fx-data-shared-prod.operational_monitoring.firefox_suggest_by_merino_nightly_statistics
-        xaxis: submission_date
-      type: operational_monitoring_view
     telemetry_alerts_prototype:
       tables:
-      - dimensions: *id008
+      - dimensions: *id002
         table: moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype_statistics
         xaxis: build_id
       type: operational_monitoring_view
