@@ -456,7 +456,7 @@ to be displayed
 
   dimension: metrics__counter__downloads_downloaded_pdf_open_count {
     label: "Downloads Downloaded Pdf Open Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.downloads_downloaded_pdf_open_count ;;
     type: number
     group_label: "Downloads"
@@ -475,7 +475,7 @@ for a downloaded pdf.
 
   dimension: metrics__counter__downloads_pdf_download_count {
     label: "Downloads Pdf Download Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.downloads_pdf_download_count ;;
     type: number
     group_label: "Downloads"
@@ -2021,7 +2021,7 @@ default: true
 
   dimension: metrics__boolean__preferences_search_term_groups_enabled {
     label: "Preferences Search Term Groups Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.preferences_search_term_groups_enabled ;;
     type: yesno
     group_label: "Preferences"
@@ -2387,7 +2387,7 @@ will be \"custom\"
 
   dimension: metrics__custom_distribution__search_terms_group_size_distribution__sum {
     label: "Search Terms Group Size Distribution Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.search_terms_group_size_distribution.sum ;;
     type: number
     group_label: "Search Terms"

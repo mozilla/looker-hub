@@ -413,6 +413,11 @@ view: clients_daily_table {
     type: string
   }
 
+  dimension: dom_parentprocess_private_window_used {
+    sql: ${TABLE}.dom_parentprocess_private_window_used ;;
+    type: yesno
+  }
+
   dimension: e10s_enabled {
     sql: ${TABLE}.e10s_enabled ;;
     type: yesno
@@ -728,6 +733,21 @@ view: clients_daily_table {
     type: string
   }
 
+  dimension: os_environment_is_taskbar_pinned_any {
+    sql: ${TABLE}.os_environment_is_taskbar_pinned_any ;;
+    type: yesno
+  }
+
+  dimension: os_environment_is_taskbar_pinned_private {
+    sql: ${TABLE}.os_environment_is_taskbar_pinned_private ;;
+    type: yesno
+  }
+
+  dimension: os_environment_is_taskbar_pinned_private_any {
+    sql: ${TABLE}.os_environment_is_taskbar_pinned_private_any ;;
+    type: yesno
+  }
+
   dimension: os_service_pack_major {
     sql: ${TABLE}.os_service_pack_major ;;
     type: number
@@ -1000,6 +1020,11 @@ view: clients_daily_table {
 
   dimension: scalar_parent_os_environment_launched_via_taskbar {
     sql: ${TABLE}.scalar_parent_os_environment_launched_via_taskbar ;;
+    type: yesno
+  }
+
+  dimension: scalar_parent_os_environment_launched_via_taskbar_private {
+    sql: ${TABLE}.scalar_parent_os_environment_launched_via_taskbar_private ;;
     type: yesno
   }
 

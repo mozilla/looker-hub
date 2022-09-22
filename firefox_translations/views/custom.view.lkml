@@ -512,7 +512,7 @@ and build config was used to produce this build
 
   dimension: metrics__string__metadata_firefox_client_id {
     label: "Metadata Firefox Client Id"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.metadata_firefox_client_id ;;
     type: string
     group_label: "Metadata"
@@ -735,7 +735,7 @@ changing type from string to quantity)
 
   dimension: metrics__string__performance_translation_quality {
     label: "Performance Translation Quality"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.performance_translation_quality ;;
     type: string
     group_label: "Performance"

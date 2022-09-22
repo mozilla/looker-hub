@@ -5,6 +5,26 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics {
+  dimension: metrics__counter__app_opened_as_default_browser {
+    label: "App Opened As Default Browser"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.app_opened_as_default_browser ;;
+    type: number
+    group_label: "App"
+    group_item_label: "Opened As Default Browser"
+
+    link: {
+      label: "Glean Dictionary reference for App Opened As Default Browser"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/app_opened_as_default_browser"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded when a preference is changed and includes the
+preference that changed as well as the value changed to
+recorded in the extra keys.
+"
+  }
+
   dimension: metrics__counter__browser_total_uri_count {
     label: "Browser Total Uri Count"
     hidden: no
@@ -1110,6 +1130,31 @@ documented in the ping's pings.yaml file.
 
   measure: ping_count {
     type: count
+  }
+
+  measure: app_opened_as_default_browser {
+    type: sum
+    sql: ${metrics__counter__app_opened_as_default_browser} ;;
+
+    link: {
+      label: "Glean Dictionary reference for App Opened As Default Browser"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/app_opened_as_default_browser"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: app_opened_as_default_browser_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__app_opened_as_default_browser: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for App Opened As Default Browser"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/app_opened_as_default_browser"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   measure: browser_total_uri_count {
