@@ -5,6 +5,82 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics {
+  dimension: metrics__string__adjust_ad_group {
+    label: "Adjust Ad Group"
+    hidden: no
+    sql: ${TABLE}.metrics.string.adjust_ad_group ;;
+    type: string
+    group_label: "Adjust"
+    group_item_label: "Ad Group"
+
+    link: {
+      label: "Glean Dictionary reference for Adjust Ad Group"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/adjust_ad_group"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A string containing the Adjust ad group ID from which the user installed
+Firefox-iOS.
+"
+  }
+
+  dimension: metrics__string__adjust_campaign {
+    label: "Adjust Campaign"
+    hidden: no
+    sql: ${TABLE}.metrics.string.adjust_campaign ;;
+    type: string
+    group_label: "Adjust"
+    group_item_label: "Campaign"
+
+    link: {
+      label: "Glean Dictionary reference for Adjust Campaign"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/adjust_campaign"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A string containing the Adjust campaign ID from which the user installed
+Firefox-iOS.
+"
+  }
+
+  dimension: metrics__string__adjust_creative {
+    label: "Adjust Creative"
+    hidden: no
+    sql: ${TABLE}.metrics.string.adjust_creative ;;
+    type: string
+    group_label: "Adjust"
+    group_item_label: "Creative"
+
+    link: {
+      label: "Glean Dictionary reference for Adjust Creative"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/adjust_creative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A string containing the Adjust creative ID from which the user installed
+Firefox-iOS.
+"
+  }
+
+  dimension: metrics__string__adjust_network {
+    label: "Adjust Network"
+    hidden: no
+    sql: ${TABLE}.metrics.string.adjust_network ;;
+    type: string
+    group_label: "Adjust"
+    group_item_label: "Network"
+
+    link: {
+      label: "Glean Dictionary reference for Adjust Network"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/adjust_network"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A string containing the Adjust network ID from which the user installed
+Firefox-iOS.
+"
+  }
+
   dimension: metrics__counter__app_opened_as_default_browser {
     label: "App Opened As Default Browser"
     hidden: no
@@ -234,7 +310,7 @@ preference.
 
   dimension: metrics__boolean__application_services_pocket_stories_visible {
     label: "Application Services Pocket Stories Visible"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.application_services_pocket_stories_visible ;;
     type: yesno
     group_label: "Application Services"
@@ -687,7 +763,7 @@ existing group from the Jump Back In section
 
   dimension: metrics__counter__firefox_home_page_jump_back_in_section_view {
     label: "Firefox Home Page Jump Back In Section View"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.firefox_home_page_jump_back_in_section_view ;;
     type: number
     group_label: "Firefox Home Page"
@@ -1345,7 +1421,7 @@ sd web image library cache cleanup
 
   dimension: metrics__counter__onboarding_sync_screen {
     label: "Onboarding Sync Screen"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.onboarding_sync_screen ;;
     type: number
     group_label: "Onboarding"
@@ -1364,7 +1440,7 @@ Sync Screen, from the onboarding process.
 
   dimension: metrics__counter__onboarding_sync_screen_browse {
     label: "Onboarding Sync Screen Browse"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.onboarding_sync_screen_browse ;;
     type: number
     group_label: "Onboarding"
@@ -1383,7 +1459,7 @@ in onboarding's second screen, the Sync Screen.
 
   dimension: metrics__counter__onboarding_sync_screen_sign_up {
     label: "Onboarding Sync Screen Sign Up"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.onboarding_sync_screen_sign_up ;;
     type: number
     group_label: "Onboarding"
@@ -1402,7 +1478,7 @@ onboarding's second screen, the Sync Screen.
 
   dimension: metrics__counter__onboarding_welcome_screen {
     label: "Onboarding Welcome Screen"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.onboarding_welcome_screen ;;
     type: number
     group_label: "Onboarding"
@@ -1421,7 +1497,7 @@ welcome screen, from the onboarding process.
 
   dimension: metrics__counter__onboarding_welcome_screen_close {
     label: "Onboarding Welcome Screen Close"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.onboarding_welcome_screen_close ;;
     type: number
     group_label: "Onboarding"
@@ -1440,7 +1516,7 @@ onboarding's first screen, the welcome screen.
 
   dimension: metrics__counter__onboarding_welcome_screen_next {
     label: "Onboarding Welcome Screen Next"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.onboarding_welcome_screen_next ;;
     type: number
     group_label: "Onboarding"
@@ -1459,7 +1535,7 @@ onboarding's first screen, the welcome screen.
 
   dimension: metrics__counter__onboarding_welcome_screen_sign_in {
     label: "Onboarding Welcome Screen Sign In"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.onboarding_welcome_screen_sign_in ;;
     type: number
     group_label: "Onboarding"
@@ -1478,7 +1554,7 @@ onboarding's first screen, the welcome screen.
 
   dimension: metrics__counter__onboarding_welcome_screen_sign_up {
     label: "Onboarding Welcome Screen Sign Up"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.onboarding_welcome_screen_sign_up ;;
     type: number
     group_label: "Onboarding"
@@ -7392,7 +7468,7 @@ view: metrics__metrics__labeled_counter__firefox_home_page_your_library {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__firefox_home_page_your_library
     suggest_dimension: suggest__metrics__metrics__labeled_counter__firefox_home_page_your_library.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -7404,13 +7480,13 @@ view: metrics__metrics__labeled_counter__firefox_home_page_your_library {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -8381,7 +8457,7 @@ view: metrics__metrics__labeled_counter__top_site_pressed_tile_origin {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__top_site_pressed_tile_origin
     suggest_dimension: suggest__metrics__metrics__labeled_counter__top_site_pressed_tile_origin.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -8393,13 +8469,13 @@ view: metrics__metrics__labeled_counter__top_site_pressed_tile_origin {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 

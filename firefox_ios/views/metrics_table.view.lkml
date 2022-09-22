@@ -1972,6 +1972,46 @@ closes the application.
 "
   }
 
+  dimension: metrics__string__adjust_ad_group {
+    sql: ${TABLE}.metrics.string.adjust_ad_group ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Adjust Ad Group"
+    description: "A string containing the Adjust ad group ID from which the user installed
+Firefox-iOS.
+"
+  }
+
+  dimension: metrics__string__adjust_campaign {
+    sql: ${TABLE}.metrics.string.adjust_campaign ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Adjust Campaign"
+    description: "A string containing the Adjust campaign ID from which the user installed
+Firefox-iOS.
+"
+  }
+
+  dimension: metrics__string__adjust_creative {
+    sql: ${TABLE}.metrics.string.adjust_creative ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Adjust Creative"
+    description: "A string containing the Adjust creative ID from which the user installed
+Firefox-iOS.
+"
+  }
+
+  dimension: metrics__string__adjust_network {
+    sql: ${TABLE}.metrics.string.adjust_network ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Adjust Network"
+    description: "A string containing the Adjust network ID from which the user installed
+Firefox-iOS.
+"
+  }
+
   dimension: metrics__string__ping_reason {
     sql: ${TABLE}.metrics.string.ping_reason ;;
     type: string

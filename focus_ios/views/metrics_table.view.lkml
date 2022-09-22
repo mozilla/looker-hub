@@ -367,6 +367,17 @@ at least once.
 "
   }
 
+  dimension: metrics__counter__app_opened_as_default_browser {
+    sql: ${TABLE}.metrics.counter.app_opened_as_default_browser ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "App Opened As Default Browser"
+    description: "Recorded when a preference is changed and includes the
+preference that changed as well as the value changed to
+recorded in the extra keys.
+"
+  }
+
   dimension: metrics__counter__browser_total_uri_count {
     sql: ${TABLE}.metrics.counter.browser_total_uri_count ;;
     type: number
