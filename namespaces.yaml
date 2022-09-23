@@ -3318,6 +3318,15 @@ sync:
       tables:
       - table: mozdata.telemetry.sync
       type: ping_view
+viu_politica:
+  explores: {}
+  glean_app: true
+  owners:
+  - chico@mozillafoundation.org
+  - ranadheer@mozillafoundation.org
+  pretty_name: Viu Politica
+  spoke: looker-spoke-default
+  views: {}
 websites:
   glean_app: false
   owners:
