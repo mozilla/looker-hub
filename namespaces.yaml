@@ -2952,18 +2952,18 @@ operational_monitoring:
         explore: bug_1791587_rollout_revert_unplanned_config_change_release_105_105
         group_by_dimension: null
         summaries: &id003
-        - metric: shutdown_hangs
-          statistic: sum
         - metric: main_crashes
-          statistic: sum
-        - metric: startup_crashes
-          statistic: sum
-        - metric: content_crashes
-          statistic: sum
-        - metric: oom_crashes
           statistic: sum
         - metric: memory_total
           statistic: percentile
+        - metric: content_crashes
+          statistic: sum
+        - metric: shutdown_hangs
+          statistic: sum
+        - metric: oom_crashes
+          statistic: sum
+        - metric: startup_crashes
+          statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1791587_rollout_revert_unplanned_config_change_release_105_105_statistics
         xaxis: submission_date
       title: Revert Unplanned Config Change
@@ -2978,18 +2978,18 @@ operational_monitoring:
         explore: firefox_suggest_by_merino_nightly
         group_by_dimension: null
         summaries: &id006
-        - metric: shutdown_hangs
-          statistic: sum
         - metric: main_crashes
-          statistic: sum
-        - metric: startup_crashes
-          statistic: sum
-        - metric: content_crashes
-          statistic: sum
-        - metric: oom_crashes
           statistic: sum
         - metric: memory_total
           statistic: percentile
+        - metric: content_crashes
+          statistic: sum
+        - metric: shutdown_hangs
+          statistic: sum
+        - metric: oom_crashes
+          statistic: sum
+        - metric: startup_crashes
+          statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_suggest_by_merino_nightly_statistics
         xaxis: submission_date
       title: Firefox Suggest By Merino   Nightly
@@ -3004,18 +3004,18 @@ operational_monitoring:
         explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
         group_by_dimension: null
         summaries: &id009
-        - metric: shutdown_hangs
-          statistic: sum
         - metric: main_crashes
-          statistic: sum
-        - metric: startup_crashes
-          statistic: sum
-        - metric: content_crashes
-          statistic: sum
-        - metric: oom_crashes
           statistic: sum
         - metric: memory_total
           statistic: percentile
+        - metric: content_crashes
+          statistic: sum
+        - metric: shutdown_hangs
+          statistic: sum
+        - metric: oom_crashes
+          statistic: sum
+        - metric: startup_crashes
+          statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_statistics
         xaxis: submission_date
       title: Doh Nightly Rollout To All Us Desktop Users
@@ -3061,36 +3061,36 @@ operational_monitoring:
         compact_visualization: true
         dimensions: &id014
           os:
-            default: Mac
+            default: Linux
             options:
-            - Mac
-            - Windows
             - Linux
+            - Windows
+            - Mac
         explore: telemetry_alerts_prototype
         group_by_dimension: null
         summaries: &id015
-        - metric: gc_ms
-          statistic: percentile
-        - metric: active_ticks
-          statistic: percentile
         - metric: oom_crashes
           statistic: sum
-        - metric: memory_total
-          statistic: percentile
-        - metric: checkerboard_severity
+        - metric: js_pageload_execution_ms
           statistic: percentile
         - metric: perf_first_contentful_paint_ms
           statistic: percentile
-        - metric: subsession_length
+        - metric: memory_total
+          statistic: percentile
+        - metric: active_ticks
           statistic: percentile
         - metric: gc_budget_overrun
           statistic: percentile
-        - metric: gc_ms_content
-          statistic: percentile
-        - metric: js_pageload_execution_ms
-          statistic: percentile
         - metric: main_crashes
           statistic: sum
+        - metric: gc_ms
+          statistic: percentile
+        - metric: gc_ms_content
+          statistic: percentile
+        - metric: checkerboard_severity
+          statistic: percentile
+        - metric: subsession_length
+          statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype_statistics
         xaxis: build_id
       - explore: telemetry_alerts_prototype_alerts
