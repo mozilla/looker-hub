@@ -2978,17 +2978,17 @@ operational_monitoring:
         explore: firefox_suggest_by_merino_nightly
         group_by_dimension: null
         summaries: &id006
+        - metric: shutdown_hangs
+          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
+          statistic: sum
+        - metric: startup_crashes
           statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
-        - metric: shutdown_hangs
-          statistic: sum
-        - metric: main_crashes
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_suggest_by_merino_nightly_statistics
         xaxis: submission_date
@@ -3004,17 +3004,17 @@ operational_monitoring:
         explore: mr2022_backgroundtaskmessage_experiment_sizing
         group_by_dimension: null
         summaries: &id009
+        - metric: shutdown_hangs
+          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
+          statistic: sum
+        - metric: startup_crashes
           statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
-        - metric: shutdown_hangs
-          statistic: sum
-        - metric: main_crashes
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.mr2022_backgroundtaskmessage_experiment_sizing_statistics
         xaxis: submission_date
@@ -3030,17 +3030,17 @@ operational_monitoring:
         explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
         group_by_dimension: null
         summaries: &id012
+        - metric: shutdown_hangs
+          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
+          statistic: sum
+        - metric: startup_crashes
           statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
-        - metric: shutdown_hangs
-          statistic: sum
-        - metric: main_crashes
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_statistics
         xaxis: submission_date
@@ -3087,36 +3087,36 @@ operational_monitoring:
         compact_visualization: true
         dimensions: &id017
           os:
-            default: Linux
+            default: Mac
             options:
-            - Linux
             - Mac
             - Windows
+            - Linux
         explore: telemetry_alerts_prototype
         group_by_dimension: null
         summaries: &id018
-        - metric: gc_budget_overrun
-          statistic: percentile
-        - metric: oom_crashes
-          statistic: sum
-        - metric: gc_ms
-          statistic: percentile
-        - metric: subsession_length
-          statistic: percentile
-        - metric: memory_total
-          statistic: percentile
-        - metric: checkerboard_severity
-          statistic: percentile
         - metric: perf_first_contentful_paint_ms
           statistic: percentile
         - metric: gc_ms_content
+          statistic: percentile
+        - metric: oom_crashes
+          statistic: sum
+        - metric: gc_budget_overrun
+          statistic: percentile
+        - metric: checkerboard_severity
+          statistic: percentile
+        - metric: main_crashes
+          statistic: sum
+        - metric: memory_total
           statistic: percentile
         - metric: active_ticks
           statistic: percentile
         - metric: js_pageload_execution_ms
           statistic: percentile
-        - metric: main_crashes
-          statistic: sum
+        - metric: subsession_length
+          statistic: percentile
+        - metric: gc_ms
+          statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype_statistics
         xaxis: build_id
       - explore: telemetry_alerts_prototype_alerts
