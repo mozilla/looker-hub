@@ -117,7 +117,7 @@
   - name: Metric
     title: Metric
     type: field_filter
-    default_value: 'perf_first_contentful_paint_ms'
+    default_value: 'active_ticks'
     allow_multiple_values: false
     required: true
     ui_config:
@@ -144,16 +144,16 @@
   - title: Os
     name: Os
     type: string_filter
-    default_value: 'Mac'
+    default_value: 'Linux'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
+      - 'Linux'
       - 'Mac'
       - 'Windows'
-      - 'Linux'
       
   
   
