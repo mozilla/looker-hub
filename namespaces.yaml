@@ -2942,16 +2942,42 @@ newtab:
   spoke: looker-spoke-private
 operational_monitoring:
   dashboards:
-    bug_1791587_rollout_revert_unplanned_config_change_release_105_105:
+    backgroundtaskmessage_verification_2:
       tables:
       - branches: &id001
         - enabled
         - disabled
         compact_visualization: false
         dimensions: &id002 {}
-        explore: bug_1791587_rollout_revert_unplanned_config_change_release_105_105
+        explore: backgroundtaskmessage_verification_2
         group_by_dimension: null
         summaries: &id003
+        - metric: memory_total
+          statistic: percentile
+        - metric: oom_crashes
+          statistic: sum
+        - metric: shutdown_hangs
+          statistic: sum
+        - metric: main_crashes
+          statistic: sum
+        - metric: content_crashes
+          statistic: sum
+        - metric: startup_crashes
+          statistic: sum
+        table: moz-fx-data-shared-prod.operational_monitoring.backgroundtaskmessage_verification_2_statistics
+        xaxis: submission_date
+      title: Backgroundtaskmessage Verification 2
+      type: operational_monitoring_dashboard
+    bug_1791587_rollout_revert_unplanned_config_change_release_105_105:
+      tables:
+      - branches: &id004
+        - enabled
+        - disabled
+        compact_visualization: false
+        dimensions: &id005 {}
+        explore: bug_1791587_rollout_revert_unplanned_config_change_release_105_105
+        group_by_dimension: null
+        summaries: &id006
         - metric: main_crashes
           statistic: sum
         - metric: memory_total
@@ -2970,25 +2996,25 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     firefox_suggest_by_merino_nightly:
       tables:
-      - branches: &id004
+      - branches: &id007
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id005 {}
+        dimensions: &id008 {}
         explore: firefox_suggest_by_merino_nightly
         group_by_dimension: null
-        summaries: &id006
-        - metric: main_crashes
-          statistic: sum
+        summaries: &id009
+        - metric: memory_total
+          statistic: percentile
         - metric: oom_crashes
-          statistic: sum
-        - metric: startup_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: memory_total
-          statistic: percentile
+        - metric: main_crashes
+          statistic: sum
         - metric: content_crashes
+          statistic: sum
+        - metric: startup_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_suggest_by_merino_nightly_statistics
         xaxis: submission_date
@@ -2996,25 +3022,25 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     mr2022_backgroundtaskmessage_experiment_sizing:
       tables:
-      - branches: &id007
+      - branches: &id010
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id008 {}
+        dimensions: &id011 {}
         explore: mr2022_backgroundtaskmessage_experiment_sizing
         group_by_dimension: null
-        summaries: &id009
-        - metric: main_crashes
-          statistic: sum
+        summaries: &id012
+        - metric: memory_total
+          statistic: percentile
         - metric: oom_crashes
-          statistic: sum
-        - metric: startup_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: memory_total
-          statistic: percentile
+        - metric: main_crashes
+          statistic: sum
         - metric: content_crashes
+          statistic: sum
+        - metric: startup_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.mr2022_backgroundtaskmessage_experiment_sizing_statistics
         xaxis: submission_date
@@ -3022,25 +3048,25 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481:
       tables:
-      - branches: &id010
+      - branches: &id013
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id011 {}
+        dimensions: &id014 {}
         explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
         group_by_dimension: null
-        summaries: &id012
-        - metric: main_crashes
-          statistic: sum
+        summaries: &id015
+        - metric: memory_total
+          statistic: percentile
         - metric: oom_crashes
-          statistic: sum
-        - metric: startup_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: memory_total
-          statistic: percentile
+        - metric: main_crashes
+          statistic: sum
         - metric: content_crashes
+          statistic: sum
+        - metric: startup_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_statistics
         xaxis: submission_date
@@ -3048,18 +3074,18 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     tcp_rollout_phase_2_demo:
       tables:
-      - branches: &id013
+      - branches: &id016
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id014
+        dimensions: &id017
           os:
             default: Windows
             options:
             - Windows
         explore: tcp_rollout_phase_2_demo
         group_by_dimension: null
-        summaries: &id015
+        summaries: &id018
         - metric: perf_first_contentful_paint_ms
           statistic: percentile
         - metric: tagged_search_count
@@ -3082,10 +3108,10 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     telemetry_alerts_prototype:
       tables:
-      - branches: &id016
+      - branches: &id019
         - active
         compact_visualization: true
-        dimensions: &id017
+        dimensions: &id020
           os:
             default: Linux
             options:
@@ -3094,28 +3120,28 @@ operational_monitoring:
             - Windows
         explore: telemetry_alerts_prototype
         group_by_dimension: null
-        summaries: &id018
-        - metric: active_ticks
-          statistic: percentile
-        - metric: gc_ms
-          statistic: percentile
-        - metric: main_crashes
-          statistic: sum
-        - metric: oom_crashes
-          statistic: sum
+        summaries: &id021
         - metric: perf_first_contentful_paint_ms
           statistic: percentile
         - metric: gc_ms_content
           statistic: percentile
         - metric: js_pageload_execution_ms
           statistic: percentile
-        - metric: checkerboard_severity
-          statistic: percentile
-        - metric: subsession_length
-          statistic: percentile
         - metric: memory_total
           statistic: percentile
+        - metric: oom_crashes
+          statistic: sum
+        - metric: main_crashes
+          statistic: sum
+        - metric: subsession_length
+          statistic: percentile
+        - metric: active_ticks
+          statistic: percentile
+        - metric: gc_ms
+          statistic: percentile
         - metric: gc_budget_overrun
+          statistic: percentile
+        - metric: checkerboard_severity
           statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype_statistics
         xaxis: build_id
@@ -3124,50 +3150,58 @@ operational_monitoring:
       title: Telemetry Alerts Prototype
       type: operational_monitoring_dashboard
   explores:
-    bug_1791587_rollout_revert_unplanned_config_change_release_105_105:
+    backgroundtaskmessage_verification_2:
       branches: *id001
       dimensions: *id002
       summaries: *id003
       type: operational_monitoring_explore
       views:
-        base_view: bug_1791587_rollout_revert_unplanned_config_change_release_105_105
+        base_view: backgroundtaskmessage_verification_2
       xaxis: submission_date
-    firefox_suggest_by_merino_nightly:
+    bug_1791587_rollout_revert_unplanned_config_change_release_105_105:
       branches: *id004
       dimensions: *id005
       summaries: *id006
       type: operational_monitoring_explore
       views:
-        base_view: firefox_suggest_by_merino_nightly
+        base_view: bug_1791587_rollout_revert_unplanned_config_change_release_105_105
       xaxis: submission_date
-    mr2022_backgroundtaskmessage_experiment_sizing:
+    firefox_suggest_by_merino_nightly:
       branches: *id007
       dimensions: *id008
       summaries: *id009
       type: operational_monitoring_explore
       views:
-        base_view: mr2022_backgroundtaskmessage_experiment_sizing
+        base_view: firefox_suggest_by_merino_nightly
       xaxis: submission_date
-    rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481:
+    mr2022_backgroundtaskmessage_experiment_sizing:
       branches: *id010
       dimensions: *id011
       summaries: *id012
       type: operational_monitoring_explore
       views:
-        base_view: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
+        base_view: mr2022_backgroundtaskmessage_experiment_sizing
       xaxis: submission_date
-    tcp_rollout_phase_2_demo:
+    rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481:
       branches: *id013
       dimensions: *id014
       summaries: *id015
       type: operational_monitoring_explore
       views:
-        base_view: tcp_rollout_phase_2_demo
+        base_view: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
       xaxis: submission_date
-    telemetry_alerts_prototype:
+    tcp_rollout_phase_2_demo:
       branches: *id016
       dimensions: *id017
       summaries: *id018
+      type: operational_monitoring_explore
+      views:
+        base_view: tcp_rollout_phase_2_demo
+      xaxis: submission_date
+    telemetry_alerts_prototype:
+      branches: *id019
+      dimensions: *id020
+      summaries: *id021
       type: operational_monitoring_explore
       views:
         base_view: telemetry_alerts_prototype
@@ -3182,39 +3216,45 @@ operational_monitoring:
   pretty_name: Operational Monitoring
   spoke: looker-spoke-default
   views:
-    bug_1791587_rollout_revert_unplanned_config_change_release_105_105:
+    backgroundtaskmessage_verification_2:
       tables:
       - dimensions: *id002
+        table: moz-fx-data-shared-prod.operational_monitoring.backgroundtaskmessage_verification_2_statistics
+        xaxis: submission_date
+      type: operational_monitoring_view
+    bug_1791587_rollout_revert_unplanned_config_change_release_105_105:
+      tables:
+      - dimensions: *id005
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1791587_rollout_revert_unplanned_config_change_release_105_105_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     firefox_suggest_by_merino_nightly:
       tables:
-      - dimensions: *id005
+      - dimensions: *id008
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_suggest_by_merino_nightly_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     mr2022_backgroundtaskmessage_experiment_sizing:
       tables:
-      - dimensions: *id008
+      - dimensions: *id011
         table: moz-fx-data-shared-prod.operational_monitoring.mr2022_backgroundtaskmessage_experiment_sizing_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481:
       tables:
-      - dimensions: *id011
+      - dimensions: *id014
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     tcp_rollout_phase_2_demo:
       tables:
-      - dimensions: *id014
+      - dimensions: *id017
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_2_demo_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     telemetry_alerts_prototype:
       tables:
-      - dimensions: *id017
+      - dimensions: *id020
         table: moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype_statistics
         xaxis: build_id
       type: operational_monitoring_view
