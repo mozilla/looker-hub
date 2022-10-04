@@ -533,6 +533,13 @@ view: metrics_table {
     group_item_label: "Preferences User Theme"
   }
 
+  dimension: metrics__string__search_default_engine {
+    sql: ${TABLE}.metrics.string.search_default_engine ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Search Default Engine"
+  }
+
   dimension: metrics__text {
     sql: ${TABLE}.metrics.text ;;
     hidden: yes

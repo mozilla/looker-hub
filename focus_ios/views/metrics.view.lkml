@@ -141,6 +141,26 @@ The key format is ‘<provider-name>’.
 "
   }
 
+  dimension: metrics__string__search_default_engine {
+    label: "Search Default Engine"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_default_engine ;;
+    type: string
+    group_label: "Search"
+    group_item_label: "Default Engine"
+
+    link: {
+      label: "Glean Dictionary reference for Search Default Engine"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/search_default_engine"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The default search engine identifier if the search engine is
+pre-loaded with Focus.  If it's a custom search engine,
+then the value will be 'custom'.
+"
+  }
+
   dimension: metrics__counter__settings_screen_autocomplete_domain_added {
     label: "Settings Screen Autocomplete Domain Added"
     hidden: no
