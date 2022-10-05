@@ -2954,13 +2954,13 @@ operational_monitoring:
         summaries: &id003
         - metric: content_crashes
           statistic: sum
-        - metric: memory_total
-          statistic: percentile
         - metric: oom_crashes
           statistic: sum
-        - metric: shutdown_hangs
-          statistic: sum
+        - metric: memory_total
+          statistic: percentile
         - metric: startup_crashes
+          statistic: sum
+        - metric: shutdown_hangs
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3006,13 +3006,13 @@ operational_monitoring:
         summaries: &id009
         - metric: content_crashes
           statistic: sum
-        - metric: memory_total
-          statistic: percentile
         - metric: oom_crashes
           statistic: sum
-        - metric: shutdown_hangs
-          statistic: sum
+        - metric: memory_total
+          statistic: percentile
         - metric: startup_crashes
+          statistic: sum
+        - metric: shutdown_hangs
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3032,13 +3032,13 @@ operational_monitoring:
         summaries: &id012
         - metric: content_crashes
           statistic: sum
-        - metric: memory_total
-          statistic: percentile
         - metric: oom_crashes
           statistic: sum
-        - metric: shutdown_hangs
-          statistic: sum
+        - metric: memory_total
+          statistic: percentile
         - metric: startup_crashes
+          statistic: sum
+        - metric: shutdown_hangs
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3058,13 +3058,13 @@ operational_monitoring:
         summaries: &id015
         - metric: content_crashes
           statistic: sum
-        - metric: memory_total
-          statistic: percentile
         - metric: oom_crashes
           statistic: sum
-        - metric: shutdown_hangs
-          statistic: sum
+        - metric: memory_total
+          statistic: percentile
         - metric: startup_crashes
+          statistic: sum
+        - metric: shutdown_hangs
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3113,35 +3113,35 @@ operational_monitoring:
         compact_visualization: true
         dimensions: &id020
           os:
-            default: Linux
+            default: Mac
             options:
-            - Linux
-            - Windows
             - Mac
+            - Windows
+            - Linux
         explore: telemetry_alerts_prototype
         group_by_dimension: null
         summaries: &id021
-        - metric: gc_ms
-          statistic: percentile
         - metric: gc_budget_overrun
-          statistic: percentile
-        - metric: memory_total
           statistic: percentile
         - metric: oom_crashes
           statistic: sum
-        - metric: js_pageload_execution_ms
-          statistic: percentile
-        - metric: perf_first_contentful_paint_ms
+        - metric: memory_total
           statistic: percentile
         - metric: checkerboard_severity
           statistic: percentile
-        - metric: active_ticks
+        - metric: gc_ms_content
+          statistic: percentile
+        - metric: perf_first_contentful_paint_ms
+          statistic: percentile
+        - metric: js_pageload_execution_ms
+          statistic: percentile
+        - metric: subsession_length
+          statistic: percentile
+        - metric: gc_ms
           statistic: percentile
         - metric: main_crashes
           statistic: sum
-        - metric: gc_ms_content
-          statistic: percentile
-        - metric: subsession_length
+        - metric: active_ticks
           statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype_statistics
         xaxis: build_id
@@ -3399,14 +3399,84 @@ sync:
       - table: mozdata.telemetry.sync
       type: ping_view
 viu_politica:
-  explores: {}
+  explores:
+    deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: deletion_request
+    main_events:
+      type: glean_ping_explore
+      views:
+        base_view: main_events
+    regret_details:
+      type: glean_ping_explore
+      views:
+        base_view: regret_details
+    video_data:
+      type: glean_ping_explore
+      views:
+        base_view: video_data
+    video_index:
+      type: glean_ping_explore
+      views:
+        base_view: video_index
   glean_app: true
   owners:
   - chico@mozillafoundation.org
   - ranadheer@mozillafoundation.org
   pretty_name: Viu Politica
   spoke: looker-spoke-default
-  views: {}
+  views:
+    deletion_request:
+      tables:
+      - table: mozdata.viu_politica.deletion_request
+      type: glean_ping_view
+    deletion_request_table:
+      tables:
+      - channel: null
+        table: mozdata.viu_politica.deletion_request
+      type: table_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.viu_politica.events
+      type: table_view
+    main_events:
+      tables:
+      - table: mozdata.viu_politica.main_events
+      type: glean_ping_view
+    main_events_table:
+      tables:
+      - channel: null
+        table: mozdata.viu_politica.main_events
+      type: table_view
+    regret_details:
+      tables:
+      - table: mozdata.viu_politica.regret_details
+      type: glean_ping_view
+    regret_details_table:
+      tables:
+      - channel: null
+        table: mozdata.viu_politica.regret_details
+      type: table_view
+    video_data:
+      tables:
+      - table: mozdata.viu_politica.video_data
+      type: glean_ping_view
+    video_data_table:
+      tables:
+      - channel: null
+        table: mozdata.viu_politica.video_data
+      type: table_view
+    video_index:
+      tables:
+      - table: mozdata.viu_politica.video_index
+      type: glean_ping_view
+    video_index_table:
+      tables:
+      - channel: null
+        table: mozdata.viu_politica.video_index
+      type: table_view
 websites:
   glean_app: false
   owners:
