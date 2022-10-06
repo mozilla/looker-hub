@@ -105,6 +105,43 @@ The key format is ‘<provider-name>’.
 "
   }
 
+  dimension: metrics__counter__default_browser_onboarding_dismiss_pressed {
+    label: "Default Browser Onboarding Dismiss Pressed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.default_browser_onboarding_dismiss_pressed ;;
+    type: number
+    group_label: "Default Browser Onboarding"
+    group_item_label: "Dismiss Pressed"
+
+    link: {
+      label: "Glean Dictionary reference for Default Browser Onboarding Dismiss Pressed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/default_browser_onboarding_dismiss_pressed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times default browser onboarding is dismissed.
+"
+  }
+
+  dimension: metrics__counter__default_browser_onboarding_go_to_settings_pressed {
+    label: "Default Browser Onboarding Go To Settings Pressed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.default_browser_onboarding_go_to_settings_pressed ;;
+    type: number
+    group_label: "Default Browser Onboarding"
+    group_item_label: "Go To Settings Pressed"
+
+    link: {
+      label: "Glean Dictionary reference for Default Browser Onboarding Go To Settings Pressed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/default_browser_onboarding_go_to_settings_pressed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the Go To Settings button on
+default browser onboarding is clicked.
+"
+  }
+
   dimension: metrics__boolean__mozilla_products_has_firefox_installed {
     label: "Mozilla Products Has Firefox Installed"
     hidden: no
@@ -1220,6 +1257,56 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Browser Total Uri Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/browser_total_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: default_browser_onboarding_dismiss_pressed {
+    type: sum
+    sql: ${metrics__counter__default_browser_onboarding_dismiss_pressed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Default Browser Onboarding Dismiss Pressed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/default_browser_onboarding_dismiss_pressed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: default_browser_onboarding_dismiss_pressed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__default_browser_onboarding_dismiss_pressed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Default Browser Onboarding Dismiss Pressed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/default_browser_onboarding_dismiss_pressed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: default_browser_onboarding_go_to_settings_pressed {
+    type: sum
+    sql: ${metrics__counter__default_browser_onboarding_go_to_settings_pressed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Default Browser Onboarding Go To Settings Pressed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/default_browser_onboarding_go_to_settings_pressed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: default_browser_onboarding_go_to_settings_pressed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__default_browser_onboarding_go_to_settings_pressed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Default Browser Onboarding Go To Settings Pressed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/default_browser_onboarding_go_to_settings_pressed"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
