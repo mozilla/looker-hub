@@ -391,6 +391,25 @@ that programmatically redirect to a new location.
 "
   }
 
+  dimension: metrics__counter__default_browser_onboarding_dismiss_pressed {
+    sql: ${TABLE}.metrics.counter.default_browser_onboarding_dismiss_pressed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Default Browser Onboarding Dismiss Pressed"
+    description: "Counts the number of times default browser onboarding is dismissed.
+"
+  }
+
+  dimension: metrics__counter__default_browser_onboarding_go_to_settings_pressed {
+    sql: ${TABLE}.metrics.counter.default_browser_onboarding_go_to_settings_pressed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Default Browser Onboarding Go To Settings Pressed"
+    description: "Counts the number of times the Go To Settings button on
+default browser onboarding is clicked.
+"
+  }
+
   dimension: metrics__counter__glean_error_io {
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
