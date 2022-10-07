@@ -586,7 +586,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__sum {
     label: "Network Open To Transaction Pending Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.sum ;;
     type: number
     group_label: "Network"
