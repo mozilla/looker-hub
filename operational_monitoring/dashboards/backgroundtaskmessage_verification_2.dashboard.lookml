@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Shutdown Hangs
-    name: Shutdown Hangs_sum
+  - title: Main Crashes
+    name: Main Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,10 +26,43 @@
       backgroundtaskmessage_verification_2.branch
     ]
     filters:
-      backgroundtaskmessage_verification_2.metric: shutdown_hangs
+      backgroundtaskmessage_verification_2.metric: main_crashes
       backgroundtaskmessage_verification_2.statistic: sum
     row: 0
     col: 0
+    width: 12
+    height: 8
+    field_x: backgroundtaskmessage_verification_2.submission_date
+    field_y: backgroundtaskmessage_verification_2.point
+    log_scale: false
+    ci_lower: backgroundtaskmessage_verification_2.lower
+    ci_upper: backgroundtaskmessage_verification_2.upper
+    show_grid: true
+    listen:
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Startup Crashes
+    name: Startup Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: backgroundtaskmessage_verification_2
+    type: looker_line
+    fields: [
+      backgroundtaskmessage_verification_2.submission_date,
+      backgroundtaskmessage_verification_2.branch,
+      backgroundtaskmessage_verification_2.point
+    ]
+    pivots: [
+      backgroundtaskmessage_verification_2.branch
+    ]
+    filters:
+      backgroundtaskmessage_verification_2.metric: startup_crashes
+      backgroundtaskmessage_verification_2.statistic: sum
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: backgroundtaskmessage_verification_2.submission_date
@@ -61,7 +94,40 @@
     filters:
       backgroundtaskmessage_verification_2.metric: content_crashes
       backgroundtaskmessage_verification_2.statistic: sum
-    row: 0
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: backgroundtaskmessage_verification_2.submission_date
+    field_y: backgroundtaskmessage_verification_2.point
+    log_scale: false
+    ci_lower: backgroundtaskmessage_verification_2.lower
+    ci_upper: backgroundtaskmessage_verification_2.upper
+    show_grid: true
+    listen:
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Shutdown Hangs
+    name: Shutdown Hangs_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: backgroundtaskmessage_verification_2
+    type: looker_line
+    fields: [
+      backgroundtaskmessage_verification_2.submission_date,
+      backgroundtaskmessage_verification_2.branch,
+      backgroundtaskmessage_verification_2.point
+    ]
+    pivots: [
+      backgroundtaskmessage_verification_2.branch
+    ]
+    filters:
+      backgroundtaskmessage_verification_2.metric: shutdown_hangs
+      backgroundtaskmessage_verification_2.statistic: sum
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -94,41 +160,8 @@
     filters:
       backgroundtaskmessage_verification_2.metric: oom_crashes
       backgroundtaskmessage_verification_2.statistic: sum
-    row: 10
+    row: 20
     col: 0
-    width: 12
-    height: 8
-    field_x: backgroundtaskmessage_verification_2.submission_date
-    field_y: backgroundtaskmessage_verification_2.point
-    log_scale: false
-    ci_lower: backgroundtaskmessage_verification_2.lower
-    ci_upper: backgroundtaskmessage_verification_2.upper
-    show_grid: true
-    listen:
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Main Crashes
-    name: Main Crashes_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: backgroundtaskmessage_verification_2
-    type: looker_line
-    fields: [
-      backgroundtaskmessage_verification_2.submission_date,
-      backgroundtaskmessage_verification_2.branch,
-      backgroundtaskmessage_verification_2.point
-    ]
-    pivots: [
-      backgroundtaskmessage_verification_2.branch
-    ]
-    filters:
-      backgroundtaskmessage_verification_2.metric: main_crashes
-      backgroundtaskmessage_verification_2.statistic: sum
-    row: 10
-    col: 12
     width: 12
     height: 8
     field_x: backgroundtaskmessage_verification_2.submission_date
@@ -163,40 +196,6 @@
       backgroundtaskmessage_verification_2.metric: memory_total
       backgroundtaskmessage_verification_2.statistic: percentile
     row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: backgroundtaskmessage_verification_2.submission_date
-    field_y: backgroundtaskmessage_verification_2.point
-    log_scale: false
-    ci_lower: backgroundtaskmessage_verification_2.lower
-    ci_upper: backgroundtaskmessage_verification_2.upper
-    show_grid: true
-    listen:
-      Percentile: backgroundtaskmessage_verification_2.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Startup Crashes
-    name: Startup Crashes_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: backgroundtaskmessage_verification_2
-    type: looker_line
-    fields: [
-      backgroundtaskmessage_verification_2.submission_date,
-      backgroundtaskmessage_verification_2.branch,
-      backgroundtaskmessage_verification_2.point
-    ]
-    pivots: [
-      backgroundtaskmessage_verification_2.branch
-    ]
-    filters:
-      backgroundtaskmessage_verification_2.metric: startup_crashes
-      backgroundtaskmessage_verification_2.statistic: sum
-    row: 20
     col: 12
     width: 12
     height: 8
@@ -207,6 +206,7 @@
     ci_upper: backgroundtaskmessage_verification_2.upper
     show_grid: true
     listen:
+      Percentile: backgroundtaskmessage_verification_2.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
