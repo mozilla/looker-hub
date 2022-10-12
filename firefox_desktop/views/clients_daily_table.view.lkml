@@ -1608,6 +1608,21 @@ view: clients_daily_table {
     type: number
   }
 
+  dimension: total_uri_count {
+    sql: ${TABLE}.total_uri_count ;;
+    type: number
+  }
+
+  dimension: total_uri_count_normal_mode {
+    sql: ${TABLE}.total_uri_count_normal_mode ;;
+    type: number
+  }
+
+  dimension: total_uri_count_private_mode {
+    sql: ${TABLE}.total_uri_count_private_mode ;;
+    type: number
+  }
+
   dimension: trackers_blocked_sum {
     sql: ${TABLE}.trackers_blocked_sum ;;
     type: number
