@@ -10,6 +10,8 @@ view: telemetry_alerts_prototype {
   dimension: build_id {
     type: date
     sql: PARSE_DATE('%Y%m%d', CAST(${TABLE}.build_id AS STRING)) ;;
+    datatype: date
+    convert_tz: no
   }
 
   dimension: branch {

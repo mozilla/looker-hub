@@ -10,6 +10,8 @@ view: mr2022_backgroundtaskmessage_experiment_sizing {
   dimension: submission_date {
     type: date
     sql: ${TABLE}.submission_date ;;
+    datatype: date
+    convert_tz: no
   }
 
   dimension: branch {

@@ -383,6 +383,11 @@ view: clients_last_seen_table {
     type: number
   }
 
+  dimension: days_since_qualified_use_v1 {
+    sql: ${TABLE}.days_since_qualified_use_v1 ;;
+    type: number
+  }
+
   dimension: days_since_second_seen {
     sql: ${TABLE}.days_since_second_seen ;;
     type: number
@@ -403,6 +408,16 @@ view: clients_last_seen_table {
     type: number
   }
 
+  dimension: days_since_visited_1_uri_normal_mode {
+    sql: ${TABLE}.days_since_visited_1_uri_normal_mode ;;
+    type: number
+  }
+
+  dimension: days_since_visited_1_uri_private_mode {
+    sql: ${TABLE}.days_since_visited_1_uri_private_mode ;;
+    type: number
+  }
+
   dimension: days_since_visited_5_uri {
     sql: ${TABLE}.days_since_visited_5_uri ;;
     type: number
@@ -415,6 +430,16 @@ view: clients_last_seen_table {
 
   dimension: days_visited_1_uri_bits {
     sql: ${TABLE}.days_visited_1_uri_bits ;;
+    type: number
+  }
+
+  dimension: days_visited_1_uri_normal_mode_bits {
+    sql: ${TABLE}.days_visited_1_uri_normal_mode_bits ;;
+    type: number
+  }
+
+  dimension: days_visited_1_uri_private_mode_bits {
+    sql: ${TABLE}.days_visited_1_uri_private_mode_bits ;;
     type: number
   }
 

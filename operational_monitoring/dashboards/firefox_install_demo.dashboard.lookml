@@ -39,6 +39,7 @@
     ci_upper: firefox_install_demo.upper
     show_grid: true
     listen:
+      Date: firefox_install_demo.submission_date
       
     Win7: "#3FE1B0"
     Win8: "#0060E0"
@@ -74,6 +75,7 @@
     ci_upper: firefox_install_demo.upper
     show_grid: true
     listen:
+      Date: firefox_install_demo.submission_date
       
     Win7: "#3FE1B0"
     Win8: "#0060E0"
@@ -82,6 +84,19 @@
     defaults_version: 0
   
   filters:
+  - name: Date
+    title: Date
+    type: field_filter
+    allow_multiple_values: true
+    required: false
+    ui_config:
+      type: advanced
+      display: popover
+    model: operational_monitoring
+    explore: firefox_install_demo
+    listens_to_filters: []
+    field: firefox_install_demo.submission_date
+
   - name: Percentile
     title: Percentile
     type: field_filter
