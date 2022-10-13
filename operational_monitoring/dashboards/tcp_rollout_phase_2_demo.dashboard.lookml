@@ -41,6 +41,7 @@
     ci_upper: tcp_rollout_phase_2_demo.upper
     show_grid: true
     listen:
+      Date: tcp_rollout_phase_2_demo.submission_date
       Percentile: tcp_rollout_phase_2_demo.parameter
       Os: tcp_rollout_phase_2_demo.os
       
@@ -76,6 +77,7 @@
     ci_upper: tcp_rollout_phase_2_demo.upper
     show_grid: true
     listen:
+      Date: tcp_rollout_phase_2_demo.submission_date
       Os: tcp_rollout_phase_2_demo.os
       
     enabled: "#3FE1B0"
@@ -110,6 +112,7 @@
     ci_upper: tcp_rollout_phase_2_demo.upper
     show_grid: true
     listen:
+      Date: tcp_rollout_phase_2_demo.submission_date
       Os: tcp_rollout_phase_2_demo.os
       
     enabled: "#3FE1B0"
@@ -144,6 +147,7 @@
     ci_upper: tcp_rollout_phase_2_demo.upper
     show_grid: true
     listen:
+      Date: tcp_rollout_phase_2_demo.submission_date
       Os: tcp_rollout_phase_2_demo.os
       
     enabled: "#3FE1B0"
@@ -178,6 +182,7 @@
     ci_upper: tcp_rollout_phase_2_demo.upper
     show_grid: true
     listen:
+      Date: tcp_rollout_phase_2_demo.submission_date
       Os: tcp_rollout_phase_2_demo.os
       
     enabled: "#3FE1B0"
@@ -212,6 +217,7 @@
     ci_upper: tcp_rollout_phase_2_demo.upper
     show_grid: true
     listen:
+      Date: tcp_rollout_phase_2_demo.submission_date
       Os: tcp_rollout_phase_2_demo.os
       
     enabled: "#3FE1B0"
@@ -246,6 +252,7 @@
     ci_upper: tcp_rollout_phase_2_demo.upper
     show_grid: true
     listen:
+      Date: tcp_rollout_phase_2_demo.submission_date
       Os: tcp_rollout_phase_2_demo.os
       
     enabled: "#3FE1B0"
@@ -280,6 +287,7 @@
     ci_upper: tcp_rollout_phase_2_demo.upper
     show_grid: true
     listen:
+      Date: tcp_rollout_phase_2_demo.submission_date
       Os: tcp_rollout_phase_2_demo.os
       
     enabled: "#3FE1B0"
@@ -287,6 +295,19 @@
     defaults_version: 0
   
   filters:
+  - name: Date
+    title: Date
+    type: field_filter
+    allow_multiple_values: true
+    required: false
+    ui_config:
+      type: advanced
+      display: popover
+    model: operational_monitoring
+    explore: tcp_rollout_phase_2_demo
+    listens_to_filters: []
+    field: tcp_rollout_phase_2_demo.submission_date
+
   - name: Percentile
     title: Percentile
     type: field_filter

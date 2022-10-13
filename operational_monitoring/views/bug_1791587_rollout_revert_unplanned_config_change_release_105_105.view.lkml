@@ -10,6 +10,8 @@ view: bug_1791587_rollout_revert_unplanned_config_change_release_105_105 {
   dimension: submission_date {
     type: date
     sql: ${TABLE}.submission_date ;;
+    datatype: date
+    convert_tz: no
   }
 
   dimension: branch {

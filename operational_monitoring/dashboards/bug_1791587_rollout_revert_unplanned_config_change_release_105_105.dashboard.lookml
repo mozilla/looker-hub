@@ -39,6 +39,7 @@
     ci_upper: bug_1791587_rollout_revert_unplanned_config_change_release_105_105.upper
     show_grid: true
     listen:
+      Date: bug_1791587_rollout_revert_unplanned_config_change_release_105_105.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -74,6 +75,7 @@
     ci_upper: bug_1791587_rollout_revert_unplanned_config_change_release_105_105.upper
     show_grid: true
     listen:
+      Date: bug_1791587_rollout_revert_unplanned_config_change_release_105_105.submission_date
       Percentile: bug_1791587_rollout_revert_unplanned_config_change_release_105_105.parameter
       
     enabled: "#3FE1B0"
@@ -108,6 +110,7 @@
     ci_upper: bug_1791587_rollout_revert_unplanned_config_change_release_105_105.upper
     show_grid: true
     listen:
+      Date: bug_1791587_rollout_revert_unplanned_config_change_release_105_105.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -141,6 +144,7 @@
     ci_upper: bug_1791587_rollout_revert_unplanned_config_change_release_105_105.upper
     show_grid: true
     listen:
+      Date: bug_1791587_rollout_revert_unplanned_config_change_release_105_105.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -174,6 +178,7 @@
     ci_upper: bug_1791587_rollout_revert_unplanned_config_change_release_105_105.upper
     show_grid: true
     listen:
+      Date: bug_1791587_rollout_revert_unplanned_config_change_release_105_105.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -207,12 +212,26 @@
     ci_upper: bug_1791587_rollout_revert_unplanned_config_change_release_105_105.upper
     show_grid: true
     listen:
+      Date: bug_1791587_rollout_revert_unplanned_config_change_release_105_105.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
   
   filters:
+  - name: Date
+    title: Date
+    type: field_filter
+    allow_multiple_values: true
+    required: false
+    ui_config:
+      type: advanced
+      display: popover
+    model: operational_monitoring
+    explore: bug_1791587_rollout_revert_unplanned_config_change_release_105_105
+    listens_to_filters: []
+    field: bug_1791587_rollout_revert_unplanned_config_change_release_105_105.submission_date
+
   - name: Percentile
     title: Percentile
     type: field_filter

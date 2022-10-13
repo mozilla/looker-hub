@@ -10,6 +10,8 @@ view: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613
   dimension: submission_date {
     type: date
     sql: ${TABLE}.submission_date ;;
+    datatype: date
+    convert_tz: no
   }
 
   dimension: branch {

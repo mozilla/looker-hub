@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: tcp_rollout_phase_2_demo {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_2_demo_statistics ;;
+view: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_statistics ;;
 
   dimension: submission_date {
     type: date
@@ -21,11 +21,6 @@ view: tcp_rollout_phase_2_demo {
 
   dimension: metric {
     sql: ${TABLE}.metric ;;
-    type: string
-  }
-
-  dimension: os {
-    sql: ${TABLE}.os ;;
     type: string
   }
 

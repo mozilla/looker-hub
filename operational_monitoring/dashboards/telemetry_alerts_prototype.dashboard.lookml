@@ -35,6 +35,7 @@
     ci_upper: telemetry_alerts_prototype.upper
     show_grid: true
     listen:
+      Date: telemetry_alerts_prototype.build_id
       Percentile: telemetry_alerts_prototype.parameter
       Os: telemetry_alerts_prototype.os
       Metric: telemetry_alerts_prototype.metric
@@ -94,13 +95,27 @@
     interpolation: linear
     defaults_version: 1
     series_types: {}
-    listen: {}
+    listen:
+      Date: telemetry_alerts_prototype_alerts.build_id_date
     row: 0
     col: 0
     width: 24
     height: 6
   
   filters:
+  - name: Date
+    title: Date
+    type: field_filter
+    allow_multiple_values: true
+    required: false
+    ui_config:
+      type: advanced
+      display: popover
+    model: operational_monitoring
+    explore: telemetry_alerts_prototype
+    listens_to_filters: []
+    field: telemetry_alerts_prototype.build_id
+
   - name: Percentile
     title: Percentile
     type: field_filter
@@ -117,7 +132,7 @@
   - name: Metric
     title: Metric
     type: field_filter
-    default_value: 'js_pageload_execution_ms'
+    default_value: 'subsession_length'
     allow_multiple_values: false
     required: true
     ui_config:
@@ -144,16 +159,16 @@
   - title: Os
     name: Os
     type: string_filter
-    default_value: 'Mac'
+    default_value: 'Linux'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'Mac'
-      - 'Windows'
       - 'Linux'
+      - 'Windows'
+      - 'Mac'
       
   
   
