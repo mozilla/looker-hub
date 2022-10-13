@@ -10,11 +10,11 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Install Volume Total
-    name: Install Volume Total_sum
+  - title: Install Success Rate
+    name: Install Success Rate_mean
     note_state: expanded
     note_display: above
-    note_text: Sum
+    note_text: Mean
     explore: firefox_install_demo
     type: looker_line
     fields: [
@@ -26,8 +26,8 @@
       firefox_install_demo.branch
     ]
     filters:
-      firefox_install_demo.metric: install_volume_total
-      firefox_install_demo.statistic: sum
+      firefox_install_demo.metric: install_success_rate
+      firefox_install_demo.statistic: mean
     row: 0
     col: 0
     width: 12
@@ -45,7 +45,6 @@
     Win8: "#0060E0"
     Win8.1: "#9059FF"
     Win10: "#B933E1"
-    All versions: "#FF2A8A"
     defaults_version: 0
   - title: Install Volume By Os Version
     name: Install Volume By Os Version_sum
@@ -82,44 +81,6 @@
     Win8: "#0060E0"
     Win8.1: "#9059FF"
     Win10: "#B933E1"
-    All versions: "#FF2A8A"
-    defaults_version: 0
-  - title: Install Success Rate
-    name: Install Success Rate_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: firefox_install_demo
-    type: looker_line
-    fields: [
-      firefox_install_demo.submission_date,
-      firefox_install_demo.branch,
-      firefox_install_demo.point
-    ]
-    pivots: [
-      firefox_install_demo.branch
-    ]
-    filters:
-      firefox_install_demo.metric: install_success_rate
-      firefox_install_demo.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: firefox_install_demo.submission_date
-    field_y: firefox_install_demo.point
-    log_scale: false
-    ci_lower: firefox_install_demo.lower
-    ci_upper: firefox_install_demo.upper
-    show_grid: true
-    listen:
-      Date: firefox_install_demo.submission_date
-      
-    Win7: "#3FE1B0"
-    Win8: "#0060E0"
-    Win8.1: "#9059FF"
-    Win10: "#B933E1"
-    All versions: "#FF2A8A"
     defaults_version: 0
   
   - title: Alerts

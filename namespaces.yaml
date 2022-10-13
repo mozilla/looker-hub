@@ -3087,18 +3087,15 @@ operational_monitoring:
         - Win8
         - Win8.1
         - Win10
-        - All versions
         compact_visualization: false
         dimensions: &id017 {}
         explore: firefox_install_demo
         group_by_dimension: null
         summaries: &id018
-        - metric: install_volume_total
-          statistic: sum
-        - metric: install_volume_by_os_version
-          statistic: sum
         - metric: install_success_rate
           statistic: mean
+        - metric: install_volume_by_os_version
+          statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_install_demo_statistics
         xaxis: submission_date
       - explore: firefox_install_demo_alerts
