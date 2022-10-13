@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Oom Crashes
-    name: Oom Crashes_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: backgroundtaskmessage_verification_beta_2
-    type: looker_line
-    fields: [
-      backgroundtaskmessage_verification_beta_2.submission_date,
-      backgroundtaskmessage_verification_beta_2.branch,
-      backgroundtaskmessage_verification_beta_2.point
-    ]
-    pivots: [
-      backgroundtaskmessage_verification_beta_2.branch
-    ]
-    filters:
-      backgroundtaskmessage_verification_beta_2.metric: oom_crashes
-      backgroundtaskmessage_verification_beta_2.statistic: sum
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: backgroundtaskmessage_verification_beta_2.submission_date
-    field_y: backgroundtaskmessage_verification_beta_2.point
-    log_scale: false
-    ci_lower: backgroundtaskmessage_verification_beta_2.lower
-    ci_upper: backgroundtaskmessage_verification_beta_2.upper
-    show_grid: true
-    listen:
-      Date: backgroundtaskmessage_verification_beta_2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -65,7 +31,7 @@
       backgroundtaskmessage_verification_beta_2.metric: memory_total
       backgroundtaskmessage_verification_beta_2.statistic: percentile
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: backgroundtaskmessage_verification_beta_2.submission_date
@@ -99,41 +65,7 @@
     filters:
       backgroundtaskmessage_verification_beta_2.metric: startup_crashes
       backgroundtaskmessage_verification_beta_2.statistic: sum
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: backgroundtaskmessage_verification_beta_2.submission_date
-    field_y: backgroundtaskmessage_verification_beta_2.point
-    log_scale: false
-    ci_lower: backgroundtaskmessage_verification_beta_2.lower
-    ci_upper: backgroundtaskmessage_verification_beta_2.upper
-    show_grid: true
-    listen:
-      Date: backgroundtaskmessage_verification_beta_2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Shutdown Hangs
-    name: Shutdown Hangs_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: backgroundtaskmessage_verification_beta_2
-    type: looker_line
-    fields: [
-      backgroundtaskmessage_verification_beta_2.submission_date,
-      backgroundtaskmessage_verification_beta_2.branch,
-      backgroundtaskmessage_verification_beta_2.point
-    ]
-    pivots: [
-      backgroundtaskmessage_verification_beta_2.branch
-    ]
-    filters:
-      backgroundtaskmessage_verification_beta_2.metric: shutdown_hangs
-      backgroundtaskmessage_verification_beta_2.statistic: sum
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -149,8 +81,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Main Crashes
-    name: Main Crashes_sum
+  - title: Oom Crashes
+    name: Oom Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -165,9 +97,9 @@
       backgroundtaskmessage_verification_beta_2.branch
     ]
     filters:
-      backgroundtaskmessage_verification_beta_2.metric: main_crashes
+      backgroundtaskmessage_verification_beta_2.metric: oom_crashes
       backgroundtaskmessage_verification_beta_2.statistic: sum
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -200,6 +132,74 @@
     ]
     filters:
       backgroundtaskmessage_verification_beta_2.metric: content_crashes
+      backgroundtaskmessage_verification_beta_2.statistic: sum
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: backgroundtaskmessage_verification_beta_2.submission_date
+    field_y: backgroundtaskmessage_verification_beta_2.point
+    log_scale: false
+    ci_lower: backgroundtaskmessage_verification_beta_2.lower
+    ci_upper: backgroundtaskmessage_verification_beta_2.upper
+    show_grid: true
+    listen:
+      Date: backgroundtaskmessage_verification_beta_2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Shutdown Hangs
+    name: Shutdown Hangs_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: backgroundtaskmessage_verification_beta_2
+    type: looker_line
+    fields: [
+      backgroundtaskmessage_verification_beta_2.submission_date,
+      backgroundtaskmessage_verification_beta_2.branch,
+      backgroundtaskmessage_verification_beta_2.point
+    ]
+    pivots: [
+      backgroundtaskmessage_verification_beta_2.branch
+    ]
+    filters:
+      backgroundtaskmessage_verification_beta_2.metric: shutdown_hangs
+      backgroundtaskmessage_verification_beta_2.statistic: sum
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: backgroundtaskmessage_verification_beta_2.submission_date
+    field_y: backgroundtaskmessage_verification_beta_2.point
+    log_scale: false
+    ci_lower: backgroundtaskmessage_verification_beta_2.lower
+    ci_upper: backgroundtaskmessage_verification_beta_2.upper
+    show_grid: true
+    listen:
+      Date: backgroundtaskmessage_verification_beta_2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Main Crashes
+    name: Main Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: backgroundtaskmessage_verification_beta_2
+    type: looker_line
+    fields: [
+      backgroundtaskmessage_verification_beta_2.submission_date,
+      backgroundtaskmessage_verification_beta_2.branch,
+      backgroundtaskmessage_verification_beta_2.point
+    ]
+    pivots: [
+      backgroundtaskmessage_verification_beta_2.branch
+    ]
+    filters:
+      backgroundtaskmessage_verification_beta_2.metric: main_crashes
       backgroundtaskmessage_verification_beta_2.statistic: sum
     row: 20
     col: 12

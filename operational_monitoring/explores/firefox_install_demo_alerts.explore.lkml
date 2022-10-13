@@ -4,14 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/firefox_install_demo.view.lkml"
+include: "/looker-hub/operational_monitoring/views/firefox_install_demo_alerts.view.lkml"
 
-explore: firefox_install_demo {
-  always_filter: {
-    filters: [
-      branch: "Win7, Win8, Win8.1, Win10, All versions",
-    ]
-  }
-
+explore: firefox_install_demo_alerts {
   hidden: yes
 }

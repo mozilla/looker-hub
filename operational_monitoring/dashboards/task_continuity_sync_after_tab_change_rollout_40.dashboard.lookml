@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Oom Crashes
-    name: Oom Crashes_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: task_continuity_sync_after_tab_change_rollout_40
-    type: looker_line
-    fields: [
-      task_continuity_sync_after_tab_change_rollout_40.submission_date,
-      task_continuity_sync_after_tab_change_rollout_40.branch,
-      task_continuity_sync_after_tab_change_rollout_40.point
-    ]
-    pivots: [
-      task_continuity_sync_after_tab_change_rollout_40.branch
-    ]
-    filters:
-      task_continuity_sync_after_tab_change_rollout_40.metric: oom_crashes
-      task_continuity_sync_after_tab_change_rollout_40.statistic: sum
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: task_continuity_sync_after_tab_change_rollout_40.submission_date
-    field_y: task_continuity_sync_after_tab_change_rollout_40.point
-    log_scale: false
-    ci_lower: task_continuity_sync_after_tab_change_rollout_40.lower
-    ci_upper: task_continuity_sync_after_tab_change_rollout_40.upper
-    show_grid: true
-    listen:
-      Date: task_continuity_sync_after_tab_change_rollout_40.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -65,7 +31,7 @@
       task_continuity_sync_after_tab_change_rollout_40.metric: memory_total
       task_continuity_sync_after_tab_change_rollout_40.statistic: percentile
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: task_continuity_sync_after_tab_change_rollout_40.submission_date
@@ -99,41 +65,7 @@
     filters:
       task_continuity_sync_after_tab_change_rollout_40.metric: startup_crashes
       task_continuity_sync_after_tab_change_rollout_40.statistic: sum
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: task_continuity_sync_after_tab_change_rollout_40.submission_date
-    field_y: task_continuity_sync_after_tab_change_rollout_40.point
-    log_scale: false
-    ci_lower: task_continuity_sync_after_tab_change_rollout_40.lower
-    ci_upper: task_continuity_sync_after_tab_change_rollout_40.upper
-    show_grid: true
-    listen:
-      Date: task_continuity_sync_after_tab_change_rollout_40.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Shutdown Hangs
-    name: Shutdown Hangs_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: task_continuity_sync_after_tab_change_rollout_40
-    type: looker_line
-    fields: [
-      task_continuity_sync_after_tab_change_rollout_40.submission_date,
-      task_continuity_sync_after_tab_change_rollout_40.branch,
-      task_continuity_sync_after_tab_change_rollout_40.point
-    ]
-    pivots: [
-      task_continuity_sync_after_tab_change_rollout_40.branch
-    ]
-    filters:
-      task_continuity_sync_after_tab_change_rollout_40.metric: shutdown_hangs
-      task_continuity_sync_after_tab_change_rollout_40.statistic: sum
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -149,8 +81,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Main Crashes
-    name: Main Crashes_sum
+  - title: Oom Crashes
+    name: Oom Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -165,9 +97,9 @@
       task_continuity_sync_after_tab_change_rollout_40.branch
     ]
     filters:
-      task_continuity_sync_after_tab_change_rollout_40.metric: main_crashes
+      task_continuity_sync_after_tab_change_rollout_40.metric: oom_crashes
       task_continuity_sync_after_tab_change_rollout_40.statistic: sum
-    row: 20
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -200,6 +132,74 @@
     ]
     filters:
       task_continuity_sync_after_tab_change_rollout_40.metric: content_crashes
+      task_continuity_sync_after_tab_change_rollout_40.statistic: sum
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: task_continuity_sync_after_tab_change_rollout_40.submission_date
+    field_y: task_continuity_sync_after_tab_change_rollout_40.point
+    log_scale: false
+    ci_lower: task_continuity_sync_after_tab_change_rollout_40.lower
+    ci_upper: task_continuity_sync_after_tab_change_rollout_40.upper
+    show_grid: true
+    listen:
+      Date: task_continuity_sync_after_tab_change_rollout_40.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Shutdown Hangs
+    name: Shutdown Hangs_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: task_continuity_sync_after_tab_change_rollout_40
+    type: looker_line
+    fields: [
+      task_continuity_sync_after_tab_change_rollout_40.submission_date,
+      task_continuity_sync_after_tab_change_rollout_40.branch,
+      task_continuity_sync_after_tab_change_rollout_40.point
+    ]
+    pivots: [
+      task_continuity_sync_after_tab_change_rollout_40.branch
+    ]
+    filters:
+      task_continuity_sync_after_tab_change_rollout_40.metric: shutdown_hangs
+      task_continuity_sync_after_tab_change_rollout_40.statistic: sum
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: task_continuity_sync_after_tab_change_rollout_40.submission_date
+    field_y: task_continuity_sync_after_tab_change_rollout_40.point
+    log_scale: false
+    ci_lower: task_continuity_sync_after_tab_change_rollout_40.lower
+    ci_upper: task_continuity_sync_after_tab_change_rollout_40.upper
+    show_grid: true
+    listen:
+      Date: task_continuity_sync_after_tab_change_rollout_40.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Main Crashes
+    name: Main Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: task_continuity_sync_after_tab_change_rollout_40
+    type: looker_line
+    fields: [
+      task_continuity_sync_after_tab_change_rollout_40.submission_date,
+      task_continuity_sync_after_tab_change_rollout_40.branch,
+      task_continuity_sync_after_tab_change_rollout_40.point
+    ]
+    pivots: [
+      task_continuity_sync_after_tab_change_rollout_40.branch
+    ]
+    filters:
+      task_continuity_sync_after_tab_change_rollout_40.metric: main_crashes
       task_continuity_sync_after_tab_change_rollout_40.statistic: sum
     row: 20
     col: 12
