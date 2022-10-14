@@ -548,6 +548,13 @@ The key format is ‘<provider-name>’.
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_in_content {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
+    hidden: yes
+    description: "Records the type of interaction a user has on SERP pages.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_search_count {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_search_count ;;
     hidden: yes

@@ -122,6 +122,26 @@ view: clients_daily_table {
     type: yesno
   }
 
+  dimension: bookmark_migrations_quantity_all {
+    sql: ${TABLE}.bookmark_migrations_quantity_all ;;
+    type: number
+  }
+
+  dimension: bookmark_migrations_quantity_chrome {
+    sql: ${TABLE}.bookmark_migrations_quantity_chrome ;;
+    type: number
+  }
+
+  dimension: bookmark_migrations_quantity_edge {
+    sql: ${TABLE}.bookmark_migrations_quantity_edge ;;
+    type: number
+  }
+
+  dimension: bookmark_migrations_quantity_safari {
+    sql: ${TABLE}.bookmark_migrations_quantity_safari ;;
+    type: number
+  }
+
   dimension: browser_version_info__is_major_release {
     sql: ${TABLE}.browser_version_info.is_major_release ;;
     type: yesno
@@ -668,6 +688,26 @@ view: clients_daily_table {
     type: number
   }
 
+  dimension: history_migrations_quantity_all {
+    sql: ${TABLE}.history_migrations_quantity_all ;;
+    type: number
+  }
+
+  dimension: history_migrations_quantity_chrome {
+    sql: ${TABLE}.history_migrations_quantity_chrome ;;
+    type: number
+  }
+
+  dimension: history_migrations_quantity_edge {
+    sql: ${TABLE}.history_migrations_quantity_edge ;;
+    type: number
+  }
+
+  dimension: history_migrations_quantity_safari {
+    sql: ${TABLE}.history_migrations_quantity_safari ;;
+    type: number
+  }
+
   dimension: install_year {
     sql: ${TABLE}.install_year ;;
     type: number
@@ -696,6 +736,26 @@ view: clients_daily_table {
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
+  }
+
+  dimension: logins_migrations_quantity_all {
+    sql: ${TABLE}.logins_migrations_quantity_all ;;
+    type: number
+  }
+
+  dimension: logins_migrations_quantity_chrome {
+    sql: ${TABLE}.logins_migrations_quantity_chrome ;;
+    type: number
+  }
+
+  dimension: logins_migrations_quantity_edge {
+    sql: ${TABLE}.logins_migrations_quantity_edge ;;
+    type: number
+  }
+
+  dimension: logins_migrations_quantity_safari {
+    sql: ${TABLE}.logins_migrations_quantity_safari ;;
+    type: number
   }
 
   dimension: memory_mb {

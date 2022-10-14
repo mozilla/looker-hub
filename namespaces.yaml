@@ -1055,6 +1055,10 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: metrics
+    new_metric_capture_emulation:
+      type: glean_ping_explore
+      views:
+        base_view: new_metric_capture_emulation
     newtab:
       type: glean_ping_explore
       views:
@@ -1196,6 +1200,15 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.metrics
+      type: table_view
+    new_metric_capture_emulation:
+      tables:
+      - table: mozdata.firefox_desktop.new_metric_capture_emulation
+      type: glean_ping_view
+    new_metric_capture_emulation_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.new_metric_capture_emulation
       type: table_view
     newtab:
       tables:
@@ -2960,17 +2973,17 @@ operational_monitoring:
         explore: backgroundtaskmessage_verification_2
         group_by_dimension: null
         summaries: &id003
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
         - metric: startup_crashes
           statistic: sum
+        - metric: oom_crashes
+          statistic: sum
+        - metric: content_crashes
+          statistic: sum
         - metric: shutdown_hangs
           statistic: sum
         - metric: main_crashes
-          statistic: sum
-        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.backgroundtaskmessage_verification_2_statistics
         xaxis: submission_date
@@ -2986,15 +2999,15 @@ operational_monitoring:
         explore: backgroundtaskmessage_verification_beta_2
         group_by_dimension: null
         summaries: &id006
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
+        - metric: oom_crashes
+          statistic: sum
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
           statistic: sum
         - metric: content_crashes
           statistic: sum
@@ -3012,15 +3025,15 @@ operational_monitoring:
         explore: backgroundtaskmessage_verification_nightly_3
         group_by_dimension: null
         summaries: &id009
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
+        - metric: oom_crashes
+          statistic: sum
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
           statistic: sum
         - metric: content_crashes
           statistic: sum
@@ -3038,15 +3051,15 @@ operational_monitoring:
         explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
         group_by_dimension: null
         summaries: &id012
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
+        - metric: oom_crashes
+          statistic: sum
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
           statistic: sum
         - metric: content_crashes
           statistic: sum
@@ -3093,11 +3106,13 @@ operational_monitoring:
         group_by_dimension: null
         summaries: &id018
         - metric: install_success_rate
-          statistic: sum
-        - metric: install_success_rate
           statistic: mean
+        - metric: install_volume_by_os_version
+          statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_install_demo_statistics
         xaxis: submission_date
+      - explore: firefox_install_demo_alerts
+        table: moz-fx-data-shared-prod.operational_monitoring.firefox_install_demo_alerts
       title: Firefox Installation Success Rate
       type: operational_monitoring_dashboard
     firefox_suggest_by_merino_nightly:
@@ -3110,15 +3125,15 @@ operational_monitoring:
         explore: firefox_suggest_by_merino_nightly
         group_by_dimension: null
         summaries: &id021
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
+        - metric: oom_crashes
+          statistic: sum
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
           statistic: sum
         - metric: content_crashes
           statistic: sum
@@ -3136,17 +3151,17 @@ operational_monitoring:
         explore: mr2022_backgroundtaskmessage_experiment_sizing
         group_by_dimension: null
         summaries: &id024
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
         - metric: startup_crashes
           statistic: sum
+        - metric: oom_crashes
+          statistic: sum
+        - metric: content_crashes
+          statistic: sum
         - metric: shutdown_hangs
           statistic: sum
         - metric: main_crashes
-          statistic: sum
-        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.mr2022_backgroundtaskmessage_experiment_sizing_statistics
         xaxis: submission_date
@@ -3162,15 +3177,15 @@ operational_monitoring:
         explore: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489
         group_by_dimension: null
         summaries: &id027
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
+        - metric: oom_crashes
+          statistic: sum
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
           statistic: sum
         - metric: content_crashes
           statistic: sum
@@ -3188,15 +3203,15 @@ operational_monitoring:
         explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
         group_by_dimension: null
         summaries: &id030
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
+        - metric: oom_crashes
+          statistic: sum
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
           statistic: sum
         - metric: content_crashes
           statistic: sum
@@ -3215,15 +3230,15 @@ operational_monitoring:
         explore: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331
         group_by_dimension: null
         summaries: &id033
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
+        - metric: oom_crashes
+          statistic: sum
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
           statistic: sum
         - metric: content_crashes
           statistic: sum
@@ -3242,15 +3257,15 @@ operational_monitoring:
         explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout
         group_by_dimension: null
         summaries: &id036
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
+        - metric: oom_crashes
+          statistic: sum
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
           statistic: sum
         - metric: content_crashes
           statistic: sum
@@ -3268,15 +3283,15 @@ operational_monitoring:
         explore: task_continuity_sync_after_tab_change_rollout_40
         group_by_dimension: null
         summaries: &id039
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
+        - metric: oom_crashes
+          statistic: sum
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
           statistic: sum
         - metric: content_crashes
           statistic: sum
@@ -3294,15 +3309,15 @@ operational_monitoring:
         explore: task_continuity_sync_after_tab_change_rollout_60
         group_by_dimension: null
         summaries: &id042
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
+        - metric: oom_crashes
+          statistic: sum
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
           statistic: sum
         - metric: content_crashes
           statistic: sum
@@ -3320,15 +3335,15 @@ operational_monitoring:
         explore: tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles
         group_by_dimension: null
         summaries: &id045
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
+        - metric: oom_crashes
+          statistic: sum
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
           statistic: sum
         - metric: content_crashes
           statistic: sum
@@ -3346,15 +3361,15 @@ operational_monitoring:
         explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
         group_by_dimension: null
         summaries: &id048
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
+        - metric: oom_crashes
+          statistic: sum
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
           statistic: sum
         - metric: content_crashes
           statistic: sum
@@ -3406,15 +3421,15 @@ operational_monitoring:
         explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
         group_by_dimension: null
         summaries: &id054
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
+        - metric: oom_crashes
+          statistic: sum
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
           statistic: sum
         - metric: content_crashes
           statistic: sum
@@ -3432,15 +3447,15 @@ operational_monitoring:
         explore: tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles
         group_by_dimension: null
         summaries: &id057
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
+        - metric: oom_crashes
+          statistic: sum
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
           statistic: sum
         - metric: content_crashes
           statistic: sum
@@ -3458,15 +3473,15 @@ operational_monitoring:
         explore: tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles
         group_by_dimension: null
         summaries: &id060
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
+        - metric: oom_crashes
+          statistic: sum
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
           statistic: sum
         - metric: content_crashes
           statistic: sum
@@ -3527,15 +3542,15 @@ operational_monitoring:
         explore: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
         group_by_dimension: null
         summaries: &id066
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
+        - metric: oom_crashes
+          statistic: sum
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
           statistic: sum
         - metric: content_crashes
           statistic: sum
@@ -3553,15 +3568,15 @@ operational_monitoring:
         explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
         group_by_dimension: null
         summaries: &id069
-        - metric: oom_crashes
-          statistic: sum
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
+        - metric: oom_crashes
+          statistic: sum
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
           statistic: sum
         - metric: content_crashes
           statistic: sum
@@ -3618,6 +3633,10 @@ operational_monitoring:
       views:
         base_view: firefox_install_demo
       xaxis: submission_date
+    firefox_install_demo_alerts:
+      type: operational_monitoring_alerting_explore
+      views:
+        base_view: firefox_install_demo_alerts
     firefox_suggest_by_merino_nightly:
       branches: *id019
       dimensions: *id020
@@ -3800,6 +3819,10 @@ operational_monitoring:
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_install_demo_statistics
         xaxis: submission_date
       type: operational_monitoring_view
+    firefox_install_demo_alerts:
+      tables:
+      - table: moz-fx-data-shared-prod.operational_monitoring.firefox_install_demo_alerts
+      type: operational_monitoring_alerting_view
     firefox_suggest_by_merino_nightly:
       tables:
       - dimensions: *id020
@@ -3941,6 +3964,20 @@ revenue:
     stripe_itemized_payout_reconciliation:
       tables:
       - table: mozdata.stripe.itemized_payout_reconciliation
+      type: table_view
+revenue_private:
+  connection: bigquery-oauth
+  glean_app: false
+  owners:
+  - akomarzewski@mozilla.com
+  - skahmann@mozilla.com
+  - xluo@mozilla.com
+  pretty_name: Revenue Private
+  spoke: looker-spoke-private
+  views:
+    revenue_budget_2022:
+      tables:
+      - table: mozdata.revenue_cat3_analysis.budget_complete_2022
       type: table_view
 search:
   explores:

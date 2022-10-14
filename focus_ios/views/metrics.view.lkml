@@ -65,6 +65,23 @@ The key format is ‘<provider-name>’.
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_in_content {
+    label: "Browser Search In Content"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
+    group_label: "Browser Search"
+    group_item_label: "In Content"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search In Content"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_search_in_content"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the type of interaction a user has on SERP pages.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_search_count {
     label: "Browser Search Search Count"
     hidden: yes
