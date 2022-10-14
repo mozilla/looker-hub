@@ -47,40 +47,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Startup Crashes
-    name: Startup Crashes_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
-    type: looker_line
-    fields: [
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date,
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch,
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.point
-    ]
-    pivots: [
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
-    ]
-    filters:
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: startup_crashes
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.statistic: sum
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date
-    field_y: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.point
-    log_scale: false
-    ci_lower: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.lower
-    ci_upper: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.upper
-    show_grid: true
-    listen:
-      Date: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Oom Crashes
     name: Oom Crashes_sum
     note_state: expanded
@@ -99,8 +65,8 @@
     filters:
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: oom_crashes
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.statistic: sum
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date
@@ -115,8 +81,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Crashes
-    name: Content Crashes_sum
+  - title: Main Crashes
+    name: Main Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -131,10 +97,10 @@
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
     ]
     filters:
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: content_crashes
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: main_crashes
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.statistic: sum
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date
@@ -167,6 +133,40 @@
     filters:
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: shutdown_hangs
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.statistic: sum
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date
+    field_y: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.point
+    log_scale: false
+    ci_lower: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.lower
+    ci_upper: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.upper
+    show_grid: true
+    listen:
+      Date: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Startup Crashes
+    name: Startup Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
+    type: looker_line
+    fields: [
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.submission_date,
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch,
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.point
+    ]
+    pivots: [
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
+    ]
+    filters:
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: startup_crashes
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.statistic: sum
     row: 20
     col: 0
     width: 12
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Main Crashes
-    name: Main Crashes_sum
+  - title: Content Crashes
+    name: Content Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -199,7 +199,7 @@
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
     ]
     filters:
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: main_crashes
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: content_crashes
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.statistic: sum
     row: 20
     col: 12

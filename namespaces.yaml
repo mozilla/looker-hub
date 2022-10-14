@@ -1055,6 +1055,10 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: metrics
+    new_metric_capture_emulation:
+      type: glean_ping_explore
+      views:
+        base_view: new_metric_capture_emulation
     newtab:
       type: glean_ping_explore
       views:
@@ -1196,6 +1200,15 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.metrics
+      type: table_view
+    new_metric_capture_emulation:
+      tables:
+      - table: mozdata.firefox_desktop.new_metric_capture_emulation
+      type: glean_ping_view
+    new_metric_capture_emulation_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.new_metric_capture_emulation
       type: table_view
     newtab:
       tables:
@@ -2988,15 +3001,15 @@ operational_monitoring:
         summaries: &id006
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
+          statistic: sum
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.backgroundtaskmessage_verification_beta_2_statistics
         xaxis: submission_date
@@ -3014,15 +3027,15 @@ operational_monitoring:
         summaries: &id009
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
+          statistic: sum
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.backgroundtaskmessage_verification_nightly_3_statistics
         xaxis: submission_date
@@ -3040,15 +3053,15 @@ operational_monitoring:
         summaries: &id012
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
+          statistic: sum
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_statistics
         xaxis: submission_date
@@ -3114,15 +3127,15 @@ operational_monitoring:
         summaries: &id021
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
+          statistic: sum
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_suggest_by_merino_nightly_statistics
         xaxis: submission_date
@@ -3166,15 +3179,15 @@ operational_monitoring:
         summaries: &id027
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
+          statistic: sum
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_statistics
         xaxis: submission_date
@@ -3192,15 +3205,15 @@ operational_monitoring:
         summaries: &id030
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
+          statistic: sum
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_statistics
         xaxis: submission_date
@@ -3219,15 +3232,15 @@ operational_monitoring:
         summaries: &id033
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
+          statistic: sum
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_statistics
         xaxis: submission_date
@@ -3246,15 +3259,15 @@ operational_monitoring:
         summaries: &id036
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
+          statistic: sum
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_statistics
         xaxis: submission_date
@@ -3272,15 +3285,15 @@ operational_monitoring:
         summaries: &id039
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
+          statistic: sum
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.task_continuity_sync_after_tab_change_rollout_40_statistics
         xaxis: submission_date
@@ -3298,15 +3311,15 @@ operational_monitoring:
         summaries: &id042
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
+          statistic: sum
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.task_continuity_sync_after_tab_change_rollout_60_statistics
         xaxis: submission_date
@@ -3324,15 +3337,15 @@ operational_monitoring:
         summaries: &id045
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
+          statistic: sum
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles_statistics
         xaxis: submission_date
@@ -3350,15 +3363,15 @@ operational_monitoring:
         summaries: &id048
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
+          statistic: sum
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_statistics
         xaxis: submission_date
@@ -3410,15 +3423,15 @@ operational_monitoring:
         summaries: &id054
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
+          statistic: sum
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles_statistics
         xaxis: submission_date
@@ -3436,15 +3449,15 @@ operational_monitoring:
         summaries: &id057
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
+          statistic: sum
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles_statistics
         xaxis: submission_date
@@ -3462,15 +3475,15 @@ operational_monitoring:
         summaries: &id060
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
+          statistic: sum
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles_statistics
         xaxis: submission_date
@@ -3531,15 +3544,15 @@ operational_monitoring:
         summaries: &id066
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
+          statistic: sum
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users_statistics
         xaxis: submission_date
@@ -3557,15 +3570,15 @@ operational_monitoring:
         summaries: &id069
         - metric: memory_total
           statistic: percentile
-        - metric: startup_crashes
-          statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: main_crashes
           statistic: sum
         - metric: shutdown_hangs
           statistic: sum
-        - metric: main_crashes
+        - metric: startup_crashes
+          statistic: sum
+        - metric: content_crashes
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_statistics
         xaxis: submission_date
@@ -3951,6 +3964,20 @@ revenue:
     stripe_itemized_payout_reconciliation:
       tables:
       - table: mozdata.stripe.itemized_payout_reconciliation
+      type: table_view
+revenue_private:
+  connection: bigquery-oauth
+  glean_app: false
+  owners:
+  - akomarzewski@mozilla.com
+  - skahmann@mozilla.com
+  - xluo@mozilla.com
+  pretty_name: Revenue Private
+  spoke: looker-spoke-private
+  views:
+    revenue_budget_2022:
+      tables:
+      - table: mozdata.revenue_cat3_analysis.budget_complete_2022
       type: table_view
 search:
   explores:

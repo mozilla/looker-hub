@@ -47,40 +47,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Startup Crashes
-    name: Startup Crashes_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: backgroundtaskmessage_verification_nightly_3
-    type: looker_line
-    fields: [
-      backgroundtaskmessage_verification_nightly_3.submission_date,
-      backgroundtaskmessage_verification_nightly_3.branch,
-      backgroundtaskmessage_verification_nightly_3.point
-    ]
-    pivots: [
-      backgroundtaskmessage_verification_nightly_3.branch
-    ]
-    filters:
-      backgroundtaskmessage_verification_nightly_3.metric: startup_crashes
-      backgroundtaskmessage_verification_nightly_3.statistic: sum
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: backgroundtaskmessage_verification_nightly_3.submission_date
-    field_y: backgroundtaskmessage_verification_nightly_3.point
-    log_scale: false
-    ci_lower: backgroundtaskmessage_verification_nightly_3.lower
-    ci_upper: backgroundtaskmessage_verification_nightly_3.upper
-    show_grid: true
-    listen:
-      Date: backgroundtaskmessage_verification_nightly_3.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Oom Crashes
     name: Oom Crashes_sum
     note_state: expanded
@@ -99,8 +65,8 @@
     filters:
       backgroundtaskmessage_verification_nightly_3.metric: oom_crashes
       backgroundtaskmessage_verification_nightly_3.statistic: sum
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: backgroundtaskmessage_verification_nightly_3.submission_date
@@ -115,8 +81,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Crashes
-    name: Content Crashes_sum
+  - title: Main Crashes
+    name: Main Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -131,10 +97,10 @@
       backgroundtaskmessage_verification_nightly_3.branch
     ]
     filters:
-      backgroundtaskmessage_verification_nightly_3.metric: content_crashes
+      backgroundtaskmessage_verification_nightly_3.metric: main_crashes
       backgroundtaskmessage_verification_nightly_3.statistic: sum
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: backgroundtaskmessage_verification_nightly_3.submission_date
@@ -167,6 +133,40 @@
     filters:
       backgroundtaskmessage_verification_nightly_3.metric: shutdown_hangs
       backgroundtaskmessage_verification_nightly_3.statistic: sum
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: backgroundtaskmessage_verification_nightly_3.submission_date
+    field_y: backgroundtaskmessage_verification_nightly_3.point
+    log_scale: false
+    ci_lower: backgroundtaskmessage_verification_nightly_3.lower
+    ci_upper: backgroundtaskmessage_verification_nightly_3.upper
+    show_grid: true
+    listen:
+      Date: backgroundtaskmessage_verification_nightly_3.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Startup Crashes
+    name: Startup Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: backgroundtaskmessage_verification_nightly_3
+    type: looker_line
+    fields: [
+      backgroundtaskmessage_verification_nightly_3.submission_date,
+      backgroundtaskmessage_verification_nightly_3.branch,
+      backgroundtaskmessage_verification_nightly_3.point
+    ]
+    pivots: [
+      backgroundtaskmessage_verification_nightly_3.branch
+    ]
+    filters:
+      backgroundtaskmessage_verification_nightly_3.metric: startup_crashes
+      backgroundtaskmessage_verification_nightly_3.statistic: sum
     row: 20
     col: 0
     width: 12
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Main Crashes
-    name: Main Crashes_sum
+  - title: Content Crashes
+    name: Content Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -199,7 +199,7 @@
       backgroundtaskmessage_verification_nightly_3.branch
     ]
     filters:
-      backgroundtaskmessage_verification_nightly_3.metric: main_crashes
+      backgroundtaskmessage_verification_nightly_3.metric: content_crashes
       backgroundtaskmessage_verification_nightly_3.statistic: sum
     row: 20
     col: 12
