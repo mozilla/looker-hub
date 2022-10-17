@@ -10,45 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
-    type: "ci-line-chart"
-    fields: [
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date,
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch,
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.upper,
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.lower,
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.point
-    ]
-    pivots: [
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
-    ]
-    filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.metric: memory_total
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date
-    field_y: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.point
-    log_scale: false
-    ci_lower: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.lower
-    ci_upper: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.upper
-    show_grid: true
-    listen:
-      Date: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date
-      Percentile: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Oom Crashes
-    name: Oom Crashes_sum
+  - title: Shutdown Hangs
+    name: Shutdown Hangs_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -63,7 +26,41 @@
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
     ]
     filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.metric: oom_crashes
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.metric: shutdown_hangs
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.statistic: sum
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date
+    field_y: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.point
+    log_scale: false
+    ci_lower: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.lower
+    ci_upper: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.upper
+    show_grid: true
+    listen:
+      Date: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Content Crashes
+    name: Content Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
+    type: looker_line
+    fields: [
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date,
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch,
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.point
+    ]
+    pivots: [
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
+    ]
+    filters:
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.metric: content_crashes
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.statistic: sum
     row: 0
     col: 12
@@ -115,40 +112,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Shutdown Hangs
-    name: Shutdown Hangs_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
-    type: looker_line
-    fields: [
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date,
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch,
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.point
-    ]
-    pivots: [
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
-    ]
-    filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.metric: shutdown_hangs
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.statistic: sum
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date
-    field_y: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.point
-    log_scale: false
-    ci_lower: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.lower
-    ci_upper: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.upper
-    show_grid: true
-    listen:
-      Date: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Startup Crashes
     name: Startup Crashes_sum
     note_state: expanded
@@ -167,6 +130,40 @@
     filters:
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.metric: startup_crashes
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.statistic: sum
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date
+    field_y: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.point
+    log_scale: false
+    ci_lower: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.lower
+    ci_upper: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.upper
+    show_grid: true
+    listen:
+      Date: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Oom Crashes
+    name: Oom Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
+    type: looker_line
+    fields: [
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date,
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch,
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.point
+    ]
+    pivots: [
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
+    ]
+    filters:
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.metric: oom_crashes
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.statistic: sum
     row: 20
     col: 0
     width: 12
@@ -183,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Crashes
-    name: Content Crashes_sum
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Sum
+    note_text: Percentile
     explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date,
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch,
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.upper,
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.lower,
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.point
     ]
     pivots: [
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
     ]
     filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.metric: content_crashes
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.statistic: sum
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.metric: memory_total
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -213,6 +212,7 @@
     show_grid: true
     listen:
       Date: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.submission_date
+      Percentile: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
