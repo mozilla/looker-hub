@@ -202,6 +202,11 @@ view: clients_daily_table {
     type: number
   }
 
+  dimension: content_crash_count {
+    sql: ${TABLE}.content_crash_count ;;
+    type: number
+  }
+
   dimension: contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum ;;
     hidden: yes
@@ -538,6 +543,11 @@ view: clients_daily_table {
     type: string
   }
 
+  dimension: gpu_crash_count {
+    sql: ${TABLE}.gpu_crash_count ;;
+    type: number
+  }
+
   dimension: histogram_parent_devtools_aboutdebugging_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_aboutdebugging_opened_count_sum ;;
     type: number
@@ -758,6 +768,11 @@ view: clients_daily_table {
     type: number
   }
 
+  dimension: main_crash_count {
+    sql: ${TABLE}.main_crash_count ;;
+    type: number
+  }
+
   dimension: memory_mb {
     sql: ${TABLE}.memory_mb ;;
     type: number
@@ -880,6 +895,11 @@ view: clients_daily_table {
 
   dimension: push_api_notify_sum {
     sql: ${TABLE}.push_api_notify_sum ;;
+    type: number
+  }
+
+  dimension: rdd_crash_count {
+    sql: ${TABLE}.rdd_crash_count ;;
     type: number
   }
 
@@ -1588,6 +1608,11 @@ view: clients_daily_table {
     type: number
   }
 
+  dimension: socket_crash_count {
+    sql: ${TABLE}.socket_crash_count ;;
+    type: number
+  }
+
   dimension: ssl_handshake_result_failure_sum {
     sql: ${TABLE}.ssl_handshake_result_failure_sum ;;
     type: number
@@ -1768,9 +1793,19 @@ view: clients_daily_table {
     type: string
   }
 
+  dimension: utility_crash_count {
+    sql: ${TABLE}.utility_crash_count ;;
+    type: number
+  }
+
   dimension: vendor {
     sql: ${TABLE}.vendor ;;
     type: string
+  }
+
+  dimension: vr_crash_count {
+    sql: ${TABLE}.vr_crash_count ;;
+    type: number
   }
 
   dimension: web_notification_shown_sum {

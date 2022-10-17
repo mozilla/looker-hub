@@ -10,45 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
-    type: "ci-line-chart"
-    fields: [
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.upper,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.lower,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.point
-    ]
-    pivots: [
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
-    ]
-    filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: memory_total
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
-    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.point
-    log_scale: false
-    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.lower
-    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.upper
-    show_grid: true
-    listen:
-      Date: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
-      Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Oom Crashes
-    name: Oom Crashes_sum
+  - title: Shutdown Hangs
+    name: Shutdown Hangs_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -63,7 +26,41 @@
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
     ]
     filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: oom_crashes
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: shutdown_hangs
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.statistic: sum
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.point
+    log_scale: false
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.lower
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.upper
+    show_grid: true
+    listen:
+      Date: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Content Crashes
+    name: Content Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
+    type: looker_line
+    fields: [
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.point
+    ]
+    pivots: [
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
+    ]
+    filters:
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: content_crashes
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.statistic: sum
     row: 0
     col: 12
@@ -115,40 +112,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Shutdown Hangs
-    name: Shutdown Hangs_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
-    type: looker_line
-    fields: [
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch,
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.point
-    ]
-    pivots: [
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
-    ]
-    filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: shutdown_hangs
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.statistic: sum
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
-    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.point
-    log_scale: false
-    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.lower
-    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.upper
-    show_grid: true
-    listen:
-      Date: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Startup Crashes
     name: Startup Crashes_sum
     note_state: expanded
@@ -167,6 +130,40 @@
     filters:
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: startup_crashes
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.statistic: sum
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
+    field_y: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.point
+    log_scale: false
+    ci_lower: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.lower
+    ci_upper: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.upper
+    show_grid: true
+    listen:
+      Date: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Oom Crashes
+    name: Oom Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
+    type: looker_line
+    fields: [
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.point
+    ]
+    pivots: [
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
+    ]
+    filters:
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: oom_crashes
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.statistic: sum
     row: 20
     col: 0
     width: 12
@@ -183,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Crashes
-    name: Content Crashes_sum
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Sum
+    note_text: Percentile
     explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date,
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.upper,
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.lower,
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.point
     ]
     pivots: [
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
     ]
     filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: content_crashes
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.statistic: sum
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: memory_total
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -213,6 +212,7 @@
     show_grid: true
     listen:
       Date: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.submission_date
+      Percentile: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
