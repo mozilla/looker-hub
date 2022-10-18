@@ -1952,6 +1952,24 @@ the currently selected wallpaper if it's not the default.
     hidden: yes
   }
 
+  dimension: metrics__quantity__places_history_migration_num_migrated {
+    sql: ${TABLE}.metrics.quantity.places_history_migration_num_migrated ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Places History Migration Num Migrated"
+    description: "The number of visits migrated to the places.db
+"
+  }
+
+  dimension: metrics__quantity__places_history_migration_num_to_migrate {
+    sql: ${TABLE}.metrics.quantity.places_history_migration_num_to_migrate ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Places History Migration Num To Migrate"
+    description: "The number of visits expected to migrate to the places.db
+"
+  }
+
   dimension: metrics__quantity__tabs_normal_tabs_quantity {
     sql: ${TABLE}.metrics.quantity.tabs_normal_tabs_quantity ;;
     type: number
@@ -1970,6 +1988,34 @@ closes the application.
     description: "A snapshot of how many private tabs a user has opened when he
 closes the application.
 "
+  }
+
+  dimension: metrics__rate__places_history_migration_migration_ended_rate__denominator {
+    sql: ${TABLE}.metrics.rate.places_history_migration_migration_ended_rate.denominator ;;
+    type: number
+    group_label: "Metrics Rate Places History Migration Migration Ended Rate"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__places_history_migration_migration_ended_rate__numerator {
+    sql: ${TABLE}.metrics.rate.places_history_migration_migration_ended_rate.numerator ;;
+    type: number
+    group_label: "Metrics Rate Places History Migration Migration Ended Rate"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__places_history_migration_migration_error_rate__denominator {
+    sql: ${TABLE}.metrics.rate.places_history_migration_migration_error_rate.denominator ;;
+    type: number
+    group_label: "Metrics Rate Places History Migration Migration Error Rate"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__places_history_migration_migration_error_rate__numerator {
+    sql: ${TABLE}.metrics.rate.places_history_migration_migration_error_rate.numerator ;;
+    type: number
+    group_label: "Metrics Rate Places History Migration Migration Error Rate"
+    group_item_label: "Numerator"
   }
 
   dimension: metrics__string__adjust_ad_group {
@@ -2335,6 +2381,58 @@ tracking-protection that is enabled. One of:
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__places_history_migration_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_history_migration_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_history_migration_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_history_migration_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_history_migration_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_history_migration_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_history_migration_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_history_migration_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__url {
     sql: ${TABLE}.metrics.url ;;
     hidden: yes
@@ -2671,6 +2769,18 @@ view: metrics_table__metrics__timing_distribution__logins_store_unlock_time__val
 }
 
 view: metrics_table__metrics__timing_distribution__logins_store_write_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_history_migration_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
