@@ -1818,6 +1818,132 @@ from the page action menu.
 "
   }
 
+  dimension: metrics__timing_distribution__places_history_migration_duration__sum {
+    label: "Places History Migration Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.sum ;;
+    type: number
+    group_label: "Places History Migration"
+    group_item_label: "Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places History Migration Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/places_history_migration_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A time distribution of how long it took for the migration to occur
+"
+  }
+
+  dimension: metrics__rate__places_history_migration_migration_ended_rate__numerator {
+    label: "Places History Migration Migration Ended Rate Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.places_history_migration_migration_ended_rate.numerator ;;
+    type: number
+    group_label: "Places History Migration"
+    group_item_label: "Migration Ended Rate Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Places History Migration Migration Ended Rate Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/places_history_migration_migration_ended_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A Rate of how often migrations end
+"
+  }
+
+  dimension: metrics__rate__places_history_migration_migration_ended_rate__denominator {
+    label: "Places History Migration Migration Ended Rate Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.places_history_migration_migration_ended_rate.denominator ;;
+    type: number
+    group_label: "Places History Migration"
+    group_item_label: "Migration Ended Rate Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Places History Migration Migration Ended Rate Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/places_history_migration_migration_ended_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A Rate of how often migrations end
+"
+  }
+
+  dimension: metrics__rate__places_history_migration_migration_error_rate__numerator {
+    label: "Places History Migration Migration Error Rate Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.places_history_migration_migration_error_rate.numerator ;;
+    type: number
+    group_label: "Places History Migration"
+    group_item_label: "Migration Error Rate Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Places History Migration Migration Error Rate Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/places_history_migration_migration_error_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A Rate of how often migrations error out
+"
+  }
+
+  dimension: metrics__rate__places_history_migration_migration_error_rate__denominator {
+    label: "Places History Migration Migration Error Rate Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.places_history_migration_migration_error_rate.denominator ;;
+    type: number
+    group_label: "Places History Migration"
+    group_item_label: "Migration Error Rate Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Places History Migration Migration Error Rate Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/places_history_migration_migration_error_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A Rate of how often migrations error out
+"
+  }
+
+  dimension: metrics__quantity__places_history_migration_num_migrated {
+    label: "Places History Migration Num Migrated"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.places_history_migration_num_migrated ;;
+    type: number
+    group_label: "Places History Migration"
+    group_item_label: "Num Migrated"
+
+    link: {
+      label: "Glean Dictionary reference for Places History Migration Num Migrated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/places_history_migration_num_migrated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of visits migrated to the places.db
+"
+  }
+
+  dimension: metrics__quantity__places_history_migration_num_to_migrate {
+    label: "Places History Migration Num To Migrate"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.places_history_migration_num_to_migrate ;;
+    type: number
+    group_label: "Places History Migration"
+    group_item_label: "Num To Migrate"
+
+    link: {
+      label: "Glean Dictionary reference for Places History Migration Num To Migrate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/places_history_migration_num_to_migrate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of visits expected to migrate to the places.db
+"
+  }
+
   dimension: metrics__counter__pocket_open_story {
     label: "Pocket Open Story"
     hidden: yes
