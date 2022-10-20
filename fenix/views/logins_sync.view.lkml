@@ -77,6 +77,24 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_string__logins_sync_failure_reason {
+    label: "Logins Sync Failure Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.logins_sync_failure_reason ;;
+    type: string
+    group_label: "Logins Sync"
+    group_item_label: "Failure Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Sync Failure Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_sync_failure_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records why the passwords sync failed: either due to an authentication error, unexpected exception, or other error. The error strings are truncated and sanitized to omit PII, like usernames and passwords.
+"
+  }
+
   dimension: metrics__datetime__logins_sync_finished_at {
     label: "Logins Sync Finished At"
     hidden: no

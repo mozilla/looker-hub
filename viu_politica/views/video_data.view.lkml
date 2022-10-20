@@ -73,6 +73,23 @@ view: video_data {
     description: "Owner channel Id"
   }
 
+  dimension: metrics__text2__video_data_description {
+    label: "Video Data Description"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.video_data_description ;;
+    type: string
+    group_label: "Video Data"
+    group_item_label: "Description"
+
+    link: {
+      label: "Glean Dictionary reference for Video Data Description"
+      url: "https://dictionary.telemetry.mozilla.org/apps/viu_politica/metrics/video_data_description"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Video description"
+  }
+
   dimension: metrics__quantity__video_data_duration {
     label: "Video Data Duration"
     hidden: no

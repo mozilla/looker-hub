@@ -830,6 +830,24 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_string__migration_migration_versions {
+    label: "Migration Migration Versions"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_string.migration_migration_versions ;;
+    type: string
+    group_label: "Migration"
+    group_item_label: "Migration Versions"
+
+    link: {
+      label: "Glean Dictionary reference for Migration Migration Versions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/migration_migration_versions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Versions of the migrations which were executed.
+"
+  }
+
   dimension: metrics__boolean__migration_open_tabs_any_failures {
     label: "Migration Open Tabs Any Failures"
     hidden: yes

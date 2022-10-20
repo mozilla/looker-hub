@@ -211,6 +211,28 @@ Note: this metric is truncated at 100 characters.
 "
   }
 
+  dimension: metrics__url2__search_engine_default_submission_url {
+    label: "Search Engine Default Submission Url"
+    hidden: no
+    sql: ${TABLE}.metrics.url2.search_engine_default_submission_url ;;
+    type: string
+    group_label: "Search Engine Default"
+    group_item_label: "Submission Url"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Default Submission Url"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_default_submission_url"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The submission URL of the default engine. This is only reported in the
+cases where:
+  The engine is an application provided engine.
+  The engine has the same name as an application provided engine.
+  The engine matches one of a specific list of well known search engines.
+"
+  }
+
   dimension: metrics__string__search_engine_default_verified {
     label: "Search Engine Default Verified"
     hidden: no
@@ -310,6 +332,33 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__url2__search_engine_private_submission_url {
+    label: "Search Engine Private Submission Url"
+    hidden: no
+    sql: ${TABLE}.metrics.url2.search_engine_private_submission_url ;;
+    type: string
+    group_label: "Search Engine Private"
+    group_item_label: "Submission Url"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Private Submission Url"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_private_submission_url"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The submission URL of the default engine. This is only reported in the
+cases where:
+  The engine is an application provided engine.
+  The engine has the same name as an application provided engine.
+  The engine matches one of a specific list of well known search engines.
+If this string is an empty string (`\"\"`), this means that one or both of
+the preferences `browser.search.separatePrivateDefault` and
+`browser.search.separatePrivateDefault.ui.enabled` are set to false.
+It is possible that the user selects the same private engine as for the
+default engine, and hence both versions of these fields will be filled in.
+"
+  }
+
   dimension: metrics__string__search_engine_private_verified {
     label: "Search Engine Private Verified"
     hidden: no
@@ -333,6 +382,24 @@ the preferences `browser.search.separatePrivateDefault` and
 `browser.search.separatePrivateDefault.ui.enabled` are set to false.
 It is possible that the user selects the same private engine as for the
 default engine, and hence both versions of these fields will be filled in.
+"
+  }
+
+  dimension: metrics__labeled_boolean__startup_run_from_dmg_install_outcome {
+    label: "Startup Run From Dmg Install Outcome"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.startup_run_from_dmg_install_outcome ;;
+    type: string
+    group_label: "Startup"
+    group_item_label: "Run From Dmg Install Outcome"
+
+    link: {
+      label: "Glean Dictionary reference for Startup Run From Dmg Install Outcome"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/startup_run_from_dmg_install_outcome"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The outcome after the app detected that it was running from DMG or an app translocated location and should offer to install and relaunch itself.
 "
   }
 

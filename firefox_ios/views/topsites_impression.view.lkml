@@ -43,6 +43,25 @@ contextual services features.
 "
   }
 
+  dimension: metrics__url2__top_site_contile_reporting_url {
+    label: "Top Site Contile Reporting Url"
+    hidden: yes
+    sql: ${TABLE}.metrics.url2.top_site_contile_reporting_url ;;
+    type: string
+    group_label: "Top Site"
+    group_item_label: "Contile Reporting Url"
+
+    link: {
+      label: "Glean Dictionary reference for Top Site Contile Reporting Url"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/top_site_contile_reporting_url"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The AdM reporting endpoint (impression_url for “impression” event,
+click_url for “click” event).
+"
+  }
+
   dimension: metrics__quantity__top_site_contile_tile_id {
     label: "Top Site Contile Tile Id"
     hidden: yes
@@ -96,6 +115,25 @@ contextual services features.
     }
 
     description: "Advertiser brand for the sponsored TopSites tile
+"
+  }
+
+  dimension: metrics__url2__top_sites_contile_reporting_url {
+    label: "Top Sites Contile Reporting Url"
+    hidden: no
+    sql: ${TABLE}.metrics.url2.top_sites_contile_reporting_url ;;
+    type: string
+    group_label: "Top Sites"
+    group_item_label: "Contile Reporting Url"
+
+    link: {
+      label: "Glean Dictionary reference for Top Sites Contile Reporting Url"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/top_sites_contile_reporting_url"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The AdM reporting endpoint (impression_url for “impression” event,
+click_url for “click” event).
 "
   }
 
