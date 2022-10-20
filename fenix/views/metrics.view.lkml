@@ -2363,6 +2363,28 @@ value will be \"custom\"
 "
   }
 
+  dimension: metrics__url2__search_default_engine_search_url {
+    label: "Search Default Engine Search Url"
+    hidden: no
+    sql: ${TABLE}.metrics.url2.search_default_engine_search_url ;;
+    type: string
+    group_label: "Search Default Engine"
+    group_item_label: "Search Url"
+
+    link: {
+      label: "Glean Dictionary reference for Search Default Engine Search Url"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/search_default_engine_search_url"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If the search engine is pre-loaded with Fenix this value will be the base
+URL we use to build the search query for the search engine. For example:
+https://mysearchengine.com/?query=%s. If it's a custom search engine
+(defined: https://github.com/mozilla-mobile/fenix/issues/1607) the value
+will not be set.
+"
+  }
+
   dimension: metrics__string__search_default_engine_submission_url {
     label: "Search Default Engine Submission Url"
     hidden: yes

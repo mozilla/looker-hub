@@ -77,6 +77,24 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_string__sync_failure_reason {
+    label: "Sync Failure Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.sync_failure_reason ;;
+    type: string
+    group_label: "Sync"
+    group_item_label: "Failure Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Sync Failure Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/sync_failure_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records a global sync failure: either due to an authentication error, unexpected exception, or other error that caused the sync to fail. Error strings are truncated and sanitized to omit PII, like URLs and file system paths.
+"
+  }
+
   dimension: metrics__uuid__sync_sync_uuid {
     label: "Sync Sync Uuid"
     hidden: no

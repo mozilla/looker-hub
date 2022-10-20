@@ -41,6 +41,25 @@ view: non_interaction {
 "
   }
 
+  dimension: metrics__labeled_string__page_query_params {
+    label: "Page Query Params"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.page_query_params ;;
+    type: string
+    group_label: "Page"
+    group_item_label: "Query Params"
+
+    link: {
+      label: "Glean Dictionary reference for Page Query Params"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bedrock/metrics/page_query_params"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Query parameters associated with the URL of
+the page that was viewed.
+"
+  }
+
   dimension: metrics__string__page_referrer {
     label: "Page Referrer"
     hidden: no

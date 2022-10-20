@@ -77,6 +77,24 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_string__bookmarks_sync_failure_reason {
+    label: "Bookmarks Sync Failure Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.bookmarks_sync_failure_reason ;;
+    type: string
+    group_label: "Bookmarks Sync"
+    group_item_label: "Failure Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Bookmarks Sync Failure Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/bookmarks_sync_failure_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records bookmark sync failure reasons.
+"
+  }
+
   dimension: metrics__datetime__bookmarks_sync_finished_at {
     label: "Bookmarks Sync Finished At"
     hidden: no

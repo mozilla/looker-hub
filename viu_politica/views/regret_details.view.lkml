@@ -5,6 +5,23 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: regret_details {
+  dimension: metrics__text2__regret_details_feedback_text {
+    label: "Regret Details Feedback Text"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.regret_details_feedback_text ;;
+    type: string
+    group_label: "Regret Details"
+    group_item_label: "Feedback Text"
+
+    link: {
+      label: "Glean Dictionary reference for Regret Details Feedback Text"
+      url: "https://dictionary.telemetry.mozilla.org/apps/viu_politica/metrics/regret_details_feedback_text"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Regret feedback text"
+  }
+
   dimension: metrics__string__regret_details_video_data_id {
     label: "Regret Details Video Data Id"
     hidden: no
