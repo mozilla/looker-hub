@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Startup Crashes
-    name: Startup Crashes_sum
+  - title: Shutdown Hangs
+    name: Shutdown Hangs_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,10 +26,44 @@
       tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
     ]
     filters:
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.metric: startup_crashes
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.metric: shutdown_hangs
       tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.statistic: sum
     row: 0
     col: 0
+    width: 12
+    height: 8
+    field_x: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
+    field_y: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.point
+    log_scale: false
+    ci_lower: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.lower
+    ci_upper: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.upper
+    show_grid: true
+    listen:
+      Date: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Main Crashes
+    name: Main Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
+    type: looker_line
+    fields: [
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.point
+    ]
+    pivots: [
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
+    ]
+    filters:
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.metric: main_crashes
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.statistic: sum
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
@@ -64,8 +98,8 @@
     filters:
       tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.metric: memory_total
       tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.statistic: percentile
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
@@ -77,6 +111,40 @@
     listen:
       Date: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
       Percentile: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Startup Crashes
+    name: Startup Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
+    type: looker_line
+    fields: [
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch,
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.point
+    ]
+    pivots: [
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
+    ]
+    filters:
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.metric: startup_crashes
+      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.statistic: sum
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
+    field_y: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.point
+    log_scale: false
+    ci_lower: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.lower
+    ci_upper: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.upper
+    show_grid: true
+    listen:
+      Date: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -98,74 +166,6 @@
     ]
     filters:
       tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.metric: oom_crashes
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.statistic: sum
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
-    field_y: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.point
-    log_scale: false
-    ci_lower: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.lower
-    ci_upper: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.upper
-    show_grid: true
-    listen:
-      Date: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Main Crashes
-    name: Main Crashes_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
-    type: looker_line
-    fields: [
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.point
-    ]
-    pivots: [
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
-    ]
-    filters:
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.metric: main_crashes
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.statistic: sum
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
-    field_y: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.point
-    log_scale: false
-    ci_lower: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.lower
-    ci_upper: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.upper
-    show_grid: true
-    listen:
-      Date: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Shutdown Hangs
-    name: Shutdown Hangs_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
-    type: looker_line
-    fields: [
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.submission_date,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch,
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.point
-    ]
-    pivots: [
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.branch
-    ]
-    filters:
-      tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.metric: shutdown_hangs
       tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles.statistic: sum
     row: 20
     col: 0
