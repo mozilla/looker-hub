@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Shutdown Hangs
-    name: Shutdown Hangs_sum
+  - title: Content Crashes
+    name: Content Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,7 +26,7 @@
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
     ]
     filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: shutdown_hangs
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: content_crashes
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.statistic: sum
     row: 0
     col: 0
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Crashes
-    name: Content Crashes_sum
+  - title: Shutdown Hangs
+    name: Shutdown Hangs_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -199,7 +199,7 @@
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
     ]
     filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: content_crashes
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: shutdown_hangs
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.statistic: sum
     row: 20
     col: 12

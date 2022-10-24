@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Shutdown Hangs
-    name: Shutdown Hangs_sum
+  - title: Content Crashes
+    name: Content Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,7 +26,7 @@
       mr2022_backgroundtaskmessage_experiment_sizing_release_106.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_experiment_sizing_release_106.metric: shutdown_hangs
+      mr2022_backgroundtaskmessage_experiment_sizing_release_106.metric: content_crashes
       mr2022_backgroundtaskmessage_experiment_sizing_release_106.statistic: sum
     row: 0
     col: 0
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Crashes
-    name: Content Crashes_sum
+  - title: Shutdown Hangs
+    name: Shutdown Hangs_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -199,7 +199,7 @@
       mr2022_backgroundtaskmessage_experiment_sizing_release_106.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_experiment_sizing_release_106.metric: content_crashes
+      mr2022_backgroundtaskmessage_experiment_sizing_release_106.metric: shutdown_hangs
       mr2022_backgroundtaskmessage_experiment_sizing_release_106.statistic: sum
     row: 20
     col: 12
