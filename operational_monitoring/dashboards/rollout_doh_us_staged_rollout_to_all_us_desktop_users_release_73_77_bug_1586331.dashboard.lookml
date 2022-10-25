@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Shutdown Hangs
-    name: Shutdown Hangs_sum
+  - title: Content Crashes
+    name: Content Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,7 +26,7 @@
       rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331.branch
     ]
     filters:
-      rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331.metric: shutdown_hangs
+      rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331.metric: content_crashes
       rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331.statistic: sum
     row: 0
     col: 0
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Crashes
-    name: Content Crashes_sum
+  - title: Shutdown Hangs
+    name: Shutdown Hangs_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -199,7 +199,7 @@
       rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331.branch
     ]
     filters:
-      rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331.metric: content_crashes
+      rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331.metric: shutdown_hangs
       rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331.statistic: sum
     row: 20
     col: 12

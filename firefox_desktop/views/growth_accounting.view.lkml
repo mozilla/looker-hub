@@ -1813,6 +1813,11 @@ view: growth_accounting {
     type: yesno
   }
 
+  dimension: user_pref_app_shield_optoutstudies_enabled {
+    sql: ${TABLE}.user_pref_app_shield_optoutstudies_enabled ;;
+    type: string
+  }
+
   dimension: user_pref_browser_newtabpage_enabled {
     sql: ${TABLE}.user_pref_browser_newtabpage_enabled ;;
     type: string

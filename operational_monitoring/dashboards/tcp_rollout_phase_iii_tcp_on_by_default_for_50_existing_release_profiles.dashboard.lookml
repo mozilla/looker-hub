@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Shutdown Hangs
-    name: Shutdown Hangs_sum
+  - title: Content Crashes
+    name: Content Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,7 +26,7 @@
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
     ]
     filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.metric: shutdown_hangs
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.metric: content_crashes
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.statistic: sum
     row: 0
     col: 0
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Crashes
-    name: Content Crashes_sum
+  - title: Shutdown Hangs
+    name: Shutdown Hangs_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -199,7 +199,7 @@
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.branch
     ]
     filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.metric: content_crashes
+      tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.metric: shutdown_hangs
       tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles.statistic: sum
     row: 20
     col: 12

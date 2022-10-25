@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Shutdown Hangs
-    name: Shutdown Hangs_sum
+  - title: Content Crashes
+    name: Content Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,7 +26,7 @@
       task_continuity_sync_after_tab_change_rollout_60.branch
     ]
     filters:
-      task_continuity_sync_after_tab_change_rollout_60.metric: shutdown_hangs
+      task_continuity_sync_after_tab_change_rollout_60.metric: content_crashes
       task_continuity_sync_after_tab_change_rollout_60.statistic: sum
     row: 0
     col: 0
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Crashes
-    name: Content Crashes_sum
+  - title: Shutdown Hangs
+    name: Shutdown Hangs_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -199,7 +199,7 @@
       task_continuity_sync_after_tab_change_rollout_60.branch
     ]
     filters:
-      task_continuity_sync_after_tab_change_rollout_60.metric: content_crashes
+      task_continuity_sync_after_tab_change_rollout_60.metric: shutdown_hangs
       task_continuity_sync_after_tab_change_rollout_60.statistic: sum
     row: 20
     col: 12

@@ -3051,7 +3051,7 @@ operational_monitoring:
         explore: bug_1759000_rollout_initial_rollout_of_tcp_release_91_99
         group_by_dimension: null
         summaries: &id012
-        - metric: shutdown_hangs
+        - metric: content_crashes
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3061,7 +3061,7 @@ operational_monitoring:
           statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: shutdown_hangs
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.bug_1759000_rollout_initial_rollout_of_tcp_release_91_99_statistics
         xaxis: submission_date
@@ -3177,7 +3177,7 @@ operational_monitoring:
         explore: mr2022_backgroundtaskmessage_experiment_sizing_release_106
         group_by_dimension: null
         summaries: &id027
-        - metric: shutdown_hangs
+        - metric: content_crashes
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3187,7 +3187,7 @@ operational_monitoring:
           statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: shutdown_hangs
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.mr2022_backgroundtaskmessage_experiment_sizing_release_106_statistics
         xaxis: submission_date
@@ -3203,7 +3203,7 @@ operational_monitoring:
         explore: mr2022_backgroundtaskmessage_notification_beta_107
         group_by_dimension: null
         summaries: &id030
-        - metric: shutdown_hangs
+        - metric: content_crashes
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3213,7 +3213,7 @@ operational_monitoring:
           statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: shutdown_hangs
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.mr2022_backgroundtaskmessage_notification_beta_107_statistics
         xaxis: submission_date
@@ -3229,7 +3229,7 @@ operational_monitoring:
         explore: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489
         group_by_dimension: null
         summaries: &id033
-        - metric: shutdown_hangs
+        - metric: content_crashes
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3239,7 +3239,7 @@ operational_monitoring:
           statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: shutdown_hangs
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_statistics
         xaxis: submission_date
@@ -3255,7 +3255,7 @@ operational_monitoring:
         explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
         group_by_dimension: null
         summaries: &id036
-        - metric: shutdown_hangs
+        - metric: content_crashes
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3265,7 +3265,7 @@ operational_monitoring:
           statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: shutdown_hangs
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_statistics
         xaxis: submission_date
@@ -3282,7 +3282,7 @@ operational_monitoring:
         explore: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331
         group_by_dimension: null
         summaries: &id039
-        - metric: shutdown_hangs
+        - metric: content_crashes
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3292,7 +3292,7 @@ operational_monitoring:
           statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: shutdown_hangs
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_statistics
         xaxis: submission_date
@@ -3309,7 +3309,7 @@ operational_monitoring:
         explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout
         group_by_dimension: null
         summaries: &id042
-        - metric: shutdown_hangs
+        - metric: content_crashes
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3319,7 +3319,7 @@ operational_monitoring:
           statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: shutdown_hangs
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_statistics
         xaxis: submission_date
@@ -3335,7 +3335,7 @@ operational_monitoring:
         explore: task_continuity_sync_after_tab_change_rollout_40
         group_by_dimension: null
         summaries: &id045
-        - metric: shutdown_hangs
+        - metric: content_crashes
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3345,7 +3345,7 @@ operational_monitoring:
           statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: shutdown_hangs
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.task_continuity_sync_after_tab_change_rollout_40_statistics
         xaxis: submission_date
@@ -3361,7 +3361,7 @@ operational_monitoring:
         explore: task_continuity_sync_after_tab_change_rollout_60
         group_by_dimension: null
         summaries: &id048
-        - metric: shutdown_hangs
+        - metric: content_crashes
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3371,7 +3371,7 @@ operational_monitoring:
           statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: shutdown_hangs
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.task_continuity_sync_after_tab_change_rollout_60_statistics
         xaxis: submission_date
@@ -3387,7 +3387,7 @@ operational_monitoring:
         explore: tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles
         group_by_dimension: null
         summaries: &id051
-        - metric: shutdown_hangs
+        - metric: content_crashes
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3397,7 +3397,7 @@ operational_monitoring:
           statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: shutdown_hangs
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles_statistics
         xaxis: submission_date
@@ -3413,7 +3413,7 @@ operational_monitoring:
         explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
         group_by_dimension: null
         summaries: &id054
-        - metric: shutdown_hangs
+        - metric: content_crashes
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3423,7 +3423,7 @@ operational_monitoring:
           statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: shutdown_hangs
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_statistics
         xaxis: submission_date
@@ -3473,7 +3473,7 @@ operational_monitoring:
         explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
         group_by_dimension: null
         summaries: &id060
-        - metric: shutdown_hangs
+        - metric: content_crashes
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3483,7 +3483,7 @@ operational_monitoring:
           statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: shutdown_hangs
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles_statistics
         xaxis: submission_date
@@ -3499,7 +3499,7 @@ operational_monitoring:
         explore: tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles
         group_by_dimension: null
         summaries: &id063
-        - metric: shutdown_hangs
+        - metric: content_crashes
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3509,7 +3509,7 @@ operational_monitoring:
           statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: shutdown_hangs
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles_statistics
         xaxis: submission_date
@@ -3525,7 +3525,7 @@ operational_monitoring:
         explore: tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles
         group_by_dimension: null
         summaries: &id066
-        - metric: shutdown_hangs
+        - metric: content_crashes
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3535,7 +3535,7 @@ operational_monitoring:
           statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: shutdown_hangs
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles_statistics
         xaxis: submission_date
@@ -3594,7 +3594,7 @@ operational_monitoring:
         explore: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
         group_by_dimension: null
         summaries: &id072
-        - metric: shutdown_hangs
+        - metric: content_crashes
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3604,7 +3604,7 @@ operational_monitoring:
           statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: shutdown_hangs
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users_statistics
         xaxis: submission_date
@@ -3620,7 +3620,7 @@ operational_monitoring:
         explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
         group_by_dimension: null
         summaries: &id075
-        - metric: shutdown_hangs
+        - metric: content_crashes
           statistic: sum
         - metric: main_crashes
           statistic: sum
@@ -3630,7 +3630,7 @@ operational_monitoring:
           statistic: sum
         - metric: oom_crashes
           statistic: sum
-        - metric: content_crashes
+        - metric: shutdown_hangs
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_statistics
         xaxis: submission_date

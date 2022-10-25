@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Shutdown Hangs
-    name: Shutdown Hangs_sum
+  - title: Content Crashes
+    name: Content Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,7 +26,7 @@
       set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.branch
     ]
     filters:
-      set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.metric: shutdown_hangs
+      set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.metric: content_crashes
       set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.statistic: sum
     row: 0
     col: 0
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Crashes
-    name: Content Crashes_sum
+  - title: Shutdown Hangs
+    name: Shutdown Hangs_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -199,7 +199,7 @@
       set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.branch
     ]
     filters:
-      set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.metric: content_crashes
+      set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.metric: shutdown_hangs
       set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.statistic: sum
     row: 20
     col: 12
