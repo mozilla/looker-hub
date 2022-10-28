@@ -18,6 +18,16 @@ explore: metrics {
     ]
   }
 
+  join: metrics__metrics__labeled_counter__dap_report_generation_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dap_report_generation_status}) AS metrics__metrics__labeled_counter__dap_report_generation_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dap_report_generation_status.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__dap_upload_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dap_upload_status}) AS metrics__metrics__labeled_counter__dap_upload_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dap_upload_status.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__glean_error_invalid_label}) AS metrics__metrics__labeled_counter__glean_error_invalid_label ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -132,6 +142,14 @@ explore: metrics {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_parent_inactive}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive.document_id} ;;
   }
+}
+
+explore: suggest__metrics__metrics__labeled_counter__dap_report_generation_status {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__dap_upload_status {
+  hidden: yes
 }
 
 explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
