@@ -3862,11 +3862,11 @@ operational_monitoring:
         compact_visualization: true
         dimensions: &id077
           os:
-            default: Mac
+            default: Windows
             options:
-            - Mac
             - Windows
             - Linux
+            - Mac
         explore: telemetry_alerts_prototype
         group_by_dimension: null
         summaries: &id078
