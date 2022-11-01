@@ -71,6 +71,40 @@ Migrated from Telemetry's
 "
   }
 
+  dimension: metrics__labeled_counter__dap_report_generation_status {
+    label: "Dap Report Generation Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.dap_report_generation_status ;;
+    group_label: "Dap"
+    group_item_label: "Report Generation Status"
+
+    link: {
+      label: "Glean Dictionary reference for Dap Report Generation Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dap_report_generation_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The result of trying to generate a DAP report.
+"
+  }
+
+  dimension: metrics__labeled_counter__dap_upload_status {
+    label: "Dap Upload Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.dap_upload_status ;;
+    group_label: "Dap"
+    group_item_label: "Upload Status"
+
+    link: {
+      label: "Glean Dictionary reference for Dap Upload Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dap_upload_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The result of trying to upload a report to the DAP server.
+"
+  }
+
   dimension: metrics__timespan__extensions_startup_cache_load_time__value {
     label: "Extensions Startup Cache Load Time Value"
     hidden: no

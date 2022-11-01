@@ -575,6 +575,20 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__labeled_counter__dap_report_generation_status {
+    sql: ${TABLE}.metrics.labeled_counter.dap_report_generation_status ;;
+    hidden: yes
+    description: "The result of trying to generate a DAP report.
+"
+  }
+
+  dimension: metrics__labeled_counter__dap_upload_status {
+    sql: ${TABLE}.metrics.labeled_counter.dap_upload_status ;;
+    hidden: yes
+    description: "The result of trying to upload a report to the DAP server.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes

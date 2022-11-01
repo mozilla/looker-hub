@@ -26,7 +26,7 @@
       backgroundtaskmessage_verification_nightly_3.branch
     ]
     filters:
-      backgroundtaskmessage_verification_nightly_3.metric: shutdown_hangs
+      backgroundtaskmessage_verification_nightly_3.metric: 'shutdown_hangs'
       backgroundtaskmessage_verification_nightly_3.statistic: sum
     row: 0
     col: 0
@@ -60,7 +60,7 @@
       backgroundtaskmessage_verification_nightly_3.branch
     ]
     filters:
-      backgroundtaskmessage_verification_nightly_3.metric: content_crashes
+      backgroundtaskmessage_verification_nightly_3.metric: 'content_crashes'
       backgroundtaskmessage_verification_nightly_3.statistic: sum
     row: 0
     col: 12
@@ -94,7 +94,7 @@
       backgroundtaskmessage_verification_nightly_3.branch
     ]
     filters:
-      backgroundtaskmessage_verification_nightly_3.metric: main_crashes
+      backgroundtaskmessage_verification_nightly_3.metric: 'main_crashes'
       backgroundtaskmessage_verification_nightly_3.statistic: sum
     row: 10
     col: 0
@@ -128,7 +128,7 @@
       backgroundtaskmessage_verification_nightly_3.branch
     ]
     filters:
-      backgroundtaskmessage_verification_nightly_3.metric: startup_crashes
+      backgroundtaskmessage_verification_nightly_3.metric: 'startup_crashes'
       backgroundtaskmessage_verification_nightly_3.statistic: sum
     row: 10
     col: 12
@@ -162,7 +162,7 @@
       backgroundtaskmessage_verification_nightly_3.branch
     ]
     filters:
-      backgroundtaskmessage_verification_nightly_3.metric: oom_crashes
+      backgroundtaskmessage_verification_nightly_3.metric: 'oom_crashes'
       backgroundtaskmessage_verification_nightly_3.statistic: sum
     row: 20
     col: 0
@@ -198,7 +198,7 @@
       backgroundtaskmessage_verification_nightly_3.branch
     ]
     filters:
-      backgroundtaskmessage_verification_nightly_3.metric: memory_total
+      backgroundtaskmessage_verification_nightly_3.metric: 'memory_total'
       backgroundtaskmessage_verification_nightly_3.statistic: percentile
     row: 20
     col: 12

@@ -26,7 +26,7 @@
       set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.branch
     ]
     filters:
-      set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.metric: startup_crashes
+      set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.metric: 'startup_crashes'
       set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.statistic: sum
     row: 0
     col: 0
@@ -60,7 +60,7 @@
       set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.branch
     ]
     filters:
-      set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.metric: content_crashes
+      set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.metric: 'content_crashes'
       set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.statistic: sum
     row: 0
     col: 12
@@ -94,7 +94,7 @@
       set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.branch
     ]
     filters:
-      set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.metric: shutdown_hangs
+      set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.metric: 'shutdown_hangs'
       set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.statistic: sum
     row: 10
     col: 0
@@ -128,7 +128,7 @@
       set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.branch
     ]
     filters:
-      set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.metric: main_crashes
+      set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.metric: 'main_crashes'
       set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.statistic: sum
     row: 10
     col: 12
@@ -164,7 +164,7 @@
       set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.branch
     ]
     filters:
-      set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.metric: memory_total
+      set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.metric: 'memory_total'
       set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.statistic: percentile
     row: 20
     col: 0
@@ -199,7 +199,7 @@
       set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.branch
     ]
     filters:
-      set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.metric: oom_crashes
+      set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.metric: 'oom_crashes'
       set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout.statistic: sum
     row: 20
     col: 12

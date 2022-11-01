@@ -26,7 +26,7 @@
       backgroundtaskmessage_verification_beta_2.branch
     ]
     filters:
-      backgroundtaskmessage_verification_beta_2.metric: shutdown_hangs
+      backgroundtaskmessage_verification_beta_2.metric: 'shutdown_hangs'
       backgroundtaskmessage_verification_beta_2.statistic: sum
     row: 0
     col: 0
@@ -60,7 +60,7 @@
       backgroundtaskmessage_verification_beta_2.branch
     ]
     filters:
-      backgroundtaskmessage_verification_beta_2.metric: content_crashes
+      backgroundtaskmessage_verification_beta_2.metric: 'content_crashes'
       backgroundtaskmessage_verification_beta_2.statistic: sum
     row: 0
     col: 12
@@ -94,7 +94,7 @@
       backgroundtaskmessage_verification_beta_2.branch
     ]
     filters:
-      backgroundtaskmessage_verification_beta_2.metric: main_crashes
+      backgroundtaskmessage_verification_beta_2.metric: 'main_crashes'
       backgroundtaskmessage_verification_beta_2.statistic: sum
     row: 10
     col: 0
@@ -128,7 +128,7 @@
       backgroundtaskmessage_verification_beta_2.branch
     ]
     filters:
-      backgroundtaskmessage_verification_beta_2.metric: startup_crashes
+      backgroundtaskmessage_verification_beta_2.metric: 'startup_crashes'
       backgroundtaskmessage_verification_beta_2.statistic: sum
     row: 10
     col: 12
@@ -162,7 +162,7 @@
       backgroundtaskmessage_verification_beta_2.branch
     ]
     filters:
-      backgroundtaskmessage_verification_beta_2.metric: oom_crashes
+      backgroundtaskmessage_verification_beta_2.metric: 'oom_crashes'
       backgroundtaskmessage_verification_beta_2.statistic: sum
     row: 20
     col: 0
@@ -198,7 +198,7 @@
       backgroundtaskmessage_verification_beta_2.branch
     ]
     filters:
-      backgroundtaskmessage_verification_beta_2.metric: memory_total
+      backgroundtaskmessage_verification_beta_2.metric: 'memory_total'
       backgroundtaskmessage_verification_beta_2.statistic: percentile
     row: 20
     col: 12

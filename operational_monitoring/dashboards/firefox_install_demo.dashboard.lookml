@@ -26,7 +26,7 @@
       firefox_install_demo.branch
     ]
     filters:
-      firefox_install_demo.metric: install_volume_by_os_version
+      firefox_install_demo.metric: 'install_volume_by_os_version'
       firefox_install_demo.statistic: sum
     row: 0
     col: 0
@@ -62,7 +62,7 @@
       firefox_install_demo.branch
     ]
     filters:
-      firefox_install_demo.metric: install_success_rate
+      firefox_install_demo.metric: 'install_success_rate'
       firefox_install_demo.statistic: mean
     row: 0
     col: 12

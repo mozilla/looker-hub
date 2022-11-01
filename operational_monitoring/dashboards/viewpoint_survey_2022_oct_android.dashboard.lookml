@@ -28,7 +28,7 @@
       viewpoint_survey_2022_oct_android.branch
     ]
     filters:
-      viewpoint_survey_2022_oct_android.metric: memory_total
+      viewpoint_survey_2022_oct_android.metric: 'memory_total'
       viewpoint_survey_2022_oct_android.statistic: percentile
     row: 0
     col: 0

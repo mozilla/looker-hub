@@ -26,7 +26,7 @@
       bug_1791587_rollout_revert_unplanned_config_change_release_105_105.branch
     ]
     filters:
-      bug_1791587_rollout_revert_unplanned_config_change_release_105_105.metric: main_crashes
+      bug_1791587_rollout_revert_unplanned_config_change_release_105_105.metric: 'main_crashes'
       bug_1791587_rollout_revert_unplanned_config_change_release_105_105.statistic: sum
     row: 0
     col: 0
@@ -62,7 +62,7 @@
       bug_1791587_rollout_revert_unplanned_config_change_release_105_105.branch
     ]
     filters:
-      bug_1791587_rollout_revert_unplanned_config_change_release_105_105.metric: memory_total
+      bug_1791587_rollout_revert_unplanned_config_change_release_105_105.metric: 'memory_total'
       bug_1791587_rollout_revert_unplanned_config_change_release_105_105.statistic: percentile
     row: 0
     col: 12
@@ -97,7 +97,7 @@
       bug_1791587_rollout_revert_unplanned_config_change_release_105_105.branch
     ]
     filters:
-      bug_1791587_rollout_revert_unplanned_config_change_release_105_105.metric: content_crashes
+      bug_1791587_rollout_revert_unplanned_config_change_release_105_105.metric: 'content_crashes'
       bug_1791587_rollout_revert_unplanned_config_change_release_105_105.statistic: sum
     row: 10
     col: 0
@@ -131,7 +131,7 @@
       bug_1791587_rollout_revert_unplanned_config_change_release_105_105.branch
     ]
     filters:
-      bug_1791587_rollout_revert_unplanned_config_change_release_105_105.metric: shutdown_hangs
+      bug_1791587_rollout_revert_unplanned_config_change_release_105_105.metric: 'shutdown_hangs'
       bug_1791587_rollout_revert_unplanned_config_change_release_105_105.statistic: sum
     row: 10
     col: 12
@@ -165,7 +165,7 @@
       bug_1791587_rollout_revert_unplanned_config_change_release_105_105.branch
     ]
     filters:
-      bug_1791587_rollout_revert_unplanned_config_change_release_105_105.metric: oom_crashes
+      bug_1791587_rollout_revert_unplanned_config_change_release_105_105.metric: 'oom_crashes'
       bug_1791587_rollout_revert_unplanned_config_change_release_105_105.statistic: sum
     row: 20
     col: 0
@@ -199,7 +199,7 @@
       bug_1791587_rollout_revert_unplanned_config_change_release_105_105.branch
     ]
     filters:
-      bug_1791587_rollout_revert_unplanned_config_change_release_105_105.metric: startup_crashes
+      bug_1791587_rollout_revert_unplanned_config_change_release_105_105.metric: 'startup_crashes'
       bug_1791587_rollout_revert_unplanned_config_change_release_105_105.statistic: sum
     row: 20
     col: 12

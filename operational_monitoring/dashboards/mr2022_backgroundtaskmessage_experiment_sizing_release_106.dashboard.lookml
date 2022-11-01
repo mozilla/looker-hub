@@ -26,7 +26,7 @@
       mr2022_backgroundtaskmessage_experiment_sizing_release_106.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_experiment_sizing_release_106.metric: main_crashes
+      mr2022_backgroundtaskmessage_experiment_sizing_release_106.metric: 'main_crashes'
       mr2022_backgroundtaskmessage_experiment_sizing_release_106.statistic: sum
     row: 0
     col: 0
@@ -60,7 +60,7 @@
       mr2022_backgroundtaskmessage_experiment_sizing_release_106.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_experiment_sizing_release_106.metric: startup_crashes
+      mr2022_backgroundtaskmessage_experiment_sizing_release_106.metric: 'startup_crashes'
       mr2022_backgroundtaskmessage_experiment_sizing_release_106.statistic: sum
     row: 0
     col: 12
@@ -94,7 +94,7 @@
       mr2022_backgroundtaskmessage_experiment_sizing_release_106.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_experiment_sizing_release_106.metric: shutdown_hangs
+      mr2022_backgroundtaskmessage_experiment_sizing_release_106.metric: 'shutdown_hangs'
       mr2022_backgroundtaskmessage_experiment_sizing_release_106.statistic: sum
     row: 10
     col: 0
@@ -130,7 +130,7 @@
       mr2022_backgroundtaskmessage_experiment_sizing_release_106.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_experiment_sizing_release_106.metric: memory_total
+      mr2022_backgroundtaskmessage_experiment_sizing_release_106.metric: 'memory_total'
       mr2022_backgroundtaskmessage_experiment_sizing_release_106.statistic: percentile
     row: 10
     col: 12
@@ -165,7 +165,7 @@
       mr2022_backgroundtaskmessage_experiment_sizing_release_106.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_experiment_sizing_release_106.metric: oom_crashes
+      mr2022_backgroundtaskmessage_experiment_sizing_release_106.metric: 'oom_crashes'
       mr2022_backgroundtaskmessage_experiment_sizing_release_106.statistic: sum
     row: 20
     col: 0
@@ -199,7 +199,7 @@
       mr2022_backgroundtaskmessage_experiment_sizing_release_106.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_experiment_sizing_release_106.metric: content_crashes
+      mr2022_backgroundtaskmessage_experiment_sizing_release_106.metric: 'content_crashes'
       mr2022_backgroundtaskmessage_experiment_sizing_release_106.statistic: sum
     row: 20
     col: 12

@@ -28,7 +28,7 @@
       firefox_suggest_by_merino_nightly.branch
     ]
     filters:
-      firefox_suggest_by_merino_nightly.metric: memory_total
+      firefox_suggest_by_merino_nightly.metric: 'memory_total'
       firefox_suggest_by_merino_nightly.statistic: percentile
     row: 0
     col: 0
@@ -63,7 +63,7 @@
       firefox_suggest_by_merino_nightly.branch
     ]
     filters:
-      firefox_suggest_by_merino_nightly.metric: oom_crashes
+      firefox_suggest_by_merino_nightly.metric: 'oom_crashes'
       firefox_suggest_by_merino_nightly.statistic: sum
     row: 0
     col: 12
@@ -97,7 +97,7 @@
       firefox_suggest_by_merino_nightly.branch
     ]
     filters:
-      firefox_suggest_by_merino_nightly.metric: main_crashes
+      firefox_suggest_by_merino_nightly.metric: 'main_crashes'
       firefox_suggest_by_merino_nightly.statistic: sum
     row: 10
     col: 0
@@ -131,7 +131,7 @@
       firefox_suggest_by_merino_nightly.branch
     ]
     filters:
-      firefox_suggest_by_merino_nightly.metric: shutdown_hangs
+      firefox_suggest_by_merino_nightly.metric: 'shutdown_hangs'
       firefox_suggest_by_merino_nightly.statistic: sum
     row: 10
     col: 12
@@ -165,7 +165,7 @@
       firefox_suggest_by_merino_nightly.branch
     ]
     filters:
-      firefox_suggest_by_merino_nightly.metric: startup_crashes
+      firefox_suggest_by_merino_nightly.metric: 'startup_crashes'
       firefox_suggest_by_merino_nightly.statistic: sum
     row: 20
     col: 0
@@ -199,7 +199,7 @@
       firefox_suggest_by_merino_nightly.branch
     ]
     filters:
-      firefox_suggest_by_merino_nightly.metric: content_crashes
+      firefox_suggest_by_merino_nightly.metric: 'content_crashes'
       firefox_suggest_by_merino_nightly.statistic: sum
     row: 20
     col: 12

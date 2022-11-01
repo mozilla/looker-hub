@@ -28,7 +28,7 @@
       tcp_rollout_phase_2_demo.branch
     ]
     filters:
-      tcp_rollout_phase_2_demo.metric: perf_first_contentful_paint_ms
+      tcp_rollout_phase_2_demo.metric: 'perf_first_contentful_paint_ms'
       tcp_rollout_phase_2_demo.statistic: percentile
     row: 0
     col: 0
@@ -64,7 +64,7 @@
       tcp_rollout_phase_2_demo.branch
     ]
     filters:
-      tcp_rollout_phase_2_demo.metric: tagged_search_count
+      tcp_rollout_phase_2_demo.metric: 'tagged_search_count'
       tcp_rollout_phase_2_demo.statistic: sum
     row: 0
     col: 12
@@ -99,7 +99,7 @@
       tcp_rollout_phase_2_demo.branch
     ]
     filters:
-      tcp_rollout_phase_2_demo.metric: tagged_search_count
+      tcp_rollout_phase_2_demo.metric: 'tagged_search_count'
       tcp_rollout_phase_2_demo.statistic: mean
     row: 10
     col: 0
@@ -134,7 +134,7 @@
       tcp_rollout_phase_2_demo.branch
     ]
     filters:
-      tcp_rollout_phase_2_demo.metric: daily_active_clients
+      tcp_rollout_phase_2_demo.metric: 'daily_active_clients'
       tcp_rollout_phase_2_demo.statistic: sum
     row: 10
     col: 12
@@ -169,7 +169,7 @@
       tcp_rollout_phase_2_demo.branch
     ]
     filters:
-      tcp_rollout_phase_2_demo.metric: ad_click
+      tcp_rollout_phase_2_demo.metric: 'ad_click'
       tcp_rollout_phase_2_demo.statistic: sum
     row: 20
     col: 0
@@ -204,7 +204,7 @@
       tcp_rollout_phase_2_demo.branch
     ]
     filters:
-      tcp_rollout_phase_2_demo.metric: ad_click
+      tcp_rollout_phase_2_demo.metric: 'ad_click'
       tcp_rollout_phase_2_demo.statistic: mean
     row: 20
     col: 12
@@ -239,7 +239,7 @@
       tcp_rollout_phase_2_demo.branch
     ]
     filters:
-      tcp_rollout_phase_2_demo.metric: search_with_ads
+      tcp_rollout_phase_2_demo.metric: 'search_with_ads'
       tcp_rollout_phase_2_demo.statistic: sum
     row: 30
     col: 0
@@ -274,7 +274,7 @@
       tcp_rollout_phase_2_demo.branch
     ]
     filters:
-      tcp_rollout_phase_2_demo.metric: search_with_ads
+      tcp_rollout_phase_2_demo.metric: 'search_with_ads'
       tcp_rollout_phase_2_demo.statistic: mean
     row: 30
     col: 12

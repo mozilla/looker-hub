@@ -26,7 +26,7 @@
       task_continuity_sync_after_tab_change_rollout_60.branch
     ]
     filters:
-      task_continuity_sync_after_tab_change_rollout_60.metric: startup_crashes
+      task_continuity_sync_after_tab_change_rollout_60.metric: 'startup_crashes'
       task_continuity_sync_after_tab_change_rollout_60.statistic: sum
     row: 0
     col: 0
@@ -60,7 +60,7 @@
       task_continuity_sync_after_tab_change_rollout_60.branch
     ]
     filters:
-      task_continuity_sync_after_tab_change_rollout_60.metric: content_crashes
+      task_continuity_sync_after_tab_change_rollout_60.metric: 'content_crashes'
       task_continuity_sync_after_tab_change_rollout_60.statistic: sum
     row: 0
     col: 12
@@ -94,7 +94,7 @@
       task_continuity_sync_after_tab_change_rollout_60.branch
     ]
     filters:
-      task_continuity_sync_after_tab_change_rollout_60.metric: shutdown_hangs
+      task_continuity_sync_after_tab_change_rollout_60.metric: 'shutdown_hangs'
       task_continuity_sync_after_tab_change_rollout_60.statistic: sum
     row: 10
     col: 0
@@ -128,7 +128,7 @@
       task_continuity_sync_after_tab_change_rollout_60.branch
     ]
     filters:
-      task_continuity_sync_after_tab_change_rollout_60.metric: main_crashes
+      task_continuity_sync_after_tab_change_rollout_60.metric: 'main_crashes'
       task_continuity_sync_after_tab_change_rollout_60.statistic: sum
     row: 10
     col: 12
@@ -164,7 +164,7 @@
       task_continuity_sync_after_tab_change_rollout_60.branch
     ]
     filters:
-      task_continuity_sync_after_tab_change_rollout_60.metric: memory_total
+      task_continuity_sync_after_tab_change_rollout_60.metric: 'memory_total'
       task_continuity_sync_after_tab_change_rollout_60.statistic: percentile
     row: 20
     col: 0
@@ -199,7 +199,7 @@
       task_continuity_sync_after_tab_change_rollout_60.branch
     ]
     filters:
-      task_continuity_sync_after_tab_change_rollout_60.metric: oom_crashes
+      task_continuity_sync_after_tab_change_rollout_60.metric: 'oom_crashes'
       task_continuity_sync_after_tab_change_rollout_60.statistic: sum
     row: 20
     col: 12
