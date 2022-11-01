@@ -26,7 +26,7 @@
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.branch
     ]
     filters:
-      rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.metric: startup_crashes
+      rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.metric: 'startup_crashes'
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.statistic: sum
     row: 0
     col: 0
@@ -60,7 +60,7 @@
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.branch
     ]
     filters:
-      rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.metric: content_crashes
+      rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.metric: 'content_crashes'
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.statistic: sum
     row: 0
     col: 12
@@ -94,7 +94,7 @@
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.branch
     ]
     filters:
-      rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.metric: shutdown_hangs
+      rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.metric: 'shutdown_hangs'
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.statistic: sum
     row: 10
     col: 0
@@ -128,7 +128,7 @@
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.branch
     ]
     filters:
-      rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.metric: main_crashes
+      rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.metric: 'main_crashes'
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.statistic: sum
     row: 10
     col: 12
@@ -164,7 +164,7 @@
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.branch
     ]
     filters:
-      rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.metric: memory_total
+      rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.metric: 'memory_total'
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.statistic: percentile
     row: 20
     col: 0
@@ -199,7 +199,7 @@
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.branch
     ]
     filters:
-      rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.metric: oom_crashes
+      rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.metric: 'oom_crashes'
       rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489.statistic: sum
     row: 20
     col: 12

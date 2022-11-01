@@ -26,7 +26,7 @@
       mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.metric: startup_crashes
+      mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.metric: 'startup_crashes'
       mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.statistic: sum
     row: 0
     col: 0
@@ -60,7 +60,7 @@
       mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.metric: oom_crashes
+      mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.metric: 'oom_crashes'
       mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.statistic: sum
     row: 0
     col: 12
@@ -94,7 +94,7 @@
       mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.metric: shutdown_hangs
+      mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.metric: 'shutdown_hangs'
       mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.statistic: sum
     row: 10
     col: 0
@@ -128,7 +128,7 @@
       mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.metric: content_crashes
+      mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.metric: 'content_crashes'
       mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.statistic: sum
     row: 10
     col: 12
@@ -162,7 +162,7 @@
       mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.metric: main_crashes
+      mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.metric: 'main_crashes'
       mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.statistic: sum
     row: 20
     col: 0
@@ -198,7 +198,7 @@
       mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.metric: memory_total
+      mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.metric: 'memory_total'
       mr2022_backgroundtaskmessage_notification_beta_107_experiment_1.statistic: percentile
     row: 20
     col: 12

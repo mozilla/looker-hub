@@ -26,7 +26,7 @@
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
     ]
     filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: startup_crashes
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: 'startup_crashes'
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.statistic: sum
     row: 0
     col: 0
@@ -60,7 +60,7 @@
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
     ]
     filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: content_crashes
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: 'content_crashes'
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.statistic: sum
     row: 0
     col: 12
@@ -94,7 +94,7 @@
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
     ]
     filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: shutdown_hangs
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: 'shutdown_hangs'
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.statistic: sum
     row: 10
     col: 0
@@ -128,7 +128,7 @@
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
     ]
     filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: main_crashes
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: 'main_crashes'
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.statistic: sum
     row: 10
     col: 12
@@ -164,7 +164,7 @@
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
     ]
     filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: memory_total
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: 'memory_total'
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.statistic: percentile
     row: 20
     col: 0
@@ -199,7 +199,7 @@
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.branch
     ]
     filters:
-      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: oom_crashes
+      bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.metric: 'oom_crashes'
       bug_1759000_rollout_initial_rollout_of_tcp_release_91_99.statistic: sum
     row: 20
     col: 12

@@ -26,7 +26,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: oom_crashes
+      performance_desktop_build_by_build_beta.metric: 'oom_crashes'
       performance_desktop_build_by_build_beta.statistic: sum
     row: 0
     col: 0
@@ -62,7 +62,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: keypress_present_latency_ms
+      performance_desktop_build_by_build_beta.metric: 'keypress_present_latency_ms'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 0
     col: 12
@@ -99,7 +99,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: perf_request_animation_callback_non_pageload
+      performance_desktop_build_by_build_beta.metric: 'perf_request_animation_callback_non_pageload'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 10
     col: 0
@@ -136,7 +136,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: perf_first_contentful_paint_ms
+      performance_desktop_build_by_build_beta.metric: 'perf_first_contentful_paint_ms'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 10
     col: 12
@@ -173,7 +173,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: perf_dom_contentperf_dom_content_loaded_time_from_responsestart_ms_loaded_time
+      performance_desktop_build_by_build_beta.metric: 'perf_dom_contentperf_dom_content_loaded_time_from_responsestart_ms_loaded_time'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 20
     col: 0
@@ -210,7 +210,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: scroll_present_latency
+      performance_desktop_build_by_build_beta.metric: 'scroll_present_latency'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 20
     col: 12
@@ -247,7 +247,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: timestamps_about_home_topsites_first_paint
+      performance_desktop_build_by_build_beta.metric: 'timestamps_about_home_topsites_first_paint'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 30
     col: 0
@@ -284,7 +284,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: input_event_response_coalesced
+      performance_desktop_build_by_build_beta.metric: 'input_event_response_coalesced'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 30
     col: 12
@@ -321,7 +321,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: js_pageload_baseline_compile_ms
+      performance_desktop_build_by_build_beta.metric: 'js_pageload_baseline_compile_ms'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 40
     col: 0
@@ -358,7 +358,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: cycle_collector_visited_gced
+      performance_desktop_build_by_build_beta.metric: 'cycle_collector_visited_gced'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 40
     col: 12
@@ -393,7 +393,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: shutdown_hangs
+      performance_desktop_build_by_build_beta.metric: 'shutdown_hangs'
       performance_desktop_build_by_build_beta.statistic: sum
     row: 50
     col: 0
@@ -429,7 +429,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: js_pageload_parse_ms
+      performance_desktop_build_by_build_beta.metric: 'js_pageload_parse_ms'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 50
     col: 12
@@ -466,7 +466,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: cycle_collector_visited_ref_counted
+      performance_desktop_build_by_build_beta.metric: 'cycle_collector_visited_ref_counted'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 60
     col: 0
@@ -503,7 +503,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: fx_page_load_ms_2
+      performance_desktop_build_by_build_beta.metric: 'fx_page_load_ms_2'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 60
     col: 12
@@ -540,7 +540,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: perf_dom_content_loaded_time
+      performance_desktop_build_by_build_beta.metric: 'perf_dom_content_loaded_time'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 70
     col: 0
@@ -575,7 +575,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: startup_crashes
+      performance_desktop_build_by_build_beta.metric: 'startup_crashes'
       performance_desktop_build_by_build_beta.statistic: sum
     row: 70
     col: 12
@@ -611,7 +611,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: perf_request_animation_callback_pageload
+      performance_desktop_build_by_build_beta.metric: 'perf_request_animation_callback_pageload'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 80
     col: 0
@@ -648,7 +648,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: js_pageload_protect_ms
+      performance_desktop_build_by_build_beta.metric: 'js_pageload_protect_ms'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 80
     col: 12
@@ -685,7 +685,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: js_pageload_execution_ms
+      performance_desktop_build_by_build_beta.metric: 'js_pageload_execution_ms'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 90
     col: 0
@@ -722,7 +722,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: perf_page_load_time_from_responsestart
+      performance_desktop_build_by_build_beta.metric: 'perf_page_load_time_from_responsestart'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 90
     col: 12
@@ -757,7 +757,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: content_crashes
+      performance_desktop_build_by_build_beta.metric: 'content_crashes'
       performance_desktop_build_by_build_beta.statistic: sum
     row: 100
     col: 0
@@ -791,7 +791,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: main_crashes
+      performance_desktop_build_by_build_beta.metric: 'main_crashes'
       performance_desktop_build_by_build_beta.statistic: sum
     row: 100
     col: 12
@@ -827,7 +827,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: js_pageload_delazification_ms
+      performance_desktop_build_by_build_beta.metric: 'js_pageload_delazification_ms'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 110
     col: 0
@@ -864,7 +864,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: js_pageload_xdr_encoding_ms
+      performance_desktop_build_by_build_beta.metric: 'js_pageload_xdr_encoding_ms'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 110
     col: 12
@@ -901,7 +901,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: mouseup_followed_by_click_present_latency
+      performance_desktop_build_by_build_beta.metric: 'mouseup_followed_by_click_present_latency'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 120
     col: 0
@@ -938,7 +938,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: perf_page_load_time_ms
+      performance_desktop_build_by_build_beta.metric: 'perf_page_load_time_ms'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 120
     col: 12
@@ -975,7 +975,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: timestamps_first_paint_two
+      performance_desktop_build_by_build_beta.metric: 'timestamps_first_paint_two'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 130
     col: 0
@@ -1012,7 +1012,7 @@
       performance_desktop_build_by_build_beta.branch
     ]
     filters:
-      performance_desktop_build_by_build_beta.metric: time_to_first_interaction_ms
+      performance_desktop_build_by_build_beta.metric: 'time_to_first_interaction_ms'
       performance_desktop_build_by_build_beta.statistic: percentile
     row: 130
     col: 12

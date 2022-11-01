@@ -26,7 +26,7 @@
       tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.branch
     ]
     filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.metric: startup_crashes
+      tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.metric: 'startup_crashes'
       tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.statistic: sum
     row: 0
     col: 0
@@ -60,7 +60,7 @@
       tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.branch
     ]
     filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.metric: content_crashes
+      tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.metric: 'content_crashes'
       tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.statistic: sum
     row: 0
     col: 12
@@ -94,7 +94,7 @@
       tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.branch
     ]
     filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.metric: shutdown_hangs
+      tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.metric: 'shutdown_hangs'
       tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.statistic: sum
     row: 10
     col: 0
@@ -128,7 +128,7 @@
       tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.branch
     ]
     filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.metric: main_crashes
+      tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.metric: 'main_crashes'
       tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.statistic: sum
     row: 10
     col: 12
@@ -164,7 +164,7 @@
       tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.branch
     ]
     filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.metric: memory_total
+      tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.metric: 'memory_total'
       tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.statistic: percentile
     row: 20
     col: 0
@@ -199,7 +199,7 @@
       tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.branch
     ]
     filters:
-      tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.metric: oom_crashes
+      tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.metric: 'oom_crashes'
       tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles.statistic: sum
     row: 20
     col: 12

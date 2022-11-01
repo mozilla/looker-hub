@@ -28,7 +28,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: performance_pageload_dcl
+      performance_fenix_build_by_build_beta.metric: 'performance_pageload_dcl'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 0
     col: 0
@@ -64,7 +64,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: performance_pageload_fcp
+      performance_fenix_build_by_build_beta.metric: 'performance_pageload_fcp'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 0
     col: 12
@@ -100,7 +100,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: storage_stats_data_dir_bytes
+      performance_fenix_build_by_build_beta.metric: 'storage_stats_data_dir_bytes'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 10
     col: 0
@@ -136,7 +136,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: perf_startup_cold_main_app_to_first_frame
+      performance_fenix_build_by_build_beta.metric: 'perf_startup_cold_main_app_to_first_frame'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 10
     col: 12
@@ -172,7 +172,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: perf_startup_cold_view_app_to_first_frame
+      performance_fenix_build_by_build_beta.metric: 'perf_startup_cold_view_app_to_first_frame'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 20
     col: 0
@@ -208,7 +208,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: storage_stats_cache_bytes
+      performance_fenix_build_by_build_beta.metric: 'storage_stats_cache_bytes'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 20
     col: 12
@@ -244,7 +244,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: performance_pageload_req_anim_frame_callback
+      performance_fenix_build_by_build_beta.metric: 'performance_pageload_req_anim_frame_callback'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 30
     col: 0
@@ -280,7 +280,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: storage_stats_app_bytes
+      performance_fenix_build_by_build_beta.metric: 'storage_stats_app_bytes'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 30
     col: 12
@@ -316,7 +316,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: performance_pageload_load_time_responsestart
+      performance_fenix_build_by_build_beta.metric: 'performance_pageload_load_time_responsestart'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 40
     col: 0
@@ -352,7 +352,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: performance_pageload_dcl_responsestart
+      performance_fenix_build_by_build_beta.metric: 'performance_pageload_dcl_responsestart'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 40
     col: 12
@@ -388,7 +388,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: performance_pageload_load_time
+      performance_fenix_build_by_build_beta.metric: 'performance_pageload_load_time'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 50
     col: 0
@@ -424,7 +424,7 @@
       performance_fenix_build_by_build_beta.branch
     ]
     filters:
-      performance_fenix_build_by_build_beta.metric: performance_pageload_fcp_responsestart
+      performance_fenix_build_by_build_beta.metric: 'performance_pageload_fcp_responsestart'
       performance_fenix_build_by_build_beta.statistic: percentile
     row: 50
     col: 12

@@ -28,7 +28,7 @@
       mr2022_backgroundtaskmessage_experiment_sizing.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_experiment_sizing.metric: memory_total
+      mr2022_backgroundtaskmessage_experiment_sizing.metric: 'memory_total'
       mr2022_backgroundtaskmessage_experiment_sizing.statistic: percentile
     row: 0
     col: 0
@@ -63,7 +63,7 @@
       mr2022_backgroundtaskmessage_experiment_sizing.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_experiment_sizing.metric: startup_crashes
+      mr2022_backgroundtaskmessage_experiment_sizing.metric: 'startup_crashes'
       mr2022_backgroundtaskmessage_experiment_sizing.statistic: sum
     row: 0
     col: 12
@@ -97,7 +97,7 @@
       mr2022_backgroundtaskmessage_experiment_sizing.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_experiment_sizing.metric: oom_crashes
+      mr2022_backgroundtaskmessage_experiment_sizing.metric: 'oom_crashes'
       mr2022_backgroundtaskmessage_experiment_sizing.statistic: sum
     row: 10
     col: 0
@@ -131,7 +131,7 @@
       mr2022_backgroundtaskmessage_experiment_sizing.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_experiment_sizing.metric: content_crashes
+      mr2022_backgroundtaskmessage_experiment_sizing.metric: 'content_crashes'
       mr2022_backgroundtaskmessage_experiment_sizing.statistic: sum
     row: 10
     col: 12
@@ -165,7 +165,7 @@
       mr2022_backgroundtaskmessage_experiment_sizing.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_experiment_sizing.metric: shutdown_hangs
+      mr2022_backgroundtaskmessage_experiment_sizing.metric: 'shutdown_hangs'
       mr2022_backgroundtaskmessage_experiment_sizing.statistic: sum
     row: 20
     col: 0
@@ -199,7 +199,7 @@
       mr2022_backgroundtaskmessage_experiment_sizing.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_experiment_sizing.metric: main_crashes
+      mr2022_backgroundtaskmessage_experiment_sizing.metric: 'main_crashes'
       mr2022_backgroundtaskmessage_experiment_sizing.statistic: sum
     row: 20
     col: 12

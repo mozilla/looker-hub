@@ -26,7 +26,7 @@
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
     ]
     filters:
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: startup_crashes
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: 'startup_crashes'
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.statistic: sum
     row: 0
     col: 0
@@ -60,7 +60,7 @@
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
     ]
     filters:
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: content_crashes
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: 'content_crashes'
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.statistic: sum
     row: 0
     col: 12
@@ -94,7 +94,7 @@
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
     ]
     filters:
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: shutdown_hangs
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: 'shutdown_hangs'
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.statistic: sum
     row: 10
     col: 0
@@ -128,7 +128,7 @@
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
     ]
     filters:
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: main_crashes
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: 'main_crashes'
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.statistic: sum
     row: 10
     col: 12
@@ -164,7 +164,7 @@
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
     ]
     filters:
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: memory_total
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: 'memory_total'
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.statistic: percentile
     row: 20
     col: 0
@@ -199,7 +199,7 @@
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.branch
     ]
     filters:
-      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: oom_crashes
+      total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.metric: 'oom_crashes'
       total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default.statistic: sum
     row: 20
     col: 12
