@@ -3135,12 +3135,12 @@ operational_monitoring:
         explore: firefox_install_demo
         group_by_dimension: null
         summaries: &id018
-        - metric: install_volume_by_os_version
-          metric_groups: []
-          statistic: sum
         - metric: install_success_rate
           metric_groups: []
           statistic: mean
+        - metric: install_volume_by_os_version
+          metric_groups: []
+          statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_install_demo_statistics
         xaxis: submission_date
       - explore: firefox_install_demo_alerts
@@ -3288,7 +3288,7 @@ operational_monitoring:
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
-        - metric: oom_crashes
+        - metric: main_crashes
           metric_groups: []
           statistic: sum
         - metric: shutdown_hangs
@@ -3297,12 +3297,12 @@ operational_monitoring:
         - metric: content_crashes
           metric_groups: []
           statistic: sum
-        - metric: main_crashes
-          metric_groups: []
-          statistic: sum
         - metric: memory_total
           metric_groups: []
           statistic: percentile
+        - metric: oom_crashes
+          metric_groups: []
+          statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.mr2022_backgroundtaskmessage_notification_beta_107_experiment_1_statistics
         xaxis: submission_date
       title: Mr2022 Backgroundtaskmessage Notification Beta 107 Experiment 1
@@ -3322,88 +3322,88 @@ operational_monitoring:
         explore: performance_desktop_build_by_build_beta
         group_by_dimension: null
         summaries: &id036
-        - metric: oom_crashes
-          metric_groups: []
-          statistic: sum
-        - metric: keypress_present_latency_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: perf_request_animation_callback_non_pageload
-          metric_groups: []
-          statistic: percentile
-        - metric: perf_first_contentful_paint_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: perf_dom_contentperf_dom_content_loaded_time_from_responsestart_ms_loaded_time
-          metric_groups: []
-          statistic: percentile
         - metric: scroll_present_latency
           metric_groups: []
           statistic: percentile
-        - metric: timestamps_about_home_topsites_first_paint
-          metric_groups: []
-          statistic: percentile
-        - metric: input_event_response_coalesced
-          metric_groups: []
-          statistic: percentile
-        - metric: js_pageload_baseline_compile_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: cycle_collector_visited_gced
-          metric_groups: []
-          statistic: percentile
-        - metric: shutdown_hangs
-          metric_groups: []
-          statistic: sum
         - metric: js_pageload_parse_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: cycle_collector_visited_ref_counted
-          metric_groups: []
-          statistic: percentile
-        - metric: fx_page_load_ms_2
-          metric_groups: []
-          statistic: percentile
-        - metric: perf_dom_content_loaded_time
-          metric_groups: []
-          statistic: percentile
-        - metric: startup_crashes
-          metric_groups: []
-          statistic: sum
-        - metric: perf_request_animation_callback_pageload
-          metric_groups: []
-          statistic: percentile
-        - metric: js_pageload_protect_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: js_pageload_execution_ms
           metric_groups: []
           statistic: percentile
         - metric: perf_page_load_time_from_responsestart
           metric_groups: []
           statistic: percentile
+        - metric: shutdown_hangs
+          metric_groups: []
+          statistic: sum
+        - metric: js_pageload_xdr_encoding_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: js_pageload_baseline_compile_ms
+          metric_groups: []
+          statistic: percentile
         - metric: content_crashes
           metric_groups: []
           statistic: sum
+        - metric: perf_dom_contentperf_dom_content_loaded_time_from_responsestart_ms_loaded_time
+          metric_groups: []
+          statistic: percentile
+        - metric: js_pageload_execution_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: startup_crashes
+          metric_groups: []
+          statistic: sum
+        - metric: timestamps_first_paint_two
+          metric_groups: []
+          statistic: percentile
+        - metric: perf_page_load_time_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: time_to_first_interaction_ms
+          metric_groups: []
+          statistic: percentile
         - metric: main_crashes
           metric_groups: []
           statistic: sum
         - metric: js_pageload_delazification_ms
           metric_groups: []
           statistic: percentile
-        - metric: js_pageload_xdr_encoding_ms
+        - metric: timestamps_about_home_topsites_first_paint
+          metric_groups: []
+          statistic: percentile
+        - metric: oom_crashes
+          metric_groups: []
+          statistic: sum
+        - metric: js_pageload_protect_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: perf_first_contentful_paint_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: perf_dom_content_loaded_time
+          metric_groups: []
+          statistic: percentile
+        - metric: cycle_collector_visited_gced
           metric_groups: []
           statistic: percentile
         - metric: mouseup_followed_by_click_present_latency
           metric_groups: []
           statistic: percentile
-        - metric: perf_page_load_time_ms
+        - metric: perf_request_animation_callback_pageload
           metric_groups: []
           statistic: percentile
-        - metric: timestamps_first_paint_two
+        - metric: keypress_present_latency_ms
           metric_groups: []
           statistic: percentile
-        - metric: time_to_first_interaction_ms
+        - metric: cycle_collector_visited_ref_counted
+          metric_groups: []
+          statistic: percentile
+        - metric: perf_request_animation_callback_non_pageload
+          metric_groups: []
+          statistic: percentile
+        - metric: fx_page_load_ms_2
+          metric_groups: []
+          statistic: percentile
+        - metric: input_event_response_coalesced
           metric_groups: []
           statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.performance_desktop_build_by_build_beta_statistics
@@ -3419,16 +3419,22 @@ operational_monitoring:
         explore: performance_fenix_build_by_build_beta
         group_by_dimension: null
         summaries: &id039
-        - metric: performance_pageload_dcl
+        - metric: performance_pageload_load_time
+          metric_groups: []
+          statistic: percentile
+        - metric: performance_pageload_load_time_responsestart
           metric_groups: []
           statistic: percentile
         - metric: performance_pageload_fcp
           metric_groups: []
           statistic: percentile
-        - metric: storage_stats_data_dir_bytes
+        - metric: storage_stats_app_bytes
           metric_groups: []
           statistic: percentile
         - metric: perf_startup_cold_main_app_to_first_frame
+          metric_groups: []
+          statistic: percentile
+        - metric: performance_pageload_fcp_responsestart
           metric_groups: []
           statistic: percentile
         - metric: perf_startup_cold_view_app_to_first_frame
@@ -3440,19 +3446,13 @@ operational_monitoring:
         - metric: performance_pageload_req_anim_frame_callback
           metric_groups: []
           statistic: percentile
-        - metric: storage_stats_app_bytes
-          metric_groups: []
-          statistic: percentile
-        - metric: performance_pageload_load_time_responsestart
+        - metric: performance_pageload_dcl
           metric_groups: []
           statistic: percentile
         - metric: performance_pageload_dcl_responsestart
           metric_groups: []
           statistic: percentile
-        - metric: performance_pageload_load_time
-          metric_groups: []
-          statistic: percentile
-        - metric: performance_pageload_fcp_responsestart
+        - metric: storage_stats_data_dir_bytes
           metric_groups: []
           statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.performance_fenix_build_by_build_beta_statistics
@@ -3466,13 +3466,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id041
           channel:
-            default: Other
+            default: esr
             options:
-            - Other
-            - nightly
-            - beta
-            - aurora
             - esr
+            - beta
+            - Other
+            - aurora
+            - nightly
             - release
           os:
             default: Windows_NT
@@ -3556,7 +3556,7 @@ operational_monitoring:
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
-        - metric: oom_crashes
+        - metric: main_crashes
           metric_groups: []
           statistic: sum
         - metric: shutdown_hangs
@@ -3565,12 +3565,12 @@ operational_monitoring:
         - metric: content_crashes
           metric_groups: []
           statistic: sum
-        - metric: main_crashes
-          metric_groups: []
-          statistic: sum
         - metric: memory_total
           metric_groups: []
           statistic: percentile
+        - metric: oom_crashes
+          metric_groups: []
+          statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_statistics
         xaxis: submission_date
       title: Rollout Doh Nightly Rollout To All Us Desktop Users Nightly 74 80 Bug
@@ -3914,45 +3914,45 @@ operational_monitoring:
         compact_visualization: true
         dimensions: &id080
           os:
-            default: Linux
+            default: Windows
             options:
+            - Windows
             - Linux
             - Mac
-            - Windows
         explore: telemetry_alerts_prototype
         group_by_dimension: null
         summaries: &id081
-        - metric: active_ticks
+        - metric: gc_ms_content
           metric_groups: []
           statistic: percentile
         - metric: checkerboard_severity
           metric_groups: []
           statistic: percentile
-        - metric: oom_crashes
-          metric_groups: []
-          statistic: sum
         - metric: gc_budget_overrun
-          metric_groups: []
-          statistic: percentile
-        - metric: js_pageload_execution_ms
           metric_groups: []
           statistic: percentile
         - metric: subsession_length
           metric_groups: []
           statistic: percentile
-        - metric: gc_ms
-          metric_groups: []
-          statistic: percentile
         - metric: perf_first_contentful_paint_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: gc_ms_content
           metric_groups: []
           statistic: percentile
         - metric: main_crashes
           metric_groups: []
           statistic: sum
         - metric: memory_total
+          metric_groups: []
+          statistic: percentile
+        - metric: active_ticks
+          metric_groups: []
+          statistic: percentile
+        - metric: oom_crashes
+          metric_groups: []
+          statistic: sum
+        - metric: gc_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: js_pageload_execution_ms
           metric_groups: []
           statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype_statistics

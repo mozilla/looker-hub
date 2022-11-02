@@ -77,18 +77,18 @@
   - title: Channel
     name: Channel
     type: string_filter
-    default_value: 'Other'
+    default_value: 'esr'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'Other'
-      - 'nightly'
-      - 'beta'
-      - 'aurora'
       - 'esr'
+      - 'beta'
+      - 'Other'
+      - 'aurora'
+      - 'nightly'
       - 'release'
       
   

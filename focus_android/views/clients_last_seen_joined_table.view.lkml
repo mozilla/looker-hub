@@ -106,6 +106,11 @@ view: clients_last_seen_joined_table {
     type: number
   }
 
+  dimension: is_default_browser {
+    sql: ${TABLE}.is_default_browser ;;
+    type: yesno
+  }
+
   dimension: is_new_profile {
     sql: ${TABLE}.is_new_profile ;;
     type: yesno
@@ -149,6 +154,11 @@ view: clients_last_seen_joined_table {
   dimension: telemetry_sdk_build {
     sql: ${TABLE}.telemetry_sdk_build ;;
     type: string
+  }
+
+  dimension: uri_count {
+    sql: ${TABLE}.uri_count ;;
+    type: number
   }
 
   dimension_group: first_run {
