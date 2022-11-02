@@ -65,6 +65,11 @@ view: search_term_sanitization_job_metadata_daily {
     type: number
   }
 
+  dimension: total_search_terms_appearing_in_allow_list {
+    sql: ${TABLE}.total_search_terms_appearing_in_allow_list ;;
+    type: number
+  }
+
   dimension: total_search_terms_removed_by_sanitization_job {
     sql: ${TABLE}.total_search_terms_removed_by_sanitization_job ;;
     type: number
