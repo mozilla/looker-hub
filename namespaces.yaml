@@ -3466,11 +3466,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id041
           channel:
-            default: release
+            default: beta
             options:
-            - release
-            - nightly
             - beta
+            - nightly
+            - release
           os:
             default: Darwin
             options:
@@ -3480,7 +3480,11 @@ operational_monitoring:
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id042
-        - metric: printing_preview_opened
+        - metric: printing_preview_cancelled
+          metric_groups:
+          - print_cancel_ratios
+          statistic: total_ratio
+        - metric: printing_preview_opened_tm
           metric_groups:
           - print_initiation_counts
           statistic: sum
@@ -3488,15 +3492,11 @@ operational_monitoring:
           metric_groups:
           - print_initiation_counts
           statistic: sum
-        - metric: printing_dialog_without_preview_cancelled
-          metric_groups:
-          - print_cancel_ratios
-          statistic: total_ratio
         - metric: printing_dialog_opened_via_preview_tm
           metric_groups:
           - print_initiation_counts
           statistic: sum
-        - metric: printing_dialog_via_preview_cancelled_tm
+        - metric: printing_dialog_via_preview_cancelled
           metric_groups:
           - print_cancel_ratios
           statistic: total_ratio
@@ -3506,15 +3506,15 @@ operational_monitoring:
         - metric: print_count
           metric_groups: []
           statistic: percentile
-        - metric: printing_preview_opened_tm
-          metric_groups:
-          - print_initiation_counts
-          statistic: sum
-        - metric: printing_dialog_via_preview_cancelled
+        - metric: printing_dialog_without_preview_cancelled
           metric_groups:
           - print_cancel_ratios
           statistic: total_ratio
         - metric: printing_silent_print
+          metric_groups:
+          - print_initiation_counts
+          statistic: sum
+        - metric: printing_preview_opened
           metric_groups:
           - print_initiation_counts
           statistic: sum
@@ -3526,7 +3526,7 @@ operational_monitoring:
           metric_groups:
           - print_initiation_counts
           statistic: sum
-        - metric: printing_preview_cancelled
+        - metric: printing_dialog_via_preview_cancelled_tm
           metric_groups:
           - print_cancel_ratios
           statistic: total_ratio
