@@ -132,7 +132,7 @@
   - name: Metric
     title: Metric
     type: field_filter
-    default_value: 'gc_ms_content'
+    default_value: 'checkerboard_severity'
     allow_multiple_values: false
     required: true
     ui_config:
@@ -159,16 +159,16 @@
   - title: Os
     name: Os
     type: string_filter
-    default_value: 'Windows'
+    default_value: 'Mac'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
+      - 'Mac'
       - 'Windows'
       - 'Linux'
-      - 'Mac'
       
   
   
