@@ -476,7 +476,7 @@ from either the Home Panel tab button or the App Menu.
     }
 
     description: "Records clicks of adverts on SERP pages.
-The key format is ‘<provider-name>’.
+The key format is `<provider-name>`.
 "
   }
 
@@ -494,7 +494,7 @@ The key format is ‘<provider-name>’.
     }
 
     description: "Records counts of SERP pages with adverts displayed.
-The key format is ‘<provider-name>’.
+The key format is `<provider-name>`.
 "
   }
 

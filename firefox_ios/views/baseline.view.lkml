@@ -706,6 +706,92 @@ This metric appears in both the metrics and baseline pings.
   sql_table_name: `{% parameter channel %}` ;;
 }
 
+view: baseline__metrics__labeled_counter__browser_search_ad_clicks {
+  label: "Browser Search - Ad Clicks"
+
+  dimension: document_id {
+    type: string
+    sql: ${baseline.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${baseline.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__baseline__metrics__labeled_counter__browser_search_ad_clicks
+    suggest_dimension: suggest__baseline__metrics__labeled_counter__browser_search_ad_clicks.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: baseline__metrics__labeled_counter__browser_search_with_ads {
+  label: "Browser Search - With Ads"
+
+  dimension: document_id {
+    type: string
+    sql: ${baseline.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${baseline.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__baseline__metrics__labeled_counter__browser_search_with_ads
+    suggest_dimension: suggest__baseline__metrics__labeled_counter__browser_search_with_ads.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: baseline__metrics__labeled_counter__glean_error_invalid_label {
   label: "Glean Error - Invalid Label"
 
@@ -921,6 +1007,130 @@ view: baseline__metrics__labeled_counter__glean_validation_pings_submitted {
   }
 }
 
+view: baseline__metrics__labeled_counter__search_counts {
+  label: "Search - Counts"
+
+  dimension: document_id {
+    type: string
+    sql: ${baseline.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${baseline.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__baseline__metrics__labeled_counter__search_counts
+    suggest_dimension: suggest__baseline__metrics__labeled_counter__search_counts.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: baseline__metrics__labeled_counter__search_in_content {
+  label: "Search - In Content"
+
+  dimension: document_id {
+    type: string
+    sql: ${baseline.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${baseline.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__baseline__metrics__labeled_counter__search_in_content
+    suggest_dimension: suggest__baseline__metrics__labeled_counter__search_in_content.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${baseline.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: suggest__baseline__metrics__labeled_counter__browser_search_ad_clicks {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.baseline as t,
+unnest(metrics.labeled_counter.browser_search_ad_clicks) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__baseline__metrics__labeled_counter__browser_search_with_ads {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.baseline as t,
+unnest(metrics.labeled_counter.browser_search_with_ads) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__baseline__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
@@ -1004,6 +1214,44 @@ view: suggest__baseline__metrics__labeled_counter__glean_validation_pings_submit
     count(*) as n
 from mozdata.firefox_ios.baseline as t,
 unnest(metrics.labeled_counter.glean_validation_pings_submitted) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__baseline__metrics__labeled_counter__search_counts {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.baseline as t,
+unnest(metrics.labeled_counter.search_counts) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__baseline__metrics__labeled_counter__search_in_content {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_ios.baseline as t,
+unnest(metrics.labeled_counter.search_in_content) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
