@@ -90,6 +90,11 @@ view: search_term_data_validation_reports {
     type: string
   }
 
+  dimension: range_test_window_num_days {
+    sql: ${TABLE}.range_test_window_num_days ;;
+    type: number
+  }
+
   dimension: test_window_num_days {
     sql: ${TABLE}.test_window_num_days ;;
     type: number
