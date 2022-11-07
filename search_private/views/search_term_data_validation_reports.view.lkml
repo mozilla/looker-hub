@@ -40,6 +40,11 @@ view: search_term_data_validation_reports {
     type: string
   }
 
+  dimension: mean_test_window_num_days {
+    sql: ${TABLE}.mean_test_window_num_days ;;
+    type: number
+  }
+
   dimension: metric {
     sql: ${TABLE}.metric ;;
     type: string
@@ -92,11 +97,6 @@ view: search_term_data_validation_reports {
 
   dimension: range_test_window_num_days {
     sql: ${TABLE}.range_test_window_num_days ;;
-    type: number
-  }
-
-  dimension: test_window_num_days {
-    sql: ${TABLE}.test_window_num_days ;;
     type: number
   }
 
