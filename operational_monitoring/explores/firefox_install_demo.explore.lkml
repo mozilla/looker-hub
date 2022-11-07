@@ -9,7 +9,7 @@ include: "/looker-hub/operational_monitoring/views/firefox_install_demo.view.lkm
 explore: firefox_install_demo {
   always_filter: {
     filters: [
-      branch: "Win7, Win8, Win8.1, Win10",
+      branch: "active",
     ]
   }
 
