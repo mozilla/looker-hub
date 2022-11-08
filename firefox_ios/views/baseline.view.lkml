@@ -5,6 +5,106 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: baseline {
+  dimension: metrics__labeled_counter__browser_search_ad_clicks {
+    label: "Browser Search Ad Clicks"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
+    group_label: "Browser Search"
+    group_item_label: "Ad Clicks"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Ad Clicks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/browser_search_ad_clicks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records clicks of adverts on SERP pages.
+The key format is `<provider-name>`.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_with_ads {
+    label: "Browser Search With Ads"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
+    group_label: "Browser Search"
+    group_item_label: "With Ads"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search With Ads"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/browser_search_with_ads"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records counts of SERP pages with adverts displayed.
+The key format is `<provider-name>`.
+"
+  }
+
+  dimension: metrics__labeled_counter__search_counts {
+    label: "Search Counts"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.search_counts ;;
+    group_label: "Search"
+    group_item_label: "Counts"
+
+    link: {
+      label: "Glean Dictionary reference for Search Counts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/search_counts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The labels for this counter are `{search-engine-name}.{source}`
+
+If the search engine is bundled with Firefox-iOS, then
+`search-engine-name` will be the name of the search engine. If
+it is a custom search engine, the value will be `custom`.
+
+The value of `source` will reflect the source from which the
+search started.  One of:
+* quicksearch
+* suggestion
+* actionbar
+"
+  }
+
+  dimension: metrics__string__search_default_engine {
+    label: "Search Default Engine"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_default_engine ;;
+    type: string
+    group_label: "Search"
+    group_item_label: "Default Engine"
+
+    link: {
+      label: "Glean Dictionary reference for Search Default Engine"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/search_default_engine"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The default search engine identifier if the search engine is
+pre-loaded with Firefox-iOS.  If it's a custom search engine,
+then the value will be 'custom'.
+"
+  }
+
+  dimension: metrics__labeled_counter__search_in_content {
+    label: "Search In Content"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.search_in_content ;;
+    group_label: "Search"
+    group_item_label: "In Content"
+
+    link: {
+      label: "Glean Dictionary reference for Search In Content"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/search_in_content"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the type of interaction a user has on SERP pages.
+"
+  }
+
   dimension: metrics__counter__tabs_normal_and_private_uri_count {
     label: "Tabs Normal And Private Uri Count"
     hidden: no

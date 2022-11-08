@@ -128,6 +128,48 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
 "
   }
 
+  dimension: metrics__string__search_default_engine_code {
+    label: "Search Default Engine Code"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_default_engine_code ;;
+    type: string
+    group_label: "Search Default Engine"
+    group_item_label: "Code"
+
+    link: {
+      label: "Glean Dictionary reference for Search Default Engine Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/search_default_engine_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If the search engine is pre-loaded with Fenix this value
+will be the search engine identifier. If it's a custom search engine
+(defined: https://github.com/mozilla-mobile/fenix/issues/1607) the
+value will be \"custom\"
+"
+  }
+
+  dimension: metrics__string__search_default_engine_name {
+    label: "Search Default Engine Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_default_engine_name ;;
+    type: string
+    group_label: "Search Default Engine"
+    group_item_label: "Name"
+
+    link: {
+      label: "Glean Dictionary reference for Search Default Engine Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/search_default_engine_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If the search engine is pre-loaded with Fenix this value
+will be the search engine name. If it's a custom search engine
+(defined: https://github.com/mozilla-mobile/fenix/issues/1607) the
+value will be \"custom\"
+"
+  }
+
   dimension: metrics__timespan__glean_baseline_duration__value {
     label: "Glean Baseline Duration Value"
     hidden: no

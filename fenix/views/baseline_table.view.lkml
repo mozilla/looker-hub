@@ -450,6 +450,30 @@ to indicate \"undetermined\".
 "
   }
 
+  dimension: metrics__string__search_default_engine_code {
+    sql: ${TABLE}.metrics.string.search_default_engine_code ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Search Default Engine Code"
+    description: "If the search engine is pre-loaded with Fenix this value
+will be the search engine identifier. If it's a custom search engine
+(defined: https://github.com/mozilla-mobile/fenix/issues/1607) the
+value will be \"custom\"
+"
+  }
+
+  dimension: metrics__string__search_default_engine_name {
+    sql: ${TABLE}.metrics.string.search_default_engine_name ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Search Default Engine Name"
+    description: "If the search engine is pre-loaded with Fenix this value
+will be the search engine name. If it's a custom search engine
+(defined: https://github.com/mozilla-mobile/fenix/issues/1607) the
+value will be \"custom\"
+"
+  }
+
   dimension: metrics__text {
     sql: ${TABLE}.metrics.text ;;
     hidden: yes

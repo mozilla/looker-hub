@@ -151,6 +151,11 @@ view: unified_metrics {
     type: yesno
   }
 
+  dimension: isp {
+    sql: ${TABLE}.isp ;;
+    type: string
+  }
+
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string

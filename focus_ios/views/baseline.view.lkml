@@ -5,6 +5,123 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: baseline {
+  dimension: metrics__counter__browser_total_uri_count {
+    label: "Browser Total Uri Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_total_uri_count ;;
+    type: number
+    group_label: "Browser"
+    group_item_label: "Total Uri Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Total Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_total_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records count of URIs visited by the user in the current session,
+including page reloads.
+It does not include background page requests and URIs from embedded pages
+but may be incremented without user interaction by website scripts
+that programmatically redirect to a new location.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_ad_clicks {
+    label: "Browser Search Ad Clicks"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
+    group_label: "Browser Search"
+    group_item_label: "Ad Clicks"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Ad Clicks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_search_ad_clicks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records clicks of adverts on SERP pages.
+The key format is ‘<provider-name>’.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_in_content {
+    label: "Browser Search In Content"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
+    group_label: "Browser Search"
+    group_item_label: "In Content"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search In Content"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_search_in_content"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the type of interaction a user has on SERP pages.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_search_count {
+    label: "Browser Search Search Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_search_count ;;
+    group_label: "Browser Search"
+    group_item_label: "Search Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Search Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_search_search_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The labels for this counter are `<search-engine-name>.<source>`.
+If the search engine is bundled with Focus `search-engine-name` will be
+the name of the search engine. If it's a custom search engine (defined:
+https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
+`custom`.
+`source` will be: `action`, `suggestion`.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_with_ads {
+    label: "Browser Search With Ads"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
+    group_label: "Browser Search"
+    group_item_label: "With Ads"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search With Ads"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_search_with_ads"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records counts of SERP pages with adverts displayed.
+The key format is ‘<provider-name>’.
+"
+  }
+
+  dimension: metrics__string__search_default_engine {
+    label: "Search Default Engine"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_default_engine ;;
+    type: string
+    group_label: "Search"
+    group_item_label: "Default Engine"
+
+    link: {
+      label: "Glean Dictionary reference for Search Default Engine"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/search_default_engine"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The default search engine identifier if the search engine is
+pre-loaded with Focus.  If it's a custom search engine,
+then the value will be 'custom'.
+"
+  }
+
   dimension: metrics__timespan__glean_baseline_duration__value {
     label: "Glean Baseline Duration Value"
     hidden: no
@@ -596,6 +713,31 @@ This metric appears in both the metrics and baseline pings.
 
   measure: ping_count {
     type: count
+  }
+
+  measure: browser_total_uri_count {
+    type: sum
+    sql: ${metrics__counter__browser_total_uri_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Total Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_total_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_total_uri_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_total_uri_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Total Uri Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_total_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   sql_table_name: `mozdata.org_mozilla_ios_focus.baseline` ;;
