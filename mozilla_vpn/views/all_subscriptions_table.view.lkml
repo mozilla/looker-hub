@@ -46,6 +46,11 @@ view: all_subscriptions_table {
     type: string
   }
 
+  dimension: ended_reason {
+    sql: ${TABLE}.ended_reason ;;
+    type: string
+  }
+
   dimension: entrypoint_experiment {
     sql: ${TABLE}.entrypoint_experiment ;;
     type: string
@@ -88,6 +93,11 @@ view: all_subscriptions_table {
 
   dimension: normalized_source {
     sql: ${TABLE}.normalized_source ;;
+    type: string
+  }
+
+  dimension: original_subscription_id {
+    sql: ${TABLE}.original_subscription_id ;;
     type: string
   }
 
@@ -158,6 +168,11 @@ view: all_subscriptions_table {
 
   dimension: subscription_id {
     sql: ${TABLE}.subscription_id ;;
+    type: string
+  }
+
+  dimension: subscription_start_reason {
+    sql: ${TABLE}.subscription_start_reason ;;
     type: string
   }
 

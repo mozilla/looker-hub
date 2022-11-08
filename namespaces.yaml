@@ -192,6 +192,14 @@ contextual_services:
       type: ping_explore
       views:
         base_view: event_aggregates
+    event_aggregates_spons_tiles:
+      type: ping_explore
+      views:
+        base_view: event_aggregates_spons_tiles
+    event_aggregates_suggest:
+      type: ping_explore
+      views:
+        base_view: event_aggregates_suggest
     quicksuggest_clicks:
       type: ping_explore
       views:
@@ -226,6 +234,14 @@ contextual_services:
     event_aggregates:
       tables:
       - table: mozdata.contextual_services.event_aggregates
+      type: ping_view
+    event_aggregates_spons_tiles:
+      tables:
+      - table: mozdata.contextual_services.event_aggregates_spons_tiles
+      type: ping_view
+    event_aggregates_suggest:
+      tables:
+      - table: mozdata.contextual_services.event_aggregates_suggest
       type: ping_view
     quicksuggest_click:
       tables:
@@ -1067,6 +1083,16 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: pseudo_main
+    sponsored_tiles_clients_daily:
+      type: client_counts_explore
+      views:
+        base_view: sponsored_tiles_clients_daily
+        extended_view: sponsored_tiles_clients_daily_table
+    suggest_clients_daily:
+      type: client_counts_explore
+      views:
+        base_view: suggest_clients_daily
+        extended_view: suggest_clients_daily_table
   glean_app: true
   owners:
   - chutten@mozilla.com
@@ -1231,6 +1257,22 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.pseudo_main
+      type: table_view
+    sponsored_tiles_clients_daily:
+      tables:
+      - table: mozdata.telemetry.sponsored_tiles_clients_daily
+      type: client_counts_view
+    sponsored_tiles_clients_daily_table:
+      tables:
+      - table: mozdata.telemetry.sponsored_tiles_clients_daily
+      type: table_view
+    suggest_clients_daily:
+      tables:
+      - table: mozdata.telemetry.suggest_clients_daily
+      type: client_counts_view
+    suggest_clients_daily_table:
+      tables:
+      - table: mozdata.telemetry.suggest_clients_daily
       type: table_view
 firefox_desktop_background_update:
   explores:
@@ -3132,14 +3174,6 @@ operational_monitoring:
         explore: firefox_install_demo
         group_by_dimension: null
         summaries: &id018
-        - metric: install_volume_win8
-          metric_groups:
-          - installs_by_os
-          statistic: sum
-        - metric: install_volume_win8
-          metric_groups:
-          - installs_by_os
-          statistic: mean
         - metric: install_volume_total
           metric_groups: []
           statistic: sum
@@ -3154,11 +3188,11 @@ operational_monitoring:
           metric_groups:
           - installs_by_os
           statistic: mean
-        - metric: install_volume_win10
+        - metric: install_volume_win8
           metric_groups:
           - installs_by_os
           statistic: sum
-        - metric: install_volume_win10
+        - metric: install_volume_win8
           metric_groups:
           - installs_by_os
           statistic: mean
@@ -3167,6 +3201,14 @@ operational_monitoring:
           - installs_by_os
           statistic: sum
         - metric: install_volume_win8_1
+          metric_groups:
+          - installs_by_os
+          statistic: mean
+        - metric: install_volume_win10
+          metric_groups:
+          - installs_by_os
+          statistic: sum
+        - metric: install_volume_win10
           metric_groups:
           - installs_by_os
           statistic: mean
@@ -3314,22 +3356,22 @@ operational_monitoring:
         explore: mr2022_backgroundtaskmessage_notification_beta_107_experiment_1
         group_by_dimension: null
         summaries: &id033
-        - metric: shutdown_hangs
+        - metric: oom_crashes
           metric_groups: []
           statistic: sum
         - metric: content_crashes
+          metric_groups: []
+          statistic: sum
+        - metric: shutdown_hangs
+          metric_groups: []
+          statistic: sum
+        - metric: startup_crashes
           metric_groups: []
           statistic: sum
         - metric: memory_total
           metric_groups: []
           statistic: percentile
         - metric: main_crashes
-          metric_groups: []
-          statistic: sum
-        - metric: oom_crashes
-          metric_groups: []
-          statistic: sum
-        - metric: startup_crashes
           metric_groups: []
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.mr2022_backgroundtaskmessage_notification_beta_107_experiment_1_statistics
@@ -3343,24 +3385,21 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id035
           os:
-            default: Linux
+            default: Windows
             options:
-            - Linux
             - Windows
+            - Linux
             - Mac
         explore: performance_desktop_build_by_build_beta
         group_by_dimension: null
         summaries: &id036
-        - metric: js_pageload_baseline_compile_ms
+        - metric: timestamps_first_paint_two
           metric_groups: []
           statistic: percentile
         - metric: cycle_collector_visited_ref_counted
           metric_groups: []
           statistic: percentile
-        - metric: perf_request_animation_callback_non_pageload
-          metric_groups: []
-          statistic: percentile
-        - metric: js_pageload_parse_ms
+        - metric: scroll_present_latency
           metric_groups: []
           statistic: percentile
         - metric: perf_page_load_time_from_responsestart
@@ -3369,46 +3408,49 @@ operational_monitoring:
         - metric: input_event_response_coalesced
           metric_groups: []
           statistic: percentile
-        - metric: mouseup_followed_by_click_present_latency
+        - metric: js_pageload_delazification_ms
           metric_groups: []
           statistic: percentile
-        - metric: perf_page_load_time_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: perf_dom_contentperf_dom_content_loaded_time_from_responsestart_ms_loaded_time
-          metric_groups: []
-          statistic: percentile
-        - metric: js_pageload_execution_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: scroll_present_latency
+        - metric: js_pageload_parse_ms
           metric_groups: []
           statistic: percentile
         - metric: fx_page_load_ms_2
           metric_groups: []
           statistic: percentile
-        - metric: cycle_collector_visited_gced
+        - metric: keypress_present_latency_ms
           metric_groups: []
           statistic: percentile
-        - metric: js_pageload_protect_ms
+        - metric: perf_page_load_time_ms
           metric_groups: []
           statistic: percentile
-        - metric: timestamps_first_paint_two
+        - metric: mouseup_followed_by_click_present_latency
           metric_groups: []
           statistic: percentile
-        - metric: timestamps_about_home_topsites_first_paint
-          metric_groups: []
-          statistic: percentile
-        - metric: time_to_first_interaction_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: js_pageload_delazification_ms
+        - metric: perf_first_contentful_paint_ms
           metric_groups: []
           statistic: percentile
         - metric: js_pageload_xdr_encoding_ms
           metric_groups: []
           statistic: percentile
-        - metric: perf_first_contentful_paint_ms
+        - metric: js_pageload_baseline_compile_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: time_to_first_interaction_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: js_pageload_execution_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: timestamps_about_home_topsites_first_paint
+          metric_groups: []
+          statistic: percentile
+        - metric: perf_request_animation_callback_non_pageload
+          metric_groups: []
+          statistic: percentile
+        - metric: perf_dom_contentperf_dom_content_loaded_time_from_responsestart_ms_loaded_time
+          metric_groups: []
+          statistic: percentile
+        - metric: cycle_collector_visited_gced
           metric_groups: []
           statistic: percentile
         - metric: perf_request_animation_callback_pageload
@@ -3417,7 +3459,7 @@ operational_monitoring:
         - metric: perf_dom_content_loaded_time
           metric_groups: []
           statistic: percentile
-        - metric: keypress_present_latency_ms
+        - metric: js_pageload_protect_ms
           metric_groups: []
           statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.performance_desktop_build_by_build_beta_statistics
@@ -3433,40 +3475,40 @@ operational_monitoring:
         explore: performance_fenix_build_by_build_beta
         group_by_dimension: null
         summaries: &id039
-        - metric: performance_pageload_fcp_responsestart
-          metric_groups: []
-          statistic: percentile
-        - metric: performance_pageload_req_anim_frame_callback
-          metric_groups: []
-          statistic: percentile
-        - metric: perf_startup_cold_view_app_to_first_frame
-          metric_groups: []
-          statistic: percentile
-        - metric: storage_stats_data_dir_bytes
-          metric_groups: []
-          statistic: percentile
-        - metric: performance_pageload_fcp
+        - metric: performance_pageload_dcl
           metric_groups: []
           statistic: percentile
         - metric: performance_pageload_load_time_responsestart
           metric_groups: []
           statistic: percentile
-        - metric: storage_stats_cache_bytes
+        - metric: perf_startup_cold_view_app_to_first_frame
           metric_groups: []
           statistic: percentile
-        - metric: performance_pageload_dcl_responsestart
+        - metric: performance_pageload_req_anim_frame_callback
+          metric_groups: []
+          statistic: percentile
+        - metric: performance_pageload_fcp
           metric_groups: []
           statistic: percentile
         - metric: perf_startup_cold_main_app_to_first_frame
           metric_groups: []
           statistic: percentile
-        - metric: performance_pageload_load_time
-          metric_groups: []
-          statistic: percentile
         - metric: storage_stats_app_bytes
           metric_groups: []
           statistic: percentile
-        - metric: performance_pageload_dcl
+        - metric: storage_stats_cache_bytes
+          metric_groups: []
+          statistic: percentile
+        - metric: storage_stats_data_dir_bytes
+          metric_groups: []
+          statistic: percentile
+        - metric: performance_pageload_load_time
+          metric_groups: []
+          statistic: percentile
+        - metric: performance_pageload_fcp_responsestart
+          metric_groups: []
+          statistic: percentile
+        - metric: performance_pageload_dcl_responsestart
           metric_groups: []
           statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.performance_fenix_build_by_build_beta_statistics
@@ -3480,47 +3522,29 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id041
           channel:
-            default: beta
+            default: release
             options:
+            - release
             - beta
             - nightly
-            - release
           os:
-            default: Linux
+            default: Windows_NT
             options:
-            - Linux
             - Windows_NT
             - Darwin
+            - Linux
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id042
-        - metric: printing_dialog_via_preview_cancelled_tm
-          metric_groups:
-          - print_cancel_ratios
-          statistic: total_ratio
-        - metric: print_count
-          metric_groups: []
-          statistic: mean
-        - metric: print_count
-          metric_groups: []
-          statistic: percentile
-        - metric: printing_silent_print
-          metric_groups:
-          - print_initiation_counts
-          statistic: sum
-        - metric: printing_dialog_opened_via_preview_tm
-          metric_groups:
-          - print_initiation_counts
-          statistic: sum
         - metric: printing_dialog_opened_without_preview
           metric_groups:
           - print_initiation_counts
           statistic: sum
-        - metric: printing_dialog_opened_via_preview
+        - metric: printing_preview_opened_tm
           metric_groups:
           - print_initiation_counts
           statistic: sum
-        - metric: printing_preview_cancelled
+        - metric: printing_preview_cancelled_tm
           metric_groups:
           - print_cancel_ratios
           statistic: total_ratio
@@ -3528,10 +3552,14 @@ operational_monitoring:
           metric_groups:
           - print_cancel_ratios
           statistic: total_ratio
-        - metric: printing_preview_cancelled_tm
+        - metric: printing_dialog_via_preview_cancelled_tm
           metric_groups:
           - print_cancel_ratios
           statistic: total_ratio
+        - metric: printing_dialog_opened_via_preview
+          metric_groups:
+          - print_initiation_counts
+          statistic: sum
         - metric: printing_dialog_via_preview_cancelled
           metric_groups:
           - print_cancel_ratios
@@ -3540,7 +3568,21 @@ operational_monitoring:
           metric_groups:
           - print_initiation_counts
           statistic: sum
-        - metric: printing_preview_opened_tm
+        - metric: print_count
+          metric_groups: []
+          statistic: mean
+        - metric: print_count
+          metric_groups: []
+          statistic: percentile
+        - metric: printing_preview_cancelled
+          metric_groups:
+          - print_cancel_ratios
+          statistic: total_ratio
+        - metric: printing_silent_print
+          metric_groups:
+          - print_initiation_counts
+          statistic: sum
+        - metric: printing_dialog_opened_via_preview_tm
           metric_groups:
           - print_initiation_counts
           statistic: sum
@@ -3569,55 +3611,11 @@ operational_monitoring:
         explore: print_background_task_times_by_build
         group_by_dimension: null
         summaries: &id045
-        - metric: abort
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: gfx_printer_doc_is_busy
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: unexpected
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: not_available
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: total_printing_errors_new_ui
-          metric_groups:
-          - print_error_by_ui
-          statistic: sum
-        - metric: name_not_found
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: cannot_open_file
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: enddoc
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: start_page
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: total_printing_errors_old_ui
-          metric_groups:
-          - print_error_by_ui
-          statistic: sum
-        - metric: startdoc
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
         - metric: oom
           metric_groups:
           - print_error_breakdown
           statistic: sum
-        - metric: no_printer
+        - metric: not_available
           metric_groups:
           - print_error_breakdown
           statistic: sum
@@ -3631,6 +3629,50 @@ operational_monitoring:
           statistic: sum
         - metric: total_printing_errors
           metric_groups: []
+          statistic: sum
+        - metric: startdoc
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: start_page
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: no_printer
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: abort
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: total_printing_errors_new_ui
+          metric_groups:
+          - print_error_by_ui
+          statistic: sum
+        - metric: name_not_found
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: unexpected
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: gfx_printer_doc_is_busy
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: total_printing_errors_old_ui
+          metric_groups:
+          - print_error_by_ui
+          statistic: sum
+        - metric: enddoc
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: cannot_open_file
+          metric_groups:
+          - print_error_breakdown
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.print_background_task_times_by_build_statistics
         xaxis: build_id
@@ -3678,22 +3720,22 @@ operational_monitoring:
         explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
         group_by_dimension: null
         summaries: &id051
-        - metric: shutdown_hangs
+        - metric: oom_crashes
           metric_groups: []
           statistic: sum
         - metric: content_crashes
+          metric_groups: []
+          statistic: sum
+        - metric: shutdown_hangs
+          metric_groups: []
+          statistic: sum
+        - metric: startup_crashes
           metric_groups: []
           statistic: sum
         - metric: memory_total
           metric_groups: []
           statistic: percentile
         - metric: main_crashes
-          metric_groups: []
-          statistic: sum
-        - metric: oom_crashes
-          metric_groups: []
-          statistic: sum
-        - metric: startup_crashes
           metric_groups: []
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_statistics
@@ -4042,15 +4084,15 @@ operational_monitoring:
             default: Linux
             options:
             - Linux
-            - Windows
             - Mac
+            - Windows
         explore: telemetry_alerts_prototype
         group_by_dimension: null
         summaries: &id084
-        - metric: active_ticks
+        - metric: oom_crashes
           metric_groups: []
-          statistic: percentile
-        - metric: subsession_length
+          statistic: sum
+        - metric: active_ticks
           metric_groups: []
           statistic: percentile
         - metric: js_pageload_execution_ms
@@ -4059,19 +4101,19 @@ operational_monitoring:
         - metric: gc_ms
           metric_groups: []
           statistic: percentile
-        - metric: checkerboard_severity
-          metric_groups: []
-          statistic: percentile
         - metric: perf_first_contentful_paint_ms
           metric_groups: []
           statistic: percentile
         - metric: memory_total
           metric_groups: []
           statistic: percentile
-        - metric: main_crashes
+        - metric: checkerboard_severity
           metric_groups: []
-          statistic: sum
-        - metric: oom_crashes
+          statistic: percentile
+        - metric: subsession_length
+          metric_groups: []
+          statistic: percentile
+        - metric: main_crashes
           metric_groups: []
           statistic: sum
         - metric: gc_ms_content

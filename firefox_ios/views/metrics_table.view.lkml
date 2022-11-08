@@ -1588,7 +1588,7 @@ from either the Home Panel tab button or the App Menu.
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     hidden: yes
     description: "Records clicks of adverts on SERP pages.
-The key format is ‘<provider-name>’.
+The key format is `<provider-name>`.
 "
   }
 
@@ -1596,7 +1596,7 @@ The key format is ‘<provider-name>’.
     sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
     hidden: yes
     description: "Records counts of SERP pages with adverts displayed.
-The key format is ‘<provider-name>’.
+The key format is `<provider-name>`.
 "
   }
 
