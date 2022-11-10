@@ -4,48 +4,198 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "suggest_clients_daily_table.view.lkml"
-
 view: suggest_clients_daily {
-  extends: [suggest_clients_daily_table]
-
-  dimension: have_completed_period {
-    type: yesno
-    description: "Only for use with cohort analysis.Filter on true to remove the tail of incomplete data from cohorts.Indicates whether the cohort for this row have all had a chance to complete this interval.For example, new clients from yesterday have not all had a chance to send a ping for today."
-    sql: DATE_ADD(
-                {% if client_counts.first_seen_date._is_selected %}
-                  DATE_ADD(DATE(${client_counts.first_seen_date}), INTERVAL 1 DAY)
-                {% elsif client_counts.first_seen_week._is_selected %}
-                  DATE_ADD(DATE(${client_counts.first_seen_week}), INTERVAL 1 WEEK)
-                {% elsif client_counts.first_seen_month._is_selected %}
-                  DATE_ADD(PARSE_DATE('%Y-%m', ${client_counts.first_seen_month}), INTERVAL 1 MONTH)
-                {% elsif client_counts.first_seen_year._is_selected %}
-                  DATE_ADD(DATE(${client_counts.first_seen_year}, 1, 1), INTERVAL 1 YEAR)
-                {% endif %}
-                ,
-                {% if client_counts.days_since_first_seen._is_selected %}
-                  INTERVAL ${client_counts.days_since_first_seen} DAY
-                {% elsif client_counts.weeks_since_first_seen._is_selected %}
-                  INTERVAL ${client_counts.weeks_since_first_seen} WEEK
-                {% elsif client_counts.months_since_first_seen._is_selected %}
-                  INTERVAL ${client_counts.months_since_first_seen} MONTH
-                {% elsif client_counts.years_since_first_seen._is_selected %}
-                  INTERVAL ${client_counts.months_since_first_seen} YEAR
-                {% endif %}
-              ) < current_date ;;
-  }
-
-  dimension_group: since_first_seen {
-    type: duration
-    description: "Amount of time that has passed since the client was first seen."
-    sql_start: CAST(${TABLE}.first_seen_date AS TIMESTAMP) ;;
-    sql_end: CAST(${TABLE}.submission_date AS TIMESTAMP) ;;
-    intervals: [day, week, month, year]
-  }
-
-  measure: client_count {
+  dimension: block_nonsponsored_bestmatch_count {
+    sql: ${TABLE}.block_nonsponsored_bestmatch_count ;;
     type: number
-    description: "The number of clients, determined by whether they sent a baseline ping on the day in question."
-    sql: COUNT(DISTINCT client_id) ;;
+  }
+
+  dimension: block_nonsponsored_count {
+    sql: ${TABLE}.block_nonsponsored_count ;;
+    type: number
+  }
+
+  dimension: block_sponsored_bestmatch_count {
+    sql: ${TABLE}.block_sponsored_bestmatch_count ;;
+    type: number
+  }
+
+  dimension: block_sponsored_count {
+    sql: ${TABLE}.block_sponsored_count ;;
+    type: number
+  }
+
+  dimension: browser_version_info__is_major_release {
+    sql: ${TABLE}.browser_version_info.is_major_release ;;
+    type: yesno
+    group_label: "Browser Version Info"
+    group_item_label: "Is Major Release"
+  }
+
+  dimension: browser_version_info__major_version {
+    sql: ${TABLE}.browser_version_info.major_version ;;
+    type: number
+    group_label: "Browser Version Info"
+    group_item_label: "Major Version"
+  }
+
+  dimension: browser_version_info__minor_version {
+    sql: ${TABLE}.browser_version_info.minor_version ;;
+    type: number
+    group_label: "Browser Version Info"
+    group_item_label: "Minor Version"
+  }
+
+  dimension: browser_version_info__patch_revision {
+    sql: ${TABLE}.browser_version_info.patch_revision ;;
+    type: number
+    group_label: "Browser Version Info"
+    group_item_label: "Patch Revision"
+  }
+
+  dimension: browser_version_info__version {
+    sql: ${TABLE}.browser_version_info.version ;;
+    type: string
+    group_label: "Browser Version Info"
+    group_item_label: "Version"
+  }
+
+  dimension: click_nonsponsored_bestmatch_count {
+    sql: ${TABLE}.click_nonsponsored_bestmatch_count ;;
+    type: number
+  }
+
+  dimension: click_nonsponsored_count {
+    sql: ${TABLE}.click_nonsponsored_count ;;
+    type: number
+  }
+
+  dimension: click_sponsored_bestmatch_count {
+    sql: ${TABLE}.click_sponsored_bestmatch_count ;;
+    type: number
+  }
+
+  dimension: click_sponsored_count {
+    sql: ${TABLE}.click_sponsored_count ;;
+    type: number
+  }
+
+  dimension: client_id {
+    sql: ${TABLE}.client_id ;;
+    hidden: yes
+  }
+
+  dimension: experiments {
+    sql: ${TABLE}.experiments ;;
+    hidden: yes
+  }
+
+  dimension: help_nonsponsored_bestmatch_count {
+    sql: ${TABLE}.help_nonsponsored_bestmatch_count ;;
+    type: number
+  }
+
+  dimension: help_nonsponsored_count {
+    sql: ${TABLE}.help_nonsponsored_count ;;
+    type: number
+  }
+
+  dimension: help_sponsored_bestmatch_count {
+    sql: ${TABLE}.help_sponsored_bestmatch_count ;;
+    type: number
+  }
+
+  dimension: help_sponsored_count {
+    sql: ${TABLE}.help_sponsored_count ;;
+    type: number
+  }
+
+  dimension: impression_nonsponsored_bestmatch_count {
+    sql: ${TABLE}.impression_nonsponsored_bestmatch_count ;;
+    type: number
+  }
+
+  dimension: impression_nonsponsored_count {
+    sql: ${TABLE}.impression_nonsponsored_count ;;
+    type: number
+  }
+
+  dimension: impression_sponsored_bestmatch_count {
+    sql: ${TABLE}.impression_sponsored_bestmatch_count ;;
+    type: number
+  }
+
+  dimension: impression_sponsored_count {
+    sql: ${TABLE}.impression_sponsored_count ;;
+    type: number
+  }
+
+  dimension: locale {
+    sql: ${TABLE}.locale ;;
+    type: string
+  }
+
+  dimension: normalized_channel {
+    sql: ${TABLE}.normalized_channel ;;
+    type: string
+  }
+
+  dimension: normalized_os_version {
+    sql: ${TABLE}.normalized_os_version ;;
+    type: string
+  }
+
+  dimension: profile_age_in_days {
+    sql: ${TABLE}.profile_age_in_days ;;
+    type: number
+  }
+
+  dimension: sample_id {
+    sql: ${TABLE}.sample_id ;;
+    type: number
+  }
+
+  dimension: user_pref_data_collection_enabled {
+    sql: ${TABLE}.user_pref_data_collection_enabled ;;
+    type: yesno
+  }
+
+  dimension: user_pref_firefox_suggest_enabled {
+    sql: ${TABLE}.user_pref_firefox_suggest_enabled ;;
+    type: yesno
+  }
+
+  dimension: user_pref_sponsored_suggestions_enabled {
+    sql: ${TABLE}.user_pref_sponsored_suggestions_enabled ;;
+    type: yesno
+  }
+
+  dimension_group: submission {
+    sql: ${TABLE}.submission_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+  }
+
+  sql_table_name: `mozdata.telemetry.suggest_clients_daily` ;;
+}
+
+view: suggest_clients_daily__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
   }
 }
