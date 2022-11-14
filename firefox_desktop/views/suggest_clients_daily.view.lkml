@@ -85,6 +85,12 @@ view: suggest_clients_daily {
     hidden: yes
   }
 
+  dimension: country {
+    sql: ${TABLE}.country ;;
+    type: string
+    map_layer_name: countries
+  }
+
   dimension: experiments {
     sql: ${TABLE}.experiments ;;
     hidden: yes
@@ -143,11 +149,6 @@ view: suggest_clients_daily {
   dimension: normalized_os_version {
     sql: ${TABLE}.normalized_os_version ;;
     type: string
-  }
-
-  dimension: profile_age_in_days {
-    sql: ${TABLE}.profile_age_in_days ;;
-    type: number
   }
 
   dimension: sample_id {

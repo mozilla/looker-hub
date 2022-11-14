@@ -277,6 +277,26 @@ contextual_services:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.topsites_impression
       type: ping_view
+data_integrity_monitoring:
+  glean_app: false
+  owners:
+  - kignasiak@mozilla.com
+  - akommasani@mozilla.com
+  pretty_name: Data Integrity Monitoring (dim)
+  spoke: looker-spoke-default
+  views:
+    muted_alerts:
+      tables:
+      - table: data-monitoring-dev.dim.dim_muted_alerts
+      type: table_view
+    run_history:
+      tables:
+      - table: data-monitoring-dev.dim.dim_run_history
+      type: table_view
+    run_processing_info:
+      tables:
+      - table: data-monitoring-dev.dim.dim_run_processing_info
+      type: table_view
 duet:
   glean_app: false
   owners:
