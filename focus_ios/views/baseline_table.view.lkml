@@ -350,7 +350,9 @@ If the search engine is bundled with Focus `search-engine-name` will be
 the name of the search engine. If it's a custom search engine (defined:
 https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
 `custom`.
-`source` will be: `action`, `suggestion`.
+`source` will be: `action`, `suggestion`, `widget`, `shortcut`, `topsite`
+(depending on the source from which the search started). Also added the
+`other` option for the source but it should never enter on this case.
 "
   }
 

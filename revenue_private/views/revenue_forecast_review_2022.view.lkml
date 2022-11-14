@@ -5,11 +5,6 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: revenue_forecast_review_2022 {
-  dimension: __index_level_0__ {
-    sql: ${TABLE}.__index_level_0__ ;;
-    type: number
-  }
-
   dimension: date {
     sql: ${TABLE}.date ;;
     type: string
