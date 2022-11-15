@@ -68,6 +68,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_early_hints}) AS metrics__metrics__labeled_counter__netwerk_early_hints ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_early_hints.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__netwerk_eh_link_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_eh_link_type}) AS metrics__metrics__labeled_counter__netwerk_eh_link_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_eh_link_type.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__pdfjs_buttons {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_buttons}) AS metrics__metrics__labeled_counter__pdfjs_buttons ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_buttons.document_id} ;;
@@ -181,6 +186,10 @@ explore: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result
 }
 
 explore: suggest__metrics__metrics__labeled_counter__netwerk_early_hints {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type {
   hidden: yes
 }
 
