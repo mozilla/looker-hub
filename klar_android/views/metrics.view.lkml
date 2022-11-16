@@ -942,6 +942,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__netwerk_eh_link_type {
+    label: "Netwerk Eh Link Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_eh_link_type ;;
+    group_label: "Netwerk"
+    group_item_label: "Eh Link Type"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk Eh Link Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/netwerk_eh_link_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts different type of link headers that are sent in early hint
+"
+  }
+
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__sum {
     label: "Network Open To Transaction Pending Sum"
     hidden: yes
@@ -3571,6 +3588,49 @@ view: metrics__metrics__labeled_counter__netwerk_early_hints {
   }
 }
 
+view: metrics__metrics__labeled_counter__netwerk_eh_link_type {
+  label: "Netwerk - Eh Link Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__perf_startup_startup_type {
   label: "Perf Startup - Startup Type"
 
@@ -4451,6 +4511,25 @@ view: suggest__metrics__metrics__labeled_counter__netwerk_early_hints {
     count(*) as n
 from mozdata.org_mozilla_klar.metrics as t,
 unnest(metrics.labeled_counter.netwerk_early_hints) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.netwerk_eh_link_type) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

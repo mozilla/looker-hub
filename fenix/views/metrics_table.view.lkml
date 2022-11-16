@@ -424,6 +424,15 @@ to be displayed
 "
   }
 
+  dimension: metrics__boolean__events_marketing_notification_allowed {
+    sql: ${TABLE}.metrics.boolean.events_marketing_notification_allowed ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Events Marketing Notification Allowed"
+    description: "True if marketing notifications are allowed, otherwise false.
+"
+  }
+
   dimension: metrics__boolean__fog_failed_idle_registration {
     sql: ${TABLE}.metrics.boolean.fog_failed_idle_registration ;;
     type: yesno
@@ -544,6 +553,15 @@ See recently_used_pwa_count for the actual count.
     group_label: "Metrics Boolean"
     group_item_label: "Metrics Has Top Sites"
     description: "A boolean that indicates if the user has top sites
+"
+  }
+
+  dimension: metrics__boolean__metrics_notifications_allowed {
+    sql: ${TABLE}.metrics.boolean.metrics_notifications_allowed ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Metrics Notifications Allowed"
+    description: "True if notifications are allowed, otherwise false.
 "
   }
 
@@ -1785,6 +1803,13 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
     sql: ${TABLE}.metrics.labeled_counter.netwerk_early_hints ;;
     hidden: yes
     description: "Counts the different type of resources that are sent for early hints.
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_eh_link_type {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_eh_link_type ;;
+    hidden: yes
+    description: "Counts different type of link headers that are sent in early hint
 "
   }
 

@@ -878,6 +878,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__netwerk_eh_link_type {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_eh_link_type ;;
+    hidden: yes
+    description: "Counts different type of link headers that are sent in early hint
+"
+  }
+
   dimension: metrics__labeled_counter__perf_startup_startup_type {
     sql: ${TABLE}.metrics.labeled_counter.perf_startup_startup_type ;;
     hidden: yes
