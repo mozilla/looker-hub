@@ -61,6 +61,11 @@ view: sponsored_tiles_clients_daily {
     hidden: yes
   }
 
+  dimension: is_new_profile {
+    sql: ${TABLE}.is_new_profile ;;
+    type: yesno
+  }
+
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
@@ -71,19 +76,9 @@ view: sponsored_tiles_clients_daily {
     type: string
   }
 
-  dimension: normalized_os_version {
-    sql: ${TABLE}.normalized_os_version ;;
+  dimension: normalized_os {
+    sql: ${TABLE}.normalized_os ;;
     type: string
-  }
-
-  dimension: os {
-    sql: ${TABLE}.os ;;
-    type: string
-  }
-
-  dimension: profile_age_in_days {
-    sql: ${TABLE}.profile_age_in_days ;;
-    type: number
   }
 
   dimension: sample_id {
@@ -104,11 +99,6 @@ view: sponsored_tiles_clients_daily {
   dimension: sponsored_tiles_dismissal_count {
     sql: ${TABLE}.sponsored_tiles_dismissal_count ;;
     type: number
-  }
-
-  dimension: sponsored_tiles_enabled_at_startup {
-    sql: ${TABLE}.sponsored_tiles_enabled_at_startup ;;
-    type: yesno
   }
 
   dimension: sponsored_tiles_impression_count {
