@@ -26,6 +26,11 @@ view: fxa_events_table {
     map_layer_name: countries
   }
 
+  dimension: device_id {
+    sql: ${TABLE}.device_id ;;
+    type: string
+  }
+
   dimension: email_provider {
     sql: ${TABLE}.email_provider ;;
     type: string
