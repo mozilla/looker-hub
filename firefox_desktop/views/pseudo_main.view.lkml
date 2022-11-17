@@ -32,7 +32,7 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 
   dimension: metrics__quantity__legacy_telemetry_profile_subsession_counter {
     label: "Legacy Telemetry Profile Subsession Counter"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.legacy_telemetry_profile_subsession_counter ;;
     type: number
     group_label: "Legacy Telemetry"
