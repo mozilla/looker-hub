@@ -455,6 +455,42 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
+    label: "Cookie Banners Normal Window Service Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_normal_window_service_mode ;;
+    type: string
+    group_label: "Cookie Banners"
+    group_item_label: "Normal Window Service Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Normal Window Service Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cookie_banners_normal_window_service_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The pref value of the cookie banner service mode for normal windows.
+"
+  }
+
+  dimension: metrics__labeled_boolean__cookie_banners_private_window_service_mode {
+    label: "Cookie Banners Private Window Service Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_private_window_service_mode ;;
+    type: string
+    group_label: "Cookie Banners"
+    group_item_label: "Private Window Service Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Private Window Service Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cookie_banners_private_window_service_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The pref value of the cookie banner service mode for private windows.
+"
+  }
+
   dimension: metrics__boolean__fog_failed_idle_registration {
     label: "Fog Failed Idle Registration"
     hidden: no

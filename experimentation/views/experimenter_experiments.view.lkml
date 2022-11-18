@@ -55,6 +55,11 @@ view: experimenter_experiments {
     type: string
   }
 
+  dimension: targeting {
+    sql: ${TABLE}.targeting ;;
+    type: string
+  }
+
   dimension: type {
     sql: ${TABLE}.type ;;
     type: string
@@ -62,6 +67,21 @@ view: experimenter_experiments {
 
   dimension_group: end {
     sql: ${TABLE}.end_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+  }
+
+  dimension_group: enrollment_end {
+    sql: ${TABLE}.enrollment_end_date ;;
     type: time
     timeframes: [
       raw,

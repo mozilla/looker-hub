@@ -764,6 +764,20 @@ the tracking protection settings panel from the toolbar.
     hidden: yes
   }
 
+  dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
+    sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_normal_window_service_mode ;;
+    hidden: yes
+    description: "The pref value of the cookie banner service mode for normal windows.
+"
+  }
+
+  dimension: metrics__labeled_boolean__cookie_banners_private_window_service_mode {
+    sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_private_window_service_mode ;;
+    hidden: yes
+    description: "The pref value of the cookie banner service mode for private windows.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     hidden: yes
@@ -2113,6 +2127,30 @@ view: metrics_table__metrics__jwe {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__cookie_banners_private_window_service_mode {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
   }
 }
 
