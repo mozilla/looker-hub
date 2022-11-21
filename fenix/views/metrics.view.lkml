@@ -6400,6 +6400,57 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
 "
   }
 
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time__sum {
+    label: "Places Manager Run Maintenance Chk Pnt Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Run Maintenance Chk Pnt Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager Run Maintenance Chk Pnt Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_run_maintenance_chk_pnt_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to execute `PRAGMA_CHECKPOINT` inside `run_maintenance()`"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time__sum {
+    label: "Places Manager Run Maintenance Optimize Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Run Maintenance Optimize Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager Run Maintenance Optimize Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_run_maintenance_optimize_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to execute `PRAGMA optimize` inside `run_maintenance()`"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time__sum {
+    label: "Places Manager Run Maintenance Prune Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Run Maintenance Prune Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager Run Maintenance Prune Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_run_maintenance_prune_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to execute `prune_older_visits()` inside `run_maintenance()`"
+  }
+
   dimension: metrics__timing_distribution__places_manager_run_maintenance_time__sum {
     label: "Places Manager Run Maintenance Time Sum"
     hidden: no
@@ -6415,6 +6466,23 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
 
     description: "Time taken to execute `run_maintenance()`"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time__sum {
+    label: "Places Manager Run Maintenance Vacuum Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Run Maintenance Vacuum Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager Run Maintenance Vacuum Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_run_maintenance_vacuum_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to execute `VACUUM` inside `run_maintenance()`"
   }
 
   dimension: metrics__timing_distribution__places_manager_scan_query_time__sum {
