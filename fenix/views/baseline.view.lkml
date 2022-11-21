@@ -102,6 +102,25 @@ location.
 "
   }
 
+  dimension: metrics__string__metrics_distribution_id {
+    label: "Metrics Distribution Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.metrics_distribution_id ;;
+    type: string
+    group_label: "Metrics"
+    group_item_label: "Distribution Id"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Distribution Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_distribution_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A string containing the distribution identifier. This is currently used
+to identify installs from Mozilla Online.
+"
+  }
+
   dimension: metrics__labeled_counter__metrics_search_count {
     label: "Metrics Search Count"
     hidden: yes
@@ -125,6 +144,48 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
 `source` will be: `action`, `suggestion`, `widget`, `shortcut`, `topsite`
 (depending on the source from which the search started). Also added the
 `other` option for the source but it should never enter on this case.
+"
+  }
+
+  dimension: metrics__string__search_default_engine_code {
+    label: "Search Default Engine Code"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_default_engine_code ;;
+    type: string
+    group_label: "Search Default Engine"
+    group_item_label: "Code"
+
+    link: {
+      label: "Glean Dictionary reference for Search Default Engine Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/search_default_engine_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If the search engine is pre-loaded with Fenix this value
+will be the search engine identifier. If it's a custom search engine
+(defined: https://github.com/mozilla-mobile/fenix/issues/1607) the
+value will be \"custom\"
+"
+  }
+
+  dimension: metrics__string__search_default_engine_name {
+    label: "Search Default Engine Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_default_engine_name ;;
+    type: string
+    group_label: "Search Default Engine"
+    group_item_label: "Name"
+
+    link: {
+      label: "Glean Dictionary reference for Search Default Engine Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/search_default_engine_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If the search engine is pre-loaded with Fenix this value
+will be the search engine name. If it's a custom search engine
+(defined: https://github.com/mozilla-mobile/fenix/issues/1607) the
+value will be \"custom\"
 "
   }
 

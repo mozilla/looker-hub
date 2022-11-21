@@ -17,10 +17,22 @@ view: countries {
     description: "The UNSD intermediate region name."
   }
 
+  dimension: mozilla_vpn_available {
+    sql: ${TABLE}.mozilla_vpn_available ;;
+    type: yesno
+    description: "Whether Mozilla VPN is available in this country."
+  }
+
   dimension: name {
     sql: ${TABLE}.name ;;
     type: string
     description: "Official country name per ISO 3166"
+  }
+
+  dimension: pocket_available_on_newtab {
+    sql: ${TABLE}.pocket_available_on_newtab ;;
+    type: yesno
+    description: "Whether Pocket is available on the newtab page in this country. Note that Pocket might only be available in certain locales/languages within a country."
   }
 
   dimension: region_name {

@@ -351,6 +351,13 @@ It is a sequence number by a longer name.
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__wr_renderer_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Renderer Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__wr_renderer_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.histogram_type ;;
     type: string

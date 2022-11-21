@@ -62,6 +62,16 @@ view: telemetry_alerts_prototype_alerts {
     hidden: yes
   }
 
+  dimension: message {
+    sql: ${TABLE}.message ;;
+    type: string
+  }
+
+  dimension: metric {
+    sql: ${TABLE}.metric ;;
+    type: string
+  }
+
   dimension: oom_crashes {
     sql: ${TABLE}.oom_crashes ;;
     type: number
@@ -72,9 +82,19 @@ view: telemetry_alerts_prototype_alerts {
     type: string
   }
 
+  dimension: parameter {
+    sql: ${TABLE}.parameter ;;
+    type: number
+  }
+
   dimension: perf_first_contentful_paint_ms {
     sql: ${TABLE}.perf_first_contentful_paint_ms ;;
     hidden: yes
+  }
+
+  dimension: statistic {
+    sql: ${TABLE}.statistic ;;
+    type: string
   }
 
   dimension: subsession_length {
@@ -85,6 +105,16 @@ view: telemetry_alerts_prototype_alerts {
   dimension: submission_date {
     type: date
     sql: ${TABLE}.submission_date ;;
+    datatype: date
+    convert_tz: no
+  }
+
+  dimension: build_id_date {
+    type: date
+    hidden: yes
+    sql: PARSE_DATE('%Y%m%d', CAST(${TABLE}.build_id AS STRING)) ;;
+    datatype: date
+    convert_tz: no
   }
 
   measure: errors {

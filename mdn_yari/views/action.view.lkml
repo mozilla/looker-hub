@@ -5,6 +5,42 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: action {
+  dimension: metrics__url2__page_path {
+    label: "Page Path"
+    hidden: no
+    sql: ${TABLE}.metrics.url2.page_path ;;
+    type: string
+    group_label: "Page"
+    group_item_label: "Path"
+
+    link: {
+      label: "Glean Dictionary reference for Page Path"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/page_path"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The URL path of the page that was viewed.
+"
+  }
+
+  dimension: metrics__url2__page_referrer {
+    label: "Page Referrer"
+    hidden: no
+    sql: ${TABLE}.metrics.url2.page_referrer ;;
+    type: string
+    group_label: "Page"
+    group_item_label: "Referrer"
+
+    link: {
+      label: "Glean Dictionary reference for Page Referrer"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/page_referrer"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The referring URL that linked to the page that was viewed.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes

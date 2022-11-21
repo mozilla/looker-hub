@@ -456,7 +456,7 @@ to be displayed
 
   dimension: metrics__counter__downloads_downloaded_pdf_open_count {
     label: "Downloads Downloaded Pdf Open Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.downloads_downloaded_pdf_open_count ;;
     type: number
     group_label: "Downloads"
@@ -475,7 +475,7 @@ for a downloaded pdf.
 
   dimension: metrics__counter__downloads_pdf_download_count {
     label: "Downloads Pdf Download Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.downloads_pdf_download_count ;;
     type: number
     group_label: "Downloads"
@@ -582,6 +582,24 @@ time its content process got killed.
 
     description: "Measures the age of the engine session of a foreground (selected) tab
 at the time its content process got killed.
+"
+  }
+
+  dimension: metrics__boolean__events_marketing_notification_allowed {
+    label: "Events Marketing Notification Allowed"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.events_marketing_notification_allowed ;;
+    type: yesno
+    group_label: "Events"
+    group_item_label: "Marketing Notification Allowed"
+
+    link: {
+      label: "Glean Dictionary reference for Events Marketing Notification Allowed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_marketing_notification_allowed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if marketing notifications are allowed, otherwise false.
 "
   }
 
@@ -1086,6 +1104,24 @@ folder. This value will only be set if the user has at least *one*
 bookmark. If they have 0, this ping will not get sent, resulting in
 a null value. To disambiguate between a failed `mobile_bookmarks_count`
 ping and 0 bookmarks, please see `has_mobile_bookmarks`.
+"
+  }
+
+  dimension: metrics__boolean__metrics_notifications_allowed {
+    label: "Metrics Notifications Allowed"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.metrics_notifications_allowed ;;
+    type: yesno
+    group_label: "Metrics"
+    group_item_label: "Notifications Allowed"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Notifications Allowed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_notifications_allowed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if notifications are allowed, otherwise false.
 "
   }
 
@@ -2021,7 +2057,7 @@ default: true
 
   dimension: metrics__boolean__preferences_search_term_groups_enabled {
     label: "Preferences Search Term Groups Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.preferences_search_term_groups_enabled ;;
     type: yesno
     group_label: "Preferences"
@@ -2363,6 +2399,28 @@ value will be \"custom\"
 "
   }
 
+  dimension: metrics__url2__search_default_engine_search_url {
+    label: "Search Default Engine Search Url"
+    hidden: no
+    sql: ${TABLE}.metrics.url2.search_default_engine_search_url ;;
+    type: string
+    group_label: "Search Default Engine"
+    group_item_label: "Search Url"
+
+    link: {
+      label: "Glean Dictionary reference for Search Default Engine Search Url"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/search_default_engine_search_url"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If the search engine is pre-loaded with Fenix this value will be the base
+URL we use to build the search query for the search engine. For example:
+https://mysearchengine.com/?query=%s. If it's a custom search engine
+(defined: https://github.com/mozilla-mobile/fenix/issues/1607) the value
+will not be set.
+"
+  }
+
   dimension: metrics__string__search_default_engine_submission_url {
     label: "Search Default Engine Submission Url"
     hidden: yes
@@ -2387,7 +2445,7 @@ will be \"custom\"
 
   dimension: metrics__custom_distribution__search_terms_group_size_distribution__sum {
     label: "Search Terms Group Size Distribution Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.search_terms_group_size_distribution.sum ;;
     type: number
     group_label: "Search Terms"
@@ -2602,6 +2660,42 @@ ensure it's not too expensive.  This value is only available on Android
     }
 
     description: "True if the Proton default theme is enabled.
+"
+  }
+
+  dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
+    label: "Cookie Banners Normal Window Service Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_normal_window_service_mode ;;
+    type: string
+    group_label: "Cookie Banners"
+    group_item_label: "Normal Window Service Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Normal Window Service Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cookie_banners_normal_window_service_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The pref value of the cookie banner service mode for normal windows.
+"
+  }
+
+  dimension: metrics__labeled_boolean__cookie_banners_private_window_service_mode {
+    label: "Cookie Banners Private Window Service Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_private_window_service_mode ;;
+    type: string
+    group_label: "Cookie Banners"
+    group_item_label: "Private Window Service Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Private Window Service Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cookie_banners_private_window_service_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The pref value of the cookie banner service mode for private windows.
 "
   }
 
@@ -2832,6 +2926,41 @@ To be used to validate GIFFT.
     }
 
     description: "Counts the different type of resources that are sent for early hints.
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_eh_link_type {
+    label: "Netwerk Eh Link Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_eh_link_type ;;
+    group_label: "Netwerk"
+    group_item_label: "Eh Link Type"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk Eh Link Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/netwerk_eh_link_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts different type of link headers that are sent in early hint
+"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_transaction_pending__sum {
+    label: "Network Open To Transaction Pending Sum"
+    hidden: yes
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Open To Transaction Pending Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Open To Transaction Pending Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_open_to_transaction_pending"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent from HttpChannelChild::AsyncOpen to adding the transaction to the nsHttpConnectionMgr
 "
   }
 
@@ -6271,6 +6400,57 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
 "
   }
 
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time__sum {
+    label: "Places Manager Run Maintenance Chk Pnt Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Run Maintenance Chk Pnt Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager Run Maintenance Chk Pnt Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_run_maintenance_chk_pnt_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to execute `PRAGMA_CHECKPOINT` inside `run_maintenance()`"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time__sum {
+    label: "Places Manager Run Maintenance Optimize Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Run Maintenance Optimize Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager Run Maintenance Optimize Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_run_maintenance_optimize_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to execute `PRAGMA optimize` inside `run_maintenance()`"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time__sum {
+    label: "Places Manager Run Maintenance Prune Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Run Maintenance Prune Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager Run Maintenance Prune Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_run_maintenance_prune_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to execute `prune_older_visits()` inside `run_maintenance()`"
+  }
+
   dimension: metrics__timing_distribution__places_manager_run_maintenance_time__sum {
     label: "Places Manager Run Maintenance Time Sum"
     hidden: no
@@ -6286,6 +6466,23 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
 
     description: "Time taken to execute `run_maintenance()`"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time__sum {
+    label: "Places Manager Run Maintenance Vacuum Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time.sum ;;
+    type: number
+    group_label: "Places Manager"
+    group_item_label: "Run Maintenance Vacuum Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Places Manager Run Maintenance Vacuum Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/places_manager_run_maintenance_vacuum_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to execute `VACUUM` inside `run_maintenance()`"
   }
 
   dimension: metrics__timing_distribution__places_manager_scan_query_time__sum {
@@ -9868,6 +10065,49 @@ view: metrics__metrics__labeled_counter__netwerk_early_hints {
   }
 }
 
+view: metrics__metrics__labeled_counter__netwerk_eh_link_type {
+  label: "Netwerk - Eh Link Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__perf_startup_startup_type {
   label: "Perf Startup - Startup Type"
 
@@ -11476,6 +11716,25 @@ view: suggest__metrics__metrics__labeled_counter__netwerk_early_hints {
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.netwerk_early_hints) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.netwerk_eh_link_type) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

@@ -132,6 +132,26 @@ view: growth_accounting {
     type: yesno
   }
 
+  dimension: bookmark_migrations_quantity_all {
+    sql: ${TABLE}.bookmark_migrations_quantity_all ;;
+    type: number
+  }
+
+  dimension: bookmark_migrations_quantity_chrome {
+    sql: ${TABLE}.bookmark_migrations_quantity_chrome ;;
+    type: number
+  }
+
+  dimension: bookmark_migrations_quantity_edge {
+    sql: ${TABLE}.bookmark_migrations_quantity_edge ;;
+    type: number
+  }
+
+  dimension: bookmark_migrations_quantity_safari {
+    sql: ${TABLE}.bookmark_migrations_quantity_safari ;;
+    type: number
+  }
+
   dimension: channel {
     sql: ${TABLE}.channel ;;
     type: string
@@ -383,6 +403,11 @@ view: growth_accounting {
     type: number
   }
 
+  dimension: days_since_qualified_use_v1 {
+    sql: ${TABLE}.days_since_qualified_use_v1 ;;
+    type: number
+  }
+
   dimension: days_since_second_seen {
     sql: ${TABLE}.days_since_second_seen ;;
     type: number
@@ -403,6 +428,16 @@ view: growth_accounting {
     type: number
   }
 
+  dimension: days_since_visited_1_uri_normal_mode {
+    sql: ${TABLE}.days_since_visited_1_uri_normal_mode ;;
+    type: number
+  }
+
+  dimension: days_since_visited_1_uri_private_mode {
+    sql: ${TABLE}.days_since_visited_1_uri_private_mode ;;
+    type: number
+  }
+
   dimension: days_since_visited_5_uri {
     sql: ${TABLE}.days_since_visited_5_uri ;;
     type: number
@@ -415,6 +450,16 @@ view: growth_accounting {
 
   dimension: days_visited_1_uri_bits {
     sql: ${TABLE}.days_visited_1_uri_bits ;;
+    type: number
+  }
+
+  dimension: days_visited_1_uri_normal_mode_bits {
+    sql: ${TABLE}.days_visited_1_uri_normal_mode_bits ;;
+    type: number
+  }
+
+  dimension: days_visited_1_uri_private_mode_bits {
+    sql: ${TABLE}.days_visited_1_uri_private_mode_bits ;;
     type: number
   }
 
@@ -481,6 +526,11 @@ view: growth_accounting {
   dimension: distribution_id {
     sql: ${TABLE}.distribution_id ;;
     type: string
+  }
+
+  dimension: dom_parentprocess_private_window_used {
+    sql: ${TABLE}.dom_parentprocess_private_window_used ;;
+    type: yesno
   }
 
   dimension: e10s_enabled {
@@ -733,6 +783,26 @@ view: growth_accounting {
     type: number
   }
 
+  dimension: history_migrations_quantity_all {
+    sql: ${TABLE}.history_migrations_quantity_all ;;
+    type: number
+  }
+
+  dimension: history_migrations_quantity_chrome {
+    sql: ${TABLE}.history_migrations_quantity_chrome ;;
+    type: number
+  }
+
+  dimension: history_migrations_quantity_edge {
+    sql: ${TABLE}.history_migrations_quantity_edge ;;
+    type: number
+  }
+
+  dimension: history_migrations_quantity_safari {
+    sql: ${TABLE}.history_migrations_quantity_safari ;;
+    type: number
+  }
+
   dimension: install_year {
     sql: ${TABLE}.install_year ;;
     type: number
@@ -788,6 +858,26 @@ view: growth_accounting {
     type: string
   }
 
+  dimension: logins_migrations_quantity_all {
+    sql: ${TABLE}.logins_migrations_quantity_all ;;
+    type: number
+  }
+
+  dimension: logins_migrations_quantity_chrome {
+    sql: ${TABLE}.logins_migrations_quantity_chrome ;;
+    type: number
+  }
+
+  dimension: logins_migrations_quantity_edge {
+    sql: ${TABLE}.logins_migrations_quantity_edge ;;
+    type: number
+  }
+
+  dimension: logins_migrations_quantity_safari {
+    sql: ${TABLE}.logins_migrations_quantity_safari ;;
+    type: number
+  }
+
   dimension: memory_mb {
     sql: ${TABLE}.memory_mb ;;
     type: number
@@ -821,6 +911,21 @@ view: growth_accounting {
   dimension: os {
     sql: ${TABLE}.os ;;
     type: string
+  }
+
+  dimension: os_environment_is_taskbar_pinned_any {
+    sql: ${TABLE}.os_environment_is_taskbar_pinned_any ;;
+    type: yesno
+  }
+
+  dimension: os_environment_is_taskbar_pinned_private {
+    sql: ${TABLE}.os_environment_is_taskbar_pinned_private ;;
+    type: yesno
+  }
+
+  dimension: os_environment_is_taskbar_pinned_private_any {
+    sql: ${TABLE}.os_environment_is_taskbar_pinned_private_any ;;
+    type: yesno
   }
 
   dimension: os_service_pack_major {
@@ -1095,6 +1200,11 @@ view: growth_accounting {
 
   dimension: scalar_parent_os_environment_launched_via_taskbar {
     sql: ${TABLE}.scalar_parent_os_environment_launched_via_taskbar ;;
+    type: yesno
+  }
+
+  dimension: scalar_parent_os_environment_launched_via_taskbar_private {
+    sql: ${TABLE}.scalar_parent_os_environment_launched_via_taskbar_private ;;
     type: yesno
   }
 
@@ -1701,6 +1811,11 @@ view: growth_accounting {
   dimension: update_enabled {
     sql: ${TABLE}.update_enabled ;;
     type: yesno
+  }
+
+  dimension: user_pref_app_shield_optoutstudies_enabled {
+    sql: ${TABLE}.user_pref_app_shield_optoutstudies_enabled ;;
+    type: string
   }
 
   dimension: user_pref_browser_newtabpage_enabled {

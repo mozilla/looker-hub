@@ -367,6 +367,17 @@ at least once.
 "
   }
 
+  dimension: metrics__counter__app_opened_as_default_browser {
+    sql: ${TABLE}.metrics.counter.app_opened_as_default_browser ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "App Opened As Default Browser"
+    description: "Recorded when a preference is changed and includes the
+preference that changed as well as the value changed to
+recorded in the extra keys.
+"
+  }
+
   dimension: metrics__counter__browser_total_uri_count {
     sql: ${TABLE}.metrics.counter.browser_total_uri_count ;;
     type: number
@@ -377,6 +388,25 @@ including page reloads.
 It does not include background page requests and URIs from embedded pages
 but may be incremented without user interaction by website scripts
 that programmatically redirect to a new location.
+"
+  }
+
+  dimension: metrics__counter__default_browser_onboarding_dismiss_pressed {
+    sql: ${TABLE}.metrics.counter.default_browser_onboarding_dismiss_pressed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Default Browser Onboarding Dismiss Pressed"
+    description: "Counts the number of times default browser onboarding is dismissed.
+"
+  }
+
+  dimension: metrics__counter__default_browser_onboarding_go_to_settings_pressed {
+    sql: ${TABLE}.metrics.counter.default_browser_onboarding_go_to_settings_pressed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Default Browser Onboarding Go To Settings Pressed"
+    description: "Counts the number of times the Go To Settings button on
+default browser onboarding is clicked.
 "
   }
 
@@ -518,6 +548,27 @@ The key format is ‘<provider-name>’.
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_in_content {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
+    hidden: yes
+    description: "Records the type of interaction a user has on SERP pages.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_search_count {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_search_count ;;
+    hidden: yes
+    description: "The labels for this counter are `<search-engine-name>.<source>`.
+If the search engine is bundled with Focus `search-engine-name` will be
+the name of the search engine. If it's a custom search engine (defined:
+https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
+`custom`.
+`source` will be: `action`, `suggestion`, `widget`, `shortcut`, `topsite`
+(depending on the source from which the search started). Also added the
+`other` option for the source but it should never enter on this case.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_with_ads {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
     hidden: yes
@@ -595,6 +646,13 @@ It also indicates the screen it was removed from, home or browser.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__glean_database_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.glean_database_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Glean Database Size"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__memory_distribution__glean_database_size__sum {
     sql: ${TABLE}.metrics.memory_distribution.glean_database_size.sum ;;
     type: number
@@ -607,6 +665,13 @@ It also indicates the screen it was removed from, home or browser.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Glean Upload Discarded Exceeding Pings Size"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__sum {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.sum ;;
     type: number
@@ -617,6 +682,13 @@ It also indicates the screen it was removed from, home or browser.
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__values {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Glean Upload Pending Pings Directory Size"
+    group_item_label: "Count"
   }
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
@@ -658,6 +730,17 @@ documented in the ping's pings.yaml file.
     group_label: "Metrics String"
     group_item_label: "Preferences User Theme"
     description: "A string that indicates the theme. Can be one of \"Light\", \"Dark\", or \"Follow device\". Default is \"Follow device\".
+"
+  }
+
+  dimension: metrics__string__search_default_engine {
+    sql: ${TABLE}.metrics.string.search_default_engine ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Search Default Engine"
+    description: "The default search engine identifier if the search engine is
+pre-loaded with Focus.  If it's a custom search engine,
+then the value will be 'custom'.
 "
   }
 

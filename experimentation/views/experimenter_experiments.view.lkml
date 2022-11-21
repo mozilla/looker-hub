@@ -35,6 +35,11 @@ view: experimenter_experiments {
     type: yesno
   }
 
+  dimension: namespace {
+    sql: ${TABLE}.namespace ;;
+    type: string
+  }
+
   dimension: normandy_slug {
     sql: ${TABLE}.normandy_slug ;;
     type: string
@@ -55,6 +60,16 @@ view: experimenter_experiments {
     type: string
   }
 
+  dimension: targeted_percent {
+    sql: ${TABLE}.targeted_percent ;;
+    type: number
+  }
+
+  dimension: targeting {
+    sql: ${TABLE}.targeting ;;
+    type: string
+  }
+
   dimension: type {
     sql: ${TABLE}.type ;;
     type: string
@@ -62,6 +77,21 @@ view: experimenter_experiments {
 
   dimension_group: end {
     sql: ${TABLE}.end_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+  }
+
+  dimension_group: enrollment_end {
+    sql: ${TABLE}.enrollment_end_date ;;
     type: time
     timeframes: [
       raw,
@@ -102,5 +132,10 @@ view: experimenter_experiments__branches {
   dimension: slug {
     sql: ${TABLE}.slug ;;
     type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    hidden: yes
   }
 }

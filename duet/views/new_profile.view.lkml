@@ -795,6 +795,14 @@ view: new_profile {
     description: "The CPU model, `null` on failure. Desktop only."
   }
 
+  dimension: environment__system__cpu__name {
+    sql: ${TABLE}.environment.system.cpu.name ;;
+    type: string
+    group_label: "Environment System Cpu"
+    group_item_label: "Name"
+    description: "The CPU name, e.g. 'Intel(R) Core(TM) i9-8950HK CPU @ 2.90GHz', or `null` on failure. Desktop only."
+  }
+
   dimension: environment__system__cpu__speed_m_hz {
     sql: ${TABLE}.environment.system.cpu.speed_m_hz ;;
     type: number

@@ -71,6 +71,40 @@ Migrated from Telemetry's
 "
   }
 
+  dimension: metrics__labeled_counter__dap_report_generation_status {
+    label: "Dap Report Generation Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.dap_report_generation_status ;;
+    group_label: "Dap"
+    group_item_label: "Report Generation Status"
+
+    link: {
+      label: "Glean Dictionary reference for Dap Report Generation Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dap_report_generation_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The result of trying to generate a DAP report.
+"
+  }
+
+  dimension: metrics__labeled_counter__dap_upload_status {
+    label: "Dap Upload Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.dap_upload_status ;;
+    group_label: "Dap"
+    group_item_label: "Upload Status"
+
+    link: {
+      label: "Glean Dictionary reference for Dap Upload Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/dap_upload_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The result of trying to upload a report to the DAP server.
+"
+  }
+
   dimension: metrics__timespan__extensions_startup_cache_load_time__value {
     label: "Extensions Startup Cache Load Time Value"
     hidden: no
@@ -148,6 +182,24 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__counter__ping_centre_send_failures {
+    label: "Ping Centre Send Failures"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.ping_centre_send_failures ;;
+    type: number
+    group_label: "Ping Centre"
+    group_item_label: "Send Failures"
+
+    link: {
+      label: "Glean Dictionary reference for Ping Centre Send Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ping_centre_send_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of PingCentre send failures.
+"
+  }
+
   dimension: metrics__string__search_engine_default_display_name {
     label: "Search Engine Default Display Name"
     hidden: no
@@ -208,6 +260,28 @@ For example:
   `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch based
   engine.
 Note: this metric is truncated at 100 characters.
+"
+  }
+
+  dimension: metrics__url2__search_engine_default_submission_url {
+    label: "Search Engine Default Submission Url"
+    hidden: no
+    sql: ${TABLE}.metrics.url2.search_engine_default_submission_url ;;
+    type: string
+    group_label: "Search Engine Default"
+    group_item_label: "Submission Url"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Default Submission Url"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_default_submission_url"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The submission URL of the default engine. This is only reported in the
+cases where:
+  The engine is an application provided engine.
+  The engine has the same name as an application provided engine.
+  The engine matches one of a specific list of well known search engines.
 "
   }
 
@@ -310,6 +384,33 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__url2__search_engine_private_submission_url {
+    label: "Search Engine Private Submission Url"
+    hidden: no
+    sql: ${TABLE}.metrics.url2.search_engine_private_submission_url ;;
+    type: string
+    group_label: "Search Engine Private"
+    group_item_label: "Submission Url"
+
+    link: {
+      label: "Glean Dictionary reference for Search Engine Private Submission Url"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_engine_private_submission_url"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The submission URL of the default engine. This is only reported in the
+cases where:
+  The engine is an application provided engine.
+  The engine has the same name as an application provided engine.
+  The engine matches one of a specific list of well known search engines.
+If this string is an empty string (`\"\"`), this means that one or both of
+the preferences `browser.search.separatePrivateDefault` and
+`browser.search.separatePrivateDefault.ui.enabled` are set to false.
+It is possible that the user selects the same private engine as for the
+default engine, and hence both versions of these fields will be filled in.
+"
+  }
+
   dimension: metrics__string__search_engine_private_verified {
     label: "Search Engine Private Verified"
     hidden: no
@@ -336,6 +437,24 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__labeled_boolean__startup_run_from_dmg_install_outcome {
+    label: "Startup Run From Dmg Install Outcome"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_boolean.startup_run_from_dmg_install_outcome ;;
+    type: string
+    group_label: "Startup"
+    group_item_label: "Run From Dmg Install Outcome"
+
+    link: {
+      label: "Glean Dictionary reference for Startup Run From Dmg Install Outcome"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/startup_run_from_dmg_install_outcome"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The outcome after the app detected that it was running from DMG or an app translocated location and should offer to install and relaunch itself.
+"
+  }
+
   dimension: metrics__boolean__browser_ui_proton_enabled {
     label: "Browser Ui Proton Enabled"
     hidden: yes
@@ -351,6 +470,42 @@ default engine, and hence both versions of these fields will be filled in.
     }
 
     description: "True if the Proton default theme is enabled.
+"
+  }
+
+  dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
+    label: "Cookie Banners Normal Window Service Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_normal_window_service_mode ;;
+    type: string
+    group_label: "Cookie Banners"
+    group_item_label: "Normal Window Service Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Normal Window Service Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cookie_banners_normal_window_service_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The pref value of the cookie banner service mode for normal windows.
+"
+  }
+
+  dimension: metrics__labeled_boolean__cookie_banners_private_window_service_mode {
+    label: "Cookie Banners Private Window Service Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_private_window_service_mode ;;
+    type: string
+    group_label: "Cookie Banners"
+    group_item_label: "Private Window Service Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Private Window Service Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cookie_banners_private_window_service_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The pref value of the cookie banner service mode for private windows.
 "
   }
 
@@ -581,6 +736,41 @@ To be used to validate GIFFT.
     }
 
     description: "Counts the different type of resources that are sent for early hints.
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_eh_link_type {
+    label: "Netwerk Eh Link Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_eh_link_type ;;
+    group_label: "Netwerk"
+    group_item_label: "Eh Link Type"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk Eh Link Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/netwerk_eh_link_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts different type of link headers that are sent in early hint
+"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_transaction_pending__sum {
+    label: "Network Open To Transaction Pending Sum"
+    hidden: yes
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Open To Transaction Pending Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Open To Transaction Pending Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_open_to_transaction_pending"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent from HttpChannelChild::AsyncOpen to adding the transaction to the nsHttpConnectionMgr
 "
   }
 
@@ -2015,6 +2205,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: ping_centre_send_failures {
+    type: sum
+    sql: ${metrics__counter__ping_centre_send_failures} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ping Centre Send Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ping_centre_send_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ping_centre_send_failures_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__ping_centre_send_failures: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ping Centre Send Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ping_centre_send_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: fog_ipc_flush_failures {
     type: sum
     sql: ${metrics__counter__fog_ipc_flush_failures} ;;
@@ -2418,6 +2633,92 @@ documented in the ping's pings.yaml file.
   sql_table_name: `mozdata.firefox_desktop.metrics` ;;
 }
 
+view: metrics__metrics__labeled_counter__dap_report_generation_status {
+  label: "Dap - Report Generation Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__dap_report_generation_status
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__dap_report_generation_status.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__dap_upload_status {
+  label: "Dap - Upload Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__dap_upload_status
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__dap_upload_status.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__glean_error_invalid_label {
   label: "Glean Error - Invalid Label"
 
@@ -2740,6 +3041,49 @@ view: metrics__metrics__labeled_counter__netwerk_early_hints {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__netwerk_early_hints
     suggest_dimension: suggest__metrics__metrics__labeled_counter__netwerk_early_hints.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__netwerk_eh_link_type {
+  label: "Netwerk - Eh Link Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type.key
     hidden: no
   }
 
@@ -3407,6 +3751,44 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactiv
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__dap_report_generation_status {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.dap_report_generation_status) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__dap_upload_status {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.dap_upload_status) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
@@ -3547,6 +3929,25 @@ view: suggest__metrics__metrics__labeled_counter__netwerk_early_hints {
     count(*) as n
 from mozdata.firefox_desktop.metrics as t,
 unnest(metrics.labeled_counter.netwerk_early_hints) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.netwerk_eh_link_type) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

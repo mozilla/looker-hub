@@ -1588,7 +1588,7 @@ from either the Home Panel tab button or the App Menu.
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     hidden: yes
     description: "Records clicks of adverts on SERP pages.
-The key format is ‘<provider-name>’.
+The key format is `<provider-name>`.
 "
   }
 
@@ -1596,7 +1596,7 @@ The key format is ‘<provider-name>’.
     sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
     hidden: yes
     description: "Records counts of SERP pages with adverts displayed.
-The key format is ‘<provider-name>’.
+The key format is `<provider-name>`.
 "
   }
 
@@ -1916,6 +1916,13 @@ the currently selected wallpaper if it's not the default.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__glean_database_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.glean_database_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Glean Database Size"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__memory_distribution__glean_database_size__sum {
     sql: ${TABLE}.metrics.memory_distribution.glean_database_size.sum ;;
     type: number
@@ -1926,6 +1933,13 @@ the currently selected wallpaper if it's not the default.
   dimension: metrics__memory_distribution__glean_database_size__values {
     sql: ${TABLE}.metrics.memory_distribution.glean_database_size.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Glean Upload Discarded Exceeding Pings Size"
+    group_item_label: "Count"
   }
 
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__sum {
@@ -1940,6 +1954,13 @@ the currently selected wallpaper if it's not the default.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Glean Upload Pending Pings Directory Size"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.sum ;;
     type: number
@@ -1950,6 +1971,24 @@ the currently selected wallpaper if it's not the default.
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__quantity__places_history_migration_num_migrated {
+    sql: ${TABLE}.metrics.quantity.places_history_migration_num_migrated ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Places History Migration Num Migrated"
+    description: "The number of visits migrated to the places.db
+"
+  }
+
+  dimension: metrics__quantity__places_history_migration_num_to_migrate {
+    sql: ${TABLE}.metrics.quantity.places_history_migration_num_to_migrate ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Places History Migration Num To Migrate"
+    description: "The number of visits expected to migrate to the places.db
+"
   }
 
   dimension: metrics__quantity__tabs_normal_tabs_quantity {
@@ -1969,6 +2008,74 @@ closes the application.
     group_item_label: "Tabs Private Tabs Quantity"
     description: "A snapshot of how many private tabs a user has opened when he
 closes the application.
+"
+  }
+
+  dimension: metrics__rate__places_history_migration_migration_ended_rate__denominator {
+    sql: ${TABLE}.metrics.rate.places_history_migration_migration_ended_rate.denominator ;;
+    type: number
+    group_label: "Metrics Rate Places History Migration Migration Ended Rate"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__places_history_migration_migration_ended_rate__numerator {
+    sql: ${TABLE}.metrics.rate.places_history_migration_migration_ended_rate.numerator ;;
+    type: number
+    group_label: "Metrics Rate Places History Migration Migration Ended Rate"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__places_history_migration_migration_error_rate__denominator {
+    sql: ${TABLE}.metrics.rate.places_history_migration_migration_error_rate.denominator ;;
+    type: number
+    group_label: "Metrics Rate Places History Migration Migration Error Rate"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__places_history_migration_migration_error_rate__numerator {
+    sql: ${TABLE}.metrics.rate.places_history_migration_migration_error_rate.numerator ;;
+    type: number
+    group_label: "Metrics Rate Places History Migration Migration Error Rate"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__string__adjust_ad_group {
+    sql: ${TABLE}.metrics.string.adjust_ad_group ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Adjust Ad Group"
+    description: "A string containing the Adjust ad group ID from which the user installed
+Firefox-iOS.
+"
+  }
+
+  dimension: metrics__string__adjust_campaign {
+    sql: ${TABLE}.metrics.string.adjust_campaign ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Adjust Campaign"
+    description: "A string containing the Adjust campaign ID from which the user installed
+Firefox-iOS.
+"
+  }
+
+  dimension: metrics__string__adjust_creative {
+    sql: ${TABLE}.metrics.string.adjust_creative ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Adjust Creative"
+    description: "A string containing the Adjust creative ID from which the user installed
+Firefox-iOS.
+"
+  }
+
+  dimension: metrics__string__adjust_network {
+    sql: ${TABLE}.metrics.string.adjust_network ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Adjust Network"
+    description: "A string containing the Adjust network ID from which the user installed
+Firefox-iOS.
 "
   }
 
@@ -2094,6 +2201,13 @@ tracking-protection that is enabled. One of:
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__awesomebar_query_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Awesomebar Query Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__awesomebar_query_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.histogram_type ;;
     type: string
@@ -2144,6 +2258,13 @@ tracking-protection that is enabled. One of:
     type: number
     group_label: "Metrics Timing Distribution Logins Store Read Query Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_read_query_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Read Query Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__logins_store_read_query_time__histogram_type {
@@ -2198,6 +2319,13 @@ tracking-protection that is enabled. One of:
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__logins_store_unlock_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Unlock Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__logins_store_unlock_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.histogram_type ;;
     type: string
@@ -2250,6 +2378,13 @@ tracking-protection that is enabled. One of:
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__logins_store_write_query_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Write Query Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__logins_store_write_query_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.histogram_type ;;
     type: string
@@ -2292,6 +2427,65 @@ tracking-protection that is enabled. One of:
 
   dimension: metrics__timing_distribution__logins_store_write_query_time__values {
     sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_history_migration_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_history_migration_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__places_history_migration_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_history_migration_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_history_migration_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_history_migration_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_history_migration_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_history_migration_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_history_migration_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.values ;;
     hidden: yes
   }
 
@@ -2631,6 +2825,18 @@ view: metrics_table__metrics__timing_distribution__logins_store_unlock_time__val
 }
 
 view: metrics_table__metrics__timing_distribution__logins_store_write_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_history_migration_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -726,6 +726,13 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__count {
+    sql: ${TABLE}.metrics.custom_distribution.power_battery_percentage_when_user_active.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Power Battery Percentage When User Active"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__sum {
     sql: ${TABLE}.metrics.custom_distribution.power_battery_percentage_when_user_active.sum ;;
     type: number
@@ -736,6 +743,13 @@ the tracking protection settings panel from the toolbar.
   dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__values {
     sql: ${TABLE}.metrics.custom_distribution.power_battery_percentage_when_user_active.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__tab_count_app_backgrounded__count {
+    sql: ${TABLE}.metrics.custom_distribution.tab_count_app_backgrounded.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Tab Count App Backgrounded"
+    group_item_label: "Count"
   }
 
   dimension: metrics__custom_distribution__tab_count_app_backgrounded__sum {
@@ -762,6 +776,20 @@ the tracking protection settings panel from the toolbar.
   dimension: metrics__jwe {
     sql: ${TABLE}.metrics.jwe ;;
     hidden: yes
+  }
+
+  dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
+    sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_normal_window_service_mode ;;
+    hidden: yes
+    description: "The pref value of the cookie banner service mode for normal windows.
+"
+  }
+
+  dimension: metrics__labeled_boolean__cookie_banners_private_window_service_mode {
+    sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_private_window_service_mode ;;
+    hidden: yes
+    description: "The pref value of the cookie banner service mode for private windows.
+"
   }
 
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
@@ -875,6 +903,13 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.labeled_counter.netwerk_early_hints ;;
     hidden: yes
     description: "Counts the different type of resources that are sent for early hints.
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_eh_link_type {
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_eh_link_type ;;
+    hidden: yes
+    description: "Counts different type of link headers that are sent in early hint
 "
   }
 
@@ -1012,6 +1047,13 @@ It also indicates the screen it was removed from, home or browser.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__fog_ipc_buffer_sizes__count {
+    sql: ${TABLE}.metrics.memory_distribution.fog_ipc_buffer_sizes.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Fog Ipc Buffer Sizes"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__memory_distribution__fog_ipc_buffer_sizes__sum {
     sql: ${TABLE}.metrics.memory_distribution.fog_ipc_buffer_sizes.sum ;;
     type: number
@@ -1022,6 +1064,13 @@ It also indicates the screen it was removed from, home or browser.
   dimension: metrics__memory_distribution__fog_ipc_buffer_sizes__values {
     sql: ${TABLE}.metrics.memory_distribution.fog_ipc_buffer_sizes.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__glean_database_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.glean_database_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Glean Database Size"
+    group_item_label: "Count"
   }
 
   dimension: metrics__memory_distribution__glean_database_size__sum {
@@ -1036,6 +1085,13 @@ It also indicates the screen it was removed from, home or browser.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Glean Upload Discarded Exceeding Pings Size"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__sum {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.sum ;;
     type: number
@@ -1046,6 +1102,13 @@ It also indicates the screen it was removed from, home or browser.
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__values {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Glean Upload Pending Pings Directory Size"
+    group_item_label: "Count"
   }
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
@@ -1175,6 +1238,13 @@ documented in the ping's pings.yaml file.
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__count {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Ipc Flush Durations"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__fog_ipc_flush_durations__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.histogram_type ;;
     type: string
@@ -1220,11 +1290,77 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__network_open_to_transaction_pending__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Open To Transaction Pending"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_transaction_pending__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Open To Transaction Pending"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_transaction_pending__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Open To Transaction Pending"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_transaction_pending__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Open To Transaction Pending"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_transaction_pending__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_transaction_pending__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Open To Transaction Pending"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_transaction_pending__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Open To Transaction Pending"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_transaction_pending__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Open To Transaction Pending"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_transaction_pending__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__paint_build_displaylist_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.bucket_count ;;
     type: number
     group_label: "Metrics Timing Distribution Paint Build Displaylist Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Paint Build Displaylist Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__paint_build_displaylist_time__histogram_type {
@@ -1279,6 +1415,13 @@ documented in the ping's pings.yaml file.
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__wr_framebuild_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Framebuild Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__wr_framebuild_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.histogram_type ;;
     type: string
@@ -1329,6 +1472,13 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Wr Gpu Wait Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_gpu_wait_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Gpu Wait Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__wr_gpu_wait_time__histogram_type {
@@ -1383,6 +1533,13 @@ documented in the ping's pings.yaml file.
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__wr_rasterize_blobs_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_blobs_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Rasterize Blobs Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__wr_rasterize_blobs_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_blobs_time.histogram_type ;;
     type: string
@@ -1433,6 +1590,13 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Wr Rasterize Glyphs Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Rasterize Glyphs Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__histogram_type {
@@ -1487,6 +1651,13 @@ documented in the ping's pings.yaml file.
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__wr_renderer_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Renderer Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__wr_renderer_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.histogram_type ;;
     type: string
@@ -1537,6 +1708,13 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Wr Renderer Time No Sc"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time_no_sc__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time_no_sc.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Renderer Time No Sc"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__wr_renderer_time_no_sc__histogram_type {
@@ -1591,6 +1769,13 @@ documented in the ping's pings.yaml file.
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__wr_scenebuild_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Scenebuild Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__wr_scenebuild_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.histogram_type ;;
     type: string
@@ -1641,6 +1826,13 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Wr Sceneswap Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Sceneswap Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__wr_sceneswap_time__histogram_type {
@@ -1695,6 +1887,13 @@ documented in the ping's pings.yaml file.
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__wr_texture_cache_update_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_texture_cache_update_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Texture Cache Update Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__wr_texture_cache_update_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.wr_texture_cache_update_time.histogram_type ;;
     type: string
@@ -1747,6 +1946,13 @@ documented in the ping's pings.yaml file.
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__wr_time_to_frame_build__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_time_to_frame_build.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Time To Frame Build"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__wr_time_to_frame_build__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.wr_time_to_frame_build.histogram_type ;;
     type: string
@@ -1797,6 +2003,13 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Wr Time To Render Start"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_time_to_render_start__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_time_to_render_start.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Time To Render Start"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__wr_time_to_render_start__histogram_type {
@@ -2077,6 +2290,30 @@ view: metrics_table__metrics__jwe {
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__cookie_banners_private_window_service_mode {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics_table__metrics__labeled_rate {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -2171,6 +2408,18 @@ view: metrics_table__metrics__text {
 }
 
 view: metrics_table__metrics__timing_distribution__fog_ipc_flush_durations__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_open_to_transaction_pending__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

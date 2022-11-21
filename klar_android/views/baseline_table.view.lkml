@@ -300,6 +300,19 @@ view: baseline_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__counter__browser_total_uri_count {
+    sql: ${TABLE}.metrics.counter.browser_total_uri_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Total Uri Count"
+    description: "Records count of URIs visited by the user in the current session,
+including page reloads.
+It does not include background page requests and URIs from embedded pages
+but may be incremented without user interaction by website scripts
+that programmatically redirect to a new location.
+"
+  }
+
   dimension: metrics__counter__glean_validation_metrics_ping_count {
     sql: ${TABLE}.metrics.counter.glean_validation_metrics_ping_count ;;
     type: number
@@ -320,6 +333,35 @@ view: baseline_table {
   dimension: metrics__jwe {
     sql: ${TABLE}.metrics.jwe ;;
     hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_ad_clicks {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages.
+The key format is `<provider-name>`.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_in_content {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
+    hidden: yes
+    description: "Records the type of interaction a user has on SERP pages.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_search_count {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_search_count ;;
+    hidden: yes
+    description: "The labels for this counter are `<search-engine-name>.<source>`.
+
+If the search engine is bundled with Focus `search-engine-name` will be
+the name of the search engine. If it's a custom search engine (defined:
+https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
+`custom`.
+
+`source` will be: `action`, `suggestion`
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -371,6 +413,15 @@ This metric appears in both the metrics and baseline pings.
   dimension: metrics__labeled_rate {
     sql: ${TABLE}.metrics.labeled_rate ;;
     hidden: yes
+  }
+
+  dimension: metrics__string__browser_default_search_engine {
+    sql: ${TABLE}.metrics.string.browser_default_search_engine ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Browser Default Search Engine"
+    description: "A string containing the default search engine name.
+"
   }
 
   dimension: metrics__string__glean_baseline_locale {

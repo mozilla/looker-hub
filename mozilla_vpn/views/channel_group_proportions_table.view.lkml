@@ -40,6 +40,11 @@ view: channel_group_proportions_table {
     type: string
   }
 
+  dimension: product_name {
+    sql: ${TABLE}.product_name ;;
+    type: string
+  }
+
   dimension: promotion_codes {
     sql: ${TABLE}.promotion_codes ;;
     hidden: yes

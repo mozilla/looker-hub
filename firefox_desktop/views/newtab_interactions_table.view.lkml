@@ -55,9 +55,24 @@ view: newtab_interactions_table {
     type: number
   }
 
+  dimension: newtab_homepage_category {
+    sql: ${TABLE}.newtab_homepage_category ;;
+    type: string
+  }
+
+  dimension: newtab_newtab_category {
+    sql: ${TABLE}.newtab_newtab_category ;;
+    type: string
+  }
+
   dimension: newtab_open_source {
     sql: ${TABLE}.newtab_open_source ;;
     type: string
+  }
+
+  dimension: newtab_search_enabled {
+    sql: ${TABLE}.newtab_search_enabled ;;
+    type: yesno
   }
 
   dimension: newtab_visit_ended_at {
@@ -75,6 +90,21 @@ view: newtab_interactions_table {
     type: number
   }
 
+  dimension: organic_pocket_clicks {
+    sql: ${TABLE}.organic_pocket_clicks ;;
+    type: number
+  }
+
+  dimension: organic_pocket_impressions {
+    sql: ${TABLE}.organic_pocket_impressions ;;
+    type: number
+  }
+
+  dimension: organic_pocket_saves {
+    sql: ${TABLE}.organic_pocket_saves ;;
+    type: number
+  }
+
   dimension: os {
     sql: ${TABLE}.os ;;
     type: string
@@ -83,6 +113,41 @@ view: newtab_interactions_table {
   dimension: os_version {
     sql: ${TABLE}.os_version ;;
     type: string
+  }
+
+  dimension: pocket_clicks {
+    sql: ${TABLE}.pocket_clicks ;;
+    type: number
+  }
+
+  dimension: pocket_enabled {
+    sql: ${TABLE}.pocket_enabled ;;
+    type: yesno
+  }
+
+  dimension: pocket_impressions {
+    sql: ${TABLE}.pocket_impressions ;;
+    type: number
+  }
+
+  dimension: pocket_is_signed_in {
+    sql: ${TABLE}.pocket_is_signed_in ;;
+    type: yesno
+  }
+
+  dimension: pocket_saves {
+    sql: ${TABLE}.pocket_saves ;;
+    type: number
+  }
+
+  dimension: pocket_sponsored_stories_enabled {
+    sql: ${TABLE}.pocket_sponsored_stories_enabled ;;
+    type: yesno
+  }
+
+  dimension: pocket_story_position {
+    sql: ${TABLE}.pocket_story_position ;;
+    type: number
   }
 
   dimension: search_access_point {
@@ -97,6 +162,21 @@ view: newtab_interactions_table {
 
   dimension: searches {
     sql: ${TABLE}.searches ;;
+    type: number
+  }
+
+  dimension: sponsored_pocket_clicks {
+    sql: ${TABLE}.sponsored_pocket_clicks ;;
+    type: number
+  }
+
+  dimension: sponsored_pocket_impressions {
+    sql: ${TABLE}.sponsored_pocket_impressions ;;
+    type: number
+  }
+
+  dimension: sponsored_pocket_saves {
+    sql: ${TABLE}.sponsored_pocket_saves ;;
     type: number
   }
 
@@ -138,6 +218,11 @@ view: newtab_interactions_table {
   dimension: topsite_impressions {
     sql: ${TABLE}.topsite_impressions ;;
     type: number
+  }
+
+  dimension: topsites_enabled {
+    sql: ${TABLE}.topsites_enabled ;;
+    type: yesno
   }
 
   dimension_group: submission {

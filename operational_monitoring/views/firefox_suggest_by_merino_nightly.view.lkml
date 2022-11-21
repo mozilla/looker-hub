@@ -10,6 +10,8 @@ view: firefox_suggest_by_merino_nightly {
   dimension: submission_date {
     type: date
     sql: ${TABLE}.submission_date ;;
+    datatype: date
+    convert_tz: no
   }
 
   dimension: branch {

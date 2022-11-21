@@ -18,6 +18,16 @@ explore: metrics {
     ]
   }
 
+  join: metrics__metrics__labeled_counter__dap_report_generation_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dap_report_generation_status}) AS metrics__metrics__labeled_counter__dap_report_generation_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dap_report_generation_status.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__dap_upload_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dap_upload_status}) AS metrics__metrics__labeled_counter__dap_upload_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dap_upload_status.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__glean_error_invalid_label}) AS metrics__metrics__labeled_counter__glean_error_invalid_label ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -56,6 +66,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__netwerk_early_hints {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_early_hints}) AS metrics__metrics__labeled_counter__netwerk_early_hints ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_early_hints.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__netwerk_eh_link_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_eh_link_type}) AS metrics__metrics__labeled_counter__netwerk_eh_link_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_eh_link_type.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__pdfjs_buttons {
@@ -134,6 +149,14 @@ explore: metrics {
   }
 }
 
+explore: suggest__metrics__metrics__labeled_counter__dap_report_generation_status {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__dap_upload_status {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
   hidden: yes
 }
@@ -163,6 +186,10 @@ explore: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result
 }
 
 explore: suggest__metrics__metrics__labeled_counter__netwerk_early_hints {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type {
   hidden: yes
 }
 

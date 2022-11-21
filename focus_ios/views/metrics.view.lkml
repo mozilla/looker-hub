@@ -5,6 +5,26 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics {
+  dimension: metrics__counter__app_opened_as_default_browser {
+    label: "App Opened As Default Browser"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.app_opened_as_default_browser ;;
+    type: number
+    group_label: "App"
+    group_item_label: "Opened As Default Browser"
+
+    link: {
+      label: "Glean Dictionary reference for App Opened As Default Browser"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/app_opened_as_default_browser"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded when a preference is changed and includes the
+preference that changed as well as the value changed to
+recorded in the extra keys.
+"
+  }
+
   dimension: metrics__counter__browser_total_uri_count {
     label: "Browser Total Uri Count"
     hidden: no
@@ -45,6 +65,47 @@ The key format is ‘<provider-name>’.
 "
   }
 
+  dimension: metrics__labeled_counter__browser_search_in_content {
+    label: "Browser Search In Content"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
+    group_label: "Browser Search"
+    group_item_label: "In Content"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search In Content"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_search_in_content"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the type of interaction a user has on SERP pages.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_search_count {
+    label: "Browser Search Search Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_search_count ;;
+    group_label: "Browser Search"
+    group_item_label: "Search Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Search Search Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_search_search_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The labels for this counter are `<search-engine-name>.<source>`.
+If the search engine is bundled with Focus `search-engine-name` will be
+the name of the search engine. If it's a custom search engine (defined:
+https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
+`custom`.
+`source` will be: `action`, `suggestion`, `widget`, `shortcut`, `topsite`
+(depending on the source from which the search started). Also added the
+`other` option for the source but it should never enter on this case.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_with_ads {
     label: "Browser Search With Ads"
     hidden: yes
@@ -60,6 +121,43 @@ The key format is ‘<provider-name>’.
 
     description: "Records counts of SERP pages with adverts displayed.
 The key format is ‘<provider-name>’.
+"
+  }
+
+  dimension: metrics__counter__default_browser_onboarding_dismiss_pressed {
+    label: "Default Browser Onboarding Dismiss Pressed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.default_browser_onboarding_dismiss_pressed ;;
+    type: number
+    group_label: "Default Browser Onboarding"
+    group_item_label: "Dismiss Pressed"
+
+    link: {
+      label: "Glean Dictionary reference for Default Browser Onboarding Dismiss Pressed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/default_browser_onboarding_dismiss_pressed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times default browser onboarding is dismissed.
+"
+  }
+
+  dimension: metrics__counter__default_browser_onboarding_go_to_settings_pressed {
+    label: "Default Browser Onboarding Go To Settings Pressed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.default_browser_onboarding_go_to_settings_pressed ;;
+    type: number
+    group_label: "Default Browser Onboarding"
+    group_item_label: "Go To Settings Pressed"
+
+    link: {
+      label: "Glean Dictionary reference for Default Browser Onboarding Go To Settings Pressed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/default_browser_onboarding_go_to_settings_pressed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the Go To Settings button on
+default browser onboarding is clicked.
 "
   }
 
@@ -96,6 +194,26 @@ The key format is ‘<provider-name>’.
     }
 
     description: "A string that indicates the theme. Can be one of \"Light\", \"Dark\", or \"Follow device\". Default is \"Follow device\".
+"
+  }
+
+  dimension: metrics__string__search_default_engine {
+    label: "Search Default Engine"
+    hidden: no
+    sql: ${TABLE}.metrics.string.search_default_engine ;;
+    type: string
+    group_label: "Search"
+    group_item_label: "Default Engine"
+
+    link: {
+      label: "Glean Dictionary reference for Search Default Engine"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/search_default_engine"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The default search engine identifier if the search engine is
+pre-loaded with Focus.  If it's a custom search engine,
+then the value will be 'custom'.
 "
   }
 
@@ -1112,6 +1230,31 @@ documented in the ping's pings.yaml file.
     type: count
   }
 
+  measure: app_opened_as_default_browser {
+    type: sum
+    sql: ${metrics__counter__app_opened_as_default_browser} ;;
+
+    link: {
+      label: "Glean Dictionary reference for App Opened As Default Browser"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/app_opened_as_default_browser"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: app_opened_as_default_browser_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__app_opened_as_default_browser: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for App Opened As Default Browser"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/app_opened_as_default_browser"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: browser_total_uri_count {
     type: sum
     sql: ${metrics__counter__browser_total_uri_count} ;;
@@ -1133,6 +1276,56 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Browser Total Uri Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/browser_total_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: default_browser_onboarding_dismiss_pressed {
+    type: sum
+    sql: ${metrics__counter__default_browser_onboarding_dismiss_pressed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Default Browser Onboarding Dismiss Pressed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/default_browser_onboarding_dismiss_pressed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: default_browser_onboarding_dismiss_pressed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__default_browser_onboarding_dismiss_pressed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Default Browser Onboarding Dismiss Pressed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/default_browser_onboarding_dismiss_pressed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: default_browser_onboarding_go_to_settings_pressed {
+    type: sum
+    sql: ${metrics__counter__default_browser_onboarding_go_to_settings_pressed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Default Browser Onboarding Go To Settings Pressed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/default_browser_onboarding_go_to_settings_pressed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: default_browser_onboarding_go_to_settings_pressed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__default_browser_onboarding_go_to_settings_pressed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Default Browser Onboarding Go To Settings Pressed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/default_browser_onboarding_go_to_settings_pressed"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -1436,6 +1629,92 @@ view: metrics__metrics__labeled_counter__browser_search_ad_clicks {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks
     suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_search_in_content {
+  label: "Browser Search - In Content"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_in_content
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_in_content.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__browser_search_search_count {
+  label: "Browser Search - Search Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_search_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_search_count.key
     hidden: no
   }
 
@@ -1809,6 +2088,44 @@ view: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks {
     count(*) as n
 from mozdata.org_mozilla_ios_focus.metrics as t,
 unnest(metrics.labeled_counter.browser_search_ad_clicks) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__browser_search_in_content {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_ios_focus.metrics as t,
+unnest(metrics.labeled_counter.browser_search_in_content) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__browser_search_search_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_ios_focus.metrics as t,
+unnest(metrics.labeled_counter.browser_search_search_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

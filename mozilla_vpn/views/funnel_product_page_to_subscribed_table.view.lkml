@@ -176,6 +176,11 @@ view: funnel_product_page_to_subscribed_table {
     type: string
   }
 
+  dimension: product_name {
+    sql: ${TABLE}.product_name ;;
+    type: string
+  }
+
   dimension: promotion_code {
     sql: ${TABLE}.promotion_code ;;
     type: string

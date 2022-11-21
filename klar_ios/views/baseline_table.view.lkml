@@ -300,6 +300,19 @@ view: baseline_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__counter__browser_total_uri_count {
+    sql: ${TABLE}.metrics.counter.browser_total_uri_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Total Uri Count"
+    description: "Records count of URIs visited by the user in the current session,
+including page reloads.
+It does not include background page requests and URIs from embedded pages
+but may be incremented without user interaction by website scripts
+that programmatically redirect to a new location.
+"
+  }
+
   dimension: metrics__datetime__glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: string
@@ -312,6 +325,43 @@ view: baseline_table {
   dimension: metrics__jwe {
     sql: ${TABLE}.metrics.jwe ;;
     hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__browser_search_ad_clicks {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages.
+The key format is ‘<provider-name>’.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_in_content {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
+    hidden: yes
+    description: "Records the type of interaction a user has on SERP pages.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_search_count {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_search_count ;;
+    hidden: yes
+    description: "The labels for this counter are `<search-engine-name>.<source>`.
+If the search engine is bundled with Focus `search-engine-name` will be
+the name of the search engine. If it's a custom search engine (defined:
+https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
+`custom`.
+`source` will be: `action`, `suggestion`, `widget`, `shortcut`, `topsite`
+(depending on the source from which the search started). Also added the
+`other` option for the source but it should never enter on this case.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_with_ads {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed.
+The key format is ‘<provider-name>’.
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -374,6 +424,17 @@ This metric appears in both the metrics and baseline pings.
 If the locale can't be determined on the system, the value is
 [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers),
 to indicate \"undetermined\".
+"
+  }
+
+  dimension: metrics__string__search_default_engine {
+    sql: ${TABLE}.metrics.string.search_default_engine ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Search Default Engine"
+    description: "The default search engine identifier if the search engine is
+pre-loaded with Focus.  If it's a custom search engine,
+then the value will be 'custom'.
 "
   }
 

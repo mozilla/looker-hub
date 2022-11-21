@@ -122,6 +122,26 @@ view: clients_daily_table {
     type: yesno
   }
 
+  dimension: bookmark_migrations_quantity_all {
+    sql: ${TABLE}.bookmark_migrations_quantity_all ;;
+    type: number
+  }
+
+  dimension: bookmark_migrations_quantity_chrome {
+    sql: ${TABLE}.bookmark_migrations_quantity_chrome ;;
+    type: number
+  }
+
+  dimension: bookmark_migrations_quantity_edge {
+    sql: ${TABLE}.bookmark_migrations_quantity_edge ;;
+    type: number
+  }
+
+  dimension: bookmark_migrations_quantity_safari {
+    sql: ${TABLE}.bookmark_migrations_quantity_safari ;;
+    type: number
+  }
+
   dimension: browser_version_info__is_major_release {
     sql: ${TABLE}.browser_version_info.is_major_release ;;
     type: yesno
@@ -179,6 +199,11 @@ view: clients_daily_table {
 
   dimension: client_submission_latency_mean {
     sql: ${TABLE}.client_submission_latency_mean ;;
+    type: number
+  }
+
+  dimension: content_crash_count {
+    sql: ${TABLE}.content_crash_count ;;
     type: number
   }
 
@@ -413,6 +438,11 @@ view: clients_daily_table {
     type: string
   }
 
+  dimension: dom_parentprocess_private_window_used {
+    sql: ${TABLE}.dom_parentprocess_private_window_used ;;
+    type: yesno
+  }
+
   dimension: e10s_enabled {
     sql: ${TABLE}.e10s_enabled ;;
     type: yesno
@@ -511,6 +541,11 @@ view: clients_daily_table {
   dimension: gfx_features_gpu_process_status {
     sql: ${TABLE}.gfx_features_gpu_process_status ;;
     type: string
+  }
+
+  dimension: gpu_crash_count {
+    sql: ${TABLE}.gpu_crash_count ;;
+    type: number
   }
 
   dimension: histogram_parent_devtools_aboutdebugging_opened_count_sum {
@@ -663,6 +698,26 @@ view: clients_daily_table {
     type: number
   }
 
+  dimension: history_migrations_quantity_all {
+    sql: ${TABLE}.history_migrations_quantity_all ;;
+    type: number
+  }
+
+  dimension: history_migrations_quantity_chrome {
+    sql: ${TABLE}.history_migrations_quantity_chrome ;;
+    type: number
+  }
+
+  dimension: history_migrations_quantity_edge {
+    sql: ${TABLE}.history_migrations_quantity_edge ;;
+    type: number
+  }
+
+  dimension: history_migrations_quantity_safari {
+    sql: ${TABLE}.history_migrations_quantity_safari ;;
+    type: number
+  }
+
   dimension: install_year {
     sql: ${TABLE}.install_year ;;
     type: number
@@ -691,6 +746,31 @@ view: clients_daily_table {
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
+  }
+
+  dimension: logins_migrations_quantity_all {
+    sql: ${TABLE}.logins_migrations_quantity_all ;;
+    type: number
+  }
+
+  dimension: logins_migrations_quantity_chrome {
+    sql: ${TABLE}.logins_migrations_quantity_chrome ;;
+    type: number
+  }
+
+  dimension: logins_migrations_quantity_edge {
+    sql: ${TABLE}.logins_migrations_quantity_edge ;;
+    type: number
+  }
+
+  dimension: logins_migrations_quantity_safari {
+    sql: ${TABLE}.logins_migrations_quantity_safari ;;
+    type: number
+  }
+
+  dimension: main_crash_count {
+    sql: ${TABLE}.main_crash_count ;;
+    type: number
   }
 
   dimension: memory_mb {
@@ -726,6 +806,21 @@ view: clients_daily_table {
   dimension: os {
     sql: ${TABLE}.os ;;
     type: string
+  }
+
+  dimension: os_environment_is_taskbar_pinned_any {
+    sql: ${TABLE}.os_environment_is_taskbar_pinned_any ;;
+    type: yesno
+  }
+
+  dimension: os_environment_is_taskbar_pinned_private {
+    sql: ${TABLE}.os_environment_is_taskbar_pinned_private ;;
+    type: yesno
+  }
+
+  dimension: os_environment_is_taskbar_pinned_private_any {
+    sql: ${TABLE}.os_environment_is_taskbar_pinned_private_any ;;
+    type: yesno
   }
 
   dimension: os_service_pack_major {
@@ -800,6 +895,11 @@ view: clients_daily_table {
 
   dimension: push_api_notify_sum {
     sql: ${TABLE}.push_api_notify_sum ;;
+    type: number
+  }
+
+  dimension: rdd_crash_count {
+    sql: ${TABLE}.rdd_crash_count ;;
     type: number
   }
 
@@ -1000,6 +1100,11 @@ view: clients_daily_table {
 
   dimension: scalar_parent_os_environment_launched_via_taskbar {
     sql: ${TABLE}.scalar_parent_os_environment_launched_via_taskbar ;;
+    type: yesno
+  }
+
+  dimension: scalar_parent_os_environment_launched_via_taskbar_private {
+    sql: ${TABLE}.scalar_parent_os_environment_launched_via_taskbar_private ;;
     type: yesno
   }
 
@@ -1503,6 +1608,11 @@ view: clients_daily_table {
     type: number
   }
 
+  dimension: socket_crash_count {
+    sql: ${TABLE}.socket_crash_count ;;
+    type: number
+  }
+
   dimension: ssl_handshake_result_failure_sum {
     sql: ${TABLE}.ssl_handshake_result_failure_sum ;;
     type: number
@@ -1583,6 +1693,21 @@ view: clients_daily_table {
     type: number
   }
 
+  dimension: total_uri_count {
+    sql: ${TABLE}.total_uri_count ;;
+    type: number
+  }
+
+  dimension: total_uri_count_normal_mode {
+    sql: ${TABLE}.total_uri_count_normal_mode ;;
+    type: number
+  }
+
+  dimension: total_uri_count_private_mode {
+    sql: ${TABLE}.total_uri_count_private_mode ;;
+    type: number
+  }
+
   dimension: trackers_blocked_sum {
     sql: ${TABLE}.trackers_blocked_sum ;;
     type: number
@@ -1606,6 +1731,11 @@ view: clients_daily_table {
   dimension: update_enabled {
     sql: ${TABLE}.update_enabled ;;
     type: yesno
+  }
+
+  dimension: user_pref_app_shield_optoutstudies_enabled {
+    sql: ${TABLE}.user_pref_app_shield_optoutstudies_enabled ;;
+    type: string
   }
 
   dimension: user_pref_browser_newtabpage_enabled {
@@ -1668,9 +1798,19 @@ view: clients_daily_table {
     type: string
   }
 
+  dimension: utility_crash_count {
+    sql: ${TABLE}.utility_crash_count ;;
+    type: number
+  }
+
   dimension: vendor {
     sql: ${TABLE}.vendor ;;
     type: string
+  }
+
+  dimension: vr_crash_count {
+    sql: ${TABLE}.vr_crash_count ;;
+    type: number
   }
 
   dimension: web_notification_shown_sum {

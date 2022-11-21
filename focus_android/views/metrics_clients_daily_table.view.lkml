@@ -15,6 +15,11 @@ view: metrics_clients_daily_table {
     type: number
   }
 
+  dimension: is_default_browser {
+    sql: ${TABLE}.is_default_browser ;;
+    type: yesno
+  }
+
   dimension: n_metrics_ping {
     sql: ${TABLE}.n_metrics_ping ;;
     type: number
@@ -27,6 +32,11 @@ view: metrics_clients_daily_table {
 
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
+    type: number
+  }
+
+  dimension: uri_count {
+    sql: ${TABLE}.uri_count ;;
     type: number
   }
 

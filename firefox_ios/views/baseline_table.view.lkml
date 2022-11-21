@@ -331,6 +331,22 @@ view: baseline_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__browser_search_ad_clicks {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
+    hidden: yes
+    description: "Records clicks of adverts on SERP pages.
+The key format is `<provider-name>`.
+"
+  }
+
+  dimension: metrics__labeled_counter__browser_search_with_ads {
+    sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
+    hidden: yes
+    description: "Records counts of SERP pages with adverts displayed.
+The key format is `<provider-name>`.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -377,6 +393,30 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__search_counts {
+    sql: ${TABLE}.metrics.labeled_counter.search_counts ;;
+    hidden: yes
+    description: "The labels for this counter are `{search-engine-name}.{source}`
+
+If the search engine is bundled with Firefox-iOS, then
+`search-engine-name` will be the name of the search engine. If
+it is a custom search engine, the value will be `custom`.
+
+The value of `source` will reflect the source from which the
+search started.  One of:
+* quicksearch
+* suggestion
+* actionbar
+"
+  }
+
+  dimension: metrics__labeled_counter__search_in_content {
+    sql: ${TABLE}.metrics.labeled_counter.search_in_content ;;
+    hidden: yes
+    description: "Records the type of interaction a user has on SERP pages.
+"
+  }
+
   dimension: metrics__labeled_rate {
     sql: ${TABLE}.metrics.labeled_rate ;;
     hidden: yes
@@ -391,6 +431,17 @@ This metric appears in both the metrics and baseline pings.
 If the locale can't be determined on the system, the value is
 [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers),
 to indicate \"undetermined\".
+"
+  }
+
+  dimension: metrics__string__search_default_engine {
+    sql: ${TABLE}.metrics.string.search_default_engine ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Search Default Engine"
+    description: "The default search engine identifier if the search engine is
+pre-loaded with Firefox-iOS.  If it's a custom search engine,
+then the value will be 'custom'.
 "
   }
 
