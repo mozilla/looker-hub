@@ -1916,6 +1916,13 @@ the currently selected wallpaper if it's not the default.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__glean_database_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.glean_database_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Glean Database Size"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__memory_distribution__glean_database_size__sum {
     sql: ${TABLE}.metrics.memory_distribution.glean_database_size.sum ;;
     type: number
@@ -1928,6 +1935,13 @@ the currently selected wallpaper if it's not the default.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Glean Upload Discarded Exceeding Pings Size"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__sum {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.sum ;;
     type: number
@@ -1938,6 +1952,13 @@ the currently selected wallpaper if it's not the default.
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__values {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Glean Upload Pending Pings Directory Size"
+    group_item_label: "Count"
   }
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
@@ -2180,6 +2201,13 @@ tracking-protection that is enabled. One of:
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__awesomebar_query_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Awesomebar Query Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__awesomebar_query_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.awesomebar_query_time.histogram_type ;;
     type: string
@@ -2230,6 +2258,13 @@ tracking-protection that is enabled. One of:
     type: number
     group_label: "Metrics Timing Distribution Logins Store Read Query Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_read_query_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Read Query Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__logins_store_read_query_time__histogram_type {
@@ -2284,6 +2319,13 @@ tracking-protection that is enabled. One of:
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__logins_store_unlock_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Unlock Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__logins_store_unlock_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.histogram_type ;;
     type: string
@@ -2336,6 +2378,13 @@ tracking-protection that is enabled. One of:
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__logins_store_write_query_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Write Query Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__logins_store_write_query_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.histogram_type ;;
     type: string
@@ -2386,6 +2435,13 @@ tracking-protection that is enabled. One of:
     type: number
     group_label: "Metrics Timing Distribution Places History Migration Duration"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_history_migration_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places History Migration Duration"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__places_history_migration_duration__histogram_type {

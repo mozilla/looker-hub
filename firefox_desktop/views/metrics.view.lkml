@@ -182,6 +182,24 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__counter__ping_centre_send_failures {
+    label: "Ping Centre Send Failures"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.ping_centre_send_failures ;;
+    type: number
+    group_label: "Ping Centre"
+    group_item_label: "Send Failures"
+
+    link: {
+      label: "Glean Dictionary reference for Ping Centre Send Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ping_centre_send_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of PingCentre send failures.
+"
+  }
+
   dimension: metrics__string__search_engine_default_display_name {
     label: "Search Engine Default Display Name"
     hidden: no
@@ -2183,6 +2201,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Browser Engagement Uri Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ping_centre_send_failures {
+    type: sum
+    sql: ${metrics__counter__ping_centre_send_failures} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ping Centre Send Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ping_centre_send_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: ping_centre_send_failures_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__ping_centre_send_failures: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Ping Centre Send Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ping_centre_send_failures"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

@@ -497,6 +497,15 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__ping_centre_send_failures {
+    sql: ${TABLE}.metrics.counter.ping_centre_send_failures ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Ping Centre Send Failures"
+    description: "The number of PingCentre send failures.
+"
+  }
+
   dimension: metrics__counter__power_cpu_time_bogus_values {
     sql: ${TABLE}.metrics.counter.power_cpu_time_bogus_values ;;
     type: number
@@ -540,6 +549,13 @@ This does not include deletion-request pings.
     group_item_label: "Power Total Thread Wakeups"
     description: "How many times threads woke up and could have woken up a CPU core.
 "
+  }
+
+  dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__count {
+    sql: ${TABLE}.metrics.custom_distribution.power_battery_percentage_when_user_active.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Power Battery Percentage When User Active"
+    group_item_label: "Count"
   }
 
   dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__sum {
@@ -789,6 +805,13 @@ This metric appears in both the metrics and baseline pings.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__fog_ipc_buffer_sizes__count {
+    sql: ${TABLE}.metrics.memory_distribution.fog_ipc_buffer_sizes.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Fog Ipc Buffer Sizes"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__memory_distribution__fog_ipc_buffer_sizes__sum {
     sql: ${TABLE}.metrics.memory_distribution.fog_ipc_buffer_sizes.sum ;;
     type: number
@@ -799,6 +822,13 @@ This metric appears in both the metrics and baseline pings.
   dimension: metrics__memory_distribution__fog_ipc_buffer_sizes__values {
     sql: ${TABLE}.metrics.memory_distribution.fog_ipc_buffer_sizes.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__glean_database_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.glean_database_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Glean Database Size"
+    group_item_label: "Count"
   }
 
   dimension: metrics__memory_distribution__glean_database_size__sum {
@@ -813,6 +843,13 @@ This metric appears in both the metrics and baseline pings.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Glean Upload Discarded Exceeding Pings Size"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__sum {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.sum ;;
     type: number
@@ -823,6 +860,13 @@ This metric appears in both the metrics and baseline pings.
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__values {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Glean Upload Pending Pings Directory Size"
+    group_item_label: "Count"
   }
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
@@ -1031,6 +1075,13 @@ default engine, and hence both versions of these fields will be filled in.
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__count {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Ipc Flush Durations"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__fog_ipc_flush_durations__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.histogram_type ;;
     type: string
@@ -1081,6 +1132,13 @@ default engine, and hence both versions of these fields will be filled in.
     type: number
     group_label: "Metrics Timing Distribution Network Open To Transaction Pending"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_transaction_pending__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Open To Transaction Pending"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__histogram_type {
@@ -1135,6 +1193,13 @@ default engine, and hence both versions of these fields will be filled in.
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Paint Build Displaylist Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__paint_build_displaylist_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.histogram_type ;;
     type: string
@@ -1185,6 +1250,13 @@ default engine, and hence both versions of these fields will be filled in.
     type: number
     group_label: "Metrics Timing Distribution Wr Framebuild Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Framebuild Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__wr_framebuild_time__histogram_type {
@@ -1239,6 +1311,13 @@ default engine, and hence both versions of these fields will be filled in.
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__wr_gpu_wait_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Gpu Wait Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__wr_gpu_wait_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.histogram_type ;;
     type: string
@@ -1289,6 +1368,13 @@ default engine, and hence both versions of these fields will be filled in.
     type: number
     group_label: "Metrics Timing Distribution Wr Rasterize Blobs Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_blobs_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_blobs_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Rasterize Blobs Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__wr_rasterize_blobs_time__histogram_type {
@@ -1343,6 +1429,13 @@ default engine, and hence both versions of these fields will be filled in.
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Rasterize Glyphs Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.histogram_type ;;
     type: string
@@ -1393,6 +1486,13 @@ default engine, and hence both versions of these fields will be filled in.
     type: number
     group_label: "Metrics Timing Distribution Wr Renderer Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Renderer Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__wr_renderer_time__histogram_type {
@@ -1447,6 +1547,13 @@ default engine, and hence both versions of these fields will be filled in.
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__wr_renderer_time_no_sc__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time_no_sc.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Renderer Time No Sc"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__wr_renderer_time_no_sc__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time_no_sc.histogram_type ;;
     type: string
@@ -1497,6 +1604,13 @@ default engine, and hence both versions of these fields will be filled in.
     type: number
     group_label: "Metrics Timing Distribution Wr Scenebuild Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Scenebuild Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__wr_scenebuild_time__histogram_type {
@@ -1551,6 +1665,13 @@ default engine, and hence both versions of these fields will be filled in.
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__wr_sceneswap_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Sceneswap Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__wr_sceneswap_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.histogram_type ;;
     type: string
@@ -1601,6 +1722,13 @@ default engine, and hence both versions of these fields will be filled in.
     type: number
     group_label: "Metrics Timing Distribution Wr Texture Cache Update Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_texture_cache_update_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_texture_cache_update_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Texture Cache Update Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__wr_texture_cache_update_time__histogram_type {
@@ -1655,6 +1783,13 @@ default engine, and hence both versions of these fields will be filled in.
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__wr_time_to_frame_build__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_time_to_frame_build.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Time To Frame Build"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__wr_time_to_frame_build__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.wr_time_to_frame_build.histogram_type ;;
     type: string
@@ -1705,6 +1840,13 @@ default engine, and hence both versions of these fields will be filled in.
     type: number
     group_label: "Metrics Timing Distribution Wr Time To Render Start"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_time_to_render_start__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_time_to_render_start.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Time To Render Start"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__wr_time_to_render_start__histogram_type {

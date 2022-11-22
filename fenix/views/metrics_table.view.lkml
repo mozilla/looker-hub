@@ -1294,6 +1294,13 @@ is the same as it was before the load.
 "
   }
 
+  dimension: metrics__custom_distribution__geckoview_document_site_origins__count {
+    sql: ${TABLE}.metrics.custom_distribution.geckoview_document_site_origins.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Geckoview Document Site Origins"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__custom_distribution__geckoview_document_site_origins__sum {
     sql: ${TABLE}.metrics.custom_distribution.geckoview_document_site_origins.sum ;;
     type: number
@@ -1304,6 +1311,13 @@ is the same as it was before the load.
   dimension: metrics__custom_distribution__geckoview_document_site_origins__values {
     sql: ${TABLE}.metrics.custom_distribution.geckoview_document_site_origins.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__geckoview_per_document_site_origins__count {
+    sql: ${TABLE}.metrics.custom_distribution.geckoview_per_document_site_origins.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Geckoview Per Document Site Origins"
+    group_item_label: "Count"
   }
 
   dimension: metrics__custom_distribution__geckoview_per_document_site_origins__sum {
@@ -1318,6 +1332,13 @@ is the same as it was before the load.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_peak_pixel_count.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Checkerboard Peak Pixel Count"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__sum {
     sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_peak_pixel_count.sum ;;
     type: number
@@ -1328,6 +1349,13 @@ is the same as it was before the load.
   dimension: metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__values {
     sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_peak_pixel_count.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__gfx_checkerboard_severity__count {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_severity.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Checkerboard Severity"
+    group_item_label: "Count"
   }
 
   dimension: metrics__custom_distribution__gfx_checkerboard_severity__sum {
@@ -1342,6 +1370,13 @@ is the same as it was before the load.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__gfx_content_frame_time_from_paint__count {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_paint.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Content Frame Time From Paint"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__custom_distribution__gfx_content_frame_time_from_paint__sum {
     sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_paint.sum ;;
     type: number
@@ -1352,6 +1387,13 @@ is the same as it was before the load.
   dimension: metrics__custom_distribution__gfx_content_frame_time_from_paint__values {
     sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_paint.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_from_vsync__count {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_vsync.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Content Frame Time From Vsync"
+    group_item_label: "Count"
   }
 
   dimension: metrics__custom_distribution__gfx_content_frame_time_from_vsync__sum {
@@ -1366,6 +1408,13 @@ is the same as it was before the load.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__gfx_content_frame_time_with_svg__count {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_with_svg.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Content Frame Time With Svg"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__custom_distribution__gfx_content_frame_time_with_svg__sum {
     sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_with_svg.sum ;;
     type: number
@@ -1376,6 +1425,13 @@ is the same as it was before the load.
   dimension: metrics__custom_distribution__gfx_content_frame_time_with_svg__values {
     sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_with_svg.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_without_resource_upload__count {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_resource_upload.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Content Frame Time Without Resource Upload"
+    group_item_label: "Count"
   }
 
   dimension: metrics__custom_distribution__gfx_content_frame_time_without_resource_upload__sum {
@@ -1390,6 +1446,13 @@ is the same as it was before the load.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__gfx_content_frame_time_without_upload__count {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_upload.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Content Frame Time Without Upload"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__custom_distribution__gfx_content_frame_time_without_upload__sum {
     sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_upload.sum ;;
     type: number
@@ -1400,6 +1463,13 @@ is the same as it was before the load.
   dimension: metrics__custom_distribution__gfx_content_frame_time_without_upload__values {
     sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_upload.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__js_baseline_compile_percentage__count {
+    sql: ${TABLE}.metrics.custom_distribution.js_baseline_compile_percentage.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Js Baseline Compile Percentage"
+    group_item_label: "Count"
   }
 
   dimension: metrics__custom_distribution__js_baseline_compile_percentage__sum {
@@ -1414,6 +1484,13 @@ is the same as it was before the load.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__js_delazification_percentage__count {
+    sql: ${TABLE}.metrics.custom_distribution.js_delazification_percentage.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Js Delazification Percentage"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__custom_distribution__js_delazification_percentage__sum {
     sql: ${TABLE}.metrics.custom_distribution.js_delazification_percentage.sum ;;
     type: number
@@ -1424,6 +1501,13 @@ is the same as it was before the load.
   dimension: metrics__custom_distribution__js_delazification_percentage__values {
     sql: ${TABLE}.metrics.custom_distribution.js_delazification_percentage.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__js_execution_percentage__count {
+    sql: ${TABLE}.metrics.custom_distribution.js_execution_percentage.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Js Execution Percentage"
+    group_item_label: "Count"
   }
 
   dimension: metrics__custom_distribution__js_execution_percentage__sum {
@@ -1438,6 +1522,13 @@ is the same as it was before the load.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__js_xdr_encode_percentage__count {
+    sql: ${TABLE}.metrics.custom_distribution.js_xdr_encode_percentage.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Js Xdr Encode Percentage"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__custom_distribution__js_xdr_encode_percentage__sum {
     sql: ${TABLE}.metrics.custom_distribution.js_xdr_encode_percentage.sum ;;
     type: number
@@ -1448,6 +1539,13 @@ is the same as it was before the load.
   dimension: metrics__custom_distribution__js_xdr_encode_percentage__values {
     sql: ${TABLE}.metrics.custom_distribution.js_xdr_encode_percentage.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__performance_clone_deserialize_items__count {
+    sql: ${TABLE}.metrics.custom_distribution.performance_clone_deserialize_items.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Performance Clone Deserialize Items"
+    group_item_label: "Count"
   }
 
   dimension: metrics__custom_distribution__performance_clone_deserialize_items__sum {
@@ -1462,6 +1560,13 @@ is the same as it was before the load.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__count {
+    sql: ${TABLE}.metrics.custom_distribution.power_battery_percentage_when_user_active.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Power Battery Percentage When User Active"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__sum {
     sql: ${TABLE}.metrics.custom_distribution.power_battery_percentage_when_user_active.sum ;;
     type: number
@@ -1472,6 +1577,13 @@ is the same as it was before the load.
   dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__values {
     sql: ${TABLE}.metrics.custom_distribution.power_battery_percentage_when_user_active.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__search_terms_group_size_distribution__count {
+    sql: ${TABLE}.metrics.custom_distribution.search_terms_group_size_distribution.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Search Terms Group Size Distribution"
+    group_item_label: "Count"
   }
 
   dimension: metrics__custom_distribution__search_terms_group_size_distribution__sum {
@@ -1996,6 +2108,13 @@ device type the tab originates from.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__fog_ipc_buffer_sizes__count {
+    sql: ${TABLE}.metrics.memory_distribution.fog_ipc_buffer_sizes.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Fog Ipc Buffer Sizes"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__memory_distribution__fog_ipc_buffer_sizes__sum {
     sql: ${TABLE}.metrics.memory_distribution.fog_ipc_buffer_sizes.sum ;;
     type: number
@@ -2006,6 +2125,13 @@ device type the tab originates from.
   dimension: metrics__memory_distribution__fog_ipc_buffer_sizes__values {
     sql: ${TABLE}.metrics.memory_distribution.fog_ipc_buffer_sizes.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__glean_database_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.glean_database_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Glean Database Size"
+    group_item_label: "Count"
   }
 
   dimension: metrics__memory_distribution__glean_database_size__sum {
@@ -2020,6 +2146,13 @@ device type the tab originates from.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Glean Upload Discarded Exceeding Pings Size"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__sum {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.sum ;;
     type: number
@@ -2030,6 +2163,13 @@ device type the tab originates from.
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__values {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_discarded_exceeding_pings_size.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Glean Upload Pending Pings Directory Size"
+    group_item_label: "Count"
   }
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
@@ -2044,6 +2184,13 @@ device type the tab originates from.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__performance_clone_deserialize_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.performance_clone_deserialize_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Performance Clone Deserialize Size"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__memory_distribution__performance_clone_deserialize_size__sum {
     sql: ${TABLE}.metrics.memory_distribution.performance_clone_deserialize_size.sum ;;
     type: number
@@ -2054,6 +2201,13 @@ device type the tab originates from.
   dimension: metrics__memory_distribution__performance_clone_deserialize_size__values {
     sql: ${TABLE}.metrics.memory_distribution.performance_clone_deserialize_size.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__places_manager_db_size_after_maintenance__count {
+    sql: ${TABLE}.metrics.memory_distribution.places_manager_db_size_after_maintenance.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Places Manager Db Size After Maintenance"
+    group_item_label: "Count"
   }
 
   dimension: metrics__memory_distribution__places_manager_db_size_after_maintenance__sum {
@@ -2068,6 +2222,13 @@ device type the tab originates from.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__storage_stats_app_bytes__count {
+    sql: ${TABLE}.metrics.memory_distribution.storage_stats_app_bytes.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Storage Stats App Bytes"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__memory_distribution__storage_stats_app_bytes__sum {
     sql: ${TABLE}.metrics.memory_distribution.storage_stats_app_bytes.sum ;;
     type: number
@@ -2080,6 +2241,13 @@ device type the tab originates from.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__storage_stats_cache_bytes__count {
+    sql: ${TABLE}.metrics.memory_distribution.storage_stats_cache_bytes.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Storage Stats Cache Bytes"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__memory_distribution__storage_stats_cache_bytes__sum {
     sql: ${TABLE}.metrics.memory_distribution.storage_stats_cache_bytes.sum ;;
     type: number
@@ -2090,6 +2258,13 @@ device type the tab originates from.
   dimension: metrics__memory_distribution__storage_stats_cache_bytes__values {
     sql: ${TABLE}.metrics.memory_distribution.storage_stats_cache_bytes.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__storage_stats_data_dir_bytes__count {
+    sql: ${TABLE}.metrics.memory_distribution.storage_stats_data_dir_bytes.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Storage Stats Data Dir Bytes"
+    group_item_label: "Count"
   }
 
   dimension: metrics__memory_distribution__storage_stats_data_dir_bytes__sum {
@@ -2736,6 +2911,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__engine_tab_kill_background_age__count {
+    sql: ${TABLE}.metrics.timing_distribution.engine_tab_kill_background_age.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Engine Tab Kill Background Age"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__engine_tab_kill_background_age__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.engine_tab_kill_background_age.histogram_type ;;
     type: string
@@ -2786,6 +2968,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Engine Tab Kill Foreground Age"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__engine_tab_kill_foreground_age__count {
+    sql: ${TABLE}.metrics.timing_distribution.engine_tab_kill_foreground_age.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Engine Tab Kill Foreground Age"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__engine_tab_kill_foreground_age__histogram_type {
@@ -2840,6 +3029,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__count {
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Ipc Flush Durations"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__fog_ipc_flush_durations__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.histogram_type ;;
     type: string
@@ -2890,6 +3086,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Geckoview Content Process Lifetime"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_content_process_lifetime__count {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_content_process_lifetime.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Content Process Lifetime"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__geckoview_content_process_lifetime__histogram_type {
@@ -2944,6 +3147,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__geckoview_page_load_progress_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_progress_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Page Load Progress Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__geckoview_page_load_progress_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_progress_time.histogram_type ;;
     type: string
@@ -2994,6 +3204,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Geckoview Page Load Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Page Load Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__geckoview_page_load_time__histogram_type {
@@ -3048,6 +3265,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__geckoview_page_reload_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_reload_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Page Reload Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__geckoview_page_reload_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.geckoview_page_reload_time.histogram_type ;;
     type: string
@@ -3098,6 +3322,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Geckoview Startup Runtime"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_startup_runtime__count {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_startup_runtime.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Startup Runtime"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__geckoview_startup_runtime__histogram_type {
@@ -3152,6 +3383,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__gfx_checkerboard_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Checkerboard Duration"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__gfx_checkerboard_duration__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_duration.histogram_type ;;
     type: string
@@ -3202,6 +3440,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Gfx Checkerboard Potential Duration"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_potential_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_potential_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Checkerboard Potential Duration"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__gfx_checkerboard_potential_duration__histogram_type {
@@ -3256,6 +3501,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__gfx_composite_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_composite_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Composite Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__gfx_composite_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.gfx_composite_time.histogram_type ;;
     type: string
@@ -3306,6 +3558,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Gfx Content Full Paint Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_full_paint_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_full_paint_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Content Full Paint Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__gfx_content_full_paint_time__histogram_type {
@@ -3360,6 +3619,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__gfx_content_paint_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_paint_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Content Paint Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__gfx_content_paint_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.gfx_content_paint_time.histogram_type ;;
     type: string
@@ -3410,6 +3676,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Gfx Scroll Present Latency"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__gfx_scroll_present_latency__count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_scroll_present_latency.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Scroll Present Latency"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__gfx_scroll_present_latency__histogram_type {
@@ -3464,6 +3737,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__gfx_status_framebuild_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_status_framebuild_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Status Framebuild Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__gfx_status_framebuild_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.gfx_status_framebuild_time.histogram_type ;;
     type: string
@@ -3514,6 +3794,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Gfx Status Sceneswap Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__gfx_status_sceneswap_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_status_sceneswap_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Status Sceneswap Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__gfx_status_sceneswap_time__histogram_type {
@@ -3568,6 +3855,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__gfx_webrender_framebuild_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_webrender_framebuild_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Webrender Framebuild Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__gfx_webrender_framebuild_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.gfx_webrender_framebuild_time.histogram_type ;;
     type: string
@@ -3618,6 +3912,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Gfx Webrender Render Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__gfx_webrender_render_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_webrender_render_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Webrender Render Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__gfx_webrender_render_time__histogram_type {
@@ -3672,6 +3973,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__gfx_webrender_scenebuild_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_webrender_scenebuild_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Webrender Scenebuild Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__gfx_webrender_scenebuild_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.gfx_webrender_scenebuild_time.histogram_type ;;
     type: string
@@ -3722,6 +4030,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Gfx Webrender Sceneswap Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__gfx_webrender_sceneswap_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_webrender_sceneswap_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Webrender Sceneswap Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__gfx_webrender_sceneswap_time__histogram_type {
@@ -3776,6 +4091,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__javascript_gc_compact_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Compact Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__javascript_gc_compact_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.histogram_type ;;
     type: string
@@ -3826,6 +4148,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Javascript Gc Mark Roots Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_roots_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Roots Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__javascript_gc_mark_roots_time__histogram_type {
@@ -3880,6 +4209,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__javascript_gc_mark_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__javascript_gc_mark_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.histogram_type ;;
     type: string
@@ -3930,6 +4266,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Javascript Gc Minor Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_minor_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Minor Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__javascript_gc_minor_time__histogram_type {
@@ -3984,6 +4327,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__javascript_gc_prepare_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Prepare Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__javascript_gc_prepare_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.histogram_type ;;
     type: string
@@ -4034,6 +4384,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Javascript Gc Slice Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_slice_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Slice Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__javascript_gc_slice_time__histogram_type {
@@ -4088,6 +4445,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__javascript_gc_sweep_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Sweep Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__javascript_gc_sweep_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.histogram_type ;;
     type: string
@@ -4138,6 +4502,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Javascript Gc Total Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_total_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Total Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__javascript_gc_total_time__histogram_type {
@@ -4192,6 +4563,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Baseline Compile Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.histogram_type ;;
     type: string
@@ -4242,6 +4620,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Javascript Pageload Delazification Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_delazification_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Delazification Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__javascript_pageload_delazification_time__histogram_type {
@@ -4296,6 +4681,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__javascript_pageload_execution_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Execution Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__javascript_pageload_execution_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.histogram_type ;;
     type: string
@@ -4346,6 +4738,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Javascript Pageload Gc Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_gc_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Gc Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__javascript_pageload_gc_time__histogram_type {
@@ -4400,6 +4799,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__javascript_pageload_parse_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Parse Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__javascript_pageload_parse_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.histogram_type ;;
     type: string
@@ -4450,6 +4856,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Javascript Pageload Protect Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_protect_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Protect Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__javascript_pageload_protect_time__histogram_type {
@@ -4504,6 +4917,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Xdr Encode Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.histogram_type ;;
     type: string
@@ -4554,6 +4974,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Js Bytecode Caching Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__js_bytecode_caching_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.js_bytecode_caching_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Js Bytecode Caching Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__js_bytecode_caching_time__histogram_type {
@@ -4608,6 +5035,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__logins_store_read_query_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Read Query Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__logins_store_read_query_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.logins_store_read_query_time.histogram_type ;;
     type: string
@@ -4658,6 +5092,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Logins Store Unlock Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__logins_store_unlock_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_unlock_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Unlock Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__logins_store_unlock_time__histogram_type {
@@ -4712,6 +5153,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__logins_store_write_query_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Logins Store Write Query Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__logins_store_write_query_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.logins_store_write_query_time.histogram_type ;;
     type: string
@@ -4762,6 +5210,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Network Cache Hit Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Hit Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__network_cache_hit_time__histogram_type {
@@ -4816,6 +5271,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__network_dns_end__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns End"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__network_dns_end__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.network_dns_end.histogram_type ;;
     type: string
@@ -4866,6 +5328,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Network Dns Start"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__network_dns_start__histogram_type {
@@ -4920,6 +5389,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__network_first_from_cache__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network First From Cache"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__network_first_from_cache__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.histogram_type ;;
     type: string
@@ -4970,6 +5446,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Network Font Download End"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Font Download End"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__network_font_download_end__histogram_type {
@@ -5024,6 +5507,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__network_open_to_transaction_pending__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Open To Transaction Pending"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.histogram_type ;;
     type: string
@@ -5074,6 +5564,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Network Tcp Connection"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tcp Connection"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__network_tcp_connection__histogram_type {
@@ -5128,6 +5625,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__network_tls_handshake__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__network_tls_handshake__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.histogram_type ;;
     type: string
@@ -5178,6 +5682,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Paint Build Displaylist Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Paint Build Displaylist Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__paint_build_displaylist_time__histogram_type {
@@ -5232,6 +5743,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__perf_awesomebar_bookmark_suggestions__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_bookmark_suggestions.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Awesomebar Bookmark Suggestions"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__perf_awesomebar_bookmark_suggestions__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_bookmark_suggestions.histogram_type ;;
     type: string
@@ -5282,6 +5800,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Perf Awesomebar Clipboard Suggestions"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_awesomebar_clipboard_suggestions__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_clipboard_suggestions.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Awesomebar Clipboard Suggestions"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__perf_awesomebar_clipboard_suggestions__histogram_type {
@@ -5336,6 +5861,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__perf_awesomebar_history_suggestions__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_history_suggestions.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Awesomebar History Suggestions"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__perf_awesomebar_history_suggestions__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_history_suggestions.histogram_type ;;
     type: string
@@ -5386,6 +5918,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Perf Awesomebar Search Engine Suggestions"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_awesomebar_search_engine_suggestions__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_search_engine_suggestions.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Awesomebar Search Engine Suggestions"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__perf_awesomebar_search_engine_suggestions__histogram_type {
@@ -5440,6 +5979,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__perf_awesomebar_session_suggestions__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_session_suggestions.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Awesomebar Session Suggestions"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__perf_awesomebar_session_suggestions__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_session_suggestions.histogram_type ;;
     type: string
@@ -5490,6 +6036,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Perf Awesomebar Shortcuts Suggestions"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_awesomebar_shortcuts_suggestions__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_shortcuts_suggestions.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Awesomebar Shortcuts Suggestions"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__perf_awesomebar_shortcuts_suggestions__histogram_type {
@@ -5544,6 +6097,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__perf_awesomebar_synced_tabs_suggestions__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_synced_tabs_suggestions.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Awesomebar Synced Tabs Suggestions"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__perf_awesomebar_synced_tabs_suggestions__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.perf_awesomebar_synced_tabs_suggestions.histogram_type ;;
     type: string
@@ -5594,6 +6154,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Perf Startup App On Create To Glean Init"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_startup_app_on_create_to_glean_init__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_startup_app_on_create_to_glean_init.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Startup App On Create To Glean Init"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__perf_startup_app_on_create_to_glean_init__histogram_type {
@@ -5648,6 +6215,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__perf_startup_app_on_create_to_megazord_init__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_startup_app_on_create_to_megazord_init.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Startup App On Create To Megazord Init"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__perf_startup_app_on_create_to_megazord_init__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_app_on_create_to_megazord_init.histogram_type ;;
     type: string
@@ -5698,6 +6272,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Perf Startup App On Create To Setup In Main"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_startup_app_on_create_to_setup_in_main__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_startup_app_on_create_to_setup_in_main.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Startup App On Create To Setup In Main"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__perf_startup_app_on_create_to_setup_in_main__histogram_type {
@@ -5752,6 +6333,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__perf_startup_application_on_create__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_startup_application_on_create.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Startup Application On Create"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__perf_startup_application_on_create__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_application_on_create.histogram_type ;;
     type: string
@@ -5802,6 +6390,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Perf Startup Base Bfragment On Create View"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_startup_base_bfragment_on_create_view__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_startup_base_bfragment_on_create_view.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Startup Base Bfragment On Create View"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__perf_startup_base_bfragment_on_create_view__histogram_type {
@@ -5856,6 +6451,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__perf_startup_base_bfragment_on_view_created__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_startup_base_bfragment_on_view_created.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Startup Base Bfragment On View Created"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__perf_startup_base_bfragment_on_view_created__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_base_bfragment_on_view_created.histogram_type ;;
     type: string
@@ -5906,6 +6508,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Perf Startup Cold Main App To First Frame"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_startup_cold_main_app_to_first_frame__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_startup_cold_main_app_to_first_frame.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Startup Cold Main App To First Frame"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__perf_startup_cold_main_app_to_first_frame__histogram_type {
@@ -5960,6 +6569,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__perf_startup_cold_unknwn_app_to_first_frame__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_startup_cold_unknwn_app_to_first_frame.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Startup Cold Unknwn App To First Frame"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__perf_startup_cold_unknwn_app_to_first_frame__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_cold_unknwn_app_to_first_frame.histogram_type ;;
     type: string
@@ -6010,6 +6626,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Perf Startup Cold View App To First Frame"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_startup_cold_view_app_to_first_frame__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_startup_cold_view_app_to_first_frame.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Startup Cold View App To First Frame"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__perf_startup_cold_view_app_to_first_frame__histogram_type {
@@ -6064,6 +6687,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__perf_startup_home_activity_on_create__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_startup_home_activity_on_create.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Startup Home Activity On Create"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__perf_startup_home_activity_on_create__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_home_activity_on_create.histogram_type ;;
     type: string
@@ -6114,6 +6744,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Perf Startup Home Activity On Start"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_startup_home_activity_on_start__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_startup_home_activity_on_start.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Startup Home Activity On Start"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__perf_startup_home_activity_on_start__histogram_type {
@@ -6168,6 +6805,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__perf_startup_home_fragment_on_create_view__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_startup_home_fragment_on_create_view.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Startup Home Fragment On Create View"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__perf_startup_home_fragment_on_create_view__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.perf_startup_home_fragment_on_create_view.histogram_type ;;
     type: string
@@ -6218,6 +6862,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Perf Startup Home Fragment On View Created"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_startup_home_fragment_on_view_created__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_startup_home_fragment_on_view_created.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Startup Home Fragment On View Created"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__perf_startup_home_fragment_on_view_created__histogram_type {
@@ -6272,6 +6923,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__performance_clone_deserialize_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Clone Deserialize Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__performance_clone_deserialize_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.histogram_type ;;
     type: string
@@ -6322,6 +6980,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Performance Interaction Keypress Present Latency"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Interaction Keypress Present Latency"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__histogram_type {
@@ -6376,6 +7041,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Interaction Mouseup Click Present Latency"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.histogram_type ;;
     type: string
@@ -6426,6 +7098,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Performance Interaction Tab Switch Composite"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_tab_switch_composite__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_tab_switch_composite.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Interaction Tab Switch Composite"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__performance_interaction_tab_switch_composite__histogram_type {
@@ -6480,6 +7159,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__performance_page_non_blank_paint__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Page Non Blank Paint"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__performance_page_non_blank_paint__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.histogram_type ;;
     type: string
@@ -6530,6 +7216,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Performance Page Total Content Page Load"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_total_content_page_load__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_total_content_page_load.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Page Total Content Page Load"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__performance_page_total_content_page_load__histogram_type {
@@ -6584,6 +7277,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__performance_pageload_dcl__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_dcl.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Dcl"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__performance_pageload_dcl__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_dcl.histogram_type ;;
     type: string
@@ -6634,6 +7334,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Performance Pageload Dcl Responsestart"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_dcl_responsestart__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_dcl_responsestart.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Dcl Responsestart"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__performance_pageload_dcl_responsestart__histogram_type {
@@ -6688,6 +7395,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__performance_pageload_fcp__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Fcp"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__performance_pageload_fcp__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.histogram_type ;;
     type: string
@@ -6738,6 +7452,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Performance Pageload Fcp Responsestart"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Fcp Responsestart"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__histogram_type {
@@ -6792,6 +7513,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__performance_pageload_load_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Load Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__performance_pageload_load_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.histogram_type ;;
     type: string
@@ -6842,6 +7570,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Performance Pageload Load Time Responsestart"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time_responsestart.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Load Time Responsestart"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__histogram_type {
@@ -6896,6 +7631,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Req Anim Frame Callback"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.histogram_type ;;
     type: string
@@ -6946,6 +7688,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Performance Responsiveness Req Anim Frame Callback"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_responsiveness_req_anim_frame_callback.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Responsiveness Req Anim Frame Callback"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__histogram_type {
@@ -7000,6 +7749,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__performance_time_dom_complete__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Complete"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__performance_time_dom_complete__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.histogram_type ;;
     type: string
@@ -7050,6 +7806,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded End"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded End"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__histogram_type {
@@ -7104,6 +7867,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded Start"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.histogram_type ;;
     type: string
@@ -7154,6 +7924,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Performance Time Dom Interactive"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_interactive__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Interactive"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__performance_time_dom_interactive__histogram_type {
@@ -7208,6 +7985,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__performance_time_load_event_end__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Load Event End"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__performance_time_load_event_end__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.histogram_type ;;
     type: string
@@ -7258,6 +8042,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Performance Time Load Event End No Preload"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_end_no_preload__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end_no_preload.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Load Event End No Preload"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__performance_time_load_event_end_no_preload__histogram_type {
@@ -7312,6 +8103,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__performance_time_load_event_end_preload__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end_preload.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Load Event End Preload"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__performance_time_load_event_end_preload__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end_preload.histogram_type ;;
     type: string
@@ -7362,6 +8160,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Performance Time Load Event Start"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_start__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Load Event Start"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__performance_time_load_event_start__histogram_type {
@@ -7416,6 +8221,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__performance_time_load_event_start_no_preload__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start_no_preload.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Load Event Start No Preload"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__performance_time_load_event_start_no_preload__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start_no_preload.histogram_type ;;
     type: string
@@ -7466,6 +8278,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Performance Time Load Event Start Preload"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_start_preload__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start_preload.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Load Event Start Preload"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__performance_time_load_event_start_preload__histogram_type {
@@ -7520,6 +8339,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__performance_time_response_start__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_response_start.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Response Start"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__performance_time_response_start__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.performance_time_response_start.histogram_type ;;
     type: string
@@ -7572,6 +8398,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__places_manager_read_query_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_read_query_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Read Query Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__places_manager_read_query_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.places_manager_read_query_time.histogram_type ;;
     type: string
@@ -7617,11 +8450,195 @@ will be \"custom\"
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Chk Pnt Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Chk Pnt Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Chk Pnt Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Chk Pnt Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Chk Pnt Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Chk Pnt Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Chk Pnt Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_chk_pnt_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Optimize Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Optimize Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Optimize Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Optimize Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Optimize Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Optimize Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Optimize Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_optimize_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_optimize_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Prune Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Prune Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Prune Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Prune Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Prune Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Prune Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Prune Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_prune_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_prune_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__places_manager_run_maintenance_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_time.bucket_count ;;
     type: number
     group_label: "Metrics Timing Distribution Places Manager Run Maintenance Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__places_manager_run_maintenance_time__histogram_type {
@@ -7669,11 +8686,77 @@ will be \"custom\"
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Vacuum Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Vacuum Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Vacuum Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Vacuum Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Vacuum Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Vacuum Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Run Maintenance Vacuum Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_run_maintenance_vacuum_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_run_maintenance_vacuum_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__places_manager_scan_query_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.places_manager_scan_query_time.bucket_count ;;
     type: number
     group_label: "Metrics Timing Distribution Places Manager Scan Query Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__places_manager_scan_query_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_scan_query_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Scan Query Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__places_manager_scan_query_time__histogram_type {
@@ -7728,6 +8811,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__places_manager_write_query_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.places_manager_write_query_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Places Manager Write Query Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__places_manager_write_query_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.places_manager_write_query_time.histogram_type ;;
     type: string
@@ -7778,6 +8868,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Recent Synced Tabs Recent Synced Tab Time To Load"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__recent_synced_tabs_recent_synced_tab_time_to_load__count {
+    sql: ${TABLE}.metrics.timing_distribution.recent_synced_tabs_recent_synced_tab_time_to_load.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Recent Synced Tabs Recent Synced Tab Time To Load"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__recent_synced_tabs_recent_synced_tab_time_to_load__histogram_type {
@@ -7832,6 +8929,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__storage_stats_query_stats_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.storage_stats_query_stats_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Storage Stats Query Stats Duration"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__storage_stats_query_stats_duration__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.storage_stats_query_stats_duration.histogram_type ;;
     type: string
@@ -7882,6 +8986,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Wr Framebuild Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Framebuild Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__wr_framebuild_time__histogram_type {
@@ -7936,6 +9047,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__wr_gpu_wait_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Gpu Wait Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__wr_gpu_wait_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.histogram_type ;;
     type: string
@@ -7986,6 +9104,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Wr Rasterize Blobs Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_blobs_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_blobs_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Rasterize Blobs Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__wr_rasterize_blobs_time__histogram_type {
@@ -8040,6 +9165,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Rasterize Glyphs Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.histogram_type ;;
     type: string
@@ -8090,6 +9222,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Wr Renderer Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Renderer Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__wr_renderer_time__histogram_type {
@@ -8144,6 +9283,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__wr_renderer_time_no_sc__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time_no_sc.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Renderer Time No Sc"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__wr_renderer_time_no_sc__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time_no_sc.histogram_type ;;
     type: string
@@ -8194,6 +9340,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Wr Scenebuild Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Scenebuild Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__wr_scenebuild_time__histogram_type {
@@ -8248,6 +9401,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__wr_sceneswap_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Sceneswap Time"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__wr_sceneswap_time__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.histogram_type ;;
     type: string
@@ -8298,6 +9458,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Wr Texture Cache Update Time"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_texture_cache_update_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_texture_cache_update_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Texture Cache Update Time"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__wr_texture_cache_update_time__histogram_type {
@@ -8352,6 +9519,13 @@ will be \"custom\"
     group_item_label: "Bucket Count"
   }
 
+  dimension: metrics__timing_distribution__wr_time_to_frame_build__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_time_to_frame_build.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Time To Frame Build"
+    group_item_label: "Count"
+  }
+
   dimension: metrics__timing_distribution__wr_time_to_frame_build__histogram_type {
     sql: ${TABLE}.metrics.timing_distribution.wr_time_to_frame_build.histogram_type ;;
     type: string
@@ -8402,6 +9576,13 @@ will be \"custom\"
     type: number
     group_label: "Metrics Timing Distribution Wr Time To Render Start"
     group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__wr_time_to_render_start__count {
+    sql: ${TABLE}.metrics.timing_distribution.wr_time_to_render_start.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Wr Time To Render Start"
+    group_item_label: "Count"
   }
 
   dimension: metrics__timing_distribution__wr_time_to_render_start__histogram_type {
@@ -10168,7 +11349,55 @@ view: metrics_table__metrics__timing_distribution__places_manager_read_query_tim
   }
 }
 
+view: metrics_table__metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_manager_run_maintenance_optimize_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_manager_run_maintenance_prune_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__places_manager_run_maintenance_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__places_manager_run_maintenance_vacuum_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

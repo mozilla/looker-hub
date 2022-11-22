@@ -35,6 +35,11 @@ view: experimenter_experiments {
     type: yesno
   }
 
+  dimension: namespace {
+    sql: ${TABLE}.namespace ;;
+    type: string
+  }
+
   dimension: normandy_slug {
     sql: ${TABLE}.normandy_slug ;;
     type: string
@@ -53,6 +58,11 @@ view: experimenter_experiments {
   dimension: status {
     sql: ${TABLE}.status ;;
     type: string
+  }
+
+  dimension: targeted_percent {
+    sql: ${TABLE}.targeted_percent ;;
+    type: number
   }
 
   dimension: targeting {
