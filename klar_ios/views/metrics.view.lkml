@@ -5,6 +5,25 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics {
+  dimension: metrics__string__app_keyboard_type {
+    label: "App Keyboard Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.app_keyboard_type ;;
+    type: string
+    group_label: "App"
+    group_item_label: "Keyboard Type"
+
+    link: {
+      label: "Glean Dictionary reference for App Keyboard Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/app_keyboard_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the name of the keyboard (custom or default) everytime
+the keyboard appears on the screen.
+"
+  }
+
   dimension: metrics__counter__app_opened_as_default_browser {
     label: "App Opened As Default Browser"
     hidden: no
@@ -22,6 +41,24 @@ view: metrics {
     description: "Recorded when a preference is changed and includes the
 preference that changed as well as the value changed to
 recorded in the extra keys.
+"
+  }
+
+  dimension: metrics__counter__browser_pdf_viewer_used {
+    label: "Browser Pdf Viewer Used"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.browser_pdf_viewer_used ;;
+    type: number
+    group_label: "Browser"
+    group_item_label: "Pdf Viewer Used"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Pdf Viewer Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/browser_pdf_viewer_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times pdf view is opened in browser.
 "
   }
 
@@ -1251,6 +1288,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for App Opened As Default Browser"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/app_opened_as_default_browser"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_pdf_viewer_used {
+    type: sum
+    sql: ${metrics__counter__browser_pdf_viewer_used} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Pdf Viewer Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/browser_pdf_viewer_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: browser_pdf_viewer_used_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__browser_pdf_viewer_used: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Browser Pdf Viewer Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/browser_pdf_viewer_used"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

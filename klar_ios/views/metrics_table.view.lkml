@@ -378,6 +378,15 @@ recorded in the extra keys.
 "
   }
 
+  dimension: metrics__counter__browser_pdf_viewer_used {
+    sql: ${TABLE}.metrics.counter.browser_pdf_viewer_used ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Browser Pdf Viewer Used"
+    description: "Counts the number of times pdf view is opened in browser.
+"
+  }
+
   dimension: metrics__counter__browser_total_uri_count {
     sql: ${TABLE}.metrics.counter.browser_total_uri_count ;;
     type: number
@@ -710,6 +719,16 @@ It also indicates the screen it was removed from, home or browser.
     group_item_label: "Shortcuts Shortcuts On Home Number"
     description: "The number of shortcuts the user has on home screen,
 0, 1, 2, 3 or 4 (maximum)
+"
+  }
+
+  dimension: metrics__string__app_keyboard_type {
+    sql: ${TABLE}.metrics.string.app_keyboard_type ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "App Keyboard Type"
+    description: "Records the name of the keyboard (custom or default) everytime
+the keyboard appears on the screen.
 "
   }
 
