@@ -473,6 +473,41 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__sum {
+    label: "Cookie Banners Click Handle Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_click_handle_duration.sum ;;
+    type: number
+    group_label: "Cookie Banners Click"
+    group_item_label: "Handle Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Click Handle Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cookie_banners_click_handle_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how long it takes to handle cookie banners successfully from DOMContentLoaded until click.
+"
+  }
+
+  dimension: metrics__labeled_counter__cookie_banners_click_result {
+    label: "Cookie Banners Click Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cookie_banners_click_result ;;
+    group_label: "Cookie Banners Click"
+    group_item_label: "Result"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Click Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cookie_banners_click_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Given a matching cookie banner click rule, how often do we handle or fail to handle cookie banners, labelled by reason. The 'success' and 'fail' counters count the total numbers independently of the reason counters. Counters are incremented after the content window has been destroyed.
+"
+  }
+
   dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
     label: "Cookie Banners Normal Window Service Mode"
     hidden: no
@@ -2633,6 +2668,49 @@ documented in the ping's pings.yaml file.
   sql_table_name: `mozdata.firefox_desktop.metrics` ;;
 }
 
+view: metrics__metrics__labeled_counter__cookie_banners_click_result {
+  label: "Cookie Banners Click - Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__dap_report_generation_status {
   label: "Dap - Report Generation Status"
 
@@ -3748,6 +3826,25 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactiv
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.cookie_banners_click_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
   }
 }
 

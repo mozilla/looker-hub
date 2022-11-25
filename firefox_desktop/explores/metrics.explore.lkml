@@ -18,6 +18,11 @@ explore: metrics {
     ]
   }
 
+  join: metrics__metrics__labeled_counter__cookie_banners_click_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cookie_banners_click_result}) AS metrics__metrics__labeled_counter__cookie_banners_click_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cookie_banners_click_result.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__dap_report_generation_status {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dap_report_generation_status}) AS metrics__metrics__labeled_counter__dap_report_generation_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dap_report_generation_status.document_id} ;;
@@ -147,6 +152,10 @@ explore: metrics {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_parent_inactive}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive.document_id} ;;
   }
+}
+
+explore: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result {
+  hidden: yes
 }
 
 explore: suggest__metrics__metrics__labeled_counter__dap_report_generation_status {

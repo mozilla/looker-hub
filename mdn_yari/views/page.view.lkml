@@ -5,6 +5,61 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: page {
+  dimension: metrics__string__navigator_geo {
+    label: "Navigator Geo"
+    hidden: no
+    sql: ${TABLE}.metrics.string.navigator_geo ;;
+    type: string
+    group_label: "Navigator"
+    group_item_label: "Geo"
+
+    link: {
+      label: "Glean Dictionary reference for Navigator Geo"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/navigator_geo"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The navigators ISO 3166 country name (not code) based on geo ip.
+"
+  }
+
+  dimension: metrics__string__navigator_subscription_type {
+    label: "Navigator Subscription Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.navigator_subscription_type ;;
+    type: string
+    group_label: "Navigator"
+    group_item_label: "Subscription Type"
+
+    link: {
+      label: "Glean Dictionary reference for Navigator Subscription Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/navigator_subscription_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The subscription type of the user. can be one of
+'core','mdn_plus_5m','mdn_plus_5y','mdn_plus_10m','mdn_plus_10y'
+"
+  }
+
+  dimension: metrics__string__navigator_user_agent {
+    label: "Navigator User Agent"
+    hidden: no
+    sql: ${TABLE}.metrics.string.navigator_user_agent ;;
+    type: string
+    group_label: "Navigator"
+    group_item_label: "User Agent"
+
+    link: {
+      label: "Glean Dictionary reference for Navigator User Agent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/navigator_user_agent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The navigators user agent.
+"
+  }
+
   dimension: metrics__url2__page_path {
     label: "Page Path"
     hidden: no
