@@ -332,6 +332,34 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__navigator_geo {
+    sql: ${TABLE}.metrics.string.navigator_geo ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Navigator Geo"
+    description: "The navigators ISO 3166 country name (not code) based on geo ip.
+"
+  }
+
+  dimension: metrics__string__navigator_subscription_type {
+    sql: ${TABLE}.metrics.string.navigator_subscription_type ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Navigator Subscription Type"
+    description: "The subscription type of the user. can be one of
+'core','mdn_plus_5m','mdn_plus_5y','mdn_plus_10m','mdn_plus_10y'
+"
+  }
+
+  dimension: metrics__string__navigator_user_agent {
+    sql: ${TABLE}.metrics.string.navigator_user_agent ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Navigator User Agent"
+    description: "The navigators user agent.
+"
+  }
+
   dimension: metrics__url2__page_path {
     sql: ${TABLE}.metrics.url2.page_path ;;
     type: string

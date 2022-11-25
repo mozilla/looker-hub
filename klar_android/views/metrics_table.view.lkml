@@ -829,6 +829,13 @@ The key format is `<provider-name>`.
 "
   }
 
+  dimension: metrics__labeled_counter__cookie_banners_click_result {
+    sql: ${TABLE}.metrics.labeled_counter.cookie_banners_click_result ;;
+    hidden: yes
+    description: "Given a matching cookie banner click rule, how often do we handle or fail to handle cookie banners, labelled by reason. The 'success' and 'fail' counters count the total numbers independently of the reason counters. Counters are incremented after the content window has been destroyed.
+"
+  }
+
   dimension: metrics__labeled_counter__crash_metrics_crash_count {
     sql: ${TABLE}.metrics.labeled_counter.crash_metrics_crash_count ;;
     hidden: yes
@@ -1229,6 +1236,65 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timespan Nimbus Experiments Nimbus Initial Fetch"
     group_item_label: "Value"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_click_handle_duration.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Click Handle Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_click_handle_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Click Handle Duration"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_click_handle_duration.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cookie Banners Click Handle Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_click_handle_duration.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Click Handle Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_click_handle_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_click_handle_duration.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Click Handle Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_click_handle_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cookie Banners Click Handle Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_click_handle_duration.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Click Handle Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_click_handle_duration.values ;;
+    hidden: yes
   }
 
   dimension: metrics__timing_distribution__fog_ipc_flush_durations__bucket_count {
@@ -2384,6 +2450,18 @@ view: metrics_table__metrics__text {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cookie_banners_click_handle_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

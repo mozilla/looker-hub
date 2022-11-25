@@ -39,6 +39,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_with_ads}) AS metrics__metrics__labeled_counter__browser_search_with_ads ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_with_ads.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__cookie_banners_click_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cookie_banners_click_result}) AS metrics__metrics__labeled_counter__cookie_banners_click_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cookie_banners_click_result.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__crash_metrics_crash_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__crash_metrics_crash_count}) AS metrics__metrics__labeled_counter__crash_metrics_crash_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__crash_metrics_crash_count.document_id} ;;
@@ -178,6 +183,10 @@ explore: suggest__metrics__metrics__labeled_counter__browser_search_search_count
 }
 
 explore: suggest__metrics__metrics__labeled_counter__browser_search_with_ads {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result {
   hidden: yes
 }
 
