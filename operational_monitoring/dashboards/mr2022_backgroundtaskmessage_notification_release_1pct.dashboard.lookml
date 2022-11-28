@@ -115,8 +115,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Startup Crashes
-    name: Startup Crashes_sum
+  - title: Oom Crashes
+    name: Oom Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -131,7 +131,7 @@
       mr2022_backgroundtaskmessage_notification_release_1pct.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_notification_release_1pct.metric: 'startup_crashes'
+      mr2022_backgroundtaskmessage_notification_release_1pct.metric: 'oom_crashes'
       mr2022_backgroundtaskmessage_notification_release_1pct.statistic: sum
     row: 10
     col: 12
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Oom Crashes
-    name: Oom Crashes_sum
+  - title: Startup Crashes
+    name: Startup Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -199,7 +199,7 @@
       mr2022_backgroundtaskmessage_notification_release_1pct.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_notification_release_1pct.metric: 'oom_crashes'
+      mr2022_backgroundtaskmessage_notification_release_1pct.metric: 'startup_crashes'
       mr2022_backgroundtaskmessage_notification_release_1pct.statistic: sum
     row: 20
     col: 12

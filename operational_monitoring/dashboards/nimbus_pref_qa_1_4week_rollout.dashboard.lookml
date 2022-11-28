@@ -115,8 +115,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Startup Crashes
-    name: Startup Crashes_sum
+  - title: Oom Crashes
+    name: Oom Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -131,7 +131,7 @@
       nimbus_pref_qa_1_4week_rollout.branch
     ]
     filters:
-      nimbus_pref_qa_1_4week_rollout.metric: 'startup_crashes'
+      nimbus_pref_qa_1_4week_rollout.metric: 'oom_crashes'
       nimbus_pref_qa_1_4week_rollout.statistic: sum
     row: 10
     col: 12
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Oom Crashes
-    name: Oom Crashes_sum
+  - title: Startup Crashes
+    name: Startup Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -199,7 +199,7 @@
       nimbus_pref_qa_1_4week_rollout.branch
     ]
     filters:
-      nimbus_pref_qa_1_4week_rollout.metric: 'oom_crashes'
+      nimbus_pref_qa_1_4week_rollout.metric: 'startup_crashes'
       nimbus_pref_qa_1_4week_rollout.statistic: sum
     row: 20
     col: 12
