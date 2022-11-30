@@ -5,6 +5,11 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: newtab_interactions_table {
+  dimension: activity_segment {
+    sql: ${TABLE}.activity_segment ;;
+    type: string
+  }
+
   dimension: browser_name {
     sql: ${TABLE}.browser_name ;;
     type: string
@@ -53,6 +58,16 @@ view: newtab_interactions_table {
   dimension: follow_on_search_ad_impressions {
     sql: ${TABLE}.follow_on_search_ad_impressions ;;
     type: number
+  }
+
+  dimension: is_new_profile {
+    sql: ${TABLE}.is_new_profile ;;
+    type: yesno
+  }
+
+  dimension: legacy_telemetry_client_id {
+    sql: ${TABLE}.legacy_telemetry_client_id ;;
+    type: string
   }
 
   dimension: newtab_homepage_category {

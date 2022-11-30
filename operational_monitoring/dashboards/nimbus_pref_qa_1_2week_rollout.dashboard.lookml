@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Shutdown Hangs
-    name: Shutdown Hangs_sum
+  - title: Content Crashes
+    name: Content Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,7 +26,7 @@
       nimbus_pref_qa_1_2week_rollout.branch
     ]
     filters:
-      nimbus_pref_qa_1_2week_rollout.metric: 'shutdown_hangs'
+      nimbus_pref_qa_1_2week_rollout.metric: 'content_crashes'
       nimbus_pref_qa_1_2week_rollout.statistic: sum
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Main Crashes
-    name: Main Crashes_sum
+  - title: Oom Crashes
+    name: Oom Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -94,7 +94,7 @@
       nimbus_pref_qa_1_2week_rollout.branch
     ]
     filters:
-      nimbus_pref_qa_1_2week_rollout.metric: 'main_crashes'
+      nimbus_pref_qa_1_2week_rollout.metric: 'oom_crashes'
       nimbus_pref_qa_1_2week_rollout.statistic: sum
     row: 10
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Crashes
-    name: Content Crashes_sum
+  - title: Main Crashes
+    name: Main Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -128,7 +128,7 @@
       nimbus_pref_qa_1_2week_rollout.branch
     ]
     filters:
-      nimbus_pref_qa_1_2week_rollout.metric: 'content_crashes'
+      nimbus_pref_qa_1_2week_rollout.metric: 'main_crashes'
       nimbus_pref_qa_1_2week_rollout.statistic: sum
     row: 10
     col: 12
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Oom Crashes
-    name: Oom Crashes_sum
+  - title: Shutdown Hangs
+    name: Shutdown Hangs_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -199,7 +199,7 @@
       nimbus_pref_qa_1_2week_rollout.branch
     ]
     filters:
-      nimbus_pref_qa_1_2week_rollout.metric: 'oom_crashes'
+      nimbus_pref_qa_1_2week_rollout.metric: 'shutdown_hangs'
       nimbus_pref_qa_1_2week_rollout.statistic: sum
     row: 20
     col: 12

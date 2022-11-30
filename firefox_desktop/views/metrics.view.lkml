@@ -182,6 +182,42 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__custom_distribution__pdfjs_time_to_view__sum {
+    label: "Pdfjs Time To View Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.pdfjs_time_to_view.sum ;;
+    type: number
+    group_label: "Pdfjs"
+    group_item_label: "Time To View Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Time To View Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_time_to_view"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent to display first page in PDF Viewer (ms).
+"
+  }
+
+  dimension: metrics__counter__pdfjs_used {
+    label: "Pdfjs Used"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_used ;;
+    type: number
+    group_label: "Pdfjs"
+    group_item_label: "Used"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times PDF Viewer was used.
+"
+  }
+
   dimension: metrics__counter__ping_centre_send_failures {
     label: "Ping Centre Send Failures"
     hidden: no
@@ -2236,6 +2272,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Browser Engagement Uri Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_used {
+    type: sum
+    sql: ${metrics__counter__pdfjs_used} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_used_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_used: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_used"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
