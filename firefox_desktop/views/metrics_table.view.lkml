@@ -497,6 +497,15 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__pdfjs_used {
+    sql: ${TABLE}.metrics.counter.pdfjs_used ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Pdfjs Used"
+    description: "How many times PDF Viewer was used.
+"
+  }
+
   dimension: metrics__counter__ping_centre_send_failures {
     sql: ${TABLE}.metrics.counter.ping_centre_send_failures ;;
     type: number
@@ -549,6 +558,25 @@ This does not include deletion-request pings.
     group_item_label: "Power Total Thread Wakeups"
     description: "How many times threads woke up and could have woken up a CPU core.
 "
+  }
+
+  dimension: metrics__custom_distribution__pdfjs_time_to_view__count {
+    sql: ${TABLE}.metrics.custom_distribution.pdfjs_time_to_view.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Pdfjs Time To View"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__pdfjs_time_to_view__sum {
+    sql: ${TABLE}.metrics.custom_distribution.pdfjs_time_to_view.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Pdfjs Time To View"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__pdfjs_time_to_view__values {
+    sql: ${TABLE}.metrics.custom_distribution.pdfjs_time_to_view.values ;;
+    hidden: yes
   }
 
   dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__count {
@@ -2181,6 +2209,18 @@ view: metrics_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__pdfjs_time_to_view__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
