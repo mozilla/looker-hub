@@ -132,7 +132,7 @@
   - name: Metric
     title: Metric
     type: field_filter
-    default_value: 'checkerboard_severity'
+    default_value: 'active_ticks'
     allow_multiple_values: false
     required: true
     ui_config:
@@ -167,8 +167,8 @@
       display: inline
       options:
       - 'Linux'
-      - 'Windows'
       - 'Mac'
+      - 'Windows'
       
   
   
