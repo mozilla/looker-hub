@@ -535,11 +535,13 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
-  dimension: metrics__datetime__raw_glean_validation_first_run_hour {
-    sql: ${TABLE}.metrics.datetime.raw_glean_validation_first_run_hour ;;
+  dimension: metrics__datetime__glean_validation_first_run_hour {
+    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: string
     group_label: "Metrics Datetime"
-    group_item_label: "Raw Glean Validation First Run Hour"
+    group_item_label: "Glean Validation First Run Hour"
+    description: "The hour of the first run of the application.
+"
   }
 
   dimension: metrics__jwe {
@@ -859,23 +861,6 @@ then the value will be 'custom'.
       year,
     ]
     label: "Metadata Header: Parsed Date"
-  }
-
-  dimension_group: metrics__datetime__glean_validation_first_run_hour {
-    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    label: "Metrics Datetime: Glean Validation First Run Hour"
-    description: "The hour of the first run of the application.
-"
   }
 
   dimension_group: ping_info__parsed_end {

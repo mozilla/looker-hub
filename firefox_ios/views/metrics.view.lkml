@@ -3382,7 +3382,7 @@ though the counts appear in the next successfully sent `metrics` ping.
     label: "Glean Validation First Run Hour"
     hidden: no
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
-    type: time
+    type: string
     group_label: "Glean Validation"
     group_item_label: "First Run Hour"
 

@@ -300,11 +300,13 @@ view: interaction_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__datetime__raw_page_viewed {
-    sql: ${TABLE}.metrics.datetime.raw_page_viewed ;;
+  dimension: metrics__datetime__page_viewed {
+    sql: ${TABLE}.metrics.datetime.page_viewed ;;
     type: string
     group_label: "Metrics Datetime"
-    group_item_label: "Raw Page Viewed"
+    group_item_label: "Page Viewed"
+    description: "The time a page was viewed.
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -462,23 +464,6 @@ the page that was viewed.
       year,
     ]
     label: "Metadata Header: Parsed Date"
-  }
-
-  dimension_group: metrics__datetime__page_viewed {
-    sql: ${TABLE}.metrics.datetime.page_viewed ;;
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    label: "Metrics Datetime: Page Viewed"
-    description: "The time a page was viewed.
-"
   }
 
   dimension_group: ping_info__parsed_end {

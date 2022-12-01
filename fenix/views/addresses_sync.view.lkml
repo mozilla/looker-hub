@@ -99,7 +99,7 @@ The labels are the `category.name` identifier of the metric.
     label: "Addresses Sync Finished At"
     hidden: no
     sql: ${TABLE}.metrics.datetime.addresses_sync_finished_at ;;
-    type: time
+    type: string
     group_label: "Addresses Sync"
     group_item_label: "Finished At"
 
@@ -169,7 +169,7 @@ The labels are the `category.name` identifier of the metric.
     label: "Addresses Sync Started At"
     hidden: no
     sql: ${TABLE}.metrics.datetime.addresses_sync_started_at ;;
-    type: time
+    type: string
     group_label: "Addresses Sync"
     group_item_label: "Started At"
 

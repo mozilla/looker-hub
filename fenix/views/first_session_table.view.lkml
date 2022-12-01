@@ -300,11 +300,15 @@ view: first_session_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__datetime__raw_first_session_timestamp {
-    sql: ${TABLE}.metrics.datetime.raw_first_session_timestamp ;;
+  dimension: metrics__datetime__first_session_timestamp {
+    sql: ${TABLE}.metrics.datetime.first_session_timestamp ;;
     type: string
     group_label: "Metrics Datetime"
-    group_item_label: "Raw First Session Timestamp"
+    group_item_label: "First Session Timestamp"
+    description: "The Glean generated date and time of the installation. This is
+unique per app install, though the rest of the data in this
+ping is from Adjust and will remain static across installs.
+"
   }
 
   dimension: metrics__jwe {
@@ -493,25 +497,6 @@ to identify installs from Mozilla Online.
       year,
     ]
     label: "Metadata Header: Parsed Date"
-  }
-
-  dimension_group: metrics__datetime__first_session {
-    sql: ${TABLE}.metrics.datetime.first_session_timestamp ;;
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    label: "Metrics Datetime: First Session Timestamp"
-    description: "The Glean generated date and time of the installation. This is
-unique per app install, though the rest of the data in this
-ping is from Adjust and will remain static across installs.
-"
   }
 
   dimension_group: ping_info__parsed_end {

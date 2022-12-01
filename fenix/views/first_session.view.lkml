@@ -96,6 +96,26 @@ to identify installs from Mozilla Online.
 "
   }
 
+  dimension: metrics__datetime__first_session_timestamp {
+    label: "First Session Timestamp"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.first_session_timestamp ;;
+    type: string
+    group_label: "First Session"
+    group_item_label: "Timestamp"
+
+    link: {
+      label: "Glean Dictionary reference for First Session Timestamp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_timestamp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Glean generated date and time of the installation. This is
+unique per app install, though the rest of the data in this
+ping is from Adjust and will remain static across installs.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes

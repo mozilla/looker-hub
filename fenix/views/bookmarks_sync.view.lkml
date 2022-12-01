@@ -99,7 +99,7 @@ The labels are the `category.name` identifier of the metric.
     label: "Bookmarks Sync Finished At"
     hidden: no
     sql: ${TABLE}.metrics.datetime.bookmarks_sync_finished_at ;;
-    type: time
+    type: string
     group_label: "Bookmarks Sync"
     group_item_label: "Finished At"
 
@@ -186,7 +186,7 @@ The labels are the `category.name` identifier of the metric.
     label: "Bookmarks Sync Started At"
     hidden: no
     sql: ${TABLE}.metrics.datetime.bookmarks_sync_started_at ;;
-    type: time
+    type: string
     group_label: "Bookmarks Sync"
     group_item_label: "Started At"
 

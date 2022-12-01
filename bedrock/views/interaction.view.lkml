@@ -82,7 +82,7 @@ the page that was viewed.
     label: "Page Viewed"
     hidden: no
     sql: ${TABLE}.metrics.datetime.page_viewed ;;
-    type: time
+    type: string
     group_label: "Page"
     group_item_label: "Viewed"
 

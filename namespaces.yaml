@@ -651,6 +651,11 @@ fenix:
       - channel: release
         table: mozdata.fenix.clients_last_seen_joined
       type: table_view
+    clients_yearly_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.clients_yearly
+      type: table_view
     creditcards_sync:
       tables:
       - channel: release
