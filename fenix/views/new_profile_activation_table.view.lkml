@@ -81,11 +81,6 @@ view: new_profile_activation_table {
     type: string
   }
 
-  dimension: locale_1 {
-    sql: ${TABLE}.locale_1 ;;
-    type: string
-  }
-
   dimension: new_profile {
     sql: ${TABLE}.new_profile ;;
     type: number
