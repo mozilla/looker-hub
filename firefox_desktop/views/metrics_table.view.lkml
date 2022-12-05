@@ -786,6 +786,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__power_cpu_time_per_tracker_type_ms {
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_time_per_tracker_type_ms ;;
+    hidden: yes
+    description: "CPU time used by content processes used only for tracking resources, labeled by the category of the tracker.
+"
+  }
+
   dimension: metrics__labeled_counter__power_gpu_time_per_process_type_ms {
     sql: ${TABLE}.metrics.labeled_counter.power_gpu_time_per_process_type_ms ;;
     hidden: yes

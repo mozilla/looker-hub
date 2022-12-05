@@ -236,7 +236,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__datetime__glean_validation_first_run_hour {
     label: "Glean Validation First Run Hour"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: string
     group_label: "Glean Validation"
