@@ -1204,6 +1204,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__power_cpu_time_per_tracker_type_ms {
+    label: "Power Cpu Time Per Tracker Type Ms"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_time_per_tracker_type_ms ;;
+    group_label: "Power"
+    group_item_label: "Cpu Time Per Tracker Type Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Per Tracker Type Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/power_cpu_time_per_tracker_type_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "CPU time used by content processes used only for tracking resources, labeled by the category of the tracker.
+"
+  }
+
   dimension: metrics__counter__power_gpu_time_bogus_values {
     label: "Power Gpu Time Bogus Values"
     hidden: no
@@ -1860,7 +1877,7 @@ though the counts appear in the next successfully sent `metrics` ping.
 
   dimension: metrics__datetime__glean_validation_first_run_hour {
     label: "Glean Validation First Run Hour"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: string
     group_label: "Glean Validation"
@@ -4066,6 +4083,49 @@ view: metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
   }
 }
 
+view: metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms {
+  label: "Power - Cpu Time Per Tracker Type Ms"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
   label: "Power - Gpu Time Per Process Type Ms"
 
@@ -4816,6 +4876,25 @@ view: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_process_typ
     count(*) as n
 from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.power_cpu_time_per_process_type_ms) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_time_per_tracker_type_ms) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
