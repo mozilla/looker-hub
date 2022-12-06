@@ -716,6 +716,76 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__ipc_received_messages_content_background {
+    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_content_background ;;
+    hidden: yes
+    description: "How many times each IPC message type was received, Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_received_messages_content_foreground {
+    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_content_foreground ;;
+    hidden: yes
+    description: "How many times each IPC message type was received, Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_received_messages_gpu_process {
+    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_gpu_process ;;
+    hidden: yes
+    description: "How many times each IPC message type was received, Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_received_messages_parent_active {
+    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_parent_active ;;
+    hidden: yes
+    description: "How many times each IPC message type was received, Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_received_messages_parent_inactive {
+    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_parent_inactive ;;
+    hidden: yes
+    description: "How many times each IPC message type was received, Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_sent_messages_content_background {
+    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_content_background ;;
+    hidden: yes
+    description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_sent_messages_content_foreground {
+    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_content_foreground ;;
+    hidden: yes
+    description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_sent_messages_gpu_process {
+    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_gpu_process ;;
+    hidden: yes
+    description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_sent_messages_parent_active {
+    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_parent_active ;;
+    hidden: yes
+    description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_sent_messages_parent_inactive {
+    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_parent_inactive ;;
+    hidden: yes
+    description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_early_hints {
     sql: ${TABLE}.metrics.labeled_counter.netwerk_early_hints ;;
     hidden: yes

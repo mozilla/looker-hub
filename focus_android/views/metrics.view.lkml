@@ -996,6 +996,176 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__ipc_received_messages_content_background {
+    label: "Ipc Received Messages Content Background"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_content_background ;;
+    group_label: "Ipc Received Messages"
+    group_item_label: "Content Background"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Received Messages Content Background"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/ipc_received_messages_content_background"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was received, Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_received_messages_content_foreground {
+    label: "Ipc Received Messages Content Foreground"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_content_foreground ;;
+    group_label: "Ipc Received Messages"
+    group_item_label: "Content Foreground"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Received Messages Content Foreground"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/ipc_received_messages_content_foreground"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was received, Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_received_messages_gpu_process {
+    label: "Ipc Received Messages Gpu Process"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_gpu_process ;;
+    group_label: "Ipc Received Messages"
+    group_item_label: "Gpu Process"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Received Messages Gpu Process"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/ipc_received_messages_gpu_process"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was received, Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_received_messages_parent_active {
+    label: "Ipc Received Messages Parent Active"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_parent_active ;;
+    group_label: "Ipc Received Messages"
+    group_item_label: "Parent Active"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Received Messages Parent Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/ipc_received_messages_parent_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was received, Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_received_messages_parent_inactive {
+    label: "Ipc Received Messages Parent Inactive"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_parent_inactive ;;
+    group_label: "Ipc Received Messages"
+    group_item_label: "Parent Inactive"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Received Messages Parent Inactive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/ipc_received_messages_parent_inactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was received, Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_sent_messages_content_background {
+    label: "Ipc Sent Messages Content Background"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_content_background ;;
+    group_label: "Ipc Sent Messages"
+    group_item_label: "Content Background"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Sent Messages Content Background"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/ipc_sent_messages_content_background"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_sent_messages_content_foreground {
+    label: "Ipc Sent Messages Content Foreground"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_content_foreground ;;
+    group_label: "Ipc Sent Messages"
+    group_item_label: "Content Foreground"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Sent Messages Content Foreground"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/ipc_sent_messages_content_foreground"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_sent_messages_gpu_process {
+    label: "Ipc Sent Messages Gpu Process"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_gpu_process ;;
+    group_label: "Ipc Sent Messages"
+    group_item_label: "Gpu Process"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Sent Messages Gpu Process"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/ipc_sent_messages_gpu_process"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_sent_messages_parent_active {
+    label: "Ipc Sent Messages Parent Active"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_parent_active ;;
+    group_label: "Ipc Sent Messages"
+    group_item_label: "Parent Active"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Sent Messages Parent Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/ipc_sent_messages_parent_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_sent_messages_parent_inactive {
+    label: "Ipc Sent Messages Parent Inactive"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_parent_inactive ;;
+    group_label: "Ipc Sent Messages"
+    group_item_label: "Parent Inactive"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Sent Messages Parent Inactive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/ipc_sent_messages_parent_inactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_early_hints {
     label: "Netwerk Early Hints"
     hidden: yes
@@ -3696,6 +3866,436 @@ view: metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
   }
 }
 
+view: metrics__metrics__labeled_counter__ipc_received_messages_content_background {
+  label: "Ipc Received Messages - Content Background"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_background
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_background.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_received_messages_content_foreground {
+  label: "Ipc Received Messages - Content Foreground"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_foreground
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_foreground.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_received_messages_gpu_process {
+  label: "Ipc Received Messages - Gpu Process"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_gpu_process
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_gpu_process.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_received_messages_parent_active {
+  label: "Ipc Received Messages - Parent Active"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_active
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_active.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive {
+  label: "Ipc Received Messages - Parent Inactive"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_sent_messages_content_background {
+  label: "Ipc Sent Messages - Content Background"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_background
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_background.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground {
+  label: "Ipc Sent Messages - Content Foreground"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process {
+  label: "Ipc Sent Messages - Gpu Process"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_active {
+  label: "Ipc Sent Messages - Parent Active"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_active
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_active.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
+  label: "Ipc Sent Messages - Parent Inactive"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__netwerk_early_hints {
   label: "Netwerk - Early Hints"
 
@@ -4705,6 +5305,196 @@ view: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
     count(*) as n
 from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.gmp_update_xml_fetch_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_background {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.ipc_received_messages_content_background) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_foreground {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.ipc_received_messages_content_foreground) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_gpu_process {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.ipc_received_messages_gpu_process) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_active {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.ipc_received_messages_parent_active) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.ipc_received_messages_parent_inactive) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_background {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.ipc_sent_messages_content_background) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.ipc_sent_messages_content_foreground) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.ipc_sent_messages_gpu_process) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_active {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.ipc_sent_messages_parent_active) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.ipc_sent_messages_parent_inactive) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
