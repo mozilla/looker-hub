@@ -440,6 +440,12 @@ explore: client_counts {
     sql: LEFT JOIN UNNEST(${client_counts.search_adclicks_urlbar_handoff_sum}) AS clients_daily_table__search_adclicks_urlbar_handoff_sum ;;
   }
 
+  join: clients_daily_table__search_adclicks_urlbar_persisted_sum {
+    view_label: "Client Counts  Search Adclicks Urlbar Persisted Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.search_adclicks_urlbar_persisted_sum}) AS clients_daily_table__search_adclicks_urlbar_persisted_sum ;;
+  }
+
   join: clients_daily_table__search_adclicks_urlbar_searchmode_sum {
     view_label: "Client Counts  Search Adclicks Urlbar Searchmode Sum"
     relationship: one_to_many
@@ -510,6 +516,12 @@ explore: client_counts {
     view_label: "Client Counts  Search Content Urlbar Handoff Sum"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_counts.search_content_urlbar_handoff_sum}) AS clients_daily_table__search_content_urlbar_handoff_sum ;;
+  }
+
+  join: clients_daily_table__search_content_urlbar_persisted_sum {
+    view_label: "Client Counts  Search Content Urlbar Persisted Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.search_content_urlbar_persisted_sum}) AS clients_daily_table__search_content_urlbar_persisted_sum ;;
   }
 
   join: clients_daily_table__search_content_urlbar_searchmode_sum {
@@ -594,6 +606,12 @@ explore: client_counts {
     view_label: "Client Counts  Search Withads Urlbar Handoff Sum"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_counts.search_withads_urlbar_handoff_sum}) AS clients_daily_table__search_withads_urlbar_handoff_sum ;;
+  }
+
+  join: clients_daily_table__search_withads_urlbar_persisted_sum {
+    view_label: "Client Counts  Search Withads Urlbar Persisted Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.search_withads_urlbar_persisted_sum}) AS clients_daily_table__search_withads_urlbar_persisted_sum ;;
   }
 
   join: clients_daily_table__search_withads_urlbar_searchmode_sum {

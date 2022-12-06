@@ -68,6 +68,56 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__gmp_update_xml_fetch_result}) AS metrics__metrics__labeled_counter__gmp_update_xml_fetch_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__gmp_update_xml_fetch_result.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__ipc_received_messages_content_background {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_received_messages_content_background}) AS metrics__metrics__labeled_counter__ipc_received_messages_content_background ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_received_messages_content_background.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__ipc_received_messages_content_foreground {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_received_messages_content_foreground}) AS metrics__metrics__labeled_counter__ipc_received_messages_content_foreground ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_received_messages_content_foreground.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__ipc_received_messages_gpu_process {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_received_messages_gpu_process}) AS metrics__metrics__labeled_counter__ipc_received_messages_gpu_process ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_received_messages_gpu_process.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__ipc_received_messages_parent_active {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_received_messages_parent_active}) AS metrics__metrics__labeled_counter__ipc_received_messages_parent_active ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_received_messages_parent_active.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_received_messages_parent_inactive}) AS metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__ipc_sent_messages_content_background {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_sent_messages_content_background}) AS metrics__metrics__labeled_counter__ipc_sent_messages_content_background ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_sent_messages_content_background.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_sent_messages_content_foreground}) AS metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_sent_messages_gpu_process}) AS metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__ipc_sent_messages_parent_active {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_sent_messages_parent_active}) AS metrics__metrics__labeled_counter__ipc_sent_messages_parent_active ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_sent_messages_parent_active.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_sent_messages_parent_inactive}) AS metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__netwerk_early_hints {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_early_hints}) AS metrics__metrics__labeled_counter__netwerk_early_hints ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_early_hints.document_id} ;;
@@ -196,6 +246,46 @@ explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_subm
 }
 
 explore: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_background {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_foreground {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_gpu_process {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_active {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_background {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_active {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
   hidden: yes
 }
 
