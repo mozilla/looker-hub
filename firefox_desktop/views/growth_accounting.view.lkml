@@ -1468,6 +1468,11 @@ view: growth_accounting {
     hidden: yes
   }
 
+  dimension: search_adclicks_urlbar_persisted_sum {
+    sql: ${TABLE}.search_adclicks_urlbar_persisted_sum ;;
+    hidden: yes
+  }
+
   dimension: search_adclicks_urlbar_searchmode_sum {
     sql: ${TABLE}.search_adclicks_urlbar_searchmode_sum ;;
     hidden: yes
@@ -1530,6 +1535,11 @@ view: growth_accounting {
 
   dimension: search_content_urlbar_handoff_sum {
     sql: ${TABLE}.search_content_urlbar_handoff_sum ;;
+    hidden: yes
+  }
+
+  dimension: search_content_urlbar_persisted_sum {
+    sql: ${TABLE}.search_content_urlbar_persisted_sum ;;
     hidden: yes
   }
 
@@ -1608,6 +1618,11 @@ view: growth_accounting {
     type: number
   }
 
+  dimension: search_count_urlbar_persisted {
+    sql: ${TABLE}.search_count_urlbar_persisted ;;
+    type: number
+  }
+
   dimension: search_count_urlbar_searchmode {
     sql: ${TABLE}.search_count_urlbar_searchmode ;;
     type: number
@@ -1675,6 +1690,11 @@ view: growth_accounting {
 
   dimension: search_withads_urlbar_handoff_sum {
     sql: ${TABLE}.search_withads_urlbar_handoff_sum ;;
+    hidden: yes
+  }
+
+  dimension: search_withads_urlbar_persisted_sum {
+    sql: ${TABLE}.search_withads_urlbar_persisted_sum ;;
     hidden: yes
   }
 
