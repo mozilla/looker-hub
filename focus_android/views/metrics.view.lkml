@@ -168,7 +168,14 @@ the report site issue from browser menu
     }
 
     description: "Records clicks of adverts on SERP pages.
-The key format is `<provider-name>`.
+The key format is
+`<provider-name>.in-content.[sap|sap-follow-on|organic].[code|none](.[channel])?`,
+where:
+
+* `provider-name` is the name of the provider,
+* `sap|sap-follow-on|organic` is the search access point,
+* `code` is set when the url matches any of the provider's code prefixes,
+* `channel` is set to the url \"channel\" query parameter.
 "
   }
 
@@ -227,7 +234,14 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
     }
 
     description: "Records counts of SERP pages with adverts displayed.
-The key format is `<provider-name>`.
+The key format is
+`<provider-name>.in-content.[sap|sap-follow-on|organic].[code|none](.[channel])?`,
+where:
+
+* `provider-name` is the name of the provider,
+* `sap|sap-follow-on|organic` is the search access point,
+* `code` is set when the url matches any of the provider's code prefixes,
+* `channel` is set to the url \"channel\" query parameter.
 "
   }
 

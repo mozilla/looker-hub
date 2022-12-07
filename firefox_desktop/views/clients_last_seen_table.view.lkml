@@ -1468,6 +1468,11 @@ view: clients_last_seen_table {
     hidden: yes
   }
 
+  dimension: search_adclicks_urlbar_persisted_sum {
+    sql: ${TABLE}.search_adclicks_urlbar_persisted_sum ;;
+    hidden: yes
+  }
+
   dimension: search_adclicks_urlbar_searchmode_sum {
     sql: ${TABLE}.search_adclicks_urlbar_searchmode_sum ;;
     hidden: yes
@@ -1530,6 +1535,11 @@ view: clients_last_seen_table {
 
   dimension: search_content_urlbar_handoff_sum {
     sql: ${TABLE}.search_content_urlbar_handoff_sum ;;
+    hidden: yes
+  }
+
+  dimension: search_content_urlbar_persisted_sum {
+    sql: ${TABLE}.search_content_urlbar_persisted_sum ;;
     hidden: yes
   }
 
@@ -1608,6 +1618,11 @@ view: clients_last_seen_table {
     type: number
   }
 
+  dimension: search_count_urlbar_persisted {
+    sql: ${TABLE}.search_count_urlbar_persisted ;;
+    type: number
+  }
+
   dimension: search_count_urlbar_searchmode {
     sql: ${TABLE}.search_count_urlbar_searchmode ;;
     type: number
@@ -1675,6 +1690,11 @@ view: clients_last_seen_table {
 
   dimension: search_withads_urlbar_handoff_sum {
     sql: ${TABLE}.search_withads_urlbar_handoff_sum ;;
+    hidden: yes
+  }
+
+  dimension: search_withads_urlbar_persisted_sum {
+    sql: ${TABLE}.search_withads_urlbar_persisted_sum ;;
     hidden: yes
   }
 
@@ -2883,6 +2903,18 @@ view: clients_last_seen_table__search_adclicks_urlbar_handoff_sum {
   }
 }
 
+view: clients_last_seen_table__search_adclicks_urlbar_persisted_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: clients_last_seen_table__search_adclicks_urlbar_searchmode_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -3016,6 +3048,18 @@ view: clients_last_seen_table__search_content_unknown_sum {
 }
 
 view: clients_last_seen_table__search_content_urlbar_handoff_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__search_content_urlbar_persisted_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -3189,6 +3233,18 @@ view: clients_last_seen_table__search_withads_unknown_sum {
 }
 
 view: clients_last_seen_table__search_withads_urlbar_handoff_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_last_seen_table__search_withads_urlbar_persisted_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
