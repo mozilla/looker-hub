@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: marketing_attributable_metrics_table {
+view: attributable_clients_table {
   dimension: ad_clicks {
     sql: ${TABLE}.ad_clicks ;;
     type: number
@@ -41,19 +41,9 @@ view: marketing_attributable_metrics_table {
     map_layer_name: countries
   }
 
-  dimension: dau {
-    sql: ${TABLE}.dau ;;
-    type: number
-  }
-
   dimension: is_new_profile {
     sql: ${TABLE}.is_new_profile ;;
     type: yesno
-  }
-
-  dimension: new_profiles {
-    sql: ${TABLE}.new_profiles ;;
-    type: number
   }
 
   dimension: sample_id {
@@ -61,8 +51,8 @@ view: marketing_attributable_metrics_table {
     type: number
   }
 
-  dimension: search_count {
-    sql: ${TABLE}.search_count ;;
+  dimension: searches {
+    sql: ${TABLE}.searches ;;
     type: number
   }
 
@@ -101,5 +91,5 @@ view: marketing_attributable_metrics_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.fenix.marketing_attributable_metrics` ;;
+  sql_table_name: `mozdata.fenix.attributable_clients` ;;
 }

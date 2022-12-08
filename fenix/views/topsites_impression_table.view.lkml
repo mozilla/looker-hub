@@ -269,6 +269,13 @@ view: topsites_impression_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__customize_home_contile {
+    sql: ${TABLE}.metrics.boolean.customize_home_contile ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Customize Home Contile"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes

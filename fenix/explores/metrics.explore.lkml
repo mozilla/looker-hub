@@ -139,6 +139,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cookie_banners_click_result}) AS metrics__metrics__labeled_counter__cookie_banners_click_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cookie_banners_click_result.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cookie_banners_rule_lookup_by_domain}) AS metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cookie_banners_rule_lookup_by_load}) AS metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__crash_metrics_crash_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__crash_metrics_crash_count}) AS metrics__metrics__labeled_counter__crash_metrics_crash_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__crash_metrics_crash_count.document_id} ;;
@@ -478,6 +488,14 @@ explore: suggest__metrics__metrics__labeled_counter__browser_search_with_ads {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load {
   hidden: yes
 }
 
