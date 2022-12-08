@@ -46,13 +46,28 @@ view: fenix_marketing_metrics {
     type: number
   }
 
+  dimension: is_new_profile {
+    sql: ${TABLE}.is_new_profile ;;
+    type: yesno
+  }
+
   dimension: new_profiles {
     sql: ${TABLE}.new_profiles ;;
     type: number
   }
 
+  dimension: sample_id {
+    sql: ${TABLE}.sample_id ;;
+    type: number
+  }
+
   dimension: search_count {
     sql: ${TABLE}.search_count ;;
+    type: number
+  }
+
+  dimension: searches_with_ads {
+    sql: ${TABLE}.searches_with_ads ;;
     type: number
   }
 

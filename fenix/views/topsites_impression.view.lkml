@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: topsites_impression {
+  dimension: metrics__boolean__customize_home_contile {
+    label: "Customize Home Contile"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.customize_home_contile ;;
+    type: yesno
+    group_label: "Customize Home"
+    group_item_label: "Contile"
+
+    link: {
+      label: "Glean Dictionary reference for Customize Home Contile"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/customize_home_contile"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An indication of whether Contile is enabled to be displayed
+"
+  }
+
   dimension: metrics__uuid__top_sites_context_id {
     label: "Top Sites Context Id"
     hidden: no
