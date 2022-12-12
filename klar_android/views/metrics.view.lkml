@@ -4001,7 +4001,7 @@ view: metrics__metrics__labeled_counter__ipc_received_messages_content_backgroun
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_background
     suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_background.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -4013,13 +4013,13 @@ view: metrics__metrics__labeled_counter__ipc_received_messages_content_backgroun
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -4044,7 +4044,7 @@ view: metrics__metrics__labeled_counter__ipc_received_messages_content_foregroun
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_foreground
     suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_foreground.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -4056,13 +4056,13 @@ view: metrics__metrics__labeled_counter__ipc_received_messages_content_foregroun
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -4087,7 +4087,7 @@ view: metrics__metrics__labeled_counter__ipc_received_messages_gpu_process {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_gpu_process
     suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_gpu_process.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -4099,13 +4099,13 @@ view: metrics__metrics__labeled_counter__ipc_received_messages_gpu_process {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -4130,7 +4130,7 @@ view: metrics__metrics__labeled_counter__ipc_received_messages_parent_active {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_active
     suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_active.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -4142,13 +4142,13 @@ view: metrics__metrics__labeled_counter__ipc_received_messages_parent_active {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -4173,7 +4173,7 @@ view: metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive
     suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -4185,13 +4185,13 @@ view: metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -4216,7 +4216,7 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_content_background {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_background
     suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_background.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -4228,13 +4228,13 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_content_background {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -4259,7 +4259,7 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground
     suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -4271,13 +4271,13 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -4302,7 +4302,7 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process
     suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -4314,13 +4314,13 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -4345,7 +4345,7 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_active {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_active
     suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_active.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -4357,13 +4357,13 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_active {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -4388,7 +4388,7 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive
     suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -4400,13 +4400,13 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
