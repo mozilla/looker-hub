@@ -99,7 +99,7 @@ The labels are the `category.name` identifier of the metric.
     label: "Creditcards Sync Finished At"
     hidden: no
     sql: ${TABLE}.metrics.datetime.creditcards_sync_finished_at ;;
-    type: string
+    type: time
     group_label: "Creditcards Sync"
     group_item_label: "Finished At"
 
@@ -169,7 +169,7 @@ The labels are the `category.name` identifier of the metric.
     label: "Creditcards Sync Started At"
     hidden: no
     sql: ${TABLE}.metrics.datetime.creditcards_sync_started_at ;;
-    type: string
+    type: time
     group_label: "Creditcards Sync"
     group_item_label: "Started At"
 

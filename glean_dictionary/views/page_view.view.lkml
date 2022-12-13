@@ -9,7 +9,7 @@ view: page_view {
     label: "Page Loaded"
     hidden: no
     sql: ${TABLE}.metrics.datetime.page_loaded ;;
-    type: string
+    type: time
     group_label: "Page"
     group_item_label: "Loaded"
 

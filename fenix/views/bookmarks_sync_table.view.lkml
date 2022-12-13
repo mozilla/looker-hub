@@ -309,22 +309,18 @@ view: bookmarks_sync_table {
 "
   }
 
-  dimension: metrics__datetime__bookmarks_sync_finished_at {
-    sql: ${TABLE}.metrics.datetime.bookmarks_sync_finished_at ;;
+  dimension: metrics__datetime__raw_bookmarks_sync_finished_at {
+    sql: ${TABLE}.metrics.datetime.raw_bookmarks_sync_finished_at ;;
     type: string
     group_label: "Metrics Datetime"
-    group_item_label: "Bookmarks Sync Finished At"
-    description: "Records when the bookmark sync finished.
-"
+    group_item_label: "Raw Bookmarks Sync Finished At"
   }
 
-  dimension: metrics__datetime__bookmarks_sync_started_at {
-    sql: ${TABLE}.metrics.datetime.bookmarks_sync_started_at ;;
+  dimension: metrics__datetime__raw_bookmarks_sync_started_at {
+    sql: ${TABLE}.metrics.datetime.raw_bookmarks_sync_started_at ;;
     type: string
     group_label: "Metrics Datetime"
-    group_item_label: "Bookmarks Sync Started At"
-    description: "Records when the bookmark sync started.
-"
+    group_item_label: "Raw Bookmarks Sync Started At"
   }
 
   dimension: metrics__jwe {
@@ -513,6 +509,40 @@ The labels are the `category.name` identifier of the metric.
       year,
     ]
     label: "Metadata Header: Parsed Date"
+  }
+
+  dimension_group: metrics__datetime__bookmarks_sync_finished_at {
+    sql: ${TABLE}.metrics.datetime.bookmarks_sync_finished_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Bookmarks Sync Finished At"
+    description: "Records when the bookmark sync finished.
+"
+  }
+
+  dimension_group: metrics__datetime__bookmarks_sync_started_at {
+    sql: ${TABLE}.metrics.datetime.bookmarks_sync_started_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Bookmarks Sync Started At"
+    description: "Records when the bookmark sync started.
+"
   }
 
   dimension_group: ping_info__parsed_end {

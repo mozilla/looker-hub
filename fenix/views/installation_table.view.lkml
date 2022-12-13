@@ -300,15 +300,11 @@ view: installation_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__datetime__installation_timestamp {
-    sql: ${TABLE}.metrics.datetime.installation_timestamp ;;
+  dimension: metrics__datetime__raw_installation_timestamp {
+    sql: ${TABLE}.metrics.datetime.raw_installation_timestamp ;;
     type: string
     group_label: "Metrics Datetime"
-    group_item_label: "Installation Timestamp"
-    description: "The Glean generated date and time of the installation. This is
-unique per app install, though the rest of the data in this
-ping is from Adjust and will remain static across installs.
-"
+    group_item_label: "Raw Installation Timestamp"
   }
 
   dimension: metrics__jwe {
@@ -507,6 +503,25 @@ ping is from Adjust and will remain static across installs.
       year,
     ]
     label: "Metadata Header: Parsed Date"
+  }
+
+  dimension_group: metrics__datetime__installation {
+    sql: ${TABLE}.metrics.datetime.installation_timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Installation Timestamp"
+    description: "The Glean generated date and time of the installation. This is
+unique per app install, though the rest of the data in this
+ping is from Adjust and will remain static across installs.
+"
   }
 
   dimension_group: ping_info__parsed_end {
