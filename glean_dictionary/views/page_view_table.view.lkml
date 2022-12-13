@@ -300,13 +300,11 @@ view: page_view_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__datetime__page_loaded {
-    sql: ${TABLE}.metrics.datetime.page_loaded ;;
+  dimension: metrics__datetime__raw_page_loaded {
+    sql: ${TABLE}.metrics.datetime.raw_page_loaded ;;
     type: string
     group_label: "Metrics Datetime"
-    group_item_label: "Page Loaded"
-    description: "The time the page was loaded.
-"
+    group_item_label: "Raw Page Loaded"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -440,6 +438,23 @@ Query arguments will be stripped before recording.
       year,
     ]
     label: "Metadata Header: Parsed Date"
+  }
+
+  dimension_group: metrics__datetime__page_loaded {
+    sql: ${TABLE}.metrics.datetime.page_loaded ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Page Loaded"
+    description: "The time the page was loaded.
+"
   }
 
   dimension_group: ping_info__parsed_end {

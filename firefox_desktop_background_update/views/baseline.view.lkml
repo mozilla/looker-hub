@@ -120,7 +120,7 @@ The labels are the `category.name` identifier of the metric.
     label: "Glean Validation First Run Hour"
     hidden: yes
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
-    type: string
+    type: time
     group_label: "Glean Validation"
     group_item_label: "First Run Hour"
 

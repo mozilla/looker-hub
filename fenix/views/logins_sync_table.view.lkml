@@ -309,22 +309,18 @@ view: logins_sync_table {
 "
   }
 
-  dimension: metrics__datetime__logins_sync_finished_at {
-    sql: ${TABLE}.metrics.datetime.logins_sync_finished_at ;;
+  dimension: metrics__datetime__raw_logins_sync_finished_at {
+    sql: ${TABLE}.metrics.datetime.raw_logins_sync_finished_at ;;
     type: string
     group_label: "Metrics Datetime"
-    group_item_label: "Logins Sync Finished At"
-    description: "Records when the passwords sync finished. This includes the time to download, apply, and upload all records.
-"
+    group_item_label: "Raw Logins Sync Finished At"
   }
 
-  dimension: metrics__datetime__logins_sync_started_at {
-    sql: ${TABLE}.metrics.datetime.logins_sync_started_at ;;
+  dimension: metrics__datetime__raw_logins_sync_started_at {
+    sql: ${TABLE}.metrics.datetime.raw_logins_sync_started_at ;;
     type: string
     group_label: "Metrics Datetime"
-    group_item_label: "Logins Sync Started At"
-    description: "Records when the passwords sync started.
-"
+    group_item_label: "Raw Logins Sync Started At"
   }
 
   dimension: metrics__jwe {
@@ -506,6 +502,40 @@ The labels are the `category.name` identifier of the metric.
       year,
     ]
     label: "Metadata Header: Parsed Date"
+  }
+
+  dimension_group: metrics__datetime__logins_sync_finished_at {
+    sql: ${TABLE}.metrics.datetime.logins_sync_finished_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Logins Sync Finished At"
+    description: "Records when the passwords sync finished. This includes the time to download, apply, and upload all records.
+"
+  }
+
+  dimension_group: metrics__datetime__logins_sync_started_at {
+    sql: ${TABLE}.metrics.datetime.logins_sync_started_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Logins Sync Started At"
+    description: "Records when the passwords sync started.
+"
   }
 
   dimension_group: ping_info__parsed_end {
