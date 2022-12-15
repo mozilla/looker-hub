@@ -36,6 +36,11 @@ view: subscriptions {
     type: string
   }
 
+  dimension: current_months_since_original_subscription_start {
+    sql: ${TABLE}.current_months_since_original_subscription_start ;;
+    type: number
+  }
+
   dimension: current_months_since_subscription_start {
     sql: ${TABLE}.current_months_since_subscription_start ;;
     type: number
@@ -99,6 +104,11 @@ view: subscriptions {
   dimension: original_subscription_id {
     sql: ${TABLE}.original_subscription_id ;;
     type: string
+  }
+
+  dimension: original_subscription_months_retained {
+    sql: ${TABLE}.original_subscription_months_retained ;;
+    type: number
   }
 
   dimension: plan_amount {
@@ -297,6 +307,20 @@ view: subscriptions {
 
   dimension_group: event {
     sql: ${TABLE}.event_timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
+  dimension_group: original_subscription_start {
+    sql: ${TABLE}.original_subscription_start_date ;;
     type: time
     timeframes: [
       raw,
