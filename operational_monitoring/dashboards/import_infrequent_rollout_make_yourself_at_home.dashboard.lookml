@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Oom Crashes
-    name: Oom Crashes_sum
+  - title: Startup Crashes
+    name: Startup Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,10 +26,44 @@
       import_infrequent_rollout_make_yourself_at_home.branch
     ]
     filters:
-      import_infrequent_rollout_make_yourself_at_home.metric: 'oom_crashes'
+      import_infrequent_rollout_make_yourself_at_home.metric: 'startup_crashes'
       import_infrequent_rollout_make_yourself_at_home.statistic: sum
     row: 0
     col: 0
+    width: 12
+    height: 8
+    field_x: import_infrequent_rollout_make_yourself_at_home.submission_date
+    field_y: import_infrequent_rollout_make_yourself_at_home.point
+    log_scale: false
+    ci_lower: import_infrequent_rollout_make_yourself_at_home.lower
+    ci_upper: import_infrequent_rollout_make_yourself_at_home.upper
+    show_grid: true
+    listen:
+      Date: import_infrequent_rollout_make_yourself_at_home.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Shutdown Hangs
+    name: Shutdown Hangs_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: import_infrequent_rollout_make_yourself_at_home
+    type: looker_line
+    fields: [
+      import_infrequent_rollout_make_yourself_at_home.submission_date,
+      import_infrequent_rollout_make_yourself_at_home.branch,
+      import_infrequent_rollout_make_yourself_at_home.point
+    ]
+    pivots: [
+      import_infrequent_rollout_make_yourself_at_home.branch
+    ]
+    filters:
+      import_infrequent_rollout_make_yourself_at_home.metric: 'shutdown_hangs'
+      import_infrequent_rollout_make_yourself_at_home.statistic: sum
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: import_infrequent_rollout_make_yourself_at_home.submission_date
@@ -62,8 +96,76 @@
     filters:
       import_infrequent_rollout_make_yourself_at_home.metric: 'content_crashes'
       import_infrequent_rollout_make_yourself_at_home.statistic: sum
-    row: 0
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: import_infrequent_rollout_make_yourself_at_home.submission_date
+    field_y: import_infrequent_rollout_make_yourself_at_home.point
+    log_scale: false
+    ci_lower: import_infrequent_rollout_make_yourself_at_home.lower
+    ci_upper: import_infrequent_rollout_make_yourself_at_home.upper
+    show_grid: true
+    listen:
+      Date: import_infrequent_rollout_make_yourself_at_home.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Oom Crashes
+    name: Oom Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: import_infrequent_rollout_make_yourself_at_home
+    type: looker_line
+    fields: [
+      import_infrequent_rollout_make_yourself_at_home.submission_date,
+      import_infrequent_rollout_make_yourself_at_home.branch,
+      import_infrequent_rollout_make_yourself_at_home.point
+    ]
+    pivots: [
+      import_infrequent_rollout_make_yourself_at_home.branch
+    ]
+    filters:
+      import_infrequent_rollout_make_yourself_at_home.metric: 'oom_crashes'
+      import_infrequent_rollout_make_yourself_at_home.statistic: sum
+    row: 10
     col: 12
+    width: 12
+    height: 8
+    field_x: import_infrequent_rollout_make_yourself_at_home.submission_date
+    field_y: import_infrequent_rollout_make_yourself_at_home.point
+    log_scale: false
+    ci_lower: import_infrequent_rollout_make_yourself_at_home.lower
+    ci_upper: import_infrequent_rollout_make_yourself_at_home.upper
+    show_grid: true
+    listen:
+      Date: import_infrequent_rollout_make_yourself_at_home.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Main Crashes
+    name: Main Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: import_infrequent_rollout_make_yourself_at_home
+    type: looker_line
+    fields: [
+      import_infrequent_rollout_make_yourself_at_home.submission_date,
+      import_infrequent_rollout_make_yourself_at_home.branch,
+      import_infrequent_rollout_make_yourself_at_home.point
+    ]
+    pivots: [
+      import_infrequent_rollout_make_yourself_at_home.branch
+    ]
+    filters:
+      import_infrequent_rollout_make_yourself_at_home.metric: 'main_crashes'
+      import_infrequent_rollout_make_yourself_at_home.statistic: sum
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: import_infrequent_rollout_make_yourself_at_home.submission_date
@@ -98,8 +200,8 @@
     filters:
       import_infrequent_rollout_make_yourself_at_home.metric: 'memory_total'
       import_infrequent_rollout_make_yourself_at_home.statistic: percentile
-    row: 10
-    col: 0
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: import_infrequent_rollout_make_yourself_at_home.submission_date
@@ -111,108 +213,6 @@
     listen:
       Date: import_infrequent_rollout_make_yourself_at_home.submission_date
       Percentile: import_infrequent_rollout_make_yourself_at_home.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Main Crashes
-    name: Main Crashes_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: import_infrequent_rollout_make_yourself_at_home
-    type: looker_line
-    fields: [
-      import_infrequent_rollout_make_yourself_at_home.submission_date,
-      import_infrequent_rollout_make_yourself_at_home.branch,
-      import_infrequent_rollout_make_yourself_at_home.point
-    ]
-    pivots: [
-      import_infrequent_rollout_make_yourself_at_home.branch
-    ]
-    filters:
-      import_infrequent_rollout_make_yourself_at_home.metric: 'main_crashes'
-      import_infrequent_rollout_make_yourself_at_home.statistic: sum
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: import_infrequent_rollout_make_yourself_at_home.submission_date
-    field_y: import_infrequent_rollout_make_yourself_at_home.point
-    log_scale: false
-    ci_lower: import_infrequent_rollout_make_yourself_at_home.lower
-    ci_upper: import_infrequent_rollout_make_yourself_at_home.upper
-    show_grid: true
-    listen:
-      Date: import_infrequent_rollout_make_yourself_at_home.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Startup Crashes
-    name: Startup Crashes_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: import_infrequent_rollout_make_yourself_at_home
-    type: looker_line
-    fields: [
-      import_infrequent_rollout_make_yourself_at_home.submission_date,
-      import_infrequent_rollout_make_yourself_at_home.branch,
-      import_infrequent_rollout_make_yourself_at_home.point
-    ]
-    pivots: [
-      import_infrequent_rollout_make_yourself_at_home.branch
-    ]
-    filters:
-      import_infrequent_rollout_make_yourself_at_home.metric: 'startup_crashes'
-      import_infrequent_rollout_make_yourself_at_home.statistic: sum
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: import_infrequent_rollout_make_yourself_at_home.submission_date
-    field_y: import_infrequent_rollout_make_yourself_at_home.point
-    log_scale: false
-    ci_lower: import_infrequent_rollout_make_yourself_at_home.lower
-    ci_upper: import_infrequent_rollout_make_yourself_at_home.upper
-    show_grid: true
-    listen:
-      Date: import_infrequent_rollout_make_yourself_at_home.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Shutdown Hangs
-    name: Shutdown Hangs_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: import_infrequent_rollout_make_yourself_at_home
-    type: looker_line
-    fields: [
-      import_infrequent_rollout_make_yourself_at_home.submission_date,
-      import_infrequent_rollout_make_yourself_at_home.branch,
-      import_infrequent_rollout_make_yourself_at_home.point
-    ]
-    pivots: [
-      import_infrequent_rollout_make_yourself_at_home.branch
-    ]
-    filters:
-      import_infrequent_rollout_make_yourself_at_home.metric: 'shutdown_hangs'
-      import_infrequent_rollout_make_yourself_at_home.statistic: sum
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: import_infrequent_rollout_make_yourself_at_home.submission_date
-    field_y: import_infrequent_rollout_make_yourself_at_home.point
-    log_scale: false
-    ci_lower: import_infrequent_rollout_make_yourself_at_home.lower
-    ci_upper: import_infrequent_rollout_make_yourself_at_home.upper
-    show_grid: true
-    listen:
-      Date: import_infrequent_rollout_make_yourself_at_home.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

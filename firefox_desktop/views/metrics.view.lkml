@@ -291,7 +291,7 @@ For other engines, this is `other-<extensionName>`.
 
     description: "A path relating to where the search engine was installed/loaded from.
 For example:
-  `[other]addEngineWithDetails:<extension id>` for a WebExtension based
+  `[addon]<extension id>` for a WebExtension based
   engine.
   `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch based
   engine.
@@ -407,7 +407,7 @@ default engine, and hence both versions of these fields will be filled in.
 
     description: "A path relating to where the search engine was installed/loaded from.
 For example:
-  `[other]addEngineWithDetails:<extension id>` for a WebExtension based
+  `[addon]<extension id>` for a WebExtension based
   engine.
   `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch based
   engine.
