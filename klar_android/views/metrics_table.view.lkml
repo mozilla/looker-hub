@@ -631,6 +631,15 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__pdfjs_used {
+    sql: ${TABLE}.metrics.counter.pdfjs_used ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Pdfjs Used"
+    description: "How many times PDF Viewer was used.
+"
+  }
+
   dimension: metrics__counter__power_cpu_time_bogus_values {
     sql: ${TABLE}.metrics.counter.power_cpu_time_bogus_values ;;
     type: number
@@ -673,6 +682,24 @@ This does not include deletion-request pings.
     group_label: "Metrics Counter"
     group_item_label: "Power Total Thread Wakeups"
     description: "How many times threads woke up and could have woken up a CPU core.
+"
+  }
+
+  dimension: metrics__counter__rtcrtpsender_count {
+    sql: ${TABLE}.metrics.counter.rtcrtpsender_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Rtcrtpsender Count"
+    description: "The number of RTCRtpSenders created.
+"
+  }
+
+  dimension: metrics__counter__rtcrtpsender_count_setparameters_compat {
+    sql: ${TABLE}.metrics.counter.rtcrtpsender_count_setparameters_compat ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Rtcrtpsender Count Setparameters Compat"
+    description: "The number of RTCRtpSenders created that use the compatibility mode for setParameters.
 "
   }
 
@@ -724,6 +751,25 @@ a website from a shortcut in the home screen.
     description: "A counter that indicates how many times a user has opened
 the tracking protection settings panel from the toolbar.
 "
+  }
+
+  dimension: metrics__custom_distribution__pdfjs_time_to_view__count {
+    sql: ${TABLE}.metrics.custom_distribution.pdfjs_time_to_view.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Pdfjs Time To View"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__pdfjs_time_to_view__sum {
+    sql: ${TABLE}.metrics.custom_distribution.pdfjs_time_to_view.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Pdfjs Time To View"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__pdfjs_time_to_view__values {
+    sql: ${TABLE}.metrics.custom_distribution.pdfjs_time_to_view.values ;;
+    hidden: yes
   }
 
   dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__count {
@@ -1016,6 +1062,20 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_buttons {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_buttons ;;
+    hidden: yes
+    description: "Counts the number of times some actions are executed in the PDF viewer.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing ;;
+    hidden: yes
+    description: "Counts the number of times some PDF editing features are used.
+"
+  }
+
   dimension: metrics__labeled_counter__perf_startup_startup_type {
     sql: ${TABLE}.metrics.labeled_counter.perf_startup_startup_type ;;
     hidden: yes
@@ -1241,6 +1301,188 @@ It also indicates the screen it was removed from, home or browser.
     description: "The number of shortcuts the user has on home screen,
 0, 1, 2, 3 or 4 (maximum)
 "
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_length_changed.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail Length Changed"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_length_changed.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail Length Changed"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_encodings__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_encodings.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail No Encodings"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_encodings__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_encodings.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail No Encodings"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_getparameters__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_getparameters.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail No Getparameters"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_getparameters__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_getparameters.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail No Getparameters"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_transactionid__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_transactionid.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail No Transactionid"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_transactionid__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_transactionid.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail No Transactionid"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_other__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_other.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail Other"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_other__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_other.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail Other"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_rid_changed__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_rid_changed.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail Rid Changed"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_rid_changed__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_rid_changed.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail Rid Changed"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_stale_transactionid__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_stale_transactionid.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail Stale Transactionid"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_stale_transactionid__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_stale_transactionid.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail Stale Transactionid"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_length_changed__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_length_changed.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn Length Changed"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_length_changed__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_length_changed.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn Length Changed"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_getparameters__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_getparameters.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn No Getparameters"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_getparameters__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_getparameters.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn No Getparameters"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_transactionid__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_transactionid.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn No Transactionid"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_transactionid__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_transactionid.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn No Transactionid"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_rid_changed__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_rid_changed.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn Rid Changed"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_rid_changed__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_rid_changed.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn Rid Changed"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_stale_transactionid__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_stale_transactionid.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn Stale Transactionid"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_stale_transactionid__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_stale_transactionid.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn Stale Transactionid"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_used_sendencodings__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_used_sendencodings.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Used Sendencodings"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_used_sendencodings__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_used_sendencodings.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Used Sendencodings"
+    group_item_label: "Numerator"
   }
 
   dimension: metrics__string__browser_default_search_engine {
@@ -2231,6 +2473,15 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__uuid__legacy_ids_client_id {
+    sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Legacy Ids Client Id"
+    description: "Sets the legacy client ID as part of the deletion-reqest and other pings.
+"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -2417,6 +2668,18 @@ view: metrics_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__pdfjs_time_to_view__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

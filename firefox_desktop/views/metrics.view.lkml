@@ -1413,6 +1413,510 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__rtcrtpsender_count {
+    label: "Rtcrtpsender Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.rtcrtpsender_count ;;
+    type: number
+    group_label: "Rtcrtpsender"
+    group_item_label: "Count"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of RTCRtpSenders created.
+"
+  }
+
+  dimension: metrics__counter__rtcrtpsender_count_setparameters_compat {
+    label: "Rtcrtpsender Count Setparameters Compat"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.rtcrtpsender_count_setparameters_compat ;;
+    type: number
+    group_label: "Rtcrtpsender"
+    group_item_label: "Count Setparameters Compat"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Count Setparameters Compat"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_count_setparameters_compat"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of RTCRtpSenders created that use the compatibility mode for setParameters.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__numerator {
+    label: "Rtcrtpsender Setparameters Fail Length Changed Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_length_changed.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail Length Changed Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail Length Changed Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_fail_length_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that attempted to change the number of encodings.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__denominator {
+    label: "Rtcrtpsender Setparameters Fail Length Changed Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_length_changed.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail Length Changed Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail Length Changed Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_fail_length_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that attempted to change the number of encodings.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_encodings__numerator {
+    label: "Rtcrtpsender Setparameters Fail No Encodings Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_encodings.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail No Encodings Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail No Encodings Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_fail_no_encodings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have thrown an error at least once about a setParameters call that had no encodings (we do not measure this against the general population of RTCRtpSenders, since without the compat mode this failure is never observed, because it fails the length change check).
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_encodings__denominator {
+    label: "Rtcrtpsender Setparameters Fail No Encodings Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_encodings.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail No Encodings Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail No Encodings Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_fail_no_encodings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have thrown an error at least once about a setParameters call that had no encodings (we do not measure this against the general population of RTCRtpSenders, since without the compat mode this failure is never observed, because it fails the length change check).
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_getparameters__numerator {
+    label: "Rtcrtpsender Setparameters Fail No Getparameters Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_getparameters.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail No Getparameters Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail No Getparameters Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_fail_no_getparameters"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call because [[LastReturnedParameters]] was not set. (ie; there was not a recent enough call to getParameters)
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_getparameters__denominator {
+    label: "Rtcrtpsender Setparameters Fail No Getparameters Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_getparameters.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail No Getparameters Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail No Getparameters Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_fail_no_getparameters"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call because [[LastReturnedParameters]] was not set. (ie; there was not a recent enough call to getParameters)
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_transactionid__numerator {
+    label: "Rtcrtpsender Setparameters Fail No Transactionid Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_transactionid.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail No Transactionid Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail No Transactionid Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_fail_no_transactionid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that did not set the transactionId field.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_transactionid__denominator {
+    label: "Rtcrtpsender Setparameters Fail No Transactionid Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_transactionid.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail No Transactionid Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail No Transactionid Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_fail_no_transactionid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that did not set the transactionId field.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_other__numerator {
+    label: "Rtcrtpsender Setparameters Fail Other Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_other.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail Other Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail Other Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_fail_other"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that had no encodings.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_other__denominator {
+    label: "Rtcrtpsender Setparameters Fail Other Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_other.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail Other Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail Other Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_fail_other"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that had no encodings.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_rid_changed__numerator {
+    label: "Rtcrtpsender Setparameters Fail Rid Changed Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_rid_changed.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail Rid Changed Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail Rid Changed Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_fail_rid_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that attempted to change the rid on an encoding (note that we only check this if the encoding count did not change, see fail_length_changed).
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_rid_changed__denominator {
+    label: "Rtcrtpsender Setparameters Fail Rid Changed Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_rid_changed.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail Rid Changed Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail Rid Changed Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_fail_rid_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that attempted to change the rid on an encoding (note that we only check this if the encoding count did not change, see fail_length_changed).
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_stale_transactionid__numerator {
+    label: "Rtcrtpsender Setparameters Fail Stale Transactionid Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_stale_transactionid.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail Stale Transactionid Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail Stale Transactionid Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_fail_stale_transactionid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that used a stale transaction id.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_stale_transactionid__denominator {
+    label: "Rtcrtpsender Setparameters Fail Stale Transactionid Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_stale_transactionid.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail Stale Transactionid Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail Stale Transactionid Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_fail_stale_transactionid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that used a stale transaction id.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_length_changed__numerator {
+    label: "Rtcrtpsender Setparameters Warn Length Changed Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_length_changed.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn Length Changed Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn Length Changed Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_warn_length_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call that attempted to change the number of encodings.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_length_changed__denominator {
+    label: "Rtcrtpsender Setparameters Warn Length Changed Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_length_changed.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn Length Changed Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn Length Changed Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_warn_length_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call that attempted to change the number of encodings.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_getparameters__numerator {
+    label: "Rtcrtpsender Setparameters Warn No Getparameters Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_getparameters.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn No Getparameters Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn No Getparameters Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_warn_no_getparameters"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call because [[LastReturnedParameters]] was not set.  (ie; there was not a recent enough call to getParameters)
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_getparameters__denominator {
+    label: "Rtcrtpsender Setparameters Warn No Getparameters Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_getparameters.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn No Getparameters Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn No Getparameters Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_warn_no_getparameters"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call because [[LastReturnedParameters]] was not set.  (ie; there was not a recent enough call to getParameters)
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_transactionid__numerator {
+    label: "Rtcrtpsender Setparameters Warn No Transactionid Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_transactionid.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn No Transactionid Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn No Transactionid Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_warn_no_transactionid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call that did not set the transactionId field.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_transactionid__denominator {
+    label: "Rtcrtpsender Setparameters Warn No Transactionid Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_transactionid.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn No Transactionid Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn No Transactionid Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_warn_no_transactionid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call that did not set the transactionId field.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_rid_changed__numerator {
+    label: "Rtcrtpsender Setparameters Warn Rid Changed Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_rid_changed.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn Rid Changed Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn Rid Changed Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_warn_rid_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call that attempted to change the rid on an encoding (note that we only check this if the encoding count did not change, see warn_length_changed).
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_rid_changed__denominator {
+    label: "Rtcrtpsender Setparameters Warn Rid Changed Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_rid_changed.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn Rid Changed Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn Rid Changed Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_warn_rid_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call that attempted to change the rid on an encoding (note that we only check this if the encoding count did not change, see warn_length_changed).
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_stale_transactionid__numerator {
+    label: "Rtcrtpsender Setparameters Warn Stale Transactionid Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_stale_transactionid.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn Stale Transactionid Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn Stale Transactionid Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_warn_stale_transactionid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call that used a stale transaction id.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_stale_transactionid__denominator {
+    label: "Rtcrtpsender Setparameters Warn Stale Transactionid Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_stale_transactionid.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn Stale Transactionid Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn Stale Transactionid Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_setparameters_warn_stale_transactionid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call that used a stale transaction id.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_used_sendencodings__numerator {
+    label: "Rtcrtpsender Used Sendencodings Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_used_sendencodings.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender"
+    group_item_label: "Used Sendencodings Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Used Sendencodings Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_used_sendencodings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that were created by an addTransceivers call that was passed a sendEncodings.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_used_sendencodings__denominator {
+    label: "Rtcrtpsender Used Sendencodings Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_used_sendencodings.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender"
+    group_item_label: "Used Sendencodings Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Used Sendencodings Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_used_sendencodings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that were created by an addTransceivers call that was passed a sendEncodings.
+"
+  }
+
   dimension: metrics__timing_distribution__wr_framebuild_time__sum {
     label: "Wr Framebuild Time Sum"
     hidden: no
@@ -2743,6 +3247,56 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Power Total Thread Wakeups"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_total_thread_wakeups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: rtcrtpsender_count {
+    type: sum
+    sql: ${metrics__counter__rtcrtpsender_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: rtcrtpsender_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__rtcrtpsender_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: rtcrtpsender_count_setparameters_compat {
+    type: sum
+    sql: ${metrics__counter__rtcrtpsender_count_setparameters_compat} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Count Setparameters Compat"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_count_setparameters_compat"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: rtcrtpsender_count_setparameters_compat_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__rtcrtpsender_count_setparameters_compat: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Count Setparameters Compat"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/rtcrtpsender_count_setparameters_compat"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

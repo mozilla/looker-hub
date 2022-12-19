@@ -352,6 +352,15 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
   }
 
+  dimension: metrics__uuid__legacy_ids_client_id {
+    sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Legacy Ids Client Id"
+    description: "Sets the legacy client ID as part of the deletion-reqest and other pings.
+"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
