@@ -184,7 +184,7 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 
   dimension: metrics__custom_distribution__pdfjs_time_to_view__sum {
     label: "Pdfjs Time To View Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.pdfjs_time_to_view.sum ;;
     type: number
     group_label: "Pdfjs"
@@ -202,7 +202,7 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 
   dimension: metrics__counter__pdfjs_used {
     label: "Pdfjs Used"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.pdfjs_used ;;
     type: number
     group_label: "Pdfjs"
@@ -4003,7 +4003,7 @@ view: metrics__metrics__labeled_counter__pdfjs_buttons {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_buttons
     suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_buttons.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -4015,13 +4015,13 @@ view: metrics__metrics__labeled_counter__pdfjs_buttons {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -4046,7 +4046,7 @@ view: metrics__metrics__labeled_counter__pdfjs_editing {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing
     suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -4058,13 +4058,13 @@ view: metrics__metrics__labeled_counter__pdfjs_editing {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 

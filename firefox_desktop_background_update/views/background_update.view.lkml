@@ -79,6 +79,97 @@ It is possible for a Firefox installation to not have a default profile, but in 
 "
   }
 
+  dimension: metrics__quantity__background_update_targeting_env_firefox_version {
+    label: "Background Update Targeting Env Firefox Version"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.background_update_targeting_env_firefox_version ;;
+    type: number
+    group_label: "Background Update"
+    group_item_label: "Targeting Env Firefox Version"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Targeting Env Firefox Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_targeting_env_firefox_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The `environment.firefoxVersion` of the default profile's serialized targeting snapshot.  At the time of writing, this version is an integer representing the Firefox major version, e.g., `109`.
+"
+  }
+
+  dimension: metrics__datetime__background_update_targeting_env_profile_age {
+    label: "Background Update Targeting Env Profile Age"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.background_update_targeting_env_profile_age ;;
+    type: time
+    group_label: "Background Update"
+    group_item_label: "Targeting Env Profile Age"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Targeting Env Profile Age"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_targeting_env_profile_age"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The `environment.profileAgeCreated` of the default profile's serialized targeting snapshot.
+"
+  }
+
+  dimension: metrics__boolean__background_update_targeting_exception {
+    label: "Background Update Targeting Exception"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.background_update_targeting_exception ;;
+    type: yesno
+    group_label: "Background Update"
+    group_item_label: "Targeting Exception"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Targeting Exception"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_targeting_exception"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the default profile had a targeting snapshot serialized to disk, but an exception was thrown reading it.
+"
+  }
+
+  dimension: metrics__boolean__background_update_targeting_exists {
+    label: "Background Update Targeting Exists"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.background_update_targeting_exists ;;
+    type: yesno
+    group_label: "Background Update"
+    group_item_label: "Targeting Exists"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Targeting Exists"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_targeting_exists"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the default profile had a targeting snapshot serialized to disk, and there was no exception thrown reading it.
+"
+  }
+
+  dimension: metrics__quantity__background_update_targeting_version {
+    label: "Background Update Targeting Version"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.background_update_targeting_version ;;
+    type: number
+    group_label: "Background Update"
+    group_item_label: "Targeting Version"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Targeting Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_targeting_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If the default profile had a targeting snapshot serialized to disk, the `version` of the snapshot.
+This version number does not have a physical unit: it's only useful to compare between versions.
+"
+  }
+
   dimension: metrics__boolean__update_auto_download {
     label: "Update Auto Download"
     hidden: no

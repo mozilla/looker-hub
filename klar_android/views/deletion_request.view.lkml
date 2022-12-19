@@ -19,7 +19,7 @@ view: deletion_request {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Sets the legacy client ID as part of the deletion-reqest ping.
+    description: "Sets the legacy client ID as part of the deletion-reqest and other pings.
 "
   }
 

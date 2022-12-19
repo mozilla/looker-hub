@@ -524,6 +524,17 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__uuid__background_update_client_id {
+    sql: ${TABLE}.metrics.uuid.background_update_client_id ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Background Update Client Id"
+    description: "The legacy Telemetry client ID of this installation's default profile.
+The default profile is as determined by the Profile Service, namely `nsIToolkitProfileService.defaultProfile`.  The majority of users have only one Firefox installation and only one profile, so the default profile is their regular browsing profile.
+It is possible for a Firefox installation to not have a default profile, but in such cases the background update task will abort before sending any telemetry; therefore, the legacy Telemetry client ID should always be present.
+"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string

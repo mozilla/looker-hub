@@ -318,6 +318,24 @@ view: background_update_table {
 "
   }
 
+  dimension: metrics__boolean__background_update_targeting_exception {
+    sql: ${TABLE}.metrics.boolean.background_update_targeting_exception ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Update Targeting Exception"
+    description: "True if the default profile had a targeting snapshot serialized to disk, but an exception was thrown reading it.
+"
+  }
+
+  dimension: metrics__boolean__background_update_targeting_exists {
+    sql: ${TABLE}.metrics.boolean.background_update_targeting_exists ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Update Targeting Exists"
+    description: "True if the default profile had a targeting snapshot serialized to disk, and there was no exception thrown reading it.
+"
+  }
+
   dimension: metrics__boolean__update_auto_download {
     sql: ${TABLE}.metrics.boolean.update_auto_download ;;
     type: yesno
@@ -390,6 +408,20 @@ view: background_update_table {
 "
   }
 
+  dimension: metrics__datetime__raw_background_update_targeting_env_current_date {
+    sql: ${TABLE}.metrics.datetime.raw_background_update_targeting_env_current_date ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Background Update Targeting Env Current Date"
+  }
+
+  dimension: metrics__datetime__raw_background_update_targeting_env_profile_age {
+    sql: ${TABLE}.metrics.datetime.raw_background_update_targeting_env_profile_age ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Background Update Targeting Env Profile Age"
+  }
+
   dimension: metrics__jwe {
     sql: ${TABLE}.metrics.jwe ;;
     hidden: yes
@@ -430,6 +462,25 @@ The labels are the `category.name` identifier of the metric.
   dimension: metrics__labeled_rate {
     sql: ${TABLE}.metrics.labeled_rate ;;
     hidden: yes
+  }
+
+  dimension: metrics__quantity__background_update_targeting_env_firefox_version {
+    sql: ${TABLE}.metrics.quantity.background_update_targeting_env_firefox_version ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Background Update Targeting Env Firefox Version"
+    description: "The `environment.firefoxVersion` of the default profile's serialized targeting snapshot.  At the time of writing, this version is an integer representing the Firefox major version, e.g., `109`.
+"
+  }
+
+  dimension: metrics__quantity__background_update_targeting_version {
+    sql: ${TABLE}.metrics.quantity.background_update_targeting_version ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Background Update Targeting Version"
+    description: "If the default profile had a targeting snapshot serialized to disk, the `version` of the snapshot.
+This version number does not have a physical unit: it's only useful to compare between versions.
+"
   }
 
   dimension: metrics__string__background_update_final_state {
@@ -475,7 +526,9 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metrics Uuid"
     group_item_label: "Background Update Client Id"
-    description: "The Telemetry client ID of the default profile.
+    description: "The legacy Telemetry client ID of this installation's default profile.
+The default profile is as determined by the Profile Service, namely `nsIToolkitProfileService.defaultProfile`.  The majority of users have only one Firefox installation and only one profile, so the default profile is their regular browsing profile.
+It is possible for a Firefox installation to not have a default profile, but in such cases the background update task will abort before sending any telemetry; therefore, the legacy Telemetry client ID should always be present.
 "
   }
 
@@ -567,6 +620,40 @@ The labels are the `category.name` identifier of the metric.
       year,
     ]
     label: "Metadata Header: Parsed Date"
+  }
+
+  dimension_group: metrics__datetime__background_update_targeting_env_current {
+    sql: ${TABLE}.metrics.datetime.background_update_targeting_env_current_date ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Background Update Targeting Env Current Date"
+    description: "The `environment.currentDate` of the default profile's serialized targeting snapshot.
+"
+  }
+
+  dimension_group: metrics__datetime__background_update_targeting_env_profile_age {
+    sql: ${TABLE}.metrics.datetime.background_update_targeting_env_profile_age ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Background Update Targeting Env Profile Age"
+    description: "The `environment.profileAgeCreated` of the default profile's serialized targeting snapshot.
+"
   }
 
   dimension_group: ping_info__parsed_end {
