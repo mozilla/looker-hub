@@ -4,59 +4,23 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/firefox_desktop/views/events.view.lkml"
+include: "/looker-hub/firefox_desktop/views/glean_events.view.lkml"
 
 explore: glean_event_counts {
-  sql_always_where: ${events.submission_date} >= '2010-01-01' ;;
-  view_name: events
+  sql_always_where: ${glean_events.submission_date} >= '2010-01-01' ;;
+  view_name: glean_events
   description: "Event counts over time."
 
-  join: glean_events_table__events {
-    view_label: "Events  Events"
+  join: events_unnested_table__event_extra {
+    view_label: "Glean Events  Event Extra"
     relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${events.events}) AS glean_events_table__events ;;
+    sql: LEFT JOIN UNNEST(${glean_events.event_extra}) AS events_unnested_table__event_extra ;;
   }
 
-  join: glean_events_table__events__extra {
-    view_label: "Events  Extra"
+  join: events_unnested_table__ping_info__experiments {
+    view_label: "Glean Events  Ping Info  Experiments"
     relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${events.extra}) AS glean_events_table__events__extra ;;
-  }
-
-  join: glean_events_table__metrics__jwe {
-    view_label: "Events  Metrics  Jwe"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${events.metrics__jwe}) AS glean_events_table__metrics__jwe ;;
-  }
-
-  join: glean_events_table__metrics__labeled_rate {
-    view_label: "Events  Metrics  Labeled Rate"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${events.metrics__labeled_rate}) AS glean_events_table__metrics__labeled_rate ;;
-  }
-
-  join: glean_events_table__metrics__labeled_rate__value {
-    view_label: "Events  Value"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${events.value}) AS glean_events_table__metrics__labeled_rate__value ;;
-  }
-
-  join: glean_events_table__metrics__text {
-    view_label: "Events  Metrics  Text"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${events.metrics__text}) AS glean_events_table__metrics__text ;;
-  }
-
-  join: glean_events_table__metrics__url {
-    view_label: "Events  Metrics  Url"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${events.metrics__url}) AS glean_events_table__metrics__url ;;
-  }
-
-  join: glean_events_table__ping_info__experiments {
-    view_label: "Events  Ping Info  Experiments"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${events.ping_info__experiments}) AS glean_events_table__ping_info__experiments ;;
+    sql: LEFT JOIN UNNEST(${glean_events.ping_info__experiments}) AS events_unnested_table__ping_info__experiments ;;
   }
 
   always_filter: {

@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Startup Crashes
-    name: Startup Crashes_sum
+  - title: Content Crashes
+    name: Content Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,77 +26,9 @@
       bug_1796197_rollout_crlite_release_107_108.branch
     ]
     filters:
-      bug_1796197_rollout_crlite_release_107_108.metric: 'startup_crashes'
+      bug_1796197_rollout_crlite_release_107_108.metric: 'content_crashes'
       bug_1796197_rollout_crlite_release_107_108.statistic: sum
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: bug_1796197_rollout_crlite_release_107_108.submission_date
-    field_y: bug_1796197_rollout_crlite_release_107_108.point
-    log_scale: false
-    ci_lower: bug_1796197_rollout_crlite_release_107_108.lower
-    ci_upper: bug_1796197_rollout_crlite_release_107_108.upper
-    show_grid: true
-    listen:
-      Date: bug_1796197_rollout_crlite_release_107_108.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Shutdown Hangs
-    name: Shutdown Hangs_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: bug_1796197_rollout_crlite_release_107_108
-    type: looker_line
-    fields: [
-      bug_1796197_rollout_crlite_release_107_108.submission_date,
-      bug_1796197_rollout_crlite_release_107_108.branch,
-      bug_1796197_rollout_crlite_release_107_108.point
-    ]
-    pivots: [
-      bug_1796197_rollout_crlite_release_107_108.branch
-    ]
-    filters:
-      bug_1796197_rollout_crlite_release_107_108.metric: 'shutdown_hangs'
-      bug_1796197_rollout_crlite_release_107_108.statistic: sum
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: bug_1796197_rollout_crlite_release_107_108.submission_date
-    field_y: bug_1796197_rollout_crlite_release_107_108.point
-    log_scale: false
-    ci_lower: bug_1796197_rollout_crlite_release_107_108.lower
-    ci_upper: bug_1796197_rollout_crlite_release_107_108.upper
-    show_grid: true
-    listen:
-      Date: bug_1796197_rollout_crlite_release_107_108.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Oom Crashes
-    name: Oom Crashes_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: bug_1796197_rollout_crlite_release_107_108
-    type: looker_line
-    fields: [
-      bug_1796197_rollout_crlite_release_107_108.submission_date,
-      bug_1796197_rollout_crlite_release_107_108.branch,
-      bug_1796197_rollout_crlite_release_107_108.point
-    ]
-    pivots: [
-      bug_1796197_rollout_crlite_release_107_108.branch
-    ]
-    filters:
-      bug_1796197_rollout_crlite_release_107_108.metric: 'oom_crashes'
-      bug_1796197_rollout_crlite_release_107_108.statistic: sum
-    row: 10
     col: 0
     width: 12
     height: 8
@@ -132,7 +64,7 @@
     filters:
       bug_1796197_rollout_crlite_release_107_108.metric: 'memory_total'
       bug_1796197_rollout_crlite_release_107_108.statistic: percentile
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -145,6 +77,40 @@
     listen:
       Date: bug_1796197_rollout_crlite_release_107_108.submission_date
       Percentile: bug_1796197_rollout_crlite_release_107_108.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Shutdown Hangs
+    name: Shutdown Hangs_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: bug_1796197_rollout_crlite_release_107_108
+    type: looker_line
+    fields: [
+      bug_1796197_rollout_crlite_release_107_108.submission_date,
+      bug_1796197_rollout_crlite_release_107_108.branch,
+      bug_1796197_rollout_crlite_release_107_108.point
+    ]
+    pivots: [
+      bug_1796197_rollout_crlite_release_107_108.branch
+    ]
+    filters:
+      bug_1796197_rollout_crlite_release_107_108.metric: 'shutdown_hangs'
+      bug_1796197_rollout_crlite_release_107_108.statistic: sum
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: bug_1796197_rollout_crlite_release_107_108.submission_date
+    field_y: bug_1796197_rollout_crlite_release_107_108.point
+    log_scale: false
+    ci_lower: bug_1796197_rollout_crlite_release_107_108.lower
+    ci_upper: bug_1796197_rollout_crlite_release_107_108.upper
+    show_grid: true
+    listen:
+      Date: bug_1796197_rollout_crlite_release_107_108.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -167,6 +133,40 @@
     filters:
       bug_1796197_rollout_crlite_release_107_108.metric: 'main_crashes'
       bug_1796197_rollout_crlite_release_107_108.statistic: sum
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: bug_1796197_rollout_crlite_release_107_108.submission_date
+    field_y: bug_1796197_rollout_crlite_release_107_108.point
+    log_scale: false
+    ci_lower: bug_1796197_rollout_crlite_release_107_108.lower
+    ci_upper: bug_1796197_rollout_crlite_release_107_108.upper
+    show_grid: true
+    listen:
+      Date: bug_1796197_rollout_crlite_release_107_108.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Startup Crashes
+    name: Startup Crashes_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: bug_1796197_rollout_crlite_release_107_108
+    type: looker_line
+    fields: [
+      bug_1796197_rollout_crlite_release_107_108.submission_date,
+      bug_1796197_rollout_crlite_release_107_108.branch,
+      bug_1796197_rollout_crlite_release_107_108.point
+    ]
+    pivots: [
+      bug_1796197_rollout_crlite_release_107_108.branch
+    ]
+    filters:
+      bug_1796197_rollout_crlite_release_107_108.metric: 'startup_crashes'
+      bug_1796197_rollout_crlite_release_107_108.statistic: sum
     row: 20
     col: 0
     width: 12
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Content Crashes
-    name: Content Crashes_sum
+  - title: Oom Crashes
+    name: Oom Crashes_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -199,7 +199,7 @@
       bug_1796197_rollout_crlite_release_107_108.branch
     ]
     filters:
-      bug_1796197_rollout_crlite_release_107_108.metric: 'content_crashes'
+      bug_1796197_rollout_crlite_release_107_108.metric: 'oom_crashes'
       bug_1796197_rollout_crlite_release_107_108.statistic: sum
     row: 20
     col: 12
