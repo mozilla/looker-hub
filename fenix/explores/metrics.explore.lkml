@@ -289,6 +289,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_eh_link_type}) AS metrics__metrics__labeled_counter__netwerk_eh_link_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_eh_link_type.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__pdfjs_buttons {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_buttons}) AS metrics__metrics__labeled_counter__pdfjs_buttons ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_buttons.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pdfjs_editing {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_editing}) AS metrics__metrics__labeled_counter__pdfjs_editing ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_editing.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__perf_startup_startup_type {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__perf_startup_startup_type}) AS metrics__metrics__labeled_counter__perf_startup_startup_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__perf_startup_startup_type.document_id} ;;
@@ -608,6 +618,14 @@ explore: suggest__metrics__metrics__labeled_counter__netwerk_early_hints {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__pdfjs_buttons {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing {
   hidden: yes
 }
 

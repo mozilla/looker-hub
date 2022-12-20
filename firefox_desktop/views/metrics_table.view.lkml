@@ -560,6 +560,24 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__rtcrtpsender_count {
+    sql: ${TABLE}.metrics.counter.rtcrtpsender_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Rtcrtpsender Count"
+    description: "The number of RTCRtpSenders created.
+"
+  }
+
+  dimension: metrics__counter__rtcrtpsender_count_setparameters_compat {
+    sql: ${TABLE}.metrics.counter.rtcrtpsender_count_setparameters_compat ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Rtcrtpsender Count Setparameters Compat"
+    description: "The number of RTCRtpSenders created that use the compatibility mode for setParameters.
+"
+  }
+
   dimension: metrics__custom_distribution__pdfjs_time_to_view__count {
     sql: ${TABLE}.metrics.custom_distribution.pdfjs_time_to_view.count ;;
     type: number
@@ -1014,6 +1032,188 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_length_changed.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail Length Changed"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_length_changed.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail Length Changed"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_encodings__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_encodings.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail No Encodings"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_encodings__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_encodings.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail No Encodings"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_getparameters__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_getparameters.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail No Getparameters"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_getparameters__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_getparameters.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail No Getparameters"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_transactionid__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_transactionid.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail No Transactionid"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_transactionid__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_transactionid.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail No Transactionid"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_other__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_other.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail Other"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_other__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_other.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail Other"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_rid_changed__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_rid_changed.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail Rid Changed"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_rid_changed__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_rid_changed.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail Rid Changed"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_stale_transactionid__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_stale_transactionid.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail Stale Transactionid"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_stale_transactionid__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_stale_transactionid.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Fail Stale Transactionid"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_length_changed__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_length_changed.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn Length Changed"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_length_changed__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_length_changed.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn Length Changed"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_getparameters__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_getparameters.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn No Getparameters"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_getparameters__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_getparameters.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn No Getparameters"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_transactionid__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_transactionid.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn No Transactionid"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_transactionid__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_transactionid.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn No Transactionid"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_rid_changed__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_rid_changed.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn Rid Changed"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_rid_changed__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_rid_changed.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn Rid Changed"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_stale_transactionid__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_stale_transactionid.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn Stale Transactionid"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_stale_transactionid__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_stale_transactionid.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Setparameters Warn Stale Transactionid"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_used_sendencodings__denominator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_used_sendencodings.denominator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Used Sendencodings"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_used_sendencodings__numerator {
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_used_sendencodings.numerator ;;
+    type: number
+    group_label: "Metrics Rate Rtcrtpsender Used Sendencodings"
+    group_item_label: "Numerator"
+  }
+
   dimension: metrics__string__geckoview_validation_build_id {
     sql: ${TABLE}.metrics.string.geckoview_validation_build_id ;;
     type: string
@@ -1071,7 +1271,7 @@ For other engines, this is `other-<extensionName>`.
     group_item_label: "Search Engine Default Load Path"
     description: "A path relating to where the search engine was installed/loaded from.
 For example:
-  `[other]addEngineWithDetails:<extension id>` for a WebExtension based
+  `[addon]<extension id>` for a WebExtension based
   engine.
   `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch based
   engine.
@@ -1129,7 +1329,7 @@ default engine, and hence both versions of these fields will be filled in.
     group_item_label: "Search Engine Private Load Path"
     description: "A path relating to where the search engine was installed/loaded from.
 For example:
-  `[other]addEngineWithDetails:<extension id>` for a WebExtension based
+  `[addon]<extension id>` for a WebExtension based
   engine.
   `[https]developer.mozilla.org/mdn-web-docs.xml` for an OpenSearch based
   engine.

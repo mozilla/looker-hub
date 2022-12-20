@@ -24,6 +24,24 @@ and only sent with the activation ping.
 "
   }
 
+  dimension: metrics__uuid__legacy_ids_client_id {
+    label: "Legacy Ids Client Id"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
+    type: string
+    group_label: "Legacy Ids"
+    group_item_label: "Client Id"
+
+    link: {
+      label: "Glean Dictionary reference for Legacy Ids Client Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/legacy_ids_client_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sets the legacy client ID as part of the deletion-reqest and other pings.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes
