@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "glean_events_table.view.lkml"
+include: "events_unnested_table.view.lkml"
 
 view: glean_events {
-  extends: [glean_events_table]
+  extends: [events_unnested_table]
 
   measure: event_count {
     type: count

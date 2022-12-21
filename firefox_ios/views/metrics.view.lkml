@@ -141,6 +141,43 @@ in the app menu
 "
   }
 
+  dimension: metrics__counter__app_menu_customize_homepage {
+    label: "App Menu Customize Homepage"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.app_menu_customize_homepage ;;
+    type: number
+    group_label: "App Menu"
+    group_item_label: "Customize Homepage"
+
+    link: {
+      label: "Glean Dictionary reference for App Menu Customize Homepage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_menu_customize_homepage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps Customize Homepage
+in the app menu
+"
+  }
+
+  dimension: metrics__counter__app_menu_help {
+    label: "App Menu Help"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.app_menu_help ;;
+    type: number
+    group_label: "App Menu"
+    group_item_label: "Help"
+
+    link: {
+      label: "Glean Dictionary reference for App Menu Help"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_menu_help"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps Help in the app menu
+"
+  }
+
   dimension: metrics__counter__app_menu_home {
     label: "App Menu Home"
     hidden: no
@@ -156,6 +193,25 @@ in the app menu
     }
 
     description: "Counts the number of times a user taps Home in the app menu
+"
+  }
+
+  dimension: metrics__counter__app_menu_homepage_menu {
+    label: "App Menu Homepage Menu"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.app_menu_homepage_menu ;;
+    type: number
+    group_label: "App Menu"
+    group_item_label: "Homepage Menu"
+
+    link: {
+      label: "Glean Dictionary reference for App Menu Homepage Menu"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_menu_homepage_menu"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps in the menu toolbar
+on the homepage
 "
   }
 
@@ -268,6 +324,25 @@ in the app menu
 
     description: "Counts the number of times a user taps Sign Into Sync
 in the app menu
+"
+  }
+
+  dimension: metrics__counter__app_menu_site_menu {
+    label: "App Menu Site Menu"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.app_menu_site_menu ;;
+    type: number
+    group_label: "App Menu"
+    group_item_label: "Site Menu"
+
+    link: {
+      label: "Glean Dictionary reference for App Menu Site Menu"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_menu_site_menu"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user taps in the menu toolbar
+from a website
 "
   }
 
@@ -4255,6 +4330,56 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: app_menu_customize_homepage {
+    type: sum
+    sql: ${metrics__counter__app_menu_customize_homepage} ;;
+
+    link: {
+      label: "Glean Dictionary reference for App Menu Customize Homepage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_menu_customize_homepage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: app_menu_customize_homepage_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__app_menu_customize_homepage: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for App Menu Customize Homepage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_menu_customize_homepage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: app_menu_help {
+    type: sum
+    sql: ${metrics__counter__app_menu_help} ;;
+
+    link: {
+      label: "Glean Dictionary reference for App Menu Help"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_menu_help"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: app_menu_help_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__app_menu_help: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for App Menu Help"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_menu_help"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: app_menu_home {
     type: sum
     sql: ${metrics__counter__app_menu_home} ;;
@@ -4276,6 +4401,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for App Menu Home"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_menu_home"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: app_menu_homepage_menu {
+    type: sum
+    sql: ${metrics__counter__app_menu_homepage_menu} ;;
+
+    link: {
+      label: "Glean Dictionary reference for App Menu Homepage Menu"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_menu_homepage_menu"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: app_menu_homepage_menu_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__app_menu_homepage_menu: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for App Menu Homepage Menu"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_menu_homepage_menu"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -4426,6 +4576,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for App Menu Sign Into Sync"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_menu_sign_into_sync"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: app_menu_site_menu {
+    type: sum
+    sql: ${metrics__counter__app_menu_site_menu} ;;
+
+    link: {
+      label: "Glean Dictionary reference for App Menu Site Menu"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_menu_site_menu"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: app_menu_site_menu_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__app_menu_site_menu: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for App Menu Site Menu"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_menu_site_menu"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
