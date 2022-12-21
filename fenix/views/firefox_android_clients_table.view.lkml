@@ -174,6 +174,22 @@ view: firefox_android_clients_table {
     label: "Metadata: Min First Session Ping Run Date"
   }
 
+  dimension_group: metadata__min_metrics_ping_submission {
+    sql: ${TABLE}.metadata.min_metrics_ping_submission_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    label: "Metadata: Min Metrics Ping Submission Date"
+  }
+
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time

@@ -468,12 +468,41 @@ in the app menu
 "
   }
 
+  dimension: metrics__counter__app_menu_customize_homepage {
+    sql: ${TABLE}.metrics.counter.app_menu_customize_homepage ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "App Menu Customize Homepage"
+    description: "Counts the number of times a user taps Customize Homepage
+in the app menu
+"
+  }
+
+  dimension: metrics__counter__app_menu_help {
+    sql: ${TABLE}.metrics.counter.app_menu_help ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "App Menu Help"
+    description: "Counts the number of times a user taps Help in the app menu
+"
+  }
+
   dimension: metrics__counter__app_menu_home {
     sql: ${TABLE}.metrics.counter.app_menu_home ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "App Menu Home"
     description: "Counts the number of times a user taps Home in the app menu
+"
+  }
+
+  dimension: metrics__counter__app_menu_homepage_menu {
+    sql: ${TABLE}.metrics.counter.app_menu_homepage_menu ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "App Menu Homepage Menu"
+    description: "Counts the number of times a user taps in the menu toolbar
+on the homepage
 "
   }
 
@@ -532,6 +561,16 @@ in the app menu
     group_item_label: "App Menu Sign Into Sync"
     description: "Counts the number of times a user taps Sign Into Sync
 in the app menu
+"
+  }
+
+  dimension: metrics__counter__app_menu_site_menu {
+    sql: ${TABLE}.metrics.counter.app_menu_site_menu ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "App Menu Site Menu"
+    description: "Counts the number of times a user taps in the menu toolbar
+from a website
 "
   }
 
