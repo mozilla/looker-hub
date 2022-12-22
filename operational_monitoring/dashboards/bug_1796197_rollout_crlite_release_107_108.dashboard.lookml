@@ -10,11 +10,11 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Content Crashes
-    name: Content Crashes_sum
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
-    note_text: Sum
+    note_text: Mean
     explore: bug_1796197_rollout_crlite_release_107_108
     type: looker_line
     fields: [
@@ -26,9 +26,77 @@
       bug_1796197_rollout_crlite_release_107_108.branch
     ]
     filters:
-      bug_1796197_rollout_crlite_release_107_108.metric: 'content_crashes'
-      bug_1796197_rollout_crlite_release_107_108.statistic: sum
+      bug_1796197_rollout_crlite_release_107_108.metric: 'ad_clicks'
+      bug_1796197_rollout_crlite_release_107_108.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: bug_1796197_rollout_crlite_release_107_108.submission_date
+    field_y: bug_1796197_rollout_crlite_release_107_108.point
+    log_scale: false
+    ci_lower: bug_1796197_rollout_crlite_release_107_108.lower
+    ci_upper: bug_1796197_rollout_crlite_release_107_108.upper
+    show_grid: true
+    listen:
+      Date: bug_1796197_rollout_crlite_release_107_108.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: bug_1796197_rollout_crlite_release_107_108
+    type: looker_line
+    fields: [
+      bug_1796197_rollout_crlite_release_107_108.submission_date,
+      bug_1796197_rollout_crlite_release_107_108.branch,
+      bug_1796197_rollout_crlite_release_107_108.point
+    ]
+    pivots: [
+      bug_1796197_rollout_crlite_release_107_108.branch
+    ]
+    filters:
+      bug_1796197_rollout_crlite_release_107_108.metric: 'active_hours'
+      bug_1796197_rollout_crlite_release_107_108.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: bug_1796197_rollout_crlite_release_107_108.submission_date
+    field_y: bug_1796197_rollout_crlite_release_107_108.point
+    log_scale: false
+    ci_lower: bug_1796197_rollout_crlite_release_107_108.lower
+    ci_upper: bug_1796197_rollout_crlite_release_107_108.upper
+    show_grid: true
+    listen:
+      Date: bug_1796197_rollout_crlite_release_107_108.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: bug_1796197_rollout_crlite_release_107_108
+    type: looker_line
+    fields: [
+      bug_1796197_rollout_crlite_release_107_108.submission_date,
+      bug_1796197_rollout_crlite_release_107_108.branch,
+      bug_1796197_rollout_crlite_release_107_108.point
+    ]
+    pivots: [
+      bug_1796197_rollout_crlite_release_107_108.branch
+    ]
+    filters:
+      bug_1796197_rollout_crlite_release_107_108.metric: 'qualified_cumulative_days_of_use'
+      bug_1796197_rollout_crlite_release_107_108.statistic: mean
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -64,7 +132,7 @@
     filters:
       bug_1796197_rollout_crlite_release_107_108.metric: 'memory_total'
       bug_1796197_rollout_crlite_release_107_108.statistic: percentile
-    row: 0
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -81,11 +149,11 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Shutdown Hangs
-    name: Shutdown Hangs_sum
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
-    note_text: Sum
+    note_text: Mean
     explore: bug_1796197_rollout_crlite_release_107_108
     type: looker_line
     fields: [
@@ -97,9 +165,9 @@
       bug_1796197_rollout_crlite_release_107_108.branch
     ]
     filters:
-      bug_1796197_rollout_crlite_release_107_108.metric: 'shutdown_hangs'
-      bug_1796197_rollout_crlite_release_107_108.statistic: sum
-    row: 10
+      bug_1796197_rollout_crlite_release_107_108.metric: 'uri_count'
+      bug_1796197_rollout_crlite_release_107_108.statistic: mean
+    row: 20
     col: 0
     width: 12
     height: 8
@@ -115,11 +183,11 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Main Crashes
-    name: Main Crashes_sum
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
-    note_text: Sum
+    note_text: Mean
     explore: bug_1796197_rollout_crlite_release_107_108
     type: looker_line
     fields: [
@@ -131,9 +199,9 @@
       bug_1796197_rollout_crlite_release_107_108.branch
     ]
     filters:
-      bug_1796197_rollout_crlite_release_107_108.metric: 'main_crashes'
-      bug_1796197_rollout_crlite_release_107_108.statistic: sum
-    row: 10
+      bug_1796197_rollout_crlite_release_107_108.metric: 'retained'
+      bug_1796197_rollout_crlite_release_107_108.statistic: mean
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -149,11 +217,11 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Startup Crashes
-    name: Startup Crashes_sum
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
-    note_text: Sum
+    note_text: Mean
     explore: bug_1796197_rollout_crlite_release_107_108
     type: looker_line
     fields: [
@@ -165,9 +233,9 @@
       bug_1796197_rollout_crlite_release_107_108.branch
     ]
     filters:
-      bug_1796197_rollout_crlite_release_107_108.metric: 'startup_crashes'
-      bug_1796197_rollout_crlite_release_107_108.statistic: sum
-    row: 20
+      bug_1796197_rollout_crlite_release_107_108.metric: 'days_of_use'
+      bug_1796197_rollout_crlite_release_107_108.statistic: mean
+    row: 30
     col: 0
     width: 12
     height: 8
@@ -183,11 +251,11 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Oom Crashes
-    name: Oom Crashes_sum
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
-    note_text: Sum
+    note_text: Mean
     explore: bug_1796197_rollout_crlite_release_107_108
     type: looker_line
     fields: [
@@ -199,9 +267,9 @@
       bug_1796197_rollout_crlite_release_107_108.branch
     ]
     filters:
-      bug_1796197_rollout_crlite_release_107_108.metric: 'oom_crashes'
-      bug_1796197_rollout_crlite_release_107_108.statistic: sum
-    row: 20
+      bug_1796197_rollout_crlite_release_107_108.metric: 'search_count'
+      bug_1796197_rollout_crlite_release_107_108.statistic: mean
+    row: 30
     col: 12
     width: 12
     height: 8
