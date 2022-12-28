@@ -10,24 +10,26 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: dap_telemetry_first_ingress_test
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       dap_telemetry_first_ingress_test.submission_date,
       dap_telemetry_first_ingress_test.branch,
+      dap_telemetry_first_ingress_test.upper,
+      dap_telemetry_first_ingress_test.lower,
       dap_telemetry_first_ingress_test.point
     ]
     pivots: [
       dap_telemetry_first_ingress_test.branch
     ]
     filters:
-      dap_telemetry_first_ingress_test.metric: 'retained'
-      dap_telemetry_first_ingress_test.statistic: mean
+      dap_telemetry_first_ingress_test.metric: 'memory_total'
+      dap_telemetry_first_ingress_test.statistic: percentile
     row: 0
     col: 0
     width: 12
@@ -40,40 +42,7 @@
     show_grid: true
     listen:
       Date: dap_telemetry_first_ingress_test.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: dap_telemetry_first_ingress_test
-    type: looker_line
-    fields: [
-      dap_telemetry_first_ingress_test.submission_date,
-      dap_telemetry_first_ingress_test.branch,
-      dap_telemetry_first_ingress_test.point
-    ]
-    pivots: [
-      dap_telemetry_first_ingress_test.branch
-    ]
-    filters:
-      dap_telemetry_first_ingress_test.metric: 'days_of_use'
-      dap_telemetry_first_ingress_test.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: dap_telemetry_first_ingress_test.submission_date
-    field_y: dap_telemetry_first_ingress_test.point
-    log_scale: false
-    ci_lower: dap_telemetry_first_ingress_test.lower
-    ci_upper: dap_telemetry_first_ingress_test.upper
-    show_grid: true
-    listen:
-      Date: dap_telemetry_first_ingress_test.submission_date
+      Percentile: dap_telemetry_first_ingress_test.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -95,6 +64,40 @@
     ]
     filters:
       dap_telemetry_first_ingress_test.metric: 'active_hours'
+      dap_telemetry_first_ingress_test.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: dap_telemetry_first_ingress_test.submission_date
+    field_y: dap_telemetry_first_ingress_test.point
+    log_scale: false
+    ci_lower: dap_telemetry_first_ingress_test.lower
+    ci_upper: dap_telemetry_first_ingress_test.upper
+    show_grid: true
+    listen:
+      Date: dap_telemetry_first_ingress_test.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: dap_telemetry_first_ingress_test
+    type: looker_line
+    fields: [
+      dap_telemetry_first_ingress_test.submission_date,
+      dap_telemetry_first_ingress_test.branch,
+      dap_telemetry_first_ingress_test.point
+    ]
+    pivots: [
+      dap_telemetry_first_ingress_test.branch
+    ]
+    filters:
+      dap_telemetry_first_ingress_test.metric: 'retained'
       dap_telemetry_first_ingress_test.statistic: mean
     row: 10
     col: 0
@@ -214,26 +217,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: dap_telemetry_first_ingress_test
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       dap_telemetry_first_ingress_test.submission_date,
       dap_telemetry_first_ingress_test.branch,
-      dap_telemetry_first_ingress_test.upper,
-      dap_telemetry_first_ingress_test.lower,
       dap_telemetry_first_ingress_test.point
     ]
     pivots: [
       dap_telemetry_first_ingress_test.branch
     ]
     filters:
-      dap_telemetry_first_ingress_test.metric: 'memory_total'
-      dap_telemetry_first_ingress_test.statistic: percentile
+      dap_telemetry_first_ingress_test.metric: 'days_of_use'
+      dap_telemetry_first_ingress_test.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -246,7 +247,6 @@
     show_grid: true
     listen:
       Date: dap_telemetry_first_ingress_test.submission_date
-      Percentile: dap_telemetry_first_ingress_test.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
