@@ -399,6 +399,26 @@ once we validate these assumptions.
 "
   }
 
+  dimension: metrics__boolean__notifications_permission_granted {
+    label: "Notifications Permission Granted"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.notifications_permission_granted ;;
+    type: yesno
+    group_label: "Notifications"
+    group_item_label: "Permission Granted"
+
+    link: {
+      label: "Glean Dictionary reference for Notifications Permission Granted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/notifications_permission_granted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if notifications are allowed from OS settings, otherwise false.
+Prior to Android 13, notifications were allowed by default;
+starting with Android 13,the user must explicitly grant the permission.
+"
+  }
+
   dimension: metrics__labeled_counter__perf_startup_startup_type {
     label: "Perf Startup Startup Type"
     hidden: yes

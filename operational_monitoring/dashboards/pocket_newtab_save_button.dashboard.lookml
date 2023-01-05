@@ -10,24 +10,26 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: pocket_newtab_save_button
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       pocket_newtab_save_button.submission_date,
       pocket_newtab_save_button.branch,
+      pocket_newtab_save_button.upper,
+      pocket_newtab_save_button.lower,
       pocket_newtab_save_button.point
     ]
     pivots: [
       pocket_newtab_save_button.branch
     ]
     filters:
-      pocket_newtab_save_button.metric: 'retained'
-      pocket_newtab_save_button.statistic: mean
+      pocket_newtab_save_button.metric: 'memory_total'
+      pocket_newtab_save_button.statistic: percentile
     row: 0
     col: 0
     width: 12
@@ -40,6 +42,7 @@
     show_grid: true
     listen:
       Date: pocket_newtab_save_button.submission_date
+      Percentile: pocket_newtab_save_button.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -112,26 +115,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: pocket_newtab_save_button
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       pocket_newtab_save_button.submission_date,
       pocket_newtab_save_button.branch,
-      pocket_newtab_save_button.upper,
-      pocket_newtab_save_button.lower,
       pocket_newtab_save_button.point
     ]
     pivots: [
       pocket_newtab_save_button.branch
     ]
     filters:
-      pocket_newtab_save_button.metric: 'memory_total'
-      pocket_newtab_save_button.statistic: percentile
+      pocket_newtab_save_button.metric: 'ad_clicks'
+      pocket_newtab_save_button.statistic: mean
     row: 10
     col: 12
     width: 12
@@ -144,7 +145,6 @@
     show_grid: true
     listen:
       Date: pocket_newtab_save_button.submission_date
-      Percentile: pocket_newtab_save_button.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       pocket_newtab_save_button.branch
     ]
     filters:
-      pocket_newtab_save_button.metric: 'ad_clicks'
+      pocket_newtab_save_button.metric: 'retained'
       pocket_newtab_save_button.statistic: mean
     row: 30
     col: 0
