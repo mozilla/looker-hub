@@ -408,6 +408,17 @@ once we validate these assumptions.
 "
   }
 
+  dimension: metrics__boolean__notifications_permission_granted {
+    sql: ${TABLE}.metrics.boolean.notifications_permission_granted ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Notifications Permission Granted"
+    description: "True if notifications are allowed from OS settings, otherwise false.
+Prior to Android 13, notifications were allowed by default;
+starting with Android 13,the user must explicitly grant the permission.
+"
+  }
+
   dimension: metrics__boolean__tracking_protection_has_advertising_blocked {
     sql: ${TABLE}.metrics.boolean.tracking_protection_has_advertising_blocked ;;
     type: yesno
