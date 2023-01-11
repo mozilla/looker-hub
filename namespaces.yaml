@@ -6043,13 +6043,46 @@ sync:
       - table: mozdata.telemetry.sync
       type: ping_view
 treeherder:
-  explores: {}
+  explores:
+    deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: deletion_request
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
   glean_app: true
   owners:
   - jmaher@mozilla.com
   pretty_name: Treeherder
   spoke: looker-spoke-default
-  views: {}
+  views:
+    deletion_request:
+      tables:
+      - table: mozdata.treeherder.deletion_request
+      type: glean_ping_view
+    deletion_request_table:
+      tables:
+      - channel: null
+        table: mozdata.treeherder.deletion_request
+      type: table_view
+    events:
+      tables:
+      - base_table: mozdata.treeherder.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.treeherder.events
+      type: table_view
+    events_unnested_table:
+      tables:
+      - channel: null
+        table: mozdata.treeherder.events_unnested
+      type: table_view
 viu_politica:
   explores:
     deletion_request:
