@@ -25,6 +25,1700 @@ It is possible for a Firefox installation to not have a default profile, but in 
 "
   }
 
+  dimension: metrics__boolean__browser_ui_proton_enabled {
+    label: "Browser Ui Proton Enabled"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.browser_ui_proton_enabled ;;
+    type: yesno
+    group_label: "Browser Ui"
+    group_item_label: "Proton Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Ui Proton Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/browser_ui_proton_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the Proton default theme is enabled.
+"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__sum {
+    label: "Cookie Banners Click Handle Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_click_handle_duration.sum ;;
+    type: number
+    group_label: "Cookie Banners Click"
+    group_item_label: "Handle Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Click Handle Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cookie_banners_click_handle_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how long it takes to handle cookie banners successfully from DOMContentLoaded until click.
+"
+  }
+
+  dimension: metrics__labeled_counter__cookie_banners_click_result {
+    label: "Cookie Banners Click Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cookie_banners_click_result ;;
+    group_label: "Cookie Banners Click"
+    group_item_label: "Result"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Click Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cookie_banners_click_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Given a matching cookie banner click rule, how often do we handle or fail to handle cookie banners, labelled by reason. The 'success' and 'fail' counters count the total numbers independently of the reason counters. Counters are incremented after the content window has been destroyed.
+"
+  }
+
+  dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
+    label: "Cookie Banners Normal Window Service Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_normal_window_service_mode ;;
+    type: string
+    group_label: "Cookie Banners"
+    group_item_label: "Normal Window Service Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Normal Window Service Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cookie_banners_normal_window_service_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The pref value of the cookie banner service mode for normal windows.
+"
+  }
+
+  dimension: metrics__labeled_boolean__cookie_banners_private_window_service_mode {
+    label: "Cookie Banners Private Window Service Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_private_window_service_mode ;;
+    type: string
+    group_label: "Cookie Banners"
+    group_item_label: "Private Window Service Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Private Window Service Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cookie_banners_private_window_service_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The pref value of the cookie banner service mode for private windows.
+"
+  }
+
+  dimension: metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
+    label: "Cookie Banners Rule Lookup By Domain"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cookie_banners_rule_lookup_by_domain ;;
+    group_label: "Cookie Banners"
+    group_item_label: "Rule Lookup By Domain"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Rule Lookup By Domain"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cookie_banners_rule_lookup_by_domain"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of hit/miss of cookie banner rule lookups for domain. We collect three types of counters, including counters for overall rule lookup, counters for cookie rule lookup and counters for click rule lookup. We also divide the counter by top-level loads and iframe loads. For each domain, we will only collect once.
+"
+  }
+
+  dimension: metrics__labeled_counter__cookie_banners_rule_lookup_by_load {
+    label: "Cookie Banners Rule Lookup By Load"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cookie_banners_rule_lookup_by_load ;;
+    group_label: "Cookie Banners"
+    group_item_label: "Rule Lookup By Load"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Rule Lookup By Load"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cookie_banners_rule_lookup_by_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of hit/miss of cookie banner rule lookups for every load. We collect three types of counters, including counters for overall rule lookup, counters for cookie rule lookup and counters for click rule lookup. We also divide the counter by top-level loads and iframe loads.
+"
+  }
+
+  dimension: metrics__boolean__fog_failed_idle_registration {
+    label: "Fog Failed Idle Registration"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.fog_failed_idle_registration ;;
+    type: yesno
+    group_label: "Fog"
+    group_item_label: "Failed Idle Registration"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Failed Idle Registration"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/fog_failed_idle_registration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if we failed to register with the idle service. Absent otherwise.
+Means IPC probably isn't working well.
+Child-process data will likely be absent, or incomplete.
+"
+  }
+
+  dimension: metrics__timespan__fog_initialization__value {
+    label: "Fog Initialization Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.fog_initialization.value ;;
+    type: number
+    group_label: "Fog"
+    group_item_label: "Initialization Value"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Initialization Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/fog_initialization"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time the FOG initialization takes.
+"
+  }
+
+  dimension: metrics__memory_distribution__fog_ipc_buffer_sizes__sum {
+    label: "Fog Ipc Buffer Sizes Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.fog_ipc_buffer_sizes.sum ;;
+    type: number
+    group_label: "Fog Ipc"
+    group_item_label: "Buffer Sizes Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Buffer Sizes Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/fog_ipc_buffer_sizes"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number and size of the IPC buffers being received over FOG IPC.
+"
+  }
+
+  dimension: metrics__timing_distribution__fog_ipc_flush_durations__sum {
+    label: "Fog Ipc Flush Durations Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.sum ;;
+    type: number
+    group_label: "Fog Ipc"
+    group_item_label: "Flush Durations Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Durations Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/fog_ipc_flush_durations"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The length of time between asking the child processes for their
+IPC buffers and all of them being received by the parent.
+"
+  }
+
+  dimension: metrics__counter__fog_ipc_flush_failures {
+    label: "Fog Ipc Flush Failures"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.fog_ipc_flush_failures ;;
+    type: number
+    group_label: "Fog Ipc"
+    group_item_label: "Flush Failures"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/fog_ipc_flush_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we failed to flush all non-parent-process data,
+throwing even partial results into the trash.
+If this number is high, we might consider writing custom `MozPromise`-
+handling code instead of using `MozPromise::All`.
+"
+  }
+
+  dimension: metrics__counter__fog_ipc_replay_failures {
+    label: "Fog Ipc Replay Failures"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.fog_ipc_replay_failures ;;
+    type: number
+    group_label: "Fog Ipc"
+    group_item_label: "Replay Failures"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Replay Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/fog_ipc_replay_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times the ipc buffer failed to be replayed in the
+parent process.
+"
+  }
+
+  dimension: metrics__counter__fog_ipc_shutdown_registration_failures {
+    label: "Fog Ipc Shutdown Registration Failures"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.fog_ipc_shutdown_registration_failures ;;
+    type: number
+    group_label: "Fog Ipc"
+    group_item_label: "Shutdown Registration Failures"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Shutdown Registration Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/fog_ipc_shutdown_registration_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times we tried to register shutdown flush routines for
+content child processes, and failed (probably because there was no main
+thread).
+As a result there may be data loss from content child processes.
+Large or rising number of clients experiencing this indicates we should
+perhaps refactor content child shutdown in FOG to try harder to register
+flush operations.
+Will likely be obsoleted by bug 1641989.
+"
+  }
+
+  dimension: metrics__string__geckoview_validation_build_id {
+    label: "Geckoview Validation Build Id"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.geckoview_validation_build_id ;;
+    type: string
+    group_label: "Geckoview Validation"
+    group_item_label: "Build Id"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Validation Build Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/geckoview_validation_build_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Buildid of the Gecko engine, example: 20200205124310 Mirror of `geckoview.build_id` for validation of migrated data.
+"
+  }
+
+  dimension: metrics__string__geckoview_validation_version {
+    label: "Geckoview Validation Version"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.geckoview_validation_version ;;
+    type: string
+    group_label: "Geckoview Validation"
+    group_item_label: "Version"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Validation Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/geckoview_validation_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of the Gecko engine, example: 74.0a1 Mirror of `geckoview.version` for validation of migrated data.
+"
+  }
+
+  dimension: metrics__boolean__gifft_validation_main_ping_assembling {
+    label: "Gifft Validation Main Ping Assembling"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.gifft_validation_main_ping_assembling ;;
+    type: yesno
+    group_label: "Gifft Validation"
+    group_item_label: "Main Ping Assembling"
+
+    link: {
+      label: "Glean Dictionary reference for Gifft Validation Main Ping Assembling"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gifft_validation_main_ping_assembling"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value `true`, recorded when a Firefox Telemetry \"main\" ping is about
+to be assembled.
+To be used to validate GIFFT.
+"
+  }
+
+  dimension: metrics__labeled_counter__gmp_update_xml_fetch_result {
+    label: "Gmp Update Xml Fetch Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.gmp_update_xml_fetch_result ;;
+    group_label: "Gmp"
+    group_item_label: "Update Xml Fetch Result"
+
+    link: {
+      label: "Glean Dictionary reference for Gmp Update Xml Fetch Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gmp_update_xml_fetch_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The result of Gecko fetching an update.xml from Balrog. This captures 3 different data points: success or failure of the request, if cert pinning or content signatures were used to verify the result, and the reason for failure, if the request failed.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_received_messages_content_background {
+    label: "Ipc Received Messages Content Background"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_content_background ;;
+    group_label: "Ipc Received Messages"
+    group_item_label: "Content Background"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Received Messages Content Background"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ipc_received_messages_content_background"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was received, Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_received_messages_content_foreground {
+    label: "Ipc Received Messages Content Foreground"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_content_foreground ;;
+    group_label: "Ipc Received Messages"
+    group_item_label: "Content Foreground"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Received Messages Content Foreground"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ipc_received_messages_content_foreground"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was received, Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_received_messages_gpu_process {
+    label: "Ipc Received Messages Gpu Process"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_gpu_process ;;
+    group_label: "Ipc Received Messages"
+    group_item_label: "Gpu Process"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Received Messages Gpu Process"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ipc_received_messages_gpu_process"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was received, Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_received_messages_parent_active {
+    label: "Ipc Received Messages Parent Active"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_parent_active ;;
+    group_label: "Ipc Received Messages"
+    group_item_label: "Parent Active"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Received Messages Parent Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ipc_received_messages_parent_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was received, Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_received_messages_parent_inactive {
+    label: "Ipc Received Messages Parent Inactive"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_parent_inactive ;;
+    group_label: "Ipc Received Messages"
+    group_item_label: "Parent Inactive"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Received Messages Parent Inactive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ipc_received_messages_parent_inactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was received, Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_sent_messages_content_background {
+    label: "Ipc Sent Messages Content Background"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_content_background ;;
+    group_label: "Ipc Sent Messages"
+    group_item_label: "Content Background"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Sent Messages Content Background"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ipc_sent_messages_content_background"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_sent_messages_content_foreground {
+    label: "Ipc Sent Messages Content Foreground"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_content_foreground ;;
+    group_label: "Ipc Sent Messages"
+    group_item_label: "Content Foreground"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Sent Messages Content Foreground"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ipc_sent_messages_content_foreground"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_sent_messages_gpu_process {
+    label: "Ipc Sent Messages Gpu Process"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_gpu_process ;;
+    group_label: "Ipc Sent Messages"
+    group_item_label: "Gpu Process"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Sent Messages Gpu Process"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ipc_sent_messages_gpu_process"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_sent_messages_parent_active {
+    label: "Ipc Sent Messages Parent Active"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_parent_active ;;
+    group_label: "Ipc Sent Messages"
+    group_item_label: "Parent Active"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Sent Messages Parent Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ipc_sent_messages_parent_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__ipc_sent_messages_parent_inactive {
+    label: "Ipc Sent Messages Parent Inactive"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_parent_inactive ;;
+    group_label: "Ipc Sent Messages"
+    group_item_label: "Parent Inactive"
+
+    link: {
+      label: "Glean Dictionary reference for Ipc Sent Messages Parent Inactive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/ipc_sent_messages_parent_inactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_early_hints {
+    label: "Netwerk Early Hints"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_early_hints ;;
+    group_label: "Netwerk"
+    group_item_label: "Early Hints"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk Early Hints"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/netwerk_early_hints"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the different type of resources that are sent for early hints.
+"
+  }
+
+  dimension: metrics__labeled_counter__netwerk_eh_link_type {
+    label: "Netwerk Eh Link Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.netwerk_eh_link_type ;;
+    group_label: "Netwerk"
+    group_item_label: "Eh Link Type"
+
+    link: {
+      label: "Glean Dictionary reference for Netwerk Eh Link Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/netwerk_eh_link_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts different type of link headers that are sent in early hint
+"
+  }
+
+  dimension: metrics__timing_distribution__network_open_to_transaction_pending__sum {
+    label: "Network Open To Transaction Pending Sum"
+    hidden: yes
+    sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Open To Transaction Pending Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Open To Transaction Pending Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_open_to_transaction_pending"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent from HttpChannelChild::AsyncOpen to adding the transaction to the nsHttpConnectionMgr
+"
+  }
+
+  dimension: metrics__timing_distribution__paint_build_displaylist_time__sum {
+    label: "Paint Build Displaylist Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.sum ;;
+    type: number
+    group_label: "Paint"
+    group_item_label: "Build Displaylist Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Paint Build Displaylist Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/paint_build_displaylist_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time to build a Gecko display list.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_buttons {
+    label: "Pdfjs Buttons"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_buttons ;;
+    group_label: "Pdfjs"
+    group_item_label: "Buttons"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Buttons"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/pdfjs_buttons"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times some actions are executed in the PDF viewer.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing {
+    label: "Pdfjs Editing"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing ;;
+    group_label: "Pdfjs"
+    group_item_label: "Editing"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/pdfjs_editing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times some PDF editing features are used.
+"
+  }
+
+  dimension: metrics__custom_distribution__pdfjs_time_to_view__sum {
+    label: "Pdfjs Time To View Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.pdfjs_time_to_view.sum ;;
+    type: number
+    group_label: "Pdfjs"
+    group_item_label: "Time To View Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Time To View Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/pdfjs_time_to_view"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent to display first page in PDF Viewer (ms).
+"
+  }
+
+  dimension: metrics__counter__pdfjs_used {
+    label: "Pdfjs Used"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_used ;;
+    type: number
+    group_label: "Pdfjs"
+    group_item_label: "Used"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/pdfjs_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times PDF Viewer was used.
+"
+  }
+
+  dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__sum {
+    label: "Power Battery Percentage When User Active Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.power_battery_percentage_when_user_active.sum ;;
+    type: number
+    group_label: "Power Battery"
+    group_item_label: "Percentage When User Active Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Power Battery Percentage When User Active Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_battery_percentage_when_user_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records how many percent of battery was available for each period of user activity.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
+    label: "Power Cpu Ms Per Thread Content Background"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_content_background ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Content Background"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Content Background"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_cpu_ms_per_thread_content_background"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
+    label: "Power Cpu Ms Per Thread Content Foreground"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_content_foreground ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Content Foreground"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Content Foreground"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_cpu_ms_per_thread_content_foreground"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
+    label: "Power Cpu Ms Per Thread Gpu Process"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_gpu_process ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Gpu Process"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Gpu Process"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_cpu_ms_per_thread_gpu_process"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
+    label: "Power Cpu Ms Per Thread Parent Active"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_parent_active ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Parent Active"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Parent Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_cpu_ms_per_thread_parent_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
+    label: "Power Cpu Ms Per Thread Parent Inactive"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_parent_inactive ;;
+    group_label: "Power Cpu Ms Per Thread"
+    group_item_label: "Parent Inactive"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Ms Per Thread Parent Inactive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_cpu_ms_per_thread_parent_inactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many miliseconds of CPU time were used. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__counter__power_cpu_time_bogus_values {
+    label: "Power Cpu Time Bogus Values"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_cpu_time_bogus_values ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Cpu Time Bogus Values"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_cpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Impossibly large CPU time values that were discarded.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+    label: "Power Cpu Time Per Process Type Ms"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_time_per_process_type_ms ;;
+    group_label: "Power"
+    group_item_label: "Cpu Time Per Process Type Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Per Process Type Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_cpu_time_per_process_type_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "CPU time used by each process type in ms.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_cpu_time_per_tracker_type_ms {
+    label: "Power Cpu Time Per Tracker Type Ms"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_cpu_time_per_tracker_type_ms ;;
+    group_label: "Power"
+    group_item_label: "Cpu Time Per Tracker Type Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Per Tracker Type Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_cpu_time_per_tracker_type_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "CPU time used by content processes used only for tracking resources, labeled by the category of the tracker.
+"
+  }
+
+  dimension: metrics__counter__power_gpu_time_bogus_values {
+    label: "Power Gpu Time Bogus Values"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_gpu_time_bogus_values ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Gpu Time Bogus Values"
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_gpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Impossibly large GPU time values that were discarded.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_gpu_time_per_process_type_ms {
+    label: "Power Gpu Time Per Process Type Ms"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_gpu_time_per_process_type_ms ;;
+    group_label: "Power"
+    group_item_label: "Gpu Time Per Process Type Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Per Process Type Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_gpu_time_per_process_type_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "GPU time used by each process type in ms.
+"
+  }
+
+  dimension: metrics__counter__power_total_cpu_time_ms {
+    label: "Power Total Cpu Time Ms"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_total_cpu_time_ms ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Total Cpu Time Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Cpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_total_cpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total CPU time used by all processes in ms.
+"
+  }
+
+  dimension: metrics__counter__power_total_gpu_time_ms {
+    label: "Power Total Gpu Time Ms"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_total_gpu_time_ms ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Total Gpu Time Ms"
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Gpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_total_gpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total GPU time used by all processes in ms.
+"
+  }
+
+  dimension: metrics__counter__power_total_thread_wakeups {
+    label: "Power Total Thread Wakeups"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.power_total_thread_wakeups ;;
+    type: number
+    group_label: "Power"
+    group_item_label: "Total Thread Wakeups"
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Thread Wakeups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_total_thread_wakeups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_process_type {
+    label: "Power Wakeups Per Process Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_process_type ;;
+    group_label: "Power"
+    group_item_label: "Wakeups Per Process Type"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Process Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_wakeups_per_process_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_content_background {
+    label: "Power Wakeups Per Thread Content Background"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_content_background ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Content Background"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Content Background"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_wakeups_per_thread_content_background"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
+    label: "Power Wakeups Per Thread Content Foreground"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_content_foreground ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Content Foreground"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Content Foreground"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_wakeups_per_thread_content_foreground"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
+    label: "Power Wakeups Per Thread Gpu Process"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_gpu_process ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Gpu Process"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Gpu Process"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_wakeups_per_thread_gpu_process"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_parent_active {
+    label: "Power Wakeups Per Thread Parent Active"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_parent_active ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Parent Active"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Parent Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_wakeups_per_thread_parent_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+    label: "Power Wakeups Per Thread Parent Inactive"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_parent_inactive ;;
+    group_label: "Power Wakeups Per Thread"
+    group_item_label: "Parent Inactive"
+
+    link: {
+      label: "Glean Dictionary reference for Power Wakeups Per Thread Parent Inactive"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_wakeups_per_thread_parent_inactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__counter__rtcrtpsender_count {
+    label: "Rtcrtpsender Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.rtcrtpsender_count ;;
+    type: number
+    group_label: "Rtcrtpsender"
+    group_item_label: "Count"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of RTCRtpSenders created.
+"
+  }
+
+  dimension: metrics__counter__rtcrtpsender_count_setparameters_compat {
+    label: "Rtcrtpsender Count Setparameters Compat"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.rtcrtpsender_count_setparameters_compat ;;
+    type: number
+    group_label: "Rtcrtpsender"
+    group_item_label: "Count Setparameters Compat"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Count Setparameters Compat"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_count_setparameters_compat"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of RTCRtpSenders created that use the compatibility mode for setParameters.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__numerator {
+    label: "Rtcrtpsender Setparameters Fail Length Changed Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_length_changed.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail Length Changed Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail Length Changed Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_fail_length_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that attempted to change the number of encodings.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__denominator {
+    label: "Rtcrtpsender Setparameters Fail Length Changed Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_length_changed.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail Length Changed Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail Length Changed Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_fail_length_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that attempted to change the number of encodings.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_encodings__numerator {
+    label: "Rtcrtpsender Setparameters Fail No Encodings Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_encodings.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail No Encodings Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail No Encodings Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_fail_no_encodings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have thrown an error at least once about a setParameters call that had no encodings (we do not measure this against the general population of RTCRtpSenders, since without the compat mode this failure is never observed, because it fails the length change check).
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_encodings__denominator {
+    label: "Rtcrtpsender Setparameters Fail No Encodings Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_encodings.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail No Encodings Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail No Encodings Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_fail_no_encodings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have thrown an error at least once about a setParameters call that had no encodings (we do not measure this against the general population of RTCRtpSenders, since without the compat mode this failure is never observed, because it fails the length change check).
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_getparameters__numerator {
+    label: "Rtcrtpsender Setparameters Fail No Getparameters Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_getparameters.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail No Getparameters Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail No Getparameters Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_fail_no_getparameters"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call because [[LastReturnedParameters]] was not set. (ie; there was not a recent enough call to getParameters)
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_getparameters__denominator {
+    label: "Rtcrtpsender Setparameters Fail No Getparameters Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_getparameters.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail No Getparameters Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail No Getparameters Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_fail_no_getparameters"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call because [[LastReturnedParameters]] was not set. (ie; there was not a recent enough call to getParameters)
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_transactionid__numerator {
+    label: "Rtcrtpsender Setparameters Fail No Transactionid Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_transactionid.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail No Transactionid Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail No Transactionid Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_fail_no_transactionid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that did not set the transactionId field.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_no_transactionid__denominator {
+    label: "Rtcrtpsender Setparameters Fail No Transactionid Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_no_transactionid.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail No Transactionid Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail No Transactionid Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_fail_no_transactionid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that did not set the transactionId field.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_other__numerator {
+    label: "Rtcrtpsender Setparameters Fail Other Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_other.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail Other Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail Other Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_fail_other"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that had no encodings.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_other__denominator {
+    label: "Rtcrtpsender Setparameters Fail Other Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_other.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail Other Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail Other Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_fail_other"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that had no encodings.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_rid_changed__numerator {
+    label: "Rtcrtpsender Setparameters Fail Rid Changed Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_rid_changed.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail Rid Changed Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail Rid Changed Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_fail_rid_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that attempted to change the rid on an encoding (note that we only check this if the encoding count did not change, see fail_length_changed).
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_rid_changed__denominator {
+    label: "Rtcrtpsender Setparameters Fail Rid Changed Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_rid_changed.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail Rid Changed Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail Rid Changed Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_fail_rid_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that attempted to change the rid on an encoding (note that we only check this if the encoding count did not change, see fail_length_changed).
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_stale_transactionid__numerator {
+    label: "Rtcrtpsender Setparameters Fail Stale Transactionid Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_stale_transactionid.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail Stale Transactionid Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail Stale Transactionid Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_fail_stale_transactionid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that used a stale transaction id.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_fail_stale_transactionid__denominator {
+    label: "Rtcrtpsender Setparameters Fail Stale Transactionid Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_stale_transactionid.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Fail Stale Transactionid Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Fail Stale Transactionid Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_fail_stale_transactionid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that have thrown an error at least once about a setParameters call that used a stale transaction id.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_length_changed__numerator {
+    label: "Rtcrtpsender Setparameters Warn Length Changed Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_length_changed.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn Length Changed Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn Length Changed Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_warn_length_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call that attempted to change the number of encodings.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_length_changed__denominator {
+    label: "Rtcrtpsender Setparameters Warn Length Changed Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_length_changed.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn Length Changed Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn Length Changed Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_warn_length_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call that attempted to change the number of encodings.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_getparameters__numerator {
+    label: "Rtcrtpsender Setparameters Warn No Getparameters Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_getparameters.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn No Getparameters Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn No Getparameters Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_warn_no_getparameters"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call because [[LastReturnedParameters]] was not set.  (ie; there was not a recent enough call to getParameters)
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_getparameters__denominator {
+    label: "Rtcrtpsender Setparameters Warn No Getparameters Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_getparameters.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn No Getparameters Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn No Getparameters Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_warn_no_getparameters"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call because [[LastReturnedParameters]] was not set.  (ie; there was not a recent enough call to getParameters)
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_transactionid__numerator {
+    label: "Rtcrtpsender Setparameters Warn No Transactionid Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_transactionid.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn No Transactionid Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn No Transactionid Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_warn_no_transactionid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call that did not set the transactionId field.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_no_transactionid__denominator {
+    label: "Rtcrtpsender Setparameters Warn No Transactionid Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_no_transactionid.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn No Transactionid Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn No Transactionid Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_warn_no_transactionid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call that did not set the transactionId field.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_rid_changed__numerator {
+    label: "Rtcrtpsender Setparameters Warn Rid Changed Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_rid_changed.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn Rid Changed Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn Rid Changed Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_warn_rid_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call that attempted to change the rid on an encoding (note that we only check this if the encoding count did not change, see warn_length_changed).
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_rid_changed__denominator {
+    label: "Rtcrtpsender Setparameters Warn Rid Changed Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_rid_changed.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn Rid Changed Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn Rid Changed Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_warn_rid_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call that attempted to change the rid on an encoding (note that we only check this if the encoding count did not change, see warn_length_changed).
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_stale_transactionid__numerator {
+    label: "Rtcrtpsender Setparameters Warn Stale Transactionid Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_stale_transactionid.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn Stale Transactionid Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn Stale Transactionid Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_warn_stale_transactionid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call that used a stale transaction id.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_setparameters_warn_stale_transactionid__denominator {
+    label: "Rtcrtpsender Setparameters Warn Stale Transactionid Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_stale_transactionid.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Warn Stale Transactionid Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Warn Stale Transactionid Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_warn_stale_transactionid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders configured with the setParameters compat mode that have warned at least once about a setParameters call that used a stale transaction id.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_used_sendencodings__numerator {
+    label: "Rtcrtpsender Used Sendencodings Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_used_sendencodings.numerator ;;
+    type: number
+    group_label: "Rtcrtpsender"
+    group_item_label: "Used Sendencodings Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Used Sendencodings Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_used_sendencodings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that were created by an addTransceivers call that was passed a sendEncodings.
+"
+  }
+
+  dimension: metrics__rate__rtcrtpsender_used_sendencodings__denominator {
+    label: "Rtcrtpsender Used Sendencodings Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.rtcrtpsender_used_sendencodings.denominator ;;
+    type: number
+    group_label: "Rtcrtpsender"
+    group_item_label: "Used Sendencodings Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Used Sendencodings Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_used_sendencodings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of RTCRtpSenders that were created by an addTransceivers call that was passed a sendEncodings.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_framebuild_time__sum {
+    label: "Wr Framebuild Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Framebuild Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Framebuild Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/wr_framebuild_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time to rasterize glyphs for consumption by WebRender.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_gpu_wait_time__sum {
+    label: "Wr Gpu Wait Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_gpu_wait_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Gpu Wait Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Gpu Wait Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/wr_gpu_wait_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent waiting for the GPU to complete previously issued drawing commands.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_blobs_time__sum {
+    label: "Wr Rasterize Blobs Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_blobs_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Rasterize Blobs Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Rasterize Blobs Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/wr_rasterize_blobs_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time to rasterize blobs for consumption by WebRender.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__sum {
+    label: "Wr Rasterize Glyphs Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_rasterize_glyphs_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Rasterize Glyphs Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Rasterize Glyphs Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/wr_rasterize_glyphs_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time to rasterize glyphs for consumption by WebRender.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time__sum {
+    label: "Wr Renderer Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Renderer Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Renderer Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/wr_renderer_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebRender renderer time.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_renderer_time_no_sc__sum {
+    label: "Wr Renderer Time No Sc Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time_no_sc.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Renderer Time No Sc Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Renderer Time No Sc Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/wr_renderer_time_no_sc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebRender renderer time excluding frames in which shader compilation took place.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_scenebuild_time__sum {
+    label: "Wr Scenebuild Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_scenebuild_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Scenebuild Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Scenebuild Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/wr_scenebuild_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebRender scene build time.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_sceneswap_time__sum {
+    label: "Wr Sceneswap Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_sceneswap_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Sceneswap Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Sceneswap Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/wr_sceneswap_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "WebRender scene swap time.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_texture_cache_update_time__sum {
+    label: "Wr Texture Cache Update Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_texture_cache_update_time.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Texture Cache Update Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Texture Cache Update Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/wr_texture_cache_update_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken by WebRender to update the texture cache.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_time_to_frame_build__sum {
+    label: "Wr Time To Frame Build Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_time_to_frame_build.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Time To Frame Build Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Time To Frame Build Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/wr_time_to_frame_build"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time elapsed between the construction of a transaction and the associated frame build beginning.
+"
+  }
+
+  dimension: metrics__timing_distribution__wr_time_to_render_start__sum {
+    label: "Wr Time To Render Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.wr_time_to_render_start.sum ;;
+    type: number
+    group_label: "Wr"
+    group_item_label: "Time To Render Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Wr Time To Render Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/wr_time_to_render_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time elapsed between the construction of a frame and the start of rendering.
+"
+  }
+
   dimension: metrics__memory_distribution__glean_database_size__sum {
     label: "Glean Database Size Sum"
     hidden: no
@@ -810,6 +2504,281 @@ documented in the ping's pings.yaml file.
     type: count
   }
 
+  measure: fog_ipc_flush_failures {
+    type: sum
+    sql: ${metrics__counter__fog_ipc_flush_failures} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/fog_ipc_flush_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_flush_failures_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__fog_ipc_flush_failures: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Flush Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/fog_ipc_flush_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_replay_failures {
+    type: sum
+    sql: ${metrics__counter__fog_ipc_replay_failures} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Replay Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/fog_ipc_replay_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_replay_failures_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__fog_ipc_replay_failures: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Replay Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/fog_ipc_replay_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_shutdown_registration_failures {
+    type: sum
+    sql: ${metrics__counter__fog_ipc_shutdown_registration_failures} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Shutdown Registration Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/fog_ipc_shutdown_registration_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_ipc_shutdown_registration_failures_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__fog_ipc_shutdown_registration_failures: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Ipc Shutdown Registration Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/fog_ipc_shutdown_registration_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_used {
+    type: sum
+    sql: ${metrics__counter__pdfjs_used} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/pdfjs_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_used_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_used: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/pdfjs_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_cpu_time_bogus_values {
+    type: sum
+    sql: ${metrics__counter__power_cpu_time_bogus_values} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_cpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_cpu_time_bogus_values_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_cpu_time_bogus_values: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Cpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_cpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_gpu_time_bogus_values {
+    type: sum
+    sql: ${metrics__counter__power_gpu_time_bogus_values} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_gpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_gpu_time_bogus_values_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_gpu_time_bogus_values: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Gpu Time Bogus Values"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_gpu_time_bogus_values"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_cpu_time_ms {
+    type: sum
+    sql: ${metrics__counter__power_total_cpu_time_ms} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Cpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_total_cpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_cpu_time_ms_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_total_cpu_time_ms: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Cpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_total_cpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_gpu_time_ms {
+    type: sum
+    sql: ${metrics__counter__power_total_gpu_time_ms} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Gpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_total_gpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_gpu_time_ms_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_total_gpu_time_ms: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Gpu Time Ms"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_total_gpu_time_ms"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_thread_wakeups {
+    type: sum
+    sql: ${metrics__counter__power_total_thread_wakeups} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Thread Wakeups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_total_thread_wakeups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: power_total_thread_wakeups_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__power_total_thread_wakeups: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Power Total Thread Wakeups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/power_total_thread_wakeups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: rtcrtpsender_count {
+    type: sum
+    sql: ${metrics__counter__rtcrtpsender_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: rtcrtpsender_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__rtcrtpsender_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: rtcrtpsender_count_setparameters_compat {
+    type: sum
+    sql: ${metrics__counter__rtcrtpsender_count_setparameters_compat} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Count Setparameters Compat"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_count_setparameters_compat"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: rtcrtpsender_count_setparameters_compat_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__rtcrtpsender_count_setparameters_compat: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Count Setparameters Compat"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_count_setparameters_compat"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: glean_error_io {
     type: sum
     sql: ${metrics__counter__glean_error_io} ;;
@@ -961,6 +2930,135 @@ documented in the ping's pings.yaml file.
   }
 
   sql_table_name: `mozdata.firefox_desktop_background_update.metrics` ;;
+}
+
+view: metrics__metrics__labeled_counter__cookie_banners_click_result {
+  label: "Cookie Banners Click - Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
+  label: "Cookie Banners - Rule Lookup By Domain"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load {
+  label: "Cookie Banners - Rule Lookup By Load"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
 }
 
 view: metrics__metrics__labeled_counter__glean_error_invalid_label {
@@ -1221,6 +3319,1310 @@ view: metrics__metrics__labeled_counter__glean_validation_pings_submitted {
   }
 }
 
+view: metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
+  label: "Gmp - Update Xml Fetch Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_received_messages_content_background {
+  label: "Ipc Received Messages - Content Background"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_background
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_background.key
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_received_messages_content_foreground {
+  label: "Ipc Received Messages - Content Foreground"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_foreground
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_foreground.key
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_received_messages_gpu_process {
+  label: "Ipc Received Messages - Gpu Process"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_gpu_process
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_gpu_process.key
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_received_messages_parent_active {
+  label: "Ipc Received Messages - Parent Active"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_active
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_active.key
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive {
+  label: "Ipc Received Messages - Parent Inactive"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive.key
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_sent_messages_content_background {
+  label: "Ipc Sent Messages - Content Background"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_background
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_background.key
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground {
+  label: "Ipc Sent Messages - Content Foreground"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground.key
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process {
+  label: "Ipc Sent Messages - Gpu Process"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process.key
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_active {
+  label: "Ipc Sent Messages - Parent Active"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_active
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_active.key
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
+  label: "Ipc Sent Messages - Parent Inactive"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive.key
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__netwerk_early_hints {
+  label: "Netwerk - Early Hints"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__netwerk_early_hints
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__netwerk_early_hints.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__netwerk_eh_link_type {
+  label: "Netwerk - Eh Link Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_buttons {
+  label: "Pdfjs - Buttons"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_buttons
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_buttons.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_editing {
+  label: "Pdfjs - Editing"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
+  label: "Power Cpu Ms Per Thread - Content Background"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
+  label: "Power Cpu Ms Per Thread - Content Foreground"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
+  label: "Power Cpu Ms Per Thread - Gpu Process"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
+  label: "Power Cpu Ms Per Thread - Parent Active"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
+  label: "Power Cpu Ms Per Thread - Parent Inactive"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+  label: "Power - Cpu Time Per Process Type Ms"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms {
+  label: "Power - Cpu Time Per Tracker Type Ms"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
+  label: "Power - Gpu Time Per Process Type Ms"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_process_type {
+  label: "Power - Wakeups Per Process Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_process_type
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_process_type.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background {
+  label: "Power Wakeups Per Thread - Content Background"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
+  label: "Power Wakeups Per Thread - Content Foreground"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
+  label: "Power Wakeups Per Thread - Gpu Process"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active {
+  label: "Power Wakeups Per Thread - Parent Active"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+  label: "Power Wakeups Per Thread - Parent Inactive"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.cookie_banners_click_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.cookie_banners_rule_lookup_by_domain) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.cookie_banners_rule_lookup_by_load) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
@@ -1323,6 +4725,557 @@ view: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitt
     count(*) as n
 from mozdata.firefox_desktop_background_update.metrics as t,
 unnest(metrics.labeled_counter.glean_validation_pings_submitted) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.gmp_update_xml_fetch_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_background {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.ipc_received_messages_content_background) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_foreground {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.ipc_received_messages_content_foreground) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_gpu_process {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.ipc_received_messages_gpu_process) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_active {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.ipc_received_messages_parent_active) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.ipc_received_messages_parent_inactive) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_background {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.ipc_sent_messages_content_background) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.ipc_sent_messages_content_foreground) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.ipc_sent_messages_gpu_process) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_active {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.ipc_sent_messages_parent_active) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.ipc_sent_messages_parent_inactive) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__netwerk_early_hints {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.netwerk_early_hints) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.netwerk_eh_link_type) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__pdfjs_buttons {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.pdfjs_buttons) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__pdfjs_editing {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.pdfjs_editing) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_ms_per_thread_content_background) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_ms_per_thread_content_foreground) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_ms_per_thread_gpu_process) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_ms_per_thread_parent_active) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_ms_per_thread_parent_inactive) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_time_per_process_type_ms) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.power_cpu_time_per_tracker_type_ms) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.power_gpu_time_per_process_type_ms) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_process_type {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.power_wakeups_per_process_type) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.power_wakeups_per_thread_content_background) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.power_wakeups_per_thread_content_foreground) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.power_wakeups_per_thread_gpu_process) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.power_wakeups_per_thread_parent_active) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.power_wakeups_per_thread_parent_inactive) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
