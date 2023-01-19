@@ -753,6 +753,16 @@ view: clients_daily_joined_table {
     type: number
   }
 
+  dimension: media_play_time_ms_audio_sum {
+    sql: ${TABLE}.media_play_time_ms_audio_sum ;;
+    type: number
+  }
+
+  dimension: media_play_time_ms_video_sum {
+    sql: ${TABLE}.media_play_time_ms_video_sum ;;
+    type: number
+  }
+
   dimension: memory_mb {
     sql: ${TABLE}.memory_mb ;;
     type: number
