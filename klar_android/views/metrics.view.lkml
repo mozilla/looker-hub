@@ -869,6 +869,24 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__boolean__cookie_banners_service_detect_only {
+    label: "Cookie Banners Service Detect Only"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.cookie_banners_service_detect_only ;;
+    type: yesno
+    group_label: "Cookie Banners"
+    group_item_label: "Service Detect Only"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Service Detect Only"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cookie_banners_service_detect_only"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Tracks the value of the cookiebanners.service.detectOnly pref.
+"
+  }
+
   dimension: metrics__boolean__fog_failed_idle_registration {
     label: "Fog Failed Idle Registration"
     hidden: no
