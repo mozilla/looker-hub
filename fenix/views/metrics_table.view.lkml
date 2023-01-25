@@ -356,6 +356,15 @@ supported for this user.
 "
   }
 
+  dimension: metrics__boolean__cookie_banners_service_detect_only {
+    sql: ${TABLE}.metrics.boolean.cookie_banners_service_detect_only ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Cookie Banners Service Detect Only"
+    description: "Tracks the value of the cookiebanners.service.detectOnly pref.
+"
+  }
+
   dimension: metrics__boolean__customize_home_contile {
     sql: ${TABLE}.metrics.boolean.customize_home_contile ;;
     type: yesno
