@@ -5,6 +5,60 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: crash {
+  dimension: metrics__string__crash_process_type {
+    label: "Crash Process Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_process_type ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Process Type"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Process Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/crash_process_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of process that experienced a crash. See the full list of options [here](https://firefox-source-docs.mozilla.org/toolkit/components/telemetry/data/crash-ping.html#process-types).
+"
+  }
+
+  dimension: metrics__boolean__crash_startup {
+    label: "Crash Startup"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.crash_startup ;;
+    type: yesno
+    group_label: "Crash"
+    group_item_label: "Startup"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Startup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/crash_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If true, the crash occurred during process startup.
+"
+  }
+
+  dimension: metrics__timespan__crash_uptime__value {
+    label: "Crash Uptime Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.crash_uptime.value ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "Uptime Value"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Uptime Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/crash_uptime"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The application uptime. This is equivalent to the legacy crash ping's `UptimeTS` field.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes

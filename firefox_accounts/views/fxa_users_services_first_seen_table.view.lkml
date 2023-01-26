@@ -10,14 +10,34 @@ view: fxa_users_services_first_seen_table {
     type: yesno
   }
 
+  dimension: entrypoint {
+    sql: ${TABLE}.entrypoint ;;
+    type: string
+  }
+
+  dimension: first_service_country {
+    sql: ${TABLE}.first_service_country ;;
+    type: string
+  }
+
   dimension: first_service_flow {
     sql: ${TABLE}.first_service_flow ;;
+    type: string
+  }
+
+  dimension: first_service_os {
+    sql: ${TABLE}.first_service_os ;;
     type: string
   }
 
   dimension: service {
     sql: ${TABLE}.service ;;
     type: string
+  }
+
+  dimension: service_number {
+    sql: ${TABLE}.service_number ;;
+    type: number
   }
 
   dimension: user_id {
