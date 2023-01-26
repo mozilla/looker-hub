@@ -300,6 +300,22 @@ view: crash_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__crash_startup {
+    sql: ${TABLE}.metrics.boolean.crash_startup ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Crash Startup"
+    description: "If true, the crash occurred during process startup.
+"
+  }
+
+  dimension: metrics__datetime__raw_crash_time {
+    sql: ${TABLE}.metrics.datetime.raw_crash_time ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Crash Time"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -330,6 +346,29 @@ The labels are the `category.name` identifier of the metric.
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
+  }
+
+  dimension: metrics__string__crash_process_type {
+    sql: ${TABLE}.metrics.string.crash_process_type ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Process Type"
+    description: "The type of process that experienced a crash. See the full list of options [here](https://firefox-source-docs.mozilla.org/toolkit/components/telemetry/data/crash-ping.html#process-types).
+"
+  }
+
+  dimension: metrics__timespan__crash_uptime__time_unit {
+    sql: ${TABLE}.metrics.timespan.crash_uptime.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Crash Uptime"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__crash_uptime__value {
+    sql: ${TABLE}.metrics.timespan.crash_uptime.value ;;
+    type: number
+    group_label: "Metrics Timespan Crash Uptime"
+    group_item_label: "Value"
   }
 
   dimension: normalized_app_name {
@@ -420,6 +459,23 @@ The labels are the `category.name` identifier of the metric.
       year,
     ]
     label: "Metadata Header: Parsed Date"
+  }
+
+  dimension_group: metrics__datetime__crash {
+    sql: ${TABLE}.metrics.datetime.crash_time ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Crash Time"
+    description: "The time at which the crash occurred.
+"
   }
 
   dimension_group: ping_info__parsed_end {
