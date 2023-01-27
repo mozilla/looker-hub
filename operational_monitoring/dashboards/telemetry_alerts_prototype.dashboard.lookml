@@ -129,7 +129,7 @@
   - name: Metric
     title: Metric
     type: field_filter
-    default_value: 'main_crashes'
+    default_value: 'oom_crashes'
     allow_multiple_values: false
     required: true
     ui_config:
@@ -164,8 +164,8 @@
       display: inline
       options:
       - 'Linux'
-      - 'Windows'
       - 'Mac'
+      - 'Windows'
       
   
   
