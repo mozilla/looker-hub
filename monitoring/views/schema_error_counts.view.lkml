@@ -35,6 +35,11 @@ view: schema_error_counts {
     type: string
   }
 
+  dimension: sample_error_messages {
+    sql: ${TABLE}.sample_error_messages ;;
+    type: string
+  }
+
   dimension_group: hour {
     sql: ${TABLE}.hour ;;
     type: time
