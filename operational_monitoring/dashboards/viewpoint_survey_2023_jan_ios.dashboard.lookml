@@ -115,8 +115,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,7 +131,7 @@
       viewpoint_survey_2023_jan_ios.branch
     ]
     filters:
-      viewpoint_survey_2023_jan_ios.metric: 'days_of_use'
+      viewpoint_survey_2023_jan_ios.metric: 'search_count'
       viewpoint_survey_2023_jan_ios.statistic: mean
     row: 10
     col: 12
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       viewpoint_survey_2023_jan_ios.branch
     ]
     filters:
-      viewpoint_survey_2023_jan_ios.metric: 'search_count'
+      viewpoint_survey_2023_jan_ios.metric: 'days_of_use'
       viewpoint_survey_2023_jan_ios.statistic: mean
     row: 20
     col: 12

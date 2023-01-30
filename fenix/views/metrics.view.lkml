@@ -4716,6 +4716,44 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__sum {
+    label: "Nimbus Health Apply Pending Experiments Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.sum ;;
+    type: number
+    group_label: "Nimbus Health"
+    group_item_label: "Apply Pending Experiments Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Health Apply Pending Experiments Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/nimbus_health_apply_pending_experiments_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measure how long `applyPendingExperiments` takes.
+`applyPendingExperiments` uses disk I/O, and happens at
+startup, as part of the initialization sequence.
+"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__sum {
+    label: "Nimbus Health Fetch Experiments Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.sum ;;
+    type: number
+    group_label: "Nimbus Health"
+    group_item_label: "Fetch Experiments Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Health Fetch Experiments Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/nimbus_health_fetch_experiments_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures how long `fetchExperiments` takes.
+"
+  }
+
   dimension: metrics__counter__logins_store_migration_num_failed {
     label: "Logins Store Migration Num Failed"
     hidden: yes

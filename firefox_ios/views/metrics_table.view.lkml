@@ -2484,6 +2484,124 @@ tracking-protection that is enabled. One of:
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__places_history_migration_duration__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.places_history_migration_duration.bucket_count ;;
     type: number
@@ -2896,6 +3014,30 @@ view: metrics_table__metrics__timing_distribution__logins_store_unlock_time__val
 }
 
 view: metrics_table__metrics__timing_distribution__logins_store_write_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__nimbus_health_fetch_experiments_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

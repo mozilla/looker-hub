@@ -35,6 +35,12 @@ view: schema_error_counts {
     type: string
   }
 
+  dimension: sample_error_messages {
+    sql: ${TABLE}.sample_error_messages ;;
+    type: string
+    description: "concatenated error messages, limited to 300 characters"
+  }
+
   dimension_group: hour {
     sql: ${TABLE}.hour ;;
     type: time
