@@ -10,6 +10,74 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: import_infrequent_rollout_make_yourself_at_home
+    type: looker_line
+    fields: [
+      import_infrequent_rollout_make_yourself_at_home.submission_date,
+      import_infrequent_rollout_make_yourself_at_home.branch,
+      import_infrequent_rollout_make_yourself_at_home.point
+    ]
+    pivots: [
+      import_infrequent_rollout_make_yourself_at_home.branch
+    ]
+    filters:
+      import_infrequent_rollout_make_yourself_at_home.metric: 'ad_clicks'
+      import_infrequent_rollout_make_yourself_at_home.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: import_infrequent_rollout_make_yourself_at_home.submission_date
+    field_y: import_infrequent_rollout_make_yourself_at_home.point
+    log_scale: false
+    ci_lower: import_infrequent_rollout_make_yourself_at_home.lower
+    ci_upper: import_infrequent_rollout_make_yourself_at_home.upper
+    show_grid: true
+    listen:
+      Date: import_infrequent_rollout_make_yourself_at_home.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: import_infrequent_rollout_make_yourself_at_home
+    type: looker_line
+    fields: [
+      import_infrequent_rollout_make_yourself_at_home.submission_date,
+      import_infrequent_rollout_make_yourself_at_home.branch,
+      import_infrequent_rollout_make_yourself_at_home.point
+    ]
+    pivots: [
+      import_infrequent_rollout_make_yourself_at_home.branch
+    ]
+    filters:
+      import_infrequent_rollout_make_yourself_at_home.metric: 'search_count'
+      import_infrequent_rollout_make_yourself_at_home.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: import_infrequent_rollout_make_yourself_at_home.submission_date
+    field_y: import_infrequent_rollout_make_yourself_at_home.point
+    log_scale: false
+    ci_lower: import_infrequent_rollout_make_yourself_at_home.lower
+    ci_upper: import_infrequent_rollout_make_yourself_at_home.upper
+    show_grid: true
+    listen:
+      Date: import_infrequent_rollout_make_yourself_at_home.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -28,7 +96,7 @@
     filters:
       import_infrequent_rollout_make_yourself_at_home.metric: 'retained'
       import_infrequent_rollout_make_yourself_at_home.statistic: mean
-    row: 0
+    row: 10
     col: 0
     width: 12
     height: 8
@@ -64,7 +132,7 @@
     filters:
       import_infrequent_rollout_make_yourself_at_home.metric: 'memory_total'
       import_infrequent_rollout_make_yourself_at_home.statistic: percentile
-    row: 0
+    row: 10
     col: 12
     width: 12
     height: 8
@@ -81,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -97,44 +165,10 @@
       import_infrequent_rollout_make_yourself_at_home.branch
     ]
     filters:
-      import_infrequent_rollout_make_yourself_at_home.metric: 'active_hours'
+      import_infrequent_rollout_make_yourself_at_home.metric: 'uri_count'
       import_infrequent_rollout_make_yourself_at_home.statistic: mean
-    row: 10
+    row: 20
     col: 0
-    width: 12
-    height: 8
-    field_x: import_infrequent_rollout_make_yourself_at_home.submission_date
-    field_y: import_infrequent_rollout_make_yourself_at_home.point
-    log_scale: false
-    ci_lower: import_infrequent_rollout_make_yourself_at_home.lower
-    ci_upper: import_infrequent_rollout_make_yourself_at_home.upper
-    show_grid: true
-    listen:
-      Date: import_infrequent_rollout_make_yourself_at_home.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: import_infrequent_rollout_make_yourself_at_home
-    type: looker_line
-    fields: [
-      import_infrequent_rollout_make_yourself_at_home.submission_date,
-      import_infrequent_rollout_make_yourself_at_home.branch,
-      import_infrequent_rollout_make_yourself_at_home.point
-    ]
-    pivots: [
-      import_infrequent_rollout_make_yourself_at_home.branch
-    ]
-    filters:
-      import_infrequent_rollout_make_yourself_at_home.metric: 'search_count'
-      import_infrequent_rollout_make_yourself_at_home.statistic: mean
-    row: 10
-    col: 12
     width: 12
     height: 8
     field_x: import_infrequent_rollout_make_yourself_at_home.submission_date
@@ -168,40 +202,6 @@
       import_infrequent_rollout_make_yourself_at_home.metric: 'qualified_cumulative_days_of_use'
       import_infrequent_rollout_make_yourself_at_home.statistic: mean
     row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: import_infrequent_rollout_make_yourself_at_home.submission_date
-    field_y: import_infrequent_rollout_make_yourself_at_home.point
-    log_scale: false
-    ci_lower: import_infrequent_rollout_make_yourself_at_home.lower
-    ci_upper: import_infrequent_rollout_make_yourself_at_home.upper
-    show_grid: true
-    listen:
-      Date: import_infrequent_rollout_make_yourself_at_home.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: import_infrequent_rollout_make_yourself_at_home
-    type: looker_line
-    fields: [
-      import_infrequent_rollout_make_yourself_at_home.submission_date,
-      import_infrequent_rollout_make_yourself_at_home.branch,
-      import_infrequent_rollout_make_yourself_at_home.point
-    ]
-    pivots: [
-      import_infrequent_rollout_make_yourself_at_home.branch
-    ]
-    filters:
-      import_infrequent_rollout_make_yourself_at_home.metric: 'uri_count'
-      import_infrequent_rollout_make_yourself_at_home.statistic: mean
-    row: 20
     col: 12
     width: 12
     height: 8
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       import_infrequent_rollout_make_yourself_at_home.branch
     ]
     filters:
-      import_infrequent_rollout_make_yourself_at_home.metric: 'ad_clicks'
+      import_infrequent_rollout_make_yourself_at_home.metric: 'active_hours'
       import_infrequent_rollout_make_yourself_at_home.statistic: mean
     row: 30
     col: 0
