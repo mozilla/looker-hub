@@ -111,6 +111,12 @@ view: active_users_aggregates_device {
     type: number
   }
 
+  dimension: qdau_desktop {
+    sql: ${TABLE}.qdau_desktop ;;
+    type: number
+    description: "Count of distinct, qualified Desktop clients that we received a main ping from on a given day. In mobile DAU = QDAU."
+  }
+
   dimension: search_count {
     sql: ${TABLE}.search_count ;;
     type: number
