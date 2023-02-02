@@ -455,12 +455,7 @@ view: topsites_impression_table {
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.fenix.topsites_impression"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.fenix.topsites_impression"
-    }
+    default_value: "mozdata.org_mozilla_firefox_beta.topsites_impression"
 
     allowed_value: {
       label: "Beta"
