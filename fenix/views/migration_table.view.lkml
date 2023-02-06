@@ -106,6 +106,13 @@ view: migration_table {
     group_item_label: "Telemetry Sdk Build"
   }
 
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
@@ -164,6 +171,25 @@ view: migration_table {
     type: string
     group_label: "Metadata Header"
     group_item_label: "Dnt"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
+    type: string
+    group_label: "Metadata Header Parsed X Lb Tags"
+    group_item_label: "Tls Cipher Hex"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_version {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
+    type: string
+    group_label: "Metadata Header Parsed X Lb Tags"
+    group_item_label: "Tls Version"
+  }
+
+  dimension: metadata__header__parsed_x_source_tags {
+    sql: ${TABLE}.metadata.header.parsed_x_source_tags ;;
+    hidden: yes
   }
 
   dimension: metadata__header__x_debug_id {
@@ -579,6 +605,13 @@ view: migration_table {
     group_item_label: "Migration Telemetry Identifiers Fennec Profile Creation Date"
   }
 
+  dimension: metrics__datetime__raw_migration_telemetry_identifiers_fennec_profile_creation_date {
+    sql: ${TABLE}.metrics.datetime.raw_migration_telemetry_identifiers_fennec_profile_creation_date ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Migration Telemetry Identifiers Fennec Profile Creation Date"
+  }
+
   dimension: metrics__jwe {
     sql: ${TABLE}.metrics.jwe ;;
     hidden: yes
@@ -931,6 +964,51 @@ view: migration_table {
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+  }
+
+  dimension_group: metadata__header__parsed {
+    sql: ${TABLE}.metadata.header.parsed_date ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata Header: Parsed Date"
+  }
+
+  dimension_group: ping_info__parsed_end {
+    sql: ${TABLE}.ping_info.parsed_end_time ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Ping Info: Parsed End Time"
+  }
+
+  dimension_group: ping_info__parsed_start {
+    sql: ${TABLE}.ping_info.parsed_start_time ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Ping Info: Parsed Start Time"
   }
 
   dimension_group: submission {
