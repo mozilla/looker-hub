@@ -167,8 +167,8 @@
       display: inline
       options:
       - 'Linux'
-      - 'Windows'
       - 'Mac'
+      - 'Windows'
       
   
   
