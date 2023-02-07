@@ -99,6 +99,13 @@ view: clients_daily_joined_table {
     group_item_label: "Content"
   }
 
+  dimension: attribution__dltoken {
+    sql: ${TABLE}.attribution.dltoken ;;
+    type: string
+    group_label: "Attribution"
+    group_item_label: "Dltoken"
+  }
+
   dimension: attribution__experiment {
     sql: ${TABLE}.attribution.experiment ;;
     type: string
