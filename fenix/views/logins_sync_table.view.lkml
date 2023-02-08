@@ -366,6 +366,11 @@ view: logins_sync_table {
     group_item_label: "Sync Sync Uuid"
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string

@@ -318,6 +318,11 @@ view: temp_tabs_sync_table {
     group_item_label: "Tabs Sync Uid"
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string

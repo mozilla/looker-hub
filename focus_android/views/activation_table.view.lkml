@@ -330,6 +330,11 @@ view: activation_table {
     group_item_label: "Legacy Ids Client Id"
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string

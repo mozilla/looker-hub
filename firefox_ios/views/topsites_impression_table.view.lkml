@@ -352,6 +352,11 @@ view: topsites_impression_table {
     group_item_label: "Top Sites Context Id"
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string

@@ -148,6 +148,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_editing}) AS metrics__metrics__labeled_counter__pdfjs_editing ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_editing.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__ping_centre_send_failures_by_namespace {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ping_centre_send_failures_by_namespace}) AS metrics__metrics__labeled_counter__ping_centre_send_failures_by_namespace ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ping_centre_send_failures_by_namespace.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__ping_centre_send_successes_by_namespace {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ping_centre_send_successes_by_namespace}) AS metrics__metrics__labeled_counter__ping_centre_send_successes_by_namespace ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ping_centre_send_successes_by_namespace.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_ms_per_thread_content_background}) AS metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background.document_id} ;;
@@ -320,6 +330,14 @@ explore: suggest__metrics__metrics__labeled_counter__pdfjs_buttons {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__ping_centre_send_failures_by_namespace {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__ping_centre_send_successes_by_namespace {
   hidden: yes
 }
 

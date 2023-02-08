@@ -131,6 +131,11 @@ view: clients_last_seen_joined_table {
     type: number
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+  }
+
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string

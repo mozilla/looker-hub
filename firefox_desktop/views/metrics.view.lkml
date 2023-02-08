@@ -236,6 +236,42 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__labeled_counter__ping_centre_send_failures_by_namespace {
+    label: "Ping Centre Send Failures By Namespace"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ping_centre_send_failures_by_namespace ;;
+    group_label: "Ping Centre"
+    group_item_label: "Send Failures By Namespace"
+
+    link: {
+      label: "Glean Dictionary reference for Ping Centre Send Failures By Namespace"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ping_centre_send_failures_by_namespace"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of PingCentre send failures,
+broken down by structured ingestion namespace.
+"
+  }
+
+  dimension: metrics__labeled_counter__ping_centre_send_successes_by_namespace {
+    label: "Ping Centre Send Successes By Namespace"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.ping_centre_send_successes_by_namespace ;;
+    group_label: "Ping Centre"
+    group_item_label: "Send Successes By Namespace"
+
+    link: {
+      label: "Glean Dictionary reference for Ping Centre Send Successes By Namespace"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ping_centre_send_successes_by_namespace"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of PingCentre send successes,
+broken down by structured ingestion namespace.
+"
+  }
+
   dimension: metrics__string__search_engine_default_display_name {
     label: "Search Engine Default Display Name"
     hidden: no
@@ -4648,6 +4684,92 @@ view: metrics__metrics__labeled_counter__pdfjs_editing {
   }
 }
 
+view: metrics__metrics__labeled_counter__ping_centre_send_failures_by_namespace {
+  label: "Ping Centre - Send Failures By Namespace"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ping_centre_send_failures_by_namespace
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ping_centre_send_failures_by_namespace.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__ping_centre_send_successes_by_namespace {
+  label: "Ping Centre - Send Successes By Namespace"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__ping_centre_send_successes_by_namespace
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__ping_centre_send_successes_by_namespace.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
   label: "Power Cpu Ms Per Thread - Content Background"
 
@@ -5732,6 +5854,44 @@ view: suggest__metrics__metrics__labeled_counter__pdfjs_editing {
     count(*) as n
 from mozdata.firefox_desktop.metrics as t,
 unnest(metrics.labeled_counter.pdfjs_editing) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ping_centre_send_failures_by_namespace {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.ping_centre_send_failures_by_namespace) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__ping_centre_send_successes_by_namespace {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.ping_centre_send_successes_by_namespace) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
