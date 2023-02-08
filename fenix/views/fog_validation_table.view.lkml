@@ -337,6 +337,11 @@ view: fog_validation_table {
     group_item_label: "Fog Validation Legacy Telemetry Client Id"
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string

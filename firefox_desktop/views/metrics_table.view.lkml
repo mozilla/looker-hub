@@ -861,6 +861,22 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__ping_centre_send_failures_by_namespace {
+    sql: ${TABLE}.metrics.labeled_counter.ping_centre_send_failures_by_namespace ;;
+    hidden: yes
+    description: "The number of PingCentre send failures,
+broken down by structured ingestion namespace.
+"
+  }
+
+  dimension: metrics__labeled_counter__ping_centre_send_successes_by_namespace {
+    sql: ${TABLE}.metrics.labeled_counter.ping_centre_send_successes_by_namespace ;;
+    hidden: yes
+    description: "The number of PingCentre send successes,
+broken down by structured ingestion namespace.
+"
+  }
+
   dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
     sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_content_background ;;
     hidden: yes
