@@ -48,5 +48,20 @@ view: login_flows_table {
     ]
   }
 
-  sql_table_name: `mozdata.mozilla_vpn.login_flows` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.mozilla_vpn.login_flows"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.login_flows"
+    }
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.login_flows"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }

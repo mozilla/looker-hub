@@ -14,6 +14,7 @@ explore: events_unnested {
 
   always_filter: {
     filters: [
+      channel: "mozdata.mozilla^_vpn.events^_unnested",
       submission_date: "28 days",
     ]
   }

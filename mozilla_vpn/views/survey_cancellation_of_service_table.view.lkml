@@ -45,7 +45,22 @@ view: survey_cancellation_of_service_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.mozilla_vpn.survey_cancellation_of_service` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.mozilla_vpn.survey_cancellation_of_service"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.survey_cancellation_of_service"
+    }
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.survey_cancellation_of_service"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: survey_cancellation_of_service_table__survey_data {

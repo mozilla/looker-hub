@@ -106,7 +106,22 @@ view: events_daily_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.mozilla_vpn.events_daily` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.mozilla_vpn.events_daily"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.events_daily"
+    }
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.events_daily"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: events_daily_table__experiments {

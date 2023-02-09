@@ -40,5 +40,20 @@ view: exchange_rates_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.mozilla_vpn.exchange_rates` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.mozilla_vpn.exchange_rates"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.exchange_rates"
+    }
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.exchange_rates"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }

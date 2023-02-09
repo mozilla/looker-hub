@@ -121,5 +121,20 @@ view: site_metrics_summary_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.mozilla_vpn.site_metrics_summary` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.mozilla_vpn.site_metrics_summary"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.site_metrics_summary"
+    }
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.site_metrics_summary"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }

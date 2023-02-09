@@ -525,7 +525,22 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  sql_table_name: `mozdata.mozilla_vpn.deletion_request` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.mozilla_vpn.deletion_request"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.deletion_request"
+    }
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.deletion_request"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: deletion_request__metrics__labeled_counter__glean_error_invalid_label {

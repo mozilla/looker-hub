@@ -271,5 +271,20 @@ view: funnel_product_page_to_subscribed_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.mozilla_vpn.funnel_product_page_to_subscribed` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.mozilla_vpn.funnel_product_page_to_subscribed"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.funnel_product_page_to_subscribed"
+    }
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.funnel_product_page_to_subscribed"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }

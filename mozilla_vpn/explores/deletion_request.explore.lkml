@@ -14,6 +14,7 @@ explore: deletion_request {
 
   always_filter: {
     filters: [
+      channel: "mozdata.mozilla^_vpn.deletion^_request",
       submission_date: "28 days",
     ]
   }
