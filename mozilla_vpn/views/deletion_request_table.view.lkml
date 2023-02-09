@@ -495,7 +495,22 @@ The labels are the `category.name` identifier of the metric.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  sql_table_name: `mozdata.mozilla_vpn.deletion_request` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.mozilla_vpn.deletion_request"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.deletion_request"
+    }
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.deletion_request"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: deletion_request_table__events {

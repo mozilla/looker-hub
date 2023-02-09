@@ -45,7 +45,22 @@ view: survey_market_fit_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.mozilla_vpn.survey_market_fit` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.mozilla_vpn.survey_market_fit"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.survey_market_fit"
+    }
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.survey_market_fit"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: survey_market_fit_table__survey_data {

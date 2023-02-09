@@ -24,5 +24,20 @@ view: add_device_events_table {
     ]
   }
 
-  sql_table_name: `mozdata.mozilla_vpn.add_device_events` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.mozilla_vpn.add_device_events"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.add_device_events"
+    }
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.add_device_events"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }

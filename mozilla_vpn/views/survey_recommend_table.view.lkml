@@ -45,7 +45,22 @@ view: survey_recommend_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.mozilla_vpn.survey_recommend` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.mozilla_vpn.survey_recommend"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.survey_recommend"
+    }
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.survey_recommend"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
 
 view: survey_recommend_table__survey_data {

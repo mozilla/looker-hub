@@ -95,5 +95,20 @@ view: funnel_ga_to_subscriptions_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.mozilla_vpn.funnel_ga_to_subscriptions` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.mozilla_vpn.funnel_ga_to_subscriptions"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.funnel_ga_to_subscriptions"
+    }
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.mozilla_vpn.funnel_ga_to_subscriptions"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
