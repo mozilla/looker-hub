@@ -5,10 +5,10 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: bigquery_usage {
-  dimension: cost_usd {
-    sql: ${TABLE}.cost_usd ;;
-    type: number
-    description: "Total cost of the job in USD"
+  dimension: cache_hit {
+    sql: ${TABLE}.cache_hit ;;
+    type: yesno
+    description: "Whether the query results of this job were from a cache"
   }
 
   dimension: destination_dataset_id {
@@ -59,6 +59,12 @@ view: bigquery_usage {
     description: "The type of the job"
   }
 
+  dimension: query {
+    sql: ${TABLE}.query ;;
+    type: string
+    description: "SQL query text"
+  }
+
   dimension: query_id {
     sql: ${TABLE}.query_id ;;
     type: string
@@ -81,6 +87,12 @@ view: bigquery_usage {
     sql: ${TABLE}.reference_table_id ;;
     type: string
     description: "The ID of the table referenced by the job"
+  }
+
+  dimension: reservation_id {
+    sql: ${TABLE}.reservation_id ;;
+    type: string
+    description: "Name of the primary reservation (slots for distributing resources) assigned to this job."
   }
 
   dimension: source_project {
