@@ -512,6 +512,183 @@ documented in the ping's pings.yaml file.
 "
   }
 
+  dimension: metrics__timing_distribution__glean_upload_send_failure__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_failure__count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_failure__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_failure__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_failure__range {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_failure__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_failure__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_failure__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_failure__values {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__range {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__values {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__range {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__values {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.values ;;
+    hidden: yes
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -726,6 +903,42 @@ view: metrics_table__metrics__memory_distribution__glean_upload_discarded_exceed
 }
 
 view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__glean_upload_send_failure__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__glean_upload_send_success__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__glean_validation_shutdown_wait__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

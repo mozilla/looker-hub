@@ -3455,7 +3455,7 @@ though the counts appear in the next successfully sent `metrics` ping.
 
   dimension: metrics__timing_distribution__glean_upload_send_failure__sum {
     label: "Glean Upload Send Failure Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.sum ;;
     type: number
     group_label: "Glean Upload"
@@ -3473,7 +3473,7 @@ though the counts appear in the next successfully sent `metrics` ping.
 
   dimension: metrics__timing_distribution__glean_upload_send_success__sum {
     label: "Glean Upload Send Success Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.sum ;;
     type: number
     group_label: "Glean Upload"
@@ -3551,7 +3551,7 @@ This metric appears in both the metrics and baseline pings.
 
   dimension: metrics__timing_distribution__glean_validation_shutdown_wait__sum {
     label: "Glean Validation Shutdown Wait Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.sum ;;
     type: number
     group_label: "Glean Validation"

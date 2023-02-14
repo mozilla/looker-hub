@@ -2989,6 +2989,10 @@ monitoring:
       tables:
       - table: moz-fx-data-shared-prod.monitoring.bigquery_usage
       type: table_view
+    bigquery_usage_costs:
+      tables:
+      - table: moz-fx-data-shared-prod.monitoring.bigquery_usage_costs
+      type: table_view
     column_size:
       tables:
       - table: mozdata.monitoring.column_size
@@ -3088,10 +3092,6 @@ mozilla_vpn:
       views:
         base_view: events
         extended_view: events_unnested_table
-    events_unnested:
-      type: glean_ping_explore
-      views:
-        base_view: events_unnested
     funnel_analysis:
       type: funnel_analysis_explore
       views:
@@ -3197,13 +3197,6 @@ mozilla_vpn:
       - channel: release
         table: mozdata.mozilla_vpn.events
       type: table_view
-    events_unnested:
-      tables:
-      - channel: release
-        table: mozdata.mozilla_vpn.events_unnested
-      - channel: release
-        table: mozdata.mozilla_vpn.events_unnested
-      type: glean_ping_view
     events_unnested_table:
       tables:
       - channel: release
@@ -3278,13 +3271,6 @@ mozilla_vpn:
         table: mozdata.mozilla_vpn.main
       - channel: release
         table: mozdata.mozilla_vpn.main
-      type: table_view
-    metrics_clients_daily_table:
-      tables:
-      - channel: release
-        table: mozdata.mozilla_vpn.metrics_clients_daily
-      - channel: release
-        table: mozdata.mozilla_vpn.metrics_clients_daily
       type: table_view
     protected_table:
       tables:
