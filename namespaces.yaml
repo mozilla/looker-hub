@@ -2989,6 +2989,10 @@ monitoring:
       tables:
       - table: moz-fx-data-shared-prod.monitoring.bigquery_usage
       type: table_view
+    bigquery_usage_costs:
+      tables:
+      - table: moz-fx-data-shared-prod.monitoring.bigquery_usage_costs
+      type: table_view
     column_size:
       tables:
       - table: mozdata.monitoring.column_size
@@ -3088,10 +3092,6 @@ mozilla_vpn:
       views:
         base_view: events
         extended_view: events_unnested_table
-    events_unnested:
-      type: glean_ping_explore
-      views:
-        base_view: events_unnested
     funnel_analysis:
       type: funnel_analysis_explore
       views:
@@ -3197,13 +3197,6 @@ mozilla_vpn:
       - channel: release
         table: mozdata.mozilla_vpn.events
       type: table_view
-    events_unnested:
-      tables:
-      - channel: release
-        table: mozdata.mozilla_vpn.events_unnested
-      - channel: release
-        table: mozdata.mozilla_vpn.events_unnested
-      type: glean_ping_view
     events_unnested_table:
       tables:
       - channel: release
@@ -3278,13 +3271,6 @@ mozilla_vpn:
         table: mozdata.mozilla_vpn.main
       - channel: release
         table: mozdata.mozilla_vpn.main
-      type: table_view
-    metrics_clients_daily_table:
-      tables:
-      - channel: release
-        table: mozdata.mozilla_vpn.metrics_clients_daily
-      - channel: release
-        table: mozdata.mozilla_vpn.metrics_clients_daily
       type: table_view
     protected_table:
       tables:
@@ -3894,30 +3880,30 @@ operational_monitoring:
         explore: experiment_for_additional_metrics_for_product_insights_rollout
         group_by_dimension: null
         summaries: &id045
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
+        - metric: search_count
           metric_groups: []
           statistic: mean
         - metric: days_of_use
           metric_groups: []
           statistic: mean
-        - metric: memory_total
+        - metric: uri_count
           metric_groups: []
-          statistic: percentile
-        - metric: search_count
+          statistic: mean
+        - metric: ad_clicks
+          metric_groups: []
+          statistic: mean
+        - metric: active_hours
           metric_groups: []
           statistic: mean
         - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
+        - metric: retained
+          metric_groups: []
+          statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.experiment_for_additional_metrics_for_product_insights_rollout_statistics
         xaxis: submission_date
       title: Experiment For Additional Metrics For Product Insights Rollout
@@ -3931,11 +3917,11 @@ operational_monitoring:
         explore: firefox_install_demo
         group_by_dimension: null
         summaries: &id048
-        - metric: install_volume_win7
+        - metric: install_volume_win8
           metric_groups:
           - installs_by_os
           statistic: sum
-        - metric: install_volume_win7
+        - metric: install_volume_win8
           metric_groups:
           - installs_by_os
           statistic: mean
@@ -3955,11 +3941,11 @@ operational_monitoring:
           metric_groups:
           - installs_by_os
           statistic: mean
-        - metric: install_volume_win8
+        - metric: install_volume_win7
           metric_groups:
           - installs_by_os
           statistic: sum
-        - metric: install_volume_win8
+        - metric: install_volume_win7
           metric_groups:
           - installs_by_os
           statistic: mean
@@ -4017,30 +4003,30 @@ operational_monitoring:
         explore: first_run_easy_set_up_fx108_rollout
         group_by_dimension: null
         summaries: &id054
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
+        - metric: search_count
           metric_groups: []
           statistic: mean
         - metric: days_of_use
           metric_groups: []
           statistic: mean
-        - metric: memory_total
+        - metric: uri_count
           metric_groups: []
-          statistic: percentile
-        - metric: search_count
+          statistic: mean
+        - metric: ad_clicks
+          metric_groups: []
+          statistic: mean
+        - metric: active_hours
           metric_groups: []
           statistic: mean
         - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
+        - metric: retained
+          metric_groups: []
+          statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.first_run_easy_set_up_fx108_rollout_statistics
         xaxis: submission_date
       title: First Run Easy Set Up Fx108 Rollout
@@ -4055,30 +4041,30 @@ operational_monitoring:
         explore: import_infrequent_rollout_make_yourself_at_home
         group_by_dimension: null
         summaries: &id057
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
+        - metric: search_count
           metric_groups: []
           statistic: mean
         - metric: days_of_use
           metric_groups: []
           statistic: mean
-        - metric: memory_total
+        - metric: uri_count
           metric_groups: []
-          statistic: percentile
-        - metric: search_count
+          statistic: mean
+        - metric: ad_clicks
+          metric_groups: []
+          statistic: mean
+        - metric: active_hours
           metric_groups: []
           statistic: mean
         - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
+        - metric: retained
+          metric_groups: []
+          statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.import_infrequent_rollout_make_yourself_at_home_statistics
         xaxis: submission_date
       title: Import Infrequent Rollout Make Yourself At Home
@@ -4297,30 +4283,30 @@ operational_monitoring:
         explore: mr2022_backgroundtaskmessage_notification_release_1pct
         group_by_dimension: null
         summaries: &id078
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
+        - metric: search_count
           metric_groups: []
           statistic: mean
         - metric: days_of_use
           metric_groups: []
           statistic: mean
-        - metric: memory_total
+        - metric: uri_count
           metric_groups: []
-          statistic: percentile
-        - metric: search_count
+          statistic: mean
+        - metric: ad_clicks
+          metric_groups: []
+          statistic: mean
+        - metric: active_hours
           metric_groups: []
           statistic: mean
         - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
+        - metric: retained
+          metric_groups: []
+          statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.mr2022_backgroundtaskmessage_notification_release_1pct_statistics
         xaxis: submission_date
       title: Mr2022 Backgroundtaskmessage Notification Release 1Pct
@@ -4495,16 +4481,52 @@ operational_monitoring:
         - metric: scroll_present_latency
           metric_groups: []
           statistic: percentile
-        - metric: input_event_response_coalesced
+        - metric: js_pageload_delazification_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: cycle_collector_visited_ref_counted
+          metric_groups: []
+          statistic: percentile
+        - metric: fx_page_load_ms_2
           metric_groups: []
           statistic: percentile
         - metric: js_pageload_xdr_encoding_ms
           metric_groups: []
           statistic: percentile
-        - metric: js_pageload_baseline_compile_ms
+        - metric: perf_request_animation_callback_pageload
           metric_groups: []
           statistic: percentile
-        - metric: js_pageload_parse_ms
+        - metric: time_to_first_interaction_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: perf_dom_contentperf_dom_content_loaded_time_from_responsestart_ms_loaded_time
+          metric_groups: []
+          statistic: percentile
+        - metric: timestamps_first_paint_two
+          metric_groups: []
+          statistic: percentile
+        - metric: keypress_present_latency_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: cycle_collector_visited_gced
+          metric_groups: []
+          statistic: percentile
+        - metric: mouseup_followed_by_click_present_latency
+          metric_groups: []
+          statistic: percentile
+        - metric: timestamps_about_home_topsites_first_paint
+          metric_groups: []
+          statistic: percentile
+        - metric: perf_page_load_time_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: perf_first_contentful_paint_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: js_pageload_protect_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: js_pageload_execution_ms
           metric_groups: []
           statistic: percentile
         - metric: perf_page_load_time_from_responsestart
@@ -4513,52 +4535,16 @@ operational_monitoring:
         - metric: perf_dom_content_loaded_time
           metric_groups: []
           statistic: percentile
-        - metric: perf_page_load_time_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: timestamps_about_home_topsites_first_paint
-          metric_groups: []
-          statistic: percentile
-        - metric: perf_dom_contentperf_dom_content_loaded_time_from_responsestart_ms_loaded_time
-          metric_groups: []
-          statistic: percentile
         - metric: perf_request_animation_callback_non_pageload
           metric_groups: []
           statistic: percentile
-        - metric: js_pageload_execution_ms
+        - metric: input_event_response_coalesced
           metric_groups: []
           statistic: percentile
-        - metric: timestamps_first_paint_two
+        - metric: js_pageload_baseline_compile_ms
           metric_groups: []
           statistic: percentile
-        - metric: perf_first_contentful_paint_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: cycle_collector_visited_gced
-          metric_groups: []
-          statistic: percentile
-        - metric: keypress_present_latency_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: js_pageload_protect_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: mouseup_followed_by_click_present_latency
-          metric_groups: []
-          statistic: percentile
-        - metric: time_to_first_interaction_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: cycle_collector_visited_ref_counted
-          metric_groups: []
-          statistic: percentile
-        - metric: perf_request_animation_callback_pageload
-          metric_groups: []
-          statistic: percentile
-        - metric: js_pageload_delazification_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: fx_page_load_ms_2
+        - metric: js_pageload_parse_ms
           metric_groups: []
           statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.performance_desktop_build_by_build_beta_statistics
@@ -4574,40 +4560,40 @@ operational_monitoring:
         explore: performance_fenix_build_by_build_beta
         group_by_dimension: null
         summaries: &id096
-        - metric: performance_pageload_fcp
-          metric_groups: []
-          statistic: percentile
-        - metric: storage_stats_app_bytes
+        - metric: performance_pageload_fcp_responsestart
           metric_groups: []
           statistic: percentile
         - metric: performance_pageload_dcl_responsestart
           metric_groups: []
           statistic: percentile
-        - metric: storage_stats_cache_bytes
-          metric_groups: []
-          statistic: percentile
-        - metric: performance_pageload_load_time
-          metric_groups: []
-          statistic: percentile
-        - metric: performance_pageload_req_anim_frame_callback
-          metric_groups: []
-          statistic: percentile
-        - metric: performance_pageload_dcl
+        - metric: performance_pageload_fcp
           metric_groups: []
           statistic: percentile
         - metric: perf_startup_cold_view_app_to_first_frame
           metric_groups: []
           statistic: percentile
+        - metric: storage_stats_app_bytes
+          metric_groups: []
+          statistic: percentile
+        - metric: storage_stats_cache_bytes
+          metric_groups: []
+          statistic: percentile
+        - metric: performance_pageload_dcl
+          metric_groups: []
+          statistic: percentile
         - metric: storage_stats_data_dir_bytes
           metric_groups: []
           statistic: percentile
-        - metric: perf_startup_cold_main_app_to_first_frame
+        - metric: performance_pageload_req_anim_frame_callback
           metric_groups: []
           statistic: percentile
         - metric: performance_pageload_load_time_responsestart
           metric_groups: []
           statistic: percentile
-        - metric: performance_pageload_fcp_responsestart
+        - metric: performance_pageload_load_time
+          metric_groups: []
+          statistic: percentile
+        - metric: perf_startup_cold_main_app_to_first_frame
           metric_groups: []
           statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.performance_fenix_build_by_build_beta_statistics
@@ -4624,30 +4610,30 @@ operational_monitoring:
         explore: pocket_newtab_save_button
         group_by_dimension: null
         summaries: &id099
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
+        - metric: search_count
           metric_groups: []
           statistic: mean
         - metric: days_of_use
           metric_groups: []
           statistic: mean
-        - metric: memory_total
+        - metric: uri_count
           metric_groups: []
-          statistic: percentile
-        - metric: search_count
+          statistic: mean
+        - metric: ad_clicks
+          metric_groups: []
+          statistic: mean
+        - metric: active_hours
           metric_groups: []
           statistic: mean
         - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
+        - metric: retained
+          metric_groups: []
+          statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.pocket_newtab_save_button_statistics
         xaxis: submission_date
       title: Pocket Newtab Save Button
@@ -4662,30 +4648,30 @@ operational_monitoring:
         explore: pocket_newtab_save_button_25
         group_by_dimension: null
         summaries: &id102
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
+        - metric: search_count
           metric_groups: []
           statistic: mean
         - metric: days_of_use
           metric_groups: []
           statistic: mean
-        - metric: memory_total
+        - metric: uri_count
           metric_groups: []
-          statistic: percentile
-        - metric: search_count
+          statistic: mean
+        - metric: ad_clicks
+          metric_groups: []
+          statistic: mean
+        - metric: active_hours
           metric_groups: []
           statistic: mean
         - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
+        - metric: retained
+          metric_groups: []
+          statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.pocket_newtab_save_button_25_statistics
         xaxis: submission_date
       title: Pocket Newtab Save Button 25
@@ -4700,30 +4686,30 @@ operational_monitoring:
         explore: pocket_newtab_spocs_cache_rollout
         group_by_dimension: null
         summaries: &id105
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
+        - metric: search_count
           metric_groups: []
           statistic: mean
         - metric: days_of_use
           metric_groups: []
           statistic: mean
-        - metric: memory_total
+        - metric: uri_count
           metric_groups: []
-          statistic: percentile
-        - metric: search_count
+          statistic: mean
+        - metric: ad_clicks
+          metric_groups: []
+          statistic: mean
+        - metric: active_hours
           metric_groups: []
           statistic: mean
         - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
+        - metric: retained
+          metric_groups: []
+          statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.pocket_newtab_spocs_cache_rollout_statistics
         xaxis: submission_date
       title: Pocket Newtab Spocs Cache Rollout
@@ -4744,16 +4730,16 @@ operational_monitoring:
             default: Windows_NT
             options:
             - Windows_NT
-            - Linux
             - Darwin
+            - Linux
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id108
-        - metric: printing_dialog_opened_via_preview
+        - metric: printing_preview_cancelled_tm
           metric_groups:
-          - print_initiation_counts
-          statistic: sum
-        - metric: printing_preview_opened
+          - print_cancel_ratios
+          statistic: total_ratio
+        - metric: printing_silent_print
           metric_groups:
           - print_initiation_counts
           statistic: sum
@@ -4761,7 +4747,21 @@ operational_monitoring:
           metric_groups:
           - print_cancel_ratios
           statistic: total_ratio
-        - metric: printing_preview_cancelled_tm
+        - metric: printing_preview_cancelled
+          metric_groups:
+          - print_cancel_ratios
+          statistic: total_ratio
+        - metric: printing_preview_opened_tm
+          metric_groups:
+          - print_initiation_counts
+          statistic: sum
+        - metric: print_count
+          metric_groups: []
+          statistic: mean
+        - metric: print_count
+          metric_groups: []
+          statistic: percentile
+        - metric: printing_dialog_via_preview_cancelled_tm
           metric_groups:
           - print_cancel_ratios
           statistic: total_ratio
@@ -4769,21 +4769,7 @@ operational_monitoring:
           metric_groups:
           - print_initiation_counts
           statistic: sum
-        - metric: printing_dialog_via_preview_cancelled
-          metric_groups:
-          - print_cancel_ratios
-          statistic: total_ratio
-        - metric: print_count
-          metric_groups: []
-          statistic: mean
-        - metric: print_count
-          metric_groups: []
-          statistic: percentile
-        - metric: printing_silent_print
-          metric_groups:
-          - print_initiation_counts
-          statistic: sum
-        - metric: printing_preview_opened_tm
+        - metric: printing_dialog_opened_via_preview
           metric_groups:
           - print_initiation_counts
           statistic: sum
@@ -4791,14 +4777,14 @@ operational_monitoring:
           metric_groups:
           - print_initiation_counts
           statistic: sum
-        - metric: printing_preview_cancelled
+        - metric: printing_dialog_via_preview_cancelled
           metric_groups:
           - print_cancel_ratios
           statistic: total_ratio
-        - metric: printing_dialog_via_preview_cancelled_tm
+        - metric: printing_preview_opened
           metric_groups:
-          - print_cancel_ratios
-          statistic: total_ratio
+          - print_initiation_counts
+          statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.print_background_task_times_statistics
         xaxis: submission_date
       title: 'Print Background Task Times  1Pct Sample '
@@ -4824,23 +4810,10 @@ operational_monitoring:
         explore: print_background_task_times_by_build
         group_by_dimension: null
         summaries: &id111
-        - metric: abort
-          metric_groups:
-          - print_error_breakdown
+        - metric: total_printing_errors
+          metric_groups: []
           statistic: sum
-        - metric: start_page
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: total_printing_errors_new_ui
-          metric_groups:
-          - print_error_by_ui
-          statistic: sum
-        - metric: total_printing_errors_old_ui
-          metric_groups:
-          - print_error_by_ui
-          statistic: sum
-        - metric: unexpected
+        - metric: not_available
           metric_groups:
           - print_error_breakdown
           statistic: sum
@@ -4848,34 +4821,11 @@ operational_monitoring:
           metric_groups:
           - print_error_breakdown
           statistic: sum
-        - metric: no_printer
+        - metric: start_page
           metric_groups:
           - print_error_breakdown
           statistic: sum
         - metric: oom
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: print_failure
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: not_available
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: total_printing_errors
-          metric_groups: []
-          statistic: sum
-        - metric: enddoc
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: notimplemented
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: gfx_printer_doc_is_busy
           metric_groups:
           - print_error_breakdown
           statistic: sum
@@ -4886,6 +4836,42 @@ operational_monitoring:
         - metric: name_not_found
           metric_groups:
           - print_error_breakdown
+          statistic: sum
+        - metric: enddoc
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: notimplemented
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: total_printing_errors_new_ui
+          metric_groups:
+          - print_error_by_ui
+          statistic: sum
+        - metric: print_failure
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: no_printer
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: abort
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: gfx_printer_doc_is_busy
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: unexpected
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: total_printing_errors_old_ui
+          metric_groups:
+          - print_error_by_ui
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.print_background_task_times_by_build_statistics
         xaxis: build_id
@@ -5032,30 +5018,30 @@ operational_monitoring:
         explore: server_knobs_validation
         group_by_dimension: null
         summaries: &id126
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
+        - metric: search_count
           metric_groups: []
           statistic: mean
         - metric: days_of_use
           metric_groups: []
           statistic: mean
-        - metric: memory_total
+        - metric: uri_count
           metric_groups: []
-          statistic: percentile
-        - metric: search_count
+          statistic: mean
+        - metric: ad_clicks
+          metric_groups: []
+          statistic: mean
+        - metric: active_hours
           metric_groups: []
           statistic: mean
         - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
+        - metric: retained
+          metric_groups: []
+          statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.server_knobs_validation_statistics
         xaxis: submission_date
       title: Server Knobs Validation
@@ -5376,10 +5362,10 @@ operational_monitoring:
         - metric: checkerboard_severity
           metric_groups: []
           statistic: percentile
-        - metric: subsession_length
+        - metric: gc_ms
           metric_groups: []
           statistic: percentile
-        - metric: active_ticks
+        - metric: gc_budget_overrun
           metric_groups: []
           statistic: percentile
         - metric: gc_ms_content
@@ -5388,13 +5374,10 @@ operational_monitoring:
         - metric: memory_total
           metric_groups: []
           statistic: percentile
-        - metric: gc_ms
+        - metric: active_ticks
           metric_groups: []
           statistic: percentile
-        - metric: gc_budget_overrun
-          metric_groups: []
-          statistic: percentile
-        - metric: js_pageload_execution_ms
+        - metric: subsession_length
           metric_groups: []
           statistic: percentile
         - metric: main_crashes
@@ -5404,6 +5387,9 @@ operational_monitoring:
           metric_groups: []
           statistic: sum
         - metric: perf_first_contentful_paint_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: js_pageload_execution_ms
           metric_groups: []
           statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype_statistics

@@ -747,6 +747,42 @@ though the counts appear in the next successfully sent `metrics` ping.
 "
   }
 
+  dimension: metrics__timing_distribution__glean_upload_send_failure__sum {
+    label: "Glean Upload Send Failure Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.sum ;;
+    type: number
+    group_label: "Glean Upload"
+    group_item_label: "Send Failure Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload Send Failure Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_upload_send_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time needed for a failed send of a ping to the servers and getting a reply back.
+"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__sum {
+    label: "Glean Upload Send Success Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.sum ;;
+    type: number
+    group_label: "Glean Upload"
+    group_item_label: "Send Success Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload Send Success Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_upload_send_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time needed for a successful send of a ping to the servers and getting a reply back
+"
+  }
+
   dimension: metrics__datetime__glean_validation_first_run_hour {
     label: "Glean Validation First Run Hour"
     hidden: yes
@@ -804,6 +840,24 @@ This metric appears in both the metrics and baseline pings.
   the last metrics ping (including the last metrics ping)
 - On the baseline ping, the counts include the number of pings send since
   the last baseline ping (including the last baseline ping)
+"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__sum {
+    label: "Glean Validation Shutdown Wait Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.sum ;;
+    type: number
+    group_label: "Glean Validation"
+    group_item_label: "Shutdown Wait Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation Shutdown Wait Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_validation_shutdown_wait"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time waited for the uploader at shutdown.
 "
   }
 

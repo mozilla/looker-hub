@@ -5,6 +5,11 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: fenix_marketing_metrics {
+  dimension: activated {
+    sql: ${TABLE}.activated ;;
+    type: yesno
+  }
+
   dimension: ad_clicks {
     sql: ${TABLE}.ad_clicks ;;
     type: number
@@ -44,6 +49,11 @@ view: fenix_marketing_metrics {
   dimension: dau {
     sql: ${TABLE}.dau ;;
     type: number
+  }
+
+  dimension: is_new_install {
+    sql: ${TABLE}.is_new_install ;;
+    type: yesno
   }
 
   dimension: is_new_profile {

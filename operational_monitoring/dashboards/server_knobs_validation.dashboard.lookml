@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       server_knobs_validation.branch
     ]
     filters:
-      server_knobs_validation.metric: 'ad_clicks'
+      server_knobs_validation.metric: 'search_count'
       server_knobs_validation.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       server_knobs_validation.branch
     ]
     filters:
-      server_knobs_validation.metric: 'retained'
+      server_knobs_validation.metric: 'days_of_use'
       server_knobs_validation.statistic: mean
     row: 0
     col: 12
@@ -112,6 +112,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: server_knobs_validation
+    type: looker_line
+    fields: [
+      server_knobs_validation.submission_date,
+      server_knobs_validation.branch,
+      server_knobs_validation.point
+    ]
+    pivots: [
+      server_knobs_validation.branch
+    ]
+    filters:
+      server_knobs_validation.metric: 'ad_clicks'
+      server_knobs_validation.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: server_knobs_validation.submission_date
+    field_y: server_knobs_validation.point
+    log_scale: false
+    ci_lower: server_knobs_validation.lower
+    ci_upper: server_knobs_validation.upper
+    show_grid: true
+    listen:
+      Date: server_knobs_validation.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -130,7 +164,41 @@
     filters:
       server_knobs_validation.metric: 'active_hours'
       server_knobs_validation.statistic: mean
-    row: 10
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: server_knobs_validation.submission_date
+    field_y: server_knobs_validation.point
+    log_scale: false
+    ci_lower: server_knobs_validation.lower
+    ci_upper: server_knobs_validation.upper
+    show_grid: true
+    listen:
+      Date: server_knobs_validation.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: server_knobs_validation
+    type: looker_line
+    fields: [
+      server_knobs_validation.submission_date,
+      server_knobs_validation.branch,
+      server_knobs_validation.point
+    ]
+    pivots: [
+      server_knobs_validation.branch
+    ]
+    filters:
+      server_knobs_validation.metric: 'qualified_cumulative_days_of_use'
+      server_knobs_validation.statistic: mean
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -146,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,9 +230,9 @@
       server_knobs_validation.branch
     ]
     filters:
-      server_knobs_validation.metric: 'days_of_use'
+      server_knobs_validation.metric: 'retained'
       server_knobs_validation.statistic: mean
-    row: 20
+    row: 30
     col: 0
     width: 12
     height: 8
@@ -200,7 +268,7 @@
     filters:
       server_knobs_validation.metric: 'memory_total'
       server_knobs_validation.statistic: percentile
-    row: 20
+    row: 30
     col: 12
     width: 12
     height: 8
@@ -213,74 +281,6 @@
     listen:
       Date: server_knobs_validation.submission_date
       Percentile: server_knobs_validation.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: server_knobs_validation
-    type: looker_line
-    fields: [
-      server_knobs_validation.submission_date,
-      server_knobs_validation.branch,
-      server_knobs_validation.point
-    ]
-    pivots: [
-      server_knobs_validation.branch
-    ]
-    filters:
-      server_knobs_validation.metric: 'search_count'
-      server_knobs_validation.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: server_knobs_validation.submission_date
-    field_y: server_knobs_validation.point
-    log_scale: false
-    ci_lower: server_knobs_validation.lower
-    ci_upper: server_knobs_validation.upper
-    show_grid: true
-    listen:
-      Date: server_knobs_validation.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: server_knobs_validation
-    type: looker_line
-    fields: [
-      server_knobs_validation.submission_date,
-      server_knobs_validation.branch,
-      server_knobs_validation.point
-    ]
-    pivots: [
-      server_knobs_validation.branch
-    ]
-    filters:
-      server_knobs_validation.metric: 'qualified_cumulative_days_of_use'
-      server_knobs_validation.statistic: mean
-    row: 30
-    col: 12
-    width: 12
-    height: 8
-    field_x: server_knobs_validation.submission_date
-    field_y: server_knobs_validation.point
-    log_scale: false
-    ci_lower: server_knobs_validation.lower
-    ci_upper: server_knobs_validation.upper
-    show_grid: true
-    listen:
-      Date: server_knobs_validation.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

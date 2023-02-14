@@ -1085,6 +1085,40 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__network_data_size_pb_per_type {
+    label: "Network Data Size Pb Per Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_data_size_pb_per_type ;;
+    group_label: "Network"
+    group_item_label: "Data Size Pb Per Type"
+
+    link: {
+      label: "Glean Dictionary reference for Network Data Size Pb Per Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_data_size_pb_per_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of KB we transferred keyed by \"contentType\"
+"
+  }
+
+  dimension: metrics__labeled_counter__network_data_size_per_type {
+    label: "Network Data Size Per Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_data_size_per_type ;;
+    group_label: "Network"
+    group_item_label: "Data Size Per Type"
+
+    link: {
+      label: "Glean Dictionary reference for Network Data Size Per Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/network_data_size_per_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of KB we transferred keyed by \"contentType\"
+"
+  }
+
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__sum {
     label: "Network Open To Transaction Pending Sum"
     hidden: yes
@@ -2434,6 +2468,42 @@ though the counts appear in the next successfully sent `metrics` ping.
 "
   }
 
+  dimension: metrics__timing_distribution__glean_upload_send_failure__sum {
+    label: "Glean Upload Send Failure Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.sum ;;
+    type: number
+    group_label: "Glean Upload"
+    group_item_label: "Send Failure Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload Send Failure Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_upload_send_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time needed for a failed send of a ping to the servers and getting a reply back.
+"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__sum {
+    label: "Glean Upload Send Success Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.sum ;;
+    type: number
+    group_label: "Glean Upload"
+    group_item_label: "Send Success Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload Send Success Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_upload_send_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time needed for a successful send of a ping to the servers and getting a reply back
+"
+  }
+
   dimension: metrics__datetime__glean_validation_first_run_hour {
     label: "Glean Validation First Run Hour"
     hidden: yes
@@ -2491,6 +2561,24 @@ This metric appears in both the metrics and baseline pings.
   the last metrics ping (including the last metrics ping)
 - On the baseline ping, the counts include the number of pings send since
   the last baseline ping (including the last baseline ping)
+"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__sum {
+    label: "Glean Validation Shutdown Wait Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.sum ;;
+    type: number
+    group_label: "Glean Validation"
+    group_item_label: "Shutdown Wait Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation Shutdown Wait Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_validation_shutdown_wait"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time waited for the uploader at shutdown.
 "
   }
 
@@ -4598,6 +4686,92 @@ view: metrics__metrics__labeled_counter__netwerk_eh_link_type {
   }
 }
 
+view: metrics__metrics__labeled_counter__network_data_size_pb_per_type {
+  label: "Network - Data Size Pb Per Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__network_data_size_pb_per_type
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__network_data_size_pb_per_type.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_data_size_per_type {
+  label: "Network - Data Size Per Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__network_data_size_per_type
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__network_data_size_per_type.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__pdfjs_buttons {
   label: "Pdfjs - Buttons"
 
@@ -5816,6 +5990,44 @@ view: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type {
     count(*) as n
 from mozdata.firefox_desktop.metrics as t,
 unnest(metrics.labeled_counter.netwerk_eh_link_type) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__network_data_size_pb_per_type {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.network_data_size_pb_per_type) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__network_data_size_per_type {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.network_data_size_per_type) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
