@@ -70,11 +70,6 @@ view: ad_cost_breakdowns {
     type: number
   }
 
-  dimension: installs {
-    sql: ${TABLE}.installs ;;
-    type: number
-  }
-
   dimension: marketing_ad_clicks {
     sql: ${TABLE}.marketing_ad_clicks ;;
     type: number
@@ -82,6 +77,11 @@ view: ad_cost_breakdowns {
 
   dimension: new_installs_sum {
     sql: ${TABLE}.new_installs_sum ;;
+    type: number
+  }
+
+  dimension: new_profiles {
+    sql: ${TABLE}.new_profiles ;;
     type: number
   }
 
