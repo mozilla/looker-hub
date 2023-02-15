@@ -30,6 +30,11 @@ view: bigquery_usage_costs {
     type: string
   }
 
+  dimension: username {
+    sql: ${TABLE}.username ;;
+    type: string
+  }
+
   dimension_group: creation {
     sql: ${TABLE}.creation_date ;;
     type: time
