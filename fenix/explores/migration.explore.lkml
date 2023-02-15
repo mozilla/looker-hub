@@ -14,7 +14,7 @@ explore: migration {
 
   always_filter: {
     filters: [
-      channel: "mozdata.fenix.migration",
+      channel: "mozdata.org^_mozilla^_firefox^_beta.migration",
       submission_date: "28 days",
     ]
   }

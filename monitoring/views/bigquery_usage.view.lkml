@@ -59,12 +59,6 @@ view: bigquery_usage {
     description: "The type of the job"
   }
 
-  dimension: query {
-    sql: ${TABLE}.query ;;
-    type: string
-    description: "SQL query text"
-  }
-
   dimension: query_id {
     sql: ${TABLE}.query_id ;;
     type: string

@@ -10,6 +10,11 @@ view: fenix_marketing_metrics {
     type: yesno
   }
 
+  dimension: activations {
+    sql: ${TABLE}.activations ;;
+    type: number
+  }
+
   dimension: ad_clicks {
     sql: ${TABLE}.ad_clicks ;;
     type: number
@@ -59,6 +64,11 @@ view: fenix_marketing_metrics {
   dimension: is_new_profile {
     sql: ${TABLE}.is_new_profile ;;
     type: yesno
+  }
+
+  dimension: new_installs {
+    sql: ${TABLE}.new_installs ;;
+    type: number
   }
 
   dimension: new_profiles {

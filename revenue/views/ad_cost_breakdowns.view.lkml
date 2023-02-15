@@ -5,6 +5,11 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: ad_cost_breakdowns {
+  dimension: activations_sum {
+    sql: ${TABLE}.activations_sum ;;
+    type: number
+  }
+
   dimension: ad_conversions {
     sql: ${TABLE}.ad_conversions ;;
     type: number
@@ -25,6 +30,11 @@ view: ad_cost_breakdowns {
     type: number
   }
 
+  dimension: cost_per_activation_micros {
+    sql: ${TABLE}.cost_per_activation_micros ;;
+    type: number
+  }
+
   dimension: cost_per_dou_micros {
     sql: ${TABLE}.cost_per_dou_micros ;;
     type: number
@@ -40,8 +50,18 @@ view: ad_cost_breakdowns {
     type: number
   }
 
+  dimension: cost_per_new_profile_micros {
+    sql: ${TABLE}.cost_per_new_profile_micros ;;
+    type: number
+  }
+
   dimension: cost_per_revenue_generating_ad_click_micros {
     sql: ${TABLE}.cost_per_revenue_generating_ad_click_micros ;;
+    type: number
+  }
+
+  dimension: dau {
+    sql: ${TABLE}.dau ;;
     type: number
   }
 
@@ -57,6 +77,11 @@ view: ad_cost_breakdowns {
 
   dimension: marketing_ad_clicks {
     sql: ${TABLE}.marketing_ad_clicks ;;
+    type: number
+  }
+
+  dimension: new_installs_sum {
+    sql: ${TABLE}.new_installs_sum ;;
     type: number
   }
 

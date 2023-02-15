@@ -5,6 +5,16 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: marketing_attributable_metrics_table {
+  dimension: activated {
+    sql: ${TABLE}.activated ;;
+    type: yesno
+  }
+
+  dimension: activations {
+    sql: ${TABLE}.activations ;;
+    type: number
+  }
+
   dimension: ad_clicks {
     sql: ${TABLE}.ad_clicks ;;
     type: number
@@ -46,9 +56,19 @@ view: marketing_attributable_metrics_table {
     type: number
   }
 
+  dimension: is_new_install {
+    sql: ${TABLE}.is_new_install ;;
+    type: yesno
+  }
+
   dimension: is_new_profile {
     sql: ${TABLE}.is_new_profile ;;
     type: yesno
+  }
+
+  dimension: new_installs {
+    sql: ${TABLE}.new_installs ;;
+    type: number
   }
 
   dimension: new_profiles {

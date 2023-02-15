@@ -5,6 +5,11 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: attributable_clients_table {
+  dimension: activated {
+    sql: ${TABLE}.activated ;;
+    type: yesno
+  }
+
   dimension: ad_clicks {
     sql: ${TABLE}.ad_clicks ;;
     type: number
@@ -39,6 +44,11 @@ view: attributable_clients_table {
     sql: ${TABLE}.country ;;
     type: string
     map_layer_name: countries
+  }
+
+  dimension: is_new_install {
+    sql: ${TABLE}.is_new_install ;;
+    type: yesno
   }
 
   dimension: is_new_profile {
