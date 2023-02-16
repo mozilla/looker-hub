@@ -45,22 +45,7 @@ view: survey_lifecycle_28d_mobile_table {
     datatype: date
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.mozilla_vpn.survey_lifecycle_28d_mobile"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.survey_lifecycle_28d_mobile"
-    }
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.survey_lifecycle_28d_mobile"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.mozilla_vpn.survey_lifecycle_28d_mobile` ;;
 }
 
 view: survey_lifecycle_28d_mobile_table__survey_data {

@@ -413,22 +413,7 @@ view: events_unnested_table {
     ]
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.mozilla_vpn.events_unnested"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.events_unnested"
-    }
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.events_unnested"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.mozilla_vpn.events_unnested` ;;
 }
 
 view: events_unnested_table__event_extra {

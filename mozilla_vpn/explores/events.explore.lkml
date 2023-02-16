@@ -25,7 +25,6 @@ explore: event_counts {
 
   always_filter: {
     filters: [
-      channel: "mozdata.mozilla^_vpn.events^_unnested",
       submission_date: "28 days",
     ]
   }

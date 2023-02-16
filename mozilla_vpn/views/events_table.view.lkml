@@ -430,22 +430,7 @@ view: events_table {
     ]
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.mozilla_vpn.events"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.events"
-    }
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.events"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.mozilla_vpn.events` ;;
 }
 
 view: events_table__events {

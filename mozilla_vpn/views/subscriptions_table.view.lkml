@@ -153,20 +153,5 @@ view: subscriptions_table {
     ]
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.mozilla_vpn.subscriptions"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.subscriptions"
-    }
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.subscriptions"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.mozilla_vpn.subscriptions` ;;
 }

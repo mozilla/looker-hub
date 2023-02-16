@@ -25,20 +25,5 @@ view: active_subscription_ids_table {
     datatype: date
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.mozilla_vpn.active_subscription_ids"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.active_subscription_ids"
-    }
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.active_subscription_ids"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.mozilla_vpn.active_subscription_ids` ;;
 }

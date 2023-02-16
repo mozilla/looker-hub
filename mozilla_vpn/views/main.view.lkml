@@ -492,22 +492,7 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.mozilla_vpn.main"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.main"
-    }
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.main"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.mozilla_vpn.main` ;;
 }
 
 view: main__metrics__labeled_counter__glean_error_invalid_label {

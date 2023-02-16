@@ -29,20 +29,5 @@ view: users_table {
     ]
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.mozilla_vpn.users"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.users"
-    }
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.users"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.mozilla_vpn.users` ;;
 }
