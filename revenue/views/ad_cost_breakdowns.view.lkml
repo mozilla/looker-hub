@@ -70,6 +70,11 @@ view: ad_cost_breakdowns {
     type: number
   }
 
+  dimension: installs {
+    sql: ${TABLE}.installs ;;
+    type: number
+  }
+
   dimension: marketing_ad_clicks {
     sql: ${TABLE}.marketing_ad_clicks ;;
     type: number
