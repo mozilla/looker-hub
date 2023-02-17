@@ -14,7 +14,6 @@ explore: main {
 
   always_filter: {
     filters: [
-      channel: "mozdata.mozilla^_vpn.main",
       submission_date: "28 days",
     ]
   }

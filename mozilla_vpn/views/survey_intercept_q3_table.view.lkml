@@ -45,22 +45,7 @@ view: survey_intercept_q3_table {
     datatype: date
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.mozilla_vpn.survey_intercept_q3"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.survey_intercept_q3"
-    }
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.survey_intercept_q3"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.mozilla_vpn.survey_intercept_q3` ;;
 }
 
 view: survey_intercept_q3_table__survey_data {

@@ -53,20 +53,5 @@ view: devices_table {
     ]
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.mozilla_vpn.devices"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.devices"
-    }
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.devices"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.mozilla_vpn.devices` ;;
 }

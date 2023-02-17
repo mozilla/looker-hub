@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Uri Count
+    name: Uri Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: experiment_for_additional_metrics_for_product_insights_rollout
+    type: looker_line
+    fields: [
+      experiment_for_additional_metrics_for_product_insights_rollout.submission_date,
+      experiment_for_additional_metrics_for_product_insights_rollout.branch,
+      experiment_for_additional_metrics_for_product_insights_rollout.point
+    ]
+    pivots: [
+      experiment_for_additional_metrics_for_product_insights_rollout.branch
+    ]
+    filters:
+      experiment_for_additional_metrics_for_product_insights_rollout.metric: 'uri_count'
+      experiment_for_additional_metrics_for_product_insights_rollout.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: experiment_for_additional_metrics_for_product_insights_rollout.submission_date
+    field_y: experiment_for_additional_metrics_for_product_insights_rollout.point
+    log_scale: false
+    ci_lower: experiment_for_additional_metrics_for_product_insights_rollout.lower
+    ci_upper: experiment_for_additional_metrics_for_product_insights_rollout.upper
+    show_grid: true
+    listen:
+      Date: experiment_for_additional_metrics_for_product_insights_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -29,40 +63,6 @@
       experiment_for_additional_metrics_for_product_insights_rollout.metric: 'ad_clicks'
       experiment_for_additional_metrics_for_product_insights_rollout.statistic: mean
     row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: experiment_for_additional_metrics_for_product_insights_rollout.submission_date
-    field_y: experiment_for_additional_metrics_for_product_insights_rollout.point
-    log_scale: false
-    ci_lower: experiment_for_additional_metrics_for_product_insights_rollout.lower
-    ci_upper: experiment_for_additional_metrics_for_product_insights_rollout.upper
-    show_grid: true
-    listen:
-      Date: experiment_for_additional_metrics_for_product_insights_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: experiment_for_additional_metrics_for_product_insights_rollout
-    type: looker_line
-    fields: [
-      experiment_for_additional_metrics_for_product_insights_rollout.submission_date,
-      experiment_for_additional_metrics_for_product_insights_rollout.branch,
-      experiment_for_additional_metrics_for_product_insights_rollout.point
-    ]
-    pivots: [
-      experiment_for_additional_metrics_for_product_insights_rollout.branch
-    ]
-    filters:
-      experiment_for_additional_metrics_for_product_insights_rollout.metric: 'retained'
-      experiment_for_additional_metrics_for_product_insights_rollout.statistic: mean
-    row: 0
     col: 12
     width: 12
     height: 8
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       experiment_for_additional_metrics_for_product_insights_rollout.branch
     ]
     filters:
-      experiment_for_additional_metrics_for_product_insights_rollout.metric: 'days_of_use'
+      experiment_for_additional_metrics_for_product_insights_rollout.metric: 'search_count'
       experiment_for_additional_metrics_for_product_insights_rollout.statistic: mean
     row: 10
     col: 0
@@ -146,26 +146,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: experiment_for_additional_metrics_for_product_insights_rollout
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       experiment_for_additional_metrics_for_product_insights_rollout.submission_date,
       experiment_for_additional_metrics_for_product_insights_rollout.branch,
-      experiment_for_additional_metrics_for_product_insights_rollout.upper,
-      experiment_for_additional_metrics_for_product_insights_rollout.lower,
       experiment_for_additional_metrics_for_product_insights_rollout.point
     ]
     pivots: [
       experiment_for_additional_metrics_for_product_insights_rollout.branch
     ]
     filters:
-      experiment_for_additional_metrics_for_product_insights_rollout.metric: 'memory_total'
-      experiment_for_additional_metrics_for_product_insights_rollout.statistic: percentile
+      experiment_for_additional_metrics_for_product_insights_rollout.metric: 'days_of_use'
+      experiment_for_additional_metrics_for_product_insights_rollout.statistic: mean
     row: 20
     col: 0
     width: 12
@@ -178,7 +176,40 @@
     show_grid: true
     listen:
       Date: experiment_for_additional_metrics_for_product_insights_rollout.submission_date
-      Percentile: experiment_for_additional_metrics_for_product_insights_rollout.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: experiment_for_additional_metrics_for_product_insights_rollout
+    type: looker_line
+    fields: [
+      experiment_for_additional_metrics_for_product_insights_rollout.submission_date,
+      experiment_for_additional_metrics_for_product_insights_rollout.branch,
+      experiment_for_additional_metrics_for_product_insights_rollout.point
+    ]
+    pivots: [
+      experiment_for_additional_metrics_for_product_insights_rollout.branch
+    ]
+    filters:
+      experiment_for_additional_metrics_for_product_insights_rollout.metric: 'retained'
+      experiment_for_additional_metrics_for_product_insights_rollout.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: experiment_for_additional_metrics_for_product_insights_rollout.submission_date
+    field_y: experiment_for_additional_metrics_for_product_insights_rollout.point
+    log_scale: false
+    ci_lower: experiment_for_additional_metrics_for_product_insights_rollout.lower
+    ci_upper: experiment_for_additional_metrics_for_product_insights_rollout.upper
+    show_grid: true
+    listen:
+      Date: experiment_for_additional_metrics_for_product_insights_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -201,40 +232,6 @@
     filters:
       experiment_for_additional_metrics_for_product_insights_rollout.metric: 'active_hours'
       experiment_for_additional_metrics_for_product_insights_rollout.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: experiment_for_additional_metrics_for_product_insights_rollout.submission_date
-    field_y: experiment_for_additional_metrics_for_product_insights_rollout.point
-    log_scale: false
-    ci_lower: experiment_for_additional_metrics_for_product_insights_rollout.lower
-    ci_upper: experiment_for_additional_metrics_for_product_insights_rollout.upper
-    show_grid: true
-    listen:
-      Date: experiment_for_additional_metrics_for_product_insights_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: experiment_for_additional_metrics_for_product_insights_rollout
-    type: looker_line
-    fields: [
-      experiment_for_additional_metrics_for_product_insights_rollout.submission_date,
-      experiment_for_additional_metrics_for_product_insights_rollout.branch,
-      experiment_for_additional_metrics_for_product_insights_rollout.point
-    ]
-    pivots: [
-      experiment_for_additional_metrics_for_product_insights_rollout.branch
-    ]
-    filters:
-      experiment_for_additional_metrics_for_product_insights_rollout.metric: 'search_count'
-      experiment_for_additional_metrics_for_product_insights_rollout.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,24 +248,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: experiment_for_additional_metrics_for_product_insights_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       experiment_for_additional_metrics_for_product_insights_rollout.submission_date,
       experiment_for_additional_metrics_for_product_insights_rollout.branch,
+      experiment_for_additional_metrics_for_product_insights_rollout.upper,
+      experiment_for_additional_metrics_for_product_insights_rollout.lower,
       experiment_for_additional_metrics_for_product_insights_rollout.point
     ]
     pivots: [
       experiment_for_additional_metrics_for_product_insights_rollout.branch
     ]
     filters:
-      experiment_for_additional_metrics_for_product_insights_rollout.metric: 'uri_count'
-      experiment_for_additional_metrics_for_product_insights_rollout.statistic: mean
+      experiment_for_additional_metrics_for_product_insights_rollout.metric: 'memory_total'
+      experiment_for_additional_metrics_for_product_insights_rollout.statistic: percentile
     row: 30
     col: 12
     width: 12
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: experiment_for_additional_metrics_for_product_insights_rollout.submission_date
+      Percentile: experiment_for_additional_metrics_for_product_insights_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

@@ -24,20 +24,5 @@ view: protected_table {
     ]
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.mozilla_vpn.protected"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.protected"
-    }
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.protected"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.mozilla_vpn.protected` ;;
 }

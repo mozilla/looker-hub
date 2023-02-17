@@ -85,11 +85,6 @@ view: ad_cost_breakdowns {
     type: number
   }
 
-  dimension: new_profiles {
-    sql: ${TABLE}.new_profiles ;;
-    type: number
-  }
-
   dimension: revenue_generating_ad_clicks {
     sql: ${TABLE}.revenue_generating_ad_clicks ;;
     type: number

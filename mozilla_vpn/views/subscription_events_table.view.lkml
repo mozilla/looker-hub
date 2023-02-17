@@ -171,20 +171,5 @@ view: subscription_events_table {
     datatype: date
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.mozilla_vpn.subscription_events"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.subscription_events"
-    }
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.subscription_events"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.mozilla_vpn.subscription_events` ;;
 }

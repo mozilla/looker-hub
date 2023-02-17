@@ -45,22 +45,7 @@ view: survey_product_quality_table {
     datatype: date
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.mozilla_vpn.survey_product_quality"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.survey_product_quality"
-    }
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.survey_product_quality"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.mozilla_vpn.survey_product_quality` ;;
 }
 
 view: survey_product_quality_table__survey_data {

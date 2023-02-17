@@ -55,20 +55,5 @@ view: funnel_fxa_login_to_protected_table {
     datatype: date
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.mozilla_vpn.funnel_fxa_login_to_protected"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.funnel_fxa_login_to_protected"
-    }
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.mozilla_vpn.funnel_fxa_login_to_protected"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.mozilla_vpn.funnel_fxa_login_to_protected` ;;
 }
