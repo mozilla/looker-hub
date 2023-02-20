@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       viewpoint_survey_2023_feb_ios.branch
     ]
     filters:
-      viewpoint_survey_2023_feb_ios.metric: 'search_count'
+      viewpoint_survey_2023_feb_ios.metric: 'active_hours'
       viewpoint_survey_2023_feb_ios.statistic: mean
     row: 0
     col: 0
@@ -44,24 +44,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: viewpoint_survey_2023_feb_ios
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       viewpoint_survey_2023_feb_ios.submission_date,
       viewpoint_survey_2023_feb_ios.branch,
+      viewpoint_survey_2023_feb_ios.upper,
+      viewpoint_survey_2023_feb_ios.lower,
       viewpoint_survey_2023_feb_ios.point
     ]
     pivots: [
       viewpoint_survey_2023_feb_ios.branch
     ]
     filters:
-      viewpoint_survey_2023_feb_ios.metric: 'ad_clicks'
-      viewpoint_survey_2023_feb_ios.statistic: mean
+      viewpoint_survey_2023_feb_ios.metric: 'memory_total'
+      viewpoint_survey_2023_feb_ios.statistic: percentile
     row: 0
     col: 12
     width: 12
@@ -74,6 +76,7 @@
     show_grid: true
     listen:
       Date: viewpoint_survey_2023_feb_ios.submission_date
+      Percentile: viewpoint_survey_2023_feb_ios.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -146,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +165,7 @@
       viewpoint_survey_2023_feb_ios.branch
     ]
     filters:
-      viewpoint_survey_2023_feb_ios.metric: 'active_hours'
+      viewpoint_survey_2023_feb_ios.metric: 'ad_clicks'
       viewpoint_survey_2023_feb_ios.statistic: mean
     row: 20
     col: 0
@@ -180,26 +183,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: viewpoint_survey_2023_feb_ios
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       viewpoint_survey_2023_feb_ios.submission_date,
       viewpoint_survey_2023_feb_ios.branch,
-      viewpoint_survey_2023_feb_ios.upper,
-      viewpoint_survey_2023_feb_ios.lower,
       viewpoint_survey_2023_feb_ios.point
     ]
     pivots: [
       viewpoint_survey_2023_feb_ios.branch
     ]
     filters:
-      viewpoint_survey_2023_feb_ios.metric: 'memory_total'
-      viewpoint_survey_2023_feb_ios.statistic: percentile
+      viewpoint_survey_2023_feb_ios.metric: 'search_count'
+      viewpoint_survey_2023_feb_ios.statistic: mean
     row: 20
     col: 12
     width: 12
@@ -212,7 +213,6 @@
     show_grid: true
     listen:
       Date: viewpoint_survey_2023_feb_ios.submission_date
-      Percentile: viewpoint_survey_2023_feb_ios.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
