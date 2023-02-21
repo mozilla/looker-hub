@@ -35,6 +35,16 @@ datagroup: firefox_whatsnew_summary_v1_last_updated {
   interval_trigger: 6 hours
 }
 
+datagroup: www_site_events_metrics_v1_last_updated {
+  label: "www_site_events_metrics_v1 Last Updated"
+  sql_trigger: SELECT MAX(last_modified_time)
+    FROM `moz-fx-data-marketing-prod`.ga_derived.INFORMATION_SCHEMA.PARTITIONS
+    WHERE table_name = 'www_site_events_metrics_v1' ;;
+  description: "Updates when moz-fx-data-marketing-prod:ga_derived.www_site_events_metrics_v1 is modified."
+  max_cache_age: "24 hours"
+  interval_trigger: 6 hours
+}
+
 datagroup: www_site_landing_page_metrics_v1_last_updated {
   label: "www_site_landing_page_metrics_v1 Last Updated"
   sql_trigger: SELECT MAX(last_modified_time)
@@ -61,16 +71,6 @@ datagroup: www_site_page_metrics_v1_last_updated {
     FROM `moz-fx-data-marketing-prod`.ga_derived.INFORMATION_SCHEMA.PARTITIONS
     WHERE table_name = 'www_site_page_metrics_v1' ;;
   description: "Updates when moz-fx-data-marketing-prod:ga_derived.www_site_page_metrics_v1 is modified."
-  max_cache_age: "24 hours"
-  interval_trigger: 6 hours
-}
-
-datagroup: www_site_events_metrics_v1_last_updated {
-  label: "www_site_events_metrics_v1 Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-marketing-prod`.ga_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'www_site_events_metrics_v1' ;;
-  description: "Updates when moz-fx-data-marketing-prod:ga_derived.www_site_events_metrics_v1 is modified."
   max_cache_age: "24 hours"
   interval_trigger: 6 hours
 }

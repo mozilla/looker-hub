@@ -35,16 +35,6 @@ datagroup: devices_v1_last_updated {
   interval_trigger: 6 hours
 }
 
-datagroup: devices_v1_last_updated {
-  label: "Mozilla VPN Devices Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.mozilla_vpn_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'devices_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:mozilla_vpn_derived.devices_v1 is modified."
-  max_cache_age: "24 hours"
-  interval_trigger: 6 hours
-}
-
 datagroup: event_types_v1_last_updated {
   label: "Mozilla VPN Event Types Last Updated"
   sql_trigger: SELECT MAX(last_modified_time)
@@ -81,26 +71,6 @@ datagroup: funnel_fxa_login_to_protected_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.mozilla_vpn_derived.INFORMATION_SCHEMA.PARTITIONS
     WHERE table_name = 'funnel_fxa_login_to_protected_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:mozilla_vpn_derived.funnel_fxa_login_to_protected_v1 is modified."
-  max_cache_age: "24 hours"
-  interval_trigger: 6 hours
-}
-
-datagroup: funnel_fxa_login_to_protected_v1_last_updated {
-  label: "Funnel FxA Login to Protected Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.mozilla_vpn_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'funnel_fxa_login_to_protected_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:mozilla_vpn_derived.funnel_fxa_login_to_protected_v1 is modified."
-  max_cache_age: "24 hours"
-  interval_trigger: 6 hours
-}
-
-datagroup: funnel_ga_to_subscriptions_v1_last_updated {
-  label: "Funnel GA to Subscriptions Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.mozilla_vpn_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'funnel_ga_to_subscriptions_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:mozilla_vpn_derived.funnel_ga_to_subscriptions_v1 is modified."
   max_cache_age: "24 hours"
   interval_trigger: 6 hours
 }
@@ -151,26 +121,6 @@ datagroup: site_metrics_summary_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.mozilla_vpn_derived.INFORMATION_SCHEMA.PARTITIONS
     WHERE table_name = 'site_metrics_summary_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:mozilla_vpn_derived.site_metrics_summary_v1 is modified."
-  max_cache_age: "24 hours"
-  interval_trigger: 6 hours
-}
-
-datagroup: site_metrics_summary_v1_last_updated {
-  label: "GA Site Metrics Summary for Mozilla VPN Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.mozilla_vpn_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'site_metrics_summary_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:mozilla_vpn_derived.site_metrics_summary_v1 is modified."
-  max_cache_age: "24 hours"
-  interval_trigger: 6 hours
-}
-
-datagroup: all_subscriptions_v1_last_updated {
-  label: "All Mozilla VPN Subscriptions Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.mozilla_vpn_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'all_subscriptions_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:mozilla_vpn_derived.all_subscriptions_v1 is modified."
   max_cache_age: "24 hours"
   interval_trigger: 6 hours
 }
@@ -261,16 +211,6 @@ datagroup: users_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.mozilla_vpn_derived.INFORMATION_SCHEMA.PARTITIONS
     WHERE table_name = 'users_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:mozilla_vpn_derived.users_v1 is modified."
-  max_cache_age: "24 hours"
-  interval_trigger: 6 hours
-}
-
-datagroup: vat_rates_v1_last_updated {
-  label: "vat_rates_v1 Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.mozilla_vpn_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'vat_rates_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:mozilla_vpn_derived.vat_rates_v1 is modified."
   max_cache_age: "24 hours"
   interval_trigger: 6 hours
 }

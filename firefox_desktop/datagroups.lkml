@@ -15,16 +15,6 @@ datagroup: baseline_clients_daily_v1_last_updated {
   interval_trigger: 6 hours
 }
 
-datagroup: baseline_clients_daily_v1_last_updated {
-  label: "Baseline Clients Daily Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.firefox_desktop_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'baseline_clients_daily_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:firefox_desktop_derived.baseline_clients_daily_v1 is modified."
-  max_cache_age: "24 hours"
-  interval_trigger: 6 hours
-}
-
 datagroup: baseline_clients_last_seen_v1_last_updated {
   label: "Baseline Clients Last Seen Last Updated"
   sql_trigger: SELECT MAX(last_modified_time)
@@ -41,16 +31,6 @@ datagroup: baseline_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.firefox_desktop_stable.INFORMATION_SCHEMA.PARTITIONS
     WHERE table_name = 'baseline_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_desktop_stable.baseline_v1 is modified."
-  max_cache_age: "24 hours"
-  interval_trigger: 6 hours
-}
-
-datagroup: clients_daily_joined_v1_last_updated {
-  label: "Clients Daily Joined Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.telemetry_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'clients_daily_joined_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:telemetry_derived.clients_daily_joined_v1 is modified."
   max_cache_age: "24 hours"
   interval_trigger: 6 hours
 }
@@ -111,16 +91,6 @@ datagroup: events_daily_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.telemetry_derived.INFORMATION_SCHEMA.PARTITIONS
     WHERE table_name = 'events_daily_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:telemetry_derived.events_daily_v1 is modified."
-  max_cache_age: "24 hours"
-  interval_trigger: 6 hours
-}
-
-datagroup: events_v1_last_updated {
-  label: "events_v1 Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.firefox_desktop_stable.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'events_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:firefox_desktop_stable.events_v1 is modified."
   max_cache_age: "24 hours"
   interval_trigger: 6 hours
 }
@@ -241,26 +211,6 @@ datagroup: sponsored_tiles_clients_daily_v1_last_updated {
     FROM `moz-fx-data-shared-prod`.telemetry_derived.INFORMATION_SCHEMA.PARTITIONS
     WHERE table_name = 'sponsored_tiles_clients_daily_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:telemetry_derived.sponsored_tiles_clients_daily_v1 is modified."
-  max_cache_age: "24 hours"
-  interval_trigger: 6 hours
-}
-
-datagroup: sponsored_tiles_clients_daily_v1_last_updated {
-  label: "Sponsored Tiles Clients Daily Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.telemetry_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'sponsored_tiles_clients_daily_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:telemetry_derived.sponsored_tiles_clients_daily_v1 is modified."
-  max_cache_age: "24 hours"
-  interval_trigger: 6 hours
-}
-
-datagroup: suggest_clients_daily_v1_last_updated {
-  label: "Suggest Clients Daily Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.telemetry_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'suggest_clients_daily_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:telemetry_derived.suggest_clients_daily_v1 is modified."
   max_cache_age: "24 hours"
   interval_trigger: 6 hours
 }

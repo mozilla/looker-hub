@@ -25,16 +25,6 @@ datagroup: events_v1_last_updated {
   interval_trigger: 6 hours
 }
 
-datagroup: events_v1_last_updated {
-  label: "events_v1 Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.glean_dictionary_stable.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'events_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:glean_dictionary_stable.events_v1 is modified."
-  max_cache_age: "24 hours"
-  interval_trigger: 6 hours
-}
-
 datagroup: page_view_v1_last_updated {
   label: "page_view_v1 Last Updated"
   sql_trigger: SELECT MAX(last_modified_time)
