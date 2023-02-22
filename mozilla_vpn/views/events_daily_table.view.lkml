@@ -86,6 +86,11 @@ view: events_daily_table {
     type: string
   }
 
+  dimension: telemetry_agent {
+    sql: ${TABLE}.telemetry_agent ;;
+    type: string
+  }
+
   dimension: telemetry_sdk_build {
     sql: ${TABLE}.telemetry_sdk_build ;;
     type: string

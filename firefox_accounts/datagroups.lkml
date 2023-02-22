@@ -12,7 +12,6 @@ datagroup: events_daily_v1_last_updated {
     WHERE table_name = 'events_daily_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_accounts_derived.events_daily_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: fxa_log_device_command_events_v1_last_updated {
@@ -22,7 +21,6 @@ datagroup: fxa_log_device_command_events_v1_last_updated {
     WHERE table_name = 'fxa_log_device_command_events_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_accounts_derived.fxa_log_device_command_events_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: fxa_users_first_seen_v1_last_updated {
@@ -32,7 +30,6 @@ datagroup: fxa_users_first_seen_v1_last_updated {
     WHERE table_name = 'fxa_users_first_seen_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_accounts_derived.fxa_users_first_seen_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: fxa_users_services_first_seen_v1_last_updated {
@@ -42,5 +39,4 @@ datagroup: fxa_users_services_first_seen_v1_last_updated {
     WHERE table_name = 'fxa_users_services_first_seen_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_accounts_derived.fxa_users_services_first_seen_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }

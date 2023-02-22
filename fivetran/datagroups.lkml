@@ -12,7 +12,6 @@ datagroup: daily_active_rows_v1_last_updated {
     WHERE table_name = 'daily_active_rows_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:fivetran_costs_derived.daily_active_rows_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: monthly_connector_costs_v1_last_updated {
@@ -22,5 +21,4 @@ datagroup: monthly_connector_costs_v1_last_updated {
     WHERE table_name = 'monthly_connector_costs_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:fivetran_costs_derived.monthly_connector_costs_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }

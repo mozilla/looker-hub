@@ -12,7 +12,6 @@ datagroup: background_tasks_v1_last_updated {
     WHERE table_name = 'background_tasks_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_desktop_background_tasks_stable.background_tasks_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: baseline_v1_last_updated {
@@ -22,7 +21,6 @@ datagroup: baseline_v1_last_updated {
     WHERE table_name = 'baseline_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_desktop_background_tasks_stable.baseline_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: deletion_request_v1_last_updated {
@@ -32,7 +30,6 @@ datagroup: deletion_request_v1_last_updated {
     WHERE table_name = 'deletion_request_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_desktop_background_tasks_stable.deletion_request_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: events_v1_last_updated {
@@ -42,7 +39,6 @@ datagroup: events_v1_last_updated {
     WHERE table_name = 'events_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_desktop_background_tasks_stable.events_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: metrics_clients_daily_v1_last_updated {
@@ -52,7 +48,6 @@ datagroup: metrics_clients_daily_v1_last_updated {
     WHERE table_name = 'metrics_clients_daily_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_desktop_background_tasks_derived.metrics_clients_daily_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: metrics_v1_last_updated {
@@ -62,5 +57,4 @@ datagroup: metrics_v1_last_updated {
     WHERE table_name = 'metrics_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_desktop_background_tasks_stable.metrics_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }

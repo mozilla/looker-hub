@@ -12,5 +12,4 @@ datagroup: attributable_clients_v1_last_updated {
     WHERE table_name = 'attributable_clients_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:fenix_derived.attributable_clients_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }

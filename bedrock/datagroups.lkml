@@ -12,7 +12,6 @@ datagroup: deletion_request_v1_last_updated {
     WHERE table_name = 'deletion_request_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:bedrock_stable.deletion_request_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: events_v1_last_updated {
@@ -22,7 +21,6 @@ datagroup: events_v1_last_updated {
     WHERE table_name = 'events_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:bedrock_stable.events_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: interaction_v1_last_updated {
@@ -32,7 +30,6 @@ datagroup: interaction_v1_last_updated {
     WHERE table_name = 'interaction_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:bedrock_stable.interaction_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: non_interaction_v1_last_updated {
@@ -42,7 +39,6 @@ datagroup: non_interaction_v1_last_updated {
     WHERE table_name = 'non_interaction_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:bedrock_stable.non_interaction_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: page_view_v1_last_updated {
@@ -52,5 +48,4 @@ datagroup: page_view_v1_last_updated {
     WHERE table_name = 'page_view_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:bedrock_stable.page_view_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }

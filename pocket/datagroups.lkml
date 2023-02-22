@@ -12,5 +12,4 @@ datagroup: twice_weekly_active_user_counts_history_v1_last_updated {
     WHERE table_name = 'twice_weekly_active_user_counts_history_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:pocket_derived.twice_weekly_active_user_counts_history_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }

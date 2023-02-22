@@ -12,7 +12,6 @@ datagroup: experiment_enrollment_daily_active_population_v1_last_updated {
     WHERE table_name = 'experiment_enrollment_daily_active_population_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:telemetry_derived.experiment_enrollment_daily_active_population_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: experimenter_experiments_v1_last_updated {
@@ -22,7 +21,6 @@ datagroup: experimenter_experiments_v1_last_updated {
     WHERE table_name = 'experimenter_experiments_v1' ;;
   description: "Updates when moz-fx-data-experiments:monitoring.experimenter_experiments_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: logs_last_updated {
@@ -32,7 +30,6 @@ datagroup: logs_last_updated {
     WHERE table_name = 'logs' ;;
   description: "Updates when moz-fx-data-experiments:monitoring.logs is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: query_cost_v1_last_updated {
@@ -42,7 +39,6 @@ datagroup: query_cost_v1_last_updated {
     WHERE table_name = 'query_cost_v1' ;;
   description: "Updates when moz-fx-data-experiments:monitoring.query_cost_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: task_monitoring_logs_last_updated {
@@ -52,7 +48,6 @@ datagroup: task_monitoring_logs_last_updated {
     WHERE table_name = 'task_monitoring_logs' ;;
   description: "Updates when moz-fx-data-experiments:monitoring.task_monitoring_logs is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: task_profiling_logs_last_updated {
@@ -62,5 +57,4 @@ datagroup: task_profiling_logs_last_updated {
     WHERE table_name = 'task_profiling_logs' ;;
   description: "Updates when moz-fx-data-experiments:monitoring.task_profiling_logs is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }

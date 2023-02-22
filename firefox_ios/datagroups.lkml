@@ -12,7 +12,6 @@ datagroup: clients_last_seen_joined_v1_last_updated {
     WHERE table_name = 'clients_last_seen_joined_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_ios_derived.clients_last_seen_joined_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: metrics_clients_daily_v1_last_updated {
@@ -22,7 +21,6 @@ datagroup: metrics_clients_daily_v1_last_updated {
     WHERE table_name = 'metrics_clients_daily_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_ios_derived.metrics_clients_daily_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: metrics_clients_last_seen_v1_last_updated {
@@ -32,7 +30,6 @@ datagroup: metrics_clients_last_seen_v1_last_updated {
     WHERE table_name = 'metrics_clients_last_seen_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_ios_derived.metrics_clients_last_seen_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: new_profile_activation_v1_last_updated {
@@ -42,5 +39,4 @@ datagroup: new_profile_activation_v1_last_updated {
     WHERE table_name = 'new_profile_activation_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_ios_derived.new_profile_activation_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }

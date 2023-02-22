@@ -12,7 +12,6 @@ datagroup: classified_v1_last_updated {
     WHERE table_name = 'classified_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:treeherder_stable.classified_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: deletion_request_v1_last_updated {
@@ -22,7 +21,6 @@ datagroup: deletion_request_v1_last_updated {
     WHERE table_name = 'deletion_request_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:treeherder_stable.deletion_request_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: events_v1_last_updated {
@@ -32,5 +30,4 @@ datagroup: events_v1_last_updated {
     WHERE table_name = 'events_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:treeherder_stable.events_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }

@@ -12,7 +12,6 @@ datagroup: sanitization_job_metadata_v2_last_updated {
     WHERE table_name = 'sanitization_job_metadata_v2' ;;
   description: "Updates when moz-fx-data-shared-prod:search_terms_derived.sanitization_job_metadata_v2 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
 
 datagroup: search_term_data_validation_reports_v1_last_updated {
@@ -22,5 +21,4 @@ datagroup: search_term_data_validation_reports_v1_last_updated {
     WHERE table_name = 'search_term_data_validation_reports_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:search_terms_derived.search_term_data_validation_reports_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: "6 hours"
 }
