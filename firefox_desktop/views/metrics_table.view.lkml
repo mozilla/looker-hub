@@ -479,6 +479,26 @@ deletion request pings are never deleted.
 "
   }
 
+  dimension: metrics__counter__glean_upload_in_flight_pings_dropped {
+    sql: ${TABLE}.metrics.counter.glean_upload_in_flight_pings_dropped ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Glean Upload In Flight Pings Dropped"
+    description: "How many pings were dropped because we found them already in-flight.
+"
+  }
+
+  dimension: metrics__counter__glean_upload_missing_send_ids {
+    sql: ${TABLE}.metrics.counter.glean_upload_missing_send_ids ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Glean Upload Missing Send Ids"
+    description: "How many ping upload responses did we not record as a success or failure
+(in `glean.upload.send_success` or `glean.upload.send_failue`,
+respectively) due to an inconsistency in our internal bookkeeping?
+"
+  }
+
   dimension: metrics__counter__glean_upload_pending_pings {
     sql: ${TABLE}.metrics.counter.glean_upload_pending_pings ;;
     type: number
@@ -631,6 +651,13 @@ This does not include deletion-request pings.
   dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__values {
     sql: ${TABLE}.metrics.custom_distribution.power_battery_percentage_when_user_active.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__datetime__raw_background_update_time_last_update_scheduled {
+    sql: ${TABLE}.metrics.datetime.raw_background_update_time_last_update_scheduled ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Background Update Time Last Update Scheduled"
   }
 
   dimension: metrics__datetime__raw_glean_validation_first_run_hour {
@@ -1404,6 +1431,11 @@ the preferences `browser.search.separatePrivateDefault` and
 It is possible that the user selects the same private engine as for the
 default engine, and hence both versions of these fields will be filled in.
 "
+  }
+
+  dimension: metrics__string_list__background_update_reasons_to_not_update {
+    sql: ${TABLE}.metrics.string_list.background_update_reasons_to_not_update ;;
+    hidden: yes
   }
 
   dimension: metrics__text {
@@ -2641,6 +2673,23 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
       year,
     ]
     label: "Metadata Header: Parsed Date"
+  }
+
+  dimension_group: metrics__datetime__background_update_time_last_update_scheduled {
+    sql: ${TABLE}.metrics.datetime.background_update_time_last_update_scheduled ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Background Update Time Last Update Scheduled"
+    description: "Last time the background update was triggered.
+"
   }
 
   dimension_group: metrics__datetime__glean_validation_first_run_hour {

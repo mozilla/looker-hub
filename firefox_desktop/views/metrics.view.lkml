@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics {
+  dimension: metrics__datetime__background_update_time_last_update_scheduled {
+    label: "Background Update Time Last Update Scheduled"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.background_update_time_last_update_scheduled ;;
+    type: time
+    group_label: "Background Update"
+    group_item_label: "Time Last Update Scheduled"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Time Last Update Scheduled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/background_update_time_last_update_scheduled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Last time the background update was triggered.
+"
+  }
+
   dimension: metrics__counter__browser_engagement_active_ticks {
     label: "Browser Engagement Active Ticks"
     hidden: no
@@ -2411,6 +2429,44 @@ deletion request pings are never deleted.
 "
   }
 
+  dimension: metrics__counter__glean_upload_in_flight_pings_dropped {
+    label: "Glean Upload In Flight Pings Dropped"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.glean_upload_in_flight_pings_dropped ;;
+    type: number
+    group_label: "Glean Upload"
+    group_item_label: "In Flight Pings Dropped"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload In Flight Pings Dropped"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_upload_in_flight_pings_dropped"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many pings were dropped because we found them already in-flight.
+"
+  }
+
+  dimension: metrics__counter__glean_upload_missing_send_ids {
+    label: "Glean Upload Missing Send Ids"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.glean_upload_missing_send_ids ;;
+    type: number
+    group_label: "Glean Upload"
+    group_item_label: "Missing Send Ids"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload Missing Send Ids"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_upload_missing_send_ids"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many ping upload responses did we not record as a success or failure
+(in `glean.upload.send_success` or `glean.upload.send_failue`,
+respectively) due to an inconsistency in our internal bookkeeping?
+"
+  }
+
   dimension: metrics__counter__glean_upload_pending_pings {
     label: "Glean Upload Pending Pings"
     hidden: no
@@ -3547,6 +3603,56 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Glean Upload Deleted Pings After Quota Hit"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_upload_deleted_pings_after_quota_hit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_upload_in_flight_pings_dropped {
+    type: sum
+    sql: ${metrics__counter__glean_upload_in_flight_pings_dropped} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload In Flight Pings Dropped"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_upload_in_flight_pings_dropped"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_upload_in_flight_pings_dropped_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__glean_upload_in_flight_pings_dropped: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload In Flight Pings Dropped"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_upload_in_flight_pings_dropped"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_upload_missing_send_ids {
+    type: sum
+    sql: ${metrics__counter__glean_upload_missing_send_ids} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload Missing Send Ids"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_upload_missing_send_ids"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_upload_missing_send_ids_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__glean_upload_missing_send_ids: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload Missing Send Ids"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_upload_missing_send_ids"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
