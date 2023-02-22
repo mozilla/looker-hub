@@ -12,7 +12,7 @@ datagroup: kpi_automated_forecast_confidences_v1_last_updated {
     WHERE table_name = 'kpi_automated_forecast_confidences_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:telemetry_derived.kpi_automated_forecast_confidences_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: kpi_automated_forecast_v1_last_updated {
@@ -22,5 +22,5 @@ datagroup: kpi_automated_forecast_v1_last_updated {
     WHERE table_name = 'kpi_automated_forecast_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:telemetry_derived.kpi_automated_forecast_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }

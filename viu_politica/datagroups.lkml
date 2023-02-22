@@ -12,7 +12,7 @@ datagroup: deletion_request_v1_last_updated {
     WHERE table_name = 'deletion_request_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:viu_politica_stable.deletion_request_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: events_v1_last_updated {
@@ -22,7 +22,7 @@ datagroup: events_v1_last_updated {
     WHERE table_name = 'events_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:viu_politica_stable.events_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: main_events_v1_last_updated {
@@ -32,7 +32,7 @@ datagroup: main_events_v1_last_updated {
     WHERE table_name = 'main_events_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:viu_politica_stable.main_events_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: regret_details_v1_last_updated {
@@ -42,7 +42,7 @@ datagroup: regret_details_v1_last_updated {
     WHERE table_name = 'regret_details_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:viu_politica_stable.regret_details_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: video_data_v1_last_updated {
@@ -52,7 +52,7 @@ datagroup: video_data_v1_last_updated {
     WHERE table_name = 'video_data_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:viu_politica_stable.video_data_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: video_index_v1_last_updated {
@@ -62,5 +62,5 @@ datagroup: video_index_v1_last_updated {
     WHERE table_name = 'video_index_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:viu_politica_stable.video_index_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }

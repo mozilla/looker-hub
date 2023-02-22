@@ -12,7 +12,7 @@ datagroup: budget_complete_2022_last_updated {
     WHERE table_name = 'budget_complete_2022' ;;
   description: "Updates when mozdata:revenue_cat3_analysis.budget_complete_2022 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: revenue_forecast_review_long_last_updated {
@@ -22,5 +22,5 @@ datagroup: revenue_forecast_review_long_last_updated {
     WHERE table_name = 'revenue_forecast_review_long' ;;
   description: "Updates when mozdata:revenue_cat3_analysis.revenue_forecast_review_long is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }

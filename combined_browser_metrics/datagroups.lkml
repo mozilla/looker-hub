@@ -12,7 +12,7 @@ datagroup: active_users_aggregates_attribution_v1_last_updated {
     WHERE table_name = 'active_users_aggregates_attribution_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:telemetry_derived.active_users_aggregates_attribution_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: active_users_aggregates_device_v1_last_updated {
@@ -22,7 +22,7 @@ datagroup: active_users_aggregates_device_v1_last_updated {
     WHERE table_name = 'active_users_aggregates_device_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:telemetry_derived.active_users_aggregates_device_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: active_users_aggregates_v1_last_updated {
@@ -32,7 +32,7 @@ datagroup: active_users_aggregates_v1_last_updated {
     WHERE table_name = 'active_users_aggregates_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:telemetry_derived.active_users_aggregates_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: cohort_daily_statistics_v1_last_updated {
@@ -42,5 +42,5 @@ datagroup: cohort_daily_statistics_v1_last_updated {
     WHERE table_name = 'cohort_daily_statistics_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:telemetry_derived.cohort_daily_statistics_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }

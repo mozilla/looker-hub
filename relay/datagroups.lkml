@@ -12,5 +12,5 @@ datagroup: subscriptions_v1_last_updated {
     WHERE table_name = 'subscriptions_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:relay_derived.subscriptions_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }

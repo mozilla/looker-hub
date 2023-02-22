@@ -12,7 +12,7 @@ datagroup: airflow_dag_run_v1_last_updated {
     WHERE table_name = 'airflow_dag_run_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:monitoring_derived.airflow_dag_run_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: airflow_dag_tag_v1_last_updated {
@@ -22,7 +22,7 @@ datagroup: airflow_dag_tag_v1_last_updated {
     WHERE table_name = 'airflow_dag_tag_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:monitoring_derived.airflow_dag_tag_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: airflow_dag_v1_last_updated {
@@ -32,7 +32,7 @@ datagroup: airflow_dag_v1_last_updated {
     WHERE table_name = 'airflow_dag_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:monitoring_derived.airflow_dag_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: airflow_slot_pool_v1_last_updated {
@@ -42,7 +42,7 @@ datagroup: airflow_slot_pool_v1_last_updated {
     WHERE table_name = 'airflow_slot_pool_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:monitoring_derived.airflow_slot_pool_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: airflow_task_fail_v1_last_updated {
@@ -52,7 +52,7 @@ datagroup: airflow_task_fail_v1_last_updated {
     WHERE table_name = 'airflow_task_fail_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:monitoring_derived.airflow_task_fail_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: airflow_task_reschedule_v1_last_updated {
@@ -62,7 +62,7 @@ datagroup: airflow_task_reschedule_v1_last_updated {
     WHERE table_name = 'airflow_task_reschedule_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:monitoring_derived.airflow_task_reschedule_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: airflow_user_v1_last_updated {
@@ -72,7 +72,7 @@ datagroup: airflow_user_v1_last_updated {
     WHERE table_name = 'airflow_user_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:monitoring_derived.airflow_user_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: bigquery_table_storage_timeline_daily_v1_last_updated {
@@ -82,7 +82,7 @@ datagroup: bigquery_table_storage_timeline_daily_v1_last_updated {
     WHERE table_name = 'bigquery_table_storage_timeline_daily_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:monitoring_derived.bigquery_table_storage_timeline_daily_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: bigquery_table_storage_v1_last_updated {
@@ -92,7 +92,7 @@ datagroup: bigquery_table_storage_v1_last_updated {
     WHERE table_name = 'bigquery_table_storage_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:monitoring_derived.bigquery_table_storage_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: bigquery_tables_inventory_v1_last_updated {
@@ -102,7 +102,7 @@ datagroup: bigquery_tables_inventory_v1_last_updated {
     WHERE table_name = 'bigquery_tables_inventory_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:monitoring_derived.bigquery_tables_inventory_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: bigquery_usage_v1_last_updated {
@@ -112,5 +112,5 @@ datagroup: bigquery_usage_v1_last_updated {
     WHERE table_name = 'bigquery_usage_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:monitoring_derived.bigquery_usage_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }

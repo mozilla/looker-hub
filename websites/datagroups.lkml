@@ -12,7 +12,7 @@ datagroup: blogs_daily_summary_v1_last_updated {
     WHERE table_name = 'blogs_daily_summary_v1' ;;
   description: "Updates when moz-fx-data-marketing-prod:ga_derived.blogs_daily_summary_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: blogs_landing_page_summary_v1_last_updated {
@@ -22,7 +22,7 @@ datagroup: blogs_landing_page_summary_v1_last_updated {
     WHERE table_name = 'blogs_landing_page_summary_v1' ;;
   description: "Updates when moz-fx-data-marketing-prod:ga_derived.blogs_landing_page_summary_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: firefox_whatsnew_summary_v1_last_updated {
@@ -32,7 +32,7 @@ datagroup: firefox_whatsnew_summary_v1_last_updated {
     WHERE table_name = 'firefox_whatsnew_summary_v1' ;;
   description: "Updates when moz-fx-data-marketing-prod:ga_derived.firefox_whatsnew_summary_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: www_site_events_metrics_v1_last_updated {
@@ -42,7 +42,7 @@ datagroup: www_site_events_metrics_v1_last_updated {
     WHERE table_name = 'www_site_events_metrics_v1' ;;
   description: "Updates when moz-fx-data-marketing-prod:ga_derived.www_site_events_metrics_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: www_site_landing_page_metrics_v1_last_updated {
@@ -52,7 +52,7 @@ datagroup: www_site_landing_page_metrics_v1_last_updated {
     WHERE table_name = 'www_site_landing_page_metrics_v1' ;;
   description: "Updates when moz-fx-data-marketing-prod:ga_derived.www_site_landing_page_metrics_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: www_site_metrics_summary_v1_last_updated {
@@ -62,7 +62,7 @@ datagroup: www_site_metrics_summary_v1_last_updated {
     WHERE table_name = 'www_site_metrics_summary_v1' ;;
   description: "Updates when moz-fx-data-marketing-prod:ga_derived.www_site_metrics_summary_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: www_site_page_metrics_v1_last_updated {
@@ -72,5 +72,5 @@ datagroup: www_site_page_metrics_v1_last_updated {
     WHERE table_name = 'www_site_page_metrics_v1' ;;
   description: "Updates when moz-fx-data-marketing-prod:ga_derived.www_site_page_metrics_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }

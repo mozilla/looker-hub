@@ -12,7 +12,7 @@ datagroup: desktop_mobile_search_clients_monthly_v1_last_updated {
     WHERE table_name = 'desktop_mobile_search_clients_monthly_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:search_derived.desktop_mobile_search_clients_monthly_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
 
 datagroup: desktop_search_alert_latest_daily_last_updated {
@@ -22,5 +22,5 @@ datagroup: desktop_search_alert_latest_daily_last_updated {
     WHERE table_name = 'desktop_search_alert_latest_daily' ;;
   description: "Updates when mozdata:analysis.desktop_search_alert_latest_daily is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
+  interval_trigger: "6 hours"
 }
