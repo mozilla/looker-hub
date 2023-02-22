@@ -486,6 +486,20 @@ view: metrics_table {
     group_item_label: "Glean Upload Deleted Pings After Quota Hit"
   }
 
+  dimension: metrics__counter__glean_upload_in_flight_pings_dropped {
+    sql: ${TABLE}.metrics.counter.glean_upload_in_flight_pings_dropped ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Glean Upload In Flight Pings Dropped"
+  }
+
+  dimension: metrics__counter__glean_upload_missing_send_ids {
+    sql: ${TABLE}.metrics.counter.glean_upload_missing_send_ids ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Glean Upload Missing Send Ids"
+  }
+
   dimension: metrics__counter__glean_upload_pending_pings {
     sql: ${TABLE}.metrics.counter.glean_upload_pending_pings ;;
     type: number
