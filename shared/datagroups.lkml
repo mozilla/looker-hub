@@ -12,5 +12,4 @@ datagroup: country_codes_v1_last_updated {
     WHERE table_name = 'country_codes_v1' ;;
   description: "Updates when mozdata:static.country_codes_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
 }

@@ -12,7 +12,6 @@ datagroup: contact_current_snapshot_v1_last_updated {
     WHERE table_name = 'contact_current_snapshot_v1' ;;
   description: "Updates when moz-fx-data-marketing-prod:acoustic.contact_current_snapshot_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
 }
 
 datagroup: contact_v1_last_updated {
@@ -22,7 +21,6 @@ datagroup: contact_v1_last_updated {
     WHERE table_name = 'contact_v1' ;;
   description: "Updates when moz-fx-data-marketing-prod:acoustic.contact_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
 }
 
 datagroup: marketing_firefox_for_families_forecasted_expectations_last_updated {
@@ -32,7 +30,6 @@ datagroup: marketing_firefox_for_families_forecasted_expectations_last_updated {
     WHERE table_name = 'marketing_firefox_for_families_forecasted_expectations' ;;
   description: "Updates when mozdata:analysis.marketing_firefox_for_families_forecasted_expectations is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
 }
 
 datagroup: raw_recipient_v1_last_updated {
@@ -42,5 +39,4 @@ datagroup: raw_recipient_v1_last_updated {
     WHERE table_name = 'raw_recipient_v1' ;;
   description: "Updates when moz-fx-data-marketing-prod:acoustic.raw_recipient_v1 is modified."
   max_cache_age: "24 hours"
-  interval_trigger: 6 hours
 }
