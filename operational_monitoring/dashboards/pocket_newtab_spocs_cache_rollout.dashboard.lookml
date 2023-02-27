@@ -10,26 +10,24 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: pocket_newtab_spocs_cache_rollout
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       pocket_newtab_spocs_cache_rollout.submission_date,
       pocket_newtab_spocs_cache_rollout.branch,
-      pocket_newtab_spocs_cache_rollout.upper,
-      pocket_newtab_spocs_cache_rollout.lower,
       pocket_newtab_spocs_cache_rollout.point
     ]
     pivots: [
       pocket_newtab_spocs_cache_rollout.branch
     ]
     filters:
-      pocket_newtab_spocs_cache_rollout.metric: 'memory_total'
-      pocket_newtab_spocs_cache_rollout.statistic: percentile
+      pocket_newtab_spocs_cache_rollout.metric: 'qualified_cumulative_days_of_use'
+      pocket_newtab_spocs_cache_rollout.statistic: mean
     row: 0
     col: 0
     width: 12
@@ -42,7 +40,6 @@
     show_grid: true
     listen:
       Date: pocket_newtab_spocs_cache_rollout.submission_date
-      Percentile: pocket_newtab_spocs_cache_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -115,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,44 +128,10 @@
       pocket_newtab_spocs_cache_rollout.branch
     ]
     filters:
-      pocket_newtab_spocs_cache_rollout.metric: 'active_hours'
+      pocket_newtab_spocs_cache_rollout.metric: 'retained'
       pocket_newtab_spocs_cache_rollout.statistic: mean
     row: 10
     col: 12
-    width: 12
-    height: 8
-    field_x: pocket_newtab_spocs_cache_rollout.submission_date
-    field_y: pocket_newtab_spocs_cache_rollout.point
-    log_scale: false
-    ci_lower: pocket_newtab_spocs_cache_rollout.lower
-    ci_upper: pocket_newtab_spocs_cache_rollout.upper
-    show_grid: true
-    listen:
-      Date: pocket_newtab_spocs_cache_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: pocket_newtab_spocs_cache_rollout
-    type: looker_line
-    fields: [
-      pocket_newtab_spocs_cache_rollout.submission_date,
-      pocket_newtab_spocs_cache_rollout.branch,
-      pocket_newtab_spocs_cache_rollout.point
-    ]
-    pivots: [
-      pocket_newtab_spocs_cache_rollout.branch
-    ]
-    filters:
-      pocket_newtab_spocs_cache_rollout.metric: 'search_count'
-      pocket_newtab_spocs_cache_rollout.statistic: mean
-    row: 20
-    col: 0
     width: 12
     height: 8
     field_x: pocket_newtab_spocs_cache_rollout.submission_date
@@ -202,40 +165,6 @@
       pocket_newtab_spocs_cache_rollout.metric: 'uri_count'
       pocket_newtab_spocs_cache_rollout.statistic: mean
     row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: pocket_newtab_spocs_cache_rollout.submission_date
-    field_y: pocket_newtab_spocs_cache_rollout.point
-    log_scale: false
-    ci_lower: pocket_newtab_spocs_cache_rollout.lower
-    ci_upper: pocket_newtab_spocs_cache_rollout.upper
-    show_grid: true
-    listen:
-      Date: pocket_newtab_spocs_cache_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: pocket_newtab_spocs_cache_rollout
-    type: looker_line
-    fields: [
-      pocket_newtab_spocs_cache_rollout.submission_date,
-      pocket_newtab_spocs_cache_rollout.branch,
-      pocket_newtab_spocs_cache_rollout.point
-    ]
-    pivots: [
-      pocket_newtab_spocs_cache_rollout.branch
-    ]
-    filters:
-      pocket_newtab_spocs_cache_rollout.metric: 'retained'
-      pocket_newtab_spocs_cache_rollout.statistic: mean
-    row: 30
     col: 0
     width: 12
     height: 8
@@ -251,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +196,78 @@
       pocket_newtab_spocs_cache_rollout.branch
     ]
     filters:
-      pocket_newtab_spocs_cache_rollout.metric: 'qualified_cumulative_days_of_use'
+      pocket_newtab_spocs_cache_rollout.metric: 'search_count'
+      pocket_newtab_spocs_cache_rollout.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: pocket_newtab_spocs_cache_rollout.submission_date
+    field_y: pocket_newtab_spocs_cache_rollout.point
+    log_scale: false
+    ci_lower: pocket_newtab_spocs_cache_rollout.lower
+    ci_upper: pocket_newtab_spocs_cache_rollout.upper
+    show_grid: true
+    listen:
+      Date: pocket_newtab_spocs_cache_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: pocket_newtab_spocs_cache_rollout
+    type: "ci-line-chart"
+    fields: [
+      pocket_newtab_spocs_cache_rollout.submission_date,
+      pocket_newtab_spocs_cache_rollout.branch,
+      pocket_newtab_spocs_cache_rollout.upper,
+      pocket_newtab_spocs_cache_rollout.lower,
+      pocket_newtab_spocs_cache_rollout.point
+    ]
+    pivots: [
+      pocket_newtab_spocs_cache_rollout.branch
+    ]
+    filters:
+      pocket_newtab_spocs_cache_rollout.metric: 'memory_total'
+      pocket_newtab_spocs_cache_rollout.statistic: percentile
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: pocket_newtab_spocs_cache_rollout.submission_date
+    field_y: pocket_newtab_spocs_cache_rollout.point
+    log_scale: false
+    ci_lower: pocket_newtab_spocs_cache_rollout.lower
+    ci_upper: pocket_newtab_spocs_cache_rollout.upper
+    show_grid: true
+    listen:
+      Date: pocket_newtab_spocs_cache_rollout.submission_date
+      Percentile: pocket_newtab_spocs_cache_rollout.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: pocket_newtab_spocs_cache_rollout
+    type: looker_line
+    fields: [
+      pocket_newtab_spocs_cache_rollout.submission_date,
+      pocket_newtab_spocs_cache_rollout.branch,
+      pocket_newtab_spocs_cache_rollout.point
+    ]
+    pivots: [
+      pocket_newtab_spocs_cache_rollout.branch
+    ]
+    filters:
+      pocket_newtab_spocs_cache_rollout.metric: 'active_hours'
       pocket_newtab_spocs_cache_rollout.statistic: mean
     row: 30
     col: 12
