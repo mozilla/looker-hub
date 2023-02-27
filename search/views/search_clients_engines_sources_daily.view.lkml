@@ -341,11 +341,6 @@ view: search_clients_engines_sources_daily {
     datatype: date
   }
 
-  measure: clients {
-    type: count_distinct
-    sql: ${client_id} ;;
-  }
-
   sql_table_name: `mozdata.search.search_clients_engines_sources_daily` ;;
 }
 
