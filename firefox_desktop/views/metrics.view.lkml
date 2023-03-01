@@ -48,6 +48,28 @@ Migrated from Telemetry's `browser.engagement.active_ticks`.
 "
   }
 
+  dimension: metrics__quantity__browser_engagement_profile_count {
+    label: "Browser Engagement Profile Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.browser_engagement_profile_count ;;
+    type: number
+    group_label: "Browser Engagement"
+    group_item_label: "Profile Count"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Engagement Profile Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_engagement_profile_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Windows only count of the browser profiles on the current system. This
+counts profiles that have been used across all Windows user accounts on
+machine since this probe was added. The value persists across installs.
+A value of 0 is reported if there is an error determining the correct
+count. Unset on other platforms.
+"
+  }
+
   dimension: metrics__counter__browser_engagement_uri_count {
     label: "Browser Engagement Uri Count"
     hidden: no
