@@ -2854,7 +2854,7 @@ mdn_yari:
         base_view: page
   glean_app: true
   owners:
-  - gsleigh@mozilla.com
+  - caugner@mozilla.com
   - tlong@mozilla.com
   - glean-team@mozilla.com
   pretty_name: Mozilla Developer Network
