@@ -1097,6 +1097,19 @@ broken down by structured ingestion namespace.
     hidden: yes
   }
 
+  dimension: metrics__quantity__browser_engagement_profile_count {
+    sql: ${TABLE}.metrics.quantity.browser_engagement_profile_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Engagement Profile Count"
+    description: "Windows only count of the browser profiles on the current system. This
+counts profiles that have been used across all Windows user accounts on
+machine since this probe was added. The value persists across installs.
+A value of 0 is reported if there is an error determining the correct
+count. Unset on other platforms.
+"
+  }
+
   dimension: metrics__quantity__browser_link_open_newwindow_restriction {
     sql: ${TABLE}.metrics.quantity.browser_link_open_newwindow_restriction ;;
     type: number
