@@ -1573,6 +1573,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__timer_thread_timers_fired_per_wakeup__sum {
+    label: "Timer Thread Timers Fired Per Wakeup Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.timer_thread_timers_fired_per_wakeup.sum ;;
+    type: number
+    group_label: "Timer Thread"
+    group_item_label: "Timers Fired Per Wakeup Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Timer Thread Timers Fired Per Wakeup Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/timer_thread_timers_fired_per_wakeup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many timers were processed in a single wake-up of the Timer Thread.
+"
+  }
+
   dimension: metrics__timing_distribution__wr_framebuild_time__sum {
     label: "Wr Framebuild Time Sum"
     hidden: no

@@ -590,6 +590,25 @@ This does not include deletion-request pings.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__timer_thread_timers_fired_per_wakeup__count {
+    sql: ${TABLE}.metrics.custom_distribution.timer_thread_timers_fired_per_wakeup.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Timer Thread Timers Fired Per Wakeup"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__timer_thread_timers_fired_per_wakeup__sum {
+    sql: ${TABLE}.metrics.custom_distribution.timer_thread_timers_fired_per_wakeup.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Timer Thread Timers Fired Per Wakeup"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__timer_thread_timers_fired_per_wakeup__values {
+    sql: ${TABLE}.metrics.custom_distribution.timer_thread_timers_fired_per_wakeup.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__datetime__raw_glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.raw_glean_validation_first_run_hour ;;
     type: string
@@ -2500,6 +2519,18 @@ view: metrics_table__metrics__custom_distribution__pdfjs_time_to_view__values {
 }
 
 view: metrics_table__metrics__custom_distribution__power_battery_percentage_when_user_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__timer_thread_timers_fired_per_wakeup__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
