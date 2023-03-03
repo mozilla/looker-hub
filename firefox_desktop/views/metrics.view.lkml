@@ -188,76 +188,6 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
-  dimension: metrics__labeled_counter__pdfjs_buttons {
-    label: "Pdfjs Buttons"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.pdfjs_buttons ;;
-    group_label: "Pdfjs"
-    group_item_label: "Buttons"
-
-    link: {
-      label: "Glean Dictionary reference for Pdfjs Buttons"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_buttons"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times some actions are executed in the PDF viewer.
-"
-  }
-
-  dimension: metrics__labeled_counter__pdfjs_editing {
-    label: "Pdfjs Editing"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing ;;
-    group_label: "Pdfjs"
-    group_item_label: "Editing"
-
-    link: {
-      label: "Glean Dictionary reference for Pdfjs Editing"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_editing"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times some PDF editing features are used.
-"
-  }
-
-  dimension: metrics__custom_distribution__pdfjs_time_to_view__sum {
-    label: "Pdfjs Time To View Sum"
-    hidden: yes
-    sql: ${TABLE}.metrics.custom_distribution.pdfjs_time_to_view.sum ;;
-    type: number
-    group_label: "Pdfjs"
-    group_item_label: "Time To View Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Pdfjs Time To View Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_time_to_view"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent to display first page in PDF Viewer (ms).
-"
-  }
-
-  dimension: metrics__counter__pdfjs_used {
-    label: "Pdfjs Used"
-    hidden: yes
-    sql: ${TABLE}.metrics.counter.pdfjs_used ;;
-    type: number
-    group_label: "Pdfjs"
-    group_item_label: "Used"
-
-    link: {
-      label: "Glean Dictionary reference for Pdfjs Used"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_used"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "How many times PDF Viewer was used.
-"
-  }
-
   dimension: metrics__counter__ping_centre_send_failures {
     label: "Ping Centre Send Failures"
     hidden: no
@@ -921,176 +851,6 @@ To be used to validate GIFFT.
 "
   }
 
-  dimension: metrics__labeled_counter__ipc_received_messages_content_background {
-    label: "Ipc Received Messages Content Background"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_content_background ;;
-    group_label: "Ipc Received Messages"
-    group_item_label: "Content Background"
-
-    link: {
-      label: "Glean Dictionary reference for Ipc Received Messages Content Background"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipc_received_messages_content_background"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "How many times each IPC message type was received, Broken down by process type.
-"
-  }
-
-  dimension: metrics__labeled_counter__ipc_received_messages_content_foreground {
-    label: "Ipc Received Messages Content Foreground"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_content_foreground ;;
-    group_label: "Ipc Received Messages"
-    group_item_label: "Content Foreground"
-
-    link: {
-      label: "Glean Dictionary reference for Ipc Received Messages Content Foreground"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipc_received_messages_content_foreground"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "How many times each IPC message type was received, Broken down by process type.
-"
-  }
-
-  dimension: metrics__labeled_counter__ipc_received_messages_gpu_process {
-    label: "Ipc Received Messages Gpu Process"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_gpu_process ;;
-    group_label: "Ipc Received Messages"
-    group_item_label: "Gpu Process"
-
-    link: {
-      label: "Glean Dictionary reference for Ipc Received Messages Gpu Process"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipc_received_messages_gpu_process"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "How many times each IPC message type was received, Broken down by process type.
-"
-  }
-
-  dimension: metrics__labeled_counter__ipc_received_messages_parent_active {
-    label: "Ipc Received Messages Parent Active"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_parent_active ;;
-    group_label: "Ipc Received Messages"
-    group_item_label: "Parent Active"
-
-    link: {
-      label: "Glean Dictionary reference for Ipc Received Messages Parent Active"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipc_received_messages_parent_active"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "How many times each IPC message type was received, Broken down by process type.
-"
-  }
-
-  dimension: metrics__labeled_counter__ipc_received_messages_parent_inactive {
-    label: "Ipc Received Messages Parent Inactive"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_parent_inactive ;;
-    group_label: "Ipc Received Messages"
-    group_item_label: "Parent Inactive"
-
-    link: {
-      label: "Glean Dictionary reference for Ipc Received Messages Parent Inactive"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipc_received_messages_parent_inactive"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "How many times each IPC message type was received, Broken down by process type.
-"
-  }
-
-  dimension: metrics__labeled_counter__ipc_sent_messages_content_background {
-    label: "Ipc Sent Messages Content Background"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_content_background ;;
-    group_label: "Ipc Sent Messages"
-    group_item_label: "Content Background"
-
-    link: {
-      label: "Glean Dictionary reference for Ipc Sent Messages Content Background"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipc_sent_messages_content_background"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "How many times each IPC message type was sent. Broken down by process type.
-"
-  }
-
-  dimension: metrics__labeled_counter__ipc_sent_messages_content_foreground {
-    label: "Ipc Sent Messages Content Foreground"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_content_foreground ;;
-    group_label: "Ipc Sent Messages"
-    group_item_label: "Content Foreground"
-
-    link: {
-      label: "Glean Dictionary reference for Ipc Sent Messages Content Foreground"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipc_sent_messages_content_foreground"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "How many times each IPC message type was sent. Broken down by process type.
-"
-  }
-
-  dimension: metrics__labeled_counter__ipc_sent_messages_gpu_process {
-    label: "Ipc Sent Messages Gpu Process"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_gpu_process ;;
-    group_label: "Ipc Sent Messages"
-    group_item_label: "Gpu Process"
-
-    link: {
-      label: "Glean Dictionary reference for Ipc Sent Messages Gpu Process"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipc_sent_messages_gpu_process"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "How many times each IPC message type was sent. Broken down by process type.
-"
-  }
-
-  dimension: metrics__labeled_counter__ipc_sent_messages_parent_active {
-    label: "Ipc Sent Messages Parent Active"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_parent_active ;;
-    group_label: "Ipc Sent Messages"
-    group_item_label: "Parent Active"
-
-    link: {
-      label: "Glean Dictionary reference for Ipc Sent Messages Parent Active"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipc_sent_messages_parent_active"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "How many times each IPC message type was sent. Broken down by process type.
-"
-  }
-
-  dimension: metrics__labeled_counter__ipc_sent_messages_parent_inactive {
-    label: "Ipc Sent Messages Parent Inactive"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_parent_inactive ;;
-    group_label: "Ipc Sent Messages"
-    group_item_label: "Parent Inactive"
-
-    link: {
-      label: "Glean Dictionary reference for Ipc Sent Messages Parent Inactive"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ipc_sent_messages_parent_inactive"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "How many times each IPC message type was sent. Broken down by process type.
-"
-  }
-
   dimension: metrics__labeled_counter__netwerk_early_hints {
     label: "Netwerk Early Hints"
     hidden: yes
@@ -1192,6 +952,76 @@ To be used to validate GIFFT.
     }
 
     description: "The time to build a Gecko display list.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_buttons {
+    label: "Pdfjs Buttons"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_buttons ;;
+    group_label: "Pdfjs"
+    group_item_label: "Buttons"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Buttons"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_buttons"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times some actions are executed in the PDF viewer.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing {
+    label: "Pdfjs Editing"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing ;;
+    group_label: "Pdfjs"
+    group_item_label: "Editing"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_editing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times some PDF editing features are used.
+"
+  }
+
+  dimension: metrics__custom_distribution__pdfjs_time_to_view__sum {
+    label: "Pdfjs Time To View Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.pdfjs_time_to_view.sum ;;
+    type: number
+    group_label: "Pdfjs"
+    group_item_label: "Time To View Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Time To View Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_time_to_view"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent to display first page in PDF Viewer (ms).
+"
+  }
+
+  dimension: metrics__counter__pdfjs_used {
+    label: "Pdfjs Used"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_used ;;
+    type: number
+    group_label: "Pdfjs"
+    group_item_label: "Used"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times PDF Viewer was used.
 "
   }
 
@@ -3247,31 +3077,6 @@ documented in the ping's pings.yaml file.
     }
   }
 
-  measure: pdfjs_used {
-    type: sum
-    sql: ${metrics__counter__pdfjs_used} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Pdfjs Used"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_used"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: pdfjs_used_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__pdfjs_used: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Pdfjs Used"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_used"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
   measure: ping_centre_send_failures {
     type: sum
     sql: ${metrics__counter__ping_centre_send_failures} ;;
@@ -3368,6 +3173,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Fog Ipc Shutdown Registration Failures"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_ipc_shutdown_registration_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_used {
+    type: sum
+    sql: ${metrics__counter__pdfjs_used} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_used"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_used_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_used: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Used"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_used"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -4316,436 +4146,6 @@ view: metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
   }
 }
 
-view: metrics__metrics__labeled_counter__ipc_received_messages_content_background {
-  label: "Ipc Received Messages - Content Background"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_background
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_background.key
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: yes
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
-  }
-}
-
-view: metrics__metrics__labeled_counter__ipc_received_messages_content_foreground {
-  label: "Ipc Received Messages - Content Foreground"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_foreground
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_foreground.key
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: yes
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
-  }
-}
-
-view: metrics__metrics__labeled_counter__ipc_received_messages_gpu_process {
-  label: "Ipc Received Messages - Gpu Process"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_gpu_process
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_gpu_process.key
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: yes
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
-  }
-}
-
-view: metrics__metrics__labeled_counter__ipc_received_messages_parent_active {
-  label: "Ipc Received Messages - Parent Active"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_active
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_active.key
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: yes
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
-  }
-}
-
-view: metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive {
-  label: "Ipc Received Messages - Parent Inactive"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive.key
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: yes
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
-  }
-}
-
-view: metrics__metrics__labeled_counter__ipc_sent_messages_content_background {
-  label: "Ipc Sent Messages - Content Background"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_background
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_background.key
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: yes
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
-  }
-}
-
-view: metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground {
-  label: "Ipc Sent Messages - Content Foreground"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground.key
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: yes
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
-  }
-}
-
-view: metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process {
-  label: "Ipc Sent Messages - Gpu Process"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process.key
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: yes
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
-  }
-}
-
-view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_active {
-  label: "Ipc Sent Messages - Parent Active"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_active
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_active.key
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: yes
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
-  }
-}
-
-view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
-  label: "Ipc Sent Messages - Parent Inactive"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive.key
-    hidden: yes
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: yes
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
-  }
-}
-
 view: metrics__metrics__labeled_counter__netwerk_early_hints {
   label: "Netwerk - Early Hints"
 
@@ -4939,7 +4339,7 @@ view: metrics__metrics__labeled_counter__pdfjs_buttons {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_buttons
     suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_buttons.key
-    hidden: yes
+    hidden: no
   }
 
   dimension: value {
@@ -4951,13 +4351,13 @@ view: metrics__metrics__labeled_counter__pdfjs_buttons {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -4982,7 +4382,7 @@ view: metrics__metrics__labeled_counter__pdfjs_editing {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing
     suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing.key
-    hidden: yes
+    hidden: no
   }
 
   dimension: value {
@@ -4994,13 +4394,13 @@ view: metrics__metrics__labeled_counter__pdfjs_editing {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
@@ -5908,196 +5308,6 @@ view: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
     count(*) as n
 from mozdata.firefox_desktop.metrics as t,
 unnest(metrics.labeled_counter.gmp_update_xml_fetch_result) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_background {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.metrics as t,
-unnest(metrics.labeled_counter.ipc_received_messages_content_background) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_foreground {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.metrics as t,
-unnest(metrics.labeled_counter.ipc_received_messages_content_foreground) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_gpu_process {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.metrics as t,
-unnest(metrics.labeled_counter.ipc_received_messages_gpu_process) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_active {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.metrics as t,
-unnest(metrics.labeled_counter.ipc_received_messages_parent_active) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.metrics as t,
-unnest(metrics.labeled_counter.ipc_received_messages_parent_inactive) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_background {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.metrics as t,
-unnest(metrics.labeled_counter.ipc_sent_messages_content_background) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.metrics as t,
-unnest(metrics.labeled_counter.ipc_sent_messages_content_foreground) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.metrics as t,
-unnest(metrics.labeled_counter.ipc_sent_messages_gpu_process) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_active {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.metrics as t,
-unnest(metrics.labeled_counter.ipc_sent_messages_parent_active) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.metrics as t,
-unnest(metrics.labeled_counter.ipc_sent_messages_parent_inactive) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

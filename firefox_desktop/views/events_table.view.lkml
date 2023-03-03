@@ -308,6 +308,15 @@ view: events_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__urlbar_pref_suggest_topsites {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_topsites ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Urlbar Pref Suggest Topsites"
+    description: "Whether topsite results are enabled in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.topsites` pref.
+"
+  }
+
   dimension: metrics__jwe {
     sql: ${TABLE}.metrics.jwe ;;
     hidden: yes
@@ -348,6 +357,15 @@ The labels are the `category.name` identifier of the metric.
   dimension: metrics__labeled_rate {
     sql: ${TABLE}.metrics.labeled_rate ;;
     hidden: yes
+  }
+
+  dimension: metrics__quantity__urlbar_pref_max_results {
+    sql: ${TABLE}.metrics.quantity.urlbar_pref_max_results ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Urlbar Pref Max Results"
+    description: "Maximum results to show in the Address Bar. Corresponds to the value of the `browser.urlbar.maxRichResults` pref.
+"
   }
 
   dimension: metrics__text {
