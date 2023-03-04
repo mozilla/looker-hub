@@ -9,7 +9,7 @@ include: "/looker-hub/focus_android/views/baseline.view.lkml"
 explore: baseline {
   sql_always_where: ${baseline.submission_date} >= '2010-01-01' ;;
   view_label: " Baseline"
-  description: "Explore for the baseline ping. This ping is intended to provide metrics that are managed by the library itself, and not explicitly set by the application or included in the application's `metrics.yaml` file. The `baseline` ping is automatically sent when the application is moved to the background."
+  description: "Explore for the baseline ping. This ping is intended to provide metrics that are managed by the library itself, and not explicitly set by the application or included in the application's `metrics.yaml` file. The `baseline` ping is automatically sent when the application becomes inactive and when the application becomes active again (including application start). Please see the Reasons section for more information."
   view_name: baseline
 
   always_filter: {

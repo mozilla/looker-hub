@@ -14,7 +14,7 @@ explore: crash {
 
   always_filter: {
     filters: [
-      channel: "mozdata.focus^_android.crash",
+      channel: "mozdata.org^_mozilla^_focus^_beta.crash",
       submission_date: "28 days",
     ]
   }
