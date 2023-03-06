@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: crash {
+view: first_startup_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -133,7 +133,6 @@ view: crash {
     sql: ${TABLE}.document_id ;;
     hidden: yes
     description: "The document ID specified in the URI when the client sent this message"
-    primary_key: yes
   }
 
   dimension: events {
@@ -309,6 +308,57 @@ view: crash {
     group_item_label: "Version"
   }
 
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    hidden: yes
+    description: "Counts the number of times a metric was set with an invalid label.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    hidden: yes
+    description: "Counts the number of times a metric was set a value that overflowed.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    hidden: yes
+    description: "Counts the number of times a timing metric was used incorrectly.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    hidden: yes
+    description: "Counts the number of times a metric was set to an invalid value.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__quantity__first_startup_elapsed {
+    sql: ${TABLE}.metrics.quantity.first_startup_elapsed ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "First Startup Elapsed"
+    description: "Number of milliseconds the FirstStartup service took to run.
+"
+  }
+
+  dimension: metrics__quantity__first_startup_status_code {
+    sql: ${TABLE}.metrics.quantity.first_startup_status_code ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "First Startup Status Code"
+    description: "Status of the FirstStartup service, which runs
+post-install/early-startup in Firefox.
+"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -444,29 +494,60 @@ view: crash {
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  measure: clients {
-    type: count_distinct
-    sql: ${client_info__client_id} ;;
+  sql_table_name: `mozdata.firefox_desktop.first_startup` ;;
+}
+
+view: first_startup_table__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
   }
 
-  measure: ping_count {
-    type: count
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.org_mozilla_firefox_beta.crash"
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_firefox_beta.crash"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix.crash"
-    }
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
   }
 
-  sql_table_name: `{% parameter channel %}` ;;
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: first_startup_table__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: first_startup_table__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
+  }
 }

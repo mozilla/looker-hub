@@ -1971,8 +1971,9 @@ default: true
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Whether or not the user has the open links in apps feature enabled.
-default: false
+    description: "The user has the open links in apps feature enabled.
+\"ask_before_opening\", \"always\" or \"never\".
+default: \"never\"
 "
   }
 

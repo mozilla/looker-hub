@@ -4,17 +4,14 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/klar_android/views/crash.view.lkml"
+include: "/looker-hub/operational_monitoring/views/experiment_for_additional_metrics_for_product_insights_rollout_100.view.lkml"
 
-explore: crash {
-  sql_always_where: ${crash.submission_date} >= '2010-01-01' ;;
-  view_label: " Crash"
-  description: "Explore for the crash ping. "
-  view_name: crash
-
+explore: experiment_for_additional_metrics_for_product_insights_rollout_100 {
   always_filter: {
     filters: [
-      submission_date: "28 days",
+      branch: "enabled, disabled",
     ]
   }
+
+  hidden: yes
 }

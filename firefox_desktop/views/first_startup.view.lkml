@@ -4,7 +4,116 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: crash_table {
+view: first_startup {
+  dimension: metrics__quantity__first_startup_elapsed {
+    label: "First Startup Elapsed"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.first_startup_elapsed ;;
+    type: number
+    group_label: "First Startup"
+    group_item_label: "Elapsed"
+
+    link: {
+      label: "Glean Dictionary reference for First Startup Elapsed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/first_startup_elapsed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of milliseconds the FirstStartup service took to run.
+"
+  }
+
+  dimension: metrics__quantity__first_startup_status_code {
+    label: "First Startup Status Code"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.first_startup_status_code ;;
+    type: number
+    group_label: "First Startup"
+    group_item_label: "Status Code"
+
+    link: {
+      label: "Glean Dictionary reference for First Startup Status Code"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/first_startup_status_code"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Status of the FirstStartup service, which runs
+post-install/early-startup in Firefox.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    label: "Glean Error Invalid Label"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Label"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_label"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set with an invalid label.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    label: "Glean Error Invalid Overflow"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Overflow"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_overflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set a value that overflowed.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    label: "Glean Error Invalid State"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid State"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a timing metric was used incorrectly.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    label: "Glean Error Invalid Value"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Value"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set to an invalid value.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -133,6 +242,7 @@ view: crash_table {
     sql: ${TABLE}.document_id ;;
     hidden: yes
     description: "The document ID specified in the URI when the client sent this message"
+    primary_key: yes
   }
 
   dimension: events {
@@ -308,77 +418,6 @@ view: crash_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__boolean__crash_startup {
-    sql: ${TABLE}.metrics.boolean.crash_startup ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Crash Startup"
-    description: "If true, the crash occurred during process startup.
-"
-  }
-
-  dimension: metrics__datetime__raw_crash_time {
-    sql: ${TABLE}.metrics.datetime.raw_crash_time ;;
-    type: string
-    group_label: "Metrics Datetime"
-    group_item_label: "Raw Crash Time"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_label {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
-    hidden: yes
-    description: "Counts the number of times a metric was set with an invalid label.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
-    hidden: yes
-    description: "Counts the number of times a metric was set a value that overflowed.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_state {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
-    hidden: yes
-    description: "Counts the number of times a timing metric was used incorrectly.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_value {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
-    hidden: yes
-    description: "Counts the number of times a metric was set to an invalid value.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__string__crash_process_type {
-    sql: ${TABLE}.metrics.string.crash_process_type ;;
-    type: string
-    group_label: "Metrics String"
-    group_item_label: "Crash Process Type"
-    description: "The type of process that experienced a crash. See the full list of options [here](https://firefox-source-docs.mozilla.org/toolkit/components/telemetry/data/crash-ping.html#process-types).
-"
-  }
-
-  dimension: metrics__timespan__crash_uptime__time_unit {
-    sql: ${TABLE}.metrics.timespan.crash_uptime.time_unit ;;
-    type: string
-    group_label: "Metrics Timespan Crash Uptime"
-    group_item_label: "Time Unit"
-  }
-
-  dimension: metrics__timespan__crash_uptime__value {
-    sql: ${TABLE}.metrics.timespan.crash_uptime.value ;;
-    type: number
-    group_label: "Metrics Timespan Crash Uptime"
-    group_item_label: "Value"
-  }
-
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -469,23 +508,6 @@ The labels are the `category.name` identifier of the metric.
     label: "Metadata Header: Parsed Date"
   }
 
-  dimension_group: metrics__datetime__crash {
-    sql: ${TABLE}.metrics.datetime.crash_time ;;
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    label: "Metrics Datetime: Crash Time"
-    description: "The time at which the crash occurred.
-"
-  }
-
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
@@ -531,60 +553,262 @@ The labels are the `category.name` identifier of the metric.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  sql_table_name: `mozdata.org_mozilla_klar.crash` ;;
-}
-
-view: crash_table__events {
-  dimension: category {
-    sql: ${TABLE}.category ;;
-    type: string
+  measure: clients {
+    type: count_distinct
+    sql: ${client_info__client_id} ;;
   }
 
-  dimension: extra {
-    sql: ${TABLE}.extra ;;
+  measure: ping_count {
+    type: count
+  }
+
+  sql_table_name: `mozdata.firefox_desktop.first_startup` ;;
+}
+
+view: first_startup__metrics__labeled_counter__glean_error_invalid_label {
+  label: "Glean Error - Invalid Label"
+
+  dimension: document_id {
+    type: string
+    sql: ${first_startup.document_id} ;;
     hidden: yes
   }
 
-  dimension: name {
-    sql: ${TABLE}.name ;;
+  dimension: document_label_id {
     type: string
+    sql: ${first_startup.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
   }
 
-  dimension: timestamp {
-    sql: ${TABLE}.timestamp ;;
-    type: number
-  }
-}
-
-view: crash_table__events__extra {
-  dimension: key {
+  dimension: label {
+    type: string
     sql: ${TABLE}.key ;;
-    type: string
+    suggest_explore: suggest__first_startup__metrics__labeled_counter__glean_error_invalid_label
+    suggest_dimension: suggest__first_startup__metrics__labeled_counter__glean_error_invalid_label.key
+    hidden: no
   }
 
   dimension: value {
+    type: number
     sql: ${TABLE}.value ;;
-    type: string
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${first_startup.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
-view: crash_table__ping_info__experiments {
-  dimension: key {
+view: first_startup__metrics__labeled_counter__glean_error_invalid_overflow {
+  label: "Glean Error - Invalid Overflow"
+
+  dimension: document_id {
+    type: string
+    sql: ${first_startup.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${first_startup.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
     sql: ${TABLE}.key ;;
-    type: string
+    suggest_explore: suggest__first_startup__metrics__labeled_counter__glean_error_invalid_overflow
+    suggest_dimension: suggest__first_startup__metrics__labeled_counter__glean_error_invalid_overflow.key
+    hidden: no
   }
 
-  dimension: value__branch {
-    sql: ${TABLE}.value.branch ;;
-    type: string
-    group_label: "Value"
-    group_item_label: "Branch"
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
   }
 
-  dimension: value__extra__type {
-    sql: ${TABLE}.value.extra.type ;;
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${first_startup.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: first_startup__metrics__labeled_counter__glean_error_invalid_state {
+  label: "Glean Error - Invalid State"
+
+  dimension: document_id {
     type: string
-    group_label: "Value Extra"
-    group_item_label: "Type"
+    sql: ${first_startup.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${first_startup.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__first_startup__metrics__labeled_counter__glean_error_invalid_state
+    suggest_dimension: suggest__first_startup__metrics__labeled_counter__glean_error_invalid_state.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${first_startup.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: first_startup__metrics__labeled_counter__glean_error_invalid_value {
+  label: "Glean Error - Invalid Value"
+
+  dimension: document_id {
+    type: string
+    sql: ${first_startup.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${first_startup.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__first_startup__metrics__labeled_counter__glean_error_invalid_value
+    suggest_dimension: suggest__first_startup__metrics__labeled_counter__glean_error_invalid_value.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${first_startup.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: suggest__first_startup__metrics__labeled_counter__glean_error_invalid_label {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.first_startup as t,
+unnest(metrics.labeled_counter.glean_error_invalid_label) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__first_startup__metrics__labeled_counter__glean_error_invalid_overflow {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.first_startup as t,
+unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__first_startup__metrics__labeled_counter__glean_error_invalid_state {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.first_startup as t,
+unnest(metrics.labeled_counter.glean_error_invalid_state) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__first_startup__metrics__labeled_counter__glean_error_invalid_value {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.first_startup as t,
+unnest(metrics.labeled_counter.glean_error_invalid_value) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
   }
 }
