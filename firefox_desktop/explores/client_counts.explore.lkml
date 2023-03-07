@@ -50,58 +50,10 @@ explore: client_counts {
     sql: LEFT JOIN UNNEST(${client_counts.ad_clicks}) AS clients_daily_table__ad_clicks ;;
   }
 
-  join: clients_daily_table__contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum {
-    view_label: "Client Counts  Contextual Services Quicksuggest Block Nonsponsored Bestmatch Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum}) AS clients_daily_table__contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum ;;
-  }
-
-  join: clients_daily_table__contextual_services_quicksuggest_block_nonsponsored_sum {
-    view_label: "Client Counts  Contextual Services Quicksuggest Block Nonsponsored Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_block_nonsponsored_sum}) AS clients_daily_table__contextual_services_quicksuggest_block_nonsponsored_sum ;;
-  }
-
-  join: clients_daily_table__contextual_services_quicksuggest_block_sponsored_bestmatch_sum {
-    view_label: "Client Counts  Contextual Services Quicksuggest Block Sponsored Bestmatch Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_block_sponsored_bestmatch_sum}) AS clients_daily_table__contextual_services_quicksuggest_block_sponsored_bestmatch_sum ;;
-  }
-
-  join: clients_daily_table__contextual_services_quicksuggest_block_sponsored_sum {
-    view_label: "Client Counts  Contextual Services Quicksuggest Block Sponsored Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_block_sponsored_sum}) AS clients_daily_table__contextual_services_quicksuggest_block_sponsored_sum ;;
-  }
-
-  join: clients_daily_table__contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum {
-    view_label: "Client Counts  Contextual Services Quicksuggest Click Nonsponsored Bestmatch Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum}) AS clients_daily_table__contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum ;;
-  }
-
-  join: clients_daily_table__contextual_services_quicksuggest_click_sponsored_bestmatch_sum {
-    view_label: "Client Counts  Contextual Services Quicksuggest Click Sponsored Bestmatch Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_click_sponsored_bestmatch_sum}) AS clients_daily_table__contextual_services_quicksuggest_click_sponsored_bestmatch_sum ;;
-  }
-
   join: clients_daily_table__contextual_services_quicksuggest_click_sum {
     view_label: "Client Counts  Contextual Services Quicksuggest Click Sum"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_click_sum}) AS clients_daily_table__contextual_services_quicksuggest_click_sum ;;
-  }
-
-  join: clients_daily_table__contextual_services_quicksuggest_help_nonsponsored_bestmatch_sum {
-    view_label: "Client Counts  Contextual Services Quicksuggest Help Nonsponsored Bestmatch Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_help_nonsponsored_bestmatch_sum}) AS clients_daily_table__contextual_services_quicksuggest_help_nonsponsored_bestmatch_sum ;;
-  }
-
-  join: clients_daily_table__contextual_services_quicksuggest_help_sponsored_bestmatch_sum {
-    view_label: "Client Counts  Contextual Services Quicksuggest Help Sponsored Bestmatch Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_help_sponsored_bestmatch_sum}) AS clients_daily_table__contextual_services_quicksuggest_help_sponsored_bestmatch_sum ;;
   }
 
   join: clients_daily_table__contextual_services_quicksuggest_help_sum {
@@ -110,34 +62,10 @@ explore: client_counts {
     sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_help_sum}) AS clients_daily_table__contextual_services_quicksuggest_help_sum ;;
   }
 
-  join: clients_daily_table__contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum {
-    view_label: "Client Counts  Contextual Services Quicksuggest Impression Nonsponsored Bestmatch Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum}) AS clients_daily_table__contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum ;;
-  }
-
-  join: clients_daily_table__contextual_services_quicksuggest_impression_sponsored_bestmatch_sum {
-    view_label: "Client Counts  Contextual Services Quicksuggest Impression Sponsored Bestmatch Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_impression_sponsored_bestmatch_sum}) AS clients_daily_table__contextual_services_quicksuggest_impression_sponsored_bestmatch_sum ;;
-  }
-
   join: clients_daily_table__contextual_services_quicksuggest_impression_sum {
     view_label: "Client Counts  Contextual Services Quicksuggest Impression Sum"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_counts.contextual_services_quicksuggest_impression_sum}) AS clients_daily_table__contextual_services_quicksuggest_impression_sum ;;
-  }
-
-  join: clients_daily_table__contextual_services_topsites_click_sum {
-    view_label: "Client Counts  Contextual Services Topsites Click Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_topsites_click_sum}) AS clients_daily_table__contextual_services_topsites_click_sum ;;
-  }
-
-  join: clients_daily_table__contextual_services_topsites_impression_sum {
-    view_label: "Client Counts  Contextual Services Topsites Impression Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.contextual_services_topsites_impression_sum}) AS clients_daily_table__contextual_services_topsites_impression_sum ;;
   }
 
   join: clients_daily_table__experiments {
@@ -174,138 +102,6 @@ explore: client_counts {
     view_label: "Client Counts  Scalar Parent Telemetry Event Counts Sum"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_telemetry_event_counts_sum}) AS clients_daily_table__scalar_parent_telemetry_event_counts_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_autofill_about_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Autofill About Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_autofill_about_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_autofill_about_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_autofill_adaptive_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Autofill Adaptive Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_autofill_adaptive_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_autofill_adaptive_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_autofill_origin_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Autofill Origin Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_autofill_origin_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_autofill_origin_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_autofill_other_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Autofill Other Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_autofill_other_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_autofill_other_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_autofill_preloaded_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Autofill Preloaded Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_autofill_preloaded_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_autofill_preloaded_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_autofill_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Autofill Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_autofill_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_autofill_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_autofill_url_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Autofill Url Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_autofill_url_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_autofill_url_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_bookmark_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Bookmark Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_bookmark_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_bookmark_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_dynamic_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Dynamic Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_dynamic_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_dynamic_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_extension_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Extension Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_extension_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_extension_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_formhistory_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Formhistory Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_formhistory_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_formhistory_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_history_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked History Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_history_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_history_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_keyword_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Keyword Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_keyword_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_keyword_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_remotetab_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Remotetab Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_remotetab_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_remotetab_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_searchengine_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Searchengine Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_searchengine_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_searchengine_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_searchsuggestion_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Searchsuggestion Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_searchsuggestion_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_searchsuggestion_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_switchtab_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Switchtab Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_switchtab_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_switchtab_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_tabtosearch_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Tabtosearch Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_tabtosearch_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_tabtosearch_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_tip_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Tip Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_tip_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_tip_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_topsite_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Topsite Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_topsite_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_topsite_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_unknown_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Unknown Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_unknown_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_unknown_sum ;;
-  }
-
-  join: clients_daily_table__scalar_parent_urlbar_picked_visiturl_sum {
-    view_label: "Client Counts  Scalar Parent Urlbar Picked Visiturl Sum"
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_urlbar_picked_visiturl_sum}) AS clients_daily_table__scalar_parent_urlbar_picked_visiturl_sum ;;
   }
 
   join: clients_daily_table__scalar_parent_urlbar_searchmode_bookmarkmenu_sum {
