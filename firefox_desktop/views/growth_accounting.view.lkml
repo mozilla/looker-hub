@@ -99,6 +99,13 @@ view: growth_accounting {
     group_item_label: "Content"
   }
 
+  dimension: attribution__dltoken {
+    sql: ${TABLE}.attribution.dltoken ;;
+    type: string
+    group_label: "Attribution"
+    group_item_label: "Dltoken"
+  }
+
   dimension: attribution__experiment {
     sql: ${TABLE}.attribution.experiment ;;
     type: string
@@ -177,6 +184,11 @@ view: growth_accounting {
     type: number
   }
 
+  dimension: contextual_services_quicksuggest_block_dynamic_wikipedia_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_block_dynamic_wikipedia_sum ;;
+    hidden: yes
+  }
+
   dimension: contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum ;;
     hidden: yes
@@ -197,8 +209,23 @@ view: growth_accounting {
     hidden: yes
   }
 
+  dimension: contextual_services_quicksuggest_block_weather_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_block_weather_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_click_dynamic_wikipedia_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_click_dynamic_wikipedia_sum ;;
+    hidden: yes
+  }
+
   dimension: contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_click_nonsponsored_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_click_nonsponsored_sum ;;
     hidden: yes
   }
 
@@ -207,8 +234,23 @@ view: growth_accounting {
     hidden: yes
   }
 
+  dimension: contextual_services_quicksuggest_click_sponsored_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_click_sponsored_sum ;;
+    hidden: yes
+  }
+
   dimension: contextual_services_quicksuggest_click_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_click_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_click_weather_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_click_weather_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_help_dynamic_wikipedia_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_help_dynamic_wikipedia_sum ;;
     hidden: yes
   }
 
@@ -217,8 +259,18 @@ view: growth_accounting {
     hidden: yes
   }
 
+  dimension: contextual_services_quicksuggest_help_nonsponsored_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_help_nonsponsored_sum ;;
+    hidden: yes
+  }
+
   dimension: contextual_services_quicksuggest_help_sponsored_bestmatch_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_help_sponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_help_sponsored_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_help_sponsored_sum ;;
     hidden: yes
   }
 
@@ -227,8 +279,23 @@ view: growth_accounting {
     hidden: yes
   }
 
+  dimension: contextual_services_quicksuggest_help_weather_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_help_weather_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_impression_dynamic_wikipedia_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_impression_dynamic_wikipedia_sum ;;
+    hidden: yes
+  }
+
   dimension: contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_impression_nonsponsored_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_impression_nonsponsored_sum ;;
     hidden: yes
   }
 
@@ -237,8 +304,18 @@ view: growth_accounting {
     hidden: yes
   }
 
+  dimension: contextual_services_quicksuggest_impression_sponsored_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_impression_sponsored_sum ;;
+    hidden: yes
+  }
+
   dimension: contextual_services_quicksuggest_impression_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_impression_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_impression_weather_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_impression_weather_sum ;;
     hidden: yes
   }
 
@@ -875,6 +952,16 @@ view: growth_accounting {
 
   dimension: logins_migrations_quantity_safari {
     sql: ${TABLE}.logins_migrations_quantity_safari ;;
+    type: number
+  }
+
+  dimension: media_play_time_ms_audio_sum {
+    sql: ${TABLE}.media_play_time_ms_audio_sum ;;
+    type: number
+  }
+
+  dimension: media_play_time_ms_video_sum {
+    sql: ${TABLE}.media_play_time_ms_video_sum ;;
     type: number
   }
 
