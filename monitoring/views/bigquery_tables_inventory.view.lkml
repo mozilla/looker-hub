@@ -11,6 +11,11 @@ view: bigquery_tables_inventory {
     description: "The name of the dataset that contains the table or view"
   }
 
+  dimension: owners {
+    sql: ${TABLE}.owners ;;
+    hidden: yes
+  }
+
   dimension: project_id {
     sql: ${TABLE}.project_id ;;
     type: string
@@ -58,7 +63,6 @@ view: bigquery_tables_inventory {
     ]
     convert_tz: no
     datatype: date
-    description: "The table's last modified date"
   }
 
   dimension_group: submission {
