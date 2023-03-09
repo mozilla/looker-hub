@@ -920,6 +920,16 @@ view: clients_daily_joined_table {
     type: number
   }
 
+  dimension: places_searchbar_cumulative_filter_count_sum {
+    sql: ${TABLE}.places_searchbar_cumulative_filter_count_sum ;;
+    type: number
+  }
+
+  dimension: places_searchbar_cumulative_searches_sum {
+    sql: ${TABLE}.places_searchbar_cumulative_searches_sum ;;
+    type: number
+  }
+
   dimension: plugin_hangs_sum {
     sql: ${TABLE}.plugin_hangs_sum ;;
     type: number
@@ -1178,6 +1188,21 @@ view: clients_daily_joined_table {
   dimension: scalar_parent_os_environment_launched_via_taskbar_private {
     sql: ${TABLE}.scalar_parent_os_environment_launched_via_taskbar_private ;;
     type: yesno
+  }
+
+  dimension: scalar_parent_sidebar_link_sum {
+    sql: ${TABLE}.scalar_parent_sidebar_link_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_sidebar_opened_sum {
+    sql: ${TABLE}.scalar_parent_sidebar_opened_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_sidebar_search_sum {
+    sql: ${TABLE}.scalar_parent_sidebar_search_sum ;;
+    hidden: yes
   }
 
   dimension: scalar_parent_storage_sync_api_usage_extensions_using_sum {
@@ -2475,6 +2500,42 @@ view: clients_daily_joined_table__scalar_parent_browser_ui_interaction_preferenc
 }
 
 view: clients_daily_joined_table__scalar_parent_devtools_accessibility_select_accessible_for_node_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__scalar_parent_sidebar_link_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__scalar_parent_sidebar_opened_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__scalar_parent_sidebar_search_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
