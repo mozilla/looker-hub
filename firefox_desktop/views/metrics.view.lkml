@@ -1107,6 +1107,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_speculative_connection_outcome {
+    label: "Networking Speculative Connection Outcome"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_speculative_connection_outcome ;;
+    group_label: "Networking"
+    group_item_label: "Speculative Connection Outcome"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Speculative Connection Outcome"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_speculative_connection_outcome"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the occurrence of each outcome of a speculative connection
+"
+  }
+
   dimension: metrics__timing_distribution__paint_build_displaylist_time__sum {
     label: "Paint Build Displaylist Time Sum"
     hidden: no
@@ -4918,6 +4935,49 @@ view: metrics__metrics__labeled_counter__network_data_size_per_type {
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_speculative_connection_outcome {
+  label: "Networking - Speculative Connection Outcome"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_speculative_connection_outcome
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_speculative_connection_outcome.key
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
 view: metrics__metrics__labeled_counter__pdfjs_buttons {
   label: "Pdfjs - Buttons"
 
@@ -6174,6 +6234,25 @@ view: suggest__metrics__metrics__labeled_counter__network_data_size_per_type {
     count(*) as n
 from mozdata.firefox_desktop.metrics as t,
 unnest(metrics.labeled_counter.network_data_size_per_type) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_speculative_connection_outcome {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.networking_speculative_connection_outcome) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

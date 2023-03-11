@@ -1499,6 +1499,78 @@ view: new_profile {
     type: string
   }
 
+  dimension: payload__processes__parent__scalars__attribution_provenance_ads_exists {
+    sql: ${TABLE}.payload.processes.parent.scalars.attribution_provenance_ads_exists ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Attribution Provenance Ads Exists"
+    description: "Will always be false if attribution.provenance.zone_id.data_exists is false. Will be true if the provenance data indicates that the :Zone.Identifier Alternate Data Stream existed on the installer.
+"
+  }
+
+  dimension: payload__processes__parent__scalars__attribution_provenance_data_exists {
+    sql: ${TABLE}.payload.processes.parent.scalars.attribution_provenance_data_exists ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Attribution Provenance Data Exists"
+    description: "Will be true if the \"zoneIdProvenanceData\" file is present in the installation directory and we were able to successfully read it.
+"
+  }
+
+  dimension: payload__processes__parent__scalars__attribution_provenance_file_system {
+    sql: ${TABLE}.payload.processes.parent.scalars.attribution_provenance_file_system ;;
+    type: string
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Attribution Provenance File System"
+    description: "The file system that the installer resided on at installation time. Possible values are: \"NTFS\", \"FAT32\", \"other\". In error cases, it can also be \"missing\", \"error\" or \"readIniError\". Only sent if attribution.provenance.zone_id.data_exists is true.
+"
+  }
+
+  dimension: payload__processes__parent__scalars__attribution_provenance_host_url_exists {
+    sql: ${TABLE}.payload.processes.parent.scalars.attribution_provenance_host_url_exists ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Attribution Provenance Host Url Exists"
+    description: "Will be true if the zone identifier ADS contained a host URL. Will be false if a host URL is specified, but it isn't a valid URL. Only sent if attribution.provenance.zone_id.ads_exists is true.
+"
+  }
+
+  dimension: payload__processes__parent__scalars__attribution_provenance_host_url_is_mozilla {
+    sql: ${TABLE}.payload.processes.parent.scalars.attribution_provenance_host_url_is_mozilla ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Attribution Provenance Host Url Is Mozilla"
+    description: "Will be true if the host URL from the zone identifier ADS appeared to be a Mozilla URL. Only sent if attribution.provenance.zone_id.host_url_exists is true.
+"
+  }
+
+  dimension: payload__processes__parent__scalars__attribution_provenance_referrer_url_exists {
+    sql: ${TABLE}.payload.processes.parent.scalars.attribution_provenance_referrer_url_exists ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Attribution Provenance Referrer Url Exists"
+    description: "Will be true if the zone identifier ADS contained a referrer URL. Will be false if a referrer URL is specified, but it isn't a valid URL. Only sent if attribution.provenance.zone_id.ads_exists is true.
+"
+  }
+
+  dimension: payload__processes__parent__scalars__attribution_provenance_referrer_url_is_mozilla {
+    sql: ${TABLE}.payload.processes.parent.scalars.attribution_provenance_referrer_url_is_mozilla ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Attribution Provenance Referrer Url Is Mozilla"
+    description: "Will be true if the referrer URL from the zone identifier ADS appeared to be a Mozilla URL. Only sent if attribution.provenance.zone_id.referrer_url_exists is true.
+"
+  }
+
+  dimension: payload__processes__parent__scalars__attribution_provenance_security_zone {
+    sql: ${TABLE}.payload.processes.parent.scalars.attribution_provenance_security_zone ;;
+    type: string
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Attribution Provenance Security Zone"
+    description: "The zone identifier in the installer's :Zone.Identifier ADS. Possible values are integers between 0 and 4, inclusive. In error cases, it can also be \"unexpected\", \"missing\", \"error\", or \"readIniError\". Only sent if attribution.provenance.zone_id.ads_exists is true.
+"
+  }
+
   dimension: payload__processes__parent__scalars__startup_profile_selection_reason {
     sql: ${TABLE}.payload.processes.parent.scalars.startup_profile_selection_reason ;;
     type: string

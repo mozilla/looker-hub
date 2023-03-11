@@ -365,6 +365,11 @@ view: client_deduplication_table {
     group_item_label: "Search Default Engine Name"
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string

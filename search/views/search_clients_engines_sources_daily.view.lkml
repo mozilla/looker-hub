@@ -136,6 +136,11 @@ view: search_clients_engines_sources_daily {
     type: yesno
   }
 
+  dimension: is_sap_monetizable {
+    sql: ${TABLE}.is_sap_monetizable ;;
+    type: yesno
+  }
+
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
