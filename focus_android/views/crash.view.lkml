@@ -4,7 +4,133 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: client_deduplication_table {
+view: crash {
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    label: "Glean Error Invalid Label"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Label"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/glean_error_invalid_label"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set with an invalid label.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    label: "Glean Error Invalid Overflow"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Overflow"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/glean_error_invalid_overflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set a value that overflowed.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    label: "Glean Error Invalid State"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid State"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/glean_error_invalid_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a timing metric was used incorrectly.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    label: "Glean Error Invalid Value"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Value"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/glean_error_invalid_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set to an invalid value.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__string__crash_process_type {
+    label: "Crash Process Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_process_type ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Process Type"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Process Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/crash_process_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of process that experienced a crash. See the full list of options [here](https://firefox-source-docs.mozilla.org/toolkit/components/telemetry/data/crash-ping.html#process-types).
+"
+  }
+
+  dimension: metrics__boolean__crash_startup {
+    label: "Crash Startup"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.crash_startup ;;
+    type: yesno
+    group_label: "Crash"
+    group_item_label: "Startup"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Startup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/crash_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If true, the crash occurred during process startup.
+"
+  }
+
+  dimension: metrics__timespan__crash_uptime__value {
+    label: "Crash Uptime Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.crash_uptime.value ;;
+    type: number
+    group_label: "Crash"
+    group_item_label: "Uptime Value"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Uptime Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/crash_uptime"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The application uptime. This is equivalent to the legacy crash ping's `UptimeTS` field.
+"
+  }
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -116,6 +242,7 @@ view: client_deduplication_table {
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    primary_key: yes
   }
 
   dimension: events {
@@ -276,95 +403,6 @@ view: client_deduplication_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__boolean__client_deduplication_valid_advertising_id {
-    sql: ${TABLE}.metrics.boolean.client_deduplication_valid_advertising_id ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Client Deduplication Valid Advertising Id"
-  }
-
-  dimension: metrics__counter__events_normal_and_private_uri_count {
-    sql: ${TABLE}.metrics.counter.events_normal_and_private_uri_count ;;
-    type: number
-    group_label: "Metrics Counter"
-    group_item_label: "Events Normal And Private Uri Count"
-  }
-
-  dimension: metrics__counter__metrics_tabs_open_count {
-    sql: ${TABLE}.metrics.counter.metrics_tabs_open_count ;;
-    type: number
-    group_label: "Metrics Counter"
-    group_item_label: "Metrics Tabs Open Count"
-  }
-
-  dimension: metrics__labeled_counter__browser_search_ad_clicks {
-    sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_counter__browser_search_in_content {
-    sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_counter__browser_search_with_ads {
-    sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_label {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_state {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_value {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_counter__metrics_search_count {
-    sql: ${TABLE}.metrics.labeled_counter.metrics_search_count ;;
-    hidden: yes
-  }
-
-  dimension: metrics__string__activation_identifier {
-    sql: ${TABLE}.metrics.string.activation_identifier ;;
-    type: string
-    group_label: "Metrics String"
-    group_item_label: "Activation Identifier"
-  }
-
-  dimension: metrics__string__client_deduplication_experiment_timeframe {
-    sql: ${TABLE}.metrics.string.client_deduplication_experiment_timeframe ;;
-    type: string
-    group_label: "Metrics String"
-    group_item_label: "Client Deduplication Experiment Timeframe"
-  }
-
-  dimension: metrics__string__search_default_engine_code {
-    sql: ${TABLE}.metrics.string.search_default_engine_code ;;
-    type: string
-    group_label: "Metrics String"
-    group_item_label: "Search Default Engine Code"
-  }
-
-  dimension: metrics__string__search_default_engine_name {
-    sql: ${TABLE}.metrics.string.search_default_engine_name ;;
-    type: string
-    group_label: "Metrics String"
-    group_item_label: "Search Default Engine Name"
-  }
-
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
@@ -499,75 +537,282 @@ view: client_deduplication_table {
     ]
   }
 
+  measure: clients {
+    type: count_distinct
+    sql: ${client_info__client_id} ;;
+  }
+
+  measure: ping_count {
+    type: count
+  }
+
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox_beta.client_deduplication"
+    default_value: "mozdata.focus_android.crash"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.focus_android.crash"
+    }
 
     allowed_value: {
       label: "Beta"
-      value: "mozdata.org_mozilla_firefox_beta.client_deduplication"
+      value: "mozdata.org_mozilla_focus_beta.crash"
     }
 
     allowed_value: {
       label: "Nightly"
-      value: "mozdata.org_mozilla_fenix.client_deduplication"
+      value: "mozdata.org_mozilla_focus_nightly.crash"
     }
   }
 
   sql_table_name: `{% parameter channel %}` ;;
 }
 
-view: client_deduplication_table__events {
-  dimension: category {
-    sql: ${TABLE}.category ;;
-    type: string
-  }
+view: crash__metrics__labeled_counter__glean_error_invalid_label {
+  label: "Glean Error - Invalid Label"
 
-  dimension: extra {
-    sql: ${TABLE}.extra ;;
+  dimension: document_id {
+    type: string
+    sql: ${crash.document_id} ;;
     hidden: yes
   }
 
-  dimension: name {
-    sql: ${TABLE}.name ;;
+  dimension: document_label_id {
     type: string
+    sql: ${crash.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
   }
 
-  dimension: timestamp {
-    sql: ${TABLE}.timestamp ;;
-    type: number
-  }
-}
-
-view: client_deduplication_table__events__extra {
-  dimension: key {
+  dimension: label {
+    type: string
     sql: ${TABLE}.key ;;
-    type: string
+    suggest_explore: suggest__crash__metrics__labeled_counter__glean_error_invalid_label
+    suggest_dimension: suggest__crash__metrics__labeled_counter__glean_error_invalid_label.key
+    hidden: no
   }
 
   dimension: value {
+    type: number
     sql: ${TABLE}.value ;;
-    type: string
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${crash.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
-view: client_deduplication_table__ping_info__experiments {
-  dimension: key {
+view: crash__metrics__labeled_counter__glean_error_invalid_overflow {
+  label: "Glean Error - Invalid Overflow"
+
+  dimension: document_id {
+    type: string
+    sql: ${crash.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${crash.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
     sql: ${TABLE}.key ;;
-    type: string
+    suggest_explore: suggest__crash__metrics__labeled_counter__glean_error_invalid_overflow
+    suggest_dimension: suggest__crash__metrics__labeled_counter__glean_error_invalid_overflow.key
+    hidden: no
   }
 
-  dimension: value__branch {
-    sql: ${TABLE}.value.branch ;;
-    type: string
-    group_label: "Value"
-    group_item_label: "Branch"
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
   }
 
-  dimension: value__extra__type {
-    sql: ${TABLE}.value.extra.type ;;
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${crash.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: crash__metrics__labeled_counter__glean_error_invalid_state {
+  label: "Glean Error - Invalid State"
+
+  dimension: document_id {
     type: string
-    group_label: "Value Extra"
-    group_item_label: "Type"
+    sql: ${crash.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${crash.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__crash__metrics__labeled_counter__glean_error_invalid_state
+    suggest_dimension: suggest__crash__metrics__labeled_counter__glean_error_invalid_state.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${crash.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: crash__metrics__labeled_counter__glean_error_invalid_value {
+  label: "Glean Error - Invalid Value"
+
+  dimension: document_id {
+    type: string
+    sql: ${crash.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${crash.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__crash__metrics__labeled_counter__glean_error_invalid_value
+    suggest_dimension: suggest__crash__metrics__labeled_counter__glean_error_invalid_value.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${crash.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: suggest__crash__metrics__labeled_counter__glean_error_invalid_label {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.crash as t,
+unnest(metrics.labeled_counter.glean_error_invalid_label) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__crash__metrics__labeled_counter__glean_error_invalid_overflow {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.crash as t,
+unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__crash__metrics__labeled_counter__glean_error_invalid_state {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.crash as t,
+unnest(metrics.labeled_counter.glean_error_invalid_state) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__crash__metrics__labeled_counter__glean_error_invalid_value {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.crash as t,
+unnest(metrics.labeled_counter.glean_error_invalid_value) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
   }
 }

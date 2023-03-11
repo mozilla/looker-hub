@@ -6,10 +6,10 @@
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
 datagroup: client_deduplication_v1_last_updated {
-  label: "client_deduplication_v1 Last Updated"
+  label: "Client Deduplication Last Updated"
   sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.org_mozilla_firefox_beta_stable.INFORMATION_SCHEMA.PARTITIONS
+    FROM `moz-fx-data-shared-prod`.org_mozilla_firefox_beta_derived.INFORMATION_SCHEMA.PARTITIONS
     WHERE table_name = 'client_deduplication_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:org_mozilla_firefox_beta_stable.client_deduplication_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod:org_mozilla_firefox_beta_derived.client_deduplication_v1 is modified."
   max_cache_age: "24 hours"
 }

@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: client_deduplication_table {
+view: crash_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -276,40 +276,18 @@ view: client_deduplication_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__boolean__client_deduplication_valid_advertising_id {
-    sql: ${TABLE}.metrics.boolean.client_deduplication_valid_advertising_id ;;
+  dimension: metrics__boolean__crash_startup {
+    sql: ${TABLE}.metrics.boolean.crash_startup ;;
     type: yesno
     group_label: "Metrics Boolean"
-    group_item_label: "Client Deduplication Valid Advertising Id"
+    group_item_label: "Crash Startup"
   }
 
-  dimension: metrics__counter__events_normal_and_private_uri_count {
-    sql: ${TABLE}.metrics.counter.events_normal_and_private_uri_count ;;
-    type: number
-    group_label: "Metrics Counter"
-    group_item_label: "Events Normal And Private Uri Count"
-  }
-
-  dimension: metrics__counter__metrics_tabs_open_count {
-    sql: ${TABLE}.metrics.counter.metrics_tabs_open_count ;;
-    type: number
-    group_label: "Metrics Counter"
-    group_item_label: "Metrics Tabs Open Count"
-  }
-
-  dimension: metrics__labeled_counter__browser_search_ad_clicks {
-    sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_counter__browser_search_in_content {
-    sql: ${TABLE}.metrics.labeled_counter.browser_search_in_content ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_counter__browser_search_with_ads {
-    sql: ${TABLE}.metrics.labeled_counter.browser_search_with_ads ;;
-    hidden: yes
+  dimension: metrics__datetime__raw_crash_time {
+    sql: ${TABLE}.metrics.datetime.raw_crash_time ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Crash Time"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -332,37 +310,25 @@ view: client_deduplication_table {
     hidden: yes
   }
 
-  dimension: metrics__labeled_counter__metrics_search_count {
-    sql: ${TABLE}.metrics.labeled_counter.metrics_search_count ;;
-    hidden: yes
-  }
-
-  dimension: metrics__string__activation_identifier {
-    sql: ${TABLE}.metrics.string.activation_identifier ;;
+  dimension: metrics__string__crash_process_type {
+    sql: ${TABLE}.metrics.string.crash_process_type ;;
     type: string
     group_label: "Metrics String"
-    group_item_label: "Activation Identifier"
+    group_item_label: "Crash Process Type"
   }
 
-  dimension: metrics__string__client_deduplication_experiment_timeframe {
-    sql: ${TABLE}.metrics.string.client_deduplication_experiment_timeframe ;;
+  dimension: metrics__timespan__crash_uptime__time_unit {
+    sql: ${TABLE}.metrics.timespan.crash_uptime.time_unit ;;
     type: string
-    group_label: "Metrics String"
-    group_item_label: "Client Deduplication Experiment Timeframe"
+    group_label: "Metrics Timespan Crash Uptime"
+    group_item_label: "Time Unit"
   }
 
-  dimension: metrics__string__search_default_engine_code {
-    sql: ${TABLE}.metrics.string.search_default_engine_code ;;
-    type: string
-    group_label: "Metrics String"
-    group_item_label: "Search Default Engine Code"
-  }
-
-  dimension: metrics__string__search_default_engine_name {
-    sql: ${TABLE}.metrics.string.search_default_engine_name ;;
-    type: string
-    group_label: "Metrics String"
-    group_item_label: "Search Default Engine Name"
+  dimension: metrics__timespan__crash_uptime__value {
+    sql: ${TABLE}.metrics.timespan.crash_uptime.value ;;
+    type: number
+    group_label: "Metrics Timespan Crash Uptime"
+    group_item_label: "Value"
   }
 
   dimension: normalized_app_id {
@@ -455,6 +421,21 @@ view: client_deduplication_table {
     label: "Metadata Header: Parsed Date"
   }
 
+  dimension_group: metrics__datetime__crash {
+    sql: ${TABLE}.metrics.datetime.crash_time ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Crash Time"
+  }
+
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
@@ -501,23 +482,28 @@ view: client_deduplication_table {
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox_beta.client_deduplication"
+    default_value: "mozdata.fenix.crash"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.fenix.crash"
+    }
 
     allowed_value: {
       label: "Beta"
-      value: "mozdata.org_mozilla_firefox_beta.client_deduplication"
+      value: "mozdata.org_mozilla_firefox_beta.crash"
     }
 
     allowed_value: {
       label: "Nightly"
-      value: "mozdata.org_mozilla_fenix.client_deduplication"
+      value: "mozdata.org_mozilla_fenix.crash"
     }
   }
 
   sql_table_name: `{% parameter channel %}` ;;
 }
 
-view: client_deduplication_table__events {
+view: crash_table__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
@@ -539,7 +525,7 @@ view: client_deduplication_table__events {
   }
 }
 
-view: client_deduplication_table__events__extra {
+view: crash_table__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -551,7 +537,7 @@ view: client_deduplication_table__events__extra {
   }
 }
 
-view: client_deduplication_table__ping_info__experiments {
+view: crash_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

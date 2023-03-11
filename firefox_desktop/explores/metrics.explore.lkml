@@ -148,6 +148,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_data_size_per_type}) AS metrics__metrics__labeled_counter__network_data_size_per_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_data_size_per_type.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_speculative_connection_outcome {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_speculative_connection_outcome}) AS metrics__metrics__labeled_counter__networking_speculative_connection_outcome ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_speculative_connection_outcome.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__pdfjs_buttons {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_buttons}) AS metrics__metrics__labeled_counter__pdfjs_buttons ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_buttons.document_id} ;;
@@ -340,6 +345,10 @@ explore: suggest__metrics__metrics__labeled_counter__network_data_size_pb_per_ty
 }
 
 explore: suggest__metrics__metrics__labeled_counter__network_data_size_per_type {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__networking_speculative_connection_outcome {
   hidden: yes
 }
 
