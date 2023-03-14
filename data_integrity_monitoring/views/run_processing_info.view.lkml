@@ -60,5 +60,5 @@ view: run_processing_info {
     datatype: date
   }
 
-  sql_table_name: `data-monitoring-dev.dim.dim_run_processing_info` ;;
+  sql_table_name: `data-monitoring-dev.dim_external.run_processing_info` ;;
 }

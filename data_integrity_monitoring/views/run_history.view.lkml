@@ -99,5 +99,5 @@ view: run_history {
     datatype: date
   }
 
-  sql_table_name: `data-monitoring-dev.dim.dim_run_history` ;;
+  sql_table_name: `data-monitoring-dev.dim_external.run_history` ;;
 }

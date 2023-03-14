@@ -8,7 +8,6 @@ view: muted_alerts {
   dimension: comment {
     sql: ${TABLE}.comment ;;
     type: string
-    description: "Provides information about why the alert is muted."
   }
 
   dimension: dataset {
@@ -41,5 +40,5 @@ view: muted_alerts {
     datatype: date
   }
 
-  sql_table_name: `data-monitoring-dev.dim.dim_muted_alerts` ;;
+  sql_table_name: `data-monitoring-dev.dim_external.muted_alerts` ;;
 }
