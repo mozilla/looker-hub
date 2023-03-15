@@ -340,6 +340,25 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__navigator_viewport_horizontal_coverage {
+    sql: ${TABLE}.metrics.quantity.navigator_viewport_horizontal_coverage ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Navigator Viewport Horizontal Coverage"
+    description: "The ratio of viewport width to screen width, expressed as a percentage.
+"
+  }
+
+  dimension: metrics__quantity__navigator_viewport_ratio {
+    sql: ${TABLE}.metrics.quantity.navigator_viewport_ratio ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Navigator Viewport Ratio"
+    description: "The ratio of viewport width to viewport height,
+expressed as a percentage.
+"
+  }
+
   dimension: metrics__string__navigator_geo {
     sql: ${TABLE}.metrics.string.navigator_geo ;;
     type: string
@@ -365,6 +384,16 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics String"
     group_item_label: "Navigator User Agent"
     description: "The navigators user agent.
+"
+  }
+
+  dimension: metrics__string__navigator_viewport_breakpoint {
+    sql: ${TABLE}.metrics.string.navigator_viewport_breakpoint ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Navigator Viewport Breakpoint"
+    description: "The currently displayed viewport breakpoint,
+one of \"xs\", \"sm\", \"md\",\"lg\", \"xl\" or \"xxl\".
 "
   }
 
@@ -569,6 +598,13 @@ view: page_table__ping_info__experiments {
     type: string
     group_label: "Value"
     group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
   }
 
   dimension: value__extra__type {

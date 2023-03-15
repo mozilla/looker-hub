@@ -60,6 +60,62 @@ view: action {
 "
   }
 
+  dimension: metrics__string__navigator_viewport_breakpoint {
+    label: "Navigator Viewport Breakpoint"
+    hidden: no
+    sql: ${TABLE}.metrics.string.navigator_viewport_breakpoint ;;
+    type: string
+    group_label: "Navigator"
+    group_item_label: "Viewport Breakpoint"
+
+    link: {
+      label: "Glean Dictionary reference for Navigator Viewport Breakpoint"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/navigator_viewport_breakpoint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The currently displayed viewport breakpoint,
+one of \"xs\", \"sm\", \"md\",\"lg\", \"xl\" or \"xxl\".
+"
+  }
+
+  dimension: metrics__quantity__navigator_viewport_horizontal_coverage {
+    label: "Navigator Viewport Horizontal Coverage"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.navigator_viewport_horizontal_coverage ;;
+    type: number
+    group_label: "Navigator"
+    group_item_label: "Viewport Horizontal Coverage"
+
+    link: {
+      label: "Glean Dictionary reference for Navigator Viewport Horizontal Coverage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/navigator_viewport_horizontal_coverage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The ratio of viewport width to screen width, expressed as a percentage.
+"
+  }
+
+  dimension: metrics__quantity__navigator_viewport_ratio {
+    label: "Navigator Viewport Ratio"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.navigator_viewport_ratio ;;
+    type: number
+    group_label: "Navigator"
+    group_item_label: "Viewport Ratio"
+
+    link: {
+      label: "Glean Dictionary reference for Navigator Viewport Ratio"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/navigator_viewport_ratio"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The ratio of viewport width to viewport height,
+expressed as a percentage.
+"
+  }
+
   dimension: metrics__url2__page_path {
     label: "Page Path"
     hidden: no

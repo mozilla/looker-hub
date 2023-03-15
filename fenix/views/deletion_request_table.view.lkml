@@ -589,6 +589,13 @@ view: deletion_request_table__ping_info__experiments {
     group_item_label: "Branch"
   }
 
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
   dimension: value__extra__type {
     sql: ${TABLE}.value.extra.type ;;
     type: string
