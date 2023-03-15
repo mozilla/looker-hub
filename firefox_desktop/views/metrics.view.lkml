@@ -50,7 +50,7 @@ Migrated from Telemetry's `browser.engagement.active_ticks`.
 
   dimension: metrics__quantity__browser_engagement_profile_count {
     label: "Browser Engagement Profile Count"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.browser_engagement_profile_count ;;
     type: number
     group_label: "Browser Engagement"
