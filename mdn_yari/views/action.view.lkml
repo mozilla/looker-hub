@@ -116,6 +116,24 @@ expressed as a percentage.
 "
   }
 
+  dimension: metrics__string__page_http_status {
+    label: "Page Http Status"
+    hidden: no
+    sql: ${TABLE}.metrics.string.page_http_status ;;
+    type: string
+    group_label: "Page"
+    group_item_label: "Http Status"
+
+    link: {
+      label: "Glean Dictionary reference for Page Http Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/page_http_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The HTTP status code of the page.
+"
+  }
+
   dimension: metrics__url2__page_path {
     label: "Page Path"
     hidden: no
