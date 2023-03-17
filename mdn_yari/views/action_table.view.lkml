@@ -397,6 +397,15 @@ one of \"xs\", \"sm\", \"md\",\"lg\", \"xl\" or \"xxl\".
 "
   }
 
+  dimension: metrics__string__page_http_status {
+    sql: ${TABLE}.metrics.string.page_http_status ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Page Http Status"
+    description: "The HTTP status code of the page.
+"
+  }
+
   dimension: metrics__url2__page_path {
     sql: ${TABLE}.metrics.url2.page_path ;;
     type: string
