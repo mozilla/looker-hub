@@ -351,6 +351,13 @@ view: client_deduplication_table {
     group_item_label: "Client Deduplication Experiment Timeframe"
   }
 
+  dimension: metrics__string__client_deduplication_hashed_gaid {
+    sql: ${TABLE}.metrics.string.client_deduplication_hashed_gaid ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Client Deduplication Hashed Gaid"
+  }
+
   dimension: metrics__string__search_default_engine_code {
     sql: ${TABLE}.metrics.string.search_default_engine_code ;;
     type: string
