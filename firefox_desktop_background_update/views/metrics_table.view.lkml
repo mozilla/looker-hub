@@ -816,6 +816,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_speculative_connect_outcome {
+    sql: ${TABLE}.metrics.labeled_counter.networking_speculative_connect_outcome ;;
+    hidden: yes
+    description: "Counts the occurrence of each outcome of a speculative connection
+"
+  }
+
   dimension: metrics__labeled_counter__networking_speculative_connection_outcome {
     sql: ${TABLE}.metrics.labeled_counter.networking_speculative_connection_outcome ;;
     hidden: yes

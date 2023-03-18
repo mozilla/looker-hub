@@ -1655,6 +1655,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_speculative_connect_outcome {
+    sql: ${TABLE}.metrics.labeled_counter.networking_speculative_connect_outcome ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_speculative_connection_outcome {
     sql: ${TABLE}.metrics.labeled_counter.networking_speculative_connection_outcome ;;
     hidden: yes
