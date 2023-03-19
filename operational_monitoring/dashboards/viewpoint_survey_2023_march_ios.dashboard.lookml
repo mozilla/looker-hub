@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       viewpoint_survey_2023_march_ios.branch
     ]
     filters:
-      viewpoint_survey_2023_march_ios.metric: 'retained'
+      viewpoint_survey_2023_march_ios.metric: 'search_count'
       viewpoint_survey_2023_march_ios.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       viewpoint_survey_2023_march_ios.branch
     ]
     filters:
-      viewpoint_survey_2023_march_ios.metric: 'active_hours'
+      viewpoint_survey_2023_march_ios.metric: 'ad_clicks'
       viewpoint_survey_2023_march_ios.statistic: mean
     row: 0
     col: 12
@@ -149,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,7 +165,7 @@
       viewpoint_survey_2023_march_ios.branch
     ]
     filters:
-      viewpoint_survey_2023_march_ios.metric: 'ad_clicks'
+      viewpoint_survey_2023_march_ios.metric: 'active_hours'
       viewpoint_survey_2023_march_ios.statistic: mean
     row: 20
     col: 0
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       viewpoint_survey_2023_march_ios.branch
     ]
     filters:
-      viewpoint_survey_2023_march_ios.metric: 'search_count'
+      viewpoint_survey_2023_march_ios.metric: 'retained'
       viewpoint_survey_2023_march_ios.statistic: mean
     row: 20
     col: 12
