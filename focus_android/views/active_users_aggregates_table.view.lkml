@@ -25,6 +25,26 @@ view: active_users_aggregates_table {
     type: string
   }
 
+  dimension: app_version_is_major_release {
+    sql: ${TABLE}.app_version_is_major_release ;;
+    type: yesno
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch_revision {
+    sql: ${TABLE}.app_version_patch_revision ;;
+    type: number
+  }
+
   dimension: attributed {
     sql: ${TABLE}.attributed ;;
     type: yesno
@@ -38,41 +58,6 @@ view: active_users_aggregates_table {
   dimension: attribution_source {
     sql: ${TABLE}.attribution_source ;;
     type: string
-  }
-
-  dimension: browser_version_info__is_major_release {
-    sql: ${TABLE}.browser_version_info.is_major_release ;;
-    type: yesno
-    group_label: "Browser Version Info"
-    group_item_label: "Is Major Release"
-  }
-
-  dimension: browser_version_info__major_version {
-    sql: ${TABLE}.browser_version_info.major_version ;;
-    type: number
-    group_label: "Browser Version Info"
-    group_item_label: "Major Version"
-  }
-
-  dimension: browser_version_info__minor_version {
-    sql: ${TABLE}.browser_version_info.minor_version ;;
-    type: number
-    group_label: "Browser Version Info"
-    group_item_label: "Minor Version"
-  }
-
-  dimension: browser_version_info__patch_revision {
-    sql: ${TABLE}.browser_version_info.patch_revision ;;
-    type: number
-    group_label: "Browser Version Info"
-    group_item_label: "Patch Revision"
-  }
-
-  dimension: browser_version_info__version {
-    sql: ${TABLE}.browser_version_info.version ;;
-    type: string
-    group_label: "Browser Version Info"
-    group_item_label: "Version"
   }
 
   dimension: channel {

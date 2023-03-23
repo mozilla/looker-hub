@@ -364,6 +364,15 @@ To be used to validate GIFFT.
     description: "Set to true if the tasks that are queued prior to Glean initialization time out."
   }
 
+  dimension: metrics__boolean__startup_is_restored_by_macos {
+    sql: ${TABLE}.metrics.boolean.startup_is_restored_by_macos ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Startup Is Restored By Macos"
+    description: "Recorded on every launch of a Firefox install on macOS, with a boolean value indicating whether Firefox was restored by macOS or if it was manually launched by a user.
+"
+  }
+
   dimension: metrics__counter__browser_engagement_active_ticks {
     sql: ${TABLE}.metrics.counter.browser_engagement_active_ticks ;;
     type: number
