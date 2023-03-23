@@ -479,6 +479,24 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__boolean__startup_is_restored_by_macos {
+    label: "Startup Is Restored By Macos"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.startup_is_restored_by_macos ;;
+    type: yesno
+    group_label: "Startup"
+    group_item_label: "Is Restored By Macos"
+
+    link: {
+      label: "Glean Dictionary reference for Startup Is Restored By Macos"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/startup_is_restored_by_macos"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded on every launch of a Firefox install on macOS, with a boolean value indicating whether Firefox was restored by macOS or if it was manually launched by a user.
+"
+  }
+
   dimension: metrics__labeled_boolean__startup_run_from_dmg_install_outcome {
     label: "Startup Run From Dmg Install Outcome"
     hidden: yes
@@ -546,7 +564,7 @@ default engine, and hence both versions of these fields will be filled in.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Given a matching cookie banner click rule, how often do we handle or fail to handle cookie banners, labelled by reason. The 'success' and 'fail' counters count the total numbers independently of the reason counters. Counters are incremented after the content window has been destroyed.
+    description: "Given a matching cookie banner rule, how often do we handle or fail to handle cookie banners, labelled by reason. The 'success' and 'fail' counters count the total numbers independently of the reason counters. Counters are incremented after the content window has been destroyed. This metric additionally reports cookie injections after which we didn't see a banner as \"success_cookie_injected\".
 "
   }
 
