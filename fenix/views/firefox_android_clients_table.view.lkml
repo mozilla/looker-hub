@@ -5,6 +5,11 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: firefox_android_clients_table {
+  dimension: activated {
+    sql: ${TABLE}.activated ;;
+    type: yesno
+  }
+
   dimension: adjust_ad_group {
     sql: ${TABLE}.adjust_ad_group ;;
     type: string
@@ -22,6 +27,11 @@ view: firefox_android_clients_table {
 
   dimension: adjust_network {
     sql: ${TABLE}.adjust_network ;;
+    type: string
+  }
+
+  dimension: app_version {
+    sql: ${TABLE}.app_version ;;
     type: string
   }
 
@@ -172,6 +182,22 @@ view: firefox_android_clients_table {
     convert_tz: no
     datatype: date
     label: "Metadata: Min First Session Ping Run Date"
+  }
+
+  dimension_group: metadata__min_first_session_ping_submission {
+    sql: ${TABLE}.metadata.min_first_session_ping_submission_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    label: "Metadata: Min First Session Ping Submission Date"
   }
 
   dimension_group: metadata__min_metrics_ping_submission {
