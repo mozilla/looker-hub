@@ -353,6 +353,65 @@ view: first_session_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__first_session_adjust_attribution_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution First Session Adjust Attribution Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__first_session_adjust_attribution_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution First Session Adjust Attribution Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__first_session_adjust_attribution_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution First Session Adjust Attribution Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__first_session_adjust_attribution_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution First Session Adjust Attribution Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__first_session_adjust_attribution_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__first_session_adjust_attribution_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution First Session Adjust Attribution Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__first_session_adjust_attribution_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution First Session Adjust Attribution Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__first_session_adjust_attribution_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution First Session Adjust Attribution Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__first_session_adjust_attribution_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__url {
     sql: ${TABLE}.metrics.url ;;
     hidden: yes
@@ -618,6 +677,18 @@ view: first_session_table__metrics__text {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: first_session_table__metrics__timing_distribution__first_session_adjust_attribution_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

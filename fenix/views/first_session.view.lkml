@@ -23,6 +23,24 @@ view: first_session {
 "
   }
 
+  dimension: metrics__timing_distribution__first_session_adjust_attribution_time__sum {
+    label: "First Session Adjust Attribution Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.sum ;;
+    type: number
+    group_label: "First Session"
+    group_item_label: "Adjust Attribution Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for First Session Adjust Attribution Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_adjust_attribution_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time that it takes to derive the attribution parameters by the Adjust SDK.
+"
+  }
+
   dimension: metrics__string__first_session_campaign {
     label: "First Session Campaign"
     hidden: no
