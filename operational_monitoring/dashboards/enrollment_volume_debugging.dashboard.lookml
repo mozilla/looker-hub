@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: enrollment_volume_debugging
-    type: looker_line
-    fields: [
-      enrollment_volume_debugging.submission_date,
-      enrollment_volume_debugging.branch,
-      enrollment_volume_debugging.point
-    ]
-    pivots: [
-      enrollment_volume_debugging.branch
-    ]
-    filters:
-      enrollment_volume_debugging.metric: 'active_hours'
-      enrollment_volume_debugging.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: enrollment_volume_debugging.submission_date
-    field_y: enrollment_volume_debugging.point
-    log_scale: false
-    ci_lower: enrollment_volume_debugging.lower
-    ci_upper: enrollment_volume_debugging.upper
-    show_grid: true
-    listen:
-      Date: enrollment_volume_debugging.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -129,6 +95,40 @@
     ]
     filters:
       enrollment_volume_debugging.metric: 'days_of_use'
+      enrollment_volume_debugging.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: enrollment_volume_debugging.submission_date
+    field_y: enrollment_volume_debugging.point
+    log_scale: false
+    ci_lower: enrollment_volume_debugging.lower
+    ci_upper: enrollment_volume_debugging.upper
+    show_grid: true
+    listen:
+      Date: enrollment_volume_debugging.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: enrollment_volume_debugging
+    type: looker_line
+    fields: [
+      enrollment_volume_debugging.submission_date,
+      enrollment_volume_debugging.branch,
+      enrollment_volume_debugging.point
+    ]
+    pivots: [
+      enrollment_volume_debugging.branch
+    ]
+    filters:
+      enrollment_volume_debugging.metric: 'search_count'
       enrollment_volume_debugging.statistic: mean
     row: 10
     col: 12
@@ -183,6 +183,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: enrollment_volume_debugging
+    type: looker_line
+    fields: [
+      enrollment_volume_debugging.submission_date,
+      enrollment_volume_debugging.branch,
+      enrollment_volume_debugging.point
+    ]
+    pivots: [
+      enrollment_volume_debugging.branch
+    ]
+    filters:
+      enrollment_volume_debugging.metric: 'active_hours'
+      enrollment_volume_debugging.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: enrollment_volume_debugging.submission_date
+    field_y: enrollment_volume_debugging.point
+    log_scale: false
+    ci_lower: enrollment_volume_debugging.lower
+    ci_upper: enrollment_volume_debugging.upper
+    show_grid: true
+    listen:
+      Date: enrollment_volume_debugging.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Uri Count
     name: Uri Count_mean
     note_state: expanded
@@ -201,8 +235,8 @@
     filters:
       enrollment_volume_debugging.metric: 'uri_count'
       enrollment_volume_debugging.statistic: mean
-    row: 20
-    col: 12
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: enrollment_volume_debugging.submission_date
@@ -234,40 +268,6 @@
     ]
     filters:
       enrollment_volume_debugging.metric: 'ad_clicks'
-      enrollment_volume_debugging.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: enrollment_volume_debugging.submission_date
-    field_y: enrollment_volume_debugging.point
-    log_scale: false
-    ci_lower: enrollment_volume_debugging.lower
-    ci_upper: enrollment_volume_debugging.upper
-    show_grid: true
-    listen:
-      Date: enrollment_volume_debugging.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: enrollment_volume_debugging
-    type: looker_line
-    fields: [
-      enrollment_volume_debugging.submission_date,
-      enrollment_volume_debugging.branch,
-      enrollment_volume_debugging.point
-    ]
-    pivots: [
-      enrollment_volume_debugging.branch
-    ]
-    filters:
-      enrollment_volume_debugging.metric: 'search_count'
       enrollment_volume_debugging.statistic: mean
     row: 30
     col: 12
