@@ -58,10 +58,22 @@ explore: sync {
     sql: LEFT JOIN UNNEST(${sync__payload__syncs.engines}) AS sync__payload__syncs__engines ;;
   }
 
+  join: sync__payload__syncs__engines__incoming__failed_reasons {
+    view_label: "Sync  Payload  Syncs  Engines  Incoming  Failed Reasons"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${sync__payload__syncs__engines.incoming__failed_reasons}) AS sync__payload__syncs__engines__incoming__failed_reasons ;;
+  }
+
   join: sync__payload__syncs__engines__outgoing {
     view_label: "Sync  Payload  Syncs  Engines  Outgoing"
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${sync__payload__syncs__engines.outgoing}) AS sync__payload__syncs__engines__outgoing ;;
+  }
+
+  join: sync__payload__syncs__engines__outgoing__failed_reasons {
+    view_label: "Sync  Payload  Syncs  Engines  Outgoing  Failed Reasons"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${sync__payload__syncs__engines__outgoing.failed_reasons}) AS sync__payload__syncs__engines__outgoing__failed_reasons ;;
   }
 
   join: sync__payload__syncs__engines__steps {

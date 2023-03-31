@@ -849,6 +849,11 @@ view: sync__payload__syncs__engines {
     group_item_label: "Failed"
   }
 
+  dimension: incoming__failed_reasons {
+    sql: ${TABLE}.incoming.failed_reasons ;;
+    hidden: yes
+  }
+
   dimension: incoming__new_failed {
     sql: ${TABLE}.incoming.new_failed ;;
     type: number
@@ -950,15 +955,44 @@ view: sync__payload__syncs__engines {
   }
 }
 
+view: sync__payload__syncs__engines__incoming__failed_reasons {
+  dimension: count {
+    sql: ${TABLE}.count ;;
+    type: number
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+}
+
 view: sync__payload__syncs__engines__outgoing {
   dimension: failed {
     sql: ${TABLE}.failed ;;
     type: number
   }
 
+  dimension: failed_reasons {
+    sql: ${TABLE}.failed_reasons ;;
+    hidden: yes
+  }
+
   dimension: sent {
     sql: ${TABLE}.sent ;;
     type: number
+  }
+}
+
+view: sync__payload__syncs__engines__outgoing__failed_reasons {
+  dimension: count {
+    sql: ${TABLE}.count ;;
+    type: number
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
   }
 }
 
