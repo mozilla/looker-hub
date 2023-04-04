@@ -394,6 +394,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__topsites_rows {
+    sql: ${TABLE}.metrics.quantity.topsites_rows ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Topsites Rows"
+    description: "The number of topsite tile rows configured to be shown on the newtab page. Corresponds to the value of the `browser.newtabpage.activity-stream.topSitesRows` pref. This is not the number of rows actually seen by the user: if the browser window is partially off-screen, or isn't wide enough to accommodate eight tiles per row, the actual number of rows may be different.
+"
+  }
+
   dimension: metrics__string__newtab_homepage_category {
     sql: ${TABLE}.metrics.string.newtab_homepage_category ;;
     type: string

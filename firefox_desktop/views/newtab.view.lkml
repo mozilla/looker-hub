@@ -221,6 +221,24 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__quantity__topsites_rows {
+    label: "Topsites Rows"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.topsites_rows ;;
+    type: number
+    group_label: "Topsites"
+    group_item_label: "Rows"
+
+    link: {
+      label: "Glean Dictionary reference for Topsites Rows"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/topsites_rows"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of topsite tile rows configured to be shown on the newtab page. Corresponds to the value of the `browser.newtabpage.activity-stream.topSitesRows` pref. This is not the number of rows actually seen by the user: if the browser window is partially off-screen, or isn't wide enough to accommodate eight tiles per row, the actual number of rows may be different.
+"
+  }
+
   dimension: metrics__boolean__topsites_sponsored_enabled {
     label: "Topsites Sponsored Enabled"
     hidden: no
