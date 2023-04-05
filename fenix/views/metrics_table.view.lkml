@@ -675,6 +675,13 @@ view: metrics_table {
     group_item_label: "Credit Cards Saved"
   }
 
+  dimension: metrics__counter__dotprint_requested {
+    sql: ${TABLE}.metrics.counter.dotprint_requested ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dotprint Requested"
+  }
+
   dimension: metrics__counter__downloads_downloaded_pdf_open_count {
     sql: ${TABLE}.metrics.counter.downloads_downloaded_pdf_open_count ;;
     type: number

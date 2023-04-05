@@ -10,43 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: firefox_android_tcp_rollout_25_50
-    type: "ci-line-chart"
-    fields: [
-      firefox_android_tcp_rollout_25_50.submission_date,
-      firefox_android_tcp_rollout_25_50.branch,
-      firefox_android_tcp_rollout_25_50.upper,
-      firefox_android_tcp_rollout_25_50.lower,
-      firefox_android_tcp_rollout_25_50.point
-    ]
-    pivots: [
-      firefox_android_tcp_rollout_25_50.branch
-    ]
-    filters:
-      firefox_android_tcp_rollout_25_50.metric: 'memory_total'
-      firefox_android_tcp_rollout_25_50.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: firefox_android_tcp_rollout_25_50.submission_date
-    field_y: firefox_android_tcp_rollout_25_50.point
-    log_scale: false
-    ci_lower: firefox_android_tcp_rollout_25_50.lower
-    ci_upper: firefox_android_tcp_rollout_25_50.upper
-    show_grid: true
-    listen:
-      Date: firefox_android_tcp_rollout_25_50.submission_date
-      Percentile: firefox_android_tcp_rollout_25_50.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -64,6 +27,40 @@
     ]
     filters:
       firefox_android_tcp_rollout_25_50.metric: 'search_count'
+      firefox_android_tcp_rollout_25_50.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: firefox_android_tcp_rollout_25_50.submission_date
+    field_y: firefox_android_tcp_rollout_25_50.point
+    log_scale: false
+    ci_lower: firefox_android_tcp_rollout_25_50.lower
+    ci_upper: firefox_android_tcp_rollout_25_50.upper
+    show_grid: true
+    listen:
+      Date: firefox_android_tcp_rollout_25_50.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: firefox_android_tcp_rollout_25_50
+    type: looker_line
+    fields: [
+      firefox_android_tcp_rollout_25_50.submission_date,
+      firefox_android_tcp_rollout_25_50.branch,
+      firefox_android_tcp_rollout_25_50.point
+    ]
+    pivots: [
+      firefox_android_tcp_rollout_25_50.branch
+    ]
+    filters:
+      firefox_android_tcp_rollout_25_50.metric: 'days_of_use'
       firefox_android_tcp_rollout_25_50.statistic: mean
     row: 0
     col: 12
@@ -115,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,10 +128,44 @@
       firefox_android_tcp_rollout_25_50.branch
     ]
     filters:
-      firefox_android_tcp_rollout_25_50.metric: 'retained'
+      firefox_android_tcp_rollout_25_50.metric: 'uri_count'
       firefox_android_tcp_rollout_25_50.statistic: mean
     row: 10
     col: 12
+    width: 12
+    height: 8
+    field_x: firefox_android_tcp_rollout_25_50.submission_date
+    field_y: firefox_android_tcp_rollout_25_50.point
+    log_scale: false
+    ci_lower: firefox_android_tcp_rollout_25_50.lower
+    ci_upper: firefox_android_tcp_rollout_25_50.upper
+    show_grid: true
+    listen:
+      Date: firefox_android_tcp_rollout_25_50.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: firefox_android_tcp_rollout_25_50
+    type: looker_line
+    fields: [
+      firefox_android_tcp_rollout_25_50.submission_date,
+      firefox_android_tcp_rollout_25_50.branch,
+      firefox_android_tcp_rollout_25_50.point
+    ]
+    pivots: [
+      firefox_android_tcp_rollout_25_50.branch
+    ]
+    filters:
+      firefox_android_tcp_rollout_25_50.metric: 'tagged_sap_searches'
+      firefox_android_tcp_rollout_25_50.statistic: mean
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: firefox_android_tcp_rollout_25_50.submission_date
@@ -168,40 +199,6 @@
       firefox_android_tcp_rollout_25_50.metric: 'ad_clicks'
       firefox_android_tcp_rollout_25_50.statistic: mean
     row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: firefox_android_tcp_rollout_25_50.submission_date
-    field_y: firefox_android_tcp_rollout_25_50.point
-    log_scale: false
-    ci_lower: firefox_android_tcp_rollout_25_50.lower
-    ci_upper: firefox_android_tcp_rollout_25_50.upper
-    show_grid: true
-    listen:
-      Date: firefox_android_tcp_rollout_25_50.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: firefox_android_tcp_rollout_25_50
-    type: looker_line
-    fields: [
-      firefox_android_tcp_rollout_25_50.submission_date,
-      firefox_android_tcp_rollout_25_50.branch,
-      firefox_android_tcp_rollout_25_50.point
-    ]
-    pivots: [
-      firefox_android_tcp_rollout_25_50.branch
-    ]
-    filters:
-      firefox_android_tcp_rollout_25_50.metric: 'days_of_use'
-      firefox_android_tcp_rollout_25_50.statistic: mean
-    row: 20
     col: 12
     width: 12
     height: 8
@@ -217,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +230,7 @@
       firefox_android_tcp_rollout_25_50.branch
     ]
     filters:
-      firefox_android_tcp_rollout_25_50.metric: 'uri_count'
+      firefox_android_tcp_rollout_25_50.metric: 'retained'
       firefox_android_tcp_rollout_25_50.statistic: mean
     row: 30
     col: 0
@@ -251,24 +248,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: firefox_android_tcp_rollout_25_50
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       firefox_android_tcp_rollout_25_50.submission_date,
       firefox_android_tcp_rollout_25_50.branch,
+      firefox_android_tcp_rollout_25_50.upper,
+      firefox_android_tcp_rollout_25_50.lower,
       firefox_android_tcp_rollout_25_50.point
     ]
     pivots: [
       firefox_android_tcp_rollout_25_50.branch
     ]
     filters:
-      firefox_android_tcp_rollout_25_50.metric: 'tagged_sap_searches'
-      firefox_android_tcp_rollout_25_50.statistic: mean
+      firefox_android_tcp_rollout_25_50.metric: 'memory_total'
+      firefox_android_tcp_rollout_25_50.statistic: percentile
     row: 30
     col: 12
     width: 12
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: firefox_android_tcp_rollout_25_50.submission_date
+      Percentile: firefox_android_tcp_rollout_25_50.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

@@ -2801,6 +2801,24 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
+  dimension: metrics__counter__dotprint_requested {
+    label: "Dotprint Requested"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.dotprint_requested ;;
+    type: number
+    group_label: "Dotprint"
+    group_item_label: "Requested"
+
+    link: {
+      label: "Glean Dictionary reference for Dotprint Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/dotprint_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times window.print was requested.
+"
+  }
+
   dimension: metrics__boolean__fog_failed_idle_registration {
     label: "Fog Failed Idle Registration"
     hidden: no
@@ -8772,6 +8790,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Tabs Tray Open Inactive Tab"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_tray_open_inactive_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dotprint_requested {
+    type: sum
+    sql: ${metrics__counter__dotprint_requested} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dotprint Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/dotprint_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dotprint_requested_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__dotprint_requested: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dotprint Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/dotprint_requested"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

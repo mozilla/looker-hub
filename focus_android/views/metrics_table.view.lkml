@@ -437,6 +437,13 @@ view: metrics_table {
     group_item_label: "Browser Total Uri Count"
   }
 
+  dimension: metrics__counter__dotprint_requested {
+    sql: ${TABLE}.metrics.counter.dotprint_requested ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dotprint Requested"
+  }
+
   dimension: metrics__counter__fog_ipc_flush_failures {
     sql: ${TABLE}.metrics.counter.fog_ipc_flush_failures ;;
     type: number
