@@ -887,6 +887,24 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__counter__dotprint_requested {
+    label: "Dotprint Requested"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.dotprint_requested ;;
+    type: number
+    group_label: "Dotprint"
+    group_item_label: "Requested"
+
+    link: {
+      label: "Glean Dictionary reference for Dotprint Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dotprint_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times window.print was requested.
+"
+  }
+
   dimension: metrics__boolean__fog_failed_idle_registration {
     label: "Fog Failed Idle Registration"
     hidden: no
@@ -3782,6 +3800,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Tracking Protection Toolbar Shield Clicked"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/tracking_protection_toolbar_shield_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dotprint_requested {
+    type: sum
+    sql: ${metrics__counter__dotprint_requested} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dotprint Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dotprint_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dotprint_requested_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__dotprint_requested: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dotprint Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/dotprint_requested"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

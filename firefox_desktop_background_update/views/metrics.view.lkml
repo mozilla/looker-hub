@@ -166,6 +166,24 @@ It is possible for a Firefox installation to not have a default profile, but in 
 "
   }
 
+  dimension: metrics__counter__dotprint_requested {
+    label: "Dotprint Requested"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.dotprint_requested ;;
+    type: number
+    group_label: "Dotprint"
+    group_item_label: "Requested"
+
+    link: {
+      label: "Glean Dictionary reference for Dotprint Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/dotprint_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many times window.print was requested.
+"
+  }
+
   dimension: metrics__boolean__fog_failed_idle_registration {
     label: "Fog Failed Idle Registration"
     hidden: no
@@ -2706,6 +2724,31 @@ documented in the ping's pings.yaml file.
 
   measure: ping_count {
     type: count
+  }
+
+  measure: dotprint_requested {
+    type: sum
+    sql: ${metrics__counter__dotprint_requested} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dotprint Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/dotprint_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dotprint_requested_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__dotprint_requested: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dotprint Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/dotprint_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   measure: fog_ipc_flush_failures {
