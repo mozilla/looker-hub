@@ -120,6 +120,16 @@ view: newtab_interactions_table {
     type: number
   }
 
+  dimension: organic_topsite_clicks {
+    sql: ${TABLE}.organic_topsite_clicks ;;
+    type: number
+  }
+
+  dimension: organic_topsite_impressions {
+    sql: ${TABLE}.organic_topsite_impressions ;;
+    type: number
+  }
+
   dimension: os {
     sql: ${TABLE}.os ;;
     type: string
@@ -238,6 +248,11 @@ view: newtab_interactions_table {
   dimension: topsites_enabled {
     sql: ${TABLE}.topsites_enabled ;;
     type: yesno
+  }
+
+  dimension: topsites_rows {
+    sql: ${TABLE}.topsites_rows ;;
+    type: number
   }
 
   dimension_group: submission {
