@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       pocket_newtab_spocs_cache_rollout_50.branch
     ]
     filters:
-      pocket_newtab_spocs_cache_rollout_50.metric: 'search_count'
+      pocket_newtab_spocs_cache_rollout_50.metric: 'qualified_cumulative_days_of_use'
       pocket_newtab_spocs_cache_rollout_50.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       pocket_newtab_spocs_cache_rollout_50.branch
     ]
     filters:
-      pocket_newtab_spocs_cache_rollout_50.metric: 'days_of_use'
+      pocket_newtab_spocs_cache_rollout_50.metric: 'uri_count'
       pocket_newtab_spocs_cache_rollout_50.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,44 +128,10 @@
       pocket_newtab_spocs_cache_rollout_50.branch
     ]
     filters:
-      pocket_newtab_spocs_cache_rollout_50.metric: 'uri_count'
+      pocket_newtab_spocs_cache_rollout_50.metric: 'days_of_use'
       pocket_newtab_spocs_cache_rollout_50.statistic: mean
     row: 10
     col: 12
-    width: 12
-    height: 8
-    field_x: pocket_newtab_spocs_cache_rollout_50.submission_date
-    field_y: pocket_newtab_spocs_cache_rollout_50.point
-    log_scale: false
-    ci_lower: pocket_newtab_spocs_cache_rollout_50.lower
-    ci_upper: pocket_newtab_spocs_cache_rollout_50.upper
-    show_grid: true
-    listen:
-      Date: pocket_newtab_spocs_cache_rollout_50.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: pocket_newtab_spocs_cache_rollout_50
-    type: looker_line
-    fields: [
-      pocket_newtab_spocs_cache_rollout_50.submission_date,
-      pocket_newtab_spocs_cache_rollout_50.branch,
-      pocket_newtab_spocs_cache_rollout_50.point
-    ]
-    pivots: [
-      pocket_newtab_spocs_cache_rollout_50.branch
-    ]
-    filters:
-      pocket_newtab_spocs_cache_rollout_50.metric: 'qualified_cumulative_days_of_use'
-      pocket_newtab_spocs_cache_rollout_50.statistic: mean
-    row: 20
-    col: 0
     width: 12
     height: 8
     field_x: pocket_newtab_spocs_cache_rollout_50.submission_date
@@ -199,6 +165,42 @@
       pocket_newtab_spocs_cache_rollout_50.metric: 'ad_clicks'
       pocket_newtab_spocs_cache_rollout_50.statistic: mean
     row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: pocket_newtab_spocs_cache_rollout_50.submission_date
+    field_y: pocket_newtab_spocs_cache_rollout_50.point
+    log_scale: false
+    ci_lower: pocket_newtab_spocs_cache_rollout_50.lower
+    ci_upper: pocket_newtab_spocs_cache_rollout_50.upper
+    show_grid: true
+    listen:
+      Date: pocket_newtab_spocs_cache_rollout_50.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: pocket_newtab_spocs_cache_rollout_50
+    type: "ci-line-chart"
+    fields: [
+      pocket_newtab_spocs_cache_rollout_50.submission_date,
+      pocket_newtab_spocs_cache_rollout_50.branch,
+      pocket_newtab_spocs_cache_rollout_50.upper,
+      pocket_newtab_spocs_cache_rollout_50.lower,
+      pocket_newtab_spocs_cache_rollout_50.point
+    ]
+    pivots: [
+      pocket_newtab_spocs_cache_rollout_50.branch
+    ]
+    filters:
+      pocket_newtab_spocs_cache_rollout_50.metric: 'memory_total'
+      pocket_newtab_spocs_cache_rollout_50.statistic: percentile
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -210,6 +212,7 @@
     show_grid: true
     listen:
       Date: pocket_newtab_spocs_cache_rollout_50.submission_date
+      Percentile: pocket_newtab_spocs_cache_rollout_50.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: pocket_newtab_spocs_cache_rollout_50
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       pocket_newtab_spocs_cache_rollout_50.submission_date,
       pocket_newtab_spocs_cache_rollout_50.branch,
-      pocket_newtab_spocs_cache_rollout_50.upper,
-      pocket_newtab_spocs_cache_rollout_50.lower,
       pocket_newtab_spocs_cache_rollout_50.point
     ]
     pivots: [
       pocket_newtab_spocs_cache_rollout_50.branch
     ]
     filters:
-      pocket_newtab_spocs_cache_rollout_50.metric: 'memory_total'
-      pocket_newtab_spocs_cache_rollout_50.statistic: percentile
+      pocket_newtab_spocs_cache_rollout_50.metric: 'search_count'
+      pocket_newtab_spocs_cache_rollout_50.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: pocket_newtab_spocs_cache_rollout_50.submission_date
-      Percentile: pocket_newtab_spocs_cache_rollout_50.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
