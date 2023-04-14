@@ -30,6 +30,11 @@ view: channel_group_proportions_table {
     type: string
   }
 
+  dimension: granular_event_type {
+    sql: ${TABLE}.granular_event_type ;;
+    type: string
+  }
+
   dimension: new_subscriptions {
     sql: ${TABLE}.new_subscriptions ;;
     type: number
