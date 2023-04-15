@@ -121,6 +121,11 @@ view: active_users_aggregates_table {
     type: string
   }
 
+  dimension: os_grouped {
+    sql: ${TABLE}.os_grouped ;;
+    type: string
+  }
+
   dimension: os_version {
     sql: ${TABLE}.os_version ;;
     type: string
