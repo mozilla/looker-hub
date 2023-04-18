@@ -25,6 +25,26 @@ view: active_users_aggregates {
     type: string
   }
 
+  dimension: app_version_is_major_release {
+    sql: ${TABLE}.app_version_is_major_release ;;
+    type: yesno
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch_revision {
+    sql: ${TABLE}.app_version_patch_revision ;;
+    type: number
+  }
+
   dimension: attributed {
     sql: ${TABLE}.attributed ;;
     type: yesno
@@ -101,11 +121,6 @@ view: active_users_aggregates {
     type: string
   }
 
-  dimension: os_grouped {
-    sql: ${TABLE}.os_grouped ;;
-    type: string
-  }
-
   dimension: os_version {
     sql: ${TABLE}.os_version ;;
     type: string
@@ -119,12 +134,6 @@ view: active_users_aggregates {
   dimension: os_version_minor {
     sql: ${TABLE}.os_version_minor ;;
     type: number
-  }
-
-  dimension: qdau_desktop {
-    sql: ${TABLE}.qdau_desktop ;;
-    type: number
-    description: "Count of distinct, qualified Desktop clients that we received a main ping from on a given day. In mobile DAU = QDAU."
   }
 
   dimension: search_count {
