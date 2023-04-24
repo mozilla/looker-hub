@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       android_client_deduplication_ping.branch
     ]
     filters:
-      android_client_deduplication_ping.metric: 'days_of_use'
+      android_client_deduplication_ping.metric: 'ad_clicks'
       android_client_deduplication_ping.statistic: mean
     row: 0
     col: 0
@@ -44,26 +44,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: android_client_deduplication_ping
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       android_client_deduplication_ping.submission_date,
       android_client_deduplication_ping.branch,
-      android_client_deduplication_ping.upper,
-      android_client_deduplication_ping.lower,
       android_client_deduplication_ping.point
     ]
     pivots: [
       android_client_deduplication_ping.branch
     ]
     filters:
-      android_client_deduplication_ping.metric: 'memory_total'
-      android_client_deduplication_ping.statistic: percentile
+      android_client_deduplication_ping.metric: 'active_hours'
+      android_client_deduplication_ping.statistic: mean
     row: 0
     col: 12
     width: 12
@@ -76,7 +74,6 @@
     show_grid: true
     listen:
       Date: android_client_deduplication_ping.submission_date
-      Percentile: android_client_deduplication_ping.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -115,108 +112,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: android_client_deduplication_ping
-    type: looker_line
-    fields: [
-      android_client_deduplication_ping.submission_date,
-      android_client_deduplication_ping.branch,
-      android_client_deduplication_ping.point
-    ]
-    pivots: [
-      android_client_deduplication_ping.branch
-    ]
-    filters:
-      android_client_deduplication_ping.metric: 'search_count'
-      android_client_deduplication_ping.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: android_client_deduplication_ping.submission_date
-    field_y: android_client_deduplication_ping.point
-    log_scale: false
-    ci_lower: android_client_deduplication_ping.lower
-    ci_upper: android_client_deduplication_ping.upper
-    show_grid: true
-    listen:
-      Date: android_client_deduplication_ping.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: android_client_deduplication_ping
-    type: looker_line
-    fields: [
-      android_client_deduplication_ping.submission_date,
-      android_client_deduplication_ping.branch,
-      android_client_deduplication_ping.point
-    ]
-    pivots: [
-      android_client_deduplication_ping.branch
-    ]
-    filters:
-      android_client_deduplication_ping.metric: 'active_hours'
-      android_client_deduplication_ping.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: android_client_deduplication_ping.submission_date
-    field_y: android_client_deduplication_ping.point
-    log_scale: false
-    ci_lower: android_client_deduplication_ping.lower
-    ci_upper: android_client_deduplication_ping.upper
-    show_grid: true
-    listen:
-      Date: android_client_deduplication_ping.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: android_client_deduplication_ping
-    type: looker_line
-    fields: [
-      android_client_deduplication_ping.submission_date,
-      android_client_deduplication_ping.branch,
-      android_client_deduplication_ping.point
-    ]
-    pivots: [
-      android_client_deduplication_ping.branch
-    ]
-    filters:
-      android_client_deduplication_ping.metric: 'ad_clicks'
-      android_client_deduplication_ping.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: android_client_deduplication_ping.submission_date
-    field_y: android_client_deduplication_ping.point
-    log_scale: false
-    ci_lower: android_client_deduplication_ping.lower
-    ci_upper: android_client_deduplication_ping.upper
-    show_grid: true
-    listen:
-      Date: android_client_deduplication_ping.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -235,8 +130,79 @@
     filters:
       android_client_deduplication_ping.metric: 'retained'
       android_client_deduplication_ping.statistic: mean
-    row: 30
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: android_client_deduplication_ping.submission_date
+    field_y: android_client_deduplication_ping.point
+    log_scale: false
+    ci_lower: android_client_deduplication_ping.lower
+    ci_upper: android_client_deduplication_ping.upper
+    show_grid: true
+    listen:
+      Date: android_client_deduplication_ping.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: android_client_deduplication_ping
+    type: "ci-line-chart"
+    fields: [
+      android_client_deduplication_ping.submission_date,
+      android_client_deduplication_ping.branch,
+      android_client_deduplication_ping.upper,
+      android_client_deduplication_ping.lower,
+      android_client_deduplication_ping.point
+    ]
+    pivots: [
+      android_client_deduplication_ping.branch
+    ]
+    filters:
+      android_client_deduplication_ping.metric: 'memory_total'
+      android_client_deduplication_ping.statistic: percentile
+    row: 20
     col: 0
+    width: 12
+    height: 8
+    field_x: android_client_deduplication_ping.submission_date
+    field_y: android_client_deduplication_ping.point
+    log_scale: false
+    ci_lower: android_client_deduplication_ping.lower
+    ci_upper: android_client_deduplication_ping.upper
+    show_grid: true
+    listen:
+      Date: android_client_deduplication_ping.submission_date
+      Percentile: android_client_deduplication_ping.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: android_client_deduplication_ping
+    type: looker_line
+    fields: [
+      android_client_deduplication_ping.submission_date,
+      android_client_deduplication_ping.branch,
+      android_client_deduplication_ping.point
+    ]
+    pivots: [
+      android_client_deduplication_ping.branch
+    ]
+    filters:
+      android_client_deduplication_ping.metric: 'days_of_use'
+      android_client_deduplication_ping.statistic: mean
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: android_client_deduplication_ping.submission_date
@@ -268,6 +234,40 @@
     ]
     filters:
       android_client_deduplication_ping.metric: 'uri_count'
+      android_client_deduplication_ping.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: android_client_deduplication_ping.submission_date
+    field_y: android_client_deduplication_ping.point
+    log_scale: false
+    ci_lower: android_client_deduplication_ping.lower
+    ci_upper: android_client_deduplication_ping.upper
+    show_grid: true
+    listen:
+      Date: android_client_deduplication_ping.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: android_client_deduplication_ping
+    type: looker_line
+    fields: [
+      android_client_deduplication_ping.submission_date,
+      android_client_deduplication_ping.branch,
+      android_client_deduplication_ping.point
+    ]
+    pivots: [
+      android_client_deduplication_ping.branch
+    ]
+    filters:
+      android_client_deduplication_ping.metric: 'search_count'
       android_client_deduplication_ping.statistic: mean
     row: 30
     col: 12
