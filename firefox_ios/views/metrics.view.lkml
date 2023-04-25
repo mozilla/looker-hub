@@ -217,7 +217,7 @@ on the homepage
 
   dimension: metrics__counter__app_menu_library {
     label: "App Menu Library"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.app_menu_library ;;
     type: number
     group_label: "App Menu"
