@@ -435,6 +435,14 @@ view: new_profile {
     description: "Identifier to indicate the particular link within a campaign."
   }
 
+  dimension: environment__settings__attribution__dlsource {
+    sql: ${TABLE}.environment.settings.attribution.dlsource ;;
+    type: string
+    group_label: "Environment Settings Attribution"
+    group_item_label: "Dlsource"
+    description: "Identifier that indicates where installations of Firefox originate, see bug 1827233"
+  }
+
   dimension: environment__settings__attribution__dltoken {
     sql: ${TABLE}.environment.settings.attribution.dltoken ;;
     type: string
