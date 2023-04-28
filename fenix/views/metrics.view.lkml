@@ -1209,6 +1209,26 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
 "
   }
 
+  dimension: metrics__uuid__metrics_shared_prefs_uuid {
+    label: "Metrics Shared Prefs Uuid"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.metrics_shared_prefs_uuid ;;
+    type: string
+    group_label: "Metrics"
+    group_item_label: "Shared Prefs Uuid"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Shared Prefs Uuid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_shared_prefs_uuid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A UUID stored in Shared Preferences used to analyze technical differences
+between storage mechanisms in Android, specifically the Glean DB and
+Shared Preferences.
+"
+  }
+
   dimension: metrics__boolean__metrics_start_reason_activity_error {
     label: "Metrics Start Reason Activity Error"
     hidden: no

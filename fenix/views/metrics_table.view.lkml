@@ -9730,6 +9730,13 @@ view: metrics_table {
     group_item_label: "Search Default Engine Search Url"
   }
 
+  dimension: metrics__uuid__metrics_shared_prefs_uuid {
+    sql: ${TABLE}.metrics.uuid.metrics_shared_prefs_uuid ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Metrics Shared Prefs Uuid"
+  }
+
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
