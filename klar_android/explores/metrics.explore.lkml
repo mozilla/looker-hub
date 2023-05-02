@@ -163,6 +163,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_data_size_per_type}) AS metrics__metrics__labeled_counter__network_data_size_per_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_data_size_per_type.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_cookie_timestamp_fixed_count}) AS metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_speculative_connect_outcome {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_speculative_connect_outcome}) AS metrics__metrics__labeled_counter__networking_speculative_connect_outcome ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_speculative_connect_outcome.document_id} ;;
@@ -377,6 +382,10 @@ explore: suggest__metrics__metrics__labeled_counter__network_data_size_pb_per_ty
 }
 
 explore: suggest__metrics__metrics__labeled_counter__network_data_size_per_type {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
   hidden: yes
 }
 

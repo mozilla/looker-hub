@@ -308,6 +308,81 @@ view: background_tasks_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__background_tasks_rmdir_base_succeeded {
+    sql: ${TABLE}.metrics.boolean.background_tasks_rmdir_base_succeeded ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Tasks Rmdir Base Succeeded"
+    description: "Whether the target directory removal succeeded."
+  }
+
+  dimension: metrics__boolean__background_tasks_rmdir_base_suffix_ever_failed {
+    sql: ${TABLE}.metrics.boolean.background_tasks_rmdir_base_suffix_ever_failed ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Tasks Rmdir Base Suffix Ever Failed"
+    description: "Whether removing the suffixed directories ever failed."
+  }
+
+  dimension: metrics__boolean__background_tasks_rmdir_base_was_first {
+    sql: ${TABLE}.metrics.boolean.background_tasks_rmdir_base_was_first ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Tasks Rmdir Base Was First"
+    description: "Whether this task is the first one removing the directory.
+"
+  }
+
+  dimension: metrics__boolean__background_tasks_rmdir_http_cache_succeeded {
+    sql: ${TABLE}.metrics.boolean.background_tasks_rmdir_http_cache_succeeded ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Tasks Rmdir Http Cache Succeeded"
+    description: "Whether the target directory removal succeeded."
+  }
+
+  dimension: metrics__boolean__background_tasks_rmdir_http_cache_suffix_ever_failed {
+    sql: ${TABLE}.metrics.boolean.background_tasks_rmdir_http_cache_suffix_ever_failed ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Tasks Rmdir Http Cache Suffix Ever Failed"
+    description: "Whether removing the suffixed directories ever failed."
+  }
+
+  dimension: metrics__boolean__background_tasks_rmdir_http_cache_was_first {
+    sql: ${TABLE}.metrics.boolean.background_tasks_rmdir_http_cache_was_first ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Tasks Rmdir Http Cache Was First"
+    description: "Whether this task is the first one removing the directory.
+"
+  }
+
+  dimension: metrics__boolean__background_tasks_rmdir_quota_succeeded {
+    sql: ${TABLE}.metrics.boolean.background_tasks_rmdir_quota_succeeded ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Tasks Rmdir Quota Succeeded"
+    description: "Whether the target directory removal succeeded."
+  }
+
+  dimension: metrics__boolean__background_tasks_rmdir_quota_suffix_ever_failed {
+    sql: ${TABLE}.metrics.boolean.background_tasks_rmdir_quota_suffix_ever_failed ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Tasks Rmdir Quota Suffix Ever Failed"
+    description: "Whether removing the suffixed directories ever failed."
+  }
+
+  dimension: metrics__boolean__background_tasks_rmdir_quota_was_first {
+    sql: ${TABLE}.metrics.boolean.background_tasks_rmdir_quota_was_first ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Tasks Rmdir Quota Was First"
+    description: "Whether this task is the first one removing the directory.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -337,6 +412,114 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__quantity__background_tasks_rmdir_base_elapsed_ms {
+    sql: ${TABLE}.metrics.quantity.background_tasks_rmdir_base_elapsed_ms ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Background Tasks Rmdir Base Elapsed Ms"
+    description: "The amount of time the task took for removing the directories.
+"
+  }
+
+  dimension: metrics__quantity__background_tasks_rmdir_base_removal_count {
+    sql: ${TABLE}.metrics.quantity.background_tasks_rmdir_base_removal_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Background Tasks Rmdir Base Removal Count"
+    description: "The number of the removed entries at each call, even if the target directory itself couldn't be removed.
+"
+  }
+
+  dimension: metrics__quantity__background_tasks_rmdir_base_retry_count {
+    sql: ${TABLE}.metrics.quantity.background_tasks_rmdir_base_retry_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Background Tasks Rmdir Base Retry Count"
+    description: "The number of retries before the task started removing the child directory. This can happen when the target directory doesn't exist.
+"
+  }
+
+  dimension: metrics__quantity__background_tasks_rmdir_base_suffix_removal_count {
+    sql: ${TABLE}.metrics.quantity.background_tasks_rmdir_base_suffix_removal_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Background Tasks Rmdir Base Suffix Removal Count"
+    description: "The number of the removed entries of the suffixed directories.
+"
+  }
+
+  dimension: metrics__quantity__background_tasks_rmdir_http_cache_elapsed_ms {
+    sql: ${TABLE}.metrics.quantity.background_tasks_rmdir_http_cache_elapsed_ms ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Background Tasks Rmdir Http Cache Elapsed Ms"
+    description: "The amount of time the task took for removing the directories.
+"
+  }
+
+  dimension: metrics__quantity__background_tasks_rmdir_http_cache_removal_count {
+    sql: ${TABLE}.metrics.quantity.background_tasks_rmdir_http_cache_removal_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Background Tasks Rmdir Http Cache Removal Count"
+    description: "The number of the removed entries at each call, even if the target directory itself couldn't be removed.
+"
+  }
+
+  dimension: metrics__quantity__background_tasks_rmdir_http_cache_retry_count {
+    sql: ${TABLE}.metrics.quantity.background_tasks_rmdir_http_cache_retry_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Background Tasks Rmdir Http Cache Retry Count"
+    description: "The number of retries before the task started removing the child directory. This can happen when the target directory doesn't exist.
+"
+  }
+
+  dimension: metrics__quantity__background_tasks_rmdir_http_cache_suffix_removal_count {
+    sql: ${TABLE}.metrics.quantity.background_tasks_rmdir_http_cache_suffix_removal_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Background Tasks Rmdir Http Cache Suffix Removal Count"
+    description: "The number of the removed entries of the suffixed directories.
+"
+  }
+
+  dimension: metrics__quantity__background_tasks_rmdir_quota_elapsed_ms {
+    sql: ${TABLE}.metrics.quantity.background_tasks_rmdir_quota_elapsed_ms ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Background Tasks Rmdir Quota Elapsed Ms"
+    description: "The amount of time the task took for removing the directories.
+"
+  }
+
+  dimension: metrics__quantity__background_tasks_rmdir_quota_removal_count {
+    sql: ${TABLE}.metrics.quantity.background_tasks_rmdir_quota_removal_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Background Tasks Rmdir Quota Removal Count"
+    description: "The number of the removed entries at each call, even if the target directory itself couldn't be removed.
+"
+  }
+
+  dimension: metrics__quantity__background_tasks_rmdir_quota_retry_count {
+    sql: ${TABLE}.metrics.quantity.background_tasks_rmdir_quota_retry_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Background Tasks Rmdir Quota Retry Count"
+    description: "The number of retries before the task started removing the child directory. This can happen when the target directory doesn't exist.
+"
+  }
+
+  dimension: metrics__quantity__background_tasks_rmdir_quota_suffix_removal_count {
+    sql: ${TABLE}.metrics.quantity.background_tasks_rmdir_quota_suffix_removal_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Background Tasks Rmdir Quota Suffix Removal Count"
+    description: "The number of the removed entries of the suffixed directories.
 "
   }
 
