@@ -633,6 +633,44 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_access_fixup_diff.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Access Fixup Diff"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_access_fixup_diff.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Access Fixup Diff"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_access_fixup_diff.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_creation_fixup_diff__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_creation_fixup_diff.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Creation Fixup Diff"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_creation_fixup_diff__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_creation_fixup_diff.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Creation Fixup Diff"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_creation_fixup_diff__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_creation_fixup_diff.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__pdfjs_time_to_view__count {
     sql: ${TABLE}.metrics.custom_distribution.pdfjs_time_to_view.count ;;
     type: number
@@ -930,6 +968,13 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.labeled_counter.network_data_size_per_type ;;
     hidden: yes
     description: "Number of KB we transferred keyed by \"contentType\"
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_cookie_timestamp_fixed_count ;;
+    hidden: yes
+    description: "Counts the number of times a cookie's invalid timestamp was fixed when reading it from the DB.
 "
   }
 
@@ -3143,6 +3188,30 @@ view: metrics_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_access_fixup_diff__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_creation_fixup_diff__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

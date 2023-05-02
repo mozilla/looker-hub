@@ -459,6 +459,11 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__string_list__newtab_blocked_sponsors {
+    sql: ${TABLE}.metrics.string_list.newtab_blocked_sponsors ;;
+    hidden: yes
+  }
+
   dimension: metrics__uuid__legacy_telemetry_client_id {
     sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
     type: string
