@@ -563,7 +563,7 @@ background tab killed.
 
   dimension: metrics__timing_distribution__engine_tab_kill_background_age__sum {
     label: "Engine Tab Kill Background Age Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.engine_tab_kill_background_age.sum ;;
     type: number
     group_label: "Engine Tab"
@@ -582,7 +582,7 @@ time its content process got killed.
 
   dimension: metrics__timing_distribution__engine_tab_kill_foreground_age__sum {
     label: "Engine Tab Kill Foreground Age Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.engine_tab_kill_foreground_age.sum ;;
     type: number
     group_label: "Engine Tab"
@@ -3330,7 +3330,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__sum {
     label: "Networking Cookie Access Fixup Diff Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.networking_cookie_access_fixup_diff.sum ;;
     type: number
     group_label: "Networking"
@@ -3348,7 +3348,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__custom_distribution__networking_cookie_creation_fixup_diff__sum {
     label: "Networking Cookie Creation Fixup Diff Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.custom_distribution.networking_cookie_creation_fixup_diff.sum ;;
     type: number
     group_label: "Networking"
@@ -10842,7 +10842,7 @@ view: metrics__metrics__labeled_counter__engine_tab_kills {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__engine_tab_kills
     suggest_dimension: suggest__metrics__metrics__labeled_counter__engine_tab_kills.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -10854,13 +10854,13 @@ view: metrics__metrics__labeled_counter__engine_tab_kills {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -12089,7 +12089,7 @@ view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count
     suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count.key
-    hidden: yes
+    hidden: no
   }
 
   dimension: value {
@@ -12101,13 +12101,13 @@ view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: yes
+    hidden: no
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: yes
+    hidden: no
   }
 }
 
