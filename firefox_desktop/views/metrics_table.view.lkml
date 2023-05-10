@@ -1120,6 +1120,34 @@ broken down by structured ingestion namespace.
 "
   }
 
+  dimension: metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
+    sql: ${TABLE}.metrics.labeled_counter.rtcrtpsender_setparameters_blame_length_changed ;;
+    hidden: yes
+    description: "The number of RTCRtpSenders that have warned at least once about a `setParameters` call that attempted to change the number of encodings, broken down by the eTLD+1 of the site. Collected only on EARLY_BETA_OR_EARLIER.
+"
+  }
+
+  dimension: metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_getparameters {
+    sql: ${TABLE}.metrics.labeled_counter.rtcrtpsender_setparameters_blame_no_getparameters ;;
+    hidden: yes
+    description: "The number of RTCRtpSenders that have warned at least once about a `setParameters` call because `[[LastReturnedParameters]]` was not set, broken down by the eTLD+1 of the site. (ie; there was not a recent enough call to `getParameters`) Collected only on EARLY_BETA_OR_EARLIER.
+"
+  }
+
+  dimension: metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_transactionid {
+    sql: ${TABLE}.metrics.labeled_counter.rtcrtpsender_setparameters_blame_no_transactionid ;;
+    hidden: yes
+    description: "The number of RTCRtpSenders that have warned at least once about a `setParameters` call that did not set the transactionId field, broken down by the eTLD+1 of the site. Collected only on EARLY_BETA_OR_EARLIER.
+"
+  }
+
+  dimension: metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid {
+    sql: ${TABLE}.metrics.labeled_counter.rtcrtpsender_setparameters_blame_stale_transactionid ;;
+    hidden: yes
+    description: "The number of RTCRtpSenders that have warned at least once about a `setParameters` call that used a stale transaction id, broken down by the eTLD+1 of the site. Collected only on EARLY_BETA_OR_EARLIER.
+"
+  }
+
   dimension: metrics__labeled_rate {
     sql: ${TABLE}.metrics.labeled_rate ;;
     hidden: yes
