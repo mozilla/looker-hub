@@ -276,6 +276,13 @@ view: vpnsession_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__counter__session_connection_health_stable_count {
+    sql: ${TABLE}.metrics.counter.session_connection_health_stable_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Session Connection Health Stable Count"
+  }
+
   dimension: metrics__datetime__raw_session_session_end {
     sql: ${TABLE}.metrics.datetime.raw_session_session_end ;;
     type: string

@@ -1210,6 +1210,74 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
+    label: "Rtcrtpsender Setparameters Blame Length Changed"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.rtcrtpsender_setparameters_blame_length_changed ;;
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Blame Length Changed"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Blame Length Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_blame_length_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of RTCRtpSenders that have warned at least once about a `setParameters` call that attempted to change the number of encodings, broken down by the eTLD+1 of the site. Collected only on EARLY_BETA_OR_EARLIER.
+"
+  }
+
+  dimension: metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_getparameters {
+    label: "Rtcrtpsender Setparameters Blame No Getparameters"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.rtcrtpsender_setparameters_blame_no_getparameters ;;
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Blame No Getparameters"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Blame No Getparameters"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_blame_no_getparameters"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of RTCRtpSenders that have warned at least once about a `setParameters` call because `[[LastReturnedParameters]]` was not set, broken down by the eTLD+1 of the site. (ie; there was not a recent enough call to `getParameters`) Collected only on EARLY_BETA_OR_EARLIER.
+"
+  }
+
+  dimension: metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_transactionid {
+    label: "Rtcrtpsender Setparameters Blame No Transactionid"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.rtcrtpsender_setparameters_blame_no_transactionid ;;
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Blame No Transactionid"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Blame No Transactionid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_blame_no_transactionid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of RTCRtpSenders that have warned at least once about a `setParameters` call that did not set the transactionId field, broken down by the eTLD+1 of the site. Collected only on EARLY_BETA_OR_EARLIER.
+"
+  }
+
+  dimension: metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid {
+    label: "Rtcrtpsender Setparameters Blame Stale Transactionid"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.rtcrtpsender_setparameters_blame_stale_transactionid ;;
+    group_label: "Rtcrtpsender Setparameters"
+    group_item_label: "Blame Stale Transactionid"
+
+    link: {
+      label: "Glean Dictionary reference for Rtcrtpsender Setparameters Blame Stale Transactionid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/rtcrtpsender_setparameters_blame_stale_transactionid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of RTCRtpSenders that have warned at least once about a `setParameters` call that used a stale transaction id, broken down by the eTLD+1 of the site. Collected only on EARLY_BETA_OR_EARLIER.
+"
+  }
+
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__numerator {
     label: "Rtcrtpsender Setparameters Fail Length Changed Numerator"
     hidden: no
@@ -5131,6 +5199,178 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactiv
   }
 }
 
+view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
+  label: "Rtcrtpsender Setparameters - Blame Length Changed"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_getparameters {
+  label: "Rtcrtpsender Setparameters - Blame No Getparameters"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_getparameters
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_getparameters.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_transactionid {
+  label: "Rtcrtpsender Setparameters - Blame No Transactionid"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_transactionid
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_transactionid.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid {
+  label: "Rtcrtpsender Setparameters - Blame Stale Transactionid"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result {
   derived_table: {
     sql: select
@@ -5936,6 +6176,82 @@ view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_paren
     count(*) as n
 from mozdata.firefox_desktop_background_update.metrics as t,
 unnest(metrics.labeled_counter.power_wakeups_per_thread_parent_inactive) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.rtcrtpsender_setparameters_blame_length_changed) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_getparameters {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.rtcrtpsender_setparameters_blame_no_getparameters) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_transactionid {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.rtcrtpsender_setparameters_blame_no_transactionid) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.rtcrtpsender_setparameters_blame_stale_transactionid) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

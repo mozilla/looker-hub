@@ -232,6 +232,26 @@ explore: metrics {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_parent_inactive}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive.document_id} ;;
   }
+
+  join: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed}) AS metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_getparameters {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_getparameters}) AS metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_getparameters ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_getparameters.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_transactionid {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_transactionid}) AS metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_transactionid ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_transactionid.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid}) AS metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid.document_id} ;;
+  }
 }
 
 explore: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result {
@@ -403,5 +423,21 @@ explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_pa
 }
 
 explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_getparameters {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_transactionid {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid {
   hidden: yes
 }

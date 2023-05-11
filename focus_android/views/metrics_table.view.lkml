@@ -1007,6 +1007,26 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
+    sql: ${TABLE}.metrics.labeled_counter.rtcrtpsender_setparameters_blame_length_changed ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_getparameters {
+    sql: ${TABLE}.metrics.labeled_counter.rtcrtpsender_setparameters_blame_no_getparameters ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_transactionid {
+    sql: ${TABLE}.metrics.labeled_counter.rtcrtpsender_setparameters_blame_no_transactionid ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid {
+    sql: ${TABLE}.metrics.labeled_counter.rtcrtpsender_setparameters_blame_stale_transactionid ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__shortcuts_shortcut_removed_counter {
     sql: ${TABLE}.metrics.labeled_counter.shortcuts_shortcut_removed_counter ;;
     hidden: yes
