@@ -912,6 +912,65 @@ then the value will be 'custom'.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__range {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__values {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__glean_validation_shutdown_wait__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.bucket_count ;;
     type: number
@@ -1389,6 +1448,18 @@ view: metrics_table__metrics__timing_distribution__glean_upload_send_failure__va
 }
 
 view: metrics_table__metrics__timing_distribution__glean_upload_send_success__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
