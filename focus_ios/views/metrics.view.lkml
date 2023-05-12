@@ -881,6 +881,25 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__sum {
+    label: "Glean Validation Shutdown Dispatcher Wait Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.sum ;;
+    type: number
+    group_label: "Glean Validation"
+    group_item_label: "Shutdown Dispatcher Wait Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation Shutdown Dispatcher Wait Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_ios/metrics/glean_validation_shutdown_dispatcher_wait"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time waited for the dispatcher to unblock during shutdown.
+Most samples are expected to be below the 10s timeout used.
+"
+  }
+
   dimension: metrics__timing_distribution__glean_validation_shutdown_wait__sum {
     label: "Glean Validation Shutdown Wait Sum"
     hidden: no
