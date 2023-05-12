@@ -9,7 +9,7 @@ include: "/looker-hub/mozilla_vpn/views/vpnsession.view.lkml"
 explore: vpnsession {
   sql_always_where: ${vpnsession.submission_date} >= '2010-01-01' ;;
   view_label: " Vpnsession"
-  description: "Explore for the vpnsession ping. Data for one VPN session, defined as a user turning on and eventually turning off the VPN in the app. This ping will record start/end datestamp, session-based metrics, etc. It will be sent after the user turns off the VPN, and a end datestamp is recorded."
+  description: "Explore for the vpnsession ping. Data for one VPN session, defined as a user turning on and eventually turning off the VPN in the app. This ping will record start/end datestamp, session-based metrics, etc."
   view_name: vpnsession
 
   always_filter: {
