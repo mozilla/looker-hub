@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       server_knobs_validation_fenix.branch
     ]
     filters:
-      server_knobs_validation_fenix.metric: 'search_count'
+      server_knobs_validation_fenix.metric: 'days_of_use'
       server_knobs_validation_fenix.statistic: mean
     row: 0
     col: 0
@@ -40,43 +40,6 @@
     show_grid: true
     listen:
       Date: server_knobs_validation_fenix.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: server_knobs_validation_fenix
-    type: "ci-line-chart"
-    fields: [
-      server_knobs_validation_fenix.submission_date,
-      server_knobs_validation_fenix.branch,
-      server_knobs_validation_fenix.upper,
-      server_knobs_validation_fenix.lower,
-      server_knobs_validation_fenix.point
-    ]
-    pivots: [
-      server_knobs_validation_fenix.branch
-    ]
-    filters:
-      server_knobs_validation_fenix.metric: 'memory_total'
-      server_knobs_validation_fenix.statistic: percentile
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: server_knobs_validation_fenix.submission_date
-    field_y: server_knobs_validation_fenix.point
-    log_scale: false
-    ci_lower: server_knobs_validation_fenix.lower
-    ci_upper: server_knobs_validation_fenix.upper
-    show_grid: true
-    listen:
-      Date: server_knobs_validation_fenix.submission_date
-      Percentile: server_knobs_validation_fenix.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -99,6 +62,40 @@
     filters:
       server_knobs_validation_fenix.metric: 'uri_count'
       server_knobs_validation_fenix.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: server_knobs_validation_fenix.submission_date
+    field_y: server_knobs_validation_fenix.point
+    log_scale: false
+    ci_lower: server_knobs_validation_fenix.lower
+    ci_upper: server_knobs_validation_fenix.upper
+    show_grid: true
+    listen:
+      Date: server_knobs_validation_fenix.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: server_knobs_validation_fenix
+    type: looker_line
+    fields: [
+      server_knobs_validation_fenix.submission_date,
+      server_knobs_validation_fenix.branch,
+      server_knobs_validation_fenix.point
+    ]
+    pivots: [
+      server_knobs_validation_fenix.branch
+    ]
+    filters:
+      server_knobs_validation_fenix.metric: 'retained'
+      server_knobs_validation_fenix.statistic: mean
     row: 10
     col: 0
     width: 12
@@ -115,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,7 +128,7 @@
       server_knobs_validation_fenix.branch
     ]
     filters:
-      server_knobs_validation_fenix.metric: 'days_of_use'
+      server_knobs_validation_fenix.metric: 'search_count'
       server_knobs_validation_fenix.statistic: mean
     row: 10
     col: 12
@@ -183,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +196,7 @@
       server_knobs_validation_fenix.branch
     ]
     filters:
-      server_knobs_validation_fenix.metric: 'retained'
+      server_knobs_validation_fenix.metric: 'tagged_sap_searches'
       server_knobs_validation_fenix.statistic: mean
     row: 20
     col: 12
@@ -213,6 +210,43 @@
     show_grid: true
     listen:
       Date: server_knobs_validation_fenix.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: server_knobs_validation_fenix
+    type: "ci-line-chart"
+    fields: [
+      server_knobs_validation_fenix.submission_date,
+      server_knobs_validation_fenix.branch,
+      server_knobs_validation_fenix.upper,
+      server_knobs_validation_fenix.lower,
+      server_knobs_validation_fenix.point
+    ]
+    pivots: [
+      server_knobs_validation_fenix.branch
+    ]
+    filters:
+      server_knobs_validation_fenix.metric: 'memory_total'
+      server_knobs_validation_fenix.statistic: percentile
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: server_knobs_validation_fenix.submission_date
+    field_y: server_knobs_validation_fenix.point
+    log_scale: false
+    ci_lower: server_knobs_validation_fenix.lower
+    ci_upper: server_knobs_validation_fenix.upper
+    show_grid: true
+    listen:
+      Date: server_knobs_validation_fenix.submission_date
+      Percentile: server_knobs_validation_fenix.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -234,40 +268,6 @@
     ]
     filters:
       server_knobs_validation_fenix.metric: 'ad_clicks'
-      server_knobs_validation_fenix.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: server_knobs_validation_fenix.submission_date
-    field_y: server_knobs_validation_fenix.point
-    log_scale: false
-    ci_lower: server_knobs_validation_fenix.lower
-    ci_upper: server_knobs_validation_fenix.upper
-    show_grid: true
-    listen:
-      Date: server_knobs_validation_fenix.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: server_knobs_validation_fenix
-    type: looker_line
-    fields: [
-      server_knobs_validation_fenix.submission_date,
-      server_knobs_validation_fenix.branch,
-      server_knobs_validation_fenix.point
-    ]
-    pivots: [
-      server_knobs_validation_fenix.branch
-    ]
-    filters:
-      server_knobs_validation_fenix.metric: 'tagged_sap_searches'
       server_knobs_validation_fenix.statistic: mean
     row: 30
     col: 12
