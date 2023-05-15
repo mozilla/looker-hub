@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,10 +94,44 @@
       firefox_android_tcp_rollout_25.branch
     ]
     filters:
-      firefox_android_tcp_rollout_25.metric: 'retained'
+      firefox_android_tcp_rollout_25.metric: 'active_hours'
       firefox_android_tcp_rollout_25.statistic: mean
     row: 10
     col: 0
+    width: 12
+    height: 8
+    field_x: firefox_android_tcp_rollout_25.submission_date
+    field_y: firefox_android_tcp_rollout_25.point
+    log_scale: false
+    ci_lower: firefox_android_tcp_rollout_25.lower
+    ci_upper: firefox_android_tcp_rollout_25.upper
+    show_grid: true
+    listen:
+      Date: firefox_android_tcp_rollout_25.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: firefox_android_tcp_rollout_25
+    type: looker_line
+    fields: [
+      firefox_android_tcp_rollout_25.submission_date,
+      firefox_android_tcp_rollout_25.branch,
+      firefox_android_tcp_rollout_25.point
+    ]
+    pivots: [
+      firefox_android_tcp_rollout_25.branch
+    ]
+    filters:
+      firefox_android_tcp_rollout_25.metric: 'ad_clicks'
+      firefox_android_tcp_rollout_25.statistic: mean
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: firefox_android_tcp_rollout_25.submission_date
@@ -130,40 +164,6 @@
     filters:
       firefox_android_tcp_rollout_25.metric: 'search_count'
       firefox_android_tcp_rollout_25.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: firefox_android_tcp_rollout_25.submission_date
-    field_y: firefox_android_tcp_rollout_25.point
-    log_scale: false
-    ci_lower: firefox_android_tcp_rollout_25.lower
-    ci_upper: firefox_android_tcp_rollout_25.upper
-    show_grid: true
-    listen:
-      Date: firefox_android_tcp_rollout_25.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: firefox_android_tcp_rollout_25
-    type: looker_line
-    fields: [
-      firefox_android_tcp_rollout_25.submission_date,
-      firefox_android_tcp_rollout_25.branch,
-      firefox_android_tcp_rollout_25.point
-    ]
-    pivots: [
-      firefox_android_tcp_rollout_25.branch
-    ]
-    filters:
-      firefox_android_tcp_rollout_25.metric: 'active_hours'
-      firefox_android_tcp_rollout_25.statistic: mean
     row: 20
     col: 0
     width: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       firefox_android_tcp_rollout_25.branch
     ]
     filters:
-      firefox_android_tcp_rollout_25.metric: 'tagged_sap_searches'
+      firefox_android_tcp_rollout_25.metric: 'retained'
       firefox_android_tcp_rollout_25.statistic: mean
     row: 20
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       firefox_android_tcp_rollout_25.branch
     ]
     filters:
-      firefox_android_tcp_rollout_25.metric: 'ad_clicks'
+      firefox_android_tcp_rollout_25.metric: 'tagged_sap_searches'
       firefox_android_tcp_rollout_25.statistic: mean
     row: 30
     col: 12
