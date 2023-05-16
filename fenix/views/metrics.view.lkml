@@ -1314,7 +1314,7 @@ please see `has_open_tabs`.
 
   dimension: metrics__string__metrics_toolbar_position {
     label: "Metrics Toolbar Position"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.metrics_toolbar_position ;;
     type: string
     group_label: "Metrics"
