@@ -403,6 +403,15 @@ Migrated from Telemetry's
 "
   }
 
+  dimension: metrics__counter__dotprint_android_dialog_requested {
+    sql: ${TABLE}.metrics.counter.dotprint_android_dialog_requested ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dotprint Android Dialog Requested"
+    description: "Opening the Android print dialog was requested via window.print.
+"
+  }
+
   dimension: metrics__counter__dotprint_requested {
     sql: ${TABLE}.metrics.counter.dotprint_requested ;;
     type: number
@@ -800,6 +809,13 @@ This does not include deletion-request pings.
     sql: ${TABLE}.metrics.labeled_counter.dap_upload_status ;;
     hidden: yes
     description: "The result of trying to upload a report to the DAP server.
+"
+  }
+
+  dimension: metrics__labeled_counter__dotprint_failure {
+    sql: ${TABLE}.metrics.labeled_counter.dotprint_failure ;;
+    hidden: yes
+    description: "An error occured while setting up for printing. Default label is 'unknown'.
 "
   }
 

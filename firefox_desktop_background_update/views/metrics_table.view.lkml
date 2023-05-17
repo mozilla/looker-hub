@@ -356,6 +356,15 @@ To be used to validate GIFFT.
     description: "Set to true if the tasks that are queued prior to Glean initialization time out."
   }
 
+  dimension: metrics__counter__dotprint_android_dialog_requested {
+    sql: ${TABLE}.metrics.counter.dotprint_android_dialog_requested ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dotprint Android Dialog Requested"
+    description: "Opening the Android print dialog was requested via window.print.
+"
+  }
+
   dimension: metrics__counter__dotprint_requested {
     sql: ${TABLE}.metrics.counter.dotprint_requested ;;
     type: number
@@ -700,6 +709,13 @@ This does not include deletion-request pings.
     sql: ${TABLE}.metrics.labeled_counter.cookie_banners_rule_lookup_by_load ;;
     hidden: yes
     description: "Counts the number of hit/miss of cookie banner rule lookups for every load. We collect three types of counters, including counters for overall rule lookup, counters for cookie rule lookup and counters for click rule lookup. We also divide the counter by top-level loads and iframe loads.
+"
+  }
+
+  dimension: metrics__labeled_counter__dotprint_failure {
+    sql: ${TABLE}.metrics.labeled_counter.dotprint_failure ;;
+    hidden: yes
+    description: "An error occured while setting up for printing. Default label is 'unknown'.
 "
   }
 
