@@ -166,6 +166,41 @@ It is possible for a Firefox installation to not have a default profile, but in 
 "
   }
 
+  dimension: metrics__counter__dotprint_android_dialog_requested {
+    label: "Dotprint Android Dialog Requested"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.dotprint_android_dialog_requested ;;
+    type: number
+    group_label: "Dotprint"
+    group_item_label: "Android Dialog Requested"
+
+    link: {
+      label: "Glean Dictionary reference for Dotprint Android Dialog Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/dotprint_android_dialog_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Opening the Android print dialog was requested via window.print.
+"
+  }
+
+  dimension: metrics__labeled_counter__dotprint_failure {
+    label: "Dotprint Failure"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.dotprint_failure ;;
+    group_label: "Dotprint"
+    group_item_label: "Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Dotprint Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/dotprint_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An error occured while setting up for printing. Default label is 'unknown'.
+"
+  }
+
   dimension: metrics__counter__dotprint_requested {
     label: "Dotprint Requested"
     hidden: no
@@ -2866,6 +2901,31 @@ documented in the ping's pings.yaml file.
     type: count
   }
 
+  measure: dotprint_android_dialog_requested {
+    type: sum
+    sql: ${metrics__counter__dotprint_android_dialog_requested} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dotprint Android Dialog Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/dotprint_android_dialog_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: dotprint_android_dialog_requested_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__dotprint_android_dialog_requested: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Dotprint Android Dialog Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/dotprint_android_dialog_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: dotprint_requested {
     type: sum
     sql: ${metrics__counter__dotprint_requested} ;;
@@ -3476,6 +3536,49 @@ view: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load
     suggest_dimension: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__dotprint_failure {
+  label: "Dotprint - Failure"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__dotprint_failure
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__dotprint_failure.key
     hidden: no
   }
 
@@ -5435,6 +5538,25 @@ view: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_
     count(*) as n
 from mozdata.firefox_desktop_background_update.metrics as t,
 unnest(metrics.labeled_counter.cookie_banners_rule_lookup_by_load) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__dotprint_failure {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.dotprint_failure) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

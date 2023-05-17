@@ -437,6 +437,13 @@ view: metrics_table {
     group_item_label: "Browser Total Uri Count"
   }
 
+  dimension: metrics__counter__dotprint_android_dialog_requested {
+    sql: ${TABLE}.metrics.counter.dotprint_android_dialog_requested ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dotprint Android Dialog Requested"
+  }
+
   dimension: metrics__counter__dotprint_requested {
     sql: ${TABLE}.metrics.counter.dotprint_requested ;;
     type: number
@@ -799,6 +806,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__crash_metrics_crash_count {
     sql: ${TABLE}.metrics.labeled_counter.crash_metrics_crash_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__dotprint_failure {
+    sql: ${TABLE}.metrics.labeled_counter.dotprint_failure ;;
     hidden: yes
   }
 

@@ -154,6 +154,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__crash_metrics_crash_count}) AS metrics__metrics__labeled_counter__crash_metrics_crash_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__crash_metrics_crash_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__dotprint_failure {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__dotprint_failure}) AS metrics__metrics__labeled_counter__dotprint_failure ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__dotprint_failure.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__engine_tab_kills {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__engine_tab_kills}) AS metrics__metrics__labeled_counter__engine_tab_kills ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__engine_tab_kills.document_id} ;;
@@ -555,6 +560,10 @@ explore: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_
 }
 
 explore: suggest__metrics__metrics__labeled_counter__crash_metrics_crash_count {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__dotprint_failure {
   hidden: yes
 }
 

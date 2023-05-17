@@ -539,6 +539,15 @@ that programmatically redirect to a new location.
 "
   }
 
+  dimension: metrics__counter__dotprint_android_dialog_requested {
+    sql: ${TABLE}.metrics.counter.dotprint_android_dialog_requested ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Dotprint Android Dialog Requested"
+    description: "Opening the Android print dialog was requested via window.print.
+"
+  }
+
   dimension: metrics__counter__dotprint_requested {
     sql: ${TABLE}.metrics.counter.dotprint_requested ;;
     type: number
@@ -1027,6 +1036,13 @@ where:
     hidden: yes
     description: "Counts the number of crashes that occur in the application. This measures only the counts of each crash in association with the labeled type of the crash. The labels correspond to the types of crashes handled by lib-crash.
 Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_code_crash` replaced by `main_proc_native_code_crash`, `fg_proc_native_code_crash` and `bg_proc_native_code_crash`.
+"
+  }
+
+  dimension: metrics__labeled_counter__dotprint_failure {
+    sql: ${TABLE}.metrics.labeled_counter.dotprint_failure ;;
+    hidden: yes
+    description: "An error occured while setting up for printing. Default label is 'unknown'.
 "
   }
 
