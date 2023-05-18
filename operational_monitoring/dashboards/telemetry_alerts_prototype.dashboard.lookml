@@ -132,7 +132,7 @@
   - name: Metric
     title: Metric
     type: field_filter
-    default_value: 'perf_first_contentful_paint_ms'
+    default_value: 'gc_ms_content'
     allow_multiple_values: false
     required: true
     ui_config:
