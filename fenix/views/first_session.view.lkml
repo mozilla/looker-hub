@@ -114,6 +114,96 @@ to identify installs from Mozilla Online.
 "
   }
 
+  dimension: metrics__string__play_store_attribution_campaign {
+    label: "Play Store Attribution Campaign"
+    hidden: no
+    sql: ${TABLE}.metrics.string.play_store_attribution_campaign ;;
+    type: string
+    group_label: "Play Store Attribution"
+    group_item_label: "Campaign"
+
+    link: {
+      label: "Glean Dictionary reference for Play Store Attribution Campaign"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_campaign"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the utm_campaign that is responsible for this installation.
+"
+  }
+
+  dimension: metrics__string__play_store_attribution_content {
+    label: "Play Store Attribution Content"
+    hidden: no
+    sql: ${TABLE}.metrics.string.play_store_attribution_content ;;
+    type: string
+    group_label: "Play Store Attribution"
+    group_item_label: "Content"
+
+    link: {
+      label: "Glean Dictionary reference for Play Store Attribution Content"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_content"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the utm_content that is responsible for this installation.
+"
+  }
+
+  dimension: metrics__string__play_store_attribution_medium {
+    label: "Play Store Attribution Medium"
+    hidden: no
+    sql: ${TABLE}.metrics.string.play_store_attribution_medium ;;
+    type: string
+    group_label: "Play Store Attribution"
+    group_item_label: "Medium"
+
+    link: {
+      label: "Glean Dictionary reference for Play Store Attribution Medium"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_medium"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the utm_medium that is responsible for this installation.
+"
+  }
+
+  dimension: metrics__string__play_store_attribution_source {
+    label: "Play Store Attribution Source"
+    hidden: no
+    sql: ${TABLE}.metrics.string.play_store_attribution_source ;;
+    type: string
+    group_label: "Play Store Attribution"
+    group_item_label: "Source"
+
+    link: {
+      label: "Glean Dictionary reference for Play Store Attribution Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the utm_source that is responsible for this installation.
+"
+  }
+
+  dimension: metrics__string__play_store_attribution_term {
+    label: "Play Store Attribution Term"
+    hidden: no
+    sql: ${TABLE}.metrics.string.play_store_attribution_term ;;
+    type: string
+    group_label: "Play Store Attribution"
+    group_item_label: "Term"
+
+    link: {
+      label: "Glean Dictionary reference for Play Store Attribution Term"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_term"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the utm_term that is responsible for this installation.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes
