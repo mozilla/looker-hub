@@ -348,6 +348,41 @@ view: first_session_table {
     group_item_label: "First Session Network"
   }
 
+  dimension: metrics__string__play_store_attribution_campaign {
+    sql: ${TABLE}.metrics.string.play_store_attribution_campaign ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Play Store Attribution Campaign"
+  }
+
+  dimension: metrics__string__play_store_attribution_content {
+    sql: ${TABLE}.metrics.string.play_store_attribution_content ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Play Store Attribution Content"
+  }
+
+  dimension: metrics__string__play_store_attribution_medium {
+    sql: ${TABLE}.metrics.string.play_store_attribution_medium ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Play Store Attribution Medium"
+  }
+
+  dimension: metrics__string__play_store_attribution_source {
+    sql: ${TABLE}.metrics.string.play_store_attribution_source ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Play Store Attribution Source"
+  }
+
+  dimension: metrics__string__play_store_attribution_term {
+    sql: ${TABLE}.metrics.string.play_store_attribution_term ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Play Store Attribution Term"
+  }
+
   dimension: metrics__text {
     sql: ${TABLE}.metrics.text ;;
     hidden: yes

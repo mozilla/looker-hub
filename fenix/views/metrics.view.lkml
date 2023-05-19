@@ -679,6 +679,24 @@ location.
 "
   }
 
+  dimension: metrics__timing_distribution__first_session_adjust_attribution_time__sum {
+    label: "First Session Adjust Attribution Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.sum ;;
+    type: number
+    group_label: "First Session"
+    group_item_label: "Adjust Attribution Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for First Session Adjust Attribution Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_adjust_attribution_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time that it takes to derive the attribution parameters by the Adjust SDK.
+"
+  }
+
   dimension: metrics__counter__home_screen_home_screen_view_count {
     label: "Home Screen Home Screen View Count"
     hidden: no
@@ -1853,6 +1871,24 @@ determines `path` so it's not perfectly accurate. In one way, we record we
 is intended to happen rather than what actually happened (e.g. the user
 may click a link so we record VIEW but the app does a MAIN by going to the
 homescreen because the link was invalid).
+"
+  }
+
+  dimension: metrics__timing_distribution__play_store_attribution_attribution_time__sum {
+    label: "Play Store Attribution Attribution Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.play_store_attribution_attribution_time.sum ;;
+    type: number
+    group_label: "Play Store Attribution"
+    group_item_label: "Attribution Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Play Store Attribution Attribution Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_attribution_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time that it takes to derive the attribution parameters by the Google Play Install Referrer library.
 "
   }
 
