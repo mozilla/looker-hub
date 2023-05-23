@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       viewpoint_survey_2023_may_ios.branch
     ]
     filters:
-      viewpoint_survey_2023_may_ios.metric: 'active_hours'
+      viewpoint_survey_2023_may_ios.metric: 'days_of_use'
       viewpoint_survey_2023_may_ios.statistic: mean
     row: 0
     col: 12
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       viewpoint_survey_2023_may_ios.branch
     ]
     filters:
-      viewpoint_survey_2023_may_ios.metric: 'search_count'
+      viewpoint_survey_2023_may_ios.metric: 'ad_clicks'
       viewpoint_survey_2023_may_ios.statistic: mean
     row: 10
     col: 0
@@ -149,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,7 +165,7 @@
       viewpoint_survey_2023_may_ios.branch
     ]
     filters:
-      viewpoint_survey_2023_may_ios.metric: 'days_of_use'
+      viewpoint_survey_2023_may_ios.metric: 'search_count'
       viewpoint_survey_2023_may_ios.statistic: mean
     row: 20
     col: 0
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       viewpoint_survey_2023_may_ios.branch
     ]
     filters:
-      viewpoint_survey_2023_may_ios.metric: 'ad_clicks'
+      viewpoint_survey_2023_may_ios.metric: 'active_hours'
       viewpoint_survey_2023_may_ios.statistic: mean
     row: 20
     col: 12
