@@ -9162,6 +9162,10 @@ revenue:
       tables:
       - table: moz-fx-data-shared-prod.fenix_derived.google_ads_campaign_cost_breakdowns_v1
       type: table_view
+    revenue_google_top10_row_data:
+      tables:
+      - table: mozdata.revenue.revenue_google_top10_row_data
+      type: table_view
     stripe_itemized_payout_reconciliation:
       tables:
       - table: mozdata.stripe.itemized_payout_reconciliation
