@@ -138,6 +138,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_sent_messages_parent_inactive}) AS metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__messaging_system_invalid_nested_data {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__messaging_system_invalid_nested_data}) AS metrics__metrics__labeled_counter__messaging_system_invalid_nested_data ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__messaging_system_invalid_nested_data.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__netwerk_early_hints {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_early_hints}) AS metrics__metrics__labeled_counter__netwerk_early_hints ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_early_hints.document_id} ;;
@@ -382,6 +387,10 @@ explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_ac
 }
 
 explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__messaging_system_invalid_nested_data {
   hidden: yes
 }
 

@@ -561,6 +561,16 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__messaging_system_glean_ping_for_ping_failures {
+    sql: ${TABLE}.metrics.counter.messaging_system_glean_ping_for_ping_failures ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Messaging System Glean Ping For Ping Failures"
+    description: "How often something went awry within
+`AboutWelcome.submitGleanPingForPing`, preventing ping submission.
+"
+  }
+
   dimension: metrics__counter__pdfjs_used {
     sql: ${TABLE}.metrics.counter.pdfjs_used ;;
     type: number
@@ -956,6 +966,20 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.labeled_counter.ipc_sent_messages_parent_inactive ;;
     hidden: yes
     description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
+  dimension: metrics__labeled_counter__messaging_system_invalid_nested_data {
+    sql: ${TABLE}.metrics.labeled_counter.messaging_system_invalid_nested_data ;;
+    hidden: yes
+    description: "We received a ping with non-scalar data on a field of this name.
+If this is existing pre-PingCentre-replacement data, you may need to
+augment the logic in
+`AboutWelcome.submitGleanPingForPing` like the other `handledKeys`.
+If this is for new, post-PingCentre-replacement data, you should
+probably prefer a flat structure.
+If you're unsure, please ask in
+[the #glean channel](https://chat.mozilla.org/#/room/#glean:mozilla.org).
 "
   }
 
