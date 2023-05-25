@@ -1548,6 +1548,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_geckoview {
+    label: "Pdfjs Geckoview"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_geckoview ;;
+    group_label: "Pdfjs"
+    group_item_label: "Geckoview"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Geckoview"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_geckoview"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times some actions are executed in the PDF viewer.
+"
+  }
+
   dimension: metrics__custom_distribution__pdfjs_time_to_view__sum {
     label: "Pdfjs Time To View Sum"
     hidden: no
@@ -6062,6 +6079,49 @@ view: metrics__metrics__labeled_counter__pdfjs_editing {
   }
 }
 
+view: metrics__metrics__labeled_counter__pdfjs_geckoview {
+  label: "Pdfjs - Geckoview"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_geckoview
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_geckoview.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__perf_startup_startup_type {
   label: "Perf Startup - Startup Type"
 
@@ -7575,6 +7635,25 @@ view: suggest__metrics__metrics__labeled_counter__pdfjs_editing {
     count(*) as n
 from mozdata.org_mozilla_klar.metrics as t,
 unnest(metrics.labeled_counter.pdfjs_editing) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__pdfjs_geckoview {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.pdfjs_geckoview) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

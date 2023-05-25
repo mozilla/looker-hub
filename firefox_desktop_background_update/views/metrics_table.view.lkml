@@ -914,6 +914,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_geckoview {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_geckoview ;;
+    hidden: yes
+    description: "Counts the number of times some actions are executed in the PDF viewer.
+"
+  }
+
   dimension: metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
     sql: ${TABLE}.metrics.labeled_counter.power_cpu_ms_per_thread_content_background ;;
     hidden: yes
