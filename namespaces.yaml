@@ -14,6 +14,24 @@ accessibility:
       tables:
       - table: mozdata.telemetry.accessibility_clients
       type: ping_view
+accounts_backend:
+  explores: {}
+  glean_app: true
+  owners:
+  - fxa-staff@mozilla.com
+  - akomarzewski@mozilla.com
+  pretty_name: Firefox Accounts Backend
+  spoke: looker-spoke-default
+  views: {}
+accounts_frontend:
+  explores: {}
+  glean_app: true
+  owners:
+  - fxa-staff@mozilla.com
+  - akomarzewski@mozilla.com
+  pretty_name: Firefox Accounts Frontend
+  spoke: looker-spoke-default
+  views: {}
 activity_stream:
   explores:
     event_counts:
