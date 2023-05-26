@@ -333,6 +333,49 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__counter__messaging_system_glean_ping_for_ping_failures {
+    label: "Messaging System Glean Ping For Ping Failures"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.messaging_system_glean_ping_for_ping_failures ;;
+    type: number
+    group_label: "Messaging System"
+    group_item_label: "Glean Ping For Ping Failures"
+
+    link: {
+      label: "Glean Dictionary reference for Messaging System Glean Ping For Ping Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_glean_ping_for_ping_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often something went awry within
+`AboutWelcome.submitGleanPingForPing`, preventing ping submission.
+"
+  }
+
+  dimension: metrics__labeled_counter__messaging_system_invalid_nested_data {
+    label: "Messaging System Invalid Nested Data"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.messaging_system_invalid_nested_data ;;
+    group_label: "Messaging System"
+    group_item_label: "Invalid Nested Data"
+
+    link: {
+      label: "Glean Dictionary reference for Messaging System Invalid Nested Data"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_invalid_nested_data"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "We received a ping with non-scalar data on a field of this name.
+If this is existing pre-PingCentre-replacement data, you may need to
+augment the logic in
+`AboutWelcome.submitGleanPingForPing` like the other `handledKeys`.
+If this is for new, post-PingCentre-replacement data, you should
+probably prefer a flat structure.
+If you're unsure, please ask in
+[the #glean channel](https://chat.mozilla.org/#/room/#glean:mozilla.org).
+"
+  }
+
   dimension: metrics__counter__ping_centre_send_failures {
     label: "Ping Centre Send Failures"
     hidden: no
@@ -3654,6 +3697,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: messaging_system_glean_ping_for_ping_failures {
+    type: sum
+    sql: ${metrics__counter__messaging_system_glean_ping_for_ping_failures} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Messaging System Glean Ping For Ping Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_glean_ping_for_ping_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: messaging_system_glean_ping_for_ping_failures_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__messaging_system_glean_ping_for_ping_failures: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Messaging System Glean Ping For Ping Failures"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_glean_ping_for_ping_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: ping_centre_send_failures {
     type: sum
     sql: ${metrics__counter__ping_centre_send_failures} ;;
@@ -5286,6 +5354,49 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__messaging_system_invalid_nested_data {
+  label: "Messaging System - Invalid Nested Data"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__messaging_system_invalid_nested_data
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__messaging_system_invalid_nested_data.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -7023,6 +7134,25 @@ view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inact
     count(*) as n
 from mozdata.firefox_desktop.metrics as t,
 unnest(metrics.labeled_counter.ipc_sent_messages_parent_inactive) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__messaging_system_invalid_nested_data {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.messaging_system_invalid_nested_data) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
