@@ -357,18 +357,18 @@
   - title: Normalized Channel
     name: Normalized Channel
     type: string_filter
-    default_value: 'esr'
+    default_value: 'release'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'esr'
       - 'release'
       - 'nightly'
       - 'beta'
       - 'aurora'
+      - 'esr'
       - 'default'
       - 'nightly-pine'
       - 'nightly-oak'
