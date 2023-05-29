@@ -865,6 +865,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__network_cors_authorization_header {
+    sql: ${TABLE}.metrics.labeled_counter.network_cors_authorization_header ;;
+    hidden: yes
+    description: "Count how many times we see `Authorization` header in `Access-Control-Request-Headers` header and the possible outcomes.
+"
+  }
+
   dimension: metrics__labeled_counter__network_data_size_pb_per_type {
     sql: ${TABLE}.metrics.labeled_counter.network_data_size_pb_per_type ;;
     hidden: yes
