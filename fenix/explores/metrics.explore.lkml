@@ -294,6 +294,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_eh_link_type}) AS metrics__metrics__labeled_counter__netwerk_eh_link_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_eh_link_type.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__network_cors_authorization_header {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_cors_authorization_header}) AS metrics__metrics__labeled_counter__network_cors_authorization_header ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_cors_authorization_header.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__network_data_size_pb_per_type {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__network_data_size_pb_per_type}) AS metrics__metrics__labeled_counter__network_data_size_pb_per_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__network_data_size_pb_per_type.document_id} ;;
@@ -677,6 +682,10 @@ explore: suggest__metrics__metrics__labeled_counter__netwerk_early_hints {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__network_cors_authorization_header {
   hidden: yes
 }
 

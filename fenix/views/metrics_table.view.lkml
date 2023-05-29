@@ -1709,6 +1709,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__network_cors_authorization_header {
+    sql: ${TABLE}.metrics.labeled_counter.network_cors_authorization_header ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__network_data_size_pb_per_type {
     sql: ${TABLE}.metrics.labeled_counter.network_data_size_pb_per_type ;;
     hidden: yes
@@ -10004,6 +10009,7 @@ view: metrics_table {
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
+    description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {

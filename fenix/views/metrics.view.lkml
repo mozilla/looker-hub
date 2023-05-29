@@ -3347,6 +3347,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__network_cors_authorization_header {
+    label: "Network Cors Authorization Header"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_cors_authorization_header ;;
+    group_label: "Network"
+    group_item_label: "Cors Authorization Header"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cors Authorization Header"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_cors_authorization_header"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count how many times we see `Authorization` header in `Access-Control-Request-Headers` header and the possible outcomes.
+"
+  }
+
   dimension: metrics__labeled_counter__network_data_size_pb_per_type {
     label: "Network Data Size Pb Per Type"
     hidden: yes
@@ -8247,6 +8264,7 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
+    description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {
@@ -12225,6 +12243,49 @@ view: metrics__metrics__labeled_counter__netwerk_eh_link_type {
   }
 }
 
+view: metrics__metrics__labeled_counter__network_cors_authorization_header {
+  label: "Network - Cors Authorization Header"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__network_cors_authorization_header
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__network_cors_authorization_header.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__network_data_size_pb_per_type {
   label: "Network - Data Size Pb Per Type"
 
@@ -14677,6 +14738,25 @@ view: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type {
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.netwerk_eh_link_type) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__network_cors_authorization_header {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.network_cors_authorization_header) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

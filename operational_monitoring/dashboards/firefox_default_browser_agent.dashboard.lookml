@@ -115,8 +115,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Firefox Is Default Volume
-    name: Firefox Is Default Volume_sum
+  - title: Firefox Default Changed Volume
+    name: Firefox Default Changed Volume_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -131,7 +131,7 @@
       firefox_default_browser_agent.branch
     ]
     filters:
-      firefox_default_browser_agent.metric: 'firefox_is_default_volume'
+      firefox_default_browser_agent.metric: 'firefox_default_changed_volume'
       firefox_default_browser_agent.statistic: sum
     row: 10
     col: 12
@@ -150,8 +150,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Firefox Is Default Volume
-    name: Firefox Is Default Volume_mean
+  - title: Firefox Default Changed Volume
+    name: Firefox Default Changed Volume_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -166,7 +166,7 @@
       firefox_default_browser_agent.branch
     ]
     filters:
-      firefox_default_browser_agent.metric: 'firefox_is_default_volume'
+      firefox_default_browser_agent.metric: 'firefox_default_changed_volume'
       firefox_default_browser_agent.statistic: mean
     row: 20
     col: 0
@@ -255,8 +255,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Firefox Default Changed Volume
-    name: Firefox Default Changed Volume_sum
+  - title: Firefox Is Default Volume
+    name: Firefox Is Default Volume_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -271,7 +271,7 @@
       firefox_default_browser_agent.branch
     ]
     filters:
-      firefox_default_browser_agent.metric: 'firefox_default_changed_volume'
+      firefox_default_browser_agent.metric: 'firefox_is_default_volume'
       firefox_default_browser_agent.statistic: sum
     row: 30
     col: 12
@@ -290,8 +290,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Firefox Default Changed Volume
-    name: Firefox Default Changed Volume_mean
+  - title: Firefox Is Default Volume
+    name: Firefox Is Default Volume_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -306,7 +306,7 @@
       firefox_default_browser_agent.branch
     ]
     filters:
-      firefox_default_browser_agent.metric: 'firefox_default_changed_volume'
+      firefox_default_browser_agent.metric: 'firefox_is_default_volume'
       firefox_default_browser_agent.statistic: mean
     row: 40
     col: 0
@@ -365,10 +365,10 @@
       display: inline
       options:
       - 'release'
-      - 'nightly'
-      - 'beta'
       - 'aurora'
       - 'esr'
+      - 'nightly'
+      - 'beta'
       - 'default'
       - 'nightly-pine'
       - 'nightly-oak'
