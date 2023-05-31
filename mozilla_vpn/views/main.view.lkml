@@ -352,6 +352,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
+    description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {
