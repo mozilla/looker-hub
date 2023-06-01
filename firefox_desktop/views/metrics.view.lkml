@@ -667,6 +667,24 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__timing_distribution__serp_categorization_duration__sum {
+    label: "Serp Categorization Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.serp_categorization_duration.sum ;;
+    type: number
+    group_label: "Serp"
+    group_item_label: "Categorization Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Serp Categorization Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/serp_categorization_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time it takes to categorize elements on a SERP.
+"
+  }
+
   dimension: metrics__boolean__startup_is_restored_by_macos {
     label: "Startup Is Restored By Macos"
     hidden: no
