@@ -4,127 +4,213 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: vpnsession {
-  dimension: metrics__quantity__session_apps_excluded {
-    label: "Session Apps Excluded"
+view: accounts_events {
+  dimension: metrics__string__account_user_id_sha256 {
+    label: "Account User Id Sha256"
     hidden: no
-    sql: ${TABLE}.metrics.quantity.session_apps_excluded ;;
-    type: number
-    group_label: "Session"
-    group_item_label: "Apps Excluded"
+    sql: ${TABLE}.metrics.string.account_user_id_sha256 ;;
+    type: string
+    group_label: "Account"
+    group_item_label: "User Id Sha256"
 
     link: {
-      label: "Glean Dictionary reference for Session Apps Excluded"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_apps_excluded"
+      label: "Glean Dictionary reference for Account User Id Sha256"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/account_user_id_sha256"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The number of apps the user is excluding from the VPN tunnel
+    description: "A hex string of a sha256 hash of the account's uid
 "
   }
 
-  dimension: metrics__counter__session_connection_health_stable_count {
-    label: "Session Connection Health Stable Count"
+  dimension: metrics__string__event_name {
+    label: "Event Name"
     hidden: no
-    sql: ${TABLE}.metrics.counter.session_connection_health_stable_count ;;
-    type: number
-    group_label: "Session"
-    group_item_label: "Connection Health Stable Count"
+    sql: ${TABLE}.metrics.string.event_name ;;
+    type: string
+    group_label: "Event"
+    group_item_label: "Name"
 
     link: {
-      label: "Glean Dictionary reference for Session Connection Health Stable Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_connection_health_stable_count"
+      label: "Glean Dictionary reference for Event Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/event_name"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Count of times that the connection health check succeeds.
-Collected only on mobile apps.
+    description: "The name of the event
 "
   }
 
-  dimension: metrics__string__session_dns_type {
-    label: "Session Dns Type"
+  dimension: metrics__string__relying_party_oauth_client_id {
+    label: "Relying Party Oauth Client Id"
     hidden: no
-    sql: ${TABLE}.metrics.string.session_dns_type ;;
+    sql: ${TABLE}.metrics.string.relying_party_oauth_client_id ;;
+    type: string
+    group_label: "Relying Party"
+    group_item_label: "Oauth Client Id"
+
+    link: {
+      label: "Glean Dictionary reference for Relying Party Oauth Client Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/relying_party_oauth_client_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The client id of the relying party
+"
+  }
+
+  dimension: metrics__string__relying_party_service {
+    label: "Relying Party Service"
+    hidden: no
+    sql: ${TABLE}.metrics.string.relying_party_service ;;
+    type: string
+    group_label: "Relying Party"
+    group_item_label: "Service"
+
+    link: {
+      label: "Glean Dictionary reference for Relying Party Service"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/relying_party_service"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The service name of the relying party
+"
+  }
+
+  dimension: metrics__string__session_device_type {
+    label: "Session Device Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.session_device_type ;;
     type: string
     group_label: "Session"
-    group_item_label: "Dns Type"
+    group_item_label: "Device Type"
 
     link: {
-      label: "Glean Dictionary reference for Session Dns Type"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_dns_type"
+      label: "Glean Dictionary reference for Session Device Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/session_device_type"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The type of DNS a user has active:
-- NoCustomDNSAvailable: Custom DNS app feature isn't available
-- Default: App's default DNS server
-- Custom: User has provided a custom valid IP address for their DNS
-- BlockAds: One of app's privacy DNS options
-- BlockTrackers: One of app's privacy DNS options
-- BlockAdsAndTrackers: One of app's privacy DNS options
-- BlockMalware: One of app's privacy DNS options
-- BlockMalwareAndAds: One of app's privacy DNS options
-- BlockMalwareAndTrackers: One of app's privacy DNS options
-- BlockMalwareAndAdsAndTrackers: One of app's privacy DNS options
-"
+    description: "one of 'mobile', 'tablet', or 'desktop'"
   }
 
-  dimension: metrics__datetime__session_session_end {
-    label: "Session Session End"
+  dimension: metrics__string__session_entrypoint {
+    label: "Session Entrypoint"
     hidden: no
-    sql: ${TABLE}.metrics.datetime.session_session_end ;;
-    type: time
-    group_label: "Session"
-    group_item_label: "Session End"
-
-    link: {
-      label: "Glean Dictionary reference for Session Session End"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_session_end"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time the user ends a VPN session from the app
-"
-  }
-
-  dimension: metrics__uuid__session_session_id {
-    label: "Session Session Id"
-    hidden: no
-    sql: ${TABLE}.metrics.uuid.session_session_id ;;
+    sql: ${TABLE}.metrics.string.session_entrypoint ;;
     type: string
     group_label: "Session"
-    group_item_label: "Session Id"
+    group_item_label: "Entrypoint"
 
     link: {
-      label: "Glean Dictionary reference for Session Session Id"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_session_id"
+      label: "Glean Dictionary reference for Session Entrypoint"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/session_entrypoint"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A unique identifier for each session, shared with the daemon instance
-of Glean. This is used to connect unique VPN sessions across pings, and
-as a safety check on edge cases of VPN activation/deactivation, such as
-a session being started/ended from mobile system settings.
-"
+    description: "entrypoint to the service"
   }
 
-  dimension: metrics__datetime__session_session_start {
-    label: "Session Session Start"
+  dimension: metrics__string__session_flow_id {
+    label: "Session Flow Id"
     hidden: no
-    sql: ${TABLE}.metrics.datetime.session_session_start ;;
-    type: time
+    sql: ${TABLE}.metrics.string.session_flow_id ;;
+    type: string
     group_label: "Session"
-    group_item_label: "Session Start"
+    group_item_label: "Flow Id"
 
     link: {
-      label: "Glean Dictionary reference for Session Session Start"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_session_start"
+      label: "Glean Dictionary reference for Session Flow Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/session_flow_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The time the user starts a VPN session from the app
-"
+    description: "an ID generated by FxA for its flow metrics"
+  }
+
+  dimension: metrics__string__utm_campaign {
+    label: "Utm Campaign"
+    hidden: no
+    sql: ${TABLE}.metrics.string.utm_campaign ;;
+    type: string
+    group_label: "Utm"
+    group_item_label: "Campaign"
+
+    link: {
+      label: "Glean Dictionary reference for Utm Campaign"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/utm_campaign"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "UTM campaign"
+  }
+
+  dimension: metrics__string__utm_content {
+    label: "Utm Content"
+    hidden: no
+    sql: ${TABLE}.metrics.string.utm_content ;;
+    type: string
+    group_label: "Utm"
+    group_item_label: "Content"
+
+    link: {
+      label: "Glean Dictionary reference for Utm Content"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/utm_content"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "UTM content"
+  }
+
+  dimension: metrics__string__utm_medium {
+    label: "Utm Medium"
+    hidden: no
+    sql: ${TABLE}.metrics.string.utm_medium ;;
+    type: string
+    group_label: "Utm"
+    group_item_label: "Medium"
+
+    link: {
+      label: "Glean Dictionary reference for Utm Medium"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/utm_medium"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "UTM medium"
+  }
+
+  dimension: metrics__string__utm_source {
+    label: "Utm Source"
+    hidden: no
+    sql: ${TABLE}.metrics.string.utm_source ;;
+    type: string
+    group_label: "Utm"
+    group_item_label: "Source"
+
+    link: {
+      label: "Glean Dictionary reference for Utm Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/utm_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "UTM source"
+  }
+
+  dimension: metrics__string__utm_term {
+    label: "Utm Term"
+    hidden: no
+    sql: ${TABLE}.metrics.string.utm_term ;;
+    type: string
+    group_label: "Utm"
+    group_item_label: "Term"
+
+    link: {
+      label: "Glean Dictionary reference for Utm Term"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/utm_term"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "UTM term"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -136,7 +222,7 @@ a session being started/ended from mobile system settings.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Label"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/glean_error_invalid_label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/glean_error_invalid_label"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -154,7 +240,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Overflow"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/glean_error_invalid_overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/glean_error_invalid_overflow"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -172,7 +258,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid State"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/glean_error_invalid_state"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/glean_error_invalid_state"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -190,7 +276,7 @@ The labels are the `category.name` identifier of the metric.
 
     link: {
       label: "Glean Dictionary reference for Glean Error Invalid Value"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/glean_error_invalid_value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/glean_error_invalid_value"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -202,6 +288,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: client_info__android_sdk_version {
@@ -209,6 +296,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Android Sdk Version"
+    description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
   dimension: client_info__app_build {
@@ -216,6 +304,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "App Build"
+    description: "The build identifier generated by the CI system (e.g. \"1234/A\"). For language bindings that provide automatic detection for this value, (e.g. Android/Kotlin), in the unlikely event that the build identifier can not be retrieved from the OS, it is set to \"inaccessible\". For other language bindings, if the value was not provided through configuration, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__app_channel {
@@ -223,6 +312,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "App Channel"
+    description: "The channel the application is being distributed on."
   }
 
   dimension: client_info__app_display_version {
@@ -230,6 +320,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "App Display Version"
+    description: "The user visible version string (e.g. \"1.0.3\").  In the unlikely event that the display version can not be retrieved, it is set to \"inaccessible\"."
   }
 
   dimension: client_info__architecture {
@@ -237,6 +328,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Architecture"
+    description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
   }
 
   dimension: client_info__build_date {
@@ -244,11 +336,13 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Build Date"
+    description: "The date & time the application was built"
   }
 
   dimension: client_info__client_id {
     sql: ${TABLE}.client_info.client_id ;;
     hidden: yes
+    description: "A UUID uniquely identifying the client."
   }
 
   dimension: client_info__device_manufacturer {
@@ -256,6 +350,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
+    description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__device_model {
@@ -263,6 +358,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Device Model"
+    description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__first_run_date {
@@ -270,6 +366,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "First Run Date"
+    description: "The date of the first run of the application."
   }
 
   dimension: client_info__locale {
@@ -277,6 +374,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Locale"
+    description: "The locale of the application during initialization (e.g. \"es-ES\"). If the locale can't be determined on the system, the value is [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers), to indicate \"undetermined\"."
   }
 
   dimension: client_info__os {
@@ -284,6 +382,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Os"
+    description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
   dimension: client_info__os_version {
@@ -291,6 +390,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
+    description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -298,6 +398,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
+    description: "The version of the Glean SDK"
   }
 
   dimension: client_info__windows_build_number {
@@ -305,11 +406,13 @@ The labels are the `category.name` identifier of the metric.
     type: number
     group_label: "Client Info"
     group_item_label: "Windows Build Number"
+    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    description: "The document ID specified in the URI when the client sent this message"
     primary_key: yes
   }
 
@@ -331,6 +434,7 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -338,6 +442,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Db Version"
+    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -345,6 +450,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
+    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -352,6 +458,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
+    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -359,6 +466,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "Date"
+    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -366,6 +474,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "Dnt"
+    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -392,6 +501,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Debug Id"
+    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -399,6 +509,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
+    description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -406,6 +517,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Lb Tags"
+    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -413,6 +525,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
+    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -420,6 +533,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
+    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -427,6 +541,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
+    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -434,6 +549,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Db Version"
+    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -441,6 +557,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Name"
+    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -448,6 +565,7 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Organization"
+    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -471,31 +589,28 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Version"
   }
 
-  dimension: normalized_app_id {
-    sql: ${TABLE}.normalized_app_id ;;
-    type: string
-    description: "App ID of the channel data was received from"
-  }
-
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
-    description: "Normalized channel name"
+    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -546,6 +661,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metadata__header__parsed {
@@ -605,6 +721,7 @@ The labels are the `category.name` identifier of the metric.
       quarter,
       year,
     ]
+    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: clients {
@@ -616,40 +733,187 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  measure: session_connection_health_stable_count {
-    type: sum
-    sql: ${metrics__counter__session_connection_health_stable_count} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Session Connection Health Stable Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_connection_health_stable_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: session_connection_health_stable_count_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__session_connection_health_stable_count: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Session Connection Health Stable Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_connection_health_stable_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  sql_table_name: `mozdata.mozilla_vpn.vpnsession` ;;
+  sql_table_name: `mozdata.accounts_frontend.accounts_events` ;;
 }
 
-view: suggest__vpnsession__metrics__labeled_counter__glean_error_invalid_label {
+view: accounts_events__metrics__labeled_counter__glean_error_invalid_label {
+  label: "Glean Error - Invalid Label"
+
+  dimension: document_id {
+    type: string
+    sql: ${accounts_events.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${accounts_events.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_label
+    suggest_dimension: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_label.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${accounts_events.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: accounts_events__metrics__labeled_counter__glean_error_invalid_overflow {
+  label: "Glean Error - Invalid Overflow"
+
+  dimension: document_id {
+    type: string
+    sql: ${accounts_events.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${accounts_events.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_overflow
+    suggest_dimension: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_overflow.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${accounts_events.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: accounts_events__metrics__labeled_counter__glean_error_invalid_state {
+  label: "Glean Error - Invalid State"
+
+  dimension: document_id {
+    type: string
+    sql: ${accounts_events.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${accounts_events.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_state
+    suggest_dimension: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_state.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${accounts_events.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: accounts_events__metrics__labeled_counter__glean_error_invalid_value {
+  label: "Glean Error - Invalid Value"
+
+  dimension: document_id {
+    type: string
+    sql: ${accounts_events.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${accounts_events.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_value
+    suggest_dimension: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_value.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${accounts_events.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.mozilla_vpn.vpnsession as t,
+from mozdata.accounts_frontend.accounts_events as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -663,12 +927,12 @@ order by n desc ;;
   }
 }
 
-view: suggest__vpnsession__metrics__labeled_counter__glean_error_invalid_overflow {
+view: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_overflow {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.mozilla_vpn.vpnsession as t,
+from mozdata.accounts_frontend.accounts_events as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -682,12 +946,12 @@ order by n desc ;;
   }
 }
 
-view: suggest__vpnsession__metrics__labeled_counter__glean_error_invalid_state {
+view: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_state {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.mozilla_vpn.vpnsession as t,
+from mozdata.accounts_frontend.accounts_events as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -701,12 +965,12 @@ order by n desc ;;
   }
 }
 
-view: suggest__vpnsession__metrics__labeled_counter__glean_error_invalid_value {
+view: suggest__accounts_events__metrics__labeled_counter__glean_error_invalid_value {
   derived_table: {
     sql: select
     m.key,
     count(*) as n
-from mozdata.mozilla_vpn.vpnsession as t,
+from mozdata.accounts_frontend.accounts_events as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -717,177 +981,5 @@ order by n desc ;;
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
-  }
-}
-
-view: vpnsession__metrics__labeled_counter__glean_error_invalid_label {
-  label: "Glean Error - Invalid Label"
-
-  dimension: document_id {
-    type: string
-    sql: ${vpnsession.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${vpnsession.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__vpnsession__metrics__labeled_counter__glean_error_invalid_label
-    suggest_dimension: suggest__vpnsession__metrics__labeled_counter__glean_error_invalid_label.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${vpnsession.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: vpnsession__metrics__labeled_counter__glean_error_invalid_overflow {
-  label: "Glean Error - Invalid Overflow"
-
-  dimension: document_id {
-    type: string
-    sql: ${vpnsession.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${vpnsession.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__vpnsession__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__vpnsession__metrics__labeled_counter__glean_error_invalid_overflow.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${vpnsession.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: vpnsession__metrics__labeled_counter__glean_error_invalid_state {
-  label: "Glean Error - Invalid State"
-
-  dimension: document_id {
-    type: string
-    sql: ${vpnsession.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${vpnsession.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__vpnsession__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__vpnsession__metrics__labeled_counter__glean_error_invalid_state.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${vpnsession.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: vpnsession__metrics__labeled_counter__glean_error_invalid_value {
-  label: "Glean Error - Invalid Value"
-
-  dimension: document_id {
-    type: string
-    sql: ${vpnsession.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${vpnsession.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__vpnsession__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__vpnsession__metrics__labeled_counter__glean_error_invalid_value.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${vpnsession.client_info__client_id} end ;;
-    hidden: no
   }
 }
