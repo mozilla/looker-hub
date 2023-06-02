@@ -667,6 +667,24 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__timing_distribution__search_service_startup_time__sum {
+    label: "Search Service Startup Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.sum ;;
+    type: number
+    group_label: "Search Service"
+    group_item_label: "Startup Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Search Service Startup Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_service_startup_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time duration it takes for the search service to start up.
+"
+  }
+
   dimension: metrics__timing_distribution__serp_categorization_duration__sum {
     label: "Serp Categorization Duration Sum"
     hidden: no
