@@ -2425,6 +2425,65 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__search_service_startup_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Search Service Startup Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__search_service_startup_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Search Service Startup Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__search_service_startup_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Search Service Startup Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__search_service_startup_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Search Service Startup Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__search_service_startup_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__search_service_startup_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Search Service Startup Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__search_service_startup_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Search Service Startup Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__search_service_startup_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Search Service Startup Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__search_service_startup_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__serp_categorization_duration__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.serp_categorization_duration.bucket_count ;;
     type: number
@@ -3749,6 +3808,18 @@ view: metrics_table__metrics__timing_distribution__network_open_to_transaction_p
 }
 
 view: metrics_table__metrics__timing_distribution__paint_build_displaylist_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__search_service_startup_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
