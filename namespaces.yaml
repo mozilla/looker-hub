@@ -9676,6 +9676,38 @@ shared:
       tables:
       - table: mozdata.static.data_incidents_v1
       type: table_view
+subscription_platform:
+  explores:
+    apple_subscriptions_v1:
+      type: table_explore
+      views:
+        base_view: apple_subscriptions_v1
+    google_subscriptions_v1:
+      type: table_explore
+      views:
+        base_view: google_subscriptions_v1
+    stripe_subscriptions_v1:
+      type: table_explore
+      views:
+        base_view: stripe_subscriptions_v1
+  glean_app: false
+  owners:
+  - srose@mozilla.com
+  pretty_name: Subscription Platform
+  spoke: looker-spoke-default
+  views:
+    apple_subscriptions_v1:
+      tables:
+      - table: moz-fx-data-shared-prod.subscription_platform_derived.apple_subscriptions_v1
+      type: table_view
+    google_subscriptions_v1:
+      tables:
+      - table: moz-fx-data-shared-prod.subscription_platform_derived.google_subscriptions_v1
+      type: table_view
+    stripe_subscriptions_v1:
+      tables:
+      - table: moz-fx-data-shared-prod.subscription_platform_derived.stripe_subscriptions_v1
+      type: table_view
 sync:
   explores:
     sync:
