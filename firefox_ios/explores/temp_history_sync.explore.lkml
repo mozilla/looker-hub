@@ -14,7 +14,7 @@ explore: temp_history_sync {
 
   always_filter: {
     filters: [
-      channel: "mozdata.firefox^_ios.temp^_history^_sync",
+      channel: "release",
       submission_date: "28 days",
     ]
   }

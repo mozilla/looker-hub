@@ -563,27 +563,15 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.firefox_ios.temp_clients_sync"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.firefox_ios.temp_clients_sync"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_ios_firefoxbeta.temp_clients_sync"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_ios_fennec.temp_clients_sync"
-    }
+  filter: channel {
+    type: string
+    description: "Filter by the app's channel"
+    sql: {% condition %} ${TABLE}.normalized_channel {% endcondition %} ;;
+    default_value: "release"
+    suggestions: ["release", "beta", "nightly"]
   }
 
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.firefox_ios.temp_clients_sync` ;;
 }
 
 view: suggest__temp_clients_sync__metrics__labeled_counter__clients_sync_failure_reason {

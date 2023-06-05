@@ -766,27 +766,15 @@ This metric appears in both the metrics and baseline pings.
     }
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.focus_android.baseline"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.focus_android.baseline"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_focus_beta.baseline"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_focus_nightly.baseline"
-    }
+  filter: channel {
+    type: string
+    description: "Filter by the app's channel"
+    sql: {% condition %} ${TABLE}.normalized_channel {% endcondition %} ;;
+    default_value: "release"
+    suggestions: ["release", "beta", "nightly"]
   }
 
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.focus_android.baseline` ;;
 }
 
 view: baseline__metrics__labeled_counter__browser_search_ad_clicks {

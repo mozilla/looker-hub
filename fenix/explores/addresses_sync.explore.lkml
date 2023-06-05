@@ -14,7 +14,7 @@ explore: addresses_sync {
 
   always_filter: {
     filters: [
-      channel: "mozdata.fenix.addresses^_sync",
+      channel: "release",
       submission_date: "28 days",
     ]
   }
