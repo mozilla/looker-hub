@@ -43,6 +43,11 @@ explore: messaging_system {
     sql: LEFT JOIN UNNEST(${messaging_system.metrics__labeled_counter__messaging_system_attribution_unknown_keys}) AS messaging_system__metrics__labeled_counter__messaging_system_attribution_unknown_keys ON ${messaging_system.document_id} = ${messaging_system__metrics__labeled_counter__messaging_system_attribution_unknown_keys.document_id} ;;
   }
 
+  join: messaging_system__metrics__labeled_counter__messaging_system_invalid_nested_data {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${messaging_system.metrics__labeled_counter__messaging_system_invalid_nested_data}) AS messaging_system__metrics__labeled_counter__messaging_system_invalid_nested_data ON ${messaging_system.document_id} = ${messaging_system__metrics__labeled_counter__messaging_system_invalid_nested_data.document_id} ;;
+  }
+
   join: messaging_system__metrics__labeled_counter__messaging_system_unknown_keys {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${messaging_system.metrics__labeled_counter__messaging_system_unknown_keys}) AS messaging_system__metrics__labeled_counter__messaging_system_unknown_keys ON ${messaging_system.document_id} = ${messaging_system__metrics__labeled_counter__messaging_system_unknown_keys.document_id} ;;
@@ -66,6 +71,10 @@ explore: suggest__messaging_system__metrics__labeled_counter__glean_error_invali
 }
 
 explore: suggest__messaging_system__metrics__labeled_counter__messaging_system_attribution_unknown_keys {
+  hidden: yes
+}
+
+explore: suggest__messaging_system__metrics__labeled_counter__messaging_system_invalid_nested_data {
   hidden: yes
 }
 

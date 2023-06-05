@@ -460,6 +460,30 @@ Present only in some circumstances (see
 "
   }
 
+  dimension: metrics__labeled_counter__messaging_system_invalid_nested_data {
+    label: "Messaging System Invalid Nested Data"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.messaging_system_invalid_nested_data ;;
+    group_label: "Messaging System"
+    group_item_label: "Invalid Nested Data"
+
+    link: {
+      label: "Glean Dictionary reference for Messaging System Invalid Nested Data"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_invalid_nested_data"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "We received a ping with non-scalar data on a field of this name.
+If this is existing pre-PingCentre-replacement data, you may need to
+augment the logic in
+`AboutWelcome.submitGleanPingForPing` like the other `handledKeys`.
+If this is for new, post-PingCentre-replacement data, you should
+probably prefer a flat structure.
+If you're unsure, please ask in
+[the #glean channel](https://chat.mozilla.org/#/room/#glean:mozilla.org).
+"
+  }
+
   dimension: metrics__string__messaging_system_locale {
     label: "Messaging System Locale"
     hidden: no
@@ -1379,6 +1403,49 @@ view: messaging_system__metrics__labeled_counter__messaging_system_attribution_u
   }
 }
 
+view: messaging_system__metrics__labeled_counter__messaging_system_invalid_nested_data {
+  label: "Messaging System - Invalid Nested Data"
+
+  dimension: document_id {
+    type: string
+    sql: ${messaging_system.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${messaging_system.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__messaging_system__metrics__labeled_counter__messaging_system_invalid_nested_data
+    suggest_dimension: suggest__messaging_system__metrics__labeled_counter__messaging_system_invalid_nested_data.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${messaging_system.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: messaging_system__metrics__labeled_counter__messaging_system_unknown_keys {
   label: "Messaging System - Unknown Keys"
 
@@ -1505,6 +1572,25 @@ view: suggest__messaging_system__metrics__labeled_counter__messaging_system_attr
     count(*) as n
 from mozdata.firefox_desktop.messaging_system as t,
 unnest(metrics.labeled_counter.messaging_system_attribution_unknown_keys) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__messaging_system__metrics__labeled_counter__messaging_system_invalid_nested_data {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.messaging_system as t,
+unnest(metrics.labeled_counter.messaging_system_invalid_nested_data) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

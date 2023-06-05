@@ -747,6 +747,34 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__datetime__raw_blocklist_last_modified_rs_addons_mblf {
+    sql: ${TABLE}.metrics.datetime.raw_blocklist_last_modified_rs_addons_mblf ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Blocklist Last Modified Rs Addons Mblf"
+  }
+
+  dimension: metrics__datetime__raw_blocklist_mlbf_generation_time {
+    sql: ${TABLE}.metrics.datetime.raw_blocklist_mlbf_generation_time ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Blocklist Mlbf Generation Time"
+  }
+
+  dimension: metrics__datetime__raw_blocklist_mlbf_stash_time_newest {
+    sql: ${TABLE}.metrics.datetime.raw_blocklist_mlbf_stash_time_newest ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Blocklist Mlbf Stash Time Newest"
+  }
+
+  dimension: metrics__datetime__raw_blocklist_mlbf_stash_time_oldest {
+    sql: ${TABLE}.metrics.datetime.raw_blocklist_mlbf_stash_time_oldest ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Blocklist Mlbf Stash Time Oldest"
+  }
+
   dimension: metrics__datetime__raw_glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.raw_glean_validation_first_run_hour ;;
     type: string
@@ -1322,6 +1350,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Rate Rtcrtpsender Used Sendencodings"
     group_item_label: "Numerator"
+  }
+
+  dimension: metrics__string__blocklist_mlbf_source {
+    sql: ${TABLE}.metrics.string.blocklist_mlbf_source ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Blocklist Mlbf Source"
   }
 
   dimension: metrics__string__browser_default_search_engine {
@@ -2660,7 +2695,6 @@ view: metrics_table {
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
-    description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {
@@ -2671,7 +2705,6 @@ view: metrics_table {
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
-    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
@@ -2747,6 +2780,66 @@ view: metrics_table {
       year,
     ]
     label: "Metadata Header: Parsed Date"
+  }
+
+  dimension_group: metrics__datetime__blocklist_last_modified_rs_addons_mblf {
+    sql: ${TABLE}.metrics.datetime.blocklist_last_modified_rs_addons_mblf ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Blocklist Last Modified Rs Addons Mblf"
+  }
+
+  dimension_group: metrics__datetime__blocklist_mlbf_generation {
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_generation_time ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Blocklist Mlbf Generation Time"
+  }
+
+  dimension_group: metrics__datetime__blocklist_mlbf_stash_time_newest {
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_newest ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Blocklist Mlbf Stash Time Newest"
+  }
+
+  dimension_group: metrics__datetime__blocklist_mlbf_stash_time_oldest {
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_oldest ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Blocklist Mlbf Stash Time Oldest"
   }
 
   dimension_group: metrics__datetime__glean_validation_first_run_hour {
