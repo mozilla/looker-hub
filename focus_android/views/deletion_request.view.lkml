@@ -512,27 +512,15 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.focus_android.deletion_request"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.focus_android.deletion_request"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_focus_beta.deletion_request"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_focus_nightly.deletion_request"
-    }
+  filter: channel {
+    type: string
+    description: "Filter by the app's channel"
+    sql: {% condition %} ${TABLE}.normalized_channel {% endcondition %} ;;
+    default_value: "release"
+    suggestions: ["release", "beta", "nightly"]
   }
 
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.focus_android.deletion_request` ;;
 }
 
 view: deletion_request__metrics__labeled_counter__glean_error_invalid_label {

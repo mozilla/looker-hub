@@ -14,7 +14,7 @@ explore: crash {
 
   always_filter: {
     filters: [
-      channel: "mozdata.fenix.crash",
+      channel: "release",
       submission_date: "28 days",
     ]
   }

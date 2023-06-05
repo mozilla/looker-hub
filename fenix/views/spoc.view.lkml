@@ -515,27 +515,15 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.fenix.spoc"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.fenix.spoc"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_firefox_beta.spoc"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix.spoc"
-    }
+  filter: channel {
+    type: string
+    description: "Filter by the app's channel"
+    sql: {% condition %} ${TABLE}.normalized_channel {% endcondition %} ;;
+    default_value: "release"
+    suggestions: ["release", "beta", "nightly"]
   }
 
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.fenix.spoc` ;;
 }
 
 view: spoc__metrics__labeled_counter__glean_error_invalid_label {

@@ -14,7 +14,7 @@ explore: pageload {
 
   always_filter: {
     filters: [
-      channel: "mozdata.fenix.pageload",
+      channel: "release",
       submission_date: "28 days",
     ]
   }

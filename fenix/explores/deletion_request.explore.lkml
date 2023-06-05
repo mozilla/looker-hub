@@ -14,7 +14,7 @@ explore: deletion_request {
 
   always_filter: {
     filters: [
-      channel: "mozdata.fenix.deletion^_request",
+      channel: "release",
       submission_date: "28 days",
     ]
   }

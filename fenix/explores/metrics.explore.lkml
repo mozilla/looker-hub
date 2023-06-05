@@ -14,7 +14,7 @@ explore: metrics {
 
   always_filter: {
     filters: [
-      channel: "mozdata.fenix.metrics",
+      channel: "release",
       submission_date: "28 days",
     ]
   }

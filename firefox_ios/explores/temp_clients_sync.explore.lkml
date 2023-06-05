@@ -14,7 +14,7 @@ explore: temp_clients_sync {
 
   always_filter: {
     filters: [
-      channel: "mozdata.firefox^_ios.temp^_clients^_sync",
+      channel: "release",
       submission_date: "28 days",
     ]
   }

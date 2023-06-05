@@ -13,7 +13,6 @@ explore: client_counts {
 
   always_filter: {
     filters: [
-      channel: "mozdata.focus^_android.baseline^_clients^_daily",
       submission_date: "28 days",
     ]
   }
