@@ -2626,6 +2626,60 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__rate__translations_error_rate__numerator {
+    label: "Translations Error Rate Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.translations_error_rate.numerator ;;
+    type: number
+    group_label: "Translations"
+    group_item_label: "Error Rate Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Translations Error Rate Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/translations_error_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The rate of failed translations requests.
+"
+  }
+
+  dimension: metrics__rate__translations_error_rate__denominator {
+    label: "Translations Error Rate Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.translations_error_rate.denominator ;;
+    type: number
+    group_label: "Translations"
+    group_item_label: "Error Rate Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Translations Error Rate Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/translations_error_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The rate of failed translations requests.
+"
+  }
+
+  dimension: metrics__counter__translations_requests_count {
+    label: "Translations Requests Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.translations_requests_count ;;
+    type: number
+    group_label: "Translations"
+    group_item_label: "Requests Count"
+
+    link: {
+      label: "Glean Dictionary reference for Translations Requests Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/translations_requests_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of translation requests.
+"
+  }
+
   dimension: metrics__timing_distribution__wr_framebuild_time__sum {
     label: "Wr Framebuild Time Sum"
     hidden: no
@@ -4406,6 +4460,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Rtcrtpsender Count Setparameters Compat"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/rtcrtpsender_count_setparameters_compat"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: translations_requests_count {
+    type: sum
+    sql: ${metrics__counter__translations_requests_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Translations Requests Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/translations_requests_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: translations_requests_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__translations_requests_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Translations Requests Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/translations_requests_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
