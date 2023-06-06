@@ -8,7 +8,6 @@ view: dag {
   dimension: concurrency {
     sql: ${TABLE}.concurrency ;;
     type: number
-    description: "Cuncerrency settings for the DAG"
   }
 
   dimension: dag_id {
@@ -20,19 +19,11 @@ view: dag {
   dimension: has_task_concurrency_limits {
     sql: ${TABLE}.has_task_concurrency_limits ;;
     type: yesno
-    description: "Indicates if DAG has concurrency limit set"
-  }
-
-  dimension: is_active {
-    sql: ${TABLE}.is_active ;;
-    type: yesno
-    description: "Indicates if the DAG is active"
   }
 
   dimension: is_paused {
     sql: ${TABLE}.is_paused ;;
     type: yesno
-    description: "Indicates if the DAG is currently paused"
   }
 
   dimension: is_subdag {
@@ -44,7 +35,6 @@ view: dag {
   dimension: max_active_runs {
     sql: ${TABLE}.max_active_runs ;;
     type: number
-    description: "Max number of active DAG runs allowed"
   }
 
   dimension: owners {

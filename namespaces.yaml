@@ -314,6 +314,19 @@ combined_browser_metrics:
       - table: moz-fx-data-shared-prod.telemetry.cohort_daily_statistics
       type: table_view
 contextual_services:
+  glean_app: false
+  owners:
+  - mmccorquodale@mozilla.com
+  - rburwei@mozilla.com
+  - mbowerman@mozilla.com
+  pretty_name: Contextual Services
+  spoke: looker-spoke-default
+  views:
+    sponsored_tiles_ad_request_fill:
+      tables:
+      - table: mozdata.telemetry.sponsored_tiles_ad_request_fill
+      type: table_view
+contextual_services_private:
   connection: bigquery-oauth
   explores:
     event_aggregates:

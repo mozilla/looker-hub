@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/contextual_services/views/topsites_impression_fenix.view.lkml"
+include: "/looker-hub/contextual_services_private/views/topsites_impression_fenix.view.lkml"
 
 explore: topsites_impressions_fenix {
   sql_always_where: ${topsites_impression_fenix.submission_date} >= '2010-01-01' ;;
