@@ -1229,7 +1229,7 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
 
   dimension: metrics__uuid__metrics_shared_prefs_uuid {
     label: "Metrics Shared Prefs Uuid"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.metrics_shared_prefs_uuid ;;
     type: string
     group_label: "Metrics"
