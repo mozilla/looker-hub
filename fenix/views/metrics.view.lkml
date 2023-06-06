@@ -1229,7 +1229,7 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
 
   dimension: metrics__uuid__metrics_shared_prefs_uuid {
     label: "Metrics Shared Prefs Uuid"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.metrics_shared_prefs_uuid ;;
     type: string
     group_label: "Metrics"
@@ -2736,6 +2736,78 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
+  dimension: metrics__datetime__blocklist_last_modified_rs_addons_mblf {
+    label: "Blocklist Last Modified Rs Addons Mblf"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.blocklist_last_modified_rs_addons_mblf ;;
+    type: time
+    group_label: "Blocklist"
+    group_item_label: "Last Modified Rs Addons Mblf"
+
+    link: {
+      label: "Glean Dictionary reference for Blocklist Last Modified Rs Addons Mblf"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/blocklist_last_modified_rs_addons_mblf"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Keep track of the last time the \"addons-bloomfilters\" remotesetting blocklist has been successfully updated.
+"
+  }
+
+  dimension: metrics__string__blocklist_mlbf_source {
+    label: "Blocklist Mlbf Source"
+    hidden: no
+    sql: ${TABLE}.metrics.string.blocklist_mlbf_source ;;
+    type: string
+    group_label: "Blocklist"
+    group_item_label: "Mlbf Source"
+
+    link: {
+      label: "Glean Dictionary reference for Blocklist Mlbf Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/blocklist_mlbf_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The source of the RemoteSettings attachment that holds the bloom filter. Possible values are \"dump_match\", \"cache_match\", \"remote_match\",\"dump_fallback\", \"cache_fallback\", \"unknown\". \"dump_match\", \"cache_match\" and \"remote_match\" are expected known-good values, and means that the loaded bloomfilter matches the blocklist record in the RemoteSettings collection. The prefix denotes the immediate source of the loaded data: \"dump\" means packaged with the application, \"remote\" means a freshly downloaded bloomfilter, \"cache\" means a previously downloaded bloomfilter. \"dump_fallback\" and \"cache_fallback\" means that the last known bloomfilter was used, despite it not matching the latest record in the RemoteSettings collection. In this case the outdated bloomfilter is used as a fallback (e.g. because the latest version cannot be downloaded). \"unknown\"  means that the bloomfilter cannot be loaded at all. This can happen if the blocklist is disabled via preferences or enterprise policies.
+"
+  }
+
+  dimension: metrics__datetime__blocklist_mlbf_stash_time_newest {
+    label: "Blocklist Mlbf Stash Time Newest"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_newest ;;
+    type: time
+    group_label: "Blocklist"
+    group_item_label: "Mlbf Stash Time Newest"
+
+    link: {
+      label: "Glean Dictionary reference for Blocklist Mlbf Stash Time Newest"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/blocklist_mlbf_stash_time_newest"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Keep track of the timestamp of the most recent stash of the addons blocklist. Only meaningful when mlbf_enabled is true.
+"
+  }
+
+  dimension: metrics__datetime__blocklist_mlbf_stash_time_oldest {
+    label: "Blocklist Mlbf Stash Time Oldest"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_oldest ;;
+    type: time
+    group_label: "Blocklist"
+    group_item_label: "Mlbf Stash Time Oldest"
+
+    link: {
+      label: "Glean Dictionary reference for Blocklist Mlbf Stash Time Oldest"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/blocklist_mlbf_stash_time_oldest"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Keep track of the timestamp of the oldest stash of the addons blocklist. Only meaningful when mlbf_enabled is true.
+"
+  }
+
   dimension: metrics__boolean__browser_ui_proton_enabled {
     label: "Browser Ui Proton Enabled"
     hidden: yes
@@ -3344,6 +3416,23 @@ To be used to validate GIFFT.
     }
 
     description: "Counts different type of link headers that are sent in early hint
+"
+  }
+
+  dimension: metrics__labeled_counter__network_cors_authorization_header {
+    label: "Network Cors Authorization Header"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.network_cors_authorization_header ;;
+    group_label: "Network"
+    group_item_label: "Cors Authorization Header"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cors Authorization Header"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_cors_authorization_header"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count how many times we see `Authorization` header in `Access-Control-Request-Headers` header and the possible outcomes.
 "
   }
 
@@ -9837,27 +9926,15 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.fenix.metrics"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.fenix.metrics"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_firefox_beta.metrics"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix.metrics"
-    }
+  filter: channel {
+    type: string
+    description: "Filter by the app's channel"
+    sql: {% condition %} ${TABLE}.normalized_channel {% endcondition %} ;;
+    default_value: "release"
+    suggestions: ["release", "beta", "nightly"]
   }
 
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.fenix.metrics` ;;
 }
 
 view: metrics__metrics__labeled_counter__avif_a1lx {
@@ -12203,6 +12280,49 @@ view: metrics__metrics__labeled_counter__netwerk_eh_link_type {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type
     suggest_dimension: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__network_cors_authorization_header {
+  label: "Network - Cors Authorization Header"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__network_cors_authorization_header
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__network_cors_authorization_header.key
     hidden: no
   }
 
@@ -14677,6 +14797,25 @@ view: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type {
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.netwerk_eh_link_type) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__network_cors_authorization_header {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.network_cors_authorization_header) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

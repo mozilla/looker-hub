@@ -4239,6 +4239,7 @@ startup, as part of the initialization sequence.
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
+    description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {
@@ -4249,6 +4250,7 @@ startup, as part of the initialization sequence.
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
@@ -7229,27 +7231,15 @@ startup, as part of the initialization sequence.
     }
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.firefox_ios.metrics"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.firefox_ios.metrics"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_ios_firefoxbeta.metrics"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_ios_fennec.metrics"
-    }
+  filter: channel {
+    type: string
+    description: "Filter by the app's channel"
+    sql: {% condition %} ${TABLE}.normalized_channel {% endcondition %} ;;
+    default_value: "release"
+    suggestions: ["release", "beta", "nightly"]
   }
 
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.firefox_ios.metrics` ;;
 }
 
 view: metrics__metrics__labeled_counter__bookmarks_add {

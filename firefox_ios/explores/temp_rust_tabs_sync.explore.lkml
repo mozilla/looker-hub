@@ -14,7 +14,7 @@ explore: temp_rust_tabs_sync {
 
   always_filter: {
     filters: [
-      channel: "mozdata.firefox^_ios.temp^_rust^_tabs^_sync",
+      channel: "release",
       submission_date: "28 days",
     ]
   }

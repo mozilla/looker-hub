@@ -14,7 +14,7 @@ explore: cookie_banner_report_site {
 
   always_filter: {
     filters: [
-      channel: "mozdata.focus^_android.cookie^_banner^_report^_site",
+      channel: "release",
       submission_date: "28 days",
     ]
   }

@@ -369,6 +369,7 @@ view: history_sync_table {
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
+    description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {
@@ -379,6 +380,7 @@ view: history_sync_table {
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {

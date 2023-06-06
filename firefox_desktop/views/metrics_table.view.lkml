@@ -754,6 +754,34 @@ This does not include deletion-request pings.
     group_item_label: "Raw Background Update Time Last Update Scheduled"
   }
 
+  dimension: metrics__datetime__raw_blocklist_last_modified_rs_addons_mblf {
+    sql: ${TABLE}.metrics.datetime.raw_blocklist_last_modified_rs_addons_mblf ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Blocklist Last Modified Rs Addons Mblf"
+  }
+
+  dimension: metrics__datetime__raw_blocklist_mlbf_generation_time {
+    sql: ${TABLE}.metrics.datetime.raw_blocklist_mlbf_generation_time ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Blocklist Mlbf Generation Time"
+  }
+
+  dimension: metrics__datetime__raw_blocklist_mlbf_stash_time_newest {
+    sql: ${TABLE}.metrics.datetime.raw_blocklist_mlbf_stash_time_newest ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Blocklist Mlbf Stash Time Newest"
+  }
+
+  dimension: metrics__datetime__raw_blocklist_mlbf_stash_time_oldest {
+    sql: ${TABLE}.metrics.datetime.raw_blocklist_mlbf_stash_time_oldest ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Blocklist Mlbf Stash Time Oldest"
+  }
+
   dimension: metrics__datetime__raw_glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.raw_glean_validation_first_run_hour ;;
     type: string
@@ -994,6 +1022,13 @@ If you're unsure, please ask in
     sql: ${TABLE}.metrics.labeled_counter.netwerk_eh_link_type ;;
     hidden: yes
     description: "Counts different type of link headers that are sent in early hint
+"
+  }
+
+  dimension: metrics__labeled_counter__network_cors_authorization_header {
+    sql: ${TABLE}.metrics.labeled_counter.network_cors_authorization_header ;;
+    hidden: yes
+    description: "Count how many times we see `Authorization` header in `Access-Control-Request-Headers` header and the possible outcomes.
 "
   }
 
@@ -1525,6 +1560,15 @@ count. Unset on other platforms.
     type: number
     group_label: "Metrics Rate Rtcrtpsender Used Sendencodings"
     group_item_label: "Numerator"
+  }
+
+  dimension: metrics__string__blocklist_mlbf_source {
+    sql: ${TABLE}.metrics.string.blocklist_mlbf_source ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Blocklist Mlbf Source"
+    description: "The source of the RemoteSettings attachment that holds the bloom filter. Possible values are \"dump_match\", \"cache_match\", \"remote_match\",\"dump_fallback\", \"cache_fallback\", \"unknown\". \"dump_match\", \"cache_match\" and \"remote_match\" are expected known-good values, and means that the loaded bloomfilter matches the blocklist record in the RemoteSettings collection. The prefix denotes the immediate source of the loaded data: \"dump\" means packaged with the application, \"remote\" means a freshly downloaded bloomfilter, \"cache\" means a previously downloaded bloomfilter. \"dump_fallback\" and \"cache_fallback\" means that the last known bloomfilter was used, despite it not matching the latest record in the RemoteSettings collection. In this case the outdated bloomfilter is used as a fallback (e.g. because the latest version cannot be downloaded). \"unknown\"  means that the bloomfilter cannot be loaded at all. This can happen if the blocklist is disabled via preferences or enterprise policies.
+"
   }
 
   dimension: metrics__string__geckoview_validation_build_id {
@@ -2418,6 +2462,124 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__search_service_startup_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Search Service Startup Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__search_service_startup_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Search Service Startup Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__search_service_startup_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Search Service Startup Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__search_service_startup_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Search Service Startup Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__search_service_startup_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__search_service_startup_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Search Service Startup Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__search_service_startup_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Search Service Startup Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__search_service_startup_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Search Service Startup Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__search_service_startup_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__serp_categorization_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.serp_categorization_duration.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Serp Categorization Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__serp_categorization_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.serp_categorization_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Serp Categorization Duration"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__serp_categorization_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.serp_categorization_duration.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Serp Categorization Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__serp_categorization_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.serp_categorization_duration.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Serp Categorization Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__serp_categorization_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.serp_categorization_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__serp_categorization_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.serp_categorization_duration.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Serp Categorization Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__serp_categorization_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.serp_categorization_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Serp Categorization Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__serp_categorization_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.serp_categorization_duration.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Serp Categorization Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__serp_categorization_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.serp_categorization_duration.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__wr_framebuild_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.wr_framebuild_time.bucket_count ;;
     type: number
@@ -3226,6 +3388,74 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension_group: metrics__datetime__blocklist_last_modified_rs_addons_mblf {
+    sql: ${TABLE}.metrics.datetime.blocklist_last_modified_rs_addons_mblf ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Blocklist Last Modified Rs Addons Mblf"
+    description: "Keep track of the last time the \"addons-bloomfilters\" remotesetting blocklist has been successfully updated.
+"
+  }
+
+  dimension_group: metrics__datetime__blocklist_mlbf_generation {
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_generation_time ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Blocklist Mlbf Generation Time"
+    description: "Keep track of the generation time of the addon blocklist's bloom filter. This marks the point in time until which signed add-ons are recognized by the selected bloom filter from the addons-bloomfilters collection.
+"
+  }
+
+  dimension_group: metrics__datetime__blocklist_mlbf_stash_time_newest {
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_newest ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Blocklist Mlbf Stash Time Newest"
+    description: "Keep track of the timestamp of the most recent stash of the addons blocklist. Only meaningful when mlbf_enabled is true.
+"
+  }
+
+  dimension_group: metrics__datetime__blocklist_mlbf_stash_time_oldest {
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_oldest ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Blocklist Mlbf Stash Time Oldest"
+    description: "Keep track of the timestamp of the oldest stash of the addons blocklist. Only meaningful when mlbf_enabled is true.
+"
+  }
+
   dimension_group: metrics__datetime__glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: time
@@ -3683,6 +3913,30 @@ view: metrics_table__metrics__timing_distribution__network_open_to_transaction_p
 }
 
 view: metrics_table__metrics__timing_distribution__paint_build_displaylist_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__search_service_startup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__serp_categorization_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

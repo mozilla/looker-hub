@@ -372,6 +372,20 @@ Either add this key to a list of known attribution keys in
 "
   }
 
+  dimension: metrics__labeled_counter__messaging_system_invalid_nested_data {
+    sql: ${TABLE}.metrics.labeled_counter.messaging_system_invalid_nested_data ;;
+    hidden: yes
+    description: "We received a ping with non-scalar data on a field of this name.
+If this is existing pre-PingCentre-replacement data, you may need to
+augment the logic in
+`AboutWelcome.submitGleanPingForPing` like the other `handledKeys`.
+If this is for new, post-PingCentre-replacement data, you should
+probably prefer a flat structure.
+If you're unsure, please ask in
+[the #glean channel](https://chat.mozilla.org/#/room/#glean:mozilla.org).
+"
+  }
+
   dimension: metrics__labeled_counter__messaging_system_unknown_keys {
     sql: ${TABLE}.metrics.labeled_counter.messaging_system_unknown_keys ;;
     hidden: yes

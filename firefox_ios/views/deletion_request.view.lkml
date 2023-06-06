@@ -406,6 +406,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
+    description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {
@@ -416,6 +417,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
@@ -546,27 +548,15 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.firefox_ios.deletion_request"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.firefox_ios.deletion_request"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_ios_firefoxbeta.deletion_request"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_ios_fennec.deletion_request"
-    }
+  filter: channel {
+    type: string
+    description: "Filter by the app's channel"
+    sql: {% condition %} ${TABLE}.normalized_channel {% endcondition %} ;;
+    default_value: "release"
+    suggestions: ["release", "beta", "nightly"]
   }
 
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.firefox_ios.deletion_request` ;;
 }
 
 view: deletion_request__metrics__labeled_counter__glean_error_invalid_label {

@@ -573,22 +573,15 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.org_mozilla_firefox_beta.topsites_impression"
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_firefox_beta.topsites_impression"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix.topsites_impression"
-    }
+  filter: channel {
+    type: string
+    description: "Filter by the app's channel"
+    sql: {% condition %} ${TABLE}.normalized_channel {% endcondition %} ;;
+    default_value: "beta"
+    suggestions: ["beta", "nightly"]
   }
 
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.org_mozilla_firefox_beta.topsites_impression` ;;
 }
 
 view: suggest__topsites_impression__metrics__labeled_counter__glean_error_invalid_label {

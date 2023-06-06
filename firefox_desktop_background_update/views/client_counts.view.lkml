@@ -11,7 +11,7 @@ view: client_counts {
 
   dimension: have_completed_period {
     type: yesno
-    description: "Only for use with cohort analysis.Filter on true to remove the tail of incomplete data from cohorts.Indicates whether the cohort for this row have all had a chance to complete this interval.For example, new clients from yesterday have not all had a chance to send a ping for today."
+    description: "Only for use with cohort analysis. Filter on true to remove the tail of incomplete data from cohorts. Indicates whether the cohort for this row have all had a chance to complete this interval. For example, new clients from yesterday have not all had a chance to send a ping for today."
     sql: DATE_ADD(
                 {% if client_counts.first_seen_date._is_selected %}
                   DATE_ADD(DATE(${client_counts.first_seen_date}), INTERVAL 1 DAY)
@@ -24,13 +24,13 @@ view: client_counts {
                 {% endif %}
                 ,
                 {% if client_counts.days_since_first_seen._is_selected %}
-                  INTERVAL ${client_counts.days_since_first_seen} DAY
+                  INTERVAL CAST(${client_counts.days_since_first_seen} AS INT64) DAY
                 {% elsif client_counts.weeks_since_first_seen._is_selected %}
-                  INTERVAL ${client_counts.weeks_since_first_seen} WEEK
+                  INTERVAL CAST(${client_counts.weeks_since_first_seen} AS INT64) WEEK
                 {% elsif client_counts.months_since_first_seen._is_selected %}
-                  INTERVAL ${client_counts.months_since_first_seen} MONTH
+                  INTERVAL CAST(${client_counts.months_since_first_seen} AS INT64) MONTH
                 {% elsif client_counts.years_since_first_seen._is_selected %}
-                  INTERVAL ${client_counts.months_since_first_seen} YEAR
+                  INTERVAL CAST(${client_counts.months_since_first_seen} AS INT64) YEAR
                 {% endif %}
               ) < current_date ;;
   }

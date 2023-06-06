@@ -14,7 +14,7 @@ explore: baseline {
 
   always_filter: {
     filters: [
-      channel: "mozdata.fenix.baseline",
+      channel: "release",
       submission_date: "28 days",
     ]
   }

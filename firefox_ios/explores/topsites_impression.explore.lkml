@@ -14,7 +14,7 @@ explore: topsites_impression {
 
   always_filter: {
     filters: [
-      channel: "mozdata.firefox^_ios.topsites^_impression",
+      channel: "release",
       submission_date: "28 days",
     ]
   }
