@@ -633,6 +633,13 @@ view: metrics_table {
     group_item_label: "Tracking Protection Toolbar Shield Clicked"
   }
 
+  dimension: metrics__counter__translations_requests_count {
+    sql: ${TABLE}.metrics.counter.translations_requests_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Translations Requests Count"
+  }
+
   dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_cookie_access_fixup_diff.count ;;
     type: number
@@ -1349,6 +1356,20 @@ view: metrics_table {
     sql: ${TABLE}.metrics.rate.rtcrtpsender_used_sendencodings.numerator ;;
     type: number
     group_label: "Metrics Rate Rtcrtpsender Used Sendencodings"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__translations_error_rate__denominator {
+    sql: ${TABLE}.metrics.rate.translations_error_rate.denominator ;;
+    type: number
+    group_label: "Metrics Rate Translations Error Rate"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__translations_error_rate__numerator {
+    sql: ${TABLE}.metrics.rate.translations_error_rate.numerator ;;
+    type: number
+    group_label: "Metrics Rate Translations Error Rate"
     group_item_label: "Numerator"
   }
 
@@ -2695,6 +2716,7 @@ view: metrics_table {
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
+    description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {
@@ -2705,6 +2727,7 @@ view: metrics_table {
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {

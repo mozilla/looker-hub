@@ -652,6 +652,15 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__translations_requests_count {
+    sql: ${TABLE}.metrics.counter.translations_requests_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Translations Requests Count"
+    description: "The count of translation requests.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_cookie_access_fixup_diff.count ;;
     type: number
@@ -1559,6 +1568,20 @@ count. Unset on other platforms.
     sql: ${TABLE}.metrics.rate.rtcrtpsender_used_sendencodings.numerator ;;
     type: number
     group_label: "Metrics Rate Rtcrtpsender Used Sendencodings"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__translations_error_rate__denominator {
+    sql: ${TABLE}.metrics.rate.translations_error_rate.denominator ;;
+    type: number
+    group_label: "Metrics Rate Translations Error Rate"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__translations_error_rate__numerator {
+    sql: ${TABLE}.metrics.rate.translations_error_rate.numerator ;;
+    type: number
+    group_label: "Metrics Rate Translations Error Rate"
     group_item_label: "Numerator"
   }
 
