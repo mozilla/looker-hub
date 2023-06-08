@@ -4977,10 +4977,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 10
+            default: Windows 7
             options:
-            - Windows 10
             - Windows 7
+            - Windows 10
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -5016,13 +5016,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id086
           normalized_channel:
-            default: esr
+            default: beta
             options:
-            - esr
             - beta
+            - nightly
+            - esr
             - aurora
             - release
-            - nightly
             - default
             - nightly-pine
             - nightly-oak
@@ -6366,17 +6366,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id188
           channel:
-            default: nightly
+            default: beta
             options:
-            - nightly
             - beta
             - release
+            - nightly
           os:
-            default: Linux
+            default: Windows_NT
             options:
+            - Windows_NT
             - Linux
             - Darwin
-            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id189
