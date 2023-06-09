@@ -169,5 +169,9 @@ view: apple_subscriptions_v1 {
     ]
   }
 
+  measure: count {
+    type: count
+  }
+
   sql_table_name: `moz-fx-data-shared-prod.subscription_platform_derived.apple_subscriptions_v1` ;;
 }
