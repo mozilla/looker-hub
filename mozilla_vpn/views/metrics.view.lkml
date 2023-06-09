@@ -4,7 +4,61 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: daemonsession_table {
+view: metrics {
+  dimension: metrics__timing_distribution__performance_time_to_main_screen__sum {
+    label: "Performance Time To Main Screen Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.sum ;;
+    type: number
+    group_label: "Performance"
+    group_item_label: "Time To Main Screen Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time To Main Screen Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/performance_time_to_main_screen"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time the app took between starting and rendering the main screen.
+"
+  }
+
+  dimension: metrics__boolean__settings_connect_on_startup_active {
+    label: "Settings Connect On Startup Active"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.settings_connect_on_startup_active ;;
+    type: yesno
+    group_label: "Settings"
+    group_item_label: "Connect On Startup Active"
+
+    link: {
+      label: "Glean Dictionary reference for Settings Connect On Startup Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/settings_connect_on_startup_active"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The status of whether the VPN is activated on device start
+"
+  }
+
+  dimension: metrics__boolean__settings_using_system_language {
+    label: "Settings Using System Language"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.settings_using_system_language ;;
+    type: yesno
+    group_label: "Settings"
+    group_item_label: "Using System Language"
+
+    link: {
+      label: "Glean Dictionary reference for Settings Using System Language"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/settings_using_system_language"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Status of whether app is being used in language of the operating system
+"
+  }
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -116,6 +170,7 @@ view: daemonsession_table {
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    primary_key: yes
   }
 
   dimension: events {
@@ -276,33 +331,6 @@ view: daemonsession_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__counter__session_connection_health_stable_count {
-    sql: ${TABLE}.metrics.counter.session_connection_health_stable_count ;;
-    type: number
-    group_label: "Metrics Counter"
-    group_item_label: "Session Connection Health Stable Count"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_label {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_state {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_value {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
-    hidden: yes
-  }
-
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
@@ -439,67 +467,14 @@ view: daemonsession_table {
     ]
   }
 
-  sql_table_name: `mozdata.mozilla_vpn.daemonsession` ;;
-}
-
-view: daemonsession_table__events {
-  dimension: category {
-    sql: ${TABLE}.category ;;
-    type: string
+  measure: clients {
+    type: count_distinct
+    sql: ${client_info__client_id} ;;
   }
 
-  dimension: extra {
-    sql: ${TABLE}.extra ;;
-    hidden: yes
+  measure: ping_count {
+    type: count
   }
 
-  dimension: name {
-    sql: ${TABLE}.name ;;
-    type: string
-  }
-
-  dimension: timestamp {
-    sql: ${TABLE}.timestamp ;;
-    type: number
-  }
-}
-
-view: daemonsession_table__events__extra {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: daemonsession_table__ping_info__experiments {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__branch {
-    sql: ${TABLE}.value.branch ;;
-    type: string
-    group_label: "Value"
-    group_item_label: "Branch"
-  }
-
-  dimension: value__extra__enrollment_id {
-    sql: ${TABLE}.value.extra.enrollment_id ;;
-    type: string
-    group_label: "Value Extra"
-    group_item_label: "Enrollment Id"
-  }
-
-  dimension: value__extra__type {
-    sql: ${TABLE}.value.extra.type ;;
-    type: string
-    group_label: "Value Extra"
-    group_item_label: "Type"
-  }
+  sql_table_name: `mozdata.mozilla_vpn.metrics` ;;
 }

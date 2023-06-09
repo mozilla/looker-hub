@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: daemonsession_table {
+view: baseline_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -276,11 +276,18 @@ view: daemonsession_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__counter__session_connection_health_stable_count {
-    sql: ${TABLE}.metrics.counter.session_connection_health_stable_count ;;
+  dimension: metrics__counter__glean_validation_metrics_ping_count {
+    sql: ${TABLE}.metrics.counter.glean_validation_metrics_ping_count ;;
     type: number
     group_label: "Metrics Counter"
-    group_item_label: "Session Connection Health Stable Count"
+    group_item_label: "Glean Validation Metrics Ping Count"
+  }
+
+  dimension: metrics__datetime__raw_glean_validation_first_run_hour {
+    sql: ${TABLE}.metrics.datetime.raw_glean_validation_first_run_hour ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Glean Validation First Run Hour"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -301,6 +308,32 @@ view: daemonsession_table {
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__glean_validation_pings_submitted {
+    sql: ${TABLE}.metrics.labeled_counter.glean_validation_pings_submitted ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string__glean_baseline_locale {
+    sql: ${TABLE}.metrics.string.glean_baseline_locale ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Baseline Locale"
+  }
+
+  dimension: metrics__timespan__glean_baseline_duration__time_unit {
+    sql: ${TABLE}.metrics.timespan.glean_baseline_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Glean Baseline Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__glean_baseline_duration__value {
+    sql: ${TABLE}.metrics.timespan.glean_baseline_duration.value ;;
+    type: number
+    group_label: "Metrics Timespan Glean Baseline Duration"
+    group_item_label: "Value"
   }
 
   dimension: normalized_app_id {
@@ -395,6 +428,21 @@ view: daemonsession_table {
     label: "Metadata Header: Parsed Date"
   }
 
+  dimension_group: metrics__datetime__glean_validation_first_run_hour {
+    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Glean Validation First Run Hour"
+  }
+
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
@@ -439,10 +487,10 @@ view: daemonsession_table {
     ]
   }
 
-  sql_table_name: `mozdata.mozilla_vpn.daemonsession` ;;
+  sql_table_name: `mozdata.mozilla_vpn.baseline` ;;
 }
 
-view: daemonsession_table__events {
+view: baseline_table__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
@@ -464,7 +512,7 @@ view: daemonsession_table__events {
   }
 }
 
-view: daemonsession_table__events__extra {
+view: baseline_table__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -476,7 +524,7 @@ view: daemonsession_table__events__extra {
   }
 }
 
-view: daemonsession_table__ping_info__experiments {
+view: baseline_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

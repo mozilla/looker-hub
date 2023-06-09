@@ -5,6 +5,25 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: daemonsession {
+  dimension: metrics__counter__session_connection_health_stable_count {
+    label: "Session Connection Health Stable Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.session_connection_health_stable_count ;;
+    type: number
+    group_label: "Session"
+    group_item_label: "Connection Health Stable Count"
+
+    link: {
+      label: "Glean Dictionary reference for Session Connection Health Stable Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_connection_health_stable_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of times that the connection health check succeeds.
+Collected only on mobile apps.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes
@@ -492,6 +511,31 @@ The labels are the `category.name` identifier of the metric.
 
   measure: ping_count {
     type: count
+  }
+
+  measure: session_connection_health_stable_count {
+    type: sum
+    sql: ${metrics__counter__session_connection_health_stable_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Session Connection Health Stable Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_connection_health_stable_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: session_connection_health_stable_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__session_connection_health_stable_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Session Connection Health Stable Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_connection_health_stable_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
   }
 
   sql_table_name: `mozdata.mozilla_vpn.daemonsession` ;;
