@@ -4,95 +4,58 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: daemonsession {
-  dimension: metrics__counter__session_connection_health_stable_count {
-    label: "Session Connection Health Stable Count"
+view: metrics {
+  dimension: metrics__timing_distribution__performance_time_to_main_screen__sum {
+    label: "Performance Time To Main Screen Sum"
     hidden: no
-    sql: ${TABLE}.metrics.counter.session_connection_health_stable_count ;;
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.sum ;;
     type: number
-    group_label: "Session"
-    group_item_label: "Connection Health Stable Count"
+    group_label: "Performance"
+    group_item_label: "Time To Main Screen Sum"
 
     link: {
-      label: "Glean Dictionary reference for Session Connection Health Stable Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_connection_health_stable_count"
+      label: "Glean Dictionary reference for Performance Time To Main Screen Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/performance_time_to_main_screen"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Count of times that the connection health check succeeds.
-Collected only on mobile apps.
+    description: "The time the app took between starting and rendering the main screen.
 "
   }
 
-  dimension: metrics__labeled_counter__glean_error_invalid_label {
-    label: "Glean Error Invalid Label"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
-    group_label: "Glean Error"
-    group_item_label: "Invalid Label"
+  dimension: metrics__boolean__settings_connect_on_startup_active {
+    label: "Settings Connect On Startup Active"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.settings_connect_on_startup_active ;;
+    type: yesno
+    group_label: "Settings"
+    group_item_label: "Connect On Startup Active"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Label"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/glean_error_invalid_label"
+      label: "Glean Dictionary reference for Settings Connect On Startup Active"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/settings_connect_on_startup_active"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts the number of times a metric was set with an invalid label.
-The labels are the `category.name` identifier of the metric.
+    description: "The status of whether the VPN is activated on device start
 "
   }
 
-  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    label: "Glean Error Invalid Overflow"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
-    group_label: "Glean Error"
-    group_item_label: "Invalid Overflow"
+  dimension: metrics__boolean__settings_using_system_language {
+    label: "Settings Using System Language"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.settings_using_system_language ;;
+    type: yesno
+    group_label: "Settings"
+    group_item_label: "Using System Language"
 
     link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/glean_error_invalid_overflow"
+      label: "Glean Dictionary reference for Settings Using System Language"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/settings_using_system_language"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts the number of times a metric was set a value that overflowed.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_state {
-    label: "Glean Error Invalid State"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
-    group_label: "Glean Error"
-    group_item_label: "Invalid State"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Error Invalid State"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/glean_error_invalid_state"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times a timing metric was used incorrectly.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_value {
-    label: "Glean Error Invalid Value"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
-    group_label: "Glean Error"
-    group_item_label: "Invalid Value"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Value"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/glean_error_invalid_value"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times a metric was set to an invalid value.
-The labels are the `category.name` identifier of the metric.
+    description: "Status of whether app is being used in language of the operating system
 "
   }
 
@@ -513,278 +476,5 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  measure: session_connection_health_stable_count {
-    type: sum
-    sql: ${metrics__counter__session_connection_health_stable_count} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Session Connection Health Stable Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_connection_health_stable_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: session_connection_health_stable_count_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__session_connection_health_stable_count: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Session Connection Health Stable Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_connection_health_stable_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  sql_table_name: `mozdata.mozilla_vpn.daemonsession` ;;
-}
-
-view: daemonsession__metrics__labeled_counter__glean_error_invalid_label {
-  label: "Glean Error - Invalid Label"
-
-  dimension: document_id {
-    type: string
-    sql: ${daemonsession.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${daemonsession.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__daemonsession__metrics__labeled_counter__glean_error_invalid_label
-    suggest_dimension: suggest__daemonsession__metrics__labeled_counter__glean_error_invalid_label.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${daemonsession.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: daemonsession__metrics__labeled_counter__glean_error_invalid_overflow {
-  label: "Glean Error - Invalid Overflow"
-
-  dimension: document_id {
-    type: string
-    sql: ${daemonsession.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${daemonsession.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__daemonsession__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__daemonsession__metrics__labeled_counter__glean_error_invalid_overflow.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${daemonsession.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: daemonsession__metrics__labeled_counter__glean_error_invalid_state {
-  label: "Glean Error - Invalid State"
-
-  dimension: document_id {
-    type: string
-    sql: ${daemonsession.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${daemonsession.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__daemonsession__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__daemonsession__metrics__labeled_counter__glean_error_invalid_state.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${daemonsession.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: daemonsession__metrics__labeled_counter__glean_error_invalid_value {
-  label: "Glean Error - Invalid Value"
-
-  dimension: document_id {
-    type: string
-    sql: ${daemonsession.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${daemonsession.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__daemonsession__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__daemonsession__metrics__labeled_counter__glean_error_invalid_value.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${daemonsession.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
-view: suggest__daemonsession__metrics__labeled_counter__glean_error_invalid_label {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.mozilla_vpn.daemonsession as t,
-unnest(metrics.labeled_counter.glean_error_invalid_label) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__daemonsession__metrics__labeled_counter__glean_error_invalid_overflow {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.mozilla_vpn.daemonsession as t,
-unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__daemonsession__metrics__labeled_counter__glean_error_invalid_state {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.mozilla_vpn.daemonsession as t,
-unnest(metrics.labeled_counter.glean_error_invalid_state) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__daemonsession__metrics__labeled_counter__glean_error_invalid_value {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.mozilla_vpn.daemonsession as t,
-unnest(metrics.labeled_counter.glean_error_invalid_value) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
+  sql_table_name: `mozdata.mozilla_vpn.metrics` ;;
 }
