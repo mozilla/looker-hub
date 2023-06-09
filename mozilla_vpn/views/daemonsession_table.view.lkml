@@ -276,6 +276,13 @@ view: daemonsession_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__counter__session_connection_health_stable_count {
+    sql: ${TABLE}.metrics.counter.session_connection_health_stable_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Session Connection Health Stable Count"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
