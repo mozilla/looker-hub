@@ -4040,28 +4040,28 @@ operational_monitoring:
         explore: abouthome_startup_cache_rollout
         group_by_dimension: null
         summaries: &id003
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.abouthome_startup_cache_rollout_statistics
@@ -4154,28 +4154,28 @@ operational_monitoring:
         explore: awesome_bar_result_menu_rollout_phase_1
         group_by_dimension: null
         summaries: &id012
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.awesome_bar_result_menu_rollout_phase_1_statistics
@@ -4699,44 +4699,82 @@ operational_monitoring:
         explore: device_migration_existing_user_messaging_tour_spotlight_rollout
         group_by_dimension: null
         summaries: &id060
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.device_migration_existing_user_messaging_tour_spotlight_rollout_statistics
         xaxis: submission_date
       title: Device Migration Existing User Messaging Tour Spotlight Rollout
       type: operational_monitoring_dashboard
-    enrollment_volume_debugging:
+    device_migration_existing_users_sumo_switch_device_cfr_rollout:
       tables:
       - branches: &id061
         - enabled
         - disabled
         compact_visualization: false
         dimensions: &id062 {}
-        explore: enrollment_volume_debugging
+        explore: device_migration_existing_users_sumo_switch_device_cfr_rollout
         group_by_dimension: null
         summaries: &id063
+        - metric: uri_count
+          metric_groups: []
+          statistic: mean
+        - metric: retained
+          metric_groups: []
+          statistic: mean
+        - metric: days_of_use
+          metric_groups: []
+          statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
+        - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
+          metric_groups: []
+          statistic: mean
+        - metric: ad_clicks
+          metric_groups: []
+          statistic: mean
+        - metric: search_count
+          metric_groups: []
+          statistic: mean
+        table: moz-fx-data-shared-prod.operational_monitoring.device_migration_existing_users_sumo_switch_device_cfr_rollout_statistics
+        xaxis: submission_date
+      title: Device Migration Existing Users Sumo Switch Device Cfr Rollout
+      type: operational_monitoring_dashboard
+    enrollment_volume_debugging:
+      tables:
+      - branches: &id064
+        - enabled
+        - disabled
+        compact_visualization: false
+        dimensions: &id065 {}
+        explore: enrollment_volume_debugging
+        group_by_dimension: null
+        summaries: &id066
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
@@ -4767,14 +4805,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     experiment_for_additional_metrics_for_product_insights_rollout:
       tables:
-      - branches: &id064
+      - branches: &id067
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id065 {}
+        dimensions: &id068 {}
         explore: experiment_for_additional_metrics_for_product_insights_rollout
         group_by_dimension: null
-        summaries: &id066
+        summaries: &id069
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
@@ -4805,14 +4843,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     experiment_for_additional_metrics_for_product_insights_rollout_100:
       tables:
-      - branches: &id067
+      - branches: &id070
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id068 {}
+        dimensions: &id071 {}
         explore: experiment_for_additional_metrics_for_product_insights_rollout_100
         group_by_dimension: null
-        summaries: &id069
+        summaries: &id072
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
@@ -4843,14 +4881,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     experiment_for_additional_metrics_for_product_insights_rollout_clone_2_45:
       tables:
-      - branches: &id070
+      - branches: &id073
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id071 {}
+        dimensions: &id074 {}
         explore: experiment_for_additional_metrics_for_product_insights_rollout_clone_2_45
         group_by_dimension: null
-        summaries: &id072
+        summaries: &id075
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
@@ -4882,36 +4920,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     firefox_accounts_toolbar_button_badge:
       tables:
-      - branches: &id073
+      - branches: &id076
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id074 {}
+        dimensions: &id077 {}
         explore: firefox_accounts_toolbar_button_badge
         group_by_dimension: null
-        summaries: &id075
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        summaries: &id078
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_accounts_toolbar_button_badge_statistics
@@ -4920,36 +4958,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     firefox_android_tcp_rollout_100:
       tables:
-      - branches: &id076
+      - branches: &id079
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id077 {}
+        dimensions: &id080 {}
         explore: firefox_android_tcp_rollout_100
         group_by_dimension: null
-        summaries: &id078
-        - metric: memory_total
+        summaries: &id081
+        - metric: tagged_sap_searches
           metric_groups: []
-          statistic: percentile
-        - metric: search_count
+          statistic: mean
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: tagged_sap_searches
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_android_tcp_rollout_100_statistics
@@ -4958,36 +4996,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     firefox_android_tcp_rollout_25:
       tables:
-      - branches: &id079
+      - branches: &id082
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id080 {}
+        dimensions: &id083 {}
         explore: firefox_android_tcp_rollout_25
         group_by_dimension: null
-        summaries: &id081
-        - metric: memory_total
+        summaries: &id084
+        - metric: tagged_sap_searches
           metric_groups: []
-          statistic: percentile
-        - metric: search_count
+          statistic: mean
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: tagged_sap_searches
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_android_tcp_rollout_25_statistics
@@ -4996,36 +5034,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     firefox_android_tcp_rollout_25_50:
       tables:
-      - branches: &id082
+      - branches: &id085
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id083 {}
+        dimensions: &id086 {}
         explore: firefox_android_tcp_rollout_25_50
         group_by_dimension: null
-        summaries: &id084
-        - metric: memory_total
+        summaries: &id087
+        - metric: tagged_sap_searches
           metric_groups: []
-          statistic: percentile
-        - metric: search_count
+          statistic: mean
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: tagged_sap_searches
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_android_tcp_rollout_25_50_statistics
@@ -5034,10 +5072,10 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     firefox_background_update:
       tables:
-      - branches: &id085
+      - branches: &id088
         - active
         compact_visualization: false
-        dimensions: &id086
+        dimensions: &id089
           normalized_channel:
             default: nightly
             options:
@@ -5057,8 +5095,11 @@ operational_monitoring:
             - Windows 11
         explore: firefox_background_update
         group_by_dimension: null
-        summaries: &id087
-        - metric: ping_volume
+        summaries: &id090
+        - metric: exception_rate
+          metric_groups: []
+          statistic: mean
+        - metric: crash_volume
           metric_groups: []
           statistic: sum
         - metric: client_volume
@@ -5067,13 +5108,10 @@ operational_monitoring:
         - metric: success_rate
           metric_groups: []
           statistic: mean
-        - metric: crash_volume
+        - metric: exception_volume
           metric_groups: []
           statistic: sum
-        - metric: exception_rate
-          metric_groups: []
-          statistic: mean
-        - metric: exception_volume
+        - metric: ping_volume
           metric_groups: []
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_background_update_statistics
@@ -5082,18 +5120,18 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     firefox_default_browser_agent:
       tables:
-      - branches: &id088
+      - branches: &id091
         - active
         compact_visualization: false
-        dimensions: &id089
+        dimensions: &id092
           normalized_channel:
-            default: beta
+            default: esr
             options:
-            - beta
             - esr
             - release
-            - nightly
             - aurora
+            - beta
+            - nightly
             - default
             - nightly-pine
             - nightly-oak
@@ -5109,52 +5147,68 @@ operational_monitoring:
             - Windows 8
         explore: firefox_default_browser_agent
         group_by_dimension: null
-        summaries: &id090
+        summaries: &id093
+        - metric: firefox_is_default_volume
+          metric_groups: []
+          statistic: sum
+        - metric: firefox_is_default_volume
+          metric_groups: []
+          statistic: mean
+        - metric: firefox_lost_default_volume
+          metric_groups: []
+          statistic: sum
+        - metric: firefox_lost_default_volume
+          metric_groups: []
+          statistic: mean
+        - metric: firefox_won_default_volume
+          metric_groups: []
+          statistic: sum
+        - metric: firefox_won_default_volume
+          metric_groups: []
+          statistic: mean
+        - metric: firefox_default_changed_volume
+          metric_groups: []
+          statistic: sum
+        - metric: firefox_default_changed_volume
+          metric_groups: []
+          statistic: mean
         - metric: ping_volume
           metric_groups: []
           statistic: sum
-        - metric: firefox_lost_default_volume
-          metric_groups: []
-          statistic: sum
-        - metric: firefox_lost_default_volume
-          metric_groups: []
-          statistic: mean
-        - metric: firefox_won_default_volume
-          metric_groups: []
-          statistic: sum
-        - metric: firefox_won_default_volume
-          metric_groups: []
-          statistic: mean
-        - metric: firefox_is_default_volume
-          metric_groups: []
-          statistic: sum
-        - metric: firefox_is_default_volume
-          metric_groups: []
-          statistic: mean
-        - metric: firefox_default_changed_volume
-          metric_groups: []
-          statistic: sum
-        - metric: firefox_default_changed_volume
-          metric_groups: []
-          statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_default_browser_agent_statistics
         xaxis: submission_date
       title: Firefox Default Browser Agent
       type: operational_monitoring_dashboard
     firefox_install_demo:
       tables:
-      - branches: &id091
+      - branches: &id094
         - active
         compact_visualization: false
-        dimensions: &id092 {}
+        dimensions: &id095 {}
         explore: firefox_install_demo
         group_by_dimension: null
-        summaries: &id093
+        summaries: &id096
+        - metric: install_volume_win10
+          metric_groups:
+          - installs_by_os
+          statistic: sum
+        - metric: install_volume_win10
+          metric_groups:
+          - installs_by_os
+          statistic: mean
         - metric: install_volume_win8
           metric_groups:
           - installs_by_os
           statistic: sum
         - metric: install_volume_win8
+          metric_groups:
+          - installs_by_os
+          statistic: mean
+        - metric: install_volume_win7
+          metric_groups:
+          - installs_by_os
+          statistic: sum
+        - metric: install_volume_win7
           metric_groups:
           - installs_by_os
           statistic: mean
@@ -5169,22 +5223,6 @@ operational_monitoring:
           - installs_by_os
           statistic: sum
         - metric: install_volume_win8_1
-          metric_groups:
-          - installs_by_os
-          statistic: mean
-        - metric: install_volume_win10
-          metric_groups:
-          - installs_by_os
-          statistic: sum
-        - metric: install_volume_win10
-          metric_groups:
-          - installs_by_os
-          statistic: mean
-        - metric: install_volume_win7
-          metric_groups:
-          - installs_by_os
-          statistic: sum
-        - metric: install_volume_win7
           metric_groups:
           - installs_by_os
           statistic: mean
@@ -5196,14 +5234,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     firefox_suggest_by_merino_nightly:
       tables:
-      - branches: &id094
+      - branches: &id097
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id095 {}
+        dimensions: &id098 {}
         explore: firefox_suggest_by_merino_nightly
         group_by_dimension: null
-        summaries: &id096
+        summaries: &id099
         - metric: memory_total
           metric_groups: []
           statistic: percentile
@@ -5228,10 +5266,10 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     firefox_uninstalls:
       tables:
-      - branches: &id097
+      - branches: &id100
         - active
         compact_visualization: false
-        dimensions: &id098
+        dimensions: &id101
           normalized_channel:
             default: release
             options:
@@ -5251,7 +5289,7 @@ operational_monitoring:
             - Windows 11
         explore: firefox_uninstalls
         group_by_dimension: null
-        summaries: &id099
+        summaries: &id102
         - metric: client_volume
           metric_groups: []
           statistic: sum
@@ -5261,14 +5299,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     first_run_easy_set_up_fx108_rollout:
       tables:
-      - branches: &id100
+      - branches: &id103
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id101 {}
+        dimensions: &id104 {}
         explore: first_run_easy_set_up_fx108_rollout
         group_by_dimension: null
-        summaries: &id102
+        summaries: &id105
         - metric: memory_total
           metric_groups: []
           statistic: percentile
@@ -5299,14 +5337,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     fox_doodle_pin_to_taskbar_rollout:
       tables:
-      - branches: &id103
+      - branches: &id106
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id104 {}
+        dimensions: &id107 {}
         explore: fox_doodle_pin_to_taskbar_rollout
         group_by_dimension: null
-        summaries: &id105
+        summaries: &id108
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
@@ -5337,14 +5375,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     fox_doodle_pin_to_taskbar_rollout_100:
       tables:
-      - branches: &id106
+      - branches: &id109
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id107 {}
+        dimensions: &id110 {}
         explore: fox_doodle_pin_to_taskbar_rollout_100
         group_by_dimension: null
-        summaries: &id108
+        summaries: &id111
         - metric: uri_count
           metric_groups: []
           statistic: mean
@@ -5375,14 +5413,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     fox_doodle_set_default_rollout:
       tables:
-      - branches: &id109
+      - branches: &id112
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id110 {}
+        dimensions: &id113 {}
         explore: fox_doodle_set_default_rollout
         group_by_dimension: null
-        summaries: &id111
+        summaries: &id114
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
@@ -5413,14 +5451,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     fox_doodle_set_default_rollout_100:
       tables:
-      - branches: &id112
+      - branches: &id115
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id113 {}
+        dimensions: &id116 {}
         explore: fox_doodle_set_default_rollout_100
         group_by_dimension: null
-        summaries: &id114
+        summaries: &id117
         - metric: uri_count
           metric_groups: []
           statistic: mean
@@ -5451,36 +5489,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     fx_release_android_re_engagement_notifications_114_rollout:
       tables:
-      - branches: &id115
+      - branches: &id118
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id116 {}
+        dimensions: &id119 {}
         explore: fx_release_android_re_engagement_notifications_114_rollout
         group_by_dimension: null
-        summaries: &id117
-        - metric: memory_total
+        summaries: &id120
+        - metric: tagged_sap_searches
           metric_groups: []
-          statistic: percentile
-        - metric: search_count
+          statistic: mean
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: tagged_sap_searches
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.fx_release_android_re_engagement_notifications_114_rollout_statistics
@@ -5489,14 +5527,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     import_infrequent_rollout_make_yourself_at_home:
       tables:
-      - branches: &id118
+      - branches: &id121
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id119 {}
+        dimensions: &id122 {}
         explore: import_infrequent_rollout_make_yourself_at_home
         group_by_dimension: null
-        summaries: &id120
+        summaries: &id123
         - metric: uri_count
           metric_groups: []
           statistic: mean
@@ -5527,27 +5565,27 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     ios_search_bar_placement_v2_treatment_a_rollout:
       tables:
-      - branches: &id121
+      - branches: &id124
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id122 {}
+        dimensions: &id125 {}
         explore: ios_search_bar_placement_v2_treatment_a_rollout
         group_by_dimension: null
-        summaries: &id123
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
+        summaries: &id126
         - metric: retained
           metric_groups: []
           statistic: mean
+        - metric: days_of_use
+          metric_groups: []
+          statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: days_of_use
           metric_groups: []
           statistic: mean
         - metric: search_count
@@ -5559,14 +5597,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     merino_py_rollout_for_firefox_suggest_phase_2:
       tables:
-      - branches: &id124
+      - branches: &id127
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id125 {}
+        dimensions: &id128 {}
         explore: merino_py_rollout_for_firefox_suggest_phase_2
         group_by_dimension: null
-        summaries: &id126
+        summaries: &id129
         - metric: retained
           metric_groups: []
           statistic: mean
@@ -5597,14 +5635,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     merino_py_rollout_for_firefox_suggest_phase_3:
       tables:
-      - branches: &id127
+      - branches: &id130
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id128 {}
+        dimensions: &id131 {}
         explore: merino_py_rollout_for_firefox_suggest_phase_3
         group_by_dimension: null
-        summaries: &id129
+        summaries: &id132
         - metric: retained
           metric_groups: []
           statistic: mean
@@ -5635,14 +5673,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     mixed_content_level_2_roll_out_release:
       tables:
-      - branches: &id130
+      - branches: &id133
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id131 {}
+        dimensions: &id134 {}
         explore: mixed_content_level_2_roll_out_release
         group_by_dimension: null
-        summaries: &id132
+        summaries: &id135
         - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
@@ -5673,36 +5711,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     mixed_content_level_2_roll_out_release_113:
       tables:
-      - branches: &id133
+      - branches: &id136
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id134 {}
+        dimensions: &id137 {}
         explore: mixed_content_level_2_roll_out_release_113
         group_by_dimension: null
-        summaries: &id135
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        summaries: &id138
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.mixed_content_level_2_roll_out_release_113_statistics
@@ -5711,14 +5749,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     mozilla_rally_convert_core_add_on_users_to_attention_stream_2nd_rollout:
       tables:
-      - branches: &id136
+      - branches: &id139
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id137 {}
+        dimensions: &id140 {}
         explore: mozilla_rally_convert_core_add_on_users_to_attention_stream_2nd_rollout
         group_by_dimension: null
-        summaries: &id138
+        summaries: &id141
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
@@ -5749,14 +5787,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     mr2022_backgroundtaskmessage_experiment_sizing:
       tables:
-      - branches: &id139
+      - branches: &id142
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id140 {}
+        dimensions: &id143 {}
         explore: mr2022_backgroundtaskmessage_experiment_sizing
         group_by_dimension: null
-        summaries: &id141
+        summaries: &id144
         - metric: memory_total
           metric_groups: []
           statistic: percentile
@@ -5781,14 +5819,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     mr2022_backgroundtaskmessage_experiment_sizing_release_106:
       tables:
-      - branches: &id142
+      - branches: &id145
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id143 {}
+        dimensions: &id146 {}
         explore: mr2022_backgroundtaskmessage_experiment_sizing_release_106
         group_by_dimension: null
-        summaries: &id144
+        summaries: &id147
         - metric: main_crashes
           metric_groups: []
           statistic: sum
@@ -5813,14 +5851,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     mr2022_backgroundtaskmessage_notification_beta_107:
       tables:
-      - branches: &id145
+      - branches: &id148
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id146 {}
+        dimensions: &id149 {}
         explore: mr2022_backgroundtaskmessage_notification_beta_107
         group_by_dimension: null
-        summaries: &id147
+        summaries: &id150
         - metric: main_crashes
           metric_groups: []
           statistic: sum
@@ -5845,14 +5883,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     mr2022_backgroundtaskmessage_notification_beta_107_experiment_1:
       tables:
-      - branches: &id148
+      - branches: &id151
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id149 {}
+        dimensions: &id152 {}
         explore: mr2022_backgroundtaskmessage_notification_beta_107_experiment_1
         group_by_dimension: null
-        summaries: &id150
+        summaries: &id153
         - metric: oom_crashes
           metric_groups: []
           statistic: sum
@@ -5877,36 +5915,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     mr2022_backgroundtaskmessage_notification_release_1pct:
       tables:
-      - branches: &id151
+      - branches: &id154
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id152 {}
+        dimensions: &id155 {}
         explore: mr2022_backgroundtaskmessage_notification_release_1pct
         group_by_dimension: null
-        summaries: &id153
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        summaries: &id156
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.mr2022_backgroundtaskmessage_notification_release_1pct_statistics
@@ -5915,10 +5953,10 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     network_performance_desktop_build_by_build:
       tables:
-      - branches: &id154
+      - branches: &id157
         - active
         compact_visualization: false
-        dimensions: &id155
+        dimensions: &id158
           os:
             default: Linux
             options:
@@ -5927,20 +5965,20 @@ operational_monitoring:
             - Mac
         explore: network_performance_desktop_build_by_build
         group_by_dimension: null
-        summaries: &id156
-        - metric: http_page_open_to_first_sent
-          metric_groups: []
-          statistic: percentile
+        summaries: &id159
         - metric: dns_lookup_time
           metric_groups: []
           statistic: percentile
-        - metric: http_sub_tls_handshake
+        - metric: http_page_tls_handshake
           metric_groups: []
           statistic: percentile
         - metric: time_to_response_start_ms
           metric_groups: []
           statistic: percentile
-        - metric: http_page_tls_handshake
+        - metric: http_sub_tls_handshake
+          metric_groups: []
+          statistic: percentile
+        - metric: http_page_open_to_first_sent
           metric_groups: []
           statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.network_performance_desktop_build_by_build_statistics
@@ -5949,36 +5987,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     new_import_interface_firefox_114_existing_users_rollout:
       tables:
-      - branches: &id157
+      - branches: &id160
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id158 {}
+        dimensions: &id161 {}
         explore: new_import_interface_firefox_114_existing_users_rollout
         group_by_dimension: null
-        summaries: &id159
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        summaries: &id162
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.new_import_interface_firefox_114_existing_users_rollout_statistics
@@ -5987,36 +6025,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     next_generation_accessibility_engine_powering_screen_readers:
       tables:
-      - branches: &id160
+      - branches: &id163
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id161 {}
+        dimensions: &id164 {}
         explore: next_generation_accessibility_engine_powering_screen_readers
         group_by_dimension: null
-        summaries: &id162
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        summaries: &id165
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.next_generation_accessibility_engine_powering_screen_readers_statistics
@@ -6025,14 +6063,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     nimbus_pref_qa_1_2week_rollout:
       tables:
-      - branches: &id163
+      - branches: &id166
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id164 {}
+        dimensions: &id167 {}
         explore: nimbus_pref_qa_1_2week_rollout
         group_by_dimension: null
-        summaries: &id165
+        summaries: &id168
         - metric: retained
           metric_groups: []
           statistic: mean
@@ -6063,14 +6101,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     nimbus_pref_qa_1_4week_rollout:
       tables:
-      - branches: &id166
+      - branches: &id169
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id167 {}
+        dimensions: &id170 {}
         explore: nimbus_pref_qa_1_4week_rollout
         group_by_dimension: null
-        summaries: &id168
+        summaries: &id171
         - metric: retained
           metric_groups: []
           statistic: mean
@@ -6101,14 +6139,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     nimbus_pref_qa_2_2week_rollout:
       tables:
-      - branches: &id169
+      - branches: &id172
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id170 {}
+        dimensions: &id173 {}
         explore: nimbus_pref_qa_2_2week_rollout
         group_by_dimension: null
-        summaries: &id171
+        summaries: &id174
         - metric: retained
           metric_groups: []
           statistic: mean
@@ -6139,14 +6177,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     nimbus_pref_qa_2_4week_rollout:
       tables:
-      - branches: &id172
+      - branches: &id175
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id173 {}
+        dimensions: &id176 {}
         explore: nimbus_pref_qa_2_4week_rollout
         group_by_dimension: null
-        summaries: &id174
+        summaries: &id177
         - metric: retained
           metric_groups: []
           statistic: mean
@@ -6175,12 +6213,50 @@ operational_monitoring:
         xaxis: submission_date
       title: Nimbus Pref Qa 2 4Week Rollout
       type: operational_monitoring_dashboard
+    opaque_response_blocking_orb_beta_rollout:
+      tables:
+      - branches: &id178
+        - enabled
+        - disabled
+        compact_visualization: false
+        dimensions: &id179 {}
+        explore: opaque_response_blocking_orb_beta_rollout
+        group_by_dimension: null
+        summaries: &id180
+        - metric: uri_count
+          metric_groups: []
+          statistic: mean
+        - metric: retained
+          metric_groups: []
+          statistic: mean
+        - metric: days_of_use
+          metric_groups: []
+          statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
+        - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
+          metric_groups: []
+          statistic: mean
+        - metric: ad_clicks
+          metric_groups: []
+          statistic: mean
+        - metric: search_count
+          metric_groups: []
+          statistic: mean
+        table: moz-fx-data-shared-prod.operational_monitoring.opaque_response_blocking_orb_beta_rollout_statistics
+        xaxis: submission_date
+      title: Opaque Response Blocking Orb Beta Rollout
+      type: operational_monitoring_dashboard
     performance_desktop_build_by_build_beta:
       tables:
-      - branches: &id175
+      - branches: &id181
         - active
         compact_visualization: false
-        dimensions: &id176
+        dimensions: &id182
           os:
             default: Linux
             options:
@@ -6189,74 +6265,74 @@ operational_monitoring:
             - Mac
         explore: performance_desktop_build_by_build_beta
         group_by_dimension: null
-        summaries: &id177
-        - metric: scroll_present_latency
-          metric_groups: []
-          statistic: percentile
-        - metric: perf_dom_contentperf_dom_content_loaded_time_from_responsestart_ms_loaded_time
-          metric_groups: []
-          statistic: percentile
-        - metric: input_event_response_coalesced
-          metric_groups: []
-          statistic: percentile
-        - metric: perf_request_animation_callback_non_pageload
-          metric_groups: []
-          statistic: percentile
-        - metric: time_to_first_interaction_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: perf_dom_content_loaded_time
+        summaries: &id183
+        - metric: js_pageload_baseline_compile_ms
           metric_groups: []
           statistic: percentile
         - metric: keypress_present_latency_ms
           metric_groups: []
           statistic: percentile
-        - metric: js_pageload_xdr_encoding_ms
+        - metric: perf_first_contentful_paint_ms
           metric_groups: []
           statistic: percentile
         - metric: perf_request_animation_callback_pageload
           metric_groups: []
           statistic: percentile
-        - metric: perf_first_contentful_paint_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: fx_page_load_ms_2
-          metric_groups: []
-          statistic: percentile
-        - metric: cycle_collector_visited_ref_counted
-          metric_groups: []
-          statistic: percentile
-        - metric: mouseup_followed_by_click_present_latency
-          metric_groups: []
-          statistic: percentile
-        - metric: perf_page_load_time_from_responsestart
-          metric_groups: []
-          statistic: percentile
-        - metric: js_pageload_execution_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: cycle_collector_visited_gced
-          metric_groups: []
-          statistic: percentile
-        - metric: perf_page_load_time_ms
-          metric_groups: []
-          statistic: percentile
         - metric: js_pageload_protect_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: timestamps_about_home_topsites_first_paint
-          metric_groups: []
-          statistic: percentile
-        - metric: js_pageload_parse_ms
-          metric_groups: []
-          statistic: percentile
-        - metric: js_pageload_baseline_compile_ms
           metric_groups: []
           statistic: percentile
         - metric: js_pageload_delazification_ms
           metric_groups: []
           statistic: percentile
+        - metric: perf_dom_contentperf_dom_content_loaded_time_from_responsestart_ms_loaded_time
+          metric_groups: []
+          statistic: percentile
+        - metric: perf_dom_content_loaded_time
+          metric_groups: []
+          statistic: percentile
+        - metric: js_pageload_parse_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: timestamps_about_home_topsites_first_paint
+          metric_groups: []
+          statistic: percentile
+        - metric: scroll_present_latency
+          metric_groups: []
+          statistic: percentile
         - metric: timestamps_first_paint_two
+          metric_groups: []
+          statistic: percentile
+        - metric: js_pageload_execution_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: perf_request_animation_callback_non_pageload
+          metric_groups: []
+          statistic: percentile
+        - metric: js_pageload_xdr_encoding_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: time_to_first_interaction_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: perf_page_load_time_ms
+          metric_groups: []
+          statistic: percentile
+        - metric: fx_page_load_ms_2
+          metric_groups: []
+          statistic: percentile
+        - metric: mouseup_followed_by_click_present_latency
+          metric_groups: []
+          statistic: percentile
+        - metric: cycle_collector_visited_ref_counted
+          metric_groups: []
+          statistic: percentile
+        - metric: input_event_response_coalesced
+          metric_groups: []
+          statistic: percentile
+        - metric: cycle_collector_visited_gced
+          metric_groups: []
+          statistic: percentile
+        - metric: perf_page_load_time_from_responsestart
           metric_groups: []
           statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.performance_desktop_build_by_build_beta_statistics
@@ -6265,44 +6341,44 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     performance_fenix_build_by_build_beta:
       tables:
-      - branches: &id178
+      - branches: &id184
         - active
         compact_visualization: false
-        dimensions: &id179 {}
+        dimensions: &id185 {}
         explore: performance_fenix_build_by_build_beta
         group_by_dimension: null
-        summaries: &id180
-        - metric: performance_pageload_dcl_responsestart
-          metric_groups: []
-          statistic: percentile
-        - metric: performance_pageload_req_anim_frame_callback
-          metric_groups: []
-          statistic: percentile
+        summaries: &id186
         - metric: performance_pageload_dcl
           metric_groups: []
           statistic: percentile
         - metric: perf_startup_cold_main_app_to_first_frame
           metric_groups: []
           statistic: percentile
-        - metric: performance_pageload_fcp_responsestart
+        - metric: perf_startup_cold_view_app_to_first_frame
           metric_groups: []
           statistic: percentile
-        - metric: perf_startup_cold_view_app_to_first_frame
+        - metric: performance_pageload_fcp_responsestart
           metric_groups: []
           statistic: percentile
         - metric: storage_stats_app_bytes
           metric_groups: []
           statistic: percentile
-        - metric: storage_stats_cache_bytes
+        - metric: storage_stats_data_dir_bytes
           metric_groups: []
           statistic: percentile
-        - metric: storage_stats_data_dir_bytes
+        - metric: performance_pageload_load_time
           metric_groups: []
           statistic: percentile
         - metric: performance_pageload_load_time_responsestart
           metric_groups: []
           statistic: percentile
-        - metric: performance_pageload_load_time
+        - metric: performance_pageload_dcl_responsestart
+          metric_groups: []
+          statistic: percentile
+        - metric: performance_pageload_req_anim_frame_callback
+          metric_groups: []
+          statistic: percentile
+        - metric: storage_stats_cache_bytes
           metric_groups: []
           statistic: percentile
         - metric: performance_pageload_fcp
@@ -6314,36 +6390,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     persist_search_term_rollout_phase_1:
       tables:
-      - branches: &id181
+      - branches: &id187
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id182 {}
+        dimensions: &id188 {}
         explore: persist_search_term_rollout_phase_1
         group_by_dimension: null
-        summaries: &id183
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        summaries: &id189
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.persist_search_term_rollout_phase_1_statistics
@@ -6352,36 +6428,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     pocket_newtab_save_button:
       tables:
-      - branches: &id184
+      - branches: &id190
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id185 {}
+        dimensions: &id191 {}
         explore: pocket_newtab_save_button
         group_by_dimension: null
-        summaries: &id186
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        summaries: &id192
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.pocket_newtab_save_button_statistics
@@ -6390,36 +6466,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     pocket_newtab_save_button_25:
       tables:
-      - branches: &id187
+      - branches: &id193
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id188 {}
+        dimensions: &id194 {}
         explore: pocket_newtab_save_button_25
         group_by_dimension: null
-        summaries: &id189
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        summaries: &id195
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.pocket_newtab_save_button_25_statistics
@@ -6428,36 +6504,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     pocket_newtab_spocs_cache_rollout:
       tables:
-      - branches: &id190
+      - branches: &id196
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id191 {}
+        dimensions: &id197 {}
         explore: pocket_newtab_spocs_cache_rollout
         group_by_dimension: null
-        summaries: &id192
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        summaries: &id198
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.pocket_newtab_spocs_cache_rollout_statistics
@@ -6466,36 +6542,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     pocket_newtab_spocs_cache_rollout_50:
       tables:
-      - branches: &id193
+      - branches: &id199
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id194 {}
+        dimensions: &id200 {}
         explore: pocket_newtab_spocs_cache_rollout_50
         group_by_dimension: null
-        summaries: &id195
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        summaries: &id201
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.pocket_newtab_spocs_cache_rollout_50_statistics
@@ -6504,26 +6580,46 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     print_background_task_times:
       tables:
-      - branches: &id196
+      - branches: &id202
         - active
         compact_visualization: false
-        dimensions: &id197
+        dimensions: &id203
           channel:
-            default: release
+            default: beta
             options:
-            - release
-            - nightly
             - beta
+            - nightly
+            - release
           os:
-            default: Windows_NT
+            default: Darwin
             options:
+            - Darwin
             - Windows_NT
             - Linux
-            - Darwin
         explore: print_background_task_times
         group_by_dimension: null
-        summaries: &id198
-        - metric: printing_dialog_opened_via_preview_tm
+        summaries: &id204
+        - metric: printing_silent_print
+          metric_groups:
+          - print_initiation_counts
+          statistic: sum
+        - metric: printing_dialog_without_preview_cancelled
+          metric_groups:
+          - print_cancel_ratios
+          statistic: total_ratio
+        - metric: printing_dialog_via_preview_cancelled
+          metric_groups:
+          - print_cancel_ratios
+          statistic: total_ratio
+        - metric: printing_preview_cancelled
+          metric_groups:
+          - print_cancel_ratios
+          statistic: total_ratio
+        - metric: printing_preview_opened
+          metric_groups:
+          - print_initiation_counts
+          statistic: sum
+        - metric: printing_dialog_opened_without_preview
           metric_groups:
           - print_initiation_counts
           statistic: sum
@@ -6533,35 +6629,11 @@ operational_monitoring:
         - metric: print_count
           metric_groups: []
           statistic: percentile
-        - metric: printing_dialog_opened_without_preview
-          metric_groups:
-          - print_initiation_counts
-          statistic: sum
-        - metric: printing_dialog_without_preview_cancelled
-          metric_groups:
-          - print_cancel_ratios
-          statistic: total_ratio
-        - metric: printing_dialog_via_preview_cancelled_tm
-          metric_groups:
-          - print_cancel_ratios
-          statistic: total_ratio
-        - metric: printing_dialog_via_preview_cancelled
-          metric_groups:
-          - print_cancel_ratios
-          statistic: total_ratio
         - metric: printing_preview_opened_tm
           metric_groups:
           - print_initiation_counts
           statistic: sum
-        - metric: printing_preview_cancelled_tm
-          metric_groups:
-          - print_cancel_ratios
-          statistic: total_ratio
-        - metric: printing_silent_print
-          metric_groups:
-          - print_initiation_counts
-          statistic: sum
-        - metric: printing_preview_opened
+        - metric: printing_dialog_opened_via_preview_tm
           metric_groups:
           - print_initiation_counts
           statistic: sum
@@ -6569,7 +6641,11 @@ operational_monitoring:
           metric_groups:
           - print_initiation_counts
           statistic: sum
-        - metric: printing_preview_cancelled
+        - metric: printing_preview_cancelled_tm
+          metric_groups:
+          - print_cancel_ratios
+          statistic: total_ratio
+        - metric: printing_dialog_via_preview_cancelled_tm
           metric_groups:
           - print_cancel_ratios
           statistic: total_ratio
@@ -6579,10 +6655,10 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     print_background_task_times_by_build:
       tables:
-      - branches: &id199
+      - branches: &id205
         - active
         compact_visualization: false
-        dimensions: &id200
+        dimensions: &id206
           channel:
             default: nightly
             options:
@@ -6597,8 +6673,8 @@ operational_monitoring:
             - Darwin
         explore: print_background_task_times_by_build
         group_by_dimension: null
-        summaries: &id201
-        - metric: gfx_printer_doc_is_busy
+        summaries: &id207
+        - metric: abort
           metric_groups:
           - print_error_breakdown
           statistic: sum
@@ -6606,54 +6682,14 @@ operational_monitoring:
           metric_groups:
           - print_error_by_ui
           statistic: sum
-        - metric: total_printing_errors
-          metric_groups: []
-          statistic: sum
-        - metric: startdoc
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
         - metric: cannot_open_file
           metric_groups:
           - print_error_breakdown
           statistic: sum
-        - metric: print_failure
-          metric_groups:
-          - print_error_breakdown
+        - metric: total_printing_errors
+          metric_groups: []
           statistic: sum
-        - metric: unexpected
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: not_available
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: enddoc
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: abort
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: notimplemented
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: name_not_found
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: no_printer
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: oom
-          metric_groups:
-          - print_error_breakdown
-          statistic: sum
-        - metric: start_page
+        - metric: gfx_printer_doc_is_busy
           metric_groups:
           - print_error_breakdown
           statistic: sum
@@ -6661,42 +6697,82 @@ operational_monitoring:
           metric_groups:
           - print_error_by_ui
           statistic: sum
+        - metric: startdoc
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: notimplemented
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: print_failure
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: start_page
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: no_printer
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: unexpected
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: enddoc
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: name_not_found
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: not_available
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
+        - metric: oom
+          metric_groups:
+          - print_error_breakdown
+          statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.print_background_task_times_by_build_statistics
         xaxis: build_id
       title: 'Print Background Task Times By Build Id  1Pct Sample '
       type: operational_monitoring_dashboard
     product_insight_telemetry_via_server_knobs_rollout_100:
       tables:
-      - branches: &id202
+      - branches: &id208
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id203 {}
+        dimensions: &id209 {}
         explore: product_insight_telemetry_via_server_knobs_rollout_100
         group_by_dimension: null
-        summaries: &id204
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        summaries: &id210
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.product_insight_telemetry_via_server_knobs_rollout_100_statistics
@@ -6705,36 +6781,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     product_insight_telemetry_via_server_knobs_rollout_release:
       tables:
-      - branches: &id205
+      - branches: &id211
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id206 {}
+        dimensions: &id212 {}
         explore: product_insight_telemetry_via_server_knobs_rollout_release
         group_by_dimension: null
-        summaries: &id207
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        summaries: &id213
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.product_insight_telemetry_via_server_knobs_rollout_release_statistics
@@ -6743,36 +6819,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     release_experiment_for_additional_metrics_for_product_insights_rollout:
       tables:
-      - branches: &id208
+      - branches: &id214
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id209 {}
+        dimensions: &id215 {}
         explore: release_experiment_for_additional_metrics_for_product_insights_rollout
         group_by_dimension: null
-        summaries: &id210
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        summaries: &id216
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.release_experiment_for_additional_metrics_for_product_insights_rollout_statistics
@@ -6781,36 +6857,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     rollout_100_experiment_for_additional_metrics_for_product_insights_new:
       tables:
-      - branches: &id211
+      - branches: &id217
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id212 {}
+        dimensions: &id218 {}
         explore: rollout_100_experiment_for_additional_metrics_for_product_insights_new
         group_by_dimension: null
-        summaries: &id213
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        summaries: &id219
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_100_experiment_for_additional_metrics_for_product_insights_new_statistics
@@ -6819,14 +6895,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489:
       tables:
-      - branches: &id214
+      - branches: &id220
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id215 {}
+        dimensions: &id221 {}
         explore: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489
         group_by_dimension: null
-        summaries: &id216
+        summaries: &id222
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -6851,14 +6927,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481:
       tables:
-      - branches: &id217
+      - branches: &id223
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id218 {}
+        dimensions: &id224 {}
         explore: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
         group_by_dimension: null
-        summaries: &id219
+        summaries: &id225
         - metric: uri_count
           metric_groups: []
           statistic: mean
@@ -6890,14 +6966,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331:
       tables:
-      - branches: &id220
+      - branches: &id226
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id221 {}
+        dimensions: &id227 {}
         explore: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331
         group_by_dimension: null
-        summaries: &id222
+        summaries: &id228
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -6923,14 +6999,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     running_a_dry_run_migration_to_the_application_services_history_in_firefox_ios:
       tables:
-      - branches: &id223
+      - branches: &id229
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id224 {}
+        dimensions: &id230 {}
         explore: running_a_dry_run_migration_to_the_application_services_history_in_firefox_ios
         group_by_dimension: null
-        summaries: &id225
+        summaries: &id231
         - metric: retained
           metric_groups: []
           statistic: mean
@@ -6956,36 +7032,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     serp_ad_telemetry_validation_rollout:
       tables:
-      - branches: &id226
+      - branches: &id232
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id227 {}
+        dimensions: &id233 {}
         explore: serp_ad_telemetry_validation_rollout
         group_by_dimension: null
-        summaries: &id228
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        summaries: &id234
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.serp_ad_telemetry_validation_rollout_statistics
@@ -6994,14 +7070,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     server_knobs_validation:
       tables:
-      - branches: &id229
+      - branches: &id235
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id230 {}
+        dimensions: &id236 {}
         explore: server_knobs_validation
         group_by_dimension: null
-        summaries: &id231
+        summaries: &id237
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
@@ -7032,14 +7108,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     server_knobs_validation_fenix:
       tables:
-      - branches: &id232
+      - branches: &id238
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id233 {}
+        dimensions: &id239 {}
         explore: server_knobs_validation_fenix
         group_by_dimension: null
-        summaries: &id234
+        summaries: &id240
         - metric: active_hours
           metric_groups: []
           statistic: mean
@@ -7070,14 +7146,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout:
       tables:
-      - branches: &id235
+      - branches: &id241
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id236 {}
+        dimensions: &id242 {}
         explore: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout
         group_by_dimension: null
-        summaries: &id237
+        summaries: &id243
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -7102,14 +7178,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     task_continuity_sync_after_tab_change_rollout_40:
       tables:
-      - branches: &id238
+      - branches: &id244
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id239 {}
+        dimensions: &id245 {}
         explore: task_continuity_sync_after_tab_change_rollout_40
         group_by_dimension: null
-        summaries: &id240
+        summaries: &id246
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -7134,14 +7210,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     task_continuity_sync_after_tab_change_rollout_60:
       tables:
-      - branches: &id241
+      - branches: &id247
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id242 {}
+        dimensions: &id248 {}
         explore: task_continuity_sync_after_tab_change_rollout_60
         group_by_dimension: null
-        summaries: &id243
+        summaries: &id249
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -7166,14 +7242,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles:
       tables:
-      - branches: &id244
+      - branches: &id250
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id245 {}
+        dimensions: &id251 {}
         explore: tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles
         group_by_dimension: null
-        summaries: &id246
+        summaries: &id252
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -7198,14 +7274,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles:
       tables:
-      - branches: &id247
+      - branches: &id253
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id248 {}
+        dimensions: &id254 {}
         explore: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
         group_by_dimension: null
-        summaries: &id249
+        summaries: &id255
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -7230,18 +7306,18 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     tcp_rollout_phase_2_demo:
       tables:
-      - branches: &id250
+      - branches: &id256
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id251
+        dimensions: &id257
           os:
             default: Windows
             options:
             - Windows
         explore: tcp_rollout_phase_2_demo
         group_by_dimension: null
-        summaries: &id252
+        summaries: &id258
         - metric: perf_first_contentful_paint_ms
           metric_groups: []
           statistic: percentile
@@ -7272,14 +7348,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles:
       tables:
-      - branches: &id253
+      - branches: &id259
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id254 {}
+        dimensions: &id260 {}
         explore: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
         group_by_dimension: null
-        summaries: &id255
+        summaries: &id261
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -7304,14 +7380,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles:
       tables:
-      - branches: &id256
+      - branches: &id262
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id257 {}
+        dimensions: &id263 {}
         explore: tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles
         group_by_dimension: null
-        summaries: &id258
+        summaries: &id264
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -7336,14 +7412,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles:
       tables:
-      - branches: &id259
+      - branches: &id265
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id260 {}
+        dimensions: &id266 {}
         explore: tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles
         group_by_dimension: null
-        summaries: &id261
+        summaries: &id267
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -7368,10 +7444,10 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     telemetry_alerts_prototype:
       tables:
-      - branches: &id262
+      - branches: &id268
         - active
         compact_visualization: true
-        dimensions: &id263
+        dimensions: &id269
           os:
             default: Linux
             options:
@@ -7380,16 +7456,7 @@ operational_monitoring:
             - Mac
         explore: telemetry_alerts_prototype
         group_by_dimension: null
-        summaries: &id264
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: gc_ms_content
-          metric_groups: []
-          statistic: percentile
-        - metric: subsession_length
-          metric_groups: []
-          statistic: percentile
+        summaries: &id270
         - metric: checkerboard_severity
           metric_groups: []
           statistic: percentile
@@ -7399,19 +7466,28 @@ operational_monitoring:
         - metric: gc_ms
           metric_groups: []
           statistic: percentile
-        - metric: active_ticks
+        - metric: gc_ms_content
           metric_groups: []
           statistic: percentile
-        - metric: js_pageload_execution_ms
+        - metric: subsession_length
           metric_groups: []
           statistic: percentile
-        - metric: perf_first_contentful_paint_ms
+        - metric: memory_total
           metric_groups: []
           statistic: percentile
         - metric: main_crashes
           metric_groups: []
           statistic: sum
+        - metric: active_ticks
+          metric_groups: []
+          statistic: percentile
+        - metric: perf_first_contentful_paint_ms
+          metric_groups: []
+          statistic: percentile
         - metric: gc_budget_overrun
+          metric_groups: []
+          statistic: percentile
+        - metric: js_pageload_execution_ms
           metric_groups: []
           statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype_statistics
@@ -7422,14 +7498,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users:
       tables:
-      - branches: &id265
+      - branches: &id271
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id266 {}
+        dimensions: &id272 {}
         explore: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
         group_by_dimension: null
-        summaries: &id267
+        summaries: &id273
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -7454,14 +7530,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default:
       tables:
-      - branches: &id268
+      - branches: &id274
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id269 {}
+        dimensions: &id275 {}
         explore: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
         group_by_dimension: null
-        summaries: &id270
+        summaries: &id276
         - metric: startup_crashes
           metric_groups: []
           statistic: sum
@@ -7486,36 +7562,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     updated_import_infrequent_rollout_make_yourself_at_home_copy:
       tables:
-      - branches: &id271
+      - branches: &id277
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id272 {}
+        dimensions: &id278 {}
         explore: updated_import_infrequent_rollout_make_yourself_at_home_copy
         group_by_dimension: null
-        summaries: &id273
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        summaries: &id279
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.updated_import_infrequent_rollout_make_yourself_at_home_copy_statistics
@@ -7524,36 +7600,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     use_additional_tiles_for_sponsored_shortcuts:
       tables:
-      - branches: &id274
+      - branches: &id280
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id275 {}
+        dimensions: &id281 {}
         explore: use_additional_tiles_for_sponsored_shortcuts
         group_by_dimension: null
-        summaries: &id276
-        - metric: memory_total
-          metric_groups: []
-          statistic: percentile
-        - metric: search_count
+        summaries: &id282
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: qualified_cumulative_days_of_use
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: qualified_cumulative_days_of_use
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.use_additional_tiles_for_sponsored_shortcuts_statistics
@@ -7562,14 +7638,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_ios_rolling_week_1:
       tables:
-      - branches: &id277
+      - branches: &id283
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id278 {}
+        dimensions: &id284 {}
         explore: viewpoint_ios_rolling_week_1
         group_by_dimension: null
-        summaries: &id279
+        summaries: &id285
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
@@ -7594,14 +7670,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_ios_rolling_week_2:
       tables:
-      - branches: &id280
+      - branches: &id286
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id281 {}
+        dimensions: &id287 {}
         explore: viewpoint_ios_rolling_week_2
         group_by_dimension: null
-        summaries: &id282
+        summaries: &id288
         - metric: search_count
           metric_groups: []
           statistic: mean
@@ -7626,14 +7702,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_ios_rolling_week_3:
       tables:
-      - branches: &id283
+      - branches: &id289
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id284 {}
+        dimensions: &id290 {}
         explore: viewpoint_ios_rolling_week_3
         group_by_dimension: null
-        summaries: &id285
+        summaries: &id291
         - metric: search_count
           metric_groups: []
           statistic: mean
@@ -7658,14 +7734,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_ios_rolling_week_4:
       tables:
-      - branches: &id286
+      - branches: &id292
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id287 {}
+        dimensions: &id293 {}
         explore: viewpoint_ios_rolling_week_4
         group_by_dimension: null
-        summaries: &id288
+        summaries: &id294
         - metric: active_hours
           metric_groups: []
           statistic: mean
@@ -7690,14 +7766,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_ios_rolling_week_5:
       tables:
-      - branches: &id289
+      - branches: &id295
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id290 {}
+        dimensions: &id296 {}
         explore: viewpoint_ios_rolling_week_5
         group_by_dimension: null
-        summaries: &id291
+        summaries: &id297
         - metric: active_hours
           metric_groups: []
           statistic: mean
@@ -7722,14 +7798,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_rolling_week_1_expansion_android:
       tables:
-      - branches: &id292
+      - branches: &id298
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id293 {}
+        dimensions: &id299 {}
         explore: viewpoint_rolling_week_1_expansion_android
         group_by_dimension: null
-        summaries: &id294
+        summaries: &id300
         - metric: uri_count
           metric_groups: []
           statistic: mean
@@ -7760,14 +7836,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_rolling_week_2_expansion_android:
       tables:
-      - branches: &id295
+      - branches: &id301
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id296 {}
+        dimensions: &id302 {}
         explore: viewpoint_rolling_week_2_expansion_android
         group_by_dimension: null
-        summaries: &id297
+        summaries: &id303
         - metric: memory_total
           metric_groups: []
           statistic: percentile
@@ -7798,36 +7874,36 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_rolling_week_3_expansion_android:
       tables:
-      - branches: &id298
+      - branches: &id304
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id299 {}
+        dimensions: &id305 {}
         explore: viewpoint_rolling_week_3_expansion_android
         group_by_dimension: null
-        summaries: &id300
-        - metric: memory_total
+        summaries: &id306
+        - metric: tagged_sap_searches
           metric_groups: []
-          statistic: percentile
-        - metric: search_count
+          statistic: mean
+        - metric: uri_count
           metric_groups: []
           statistic: mean
         - metric: retained
           metric_groups: []
           statistic: mean
-        - metric: tagged_sap_searches
+        - metric: days_of_use
           metric_groups: []
           statistic: mean
+        - metric: memory_total
+          metric_groups: []
+          statistic: percentile
         - metric: active_hours
           metric_groups: []
           statistic: mean
         - metric: ad_clicks
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
+        - metric: search_count
           metric_groups: []
           statistic: mean
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_rolling_week_3_expansion_android_statistics
@@ -7836,14 +7912,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_survey_2022_nov_android:
       tables:
-      - branches: &id301
+      - branches: &id307
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id302 {}
+        dimensions: &id308 {}
         explore: viewpoint_survey_2022_nov_android
         group_by_dimension: null
-        summaries: &id303
+        summaries: &id309
         - metric: memory_total
           metric_groups: []
           statistic: percentile
@@ -7853,14 +7929,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_survey_2022_nov_ios:
       tables:
-      - branches: &id304
+      - branches: &id310
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id305 {}
+        dimensions: &id311 {}
         explore: viewpoint_survey_2022_nov_ios
         group_by_dimension: null
-        summaries: &id306
+        summaries: &id312
         - metric: memory_total
           metric_groups: []
           statistic: percentile
@@ -7870,14 +7946,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_survey_2022_oct_android:
       tables:
-      - branches: &id307
+      - branches: &id313
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id308 {}
+        dimensions: &id314 {}
         explore: viewpoint_survey_2022_oct_android
         group_by_dimension: null
-        summaries: &id309
+        summaries: &id315
         - metric: memory_total
           metric_groups: []
           statistic: percentile
@@ -7887,14 +7963,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_survey_2022_oct_ios:
       tables:
-      - branches: &id310
+      - branches: &id316
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id311 {}
+        dimensions: &id317 {}
         explore: viewpoint_survey_2022_oct_ios
         group_by_dimension: null
-        summaries: &id312
+        summaries: &id318
         - metric: memory_total
           metric_groups: []
           statistic: percentile
@@ -7904,14 +7980,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_survey_2023_april_android:
       tables:
-      - branches: &id313
+      - branches: &id319
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id314 {}
+        dimensions: &id320 {}
         explore: viewpoint_survey_2023_april_android
         group_by_dimension: null
-        summaries: &id315
+        summaries: &id321
         - metric: search_count
           metric_groups: []
           statistic: mean
@@ -7942,14 +8018,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_survey_2023_april_ios:
       tables:
-      - branches: &id316
+      - branches: &id322
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id317 {}
+        dimensions: &id323 {}
         explore: viewpoint_survey_2023_april_ios
         group_by_dimension: null
-        summaries: &id318
+        summaries: &id324
         - metric: search_count
           metric_groups: []
           statistic: mean
@@ -7974,14 +8050,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_survey_2023_feb_android:
       tables:
-      - branches: &id319
+      - branches: &id325
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id320 {}
+        dimensions: &id326 {}
         explore: viewpoint_survey_2023_feb_android
         group_by_dimension: null
-        summaries: &id321
+        summaries: &id327
         - metric: memory_total
           metric_groups: []
           statistic: percentile
@@ -8012,14 +8088,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_survey_2023_feb_ios:
       tables:
-      - branches: &id322
+      - branches: &id328
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id323 {}
+        dimensions: &id329 {}
         explore: viewpoint_survey_2023_feb_ios
         group_by_dimension: null
-        summaries: &id324
+        summaries: &id330
         - metric: memory_total
           metric_groups: []
           statistic: percentile
@@ -8044,14 +8120,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_survey_2023_jan_ios:
       tables:
-      - branches: &id325
+      - branches: &id331
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id326 {}
+        dimensions: &id332 {}
         explore: viewpoint_survey_2023_jan_ios
         group_by_dimension: null
-        summaries: &id327
+        summaries: &id333
         - metric: active_hours
           metric_groups: []
           statistic: mean
@@ -8076,14 +8152,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_survey_2023_march_android:
       tables:
-      - branches: &id328
+      - branches: &id334
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id329 {}
+        dimensions: &id335 {}
         explore: viewpoint_survey_2023_march_android
         group_by_dimension: null
-        summaries: &id330
+        summaries: &id336
         - metric: retained
           metric_groups: []
           statistic: mean
@@ -8114,14 +8190,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_survey_2023_march_ios:
       tables:
-      - branches: &id331
+      - branches: &id337
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id332 {}
+        dimensions: &id338 {}
         explore: viewpoint_survey_2023_march_ios
         group_by_dimension: null
-        summaries: &id333
+        summaries: &id339
         - metric: retained
           metric_groups: []
           statistic: mean
@@ -8146,14 +8222,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_survey_2023_may_android:
       tables:
-      - branches: &id334
+      - branches: &id340
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id335 {}
+        dimensions: &id341 {}
         explore: viewpoint_survey_2023_may_android
         group_by_dimension: null
-        summaries: &id336
+        summaries: &id342
         - metric: active_hours
           metric_groups: []
           statistic: mean
@@ -8184,14 +8260,14 @@ operational_monitoring:
       type: operational_monitoring_dashboard
     viewpoint_survey_2023_may_ios:
       tables:
-      - branches: &id337
+      - branches: &id343
         - enabled
         - disabled
         compact_visualization: false
-        dimensions: &id338 {}
+        dimensions: &id344 {}
         explore: viewpoint_survey_2023_may_ios
         group_by_dimension: null
-        summaries: &id339
+        summaries: &id345
         - metric: active_hours
           metric_groups: []
           statistic: mean
@@ -8375,90 +8451,98 @@ operational_monitoring:
       views:
         base_view: device_migration_existing_user_messaging_tour_spotlight_rollout
       xaxis: submission_date
-    enrollment_volume_debugging:
+    device_migration_existing_users_sumo_switch_device_cfr_rollout:
       branches: *id061
       dimensions: *id062
       summaries: *id063
       type: operational_monitoring_explore
       views:
-        base_view: enrollment_volume_debugging
+        base_view: device_migration_existing_users_sumo_switch_device_cfr_rollout
       xaxis: submission_date
-    experiment_for_additional_metrics_for_product_insights_rollout:
+    enrollment_volume_debugging:
       branches: *id064
       dimensions: *id065
       summaries: *id066
       type: operational_monitoring_explore
       views:
-        base_view: experiment_for_additional_metrics_for_product_insights_rollout
+        base_view: enrollment_volume_debugging
       xaxis: submission_date
-    experiment_for_additional_metrics_for_product_insights_rollout_100:
+    experiment_for_additional_metrics_for_product_insights_rollout:
       branches: *id067
       dimensions: *id068
       summaries: *id069
       type: operational_monitoring_explore
       views:
-        base_view: experiment_for_additional_metrics_for_product_insights_rollout_100
+        base_view: experiment_for_additional_metrics_for_product_insights_rollout
       xaxis: submission_date
-    experiment_for_additional_metrics_for_product_insights_rollout_clone_2_45:
+    experiment_for_additional_metrics_for_product_insights_rollout_100:
       branches: *id070
       dimensions: *id071
       summaries: *id072
       type: operational_monitoring_explore
       views:
-        base_view: experiment_for_additional_metrics_for_product_insights_rollout_clone_2_45
+        base_view: experiment_for_additional_metrics_for_product_insights_rollout_100
       xaxis: submission_date
-    firefox_accounts_toolbar_button_badge:
+    experiment_for_additional_metrics_for_product_insights_rollout_clone_2_45:
       branches: *id073
       dimensions: *id074
       summaries: *id075
       type: operational_monitoring_explore
       views:
-        base_view: firefox_accounts_toolbar_button_badge
+        base_view: experiment_for_additional_metrics_for_product_insights_rollout_clone_2_45
       xaxis: submission_date
-    firefox_android_tcp_rollout_100:
+    firefox_accounts_toolbar_button_badge:
       branches: *id076
       dimensions: *id077
       summaries: *id078
       type: operational_monitoring_explore
       views:
-        base_view: firefox_android_tcp_rollout_100
+        base_view: firefox_accounts_toolbar_button_badge
       xaxis: submission_date
-    firefox_android_tcp_rollout_25:
+    firefox_android_tcp_rollout_100:
       branches: *id079
       dimensions: *id080
       summaries: *id081
       type: operational_monitoring_explore
       views:
-        base_view: firefox_android_tcp_rollout_25
+        base_view: firefox_android_tcp_rollout_100
       xaxis: submission_date
-    firefox_android_tcp_rollout_25_50:
+    firefox_android_tcp_rollout_25:
       branches: *id082
       dimensions: *id083
       summaries: *id084
       type: operational_monitoring_explore
       views:
-        base_view: firefox_android_tcp_rollout_25_50
+        base_view: firefox_android_tcp_rollout_25
       xaxis: submission_date
-    firefox_background_update:
+    firefox_android_tcp_rollout_25_50:
       branches: *id085
       dimensions: *id086
       summaries: *id087
       type: operational_monitoring_explore
       views:
-        base_view: firefox_background_update
+        base_view: firefox_android_tcp_rollout_25_50
       xaxis: submission_date
-    firefox_default_browser_agent:
+    firefox_background_update:
       branches: *id088
       dimensions: *id089
       summaries: *id090
       type: operational_monitoring_explore
       views:
-        base_view: firefox_default_browser_agent
+        base_view: firefox_background_update
       xaxis: submission_date
-    firefox_install_demo:
+    firefox_default_browser_agent:
       branches: *id091
       dimensions: *id092
       summaries: *id093
+      type: operational_monitoring_explore
+      views:
+        base_view: firefox_default_browser_agent
+      xaxis: submission_date
+    firefox_install_demo:
+      branches: *id094
+      dimensions: *id095
+      summaries: *id096
       type: operational_monitoring_explore
       views:
         base_view: firefox_install_demo
@@ -8468,457 +8552,465 @@ operational_monitoring:
       views:
         base_view: firefox_install_demo_alerts
     firefox_suggest_by_merino_nightly:
-      branches: *id094
-      dimensions: *id095
-      summaries: *id096
-      type: operational_monitoring_explore
-      views:
-        base_view: firefox_suggest_by_merino_nightly
-      xaxis: submission_date
-    firefox_uninstalls:
       branches: *id097
       dimensions: *id098
       summaries: *id099
       type: operational_monitoring_explore
       views:
-        base_view: firefox_uninstalls
+        base_view: firefox_suggest_by_merino_nightly
       xaxis: submission_date
-    first_run_easy_set_up_fx108_rollout:
+    firefox_uninstalls:
       branches: *id100
       dimensions: *id101
       summaries: *id102
       type: operational_monitoring_explore
       views:
-        base_view: first_run_easy_set_up_fx108_rollout
+        base_view: firefox_uninstalls
       xaxis: submission_date
-    fox_doodle_pin_to_taskbar_rollout:
+    first_run_easy_set_up_fx108_rollout:
       branches: *id103
       dimensions: *id104
       summaries: *id105
       type: operational_monitoring_explore
       views:
-        base_view: fox_doodle_pin_to_taskbar_rollout
+        base_view: first_run_easy_set_up_fx108_rollout
       xaxis: submission_date
-    fox_doodle_pin_to_taskbar_rollout_100:
+    fox_doodle_pin_to_taskbar_rollout:
       branches: *id106
       dimensions: *id107
       summaries: *id108
       type: operational_monitoring_explore
       views:
-        base_view: fox_doodle_pin_to_taskbar_rollout_100
+        base_view: fox_doodle_pin_to_taskbar_rollout
       xaxis: submission_date
-    fox_doodle_set_default_rollout:
+    fox_doodle_pin_to_taskbar_rollout_100:
       branches: *id109
       dimensions: *id110
       summaries: *id111
       type: operational_monitoring_explore
       views:
-        base_view: fox_doodle_set_default_rollout
+        base_view: fox_doodle_pin_to_taskbar_rollout_100
       xaxis: submission_date
-    fox_doodle_set_default_rollout_100:
+    fox_doodle_set_default_rollout:
       branches: *id112
       dimensions: *id113
       summaries: *id114
       type: operational_monitoring_explore
       views:
-        base_view: fox_doodle_set_default_rollout_100
+        base_view: fox_doodle_set_default_rollout
       xaxis: submission_date
-    fx_release_android_re_engagement_notifications_114_rollout:
+    fox_doodle_set_default_rollout_100:
       branches: *id115
       dimensions: *id116
       summaries: *id117
       type: operational_monitoring_explore
       views:
-        base_view: fx_release_android_re_engagement_notifications_114_rollout
+        base_view: fox_doodle_set_default_rollout_100
       xaxis: submission_date
-    import_infrequent_rollout_make_yourself_at_home:
+    fx_release_android_re_engagement_notifications_114_rollout:
       branches: *id118
       dimensions: *id119
       summaries: *id120
       type: operational_monitoring_explore
       views:
-        base_view: import_infrequent_rollout_make_yourself_at_home
+        base_view: fx_release_android_re_engagement_notifications_114_rollout
       xaxis: submission_date
-    ios_search_bar_placement_v2_treatment_a_rollout:
+    import_infrequent_rollout_make_yourself_at_home:
       branches: *id121
       dimensions: *id122
       summaries: *id123
       type: operational_monitoring_explore
       views:
-        base_view: ios_search_bar_placement_v2_treatment_a_rollout
+        base_view: import_infrequent_rollout_make_yourself_at_home
       xaxis: submission_date
-    merino_py_rollout_for_firefox_suggest_phase_2:
+    ios_search_bar_placement_v2_treatment_a_rollout:
       branches: *id124
       dimensions: *id125
       summaries: *id126
       type: operational_monitoring_explore
       views:
-        base_view: merino_py_rollout_for_firefox_suggest_phase_2
+        base_view: ios_search_bar_placement_v2_treatment_a_rollout
       xaxis: submission_date
-    merino_py_rollout_for_firefox_suggest_phase_3:
+    merino_py_rollout_for_firefox_suggest_phase_2:
       branches: *id127
       dimensions: *id128
       summaries: *id129
       type: operational_monitoring_explore
       views:
-        base_view: merino_py_rollout_for_firefox_suggest_phase_3
+        base_view: merino_py_rollout_for_firefox_suggest_phase_2
       xaxis: submission_date
-    mixed_content_level_2_roll_out_release:
+    merino_py_rollout_for_firefox_suggest_phase_3:
       branches: *id130
       dimensions: *id131
       summaries: *id132
       type: operational_monitoring_explore
       views:
-        base_view: mixed_content_level_2_roll_out_release
+        base_view: merino_py_rollout_for_firefox_suggest_phase_3
       xaxis: submission_date
-    mixed_content_level_2_roll_out_release_113:
+    mixed_content_level_2_roll_out_release:
       branches: *id133
       dimensions: *id134
       summaries: *id135
       type: operational_monitoring_explore
       views:
-        base_view: mixed_content_level_2_roll_out_release_113
+        base_view: mixed_content_level_2_roll_out_release
       xaxis: submission_date
-    mozilla_rally_convert_core_add_on_users_to_attention_stream_2nd_rollout:
+    mixed_content_level_2_roll_out_release_113:
       branches: *id136
       dimensions: *id137
       summaries: *id138
       type: operational_monitoring_explore
       views:
-        base_view: mozilla_rally_convert_core_add_on_users_to_attention_stream_2nd_rollout
+        base_view: mixed_content_level_2_roll_out_release_113
       xaxis: submission_date
-    mr2022_backgroundtaskmessage_experiment_sizing:
+    mozilla_rally_convert_core_add_on_users_to_attention_stream_2nd_rollout:
       branches: *id139
       dimensions: *id140
       summaries: *id141
       type: operational_monitoring_explore
       views:
-        base_view: mr2022_backgroundtaskmessage_experiment_sizing
+        base_view: mozilla_rally_convert_core_add_on_users_to_attention_stream_2nd_rollout
       xaxis: submission_date
-    mr2022_backgroundtaskmessage_experiment_sizing_release_106:
+    mr2022_backgroundtaskmessage_experiment_sizing:
       branches: *id142
       dimensions: *id143
       summaries: *id144
       type: operational_monitoring_explore
       views:
-        base_view: mr2022_backgroundtaskmessage_experiment_sizing_release_106
+        base_view: mr2022_backgroundtaskmessage_experiment_sizing
       xaxis: submission_date
-    mr2022_backgroundtaskmessage_notification_beta_107:
+    mr2022_backgroundtaskmessage_experiment_sizing_release_106:
       branches: *id145
       dimensions: *id146
       summaries: *id147
       type: operational_monitoring_explore
       views:
-        base_view: mr2022_backgroundtaskmessage_notification_beta_107
+        base_view: mr2022_backgroundtaskmessage_experiment_sizing_release_106
       xaxis: submission_date
-    mr2022_backgroundtaskmessage_notification_beta_107_experiment_1:
+    mr2022_backgroundtaskmessage_notification_beta_107:
       branches: *id148
       dimensions: *id149
       summaries: *id150
       type: operational_monitoring_explore
       views:
-        base_view: mr2022_backgroundtaskmessage_notification_beta_107_experiment_1
+        base_view: mr2022_backgroundtaskmessage_notification_beta_107
       xaxis: submission_date
-    mr2022_backgroundtaskmessage_notification_release_1pct:
+    mr2022_backgroundtaskmessage_notification_beta_107_experiment_1:
       branches: *id151
       dimensions: *id152
       summaries: *id153
       type: operational_monitoring_explore
       views:
-        base_view: mr2022_backgroundtaskmessage_notification_release_1pct
+        base_view: mr2022_backgroundtaskmessage_notification_beta_107_experiment_1
       xaxis: submission_date
-    network_performance_desktop_build_by_build:
+    mr2022_backgroundtaskmessage_notification_release_1pct:
       branches: *id154
       dimensions: *id155
       summaries: *id156
       type: operational_monitoring_explore
       views:
-        base_view: network_performance_desktop_build_by_build
-      xaxis: build_id
-    new_import_interface_firefox_114_existing_users_rollout:
+        base_view: mr2022_backgroundtaskmessage_notification_release_1pct
+      xaxis: submission_date
+    network_performance_desktop_build_by_build:
       branches: *id157
       dimensions: *id158
       summaries: *id159
       type: operational_monitoring_explore
       views:
-        base_view: new_import_interface_firefox_114_existing_users_rollout
-      xaxis: submission_date
-    next_generation_accessibility_engine_powering_screen_readers:
+        base_view: network_performance_desktop_build_by_build
+      xaxis: build_id
+    new_import_interface_firefox_114_existing_users_rollout:
       branches: *id160
       dimensions: *id161
       summaries: *id162
       type: operational_monitoring_explore
       views:
-        base_view: next_generation_accessibility_engine_powering_screen_readers
+        base_view: new_import_interface_firefox_114_existing_users_rollout
       xaxis: submission_date
-    nimbus_pref_qa_1_2week_rollout:
+    next_generation_accessibility_engine_powering_screen_readers:
       branches: *id163
       dimensions: *id164
       summaries: *id165
       type: operational_monitoring_explore
       views:
-        base_view: nimbus_pref_qa_1_2week_rollout
+        base_view: next_generation_accessibility_engine_powering_screen_readers
       xaxis: submission_date
-    nimbus_pref_qa_1_4week_rollout:
+    nimbus_pref_qa_1_2week_rollout:
       branches: *id166
       dimensions: *id167
       summaries: *id168
       type: operational_monitoring_explore
       views:
-        base_view: nimbus_pref_qa_1_4week_rollout
+        base_view: nimbus_pref_qa_1_2week_rollout
       xaxis: submission_date
-    nimbus_pref_qa_2_2week_rollout:
+    nimbus_pref_qa_1_4week_rollout:
       branches: *id169
       dimensions: *id170
       summaries: *id171
       type: operational_monitoring_explore
       views:
-        base_view: nimbus_pref_qa_2_2week_rollout
+        base_view: nimbus_pref_qa_1_4week_rollout
       xaxis: submission_date
-    nimbus_pref_qa_2_4week_rollout:
+    nimbus_pref_qa_2_2week_rollout:
       branches: *id172
       dimensions: *id173
       summaries: *id174
       type: operational_monitoring_explore
       views:
-        base_view: nimbus_pref_qa_2_4week_rollout
+        base_view: nimbus_pref_qa_2_2week_rollout
       xaxis: submission_date
-    performance_desktop_build_by_build_beta:
+    nimbus_pref_qa_2_4week_rollout:
       branches: *id175
       dimensions: *id176
       summaries: *id177
       type: operational_monitoring_explore
       views:
-        base_view: performance_desktop_build_by_build_beta
-      xaxis: build_id
-    performance_fenix_build_by_build_beta:
+        base_view: nimbus_pref_qa_2_4week_rollout
+      xaxis: submission_date
+    opaque_response_blocking_orb_beta_rollout:
       branches: *id178
       dimensions: *id179
       summaries: *id180
       type: operational_monitoring_explore
       views:
-        base_view: performance_fenix_build_by_build_beta
-      xaxis: build_id
-    persist_search_term_rollout_phase_1:
+        base_view: opaque_response_blocking_orb_beta_rollout
+      xaxis: submission_date
+    performance_desktop_build_by_build_beta:
       branches: *id181
       dimensions: *id182
       summaries: *id183
       type: operational_monitoring_explore
       views:
-        base_view: persist_search_term_rollout_phase_1
-      xaxis: submission_date
-    pocket_newtab_save_button:
+        base_view: performance_desktop_build_by_build_beta
+      xaxis: build_id
+    performance_fenix_build_by_build_beta:
       branches: *id184
       dimensions: *id185
       summaries: *id186
       type: operational_monitoring_explore
       views:
-        base_view: pocket_newtab_save_button
-      xaxis: submission_date
-    pocket_newtab_save_button_25:
+        base_view: performance_fenix_build_by_build_beta
+      xaxis: build_id
+    persist_search_term_rollout_phase_1:
       branches: *id187
       dimensions: *id188
       summaries: *id189
       type: operational_monitoring_explore
       views:
-        base_view: pocket_newtab_save_button_25
+        base_view: persist_search_term_rollout_phase_1
       xaxis: submission_date
-    pocket_newtab_spocs_cache_rollout:
+    pocket_newtab_save_button:
       branches: *id190
       dimensions: *id191
       summaries: *id192
       type: operational_monitoring_explore
       views:
-        base_view: pocket_newtab_spocs_cache_rollout
+        base_view: pocket_newtab_save_button
       xaxis: submission_date
-    pocket_newtab_spocs_cache_rollout_50:
+    pocket_newtab_save_button_25:
       branches: *id193
       dimensions: *id194
       summaries: *id195
       type: operational_monitoring_explore
       views:
-        base_view: pocket_newtab_spocs_cache_rollout_50
+        base_view: pocket_newtab_save_button_25
       xaxis: submission_date
-    print_background_task_times:
+    pocket_newtab_spocs_cache_rollout:
       branches: *id196
       dimensions: *id197
       summaries: *id198
       type: operational_monitoring_explore
       views:
-        base_view: print_background_task_times
+        base_view: pocket_newtab_spocs_cache_rollout
       xaxis: submission_date
-    print_background_task_times_by_build:
+    pocket_newtab_spocs_cache_rollout_50:
       branches: *id199
       dimensions: *id200
       summaries: *id201
       type: operational_monitoring_explore
       views:
-        base_view: print_background_task_times_by_build
-      xaxis: build_id
-    product_insight_telemetry_via_server_knobs_rollout_100:
+        base_view: pocket_newtab_spocs_cache_rollout_50
+      xaxis: submission_date
+    print_background_task_times:
       branches: *id202
       dimensions: *id203
       summaries: *id204
       type: operational_monitoring_explore
       views:
-        base_view: product_insight_telemetry_via_server_knobs_rollout_100
+        base_view: print_background_task_times
       xaxis: submission_date
-    product_insight_telemetry_via_server_knobs_rollout_release:
+    print_background_task_times_by_build:
       branches: *id205
       dimensions: *id206
       summaries: *id207
       type: operational_monitoring_explore
       views:
-        base_view: product_insight_telemetry_via_server_knobs_rollout_release
-      xaxis: submission_date
-    release_experiment_for_additional_metrics_for_product_insights_rollout:
+        base_view: print_background_task_times_by_build
+      xaxis: build_id
+    product_insight_telemetry_via_server_knobs_rollout_100:
       branches: *id208
       dimensions: *id209
       summaries: *id210
       type: operational_monitoring_explore
       views:
-        base_view: release_experiment_for_additional_metrics_for_product_insights_rollout
+        base_view: product_insight_telemetry_via_server_knobs_rollout_100
       xaxis: submission_date
-    rollout_100_experiment_for_additional_metrics_for_product_insights_new:
+    product_insight_telemetry_via_server_knobs_rollout_release:
       branches: *id211
       dimensions: *id212
       summaries: *id213
       type: operational_monitoring_explore
       views:
-        base_view: rollout_100_experiment_for_additional_metrics_for_product_insights_new
+        base_view: product_insight_telemetry_via_server_knobs_rollout_release
       xaxis: submission_date
-    rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489:
+    release_experiment_for_additional_metrics_for_product_insights_rollout:
       branches: *id214
       dimensions: *id215
       summaries: *id216
       type: operational_monitoring_explore
       views:
-        base_view: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489
+        base_view: release_experiment_for_additional_metrics_for_product_insights_rollout
       xaxis: submission_date
-    rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481:
+    rollout_100_experiment_for_additional_metrics_for_product_insights_new:
       branches: *id217
       dimensions: *id218
       summaries: *id219
       type: operational_monitoring_explore
       views:
-        base_view: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
+        base_view: rollout_100_experiment_for_additional_metrics_for_product_insights_new
       xaxis: submission_date
-    rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331:
+    rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489:
       branches: *id220
       dimensions: *id221
       summaries: *id222
       type: operational_monitoring_explore
       views:
-        base_view: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331
+        base_view: rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489
       xaxis: submission_date
-    running_a_dry_run_migration_to_the_application_services_history_in_firefox_ios:
+    rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481:
       branches: *id223
       dimensions: *id224
       summaries: *id225
       type: operational_monitoring_explore
       views:
-        base_view: running_a_dry_run_migration_to_the_application_services_history_in_firefox_ios
+        base_view: rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481
       xaxis: submission_date
-    serp_ad_telemetry_validation_rollout:
+    rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331:
       branches: *id226
       dimensions: *id227
       summaries: *id228
       type: operational_monitoring_explore
       views:
-        base_view: serp_ad_telemetry_validation_rollout
+        base_view: rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331
       xaxis: submission_date
-    server_knobs_validation:
+    running_a_dry_run_migration_to_the_application_services_history_in_firefox_ios:
       branches: *id229
       dimensions: *id230
       summaries: *id231
       type: operational_monitoring_explore
       views:
-        base_view: server_knobs_validation
+        base_view: running_a_dry_run_migration_to_the_application_services_history_in_firefox_ios
       xaxis: submission_date
-    server_knobs_validation_fenix:
+    serp_ad_telemetry_validation_rollout:
       branches: *id232
       dimensions: *id233
       summaries: *id234
       type: operational_monitoring_explore
       views:
-        base_view: server_knobs_validation_fenix
+        base_view: serp_ad_telemetry_validation_rollout
       xaxis: submission_date
-    set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout:
+    server_knobs_validation:
       branches: *id235
       dimensions: *id236
       summaries: *id237
       type: operational_monitoring_explore
       views:
-        base_view: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout
+        base_view: server_knobs_validation
       xaxis: submission_date
-    task_continuity_sync_after_tab_change_rollout_40:
+    server_knobs_validation_fenix:
       branches: *id238
       dimensions: *id239
       summaries: *id240
       type: operational_monitoring_explore
       views:
-        base_view: task_continuity_sync_after_tab_change_rollout_40
+        base_view: server_knobs_validation_fenix
       xaxis: submission_date
-    task_continuity_sync_after_tab_change_rollout_60:
+    set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout:
       branches: *id241
       dimensions: *id242
       summaries: *id243
       type: operational_monitoring_explore
       views:
-        base_view: task_continuity_sync_after_tab_change_rollout_60
+        base_view: set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout
       xaxis: submission_date
-    tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles:
+    task_continuity_sync_after_tab_change_rollout_40:
       branches: *id244
       dimensions: *id245
       summaries: *id246
       type: operational_monitoring_explore
       views:
-        base_view: tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles
+        base_view: task_continuity_sync_after_tab_change_rollout_40
       xaxis: submission_date
-    tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles:
+    task_continuity_sync_after_tab_change_rollout_60:
       branches: *id247
       dimensions: *id248
       summaries: *id249
       type: operational_monitoring_explore
       views:
-        base_view: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
+        base_view: task_continuity_sync_after_tab_change_rollout_60
       xaxis: submission_date
-    tcp_rollout_phase_2_demo:
+    tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles:
       branches: *id250
       dimensions: *id251
       summaries: *id252
       type: operational_monitoring_explore
       views:
-        base_view: tcp_rollout_phase_2_demo
+        base_view: tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles
       xaxis: submission_date
-    tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles:
+    tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles:
       branches: *id253
       dimensions: *id254
       summaries: *id255
       type: operational_monitoring_explore
       views:
-        base_view: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
+        base_view: tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles
       xaxis: submission_date
-    tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles:
+    tcp_rollout_phase_2_demo:
       branches: *id256
       dimensions: *id257
       summaries: *id258
       type: operational_monitoring_explore
       views:
-        base_view: tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles
+        base_view: tcp_rollout_phase_2_demo
       xaxis: submission_date
-    tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles:
+    tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles:
       branches: *id259
       dimensions: *id260
       summaries: *id261
       type: operational_monitoring_explore
       views:
-        base_view: tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles
+        base_view: tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles
       xaxis: submission_date
-    telemetry_alerts_prototype:
+    tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles:
       branches: *id262
       dimensions: *id263
       summaries: *id264
+      type: operational_monitoring_explore
+      views:
+        base_view: tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles
+      xaxis: submission_date
+    tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles:
+      branches: *id265
+      dimensions: *id266
+      summaries: *id267
+      type: operational_monitoring_explore
+      views:
+        base_view: tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles
+      xaxis: submission_date
+    telemetry_alerts_prototype:
+      branches: *id268
+      dimensions: *id269
+      summaries: *id270
       type: operational_monitoring_explore
       views:
         base_view: telemetry_alerts_prototype
@@ -8928,201 +9020,201 @@ operational_monitoring:
       views:
         base_view: telemetry_alerts_prototype_alerts
     total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users:
-      branches: *id265
-      dimensions: *id266
-      summaries: *id267
-      type: operational_monitoring_explore
-      views:
-        base_view: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
-      xaxis: submission_date
-    total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default:
-      branches: *id268
-      dimensions: *id269
-      summaries: *id270
-      type: operational_monitoring_explore
-      views:
-        base_view: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
-      xaxis: submission_date
-    updated_import_infrequent_rollout_make_yourself_at_home_copy:
       branches: *id271
       dimensions: *id272
       summaries: *id273
       type: operational_monitoring_explore
       views:
-        base_view: updated_import_infrequent_rollout_make_yourself_at_home_copy
+        base_view: total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users
       xaxis: submission_date
-    use_additional_tiles_for_sponsored_shortcuts:
+    total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default:
       branches: *id274
       dimensions: *id275
       summaries: *id276
       type: operational_monitoring_explore
       views:
-        base_view: use_additional_tiles_for_sponsored_shortcuts
+        base_view: total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default
       xaxis: submission_date
-    viewpoint_ios_rolling_week_1:
+    updated_import_infrequent_rollout_make_yourself_at_home_copy:
       branches: *id277
       dimensions: *id278
       summaries: *id279
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_ios_rolling_week_1
+        base_view: updated_import_infrequent_rollout_make_yourself_at_home_copy
       xaxis: submission_date
-    viewpoint_ios_rolling_week_2:
+    use_additional_tiles_for_sponsored_shortcuts:
       branches: *id280
       dimensions: *id281
       summaries: *id282
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_ios_rolling_week_2
+        base_view: use_additional_tiles_for_sponsored_shortcuts
       xaxis: submission_date
-    viewpoint_ios_rolling_week_3:
+    viewpoint_ios_rolling_week_1:
       branches: *id283
       dimensions: *id284
       summaries: *id285
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_ios_rolling_week_3
+        base_view: viewpoint_ios_rolling_week_1
       xaxis: submission_date
-    viewpoint_ios_rolling_week_4:
+    viewpoint_ios_rolling_week_2:
       branches: *id286
       dimensions: *id287
       summaries: *id288
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_ios_rolling_week_4
+        base_view: viewpoint_ios_rolling_week_2
       xaxis: submission_date
-    viewpoint_ios_rolling_week_5:
+    viewpoint_ios_rolling_week_3:
       branches: *id289
       dimensions: *id290
       summaries: *id291
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_ios_rolling_week_5
+        base_view: viewpoint_ios_rolling_week_3
       xaxis: submission_date
-    viewpoint_rolling_week_1_expansion_android:
+    viewpoint_ios_rolling_week_4:
       branches: *id292
       dimensions: *id293
       summaries: *id294
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_rolling_week_1_expansion_android
+        base_view: viewpoint_ios_rolling_week_4
       xaxis: submission_date
-    viewpoint_rolling_week_2_expansion_android:
+    viewpoint_ios_rolling_week_5:
       branches: *id295
       dimensions: *id296
       summaries: *id297
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_rolling_week_2_expansion_android
+        base_view: viewpoint_ios_rolling_week_5
       xaxis: submission_date
-    viewpoint_rolling_week_3_expansion_android:
+    viewpoint_rolling_week_1_expansion_android:
       branches: *id298
       dimensions: *id299
       summaries: *id300
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_rolling_week_3_expansion_android
+        base_view: viewpoint_rolling_week_1_expansion_android
       xaxis: submission_date
-    viewpoint_survey_2022_nov_android:
+    viewpoint_rolling_week_2_expansion_android:
       branches: *id301
       dimensions: *id302
       summaries: *id303
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_survey_2022_nov_android
+        base_view: viewpoint_rolling_week_2_expansion_android
       xaxis: submission_date
-    viewpoint_survey_2022_nov_ios:
+    viewpoint_rolling_week_3_expansion_android:
       branches: *id304
       dimensions: *id305
       summaries: *id306
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_survey_2022_nov_ios
+        base_view: viewpoint_rolling_week_3_expansion_android
       xaxis: submission_date
-    viewpoint_survey_2022_oct_android:
+    viewpoint_survey_2022_nov_android:
       branches: *id307
       dimensions: *id308
       summaries: *id309
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_survey_2022_oct_android
+        base_view: viewpoint_survey_2022_nov_android
       xaxis: submission_date
-    viewpoint_survey_2022_oct_ios:
+    viewpoint_survey_2022_nov_ios:
       branches: *id310
       dimensions: *id311
       summaries: *id312
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_survey_2022_oct_ios
+        base_view: viewpoint_survey_2022_nov_ios
       xaxis: submission_date
-    viewpoint_survey_2023_april_android:
+    viewpoint_survey_2022_oct_android:
       branches: *id313
       dimensions: *id314
       summaries: *id315
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_survey_2023_april_android
+        base_view: viewpoint_survey_2022_oct_android
       xaxis: submission_date
-    viewpoint_survey_2023_april_ios:
+    viewpoint_survey_2022_oct_ios:
       branches: *id316
       dimensions: *id317
       summaries: *id318
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_survey_2023_april_ios
+        base_view: viewpoint_survey_2022_oct_ios
       xaxis: submission_date
-    viewpoint_survey_2023_feb_android:
+    viewpoint_survey_2023_april_android:
       branches: *id319
       dimensions: *id320
       summaries: *id321
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_survey_2023_feb_android
+        base_view: viewpoint_survey_2023_april_android
       xaxis: submission_date
-    viewpoint_survey_2023_feb_ios:
+    viewpoint_survey_2023_april_ios:
       branches: *id322
       dimensions: *id323
       summaries: *id324
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_survey_2023_feb_ios
+        base_view: viewpoint_survey_2023_april_ios
       xaxis: submission_date
-    viewpoint_survey_2023_jan_ios:
+    viewpoint_survey_2023_feb_android:
       branches: *id325
       dimensions: *id326
       summaries: *id327
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_survey_2023_jan_ios
+        base_view: viewpoint_survey_2023_feb_android
       xaxis: submission_date
-    viewpoint_survey_2023_march_android:
+    viewpoint_survey_2023_feb_ios:
       branches: *id328
       dimensions: *id329
       summaries: *id330
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_survey_2023_march_android
+        base_view: viewpoint_survey_2023_feb_ios
       xaxis: submission_date
-    viewpoint_survey_2023_march_ios:
+    viewpoint_survey_2023_jan_ios:
       branches: *id331
       dimensions: *id332
       summaries: *id333
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_survey_2023_march_ios
+        base_view: viewpoint_survey_2023_jan_ios
       xaxis: submission_date
-    viewpoint_survey_2023_may_android:
+    viewpoint_survey_2023_march_android:
       branches: *id334
       dimensions: *id335
       summaries: *id336
       type: operational_monitoring_explore
       views:
-        base_view: viewpoint_survey_2023_may_android
+        base_view: viewpoint_survey_2023_march_android
       xaxis: submission_date
-    viewpoint_survey_2023_may_ios:
+    viewpoint_survey_2023_march_ios:
       branches: *id337
       dimensions: *id338
       summaries: *id339
+      type: operational_monitoring_explore
+      views:
+        base_view: viewpoint_survey_2023_march_ios
+      xaxis: submission_date
+    viewpoint_survey_2023_may_android:
+      branches: *id340
+      dimensions: *id341
+      summaries: *id342
+      type: operational_monitoring_explore
+      views:
+        base_view: viewpoint_survey_2023_may_android
+      xaxis: submission_date
+    viewpoint_survey_2023_may_ios:
+      branches: *id343
+      dimensions: *id344
+      summaries: *id345
       type: operational_monitoring_explore
       views:
         base_view: viewpoint_survey_2023_may_ios
@@ -9253,69 +9345,75 @@ operational_monitoring:
         table: moz-fx-data-shared-prod.operational_monitoring.device_migration_existing_user_messaging_tour_spotlight_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
-    enrollment_volume_debugging:
+    device_migration_existing_users_sumo_switch_device_cfr_rollout:
       tables:
       - dimensions: *id062
+        table: moz-fx-data-shared-prod.operational_monitoring.device_migration_existing_users_sumo_switch_device_cfr_rollout_statistics
+        xaxis: submission_date
+      type: operational_monitoring_view
+    enrollment_volume_debugging:
+      tables:
+      - dimensions: *id065
         table: moz-fx-data-shared-prod.operational_monitoring.enrollment_volume_debugging_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     experiment_for_additional_metrics_for_product_insights_rollout:
       tables:
-      - dimensions: *id065
+      - dimensions: *id068
         table: moz-fx-data-shared-prod.operational_monitoring.experiment_for_additional_metrics_for_product_insights_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     experiment_for_additional_metrics_for_product_insights_rollout_100:
       tables:
-      - dimensions: *id068
+      - dimensions: *id071
         table: moz-fx-data-shared-prod.operational_monitoring.experiment_for_additional_metrics_for_product_insights_rollout_100_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     experiment_for_additional_metrics_for_product_insights_rollout_clone_2_45:
       tables:
-      - dimensions: *id071
+      - dimensions: *id074
         table: moz-fx-data-shared-prod.operational_monitoring.experiment_for_additional_metrics_for_product_insights_rollout_clone_2_45_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     firefox_accounts_toolbar_button_badge:
       tables:
-      - dimensions: *id074
+      - dimensions: *id077
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_accounts_toolbar_button_badge_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     firefox_android_tcp_rollout_100:
       tables:
-      - dimensions: *id077
+      - dimensions: *id080
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_android_tcp_rollout_100_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     firefox_android_tcp_rollout_25:
       tables:
-      - dimensions: *id080
+      - dimensions: *id083
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_android_tcp_rollout_25_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     firefox_android_tcp_rollout_25_50:
       tables:
-      - dimensions: *id083
+      - dimensions: *id086
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_android_tcp_rollout_25_50_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     firefox_background_update:
       tables:
-      - dimensions: *id086
+      - dimensions: *id089
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_background_update_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     firefox_default_browser_agent:
       tables:
-      - dimensions: *id089
+      - dimensions: *id092
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_default_browser_agent_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     firefox_install_demo:
       tables:
-      - dimensions: *id092
+      - dimensions: *id095
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_install_demo_statistics
         xaxis: submission_date
       type: operational_monitoring_view
@@ -9325,343 +9423,349 @@ operational_monitoring:
       type: operational_monitoring_alerting_view
     firefox_suggest_by_merino_nightly:
       tables:
-      - dimensions: *id095
+      - dimensions: *id098
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_suggest_by_merino_nightly_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     firefox_uninstalls:
       tables:
-      - dimensions: *id098
+      - dimensions: *id101
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_uninstalls_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     first_run_easy_set_up_fx108_rollout:
       tables:
-      - dimensions: *id101
+      - dimensions: *id104
         table: moz-fx-data-shared-prod.operational_monitoring.first_run_easy_set_up_fx108_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     fox_doodle_pin_to_taskbar_rollout:
       tables:
-      - dimensions: *id104
+      - dimensions: *id107
         table: moz-fx-data-shared-prod.operational_monitoring.fox_doodle_pin_to_taskbar_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     fox_doodle_pin_to_taskbar_rollout_100:
       tables:
-      - dimensions: *id107
+      - dimensions: *id110
         table: moz-fx-data-shared-prod.operational_monitoring.fox_doodle_pin_to_taskbar_rollout_100_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     fox_doodle_set_default_rollout:
       tables:
-      - dimensions: *id110
+      - dimensions: *id113
         table: moz-fx-data-shared-prod.operational_monitoring.fox_doodle_set_default_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     fox_doodle_set_default_rollout_100:
       tables:
-      - dimensions: *id113
+      - dimensions: *id116
         table: moz-fx-data-shared-prod.operational_monitoring.fox_doodle_set_default_rollout_100_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     fx_release_android_re_engagement_notifications_114_rollout:
       tables:
-      - dimensions: *id116
+      - dimensions: *id119
         table: moz-fx-data-shared-prod.operational_monitoring.fx_release_android_re_engagement_notifications_114_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     import_infrequent_rollout_make_yourself_at_home:
       tables:
-      - dimensions: *id119
+      - dimensions: *id122
         table: moz-fx-data-shared-prod.operational_monitoring.import_infrequent_rollout_make_yourself_at_home_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     ios_search_bar_placement_v2_treatment_a_rollout:
       tables:
-      - dimensions: *id122
+      - dimensions: *id125
         table: moz-fx-data-shared-prod.operational_monitoring.ios_search_bar_placement_v2_treatment_a_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     merino_py_rollout_for_firefox_suggest_phase_2:
       tables:
-      - dimensions: *id125
+      - dimensions: *id128
         table: moz-fx-data-shared-prod.operational_monitoring.merino_py_rollout_for_firefox_suggest_phase_2_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     merino_py_rollout_for_firefox_suggest_phase_3:
       tables:
-      - dimensions: *id128
+      - dimensions: *id131
         table: moz-fx-data-shared-prod.operational_monitoring.merino_py_rollout_for_firefox_suggest_phase_3_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     mixed_content_level_2_roll_out_release:
       tables:
-      - dimensions: *id131
+      - dimensions: *id134
         table: moz-fx-data-shared-prod.operational_monitoring.mixed_content_level_2_roll_out_release_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     mixed_content_level_2_roll_out_release_113:
       tables:
-      - dimensions: *id134
+      - dimensions: *id137
         table: moz-fx-data-shared-prod.operational_monitoring.mixed_content_level_2_roll_out_release_113_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     mozilla_rally_convert_core_add_on_users_to_attention_stream_2nd_rollout:
       tables:
-      - dimensions: *id137
+      - dimensions: *id140
         table: moz-fx-data-shared-prod.operational_monitoring.mozilla_rally_convert_core_add_on_users_to_attention_stream_2nd_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     mr2022_backgroundtaskmessage_experiment_sizing:
       tables:
-      - dimensions: *id140
+      - dimensions: *id143
         table: moz-fx-data-shared-prod.operational_monitoring.mr2022_backgroundtaskmessage_experiment_sizing_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     mr2022_backgroundtaskmessage_experiment_sizing_release_106:
       tables:
-      - dimensions: *id143
+      - dimensions: *id146
         table: moz-fx-data-shared-prod.operational_monitoring.mr2022_backgroundtaskmessage_experiment_sizing_release_106_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     mr2022_backgroundtaskmessage_notification_beta_107:
       tables:
-      - dimensions: *id146
+      - dimensions: *id149
         table: moz-fx-data-shared-prod.operational_monitoring.mr2022_backgroundtaskmessage_notification_beta_107_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     mr2022_backgroundtaskmessage_notification_beta_107_experiment_1:
       tables:
-      - dimensions: *id149
+      - dimensions: *id152
         table: moz-fx-data-shared-prod.operational_monitoring.mr2022_backgroundtaskmessage_notification_beta_107_experiment_1_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     mr2022_backgroundtaskmessage_notification_release_1pct:
       tables:
-      - dimensions: *id152
+      - dimensions: *id155
         table: moz-fx-data-shared-prod.operational_monitoring.mr2022_backgroundtaskmessage_notification_release_1pct_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     network_performance_desktop_build_by_build:
       tables:
-      - dimensions: *id155
+      - dimensions: *id158
         table: moz-fx-data-shared-prod.operational_monitoring.network_performance_desktop_build_by_build_statistics
         xaxis: build_id
       type: operational_monitoring_view
     new_import_interface_firefox_114_existing_users_rollout:
       tables:
-      - dimensions: *id158
+      - dimensions: *id161
         table: moz-fx-data-shared-prod.operational_monitoring.new_import_interface_firefox_114_existing_users_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     next_generation_accessibility_engine_powering_screen_readers:
       tables:
-      - dimensions: *id161
+      - dimensions: *id164
         table: moz-fx-data-shared-prod.operational_monitoring.next_generation_accessibility_engine_powering_screen_readers_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     nimbus_pref_qa_1_2week_rollout:
       tables:
-      - dimensions: *id164
+      - dimensions: *id167
         table: moz-fx-data-shared-prod.operational_monitoring.nimbus_pref_qa_1_2week_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     nimbus_pref_qa_1_4week_rollout:
       tables:
-      - dimensions: *id167
+      - dimensions: *id170
         table: moz-fx-data-shared-prod.operational_monitoring.nimbus_pref_qa_1_4week_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     nimbus_pref_qa_2_2week_rollout:
       tables:
-      - dimensions: *id170
+      - dimensions: *id173
         table: moz-fx-data-shared-prod.operational_monitoring.nimbus_pref_qa_2_2week_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     nimbus_pref_qa_2_4week_rollout:
       tables:
-      - dimensions: *id173
+      - dimensions: *id176
         table: moz-fx-data-shared-prod.operational_monitoring.nimbus_pref_qa_2_4week_rollout_statistics
+        xaxis: submission_date
+      type: operational_monitoring_view
+    opaque_response_blocking_orb_beta_rollout:
+      tables:
+      - dimensions: *id179
+        table: moz-fx-data-shared-prod.operational_monitoring.opaque_response_blocking_orb_beta_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     performance_desktop_build_by_build_beta:
       tables:
-      - dimensions: *id176
+      - dimensions: *id182
         table: moz-fx-data-shared-prod.operational_monitoring.performance_desktop_build_by_build_beta_statistics
         xaxis: build_id
       type: operational_monitoring_view
     performance_fenix_build_by_build_beta:
       tables:
-      - dimensions: *id179
+      - dimensions: *id185
         table: moz-fx-data-shared-prod.operational_monitoring.performance_fenix_build_by_build_beta_statistics
         xaxis: build_id
       type: operational_monitoring_view
     persist_search_term_rollout_phase_1:
       tables:
-      - dimensions: *id182
+      - dimensions: *id188
         table: moz-fx-data-shared-prod.operational_monitoring.persist_search_term_rollout_phase_1_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     pocket_newtab_save_button:
       tables:
-      - dimensions: *id185
+      - dimensions: *id191
         table: moz-fx-data-shared-prod.operational_monitoring.pocket_newtab_save_button_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     pocket_newtab_save_button_25:
       tables:
-      - dimensions: *id188
+      - dimensions: *id194
         table: moz-fx-data-shared-prod.operational_monitoring.pocket_newtab_save_button_25_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     pocket_newtab_spocs_cache_rollout:
       tables:
-      - dimensions: *id191
+      - dimensions: *id197
         table: moz-fx-data-shared-prod.operational_monitoring.pocket_newtab_spocs_cache_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     pocket_newtab_spocs_cache_rollout_50:
       tables:
-      - dimensions: *id194
+      - dimensions: *id200
         table: moz-fx-data-shared-prod.operational_monitoring.pocket_newtab_spocs_cache_rollout_50_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     print_background_task_times:
       tables:
-      - dimensions: *id197
+      - dimensions: *id203
         table: moz-fx-data-shared-prod.operational_monitoring.print_background_task_times_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     print_background_task_times_by_build:
       tables:
-      - dimensions: *id200
+      - dimensions: *id206
         table: moz-fx-data-shared-prod.operational_monitoring.print_background_task_times_by_build_statistics
         xaxis: build_id
       type: operational_monitoring_view
     product_insight_telemetry_via_server_knobs_rollout_100:
       tables:
-      - dimensions: *id203
+      - dimensions: *id209
         table: moz-fx-data-shared-prod.operational_monitoring.product_insight_telemetry_via_server_knobs_rollout_100_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     product_insight_telemetry_via_server_knobs_rollout_release:
       tables:
-      - dimensions: *id206
+      - dimensions: *id212
         table: moz-fx-data-shared-prod.operational_monitoring.product_insight_telemetry_via_server_knobs_rollout_release_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     release_experiment_for_additional_metrics_for_product_insights_rollout:
       tables:
-      - dimensions: *id209
+      - dimensions: *id215
         table: moz-fx-data-shared-prod.operational_monitoring.release_experiment_for_additional_metrics_for_product_insights_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     rollout_100_experiment_for_additional_metrics_for_product_insights_new:
       tables:
-      - dimensions: *id212
+      - dimensions: *id218
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_100_experiment_for_additional_metrics_for_product_insights_new_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489:
       tables:
-      - dimensions: *id215
+      - dimensions: *id221
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_beta_rollout_to_all_us_desktop_users_v2_beta_74_80_bug_1613489_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481:
       tables:
-      - dimensions: *id218
+      - dimensions: *id224
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_nightly_rollout_to_all_us_desktop_users_nightly_74_80_bug_1613481_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331:
       tables:
-      - dimensions: *id221
+      - dimensions: *id227
         table: moz-fx-data-shared-prod.operational_monitoring.rollout_doh_us_staged_rollout_to_all_us_desktop_users_release_73_77_bug_1586331_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     running_a_dry_run_migration_to_the_application_services_history_in_firefox_ios:
       tables:
-      - dimensions: *id224
+      - dimensions: *id230
         table: moz-fx-data-shared-prod.operational_monitoring.running_a_dry_run_migration_to_the_application_services_history_in_firefox_ios_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     serp_ad_telemetry_validation_rollout:
       tables:
-      - dimensions: *id227
+      - dimensions: *id233
         table: moz-fx-data-shared-prod.operational_monitoring.serp_ad_telemetry_validation_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     server_knobs_validation:
       tables:
-      - dimensions: *id230
+      - dimensions: *id236
         table: moz-fx-data-shared-prod.operational_monitoring.server_knobs_validation_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     server_knobs_validation_fenix:
       tables:
-      - dimensions: *id233
+      - dimensions: *id239
         table: moz-fx-data-shared-prod.operational_monitoring.server_knobs_validation_fenix_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout:
       tables:
-      - dimensions: *id236
+      - dimensions: *id242
         table: moz-fx-data-shared-prod.operational_monitoring.set_firefox_as_default_pdf_handler_on_windows_for_new_users_rollout_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     task_continuity_sync_after_tab_change_rollout_40:
       tables:
-      - dimensions: *id239
+      - dimensions: *id245
         table: moz-fx-data-shared-prod.operational_monitoring.task_continuity_sync_after_tab_change_rollout_40_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     task_continuity_sync_after_tab_change_rollout_60:
       tables:
-      - dimensions: *id242
+      - dimensions: *id248
         table: moz-fx-data-shared-prod.operational_monitoring.task_continuity_sync_after_tab_change_rollout_60_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles:
       tables:
-      - dimensions: *id245
+      - dimensions: *id251
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_aurora_phase_iii_tcp_on_by_default_for_100_aurora_profiles_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles:
       tables:
-      - dimensions: *id248
+      - dimensions: *id254
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_beta_phase_iii_tcp_on_by_default_for_remaining_beta_profiles_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     tcp_rollout_phase_2_demo:
       tables:
-      - dimensions: *id251
+      - dimensions: *id257
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_2_demo_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles:
       tables:
-      - dimensions: *id254
+      - dimensions: *id260
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_iii_tcp_on_by_default_for_50_existing_release_profiles_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles:
       tables:
-      - dimensions: *id257
+      - dimensions: *id263
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_esr_profiles_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles:
       tables:
-      - dimensions: *id260
+      - dimensions: *id266
         table: moz-fx-data-shared-prod.operational_monitoring.tcp_rollout_phase_iii_tcp_on_by_default_for_95_existing_release_profiles_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     telemetry_alerts_prototype:
       tables:
-      - dimensions: *id263
+      - dimensions: *id269
         table: moz-fx-data-shared-prod.operational_monitoring.telemetry_alerts_prototype_statistics
         xaxis: build_id
       type: operational_monitoring_view
@@ -9671,151 +9775,151 @@ operational_monitoring:
       type: operational_monitoring_alerting_view
     total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users:
       tables:
-      - dimensions: *id266
+      - dimensions: *id272
         table: moz-fx-data-shared-prod.operational_monitoring.total_cookie_protection_beta_roll_out_phase_ii_switch_on_to_new_users_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default:
       tables:
-      - dimensions: *id269
+      - dimensions: *id275
         table: moz-fx-data-shared-prod.operational_monitoring.total_cookie_protection_roll_out_to_users_phase_ii_switch_on_by_default_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     updated_import_infrequent_rollout_make_yourself_at_home_copy:
       tables:
-      - dimensions: *id272
+      - dimensions: *id278
         table: moz-fx-data-shared-prod.operational_monitoring.updated_import_infrequent_rollout_make_yourself_at_home_copy_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     use_additional_tiles_for_sponsored_shortcuts:
       tables:
-      - dimensions: *id275
+      - dimensions: *id281
         table: moz-fx-data-shared-prod.operational_monitoring.use_additional_tiles_for_sponsored_shortcuts_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_ios_rolling_week_1:
       tables:
-      - dimensions: *id278
+      - dimensions: *id284
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_rolling_week_1_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_ios_rolling_week_2:
       tables:
-      - dimensions: *id281
+      - dimensions: *id287
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_rolling_week_2_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_ios_rolling_week_3:
       tables:
-      - dimensions: *id284
+      - dimensions: *id290
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_rolling_week_3_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_ios_rolling_week_4:
       tables:
-      - dimensions: *id287
+      - dimensions: *id293
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_rolling_week_4_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_ios_rolling_week_5:
       tables:
-      - dimensions: *id290
+      - dimensions: *id296
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_rolling_week_5_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_rolling_week_1_expansion_android:
       tables:
-      - dimensions: *id293
+      - dimensions: *id299
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_rolling_week_1_expansion_android_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_rolling_week_2_expansion_android:
       tables:
-      - dimensions: *id296
+      - dimensions: *id302
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_rolling_week_2_expansion_android_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_rolling_week_3_expansion_android:
       tables:
-      - dimensions: *id299
+      - dimensions: *id305
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_rolling_week_3_expansion_android_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_survey_2022_nov_android:
       tables:
-      - dimensions: *id302
+      - dimensions: *id308
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_survey_2022_nov_android_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_survey_2022_nov_ios:
       tables:
-      - dimensions: *id305
+      - dimensions: *id311
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_survey_2022_nov_ios_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_survey_2022_oct_android:
       tables:
-      - dimensions: *id308
+      - dimensions: *id314
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_survey_2022_oct_android_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_survey_2022_oct_ios:
       tables:
-      - dimensions: *id311
+      - dimensions: *id317
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_survey_2022_oct_ios_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_survey_2023_april_android:
       tables:
-      - dimensions: *id314
+      - dimensions: *id320
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_survey_2023_april_android_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_survey_2023_april_ios:
       tables:
-      - dimensions: *id317
+      - dimensions: *id323
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_survey_2023_april_ios_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_survey_2023_feb_android:
       tables:
-      - dimensions: *id320
+      - dimensions: *id326
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_survey_2023_feb_android_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_survey_2023_feb_ios:
       tables:
-      - dimensions: *id323
+      - dimensions: *id329
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_survey_2023_feb_ios_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_survey_2023_jan_ios:
       tables:
-      - dimensions: *id326
+      - dimensions: *id332
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_survey_2023_jan_ios_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_survey_2023_march_android:
       tables:
-      - dimensions: *id329
+      - dimensions: *id335
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_survey_2023_march_android_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_survey_2023_march_ios:
       tables:
-      - dimensions: *id332
+      - dimensions: *id338
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_survey_2023_march_ios_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_survey_2023_may_android:
       tables:
-      - dimensions: *id335
+      - dimensions: *id341
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_survey_2023_may_android_statistics
         xaxis: submission_date
       type: operational_monitoring_view
     viewpoint_survey_2023_may_ios:
       tables:
-      - dimensions: *id338
+      - dimensions: *id344
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_survey_2023_may_ios_statistics
         xaxis: submission_date
       type: operational_monitoring_view
