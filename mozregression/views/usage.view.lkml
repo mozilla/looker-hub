@@ -41,6 +41,78 @@ view: usage {
 "
   }
 
+  dimension: metrics__string__usage_linux_distro {
+    label: "Usage Linux Distro"
+    hidden: no
+    sql: ${TABLE}.metrics.string.usage_linux_distro ;;
+    type: string
+    group_label: "Usage"
+    group_item_label: "Linux Distro"
+
+    link: {
+      label: "Glean Dictionary reference for Usage Linux Distro"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozregression/metrics/usage_linux_distro"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the Linux distribution that mozregression is running on (e.g., ubuntu). This is fetched using the `distro` package (`distro.info`).
+"
+  }
+
+  dimension: metrics__string__usage_linux_version {
+    label: "Usage Linux Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.usage_linux_version ;;
+    type: string
+    group_label: "Usage"
+    group_item_label: "Linux Version"
+
+    link: {
+      label: "Glean Dictionary reference for Usage Linux Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozregression/metrics/usage_linux_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of the Linux distribution that mozregression is running on (e.g., 22.04). This is fetched using the `distro` package (`distro.info`).
+"
+  }
+
+  dimension: metrics__string__usage_mac_version {
+    label: "Usage Mac Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.usage_mac_version ;;
+    type: string
+    group_label: "Usage"
+    group_item_label: "Mac Version"
+
+    link: {
+      label: "Glean Dictionary reference for Usage Mac Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozregression/metrics/usage_mac_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of macOS that mozregression is running on (e.g., 13.0). This is fetched using the `platform` module (`platform.mac_ver`).
+"
+  }
+
+  dimension: metrics__string__usage_python_version {
+    label: "Usage Python Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.usage_python_version ;;
+    type: string
+    group_label: "Usage"
+    group_item_label: "Python Version"
+
+    link: {
+      label: "Glean Dictionary reference for Usage Python Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozregression/metrics/usage_python_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of the Python mozregression is running on (e.g., 3.11). This is fetched using the `platform` module (`platform.python_version`).
+"
+  }
+
   dimension: metrics__string__usage_variant {
     label: "Usage Variant"
     hidden: no
@@ -56,6 +128,24 @@ view: usage {
     }
 
     description: "The variant of mozregression used to perform the bisection (gui, console, mach, etc.)
+"
+  }
+
+  dimension: metrics__string__usage_windows_version {
+    label: "Usage Windows Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.usage_windows_version ;;
+    type: string
+    group_label: "Usage"
+    group_item_label: "Windows Version"
+
+    link: {
+      label: "Glean Dictionary reference for Usage Windows Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozregression/metrics/usage_windows_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of Windows that mozregression is running on (e.g., 11). This is fetched using the `platform` module (`platform.win32_ver`).
 "
   }
 

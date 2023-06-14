@@ -389,12 +389,57 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__usage_linux_distro {
+    sql: ${TABLE}.metrics.string.usage_linux_distro ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Usage Linux Distro"
+    description: "The name of the Linux distribution that mozregression is running on (e.g., ubuntu). This is fetched using the `distro` package (`distro.info`).
+"
+  }
+
+  dimension: metrics__string__usage_linux_version {
+    sql: ${TABLE}.metrics.string.usage_linux_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Usage Linux Version"
+    description: "The version of the Linux distribution that mozregression is running on (e.g., 22.04). This is fetched using the `distro` package (`distro.info`).
+"
+  }
+
+  dimension: metrics__string__usage_mac_version {
+    sql: ${TABLE}.metrics.string.usage_mac_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Usage Mac Version"
+    description: "The version of macOS that mozregression is running on (e.g., 13.0). This is fetched using the `platform` module (`platform.mac_ver`).
+"
+  }
+
+  dimension: metrics__string__usage_python_version {
+    sql: ${TABLE}.metrics.string.usage_python_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Usage Python Version"
+    description: "The version of the Python mozregression is running on (e.g., 3.11). This is fetched using the `platform` module (`platform.python_version`).
+"
+  }
+
   dimension: metrics__string__usage_variant {
     sql: ${TABLE}.metrics.string.usage_variant ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Usage Variant"
     description: "The variant of mozregression used to perform the bisection (gui, console, mach, etc.)
+"
+  }
+
+  dimension: metrics__string__usage_windows_version {
+    sql: ${TABLE}.metrics.string.usage_windows_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Usage Windows Version"
+    description: "The version of Windows that mozregression is running on (e.g., 11). This is fetched using the `platform` module (`platform.win32_ver`).
 "
   }
 
