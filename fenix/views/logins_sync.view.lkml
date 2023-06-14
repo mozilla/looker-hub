@@ -79,7 +79,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_string__logins_sync_failure_reason {
     label: "Logins Sync Failure Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_string.logins_sync_failure_reason ;;
     type: string
     group_label: "Logins Sync"
@@ -97,7 +97,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__datetime__logins_sync_finished_at {
     label: "Logins Sync Finished At"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.datetime.logins_sync_finished_at ;;
     type: time
     group_label: "Logins Sync"
@@ -149,7 +149,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__logins_sync_outgoing_batches {
     label: "Logins Sync Outgoing Batches"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.logins_sync_outgoing_batches ;;
     type: number
     group_label: "Logins Sync"
@@ -167,7 +167,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__datetime__logins_sync_started_at {
     label: "Logins Sync Started At"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.datetime.logins_sync_started_at ;;
     type: time
     group_label: "Logins Sync"
@@ -185,7 +185,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__logins_sync_uid {
     label: "Logins Sync Uid"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.logins_sync_uid ;;
     type: string
     group_label: "Logins Sync"
@@ -203,7 +203,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__uuid__sync_sync_uuid {
     label: "Sync Sync Uuid"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
     type: string
     group_label: "Sync"
@@ -865,7 +865,7 @@ view: logins_sync__metrics__labeled_counter__logins_sync_incoming {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__logins_sync__metrics__labeled_counter__logins_sync_incoming
     suggest_dimension: suggest__logins_sync__metrics__labeled_counter__logins_sync_incoming.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -877,13 +877,13 @@ view: logins_sync__metrics__labeled_counter__logins_sync_incoming {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${logins_sync.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -908,7 +908,7 @@ view: logins_sync__metrics__labeled_counter__logins_sync_outgoing {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__logins_sync__metrics__labeled_counter__logins_sync_outgoing
     suggest_dimension: suggest__logins_sync__metrics__labeled_counter__logins_sync_outgoing.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -920,13 +920,13 @@ view: logins_sync__metrics__labeled_counter__logins_sync_outgoing {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${logins_sync.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 

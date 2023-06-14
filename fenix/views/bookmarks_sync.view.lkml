@@ -79,7 +79,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_string__bookmarks_sync_failure_reason {
     label: "Bookmarks Sync Failure Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_string.bookmarks_sync_failure_reason ;;
     type: string
     group_label: "Bookmarks Sync"
@@ -97,7 +97,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__datetime__bookmarks_sync_finished_at {
     label: "Bookmarks Sync Finished At"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.datetime.bookmarks_sync_finished_at ;;
     type: time
     group_label: "Bookmarks Sync"
@@ -149,7 +149,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__bookmarks_sync_outgoing_batches {
     label: "Bookmarks Sync Outgoing Batches"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.bookmarks_sync_outgoing_batches ;;
     type: number
     group_label: "Bookmarks Sync"
@@ -184,7 +184,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__datetime__bookmarks_sync_started_at {
     label: "Bookmarks Sync Started At"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.datetime.bookmarks_sync_started_at ;;
     type: time
     group_label: "Bookmarks Sync"
@@ -202,7 +202,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__bookmarks_sync_uid {
     label: "Bookmarks Sync Uid"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.bookmarks_sync_uid ;;
     type: string
     group_label: "Bookmarks Sync"
@@ -220,7 +220,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__uuid__sync_sync_uuid {
     label: "Sync Sync Uuid"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
     type: string
     group_label: "Sync"
@@ -710,7 +710,7 @@ view: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming
     suggest_dimension: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -722,13 +722,13 @@ view: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${bookmarks_sync.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -753,7 +753,7 @@ view: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_outgoing {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_outgoing
     suggest_dimension: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_outgoing.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -765,13 +765,13 @@ view: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_outgoing {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${bookmarks_sync.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -796,7 +796,7 @@ view: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_remote_tree_probl
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_remote_tree_problems
     suggest_dimension: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_remote_tree_problems.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -808,13 +808,13 @@ view: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_remote_tree_probl
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${bookmarks_sync.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 

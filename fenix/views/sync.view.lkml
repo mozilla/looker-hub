@@ -79,7 +79,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_string__sync_failure_reason {
     label: "Sync Failure Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_string.sync_failure_reason ;;
     type: string
     group_label: "Sync"
@@ -97,7 +97,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__uuid__sync_sync_uuid {
     label: "Sync Sync Uuid"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
     type: string
     group_label: "Sync"

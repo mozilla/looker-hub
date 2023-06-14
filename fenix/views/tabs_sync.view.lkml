@@ -79,7 +79,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__labeled_string__tabs_sync_failure_reason {
     label: "Tabs Sync Failure Reason"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_string.tabs_sync_failure_reason ;;
     type: string
     group_label: "Tabs Sync"
@@ -97,7 +97,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__datetime__tabs_sync_finished_at {
     label: "Tabs Sync Finished At"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.datetime.tabs_sync_finished_at ;;
     type: time
     group_label: "Tabs Sync"
@@ -149,7 +149,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__counter__tabs_sync_outgoing_batches {
     label: "Tabs Sync Outgoing Batches"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.tabs_sync_outgoing_batches ;;
     type: number
     group_label: "Tabs Sync"
@@ -167,7 +167,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__datetime__tabs_sync_started_at {
     label: "Tabs Sync Started At"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.datetime.tabs_sync_started_at ;;
     type: time
     group_label: "Tabs Sync"
@@ -185,7 +185,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension: metrics__string__tabs_sync_uid {
     label: "Tabs Sync Uid"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.tabs_sync_uid ;;
     type: string
     group_label: "Tabs Sync"
@@ -961,7 +961,7 @@ view: tabs_sync__metrics__labeled_counter__tabs_sync_incoming {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_incoming
     suggest_dimension: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_incoming.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -973,13 +973,13 @@ view: tabs_sync__metrics__labeled_counter__tabs_sync_incoming {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${tabs_sync.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -1004,7 +1004,7 @@ view: tabs_sync__metrics__labeled_counter__tabs_sync_outgoing {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_outgoing
     suggest_dimension: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_outgoing.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -1016,12 +1016,12 @@ view: tabs_sync__metrics__labeled_counter__tabs_sync_outgoing {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${tabs_sync.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
