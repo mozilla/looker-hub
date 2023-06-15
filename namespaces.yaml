@@ -727,8 +727,6 @@ fenix:
       type: table_view
     addresses_sync:
       tables:
-      - channel: release
-        table: mozdata.fenix.addresses_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.addresses_sync
       - channel: nightly
@@ -736,8 +734,6 @@ fenix:
       type: glean_ping_view
     addresses_sync_table:
       tables:
-      - channel: release
-        table: mozdata.fenix.addresses_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.addresses_sync
       - channel: nightly
@@ -810,8 +806,6 @@ fenix:
       type: table_view
     bookmarks_sync:
       tables:
-      - channel: release
-        table: mozdata.fenix.bookmarks_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.bookmarks_sync
       - channel: nightly
@@ -819,8 +813,6 @@ fenix:
       type: glean_ping_view
     bookmarks_sync_table:
       tables:
-      - channel: release
-        table: mozdata.fenix.bookmarks_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.bookmarks_sync
       - channel: nightly
@@ -885,8 +877,6 @@ fenix:
       type: table_view
     creditcards_sync:
       tables:
-      - channel: release
-        table: mozdata.fenix.creditcards_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.creditcards_sync
       - channel: nightly
@@ -894,8 +884,6 @@ fenix:
       type: glean_ping_view
     creditcards_sync_table:
       tables:
-      - channel: release
-        table: mozdata.fenix.creditcards_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.creditcards_sync
       - channel: nightly
@@ -1014,8 +1002,6 @@ fenix:
       type: growth_accounting_view
     history_sync:
       tables:
-      - channel: release
-        table: mozdata.fenix.history_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.history_sync
       - channel: nightly
@@ -1023,8 +1009,6 @@ fenix:
       type: glean_ping_view
     history_sync_table:
       tables:
-      - channel: release
-        table: mozdata.fenix.history_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.history_sync
       - channel: nightly
@@ -1050,8 +1034,6 @@ fenix:
       type: table_view
     logins_sync:
       tables:
-      - channel: release
-        table: mozdata.fenix.logins_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.logins_sync
       - channel: nightly
@@ -1059,8 +1041,6 @@ fenix:
       type: glean_ping_view
     logins_sync_table:
       tables:
-      - channel: release
-        table: mozdata.fenix.logins_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.logins_sync
       - channel: nightly
@@ -1188,8 +1168,6 @@ fenix:
       type: table_view
     sync:
       tables:
-      - channel: release
-        table: mozdata.fenix.sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.sync
       - channel: nightly
@@ -1197,8 +1175,6 @@ fenix:
       type: glean_ping_view
     sync_table:
       tables:
-      - channel: release
-        table: mozdata.fenix.sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.sync
       - channel: nightly
@@ -1206,8 +1182,6 @@ fenix:
       type: table_view
     tabs_sync:
       tables:
-      - channel: release
-        table: mozdata.fenix.tabs_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.tabs_sync
       - channel: nightly
@@ -1215,8 +1189,6 @@ fenix:
       type: glean_ping_view
     tabs_sync_table:
       tables:
-      - channel: release
-        table: mozdata.fenix.tabs_sync
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.tabs_sync
       - channel: nightly
