@@ -14,7 +14,7 @@ explore: addresses_sync {
 
   always_filter: {
     filters: [
-      channel: "beta",
+      channel: "release",
       submission_date: "28 days",
     ]
   }
@@ -27,6 +27,16 @@ explore: addresses_sync {
   join: addresses_sync__metrics__labeled_counter__addresses_sync_outgoing {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${addresses_sync.metrics__labeled_counter__addresses_sync_outgoing}) AS addresses_sync__metrics__labeled_counter__addresses_sync_outgoing ON ${addresses_sync.document_id} = ${addresses_sync__metrics__labeled_counter__addresses_sync_outgoing.document_id} ;;
+  }
+
+  join: addresses_sync__metrics__labeled_counter__addresses_sync_v2_incoming {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${addresses_sync.metrics__labeled_counter__addresses_sync_v2_incoming}) AS addresses_sync__metrics__labeled_counter__addresses_sync_v2_incoming ON ${addresses_sync.document_id} = ${addresses_sync__metrics__labeled_counter__addresses_sync_v2_incoming.document_id} ;;
+  }
+
+  join: addresses_sync__metrics__labeled_counter__addresses_sync_v2_outgoing {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${addresses_sync.metrics__labeled_counter__addresses_sync_v2_outgoing}) AS addresses_sync__metrics__labeled_counter__addresses_sync_v2_outgoing ON ${addresses_sync.document_id} = ${addresses_sync__metrics__labeled_counter__addresses_sync_v2_outgoing.document_id} ;;
   }
 
   join: addresses_sync__metrics__labeled_counter__glean_error_invalid_label {
@@ -55,6 +65,14 @@ explore: suggest__addresses_sync__metrics__labeled_counter__addresses_sync_incom
 }
 
 explore: suggest__addresses_sync__metrics__labeled_counter__addresses_sync_outgoing {
+  hidden: yes
+}
+
+explore: suggest__addresses_sync__metrics__labeled_counter__addresses_sync_v2_incoming {
+  hidden: yes
+}
+
+explore: suggest__addresses_sync__metrics__labeled_counter__addresses_sync_v2_outgoing {
   hidden: yes
 }
 

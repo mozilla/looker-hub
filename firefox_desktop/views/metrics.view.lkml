@@ -705,7 +705,7 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__boolean__startup_is_restored_by_macos {
     label: "Startup Is Restored By Macos"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.startup_is_restored_by_macos ;;
     type: yesno
     group_label: "Startup"
