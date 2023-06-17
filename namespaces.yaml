@@ -748,6 +748,11 @@ fenix:
       - channel: release
         table: mozdata.fenix.attributable_clients
       type: table_view
+    attributable_clients_v2_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.attributable_clients_v2
+      type: table_view
     baseline:
       tables:
       - channel: release
