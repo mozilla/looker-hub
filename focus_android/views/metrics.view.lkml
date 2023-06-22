@@ -522,7 +522,7 @@ a website to the autocomplete list.
 
   dimension: metrics__counter__settings_screen_whats_new_tapped {
     label: "Settings Screen Whats New Tapped"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.settings_screen_whats_new_tapped ;;
     type: number
     group_label: "Settings Screen"
