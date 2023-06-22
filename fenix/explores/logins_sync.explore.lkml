@@ -48,6 +48,16 @@ explore: logins_sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${logins_sync.metrics__labeled_counter__logins_sync_outgoing}) AS logins_sync__metrics__labeled_counter__logins_sync_outgoing ON ${logins_sync.document_id} = ${logins_sync__metrics__labeled_counter__logins_sync_outgoing.document_id} ;;
   }
+
+  join: logins_sync__metrics__labeled_counter__logins_sync_v2_incoming {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${logins_sync.metrics__labeled_counter__logins_sync_v2_incoming}) AS logins_sync__metrics__labeled_counter__logins_sync_v2_incoming ON ${logins_sync.document_id} = ${logins_sync__metrics__labeled_counter__logins_sync_v2_incoming.document_id} ;;
+  }
+
+  join: logins_sync__metrics__labeled_counter__logins_sync_v2_outgoing {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${logins_sync.metrics__labeled_counter__logins_sync_v2_outgoing}) AS logins_sync__metrics__labeled_counter__logins_sync_v2_outgoing ON ${logins_sync.document_id} = ${logins_sync__metrics__labeled_counter__logins_sync_v2_outgoing.document_id} ;;
+  }
 }
 
 explore: suggest__logins_sync__metrics__labeled_counter__glean_error_invalid_label {
@@ -71,5 +81,13 @@ explore: suggest__logins_sync__metrics__labeled_counter__logins_sync_incoming {
 }
 
 explore: suggest__logins_sync__metrics__labeled_counter__logins_sync_outgoing {
+  hidden: yes
+}
+
+explore: suggest__logins_sync__metrics__labeled_counter__logins_sync_v2_incoming {
+  hidden: yes
+}
+
+explore: suggest__logins_sync__metrics__labeled_counter__logins_sync_v2_outgoing {
   hidden: yes
 }

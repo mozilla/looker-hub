@@ -48,6 +48,16 @@ explore: history_sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${history_sync.metrics__labeled_counter__history_sync_outgoing}) AS history_sync__metrics__labeled_counter__history_sync_outgoing ON ${history_sync.document_id} = ${history_sync__metrics__labeled_counter__history_sync_outgoing.document_id} ;;
   }
+
+  join: history_sync__metrics__labeled_counter__history_sync_v2_incoming {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${history_sync.metrics__labeled_counter__history_sync_v2_incoming}) AS history_sync__metrics__labeled_counter__history_sync_v2_incoming ON ${history_sync.document_id} = ${history_sync__metrics__labeled_counter__history_sync_v2_incoming.document_id} ;;
+  }
+
+  join: history_sync__metrics__labeled_counter__history_sync_v2_outgoing {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${history_sync.metrics__labeled_counter__history_sync_v2_outgoing}) AS history_sync__metrics__labeled_counter__history_sync_v2_outgoing ON ${history_sync.document_id} = ${history_sync__metrics__labeled_counter__history_sync_v2_outgoing.document_id} ;;
+  }
 }
 
 explore: suggest__history_sync__metrics__labeled_counter__glean_error_invalid_label {
@@ -71,5 +81,13 @@ explore: suggest__history_sync__metrics__labeled_counter__history_sync_incoming 
 }
 
 explore: suggest__history_sync__metrics__labeled_counter__history_sync_outgoing {
+  hidden: yes
+}
+
+explore: suggest__history_sync__metrics__labeled_counter__history_sync_v2_incoming {
+  hidden: yes
+}
+
+explore: suggest__history_sync__metrics__labeled_counter__history_sync_v2_outgoing {
   hidden: yes
 }

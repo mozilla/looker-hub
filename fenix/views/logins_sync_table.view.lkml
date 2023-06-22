@@ -283,6 +283,13 @@ view: logins_sync_table {
     group_item_label: "Logins Sync Outgoing Batches"
   }
 
+  dimension: metrics__counter__logins_sync_v2_outgoing_batches {
+    sql: ${TABLE}.metrics.counter.logins_sync_v2_outgoing_batches ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Sync V2 Outgoing Batches"
+  }
+
   dimension: metrics__datetime__raw_logins_sync_finished_at {
     sql: ${TABLE}.metrics.datetime.raw_logins_sync_finished_at ;;
     type: string
@@ -295,6 +302,20 @@ view: logins_sync_table {
     type: string
     group_label: "Metrics Datetime"
     group_item_label: "Raw Logins Sync Started At"
+  }
+
+  dimension: metrics__datetime__raw_logins_sync_v2_finished_at {
+    sql: ${TABLE}.metrics.datetime.raw_logins_sync_v2_finished_at ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Logins Sync V2 Finished At"
+  }
+
+  dimension: metrics__datetime__raw_logins_sync_v2_started_at {
+    sql: ${TABLE}.metrics.datetime.raw_logins_sync_v2_started_at ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Logins Sync V2 Started At"
   }
 
   dimension: metrics__jwe {
@@ -332,6 +353,16 @@ view: logins_sync_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__logins_sync_v2_incoming {
+    sql: ${TABLE}.metrics.labeled_counter.logins_sync_v2_incoming ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__logins_sync_v2_outgoing {
+    sql: ${TABLE}.metrics.labeled_counter.logins_sync_v2_outgoing ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_rate {
     sql: ${TABLE}.metrics.labeled_rate ;;
     hidden: yes
@@ -342,11 +373,23 @@ view: logins_sync_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_string__logins_sync_v2_failure_reason {
+    sql: ${TABLE}.metrics.labeled_string.logins_sync_v2_failure_reason ;;
+    hidden: yes
+  }
+
   dimension: metrics__string__logins_sync_uid {
     sql: ${TABLE}.metrics.string.logins_sync_uid ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Logins Sync Uid"
+  }
+
+  dimension: metrics__string__logins_sync_v2_uid {
+    sql: ${TABLE}.metrics.string.logins_sync_v2_uid ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Logins Sync V2 Uid"
   }
 
   dimension: metrics__text {
@@ -364,6 +407,13 @@ view: logins_sync_table {
     type: string
     group_label: "Metrics Uuid"
     group_item_label: "Sync Sync Uuid"
+  }
+
+  dimension: metrics__uuid__sync_v2_sync_uuid {
+    sql: ${TABLE}.metrics.uuid.sync_v2_sync_uuid ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Sync V2 Sync Uuid"
   }
 
   dimension: normalized_app_id {
@@ -486,6 +536,36 @@ view: logins_sync_table {
       year,
     ]
     label: "Metrics Datetime: Logins Sync Started At"
+  }
+
+  dimension_group: metrics__datetime__logins_sync_v2_finished_at {
+    sql: ${TABLE}.metrics.datetime.logins_sync_v2_finished_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Logins Sync V2 Finished At"
+  }
+
+  dimension_group: metrics__datetime__logins_sync_v2_started_at {
+    sql: ${TABLE}.metrics.datetime.logins_sync_v2_started_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Logins Sync V2 Started At"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -635,6 +715,18 @@ view: logins_sync_table__metrics__labeled_rate__value {
 }
 
 view: logins_sync_table__metrics__labeled_string__logins_sync_failure_reason {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: logins_sync_table__metrics__labeled_string__logins_sync_v2_failure_reason {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

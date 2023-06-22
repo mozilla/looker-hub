@@ -283,6 +283,13 @@ view: history_sync_table {
     group_item_label: "History Sync Outgoing Batches"
   }
 
+  dimension: metrics__counter__history_sync_v2_outgoing_batches {
+    sql: ${TABLE}.metrics.counter.history_sync_v2_outgoing_batches ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "History Sync V2 Outgoing Batches"
+  }
+
   dimension: metrics__datetime__raw_history_sync_finished_at {
     sql: ${TABLE}.metrics.datetime.raw_history_sync_finished_at ;;
     type: string
@@ -295,6 +302,20 @@ view: history_sync_table {
     type: string
     group_label: "Metrics Datetime"
     group_item_label: "Raw History Sync Started At"
+  }
+
+  dimension: metrics__datetime__raw_history_sync_v2_finished_at {
+    sql: ${TABLE}.metrics.datetime.raw_history_sync_v2_finished_at ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw History Sync V2 Finished At"
+  }
+
+  dimension: metrics__datetime__raw_history_sync_v2_started_at {
+    sql: ${TABLE}.metrics.datetime.raw_history_sync_v2_started_at ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw History Sync V2 Started At"
   }
 
   dimension: metrics__jwe {
@@ -332,6 +353,16 @@ view: history_sync_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__history_sync_v2_incoming {
+    sql: ${TABLE}.metrics.labeled_counter.history_sync_v2_incoming ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__history_sync_v2_outgoing {
+    sql: ${TABLE}.metrics.labeled_counter.history_sync_v2_outgoing ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_rate {
     sql: ${TABLE}.metrics.labeled_rate ;;
     hidden: yes
@@ -342,11 +373,23 @@ view: history_sync_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_string__history_sync_v2_failure_reason {
+    sql: ${TABLE}.metrics.labeled_string.history_sync_v2_failure_reason ;;
+    hidden: yes
+  }
+
   dimension: metrics__string__history_sync_uid {
     sql: ${TABLE}.metrics.string.history_sync_uid ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "History Sync Uid"
+  }
+
+  dimension: metrics__string__history_sync_v2_uid {
+    sql: ${TABLE}.metrics.string.history_sync_v2_uid ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "History Sync V2 Uid"
   }
 
   dimension: metrics__text {
@@ -366,10 +409,16 @@ view: history_sync_table {
     group_item_label: "Sync Sync Uuid"
   }
 
+  dimension: metrics__uuid__sync_v2_sync_uuid {
+    sql: ${TABLE}.metrics.uuid.sync_v2_sync_uuid ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Sync V2 Sync Uuid"
+  }
+
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
-    description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {
@@ -380,7 +429,6 @@ view: history_sync_table {
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
-    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
@@ -486,6 +534,36 @@ view: history_sync_table {
       year,
     ]
     label: "Metrics Datetime: History Sync Started At"
+  }
+
+  dimension_group: metrics__datetime__history_sync_v2_finished_at {
+    sql: ${TABLE}.metrics.datetime.history_sync_v2_finished_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: History Sync V2 Finished At"
+  }
+
+  dimension_group: metrics__datetime__history_sync_v2_started_at {
+    sql: ${TABLE}.metrics.datetime.history_sync_v2_started_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: History Sync V2 Started At"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -635,6 +713,18 @@ view: history_sync_table__metrics__labeled_rate__value {
 }
 
 view: history_sync_table__metrics__labeled_string__history_sync_failure_reason {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: history_sync_table__metrics__labeled_string__history_sync_v2_failure_reason {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

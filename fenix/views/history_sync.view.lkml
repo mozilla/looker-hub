@@ -201,6 +201,130 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_string__history_sync_v2_failure_reason {
+    label: "History Sync V2 Failure Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.history_sync_v2_failure_reason ;;
+    type: string
+    group_label: "History Sync V2"
+    group_item_label: "Failure Reason"
+
+    link: {
+      label: "Glean Dictionary reference for History Sync V2 Failure Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/history_sync_v2_failure_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records why the history sync failed: either due to an authentication error, unexpected exception, or other error. The error strings are truncated and sanitized to omit PII, like URLs and file system paths.
+"
+  }
+
+  dimension: metrics__datetime__history_sync_v2_finished_at {
+    label: "History Sync V2 Finished At"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.history_sync_v2_finished_at ;;
+    type: time
+    group_label: "History Sync V2"
+    group_item_label: "Finished At"
+
+    link: {
+      label: "Glean Dictionary reference for History Sync V2 Finished At"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/history_sync_v2_finished_at"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records when the history sync finished. This includes the time to download, apply, and upload all records.
+"
+  }
+
+  dimension: metrics__labeled_counter__history_sync_v2_incoming {
+    label: "History Sync V2 Incoming"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.history_sync_v2_incoming ;;
+    group_label: "History Sync V2"
+    group_item_label: "Incoming"
+
+    link: {
+      label: "Glean Dictionary reference for History Sync V2 Incoming"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/history_sync_v2_incoming"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records incoming history record counts. `applied` is the number of incoming history pages that were successfully stored or updated in the local database. `failed_to_apply` is the number of pages that were ignored due to errors. `reconciled` is the number of pages with new visits locally and remotely, and had their visits merged.
+"
+  }
+
+  dimension: metrics__labeled_counter__history_sync_v2_outgoing {
+    label: "History Sync V2 Outgoing"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.history_sync_v2_outgoing ;;
+    group_label: "History Sync V2"
+    group_item_label: "Outgoing"
+
+    link: {
+      label: "Glean Dictionary reference for History Sync V2 Outgoing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/history_sync_v2_outgoing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records outgoing history record counts. `uploaded` is the number of records that were successfully sent to the server. `failed_to_upload` is the number of records that weren't uploaded, and will be retried on the next sync.
+"
+  }
+
+  dimension: metrics__counter__history_sync_v2_outgoing_batches {
+    label: "History Sync V2 Outgoing Batches"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.history_sync_v2_outgoing_batches ;;
+    type: number
+    group_label: "History Sync V2"
+    group_item_label: "Outgoing Batches"
+
+    link: {
+      label: "Glean Dictionary reference for History Sync V2 Outgoing Batches"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/history_sync_v2_outgoing_batches"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of batches needed to upload all outgoing records. The Sync server has a hard limit on the number of records (and request body bytes) on the number of records that can fit into a single batch, and large syncs may require multiple batches.
+"
+  }
+
+  dimension: metrics__datetime__history_sync_v2_started_at {
+    label: "History Sync V2 Started At"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.history_sync_v2_started_at ;;
+    type: time
+    group_label: "History Sync V2"
+    group_item_label: "Started At"
+
+    link: {
+      label: "Glean Dictionary reference for History Sync V2 Started At"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/history_sync_v2_started_at"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records when the history sync started.
+"
+  }
+
+  dimension: metrics__string__history_sync_v2_uid {
+    label: "History Sync V2 Uid"
+    hidden: no
+    sql: ${TABLE}.metrics.string.history_sync_v2_uid ;;
+    type: string
+    group_label: "History Sync V2"
+    group_item_label: "Uid"
+
+    link: {
+      label: "Glean Dictionary reference for History Sync V2 Uid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/history_sync_v2_uid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The user's hashed Firefox Account ID.
+"
+  }
+
   dimension: metrics__uuid__sync_sync_uuid {
     label: "Sync Sync Uuid"
     hidden: yes
@@ -212,6 +336,24 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Sync Sync Uuid"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/sync_sync_uuid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Unique identifier for this sync, used to correlate together individual pings for data types that were synchronized together (history, bookmarks, logins). If a data type is synchronized by itself via the legacy 'sync' API (as opposed to the Sync Manager), then this field will not be set on the corresponding ping.
+"
+  }
+
+  dimension: metrics__uuid__sync_v2_sync_uuid {
+    label: "Sync V2 Sync Uuid"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.sync_v2_sync_uuid ;;
+    type: string
+    group_label: "Sync V2"
+    group_item_label: "Sync Uuid"
+
+    link: {
+      label: "Glean Dictionary reference for Sync V2 Sync Uuid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/sync_v2_sync_uuid"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
@@ -494,7 +636,6 @@ The labels are the `category.name` identifier of the metric.
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
-    description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {
@@ -505,7 +646,6 @@ The labels are the `category.name` identifier of the metric.
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
-    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
@@ -657,6 +797,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for History Sync Outgoing Batches"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/history_sync_outgoing_batches"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: history_sync_v2_outgoing_batches {
+    type: sum
+    sql: ${metrics__counter__history_sync_v2_outgoing_batches} ;;
+
+    link: {
+      label: "Glean Dictionary reference for History Sync V2 Outgoing Batches"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/history_sync_v2_outgoing_batches"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: history_sync_v2_outgoing_batches_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__history_sync_v2_outgoing_batches: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for History Sync V2 Outgoing Batches"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/history_sync_v2_outgoing_batches"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -930,6 +1095,92 @@ view: history_sync__metrics__labeled_counter__history_sync_outgoing {
   }
 }
 
+view: history_sync__metrics__labeled_counter__history_sync_v2_incoming {
+  label: "History Sync V2 - Incoming"
+
+  dimension: document_id {
+    type: string
+    sql: ${history_sync.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${history_sync.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__history_sync__metrics__labeled_counter__history_sync_v2_incoming
+    suggest_dimension: suggest__history_sync__metrics__labeled_counter__history_sync_v2_incoming.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${history_sync.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: history_sync__metrics__labeled_counter__history_sync_v2_outgoing {
+  label: "History Sync V2 - Outgoing"
+
+  dimension: document_id {
+    type: string
+    sql: ${history_sync.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${history_sync.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__history_sync__metrics__labeled_counter__history_sync_v2_outgoing
+    suggest_dimension: suggest__history_sync__metrics__labeled_counter__history_sync_v2_outgoing.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${history_sync.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: suggest__history_sync__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
@@ -1032,6 +1283,44 @@ view: suggest__history_sync__metrics__labeled_counter__history_sync_outgoing {
     count(*) as n
 from mozdata.fenix.history_sync as t,
 unnest(metrics.labeled_counter.history_sync_outgoing) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__history_sync__metrics__labeled_counter__history_sync_v2_incoming {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.history_sync as t,
+unnest(metrics.labeled_counter.history_sync_v2_incoming) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__history_sync__metrics__labeled_counter__history_sync_v2_outgoing {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.history_sync as t,
+unnest(metrics.labeled_counter.history_sync_v2_outgoing) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

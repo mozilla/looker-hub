@@ -34,6 +34,21 @@ explore: bookmarks_sync {
     sql: LEFT JOIN UNNEST(${bookmarks_sync.metrics__labeled_counter__bookmarks_sync_remote_tree_problems}) AS bookmarks_sync__metrics__labeled_counter__bookmarks_sync_remote_tree_problems ON ${bookmarks_sync.document_id} = ${bookmarks_sync__metrics__labeled_counter__bookmarks_sync_remote_tree_problems.document_id} ;;
   }
 
+  join: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_incoming {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${bookmarks_sync.metrics__labeled_counter__bookmarks_sync_v2_incoming}) AS bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_incoming ON ${bookmarks_sync.document_id} = ${bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_incoming.document_id} ;;
+  }
+
+  join: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_outgoing {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${bookmarks_sync.metrics__labeled_counter__bookmarks_sync_v2_outgoing}) AS bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_outgoing ON ${bookmarks_sync.document_id} = ${bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_outgoing.document_id} ;;
+  }
+
+  join: bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_remote_tree_problems {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${bookmarks_sync.metrics__labeled_counter__bookmarks_sync_v2_remote_tree_problems}) AS bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_remote_tree_problems ON ${bookmarks_sync.document_id} = ${bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_remote_tree_problems.document_id} ;;
+  }
+
   join: bookmarks_sync__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${bookmarks_sync.metrics__labeled_counter__glean_error_invalid_label}) AS bookmarks_sync__metrics__labeled_counter__glean_error_invalid_label ON ${bookmarks_sync.document_id} = ${bookmarks_sync__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -64,6 +79,18 @@ explore: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_outgo
 }
 
 explore: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_remote_tree_problems {
+  hidden: yes
+}
+
+explore: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_incoming {
+  hidden: yes
+}
+
+explore: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_outgoing {
+  hidden: yes
+}
+
+explore: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_v2_remote_tree_problems {
   hidden: yes
 }
 

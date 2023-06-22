@@ -29,6 +29,16 @@ explore: creditcards_sync {
     sql: LEFT JOIN UNNEST(${creditcards_sync.metrics__labeled_counter__creditcards_sync_outgoing}) AS creditcards_sync__metrics__labeled_counter__creditcards_sync_outgoing ON ${creditcards_sync.document_id} = ${creditcards_sync__metrics__labeled_counter__creditcards_sync_outgoing.document_id} ;;
   }
 
+  join: creditcards_sync__metrics__labeled_counter__creditcards_sync_v2_incoming {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${creditcards_sync.metrics__labeled_counter__creditcards_sync_v2_incoming}) AS creditcards_sync__metrics__labeled_counter__creditcards_sync_v2_incoming ON ${creditcards_sync.document_id} = ${creditcards_sync__metrics__labeled_counter__creditcards_sync_v2_incoming.document_id} ;;
+  }
+
+  join: creditcards_sync__metrics__labeled_counter__creditcards_sync_v2_outgoing {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${creditcards_sync.metrics__labeled_counter__creditcards_sync_v2_outgoing}) AS creditcards_sync__metrics__labeled_counter__creditcards_sync_v2_outgoing ON ${creditcards_sync.document_id} = ${creditcards_sync__metrics__labeled_counter__creditcards_sync_v2_outgoing.document_id} ;;
+  }
+
   join: creditcards_sync__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${creditcards_sync.metrics__labeled_counter__glean_error_invalid_label}) AS creditcards_sync__metrics__labeled_counter__glean_error_invalid_label ON ${creditcards_sync.document_id} = ${creditcards_sync__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -55,6 +65,14 @@ explore: suggest__creditcards_sync__metrics__labeled_counter__creditcards_sync_i
 }
 
 explore: suggest__creditcards_sync__metrics__labeled_counter__creditcards_sync_outgoing {
+  hidden: yes
+}
+
+explore: suggest__creditcards_sync__metrics__labeled_counter__creditcards_sync_v2_incoming {
+  hidden: yes
+}
+
+explore: suggest__creditcards_sync__metrics__labeled_counter__creditcards_sync_v2_outgoing {
   hidden: yes
 }
 

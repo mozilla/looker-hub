@@ -201,6 +201,130 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_string__tabs_sync_v2_failure_reason {
+    label: "Tabs Sync V2 Failure Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.tabs_sync_v2_failure_reason ;;
+    type: string
+    group_label: "Tabs Sync V2"
+    group_item_label: "Failure Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Sync V2 Failure Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_sync_v2_failure_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records why the tabs sync failed: either due to an authentication error, unexpected exception, or other error. The error strings are truncated and sanitized to omit PII, like URLs and file system paths.
+"
+  }
+
+  dimension: metrics__datetime__tabs_sync_v2_finished_at {
+    label: "Tabs Sync V2 Finished At"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.tabs_sync_v2_finished_at ;;
+    type: time
+    group_label: "Tabs Sync V2"
+    group_item_label: "Finished At"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Sync V2 Finished At"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_sync_v2_finished_at"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records when the tabs sync finished. This includes the time to download, apply, and upload all records.
+"
+  }
+
+  dimension: metrics__labeled_counter__tabs_sync_v2_incoming {
+    label: "Tabs Sync V2 Incoming"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tabs_sync_v2_incoming ;;
+    group_label: "Tabs Sync V2"
+    group_item_label: "Incoming"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Sync V2 Incoming"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_sync_v2_incoming"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records incoming tabs record counts. `applied` is the number of incoming records that were successfully stored or updated in the local database. `failed_to_apply` is the number of records that were ignored due to errors. `reconciled` is the number of merged records.
+"
+  }
+
+  dimension: metrics__labeled_counter__tabs_sync_v2_outgoing {
+    label: "Tabs Sync V2 Outgoing"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tabs_sync_v2_outgoing ;;
+    group_label: "Tabs Sync V2"
+    group_item_label: "Outgoing"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Sync V2 Outgoing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_sync_v2_outgoing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records outgoing tabs record counts. `uploaded` is the number of records that were successfully sent to the server. `failed_to_upload` is the number of records that weren't uploaded, and will be retried on the next sync.
+"
+  }
+
+  dimension: metrics__counter__tabs_sync_v2_outgoing_batches {
+    label: "Tabs Sync V2 Outgoing Batches"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tabs_sync_v2_outgoing_batches ;;
+    type: number
+    group_label: "Tabs Sync V2"
+    group_item_label: "Outgoing Batches"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Sync V2 Outgoing Batches"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_sync_v2_outgoing_batches"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the number of batches needed to upload all outgoing records. The Sync server has a hard limit on the number of records (and request body bytes) on the number of records that can fit into a single batch, and large syncs may require multiple batches.
+"
+  }
+
+  dimension: metrics__datetime__tabs_sync_v2_started_at {
+    label: "Tabs Sync V2 Started At"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.tabs_sync_v2_started_at ;;
+    type: time
+    group_label: "Tabs Sync V2"
+    group_item_label: "Started At"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Sync V2 Started At"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_sync_v2_started_at"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records when the tabs sync started.
+"
+  }
+
+  dimension: metrics__string__tabs_sync_v2_uid {
+    label: "Tabs Sync V2 Uid"
+    hidden: no
+    sql: ${TABLE}.metrics.string.tabs_sync_v2_uid ;;
+    type: string
+    group_label: "Tabs Sync V2"
+    group_item_label: "Uid"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Sync V2 Uid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_sync_v2_uid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The user's hashed Firefox Account ID.
+"
+  }
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -643,6 +767,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: tabs_sync_v2_outgoing_batches {
+    type: sum
+    sql: ${metrics__counter__tabs_sync_v2_outgoing_batches} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Sync V2 Outgoing Batches"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_sync_v2_outgoing_batches"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_sync_v2_outgoing_batches_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tabs_sync_v2_outgoing_batches: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Sync V2 Outgoing Batches"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_sync_v2_outgoing_batches"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   filter: channel {
     type: string
     description: "Filter by the app's channel"
@@ -756,6 +905,44 @@ view: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_outgoing {
     count(*) as n
 from mozdata.fenix.tabs_sync as t,
 unnest(metrics.labeled_counter.tabs_sync_outgoing) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_v2_incoming {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.tabs_sync as t,
+unnest(metrics.labeled_counter.tabs_sync_v2_incoming) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_v2_outgoing {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.tabs_sync as t,
+unnest(metrics.labeled_counter.tabs_sync_v2_outgoing) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -1023,5 +1210,91 @@ view: tabs_sync__metrics__labeled_counter__tabs_sync_outgoing {
     type: count_distinct
     sql: case when ${value} > 0 then ${tabs_sync.client_info__client_id} end ;;
     hidden: yes
+  }
+}
+
+view: tabs_sync__metrics__labeled_counter__tabs_sync_v2_incoming {
+  label: "Tabs Sync V2 - Incoming"
+
+  dimension: document_id {
+    type: string
+    sql: ${tabs_sync.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${tabs_sync.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_v2_incoming
+    suggest_dimension: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_v2_incoming.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${tabs_sync.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: tabs_sync__metrics__labeled_counter__tabs_sync_v2_outgoing {
+  label: "Tabs Sync V2 - Outgoing"
+
+  dimension: document_id {
+    type: string
+    sql: ${tabs_sync.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${tabs_sync.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_v2_outgoing
+    suggest_dimension: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_v2_outgoing.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${tabs_sync.client_info__client_id} end ;;
+    hidden: no
   }
 }

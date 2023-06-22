@@ -283,6 +283,13 @@ view: creditcards_sync_table {
     group_item_label: "Creditcards Sync Outgoing Batches"
   }
 
+  dimension: metrics__counter__creditcards_sync_v2_outgoing_batches {
+    sql: ${TABLE}.metrics.counter.creditcards_sync_v2_outgoing_batches ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Creditcards Sync V2 Outgoing Batches"
+  }
+
   dimension: metrics__datetime__raw_creditcards_sync_finished_at {
     sql: ${TABLE}.metrics.datetime.raw_creditcards_sync_finished_at ;;
     type: string
@@ -297,6 +304,20 @@ view: creditcards_sync_table {
     group_item_label: "Raw Creditcards Sync Started At"
   }
 
+  dimension: metrics__datetime__raw_creditcards_sync_v2_finished_at {
+    sql: ${TABLE}.metrics.datetime.raw_creditcards_sync_v2_finished_at ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Creditcards Sync V2 Finished At"
+  }
+
+  dimension: metrics__datetime__raw_creditcards_sync_v2_started_at {
+    sql: ${TABLE}.metrics.datetime.raw_creditcards_sync_v2_started_at ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Creditcards Sync V2 Started At"
+  }
+
   dimension: metrics__jwe {
     sql: ${TABLE}.metrics.jwe ;;
     hidden: yes
@@ -309,6 +330,16 @@ view: creditcards_sync_table {
 
   dimension: metrics__labeled_counter__creditcards_sync_outgoing {
     sql: ${TABLE}.metrics.labeled_counter.creditcards_sync_outgoing ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__creditcards_sync_v2_incoming {
+    sql: ${TABLE}.metrics.labeled_counter.creditcards_sync_v2_incoming ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__creditcards_sync_v2_outgoing {
+    sql: ${TABLE}.metrics.labeled_counter.creditcards_sync_v2_outgoing ;;
     hidden: yes
   }
 
@@ -342,11 +373,23 @@ view: creditcards_sync_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_string__creditcards_sync_v2_failure_reason {
+    sql: ${TABLE}.metrics.labeled_string.creditcards_sync_v2_failure_reason ;;
+    hidden: yes
+  }
+
   dimension: metrics__string__creditcards_sync_uid {
     sql: ${TABLE}.metrics.string.creditcards_sync_uid ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Creditcards Sync Uid"
+  }
+
+  dimension: metrics__string__creditcards_sync_v2_uid {
+    sql: ${TABLE}.metrics.string.creditcards_sync_v2_uid ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Creditcards Sync V2 Uid"
   }
 
   dimension: metrics__text {
@@ -479,6 +522,36 @@ view: creditcards_sync_table {
       year,
     ]
     label: "Metrics Datetime: Creditcards Sync Started At"
+  }
+
+  dimension_group: metrics__datetime__creditcards_sync_v2_finished_at {
+    sql: ${TABLE}.metrics.datetime.creditcards_sync_v2_finished_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Creditcards Sync V2 Finished At"
+  }
+
+  dimension_group: metrics__datetime__creditcards_sync_v2_started_at {
+    sql: ${TABLE}.metrics.datetime.creditcards_sync_v2_started_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Creditcards Sync V2 Started At"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -628,6 +701,18 @@ view: creditcards_sync_table__metrics__labeled_rate__value {
 }
 
 view: creditcards_sync_table__metrics__labeled_string__creditcards_sync_failure_reason {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: creditcards_sync_table__metrics__labeled_string__creditcards_sync_v2_failure_reason {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

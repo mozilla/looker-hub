@@ -283,6 +283,13 @@ view: addresses_sync_table {
     group_item_label: "Addresses Sync Outgoing Batches"
   }
 
+  dimension: metrics__counter__addresses_sync_v2_outgoing_batches {
+    sql: ${TABLE}.metrics.counter.addresses_sync_v2_outgoing_batches ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Addresses Sync V2 Outgoing Batches"
+  }
+
   dimension: metrics__datetime__raw_addresses_sync_finished_at {
     sql: ${TABLE}.metrics.datetime.raw_addresses_sync_finished_at ;;
     type: string
@@ -297,6 +304,20 @@ view: addresses_sync_table {
     group_item_label: "Raw Addresses Sync Started At"
   }
 
+  dimension: metrics__datetime__raw_addresses_sync_v2_finished_at {
+    sql: ${TABLE}.metrics.datetime.raw_addresses_sync_v2_finished_at ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Addresses Sync V2 Finished At"
+  }
+
+  dimension: metrics__datetime__raw_addresses_sync_v2_started_at {
+    sql: ${TABLE}.metrics.datetime.raw_addresses_sync_v2_started_at ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Addresses Sync V2 Started At"
+  }
+
   dimension: metrics__jwe {
     sql: ${TABLE}.metrics.jwe ;;
     hidden: yes
@@ -309,6 +330,16 @@ view: addresses_sync_table {
 
   dimension: metrics__labeled_counter__addresses_sync_outgoing {
     sql: ${TABLE}.metrics.labeled_counter.addresses_sync_outgoing ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__addresses_sync_v2_incoming {
+    sql: ${TABLE}.metrics.labeled_counter.addresses_sync_v2_incoming ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__addresses_sync_v2_outgoing {
+    sql: ${TABLE}.metrics.labeled_counter.addresses_sync_v2_outgoing ;;
     hidden: yes
   }
 
@@ -342,11 +373,23 @@ view: addresses_sync_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_string__addresses_sync_v2_failure_reason {
+    sql: ${TABLE}.metrics.labeled_string.addresses_sync_v2_failure_reason ;;
+    hidden: yes
+  }
+
   dimension: metrics__string__addresses_sync_uid {
     sql: ${TABLE}.metrics.string.addresses_sync_uid ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Addresses Sync Uid"
+  }
+
+  dimension: metrics__string__addresses_sync_v2_uid {
+    sql: ${TABLE}.metrics.string.addresses_sync_v2_uid ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Addresses Sync V2 Uid"
   }
 
   dimension: metrics__text {
@@ -479,6 +522,36 @@ view: addresses_sync_table {
       year,
     ]
     label: "Metrics Datetime: Addresses Sync Started At"
+  }
+
+  dimension_group: metrics__datetime__addresses_sync_v2_finished_at {
+    sql: ${TABLE}.metrics.datetime.addresses_sync_v2_finished_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Addresses Sync V2 Finished At"
+  }
+
+  dimension_group: metrics__datetime__addresses_sync_v2_started_at {
+    sql: ${TABLE}.metrics.datetime.addresses_sync_v2_started_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Addresses Sync V2 Started At"
   }
 
   dimension_group: ping_info__parsed_end {
@@ -628,6 +701,18 @@ view: addresses_sync_table__metrics__labeled_rate__value {
 }
 
 view: addresses_sync_table__metrics__labeled_string__addresses_sync_failure_reason {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: addresses_sync_table__metrics__labeled_string__addresses_sync_v2_failure_reason {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -311,6 +311,11 @@ view: sync_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_string__sync_v2_failure_reason {
+    sql: ${TABLE}.metrics.labeled_string.sync_v2_failure_reason ;;
+    hidden: yes
+  }
+
   dimension: metrics__text {
     sql: ${TABLE}.metrics.text ;;
     hidden: yes
@@ -328,10 +333,16 @@ view: sync_table {
     group_item_label: "Sync Sync Uuid"
   }
 
+  dimension: metrics__uuid__sync_v2_sync_uuid {
+    sql: ${TABLE}.metrics.uuid.sync_v2_sync_uuid ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Sync V2 Sync Uuid"
+  }
+
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
-    description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {
@@ -342,7 +353,6 @@ view: sync_table {
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
-    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
@@ -567,6 +577,18 @@ view: sync_table__metrics__labeled_rate__value {
 }
 
 view: sync_table__metrics__labeled_string__sync_failure_reason {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: sync_table__metrics__labeled_string__sync_v2_failure_reason {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
