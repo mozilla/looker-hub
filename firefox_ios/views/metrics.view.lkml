@@ -2247,6 +2247,42 @@ introduce the new Activity Stream features.
 "
   }
 
+  dimension: metrics__boolean__preferences_sync_notifs {
+    label: "Preferences Sync Notifs"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_sync_notifs ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Sync Notifs"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Sync Notifs"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/preferences_sync_notifs"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if notifications for sync are allowed, otherwise false.
+"
+  }
+
+  dimension: metrics__boolean__preferences_tips_and_features_notifs {
+    label: "Preferences Tips And Features Notifs"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_tips_and_features_notifs ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Tips And Features Notifs"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Tips And Features Notifs"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/preferences_tips_and_features_notifs"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if notifications for tips and features are allowed, otherwise false.
+"
+  }
+
   dimension: metrics__counter__qr_code_scanned {
     label: "Qr Code Scanned"
     hidden: no
