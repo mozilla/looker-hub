@@ -106,6 +106,11 @@ view: all_events_table {
     type: string
   }
 
+  dimension: logger {
+    sql: ${TABLE}.logger ;;
+    type: string
+  }
+
   dimension: oauth_client_id {
     sql: ${TABLE}.oauth_client_id ;;
     type: string
