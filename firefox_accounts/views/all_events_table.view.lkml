@@ -31,6 +31,16 @@ view: all_events_table {
     map_layer_name: countries
   }
 
+  dimension: country_code {
+    sql: ${TABLE}.country_code ;;
+    type: string
+  }
+
+  dimension: country_code_source {
+    sql: ${TABLE}.country_code_source ;;
+    type: string
+  }
+
   dimension: device_id {
     sql: ${TABLE}.device_id ;;
     type: string
@@ -78,6 +88,11 @@ view: all_events_table {
 
   dimension: entrypoint_variation {
     sql: ${TABLE}.entrypoint_variation ;;
+    type: string
+  }
+
+  dimension: error_id {
+    sql: ${TABLE}.error_id ;;
     type: string
   }
 
@@ -136,6 +151,16 @@ view: all_events_table {
     type: string
   }
 
+  dimension: previous_plan_id {
+    sql: ${TABLE}.previous_plan_id ;;
+    type: string
+  }
+
+  dimension: previous_product_id {
+    sql: ${TABLE}.previous_product_id ;;
+    type: string
+  }
+
   dimension: product_id {
     sql: ${TABLE}.product_id ;;
     type: string
@@ -146,6 +171,11 @@ view: all_events_table {
     type: string
   }
 
+  dimension: provider_event_id {
+    sql: ${TABLE}.provider_event_id ;;
+    type: string
+  }
+
   dimension: service {
     sql: ${TABLE}.service ;;
     type: string
@@ -153,6 +183,16 @@ view: all_events_table {
 
   dimension: source_country {
     sql: ${TABLE}.source_country ;;
+    type: string
+  }
+
+  dimension: subscribed_plan_ids {
+    sql: ${TABLE}.subscribed_plan_ids ;;
+    type: string
+  }
+
+  dimension: subscription_id {
+    sql: ${TABLE}.subscription_id ;;
     type: string
   }
 
@@ -219,6 +259,25 @@ view: all_events_table {
   dimension: utm_term {
     sql: ${TABLE}.utm_term ;;
     type: string
+  }
+
+  dimension: voluntary_cancellation {
+    sql: ${TABLE}.voluntary_cancellation ;;
+    type: yesno
+  }
+
+  dimension_group: event {
+    sql: ${TABLE}.event_time ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
   }
 
   dimension_group: receiveTimestamp {

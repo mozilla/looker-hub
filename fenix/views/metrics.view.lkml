@@ -136,6 +136,24 @@ supported for this user.
 "
   }
 
+  dimension: metrics__counter__app_menu_sign_into_sync {
+    label: "App Menu Sign Into Sync"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.app_menu_sign_into_sync ;;
+    type: number
+    group_label: "App Menu"
+    group_item_label: "Sign Into Sync"
+
+    link: {
+      label: "Glean Dictionary reference for App Menu Sign Into Sync"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/app_menu_sign_into_sync"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user has clicked \"sign into sync\" from the settings page.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
     label: "Browser Search Ad Clicks"
     hidden: yes
@@ -816,6 +834,91 @@ install is organic, this will be empty.
 "
   }
 
+  dimension: metrics__labeled_counter__metrics_bookmarks_add {
+    label: "Metrics Bookmarks Add"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.metrics_bookmarks_add ;;
+    group_label: "Metrics"
+    group_item_label: "Bookmarks Add"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Bookmarks Add"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_bookmarks_add"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many bookmarks a user has added.
+
+The label for this counter is `<source>`.
+
+`source` will be: `page_action_menu` as that is the only
+entry point right now to add bookmarks.
+"
+  }
+
+  dimension: metrics__labeled_counter__metrics_bookmarks_delete {
+    label: "Metrics Bookmarks Delete"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.metrics_bookmarks_delete ;;
+    group_label: "Metrics"
+    group_item_label: "Bookmarks Delete"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Bookmarks Delete"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_bookmarks_delete"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many bookmarks a user has deleted.
+
+The label for this counter is `<source>`.
+
+`source` will be: `add_bookmark_toast` or `bookmark_panel`.
+"
+  }
+
+  dimension: metrics__labeled_counter__metrics_bookmarks_edit {
+    label: "Metrics Bookmarks Edit"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.metrics_bookmarks_edit ;;
+    group_label: "Metrics"
+    group_item_label: "Bookmarks Edit"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Bookmarks Edit"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_bookmarks_edit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many bookmarks a user has edited.
+
+The label for this counter is `<source>`.
+
+`source` will be: `bookmark_edit_page` or `bookmark_panel`.
+"
+  }
+
+  dimension: metrics__labeled_counter__metrics_bookmarks_open {
+    label: "Metrics Bookmarks Open"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.metrics_bookmarks_open ;;
+    group_label: "Metrics"
+    group_item_label: "Bookmarks Open"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Bookmarks Open"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_bookmarks_open"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many bookmarks a user has opened.
+
+The label for this counter is `<source>`.
+
+`source` will be: `top_sites`, `awesomebar_results`, `bookmark_panel`.
+"
+  }
+
   dimension: metrics__string__metrics_close_tab_setting {
     label: "Metrics Close Tab Setting"
     hidden: no
@@ -1154,6 +1257,28 @@ ping and 0 bookmarks, please see `has_mobile_bookmarks`.
     }
 
     description: "True if notifications are allowed, otherwise false.
+"
+  }
+
+  dimension: metrics__counter__metrics_private_tabs_open_count {
+    label: "Metrics Private Tabs Open Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.metrics_private_tabs_open_count ;;
+    type: number
+    group_label: "Metrics"
+    group_item_label: "Private Tabs Open Count"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Private Tabs Open Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_private_tabs_open_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates how many PRIVATE tabs a user has open. This
+value will only be set if the user has at least *one* open tab. If they
+have 0, this ping will not get sent, resulting in a null value. To
+disambiguate between a failed `private_tabs_open_count` ping and 0 open tabs,
+please see `has_open_tabs`
 "
   }
 
@@ -2559,6 +2684,24 @@ The \"buckets\" for reporting group sizes will be mapped as follows:
 Where the reported number will be 1, 2, 3, or 4, accordingly.
 As an example, say a user has three groups of sizes 3, 6, and 15. The
 app will report 2, 3, and 4 when this metric is tracked.
+"
+  }
+
+  dimension: metrics__counter__settings_sign_into_sync {
+    label: "Settings Sign Into Sync"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.settings_sign_into_sync ;;
+    type: number
+    group_label: "Settings"
+    group_item_label: "Sign Into Sync"
+
+    link: {
+      label: "Glean Dictionary reference for Settings Sign Into Sync"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/settings_sign_into_sync"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a user has clicked \"sign into sync\" from the settings page.
 "
   }
 
@@ -8607,6 +8750,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: app_menu_sign_into_sync {
+    type: sum
+    sql: ${metrics__counter__app_menu_sign_into_sync} ;;
+
+    link: {
+      label: "Glean Dictionary reference for App Menu Sign Into Sync"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/app_menu_sign_into_sync"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: app_menu_sign_into_sync_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__app_menu_sign_into_sync: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for App Menu Sign Into Sync"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/app_menu_sign_into_sync"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: credit_cards_autofill_card {
     type: sum
     sql: ${metrics__counter__credit_cards_autofill_card} ;;
@@ -8982,6 +9150,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: metrics_private_tabs_open_count {
+    type: sum
+    sql: ${metrics__counter__metrics_private_tabs_open_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Private Tabs Open Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_private_tabs_open_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: metrics_private_tabs_open_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__metrics_private_tabs_open_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Private Tabs Open Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_private_tabs_open_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: metrics_recently_used_pwa_count {
     type: sum
     sql: ${metrics__counter__metrics_recently_used_pwa_count} ;;
@@ -9153,6 +9346,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Recent Synced Tabs Show All Synced Tabs Clicked"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/recent_synced_tabs_show_all_synced_tabs_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: settings_sign_into_sync {
+    type: sum
+    sql: ${metrics__counter__settings_sign_into_sync} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Settings Sign Into Sync"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/settings_sign_into_sync"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: settings_sign_into_sync_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__settings_sign_into_sync: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Settings Sign Into Sync"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/settings_sign_into_sync"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -12254,6 +12472,178 @@ view: metrics__metrics__labeled_counter__media_audio_init_failure {
   }
 }
 
+view: metrics__metrics__labeled_counter__metrics_bookmarks_add {
+  label: "Metrics - Bookmarks Add"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_add
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_add.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__metrics_bookmarks_delete {
+  label: "Metrics - Bookmarks Delete"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_delete
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_delete.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__metrics_bookmarks_edit {
+  label: "Metrics - Bookmarks Edit"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_edit
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_edit.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__metrics_bookmarks_open {
+  label: "Metrics - Bookmarks Open"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_open
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_open.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__metrics_search_count {
   label: "Metrics - Search Count"
 
@@ -14821,6 +15211,82 @@ view: suggest__metrics__metrics__labeled_counter__media_audio_init_failure {
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.media_audio_init_failure) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_add {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.metrics_bookmarks_add) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_delete {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.metrics_bookmarks_delete) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_edit {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.metrics_bookmarks_edit) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_open {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.metrics_bookmarks_open) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
