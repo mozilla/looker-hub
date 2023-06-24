@@ -147,7 +147,7 @@ Migrated from Telemetry's
 
   dimension: metrics__quantity__extensions_apis_dnr_evaluate_rules_count_max {
     label: "Extensions Apis Dnr Evaluate Rules Count Max"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.extensions_apis_dnr_evaluate_rules_count_max ;;
     type: number
     group_label: "Extensions Apis Dnr"
@@ -165,7 +165,7 @@ Migrated from Telemetry's
 
   dimension: metrics__timing_distribution__extensions_apis_dnr_evaluate_rules_time__sum {
     label: "Extensions Apis Dnr Evaluate Rules Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_evaluate_rules_time.sum ;;
     type: number
     group_label: "Extensions Apis Dnr"
@@ -201,7 +201,7 @@ DNR rules for extensions loaded on application startup.
 
   dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__sum {
     label: "Extensions Apis Dnr Startup Cache Read Size Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.extensions_apis_dnr_startup_cache_read_size.sum ;;
     type: number
     group_label: "Extensions Apis Dnr"
@@ -219,7 +219,7 @@ DNR rules for extensions loaded on application startup.
 
   dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_read_time__sum {
     label: "Extensions Apis Dnr Startup Cache Read Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_read_time.sum ;;
     type: number
     group_label: "Extensions Apis Dnr"
@@ -237,7 +237,7 @@ DNR rules for extensions loaded on application startup.
 
   dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_write_size__sum {
     label: "Extensions Apis Dnr Startup Cache Write Size Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.memory_distribution.extensions_apis_dnr_startup_cache_write_size.sum ;;
     type: number
     group_label: "Extensions Apis Dnr"
@@ -255,7 +255,7 @@ DNR rules for extensions loaded on application startup.
 
   dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_write_time__sum {
     label: "Extensions Apis Dnr Startup Cache Write Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_write_time.sum ;;
     type: number
     group_label: "Extensions Apis Dnr"
@@ -273,7 +273,7 @@ DNR rules for extensions loaded on application startup.
 
   dimension: metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__sum {
     label: "Extensions Apis Dnr Validate Rules Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_validate_rules_time.sum ;;
     type: number
     group_label: "Extensions Apis Dnr"
@@ -292,7 +292,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__timespan__extensions_startup_cache_load_time__value {
     label: "Extensions Startup Cache Load Time Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.extensions_startup_cache_load_time.value ;;
     type: number
     group_label: "Extensions"
@@ -4808,7 +4808,7 @@ view: metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entri
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries
     suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -4820,13 +4820,13 @@ view: metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entri
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
