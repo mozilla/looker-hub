@@ -367,6 +367,20 @@ view: metrics_table {
     group_item_label: "Preferences Show Clipboard Bar"
   }
 
+  dimension: metrics__boolean__preferences_sync_notifs {
+    sql: ${TABLE}.metrics.boolean.preferences_sync_notifs ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Sync Notifs"
+  }
+
+  dimension: metrics__boolean__preferences_tips_and_features_notifs {
+    sql: ${TABLE}.metrics.boolean.preferences_tips_and_features_notifs ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Tips And Features Notifs"
+  }
+
   dimension: metrics__boolean__theme_automatic_mode {
     sql: ${TABLE}.metrics.boolean.theme_automatic_mode ;;
     type: yesno

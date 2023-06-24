@@ -383,7 +383,7 @@ once we validate these assumptions.
 
   dimension: metrics__timespan__nimbus_experiments_nimbus_initial_fetch__value {
     label: "Nimbus Experiments Nimbus Initial Fetch Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.nimbus_experiments_nimbus_initial_fetch.value ;;
     type: number
     group_label: "Nimbus Experiments"

@@ -647,6 +647,13 @@ view: metrics_table {
     group_item_label: "Addresses Updated"
   }
 
+  dimension: metrics__counter__app_menu_sign_into_sync {
+    sql: ${TABLE}.metrics.counter.app_menu_sign_into_sync ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "App Menu Sign Into Sync"
+  }
+
   dimension: metrics__counter__credit_cards_autofill_card {
     sql: ${TABLE}.metrics.counter.credit_cards_autofill_card ;;
     type: number
@@ -899,6 +906,13 @@ view: metrics_table {
     group_item_label: "Metrics Mobile Bookmarks Count"
   }
 
+  dimension: metrics__counter__metrics_private_tabs_open_count {
+    sql: ${TABLE}.metrics.counter.metrics_private_tabs_open_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Metrics Private Tabs Open Count"
+  }
+
   dimension: metrics__counter__metrics_recently_used_pwa_count {
     sql: ${TABLE}.metrics.counter.metrics_recently_used_pwa_count ;;
     type: number
@@ -1016,6 +1030,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Rtcrtpsender Count Setparameters Compat"
+  }
+
+  dimension: metrics__counter__settings_sign_into_sync {
+    sql: ${TABLE}.metrics.counter.settings_sign_into_sync ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Settings Sign Into Sync"
   }
 
   dimension: metrics__counter__tabs_tray_close_inactive_tab {
@@ -1726,6 +1747,26 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__media_audio_init_failure {
     sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__metrics_bookmarks_add {
+    sql: ${TABLE}.metrics.labeled_counter.metrics_bookmarks_add ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__metrics_bookmarks_delete {
+    sql: ${TABLE}.metrics.labeled_counter.metrics_bookmarks_delete ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__metrics_bookmarks_edit {
+    sql: ${TABLE}.metrics.labeled_counter.metrics_bookmarks_edit ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__metrics_bookmarks_open {
+    sql: ${TABLE}.metrics.labeled_counter.metrics_bookmarks_open ;;
     hidden: yes
   }
 

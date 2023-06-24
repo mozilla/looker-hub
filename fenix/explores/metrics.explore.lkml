@@ -279,6 +279,26 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_audio_init_failure}) AS metrics__metrics__labeled_counter__media_audio_init_failure ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_audio_init_failure.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__metrics_bookmarks_add {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__metrics_bookmarks_add}) AS metrics__metrics__labeled_counter__metrics_bookmarks_add ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__metrics_bookmarks_add.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__metrics_bookmarks_delete {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__metrics_bookmarks_delete}) AS metrics__metrics__labeled_counter__metrics_bookmarks_delete ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__metrics_bookmarks_delete.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__metrics_bookmarks_edit {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__metrics_bookmarks_edit}) AS metrics__metrics__labeled_counter__metrics_bookmarks_edit ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__metrics_bookmarks_edit.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__metrics_bookmarks_open {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__metrics_bookmarks_open}) AS metrics__metrics__labeled_counter__metrics_bookmarks_open ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__metrics_bookmarks_open.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__metrics_search_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__metrics_search_count}) AS metrics__metrics__labeled_counter__metrics_search_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__metrics_search_count.document_id} ;;
@@ -670,6 +690,22 @@ explore: suggest__metrics__metrics__labeled_counter__media_audio_backend {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__media_audio_init_failure {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_add {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_delete {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_edit {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_open {
   hidden: yes
 }
 
