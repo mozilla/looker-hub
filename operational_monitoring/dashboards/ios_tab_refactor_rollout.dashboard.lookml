@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       ios_tab_refactor_rollout.branch
     ]
     filters:
-      ios_tab_refactor_rollout.metric: 'retained'
+      ios_tab_refactor_rollout.metric: 'active_hours'
       ios_tab_refactor_rollout.statistic: mean
     row: 0
     col: 0
@@ -44,24 +44,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: ios_tab_refactor_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       ios_tab_refactor_rollout.submission_date,
       ios_tab_refactor_rollout.branch,
+      ios_tab_refactor_rollout.upper,
+      ios_tab_refactor_rollout.lower,
       ios_tab_refactor_rollout.point
     ]
     pivots: [
       ios_tab_refactor_rollout.branch
     ]
     filters:
-      ios_tab_refactor_rollout.metric: 'search_count'
-      ios_tab_refactor_rollout.statistic: mean
+      ios_tab_refactor_rollout.metric: 'memory_total'
+      ios_tab_refactor_rollout.statistic: percentile
     row: 0
     col: 12
     width: 12
@@ -74,6 +76,7 @@
     show_grid: true
     listen:
       Date: ios_tab_refactor_rollout.submission_date
+      Percentile: ios_tab_refactor_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -146,45 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: ios_tab_refactor_rollout
-    type: "ci-line-chart"
-    fields: [
-      ios_tab_refactor_rollout.submission_date,
-      ios_tab_refactor_rollout.branch,
-      ios_tab_refactor_rollout.upper,
-      ios_tab_refactor_rollout.lower,
-      ios_tab_refactor_rollout.point
-    ]
-    pivots: [
-      ios_tab_refactor_rollout.branch
-    ]
-    filters:
-      ios_tab_refactor_rollout.metric: 'memory_total'
-      ios_tab_refactor_rollout.statistic: percentile
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: ios_tab_refactor_rollout.submission_date
-    field_y: ios_tab_refactor_rollout.point
-    log_scale: false
-    ci_lower: ios_tab_refactor_rollout.lower
-    ci_upper: ios_tab_refactor_rollout.upper
-    show_grid: true
-    listen:
-      Date: ios_tab_refactor_rollout.submission_date
-      Percentile: ios_tab_refactor_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +165,41 @@
       ios_tab_refactor_rollout.branch
     ]
     filters:
-      ios_tab_refactor_rollout.metric: 'active_hours'
+      ios_tab_refactor_rollout.metric: 'search_count'
+      ios_tab_refactor_rollout.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: ios_tab_refactor_rollout.submission_date
+    field_y: ios_tab_refactor_rollout.point
+    log_scale: false
+    ci_lower: ios_tab_refactor_rollout.lower
+    ci_upper: ios_tab_refactor_rollout.upper
+    show_grid: true
+    listen:
+      Date: ios_tab_refactor_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_tab_refactor_rollout
+    type: looker_line
+    fields: [
+      ios_tab_refactor_rollout.submission_date,
+      ios_tab_refactor_rollout.branch,
+      ios_tab_refactor_rollout.point
+    ]
+    pivots: [
+      ios_tab_refactor_rollout.branch
+    ]
+    filters:
+      ios_tab_refactor_rollout.metric: 'retained'
       ios_tab_refactor_rollout.statistic: mean
     row: 20
     col: 12
