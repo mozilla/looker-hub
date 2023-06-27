@@ -1544,6 +1544,78 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__sum {
+    label: "Networking Dns Failed Lookup Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Dns Failed Lookup Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Dns Failed Lookup Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_dns_failed_lookup_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time for an unsuccessful DNS OS resolution (msec) | Migrated from Firefox Telemetry's `DNS_FAILED_LOOKUP_TIME`.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__sum {
+    label: "Networking Dns Lookup Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Dns Lookup Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Dns Lookup Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_dns_lookup_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time for a successful DNS resolution (msec) | Migrated from Firefox Telemetry's `DNS_LOOKUP_TIME`.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__sum {
+    label: "Networking Dns Renewal Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Dns Renewal Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Dns Renewal Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_dns_renewal_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time for a renewed DNS OS resolution (msec) | Migrated from Firefox Telemetry's `DNS_RENEWAL_TIME`.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__sum {
+    label: "Networking Dns Renewal Time For Ttl Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Dns Renewal Time For Ttl Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Dns Renewal Time For Ttl Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_dns_renewal_time_for_ttl"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time for a DNS OS resolution (msec) used to get TTL | Migrated from Firefox Telemetry's `DNS_RENEWAL_TIME_FOR_TTL`.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_speculative_connect_outcome {
     label: "Networking Speculative Connect Outcome"
     hidden: yes

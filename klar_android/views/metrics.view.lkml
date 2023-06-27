@@ -1012,6 +1012,169 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__quantity__extensions_apis_dnr_evaluate_rules_count_max {
+    label: "Extensions Apis Dnr Evaluate Rules Count Max"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.extensions_apis_dnr_evaluate_rules_count_max ;;
+    type: number
+    group_label: "Extensions Apis Dnr"
+    group_item_label: "Evaluate Rules Count Max"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Apis Dnr Evaluate Rules Count Max"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/extensions_apis_dnr_evaluate_rules_count_max"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Max amount of DNR rules being evaluated.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_evaluate_rules_time__sum {
+    label: "Extensions Apis Dnr Evaluate Rules Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_evaluate_rules_time.sum ;;
+    type: number
+    group_label: "Extensions Apis Dnr"
+    group_item_label: "Evaluate Rules Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Apis Dnr Evaluate Rules Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/extensions_apis_dnr_evaluate_rules_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes to evaluate DNR rules for one network request.
+"
+  }
+
+  dimension: metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries {
+    label: "Extensions Apis Dnr Startup Cache Entries"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.extensions_apis_dnr_startup_cache_entries ;;
+    group_label: "Extensions Apis Dnr"
+    group_item_label: "Startup Cache Entries"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Apis Dnr Startup Cache Entries"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/extensions_apis_dnr_startup_cache_entries"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counters for startup cache data hits or misses on initializating
+DNR rules for extensions loaded on application startup.
+"
+  }
+
+  dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__sum {
+    label: "Extensions Apis Dnr Startup Cache Read Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.extensions_apis_dnr_startup_cache_read_size.sum ;;
+    type: number
+    group_label: "Extensions Apis Dnr"
+    group_item_label: "Startup Cache Read Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Apis Dnr Startup Cache Read Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/extensions_apis_dnr_startup_cache_read_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of data read from the DNR startup cache file.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_read_time__sum {
+    label: "Extensions Apis Dnr Startup Cache Read Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_read_time.sum ;;
+    type: number
+    group_label: "Extensions Apis Dnr"
+    group_item_label: "Startup Cache Read Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Apis Dnr Startup Cache Read Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/extensions_apis_dnr_startup_cache_read_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes to read data into the DNR startup cache file.
+"
+  }
+
+  dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_write_size__sum {
+    label: "Extensions Apis Dnr Startup Cache Write Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.extensions_apis_dnr_startup_cache_write_size.sum ;;
+    type: number
+    group_label: "Extensions Apis Dnr"
+    group_item_label: "Startup Cache Write Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Apis Dnr Startup Cache Write Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/extensions_apis_dnr_startup_cache_write_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of data written to the DNR startup cache file.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_write_time__sum {
+    label: "Extensions Apis Dnr Startup Cache Write Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_write_time.sum ;;
+    type: number
+    group_label: "Extensions Apis Dnr"
+    group_item_label: "Startup Cache Write Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Apis Dnr Startup Cache Write Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/extensions_apis_dnr_startup_cache_write_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes to write data into the DNR startup cache file.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__sum {
+    label: "Extensions Apis Dnr Validate Rules Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_validate_rules_time.sum ;;
+    type: number
+    group_label: "Extensions Apis Dnr"
+    group_item_label: "Validate Rules Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Apis Dnr Validate Rules Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/extensions_apis_dnr_validate_rules_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes to validate DNR rules of individual ruleset
+when dynamic or static rulesets have been loaded from disk.
+"
+  }
+
+  dimension: metrics__timespan__extensions_startup_cache_load_time__value {
+    label: "Extensions Startup Cache Load Time Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.extensions_startup_cache_load_time.value ;;
+    type: number
+    group_label: "Extensions"
+    group_item_label: "Startup Cache Load Time Value"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Startup Cache Load Time Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/extensions_startup_cache_load_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time to load and deserialize the extensions startupCache data.
+"
+  }
+
   dimension: metrics__boolean__fog_failed_idle_registration {
     label: "Fog Failed Idle Registration"
     hidden: no
@@ -1548,6 +1711,78 @@ To be used to validate GIFFT.
     }
 
     description: "Counts the number of times a cookie's invalid timestamp was fixed when reading it from the DB.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__sum {
+    label: "Networking Dns Failed Lookup Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Dns Failed Lookup Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Dns Failed Lookup Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_dns_failed_lookup_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time for an unsuccessful DNS OS resolution (msec) | Migrated from Firefox Telemetry's `DNS_FAILED_LOOKUP_TIME`.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__sum {
+    label: "Networking Dns Lookup Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Dns Lookup Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Dns Lookup Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_dns_lookup_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time for a successful DNS resolution (msec) | Migrated from Firefox Telemetry's `DNS_LOOKUP_TIME`.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__sum {
+    label: "Networking Dns Renewal Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Dns Renewal Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Dns Renewal Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_dns_renewal_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time for a renewed DNS OS resolution (msec) | Migrated from Firefox Telemetry's `DNS_RENEWAL_TIME`.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__sum {
+    label: "Networking Dns Renewal Time For Ttl Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Dns Renewal Time For Ttl Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Dns Renewal Time For Ttl Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_dns_renewal_time_for_ttl"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time for a DNS OS resolution (msec) used to get TTL | Migrated from Firefox Telemetry's `DNS_RENEWAL_TIME_FOR_TTL`.
 "
   }
 
@@ -5129,6 +5364,49 @@ view: metrics__metrics__labeled_counter__dotprint_failure {
   }
 }
 
+view: metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries {
+  label: "Extensions Apis Dnr - Startup Cache Entries"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__glean_error_invalid_label {
   label: "Glean Error - Invalid Label"
 
@@ -7352,6 +7630,25 @@ view: suggest__metrics__metrics__labeled_counter__dotprint_failure {
     count(*) as n
 from mozdata.org_mozilla_klar.metrics as t,
 unnest(metrics.labeled_counter.dotprint_failure) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.extensions_apis_dnr_startup_cache_entries) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

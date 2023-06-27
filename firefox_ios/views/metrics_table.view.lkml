@@ -353,6 +353,13 @@ view: metrics_table {
     group_item_label: "Preferences Close Private Tabs"
   }
 
+  dimension: metrics__boolean__preferences_fxa_logged_in {
+    sql: ${TABLE}.metrics.boolean.preferences_fxa_logged_in ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Fxa Logged In"
+  }
+
   dimension: metrics__boolean__preferences_save_logins {
     sql: ${TABLE}.metrics.boolean.preferences_save_logins ;;
     type: yesno

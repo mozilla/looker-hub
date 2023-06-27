@@ -2426,6 +2426,242 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__paint_build_displaylist_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.bucket_count ;;
     type: number
@@ -3924,6 +4160,54 @@ view: metrics_table__metrics__timing_distribution__glean_validation_shutdown_wai
 }
 
 view: metrics_table__metrics__timing_distribution__network_open_to_transaction_pending__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_dns_failed_lookup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_dns_lookup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_dns_renewal_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_dns_renewal_time_for_ttl__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

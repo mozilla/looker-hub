@@ -2148,6 +2148,24 @@ on Firefox Home
 "
   }
 
+  dimension: metrics__boolean__preferences_fxa_logged_in {
+    label: "Preferences Fxa Logged In"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_fxa_logged_in ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Fxa Logged In"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Fxa Logged In"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/preferences_fxa_logged_in"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures the state of the fxa login.
+"
+  }
+
   dimension: metrics__string__preferences_home_page_setting {
     label: "Preferences Home Page Setting"
     hidden: no

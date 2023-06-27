@@ -164,6 +164,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__engine_tab_kills}) AS metrics__metrics__labeled_counter__engine_tab_kills ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__engine_tab_kills.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries}) AS metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__gfx_content_frame_time_reason}) AS metrics__metrics__labeled_counter__gfx_content_frame_time_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__gfx_content_frame_time_reason.document_id} ;;
@@ -598,6 +603,10 @@ explore: suggest__metrics__metrics__labeled_counter__dotprint_failure {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__engine_tab_kills {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries {
   hidden: yes
 }
 
