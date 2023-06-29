@@ -1211,6 +1211,12 @@ broken down by structured ingestion namespace.
 "
   }
 
+  dimension: metrics__labeled_counter__pwmgr_form_autofill_result {
+    sql: ${TABLE}.metrics.labeled_counter.pwmgr_form_autofill_result ;;
+    hidden: yes
+    description: "The result of auto-filling a login form."
+  }
+
   dimension: metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
     sql: ${TABLE}.metrics.labeled_counter.rtcrtpsender_setparameters_blame_length_changed ;;
     hidden: yes
