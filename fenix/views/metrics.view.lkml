@@ -79,6 +79,24 @@ manually by the user.
 "
   }
 
+  dimension: metrics__quantity__addresses_saved_all {
+    label: "Addresses Saved All"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.addresses_saved_all ;;
+    type: number
+    group_label: "Addresses"
+    group_item_label: "Saved All"
+
+    link: {
+      label: "Glean Dictionary reference for Addresses Saved All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_saved_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of the number of all addresses that are currently saved by user.
+"
+  }
+
   dimension: metrics__counter__addresses_updated {
     label: "Addresses Updated"
     hidden: no
@@ -331,6 +349,24 @@ manually by the user.
 
     description: "A counter of the number of credit cards that have been saved
 manually by the user.
+"
+  }
+
+  dimension: metrics__quantity__credit_cards_saved_all {
+    label: "Credit Cards Saved All"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.credit_cards_saved_all ;;
+    type: number
+    group_label: "Credit Cards"
+    group_item_label: "Saved All"
+
+    link: {
+      label: "Glean Dictionary reference for Credit Cards Saved All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/credit_cards_saved_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counter of number of credit cards that are currently stored by user.
 "
   }
 
@@ -730,6 +766,78 @@ location.
     }
 
     description: "The number of times the home screen was displayed to the user.
+"
+  }
+
+  dimension: metrics__counter__logins_deleted {
+    label: "Logins Deleted"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.logins_deleted ;;
+    type: number
+    group_label: "Logins"
+    group_item_label: "Deleted"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counter of number of passwords that have been deleted by user.
+"
+  }
+
+  dimension: metrics__counter__logins_modified {
+    label: "Logins Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.logins_modified ;;
+    type: number
+    group_label: "Logins"
+    group_item_label: "Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counter of number of passwords that have been modified by user.
+"
+  }
+
+  dimension: metrics__counter__logins_saved {
+    label: "Logins Saved"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.logins_saved ;;
+    type: number
+    group_label: "Logins"
+    group_item_label: "Saved"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Saved"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_saved"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counter of number of passwords that have been saved by user (including deleted).
+"
+  }
+
+  dimension: metrics__quantity__logins_saved_all {
+    label: "Logins Saved All"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.logins_saved_all ;;
+    type: number
+    group_label: "Logins"
+    group_item_label: "Saved All"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Saved All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_saved_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counter of number of passwords currently saved by user.
 "
   }
 
@@ -3305,6 +3413,24 @@ when dynamic or static rulesets have been loaded from disk.
     }
 
     description: "Time to load and deserialize the extensions startupCache data.
+"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__sum {
+    label: "Fingerprinting Protection Canvas Noise Calculate Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.sum ;;
+    type: number
+    group_label: "Fingerprinting Protection"
+    group_item_label: "Canvas Noise Calculate Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fingerprinting Protection Canvas Noise Calculate Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fingerprinting_protection_canvas_noise_calculate_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how long to generate canvas random noises.
 "
   }
 
@@ -9256,6 +9382,81 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Home Screen Home Screen View Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/home_screen_home_screen_view_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_deleted {
+    type: sum
+    sql: ${metrics__counter__logins_deleted} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_deleted_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_deleted: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_modified {
+    type: sum
+    sql: ${metrics__counter__logins_modified} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_modified_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_modified: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_saved {
+    type: sum
+    sql: ${metrics__counter__logins_saved} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Saved"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_saved"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_saved_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_saved: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Saved"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_saved"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

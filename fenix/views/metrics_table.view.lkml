@@ -829,6 +829,27 @@ view: metrics_table {
     group_item_label: "Home Screen Home Screen View Count"
   }
 
+  dimension: metrics__counter__logins_deleted {
+    sql: ${TABLE}.metrics.counter.logins_deleted ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Deleted"
+  }
+
+  dimension: metrics__counter__logins_modified {
+    sql: ${TABLE}.metrics.counter.logins_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Modified"
+  }
+
+  dimension: metrics__counter__logins_saved {
+    sql: ${TABLE}.metrics.counter.logins_saved ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Saved"
+  }
+
   dimension: metrics__counter__logins_store_migration_num_failed {
     sql: ${TABLE}.metrics.counter.logins_store_migration_num_failed ;;
     type: number
@@ -2174,6 +2195,13 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__quantity__addresses_saved_all {
+    sql: ${TABLE}.metrics.quantity.addresses_saved_all ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Addresses Saved All"
+  }
+
   dimension: metrics__quantity__avif_aom_decode_error {
     sql: ${TABLE}.metrics.quantity.avif_aom_decode_error ;;
     type: number
@@ -2186,6 +2214,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Avif Dav1D Decode Error"
+  }
+
+  dimension: metrics__quantity__credit_cards_saved_all {
+    sql: ${TABLE}.metrics.quantity.credit_cards_saved_all ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Credit Cards Saved All"
   }
 
   dimension: metrics__quantity__extensions_apis_dnr_evaluate_rules_count_max {
@@ -2221,6 +2256,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Gfx Display Primary Width"
+  }
+
+  dimension: metrics__quantity__logins_saved_all {
+    sql: ${TABLE}.metrics.quantity.logins_saved_all ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Logins Saved All"
   }
 
   dimension: metrics__quantity__metrics_inactive_tabs_count {
@@ -3301,6 +3343,65 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__values {
     sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_validate_rules_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.values ;;
     hidden: yes
   }
 
@@ -11433,6 +11534,18 @@ view: metrics_table__metrics__timing_distribution__extensions_apis_dnr_startup_c
 }
 
 view: metrics_table__metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
