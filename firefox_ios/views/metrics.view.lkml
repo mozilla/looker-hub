@@ -573,6 +573,44 @@ The key format is `<provider-name>`.
 "
   }
 
+  dimension: metrics__boolean__credit_card_autofill_enabled {
+    label: "Credit Card Autofill Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.credit_card_autofill_enabled ;;
+    type: yesno
+    group_label: "Credit Card"
+    group_item_label: "Autofill Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Autofill Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_autofill_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded on startup to check if credit card
+autofill settings are enabled
+"
+  }
+
+  dimension: metrics__boolean__credit_card_sync_enabled {
+    label: "Credit Card Sync Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.credit_card_sync_enabled ;;
+    type: yesno
+    group_label: "Credit Card"
+    group_item_label: "Sync Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Sync Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_sync_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded on startup to check if credit card
+sync settings are enabled
+"
+  }
+
   dimension: metrics__counter__default_browser_card_dismiss_pressed {
     label: "Default Browser Card Dismiss Pressed"
     hidden: no
