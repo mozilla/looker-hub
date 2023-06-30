@@ -297,6 +297,20 @@ view: metrics_table {
     group_item_label: "Application Services Recent Highlights Visible"
   }
 
+  dimension: metrics__boolean__credit_card_autofill_enabled {
+    sql: ${TABLE}.metrics.boolean.credit_card_autofill_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Credit Card Autofill Enabled"
+  }
+
+  dimension: metrics__boolean__credit_card_sync_enabled {
+    sql: ${TABLE}.metrics.boolean.credit_card_sync_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Credit Card Sync Enabled"
+  }
+
   dimension: metrics__boolean__device_authentication {
     sql: ${TABLE}.metrics.boolean.device_authentication ;;
     type: yesno
@@ -353,6 +367,13 @@ view: metrics_table {
     group_item_label: "Preferences Close Private Tabs"
   }
 
+  dimension: metrics__boolean__preferences_fxa_logged_in {
+    sql: ${TABLE}.metrics.boolean.preferences_fxa_logged_in ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Fxa Logged In"
+  }
+
   dimension: metrics__boolean__preferences_save_logins {
     sql: ${TABLE}.metrics.boolean.preferences_save_logins ;;
     type: yesno
@@ -365,6 +386,20 @@ view: metrics_table {
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Preferences Show Clipboard Bar"
+  }
+
+  dimension: metrics__boolean__preferences_sync_notifs {
+    sql: ${TABLE}.metrics.boolean.preferences_sync_notifs ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Sync Notifs"
+  }
+
+  dimension: metrics__boolean__preferences_tips_and_features_notifs {
+    sql: ${TABLE}.metrics.boolean.preferences_tips_and_features_notifs ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Tips And Features Notifs"
   }
 
   dimension: metrics__boolean__theme_automatic_mode {

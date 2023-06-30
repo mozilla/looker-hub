@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: newtab_table {
+view: top_sites_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -308,60 +308,6 @@ view: newtab_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__boolean__newtab_search_enabled {
-    sql: ${TABLE}.metrics.boolean.newtab_search_enabled ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Newtab Search Enabled"
-    description: "Whether the search input is enabled on the newtab. Corresponds to the value of the `browser.newtabpage.activity-stream.showSearch` pref.
-"
-  }
-
-  dimension: metrics__boolean__pocket_enabled {
-    sql: ${TABLE}.metrics.boolean.pocket_enabled ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Pocket Enabled"
-    description: "Whether Pocket is enabled on the newtab. AKA the \"Recommended by Pocket\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.feeds.section.topstories` pref.
-"
-  }
-
-  dimension: metrics__boolean__pocket_is_signed_in {
-    sql: ${TABLE}.metrics.boolean.pocket_is_signed_in ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Pocket Is Signed In"
-    description: "Whether the Firefox user is signed in to Pocket. Does not correspond to a pref, so its value is resampled at newtab's component init and whenever there is a Discovery Stream user event.
-"
-  }
-
-  dimension: metrics__boolean__pocket_sponsored_stories_enabled {
-    sql: ${TABLE}.metrics.boolean.pocket_sponsored_stories_enabled ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Pocket Sponsored Stories Enabled"
-    description: "Whether Pocket sponsored stories are enabled on the newtab. Corresponds to the value of the `browser.newtabpage.activity-stream.showSponsored` pref. Can be `true` even if pocket.enabled is `false`.
-"
-  }
-
-  dimension: metrics__boolean__topsites_enabled {
-    sql: ${TABLE}.metrics.boolean.topsites_enabled ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Topsites Enabled"
-    description: "Whether \"topsites\" is enabled on the newtab. AKA the \"Shortcuts\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.feeds.topsites` pref.
-"
-  }
-
-  dimension: metrics__boolean__topsites_sponsored_enabled {
-    sql: ${TABLE}.metrics.boolean.topsites_sponsored_enabled ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Topsites Sponsored Enabled"
-    description: "Whether sponsored topsites are enabled on the newtab. AKA the \"Sponsored Shortcuts\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.showSponsoredTopSites` pref. Can be `true` even if topsites.enabled is `false`.
-"
-  }
-
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -394,94 +340,75 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
-  dimension: metrics__quantity__topsites_rows {
-    sql: ${TABLE}.metrics.quantity.topsites_rows ;;
+  dimension: metrics__quantity__top_sites_position {
+    sql: ${TABLE}.metrics.quantity.top_sites_position ;;
     type: number
     group_label: "Metrics Quantity"
-    group_item_label: "Topsites Rows"
-    description: "The number of topsite tile rows configured to be shown on the newtab page. Corresponds to the value of the `browser.newtabpage.activity-stream.topSitesRows` pref. This is not the number of rows actually seen by the user: if the browser window is partially off-screen, or isn't wide enough to accommodate eight tiles per row, the actual number of rows may be different.
+    group_item_label: "Top Sites Position"
+    description: "The position (1-based) of the topsites item being interatcted with.
 "
   }
 
-  dimension: metrics__string__newtab_homepage_category {
-    sql: ${TABLE}.metrics.string.newtab_homepage_category ;;
+  dimension: metrics__string__top_sites_advertiser {
+    sql: ${TABLE}.metrics.string.top_sites_advertiser ;;
     type: string
     group_label: "Metrics String"
-    group_item_label: "Newtab Homepage Category"
-    description: "The current setting of the home page. One of [\"enabled\", \"disabled\", \"extension\"] or any value from SiteClassifier like \"known-hijacker\" or \"social-media\". Similar to Activity Stream's PAGE_TAKEOVER_DATA event's `home_url_category`. Sampled once after newtab init.
+    group_item_label: "Top Sites Advertiser"
+    description: "The name of the advertiser providing the sponsored TopSite.
 "
   }
 
-  dimension: metrics__string__newtab_locale {
-    sql: ${TABLE}.metrics.string.newtab_locale ;;
+  dimension: metrics__string__top_sites_ping_type {
+    sql: ${TABLE}.metrics.string.top_sites_ping_type ;;
     type: string
     group_label: "Metrics String"
-    group_item_label: "Newtab Locale"
-    description: "The application's locale as of when newtab's TelemetryFeed was init. Comes from `Services.local.appLocaleAsBCP47`. Looks like `en-US`.
+    group_item_label: "Top Sites Ping Type"
+    description: "The ping's type. In other situations might be designated by an event's name or an interaction field. E.g. \"topsites-impression\", \"topsites-click\".
 "
   }
 
-  dimension: metrics__string__newtab_newtab_category {
-    sql: ${TABLE}.metrics.string.newtab_newtab_category ;;
+  dimension: metrics__string__top_sites_source {
+    sql: ${TABLE}.metrics.string.top_sites_source ;;
     type: string
     group_label: "Metrics String"
-    group_item_label: "Newtab Newtab Category"
-    description: "The current setting of the newtab page. One of [\"enabled\", \"disabled\", \"extension\"] or any value from SiteClassifier like \"known-hijacker\" or \"social-media\". Similar to Activity Stream's PAGE_TAKEOVER_DATA event's `newtab_url_category`. Sampled once after newtab init.
+    group_item_label: "Top Sites Source"
+    description: "The source of the interaction. Always set to \"newtab\".
 "
   }
 
-  dimension: metrics__string__search_engine_default_engine_id {
-    sql: ${TABLE}.metrics.string.search_engine_default_engine_id ;;
+  dimension: metrics__string__top_sites_tile_id {
+    sql: ${TABLE}.metrics.string.top_sites_tile_id ;;
     type: string
     group_label: "Metrics String"
-    group_item_label: "Search Engine Default Engine Id"
-    description: "The telemetry id of the search engine.
-For application provided engines, this is either supplied by the
-configuration or from the first part of the associated WebExtension Id.
-For other engines, this is `other-<extensionName>`.
+    group_item_label: "Top Sites Tile Id"
+    description: "String-encoded number for the tile's sponsored tile id.
 "
   }
 
-  dimension: metrics__string__search_engine_private_engine_id {
-    sql: ${TABLE}.metrics.string.search_engine_private_engine_id ;;
+  dimension: metrics__url2__quick_suggest_reporting_url {
+    sql: ${TABLE}.metrics.url2.quick_suggest_reporting_url ;;
     type: string
-    group_label: "Metrics String"
-    group_item_label: "Search Engine Private Engine Id"
-    description: "The telemetry id of the search engine.
-For application provided engines, this is either supplied by the
-configuration or from the first part of the associated WebExtension Id.
-For other engines, this is `other-<extensionName>`.
-If this string is an empty string (`\"\"`), this means that one or both of
-the preferences `browser.search.separatePrivateDefault` and
-`browser.search.separatePrivateDefault.ui.enabled` are set to false.
-It is possible that the user selects the same private engine as for the
-default engine, and hence both versions of these fields will be filled in.
+    group_label: "Metrics Url2"
+    group_item_label: "Quick Suggest Reporting Url"
+    description: "The url to report this interaction to.
 "
   }
 
-  dimension: metrics__string_list__newtab_blocked_sponsors {
-    sql: ${TABLE}.metrics.string_list.newtab_blocked_sponsors ;;
-    hidden: yes
+  dimension: metrics__url2__top_sites_reporting_url {
+    sql: ${TABLE}.metrics.url2.top_sites_reporting_url ;;
+    type: string
+    group_label: "Metrics Url2"
+    group_item_label: "Top Sites Reporting Url"
+    description: "The url to report this interaction to.
+"
   }
 
-  dimension: metrics__string_list__newtab_sov_allocation {
-    sql: ${TABLE}.metrics.string_list.newtab_sov_allocation ;;
-    hidden: yes
-  }
-
-  dimension: metrics__uuid__legacy_telemetry_client_id {
-    sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
+  dimension: metrics__uuid__top_sites_context_id {
+    sql: ${TABLE}.metrics.uuid.top_sites_context_id ;;
     type: string
     group_label: "Metrics Uuid"
-    group_item_label: "Legacy Telemetry Client Id"
-    description: "The client_id according to Telemetry.
-Might not always have a value due to being too early for it to have
-loaded.
-Value may be the canary client id `c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0`
-in pings near when the data upload pref is disabled (if Telemetry gets
-to go first), or between when a client_id has been removed and when it
-has been regenerated.
-Does not need to be sent in the Glean \"deletion-request\" ping.
+    group_item_label: "Top Sites Context Id"
+    description: "An identifier to identify users for Contextual Services user interaction pings.
 "
   }
 
@@ -620,10 +547,10 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  sql_table_name: `mozdata.firefox_desktop.newtab` ;;
+  sql_table_name: `mozdata.firefox_desktop.top_sites` ;;
 }
 
-view: newtab_table__events {
+view: top_sites_table__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
@@ -645,7 +572,7 @@ view: newtab_table__events {
   }
 }
 
-view: newtab_table__events__extra {
+view: top_sites_table__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -657,7 +584,7 @@ view: newtab_table__events__extra {
   }
 }
 
-view: newtab_table__ping_info__experiments {
+view: top_sites_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

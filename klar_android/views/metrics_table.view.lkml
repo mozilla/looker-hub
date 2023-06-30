@@ -1083,6 +1083,14 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
 "
   }
 
+  dimension: metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_apis_dnr_startup_cache_entries ;;
+    hidden: yes
+    description: "Counters for startup cache data hits or misses on initializating
+DNR rules for extensions loaded on application startup.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -1419,6 +1427,12 @@ primary buckets:
 "
   }
 
+  dimension: metrics__labeled_counter__pwmgr_form_autofill_result {
+    sql: ${TABLE}.metrics.labeled_counter.pwmgr_form_autofill_result ;;
+    hidden: yes
+    description: "The result of auto-filling a login form."
+  }
+
   dimension: metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
     sql: ${TABLE}.metrics.labeled_counter.rtcrtpsender_setparameters_blame_length_changed ;;
     hidden: yes
@@ -1458,6 +1472,44 @@ It also indicates the screen it was removed from, home or browser.
 
   dimension: metrics__labeled_rate {
     sql: ${TABLE}.metrics.labeled_rate ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.extensions_apis_dnr_startup_cache_read_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Extensions Apis Dnr Startup Cache Read Size"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.extensions_apis_dnr_startup_cache_read_size.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Extensions Apis Dnr Startup Cache Read Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.extensions_apis_dnr_startup_cache_read_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_write_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.extensions_apis_dnr_startup_cache_write_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Extensions Apis Dnr Startup Cache Write Size"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_write_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.extensions_apis_dnr_startup_cache_write_size.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Extensions Apis Dnr Startup Cache Write Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_write_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.extensions_apis_dnr_startup_cache_write_size.values ;;
     hidden: yes
   }
 
@@ -1535,6 +1587,15 @@ It also indicates the screen it was removed from, home or browser.
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__quantity__extensions_apis_dnr_evaluate_rules_count_max {
+    sql: ${TABLE}.metrics.quantity.extensions_apis_dnr_evaluate_rules_count_max ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Extensions Apis Dnr Evaluate Rules Count Max"
+    description: "Max amount of DNR rules being evaluated.
+"
   }
 
   dimension: metrics__quantity__shortcuts_shortcuts_on_home_number {
@@ -1822,6 +1883,20 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__timespan__extensions_startup_cache_load_time__time_unit {
+    sql: ${TABLE}.metrics.timespan.extensions_startup_cache_load_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Extensions Startup Cache Load Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__extensions_startup_cache_load_time__value {
+    sql: ${TABLE}.metrics.timespan.extensions_startup_cache_load_time.value ;;
+    type: number
+    group_label: "Metrics Timespan Extensions Startup Cache Load Time"
+    group_item_label: "Value"
+  }
+
   dimension: metrics__timespan__fog_initialization__time_unit {
     sql: ${TABLE}.metrics.timespan.fog_initialization.time_unit ;;
     type: string
@@ -1906,6 +1981,301 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__values {
     sql: ${TABLE}.metrics.timing_distribution.cookie_banners_click_handle_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_evaluate_rules_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_evaluate_rules_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Evaluate Rules Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_evaluate_rules_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_evaluate_rules_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Evaluate Rules Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_evaluate_rules_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_evaluate_rules_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Evaluate Rules Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_evaluate_rules_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_evaluate_rules_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Evaluate Rules Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_evaluate_rules_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_evaluate_rules_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_evaluate_rules_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_evaluate_rules_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Evaluate Rules Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_evaluate_rules_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_evaluate_rules_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Evaluate Rules Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_evaluate_rules_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_evaluate_rules_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Evaluate Rules Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_evaluate_rules_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_evaluate_rules_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_read_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_read_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Startup Cache Read Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_read_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_read_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Startup Cache Read Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_read_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_read_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Startup Cache Read Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_read_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_read_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Startup Cache Read Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_read_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_read_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_read_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_read_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Startup Cache Read Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_read_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_read_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Startup Cache Read Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_read_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_read_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Startup Cache Read Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_read_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_read_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_write_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_write_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Startup Cache Write Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_write_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_write_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Startup Cache Write Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_write_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_write_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Startup Cache Write Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_write_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_write_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Startup Cache Write Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_write_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_write_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_write_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_write_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Startup Cache Write Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_write_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_write_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Startup Cache Write Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_write_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_write_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Startup Cache Write Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_write_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_startup_cache_write_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_validate_rules_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Validate Rules Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_validate_rules_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Validate Rules Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_validate_rules_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Validate Rules Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_validate_rules_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Validate Rules Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_validate_rules_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_validate_rules_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Validate Rules Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_validate_rules_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Validate Rules Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_validate_rules_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Apis Dnr Validate Rules Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_validate_rules_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.values ;;
     hidden: yes
   }
 
@@ -2260,6 +2630,242 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__values {
     sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_failed_lookup_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_lookup_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.values ;;
     hidden: yes
   }
 
@@ -3501,6 +4107,30 @@ view: metrics_table__metrics__labeled_rate__value {
   }
 }
 
+view: metrics_table__metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__memory_distribution__extensions_apis_dnr_startup_cache_write_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__memory_distribution__fog_ipc_buffer_sizes__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -3573,6 +4203,66 @@ view: metrics_table__metrics__timing_distribution__cookie_banners_click_handle_d
   }
 }
 
+view: metrics_table__metrics__timing_distribution__extensions_apis_dnr_evaluate_rules_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_apis_dnr_startup_cache_read_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_apis_dnr_startup_cache_write_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__fog_ipc_flush_durations__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -3634,6 +4324,54 @@ view: metrics_table__metrics__timing_distribution__glean_validation_shutdown_wai
 }
 
 view: metrics_table__metrics__timing_distribution__network_open_to_transaction_pending__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_dns_failed_lookup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_dns_lookup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_dns_renewal_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_dns_renewal_time_for_ttl__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

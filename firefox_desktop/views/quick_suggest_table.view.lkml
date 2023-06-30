@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: newtab_table {
+view: quick_suggest_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -308,57 +308,21 @@ view: newtab_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__boolean__newtab_search_enabled {
-    sql: ${TABLE}.metrics.boolean.newtab_search_enabled ;;
+  dimension: metrics__boolean__quick_suggest_improve_suggest_experience {
+    sql: ${TABLE}.metrics.boolean.quick_suggest_improve_suggest_experience ;;
     type: yesno
     group_label: "Metrics Boolean"
-    group_item_label: "Newtab Search Enabled"
-    description: "Whether the search input is enabled on the newtab. Corresponds to the value of the `browser.newtabpage.activity-stream.showSearch` pref.
+    group_item_label: "Quick Suggest Improve Suggest Experience"
+    description: "Whether the \"Improve Suggest Experience\" checkbox is checked.
 "
   }
 
-  dimension: metrics__boolean__pocket_enabled {
-    sql: ${TABLE}.metrics.boolean.pocket_enabled ;;
+  dimension: metrics__boolean__quick_suggest_is_clicked {
+    sql: ${TABLE}.metrics.boolean.quick_suggest_is_clicked ;;
     type: yesno
     group_label: "Metrics Boolean"
-    group_item_label: "Pocket Enabled"
-    description: "Whether Pocket is enabled on the newtab. AKA the \"Recommended by Pocket\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.feeds.section.topstories` pref.
-"
-  }
-
-  dimension: metrics__boolean__pocket_is_signed_in {
-    sql: ${TABLE}.metrics.boolean.pocket_is_signed_in ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Pocket Is Signed In"
-    description: "Whether the Firefox user is signed in to Pocket. Does not correspond to a pref, so its value is resampled at newtab's component init and whenever there is a Discovery Stream user event.
-"
-  }
-
-  dimension: metrics__boolean__pocket_sponsored_stories_enabled {
-    sql: ${TABLE}.metrics.boolean.pocket_sponsored_stories_enabled ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Pocket Sponsored Stories Enabled"
-    description: "Whether Pocket sponsored stories are enabled on the newtab. Corresponds to the value of the `browser.newtabpage.activity-stream.showSponsored` pref. Can be `true` even if pocket.enabled is `false`.
-"
-  }
-
-  dimension: metrics__boolean__topsites_enabled {
-    sql: ${TABLE}.metrics.boolean.topsites_enabled ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Topsites Enabled"
-    description: "Whether \"topsites\" is enabled on the newtab. AKA the \"Shortcuts\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.feeds.topsites` pref.
-"
-  }
-
-  dimension: metrics__boolean__topsites_sponsored_enabled {
-    sql: ${TABLE}.metrics.boolean.topsites_sponsored_enabled ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Topsites Sponsored Enabled"
-    description: "Whether sponsored topsites are enabled on the newtab. AKA the \"Sponsored Shortcuts\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.showSponsoredTopSites` pref. Can be `true` even if topsites.enabled is `false`.
+    group_item_label: "Quick Suggest Is Clicked"
+    description: "Whether this quicksuggest-impression ping was for an item that was clicked.
 "
   }
 
@@ -394,94 +358,84 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
-  dimension: metrics__quantity__topsites_rows {
-    sql: ${TABLE}.metrics.quantity.topsites_rows ;;
+  dimension: metrics__quantity__quick_suggest_position {
+    sql: ${TABLE}.metrics.quantity.quick_suggest_position ;;
     type: number
     group_label: "Metrics Quantity"
-    group_item_label: "Topsites Rows"
-    description: "The number of topsite tile rows configured to be shown on the newtab page. Corresponds to the value of the `browser.newtabpage.activity-stream.topSitesRows` pref. This is not the number of rows actually seen by the user: if the browser window is partially off-screen, or isn't wide enough to accommodate eight tiles per row, the actual number of rows may be different.
+    group_item_label: "Quick Suggest Position"
+    description: "The position (1-based) of the QuickSuggest item being interatcted with.
 "
   }
 
-  dimension: metrics__string__newtab_homepage_category {
-    sql: ${TABLE}.metrics.string.newtab_homepage_category ;;
+  dimension: metrics__string__quick_suggest_advertiser {
+    sql: ${TABLE}.metrics.string.quick_suggest_advertiser ;;
     type: string
     group_label: "Metrics String"
-    group_item_label: "Newtab Homepage Category"
-    description: "The current setting of the home page. One of [\"enabled\", \"disabled\", \"extension\"] or any value from SiteClassifier like \"known-hijacker\" or \"social-media\". Similar to Activity Stream's PAGE_TAKEOVER_DATA event's `home_url_category`. Sampled once after newtab init.
+    group_item_label: "Quick Suggest Advertiser"
+    description: "The name of the advertiser providing the sponsored TopSite.
 "
   }
 
-  dimension: metrics__string__newtab_locale {
-    sql: ${TABLE}.metrics.string.newtab_locale ;;
+  dimension: metrics__string__quick_suggest_block_id {
+    sql: ${TABLE}.metrics.string.quick_suggest_block_id ;;
     type: string
     group_label: "Metrics String"
-    group_item_label: "Newtab Locale"
-    description: "The application's locale as of when newtab's TelemetryFeed was init. Comes from `Services.local.appLocaleAsBCP47`. Looks like `en-US`.
+    group_item_label: "Quick Suggest Block Id"
+    description: "A unique identifier for the suggestion (a.k.a. a keywords block).
 "
   }
 
-  dimension: metrics__string__newtab_newtab_category {
-    sql: ${TABLE}.metrics.string.newtab_newtab_category ;;
+  dimension: metrics__string__quick_suggest_iab_category {
+    sql: ${TABLE}.metrics.string.quick_suggest_iab_category ;;
     type: string
     group_label: "Metrics String"
-    group_item_label: "Newtab Newtab Category"
-    description: "The current setting of the newtab page. One of [\"enabled\", \"disabled\", \"extension\"] or any value from SiteClassifier like \"known-hijacker\" or \"social-media\". Similar to Activity Stream's PAGE_TAKEOVER_DATA event's `newtab_url_category`. Sampled once after newtab init.
+    group_item_label: "Quick Suggest Iab Category"
+    description: "The suggestion's category. Either \"22 - Shopping\" or \"5 - Educational\".
 "
   }
 
-  dimension: metrics__string__search_engine_default_engine_id {
-    sql: ${TABLE}.metrics.string.search_engine_default_engine_id ;;
+  dimension: metrics__string__quick_suggest_match_type {
+    sql: ${TABLE}.metrics.string.quick_suggest_match_type ;;
     type: string
     group_label: "Metrics String"
-    group_item_label: "Search Engine Default Engine Id"
-    description: "The telemetry id of the search engine.
-For application provided engines, this is either supplied by the
-configuration or from the first part of the associated WebExtension Id.
-For other engines, this is `other-<extensionName>`.
+    group_item_label: "Quick Suggest Match Type"
+    description: "Whether this was a best/top match or not. Either \"best-match\" or \"firefox-suggest\".
 "
   }
 
-  dimension: metrics__string__search_engine_private_engine_id {
-    sql: ${TABLE}.metrics.string.search_engine_private_engine_id ;;
+  dimension: metrics__string__quick_suggest_ping_type {
+    sql: ${TABLE}.metrics.string.quick_suggest_ping_type ;;
     type: string
     group_label: "Metrics String"
-    group_item_label: "Search Engine Private Engine Id"
-    description: "The telemetry id of the search engine.
-For application provided engines, this is either supplied by the
-configuration or from the first part of the associated WebExtension Id.
-For other engines, this is `other-<extensionName>`.
-If this string is an empty string (`\"\"`), this means that one or both of
-the preferences `browser.search.separatePrivateDefault` and
-`browser.search.separatePrivateDefault.ui.enabled` are set to false.
-It is possible that the user selects the same private engine as for the
-default engine, and hence both versions of these fields will be filled in.
+    group_item_label: "Quick Suggest Ping Type"
+    description: "The ping's type. In other situations might be designated by an event's name or an interaction field. E.g. \"quicksuggest-impression\", \"quicksuggest-block\", \"quicksuggest-click\".
 "
   }
 
-  dimension: metrics__string_list__newtab_blocked_sponsors {
-    sql: ${TABLE}.metrics.string_list.newtab_blocked_sponsors ;;
-    hidden: yes
+  dimension: metrics__string__quick_suggest_request_id {
+    sql: ${TABLE}.metrics.string.quick_suggest_request_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Quick Suggest Request Id"
+    description: "A request identifier for each API request to [Merino](https://mozilla-services.github.io/merino/). Only present for suggestions provided by Merino.
+"
   }
 
-  dimension: metrics__string_list__newtab_sov_allocation {
-    sql: ${TABLE}.metrics.string_list.newtab_sov_allocation ;;
-    hidden: yes
+  dimension: metrics__string__quick_suggest_source {
+    sql: ${TABLE}.metrics.string.quick_suggest_source ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Quick Suggest Source"
+    description: "The source of the interaction. E.g. \"urlbar\".
+"
   }
 
-  dimension: metrics__uuid__legacy_telemetry_client_id {
-    sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
+  dimension: metrics__uuid__quick_suggest_context_id {
+    sql: ${TABLE}.metrics.uuid.quick_suggest_context_id ;;
     type: string
     group_label: "Metrics Uuid"
-    group_item_label: "Legacy Telemetry Client Id"
-    description: "The client_id according to Telemetry.
-Might not always have a value due to being too early for it to have
-loaded.
-Value may be the canary client id `c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0`
-in pings near when the data upload pref is disabled (if Telemetry gets
-to go first), or between when a client_id has been removed and when it
-has been regenerated.
-Does not need to be sent in the Glean \"deletion-request\" ping.
+    group_item_label: "Quick Suggest Context Id"
+    description: "An identifier to identify users for Contextual Services user interaction pings.
 "
   }
 
@@ -620,10 +574,10 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  sql_table_name: `mozdata.firefox_desktop.newtab` ;;
+  sql_table_name: `mozdata.firefox_desktop.quick_suggest` ;;
 }
 
-view: newtab_table__events {
+view: quick_suggest_table__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
@@ -645,7 +599,7 @@ view: newtab_table__events {
   }
 }
 
-view: newtab_table__events__extra {
+view: quick_suggest_table__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -657,7 +611,7 @@ view: newtab_table__events__extra {
   }
 }
 
-view: newtab_table__ping_info__experiments {
+view: quick_suggest_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

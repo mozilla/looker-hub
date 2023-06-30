@@ -4,7 +4,223 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: newtab_table {
+view: top_sites {
+  dimension: metrics__url2__quick_suggest_reporting_url {
+    label: "Quick Suggest Reporting Url"
+    hidden: no
+    sql: ${TABLE}.metrics.url2.quick_suggest_reporting_url ;;
+    type: string
+    group_label: "Quick Suggest"
+    group_item_label: "Reporting Url"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest Reporting Url"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_reporting_url"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The url to report this interaction to.
+"
+  }
+
+  dimension: metrics__string__top_sites_advertiser {
+    label: "Top Sites Advertiser"
+    hidden: no
+    sql: ${TABLE}.metrics.string.top_sites_advertiser ;;
+    type: string
+    group_label: "Top Sites"
+    group_item_label: "Advertiser"
+
+    link: {
+      label: "Glean Dictionary reference for Top Sites Advertiser"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/top_sites_advertiser"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the advertiser providing the sponsored TopSite.
+"
+  }
+
+  dimension: metrics__uuid__top_sites_context_id {
+    label: "Top Sites Context Id"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.top_sites_context_id ;;
+    type: string
+    group_label: "Top Sites"
+    group_item_label: "Context Id"
+
+    link: {
+      label: "Glean Dictionary reference for Top Sites Context Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/top_sites_context_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An identifier to identify users for Contextual Services user interaction pings.
+"
+  }
+
+  dimension: metrics__string__top_sites_ping_type {
+    label: "Top Sites Ping Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.top_sites_ping_type ;;
+    type: string
+    group_label: "Top Sites"
+    group_item_label: "Ping Type"
+
+    link: {
+      label: "Glean Dictionary reference for Top Sites Ping Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/top_sites_ping_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The ping's type. In other situations might be designated by an event's name or an interaction field. E.g. \"topsites-impression\", \"topsites-click\".
+"
+  }
+
+  dimension: metrics__quantity__top_sites_position {
+    label: "Top Sites Position"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.top_sites_position ;;
+    type: number
+    group_label: "Top Sites"
+    group_item_label: "Position"
+
+    link: {
+      label: "Glean Dictionary reference for Top Sites Position"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/top_sites_position"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The position (1-based) of the topsites item being interatcted with.
+"
+  }
+
+  dimension: metrics__url2__top_sites_reporting_url {
+    label: "Top Sites Reporting Url"
+    hidden: no
+    sql: ${TABLE}.metrics.url2.top_sites_reporting_url ;;
+    type: string
+    group_label: "Top Sites"
+    group_item_label: "Reporting Url"
+
+    link: {
+      label: "Glean Dictionary reference for Top Sites Reporting Url"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/top_sites_reporting_url"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The url to report this interaction to.
+"
+  }
+
+  dimension: metrics__string__top_sites_source {
+    label: "Top Sites Source"
+    hidden: no
+    sql: ${TABLE}.metrics.string.top_sites_source ;;
+    type: string
+    group_label: "Top Sites"
+    group_item_label: "Source"
+
+    link: {
+      label: "Glean Dictionary reference for Top Sites Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/top_sites_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The source of the interaction. Always set to \"newtab\".
+"
+  }
+
+  dimension: metrics__string__top_sites_tile_id {
+    label: "Top Sites Tile Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.top_sites_tile_id ;;
+    type: string
+    group_label: "Top Sites"
+    group_item_label: "Tile Id"
+
+    link: {
+      label: "Glean Dictionary reference for Top Sites Tile Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/top_sites_tile_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "String-encoded number for the tile's sponsored tile id.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    label: "Glean Error Invalid Label"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Label"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_label"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set with an invalid label.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    label: "Glean Error Invalid Overflow"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Overflow"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_overflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set a value that overflowed.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    label: "Glean Error Invalid State"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid State"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a timing metric was used incorrectly.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    label: "Glean Error Invalid Value"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Value"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_error_invalid_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set to an invalid value.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -133,6 +349,7 @@ view: newtab_table {
     sql: ${TABLE}.document_id ;;
     hidden: yes
     description: "The document ID specified in the URI when the client sent this message"
+    primary_key: yes
   }
 
   dimension: events {
@@ -308,183 +525,6 @@ view: newtab_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__boolean__newtab_search_enabled {
-    sql: ${TABLE}.metrics.boolean.newtab_search_enabled ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Newtab Search Enabled"
-    description: "Whether the search input is enabled on the newtab. Corresponds to the value of the `browser.newtabpage.activity-stream.showSearch` pref.
-"
-  }
-
-  dimension: metrics__boolean__pocket_enabled {
-    sql: ${TABLE}.metrics.boolean.pocket_enabled ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Pocket Enabled"
-    description: "Whether Pocket is enabled on the newtab. AKA the \"Recommended by Pocket\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.feeds.section.topstories` pref.
-"
-  }
-
-  dimension: metrics__boolean__pocket_is_signed_in {
-    sql: ${TABLE}.metrics.boolean.pocket_is_signed_in ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Pocket Is Signed In"
-    description: "Whether the Firefox user is signed in to Pocket. Does not correspond to a pref, so its value is resampled at newtab's component init and whenever there is a Discovery Stream user event.
-"
-  }
-
-  dimension: metrics__boolean__pocket_sponsored_stories_enabled {
-    sql: ${TABLE}.metrics.boolean.pocket_sponsored_stories_enabled ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Pocket Sponsored Stories Enabled"
-    description: "Whether Pocket sponsored stories are enabled on the newtab. Corresponds to the value of the `browser.newtabpage.activity-stream.showSponsored` pref. Can be `true` even if pocket.enabled is `false`.
-"
-  }
-
-  dimension: metrics__boolean__topsites_enabled {
-    sql: ${TABLE}.metrics.boolean.topsites_enabled ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Topsites Enabled"
-    description: "Whether \"topsites\" is enabled on the newtab. AKA the \"Shortcuts\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.feeds.topsites` pref.
-"
-  }
-
-  dimension: metrics__boolean__topsites_sponsored_enabled {
-    sql: ${TABLE}.metrics.boolean.topsites_sponsored_enabled ;;
-    type: yesno
-    group_label: "Metrics Boolean"
-    group_item_label: "Topsites Sponsored Enabled"
-    description: "Whether sponsored topsites are enabled on the newtab. AKA the \"Sponsored Shortcuts\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.showSponsoredTopSites` pref. Can be `true` even if topsites.enabled is `false`.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_label {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
-    hidden: yes
-    description: "Counts the number of times a metric was set with an invalid label.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
-    hidden: yes
-    description: "Counts the number of times a metric was set a value that overflowed.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_state {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
-    hidden: yes
-    description: "Counts the number of times a timing metric was used incorrectly.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_value {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
-    hidden: yes
-    description: "Counts the number of times a metric was set to an invalid value.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__quantity__topsites_rows {
-    sql: ${TABLE}.metrics.quantity.topsites_rows ;;
-    type: number
-    group_label: "Metrics Quantity"
-    group_item_label: "Topsites Rows"
-    description: "The number of topsite tile rows configured to be shown on the newtab page. Corresponds to the value of the `browser.newtabpage.activity-stream.topSitesRows` pref. This is not the number of rows actually seen by the user: if the browser window is partially off-screen, or isn't wide enough to accommodate eight tiles per row, the actual number of rows may be different.
-"
-  }
-
-  dimension: metrics__string__newtab_homepage_category {
-    sql: ${TABLE}.metrics.string.newtab_homepage_category ;;
-    type: string
-    group_label: "Metrics String"
-    group_item_label: "Newtab Homepage Category"
-    description: "The current setting of the home page. One of [\"enabled\", \"disabled\", \"extension\"] or any value from SiteClassifier like \"known-hijacker\" or \"social-media\". Similar to Activity Stream's PAGE_TAKEOVER_DATA event's `home_url_category`. Sampled once after newtab init.
-"
-  }
-
-  dimension: metrics__string__newtab_locale {
-    sql: ${TABLE}.metrics.string.newtab_locale ;;
-    type: string
-    group_label: "Metrics String"
-    group_item_label: "Newtab Locale"
-    description: "The application's locale as of when newtab's TelemetryFeed was init. Comes from `Services.local.appLocaleAsBCP47`. Looks like `en-US`.
-"
-  }
-
-  dimension: metrics__string__newtab_newtab_category {
-    sql: ${TABLE}.metrics.string.newtab_newtab_category ;;
-    type: string
-    group_label: "Metrics String"
-    group_item_label: "Newtab Newtab Category"
-    description: "The current setting of the newtab page. One of [\"enabled\", \"disabled\", \"extension\"] or any value from SiteClassifier like \"known-hijacker\" or \"social-media\". Similar to Activity Stream's PAGE_TAKEOVER_DATA event's `newtab_url_category`. Sampled once after newtab init.
-"
-  }
-
-  dimension: metrics__string__search_engine_default_engine_id {
-    sql: ${TABLE}.metrics.string.search_engine_default_engine_id ;;
-    type: string
-    group_label: "Metrics String"
-    group_item_label: "Search Engine Default Engine Id"
-    description: "The telemetry id of the search engine.
-For application provided engines, this is either supplied by the
-configuration or from the first part of the associated WebExtension Id.
-For other engines, this is `other-<extensionName>`.
-"
-  }
-
-  dimension: metrics__string__search_engine_private_engine_id {
-    sql: ${TABLE}.metrics.string.search_engine_private_engine_id ;;
-    type: string
-    group_label: "Metrics String"
-    group_item_label: "Search Engine Private Engine Id"
-    description: "The telemetry id of the search engine.
-For application provided engines, this is either supplied by the
-configuration or from the first part of the associated WebExtension Id.
-For other engines, this is `other-<extensionName>`.
-If this string is an empty string (`\"\"`), this means that one or both of
-the preferences `browser.search.separatePrivateDefault` and
-`browser.search.separatePrivateDefault.ui.enabled` are set to false.
-It is possible that the user selects the same private engine as for the
-default engine, and hence both versions of these fields will be filled in.
-"
-  }
-
-  dimension: metrics__string_list__newtab_blocked_sponsors {
-    sql: ${TABLE}.metrics.string_list.newtab_blocked_sponsors ;;
-    hidden: yes
-  }
-
-  dimension: metrics__string_list__newtab_sov_allocation {
-    sql: ${TABLE}.metrics.string_list.newtab_sov_allocation ;;
-    hidden: yes
-  }
-
-  dimension: metrics__uuid__legacy_telemetry_client_id {
-    sql: ${TABLE}.metrics.uuid.legacy_telemetry_client_id ;;
-    type: string
-    group_label: "Metrics Uuid"
-    group_item_label: "Legacy Telemetry Client Id"
-    description: "The client_id according to Telemetry.
-Might not always have a value due to being too early for it to have
-loaded.
-Value may be the canary client id `c0ffeec0-ffee-c0ff-eec0-ffeec0ffeec0`
-in pings near when the data upload pref is disabled (if Telemetry gets
-to go first), or between when a client_id has been removed and when it
-has been regenerated.
-Does not need to be sent in the Glean \"deletion-request\" ping.
-"
-  }
-
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -620,67 +660,262 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  sql_table_name: `mozdata.firefox_desktop.newtab` ;;
-}
-
-view: newtab_table__events {
-  dimension: category {
-    sql: ${TABLE}.category ;;
-    type: string
+  measure: clients {
+    type: count_distinct
+    sql: ${client_info__client_id} ;;
   }
 
-  dimension: extra {
-    sql: ${TABLE}.extra ;;
+  measure: ping_count {
+    type: count
+  }
+
+  sql_table_name: `mozdata.firefox_desktop.top_sites` ;;
+}
+
+view: suggest__top_sites__metrics__labeled_counter__glean_error_invalid_label {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.top_sites as t,
+unnest(metrics.labeled_counter.glean_error_invalid_label) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__top_sites__metrics__labeled_counter__glean_error_invalid_overflow {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.top_sites as t,
+unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__top_sites__metrics__labeled_counter__glean_error_invalid_state {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.top_sites as t,
+unnest(metrics.labeled_counter.glean_error_invalid_state) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__top_sites__metrics__labeled_counter__glean_error_invalid_value {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.top_sites as t,
+unnest(metrics.labeled_counter.glean_error_invalid_value) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: top_sites__metrics__labeled_counter__glean_error_invalid_label {
+  label: "Glean Error - Invalid Label"
+
+  dimension: document_id {
+    type: string
+    sql: ${top_sites.document_id} ;;
     hidden: yes
   }
 
-  dimension: name {
-    sql: ${TABLE}.name ;;
+  dimension: document_label_id {
     type: string
+    sql: ${top_sites.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
   }
 
-  dimension: timestamp {
-    sql: ${TABLE}.timestamp ;;
-    type: number
-  }
-}
-
-view: newtab_table__events__extra {
-  dimension: key {
+  dimension: label {
+    type: string
     sql: ${TABLE}.key ;;
-    type: string
+    suggest_explore: suggest__top_sites__metrics__labeled_counter__glean_error_invalid_label
+    suggest_dimension: suggest__top_sites__metrics__labeled_counter__glean_error_invalid_label.key
+    hidden: no
   }
 
   dimension: value {
+    type: number
     sql: ${TABLE}.value ;;
-    type: string
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${top_sites.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
-view: newtab_table__ping_info__experiments {
-  dimension: key {
+view: top_sites__metrics__labeled_counter__glean_error_invalid_overflow {
+  label: "Glean Error - Invalid Overflow"
+
+  dimension: document_id {
+    type: string
+    sql: ${top_sites.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${top_sites.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
     sql: ${TABLE}.key ;;
-    type: string
+    suggest_explore: suggest__top_sites__metrics__labeled_counter__glean_error_invalid_overflow
+    suggest_dimension: suggest__top_sites__metrics__labeled_counter__glean_error_invalid_overflow.key
+    hidden: no
   }
 
-  dimension: value__branch {
-    sql: ${TABLE}.value.branch ;;
-    type: string
-    group_label: "Value"
-    group_item_label: "Branch"
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
   }
 
-  dimension: value__extra__enrollment_id {
-    sql: ${TABLE}.value.extra.enrollment_id ;;
-    type: string
-    group_label: "Value Extra"
-    group_item_label: "Enrollment Id"
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
   }
 
-  dimension: value__extra__type {
-    sql: ${TABLE}.value.extra.type ;;
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${top_sites.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: top_sites__metrics__labeled_counter__glean_error_invalid_state {
+  label: "Glean Error - Invalid State"
+
+  dimension: document_id {
     type: string
-    group_label: "Value Extra"
-    group_item_label: "Type"
+    sql: ${top_sites.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${top_sites.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__top_sites__metrics__labeled_counter__glean_error_invalid_state
+    suggest_dimension: suggest__top_sites__metrics__labeled_counter__glean_error_invalid_state.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${top_sites.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: top_sites__metrics__labeled_counter__glean_error_invalid_value {
+  label: "Glean Error - Invalid Value"
+
+  dimension: document_id {
+    type: string
+    sql: ${top_sites.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${top_sites.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__top_sites__metrics__labeled_counter__glean_error_invalid_value
+    suggest_dimension: suggest__top_sites__metrics__labeled_counter__glean_error_invalid_value.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${top_sites.client_info__client_id} end ;;
+    hidden: no
   }
 }

@@ -164,6 +164,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__engine_tab_kills}) AS metrics__metrics__labeled_counter__engine_tab_kills ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__engine_tab_kills.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries}) AS metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__gfx_content_frame_time_reason}) AS metrics__metrics__labeled_counter__gfx_content_frame_time_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__gfx_content_frame_time_reason.document_id} ;;
@@ -277,6 +282,26 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__media_audio_init_failure {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_audio_init_failure}) AS metrics__metrics__labeled_counter__media_audio_init_failure ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_audio_init_failure.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__metrics_bookmarks_add {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__metrics_bookmarks_add}) AS metrics__metrics__labeled_counter__metrics_bookmarks_add ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__metrics_bookmarks_add.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__metrics_bookmarks_delete {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__metrics_bookmarks_delete}) AS metrics__metrics__labeled_counter__metrics_bookmarks_delete ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__metrics_bookmarks_delete.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__metrics_bookmarks_edit {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__metrics_bookmarks_edit}) AS metrics__metrics__labeled_counter__metrics_bookmarks_edit ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__metrics_bookmarks_edit.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__metrics_bookmarks_open {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__metrics_bookmarks_open}) AS metrics__metrics__labeled_counter__metrics_bookmarks_open ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__metrics_bookmarks_open.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__metrics_search_count {
@@ -422,6 +447,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_parent_inactive}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pwmgr_form_autofill_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pwmgr_form_autofill_result}) AS metrics__metrics__labeled_counter__pwmgr_form_autofill_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pwmgr_form_autofill_result.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__recent_synced_tabs_recent_synced_tab_opened {
@@ -581,6 +611,10 @@ explore: suggest__metrics__metrics__labeled_counter__engine_tab_kills {
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
   hidden: yes
 }
@@ -670,6 +704,22 @@ explore: suggest__metrics__metrics__labeled_counter__media_audio_backend {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__media_audio_init_failure {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_add {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_delete {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_edit {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__metrics_bookmarks_open {
   hidden: yes
 }
 
@@ -786,6 +836,10 @@ explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_pa
 }
 
 explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__pwmgr_form_autofill_result {
   hidden: yes
 }
 
