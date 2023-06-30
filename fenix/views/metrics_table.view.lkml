@@ -479,6 +479,13 @@ view: metrics_table {
     group_item_label: "Metrics Notifications Allowed"
   }
 
+  dimension: metrics__boolean__metrics_ram_more_than_threshold {
+    sql: ${TABLE}.metrics.boolean.metrics_ram_more_than_threshold ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Metrics Ram More Than Threshold"
+  }
+
   dimension: metrics__boolean__metrics_search_widget_installed {
     sql: ${TABLE}.metrics.boolean.metrics_search_widget_installed ;;
     type: yesno
@@ -1938,6 +1945,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
     sql: ${TABLE}.metrics.labeled_counter.power_wakeups_per_thread_parent_inactive ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__pwmgr_form_autofill_result {
+    sql: ${TABLE}.metrics.labeled_counter.pwmgr_form_autofill_result ;;
     hidden: yes
   }
 

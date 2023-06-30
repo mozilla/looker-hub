@@ -1568,6 +1568,22 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__pwmgr_form_autofill_result {
+    label: "Pwmgr Form Autofill Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pwmgr_form_autofill_result ;;
+    group_label: "Pwmgr"
+    group_item_label: "Form Autofill Result"
+
+    link: {
+      label: "Glean Dictionary reference for Pwmgr Form Autofill Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/pwmgr_form_autofill_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The result of auto-filling a login form."
+  }
+
   dimension: metrics__counter__rtcrtpsender_count {
     label: "Rtcrtpsender Count"
     hidden: no
@@ -5888,6 +5904,49 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactiv
   }
 }
 
+view: metrics__metrics__labeled_counter__pwmgr_form_autofill_result {
+  label: "Pwmgr - Form Autofill Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pwmgr_form_autofill_result
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pwmgr_form_autofill_result.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
   label: "Rtcrtpsender Setparameters - Blame Length Changed"
 
@@ -6941,6 +7000,25 @@ view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_paren
     count(*) as n
 from mozdata.firefox_desktop_background_update.metrics as t,
 unnest(metrics.labeled_counter.power_wakeups_per_thread_parent_inactive) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__pwmgr_form_autofill_result {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.pwmgr_form_autofill_result) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

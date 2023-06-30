@@ -470,6 +470,10 @@ duet:
       tables:
       - table: moz-fx-data-shared-prod.fenix.marketing_attributable_metrics
       type: table_view
+    firefox_android_clients:
+      tables:
+      - table: mozdata.fenix.firefox_android_clients
+      type: table_view
     firefox_ios_campaign_performance:
       tables:
       - table: mozdata.firefox_ios.ad_activation_performance
@@ -5193,13 +5197,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id092
           normalized_channel:
-            default: nightly
+            default: esr
             options:
-            - nightly
-            - release
             - esr
             - beta
+            - release
             - aurora
+            - nightly
             - default
             - nightly-pine
             - nightly-oak
@@ -5307,11 +5311,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id098
           normalized_channel:
-            default: nightly
+            default: aurora
             options:
-            - nightly
             - aurora
             - beta
+            - nightly
             - release
             - Other
             - esr
