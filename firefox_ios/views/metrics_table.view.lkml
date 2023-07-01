@@ -297,6 +297,20 @@ view: metrics_table {
     group_item_label: "Application Services Recent Highlights Visible"
   }
 
+  dimension: metrics__boolean__credit_card_autofill_enabled {
+    sql: ${TABLE}.metrics.boolean.credit_card_autofill_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Credit Card Autofill Enabled"
+  }
+
+  dimension: metrics__boolean__credit_card_sync_enabled {
+    sql: ${TABLE}.metrics.boolean.credit_card_sync_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Credit Card Sync Enabled"
+  }
+
   dimension: metrics__boolean__device_authentication {
     sql: ${TABLE}.metrics.boolean.device_authentication ;;
     type: yesno
