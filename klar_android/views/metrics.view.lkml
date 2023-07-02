@@ -2771,7 +2771,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_rid_changed__numerator {
     label: "Rtcrtpsender Setparameters Warn Rid Changed Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_rid_changed.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -2789,7 +2789,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_rid_changed__denominator {
     label: "Rtcrtpsender Setparameters Warn Rid Changed Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_rid_changed.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
