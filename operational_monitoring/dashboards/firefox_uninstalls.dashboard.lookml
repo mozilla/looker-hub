@@ -106,8 +106,8 @@
       - 'Windows 10'
       - 'Windows 7'
       - 'Windows 8.1'
-      - 'Windows 8'
       - 'Windows 11'
+      - 'Windows 8'
       
   
   
