@@ -1055,6 +1055,14 @@ view: new_profile {
     hidden: yes
   }
 
+  dimension: environment__system__gfx__target_frame_rate {
+    sql: ${TABLE}.environment.system.gfx.target_frame_rate ;;
+    type: number
+    group_label: "Environment System Gfx"
+    group_item_label: "Target Frame Rate"
+    description: "Frame rate in Hz, typically 60 or more, see bug 1840381"
+  }
+
   dimension: environment__system__has_win_package_id {
     sql: ${TABLE}.environment.system.has_win_package_id ;;
     type: yesno
