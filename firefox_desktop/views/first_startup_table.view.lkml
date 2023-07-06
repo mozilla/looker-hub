@@ -340,12 +340,30 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__first_startup_delete_tasks_time {
+    sql: ${TABLE}.metrics.quantity.first_startup_delete_tasks_time ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "First Startup Delete Tasks Time"
+    description: "Number of milliseconds until TaskScheduler.deleteAllTasks resolved in FirstStartup.
+"
+  }
+
   dimension: metrics__quantity__first_startup_elapsed {
     sql: ${TABLE}.metrics.quantity.first_startup_elapsed ;;
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "First Startup Elapsed"
     description: "Number of milliseconds the FirstStartup service took to run.
+"
+  }
+
+  dimension: metrics__quantity__first_startup_normandy_init_time {
+    sql: ${TABLE}.metrics.quantity.first_startup_normandy_init_time ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "First Startup Normandy Init Time"
+    description: "Number of milliseconds until Normandy.init resolved in FirstStartup.
 "
   }
 
