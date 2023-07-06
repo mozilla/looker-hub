@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: first_startup {
+  dimension: metrics__quantity__first_startup_delete_tasks_time {
+    label: "First Startup Delete Tasks Time"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.first_startup_delete_tasks_time ;;
+    type: number
+    group_label: "First Startup"
+    group_item_label: "Delete Tasks Time"
+
+    link: {
+      label: "Glean Dictionary reference for First Startup Delete Tasks Time"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/first_startup_delete_tasks_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of milliseconds until TaskScheduler.deleteAllTasks resolved in FirstStartup.
+"
+  }
+
   dimension: metrics__quantity__first_startup_elapsed {
     label: "First Startup Elapsed"
     hidden: no
@@ -20,6 +38,24 @@ view: first_startup {
     }
 
     description: "Number of milliseconds the FirstStartup service took to run.
+"
+  }
+
+  dimension: metrics__quantity__first_startup_normandy_init_time {
+    label: "First Startup Normandy Init Time"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.first_startup_normandy_init_time ;;
+    type: number
+    group_label: "First Startup"
+    group_item_label: "Normandy Init Time"
+
+    link: {
+      label: "Glean Dictionary reference for First Startup Normandy Init Time"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/first_startup_normandy_init_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of milliseconds until Normandy.init resolved in FirstStartup.
 "
   }
 
