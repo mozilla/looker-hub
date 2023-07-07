@@ -1395,6 +1395,15 @@ count. Unset on other platforms.
 "
   }
 
+  dimension: metrics__quantity__extensions_quarantined_domains_listsize {
+    sql: ${TABLE}.metrics.quantity.extensions_quarantined_domains_listsize ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Extensions Quarantined Domains Listsize"
+    description: "Number of domains listed in the quarantined domains list pref for the client during this session.
+"
+  }
+
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__denominator {
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_length_changed.denominator ;;
     type: number

@@ -1157,6 +1157,24 @@ when dynamic or static rulesets have been loaded from disk.
 "
   }
 
+  dimension: metrics__quantity__extensions_quarantined_domains_listsize {
+    label: "Extensions Quarantined Domains Listsize"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.extensions_quarantined_domains_listsize ;;
+    type: number
+    group_label: "Extensions Quarantined Domains"
+    group_item_label: "Listsize"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Quarantined Domains Listsize"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/extensions_quarantined_domains_listsize"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of domains listed in the quarantined domains list pref for the client during this session.
+"
+  }
+
   dimension: metrics__timespan__extensions_startup_cache_load_time__value {
     label: "Extensions Startup Cache Load Time Value"
     hidden: no
