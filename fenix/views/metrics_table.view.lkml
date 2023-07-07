@@ -2242,6 +2242,13 @@ view: metrics_table {
     group_item_label: "Extensions Apis Dnr Evaluate Rules Count Max"
   }
 
+  dimension: metrics__quantity__extensions_quarantined_domains_listsize {
+    sql: ${TABLE}.metrics.quantity.extensions_quarantined_domains_listsize ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Extensions Quarantined Domains Listsize"
+  }
+
   dimension: metrics__quantity__gfx_adapter_primary_ram {
     sql: ${TABLE}.metrics.quantity.gfx_adapter_primary_ram ;;
     type: number

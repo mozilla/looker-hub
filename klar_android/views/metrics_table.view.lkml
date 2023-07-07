@@ -1598,6 +1598,15 @@ It also indicates the screen it was removed from, home or browser.
 "
   }
 
+  dimension: metrics__quantity__extensions_quarantined_domains_listsize {
+    sql: ${TABLE}.metrics.quantity.extensions_quarantined_domains_listsize ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Extensions Quarantined Domains Listsize"
+    description: "Number of domains listed in the quarantined domains list pref for the client during this session.
+"
+  }
+
   dimension: metrics__quantity__shortcuts_shortcuts_on_home_number {
     sql: ${TABLE}.metrics.quantity.shortcuts_shortcuts_on_home_number ;;
     type: number

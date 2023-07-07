@@ -1005,6 +1005,24 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__quantity__extensions_quarantined_domains_listsize {
+    label: "Extensions Quarantined Domains Listsize"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.extensions_quarantined_domains_listsize ;;
+    type: number
+    group_label: "Extensions Quarantined Domains"
+    group_item_label: "Listsize"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Quarantined Domains Listsize"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_quarantined_domains_listsize"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of domains listed in the quarantined domains list pref for the client during this session.
+"
+  }
+
   dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__sum {
     label: "Fingerprinting Protection Canvas Noise Calculate Time Sum"
     hidden: no
