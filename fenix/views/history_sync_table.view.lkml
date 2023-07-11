@@ -318,11 +318,6 @@ view: history_sync_table {
     group_item_label: "Raw History Sync V2 Started At"
   }
 
-  dimension: metrics__jwe {
-    sql: ${TABLE}.metrics.jwe ;;
-    hidden: yes
-  }
-
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -363,11 +358,6 @@ view: history_sync_table {
     hidden: yes
   }
 
-  dimension: metrics__labeled_rate {
-    sql: ${TABLE}.metrics.labeled_rate ;;
-    hidden: yes
-  }
-
   dimension: metrics__labeled_string__history_sync_failure_reason {
     sql: ${TABLE}.metrics.labeled_string.history_sync_failure_reason ;;
     hidden: yes
@@ -392,16 +382,6 @@ view: history_sync_table {
     group_item_label: "History Sync V2 Uid"
   }
 
-  dimension: metrics__text {
-    sql: ${TABLE}.metrics.text ;;
-    hidden: yes
-  }
-
-  dimension: metrics__url {
-    sql: ${TABLE}.metrics.url ;;
-    hidden: yes
-  }
-
   dimension: metrics__uuid__sync_sync_uuid {
     sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
     type: string
@@ -419,6 +399,7 @@ view: history_sync_table {
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
+    description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {
@@ -429,6 +410,7 @@ view: history_sync_table {
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
@@ -667,51 +649,6 @@ view: history_sync_table__events__extra {
   }
 }
 
-view: history_sync_table__metrics__jwe {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: history_sync_table__metrics__labeled_rate {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-}
-
-view: history_sync_table__metrics__labeled_rate__value {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__denominator {
-    sql: ${TABLE}.value.denominator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Denominator"
-  }
-
-  dimension: value__numerator {
-    sql: ${TABLE}.value.numerator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Numerator"
-  }
-}
-
 view: history_sync_table__metrics__labeled_string__history_sync_failure_reason {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -725,30 +662,6 @@ view: history_sync_table__metrics__labeled_string__history_sync_failure_reason {
 }
 
 view: history_sync_table__metrics__labeled_string__history_sync_v2_failure_reason {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: history_sync_table__metrics__text {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: history_sync_table__metrics__url {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

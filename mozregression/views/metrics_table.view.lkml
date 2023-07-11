@@ -433,11 +433,6 @@ This does not include deletion-request pings.
     group_item_label: "Raw Glean Validation First Run Hour"
   }
 
-  dimension: metrics__jwe {
-    sql: ${TABLE}.metrics.jwe ;;
-    hidden: yes
-  }
-
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -491,11 +486,6 @@ This metric appears in both the metrics and baseline pings.
 - On the baseline ping, the counts include the number of pings send since
   the last baseline ping (including the last baseline ping)
 "
-  }
-
-  dimension: metrics__labeled_rate {
-    sql: ${TABLE}.metrics.labeled_rate ;;
-    hidden: yes
   }
 
   dimension: metrics__memory_distribution__glean_database_size__count {
@@ -564,11 +554,6 @@ This metric appears in both the metrics and baseline pings.
 The specific values for reason are specific to each ping, and are
 documented in the ping's pings.yaml file.
 "
-  }
-
-  dimension: metrics__text {
-    sql: ${TABLE}.metrics.text ;;
-    hidden: yes
   }
 
   dimension: metrics__timing_distribution__glean_upload_send_failure__bucket_count {
@@ -807,11 +792,6 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
-  dimension: metrics__url {
-    sql: ${TABLE}.metrics.url ;;
-    hidden: yes
-  }
-
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -1001,51 +981,6 @@ view: metrics_table__events__extra {
   }
 }
 
-view: metrics_table__metrics__jwe {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: metrics_table__metrics__labeled_rate {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-}
-
-view: metrics_table__metrics__labeled_rate__value {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__denominator {
-    sql: ${TABLE}.value.denominator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Denominator"
-  }
-
-  dimension: value__numerator {
-    sql: ${TABLE}.value.numerator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Numerator"
-  }
-}
-
 view: metrics_table__metrics__memory_distribution__glean_database_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -1079,18 +1014,6 @@ view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_di
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
-  }
-}
-
-view: metrics_table__metrics__text {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
   }
 }
 
@@ -1139,18 +1062,6 @@ view: metrics_table__metrics__timing_distribution__glean_validation_shutdown_wai
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
-  }
-}
-
-view: metrics_table__metrics__url {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
   }
 }
 

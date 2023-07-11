@@ -318,11 +318,6 @@ view: creditcards_sync_table {
     group_item_label: "Raw Creditcards Sync V2 Started At"
   }
 
-  dimension: metrics__jwe {
-    sql: ${TABLE}.metrics.jwe ;;
-    hidden: yes
-  }
-
   dimension: metrics__labeled_counter__creditcards_sync_incoming {
     sql: ${TABLE}.metrics.labeled_counter.creditcards_sync_incoming ;;
     hidden: yes
@@ -363,11 +358,6 @@ view: creditcards_sync_table {
     hidden: yes
   }
 
-  dimension: metrics__labeled_rate {
-    sql: ${TABLE}.metrics.labeled_rate ;;
-    hidden: yes
-  }
-
   dimension: metrics__labeled_string__creditcards_sync_failure_reason {
     sql: ${TABLE}.metrics.labeled_string.creditcards_sync_failure_reason ;;
     hidden: yes
@@ -390,16 +380,6 @@ view: creditcards_sync_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Creditcards Sync V2 Uid"
-  }
-
-  dimension: metrics__text {
-    sql: ${TABLE}.metrics.text ;;
-    hidden: yes
-  }
-
-  dimension: metrics__url {
-    sql: ${TABLE}.metrics.url ;;
-    hidden: yes
   }
 
   dimension: normalized_app_id {
@@ -655,51 +635,6 @@ view: creditcards_sync_table__events__extra {
   }
 }
 
-view: creditcards_sync_table__metrics__jwe {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: creditcards_sync_table__metrics__labeled_rate {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-}
-
-view: creditcards_sync_table__metrics__labeled_rate__value {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__denominator {
-    sql: ${TABLE}.value.denominator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Denominator"
-  }
-
-  dimension: value__numerator {
-    sql: ${TABLE}.value.numerator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Numerator"
-  }
-}
-
 view: creditcards_sync_table__metrics__labeled_string__creditcards_sync_failure_reason {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -713,30 +648,6 @@ view: creditcards_sync_table__metrics__labeled_string__creditcards_sync_failure_
 }
 
 view: creditcards_sync_table__metrics__labeled_string__creditcards_sync_v2_failure_reason {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: creditcards_sync_table__metrics__text {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: creditcards_sync_table__metrics__url {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

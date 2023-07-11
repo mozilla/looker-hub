@@ -430,11 +430,6 @@ view: background_update_table {
     group_item_label: "Raw Background Update Targeting Env Profile Age"
   }
 
-  dimension: metrics__jwe {
-    sql: ${TABLE}.metrics.jwe ;;
-    hidden: yes
-  }
-
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -465,11 +460,6 @@ The labels are the `category.name` identifier of the metric.
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
-  }
-
-  dimension: metrics__labeled_rate {
-    sql: ${TABLE}.metrics.labeled_rate ;;
-    hidden: yes
   }
 
   dimension: metrics__quantity__background_update_targeting_env_firefox_version {
@@ -516,16 +506,6 @@ This version number does not have a physical unit: it's only useful to compare b
 
   dimension: metrics__string_list__background_update_states {
     sql: ${TABLE}.metrics.string_list.background_update_states ;;
-    hidden: yes
-  }
-
-  dimension: metrics__text {
-    sql: ${TABLE}.metrics.text ;;
-    hidden: yes
-  }
-
-  dimension: metrics__url {
-    sql: ${TABLE}.metrics.url ;;
     hidden: yes
   }
 
@@ -735,75 +715,6 @@ view: background_update_table__events {
 }
 
 view: background_update_table__events__extra {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: background_update_table__metrics__jwe {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: background_update_table__metrics__labeled_rate {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-}
-
-view: background_update_table__metrics__labeled_rate__value {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__denominator {
-    sql: ${TABLE}.value.denominator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Denominator"
-  }
-
-  dimension: value__numerator {
-    sql: ${TABLE}.value.numerator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Numerator"
-  }
-}
-
-view: background_update_table__metrics__text {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: background_update_table__metrics__url {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -597,6 +597,27 @@ name.
 "
   }
 
+  dimension: metrics__text__messaging_system_cfr_action {
+    sql: ${TABLE}.metrics.text.messaging_system_cfr_action ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Messaging System Cfr Action"
+  }
+
+  dimension: metrics__text__messaging_system_event_context {
+    sql: ${TABLE}.metrics.text.messaging_system_event_context ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Messaging System Event Context"
+  }
+
+  dimension: metrics__text__messaging_system_message_id {
+    sql: ${TABLE}.metrics.text.messaging_system_message_id ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Messaging System Message Id"
+  }
+
   dimension: metrics__text2__messaging_system_cfr_action {
     sql: ${TABLE}.metrics.text2.messaging_system_cfr_action ;;
     type: string

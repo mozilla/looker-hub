@@ -308,11 +308,6 @@ view: events_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__jwe {
-    sql: ${TABLE}.metrics.jwe ;;
-    hidden: yes
-  }
-
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -343,21 +338,6 @@ The labels are the `category.name` identifier of the metric.
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
-  }
-
-  dimension: metrics__labeled_rate {
-    sql: ${TABLE}.metrics.labeled_rate ;;
-    hidden: yes
-  }
-
-  dimension: metrics__text {
-    sql: ${TABLE}.metrics.text ;;
-    hidden: yes
-  }
-
-  dimension: metrics__url {
-    sql: ${TABLE}.metrics.url ;;
-    hidden: yes
   }
 
   dimension: metrics__uuid__legacy_ids_client_id {
@@ -530,75 +510,6 @@ view: events_table__events {
 }
 
 view: events_table__events__extra {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: events_table__metrics__jwe {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: events_table__metrics__labeled_rate {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-}
-
-view: events_table__metrics__labeled_rate__value {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__denominator {
-    sql: ${TABLE}.value.denominator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Denominator"
-  }
-
-  dimension: value__numerator {
-    sql: ${TABLE}.value.numerator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Numerator"
-  }
-}
-
-view: events_table__metrics__text {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: events_table__metrics__url {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

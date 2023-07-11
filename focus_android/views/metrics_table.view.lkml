@@ -789,11 +789,6 @@ view: metrics_table {
     group_item_label: "Raw Glean Validation First Run Hour"
   }
 
-  dimension: metrics__jwe {
-    sql: ${TABLE}.metrics.jwe ;;
-    hidden: yes
-  }
-
   dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
     sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_normal_window_service_mode ;;
     hidden: yes
@@ -1096,11 +1091,6 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__shortcuts_shortcut_removed_counter {
     sql: ${TABLE}.metrics.labeled_counter.shortcuts_shortcut_removed_counter ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_rate {
-    sql: ${TABLE}.metrics.labeled_rate ;;
     hidden: yes
   }
 
@@ -1489,11 +1479,6 @@ view: metrics_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Preferences User Theme"
-  }
-
-  dimension: metrics__text {
-    sql: ${TABLE}.metrics.text ;;
-    hidden: yes
   }
 
   dimension: metrics__timespan__extensions_startup_cache_load_time__time_unit {
@@ -3308,11 +3293,6 @@ view: metrics_table {
     hidden: yes
   }
 
-  dimension: metrics__url {
-    sql: ${TABLE}.metrics.url ;;
-    hidden: yes
-  }
-
   dimension: metrics__uuid__legacy_ids_client_id {
     sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
     type: string
@@ -3660,18 +3640,6 @@ view: metrics_table__metrics__custom_distribution__timer_thread_timers_fired_per
   }
 }
 
-view: metrics_table__metrics__jwe {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
 view: metrics_table__metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -3693,39 +3661,6 @@ view: metrics_table__metrics__labeled_boolean__cookie_banners_private_window_ser
   dimension: value {
     sql: ${TABLE}.value ;;
     type: yesno
-  }
-}
-
-view: metrics_table__metrics__labeled_rate {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-}
-
-view: metrics_table__metrics__labeled_rate__value {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__denominator {
-    sql: ${TABLE}.value.denominator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Denominator"
-  }
-
-  dimension: value__numerator {
-    sql: ${TABLE}.value.numerator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Numerator"
   }
 }
 
@@ -3798,18 +3733,6 @@ view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_di
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
-  }
-}
-
-view: metrics_table__metrics__text {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
   }
 }
 
@@ -4170,18 +4093,6 @@ view: metrics_table__metrics__timing_distribution__wr_time_to_render_start__valu
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
-  }
-}
-
-view: metrics_table__metrics__url {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
   }
 }
 

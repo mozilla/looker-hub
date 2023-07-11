@@ -1503,11 +1503,6 @@ view: metrics_table {
     group_item_label: "Raw Glean Validation First Run Hour"
   }
 
-  dimension: metrics__jwe {
-    sql: ${TABLE}.metrics.jwe ;;
-    hidden: yes
-  }
-
   dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
     sql: ${TABLE}.metrics.labeled_boolean.cookie_banners_normal_window_service_mode ;;
     hidden: yes
@@ -1990,11 +1985,6 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__wallpapers_new_wallpaper_applied {
     sql: ${TABLE}.metrics.labeled_counter.wallpapers_new_wallpaper_applied ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_rate {
-    sql: ${TABLE}.metrics.labeled_rate ;;
     hidden: yes
   }
 
@@ -2874,11 +2864,6 @@ view: metrics_table {
 
   dimension: metrics__string_list__preferences_tracking_protection {
     sql: ${TABLE}.metrics.string_list.preferences_tracking_protection ;;
-    hidden: yes
-  }
-
-  dimension: metrics__text {
-    sql: ${TABLE}.metrics.text ;;
     hidden: yes
   }
 
@@ -10740,9 +10725,11 @@ view: metrics_table {
     hidden: yes
   }
 
-  dimension: metrics__url {
-    sql: ${TABLE}.metrics.url ;;
-    hidden: yes
+  dimension: metrics__url__search_default_engine_search_url {
+    sql: ${TABLE}.metrics.url.search_default_engine_search_url ;;
+    type: string
+    group_label: "Metrics Url"
+    group_item_label: "Search Default Engine Search Url"
   }
 
   dimension: metrics__url2__search_default_engine_search_url {
@@ -11267,18 +11254,6 @@ view: metrics_table__metrics__custom_distribution__timer_thread_timers_fired_per
   }
 }
 
-view: metrics_table__metrics__jwe {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
 view: metrics_table__metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -11300,39 +11275,6 @@ view: metrics_table__metrics__labeled_boolean__cookie_banners_private_window_ser
   dimension: value {
     sql: ${TABLE}.value ;;
     type: yesno
-  }
-}
-
-view: metrics_table__metrics__labeled_rate {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-}
-
-view: metrics_table__metrics__labeled_rate__value {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__denominator {
-    sql: ${TABLE}.value.denominator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Denominator"
-  }
-
-  dimension: value__numerator {
-    sql: ${TABLE}.value.numerator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Numerator"
   }
 }
 
@@ -11465,18 +11407,6 @@ view: metrics_table__metrics__memory_distribution__storage_stats_data_dir_bytes_
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
-  }
-}
-
-view: metrics_table__metrics__text {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
   }
 }
 
@@ -13061,18 +12991,6 @@ view: metrics_table__metrics__timing_distribution__wr_time_to_render_start__valu
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
-  }
-}
-
-view: metrics_table__metrics__url {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
   }
 }
 

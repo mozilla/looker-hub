@@ -283,11 +283,6 @@ view: first_session_table {
     group_item_label: "Raw First Session Timestamp"
   }
 
-  dimension: metrics__jwe {
-    sql: ${TABLE}.metrics.jwe ;;
-    hidden: yes
-  }
-
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -305,11 +300,6 @@ view: first_session_table {
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_rate {
-    sql: ${TABLE}.metrics.labeled_rate ;;
     hidden: yes
   }
 
@@ -383,11 +373,6 @@ view: first_session_table {
     group_item_label: "Play Store Attribution Term"
   }
 
-  dimension: metrics__text {
-    sql: ${TABLE}.metrics.text ;;
-    hidden: yes
-  }
-
   dimension: metrics__timing_distribution__first_session_adjust_attribution_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.bucket_count ;;
     type: number
@@ -444,11 +429,6 @@ view: first_session_table {
 
   dimension: metrics__timing_distribution__first_session_adjust_attribution_time__values {
     sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.values ;;
-    hidden: yes
-  }
-
-  dimension: metrics__url {
-    sql: ${TABLE}.metrics.url ;;
     hidden: yes
   }
 
@@ -660,63 +640,6 @@ view: first_session_table__events__extra {
   }
 }
 
-view: first_session_table__metrics__jwe {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: first_session_table__metrics__labeled_rate {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-}
-
-view: first_session_table__metrics__labeled_rate__value {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__denominator {
-    sql: ${TABLE}.value.denominator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Denominator"
-  }
-
-  dimension: value__numerator {
-    sql: ${TABLE}.value.numerator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Numerator"
-  }
-}
-
-view: first_session_table__metrics__text {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
 view: first_session_table__metrics__timing_distribution__first_session_adjust_attribution_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -726,18 +649,6 @@ view: first_session_table__metrics__timing_distribution__first_session_adjust_at
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
-  }
-}
-
-view: first_session_table__metrics__url {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
   }
 }
 
