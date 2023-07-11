@@ -296,6 +296,13 @@ view: spoc_table {
     hidden: yes
   }
 
+  dimension: metrics__text__pocket_spoc_shim {
+    sql: ${TABLE}.metrics.text.pocket_spoc_shim ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Pocket Spoc Shim"
+  }
+
   dimension: metrics__text2__pocket_spoc_shim {
     sql: ${TABLE}.metrics.text2.pocket_spoc_shim ;;
     type: string

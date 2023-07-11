@@ -328,11 +328,6 @@ that programmatically redirect to a new location.
     group_item_label: "Raw Glean Validation First Run Hour"
   }
 
-  dimension: metrics__jwe {
-    sql: ${TABLE}.metrics.jwe ;;
-    hidden: yes
-  }
-
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     hidden: yes
@@ -416,11 +411,6 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
-  dimension: metrics__labeled_rate {
-    sql: ${TABLE}.metrics.labeled_rate ;;
-    hidden: yes
-  }
-
   dimension: metrics__string__glean_baseline_locale {
     sql: ${TABLE}.metrics.string.glean_baseline_locale ;;
     type: string
@@ -444,11 +434,6 @@ then the value will be 'custom'.
 "
   }
 
-  dimension: metrics__text {
-    sql: ${TABLE}.metrics.text ;;
-    hidden: yes
-  }
-
   dimension: metrics__timespan__glean_baseline_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.glean_baseline_duration.time_unit ;;
     type: string
@@ -461,11 +446,6 @@ then the value will be 'custom'.
     type: number
     group_label: "Metrics Timespan Glean Baseline Duration"
     group_item_label: "Value"
-  }
-
-  dimension: metrics__url {
-    sql: ${TABLE}.metrics.url ;;
-    hidden: yes
   }
 
   dimension: normalized_app_name {
@@ -646,75 +626,6 @@ view: baseline_table__events {
 }
 
 view: baseline_table__events__extra {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: baseline_table__metrics__jwe {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: baseline_table__metrics__labeled_rate {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-}
-
-view: baseline_table__metrics__labeled_rate__value {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__denominator {
-    sql: ${TABLE}.value.denominator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Denominator"
-  }
-
-  dimension: value__numerator {
-    sql: ${TABLE}.value.numerator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Numerator"
-  }
-}
-
-view: baseline_table__metrics__text {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: baseline_table__metrics__url {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

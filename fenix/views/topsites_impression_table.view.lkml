@@ -106,6 +106,13 @@ view: topsites_impression_table {
     group_item_label: "Telemetry Sdk Build"
   }
 
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
@@ -308,6 +315,13 @@ view: topsites_impression_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Top Sites Contile Advertiser"
+  }
+
+  dimension: metrics__url__top_sites_contile_reporting_url {
+    sql: ${TABLE}.metrics.url.top_sites_contile_reporting_url ;;
+    type: string
+    group_label: "Metrics Url"
+    group_item_label: "Top Sites Contile Reporting Url"
   }
 
   dimension: metrics__url2__top_sites_contile_reporting_url {
@@ -516,6 +530,13 @@ view: topsites_impression_table__ping_info__experiments {
     type: string
     group_label: "Value"
     group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
   }
 
   dimension: value__extra__type {

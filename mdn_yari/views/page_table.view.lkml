@@ -406,6 +406,20 @@ one of \"xs\", \"sm\", \"md\",\"lg\", \"xl\" or \"xxl\".
 "
   }
 
+  dimension: metrics__url__page_path {
+    sql: ${TABLE}.metrics.url.page_path ;;
+    type: string
+    group_label: "Metrics Url"
+    group_item_label: "Page Path"
+  }
+
+  dimension: metrics__url__page_referrer {
+    sql: ${TABLE}.metrics.url.page_referrer ;;
+    type: string
+    group_label: "Metrics Url"
+    group_item_label: "Page Referrer"
+  }
+
   dimension: metrics__url2__page_path {
     sql: ${TABLE}.metrics.url2.page_path ;;
     type: string

@@ -412,11 +412,6 @@ view: usage_table {
     description: "Number of physical CPU cores present."
   }
 
-  dimension: metrics__jwe {
-    sql: ${TABLE}.metrics.jwe ;;
-    hidden: yes
-  }
-
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -447,11 +442,6 @@ The labels are the `category.name` identifier of the metric.
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
-  }
-
-  dimension: metrics__labeled_rate {
-    sql: ${TABLE}.metrics.labeled_rate ;;
-    hidden: yes
   }
 
   dimension: metrics__memory_distribution__mach_system_memory__count {
@@ -519,11 +509,6 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
   }
 
-  dimension: metrics__text {
-    sql: ${TABLE}.metrics.text ;;
-    hidden: yes
-  }
-
   dimension: metrics__timespan__mach_duration__time_unit {
     sql: ${TABLE}.metrics.timespan.mach_duration.time_unit ;;
     type: string
@@ -536,11 +521,6 @@ The labels are the `category.name` identifier of the metric.
     type: number
     group_label: "Metrics Timespan Mach Duration"
     group_item_label: "Value"
-  }
-
-  dimension: metrics__url {
-    sql: ${TABLE}.metrics.url ;;
-    hidden: yes
   }
 
   dimension: normalized_app_name {
@@ -715,51 +695,6 @@ view: usage_table__events__extra {
   }
 }
 
-view: usage_table__metrics__jwe {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: usage_table__metrics__labeled_rate {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-}
-
-view: usage_table__metrics__labeled_rate__value {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__denominator {
-    sql: ${TABLE}.value.denominator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Denominator"
-  }
-
-  dimension: value__numerator {
-    sql: ${TABLE}.value.numerator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Numerator"
-  }
-}
-
 view: usage_table__metrics__memory_distribution__mach_system_memory__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -769,30 +704,6 @@ view: usage_table__metrics__memory_distribution__mach_system_memory__values {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
-  }
-}
-
-view: usage_table__metrics__text {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: usage_table__metrics__url {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
   }
 }
 
