@@ -296,6 +296,13 @@ view: cookie_banner_report_site_table {
     hidden: yes
   }
 
+  dimension: metrics__url__cookie_banners_report_site_domain {
+    sql: ${TABLE}.metrics.url.cookie_banners_report_site_domain ;;
+    type: string
+    group_label: "Metrics Url"
+    group_item_label: "Cookie Banners Report Site Domain"
+  }
+
   dimension: metrics__url2__cookie_banners_report_site_domain {
     sql: ${TABLE}.metrics.url2.cookie_banners_report_site_domain ;;
     type: string

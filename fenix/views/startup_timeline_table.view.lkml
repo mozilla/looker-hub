@@ -297,11 +297,6 @@ view: startup_timeline_table {
     group_item_label: "Startup Timeline Clock Ticks Per Second"
   }
 
-  dimension: metrics__jwe {
-    sql: ${TABLE}.metrics.jwe ;;
-    hidden: yes
-  }
-
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -322,21 +317,11 @@ view: startup_timeline_table {
     hidden: yes
   }
 
-  dimension: metrics__labeled_rate {
-    sql: ${TABLE}.metrics.labeled_rate ;;
-    hidden: yes
-  }
-
   dimension: metrics__quantity__startup_timeline_clock_ticks_per_second_v2 {
     sql: ${TABLE}.metrics.quantity.startup_timeline_clock_ticks_per_second_v2 ;;
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Startup Timeline Clock Ticks Per Second V2"
-  }
-
-  dimension: metrics__text {
-    sql: ${TABLE}.metrics.text ;;
-    hidden: yes
   }
 
   dimension: metrics__timespan__startup_timeline_framework_primary__time_unit {
@@ -379,11 +364,6 @@ view: startup_timeline_table {
     type: number
     group_label: "Metrics Timespan Startup Timeline Framework Start"
     group_item_label: "Value"
-  }
-
-  dimension: metrics__url {
-    sql: ${TABLE}.metrics.url ;;
-    hidden: yes
   }
 
   dimension: normalized_app_id {
@@ -568,75 +548,6 @@ view: startup_timeline_table__events {
 }
 
 view: startup_timeline_table__events__extra {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: startup_timeline_table__metrics__jwe {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: startup_timeline_table__metrics__labeled_rate {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-}
-
-view: startup_timeline_table__metrics__labeled_rate__value {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__denominator {
-    sql: ${TABLE}.value.denominator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Denominator"
-  }
-
-  dimension: value__numerator {
-    sql: ${TABLE}.value.numerator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Numerator"
-  }
-}
-
-view: startup_timeline_table__metrics__text {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: startup_timeline_table__metrics__url {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

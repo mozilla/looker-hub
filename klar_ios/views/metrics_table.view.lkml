@@ -570,11 +570,6 @@ the tracking protection settings panel from the toolbar.
     group_item_label: "Raw Glean Validation First Run Hour"
   }
 
-  dimension: metrics__jwe {
-    sql: ${TABLE}.metrics.jwe ;;
-    hidden: yes
-  }
-
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     hidden: yes
@@ -674,11 +669,6 @@ This metric appears in both the metrics and baseline pings.
 a website from shortcuts.
 It also indicates the screen it was removed from, home or browser.
 "
-  }
-
-  dimension: metrics__labeled_rate {
-    sql: ${TABLE}.metrics.labeled_rate ;;
-    hidden: yes
   }
 
   dimension: metrics__memory_distribution__glean_database_size__count {
@@ -787,11 +777,6 @@ documented in the ping's pings.yaml file.
 pre-loaded with Focus.  If it's a custom search engine,
 then the value will be 'custom'.
 "
-  }
-
-  dimension: metrics__text {
-    sql: ${TABLE}.metrics.text ;;
-    hidden: yes
   }
 
   dimension: metrics__timing_distribution__glean_upload_send_failure__bucket_count {
@@ -1148,11 +1133,6 @@ then the value will be 'custom'.
     hidden: yes
   }
 
-  dimension: metrics__url {
-    sql: ${TABLE}.metrics.url ;;
-    hidden: yes
-  }
-
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -1342,51 +1322,6 @@ view: metrics_table__events__extra {
   }
 }
 
-view: metrics_table__metrics__jwe {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: metrics_table__metrics__labeled_rate {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-}
-
-view: metrics_table__metrics__labeled_rate__value {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__denominator {
-    sql: ${TABLE}.value.denominator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Denominator"
-  }
-
-  dimension: value__numerator {
-    sql: ${TABLE}.value.numerator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Numerator"
-  }
-}
-
 view: metrics_table__metrics__memory_distribution__glean_database_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -1420,18 +1355,6 @@ view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_di
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
-  }
-}
-
-view: metrics_table__metrics__text {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
   }
 }
 
@@ -1504,18 +1427,6 @@ view: metrics_table__metrics__timing_distribution__nimbus_health_fetch_experimen
   dimension: value {
     sql: ${TABLE}.value ;;
     type: number
-  }
-}
-
-view: metrics_table__metrics__url {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
   }
 }
 
