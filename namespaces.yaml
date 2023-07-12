@@ -10557,6 +10557,10 @@ revenue:
       tables:
       - table: mozdata.stripe.itemized_payout_reconciliation
       type: table_view
+    stripe_itemized_tax_transactions:
+      tables:
+      - table: mozdata.stripe.itemized_tax_transactions
+      type: table_view
 revenue_private:
   connection: bigquery-oauth
   glean_app: false
