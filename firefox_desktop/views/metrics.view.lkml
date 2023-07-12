@@ -1652,6 +1652,42 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__networking_http_content_onstart_delay__sum {
+    label: "Networking Http Content Onstart Delay Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Content Onstart Delay Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Content Onstart Delay Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_content_onstart_delay"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between dispatching OnStartRequest from the socket thread and processing it on the main thread (content process).
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_onstop_delay__sum {
+    label: "Networking Http Content Onstop Delay Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Content Onstop Delay Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Content Onstop Delay Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_content_onstop_delay"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between dispatching OnStopRequest from the socket thread and processing it on the main thread (content process).
+"
+  }
+
   dimension: metrics__labeled_counter__networking_speculative_connect_outcome {
     label: "Networking Speculative Connect Outcome"
     hidden: yes

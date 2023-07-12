@@ -318,6 +318,13 @@ view: topsites_impression_fenix {
     group_item_label: "Top Sites Contile Advertiser"
   }
 
+  dimension: metrics__url__top_sites_contile_reporting_url {
+    sql: ${TABLE}.metrics.url.top_sites_contile_reporting_url ;;
+    type: string
+    group_label: "Metrics Url"
+    group_item_label: "Top Sites Contile Reporting Url"
+  }
+
   dimension: metrics__url2__top_sites_contile_reporting_url {
     sql: ${TABLE}.metrics.url2.top_sites_contile_reporting_url ;;
     type: string
