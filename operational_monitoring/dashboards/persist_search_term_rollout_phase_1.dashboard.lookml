@@ -10,24 +10,26 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: persist_search_term_rollout_phase_1
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       persist_search_term_rollout_phase_1.submission_date,
       persist_search_term_rollout_phase_1.branch,
+      persist_search_term_rollout_phase_1.upper,
+      persist_search_term_rollout_phase_1.lower,
       persist_search_term_rollout_phase_1.point
     ]
     pivots: [
       persist_search_term_rollout_phase_1.branch
     ]
     filters:
-      persist_search_term_rollout_phase_1.metric: 'retained'
-      persist_search_term_rollout_phase_1.statistic: mean
+      persist_search_term_rollout_phase_1.metric: 'memory_total'
+      persist_search_term_rollout_phase_1.statistic: percentile
     row: 0
     col: 0
     width: 12
@@ -40,12 +42,13 @@
     show_grid: true
     listen:
       Date: persist_search_term_rollout_phase_1.submission_date
+      Percentile: persist_search_term_rollout_phase_1.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +63,7 @@
       persist_search_term_rollout_phase_1.branch
     ]
     filters:
-      persist_search_term_rollout_phase_1.metric: 'search_count'
+      persist_search_term_rollout_phase_1.metric: 'uri_count'
       persist_search_term_rollout_phase_1.statistic: mean
     row: 0
     col: 12
@@ -78,8 +81,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +97,7 @@
       persist_search_term_rollout_phase_1.branch
     ]
     filters:
-      persist_search_term_rollout_phase_1.metric: 'active_hours'
+      persist_search_term_rollout_phase_1.metric: 'retained'
       persist_search_term_rollout_phase_1.statistic: mean
     row: 10
     col: 0
@@ -146,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +165,7 @@
       persist_search_term_rollout_phase_1.branch
     ]
     filters:
-      persist_search_term_rollout_phase_1.metric: 'uri_count'
+      persist_search_term_rollout_phase_1.metric: 'active_hours'
       persist_search_term_rollout_phase_1.statistic: mean
     row: 20
     col: 0
@@ -180,26 +183,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: persist_search_term_rollout_phase_1
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       persist_search_term_rollout_phase_1.submission_date,
       persist_search_term_rollout_phase_1.branch,
-      persist_search_term_rollout_phase_1.upper,
-      persist_search_term_rollout_phase_1.lower,
       persist_search_term_rollout_phase_1.point
     ]
     pivots: [
       persist_search_term_rollout_phase_1.branch
     ]
     filters:
-      persist_search_term_rollout_phase_1.metric: 'memory_total'
-      persist_search_term_rollout_phase_1.statistic: percentile
+      persist_search_term_rollout_phase_1.metric: 'search_count'
+      persist_search_term_rollout_phase_1.statistic: mean
     row: 20
     col: 12
     width: 12
@@ -212,7 +213,6 @@
     show_grid: true
     listen:
       Date: persist_search_term_rollout_phase_1.submission_date
-      Percentile: persist_search_term_rollout_phase_1.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

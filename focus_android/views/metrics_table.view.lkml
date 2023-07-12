@@ -2467,6 +2467,124 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__networking_http_content_onstart_delay__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Onstart Delay"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_onstart_delay__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Onstart Delay"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_onstart_delay__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Onstart Delay"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_onstart_delay__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Onstart Delay"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_onstart_delay__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_onstart_delay__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Onstart Delay"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_onstart_delay__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Onstart Delay"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_onstart_delay__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Onstart Delay"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_onstart_delay__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_onstop_delay__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Onstop Delay"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_onstop_delay__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Onstop Delay"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_onstop_delay__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Onstop Delay"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_onstop_delay__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Onstop Delay"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_onstop_delay__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_onstop_delay__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Onstop Delay"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_onstop_delay__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Onstop Delay"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_onstop_delay__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Onstop Delay"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_onstop_delay__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.bucket_count ;;
     type: number
@@ -3917,6 +4035,30 @@ view: metrics_table__metrics__timing_distribution__networking_dns_renewal_time__
 }
 
 view: metrics_table__metrics__timing_distribution__networking_dns_renewal_time_for_ttl__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_content_onstart_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_content_onstop_delay__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

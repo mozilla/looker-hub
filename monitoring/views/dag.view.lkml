@@ -13,15 +13,11 @@ view: dag {
   dimension: dag_id {
     sql: ${TABLE}.dag_id ;;
     type: string
+    description: "Airflow DAG id (<root_dag_id>.<subdag_id>)"
   }
 
   dimension: has_task_concurrency_limits {
     sql: ${TABLE}.has_task_concurrency_limits ;;
-    type: yesno
-  }
-
-  dimension: is_active {
-    sql: ${TABLE}.is_active ;;
     type: yesno
   }
 
@@ -33,6 +29,7 @@ view: dag {
   dimension: is_subdag {
     sql: ${TABLE}.is_subdag ;;
     type: yesno
+    description: "Indicates if this DAG is a subdag"
   }
 
   dimension: max_active_runs {
@@ -43,16 +40,19 @@ view: dag {
   dimension: owners {
     sql: ${TABLE}.owners ;;
     type: string
+    description: "DAG owners (comma separated)"
   }
 
   dimension: root_dag_id {
     sql: ${TABLE}.root_dag_id ;;
     type: string
+    description: "Airflow Root DAG id"
   }
 
   dimension: subdag_id {
     sql: ${TABLE}.subdag_id ;;
     type: string
+    description: "Airflow subdag id"
   }
 
   sql_table_name: `mozdata.monitoring.airflow_dag` ;;
