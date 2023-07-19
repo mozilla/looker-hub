@@ -2771,6 +2771,26 @@ icon for grouped tabs in the tab tray.
 "
   }
 
+  dimension: metrics__quantity__tabs_inactive_tabs_count {
+    label: "Tabs Inactive Tabs Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.tabs_inactive_tabs_count ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Inactive Tabs Count"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Inactive Tabs Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_inactive_tabs_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A quantity that indicates how many INACTIVE tabs a user
+currently has open. This is reported when the user backgrounds
+the app.
+"
+  }
+
   dimension: metrics__counter__tabs_navigate_tab_back_swipe {
     label: "Tabs Navigate Tab Back Swipe"
     hidden: no

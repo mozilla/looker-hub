@@ -1516,6 +1516,13 @@ view: metrics_table {
     group_item_label: "Places History Migration Num To Migrate"
   }
 
+  dimension: metrics__quantity__tabs_inactive_tabs_count {
+    sql: ${TABLE}.metrics.quantity.tabs_inactive_tabs_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Tabs Inactive Tabs Count"
+  }
+
   dimension: metrics__quantity__tabs_normal_tabs_quantity {
     sql: ${TABLE}.metrics.quantity.tabs_normal_tabs_quantity ;;
     type: number
