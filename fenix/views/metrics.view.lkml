@@ -769,6 +769,25 @@ location.
 "
   }
 
+  dimension: metrics__counter__home_screen_standard_homepage_view_count {
+    label: "Home Screen Standard Homepage View Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.home_screen_standard_homepage_view_count ;;
+    type: number
+    group_label: "Home Screen"
+    group_item_label: "Standard Homepage View Count"
+
+    link: {
+      label: "Glean Dictionary reference for Home Screen Standard Homepage View Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/home_screen_standard_homepage_view_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times the standard browsing mode home screen was
+displayed to the user. (for tile counts)
+"
+  }
+
   dimension: metrics__counter__logins_deleted {
     label: "Logins Deleted"
     hidden: no
@@ -2142,6 +2161,24 @@ homescreen because the link was invalid).
 "
   }
 
+  dimension: metrics__timespan__play_store_attribution_deferred_deeplink_time__value {
+    label: "Play Store Attribution Deferred Deeplink Time Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.play_store_attribution_deferred_deeplink_time.value ;;
+    type: number
+    group_label: "Play Store Attribution"
+    group_item_label: "Deferred Deeplink Time Value"
+
+    link: {
+      label: "Glean Dictionary reference for Play Store Attribution Deferred Deeplink Time Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_deferred_deeplink_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time that it takes to receive deferred deeplink from the Google Play Store.
+"
+  }
+
   dimension: metrics__boolean__preferences_bookmarks_suggestion {
     label: "Preferences Bookmarks Suggestion"
     hidden: no
@@ -3412,6 +3449,23 @@ DNR rules for extensions loaded on application startup.
 
     description: "Amount of time it takes to validate DNR rules of individual ruleset
 when dynamic or static rulesets have been loaded from disk.
+"
+  }
+
+  dimension: metrics__labeled_counter__extensions_process_event {
+    label: "Extensions Process Event"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.extensions_process_event ;;
+    group_label: "Extensions"
+    group_item_label: "Process Event"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Process Event"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_process_event"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counters for how many times the extension process has crashed or been created.
 "
   }
 
@@ -9473,6 +9527,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: home_screen_standard_homepage_view_count {
+    type: sum
+    sql: ${metrics__counter__home_screen_standard_homepage_view_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Home Screen Standard Homepage View Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/home_screen_standard_homepage_view_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: home_screen_standard_homepage_view_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__home_screen_standard_homepage_view_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Home Screen Standard Homepage View Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/home_screen_standard_homepage_view_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: logins_deleted {
     type: sum
     sql: ${metrics__counter__logins_deleted} ;;
@@ -12027,6 +12106,49 @@ view: metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entri
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries
     suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__extensions_process_event {
+  label: "Extensions - Process Event"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_process_event
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_process_event.key
     hidden: no
   }
 
@@ -15402,6 +15524,25 @@ view: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup_ca
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.extensions_apis_dnr_startup_cache_entries) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__extensions_process_event {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.extensions_process_event) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

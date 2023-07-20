@@ -58,7 +58,7 @@ view: temp_credit_cards_sync {
 
   dimension: metrics__string__credit_cards_sync_uid {
     label: "Credit Cards Sync Uid"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.credit_cards_sync_uid ;;
     type: string
     group_label: "Credit Cards Sync"
@@ -76,7 +76,7 @@ view: temp_credit_cards_sync {
 
   dimension: metrics__uuid__sync_sync_uuid {
     label: "Sync Sync Uuid"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
     type: string
     group_label: "Sync"
@@ -746,7 +746,7 @@ view: temp_credit_cards_sync__metrics__labeled_counter__credit_cards_sync_failur
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__temp_credit_cards_sync__metrics__labeled_counter__credit_cards_sync_failure_reason
     suggest_dimension: suggest__temp_credit_cards_sync__metrics__labeled_counter__credit_cards_sync_failure_reason.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -758,13 +758,13 @@ view: temp_credit_cards_sync__metrics__labeled_counter__credit_cards_sync_failur
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${temp_credit_cards_sync.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -789,7 +789,7 @@ view: temp_credit_cards_sync__metrics__labeled_counter__credit_cards_sync_incomi
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__temp_credit_cards_sync__metrics__labeled_counter__credit_cards_sync_incoming
     suggest_dimension: suggest__temp_credit_cards_sync__metrics__labeled_counter__credit_cards_sync_incoming.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -801,13 +801,13 @@ view: temp_credit_cards_sync__metrics__labeled_counter__credit_cards_sync_incomi
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${temp_credit_cards_sync.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -832,7 +832,7 @@ view: temp_credit_cards_sync__metrics__labeled_counter__credit_cards_sync_outgoi
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__temp_credit_cards_sync__metrics__labeled_counter__credit_cards_sync_outgoing
     suggest_dimension: suggest__temp_credit_cards_sync__metrics__labeled_counter__credit_cards_sync_outgoing.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -844,13 +844,13 @@ view: temp_credit_cards_sync__metrics__labeled_counter__credit_cards_sync_outgoi
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${temp_credit_cards_sync.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 

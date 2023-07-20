@@ -915,8 +915,28 @@ view: clients_daily_joined_table {
     type: number
   }
 
+  dimension: places_bookmarks_searchbar_cumulative_searches_sum {
+    sql: ${TABLE}.places_bookmarks_searchbar_cumulative_searches_sum ;;
+    type: number
+  }
+
+  dimension: places_library_cumulative_bookmark_searches_sum {
+    sql: ${TABLE}.places_library_cumulative_bookmark_searches_sum ;;
+    type: number
+  }
+
+  dimension: places_library_cumulative_history_searches_sum {
+    sql: ${TABLE}.places_library_cumulative_history_searches_sum ;;
+    type: number
+  }
+
   dimension: places_pages_count_mean {
     sql: ${TABLE}.places_pages_count_mean ;;
+    type: number
+  }
+
+  dimension: places_previousday_visits_mean {
+    sql: ${TABLE}.places_previousday_visits_mean ;;
     type: number
   }
 
@@ -1143,6 +1163,21 @@ view: clients_daily_joined_table {
   dimension: scalar_parent_dom_contentprocess_troubled_due_to_memory_sum {
     sql: ${TABLE}.scalar_parent_dom_contentprocess_troubled_due_to_memory_sum ;;
     type: number
+  }
+
+  dimension: scalar_parent_library_link_sum {
+    sql: ${TABLE}.scalar_parent_library_link_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_library_opened_sum {
+    sql: ${TABLE}.scalar_parent_library_opened_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_library_search_sum {
+    sql: ${TABLE}.scalar_parent_library_search_sum ;;
+    hidden: yes
   }
 
   dimension: scalar_parent_navigator_storage_estimate_count_sum {
@@ -2500,6 +2535,42 @@ view: clients_daily_joined_table__scalar_parent_browser_ui_interaction_preferenc
 }
 
 view: clients_daily_joined_table__scalar_parent_devtools_accessibility_select_accessible_for_node_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__scalar_parent_library_link_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__scalar_parent_library_opened_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__scalar_parent_library_search_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

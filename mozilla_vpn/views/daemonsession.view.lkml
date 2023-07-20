@@ -24,6 +24,82 @@ Collected only on mobile apps.
 "
   }
 
+  dimension: metrics__datetime__session_daemon_session_end {
+    label: "Session Daemon Session End"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.session_daemon_session_end ;;
+    type: time
+    group_label: "Session"
+    group_item_label: "Daemon Session End"
+
+    link: {
+      label: "Glean Dictionary reference for Session Daemon Session End"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_daemon_session_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "(Mobile-only) The time the user ends a VPN session from the daemon or network extension
+"
+  }
+
+  dimension: metrics__uuid__session_daemon_session_id {
+    label: "Session Daemon Session Id"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.session_daemon_session_id ;;
+    type: string
+    group_label: "Session"
+    group_item_label: "Daemon Session Id"
+
+    link: {
+      label: "Glean Dictionary reference for Session Daemon Session Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_daemon_session_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "(Mobile-only) A unique identifier for each session. This is used to connect
+unique VPN sessions across pings, and as a safety check on edge cases of VPN
+activation/deactivation, such as a session being started/ended from mobile
+system settings.
+"
+  }
+
+  dimension: metrics__string__session_daemon_session_source {
+    label: "Session Daemon Session Source"
+    hidden: no
+    sql: ${TABLE}.metrics.string.session_daemon_session_source ;;
+    type: string
+    group_label: "Session"
+    group_item_label: "Daemon Session Source"
+
+    link: {
+      label: "Glean Dictionary reference for Session Daemon Session Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_daemon_session_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "(Mobile-only) Where the session started from. Should be \"app\", \"system settings\",
+or \"autostart on boot\".
+"
+  }
+
+  dimension: metrics__datetime__session_daemon_session_start {
+    label: "Session Daemon Session Start"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.session_daemon_session_start ;;
+    type: time
+    group_label: "Session"
+    group_item_label: "Daemon Session Start"
+
+    link: {
+      label: "Glean Dictionary reference for Session Daemon Session Start"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_daemon_session_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "(Mobile-only) The time the user starts a VPN session from the daemon or network extension
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes

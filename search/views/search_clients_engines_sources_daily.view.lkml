@@ -131,6 +131,11 @@ view: search_clients_engines_sources_daily {
     hidden: yes
   }
 
+  dimension: has_adblocker_addon {
+    sql: ${TABLE}.has_adblocker_addon ;;
+    type: yesno
+  }
+
   dimension: is_default_browser {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno

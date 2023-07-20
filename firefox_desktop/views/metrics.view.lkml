@@ -1005,6 +1005,23 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__labeled_counter__extensions_process_event {
+    label: "Extensions Process Event"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.extensions_process_event ;;
+    group_label: "Extensions"
+    group_item_label: "Process Event"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Process Event"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_process_event"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counters for how many times the extension process has crashed or been created.
+"
+  }
+
   dimension: metrics__quantity__extensions_quarantined_domains_listsize {
     label: "Extensions Quarantined Domains Listsize"
     hidden: no
@@ -4990,6 +5007,49 @@ view: metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entri
   }
 }
 
+view: metrics__metrics__labeled_counter__extensions_process_event {
+  label: "Extensions - Process Event"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_process_event
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_process_event.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__glean_error_invalid_label {
   label: "Glean Error - Invalid Label"
 
@@ -7261,6 +7321,25 @@ view: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup_ca
     count(*) as n
 from mozdata.firefox_desktop.metrics as t,
 unnest(metrics.labeled_counter.extensions_apis_dnr_startup_cache_entries) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__extensions_process_event {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.extensions_process_event) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

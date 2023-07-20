@@ -2223,6 +2223,25 @@ it is initially set to Firefox Home.
 "
   }
 
+  dimension: metrics__boolean__preferences_jump_back_in {
+    label: "Preferences Jump Back In"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_jump_back_in ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Jump Back In"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Jump Back In"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/preferences_jump_back_in"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An indication of whether the Jump back in section
+is enabled to be displayed.
+"
+  }
+
   dimension: metrics__string__preferences_mail_client {
     label: "Preferences Mail Client"
     hidden: yes
@@ -2264,6 +2283,82 @@ For example History, Homepage or Blank. It is used to measure
 usage of this feature, to see how effective feature promotion
 campaigns are and to establish a baseline number for when we
 introduce the new Activity Stream features.
+"
+  }
+
+  dimension: metrics__string__preferences_opening_screen {
+    label: "Preferences Opening Screen"
+    hidden: no
+    sql: ${TABLE}.metrics.string.preferences_opening_screen ;;
+    type: string
+    group_label: "Preferences"
+    group_item_label: "Opening Screen"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Opening Screen"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/preferences_opening_screen"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "What opening screen preference the user has selected under
+\"Customize Home\". \"homepage,\" \"last tab,\" or
+\"homepage after 4 hours\" default: \"homepage after 4 hours\".
+"
+  }
+
+  dimension: metrics__boolean__preferences_pocket {
+    label: "Preferences Pocket"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_pocket ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Pocket"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Pocket"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/preferences_pocket"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An indication of whether Pocket is enabled to be displayed.
+"
+  }
+
+  dimension: metrics__boolean__preferences_recently_saved {
+    label: "Preferences Recently Saved"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_recently_saved ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Recently Saved"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Recently Saved"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/preferences_recently_saved"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An indication of whether the recently saved section
+is enabled to be displayed.
+"
+  }
+
+  dimension: metrics__boolean__preferences_recently_visited {
+    label: "Preferences Recently Visited"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.preferences_recently_visited ;;
+    type: yesno
+    group_label: "Preferences"
+    group_item_label: "Recently Visited"
+
+    link: {
+      label: "Glean Dictionary reference for Preferences Recently Visited"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/preferences_recently_visited"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An indication of whether the Recently visited section
+is enabled to be displayed.
 "
   }
 
