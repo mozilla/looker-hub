@@ -836,6 +836,13 @@ view: metrics_table {
     group_item_label: "Home Screen Home Screen View Count"
   }
 
+  dimension: metrics__counter__home_screen_standard_homepage_view_count {
+    sql: ${TABLE}.metrics.counter.home_screen_standard_homepage_view_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Home Screen Standard Homepage View Count"
+  }
+
   dimension: metrics__counter__logins_deleted {
     sql: ${TABLE}.metrics.counter.logins_deleted ;;
     type: number
@@ -1660,6 +1667,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries {
     sql: ${TABLE}.metrics.labeled_counter.extensions_apis_dnr_startup_cache_entries ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__extensions_process_event {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_process_event ;;
     hidden: yes
   }
 
@@ -2934,6 +2946,20 @@ view: metrics_table {
     sql: ${TABLE}.metrics.timespan.logins_store_migration_total_duration.value ;;
     type: number
     group_label: "Metrics Timespan Logins Store Migration Total Duration"
+    group_item_label: "Value"
+  }
+
+  dimension: metrics__timespan__play_store_attribution_deferred_deeplink_time__time_unit {
+    sql: ${TABLE}.metrics.timespan.play_store_attribution_deferred_deeplink_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan Play Store Attribution Deferred Deeplink Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__play_store_attribution_deferred_deeplink_time__value {
+    sql: ${TABLE}.metrics.timespan.play_store_attribution_deferred_deeplink_time.value ;;
+    type: number
+    group_label: "Metrics Timespan Play Store Attribution Deferred Deeplink Time"
     group_item_label: "Value"
   }
 

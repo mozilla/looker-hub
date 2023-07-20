@@ -58,7 +58,7 @@ view: temp_rust_tabs_sync {
 
   dimension: metrics__string__rust_tabs_sync_uid {
     label: "Rust Tabs Sync Uid"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.rust_tabs_sync_uid ;;
     type: string
     group_label: "Rust Tabs Sync"
@@ -76,7 +76,7 @@ view: temp_rust_tabs_sync {
 
   dimension: metrics__uuid__sync_sync_uuid {
     label: "Sync Sync Uuid"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
     type: string
     group_label: "Sync"
@@ -918,7 +918,7 @@ view: temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_failure_reas
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_failure_reason
     suggest_dimension: suggest__temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_failure_reason.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -930,13 +930,13 @@ view: temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_failure_reas
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${temp_rust_tabs_sync.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -961,7 +961,7 @@ view: temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_incoming {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_incoming
     suggest_dimension: suggest__temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_incoming.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -973,13 +973,13 @@ view: temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_incoming {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${temp_rust_tabs_sync.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -1004,7 +1004,7 @@ view: temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_outgoing {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_outgoing
     suggest_dimension: suggest__temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_outgoing.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -1016,12 +1016,12 @@ view: temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_outgoing {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${temp_rust_tabs_sync.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
