@@ -374,6 +374,34 @@ view: metrics_table {
     group_item_label: "Preferences Fxa Logged In"
   }
 
+  dimension: metrics__boolean__preferences_jump_back_in {
+    sql: ${TABLE}.metrics.boolean.preferences_jump_back_in ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Jump Back In"
+  }
+
+  dimension: metrics__boolean__preferences_pocket {
+    sql: ${TABLE}.metrics.boolean.preferences_pocket ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Pocket"
+  }
+
+  dimension: metrics__boolean__preferences_recently_saved {
+    sql: ${TABLE}.metrics.boolean.preferences_recently_saved ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Recently Saved"
+  }
+
+  dimension: metrics__boolean__preferences_recently_visited {
+    sql: ${TABLE}.metrics.boolean.preferences_recently_visited ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Preferences Recently Visited"
+  }
+
   dimension: metrics__boolean__preferences_save_logins {
     sql: ${TABLE}.metrics.boolean.preferences_save_logins ;;
     type: yesno
@@ -1619,6 +1647,13 @@ view: metrics_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Preferences New Tab Experience"
+  }
+
+  dimension: metrics__string__preferences_opening_screen {
+    sql: ${TABLE}.metrics.string.preferences_opening_screen ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Preferences Opening Screen"
   }
 
   dimension: metrics__string__search_default_engine {

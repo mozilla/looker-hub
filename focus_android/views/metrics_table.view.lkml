@@ -849,6 +849,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__extensions_process_event {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_process_event ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes

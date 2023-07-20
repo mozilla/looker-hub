@@ -24,7 +24,7 @@ view: temp_sync {
 
   dimension: metrics__uuid__sync_sync_uuid {
     label: "Sync Sync Uuid"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
     type: string
     group_label: "Sync"
@@ -828,7 +828,7 @@ view: temp_sync__metrics__labeled_counter__sync_failure_reason {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__temp_sync__metrics__labeled_counter__sync_failure_reason
     suggest_dimension: suggest__temp_sync__metrics__labeled_counter__sync_failure_reason.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -840,12 +840,12 @@ view: temp_sync__metrics__labeled_counter__sync_failure_reason {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${temp_sync.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }

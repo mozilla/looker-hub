@@ -102,10 +102,10 @@ Collected only on mobile apps.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A unique identifier for each session, shared with the daemon instance
-of Glean. This is used to connect unique VPN sessions across pings, and
-as a safety check on edge cases of VPN activation/deactivation, such as
-a session being started/ended from mobile system settings.
+    description: "A unique identifier for each session. This is used to connect unique VPN
+sessions across pings, and as a safety check on edge cases of VPN
+activation/deactivation, such as a session being started/ended from mobile
+system settings.
 "
   }
 

@@ -759,6 +759,13 @@ DNR rules for extensions loaded on application startup.
 "
   }
 
+  dimension: metrics__labeled_counter__extensions_process_event {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_process_event ;;
+    hidden: yes
+    description: "Counters for how many times the extension process has crashed or been created.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes

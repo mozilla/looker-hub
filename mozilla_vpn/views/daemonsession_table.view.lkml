@@ -283,6 +283,20 @@ view: daemonsession_table {
     group_item_label: "Session Connection Health Stable Count"
   }
 
+  dimension: metrics__datetime__raw_session_daemon_session_end {
+    sql: ${TABLE}.metrics.datetime.raw_session_daemon_session_end ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Session Daemon Session End"
+  }
+
+  dimension: metrics__datetime__raw_session_daemon_session_start {
+    sql: ${TABLE}.metrics.datetime.raw_session_daemon_session_start ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Session Daemon Session Start"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -301,6 +315,20 @@ view: daemonsession_table {
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
     hidden: yes
+  }
+
+  dimension: metrics__string__session_daemon_session_source {
+    sql: ${TABLE}.metrics.string.session_daemon_session_source ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Session Daemon Session Source"
+  }
+
+  dimension: metrics__uuid__session_daemon_session_id {
+    sql: ${TABLE}.metrics.uuid.session_daemon_session_id ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Session Daemon Session Id"
   }
 
   dimension: normalized_app_id {
@@ -393,6 +421,36 @@ view: daemonsession_table {
       year,
     ]
     label: "Metadata Header: Parsed Date"
+  }
+
+  dimension_group: metrics__datetime__session_daemon_session_end {
+    sql: ${TABLE}.metrics.datetime.session_daemon_session_end ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Session Daemon Session End"
+  }
+
+  dimension_group: metrics__datetime__session_daemon_session_start {
+    sql: ${TABLE}.metrics.datetime.session_daemon_session_start ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Session Daemon Session Start"
   }
 
   dimension_group: ping_info__parsed_end {
