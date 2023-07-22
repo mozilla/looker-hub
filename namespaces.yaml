@@ -326,6 +326,10 @@ contextual_services:
       tables:
       - table: mozdata.telemetry.sponsored_tiles_ad_request_fill
       type: table_view
+    suggest_revenue_levers_daily:
+      tables:
+      - table: mozdata.contextual_services.suggest_revenue_levers_daily
+      type: table_view
 contextual_services_private:
   connection: bigquery-oauth
   explores:
@@ -5351,13 +5355,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id092
           normalized_channel:
-            default: release
+            default: aurora
             options:
-            - release
-            - esr
-            - beta
             - aurora
             - nightly
+            - release
+            - beta
+            - esr
             - default
             - nightly-pine
             - nightly-oak
@@ -5465,11 +5469,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id098
           normalized_channel:
-            default: aurora
+            default: nightly
             options:
+            - nightly
             - aurora
             - beta
-            - nightly
             - release
             - Other
             - esr
@@ -6983,17 +6987,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id215
           channel:
-            default: nightly
+            default: release
             options:
+            - release
             - nightly
             - beta
-            - release
           os:
-            default: Darwin
+            default: Windows_NT
             options:
-            - Darwin
             - Windows_NT
             - Linux
+            - Darwin
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id216
