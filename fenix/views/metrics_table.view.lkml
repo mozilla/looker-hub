@@ -2921,6 +2921,20 @@ view: metrics_table {
     group_item_label: "Value"
   }
 
+  dimension: metrics__timespan__first_session_adjust_attribution_timespan__time_unit {
+    sql: ${TABLE}.metrics.timespan.first_session_adjust_attribution_timespan.time_unit ;;
+    type: string
+    group_label: "Metrics Timespan First Session Adjust Attribution Timespan"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timespan__first_session_adjust_attribution_timespan__value {
+    sql: ${TABLE}.metrics.timespan.first_session_adjust_attribution_timespan.value ;;
+    type: number
+    group_label: "Metrics Timespan First Session Adjust Attribution Timespan"
+    group_item_label: "Value"
+  }
+
   dimension: metrics__timespan__fog_initialization__time_unit {
     sql: ${TABLE}.metrics.timespan.fog_initialization.time_unit ;;
     type: string

@@ -41,6 +41,24 @@ view: first_session {
 "
   }
 
+  dimension: metrics__timespan__first_session_adjust_attribution_timespan__value {
+    label: "First Session Adjust Attribution Timespan Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.first_session_adjust_attribution_timespan.value ;;
+    type: number
+    group_label: "First Session"
+    group_item_label: "Adjust Attribution Timespan Value"
+
+    link: {
+      label: "Glean Dictionary reference for First Session Adjust Attribution Timespan Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_adjust_attribution_timespan"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time that it takes to derive the attribution parameters by the Adjust SDK.
+"
+  }
+
   dimension: metrics__string__first_session_campaign {
     label: "First Session Campaign"
     hidden: no
