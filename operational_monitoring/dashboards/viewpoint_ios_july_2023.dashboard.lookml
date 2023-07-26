@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: viewpoint_ios_july_2023
-    type: looker_line
-    fields: [
-      viewpoint_ios_july_2023.submission_date,
-      viewpoint_ios_july_2023.branch,
-      viewpoint_ios_july_2023.point
-    ]
-    pivots: [
-      viewpoint_ios_july_2023.branch
-    ]
-    filters:
-      viewpoint_ios_july_2023.metric: 'search_count'
-      viewpoint_ios_july_2023.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: viewpoint_ios_july_2023.submission_date
-    field_y: viewpoint_ios_july_2023.point
-    log_scale: false
-    ci_lower: viewpoint_ios_july_2023.lower
-    ci_upper: viewpoint_ios_july_2023.upper
-    show_grid: true
-    listen:
-      Date: viewpoint_ios_july_2023.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -61,6 +27,40 @@
     ]
     filters:
       viewpoint_ios_july_2023.metric: 'days_of_use'
+      viewpoint_ios_july_2023.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: viewpoint_ios_july_2023.submission_date
+    field_y: viewpoint_ios_july_2023.point
+    log_scale: false
+    ci_lower: viewpoint_ios_july_2023.lower
+    ci_upper: viewpoint_ios_july_2023.upper
+    show_grid: true
+    listen:
+      Date: viewpoint_ios_july_2023.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: viewpoint_ios_july_2023
+    type: looker_line
+    fields: [
+      viewpoint_ios_july_2023.submission_date,
+      viewpoint_ios_july_2023.branch,
+      viewpoint_ios_july_2023.point
+    ]
+    pivots: [
+      viewpoint_ios_july_2023.branch
+    ]
+    filters:
+      viewpoint_ios_july_2023.metric: 'active_hours'
       viewpoint_ios_july_2023.statistic: mean
     row: 0
     col: 12
@@ -112,26 +112,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: viewpoint_ios_july_2023
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       viewpoint_ios_july_2023.submission_date,
       viewpoint_ios_july_2023.branch,
-      viewpoint_ios_july_2023.upper,
-      viewpoint_ios_july_2023.lower,
       viewpoint_ios_july_2023.point
     ]
     pivots: [
       viewpoint_ios_july_2023.branch
     ]
     filters:
-      viewpoint_ios_july_2023.metric: 'memory_total'
-      viewpoint_ios_july_2023.statistic: percentile
+      viewpoint_ios_july_2023.metric: 'search_count'
+      viewpoint_ios_july_2023.statistic: mean
     row: 10
     col: 12
     width: 12
@@ -144,7 +142,6 @@
     show_grid: true
     listen:
       Date: viewpoint_ios_july_2023.submission_date
-      Percentile: viewpoint_ios_july_2023.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -183,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: viewpoint_ios_july_2023
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       viewpoint_ios_july_2023.submission_date,
       viewpoint_ios_july_2023.branch,
+      viewpoint_ios_july_2023.upper,
+      viewpoint_ios_july_2023.lower,
       viewpoint_ios_july_2023.point
     ]
     pivots: [
       viewpoint_ios_july_2023.branch
     ]
     filters:
-      viewpoint_ios_july_2023.metric: 'active_hours'
-      viewpoint_ios_july_2023.statistic: mean
+      viewpoint_ios_july_2023.metric: 'memory_total'
+      viewpoint_ios_july_2023.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -213,6 +212,7 @@
     show_grid: true
     listen:
       Date: viewpoint_ios_july_2023.submission_date
+      Percentile: viewpoint_ios_july_2023.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
