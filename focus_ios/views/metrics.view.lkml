@@ -248,7 +248,7 @@ default browser onboarding is clicked.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The default search engine identifier if the search engine is
+    description: "The default search engine name if the search engine is
 pre-loaded with Focus.  If it's a custom search engine,
 then the value will be 'custom'.
 "
