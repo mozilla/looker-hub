@@ -1496,6 +1496,23 @@ https://github.com/mozilla-mobile/fenix/issues/1607) the value will be
 "
   }
 
+  dimension: metrics__timing_distribution__metrics_search_page_load_time__sum {
+    label: "Metrics Search Page Load Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.metrics_search_page_load_time.sum ;;
+    type: number
+    group_label: "Metrics"
+    group_item_label: "Search Page Load Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Search Page Load Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_search_page_load_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time that it takes to load the Search content."
+  }
+
   dimension: metrics__boolean__metrics_search_widget_installed {
     label: "Metrics Search Widget Installed"
     hidden: no

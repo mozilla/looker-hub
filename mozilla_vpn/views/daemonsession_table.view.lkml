@@ -331,6 +331,13 @@ view: daemonsession_table {
     group_item_label: "Session Daemon Session Id"
   }
 
+  dimension: metrics__uuid__session_installation_id {
+    sql: ${TABLE}.metrics.uuid.session_installation_id ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Session Installation Id"
+  }
+
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string

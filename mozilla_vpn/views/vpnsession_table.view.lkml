@@ -331,6 +331,13 @@ view: vpnsession_table {
     group_item_label: "Session Dns Type"
   }
 
+  dimension: metrics__uuid__session_installation_id {
+    sql: ${TABLE}.metrics.uuid.session_installation_id ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Session Installation Id"
+  }
+
   dimension: metrics__uuid__session_session_id {
     sql: ${TABLE}.metrics.uuid.session_session_id ;;
     type: string
