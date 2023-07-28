@@ -356,6 +356,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__crash_cause {
+    sql: ${TABLE}.metrics.string.crash_cause ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Cause"
+    description: "The cause of the crash. May be one of `os_fault` or `java_exception`.
+"
+  }
+
   dimension: metrics__string__crash_process_type {
     sql: ${TABLE}.metrics.string.crash_process_type ;;
     type: string
