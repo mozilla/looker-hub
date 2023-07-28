@@ -310,6 +310,13 @@ view: crash_table {
     hidden: yes
   }
 
+  dimension: metrics__string__crash_cause {
+    sql: ${TABLE}.metrics.string.crash_cause ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Cause"
+  }
+
   dimension: metrics__string__crash_process_type {
     sql: ${TABLE}.metrics.string.crash_process_type ;;
     type: string

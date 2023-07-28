@@ -5927,6 +5927,65 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__metrics_search_page_load_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.metrics_search_page_load_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Metrics Search Page Load Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__metrics_search_page_load_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.metrics_search_page_load_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Metrics Search Page Load Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__metrics_search_page_load_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.metrics_search_page_load_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Metrics Search Page Load Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__metrics_search_page_load_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.metrics_search_page_load_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Metrics Search Page Load Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__metrics_search_page_load_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.metrics_search_page_load_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__metrics_search_page_load_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.metrics_search_page_load_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Metrics Search Page Load Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__metrics_search_page_load_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.metrics_search_page_load_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Metrics Search Page Load Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__metrics_search_page_load_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.metrics_search_page_load_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Metrics Search Page Load Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__metrics_search_page_load_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.metrics_search_page_load_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__network_cache_hit_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.bucket_count ;;
     type: number
@@ -12157,6 +12216,18 @@ view: metrics_table__metrics__timing_distribution__logins_store_unlock_time__val
 }
 
 view: metrics_table__metrics__timing_distribution__logins_store_write_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__metrics_search_page_load_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

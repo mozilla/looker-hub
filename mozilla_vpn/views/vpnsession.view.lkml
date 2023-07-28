@@ -70,6 +70,24 @@ Collected only on mobile apps.
 "
   }
 
+  dimension: metrics__uuid__session_installation_id {
+    label: "Session Installation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.session_installation_id ;;
+    type: string
+    group_label: "Session"
+    group_item_label: "Installation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Session Installation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_installation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A unique identifier to connect the app and daemon Glean instances.
+"
+  }
+
   dimension: metrics__datetime__session_session_end {
     label: "Session Session End"
     hidden: no

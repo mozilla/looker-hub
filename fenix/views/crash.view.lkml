@@ -77,6 +77,24 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__crash_cause {
+    label: "Crash Cause"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_cause ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Cause"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Cause"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/crash_cause"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The cause of the crash. May be one of `os_fault` or `java_exception`.
+"
+  }
+
   dimension: metrics__string__crash_process_type {
     label: "Crash Process Type"
     hidden: no
