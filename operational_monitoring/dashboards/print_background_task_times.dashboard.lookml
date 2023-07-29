@@ -10,76 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Print Cancel Ratios
-    name: Print Cancel Ratios_total_ratio
-    note_state: expanded
-    note_display: above
-    note_text: Total_Ratio
-    explore: print_background_task_times
-    type: looker_line
-    fields: [
-      print_background_task_times.submission_date,
-      print_background_task_times.branch,
-      print_background_task_times.point
-    ]
-    pivots: [
-      print_background_task_times.branch, print_background_task_times.metric 
-    ]
-    filters:
-      print_background_task_times.metric: '"printing_dialog_via_preview_cancelled", "printing_dialog_via_preview_cancelled_tm", "printing_dialog_without_preview_cancelled", "printing_preview_cancelled_tm", "printing_preview_cancelled"'
-      print_background_task_times.statistic: total_ratio
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: print_background_task_times.submission_date
-    field_y: print_background_task_times.point
-    log_scale: false
-    ci_lower: print_background_task_times.lower
-    ci_upper: print_background_task_times.upper
-    show_grid: true
-    listen:
-      Date: print_background_task_times.submission_date
-      Channel: print_background_task_times.channel
-      Os: print_background_task_times.os
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Print Initiation Counts
-    name: Print Initiation Counts_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: print_background_task_times
-    type: looker_line
-    fields: [
-      print_background_task_times.submission_date,
-      print_background_task_times.branch,
-      print_background_task_times.point
-    ]
-    pivots: [
-      print_background_task_times.branch, print_background_task_times.metric 
-    ]
-    filters:
-      print_background_task_times.metric: '"printing_dialog_opened_without_preview", "printing_dialog_opened_via_preview_tm", "printing_preview_opened_tm", "printing_preview_opened", "printing_silent_print", "printing_dialog_opened_via_preview"'
-      print_background_task_times.statistic: sum
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: print_background_task_times.submission_date
-    field_y: print_background_task_times.point
-    log_scale: false
-    ci_lower: print_background_task_times.lower
-    ci_upper: print_background_task_times.upper
-    show_grid: true
-    listen:
-      Date: print_background_task_times.submission_date
-      Channel: print_background_task_times.channel
-      Os: print_background_task_times.os
-      
-    active: "#3FE1B0"
-    defaults_version: 0
   - title: Print Count
     name: Print Count_mean
     note_state: expanded
@@ -98,7 +28,7 @@
     filters:
       print_background_task_times.metric: 'print_count'
       print_background_task_times.statistic: mean
-    row: 10
+    row: 0
     col: 0
     width: 12
     height: 8
@@ -135,7 +65,7 @@
     filters:
       print_background_task_times.metric: 'print_count'
       print_background_task_times.statistic: percentile
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -148,6 +78,76 @@
     listen:
       Date: print_background_task_times.submission_date
       Percentile: print_background_task_times.parameter
+      Channel: print_background_task_times.channel
+      Os: print_background_task_times.os
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Print Initiation Counts
+    name: Print Initiation Counts_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: print_background_task_times
+    type: looker_line
+    fields: [
+      print_background_task_times.submission_date,
+      print_background_task_times.branch,
+      print_background_task_times.point
+    ]
+    pivots: [
+      print_background_task_times.branch, print_background_task_times.metric 
+    ]
+    filters:
+      print_background_task_times.metric: '"printing_preview_opened", "printing_dialog_opened_via_preview", "printing_dialog_opened_without_preview", "printing_dialog_opened_via_preview_tm", "printing_preview_opened_tm", "printing_silent_print"'
+      print_background_task_times.statistic: sum
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: print_background_task_times.submission_date
+    field_y: print_background_task_times.point
+    log_scale: false
+    ci_lower: print_background_task_times.lower
+    ci_upper: print_background_task_times.upper
+    show_grid: true
+    listen:
+      Date: print_background_task_times.submission_date
+      Channel: print_background_task_times.channel
+      Os: print_background_task_times.os
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Print Cancel Ratios
+    name: Print Cancel Ratios_total_ratio
+    note_state: expanded
+    note_display: above
+    note_text: Total_Ratio
+    explore: print_background_task_times
+    type: looker_line
+    fields: [
+      print_background_task_times.submission_date,
+      print_background_task_times.branch,
+      print_background_task_times.point
+    ]
+    pivots: [
+      print_background_task_times.branch, print_background_task_times.metric 
+    ]
+    filters:
+      print_background_task_times.metric: '"printing_preview_cancelled_tm", "printing_dialog_via_preview_cancelled_tm", "printing_preview_cancelled", "printing_dialog_without_preview_cancelled", "printing_dialog_via_preview_cancelled"'
+      print_background_task_times.statistic: total_ratio
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: print_background_task_times.submission_date
+    field_y: print_background_task_times.point
+    log_scale: false
+    ci_lower: print_background_task_times.lower
+    ci_upper: print_background_task_times.upper
+    show_grid: true
+    listen:
+      Date: print_background_task_times.submission_date
       Channel: print_background_task_times.channel
       Os: print_background_task_times.os
       
@@ -185,15 +185,15 @@
   - title: Channel
     name: Channel
     type: string_filter
-    default_value: 'beta'
+    default_value: 'nightly'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'beta'
       - 'nightly'
+      - 'beta'
       - 'release'
       
   
@@ -201,16 +201,16 @@
   - title: Os
     name: Os
     type: string_filter
-    default_value: 'Darwin'
+    default_value: 'Windows_NT'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'Darwin'
       - 'Windows_NT'
       - 'Linux'
+      - 'Darwin'
       
   
   
