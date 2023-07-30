@@ -444,6 +444,13 @@ view: metrics_table {
     group_item_label: "Theme Use System Theme"
   }
 
+  dimension: metrics__boolean__top_sites_sponsored_shortcuts {
+    sql: ${TABLE}.metrics.boolean.top_sites_sponsored_shortcuts ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Top Sites Sponsored Shortcuts"
+  }
+
   dimension: metrics__boolean__tracking_protection_enabled {
     sql: ${TABLE}.metrics.boolean.tracking_protection_enabled ;;
     type: yesno

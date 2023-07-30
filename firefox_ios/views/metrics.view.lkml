@@ -3188,6 +3188,24 @@ with a home page origin.
 "
   }
 
+  dimension: metrics__boolean__top_sites_sponsored_shortcuts {
+    label: "Top Sites Sponsored Shortcuts"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.top_sites_sponsored_shortcuts ;;
+    type: yesno
+    group_label: "Top Sites"
+    group_item_label: "Sponsored Shortcuts"
+
+    link: {
+      label: "Glean Dictionary reference for Top Sites Sponsored Shortcuts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/top_sites_sponsored_shortcuts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Tracks if the user has enabled sponsored shortcuts
+"
+  }
+
   dimension: metrics__boolean__tracking_protection_enabled {
     label: "Tracking Protection Enabled"
     hidden: no
