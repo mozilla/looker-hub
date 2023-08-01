@@ -5,6 +5,21 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: firefox_ltv {
+  dimension: ad_click_value {
+    sql: ${TABLE}.ad_click_value ;;
+    type: number
+  }
+
+  dimension: clicks_per_client {
+    sql: ${TABLE}.clicks_per_client ;;
+    type: number
+  }
+
+  dimension: lifetime_months {
+    sql: ${TABLE}.lifetime_months ;;
+    type: number
+  }
+
   dimension: ltv {
     sql: ${TABLE}.ltv ;;
     type: number
