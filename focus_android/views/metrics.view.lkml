@@ -1266,6 +1266,25 @@ Child-process data will likely be absent, or incomplete.
 "
   }
 
+  dimension: metrics__counter__fog_inits_during_shutdown {
+    label: "Fog Inits During Shutdown"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.fog_inits_during_shutdown ;;
+    type: number
+    group_label: "Fog"
+    group_item_label: "Inits During Shutdown"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Inits During Shutdown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/fog_inits_during_shutdown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times init had to be called during shutdown.
+Should never have a value for any session long enough to grow idle.
+"
+  }
+
   dimension: metrics__memory_distribution__fog_ipc_buffer_sizes__sum {
     label: "Fog Ipc Buffer Sizes Sum"
     hidden: no
@@ -4494,6 +4513,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Dotprint Requested"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/dotprint_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_inits_during_shutdown {
+    type: sum
+    sql: ${metrics__counter__fog_inits_during_shutdown} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Inits During Shutdown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/fog_inits_during_shutdown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fog_inits_during_shutdown_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__fog_inits_during_shutdown: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fog Inits During Shutdown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/fog_inits_during_shutdown"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
