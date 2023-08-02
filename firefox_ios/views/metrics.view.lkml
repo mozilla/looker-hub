@@ -516,6 +516,7 @@ be edited from:
 the following:
 * Awesomebar results
 * Bookmarks Panel
+* Top sites
 "
   }
 

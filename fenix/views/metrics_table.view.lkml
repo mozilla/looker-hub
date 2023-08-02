@@ -738,6 +738,13 @@ view: metrics_table {
     group_item_label: "Events Total Uri Count"
   }
 
+  dimension: metrics__counter__fog_inits_during_shutdown {
+    sql: ${TABLE}.metrics.counter.fog_inits_during_shutdown ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Fog Inits During Shutdown"
+  }
+
   dimension: metrics__counter__fog_ipc_flush_failures {
     sql: ${TABLE}.metrics.counter.fog_ipc_flush_failures ;;
     type: number
