@@ -451,6 +451,13 @@ view: metrics_table {
     group_item_label: "Dotprint Requested"
   }
 
+  dimension: metrics__counter__fog_inits_during_shutdown {
+    sql: ${TABLE}.metrics.counter.fog_inits_during_shutdown ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Fog Inits During Shutdown"
+  }
+
   dimension: metrics__counter__fog_ipc_flush_failures {
     sql: ${TABLE}.metrics.counter.fog_ipc_flush_failures ;;
     type: number
@@ -1456,6 +1463,20 @@ view: metrics_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Browser Locale Override"
+  }
+
+  dimension: metrics__string__extensions_quarantined_domains_listhash {
+    sql: ${TABLE}.metrics.string.extensions_quarantined_domains_listhash ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Extensions Quarantined Domains Listhash"
+  }
+
+  dimension: metrics__string__extensions_quarantined_domains_remotehash {
+    sql: ${TABLE}.metrics.string.extensions_quarantined_domains_remotehash ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Extensions Quarantined Domains Remotehash"
   }
 
   dimension: metrics__string__geckoview_validation_build_id {

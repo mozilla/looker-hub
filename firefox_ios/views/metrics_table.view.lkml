@@ -297,6 +297,13 @@ view: metrics_table {
     group_item_label: "Application Services Recent Highlights Visible"
   }
 
+  dimension: metrics__boolean__bookmarks_has_mobile_bookmarks {
+    sql: ${TABLE}.metrics.boolean.bookmarks_has_mobile_bookmarks ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Bookmarks Has Mobile Bookmarks"
+  }
+
   dimension: metrics__boolean__credit_card_autofill_enabled {
     sql: ${TABLE}.metrics.boolean.credit_card_autofill_enabled ;;
     type: yesno
@@ -442,6 +449,13 @@ view: metrics_table {
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Theme Use System Theme"
+  }
+
+  dimension: metrics__boolean__top_sites_sponsored_shortcuts {
+    sql: ${TABLE}.metrics.boolean.top_sites_sponsored_shortcuts ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Top Sites Sponsored Shortcuts"
   }
 
   dimension: metrics__boolean__tracking_protection_enabled {
@@ -1521,6 +1535,13 @@ view: metrics_table {
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__quantity__bookmarks_mobile_bookmarks_count {
+    sql: ${TABLE}.metrics.quantity.bookmarks_mobile_bookmarks_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Bookmarks Mobile Bookmarks Count"
   }
 
   dimension: metrics__quantity__history_num_visits {
