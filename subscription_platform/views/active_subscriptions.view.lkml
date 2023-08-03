@@ -91,7 +91,7 @@ view: active_subscriptions {
     datatype: date
   }
 
-  measure: count {
+  measure: count_sum {
     sql: ${count} ;;
     type: sum
   }
