@@ -499,6 +499,44 @@ be edited from:
 "
   }
 
+  dimension: metrics__boolean__bookmarks_has_mobile_bookmarks {
+    label: "Bookmarks Has Mobile Bookmarks"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.bookmarks_has_mobile_bookmarks ;;
+    type: yesno
+    group_label: "Bookmarks"
+    group_item_label: "Has Mobile Bookmarks"
+
+    link: {
+      label: "Glean Dictionary reference for Bookmarks Has Mobile Bookmarks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/bookmarks_has_mobile_bookmarks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A boolean that indicates if the user has bookmarks
+in the mobile folder.
+"
+  }
+
+  dimension: metrics__quantity__bookmarks_mobile_bookmarks_count {
+    label: "Bookmarks Mobile Bookmarks Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.bookmarks_mobile_bookmarks_count ;;
+    type: number
+    group_label: "Bookmarks"
+    group_item_label: "Mobile Bookmarks Count"
+
+    link: {
+      label: "Glean Dictionary reference for Bookmarks Mobile Bookmarks Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/bookmarks_mobile_bookmarks_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A quantity that indicates how many bookmarks a user
+has in the mobile folder.
+"
+  }
+
   dimension: metrics__labeled_counter__bookmarks_open {
     label: "Bookmarks Open"
     hidden: yes
