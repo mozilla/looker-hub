@@ -1174,6 +1174,24 @@ when dynamic or static rulesets have been loaded from disk.
 "
   }
 
+  dimension: metrics__string__extensions_quarantined_domains_listhash {
+    label: "Extensions Quarantined Domains Listhash"
+    hidden: no
+    sql: ${TABLE}.metrics.string.extensions_quarantined_domains_listhash ;;
+    type: string
+    group_label: "Extensions Quarantined Domains"
+    group_item_label: "Listhash"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Quarantined Domains Listhash"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/extensions_quarantined_domains_listhash"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA1 cryptographic hash of the quarantined domains string pref.
+"
+  }
+
   dimension: metrics__quantity__extensions_quarantined_domains_listsize {
     label: "Extensions Quarantined Domains Listsize"
     hidden: no
@@ -1189,6 +1207,24 @@ when dynamic or static rulesets have been loaded from disk.
     }
 
     description: "Number of domains listed in the quarantined domains list pref for the client during this session.
+"
+  }
+
+  dimension: metrics__string__extensions_quarantined_domains_remotehash {
+    label: "Extensions Quarantined Domains Remotehash"
+    hidden: no
+    sql: ${TABLE}.metrics.string.extensions_quarantined_domains_remotehash ;;
+    type: string
+    group_label: "Extensions Quarantined Domains"
+    group_item_label: "Remotehash"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Quarantined Domains Remotehash"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/extensions_quarantined_domains_remotehash"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "SHA1 cryptographic hash of the quarantined domains string pref as it was set based on the value got synced from the RemoteSettings collection. AMRemoteSettings will be re-processing the entries on the next application startup and so this metric lifetime can be set to application and expect it to be always set to the value got from the RemoteSettings collection.
 "
   }
 
