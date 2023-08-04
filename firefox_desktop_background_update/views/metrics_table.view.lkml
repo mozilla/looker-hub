@@ -1454,6 +1454,24 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__string__extensions_quarantined_domains_listhash {
+    sql: ${TABLE}.metrics.string.extensions_quarantined_domains_listhash ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Extensions Quarantined Domains Listhash"
+    description: "SHA1 cryptographic hash of the quarantined domains string pref.
+"
+  }
+
+  dimension: metrics__string__extensions_quarantined_domains_remotehash {
+    sql: ${TABLE}.metrics.string.extensions_quarantined_domains_remotehash ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Extensions Quarantined Domains Remotehash"
+    description: "SHA1 cryptographic hash of the quarantined domains string pref as it was set based on the value got synced from the RemoteSettings collection. AMRemoteSettings will be re-processing the entries on the next application startup and so this metric lifetime can be set to application and expect it to be always set to the value got from the RemoteSettings collection.
+"
+  }
+
   dimension: metrics__string__geckoview_validation_build_id {
     sql: ${TABLE}.metrics.string.geckoview_validation_build_id ;;
     type: string
