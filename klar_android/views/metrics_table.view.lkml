@@ -557,6 +557,16 @@ that programmatically redirect to a new location.
 "
   }
 
+  dimension: metrics__counter__fog_inits_during_shutdown {
+    sql: ${TABLE}.metrics.counter.fog_inits_during_shutdown ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Fog Inits During Shutdown"
+    description: "Counts the number of times init had to be called during shutdown.
+Should never have a value for any session long enough to grow idle.
+"
+  }
+
   dimension: metrics__counter__fog_ipc_flush_failures {
     sql: ${TABLE}.metrics.counter.fog_ipc_flush_failures ;;
     type: number
@@ -1843,6 +1853,24 @@ It also indicates the screen it was removed from, home or browser.
     group_item_label: "Browser Locale Override"
     description: "The locale that differs from the system locale if a user
 specifically overrides it for the app.
+"
+  }
+
+  dimension: metrics__string__extensions_quarantined_domains_listhash {
+    sql: ${TABLE}.metrics.string.extensions_quarantined_domains_listhash ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Extensions Quarantined Domains Listhash"
+    description: "SHA1 cryptographic hash of the quarantined domains string pref.
+"
+  }
+
+  dimension: metrics__string__extensions_quarantined_domains_remotehash {
+    sql: ${TABLE}.metrics.string.extensions_quarantined_domains_remotehash ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Extensions Quarantined Domains Remotehash"
+    description: "SHA1 cryptographic hash of the quarantined domains string pref as it was set based on the value got synced from the RemoteSettings collection. AMRemoteSettings will be re-processing the entries on the next application startup and so this metric lifetime can be set to application and expect it to be always set to the value got from the RemoteSettings collection.
 "
   }
 

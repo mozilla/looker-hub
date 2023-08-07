@@ -374,6 +374,16 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__fog_inits_during_shutdown {
+    sql: ${TABLE}.metrics.counter.fog_inits_during_shutdown ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Fog Inits During Shutdown"
+    description: "Counts the number of times init had to be called during shutdown.
+Should never have a value for any session long enough to grow idle.
+"
+  }
+
   dimension: metrics__counter__fog_ipc_flush_failures {
     sql: ${TABLE}.metrics.counter.fog_ipc_flush_failures ;;
     type: number
@@ -1441,6 +1451,24 @@ This metric appears in both the metrics and baseline pings.
     group_label: "Metrics String"
     group_item_label: "Blocklist Mlbf Source"
     description: "The source of the RemoteSettings attachment that holds the bloom filter. Possible values are \"dump_match\", \"cache_match\", \"remote_match\",\"dump_fallback\", \"cache_fallback\", \"unknown\". \"dump_match\", \"cache_match\" and \"remote_match\" are expected known-good values, and means that the loaded bloomfilter matches the blocklist record in the RemoteSettings collection. The prefix denotes the immediate source of the loaded data: \"dump\" means packaged with the application, \"remote\" means a freshly downloaded bloomfilter, \"cache\" means a previously downloaded bloomfilter. \"dump_fallback\" and \"cache_fallback\" means that the last known bloomfilter was used, despite it not matching the latest record in the RemoteSettings collection. In this case the outdated bloomfilter is used as a fallback (e.g. because the latest version cannot be downloaded). \"unknown\"  means that the bloomfilter cannot be loaded at all. This can happen if the blocklist is disabled via preferences or enterprise policies.
+"
+  }
+
+  dimension: metrics__string__extensions_quarantined_domains_listhash {
+    sql: ${TABLE}.metrics.string.extensions_quarantined_domains_listhash ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Extensions Quarantined Domains Listhash"
+    description: "SHA1 cryptographic hash of the quarantined domains string pref.
+"
+  }
+
+  dimension: metrics__string__extensions_quarantined_domains_remotehash {
+    sql: ${TABLE}.metrics.string.extensions_quarantined_domains_remotehash ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Extensions Quarantined Domains Remotehash"
+    description: "SHA1 cryptographic hash of the quarantined domains string pref as it was set based on the value got synced from the RemoteSettings collection. AMRemoteSettings will be re-processing the entries on the next application startup and so this metric lifetime can be set to application and expect it to be always set to the value got from the RemoteSettings collection.
 "
   }
 
