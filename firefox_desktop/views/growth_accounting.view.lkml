@@ -1040,8 +1040,38 @@ view: growth_accounting {
     type: number
   }
 
+  dimension: places_bookmarks_searchbar_cumulative_searches_sum {
+    sql: ${TABLE}.places_bookmarks_searchbar_cumulative_searches_sum ;;
+    type: number
+  }
+
+  dimension: places_library_cumulative_bookmark_searches_sum {
+    sql: ${TABLE}.places_library_cumulative_bookmark_searches_sum ;;
+    type: number
+  }
+
+  dimension: places_library_cumulative_history_searches_sum {
+    sql: ${TABLE}.places_library_cumulative_history_searches_sum ;;
+    type: number
+  }
+
   dimension: places_pages_count_mean {
     sql: ${TABLE}.places_pages_count_mean ;;
+    type: number
+  }
+
+  dimension: places_previousday_visits_mean {
+    sql: ${TABLE}.places_previousday_visits_mean ;;
+    type: number
+  }
+
+  dimension: places_searchbar_cumulative_filter_count_sum {
+    sql: ${TABLE}.places_searchbar_cumulative_filter_count_sum ;;
+    type: number
+  }
+
+  dimension: places_searchbar_cumulative_searches_sum {
+    sql: ${TABLE}.places_searchbar_cumulative_searches_sum ;;
     type: number
   }
 
@@ -1250,6 +1280,21 @@ view: growth_accounting {
     type: number
   }
 
+  dimension: scalar_parent_library_link_sum {
+    sql: ${TABLE}.scalar_parent_library_link_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_library_opened_sum {
+    sql: ${TABLE}.scalar_parent_library_opened_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_library_search_sum {
+    sql: ${TABLE}.scalar_parent_library_search_sum ;;
+    hidden: yes
+  }
+
   dimension: scalar_parent_navigator_storage_estimate_count_sum {
     sql: ${TABLE}.scalar_parent_navigator_storage_estimate_count_sum ;;
     type: number
@@ -1293,6 +1338,21 @@ view: growth_accounting {
   dimension: scalar_parent_os_environment_launched_via_taskbar_private {
     sql: ${TABLE}.scalar_parent_os_environment_launched_via_taskbar_private ;;
     type: yesno
+  }
+
+  dimension: scalar_parent_sidebar_link_sum {
+    sql: ${TABLE}.scalar_parent_sidebar_link_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_sidebar_opened_sum {
+    sql: ${TABLE}.scalar_parent_sidebar_opened_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_sidebar_search_sum {
+    sql: ${TABLE}.scalar_parent_sidebar_search_sum ;;
+    hidden: yes
   }
 
   dimension: scalar_parent_storage_sync_api_usage_extensions_using_sum {

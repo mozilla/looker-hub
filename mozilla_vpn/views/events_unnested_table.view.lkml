@@ -284,6 +284,11 @@ view: events_unnested_table {
     group_item_label: "Version"
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -439,6 +444,13 @@ view: events_unnested_table__ping_info__experiments {
     type: string
     group_label: "Value"
     group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
   }
 
   dimension: value__extra__type {
