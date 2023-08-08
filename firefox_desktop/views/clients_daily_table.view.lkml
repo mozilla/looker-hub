@@ -935,8 +935,38 @@ view: clients_daily_table {
     type: number
   }
 
+  dimension: places_bookmarks_searchbar_cumulative_searches_sum {
+    sql: ${TABLE}.places_bookmarks_searchbar_cumulative_searches_sum ;;
+    type: number
+  }
+
+  dimension: places_library_cumulative_bookmark_searches_sum {
+    sql: ${TABLE}.places_library_cumulative_bookmark_searches_sum ;;
+    type: number
+  }
+
+  dimension: places_library_cumulative_history_searches_sum {
+    sql: ${TABLE}.places_library_cumulative_history_searches_sum ;;
+    type: number
+  }
+
   dimension: places_pages_count_mean {
     sql: ${TABLE}.places_pages_count_mean ;;
+    type: number
+  }
+
+  dimension: places_previousday_visits_mean {
+    sql: ${TABLE}.places_previousday_visits_mean ;;
+    type: number
+  }
+
+  dimension: places_searchbar_cumulative_filter_count_sum {
+    sql: ${TABLE}.places_searchbar_cumulative_filter_count_sum ;;
+    type: number
+  }
+
+  dimension: places_searchbar_cumulative_searches_sum {
+    sql: ${TABLE}.places_searchbar_cumulative_searches_sum ;;
     type: number
   }
 
@@ -1150,6 +1180,21 @@ view: clients_daily_table {
     type: number
   }
 
+  dimension: scalar_parent_library_link_sum {
+    sql: ${TABLE}.scalar_parent_library_link_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_library_opened_sum {
+    sql: ${TABLE}.scalar_parent_library_opened_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_library_search_sum {
+    sql: ${TABLE}.scalar_parent_library_search_sum ;;
+    hidden: yes
+  }
+
   dimension: scalar_parent_navigator_storage_estimate_count_sum {
     sql: ${TABLE}.scalar_parent_navigator_storage_estimate_count_sum ;;
     type: number
@@ -1193,6 +1238,21 @@ view: clients_daily_table {
   dimension: scalar_parent_os_environment_launched_via_taskbar_private {
     sql: ${TABLE}.scalar_parent_os_environment_launched_via_taskbar_private ;;
     type: yesno
+  }
+
+  dimension: scalar_parent_sidebar_link_sum {
+    sql: ${TABLE}.scalar_parent_sidebar_link_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_sidebar_opened_sum {
+    sql: ${TABLE}.scalar_parent_sidebar_opened_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_sidebar_search_sum {
+    sql: ${TABLE}.scalar_parent_sidebar_search_sum ;;
+    hidden: yes
   }
 
   dimension: scalar_parent_storage_sync_api_usage_extensions_using_sum {
@@ -2203,6 +2263,78 @@ view: clients_daily_table__scalar_parent_browser_ui_interaction_preferences_pane
 }
 
 view: clients_daily_table__scalar_parent_devtools_accessibility_select_accessible_for_node_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__scalar_parent_library_link_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__scalar_parent_library_opened_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__scalar_parent_library_search_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__scalar_parent_sidebar_link_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__scalar_parent_sidebar_opened_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_table__scalar_parent_sidebar_search_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

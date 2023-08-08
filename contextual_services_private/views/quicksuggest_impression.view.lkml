@@ -264,6 +264,11 @@ view: quicksuggest_impression {
     type: string
   }
 
+  dimension: source {
+    sql: ${TABLE}.source ;;
+    type: string
+  }
+
   dimension: version {
     sql: ${TABLE}.version ;;
     type: string
