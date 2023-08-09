@@ -98,6 +98,42 @@ explore: client_counts {
     sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_devtools_accessibility_select_accessible_for_node_sum}) AS clients_daily_table__scalar_parent_devtools_accessibility_select_accessible_for_node_sum ;;
   }
 
+  join: clients_daily_table__scalar_parent_library_link_sum {
+    view_label: "Client Counts  Scalar Parent Library Link Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_library_link_sum}) AS clients_daily_table__scalar_parent_library_link_sum ;;
+  }
+
+  join: clients_daily_table__scalar_parent_library_opened_sum {
+    view_label: "Client Counts  Scalar Parent Library Opened Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_library_opened_sum}) AS clients_daily_table__scalar_parent_library_opened_sum ;;
+  }
+
+  join: clients_daily_table__scalar_parent_library_search_sum {
+    view_label: "Client Counts  Scalar Parent Library Search Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_library_search_sum}) AS clients_daily_table__scalar_parent_library_search_sum ;;
+  }
+
+  join: clients_daily_table__scalar_parent_sidebar_link_sum {
+    view_label: "Client Counts  Scalar Parent Sidebar Link Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_sidebar_link_sum}) AS clients_daily_table__scalar_parent_sidebar_link_sum ;;
+  }
+
+  join: clients_daily_table__scalar_parent_sidebar_opened_sum {
+    view_label: "Client Counts  Scalar Parent Sidebar Opened Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_sidebar_opened_sum}) AS clients_daily_table__scalar_parent_sidebar_opened_sum ;;
+  }
+
+  join: clients_daily_table__scalar_parent_sidebar_search_sum {
+    view_label: "Client Counts  Scalar Parent Sidebar Search Sum"
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${client_counts.scalar_parent_sidebar_search_sum}) AS clients_daily_table__scalar_parent_sidebar_search_sum ;;
+  }
+
   join: clients_daily_table__scalar_parent_telemetry_event_counts_sum {
     view_label: "Client Counts  Scalar Parent Telemetry Event Counts Sum"
     relationship: one_to_many

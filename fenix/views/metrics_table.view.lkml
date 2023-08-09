@@ -2258,6 +2258,13 @@ view: metrics_table {
     group_item_label: "Extensions Quarantined Domains Listsize"
   }
 
+  dimension: metrics__quantity__formautofill_creditcards_autofill_profiles_count {
+    sql: ${TABLE}.metrics.quantity.formautofill_creditcards_autofill_profiles_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Formautofill Creditcards Autofill Profiles Count"
+  }
+
   dimension: metrics__quantity__gfx_adapter_primary_ram {
     sql: ${TABLE}.metrics.quantity.gfx_adapter_primary_ram ;;
     type: number
