@@ -1249,6 +1249,15 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__quantity__formautofill_creditcards_autofill_profiles_count {
+    sql: ${TABLE}.metrics.quantity.formautofill_creditcards_autofill_profiles_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Formautofill Creditcards Autofill Profiles Count"
+    description: "Count at store time how many credit card autofill profiles the user has.
+"
+  }
+
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__denominator {
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_length_changed.denominator ;;
     type: number

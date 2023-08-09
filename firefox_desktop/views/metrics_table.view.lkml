@@ -364,6 +364,36 @@ To be used to validate GIFFT.
     description: "Set to true if the tasks that are queued prior to Glean initialization time out."
   }
 
+  dimension: metrics__boolean__shopping_settings_component_opted_out {
+    sql: ${TABLE}.metrics.boolean.shopping_settings_component_opted_out ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Shopping Settings Component Opted Out"
+    description: "Indicates if the user has opted out of using the shopping component.
+Set during shopping component init and updated when changed in browser.
+"
+  }
+
+  dimension: metrics__boolean__shopping_settings_has_onboarded {
+    sql: ${TABLE}.metrics.boolean.shopping_settings_has_onboarded ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Shopping Settings Has Onboarded"
+    description: "Indicates if the user has completed the Shopping product Onboarding
+experience. Set during shopping component init and updated when changed
+in browser.
+"
+  }
+
+  dimension: metrics__boolean__shopping_settings_nimbus_disabled_shopping {
+    sql: ${TABLE}.metrics.boolean.shopping_settings_nimbus_disabled_shopping ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Shopping Settings Nimbus Disabled Shopping"
+    description: "Indicates if Nimbus has disabled the use the shopping component.
+"
+  }
+
   dimension: metrics__boolean__startup_is_restored_by_macos {
     sql: ${TABLE}.metrics.boolean.startup_is_restored_by_macos ;;
     type: yesno
@@ -1411,6 +1441,15 @@ count. Unset on other platforms.
 "
   }
 
+  dimension: metrics__quantity__formautofill_creditcards_autofill_profiles_count {
+    sql: ${TABLE}.metrics.quantity.formautofill_creditcards_autofill_profiles_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Formautofill Creditcards Autofill Profiles Count"
+    description: "Count at store time how many credit card autofill profiles the user has.
+"
+  }
+
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__denominator {
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_length_changed.denominator ;;
     type: number
@@ -1781,6 +1820,16 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__string_list__background_update_reasons_to_not_update {
     sql: ${TABLE}.metrics.string_list.background_update_reasons_to_not_update ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__browser_migration_matched_extensions {
+    sql: ${TABLE}.metrics.string_list.browser_migration_matched_extensions ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string_list__browser_migration_unmatched_extensions {
+    sql: ${TABLE}.metrics.string_list.browser_migration_unmatched_extensions ;;
     hidden: yes
   }
 
