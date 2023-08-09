@@ -142,7 +142,13 @@ view: accounts_events {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "UTM campaign"
+    description: "A marketing campaign.  For example, if a user signs into FxA from selecting a
+Mozilla VPN plan on Mozilla VPN's product site, then value of this metric could
+be 'vpn-product-page'.  The value has a max length of 128 characters with the
+alphanumeric characters, _ (underscore), forward slash (/), . (period), %
+(percentage sign), and - (hyphen) in the allowed set of characters.  The
+special value of 'page+referral+-+not+part+of+a+campaign' is also allowed.
+"
   }
 
   dimension: metrics__string__utm_content {
@@ -159,7 +165,13 @@ view: accounts_events {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "UTM content"
+    description: "The content on which the user acted.  For example, if the user clicked on the
+\"Get started here\" link in \"Looking for Firefox Sync? Get started here\", then
+the value for this metric would be 'fx-sync-get-started'.  The value has a max
+length of 128 characters with the alphanumeric characters, _ (underscore),
+forward slash (/), . (period), % (percentage sign), and - (hyphen) in the
+allowed set of characters.
+"
   }
 
   dimension: metrics__string__utm_medium {
@@ -176,7 +188,12 @@ view: accounts_events {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "UTM medium"
+    description: "The \"medium\" on which the user acted.  For example, if the user clicked on a
+link in an email, then the value of this metric would be 'email'.  The value
+has a max length of 128 characters with the alphanumeric characters, _
+(underscore), forward slash (/), . (period), % (percentage sign), and -
+(hyphen) in the allowed set of characters.
+"
   }
 
   dimension: metrics__string__utm_source {
@@ -193,7 +210,12 @@ view: accounts_events {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "UTM source"
+    description: "The source from where the user started.  For example, if the user clicked on a
+link on the Firefox accounts web site, this value could be 'fx-website'.  The
+value has a max length of 128 characters with the alphanumeric characters, _
+(underscore), forward slash (/), . (period), % (percentage sign), and -
+(hyphen) in the allowed set of characters.
+"
   }
 
   dimension: metrics__string__utm_term {
@@ -210,7 +232,13 @@ view: accounts_events {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "UTM term"
+    description: "This metric is similar to the `utm.source`; it is used in the Firefox
+browser.  For example, if the user started from about:welcome, then the value
+could be 'aboutwelcome-default-screen'.  The value has a max length of 128
+characters with the alphanumeric characters, _ (underscore), forward slash (/),
+. (period), % (percentage sign), and - (hyphen) in the allowed set of
+characters.
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {

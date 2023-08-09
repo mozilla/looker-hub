@@ -703,6 +703,63 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__boolean__shopping_settings_component_opted_out {
+    label: "Shopping Settings Component Opted Out"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.shopping_settings_component_opted_out ;;
+    type: yesno
+    group_label: "Shopping Settings"
+    group_item_label: "Component Opted Out"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Settings Component Opted Out"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/shopping_settings_component_opted_out"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if the user has opted out of using the shopping component.
+Set during shopping component init and updated when changed in browser.
+"
+  }
+
+  dimension: metrics__boolean__shopping_settings_has_onboarded {
+    label: "Shopping Settings Has Onboarded"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.shopping_settings_has_onboarded ;;
+    type: yesno
+    group_label: "Shopping Settings"
+    group_item_label: "Has Onboarded"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Settings Has Onboarded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/shopping_settings_has_onboarded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if the user has completed the Shopping product Onboarding
+experience. Set during shopping component init and updated when changed
+in browser.
+"
+  }
+
+  dimension: metrics__boolean__shopping_settings_nimbus_disabled_shopping {
+    label: "Shopping Settings Nimbus Disabled Shopping"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.shopping_settings_nimbus_disabled_shopping ;;
+    type: yesno
+    group_label: "Shopping Settings"
+    group_item_label: "Nimbus Disabled Shopping"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Settings Nimbus Disabled Shopping"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/shopping_settings_nimbus_disabled_shopping"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if Nimbus has disabled the use the shopping component.
+"
+  }
+
   dimension: metrics__boolean__startup_is_restored_by_macos {
     label: "Startup Is Restored By Macos"
     hidden: yes
@@ -1250,6 +1307,24 @@ Large or rising number of clients experiencing this indicates we should
 perhaps refactor content child shutdown in FOG to try harder to register
 flush operations.
 Will likely be obsoleted by bug 1641989.
+"
+  }
+
+  dimension: metrics__quantity__formautofill_creditcards_autofill_profiles_count {
+    label: "Formautofill Creditcards Autofill Profiles Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.formautofill_creditcards_autofill_profiles_count ;;
+    type: number
+    group_label: "Formautofill Creditcards"
+    group_item_label: "Autofill Profiles Count"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Creditcards Autofill Profiles Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/formautofill_creditcards_autofill_profiles_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count at store time how many credit card autofill profiles the user has.
 "
   }
 
