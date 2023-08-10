@@ -41,6 +41,23 @@ view: accounts_events {
 "
   }
 
+  dimension: metrics__string__event_reason {
+    label: "Event Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.string.event_reason ;;
+    type: string
+    group_label: "Event"
+    group_item_label: "Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Event Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/event_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "additional context-dependent (on event.name) info, e.g. the cause of an error"
+  }
+
   dimension: metrics__string__relying_party_oauth_client_id {
     label: "Relying Party Oauth Client Id"
     hidden: no
