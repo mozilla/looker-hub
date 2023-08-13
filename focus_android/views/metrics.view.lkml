@@ -1423,6 +1423,24 @@ Will likely be obsoleted by bug 1641989.
 "
   }
 
+  dimension: metrics__quantity__fog_max_pings_per_minute {
+    label: "Fog Max Pings Per Minute"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.fog_max_pings_per_minute ;;
+    type: number
+    group_label: "Fog"
+    group_item_label: "Max Pings Per Minute"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Max Pings Per Minute"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/fog_max_pings_per_minute"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of the configurable rate limit, in pings per minute, for Glean pings as set at init.
+"
+  }
+
   dimension: metrics__quantity__formautofill_creditcards_autofill_profiles_count {
     label: "Formautofill Creditcards Autofill Profiles Count"
     hidden: no

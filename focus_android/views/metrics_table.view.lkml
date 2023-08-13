@@ -1234,6 +1234,13 @@ view: metrics_table {
     group_item_label: "Extensions Quarantined Domains Listsize"
   }
 
+  dimension: metrics__quantity__fog_max_pings_per_minute {
+    sql: ${TABLE}.metrics.quantity.fog_max_pings_per_minute ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Fog Max Pings Per Minute"
+  }
+
   dimension: metrics__quantity__formautofill_creditcards_autofill_profiles_count {
     sql: ${TABLE}.metrics.quantity.formautofill_creditcards_autofill_profiles_count ;;
     type: number
