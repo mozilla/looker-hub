@@ -685,6 +685,63 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_1_download_throughput__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Download Throughput"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_download_throughput__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Download Throughput"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_download_throughput__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_download_throughput__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Download Throughput"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_download_throughput__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Download Throughput"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_download_throughput__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__pdfjs_time_to_view__count {
     sql: ${TABLE}.metrics.custom_distribution.pdfjs_time_to_view.count ;;
     type: number
@@ -3739,6 +3796,42 @@ view: metrics_table__metrics__custom_distribution__networking_cookie_access_fixu
 }
 
 view: metrics_table__metrics__custom_distribution__networking_cookie_creation_fixup_diff__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_1_download_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_2_download_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_download_throughput__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

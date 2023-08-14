@@ -1930,6 +1930,60 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_1_download_throughput__sum {
+    label: "Networking Http 1 Download Throughput Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 1 Download Throughput Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 1 Download Throughput Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_1_download_throughput"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The download throughput for http/1.1 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_download_throughput__sum {
+    label: "Networking Http 2 Download Throughput Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 2 Download Throughput Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 2 Download Throughput Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_2_download_throughput"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The download throughput for http/2 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput__sum {
+    label: "Networking Http 3 Download Throughput Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Download Throughput Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Download Throughput Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_3_download_throughput"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The download throughput for http/3 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
   dimension: metrics__timing_distribution__networking_http_content_onstart_delay__sum {
     label: "Networking Http Content Onstart Delay Sum"
     hidden: no
