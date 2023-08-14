@@ -1423,6 +1423,24 @@ Will likely be obsoleted by bug 1641989.
 "
   }
 
+  dimension: metrics__quantity__formautofill_creditcards_autofill_profiles_count {
+    label: "Formautofill Creditcards Autofill Profiles Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.formautofill_creditcards_autofill_profiles_count ;;
+    type: number
+    group_label: "Formautofill Creditcards"
+    group_item_label: "Autofill Profiles Count"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Creditcards Autofill Profiles Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/formautofill_creditcards_autofill_profiles_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count at store time how many credit card autofill profiles the user has.
+"
+  }
+
   dimension: metrics__string__geckoview_validation_build_id {
     label: "Geckoview Validation Build Id"
     hidden: yes

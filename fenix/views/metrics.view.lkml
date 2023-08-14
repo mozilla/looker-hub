@@ -3753,6 +3753,42 @@ Will likely be obsoleted by bug 1641989.
 "
   }
 
+  dimension: metrics__quantity__fog_max_pings_per_minute {
+    label: "Fog Max Pings Per Minute"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.fog_max_pings_per_minute ;;
+    type: number
+    group_label: "Fog"
+    group_item_label: "Max Pings Per Minute"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Max Pings Per Minute"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_max_pings_per_minute"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of the configurable rate limit, in pings per minute, for Glean pings as set at init.
+"
+  }
+
+  dimension: metrics__quantity__formautofill_creditcards_autofill_profiles_count {
+    label: "Formautofill Creditcards Autofill Profiles Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.formautofill_creditcards_autofill_profiles_count ;;
+    type: number
+    group_label: "Formautofill Creditcards"
+    group_item_label: "Autofill Profiles Count"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Creditcards Autofill Profiles Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/formautofill_creditcards_autofill_profiles_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count at store time how many credit card autofill profiles the user has.
+"
+  }
+
   dimension: metrics__string__geckoview_validation_build_id {
     label: "Geckoview Validation Build Id"
     hidden: yes
@@ -4221,6 +4257,60 @@ To be used to validate GIFFT.
     }
 
     description: "Time for a DNS OS resolution (msec) used to get TTL | Migrated from Firefox Telemetry's `DNS_RENEWAL_TIME_FOR_TTL`.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_download_throughput__sum {
+    label: "Networking Http 1 Download Throughput Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 1 Download Throughput Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 1 Download Throughput Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_1_download_throughput"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The download throughput for http/1.1 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_download_throughput__sum {
+    label: "Networking Http 2 Download Throughput Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 2 Download Throughput Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 2 Download Throughput Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_2_download_throughput"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The download throughput for http/2 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_download_throughput__sum {
+    label: "Networking Http 3 Download Throughput Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Download Throughput Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Download Throughput Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_download_throughput"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The download throughput for http/3 requests larger than 10MB. Measured in megabits per second, Mbps.
 "
   }
 

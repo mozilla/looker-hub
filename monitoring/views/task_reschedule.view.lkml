@@ -17,10 +17,22 @@ view: task_reschedule {
     description: "Time elapsed since start until end of task's exeuction (seconds)"
   }
 
+  dimension: run_id {
+    sql: ${TABLE}.run_id ;;
+    type: string
+    description: "Unique identifier of the task run instance"
+  }
+
   dimension: task_id {
     sql: ${TABLE}.task_id ;;
     type: string
     description: "Airflow task id"
+  }
+
+  dimension: try_number {
+    sql: ${TABLE}.try_number ;;
+    type: number
+    description: "Attempt number to execute the task"
   }
 
   dimension_group: end {
@@ -36,21 +48,6 @@ view: task_reschedule {
       year,
     ]
     description: "When the DAG run finished"
-  }
-
-  dimension_group: execution {
-    sql: ${TABLE}.execution_date ;;
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-    description: "Execution date of the DAG Run instance"
   }
 
   dimension_group: reschedule {

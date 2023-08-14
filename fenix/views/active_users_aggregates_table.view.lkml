@@ -15,6 +15,11 @@ view: active_users_aggregates_table {
     type: number
   }
 
+  dimension: adjust_network {
+    sql: ${TABLE}.adjust_network ;;
+    type: string
+  }
+
   dimension: app_name {
     sql: ${TABLE}.app_name ;;
     type: string
@@ -89,6 +94,11 @@ view: active_users_aggregates_table {
   dimension: first_seen_year {
     sql: ${TABLE}.first_seen_year ;;
     type: number
+  }
+
+  dimension: install_source {
+    sql: ${TABLE}.install_source ;;
+    type: string
   }
 
   dimension: is_default_browser {

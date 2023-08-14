@@ -10,11 +10,6 @@ view: active_users_aggregates {
     type: number
   }
 
-  dimension: ad_clicks {
-    sql: ${TABLE}.ad_clicks ;;
-    type: number
-  }
-
   dimension: app_name {
     sql: ${TABLE}.app_name ;;
     type: string
@@ -111,11 +106,6 @@ view: active_users_aggregates {
     type: number
   }
 
-  dimension: organic_search_count {
-    sql: ${TABLE}.organic_search_count ;;
-    type: number
-  }
-
   dimension: os {
     sql: ${TABLE}.os ;;
     type: string
@@ -138,16 +128,6 @@ view: active_users_aggregates {
 
   dimension: os_version_minor {
     sql: ${TABLE}.os_version_minor ;;
-    type: number
-  }
-
-  dimension: search_count {
-    sql: ${TABLE}.search_count ;;
-    type: number
-  }
-
-  dimension: search_with_ads {
-    sql: ${TABLE}.search_with_ads ;;
     type: number
   }
 
