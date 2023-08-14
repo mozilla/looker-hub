@@ -78,40 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: mobile_segments_study_august_2023_ios
-    type: looker_line
-    fields: [
-      mobile_segments_study_august_2023_ios.submission_date,
-      mobile_segments_study_august_2023_ios.branch,
-      mobile_segments_study_august_2023_ios.point
-    ]
-    pivots: [
-      mobile_segments_study_august_2023_ios.branch
-    ]
-    filters:
-      mobile_segments_study_august_2023_ios.metric: 'ad_clicks'
-      mobile_segments_study_august_2023_ios.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: mobile_segments_study_august_2023_ios.submission_date
-    field_y: mobile_segments_study_august_2023_ios.point
-    log_scale: false
-    ci_lower: mobile_segments_study_august_2023_ios.lower
-    ci_upper: mobile_segments_study_august_2023_ios.upper
-    show_grid: true
-    listen:
-      Date: mobile_segments_study_august_2023_ios.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -131,7 +97,7 @@
       mobile_segments_study_august_2023_ios.metric: 'search_count'
       mobile_segments_study_august_2023_ios.statistic: mean
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: mobile_segments_study_august_2023_ios.submission_date
@@ -166,6 +132,41 @@
     filters:
       mobile_segments_study_august_2023_ios.metric: 'memory_total'
       mobile_segments_study_august_2023_ios.statistic: percentile
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: mobile_segments_study_august_2023_ios.submission_date
+    field_y: mobile_segments_study_august_2023_ios.point
+    log_scale: false
+    ci_lower: mobile_segments_study_august_2023_ios.lower
+    ci_upper: mobile_segments_study_august_2023_ios.upper
+    show_grid: true
+    listen:
+      Date: mobile_segments_study_august_2023_ios.submission_date
+      Percentile: mobile_segments_study_august_2023_ios.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: mobile_segments_study_august_2023_ios
+    type: looker_line
+    fields: [
+      mobile_segments_study_august_2023_ios.submission_date,
+      mobile_segments_study_august_2023_ios.branch,
+      mobile_segments_study_august_2023_ios.point
+    ]
+    pivots: [
+      mobile_segments_study_august_2023_ios.branch
+    ]
+    filters:
+      mobile_segments_study_august_2023_ios.metric: 'ad_clicks'
+      mobile_segments_study_august_2023_ios.statistic: mean
     row: 20
     col: 0
     width: 12
@@ -178,7 +179,6 @@
     show_grid: true
     listen:
       Date: mobile_segments_study_august_2023_ios.submission_date
-      Percentile: mobile_segments_study_august_2023_ios.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
