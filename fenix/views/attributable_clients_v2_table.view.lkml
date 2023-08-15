@@ -59,6 +59,13 @@ view: attributable_clients_v2_table {
     group_item_label: "Install Source  Source Ping"
   }
 
+  dimension: firefox_android_clients_metadata__reported_baseline_ping {
+    sql: ${TABLE}.firefox_android_clients_metadata.reported_baseline_ping ;;
+    type: yesno
+    group_label: "Firefox Android Clients Metadata"
+    group_item_label: "Reported Baseline Ping"
+  }
+
   dimension: firefox_android_clients_metadata__reported_first_session_ping {
     sql: ${TABLE}.firefox_android_clients_metadata.reported_first_session_ping ;;
     type: yesno

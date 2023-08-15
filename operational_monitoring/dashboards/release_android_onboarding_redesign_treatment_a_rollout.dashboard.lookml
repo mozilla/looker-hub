@@ -10,74 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: release_android_onboarding_redesign_treatment_a_rollout
-    type: looker_line
-    fields: [
-      release_android_onboarding_redesign_treatment_a_rollout.submission_date,
-      release_android_onboarding_redesign_treatment_a_rollout.branch,
-      release_android_onboarding_redesign_treatment_a_rollout.point
-    ]
-    pivots: [
-      release_android_onboarding_redesign_treatment_a_rollout.branch
-    ]
-    filters:
-      release_android_onboarding_redesign_treatment_a_rollout.metric: 'retained'
-      release_android_onboarding_redesign_treatment_a_rollout.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: release_android_onboarding_redesign_treatment_a_rollout.submission_date
-    field_y: release_android_onboarding_redesign_treatment_a_rollout.point
-    log_scale: false
-    ci_lower: release_android_onboarding_redesign_treatment_a_rollout.lower
-    ci_upper: release_android_onboarding_redesign_treatment_a_rollout.upper
-    show_grid: true
-    listen:
-      Date: release_android_onboarding_redesign_treatment_a_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: release_android_onboarding_redesign_treatment_a_rollout
-    type: looker_line
-    fields: [
-      release_android_onboarding_redesign_treatment_a_rollout.submission_date,
-      release_android_onboarding_redesign_treatment_a_rollout.branch,
-      release_android_onboarding_redesign_treatment_a_rollout.point
-    ]
-    pivots: [
-      release_android_onboarding_redesign_treatment_a_rollout.branch
-    ]
-    filters:
-      release_android_onboarding_redesign_treatment_a_rollout.metric: 'active_hours'
-      release_android_onboarding_redesign_treatment_a_rollout.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: release_android_onboarding_redesign_treatment_a_rollout.submission_date
-    field_y: release_android_onboarding_redesign_treatment_a_rollout.point
-    log_scale: false
-    ci_lower: release_android_onboarding_redesign_treatment_a_rollout.lower
-    ci_upper: release_android_onboarding_redesign_treatment_a_rollout.upper
-    show_grid: true
-    listen:
-      Date: release_android_onboarding_redesign_treatment_a_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -96,7 +28,7 @@
     filters:
       release_android_onboarding_redesign_treatment_a_rollout.metric: 'search_count'
       release_android_onboarding_redesign_treatment_a_rollout.statistic: mean
-    row: 10
+    row: 0
     col: 0
     width: 12
     height: 8
@@ -132,7 +64,7 @@
     filters:
       release_android_onboarding_redesign_treatment_a_rollout.metric: 'memory_total'
       release_android_onboarding_redesign_treatment_a_rollout.statistic: percentile
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -145,6 +77,74 @@
     listen:
       Date: release_android_onboarding_redesign_treatment_a_rollout.submission_date
       Percentile: release_android_onboarding_redesign_treatment_a_rollout.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: release_android_onboarding_redesign_treatment_a_rollout
+    type: looker_line
+    fields: [
+      release_android_onboarding_redesign_treatment_a_rollout.submission_date,
+      release_android_onboarding_redesign_treatment_a_rollout.branch,
+      release_android_onboarding_redesign_treatment_a_rollout.point
+    ]
+    pivots: [
+      release_android_onboarding_redesign_treatment_a_rollout.branch
+    ]
+    filters:
+      release_android_onboarding_redesign_treatment_a_rollout.metric: 'retained'
+      release_android_onboarding_redesign_treatment_a_rollout.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: release_android_onboarding_redesign_treatment_a_rollout.submission_date
+    field_y: release_android_onboarding_redesign_treatment_a_rollout.point
+    log_scale: false
+    ci_lower: release_android_onboarding_redesign_treatment_a_rollout.lower
+    ci_upper: release_android_onboarding_redesign_treatment_a_rollout.upper
+    show_grid: true
+    listen:
+      Date: release_android_onboarding_redesign_treatment_a_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: release_android_onboarding_redesign_treatment_a_rollout
+    type: looker_line
+    fields: [
+      release_android_onboarding_redesign_treatment_a_rollout.submission_date,
+      release_android_onboarding_redesign_treatment_a_rollout.branch,
+      release_android_onboarding_redesign_treatment_a_rollout.point
+    ]
+    pivots: [
+      release_android_onboarding_redesign_treatment_a_rollout.branch
+    ]
+    filters:
+      release_android_onboarding_redesign_treatment_a_rollout.metric: 'active_hours'
+      release_android_onboarding_redesign_treatment_a_rollout.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: release_android_onboarding_redesign_treatment_a_rollout.submission_date
+    field_y: release_android_onboarding_redesign_treatment_a_rollout.point
+    log_scale: false
+    ci_lower: release_android_onboarding_redesign_treatment_a_rollout.lower
+    ci_upper: release_android_onboarding_redesign_treatment_a_rollout.upper
+    show_grid: true
+    listen:
+      Date: release_android_onboarding_redesign_treatment_a_rollout.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
