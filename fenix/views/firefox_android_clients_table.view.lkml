@@ -153,6 +153,13 @@ view: firefox_android_clients_table {
     description: "Name of the ping that reports the install_source value."
   }
 
+  dimension: metadata__reported_baseline_ping {
+    sql: ${TABLE}.metadata.reported_baseline_ping ;;
+    type: yesno
+    group_label: "Metadata"
+    group_item_label: "Reported Baseline Ping"
+  }
+
   dimension: metadata__reported_first_session_ping {
     sql: ${TABLE}.metadata.reported_first_session_ping ;;
     type: yesno
