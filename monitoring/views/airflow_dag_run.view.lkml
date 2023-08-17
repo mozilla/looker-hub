@@ -4,35 +4,29 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: task_reschedule {
+view: airflow_dag_run {
   dimension: dag_id {
     sql: ${TABLE}.dag_id ;;
     type: string
     description: "Airflow DAG id"
   }
 
-  dimension: duration {
-    sql: ${TABLE}.duration ;;
-    type: number
-    description: "Time elapsed since start until end of task's exeuction (seconds)"
+  dimension: external_trigger {
+    sql: ${TABLE}.external_trigger ;;
+    type: yesno
+    description: "Indicates if the DAG was triggered externally"
   }
 
-  dimension: run_id {
-    sql: ${TABLE}.run_id ;;
+  dimension: run_type {
+    sql: ${TABLE}.run_type ;;
     type: string
-    description: "Unique identifier of the task run instance"
+    description: "manual, scheduled or backfill"
   }
 
-  dimension: task_id {
-    sql: ${TABLE}.task_id ;;
+  dimension: state {
+    sql: ${TABLE}.state ;;
     type: string
-    description: "Airflow task id"
-  }
-
-  dimension: try_number {
-    sql: ${TABLE}.try_number ;;
-    type: number
-    description: "Attempt number to execute the task"
+    description: "State of the DAG run instance (e.g. success)"
   }
 
   dimension_group: end {
@@ -50,8 +44,8 @@ view: task_reschedule {
     description: "When the DAG run finished"
   }
 
-  dimension_group: reschedule {
-    sql: ${TABLE}.reschedule_date ;;
+  dimension_group: execution {
+    sql: ${TABLE}.execution_date ;;
     type: time
     timeframes: [
       raw,
@@ -62,7 +56,7 @@ view: task_reschedule {
       quarter,
       year,
     ]
-    description: "Datetime when task has been rescheduled"
+    description: "Execution date of the DAG Run instance"
   }
 
   dimension_group: start {
@@ -80,5 +74,5 @@ view: task_reschedule {
     description: "When the DAG run started"
   }
 
-  sql_table_name: `mozdata.monitoring.airflow_task_reschedule` ;;
+  sql_table_name: `mozdata.monitoring.airflow_dag_run` ;;
 }
