@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: slot_pool {
+view: airflow_slot_pool {
   dimension: description {
     sql: ${TABLE}.description ;;
     type: string

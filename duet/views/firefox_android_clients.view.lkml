@@ -107,6 +107,12 @@ view: firefox_android_clients {
     description: "Last reported client campaign network."
   }
 
+  dimension: last_reported_channel {
+    sql: ${TABLE}.last_reported_channel ;;
+    type: string
+    description: "Last reported client channel."
+  }
+
   dimension: last_reported_country {
     sql: ${TABLE}.last_reported_country ;;
     type: string
@@ -158,6 +164,7 @@ view: firefox_android_clients {
     type: yesno
     group_label: "Metadata"
     group_item_label: "Reported Baseline Ping"
+    description: "True if the client ever reported a baseline ping."
   }
 
   dimension: metadata__reported_first_session_ping {
