@@ -14,6 +14,7 @@ view: bigquery_tables_inventory {
   dimension: owners {
     sql: ${TABLE}.owners ;;
     hidden: yes
+    description: "The owner of the table listed in metadata yaml file"
   }
 
   dimension: project_id {
@@ -63,6 +64,23 @@ view: bigquery_tables_inventory {
     ]
     convert_tz: no
     datatype: date
+    description: "The table's last modified date"
+  }
+
+  dimension_group: last_used {
+    sql: ${TABLE}.last_used_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    description: "The date when the tables was last queried"
   }
 
   dimension_group: submission {
