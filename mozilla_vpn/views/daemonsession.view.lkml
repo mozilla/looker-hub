@@ -77,8 +77,9 @@ system settings.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "(Mobile-only) Where the session started from. Should be \"app\", \"system settings\",
-or \"autostart on boot\".
+    description: "(Mobile-only) Where the VPN session started from, to determine how many sessions
+start outside the app. Values should be \"app\" or \"system\". \"system\" covers
+cases like system settings, autostart on boot, tile, etc.
 "
   }
 
