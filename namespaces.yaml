@@ -5541,10 +5541,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 10
+            default: Windows 7
             options:
-            - Windows 10
             - Windows 7
+            - Windows 10
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -5580,13 +5580,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id107
           normalized_channel:
-            default: nightly
+            default: release
             options:
-            - nightly
             - release
             - aurora
-            - beta
+            - nightly
             - esr
+            - beta
             - default
             - nightly-pine
             - nightly-oak
