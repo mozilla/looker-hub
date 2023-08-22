@@ -1223,7 +1223,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The download throughput for http/1.1 requests larger than 10MB. Measured in megabits per second, Mbps.
+    description: "The download throughput for  http/1.0, http/1.1 requests larger than 10MB. Measured in megabits per second, Mbps.
 "
   }
 
