@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       fx_release_android_re_engagement_notifications_114_rollout_v2.branch
     ]
     filters:
-      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'ad_clicks'
+      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'search_count'
       fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: mean
     row: 0
     col: 0
@@ -44,26 +44,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: fx_release_android_re_engagement_notifications_114_rollout_v2
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date,
       fx_release_android_re_engagement_notifications_114_rollout_v2.branch,
-      fx_release_android_re_engagement_notifications_114_rollout_v2.upper,
-      fx_release_android_re_engagement_notifications_114_rollout_v2.lower,
       fx_release_android_re_engagement_notifications_114_rollout_v2.point
     ]
     pivots: [
       fx_release_android_re_engagement_notifications_114_rollout_v2.branch
     ]
     filters:
-      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'memory_total'
-      fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: percentile
+      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'tagged_sap_searches'
+      fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: mean
     row: 0
     col: 12
     width: 12
@@ -76,7 +74,6 @@
     show_grid: true
     listen:
       Date: fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date
-      Percentile: fx_release_android_re_engagement_notifications_114_rollout_v2.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -149,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,7 +162,7 @@
       fx_release_android_re_engagement_notifications_114_rollout_v2.branch
     ]
     filters:
-      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'search_count'
+      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'ad_clicks'
       fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: mean
     row: 20
     col: 0
@@ -183,24 +180,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: fx_release_android_re_engagement_notifications_114_rollout_v2
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date,
       fx_release_android_re_engagement_notifications_114_rollout_v2.branch,
+      fx_release_android_re_engagement_notifications_114_rollout_v2.upper,
+      fx_release_android_re_engagement_notifications_114_rollout_v2.lower,
       fx_release_android_re_engagement_notifications_114_rollout_v2.point
     ]
     pivots: [
       fx_release_android_re_engagement_notifications_114_rollout_v2.branch
     ]
     filters:
-      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'days_of_use'
-      fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: mean
+      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'memory_total'
+      fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: percentile
     row: 20
     col: 12
     width: 12
@@ -213,6 +212,7 @@
     show_grid: true
     listen:
       Date: fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date
+      Percentile: fx_release_android_re_engagement_notifications_114_rollout_v2.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       fx_release_android_re_engagement_notifications_114_rollout_v2.branch
     ]
     filters:
-      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'tagged_sap_searches'
+      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'days_of_use'
       fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: mean
     row: 30
     col: 12
