@@ -705,7 +705,7 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__boolean__shopping_settings_component_opted_out {
     label: "Shopping Settings Component Opted Out"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.shopping_settings_component_opted_out ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -724,7 +724,7 @@ Set during shopping component init and updated when changed in browser.
 
   dimension: metrics__boolean__shopping_settings_has_onboarded {
     label: "Shopping Settings Has Onboarded"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.shopping_settings_has_onboarded ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -744,7 +744,7 @@ in browser.
 
   dimension: metrics__boolean__shopping_settings_nimbus_disabled_shopping {
     label: "Shopping Settings Nimbus Disabled Shopping"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.shopping_settings_nimbus_disabled_shopping ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -1831,7 +1831,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The download throughput for http/1.1 requests larger than 10MB. Measured in megabits per second, Mbps.
+    description: "The download throughput for  http/1.0, http/1.1 requests larger than 10MB. Measured in megabits per second, Mbps.
 "
   }
 

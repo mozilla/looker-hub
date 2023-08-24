@@ -26,7 +26,7 @@
       firefox_messaging_system.branch, firefox_messaging_system.metric 
     ]
     filters:
-      firefox_messaging_system.metric: '"null_ping_volume", "cfr_ping_volume", "infobar_ping_volume", "whats_new_panel_ping_volume", "moments_ping_volume", "other_ping_volume", "undesired_events_ping_volume", "spotlight_ping_volume"'
+      firefox_messaging_system.metric: '"other_ping_volume", "infobar_ping_volume", "undesired_events_ping_volume", "cfr_ping_volume", "spotlight_ping_volume", "null_ping_volume", "moments_ping_volume", "whats_new_panel_ping_volume"'
       firefox_messaging_system.statistic: sum
     row: 0
     col: 0
@@ -241,16 +241,16 @@
   - title: Normalized Channel
     name: Normalized Channel
     type: string_filter
-    default_value: 'aurora'
+    default_value: 'beta'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'aurora'
       - 'beta'
       - 'nightly'
+      - 'aurora'
       - 'release'
       - 'Other'
       - 'esr'
