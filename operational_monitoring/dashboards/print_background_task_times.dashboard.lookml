@@ -209,8 +209,8 @@
       display: inline
       options:
       - 'Linux'
-      - 'Darwin'
       - 'Windows_NT'
+      - 'Darwin'
       
   
   

@@ -5580,13 +5580,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id107
           normalized_channel:
-            default: esr
+            default: nightly
             options:
-            - esr
-            - beta
             - nightly
             - release
             - aurora
+            - beta
+            - esr
             - default
             - nightly-pine
             - nightly-oak
@@ -5694,11 +5694,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id113
           normalized_channel:
-            default: beta
+            default: aurora
             options:
-            - beta
-            - nightly
             - aurora
+            - nightly
+            - beta
             - release
             - Other
             - esr
@@ -7659,8 +7659,8 @@ operational_monitoring:
             default: Linux
             options:
             - Linux
-            - Darwin
             - Windows_NT
+            - Darwin
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id267
