@@ -79,6 +79,42 @@ It is possible for a Firefox installation to not have a default profile, but in 
 "
   }
 
+  dimension: metrics__boolean__background_update_registered_restart_attempted {
+    label: "Background Update Registered Restart Attempted"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.background_update_registered_restart_attempted ;;
+    type: yesno
+    group_label: "Background Update"
+    group_item_label: "Registered Restart Attempted"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Registered Restart Attempted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_registered_restart_attempted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the background update task successfully registered a restart.
+"
+  }
+
+  dimension: metrics__boolean__background_update_registered_restart_success {
+    label: "Background Update Registered Restart Success"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.background_update_registered_restart_success ;;
+    type: yesno
+    group_label: "Background Update"
+    group_item_label: "Registered Restart Success"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Registered Restart Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_registered_restart_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the background update task successfully restarted after a registered restart.
+"
+  }
+
   dimension: metrics__quantity__background_update_targeting_env_firefox_version {
     label: "Background Update Targeting Env Firefox Version"
     hidden: no

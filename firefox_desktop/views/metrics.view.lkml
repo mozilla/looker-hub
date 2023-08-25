@@ -705,7 +705,7 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__boolean__shopping_settings_component_opted_out {
     label: "Shopping Settings Component Opted Out"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.shopping_settings_component_opted_out ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -724,7 +724,7 @@ Set during shopping component init and updated when changed in browser.
 
   dimension: metrics__boolean__shopping_settings_has_onboarded {
     label: "Shopping Settings Has Onboarded"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.shopping_settings_has_onboarded ;;
     type: yesno
     group_label: "Shopping Settings"
@@ -744,7 +744,7 @@ in browser.
 
   dimension: metrics__boolean__shopping_settings_nimbus_disabled_shopping {
     label: "Shopping Settings Nimbus Disabled Shopping"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.shopping_settings_nimbus_disabled_shopping ;;
     type: yesno
     group_label: "Shopping Settings"
