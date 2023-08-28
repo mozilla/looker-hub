@@ -335,6 +335,33 @@ view: events_table {
 "
   }
 
+  dimension: metrics__boolean__urlbar_pref_suggest_data_collection {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_data_collection ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Urlbar Pref Suggest Data Collection"
+    description: "Whether the user has opted in to data collection for Firefox Suggest, i.e., online suggestions served from Merino. Corresponds to the value of the `browser.urlbar.quicksuggest.dataCollection.enabled` pref.
+"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_nonsponsored {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_nonsponsored ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Urlbar Pref Suggest Nonsponsored"
+    description: "Whether non-sponsored quick suggest results are shown in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.quicksuggest.nonsponsored` pref.
+"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_sponsored {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_sponsored ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Urlbar Pref Suggest Sponsored"
+    description: "Whether sponsored quick suggest results are shown in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.quicksuggest.sponsored` pref.
+"
+  }
+
   dimension: metrics__boolean__urlbar_pref_suggest_topsites {
     sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_topsites ;;
     type: yesno
