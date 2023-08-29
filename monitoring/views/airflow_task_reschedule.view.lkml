@@ -4,29 +4,35 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: dag_run {
+view: airflow_task_reschedule {
   dimension: dag_id {
     sql: ${TABLE}.dag_id ;;
     type: string
     description: "Airflow DAG id"
   }
 
-  dimension: external_trigger {
-    sql: ${TABLE}.external_trigger ;;
-    type: yesno
-    description: "Indicates if the DAG was triggered externally"
+  dimension: duration {
+    sql: ${TABLE}.duration ;;
+    type: number
+    description: "Time elapsed since start until end of task's exeuction (seconds)"
   }
 
-  dimension: run_type {
-    sql: ${TABLE}.run_type ;;
+  dimension: run_id {
+    sql: ${TABLE}.run_id ;;
     type: string
-    description: "manual, scheduled or backfill"
+    description: "Unique identifier of the task run instance"
   }
 
-  dimension: state {
-    sql: ${TABLE}.state ;;
+  dimension: task_id {
+    sql: ${TABLE}.task_id ;;
     type: string
-    description: "State of the DAG run instance (e.g. success)"
+    description: "Airflow task id"
+  }
+
+  dimension: try_number {
+    sql: ${TABLE}.try_number ;;
+    type: number
+    description: "Attempt number to execute the task"
   }
 
   dimension_group: end {
@@ -44,8 +50,8 @@ view: dag_run {
     description: "When the DAG run finished"
   }
 
-  dimension_group: execution {
-    sql: ${TABLE}.execution_date ;;
+  dimension_group: reschedule {
+    sql: ${TABLE}.reschedule_date ;;
     type: time
     timeframes: [
       raw,
@@ -56,7 +62,7 @@ view: dag_run {
       quarter,
       year,
     ]
-    description: "Execution date of the DAG Run instance"
+    description: "Datetime when task has been rescheduled"
   }
 
   dimension_group: start {
@@ -74,5 +80,5 @@ view: dag_run {
     description: "When the DAG run started"
   }
 
-  sql_table_name: `mozdata.monitoring.airflow_dag_run` ;;
+  sql_table_name: `mozdata.monitoring.airflow_task_reschedule` ;;
 }

@@ -326,6 +326,24 @@ view: background_update_table {
 "
   }
 
+  dimension: metrics__boolean__background_update_registered_restart_attempted {
+    sql: ${TABLE}.metrics.boolean.background_update_registered_restart_attempted ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Update Registered Restart Attempted"
+    description: "True if the background update task successfully registered a restart.
+"
+  }
+
+  dimension: metrics__boolean__background_update_registered_restart_success {
+    sql: ${TABLE}.metrics.boolean.background_update_registered_restart_success ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Update Registered Restart Success"
+    description: "True if the background update task successfully restarted after a registered restart.
+"
+  }
+
   dimension: metrics__boolean__background_update_targeting_exception {
     sql: ${TABLE}.metrics.boolean.background_update_targeting_exception ;;
     type: yesno

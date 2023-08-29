@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: page_view {
+  dimension: metrics__string__page_http_status {
+    label: "Page Http Status"
+    hidden: no
+    sql: ${TABLE}.metrics.string.page_http_status ;;
+    type: string
+    group_label: "Page"
+    group_item_label: "Http Status"
+
+    link: {
+      label: "Glean Dictionary reference for Page Http Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bedrock/metrics/page_http_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The HTTP status code of the page.
+"
+  }
+
   dimension: metrics__string__page_locale {
     label: "Page Locale"
     hidden: no

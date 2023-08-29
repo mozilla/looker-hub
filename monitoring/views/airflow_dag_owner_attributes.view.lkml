@@ -4,18 +4,21 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: dag_tag {
+view: airflow_dag_owner_attributes {
   dimension: dag_id {
     sql: ${TABLE}.dag_id ;;
     type: string
-    description: "Airflow DAG id"
   }
 
-  dimension: tag_name {
-    sql: ${TABLE}.tag_name ;;
+  dimension: link {
+    sql: ${TABLE}.link ;;
     type: string
-    description: "Airflow tag name"
   }
 
-  sql_table_name: `mozdata.monitoring.airflow_dag_tag` ;;
+  dimension: owner {
+    sql: ${TABLE}.owner ;;
+    type: string
+  }
+
+  sql_table_name: `mozdata.monitoring.airflow_dag_owner_attributes` ;;
 }

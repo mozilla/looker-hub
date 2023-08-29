@@ -44,26 +44,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: mobile_segments_study_august_2023_ios
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       mobile_segments_study_august_2023_ios.submission_date,
       mobile_segments_study_august_2023_ios.branch,
-      mobile_segments_study_august_2023_ios.upper,
-      mobile_segments_study_august_2023_ios.lower,
       mobile_segments_study_august_2023_ios.point
     ]
     pivots: [
       mobile_segments_study_august_2023_ios.branch
     ]
     filters:
-      mobile_segments_study_august_2023_ios.metric: 'memory_total'
-      mobile_segments_study_august_2023_ios.statistic: percentile
+      mobile_segments_study_august_2023_ios.metric: 'active_hours'
+      mobile_segments_study_august_2023_ios.statistic: mean
     row: 0
     col: 12
     width: 12
@@ -76,7 +74,6 @@
     show_grid: true
     listen:
       Date: mobile_segments_study_august_2023_ios.submission_date
-      Percentile: mobile_segments_study_august_2023_ios.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -115,24 +112,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: mobile_segments_study_august_2023_ios
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       mobile_segments_study_august_2023_ios.submission_date,
       mobile_segments_study_august_2023_ios.branch,
+      mobile_segments_study_august_2023_ios.upper,
+      mobile_segments_study_august_2023_ios.lower,
       mobile_segments_study_august_2023_ios.point
     ]
     pivots: [
       mobile_segments_study_august_2023_ios.branch
     ]
     filters:
-      mobile_segments_study_august_2023_ios.metric: 'active_hours'
-      mobile_segments_study_august_2023_ios.statistic: mean
+      mobile_segments_study_august_2023_ios.metric: 'memory_total'
+      mobile_segments_study_august_2023_ios.statistic: percentile
     row: 10
     col: 12
     width: 12
@@ -145,6 +144,7 @@
     show_grid: true
     listen:
       Date: mobile_segments_study_august_2023_ios.submission_date
+      Percentile: mobile_segments_study_august_2023_ios.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
