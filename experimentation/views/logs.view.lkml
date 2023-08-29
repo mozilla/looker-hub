@@ -55,6 +55,11 @@ view: logs {
     type: string
   }
 
+  dimension: source {
+    sql: ${TABLE}.source ;;
+    type: string
+  }
+
   dimension: statistic {
     sql: ${TABLE}.statistic ;;
     type: string
