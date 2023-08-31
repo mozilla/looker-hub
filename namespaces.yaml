@@ -1681,6 +1681,11 @@ firefox_desktop:
       tables:
       - table: mozdata.telemetry.newtab_visits
       type: table_view
+    onboarding_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.onboarding
+      type: table_view
     pageload:
       tables:
       - table: mozdata.firefox_desktop.pageload
@@ -1707,6 +1712,11 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.quick_suggest
+      type: table_view
+    snippets_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.snippets
       type: table_view
     sponsored_tiles_clients_daily:
       tables:
