@@ -2072,6 +2072,10 @@ firefox_ios:
       type: glean_ping_explore
       views:
         base_view: tabs_sync
+    temp_baseline:
+      type: glean_ping_explore
+      views:
+        base_view: temp_baseline
     temp_bookmarks_sync:
       type: glean_ping_explore
       views:
@@ -2433,6 +2437,24 @@ firefox_ios:
         table: mozdata.org_mozilla_ios_firefoxbeta.tabs_sync
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.tabs_sync
+      type: table_view
+    temp_baseline:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.temp_baseline
+      - channel: beta
+        table: mozdata.org_mozilla_ios_firefoxbeta.temp_baseline
+      - channel: nightly
+        table: mozdata.org_mozilla_ios_fennec.temp_baseline
+      type: glean_ping_view
+    temp_baseline_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.temp_baseline
+      - channel: beta
+        table: mozdata.org_mozilla_ios_firefoxbeta.temp_baseline
+      - channel: nightly
+        table: mozdata.org_mozilla_ios_fennec.temp_baseline
       type: table_view
     temp_bookmarks_sync:
       tables:
@@ -5610,10 +5632,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 7
+            default: Windows 10
             options:
-            - Windows 7
             - Windows 10
+            - Windows 7
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -5649,13 +5671,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id110
           normalized_channel:
-            default: aurora
+            default: release
             options:
-            - aurora
-            - beta
             - release
-            - esr
             - nightly
+            - esr
+            - beta
+            - aurora
             - default
             - nightly-pine
             - nightly-oak
@@ -7719,17 +7741,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id269
           channel:
-            default: release
+            default: beta
             options:
+            - beta
             - release
             - nightly
-            - beta
           os:
             default: Windows_NT
             options:
             - Windows_NT
-            - Linux
             - Darwin
+            - Linux
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id270
