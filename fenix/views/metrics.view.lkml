@@ -3076,6 +3076,24 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
+  dimension: metrics__counter__bloburl_resolve_stopped {
+    label: "Bloburl Resolve Stopped"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.bloburl_resolve_stopped ;;
+    type: number
+    group_label: "Bloburl"
+    group_item_label: "Resolve Stopped"
+
+    link: {
+      label: "Glean Dictionary reference for Bloburl Resolve Stopped"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/bloburl_resolve_stopped"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how many times we do not resolve a blob URL because of different partition keys
+"
+  }
+
   dimension: metrics__datetime__blocklist_last_modified_rs_addons_mblf {
     label: "Blocklist Last Modified Rs Addons Mblf"
     hidden: no
@@ -3501,6 +3519,9 @@ when dynamic or static rulesets have been loaded from disk.
     }
 
     description: "Counters for how many times the extension process has crashed or been created.
+The labels with \"_fg\" / \"_bg\" suffixes are only recorded in Android builds,
+while the \"created\" and \"crashed\" labels are recorded on both Desktop and Android
+builds. 
 "
   }
 
@@ -10203,6 +10224,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Tabs Tray Open Inactive Tab"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tabs_tray_open_inactive_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: bloburl_resolve_stopped {
+    type: sum
+    sql: ${metrics__counter__bloburl_resolve_stopped} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Bloburl Resolve Stopped"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/bloburl_resolve_stopped"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: bloburl_resolve_stopped_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__bloburl_resolve_stopped: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Bloburl Resolve Stopped"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/bloburl_resolve_stopped"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

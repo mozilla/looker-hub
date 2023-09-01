@@ -661,6 +661,13 @@ view: metrics_table {
     group_item_label: "App Menu Sign Into Sync"
   }
 
+  dimension: metrics__counter__bloburl_resolve_stopped {
+    sql: ${TABLE}.metrics.counter.bloburl_resolve_stopped ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Bloburl Resolve Stopped"
+  }
+
   dimension: metrics__counter__credit_cards_autofill_card {
     sql: ${TABLE}.metrics.counter.credit_cards_autofill_card ;;
     type: number
