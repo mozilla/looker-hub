@@ -423,6 +423,13 @@ view: metrics_table {
     group_item_label: "Autocomplete List Order Changed"
   }
 
+  dimension: metrics__counter__bloburl_resolve_stopped {
+    sql: ${TABLE}.metrics.counter.bloburl_resolve_stopped ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Bloburl Resolve Stopped"
+  }
+
   dimension: metrics__counter__browser_report_site_issue_counter {
     sql: ${TABLE}.metrics.counter.browser_report_site_issue_counter ;;
     type: number

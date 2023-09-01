@@ -356,6 +356,15 @@ To be used to validate GIFFT.
     description: "Set to true if the tasks that are queued prior to Glean initialization time out."
   }
 
+  dimension: metrics__counter__bloburl_resolve_stopped {
+    sql: ${TABLE}.metrics.counter.bloburl_resolve_stopped ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Bloburl Resolve Stopped"
+    description: "Counts how many times we do not resolve a blob URL because of different partition keys
+"
+  }
+
   dimension: metrics__counter__dotprint_android_dialog_requested {
     sql: ${TABLE}.metrics.counter.dotprint_android_dialog_requested ;;
     type: number
@@ -594,6 +603,7 @@ This does not include deletion-request pings.
     type: number
     group_label: "Metrics Custom Distribution Networking Cookie Access Fixup Diff"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__sum {
@@ -613,6 +623,7 @@ This does not include deletion-request pings.
     type: number
     group_label: "Metrics Custom Distribution Networking Cookie Creation Fixup Diff"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__custom_distribution__networking_cookie_creation_fixup_diff__sum {
@@ -632,6 +643,7 @@ This does not include deletion-request pings.
     type: number
     group_label: "Metrics Custom Distribution Networking Http 1 Download Throughput"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__custom_distribution__networking_http_1_download_throughput__sum {
@@ -651,6 +663,7 @@ This does not include deletion-request pings.
     type: number
     group_label: "Metrics Custom Distribution Networking Http 2 Download Throughput"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__custom_distribution__networking_http_2_download_throughput__sum {
@@ -670,6 +683,7 @@ This does not include deletion-request pings.
     type: number
     group_label: "Metrics Custom Distribution Networking Http 3 Download Throughput"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__custom_distribution__networking_http_3_download_throughput__sum {
@@ -689,6 +703,7 @@ This does not include deletion-request pings.
     type: number
     group_label: "Metrics Custom Distribution Pdfjs Time To View"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__custom_distribution__pdfjs_time_to_view__sum {
@@ -708,6 +723,7 @@ This does not include deletion-request pings.
     type: number
     group_label: "Metrics Custom Distribution Power Battery Percentage When User Active"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__sum {
@@ -727,6 +743,7 @@ This does not include deletion-request pings.
     type: number
     group_label: "Metrics Custom Distribution Timer Thread Timers Fired Per Wakeup"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__custom_distribution__timer_thread_timers_fired_per_wakeup__sum {
@@ -1179,6 +1196,7 @@ This metric appears in both the metrics and baseline pings.
     type: number
     group_label: "Metrics Memory Distribution Extensions Apis Dnr Startup Cache Read Size"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__sum {
@@ -1198,6 +1216,7 @@ This metric appears in both the metrics and baseline pings.
     type: number
     group_label: "Metrics Memory Distribution Extensions Apis Dnr Startup Cache Write Size"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_write_size__sum {
@@ -1217,6 +1236,7 @@ This metric appears in both the metrics and baseline pings.
     type: number
     group_label: "Metrics Memory Distribution Fog Ipc Buffer Sizes"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__memory_distribution__fog_ipc_buffer_sizes__sum {
@@ -1236,6 +1256,7 @@ This metric appears in both the metrics and baseline pings.
     type: number
     group_label: "Metrics Memory Distribution Glean Database Size"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__memory_distribution__glean_database_size__sum {
@@ -1255,6 +1276,7 @@ This metric appears in both the metrics and baseline pings.
     type: number
     group_label: "Metrics Memory Distribution Glean Upload Discarded Exceeding Pings Size"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__sum {
@@ -1274,6 +1296,7 @@ This metric appears in both the metrics and baseline pings.
     type: number
     group_label: "Metrics Memory Distribution Glean Upload Pending Pings Directory Size"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
@@ -1616,6 +1639,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Cookie Banners Click Handle Duration"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__histogram_type {
@@ -1675,6 +1699,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Extensions Apis Dnr Evaluate Rules Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__extensions_apis_dnr_evaluate_rules_time__histogram_type {
@@ -1734,6 +1759,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Extensions Apis Dnr Startup Cache Read Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_read_time__histogram_type {
@@ -1793,6 +1819,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Extensions Apis Dnr Startup Cache Write Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__extensions_apis_dnr_startup_cache_write_time__histogram_type {
@@ -1852,6 +1879,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Extensions Apis Dnr Validate Rules Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__histogram_type {
@@ -1911,6 +1939,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Fingerprinting Protection Canvas Noise Calculate Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__histogram_type {
@@ -1970,6 +1999,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Fog Ipc Flush Durations"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__fog_ipc_flush_durations__histogram_type {
@@ -2029,6 +2059,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Glean Upload Send Failure"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__glean_upload_send_failure__histogram_type {
@@ -2088,6 +2119,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Glean Upload Send Success"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__glean_upload_send_success__histogram_type {
@@ -2147,6 +2179,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__histogram_type {
@@ -2206,6 +2239,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__glean_validation_shutdown_wait__histogram_type {
@@ -2265,6 +2299,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Network Open To Transaction Pending"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__histogram_type {
@@ -2324,6 +2359,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Networking Dns Failed Lookup Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__networking_dns_failed_lookup_time__histogram_type {
@@ -2383,6 +2419,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Networking Dns Lookup Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__networking_dns_lookup_time__histogram_type {
@@ -2442,6 +2479,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Networking Dns Renewal Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__networking_dns_renewal_time__histogram_type {
@@ -2501,6 +2539,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Networking Dns Renewal Time For Ttl"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__histogram_type {
@@ -2560,6 +2599,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Networking Http Content Onstart Delay"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__networking_http_content_onstart_delay__histogram_type {
@@ -2619,6 +2659,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Networking Http Content Onstop Delay"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__networking_http_content_onstop_delay__histogram_type {
@@ -2678,6 +2719,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Paint Build Displaylist Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__paint_build_displaylist_time__histogram_type {
@@ -2737,6 +2779,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Wr Framebuild Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__wr_framebuild_time__histogram_type {
@@ -2796,6 +2839,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Wr Gpu Wait Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__wr_gpu_wait_time__histogram_type {
@@ -2855,6 +2899,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Wr Rasterize Blobs Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__wr_rasterize_blobs_time__histogram_type {
@@ -2914,6 +2959,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Wr Rasterize Glyphs Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__wr_rasterize_glyphs_time__histogram_type {
@@ -2973,6 +3019,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Wr Renderer Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__wr_renderer_time__histogram_type {
@@ -3032,6 +3079,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Wr Renderer Time No Sc"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__wr_renderer_time_no_sc__histogram_type {
@@ -3091,6 +3139,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Wr Scenebuild Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__wr_scenebuild_time__histogram_type {
@@ -3150,6 +3199,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Wr Sceneswap Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__wr_sceneswap_time__histogram_type {
@@ -3209,6 +3259,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Wr Texture Cache Update Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__wr_texture_cache_update_time__histogram_type {
@@ -3268,6 +3319,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Wr Time To Frame Build"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__wr_time_to_frame_build__histogram_type {
@@ -3327,6 +3379,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Wr Time To Render Start"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__wr_time_to_render_start__histogram_type {
