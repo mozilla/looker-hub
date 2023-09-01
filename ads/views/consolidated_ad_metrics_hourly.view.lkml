@@ -86,47 +86,18 @@ view: consolidated_ad_metrics_hourly {
     type: string
   }
 
-  dimension_group: end {
-    sql: ${TABLE}.end_timestamp ;;
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-  }
-
-  dimension_group: start {
-    sql: ${TABLE}.start_timestamp ;;
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-  }
-
   dimension_group: submission {
-    sql: ${TABLE}.submission_date ;;
+    sql: ${TABLE}.submission_timestamp ;;
     type: time
     timeframes: [
       raw,
+      time,
       date,
       week,
       month,
       quarter,
       year,
     ]
-    convert_tz: no
-    datatype: date
   }
 
   sql_table_name: `mozdata.ads.consolidated_ad_metrics_hourly` ;;
