@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       ios_coordinators_rollout_2.branch
     ]
     filters:
-      ios_coordinators_rollout_2.metric: 'ad_clicks'
+      ios_coordinators_rollout_2.metric: 'days_of_use'
       ios_coordinators_rollout_2.statistic: mean
     row: 0
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       ios_coordinators_rollout_2.branch
     ]
     filters:
-      ios_coordinators_rollout_2.metric: 'days_of_use'
+      ios_coordinators_rollout_2.metric: 'ad_clicks'
       ios_coordinators_rollout_2.statistic: mean
     row: 20
     col: 0
