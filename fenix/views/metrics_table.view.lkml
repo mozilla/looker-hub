@@ -381,6 +381,20 @@ view: metrics_table {
     group_item_label: "Events Marketing Notification Allowed"
   }
 
+  dimension: metrics__boolean__extensions_use_remote_policy {
+    sql: ${TABLE}.metrics.boolean.extensions_use_remote_policy ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Extensions Use Remote Policy"
+  }
+
+  dimension: metrics__boolean__extensions_use_remote_pref {
+    sql: ${TABLE}.metrics.boolean.extensions_use_remote_pref ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Extensions Use Remote Pref"
+  }
+
   dimension: metrics__boolean__fog_failed_idle_registration {
     sql: ${TABLE}.metrics.boolean.fog_failed_idle_registration ;;
     type: yesno

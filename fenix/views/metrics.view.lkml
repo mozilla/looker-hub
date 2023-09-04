@@ -3597,6 +3597,42 @@ builds.
 "
   }
 
+  dimension: metrics__boolean__extensions_use_remote_policy {
+    label: "Extensions Use Remote Policy"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.extensions_use_remote_policy ;;
+    type: yesno
+    group_label: "Extensions"
+    group_item_label: "Use Remote Policy"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Use Remote Policy"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_use_remote_policy"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Corresponds to the value of `WebExtensionPolicy.useRemoteWebExtensions`.
+"
+  }
+
+  dimension: metrics__boolean__extensions_use_remote_pref {
+    label: "Extensions Use Remote Pref"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.extensions_use_remote_pref ;;
+    type: yesno
+    group_label: "Extensions"
+    group_item_label: "Use Remote Pref"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Use Remote Pref"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_use_remote_pref"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Corresponds to the value of `extensions.webextensions.remote` pref.
+"
+  }
+
   dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__sum {
     label: "Fingerprinting Protection Canvas Noise Calculate Time Sum"
     hidden: no
