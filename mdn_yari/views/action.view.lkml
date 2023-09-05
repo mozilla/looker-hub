@@ -134,6 +134,27 @@ expressed as a percentage.
 "
   }
 
+  dimension: metrics__string__page_is_baseline {
+    label: "Page Is Baseline"
+    hidden: no
+    sql: ${TABLE}.metrics.string.page_is_baseline ;;
+    type: string
+    group_label: "Page"
+    group_item_label: "Is Baseline"
+
+    link: {
+      label: "Glean Dictionary reference for Page Is Baseline"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/page_is_baseline"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Baseline status of the page:
+null: the page has no baseline status
+\"baseline\": the page is baseline
+\"not_baseline\" the page is not baseline
+"
+  }
+
   dimension: metrics__url2__page_path {
     label: "Page Path"
     hidden: no
