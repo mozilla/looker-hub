@@ -1484,6 +1484,11 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: top_sites
+    urlbar_events:
+      type: events_explore
+      views:
+        base_view: urlbar_events
+        extended_view: urlbar_events_table
   glean_app: true
   owners:
   - chutten@mozilla.com
@@ -1743,10 +1748,14 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.top_sites
       type: table_view
+    urlbar_events:
+      tables:
+      - base_table: mozdata.firefox_desktop.urlbar_events
+        events_table_view: urlbar_events_table
+      type: events_view
     urlbar_events_table:
       tables:
-      - channel: null
-        table: mozdata.firefox_desktop.urlbar_events
+      - table: mozdata.firefox_desktop.urlbar_events
       type: table_view
 firefox_desktop_background_tasks:
   explores:
