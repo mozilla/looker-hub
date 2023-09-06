@@ -326,6 +326,24 @@ view: metrics_table {
 "
   }
 
+  dimension: metrics__boolean__extensions_use_remote_policy {
+    sql: ${TABLE}.metrics.boolean.extensions_use_remote_policy ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Extensions Use Remote Policy"
+    description: "Corresponds to the value of `WebExtensionPolicy.useRemoteWebExtensions`.
+"
+  }
+
+  dimension: metrics__boolean__extensions_use_remote_pref {
+    sql: ${TABLE}.metrics.boolean.extensions_use_remote_pref ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Extensions Use Remote Pref"
+    description: "Corresponds to the value of `extensions.webextensions.remote` pref.
+"
+  }
+
   dimension: metrics__boolean__fog_failed_idle_registration {
     sql: ${TABLE}.metrics.boolean.fog_failed_idle_registration ;;
     type: yesno
@@ -847,6 +865,9 @@ DNR rules for extensions loaded on application startup.
     sql: ${TABLE}.metrics.labeled_counter.extensions_process_event ;;
     hidden: yes
     description: "Counters for how many times the extension process has crashed or been created.
+The labels with \"_fg\" / \"_bg\" suffixes are only recorded in Android builds,
+while the \"created\" and \"crashed\" labels are recorded on both Desktop and Android
+builds. 
 "
   }
 

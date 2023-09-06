@@ -1743,6 +1743,11 @@ firefox_desktop:
       - channel: null
         table: mozdata.firefox_desktop.top_sites
       type: table_view
+    urlbar_events_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.urlbar_events
+      type: table_view
 firefox_desktop_background_tasks:
   explores:
     background_tasks:
@@ -12342,6 +12347,14 @@ subscription_platform:
     monthly_active_logical_subscriptions:
       tables:
       - table: mozdata.subscription_platform.monthly_active_logical_subscriptions
+      type: table_view
+    stripe_plans:
+      tables:
+      - table: mozdata.subscription_platform.stripe_plans
+      type: table_view
+    stripe_products:
+      tables:
+      - table: mozdata.subscription_platform.stripe_products
       type: table_view
     stripe_subscriptions_v1:
       measures:

@@ -625,6 +625,11 @@ view: clients_daily_table {
     type: number
   }
 
+  dimension: has_adblocker_enabled {
+    sql: ${TABLE}.has_adblocker_enabled ;;
+    type: yesno
+  }
+
   dimension: histogram_parent_devtools_aboutdebugging_opened_count_sum {
     sql: ${TABLE}.histogram_parent_devtools_aboutdebugging_opened_count_sum ;;
     type: number
