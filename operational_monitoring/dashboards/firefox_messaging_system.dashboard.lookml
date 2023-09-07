@@ -156,7 +156,7 @@
     model: operational_monitoring
     explore: firefox_messaging_system_alerts
     type: looker_grid
-    fields: [firefox_messaging_system_alerts.submission_date, firefox_messaging_system_alerts.build_id,
+    fields: [firefox_messaging_system_alerts.submission_date,
       firefox_messaging_system_alerts.normalized_channel,
       firefox_messaging_system_alerts.normalized_os,
       firefox_messaging_system_alerts.metric, firefox_messaging_system_alerts.statistic, firefox_messaging_system_alerts.parameter,

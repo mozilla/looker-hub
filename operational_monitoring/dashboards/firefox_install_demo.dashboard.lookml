@@ -148,7 +148,7 @@
     model: operational_monitoring
     explore: firefox_install_demo_alerts
     type: looker_grid
-    fields: [firefox_install_demo_alerts.submission_date, firefox_install_demo_alerts.build_id,
+    fields: [firefox_install_demo_alerts.submission_date,
       firefox_install_demo_alerts.metric, firefox_install_demo_alerts.statistic, firefox_install_demo_alerts.parameter,
       firefox_install_demo_alerts.message, firefox_install_demo_alerts.branch, firefox_install_demo_alerts.errors]
     sorts: [firefox_install_demo_alerts.submission_date
