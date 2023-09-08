@@ -825,6 +825,12 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__labeled_boolean__data_storage_migration {
+    sql: ${TABLE}.metrics.labeled_boolean.data_storage_migration ;;
+    hidden: yes
+    description: "Indicates whether or not migration was successful for each nsIDataStorage."
+  }
+
   dimension: metrics__labeled_counter__cookie_banners_click_result {
     sql: ${TABLE}.metrics.labeled_counter.cookie_banners_click_result ;;
     hidden: yes
@@ -844,6 +850,12 @@ This does not include deletion-request pings.
     hidden: yes
     description: "Counts the number of hit/miss of cookie banner rule lookups for every load. We collect three types of counters, including counters for overall rule lookup, counters for cookie rule lookup and counters for click rule lookup. We also divide the counter by top-level loads and iframe loads.
 "
+  }
+
+  dimension: metrics__labeled_counter__data_storage_entries {
+    sql: ${TABLE}.metrics.labeled_counter.data_storage_entries ;;
+    hidden: yes
+    description: "Counts the number of entries stored in each nsIDataStorage."
   }
 
   dimension: metrics__labeled_counter__dotprint_failure {
@@ -3825,6 +3837,18 @@ view: metrics_table__metrics__labeled_boolean__cookie_banners_normal_window_serv
 }
 
 view: metrics_table__metrics__labeled_boolean__cookie_banners_private_window_service_mode {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__data_storage_migration {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

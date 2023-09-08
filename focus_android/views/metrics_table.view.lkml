@@ -884,6 +884,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_boolean__data_storage_migration {
+    sql: ${TABLE}.metrics.labeled_boolean.data_storage_migration ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     hidden: yes
@@ -921,6 +926,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__crash_metrics_crash_count {
     sql: ${TABLE}.metrics.labeled_counter.crash_metrics_crash_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__data_storage_entries {
+    sql: ${TABLE}.metrics.labeled_counter.data_storage_entries ;;
     hidden: yes
   }
 
@@ -3925,6 +3935,18 @@ view: metrics_table__metrics__labeled_boolean__cookie_banners_normal_window_serv
 }
 
 view: metrics_table__metrics__labeled_boolean__cookie_banners_private_window_service_mode {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__data_storage_migration {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
