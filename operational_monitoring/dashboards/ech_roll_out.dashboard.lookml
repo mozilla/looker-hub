@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-- dashboard: csv_import
-  title: Csv Import
+- dashboard: ech_roll_out
+  title: Ech Roll Out
   layout: newspaper
   preferred_viewer: dashboards-next
 
@@ -15,31 +15,31 @@
     note_state: expanded
     note_display: above
     note_text: Mean
-    explore: csv_import
+    explore: ech_roll_out
     type: looker_line
     fields: [
-      csv_import.submission_date,
-      csv_import.branch,
-      csv_import.point
+      ech_roll_out.submission_date,
+      ech_roll_out.branch,
+      ech_roll_out.point
     ]
     pivots: [
-      csv_import.branch
+      ech_roll_out.branch
     ]
     filters:
-      csv_import.metric: 'uri_count'
-      csv_import.statistic: mean
+      ech_roll_out.metric: 'uri_count'
+      ech_roll_out.statistic: mean
     row: 0
     col: 0
     width: 12
     height: 8
-    field_x: csv_import.submission_date
-    field_y: csv_import.point
+    field_x: ech_roll_out.submission_date
+    field_y: ech_roll_out.point
     log_scale: false
-    ci_lower: csv_import.lower
-    ci_upper: csv_import.upper
+    ci_lower: ech_roll_out.lower
+    ci_upper: ech_roll_out.upper
     show_grid: true
     listen:
-      Date: csv_import.submission_date
+      Date: ech_roll_out.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -49,31 +49,31 @@
     note_state: expanded
     note_display: above
     note_text: Mean
-    explore: csv_import
+    explore: ech_roll_out
     type: looker_line
     fields: [
-      csv_import.submission_date,
-      csv_import.branch,
-      csv_import.point
+      ech_roll_out.submission_date,
+      ech_roll_out.branch,
+      ech_roll_out.point
     ]
     pivots: [
-      csv_import.branch
+      ech_roll_out.branch
     ]
     filters:
-      csv_import.metric: 'ad_clicks'
-      csv_import.statistic: mean
+      ech_roll_out.metric: 'ad_clicks'
+      ech_roll_out.statistic: mean
     row: 0
     col: 12
     width: 12
     height: 8
-    field_x: csv_import.submission_date
-    field_y: csv_import.point
+    field_x: ech_roll_out.submission_date
+    field_y: ech_roll_out.point
     log_scale: false
-    ci_lower: csv_import.lower
-    ci_upper: csv_import.upper
+    ci_lower: ech_roll_out.lower
+    ci_upper: ech_roll_out.upper
     show_grid: true
     listen:
-      Date: csv_import.submission_date
+      Date: ech_roll_out.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -83,31 +83,31 @@
     note_state: expanded
     note_display: above
     note_text: Mean
-    explore: csv_import
+    explore: ech_roll_out
     type: looker_line
     fields: [
-      csv_import.submission_date,
-      csv_import.branch,
-      csv_import.point
+      ech_roll_out.submission_date,
+      ech_roll_out.branch,
+      ech_roll_out.point
     ]
     pivots: [
-      csv_import.branch
+      ech_roll_out.branch
     ]
     filters:
-      csv_import.metric: 'retained'
-      csv_import.statistic: mean
+      ech_roll_out.metric: 'retained'
+      ech_roll_out.statistic: mean
     row: 10
     col: 0
     width: 12
     height: 8
-    field_x: csv_import.submission_date
-    field_y: csv_import.point
+    field_x: ech_roll_out.submission_date
+    field_y: ech_roll_out.point
     log_scale: false
-    ci_lower: csv_import.lower
-    ci_upper: csv_import.upper
+    ci_lower: ech_roll_out.lower
+    ci_upper: ech_roll_out.upper
     show_grid: true
     listen:
-      Date: csv_import.submission_date
+      Date: ech_roll_out.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -117,31 +117,31 @@
     note_state: expanded
     note_display: above
     note_text: Mean
-    explore: csv_import
+    explore: ech_roll_out
     type: looker_line
     fields: [
-      csv_import.submission_date,
-      csv_import.branch,
-      csv_import.point
+      ech_roll_out.submission_date,
+      ech_roll_out.branch,
+      ech_roll_out.point
     ]
     pivots: [
-      csv_import.branch
+      ech_roll_out.branch
     ]
     filters:
-      csv_import.metric: 'active_hours'
-      csv_import.statistic: mean
+      ech_roll_out.metric: 'active_hours'
+      ech_roll_out.statistic: mean
     row: 10
     col: 12
     width: 12
     height: 8
-    field_x: csv_import.submission_date
-    field_y: csv_import.point
+    field_x: ech_roll_out.submission_date
+    field_y: ech_roll_out.point
     log_scale: false
-    ci_lower: csv_import.lower
-    ci_upper: csv_import.upper
+    ci_lower: ech_roll_out.lower
+    ci_upper: ech_roll_out.upper
     show_grid: true
     listen:
-      Date: csv_import.submission_date
+      Date: ech_roll_out.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -151,31 +151,31 @@
     note_state: expanded
     note_display: above
     note_text: Mean
-    explore: csv_import
+    explore: ech_roll_out
     type: looker_line
     fields: [
-      csv_import.submission_date,
-      csv_import.branch,
-      csv_import.point
+      ech_roll_out.submission_date,
+      ech_roll_out.branch,
+      ech_roll_out.point
     ]
     pivots: [
-      csv_import.branch
+      ech_roll_out.branch
     ]
     filters:
-      csv_import.metric: 'days_of_use'
-      csv_import.statistic: mean
+      ech_roll_out.metric: 'days_of_use'
+      ech_roll_out.statistic: mean
     row: 20
     col: 0
     width: 12
     height: 8
-    field_x: csv_import.submission_date
-    field_y: csv_import.point
+    field_x: ech_roll_out.submission_date
+    field_y: ech_roll_out.point
     log_scale: false
-    ci_lower: csv_import.lower
-    ci_upper: csv_import.upper
+    ci_lower: ech_roll_out.lower
+    ci_upper: ech_roll_out.upper
     show_grid: true
     listen:
-      Date: csv_import.submission_date
+      Date: ech_roll_out.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -185,34 +185,34 @@
     note_state: expanded
     note_display: above
     note_text: Percentile
-    explore: csv_import
+    explore: ech_roll_out
     type: "ci-line-chart"
     fields: [
-      csv_import.submission_date,
-      csv_import.branch,
-      csv_import.upper,
-      csv_import.lower,
-      csv_import.point
+      ech_roll_out.submission_date,
+      ech_roll_out.branch,
+      ech_roll_out.upper,
+      ech_roll_out.lower,
+      ech_roll_out.point
     ]
     pivots: [
-      csv_import.branch
+      ech_roll_out.branch
     ]
     filters:
-      csv_import.metric: 'memory_total'
-      csv_import.statistic: percentile
+      ech_roll_out.metric: 'memory_total'
+      ech_roll_out.statistic: percentile
     row: 20
     col: 12
     width: 12
     height: 8
-    field_x: csv_import.submission_date
-    field_y: csv_import.point
+    field_x: ech_roll_out.submission_date
+    field_y: ech_roll_out.point
     log_scale: false
-    ci_lower: csv_import.lower
-    ci_upper: csv_import.upper
+    ci_lower: ech_roll_out.lower
+    ci_upper: ech_roll_out.upper
     show_grid: true
     listen:
-      Date: csv_import.submission_date
-      Percentile: csv_import.parameter
+      Date: ech_roll_out.submission_date
+      Percentile: ech_roll_out.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -222,31 +222,31 @@
     note_state: expanded
     note_display: above
     note_text: Mean
-    explore: csv_import
+    explore: ech_roll_out
     type: looker_line
     fields: [
-      csv_import.submission_date,
-      csv_import.branch,
-      csv_import.point
+      ech_roll_out.submission_date,
+      ech_roll_out.branch,
+      ech_roll_out.point
     ]
     pivots: [
-      csv_import.branch
+      ech_roll_out.branch
     ]
     filters:
-      csv_import.metric: 'qualified_cumulative_days_of_use'
-      csv_import.statistic: mean
+      ech_roll_out.metric: 'qualified_cumulative_days_of_use'
+      ech_roll_out.statistic: mean
     row: 30
     col: 0
     width: 12
     height: 8
-    field_x: csv_import.submission_date
-    field_y: csv_import.point
+    field_x: ech_roll_out.submission_date
+    field_y: ech_roll_out.point
     log_scale: false
-    ci_lower: csv_import.lower
-    ci_upper: csv_import.upper
+    ci_lower: ech_roll_out.lower
+    ci_upper: ech_roll_out.upper
     show_grid: true
     listen:
-      Date: csv_import.submission_date
+      Date: ech_roll_out.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -256,31 +256,31 @@
     note_state: expanded
     note_display: above
     note_text: Mean
-    explore: csv_import
+    explore: ech_roll_out
     type: looker_line
     fields: [
-      csv_import.submission_date,
-      csv_import.branch,
-      csv_import.point
+      ech_roll_out.submission_date,
+      ech_roll_out.branch,
+      ech_roll_out.point
     ]
     pivots: [
-      csv_import.branch
+      ech_roll_out.branch
     ]
     filters:
-      csv_import.metric: 'search_count'
-      csv_import.statistic: mean
+      ech_roll_out.metric: 'search_count'
+      ech_roll_out.statistic: mean
     row: 30
     col: 12
     width: 12
     height: 8
-    field_x: csv_import.submission_date
-    field_y: csv_import.point
+    field_x: ech_roll_out.submission_date
+    field_y: ech_roll_out.point
     log_scale: false
-    ci_lower: csv_import.lower
-    ci_upper: csv_import.upper
+    ci_lower: ech_roll_out.lower
+    ci_upper: ech_roll_out.upper
     show_grid: true
     listen:
-      Date: csv_import.submission_date
+      Date: ech_roll_out.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -296,9 +296,9 @@
       type: advanced
       display: popover
     model: operational_monitoring
-    explore: csv_import
+    explore: ech_roll_out
     listens_to_filters: []
-    field: csv_import.submission_date
+    field: ech_roll_out.submission_date
 
   - name: Percentile
     title: Percentile
@@ -310,7 +310,7 @@
       type: advanced
       display: popover
     model: operational_monitoring
-    explore: csv_import
+    explore: ech_roll_out
     listens_to_filters: []
-    field: csv_import.parameter
+    field: ech_roll_out.parameter
   

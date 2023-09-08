@@ -1027,6 +1027,39 @@ in browser.
 "
   }
 
+  dimension: metrics__labeled_counter__data_storage_entries {
+    label: "Data Storage Entries"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.data_storage_entries ;;
+    group_label: "Data Storage"
+    group_item_label: "Entries"
+
+    link: {
+      label: "Glean Dictionary reference for Data Storage Entries"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/data_storage_entries"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of entries stored in each nsIDataStorage."
+  }
+
+  dimension: metrics__labeled_boolean__data_storage_migration {
+    label: "Data Storage Migration"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.data_storage_migration ;;
+    type: string
+    group_label: "Data Storage"
+    group_item_label: "Migration"
+
+    link: {
+      label: "Glean Dictionary reference for Data Storage Migration"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/data_storage_migration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates whether or not migration was successful for each nsIDataStorage."
+  }
+
   dimension: metrics__counter__dotprint_android_dialog_requested {
     label: "Dotprint Android Dialog Requested"
     hidden: no
@@ -1930,7 +1963,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__networking_http_content_onstart_delay__sum {
     label: "Networking Http Content Onstart Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.sum ;;
     type: number
     group_label: "Networking"
@@ -1948,7 +1981,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__networking_http_content_onstop_delay__sum {
     label: "Networking Http Content Onstop Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.sum ;;
     type: number
     group_label: "Networking"
@@ -5230,6 +5263,49 @@ view: metrics__metrics__labeled_counter__dap_upload_status {
   }
 }
 
+view: metrics__metrics__labeled_counter__data_storage_entries {
+  label: "Data Storage - Entries"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__data_storage_entries
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__data_storage_entries.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__dotprint_failure {
   label: "Dotprint - Failure"
 
@@ -7592,6 +7668,25 @@ view: suggest__metrics__metrics__labeled_counter__dap_upload_status {
     count(*) as n
 from mozdata.firefox_desktop.metrics as t,
 unnest(metrics.labeled_counter.dap_upload_status) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__data_storage_entries {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.data_storage_entries) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

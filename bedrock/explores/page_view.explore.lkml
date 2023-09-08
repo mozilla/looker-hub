@@ -9,7 +9,7 @@ include: "/looker-hub/bedrock/views/page_view.view.lkml"
 explore: page_view {
   sql_always_where: ${page_view.submission_date} >= '2010-01-01' ;;
   view_label: " Page_View"
-  description: "Explore for the page_view ping. A ping which is sent everytime a page is viewed."
+  description: "Explore for the page_view ping. A ping which is sent every time a page is viewed."
   view_name: page_view
 
   always_filter: {

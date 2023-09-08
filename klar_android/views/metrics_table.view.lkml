@@ -1094,6 +1094,12 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__labeled_boolean__data_storage_migration {
+    sql: ${TABLE}.metrics.labeled_boolean.data_storage_migration ;;
+    hidden: yes
+    description: "Indicates whether or not migration was successful for each nsIDataStorage."
+  }
+
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     hidden: yes
@@ -1172,6 +1178,12 @@ where:
     description: "Counts the number of crashes that occur in the application. This measures only the counts of each crash in association with the labeled type of the crash. The labels correspond to the types of crashes handled by lib-crash.
 Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_code_crash` replaced by `main_proc_native_code_crash`, `fg_proc_native_code_crash` and `bg_proc_native_code_crash`.
 "
+  }
+
+  dimension: metrics__labeled_counter__data_storage_entries {
+    sql: ${TABLE}.metrics.labeled_counter.data_storage_entries ;;
+    hidden: yes
+    description: "Counts the number of entries stored in each nsIDataStorage."
   }
 
   dimension: metrics__labeled_counter__dotprint_failure {
@@ -4381,6 +4393,18 @@ view: metrics_table__metrics__labeled_boolean__cookie_banners_normal_window_serv
 }
 
 view: metrics_table__metrics__labeled_boolean__cookie_banners_private_window_service_mode {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__data_storage_migration {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
