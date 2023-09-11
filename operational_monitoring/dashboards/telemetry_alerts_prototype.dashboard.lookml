@@ -49,7 +49,7 @@
     model: operational_monitoring
     explore: telemetry_alerts_prototype_alerts
     type: looker_grid
-    fields: [telemetry_alerts_prototype_alerts.submission_date, telemetry_alerts_prototype_alerts.build_id,
+    fields: [telemetry_alerts_prototype_alerts.build_id,
       telemetry_alerts_prototype_alerts.os,
       telemetry_alerts_prototype_alerts.metric, telemetry_alerts_prototype_alerts.statistic, telemetry_alerts_prototype_alerts.parameter,
       telemetry_alerts_prototype_alerts.message, telemetry_alerts_prototype_alerts.branch, telemetry_alerts_prototype_alerts.errors]
@@ -132,7 +132,7 @@
   - name: Metric
     title: Metric
     type: field_filter
-    default_value: 'gc_ms_content'
+    default_value: 'gc_budget_overrun'
     allow_multiple_values: false
     required: true
     ui_config:

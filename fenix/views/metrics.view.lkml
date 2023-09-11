@@ -5,6 +5,47 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics {
+  dimension: metrics__counter__addons_extensions_process_ui_disable {
+    label: "Addons Extensions Process Ui Disable"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.addons_extensions_process_ui_disable ;;
+    type: number
+    group_label: "Addons"
+    group_item_label: "Extensions Process Ui Disable"
+
+    link: {
+      label: "Glean Dictionary reference for Addons Extensions Process Ui Disable"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addons_extensions_process_ui_disable"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates the number of times that a user
+has clicked on the button continue with add-ons
+disabled on the dialog for when the extensions
+process crashed.
+"
+  }
+
+  dimension: metrics__counter__addons_extensions_process_ui_retry {
+    label: "Addons Extensions Process Ui Retry"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.addons_extensions_process_ui_retry ;;
+    type: number
+    group_label: "Addons"
+    group_item_label: "Extensions Process Ui Retry"
+
+    link: {
+      label: "Glean Dictionary reference for Addons Extensions Process Ui Retry"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addons_extensions_process_ui_retry"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates the number of times that a user
+has clicked on the button try to restart add-ons
+on the dialog for when the extensions process crashed.
+"
+  }
+
   dimension: metrics__boolean__addons_has_enabled_addons {
     label: "Addons Has Enabled Addons"
     hidden: no
@@ -3307,6 +3348,39 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
+  dimension: metrics__labeled_counter__data_storage_entries {
+    label: "Data Storage Entries"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.data_storage_entries ;;
+    group_label: "Data Storage"
+    group_item_label: "Entries"
+
+    link: {
+      label: "Glean Dictionary reference for Data Storage Entries"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/data_storage_entries"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of entries stored in each nsIDataStorage."
+  }
+
+  dimension: metrics__labeled_boolean__data_storage_migration {
+    label: "Data Storage Migration"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.data_storage_migration ;;
+    type: string
+    group_label: "Data Storage"
+    group_item_label: "Migration"
+
+    link: {
+      label: "Glean Dictionary reference for Data Storage Migration"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/data_storage_migration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates whether or not migration was successful for each nsIDataStorage."
+  }
+
   dimension: metrics__counter__dotprint_android_dialog_requested {
     label: "Dotprint Android Dialog Requested"
     hidden: no
@@ -3594,6 +3668,42 @@ builds.
     }
 
     description: "Time to load and deserialize the extensions startupCache data.
+"
+  }
+
+  dimension: metrics__boolean__extensions_use_remote_policy {
+    label: "Extensions Use Remote Policy"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.extensions_use_remote_policy ;;
+    type: yesno
+    group_label: "Extensions"
+    group_item_label: "Use Remote Policy"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Use Remote Policy"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_use_remote_policy"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Corresponds to the value of `WebExtensionPolicy.useRemoteWebExtensions`.
+"
+  }
+
+  dimension: metrics__boolean__extensions_use_remote_pref {
+    label: "Extensions Use Remote Pref"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.extensions_use_remote_pref ;;
+    type: yesno
+    group_label: "Extensions"
+    group_item_label: "Use Remote Pref"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Use Remote Pref"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_use_remote_pref"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Corresponds to the value of `extensions.webextensions.remote` pref.
 "
   }
 
@@ -4337,7 +4447,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__networking_http_content_onstart_delay__sum {
     label: "Networking Http Content Onstart Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.sum ;;
     type: number
     group_label: "Networking"
@@ -4355,7 +4465,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__networking_http_content_onstop_delay__sum {
     label: "Networking Http Content Onstop Delay Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.sum ;;
     type: number
     group_label: "Networking"
@@ -9378,6 +9488,56 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: count
   }
 
+  measure: addons_extensions_process_ui_disable {
+    type: sum
+    sql: ${metrics__counter__addons_extensions_process_ui_disable} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Addons Extensions Process Ui Disable"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addons_extensions_process_ui_disable"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: addons_extensions_process_ui_disable_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__addons_extensions_process_ui_disable: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Addons Extensions Process Ui Disable"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addons_extensions_process_ui_disable"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: addons_extensions_process_ui_retry {
+    type: sum
+    sql: ${metrics__counter__addons_extensions_process_ui_retry} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Addons Extensions Process Ui Retry"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addons_extensions_process_ui_retry"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: addons_extensions_process_ui_retry_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__addons_extensions_process_ui_retry: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Addons Extensions Process Ui Retry"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addons_extensions_process_ui_retry"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: addresses_deleted {
     type: sum
     sql: ${metrics__counter__addresses_deleted} ;;
@@ -12228,6 +12388,49 @@ view: metrics__metrics__labeled_counter__crash_metrics_crash_count {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__crash_metrics_crash_count
     suggest_dimension: suggest__metrics__metrics__labeled_counter__crash_metrics_crash_count.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__data_storage_entries {
+  label: "Data Storage - Entries"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__data_storage_entries
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__data_storage_entries.key
     hidden: no
   }
 
@@ -15718,6 +15921,25 @@ view: suggest__metrics__metrics__labeled_counter__crash_metrics_crash_count {
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.crash_metrics_crash_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__data_storage_entries {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.data_storage_entries) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

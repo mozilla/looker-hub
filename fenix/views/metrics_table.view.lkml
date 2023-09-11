@@ -381,6 +381,20 @@ view: metrics_table {
     group_item_label: "Events Marketing Notification Allowed"
   }
 
+  dimension: metrics__boolean__extensions_use_remote_policy {
+    sql: ${TABLE}.metrics.boolean.extensions_use_remote_policy ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Extensions Use Remote Policy"
+  }
+
+  dimension: metrics__boolean__extensions_use_remote_pref {
+    sql: ${TABLE}.metrics.boolean.extensions_use_remote_pref ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Extensions Use Remote Pref"
+  }
+
   dimension: metrics__boolean__fog_failed_idle_registration {
     sql: ${TABLE}.metrics.boolean.fog_failed_idle_registration ;;
     type: yesno
@@ -631,6 +645,20 @@ view: metrics_table {
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Wallpapers Discovered Wallpaper Feature"
+  }
+
+  dimension: metrics__counter__addons_extensions_process_ui_disable {
+    sql: ${TABLE}.metrics.counter.addons_extensions_process_ui_disable ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Addons Extensions Process Ui Disable"
+  }
+
+  dimension: metrics__counter__addons_extensions_process_ui_retry {
+    sql: ${TABLE}.metrics.counter.addons_extensions_process_ui_retry ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Addons Extensions Process Ui Retry"
   }
 
   dimension: metrics__counter__addresses_deleted {
@@ -1591,6 +1619,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_boolean__data_storage_migration {
+    sql: ${TABLE}.metrics.labeled_boolean.data_storage_migration ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__avif_a1lx {
     sql: ${TABLE}.metrics.labeled_counter.avif_a1lx ;;
     hidden: yes
@@ -1723,6 +1756,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__crash_metrics_crash_count {
     sql: ${TABLE}.metrics.labeled_counter.crash_metrics_crash_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__data_storage_entries {
+    sql: ${TABLE}.metrics.labeled_counter.data_storage_entries ;;
     hidden: yes
   }
 
@@ -11619,6 +11657,18 @@ view: metrics_table__metrics__labeled_boolean__cookie_banners_normal_window_serv
 }
 
 view: metrics_table__metrics__labeled_boolean__cookie_banners_private_window_service_mode {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__data_storage_migration {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

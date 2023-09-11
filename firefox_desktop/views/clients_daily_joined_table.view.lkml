@@ -99,6 +99,13 @@ view: clients_daily_joined_table {
     group_item_label: "Content"
   }
 
+  dimension: attribution__dlsource {
+    sql: ${TABLE}.attribution.dlsource ;;
+    type: string
+    group_label: "Attribution"
+    group_item_label: "Dlsource"
+  }
+
   dimension: attribution__dltoken {
     sql: ${TABLE}.attribution.dltoken ;;
     type: string

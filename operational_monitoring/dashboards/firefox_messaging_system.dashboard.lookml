@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Client Volume
-    name: Client Volume_sum
+  - title: Undesired Events Ping Volume
+    name: Undesired Events Ping Volume_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,45 +26,10 @@
       firefox_messaging_system.branch
     ]
     filters:
-      firefox_messaging_system.metric: 'client_volume'
+      firefox_messaging_system.metric: 'undesired_events_ping_volume'
       firefox_messaging_system.statistic: sum
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: firefox_messaging_system.submission_date
-    field_y: firefox_messaging_system.point
-    log_scale: false
-    ci_lower: firefox_messaging_system.lower
-    ci_upper: firefox_messaging_system.upper
-    show_grid: true
-    listen:
-      Date: firefox_messaging_system.submission_date
-      Normalized Channel: firefox_messaging_system.normalized_channel
-      Normalized Os: firefox_messaging_system.normalized_os
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Ping Volume
-    name: Ping Volume_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: firefox_messaging_system
-    type: looker_line
-    fields: [
-      firefox_messaging_system.submission_date,
-      firefox_messaging_system.branch,
-      firefox_messaging_system.point
-    ]
-    pivots: [
-      firefox_messaging_system.branch
-    ]
-    filters:
-      firefox_messaging_system.metric: 'ping_volume'
-      firefox_messaging_system.statistic: sum
-    row: 0
-    col: 12
     width: 12
     height: 8
     field_x: firefox_messaging_system.submission_date
@@ -96,7 +61,42 @@
       firefox_messaging_system.branch, firefox_messaging_system.metric 
     ]
     filters:
-      firefox_messaging_system.metric: '"infobar_ping_volume", "moments_ping_volume", "null_ping_volume", "other_ping_volume", "undesired_events_ping_volume", "spotlight_ping_volume", "cfr_ping_volume", "whats_new_panel_ping_volume"'
+      firefox_messaging_system.metric: '"infobar_ping_volume", "other_ping_volume", "whats_new_panel_ping_volume", "null_ping_volume", "cfr_ping_volume", "moments_ping_volume", "spotlight_ping_volume"'
+      firefox_messaging_system.statistic: sum
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: firefox_messaging_system.submission_date
+    field_y: firefox_messaging_system.point
+    log_scale: false
+    ci_lower: firefox_messaging_system.lower
+    ci_upper: firefox_messaging_system.upper
+    show_grid: true
+    listen:
+      Date: firefox_messaging_system.submission_date
+      Normalized Channel: firefox_messaging_system.normalized_channel
+      Normalized Os: firefox_messaging_system.normalized_os
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Client Volume
+    name: Client Volume_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: firefox_messaging_system
+    type: looker_line
+    fields: [
+      firefox_messaging_system.submission_date,
+      firefox_messaging_system.branch,
+      firefox_messaging_system.point
+    ]
+    pivots: [
+      firefox_messaging_system.branch
+    ]
+    filters:
+      firefox_messaging_system.metric: 'client_volume'
       firefox_messaging_system.statistic: sum
     row: 10
     col: 0
@@ -150,13 +150,48 @@
       
     active: "#3FE1B0"
     defaults_version: 0
+  - title: Ping Volume
+    name: Ping Volume_sum
+    note_state: expanded
+    note_display: above
+    note_text: Sum
+    explore: firefox_messaging_system
+    type: looker_line
+    fields: [
+      firefox_messaging_system.submission_date,
+      firefox_messaging_system.branch,
+      firefox_messaging_system.point
+    ]
+    pivots: [
+      firefox_messaging_system.branch
+    ]
+    filters:
+      firefox_messaging_system.metric: 'ping_volume'
+      firefox_messaging_system.statistic: sum
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: firefox_messaging_system.submission_date
+    field_y: firefox_messaging_system.point
+    log_scale: false
+    ci_lower: firefox_messaging_system.lower
+    ci_upper: firefox_messaging_system.upper
+    show_grid: true
+    listen:
+      Date: firefox_messaging_system.submission_date
+      Normalized Channel: firefox_messaging_system.normalized_channel
+      Normalized Os: firefox_messaging_system.normalized_os
+      
+    active: "#3FE1B0"
+    defaults_version: 0
   
   - title: Alerts
     name: Alerts
     model: operational_monitoring
     explore: firefox_messaging_system_alerts
     type: looker_grid
-    fields: [firefox_messaging_system_alerts.submission_date, firefox_messaging_system_alerts.build_id,
+    fields: [firefox_messaging_system_alerts.submission_date,
       firefox_messaging_system_alerts.normalized_channel,
       firefox_messaging_system_alerts.normalized_os,
       firefox_messaging_system_alerts.metric, firefox_messaging_system_alerts.statistic, firefox_messaging_system_alerts.parameter,
@@ -241,16 +276,16 @@
   - title: Normalized Channel
     name: Normalized Channel
     type: string_filter
-    default_value: 'aurora'
+    default_value: 'beta'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'aurora'
       - 'beta'
       - 'nightly'
+      - 'aurora'
       - 'release'
       - 'Other'
       - 'esr'
