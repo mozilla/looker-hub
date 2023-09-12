@@ -710,7 +710,7 @@ fenix:
     metric_definitions_fenix:
       type: metric_definitions_explore
       views:
-        base_view: client_counts
+        base_view: baseline_clients_daily_table
         joined_views:
         - metric_definitions_active_users_aggregates_v1
         - metric_definitions_baseline
@@ -1488,7 +1488,7 @@ firefox_desktop:
     metric_definitions_firefox_desktop:
       type: metric_definitions_explore
       views:
-        base_view: client_counts
+        base_view: baseline_clients_daily_table
         joined_views:
         - metric_definitions_active_users_aggregates_v1
         - metric_definitions_activity_stream_events
@@ -2142,7 +2142,7 @@ firefox_ios:
     metric_definitions_firefox_ios:
       type: metric_definitions_explore
       views:
-        base_view: client_counts
+        base_view: baseline_clients_daily_table
         joined_views:
         - metric_definitions_active_users_aggregates_v1
         - metric_definitions_baseline
@@ -2850,7 +2850,7 @@ focus_android:
     metric_definitions_focus_android:
       type: metric_definitions_explore
       views:
-        base_view: client_counts
+        base_view: baseline_clients_daily_table
         joined_views:
         - metric_definitions_active_users_aggregates_v1
         - metric_definitions_baseline
@@ -3143,7 +3143,7 @@ focus_ios:
     metric_definitions_focus_ios:
       type: metric_definitions_explore
       views:
-        base_view: client_counts
+        base_view: baseline_clients_daily_table
         joined_views:
         - metric_definitions_active_users_aggregates_v1
         - metric_definitions_baseline
@@ -3352,7 +3352,7 @@ klar_android:
     metric_definitions_klar_android:
       type: metric_definitions_explore
       views:
-        base_view: client_counts
+        base_view: baseline_clients_daily_table
         joined_views:
         - metric_definitions_baseline
         - metric_definitions_metrics
@@ -3500,7 +3500,7 @@ klar_ios:
     metric_definitions_klar_ios:
       type: metric_definitions_explore
       views:
-        base_view: client_counts
+        base_view: baseline_clients_daily_table
         joined_views:
         - metric_definitions_baseline
         - metric_definitions_metrics

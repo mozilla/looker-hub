@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/focus_ios/views/client_counts.view.lkml"
+include: "/looker-hub/focus_ios/views/baseline_clients_daily_table.view.lkml"
 include: "/looker-hub/focus_ios/views/metric_definitions_active_users_aggregates_v1.view.lkml"
 include: "/looker-hub/focus_ios/views/metric_definitions_baseline.view.lkml"
 include: "/looker-hub/focus_ios/views/metric_definitions_baseline_v2.view.lkml"
@@ -12,7 +12,7 @@ include: "/looker-hub/focus_ios/views/metric_definitions_metrics.view.lkml"
 include: "/looker-hub/focus_ios/views/metric_definitions_mobile_search_clients_engines_sources_daily.view.lkml"
 
 explore: metric_definitions_focus_ios {
-  from: client_counts
+  from: baseline_clients_daily_table
   view_label: "Base Fields"
 
   join: metric_definitions_active_users_aggregates_v1 {
