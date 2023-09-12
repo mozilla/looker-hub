@@ -26,7 +26,7 @@
       firefox_install_demo.branch, firefox_install_demo.metric 
     ]
     filters:
-      firefox_install_demo.metric: '"install_volume_win8", "install_volume_win8_1", "install_volume_win10", "install_volume_win7"'
+      firefox_install_demo.metric: '"install_volume_win10", "install_volume_win7", "install_volume_win8", "install_volume_win8_1"'
       firefox_install_demo.statistic: sum
     row: 0
     col: 0
@@ -59,7 +59,7 @@
       firefox_install_demo.branch, firefox_install_demo.metric 
     ]
     filters:
-      firefox_install_demo.metric: '"install_volume_win8", "install_volume_win8_1", "install_volume_win10", "install_volume_win7"'
+      firefox_install_demo.metric: '"install_volume_win10", "install_volume_win7", "install_volume_win8", "install_volume_win8_1"'
       firefox_install_demo.statistic: mean
     row: 0
     col: 12
@@ -148,7 +148,7 @@
     model: operational_monitoring
     explore: firefox_install_demo_alerts
     type: looker_grid
-    fields: [firefox_install_demo_alerts.submission_date, firefox_install_demo_alerts.build_id,
+    fields: [firefox_install_demo_alerts.submission_date,
       firefox_install_demo_alerts.metric, firefox_install_demo_alerts.statistic, firefox_install_demo_alerts.parameter,
       firefox_install_demo_alerts.message, firefox_install_demo_alerts.branch, firefox_install_demo_alerts.errors]
     sorts: [firefox_install_demo_alerts.submission_date

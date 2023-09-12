@@ -406,6 +406,18 @@ one of \"xs\", \"sm\", \"md\",\"lg\", \"xl\" or \"xxl\".
 "
   }
 
+  dimension: metrics__string__page_is_baseline {
+    sql: ${TABLE}.metrics.string.page_is_baseline ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Page Is Baseline"
+    description: "The Baseline status of the page:
+null: the page has no baseline status
+\"baseline\": the page is baseline
+\"not_baseline\" the page is not baseline
+"
+  }
+
   dimension: metrics__url__page_path {
     sql: ${TABLE}.metrics.url.page_path ;;
     type: string

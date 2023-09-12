@@ -30,6 +30,11 @@ view: airflow_task_instance {
     type: string
   }
 
+  dimension: job_id {
+    sql: ${TABLE}.job_id ;;
+    type: number
+  }
+
   dimension: map_index {
     sql: ${TABLE}.map_index ;;
     type: number
@@ -117,20 +122,6 @@ view: airflow_task_instance {
 
   dimension_group: end {
     sql: ${TABLE}.end_date ;;
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-  }
-
-  dimension_group: job_id {
-    sql: ${TABLE}.job_id ;;
     type: time
     timeframes: [
       raw,
