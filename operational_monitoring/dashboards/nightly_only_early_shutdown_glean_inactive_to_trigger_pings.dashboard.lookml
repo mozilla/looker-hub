@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       nightly_only_early_shutdown_glean_inactive_to_trigger_pings.branch
     ]
     filters:
-      nightly_only_early_shutdown_glean_inactive_to_trigger_pings.metric: 'ad_clicks'
+      nightly_only_early_shutdown_glean_inactive_to_trigger_pings.metric: 'active_hours'
       nightly_only_early_shutdown_glean_inactive_to_trigger_pings.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       nightly_only_early_shutdown_glean_inactive_to_trigger_pings.branch
     ]
     filters:
-      nightly_only_early_shutdown_glean_inactive_to_trigger_pings.metric: 'retained'
+      nightly_only_early_shutdown_glean_inactive_to_trigger_pings.metric: 'days_of_use'
       nightly_only_early_shutdown_glean_inactive_to_trigger_pings.statistic: mean
     row: 0
     col: 12
@@ -146,26 +146,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: nightly_only_early_shutdown_glean_inactive_to_trigger_pings
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       nightly_only_early_shutdown_glean_inactive_to_trigger_pings.submission_date,
       nightly_only_early_shutdown_glean_inactive_to_trigger_pings.branch,
-      nightly_only_early_shutdown_glean_inactive_to_trigger_pings.upper,
-      nightly_only_early_shutdown_glean_inactive_to_trigger_pings.lower,
       nightly_only_early_shutdown_glean_inactive_to_trigger_pings.point
     ]
     pivots: [
       nightly_only_early_shutdown_glean_inactive_to_trigger_pings.branch
     ]
     filters:
-      nightly_only_early_shutdown_glean_inactive_to_trigger_pings.metric: 'memory_total'
-      nightly_only_early_shutdown_glean_inactive_to_trigger_pings.statistic: percentile
+      nightly_only_early_shutdown_glean_inactive_to_trigger_pings.metric: 'retained'
+      nightly_only_early_shutdown_glean_inactive_to_trigger_pings.statistic: mean
     row: 20
     col: 0
     width: 12
@@ -178,7 +176,6 @@
     show_grid: true
     listen:
       Date: nightly_only_early_shutdown_glean_inactive_to_trigger_pings.submission_date
-      Percentile: nightly_only_early_shutdown_glean_inactive_to_trigger_pings.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -217,24 +214,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: nightly_only_early_shutdown_glean_inactive_to_trigger_pings
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       nightly_only_early_shutdown_glean_inactive_to_trigger_pings.submission_date,
       nightly_only_early_shutdown_glean_inactive_to_trigger_pings.branch,
+      nightly_only_early_shutdown_glean_inactive_to_trigger_pings.upper,
+      nightly_only_early_shutdown_glean_inactive_to_trigger_pings.lower,
       nightly_only_early_shutdown_glean_inactive_to_trigger_pings.point
     ]
     pivots: [
       nightly_only_early_shutdown_glean_inactive_to_trigger_pings.branch
     ]
     filters:
-      nightly_only_early_shutdown_glean_inactive_to_trigger_pings.metric: 'days_of_use'
-      nightly_only_early_shutdown_glean_inactive_to_trigger_pings.statistic: mean
+      nightly_only_early_shutdown_glean_inactive_to_trigger_pings.metric: 'memory_total'
+      nightly_only_early_shutdown_glean_inactive_to_trigger_pings.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -247,12 +246,13 @@
     show_grid: true
     listen:
       Date: nightly_only_early_shutdown_glean_inactive_to_trigger_pings.submission_date
+      Percentile: nightly_only_early_shutdown_glean_inactive_to_trigger_pings.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       nightly_only_early_shutdown_glean_inactive_to_trigger_pings.branch
     ]
     filters:
-      nightly_only_early_shutdown_glean_inactive_to_trigger_pings.metric: 'active_hours'
+      nightly_only_early_shutdown_glean_inactive_to_trigger_pings.metric: 'ad_clicks'
       nightly_only_early_shutdown_glean_inactive_to_trigger_pings.statistic: mean
     row: 30
     col: 12

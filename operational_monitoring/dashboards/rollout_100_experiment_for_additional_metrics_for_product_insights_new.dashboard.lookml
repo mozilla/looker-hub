@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       rollout_100_experiment_for_additional_metrics_for_product_insights_new.branch
     ]
     filters:
-      rollout_100_experiment_for_additional_metrics_for_product_insights_new.metric: 'ad_clicks'
+      rollout_100_experiment_for_additional_metrics_for_product_insights_new.metric: 'active_hours'
       rollout_100_experiment_for_additional_metrics_for_product_insights_new.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       rollout_100_experiment_for_additional_metrics_for_product_insights_new.branch
     ]
     filters:
-      rollout_100_experiment_for_additional_metrics_for_product_insights_new.metric: 'retained'
+      rollout_100_experiment_for_additional_metrics_for_product_insights_new.metric: 'days_of_use'
       rollout_100_experiment_for_additional_metrics_for_product_insights_new.statistic: mean
     row: 0
     col: 12
@@ -146,26 +146,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: rollout_100_experiment_for_additional_metrics_for_product_insights_new
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       rollout_100_experiment_for_additional_metrics_for_product_insights_new.submission_date,
       rollout_100_experiment_for_additional_metrics_for_product_insights_new.branch,
-      rollout_100_experiment_for_additional_metrics_for_product_insights_new.upper,
-      rollout_100_experiment_for_additional_metrics_for_product_insights_new.lower,
       rollout_100_experiment_for_additional_metrics_for_product_insights_new.point
     ]
     pivots: [
       rollout_100_experiment_for_additional_metrics_for_product_insights_new.branch
     ]
     filters:
-      rollout_100_experiment_for_additional_metrics_for_product_insights_new.metric: 'memory_total'
-      rollout_100_experiment_for_additional_metrics_for_product_insights_new.statistic: percentile
+      rollout_100_experiment_for_additional_metrics_for_product_insights_new.metric: 'retained'
+      rollout_100_experiment_for_additional_metrics_for_product_insights_new.statistic: mean
     row: 20
     col: 0
     width: 12
@@ -178,7 +176,6 @@
     show_grid: true
     listen:
       Date: rollout_100_experiment_for_additional_metrics_for_product_insights_new.submission_date
-      Percentile: rollout_100_experiment_for_additional_metrics_for_product_insights_new.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -217,24 +214,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: rollout_100_experiment_for_additional_metrics_for_product_insights_new
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       rollout_100_experiment_for_additional_metrics_for_product_insights_new.submission_date,
       rollout_100_experiment_for_additional_metrics_for_product_insights_new.branch,
+      rollout_100_experiment_for_additional_metrics_for_product_insights_new.upper,
+      rollout_100_experiment_for_additional_metrics_for_product_insights_new.lower,
       rollout_100_experiment_for_additional_metrics_for_product_insights_new.point
     ]
     pivots: [
       rollout_100_experiment_for_additional_metrics_for_product_insights_new.branch
     ]
     filters:
-      rollout_100_experiment_for_additional_metrics_for_product_insights_new.metric: 'days_of_use'
-      rollout_100_experiment_for_additional_metrics_for_product_insights_new.statistic: mean
+      rollout_100_experiment_for_additional_metrics_for_product_insights_new.metric: 'memory_total'
+      rollout_100_experiment_for_additional_metrics_for_product_insights_new.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -247,12 +246,13 @@
     show_grid: true
     listen:
       Date: rollout_100_experiment_for_additional_metrics_for_product_insights_new.submission_date
+      Percentile: rollout_100_experiment_for_additional_metrics_for_product_insights_new.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       rollout_100_experiment_for_additional_metrics_for_product_insights_new.branch
     ]
     filters:
-      rollout_100_experiment_for_additional_metrics_for_product_insights_new.metric: 'active_hours'
+      rollout_100_experiment_for_additional_metrics_for_product_insights_new.metric: 'ad_clicks'
       rollout_100_experiment_for_additional_metrics_for_product_insights_new.statistic: mean
     row: 30
     col: 12

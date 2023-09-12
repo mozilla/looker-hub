@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       next_generation_accessibility_engine_powering_screen_readers.branch
     ]
     filters:
-      next_generation_accessibility_engine_powering_screen_readers.metric: 'ad_clicks'
+      next_generation_accessibility_engine_powering_screen_readers.metric: 'active_hours'
       next_generation_accessibility_engine_powering_screen_readers.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       next_generation_accessibility_engine_powering_screen_readers.branch
     ]
     filters:
-      next_generation_accessibility_engine_powering_screen_readers.metric: 'retained'
+      next_generation_accessibility_engine_powering_screen_readers.metric: 'days_of_use'
       next_generation_accessibility_engine_powering_screen_readers.statistic: mean
     row: 0
     col: 12
@@ -146,26 +146,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: next_generation_accessibility_engine_powering_screen_readers
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       next_generation_accessibility_engine_powering_screen_readers.submission_date,
       next_generation_accessibility_engine_powering_screen_readers.branch,
-      next_generation_accessibility_engine_powering_screen_readers.upper,
-      next_generation_accessibility_engine_powering_screen_readers.lower,
       next_generation_accessibility_engine_powering_screen_readers.point
     ]
     pivots: [
       next_generation_accessibility_engine_powering_screen_readers.branch
     ]
     filters:
-      next_generation_accessibility_engine_powering_screen_readers.metric: 'memory_total'
-      next_generation_accessibility_engine_powering_screen_readers.statistic: percentile
+      next_generation_accessibility_engine_powering_screen_readers.metric: 'retained'
+      next_generation_accessibility_engine_powering_screen_readers.statistic: mean
     row: 20
     col: 0
     width: 12
@@ -178,7 +176,6 @@
     show_grid: true
     listen:
       Date: next_generation_accessibility_engine_powering_screen_readers.submission_date
-      Percentile: next_generation_accessibility_engine_powering_screen_readers.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -217,24 +214,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: next_generation_accessibility_engine_powering_screen_readers
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       next_generation_accessibility_engine_powering_screen_readers.submission_date,
       next_generation_accessibility_engine_powering_screen_readers.branch,
+      next_generation_accessibility_engine_powering_screen_readers.upper,
+      next_generation_accessibility_engine_powering_screen_readers.lower,
       next_generation_accessibility_engine_powering_screen_readers.point
     ]
     pivots: [
       next_generation_accessibility_engine_powering_screen_readers.branch
     ]
     filters:
-      next_generation_accessibility_engine_powering_screen_readers.metric: 'days_of_use'
-      next_generation_accessibility_engine_powering_screen_readers.statistic: mean
+      next_generation_accessibility_engine_powering_screen_readers.metric: 'memory_total'
+      next_generation_accessibility_engine_powering_screen_readers.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -247,12 +246,13 @@
     show_grid: true
     listen:
       Date: next_generation_accessibility_engine_powering_screen_readers.submission_date
+      Percentile: next_generation_accessibility_engine_powering_screen_readers.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       next_generation_accessibility_engine_powering_screen_readers.branch
     ]
     filters:
-      next_generation_accessibility_engine_powering_screen_readers.metric: 'active_hours'
+      next_generation_accessibility_engine_powering_screen_readers.metric: 'ad_clicks'
       next_generation_accessibility_engine_powering_screen_readers.statistic: mean
     row: 30
     col: 12

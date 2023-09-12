@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       serp_ad_telemetry_validation_rollout.branch
     ]
     filters:
-      serp_ad_telemetry_validation_rollout.metric: 'ad_clicks'
+      serp_ad_telemetry_validation_rollout.metric: 'active_hours'
       serp_ad_telemetry_validation_rollout.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       serp_ad_telemetry_validation_rollout.branch
     ]
     filters:
-      serp_ad_telemetry_validation_rollout.metric: 'retained'
+      serp_ad_telemetry_validation_rollout.metric: 'days_of_use'
       serp_ad_telemetry_validation_rollout.statistic: mean
     row: 0
     col: 12
@@ -146,26 +146,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: serp_ad_telemetry_validation_rollout
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       serp_ad_telemetry_validation_rollout.submission_date,
       serp_ad_telemetry_validation_rollout.branch,
-      serp_ad_telemetry_validation_rollout.upper,
-      serp_ad_telemetry_validation_rollout.lower,
       serp_ad_telemetry_validation_rollout.point
     ]
     pivots: [
       serp_ad_telemetry_validation_rollout.branch
     ]
     filters:
-      serp_ad_telemetry_validation_rollout.metric: 'memory_total'
-      serp_ad_telemetry_validation_rollout.statistic: percentile
+      serp_ad_telemetry_validation_rollout.metric: 'retained'
+      serp_ad_telemetry_validation_rollout.statistic: mean
     row: 20
     col: 0
     width: 12
@@ -178,7 +176,6 @@
     show_grid: true
     listen:
       Date: serp_ad_telemetry_validation_rollout.submission_date
-      Percentile: serp_ad_telemetry_validation_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -217,24 +214,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: serp_ad_telemetry_validation_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       serp_ad_telemetry_validation_rollout.submission_date,
       serp_ad_telemetry_validation_rollout.branch,
+      serp_ad_telemetry_validation_rollout.upper,
+      serp_ad_telemetry_validation_rollout.lower,
       serp_ad_telemetry_validation_rollout.point
     ]
     pivots: [
       serp_ad_telemetry_validation_rollout.branch
     ]
     filters:
-      serp_ad_telemetry_validation_rollout.metric: 'days_of_use'
-      serp_ad_telemetry_validation_rollout.statistic: mean
+      serp_ad_telemetry_validation_rollout.metric: 'memory_total'
+      serp_ad_telemetry_validation_rollout.statistic: percentile
     row: 30
     col: 0
     width: 12
@@ -247,12 +246,13 @@
     show_grid: true
     listen:
       Date: serp_ad_telemetry_validation_rollout.submission_date
+      Percentile: serp_ad_telemetry_validation_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       serp_ad_telemetry_validation_rollout.branch
     ]
     filters:
-      serp_ad_telemetry_validation_rollout.metric: 'active_hours'
+      serp_ad_telemetry_validation_rollout.metric: 'ad_clicks'
       serp_ad_telemetry_validation_rollout.statistic: mean
     row: 30
     col: 12
