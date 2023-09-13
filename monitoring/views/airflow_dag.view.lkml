@@ -89,6 +89,7 @@ view: airflow_dag {
       quarter,
       year,
     ]
+    description: "The last time the DAG was parsed"
   }
 
   dimension_group: next_dagrun {

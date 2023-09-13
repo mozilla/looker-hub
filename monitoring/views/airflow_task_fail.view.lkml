@@ -8,6 +8,7 @@ view: airflow_task_fail {
   dimension: dag_id {
     sql: ${TABLE}.dag_id ;;
     type: string
+    description: "Airflow DAG id"
   }
 
   dimension: duration {
@@ -18,6 +19,7 @@ view: airflow_task_fail {
   dimension: task_id {
     sql: ${TABLE}.task_id ;;
     type: string
+    description: "Airflow task id"
   }
 
   dimension_group: end {

@@ -326,9 +326,19 @@ view: newtab_visits_table__topsite_tile_interactions {
     type: string
   }
 
+  dimension: topsite_tile_assigned_sov_branch {
+    sql: ${TABLE}.topsite_tile_assigned_sov_branch ;;
+    type: string
+  }
+
   dimension: topsite_tile_clicks {
     sql: ${TABLE}.topsite_tile_clicks ;;
     type: number
+  }
+
+  dimension: topsite_tile_displayed_sov_branch {
+    sql: ${TABLE}.topsite_tile_displayed_sov_branch ;;
+    type: string
   }
 
   dimension: topsite_tile_id {
