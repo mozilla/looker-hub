@@ -8,6 +8,7 @@ view: onboarding_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: addon_version {
@@ -20,6 +21,7 @@ view: onboarding_table {
     type: string
     group_label: "Attribution"
     group_item_label: "Campaign"
+    description: "Identifier of the particular campaign that led to the download of the product."
   }
 
   dimension: attribution__content {
@@ -27,6 +29,7 @@ view: onboarding_table {
     type: string
     group_label: "Attribution"
     group_item_label: "Content"
+    description: "Identifier to indicate the particular link within a campaign."
   }
 
   dimension: attribution__dlsource {
@@ -34,6 +37,7 @@ view: onboarding_table {
     type: string
     group_label: "Attribution"
     group_item_label: "Dlsource"
+    description: "Identifier that indicates where installations of Firefox originate, see bug 1827238"
   }
 
   dimension: attribution__dltoken {
@@ -41,6 +45,7 @@ view: onboarding_table {
     type: string
     group_label: "Attribution"
     group_item_label: "Dltoken"
+    description: "Unique token created at Firefox download time, see bug 1757451"
   }
 
   dimension: attribution__experiment {
@@ -48,6 +53,7 @@ view: onboarding_table {
     type: string
     group_label: "Attribution"
     group_item_label: "Experiment"
+    description: "Funnel experiment parameters, see bug 1567339"
   }
 
   dimension: attribution__medium {
@@ -55,6 +61,7 @@ view: onboarding_table {
     type: string
     group_label: "Attribution"
     group_item_label: "Medium"
+    description: "Category of the source, such as 'organic' for a search engine."
   }
 
   dimension: attribution__msstoresignedin {
@@ -62,6 +69,7 @@ view: onboarding_table {
     type: string
     group_label: "Attribution"
     group_item_label: "Msstoresignedin"
+    description: "Either the string \"true\" or the string \"false\" to indicate whether the attributed install came from the Microsoft store and, if so, whether the user was signed in at the time."
   }
 
   dimension: attribution__source {
@@ -69,6 +77,7 @@ view: onboarding_table {
     type: string
     group_label: "Attribution"
     group_item_label: "Source"
+    description: "Referring partner domain, when install happens via a known partner."
   }
 
   dimension: attribution__ua {
@@ -76,6 +85,7 @@ view: onboarding_table {
     type: string
     group_label: "Attribution"
     group_item_label: "Ua"
+    description: "Derived user agent, see bug 1595063"
   }
 
   dimension: attribution__variation {
@@ -83,11 +93,13 @@ view: onboarding_table {
     type: string
     group_label: "Attribution"
     group_item_label: "Variation"
+    description: "Funnel experiment parameters, see bug 1567339"
   }
 
   dimension: browser_session_id {
     sql: ${TABLE}.browser_session_id ;;
     type: string
+    description: "A mirror of the browser sessionId, as defined in https://github.com/mozilla-services/mozilla-pipeline-schemas/blob/main/schemas/telemetry/main/main.4.schema.json"
   }
 
   dimension: client_id {
@@ -98,6 +110,7 @@ view: onboarding_table {
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    description: "The document ID specified in the URI when the client sent this message"
   }
 
   dimension: event {
@@ -108,21 +121,25 @@ view: onboarding_table {
   dimension: event_context {
     sql: ${TABLE}.event_context ;;
     type: string
+    description: "A string that describes the context about this event"
   }
 
   dimension: event_page {
     sql: ${TABLE}.event_page ;;
     type: string
+    description: "The event_context's page. Almost always \"about:welcome\"."
   }
 
   dimension: event_reason {
     sql: ${TABLE}.event_reason ;;
     type: string
+    description: "The event_context's reason. Likely something like \"welcome-window-closed\" or \"app-shut-down\"."
   }
 
   dimension: event_source {
     sql: ${TABLE}.event_source ;;
     type: string
+    description: "The event_context's source. Likely something like \"primary_button\"."
   }
 
   dimension: experiments {
@@ -153,6 +170,7 @@ view: onboarding_table {
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -160,6 +178,7 @@ view: onboarding_table {
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Db Version"
+    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -167,6 +186,7 @@ view: onboarding_table {
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
+    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -174,6 +194,7 @@ view: onboarding_table {
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
+    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -181,6 +202,7 @@ view: onboarding_table {
     type: string
     group_label: "Metadata Header"
     group_item_label: "Date"
+    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -188,6 +210,7 @@ view: onboarding_table {
     type: string
     group_label: "Metadata Header"
     group_item_label: "Dnt"
+    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -214,6 +237,7 @@ view: onboarding_table {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Debug Id"
+    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -221,6 +245,7 @@ view: onboarding_table {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
+    description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -228,6 +253,7 @@ view: onboarding_table {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Lb Tags"
+    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -235,6 +261,7 @@ view: onboarding_table {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
+    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -242,6 +269,7 @@ view: onboarding_table {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
+    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -249,6 +277,7 @@ view: onboarding_table {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
+    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -256,6 +285,7 @@ view: onboarding_table {
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Db Version"
+    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -263,6 +293,7 @@ view: onboarding_table {
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Name"
+    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -270,6 +301,7 @@ view: onboarding_table {
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Organization"
+    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -296,21 +328,25 @@ view: onboarding_table {
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -360,6 +396,7 @@ view: onboarding_table {
       quarter,
       year,
     ]
+    description: "Time when the ingestion edge server accepted this message"
   }
 
   sql_table_name: `mozdata.firefox_desktop.onboarding` ;;

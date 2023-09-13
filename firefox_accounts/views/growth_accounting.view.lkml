@@ -8,32 +8,47 @@ view: growth_accounting {
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
     type: string
+    description: "Mozilla app version most recently used,
+follows format: major.minor.patch (e.g. 99.3.3).
+"
   }
 
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
     map_layer_name: countries
+    description: "User's country where activity took place.
+See: UDF mozdata.stats.mode_last for more
+info on how the function operates.
+"
   }
 
   dimension: days_registered_bits {
     sql: ${TABLE}.days_registered_bits ;;
     type: number
+    description: "No. of days since registration event.
+"
   }
 
   dimension: days_seen_bits {
     sql: ${TABLE}.days_seen_bits ;;
     type: number
+    description: "No. of days since the user had activity event.
+"
   }
 
   dimension: days_seen_in_tier1_country_bits {
     sql: ${TABLE}.days_seen_in_tier1_country_bits ;;
     type: number
+    description: "No. of days since seen_in_tier1_country was last True.
+"
   }
 
   dimension: days_seen_no_monitor_bits {
     sql: ${TABLE}.days_seen_no_monitor_bits ;;
     type: number
+    description: "No. of days since monitor flag was last True.
+"
   }
 
   dimension: days_since_registered {
@@ -59,21 +74,31 @@ view: growth_accounting {
   dimension: language {
     sql: ${TABLE}.language ;;
     type: string
+    description: "Most recently used language.
+"
   }
 
   dimension: os_name {
     sql: ${TABLE}.os_name ;;
     type: string
+    description: "OS on which the app was most recently running.
+For example: Android.
+"
   }
 
   dimension: os_version {
     sql: ${TABLE}.os_version ;;
     type: string
+    description: "Version of the OS the device was most recently using.
+"
   }
 
   dimension: user_id {
     sql: ${TABLE}.user_id ;;
     type: string
+    description: "A 36 char long hash value representing
+User ID (registered user).
+"
   }
 
   dimension: active_this_week {
@@ -120,6 +145,9 @@ view: growth_accounting {
     ]
     convert_tz: no
     datatype: date
+    description: "Corresponds to ETL processing date.
+Also, used for partitioning the table.
+"
   }
 
   measure: overall_active_previous {
