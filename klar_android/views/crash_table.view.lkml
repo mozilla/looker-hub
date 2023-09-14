@@ -374,6 +374,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__crash_remote_type {
+    sql: ${TABLE}.metrics.string.crash_remote_type ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Crash Remote Type"
+    description: "Type of the child process, can be set to \"web\", \"file\" or \"extension\" but could also be unavailable.
+"
+  }
+
   dimension: metrics__timespan__crash_uptime__time_unit {
     sql: ${TABLE}.metrics.timespan.crash_uptime.time_unit ;;
     type: string
