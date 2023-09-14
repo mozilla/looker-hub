@@ -113,6 +113,24 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__crash_remote_type {
+    label: "Crash Remote Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_remote_type ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Remote Type"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Remote Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/crash_remote_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Type of the child process, can be set to \"web\", \"file\" or \"extension\" but could also be unavailable.
+"
+  }
+
   dimension: metrics__boolean__crash_startup {
     label: "Crash Startup"
     hidden: no
