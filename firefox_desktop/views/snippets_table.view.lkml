@@ -8,6 +8,7 @@ view: snippets_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
+    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: addon_version {
@@ -23,16 +24,19 @@ view: snippets_table {
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    description: "The document ID specified in the URI when the client sent this message"
   }
 
   dimension: event {
     sql: ${TABLE}.event ;;
     type: string
+    description: "An event identifier"
   }
 
   dimension: event_context {
     sql: ${TABLE}.event_context ;;
     type: string
+    description: "A string that describes the context about this event"
   }
 
   dimension: experiments {
@@ -63,6 +67,7 @@ view: snippets_table {
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -70,6 +75,7 @@ view: snippets_table {
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Db Version"
+    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -77,6 +83,7 @@ view: snippets_table {
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
+    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -84,6 +91,7 @@ view: snippets_table {
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
+    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -91,6 +99,7 @@ view: snippets_table {
     type: string
     group_label: "Metadata Header"
     group_item_label: "Date"
+    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -98,6 +107,7 @@ view: snippets_table {
     type: string
     group_label: "Metadata Header"
     group_item_label: "Dnt"
+    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -124,6 +134,7 @@ view: snippets_table {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Debug Id"
+    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -131,6 +142,7 @@ view: snippets_table {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
+    description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -138,6 +150,7 @@ view: snippets_table {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Lb Tags"
+    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -145,6 +158,7 @@ view: snippets_table {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
+    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -152,6 +166,7 @@ view: snippets_table {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
+    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -159,6 +174,7 @@ view: snippets_table {
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
+    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -166,6 +182,7 @@ view: snippets_table {
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Db Version"
+    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -173,6 +190,7 @@ view: snippets_table {
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Name"
+    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -180,6 +198,7 @@ view: snippets_table {
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Organization"
+    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -206,21 +225,25 @@ view: snippets_table {
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
+    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
+    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -236,11 +259,13 @@ view: snippets_table {
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension: source {
     sql: ${TABLE}.source ;;
     type: string
+    description: "A string describing the source of this event"
   }
 
   dimension: version {
@@ -275,6 +300,7 @@ view: snippets_table {
       quarter,
       year,
     ]
+    description: "Time when the ingestion edge server accepted this message"
   }
 
   sql_table_name: `mozdata.firefox_desktop.snippets` ;;

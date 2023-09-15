@@ -8,6 +8,7 @@ view: airflow_dag_tag {
   dimension: dag_id {
     sql: ${TABLE}.dag_id ;;
     type: string
+    description: "Airflow DAG id"
   }
 
   dimension: tags {

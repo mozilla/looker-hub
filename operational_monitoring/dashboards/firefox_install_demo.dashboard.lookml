@@ -26,7 +26,7 @@
       firefox_install_demo.branch, firefox_install_demo.metric 
     ]
     filters:
-      firefox_install_demo.metric: '"install_volume_win10", "install_volume_win7", "install_volume_win8", "install_volume_win8_1"'
+      firefox_install_demo.metric: '"install_volume_win7", "install_volume_win10", "install_volume_win8", "install_volume_win8_1"'
       firefox_install_demo.statistic: sum
     row: 0
     col: 0
@@ -59,7 +59,7 @@
       firefox_install_demo.branch, firefox_install_demo.metric 
     ]
     filters:
-      firefox_install_demo.metric: '"install_volume_win10", "install_volume_win7", "install_volume_win8", "install_volume_win8_1"'
+      firefox_install_demo.metric: '"install_volume_win7", "install_volume_win10", "install_volume_win8", "install_volume_win8_1"'
       firefox_install_demo.statistic: mean
     row: 0
     col: 12
