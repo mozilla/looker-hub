@@ -41,6 +41,24 @@ view: main {
 "
   }
 
+  dimension: metrics__boolean__settings_using_system_language {
+    label: "Settings Using System Language"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.settings_using_system_language ;;
+    type: yesno
+    group_label: "Settings"
+    group_item_label: "Using System Language"
+
+    link: {
+      label: "Glean Dictionary reference for Settings Using System Language"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/settings_using_system_language"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Status of whether app is being used in language of the operating system
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes

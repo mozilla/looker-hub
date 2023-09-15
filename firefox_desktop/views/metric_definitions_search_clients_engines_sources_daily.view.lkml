@@ -7,7 +7,7 @@
 view: metric_definitions_search_clients_engines_sources_daily {
   derived_table: {
     sql: SELECT
-                COALESCE(SUM(sap), 0) AS search_count,COALESCE(SUM(tagged_sap), 0) AS tagged_search_count,COALESCE(SUM(tagged_follow_on), 0) AS tagged_follow_on_search_count,COALESCE(SUM(ad_click), 0) AS ad_clicks,COALESCE(SUM(search_with_ads), 0) AS searches_with_ads,COALESCE(SUM(organic), 0) AS organic_search_count,COALESCE(SUM(search_with_ads_organic), 0) AS search_with_ads_organic,COALESCE(SUM(ad_click_organic), 0) AS ad_clicks_organic,SUM(search_with_ads) AS search_with_ads,SUM(ad_click) AS ad_click,SUM(sap) AS sap,SUM(ad_click_organic) AS ad_click_organic,
+                COALESCE(SUM(sap), 0) AS search_count,COALESCE(SUM(tagged_sap), 0) AS tagged_search_count,COALESCE(SUM(tagged_follow_on), 0) AS tagged_follow_on_search_count,COALESCE(SUM(ad_click), 0) AS ad_clicks,COALESCE(SUM(search_with_ads), 0) AS searches_with_ads,COALESCE(SUM(organic), 0) AS organic_search_count,COALESCE(SUM(search_with_ads_organic), 0) AS search_with_ads_organic,COALESCE(SUM(ad_click_organic), 0) AS ad_clicks_organic,SUM(search_with_ads) AS search_with_ads,SUM(ad_click) AS ad_click,SUM(sap) AS sap,SUM(ad_click_organic) AS ad_click_organic,COALESCE(ANY_VALUE(default_search_engine != default_private_search_engine), false) AS separate_search_engine,
                 client_id AS client_id,
                 submission_date AS submission_date
               FROM
@@ -196,6 +196,13 @@ view: metric_definitions_search_clients_engines_sources_daily {
     sql: ${TABLE}.ad_click_organic ;;
   }
 
+  dimension: separate_search_engine {
+    label: "Split PBM search engine"
+    description: "Indicates whether the client configured separate search engines for regular browsing and private browsing mode."
+    type: number
+    sql: ${TABLE}.separate_search_engine ;;
+  }
+
   dimension_group: submission {
     type: time
     sql: COALESCE(CAST(${TABLE}.submission_date AS TIMESTAMP)
@@ -272,6 +279,7 @@ view: metric_definitions_search_clients_engines_sources_daily {
       ad_click,
       sap,
       ad_click_organic,
+      separate_search_engine,
     ]
   }
 }
