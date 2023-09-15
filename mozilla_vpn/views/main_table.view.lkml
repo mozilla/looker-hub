@@ -283,6 +283,13 @@ view: main_table {
     group_item_label: "Settings Connect On Startup Active"
   }
 
+  dimension: metrics__boolean__settings_using_system_language {
+    sql: ${TABLE}.metrics.boolean.settings_using_system_language ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Settings Using System Language"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
