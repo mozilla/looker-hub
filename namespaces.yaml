@@ -204,10 +204,6 @@ ads:
       tables:
       - table: mozdata.ads.consolidated_ad_metrics_daily_pt
       type: table_view
-    consolidated_ad_metrics_hourly:
-      tables:
-      - table: mozdata.ads.consolidated_ad_metrics_hourly
-      type: table_view
 awesome_bar:
   explores:
     urlbar_clients_daily:
