@@ -5,6 +5,11 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: consolidated_ad_metrics {
+  dimension: ad_id {
+    sql: ${TABLE}.ad_id ;;
+    type: number
+  }
+
   dimension: advertiser {
     sql: ${TABLE}.advertiser ;;
     type: string
@@ -87,18 +92,17 @@ view: consolidated_ad_metrics {
   }
 
   dimension_group: submission {
-    sql: ${TABLE}.submission_date ;;
+    sql: ${TABLE}.submission_timestamp ;;
     type: time
     timeframes: [
       raw,
+      time,
       date,
       week,
       month,
       quarter,
       year,
     ]
-    convert_tz: no
-    datatype: date
   }
 
   sql_table_name: `mozdata.ads.consolidated_ad_metrics` ;;
