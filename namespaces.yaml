@@ -493,6 +493,14 @@ data_integrity_monitoring:
       tables:
       - table: data-monitoring-dev.dim_external.run_processing_info
       type: table_view
+debug_ping_view:
+  explores: {}
+  glean_app: true
+  owners:
+  - glean-team@mozilla.com
+  pretty_name: Glean Debug Ping Viewer
+  spoke: looker-spoke-default
+  views: {}
 duet:
   glean_app: false
   owners:
