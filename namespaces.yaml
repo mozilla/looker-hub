@@ -4733,36 +4733,36 @@ operational_monitoring:
         - metric: storage_stats_cache_bytes
           metric_groups: []
           statistic: percentile
+        - metric: tagged_sap_searches
+          metric_groups: []
+          statistic: mean
+        - metric: uri_count
+          metric_groups: []
+          statistic: mean
+        - metric: storage_stats_app_bytes
+          metric_groups: []
+          statistic: percentile
+        - metric: retained
+          metric_groups: []
+          statistic: mean
+        - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: days_of_use
+          metric_groups: []
+          statistic: mean
+        - metric: ad_clicks
+          metric_groups: []
+          statistic: mean
+        - metric: storage_stats_data_dir_bytes
+          metric_groups: []
+          statistic: percentile
         - metric: performance_page_non_blank_paint
           metric_groups: []
           statistic: percentile
         - metric: search_count
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
-          metric_groups: []
-          statistic: mean
-        - metric: tagged_sap_searches
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
-          metric_groups: []
-          statistic: mean
-        - metric: storage_stats_app_bytes
-          metric_groups: []
-          statistic: percentile
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        - metric: storage_stats_data_dir_bytes
-          metric_groups: []
-          statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.android_add_ons_extension_process_statistics
         xaxis: submission_date
       title: Android Add Ons Extension Process
