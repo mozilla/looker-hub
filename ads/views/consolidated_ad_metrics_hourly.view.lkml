@@ -5,6 +5,11 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: consolidated_ad_metrics_hourly {
+  dimension: ad_id {
+    sql: ${TABLE}.ad_id ;;
+    type: number
+  }
+
   dimension: advertiser {
     sql: ${TABLE}.advertiser ;;
     type: string
