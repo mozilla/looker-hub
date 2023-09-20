@@ -7,7 +7,7 @@
 view: metric_definitions_metrics {
   derived_table: {
     sql: SELECT
-                COUNT(document_id) AS metric_ping_count,ARRAY_AGG(metrics.timing_distribution.performance_pageload_load_time IGNORE NULLS) AS performance_pageload_load_time,ARRAY_AGG(metrics.timing_distribution.performance_pageload_load_time_responsestart IGNORE NULLS) AS performance_pageload_load_time_responsestart,ARRAY_AGG(metrics.timing_distribution.performance_pageload_req_anim_frame_callback IGNORE NULLS) AS performance_pageload_req_anim_frame_callback,ARRAY_AGG(metrics.timing_distribution.performance_pageload_dcl IGNORE NULLS) AS performance_pageload_dcl,ARRAY_AGG(metrics.timing_distribution.performance_pageload_dcl_responsestart IGNORE NULLS) AS performance_pageload_dcl_responsestart,ARRAY_AGG(metrics.timing_distribution.performance_pageload_fcp IGNORE NULLS) AS performance_pageload_fcp,ARRAY_AGG(metrics.timing_distribution.performance_pageload_fcp_responsestart IGNORE NULLS) AS performance_pageload_fcp_responsestart,ARRAY_AGG(metrics.timing_distribution.perf_startup_cold_main_app_to_first_frame IGNORE NULLS) AS perf_startup_cold_main_app_to_first_frame,ARRAY_AGG(metrics.timing_distribution.perf_startup_cold_view_app_to_first_frame IGNORE NULLS) AS perf_startup_cold_view_app_to_first_frame,ARRAY_AGG(metrics.memory_distribution.storage_stats_app_bytes IGNORE NULLS) AS storage_stats_app_bytes,ARRAY_AGG(metrics.memory_distribution.storage_stats_cache_bytes IGNORE NULLS) AS storage_stats_cache_bytes,ARRAY_AGG(metrics.memory_distribution.storage_stats_data_dir_bytes IGNORE NULLS) AS storage_stats_data_dir_bytes,  COALESCE(MAX(
+                COUNT(document_id) AS metric_ping_count,ARRAY_AGG(metrics.timing_distribution.performance_pageload_load_time IGNORE NULLS) AS performance_pageload_load_time,ARRAY_AGG(metrics.timing_distribution.performance_pageload_load_time_responsestart IGNORE NULLS) AS performance_pageload_load_time_responsestart,ARRAY_AGG(metrics.timing_distribution.performance_page_non_blank_paint IGNORE NULLS) AS performance_page_non_blank_paint,ARRAY_AGG(metrics.timing_distribution.performance_pageload_req_anim_frame_callback IGNORE NULLS) AS performance_pageload_req_anim_frame_callback,ARRAY_AGG(metrics.timing_distribution.performance_pageload_dcl IGNORE NULLS) AS performance_pageload_dcl,ARRAY_AGG(metrics.timing_distribution.performance_pageload_dcl_responsestart IGNORE NULLS) AS performance_pageload_dcl_responsestart,ARRAY_AGG(metrics.timing_distribution.performance_pageload_fcp IGNORE NULLS) AS performance_pageload_fcp,ARRAY_AGG(metrics.timing_distribution.performance_pageload_fcp_responsestart IGNORE NULLS) AS performance_pageload_fcp_responsestart,ARRAY_AGG(metrics.timing_distribution.perf_startup_cold_main_app_to_first_frame IGNORE NULLS) AS perf_startup_cold_main_app_to_first_frame,ARRAY_AGG(metrics.timing_distribution.perf_startup_cold_view_app_to_first_frame IGNORE NULLS) AS perf_startup_cold_view_app_to_first_frame,ARRAY_AGG(metrics.memory_distribution.storage_stats_app_bytes IGNORE NULLS) AS storage_stats_app_bytes,ARRAY_AGG(metrics.memory_distribution.storage_stats_cache_bytes IGNORE NULLS) AS storage_stats_cache_bytes,ARRAY_AGG(metrics.memory_distribution.storage_stats_data_dir_bytes IGNORE NULLS) AS storage_stats_data_dir_bytes,  COALESCE(MAX(
     CAST(
        metrics.boolean.customize_home_contile AS int )
   ),0) AS spoc_tiles_disable_rate,MAX(IF(metrics.boolean.preferences_signed_in_sync, 1, 0)) AS fxa_sign_in,
@@ -92,6 +92,13 @@ view: metric_definitions_metrics {
     description: "Time in milliseconds from responseStart to loadEventStart for the foreground http or https root content document."
     type: number
     sql: ${TABLE}.performance_pageload_load_time_responsestart ;;
+  }
+
+  dimension: performance_page_non_blank_paint {
+    label: "Page Non Blank Paint"
+    description: "The time between navigationStart and the first non-blank paint of a foreground root content document, in milliseconds."
+    type: number
+    sql: ${TABLE}.performance_page_non_blank_paint ;;
   }
 
   dimension: performance_pageload_req_anim_frame_callback {
@@ -234,6 +241,7 @@ to be larger than download size."
       metric_ping_count,
       performance_pageload_load_time,
       performance_pageload_load_time_responsestart,
+      performance_page_non_blank_paint,
       performance_pageload_req_anim_frame_callback,
       performance_pageload_dcl,
       performance_pageload_dcl_responsestart,
