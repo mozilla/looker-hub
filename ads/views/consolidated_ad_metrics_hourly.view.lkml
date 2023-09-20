@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: consolidated_ad_metrics {
+view: consolidated_ad_metrics_hourly {
   dimension: ad_id {
     sql: ${TABLE}.ad_id ;;
     type: number
@@ -105,5 +105,5 @@ view: consolidated_ad_metrics {
     ]
   }
 
-  sql_table_name: `mozdata.ads.consolidated_ad_metrics` ;;
+  sql_table_name: `mozdata.ads.consolidated_ad_metrics_hourly` ;;
 }
