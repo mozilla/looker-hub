@@ -5,13 +5,6 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: app_store_funnel_table {
-  dimension: activations {
-    sql: ${TABLE}.activations ;;
-    type: number
-    description: "Number of users that ended up activating that were first seen on the date.
-"
-  }
-
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
