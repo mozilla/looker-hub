@@ -493,47 +493,6 @@ data_integrity_monitoring:
       tables:
       - table: data-monitoring-dev.dim_external.run_processing_info
       type: table_view
-debug_ping_view:
-  explores:
-    deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: deletion_request
-    events:
-      type: events_explore
-      views:
-        base_view: events
-        extended_view: events_unnested_table
-  glean_app: true
-  owners:
-  - glean-team@mozilla.com
-  pretty_name: Glean Debug Ping Viewer
-  spoke: looker-spoke-default
-  views:
-    deletion_request:
-      tables:
-      - table: mozdata.debug_ping_view.deletion_request
-      type: glean_ping_view
-    deletion_request_table:
-      tables:
-      - channel: null
-        table: mozdata.debug_ping_view.deletion_request
-      type: table_view
-    events:
-      tables:
-      - base_table: mozdata.debug_ping_view.events_unnested
-        events_table_view: events_unnested_table
-      type: events_view
-    events_table:
-      tables:
-      - channel: null
-        table: mozdata.debug_ping_view.events
-      type: table_view
-    events_unnested_table:
-      tables:
-      - channel: null
-        table: mozdata.debug_ping_view.events_unnested
-      type: table_view
 duet:
   glean_app: false
   owners:
@@ -4733,36 +4692,36 @@ operational_monitoring:
         - metric: storage_stats_cache_bytes
           metric_groups: []
           statistic: percentile
+        - metric: tagged_sap_searches
+          metric_groups: []
+          statistic: mean
+        - metric: uri_count
+          metric_groups: []
+          statistic: mean
+        - metric: storage_stats_app_bytes
+          metric_groups: []
+          statistic: percentile
+        - metric: retained
+          metric_groups: []
+          statistic: mean
+        - metric: active_hours
+          metric_groups: []
+          statistic: mean
+        - metric: days_of_use
+          metric_groups: []
+          statistic: mean
+        - metric: ad_clicks
+          metric_groups: []
+          statistic: mean
+        - metric: storage_stats_data_dir_bytes
+          metric_groups: []
+          statistic: percentile
         - metric: performance_page_non_blank_paint
           metric_groups: []
           statistic: percentile
         - metric: search_count
           metric_groups: []
           statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: uri_count
-          metric_groups: []
-          statistic: mean
-        - metric: tagged_sap_searches
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
-          metric_groups: []
-          statistic: mean
-        - metric: storage_stats_app_bytes
-          metric_groups: []
-          statistic: percentile
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        - metric: storage_stats_data_dir_bytes
-          metric_groups: []
-          statistic: percentile
         table: moz-fx-data-shared-prod.operational_monitoring.android_add_ons_extension_process_statistics
         xaxis: submission_date
       title: Android Add Ons Extension Process
