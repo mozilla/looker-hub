@@ -1258,6 +1258,24 @@ ping and 0 bookmarks, please see `has_desktop_bookmarks`.
 "
   }
 
+  dimension: metrics__quantity__metrics_device_total_ram {
+    label: "Metrics Device Total Ram"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.metrics_device_total_ram ;;
+    type: number
+    group_label: "Metrics"
+    group_item_label: "Device Total Ram"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Device Total Ram"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_device_total_ram"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total amount of memory this device in bytes, when available will be MemoryInfo.advertisedMem otherwise it will be MemoryInfo.totalMem. This doesn't represent memory available to the application however.
+"
+  }
+
   dimension: metrics__string__metrics_distribution_id {
     label: "Metrics Distribution Id"
     hidden: no
