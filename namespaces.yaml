@@ -493,6 +493,47 @@ data_integrity_monitoring:
       tables:
       - table: data-monitoring-dev.dim_external.run_processing_info
       type: table_view
+debug_ping_view:
+  explores:
+    deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: deletion_request
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
+  glean_app: true
+  owners:
+  - glean-team@mozilla.com
+  pretty_name: Glean Debug Ping Viewer
+  spoke: looker-spoke-default
+  views:
+    deletion_request:
+      tables:
+      - table: mozdata.debug_ping_view.deletion_request
+      type: glean_ping_view
+    deletion_request_table:
+      tables:
+      - channel: null
+        table: mozdata.debug_ping_view.deletion_request
+      type: table_view
+    events:
+      tables:
+      - base_table: mozdata.debug_ping_view.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.debug_ping_view.events
+      type: table_view
+    events_unnested_table:
+      tables:
+      - channel: null
+        table: mozdata.debug_ping_view.events_unnested
+      type: table_view
 duet:
   glean_app: false
   owners:
