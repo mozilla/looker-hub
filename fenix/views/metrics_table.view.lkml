@@ -2409,6 +2409,13 @@ view: metrics_table {
     group_item_label: "Logins Saved All"
   }
 
+  dimension: metrics__quantity__metrics_device_total_ram {
+    sql: ${TABLE}.metrics.quantity.metrics_device_total_ram ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Metrics Device Total Ram"
+  }
+
   dimension: metrics__quantity__metrics_inactive_tabs_count {
     sql: ${TABLE}.metrics.quantity.metrics_inactive_tabs_count ;;
     type: number
