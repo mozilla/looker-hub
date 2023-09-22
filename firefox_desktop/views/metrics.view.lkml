@@ -703,6 +703,26 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__counter__shopping_product_page_visits {
+    label: "Shopping Product Page Visits"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.shopping_product_page_visits ;;
+    type: number
+    group_label: "Shopping"
+    group_item_label: "Product Page Visits"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Product Page Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/shopping_product_page_visits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts number of visits to a supported retailer product page
+while enrolled in either the control or treatment branches
+of the shopping experiment.
+"
+  }
+
   dimension: metrics__boolean__shopping_settings_component_opted_out {
     label: "Shopping Settings Component Opted Out"
     hidden: no
@@ -4391,6 +4411,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Ping Centre Send Failures"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ping_centre_send_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: shopping_product_page_visits {
+    type: sum
+    sql: ${metrics__counter__shopping_product_page_visits} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Product Page Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/shopping_product_page_visits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: shopping_product_page_visits_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__shopping_product_page_visits: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Product Page Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/shopping_product_page_visits"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
