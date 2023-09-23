@@ -719,6 +719,17 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__shopping_product_page_visits {
+    sql: ${TABLE}.metrics.counter.shopping_product_page_visits ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Shopping Product Page Visits"
+    description: "Counts number of visits to a supported retailer product page
+while enrolled in either the control or treatment branches
+of the shopping experiment.
+"
+  }
+
   dimension: metrics__counter__translations_requests_count {
     sql: ${TABLE}.metrics.counter.translations_requests_count ;;
     type: number
