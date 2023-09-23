@@ -3020,7 +3020,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_stale_transactionid__numerator {
     label: "Rtcrtpsender Setparameters Warn Stale Transactionid Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_stale_transactionid.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -3038,7 +3038,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_stale_transactionid__denominator {
     label: "Rtcrtpsender Setparameters Warn Stale Transactionid Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_stale_transactionid.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -7608,7 +7608,7 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid
     suggest_dimension: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -7620,13 +7620,13 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 

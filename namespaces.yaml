@@ -3919,6 +3919,14 @@ monitor_cirrus:
       - channel: null
         table: mozdata.monitor_cirrus.metrics
       type: table_view
+monitor_frontend:
+  explores: {}
+  glean_app: true
+  owners:
+  - rhelmer@mozilla.com
+  pretty_name: Firefox Monitor (Frontend)
+  spoke: looker-spoke-default
+  views: {}
 monitoring:
   explores:
     average_ping_sizes:
