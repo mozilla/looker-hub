@@ -26,7 +26,7 @@
       print_background_task_times.branch, print_background_task_times.metric 
     ]
     filters:
-      print_background_task_times.metric: '"printing_preview_opened_tm", "printing_silent_print", "printing_preview_opened", "printing_dialog_opened_via_preview_tm", "printing_dialog_opened_via_preview", "printing_dialog_opened_without_preview"'
+      print_background_task_times.metric: '"printing_preview_opened", "printing_dialog_opened_via_preview", "printing_silent_print", "printing_dialog_opened_without_preview", "printing_dialog_opened_via_preview_tm", "printing_preview_opened_tm"'
       print_background_task_times.statistic: sum
     row: 0
     col: 0
@@ -61,7 +61,7 @@
       print_background_task_times.branch, print_background_task_times.metric 
     ]
     filters:
-      print_background_task_times.metric: '"printing_preview_cancelled_tm", "printing_dialog_without_preview_cancelled", "printing_dialog_via_preview_cancelled_tm", "printing_dialog_via_preview_cancelled", "printing_preview_cancelled"'
+      print_background_task_times.metric: '"printing_dialog_via_preview_cancelled_tm", "printing_dialog_without_preview_cancelled", "printing_dialog_via_preview_cancelled", "printing_preview_cancelled", "printing_preview_cancelled_tm"'
       print_background_task_times.statistic: total_ratio
     row: 0
     col: 12
@@ -185,16 +185,16 @@
   - title: Channel
     name: Channel
     type: string_filter
-    default_value: 'nightly'
+    default_value: 'beta'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
+      - 'beta'
       - 'nightly'
       - 'release'
-      - 'beta'
       
   
   
