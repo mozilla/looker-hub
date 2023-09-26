@@ -1257,6 +1257,13 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_stamp {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_stamp ;;
+    hidden: yes
+    description: "Counts the number of times some PDF editing features are used.
+"
+  }
+
   dimension: metrics__labeled_counter__ping_centre_send_failures_by_namespace {
     sql: ${TABLE}.metrics.labeled_counter.ping_centre_send_failures_by_namespace ;;
     hidden: yes

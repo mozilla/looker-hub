@@ -208,6 +208,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_geckoview}) AS metrics__metrics__labeled_counter__pdfjs_geckoview ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_geckoview.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__pdfjs_stamp {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_stamp}) AS metrics__metrics__labeled_counter__pdfjs_stamp ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_stamp.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__ping_centre_send_failures_by_namespace {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ping_centre_send_failures_by_namespace}) AS metrics__metrics__labeled_counter__ping_centre_send_failures_by_namespace ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ping_centre_send_failures_by_namespace.document_id} ;;
@@ -463,6 +468,10 @@ explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__pdfjs_geckoview {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__pdfjs_stamp {
   hidden: yes
 }
 
