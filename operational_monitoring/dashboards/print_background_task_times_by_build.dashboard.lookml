@@ -26,7 +26,7 @@
       print_background_task_times_by_build.branch, print_background_task_times_by_build.metric 
     ]
     filters:
-      print_background_task_times_by_build.metric: '"gfx_printer_doc_is_busy", "abort", "cannot_open_file", "enddoc", "startdoc", "oom", "unexpected", "print_failure", "name_not_found", "not_available", "notimplemented", "no_printer", "start_page"'
+      print_background_task_times_by_build.metric: '"no_printer", "oom", "cannot_open_file", "start_page", "gfx_printer_doc_is_busy", "unexpected", "name_not_found", "enddoc", "abort", "notimplemented", "print_failure", "not_available", "startdoc"'
       print_background_task_times_by_build.statistic: sum
     row: 0
     col: 0
