@@ -2257,7 +2257,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__timespan__play_store_attribution_deferred_deeplink_time__value {
     label: "Play Store Attribution Deferred Deeplink Time Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.play_store_attribution_deferred_deeplink_time.value ;;
     type: number
     group_label: "Play Store Attribution"
