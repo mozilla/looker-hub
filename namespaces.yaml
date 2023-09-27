@@ -535,6 +535,11 @@ debug_ping_view:
         table: mozdata.debug_ping_view.events_unnested
       type: table_view
 duet:
+  explores:
+    gplay_installs_by_country:
+      type: table_explore
+      views:
+        base_view: gplay_installs_by_country
   glean_app: false
   owners:
   - ascholtz@mozilla.com
@@ -564,6 +569,20 @@ duet:
     firefox_mobile_installs_adjust_deliverables:
       tables:
       - table: moz-fx-data-shared-prod.adjust_derived.adjust_deliverables_v1
+      type: table_view
+    gplay_installs_by_country:
+      measures:
+        total_installs:
+          sql: ${install_count}
+          type: sum
+        total_uninstalls:
+          sql: ${uninstall_count}
+          type: sum
+        total_updates:
+          sql: ${update_count}
+          type: sum
+      tables:
+      - table: mozdata.fenix.gplay_installs_by_country
       type: table_view
     install:
       tables:
