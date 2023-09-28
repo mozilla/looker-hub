@@ -296,6 +296,13 @@ view: deletion_request_table {
     hidden: yes
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+  }
+
   dimension: metrics__uuid__legacy_ids_client_id {
     sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
     type: string

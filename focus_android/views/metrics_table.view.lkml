@@ -1600,6 +1600,13 @@ view: metrics_table {
     group_item_label: "Geckoview Validation Version"
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+  }
+
   dimension: metrics__string__ping_reason {
     sql: ${TABLE}.metrics.string.ping_reason ;;
     type: string
