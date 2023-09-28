@@ -358,6 +358,13 @@ view: client_deduplication_table {
     group_item_label: "Client Deduplication Hashed Gaid"
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+  }
+
   dimension: metrics__string__search_default_engine_code {
     sql: ${TABLE}.metrics.string.search_default_engine_code ;;
     type: string

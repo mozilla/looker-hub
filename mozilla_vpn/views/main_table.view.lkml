@@ -310,6 +310,13 @@ view: main_table {
     hidden: yes
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+  }
+
   dimension: metrics__timing_distribution__performance_time_to_main_screen__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.bucket_count ;;
     type: number

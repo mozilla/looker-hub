@@ -318,6 +318,13 @@ view: temp_bookmarks_sync_table {
     group_item_label: "Bookmarks Sync Uid"
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+  }
+
   dimension: metrics__uuid__sync_sync_uuid {
     sql: ${TABLE}.metrics.uuid.sync_sync_uuid ;;
     type: string
