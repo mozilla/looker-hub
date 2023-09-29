@@ -403,6 +403,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimenation enrollment.
+"
+  }
+
   dimension: metrics__string__newtab_homepage_category {
     sql: ${TABLE}.metrics.string.newtab_homepage_category ;;
     type: string

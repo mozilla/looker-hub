@@ -449,6 +449,7 @@ The labels are the `category.name` identifier of the metric.
     type: number
     group_label: "Metrics Memory Distribution Mach System Memory"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__memory_distribution__mach_system_memory__sum {
@@ -461,6 +462,16 @@ The labels are the `category.name` identifier of the metric.
   dimension: metrics__memory_distribution__mach_system_memory__values {
     sql: ${TABLE}.metrics.memory_distribution.mach_system_memory.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimenation enrollment.
+"
   }
 
   dimension: metrics__string__mach_command {

@@ -370,6 +370,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimenation enrollment.
+"
+  }
+
   dimension: metrics__timing_distribution__wr_renderer_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.wr_renderer_time.bucket_count ;;
     type: number
@@ -382,6 +392,7 @@ The labels are the `category.name` identifier of the metric.
     type: number
     group_label: "Metrics Timing Distribution Wr Renderer Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__wr_renderer_time__histogram_type {
