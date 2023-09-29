@@ -469,6 +469,7 @@ This metric appears in both the metrics and baseline pings.
     type: number
     group_label: "Metrics Memory Distribution Glean Database Size"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__memory_distribution__glean_database_size__sum {
@@ -488,6 +489,7 @@ This metric appears in both the metrics and baseline pings.
     type: number
     group_label: "Metrics Memory Distribution Glean Upload Discarded Exceeding Pings Size"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__sum {
@@ -507,6 +509,7 @@ This metric appears in both the metrics and baseline pings.
     type: number
     group_label: "Metrics Memory Distribution Glean Upload Pending Pings Directory Size"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
@@ -519,6 +522,16 @@ This metric appears in both the metrics and baseline pings.
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimenation enrollment.
+"
   }
 
   dimension: metrics__string__ping_reason {
@@ -544,6 +557,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Glean Upload Send Failure"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__glean_upload_send_failure__histogram_type {
@@ -603,6 +617,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Glean Upload Send Success"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__glean_upload_send_success__histogram_type {
@@ -662,6 +677,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__histogram_type {
@@ -721,6 +737,7 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__glean_validation_shutdown_wait__histogram_type {

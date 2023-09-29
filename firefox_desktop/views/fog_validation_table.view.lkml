@@ -356,6 +356,16 @@ The labels are the `category.name` identifier of the metric.
     description: "The version of the OS running Firefox, as detected by Gecko. To be sent only in the \"fog-validation\" ping."
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimenation enrollment.
+"
+  }
+
   dimension: metrics__uuid__fog_validation_legacy_telemetry_client_id {
     sql: ${TABLE}.metrics.uuid.fog_validation_legacy_telemetry_client_id ;;
     type: string

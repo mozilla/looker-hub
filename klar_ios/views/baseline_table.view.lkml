@@ -423,12 +423,22 @@ to indicate \"undetermined\".
 "
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimenation enrollment.
+"
+  }
+
   dimension: metrics__string__search_default_engine {
     sql: ${TABLE}.metrics.string.search_default_engine ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Search Default Engine"
-    description: "The default search engine identifier if the search engine is
+    description: "The default search engine name if the search engine is
 pre-loaded with Focus.  If it's a custom search engine,
 then the value will be 'custom'.
 "
