@@ -382,6 +382,13 @@ view: creditcards_sync_table {
     group_item_label: "Creditcards Sync V2 Uid"
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+  }
+
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string

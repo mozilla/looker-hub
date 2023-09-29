@@ -324,6 +324,13 @@ view: first_session_table {
     group_item_label: "Adjust Network"
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+  }
+
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string

@@ -78,111 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: backgroundupdate_allowunelevated_rollout_beta
-    type: "ci-line-chart"
-    fields: [
-      backgroundupdate_allowunelevated_rollout_beta.submission_date,
-      backgroundupdate_allowunelevated_rollout_beta.branch,
-      backgroundupdate_allowunelevated_rollout_beta.upper,
-      backgroundupdate_allowunelevated_rollout_beta.lower,
-      backgroundupdate_allowunelevated_rollout_beta.point
-    ]
-    pivots: [
-      backgroundupdate_allowunelevated_rollout_beta.branch
-    ]
-    filters:
-      backgroundupdate_allowunelevated_rollout_beta.metric: 'memory_total'
-      backgroundupdate_allowunelevated_rollout_beta.statistic: percentile
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: backgroundupdate_allowunelevated_rollout_beta.submission_date
-    field_y: backgroundupdate_allowunelevated_rollout_beta.point
-    log_scale: false
-    ci_lower: backgroundupdate_allowunelevated_rollout_beta.lower
-    ci_upper: backgroundupdate_allowunelevated_rollout_beta.upper
-    show_grid: true
-    listen:
-      Date: backgroundupdate_allowunelevated_rollout_beta.submission_date
-      Percentile: backgroundupdate_allowunelevated_rollout_beta.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: backgroundupdate_allowunelevated_rollout_beta
-    type: looker_line
-    fields: [
-      backgroundupdate_allowunelevated_rollout_beta.submission_date,
-      backgroundupdate_allowunelevated_rollout_beta.branch,
-      backgroundupdate_allowunelevated_rollout_beta.point
-    ]
-    pivots: [
-      backgroundupdate_allowunelevated_rollout_beta.branch
-    ]
-    filters:
-      backgroundupdate_allowunelevated_rollout_beta.metric: 'days_of_use'
-      backgroundupdate_allowunelevated_rollout_beta.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: backgroundupdate_allowunelevated_rollout_beta.submission_date
-    field_y: backgroundupdate_allowunelevated_rollout_beta.point
-    log_scale: false
-    ci_lower: backgroundupdate_allowunelevated_rollout_beta.lower
-    ci_upper: backgroundupdate_allowunelevated_rollout_beta.upper
-    show_grid: true
-    listen:
-      Date: backgroundupdate_allowunelevated_rollout_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: backgroundupdate_allowunelevated_rollout_beta
-    type: looker_line
-    fields: [
-      backgroundupdate_allowunelevated_rollout_beta.submission_date,
-      backgroundupdate_allowunelevated_rollout_beta.branch,
-      backgroundupdate_allowunelevated_rollout_beta.point
-    ]
-    pivots: [
-      backgroundupdate_allowunelevated_rollout_beta.branch
-    ]
-    filters:
-      backgroundupdate_allowunelevated_rollout_beta.metric: 'qualified_cumulative_days_of_use'
-      backgroundupdate_allowunelevated_rollout_beta.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: backgroundupdate_allowunelevated_rollout_beta.submission_date
-    field_y: backgroundupdate_allowunelevated_rollout_beta.point
-    log_scale: false
-    ci_lower: backgroundupdate_allowunelevated_rollout_beta.lower
-    ci_upper: backgroundupdate_allowunelevated_rollout_beta.upper
-    show_grid: true
-    listen:
-      Date: backgroundupdate_allowunelevated_rollout_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -201,8 +96,8 @@
     filters:
       backgroundupdate_allowunelevated_rollout_beta.metric: 'ad_clicks'
       backgroundupdate_allowunelevated_rollout_beta.statistic: mean
-    row: 20
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: backgroundupdate_allowunelevated_rollout_beta.submission_date
@@ -235,8 +130,8 @@
     filters:
       backgroundupdate_allowunelevated_rollout_beta.metric: 'uri_count'
       backgroundupdate_allowunelevated_rollout_beta.statistic: mean
-    row: 30
-    col: 0
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: backgroundupdate_allowunelevated_rollout_beta.submission_date
@@ -268,6 +163,111 @@
     ]
     filters:
       backgroundupdate_allowunelevated_rollout_beta.metric: 'active_hours'
+      backgroundupdate_allowunelevated_rollout_beta.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: backgroundupdate_allowunelevated_rollout_beta.submission_date
+    field_y: backgroundupdate_allowunelevated_rollout_beta.point
+    log_scale: false
+    ci_lower: backgroundupdate_allowunelevated_rollout_beta.lower
+    ci_upper: backgroundupdate_allowunelevated_rollout_beta.upper
+    show_grid: true
+    listen:
+      Date: backgroundupdate_allowunelevated_rollout_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: backgroundupdate_allowunelevated_rollout_beta
+    type: looker_line
+    fields: [
+      backgroundupdate_allowunelevated_rollout_beta.submission_date,
+      backgroundupdate_allowunelevated_rollout_beta.branch,
+      backgroundupdate_allowunelevated_rollout_beta.point
+    ]
+    pivots: [
+      backgroundupdate_allowunelevated_rollout_beta.branch
+    ]
+    filters:
+      backgroundupdate_allowunelevated_rollout_beta.metric: 'days_of_use'
+      backgroundupdate_allowunelevated_rollout_beta.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: backgroundupdate_allowunelevated_rollout_beta.submission_date
+    field_y: backgroundupdate_allowunelevated_rollout_beta.point
+    log_scale: false
+    ci_lower: backgroundupdate_allowunelevated_rollout_beta.lower
+    ci_upper: backgroundupdate_allowunelevated_rollout_beta.upper
+    show_grid: true
+    listen:
+      Date: backgroundupdate_allowunelevated_rollout_beta.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: backgroundupdate_allowunelevated_rollout_beta
+    type: "ci-line-chart"
+    fields: [
+      backgroundupdate_allowunelevated_rollout_beta.submission_date,
+      backgroundupdate_allowunelevated_rollout_beta.branch,
+      backgroundupdate_allowunelevated_rollout_beta.upper,
+      backgroundupdate_allowunelevated_rollout_beta.lower,
+      backgroundupdate_allowunelevated_rollout_beta.point
+    ]
+    pivots: [
+      backgroundupdate_allowunelevated_rollout_beta.branch
+    ]
+    filters:
+      backgroundupdate_allowunelevated_rollout_beta.metric: 'memory_total'
+      backgroundupdate_allowunelevated_rollout_beta.statistic: percentile
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: backgroundupdate_allowunelevated_rollout_beta.submission_date
+    field_y: backgroundupdate_allowunelevated_rollout_beta.point
+    log_scale: false
+    ci_lower: backgroundupdate_allowunelevated_rollout_beta.lower
+    ci_upper: backgroundupdate_allowunelevated_rollout_beta.upper
+    show_grid: true
+    listen:
+      Date: backgroundupdate_allowunelevated_rollout_beta.submission_date
+      Percentile: backgroundupdate_allowunelevated_rollout_beta.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: backgroundupdate_allowunelevated_rollout_beta
+    type: looker_line
+    fields: [
+      backgroundupdate_allowunelevated_rollout_beta.submission_date,
+      backgroundupdate_allowunelevated_rollout_beta.branch,
+      backgroundupdate_allowunelevated_rollout_beta.point
+    ]
+    pivots: [
+      backgroundupdate_allowunelevated_rollout_beta.branch
+    ]
+    filters:
+      backgroundupdate_allowunelevated_rollout_beta.metric: 'qualified_cumulative_days_of_use'
       backgroundupdate_allowunelevated_rollout_beta.statistic: mean
     row: 30
     col: 12
