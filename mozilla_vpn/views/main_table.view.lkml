@@ -276,6 +276,20 @@ view: main_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__settings_connect_on_startup_active {
+    sql: ${TABLE}.metrics.boolean.settings_connect_on_startup_active ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Settings Connect On Startup Active"
+  }
+
+  dimension: metrics__boolean__settings_using_system_language {
+    sql: ${TABLE}.metrics.boolean.settings_using_system_language ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Settings Using System Language"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -293,6 +307,72 @@ view: main_table {
 
   dimension: metrics__labeled_counter__glean_error_invalid_value {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    hidden: yes
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_to_main_screen__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time To Main Screen"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_to_main_screen__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time To Main Screen"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_to_main_screen__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Time To Main Screen"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_to_main_screen__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time To Main Screen"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_to_main_screen__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_time_to_main_screen__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time To Main Screen"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_to_main_screen__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Time To Main Screen"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_to_main_screen__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time To Main Screen"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_to_main_screen__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_to_main_screen.values ;;
     hidden: yes
   }
 
@@ -466,6 +546,18 @@ view: main_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: main_table__metrics__timing_distribution__performance_time_to_main_screen__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

@@ -1979,6 +1979,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__pdfjs_stamp {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_stamp ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__perf_startup_startup_type {
     sql: ${TABLE}.metrics.labeled_counter.perf_startup_startup_type ;;
     hidden: yes
@@ -2409,6 +2414,13 @@ view: metrics_table {
     group_item_label: "Logins Saved All"
   }
 
+  dimension: metrics__quantity__metrics_device_total_ram {
+    sql: ${TABLE}.metrics.quantity.metrics_device_total_ram ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Metrics Device Total Ram"
+  }
+
   dimension: metrics__quantity__metrics_inactive_tabs_count {
     sql: ${TABLE}.metrics.quantity.metrics_inactive_tabs_count ;;
     type: number
@@ -2771,6 +2783,13 @@ view: metrics_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Gfx Status Last Compositor Gecko Version"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
   }
 
   dimension: metrics__string__metrics_adjust_ad_group {

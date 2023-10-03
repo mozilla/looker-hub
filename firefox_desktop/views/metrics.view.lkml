@@ -703,6 +703,26 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__counter__shopping_product_page_visits {
+    label: "Shopping Product Page Visits"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.shopping_product_page_visits ;;
+    type: number
+    group_label: "Shopping"
+    group_item_label: "Product Page Visits"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Product Page Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/shopping_product_page_visits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts number of visits to a supported retailer product page
+while enrolled in either the control or treatment branches
+of the shopping experiment.
+"
+  }
+
   dimension: metrics__boolean__shopping_settings_component_opted_out {
     label: "Shopping Settings Component Opted Out"
     hidden: no
@@ -2100,6 +2120,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_stamp {
+    label: "Pdfjs Stamp"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_stamp ;;
+    group_label: "Pdfjs"
+    group_item_label: "Stamp"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Stamp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/pdfjs_stamp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times some PDF editing features are used.
+"
+  }
+
   dimension: metrics__custom_distribution__pdfjs_time_to_view__sum {
     label: "Pdfjs Time To View Sum"
     hidden: no
@@ -3000,7 +3037,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_stale_transactionid__numerator {
     label: "Rtcrtpsender Setparameters Warn Stale Transactionid Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_stale_transactionid.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -3018,7 +3055,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_stale_transactionid__denominator {
     label: "Rtcrtpsender Setparameters Warn Stale Transactionid Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_stale_transactionid.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -4391,6 +4428,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Ping Centre Send Failures"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/ping_centre_send_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: shopping_product_page_visits {
+    type: sum
+    sql: ${metrics__counter__shopping_product_page_visits} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Product Page Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/shopping_product_page_visits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: shopping_product_page_visits_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__shopping_product_page_visits: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Product Page Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/shopping_product_page_visits"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -6682,6 +6744,49 @@ view: metrics__metrics__labeled_counter__pdfjs_geckoview {
   }
 }
 
+view: metrics__metrics__labeled_counter__pdfjs_stamp {
+  label: "Pdfjs - Stamp"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_stamp
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_stamp.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__ping_centre_send_failures_by_namespace {
   label: "Ping Centre - Send Failures By Namespace"
 
@@ -7563,7 +7668,7 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid
     suggest_dimension: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -7575,13 +7680,13 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -8295,6 +8400,25 @@ view: suggest__metrics__metrics__labeled_counter__pdfjs_geckoview {
     count(*) as n
 from mozdata.firefox_desktop.metrics as t,
 unnest(metrics.labeled_counter.pdfjs_geckoview) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__pdfjs_stamp {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.pdfjs_stamp) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

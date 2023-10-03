@@ -1420,6 +1420,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_stamp {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_stamp ;;
+    hidden: yes
+    description: "Counts the number of times some PDF editing features are used.
+"
+  }
+
   dimension: metrics__labeled_counter__perf_startup_startup_type {
     sql: ${TABLE}.metrics.labeled_counter.perf_startup_startup_type ;;
     hidden: yes

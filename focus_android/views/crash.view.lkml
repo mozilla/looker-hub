@@ -5,6 +5,25 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: crash {
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimenation enrollment.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes
@@ -110,6 +129,24 @@ The labels are the `category.name` identifier of the metric.
     }
 
     description: "The type of process that experienced a crash. See the full list of options [here](https://firefox-source-docs.mozilla.org/toolkit/components/telemetry/data/crash-ping.html#process-types).
+"
+  }
+
+  dimension: metrics__string__crash_remote_type {
+    label: "Crash Remote Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.crash_remote_type ;;
+    type: string
+    group_label: "Crash"
+    group_item_label: "Remote Type"
+
+    link: {
+      label: "Glean Dictionary reference for Crash Remote Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/crash_remote_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Type of the child process, can be set to \"web\", \"file\" or \"extension\" but could also be unavailable.
 "
   }
 

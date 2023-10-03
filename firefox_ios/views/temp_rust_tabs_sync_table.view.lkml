@@ -311,6 +311,13 @@ view: temp_rust_tabs_sync_table {
     hidden: yes
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+  }
+
   dimension: metrics__string__rust_tabs_sync_uid {
     sql: ${TABLE}.metrics.string.rust_tabs_sync_uid ;;
     type: string

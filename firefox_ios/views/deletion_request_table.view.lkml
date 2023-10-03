@@ -303,6 +303,13 @@ view: deletion_request_table {
     group_item_label: "Deletion Sync Device Id"
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+  }
+
   dimension: metrics__uuid__deletion_fxa_device_id {
     sql: ${TABLE}.metrics.uuid.deletion_fxa_device_id ;;
     type: string
