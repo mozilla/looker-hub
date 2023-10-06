@@ -65,6 +65,11 @@ view: firefox_ios_clients_table {
     type: yesno
   }
 
+  dimension: is_suspicious_device_client {
+    sql: ${TABLE}.is_suspicious_device_client ;;
+    type: yesno
+  }
+
   dimension: metadata__adjust_info__source_ping {
     sql: ${TABLE}.metadata.adjust_info__source_ping ;;
     type: string

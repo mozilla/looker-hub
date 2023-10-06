@@ -1116,6 +1116,13 @@ view: metrics_table {
     group_item_label: "Settings Menu Set As Default Browser Pressed"
   }
 
+  dimension: metrics__counter__shopping_product_page_visits {
+    sql: ${TABLE}.metrics.counter.shopping_product_page_visits ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Shopping Product Page Visits"
+  }
+
   dimension: metrics__counter__sync_create_account_pressed {
     sql: ${TABLE}.metrics.counter.sync_create_account_pressed ;;
     type: number

@@ -2745,6 +2745,24 @@ browser menu option is tapped.
 "
   }
 
+  dimension: metrics__counter__shopping_product_page_visits {
+    label: "Shopping Product Page Visits"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.shopping_product_page_visits ;;
+    type: number
+    group_label: "Shopping"
+    group_item_label: "Product Page Visits"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Product Page Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/shopping_product_page_visits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A count of the number of eligible product pages the user has visited.
+"
+  }
+
   dimension: metrics__counter__sync_create_account_pressed {
     label: "Sync Create Account Pressed"
     hidden: no
@@ -6585,6 +6603,31 @@ startup, as part of the initialization sequence.
     link: {
       label: "Glean Dictionary reference for Settings Menu Set As Default Browser Pressed"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/settings_menu_set_as_default_browser_pressed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: shopping_product_page_visits {
+    type: sum
+    sql: ${metrics__counter__shopping_product_page_visits} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Product Page Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/shopping_product_page_visits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: shopping_product_page_visits_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__shopping_product_page_visits: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Product Page Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/shopping_product_page_visits"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
