@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: funnel_retention_table {
+view: funnel_retention_week_4_table {
   dimension: adjust_ad_group {
     sql: ${TABLE}.adjust_ad_group ;;
     type: string
@@ -25,16 +25,6 @@ view: funnel_retention_table {
     type: string
   }
 
-  dimension: client_id {
-    sql: ${TABLE}.client_id ;;
-    hidden: yes
-  }
-
-  dimension: days_seen_in_first_28_days {
-    sql: ${TABLE}.days_seen_in_first_28_days ;;
-    type: number
-  }
-
   dimension: first_reported_country {
     sql: ${TABLE}.first_reported_country ;;
     type: string
@@ -45,23 +35,18 @@ view: funnel_retention_table {
     type: string
   }
 
-  dimension: repeat_first_month_user {
-    sql: ${TABLE}.repeat_first_month_user ;;
-    type: yesno
+  dimension: new_profiles {
+    sql: ${TABLE}.new_profiles ;;
+    type: number
   }
 
-  dimension: retained_week_2 {
-    sql: ${TABLE}.retained_week_2 ;;
-    type: yesno
+  dimension: repeat_user {
+    sql: ${TABLE}.repeat_user ;;
+    type: number
   }
 
   dimension: retained_week_4 {
     sql: ${TABLE}.retained_week_4 ;;
-    type: yesno
-  }
-
-  dimension: sample_id {
-    sql: ${TABLE}.sample_id ;;
     type: number
   }
 
@@ -80,5 +65,20 @@ view: funnel_retention_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.firefox_ios.funnel_retention` ;;
+  dimension_group: submission {
+    sql: ${TABLE}.submission_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+  }
+
+  sql_table_name: `mozdata.firefox_ios.funnel_retention_week_4` ;;
 }
