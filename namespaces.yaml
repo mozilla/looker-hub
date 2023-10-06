@@ -2270,6 +2270,9 @@ firefox_ios:
   - dthorn@mozilla.com
   - athomas@mozilla.com
   - darcese@mozilla.com
+  - kik@mozilla.com
+  - rbaffourawuah@mozilla.com
+  - vsabino@mozilla.com
   pretty_name: Firefox Ios
   spoke: looker-spoke-default
   views:
@@ -2485,6 +2488,10 @@ firefox_ios:
       tables:
       - channel: release
         table: mozdata.firefox_ios.funnel_retention_clients
+      type: table_view
+    funnel_retention_week_4:
+      tables:
+      - table: mozdata.firefox_ios.funnel_retention_week_4
       type: table_view
     funnel_retention_week_4_table:
       tables:

@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: funnel_retention_week_4_table {
+view: funnel_retention_week_4 {
   dimension: adjust_ad_group {
     sql: ${TABLE}.adjust_ad_group ;;
     type: string
