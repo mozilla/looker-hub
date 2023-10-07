@@ -133,9 +133,4 @@ view: experimenter_experiments__branches {
     sql: ${TABLE}.slug ;;
     type: string
   }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
 }
