@@ -2270,6 +2270,9 @@ firefox_ios:
   - dthorn@mozilla.com
   - athomas@mozilla.com
   - darcese@mozilla.com
+  - kik@mozilla.com
+  - rbaffourawuah@mozilla.com
+  - vsabino@mozilla.com
   pretty_name: Firefox Ios
   spoke: looker-spoke-default
   views:
@@ -2481,15 +2484,19 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.first_session
       type: table_view
-    funnel_retention_table:
+    funnel_retention_clients_table:
       tables:
       - channel: release
-        table: mozdata.firefox_ios.funnel_retention
+        table: mozdata.firefox_ios.funnel_retention_clients
       type: table_view
-    funnel_retention_week_4_aggregates_table:
+    funnel_retention_week_4:
+      tables:
+      - table: mozdata.firefox_ios.funnel_retention_week_4
+      type: table_view
+    funnel_retention_week_4_table:
       tables:
       - channel: release
-        table: mozdata.firefox_ios.funnel_retention_week_4_aggregates
+        table: mozdata.firefox_ios.funnel_retention_week_4
       type: table_view
     growth_accounting:
       tables:
@@ -6327,13 +6334,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id131
           normalized_channel:
-            default: esr
+            default: beta
             options:
-            - esr
             - beta
             - aurora
             - nightly
             - release
+            - esr
             - default
             - nightly-pine
             - nightly-oak
@@ -6444,8 +6451,8 @@ operational_monitoring:
             default: aurora
             options:
             - aurora
-            - nightly
             - beta
+            - nightly
             - release
             - esr
             - Other
@@ -8457,16 +8464,16 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id296
           channel:
-            default: release
+            default: nightly
             options:
+            - nightly
             - release
             - beta
-            - nightly
           os:
-            default: Linux
+            default: Windows_NT
             options:
-            - Linux
             - Windows_NT
+            - Linux
             - Darwin
         explore: print_background_task_times
         group_by_dimension: null
