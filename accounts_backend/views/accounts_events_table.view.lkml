@@ -366,6 +366,16 @@ The labels are the `category.name` identifier of the metric.
     description: "additional context-dependent (on event.name) info, e.g. the cause of an error"
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimenation enrollment.
+"
+  }
+
   dimension: metrics__string__relying_party_oauth_client_id {
     sql: ${TABLE}.metrics.string.relying_party_oauth_client_id ;;
     type: string
