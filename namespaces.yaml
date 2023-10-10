@@ -13202,6 +13202,17 @@ pocket:
       tables:
       - table: moz-fx-data-shared-prod.pocket_derived.twice_weekly_active_user_counts_history_v1
       type: table_view
+reference:
+  glean_app: false
+  owners:
+  - cmorales@mozilla.com
+  pretty_name: Reference
+  spoke: looker-spoke-default
+  views:
+    macroeconomic_indices:
+      tables:
+      - table: mozdata.reference.macroeconomic_indices
+      type: table_view
 regrets_reporter:
   glean_app: false
   owners:
