@@ -6,9 +6,11 @@
 
 include: "/looker-hub/firefox_ios/views/baseline_clients_daily_table.view.lkml"
 include: "/looker-hub/firefox_ios/views/metric_definitions_active_users_aggregates_v1.view.lkml"
+include: "/looker-hub/firefox_ios/views/metric_definitions_appstore_funnel.view.lkml"
 include: "/looker-hub/firefox_ios/views/metric_definitions_baseline.view.lkml"
 include: "/looker-hub/firefox_ios/views/metric_definitions_baseline_v2.view.lkml"
 include: "/looker-hub/firefox_ios/views/metric_definitions_events.view.lkml"
+include: "/looker-hub/firefox_ios/views/metric_definitions_funnel_retention.view.lkml"
 include: "/looker-hub/firefox_ios/views/metric_definitions_metrics.view.lkml"
 include: "/looker-hub/firefox_ios/views/metric_definitions_mobile_search_clients_engines_sources_daily.view.lkml"
 include: "/looker-hub/firefox_ios/views/metric_definitions_new_profile_activation.view.lkml"
@@ -25,6 +27,15 @@ explore: metric_definitions_firefox_ios {
     fields: [metrics*]
     sql_on: SAFE_CAST(metric_definitions_firefox_ios.submission_date AS TIMESTAMP) =
                   SAFE_CAST(metric_definitions_active_users_aggregates_v1.submission_date AS TIMESTAMP) ;;
+  }
+
+  join: metric_definitions_appstore_funnel {
+    view_label: "Metric Definitions Appstore Funnel"
+    relationship: many_to_many
+    type: full_outer
+    fields: [metrics*]
+    sql_on: SAFE_CAST(metric_definitions_firefox_ios.submission_date AS TIMESTAMP) =
+                  SAFE_CAST(metric_definitions_appstore_funnel.submission_date AS TIMESTAMP) ;;
   }
 
   join: metric_definitions_baseline {
@@ -55,6 +66,15 @@ explore: metric_definitions_firefox_ios {
     sql_on: SAFE_CAST(metric_definitions_firefox_ios.submission_date AS TIMESTAMP) =
                   SAFE_CAST(metric_definitions_events.submission_date AS TIMESTAMP) AND SAFE_CAST(metric_definitions_firefox_ios.client_id AS STRING) =
                   SAFE_CAST(metric_definitions_events.client_id AS STRING) ;;
+  }
+
+  join: metric_definitions_funnel_retention {
+    view_label: "Metric Definitions Funnel Retention"
+    relationship: many_to_many
+    type: full_outer
+    fields: [metrics*]
+    sql_on: SAFE_CAST(metric_definitions_firefox_ios.submission_date AS TIMESTAMP) =
+                  SAFE_CAST(metric_definitions_funnel_retention.submission_date AS TIMESTAMP) ;;
   }
 
   join: metric_definitions_metrics {

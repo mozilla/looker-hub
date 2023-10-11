@@ -5,6 +5,21 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: stripe_itemized_payout_reconciliation {
+  dimension: address_country {
+    sql: ${TABLE}.address_country ;;
+    type: string
+  }
+
+  dimension: address_postal_code {
+    sql: ${TABLE}.address_postal_code ;;
+    type: string
+  }
+
+  dimension: address_state {
+    sql: ${TABLE}.address_state ;;
+    type: string
+  }
+
   dimension: automatic_payout_id {
     sql: ${TABLE}.automatic_payout_id ;;
     type: string
@@ -27,6 +42,16 @@ view: stripe_itemized_payout_reconciliation {
 
   dimension: card_funding {
     sql: ${TABLE}.card_funding ;;
+    type: string
+  }
+
+  dimension: card_postal_code {
+    sql: ${TABLE}.card_postal_code ;;
+    type: string
+  }
+
+  dimension: card_state {
+    sql: ${TABLE}.card_state ;;
     type: string
   }
 
@@ -125,8 +150,33 @@ view: stripe_itemized_payout_reconciliation {
     type: string
   }
 
-  dimension: postal_code {
-    sql: ${TABLE}.postal_code ;;
+  dimension: plan_id {
+    sql: ${TABLE}.plan_id ;;
+    type: string
+  }
+
+  dimension: plan_interval {
+    sql: ${TABLE}.plan_interval ;;
+    type: string
+  }
+
+  dimension: plan_interval_count {
+    sql: ${TABLE}.plan_interval_count ;;
+    type: number
+  }
+
+  dimension: plan_name {
+    sql: ${TABLE}.plan_name ;;
+    type: string
+  }
+
+  dimension: product_id {
+    sql: ${TABLE}.product_id ;;
+    type: string
+  }
+
+  dimension: product_name {
+    sql: ${TABLE}.product_name ;;
     type: string
   }
 
@@ -135,23 +185,8 @@ view: stripe_itemized_payout_reconciliation {
     type: string
   }
 
-  dimension: shipping_address_city {
-    sql: ${TABLE}.shipping_address_city ;;
-    type: string
-  }
-
   dimension: shipping_address_country {
     sql: ${TABLE}.shipping_address_country ;;
-    type: string
-  }
-
-  dimension: shipping_address_line1 {
-    sql: ${TABLE}.shipping_address_line1 ;;
-    type: string
-  }
-
-  dimension: shipping_address_line2 {
-    sql: ${TABLE}.shipping_address_line2 ;;
     type: string
   }
 
@@ -170,11 +205,6 @@ view: stripe_itemized_payout_reconciliation {
     type: string
   }
 
-  dimension: state {
-    sql: ${TABLE}.state ;;
-    type: string
-  }
-
   dimension: statement_descriptor {
     sql: ${TABLE}.statement_descriptor ;;
     type: string
@@ -182,6 +212,21 @@ view: stripe_itemized_payout_reconciliation {
 
   dimension: subscription_id {
     sql: ${TABLE}.subscription_id ;;
+    type: string
+  }
+
+  dimension: tax_country {
+    sql: ${TABLE}.tax_country ;;
+    type: string
+  }
+
+  dimension: tax_postal_code {
+    sql: ${TABLE}.tax_postal_code ;;
+    type: string
+  }
+
+  dimension: tax_state {
+    sql: ${TABLE}.tax_state ;;
     type: string
   }
 

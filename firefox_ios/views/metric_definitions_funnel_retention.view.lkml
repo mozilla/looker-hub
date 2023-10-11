@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: metric_definitions_active_users_aggregates_v1 {
+view: metric_definitions_funnel_retention {
   derived_table: {
     sql: SELECT
-                SUM(dau) AS daily_active_users_v2,
+                SUM(new_profiles) AS funnel_new_profiles,SUM(repeat_user) AS repeat_users,SUM(retained_week_4) AS week_4_retained_users,
                 NULL AS client_id,
                 submission_date AS submission_date
               FROM
@@ -17,8 +17,7 @@ view: metric_definitions_active_users_aggregates_v1 {
     FROM
         (
     SELECT *
-     FROM `moz-fx-data-shared-prod.telemetry.active_users_aggregates`
-    WHERE app_name = 'Firefox iOS'
+     FROM `mozdata.firefox_ios.funnel_retention_week_4`
 )
     )
               WHERE submission_date BETWEEN
@@ -77,20 +76,37 @@ view: metric_definitions_active_users_aggregates_v1 {
     description: "Unique client identifier"
   }
 
-  dimension: daily_active_users_v2 {
-    label: "Firefox iOS DAU"
-    description: "    This is the official DAU reporting definition. The logic is
-    [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/blob/main/sql_generators/active_users/templates/mobile_query.sql)
-    and is automatically cross-checked, actively monitored, and change controlled.
-    Whenever possible, this is the preferred DAU reporting definition to use for Firefox iOS.
-    This metric needs to be aggregated by `submission_date`. If it is not aggregated by `submission_date`,
-    it is similar to a \"days of use\" metric, and not DAU.
-
-    For more information, refer to [the DAU description in the Mozilla Data Documentation](https://docs.telemetry.mozilla.org/concepts/terminology.html#dau).
-    For questions please contact bochocki@mozilla.com or firefox-kpi@mozilla.com.
+  dimension: funnel_new_profiles {
+    label: "Firefox iOS funnel new profiles"
+    description: "    This is the total number of new profiles created on a given date. We only count new profiles that came via release channel and we also filter out app version 107.2  data that was recieved after February 1st. The etl of the base table is
+    [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/blob/main/sql/moz-fx-data-shared-prod/firefox_ios_derived/funnel_retention_week_4_v1/query.sql).
+    This metric needs to be aggregated by `first_seen_date` for daily aggregation. The underlying table have a lag of 28 days, this means the most recent completed first seen date will be 28 days from current date.
+    For questions please contact \"rbaffourawuah@mozilla.com\".
 "
     type: number
-    sql: ${TABLE}.daily_active_users_v2 ;;
+    sql: ${TABLE}.funnel_new_profiles ;;
+  }
+
+  dimension: repeat_users {
+    label: "Firefox iOS funnel repeat users"
+    description: "    This is the total number of new profiles that visited more than once within their first 28 days. All the filters applied to new profile counts is applied to this calculation. The etl of the base table is
+    [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/blob/main/sql/moz-fx-data-shared-prod/firefox_ios_derived/funnel_retention_week_4_v1/query.sql).
+    This metric needs to be aggregated by `first_seen_date` for daily aggregation. The underlying table have a lag of 28 days, this means the most recent completed first seen date will be 28 days from current date.
+    For questions please contact \"rbaffourawuah@mozilla.com\".
+"
+    type: number
+    sql: ${TABLE}.repeat_users ;;
+  }
+
+  dimension: week_4_retained_users {
+    label: "Firefox iOS funnel week 4 retained users"
+    description: "    This is the total number of new profiles that returned between between day 22 to day 28 after first seen. All the filters applied to new profile counts is applied to this calculation. The etl of the base table is
+    [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/blob/main/sql/moz-fx-data-shared-prod/firefox_ios_derived/funnel_retention_week_4_v1/query.sql).
+    This metric needs to be aggregated by `first_seen_date` for daily aggregation. The underlying table have a lag of 28 days, this means the most recent completed first seen date will be 28 days from current date.
+    For questions please contact \"rbaffourawuah@mozilla.com\".
+"
+    type: number
+    sql: ${TABLE}.week_4_retained_users ;;
   }
 
   dimension_group: submission {
@@ -148,6 +164,6 @@ view: metric_definitions_active_users_aggregates_v1 {
   }
 
   set: metrics {
-    fields: [daily_active_users_v2]
+    fields: [funnel_new_profiles, repeat_users, week_4_retained_users]
   }
 }
