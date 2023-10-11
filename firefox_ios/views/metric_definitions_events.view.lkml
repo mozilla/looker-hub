@@ -79,6 +79,14 @@ view: metric_definitions_events {
                 {%- if  metric_definitions_special_onboarding_events._in_query %}
                 , SAFE_CAST(metric_definitions_special_onboarding_events.client_id AS STRING)
                 {%- endif -%}
+            
+                {%- if  metric_definitions_appstore_funnel._in_query %}
+                , SAFE_CAST(metric_definitions_appstore_funnel.client_id AS STRING)
+                {%- endif -%}
+            
+                {%- if  metric_definitions_funnel_retention._in_query %}
+                , SAFE_CAST(metric_definitions_funnel_retention.client_id AS STRING)
+                {%- endif -%}
             ) ;;
     label: "Client ID"
     primary_key: yes
@@ -139,6 +147,14 @@ view: metric_definitions_events {
             
                 {%- if  metric_definitions_special_onboarding_events._in_query %}
                 , CAST(metric_definitions_special_onboarding_events.submission_date AS TIMESTAMP)
+                {%- endif -%}
+            
+                {%- if  metric_definitions_appstore_funnel._in_query %}
+                , CAST(metric_definitions_appstore_funnel.submission_date AS TIMESTAMP)
+                {%- endif -%}
+            
+                {%- if  metric_definitions_funnel_retention._in_query %}
+                , CAST(metric_definitions_funnel_retention.submission_date AS TIMESTAMP)
                 {%- endif -%}
             ) ;;
     label: "Submission"

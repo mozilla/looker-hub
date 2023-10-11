@@ -4,10 +4,10 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: metric_definitions_active_users_aggregates_v1 {
+view: metric_definitions_appstore_funnel {
   derived_table: {
     sql: SELECT
-                SUM(dau) AS daily_active_users_v2,
+                SUM(impressions) AS impressions,SUM(total_downloads) AS downloads,
                 NULL AS client_id,
                 submission_date AS submission_date
               FROM
@@ -17,8 +17,7 @@ view: metric_definitions_active_users_aggregates_v1 {
     FROM
         (
     SELECT *
-     FROM `moz-fx-data-shared-prod.telemetry.active_users_aggregates`
-    WHERE app_name = 'Firefox iOS'
+     FROM `mozdata.firefox_ios.app_store_funnel`
 )
     )
               WHERE submission_date BETWEEN
@@ -77,20 +76,26 @@ view: metric_definitions_active_users_aggregates_v1 {
     description: "Unique client identifier"
   }
 
-  dimension: daily_active_users_v2 {
-    label: "Firefox iOS DAU"
-    description: "    This is the official DAU reporting definition. The logic is
-    [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/blob/main/sql_generators/active_users/templates/mobile_query.sql)
-    and is automatically cross-checked, actively monitored, and change controlled.
-    Whenever possible, this is the preferred DAU reporting definition to use for Firefox iOS.
-    This metric needs to be aggregated by `submission_date`. If it is not aggregated by `submission_date`,
-    it is similar to a \"days of use\" metric, and not DAU.
-
-    For more information, refer to [the DAU description in the Mozilla Data Documentation](https://docs.telemetry.mozilla.org/concepts/terminology.html#dau).
-    For questions please contact bochocki@mozilla.com or firefox-kpi@mozilla.com.
+  dimension: impressions {
+    label: "Firefox iOS appstore impressions"
+    description: "    This is the number of unique impressions of firefox browser in iOS appstore. The etl of the base table is
+    [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/blob/main/sql/moz-fx-data-shared-prod/firefox_ios_derived/app_store_funnel_v1/query.sql).
+    This metric needs to be aggregated by `first_seen_date` (date column from the data recieved from appstore) for daily aggregation. The underlying table have a lag of 7 days.
+    For questions please contact \"rbaffourawuah@mozilla.com\".
 "
     type: number
-    sql: ${TABLE}.daily_active_users_v2 ;;
+    sql: ${TABLE}.impressions ;;
+  }
+
+  dimension: downloads {
+    label: "Firefox iOS appstore downloads"
+    description: "    This is the total number of downloads of firefox browser in iOS appstore. The etl of the base table is
+    [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/blob/main/sql/moz-fx-data-shared-prod/firefox_ios_derived/app_store_funnel_v1/query.sql).
+    This metric needs to be aggregated by `first_seen_date` (date column from the data recieved from appstore) for daily aggregation. The underlying table have a lag of 7 days.
+    For questions please contact \"rbaffourawuah@mozilla.com\".
+"
+    type: number
+    sql: ${TABLE}.downloads ;;
   }
 
   dimension_group: submission {
@@ -148,6 +153,6 @@ view: metric_definitions_active_users_aggregates_v1 {
   }
 
   set: metrics {
-    fields: [daily_active_users_v2]
+    fields: [impressions, downloads]
   }
 }
