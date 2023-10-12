@@ -865,6 +865,86 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__count {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_frame.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Count Per Window Frame"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_frame.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Count Per Window Frame"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__values {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_frame.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__count {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_top_level.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Count Per Window Top Level"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_top_level.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Count Per Window Top Level"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__values {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_top_level.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__count {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_frame.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Duration Per Window Frame"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_frame.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Duration Per Window Frame"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__values {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_frame.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__count {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_top_level.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Duration Per Window Top Level"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_top_level.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Duration Per Window Top Level"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__values {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_top_level.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_cookie_access_fixup_diff.count ;;
     type: number
@@ -4286,6 +4366,54 @@ view: metrics_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

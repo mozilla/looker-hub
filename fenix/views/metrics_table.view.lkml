@@ -640,6 +640,27 @@ view: metrics_table {
     group_item_label: "Recent Tabs Section Visible"
   }
 
+  dimension: metrics__boolean__shopping_settings_component_opted_out {
+    sql: ${TABLE}.metrics.boolean.shopping_settings_component_opted_out ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Shopping Settings Component Opted Out"
+  }
+
+  dimension: metrics__boolean__shopping_settings_nimbus_disabled_shopping {
+    sql: ${TABLE}.metrics.boolean.shopping_settings_nimbus_disabled_shopping ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Shopping Settings Nimbus Disabled Shopping"
+  }
+
+  dimension: metrics__boolean__shopping_settings_user_has_onboarded {
+    sql: ${TABLE}.metrics.boolean.shopping_settings_user_has_onboarded ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Shopping Settings User Has Onboarded"
+  }
+
   dimension: metrics__boolean__wallpapers_discovered_wallpaper_feature {
     sql: ${TABLE}.metrics.boolean.wallpapers_discovered_wallpaper_feature ;;
     type: yesno
@@ -1135,6 +1156,82 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Translations Requests Count"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__count {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_frame.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Count Per Window Frame"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_frame.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Count Per Window Frame"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__values {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_frame.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__count {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_top_level.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Count Per Window Top Level"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_top_level.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Count Per Window Top Level"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__values {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_top_level.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__count {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_frame.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Duration Per Window Frame"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_frame.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Duration Per Window Frame"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__values {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_frame.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__count {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_top_level.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Duration Per Window Top Level"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_top_level.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Duration Per Window Top Level"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__values {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_top_level.values ;;
+    hidden: yes
   }
 
   dimension: metrics__custom_distribution__geckoview_document_site_origins__count {
@@ -11384,6 +11481,54 @@ view: metrics_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

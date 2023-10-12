@@ -872,6 +872,78 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__sum {
+    label: "Cookie Banners Click Query Selector Run Count Per Window Frame Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_frame.sum ;;
+    type: number
+    group_label: "Cookie Banners Click"
+    group_item_label: "Query Selector Run Count Per Window Frame Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Click Query Selector Run Count Per Window Frame Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cookie_banners_click_query_selector_run_count_per_window_frame"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often a query selector is run during the lifetime of a sub-frame content window.
+"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__sum {
+    label: "Cookie Banners Click Query Selector Run Count Per Window Top Level Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_top_level.sum ;;
+    type: number
+    group_label: "Cookie Banners Click"
+    group_item_label: "Query Selector Run Count Per Window Top Level Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Click Query Selector Run Count Per Window Top Level Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cookie_banners_click_query_selector_run_count_per_window_top_level"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often a query selector is run during the lifetime of a top-level content window.
+"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__sum {
+    label: "Cookie Banners Click Query Selector Run Duration Per Window Frame Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_frame.sum ;;
+    type: number
+    group_label: "Cookie Banners Click"
+    group_item_label: "Query Selector Run Duration Per Window Frame Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Click Query Selector Run Duration Per Window Frame Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cookie_banners_click_query_selector_run_duration_per_window_frame"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total time spent (in microseconds) on running querySelector for the lifetime of a sub-frame content window.
+"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__sum {
+    label: "Cookie Banners Click Query Selector Run Duration Per Window Top Level Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_top_level.sum ;;
+    type: number
+    group_label: "Cookie Banners Click"
+    group_item_label: "Query Selector Run Duration Per Window Top Level Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Click Query Selector Run Duration Per Window Top Level Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cookie_banners_click_query_selector_run_duration_per_window_top_level"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total time spent (in microseconds) on running querySelector for the lifetime of a top-level content window.
+"
+  }
+
   dimension: metrics__labeled_counter__cookie_banners_click_result {
     label: "Cookie Banners Click Result"
     hidden: yes
