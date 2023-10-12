@@ -3892,6 +3892,12 @@ monitor_cirrus:
       views:
         base_view: events
         extended_view: events_unnested_table
+    metric_definitions_monitor_cirrus:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_monitor_events_v1
+        joined_views:
+        - metric_definitions_monitor_events_v1
     metrics:
       type: glean_ping_explore
       views:
@@ -3902,7 +3908,7 @@ monitor_cirrus:
   - project-nimbus@mozilla.com
   - jozhou@mozilla.com
   - rhelmer@mozilla.com
-  pretty_name: Firefox Monitor (Cirrus)
+  pretty_name: Monitor Cirrus
   spoke: looker-spoke-default
   views:
     baseline:
@@ -3947,6 +3953,8 @@ monitor_cirrus:
       - channel: null
         table: mozdata.monitor_cirrus.events_unnested
       type: table_view
+    metric_definitions_monitor_events_v1:
+      type: metric_definitions_view
     metrics:
       tables:
       - table: mozdata.monitor_cirrus.metrics
