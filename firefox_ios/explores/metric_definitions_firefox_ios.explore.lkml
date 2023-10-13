@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/firefox_ios/views/baseline_clients_daily_table.view.lkml"
+include: "/looker-hub/firefox_ios/views/client_counts.view.lkml"
 include: "/looker-hub/firefox_ios/views/metric_definitions_active_users_aggregates_v1.view.lkml"
 include: "/looker-hub/firefox_ios/views/metric_definitions_appstore_funnel.view.lkml"
 include: "/looker-hub/firefox_ios/views/metric_definitions_baseline.view.lkml"
@@ -17,7 +17,7 @@ include: "/looker-hub/firefox_ios/views/metric_definitions_new_profile_activatio
 include: "/looker-hub/firefox_ios/views/metric_definitions_special_onboarding_events.view.lkml"
 
 explore: metric_definitions_firefox_ios {
-  from: baseline_clients_daily_table
+  from: client_counts
   view_label: "Base Fields"
 
   join: metric_definitions_active_users_aggregates_v1 {

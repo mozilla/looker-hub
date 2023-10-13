@@ -437,6 +437,27 @@ view: metrics_table {
     group_item_label: "Preferences Tips And Features Notifs"
   }
 
+  dimension: metrics__boolean__shopping_settings_component_opted_out {
+    sql: ${TABLE}.metrics.boolean.shopping_settings_component_opted_out ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Shopping Settings Component Opted Out"
+  }
+
+  dimension: metrics__boolean__shopping_settings_nimbus_disabled_shopping {
+    sql: ${TABLE}.metrics.boolean.shopping_settings_nimbus_disabled_shopping ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Shopping Settings Nimbus Disabled Shopping"
+  }
+
+  dimension: metrics__boolean__shopping_settings_user_has_onboarded {
+    sql: ${TABLE}.metrics.boolean.shopping_settings_user_has_onboarded ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Shopping Settings User Has Onboarded"
+  }
+
   dimension: metrics__boolean__theme_automatic_mode {
     sql: ${TABLE}.metrics.boolean.theme_automatic_mode ;;
     type: yesno
