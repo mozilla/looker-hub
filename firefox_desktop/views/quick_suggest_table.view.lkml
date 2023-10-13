@@ -290,6 +290,13 @@ view: quick_suggest_table {
     group_item_label: "Quick Suggest Is Clicked"
   }
 
+  dimension: metrics__boolean__quick_suggest_suggested_index_relative_to_group {
+    sql: ${TABLE}.metrics.boolean.quick_suggest_suggested_index_relative_to_group ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Quick Suggest Suggested Index Relative To Group"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -315,6 +322,13 @@ view: quick_suggest_table {
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Quick Suggest Position"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
   }
 
   dimension: metrics__string__quick_suggest_advertiser {
@@ -364,6 +378,13 @@ view: quick_suggest_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Quick Suggest Source"
+  }
+
+  dimension: metrics__string__quick_suggest_suggested_index {
+    sql: ${TABLE}.metrics.string.quick_suggest_suggested_index ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Quick Suggest Suggested Index"
   }
 
   dimension: metrics__url__quick_suggest_reporting_url {
