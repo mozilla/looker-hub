@@ -5,21 +5,6 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: stripe_itemized_payout_reconciliation {
-  dimension: address_country {
-    sql: ${TABLE}.address_country ;;
-    type: string
-  }
-
-  dimension: address_postal_code {
-    sql: ${TABLE}.address_postal_code ;;
-    type: string
-  }
-
-  dimension: address_state {
-    sql: ${TABLE}.address_state ;;
-    type: string
-  }
-
   dimension: automatic_payout_id {
     sql: ${TABLE}.automatic_payout_id ;;
     type: string
@@ -185,8 +170,23 @@ view: stripe_itemized_payout_reconciliation {
     type: string
   }
 
+  dimension: shipping_address_city {
+    sql: ${TABLE}.shipping_address_city ;;
+    type: string
+  }
+
   dimension: shipping_address_country {
     sql: ${TABLE}.shipping_address_country ;;
+    type: string
+  }
+
+  dimension: shipping_address_line1 {
+    sql: ${TABLE}.shipping_address_line1 ;;
+    type: string
+  }
+
+  dimension: shipping_address_line2 {
+    sql: ${TABLE}.shipping_address_line2 ;;
     type: string
   }
 
@@ -215,8 +215,18 @@ view: stripe_itemized_payout_reconciliation {
     type: string
   }
 
+  dimension: tax_amount {
+    sql: ${TABLE}.tax_amount ;;
+    type: number
+  }
+
   dimension: tax_country {
     sql: ${TABLE}.tax_country ;;
+    type: string
+  }
+
+  dimension: tax_currency {
+    sql: ${TABLE}.tax_currency ;;
     type: string
   }
 
