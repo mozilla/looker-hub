@@ -10,45 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: device_migration_existing_user_messaging_tour_spotlight_rollout
-    type: "ci-line-chart"
-    fields: [
-      device_migration_existing_user_messaging_tour_spotlight_rollout.submission_date,
-      device_migration_existing_user_messaging_tour_spotlight_rollout.branch,
-      device_migration_existing_user_messaging_tour_spotlight_rollout.upper,
-      device_migration_existing_user_messaging_tour_spotlight_rollout.lower,
-      device_migration_existing_user_messaging_tour_spotlight_rollout.point
-    ]
-    pivots: [
-      device_migration_existing_user_messaging_tour_spotlight_rollout.branch
-    ]
-    filters:
-      device_migration_existing_user_messaging_tour_spotlight_rollout.metric: 'memory_total'
-      device_migration_existing_user_messaging_tour_spotlight_rollout.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: device_migration_existing_user_messaging_tour_spotlight_rollout.submission_date
-    field_y: device_migration_existing_user_messaging_tour_spotlight_rollout.point
-    log_scale: false
-    ci_lower: device_migration_existing_user_messaging_tour_spotlight_rollout.lower
-    ci_upper: device_migration_existing_user_messaging_tour_spotlight_rollout.upper
-    show_grid: true
-    listen:
-      Date: device_migration_existing_user_messaging_tour_spotlight_rollout.submission_date
-      Percentile: device_migration_existing_user_messaging_tour_spotlight_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,43 +26,9 @@
       device_migration_existing_user_messaging_tour_spotlight_rollout.branch
     ]
     filters:
-      device_migration_existing_user_messaging_tour_spotlight_rollout.metric: 'uri_count'
+      device_migration_existing_user_messaging_tour_spotlight_rollout.metric: 'retained'
       device_migration_existing_user_messaging_tour_spotlight_rollout.statistic: mean
     row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: device_migration_existing_user_messaging_tour_spotlight_rollout.submission_date
-    field_y: device_migration_existing_user_messaging_tour_spotlight_rollout.point
-    log_scale: false
-    ci_lower: device_migration_existing_user_messaging_tour_spotlight_rollout.lower
-    ci_upper: device_migration_existing_user_messaging_tour_spotlight_rollout.upper
-    show_grid: true
-    listen:
-      Date: device_migration_existing_user_messaging_tour_spotlight_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: device_migration_existing_user_messaging_tour_spotlight_rollout
-    type: looker_line
-    fields: [
-      device_migration_existing_user_messaging_tour_spotlight_rollout.submission_date,
-      device_migration_existing_user_messaging_tour_spotlight_rollout.branch,
-      device_migration_existing_user_messaging_tour_spotlight_rollout.point
-    ]
-    pivots: [
-      device_migration_existing_user_messaging_tour_spotlight_rollout.branch
-    ]
-    filters:
-      device_migration_existing_user_messaging_tour_spotlight_rollout.metric: 'ad_clicks'
-      device_migration_existing_user_messaging_tour_spotlight_rollout.statistic: mean
-    row: 10
     col: 0
     width: 12
     height: 8
@@ -133,8 +62,42 @@
     filters:
       device_migration_existing_user_messaging_tour_spotlight_rollout.metric: 'qualified_cumulative_days_of_use'
       device_migration_existing_user_messaging_tour_spotlight_rollout.statistic: mean
-    row: 10
+    row: 0
     col: 12
+    width: 12
+    height: 8
+    field_x: device_migration_existing_user_messaging_tour_spotlight_rollout.submission_date
+    field_y: device_migration_existing_user_messaging_tour_spotlight_rollout.point
+    log_scale: false
+    ci_lower: device_migration_existing_user_messaging_tour_spotlight_rollout.lower
+    ci_upper: device_migration_existing_user_messaging_tour_spotlight_rollout.upper
+    show_grid: true
+    listen:
+      Date: device_migration_existing_user_messaging_tour_spotlight_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Uri Count
+    name: Uri Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: device_migration_existing_user_messaging_tour_spotlight_rollout
+    type: looker_line
+    fields: [
+      device_migration_existing_user_messaging_tour_spotlight_rollout.submission_date,
+      device_migration_existing_user_messaging_tour_spotlight_rollout.branch,
+      device_migration_existing_user_messaging_tour_spotlight_rollout.point
+    ]
+    pivots: [
+      device_migration_existing_user_messaging_tour_spotlight_rollout.branch
+    ]
+    filters:
+      device_migration_existing_user_messaging_tour_spotlight_rollout.metric: 'uri_count'
+      device_migration_existing_user_messaging_tour_spotlight_rollout.statistic: mean
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: device_migration_existing_user_messaging_tour_spotlight_rollout.submission_date
@@ -167,6 +130,42 @@
     filters:
       device_migration_existing_user_messaging_tour_spotlight_rollout.metric: 'days_of_use'
       device_migration_existing_user_messaging_tour_spotlight_rollout.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: device_migration_existing_user_messaging_tour_spotlight_rollout.submission_date
+    field_y: device_migration_existing_user_messaging_tour_spotlight_rollout.point
+    log_scale: false
+    ci_lower: device_migration_existing_user_messaging_tour_spotlight_rollout.lower
+    ci_upper: device_migration_existing_user_messaging_tour_spotlight_rollout.upper
+    show_grid: true
+    listen:
+      Date: device_migration_existing_user_messaging_tour_spotlight_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: device_migration_existing_user_messaging_tour_spotlight_rollout
+    type: "ci-line-chart"
+    fields: [
+      device_migration_existing_user_messaging_tour_spotlight_rollout.submission_date,
+      device_migration_existing_user_messaging_tour_spotlight_rollout.branch,
+      device_migration_existing_user_messaging_tour_spotlight_rollout.upper,
+      device_migration_existing_user_messaging_tour_spotlight_rollout.lower,
+      device_migration_existing_user_messaging_tour_spotlight_rollout.point
+    ]
+    pivots: [
+      device_migration_existing_user_messaging_tour_spotlight_rollout.branch
+    ]
+    filters:
+      device_migration_existing_user_messaging_tour_spotlight_rollout.metric: 'memory_total'
+      device_migration_existing_user_messaging_tour_spotlight_rollout.statistic: percentile
     row: 20
     col: 0
     width: 12
@@ -179,6 +178,7 @@
     show_grid: true
     listen:
       Date: device_migration_existing_user_messaging_tour_spotlight_rollout.submission_date
+      Percentile: device_migration_existing_user_messaging_tour_spotlight_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       device_migration_existing_user_messaging_tour_spotlight_rollout.branch
     ]
     filters:
-      device_migration_existing_user_messaging_tour_spotlight_rollout.metric: 'active_hours'
+      device_migration_existing_user_messaging_tour_spotlight_rollout.metric: 'ad_clicks'
       device_migration_existing_user_messaging_tour_spotlight_rollout.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       device_migration_existing_user_messaging_tour_spotlight_rollout.branch
     ]
     filters:
-      device_migration_existing_user_messaging_tour_spotlight_rollout.metric: 'retained'
+      device_migration_existing_user_messaging_tour_spotlight_rollout.metric: 'active_hours'
       device_migration_existing_user_messaging_tour_spotlight_rollout.statistic: mean
     row: 30
     col: 12
