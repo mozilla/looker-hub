@@ -340,6 +340,18 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_string__page_utm {
+    sql: ${TABLE}.metrics.labeled_string.page_utm ;;
+    hidden: yes
+    description: "The UTM parameters of the page, used to attribute the source of traffic:
+\"source\": which site sent the traffic
+\"medium\": what type of link was used
+\"campaign\": what specific campaign or experiment does this relate to
+\"term\": here for completeness, the search term that was purchased/bid on
+\"content\": what specifically was clicked to bring the user to the site
+"
+  }
+
   dimension: metrics__quantity__navigator_viewport_horizontal_coverage {
     sql: ${TABLE}.metrics.quantity.navigator_viewport_horizontal_coverage ;;
     type: number
@@ -611,6 +623,18 @@ view: page_table__events {
 }
 
 view: page_table__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: page_table__metrics__labeled_string__page_utm {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
