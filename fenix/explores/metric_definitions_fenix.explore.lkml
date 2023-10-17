@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/fenix/views/baseline_clients_daily_table.view.lkml"
+include: "/looker-hub/fenix/views/client_counts.view.lkml"
 include: "/looker-hub/fenix/views/metric_definitions_active_users_aggregates_v1.view.lkml"
 include: "/looker-hub/fenix/views/metric_definitions_baseline.view.lkml"
 include: "/looker-hub/fenix/views/metric_definitions_baseline_v2.view.lkml"
@@ -15,7 +15,7 @@ include: "/looker-hub/fenix/views/metric_definitions_new_profile_activation.view
 include: "/looker-hub/fenix/views/metric_definitions_special_onboarding_events.view.lkml"
 
 explore: metric_definitions_fenix {
-  from: baseline_clients_daily_table
+  from: client_counts
   view_label: "Base Fields"
 
   join: metric_definitions_active_users_aggregates_v1 {

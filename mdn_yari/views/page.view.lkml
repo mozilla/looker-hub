@@ -191,6 +191,29 @@ null: the page has no baseline status
 "
   }
 
+  dimension: metrics__labeled_string__page_utm {
+    label: "Page Utm"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.page_utm ;;
+    type: string
+    group_label: "Page"
+    group_item_label: "Utm"
+
+    link: {
+      label: "Glean Dictionary reference for Page Utm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/page_utm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The UTM parameters of the page, used to attribute the source of traffic:
+\"source\": which site sent the traffic
+\"medium\": what type of link was used
+\"campaign\": what specific campaign or experiment does this relate to
+\"term\": here for completeness, the search term that was purchased/bid on
+\"content\": what specifically was clicked to bring the user to the site
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes

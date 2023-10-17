@@ -151,6 +151,78 @@ It is possible for a Firefox installation to not have a default profile, but in 
 "
   }
 
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__sum {
+    label: "Cookie Banners Click Query Selector Run Count Per Window Frame Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_frame.sum ;;
+    type: number
+    group_label: "Cookie Banners Click"
+    group_item_label: "Query Selector Run Count Per Window Frame Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Click Query Selector Run Count Per Window Frame Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cookie_banners_click_query_selector_run_count_per_window_frame"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often a query selector is run during the lifetime of a sub-frame content window.
+"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__sum {
+    label: "Cookie Banners Click Query Selector Run Count Per Window Top Level Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_top_level.sum ;;
+    type: number
+    group_label: "Cookie Banners Click"
+    group_item_label: "Query Selector Run Count Per Window Top Level Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Click Query Selector Run Count Per Window Top Level Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cookie_banners_click_query_selector_run_count_per_window_top_level"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often a query selector is run during the lifetime of a top-level content window.
+"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__sum {
+    label: "Cookie Banners Click Query Selector Run Duration Per Window Frame Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_frame.sum ;;
+    type: number
+    group_label: "Cookie Banners Click"
+    group_item_label: "Query Selector Run Duration Per Window Frame Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Click Query Selector Run Duration Per Window Frame Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cookie_banners_click_query_selector_run_duration_per_window_frame"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total time spent (in microseconds) on running querySelector for the lifetime of a sub-frame content window.
+"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__sum {
+    label: "Cookie Banners Click Query Selector Run Duration Per Window Top Level Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_top_level.sum ;;
+    type: number
+    group_label: "Cookie Banners Click"
+    group_item_label: "Query Selector Run Duration Per Window Top Level Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Click Query Selector Run Duration Per Window Top Level Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cookie_banners_click_query_selector_run_duration_per_window_top_level"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total time spent (in microseconds) on running querySelector for the lifetime of a top-level content window.
+"
+  }
+
   dimension: metrics__labeled_counter__cookie_banners_click_result {
     label: "Cookie Banners Click Result"
     hidden: yes
@@ -1317,6 +1389,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput__sum {
+    label: "Networking Http 1 Upload Throughput Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 1 Upload Throughput Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 1 Upload Throughput Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_http_1_upload_throughput"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/1.0, http/1.1 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_http_2_download_throughput__sum {
     label: "Networking Http 2 Download Throughput Sum"
     hidden: no
@@ -1335,6 +1425,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput__sum {
+    label: "Networking Http 2 Upload Throughput Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 2 Upload Throughput Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 2 Upload Throughput Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_http_2_upload_throughput"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/2 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_download_throughput__sum {
     label: "Networking Http 3 Download Throughput Sum"
     hidden: no
@@ -1350,6 +1458,24 @@ To be used to validate GIFFT.
     }
 
     description: "The download throughput for http/3 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput__sum {
+    label: "Networking Http 3 Upload Throughput Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Upload Throughput Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Upload Throughput Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_http_3_upload_throughput"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/3 requests larger than 10MB. Measured in megabits per second, Mbps.
 "
   }
 

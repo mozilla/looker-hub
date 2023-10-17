@@ -9,7 +9,7 @@ view: metric_definitions_baseline_v2 {
     sql: SELECT
                 COUNT(DISTINCT CASE WHEN LOWER(metadata.isp.name) != 'browserstack' THEN client_info.client_id ELSE NULL END) AS daily_active_users,COUNT(DISTINCT CASE WHEN LOWER(metadata.isp.name) != 'browserstack' THEN client_info.client_id ELSE NULL END) AS client_level_daily_active_users_v1,
                 client_info.client_id AS client_id,
-                DATE(submission_timestamp) AS submission_date
+                submission_date AS submission_date
               FROM
                 (
     SELECT
@@ -22,7 +22,7 @@ view: metric_definitions_baseline_v2 {
     FROM `moz-fx-data-shared-prod.firefox_ios.baseline` p
 )
     )
-              WHERE DATE(submission_timestamp) BETWEEN
+              WHERE submission_date BETWEEN
                 SAFE_CAST({% date_start metric_definitions_firefox_ios.submission_date %} AS DATE) AND
                 SAFE_CAST({% date_end metric_definitions_firefox_ios.submission_date %} AS DATE)
               GROUP BY
@@ -63,6 +63,14 @@ view: metric_definitions_baseline_v2 {
             
                 {%- if  metric_definitions_special_onboarding_events._in_query %}
                 , SAFE_CAST(metric_definitions_special_onboarding_events.client_id AS STRING)
+                {%- endif -%}
+            
+                {%- if  metric_definitions_appstore_funnel._in_query %}
+                , SAFE_CAST(metric_definitions_appstore_funnel.client_id AS STRING)
+                {%- endif -%}
+            
+                {%- if  metric_definitions_funnel_retention._in_query %}
+                , SAFE_CAST(metric_definitions_funnel_retention.client_id AS STRING)
                 {%- endif -%}
             ) ;;
     label: "Client ID"
@@ -133,6 +141,14 @@ view: metric_definitions_baseline_v2 {
             
                 {%- if  metric_definitions_special_onboarding_events._in_query %}
                 , CAST(metric_definitions_special_onboarding_events.submission_date AS TIMESTAMP)
+                {%- endif -%}
+            
+                {%- if  metric_definitions_appstore_funnel._in_query %}
+                , CAST(metric_definitions_appstore_funnel.submission_date AS TIMESTAMP)
+                {%- endif -%}
+            
+                {%- if  metric_definitions_funnel_retention._in_query %}
+                , CAST(metric_definitions_funnel_retention.submission_date AS TIMESTAMP)
                 {%- endif -%}
             ) ;;
     label: "Submission"

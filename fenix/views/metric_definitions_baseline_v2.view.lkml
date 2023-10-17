@@ -9,7 +9,7 @@ view: metric_definitions_baseline_v2 {
     sql: SELECT
                 COUNT(DISTINCT CASE WHEN LOWER(metadata.isp.name) != 'browserstack' THEN client_info.client_id ELSE NULL END) AS daily_active_users,COUNT(DISTINCT CASE WHEN LOWER(metadata.isp.name) != 'browserstack' THEN client_info.client_id ELSE NULL END) AS client_level_daily_active_users_v1,
                 client_info.client_id AS client_id,
-                DATE(submission_timestamp) AS submission_date
+                submission_date AS submission_date
               FROM
                 (
     SELECT
@@ -22,7 +22,7 @@ view: metric_definitions_baseline_v2 {
     FROM `moz-fx-data-shared-prod.fenix.baseline` p
 )
     )
-              WHERE DATE(submission_timestamp) BETWEEN
+              WHERE submission_date BETWEEN
                 SAFE_CAST({% date_start metric_definitions_fenix.submission_date %} AS DATE) AND
                 SAFE_CAST({% date_end metric_definitions_fenix.submission_date %} AS DATE)
               GROUP BY
