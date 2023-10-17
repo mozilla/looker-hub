@@ -2017,6 +2017,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput__sum {
+    label: "Networking Http 1 Upload Throughput Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 1 Upload Throughput Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 1 Upload Throughput Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_1_upload_throughput"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/1.0, http/1.1 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_http_2_download_throughput__sum {
     label: "Networking Http 2 Download Throughput Sum"
     hidden: no
@@ -2035,6 +2053,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput__sum {
+    label: "Networking Http 2 Upload Throughput Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 2 Upload Throughput Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 2 Upload Throughput Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_2_upload_throughput"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/2 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_download_throughput__sum {
     label: "Networking Http 3 Download Throughput Sum"
     hidden: no
@@ -2050,6 +2086,24 @@ To be used to validate GIFFT.
     }
 
     description: "The download throughput for http/3 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput__sum {
+    label: "Networking Http 3 Upload Throughput Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Upload Throughput Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Upload Throughput Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_3_upload_throughput"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/3 requests larger than 10MB. Measured in megabits per second, Mbps.
 "
   }
 
