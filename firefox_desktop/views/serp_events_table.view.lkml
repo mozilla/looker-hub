@@ -15,11 +15,6 @@ view: serp_events_table {
     type: yesno
   }
 
-  dimension: ads_loaded {
-    sql: ${TABLE}.ads_loaded ;;
-    type: yesno
-  }
-
   dimension: browser_version_info__is_major_release {
     sql: ${TABLE}.browser_version_info.is_major_release ;;
     type: yesno
@@ -120,101 +115,6 @@ view: serp_events_table {
     type: string
   }
 
-  dimension: num_ad_carousel_ads_blocked {
-    sql: ${TABLE}.num_ad_carousel_ads_blocked ;;
-    type: number
-  }
-
-  dimension: num_ad_carousel_ads_notshowing {
-    sql: ${TABLE}.num_ad_carousel_ads_notshowing ;;
-    type: number
-  }
-
-  dimension: num_ad_carousel_ads_visible {
-    sql: ${TABLE}.num_ad_carousel_ads_visible ;;
-    type: number
-  }
-
-  dimension: num_ad_carousel_clicks {
-    sql: ${TABLE}.num_ad_carousel_clicks ;;
-    type: number
-  }
-
-  dimension: num_ad_carousel_expansions {
-    sql: ${TABLE}.num_ad_carousel_expansions ;;
-    type: number
-  }
-
-  dimension: num_ad_link_ads_blocked {
-    sql: ${TABLE}.num_ad_link_ads_blocked ;;
-    type: number
-  }
-
-  dimension: num_ad_link_ads_notshowing {
-    sql: ${TABLE}.num_ad_link_ads_notshowing ;;
-    type: number
-  }
-
-  dimension: num_ad_link_ads_notshowing_1 {
-    sql: ${TABLE}.num_ad_link_ads_notshowing_1 ;;
-    type: number
-  }
-
-  dimension: num_ad_link_ads_notshowing_2 {
-    sql: ${TABLE}.num_ad_link_ads_notshowing_2 ;;
-    type: number
-  }
-
-  dimension: num_ad_link_ads_visible {
-    sql: ${TABLE}.num_ad_link_ads_visible ;;
-    type: number
-  }
-
-  dimension: num_ad_link_clicks {
-    sql: ${TABLE}.num_ad_link_clicks ;;
-    type: number
-  }
-
-  dimension: num_ad_sidebar_ads_blocked {
-    sql: ${TABLE}.num_ad_sidebar_ads_blocked ;;
-    type: number
-  }
-
-  dimension: num_ad_sidebar_ads_notshowing {
-    sql: ${TABLE}.num_ad_sidebar_ads_notshowing ;;
-    type: number
-  }
-
-  dimension: num_ad_sidebar_ads_visible {
-    sql: ${TABLE}.num_ad_sidebar_ads_visible ;;
-    type: number
-  }
-
-  dimension: num_ad_sidebar_clicks {
-    sql: ${TABLE}.num_ad_sidebar_clicks ;;
-    type: number
-  }
-
-  dimension: num_ad_sitelink_ads_blocked {
-    sql: ${TABLE}.num_ad_sitelink_ads_blocked ;;
-    type: number
-  }
-
-  dimension: num_ad_sitelink_ads_notshowing {
-    sql: ${TABLE}.num_ad_sitelink_ads_notshowing ;;
-    type: number
-  }
-
-  dimension: num_ad_sitelink_ads_visible {
-    sql: ${TABLE}.num_ad_sitelink_ads_visible ;;
-    type: number
-  }
-
-  dimension: num_ad_sitelink_clicks {
-    sql: ${TABLE}.num_ad_sitelink_clicks ;;
-    type: number
-  }
-
   dimension: num_ads_hidden_reported {
     sql: ${TABLE}.num_ads_hidden_reported ;;
     type: number
@@ -247,56 +147,6 @@ view: serp_events_table {
 
   dimension: num_expands {
     sql: ${TABLE}.num_expands ;;
-    type: number
-  }
-
-  dimension: num_incontent_searchbox_clicks {
-    sql: ${TABLE}.num_incontent_searchbox_clicks ;;
-    type: number
-  }
-
-  dimension: num_incontent_searchbox_submits {
-    sql: ${TABLE}.num_incontent_searchbox_submits ;;
-    type: number
-  }
-
-  dimension: num_non_ads_link_clicks {
-    sql: ${TABLE}.num_non_ads_link_clicks ;;
-    type: number
-  }
-
-  dimension: num_refined_search_buttons_ads_blocked {
-    sql: ${TABLE}.num_refined_search_buttons_ads_blocked ;;
-    type: number
-  }
-
-  dimension: num_refined_search_buttons_ads_visible {
-    sql: ${TABLE}.num_refined_search_buttons_ads_visible ;;
-    type: number
-  }
-
-  dimension: num_refined_search_buttons_clicks {
-    sql: ${TABLE}.num_refined_search_buttons_clicks ;;
-    type: number
-  }
-
-  dimension: num_refined_search_buttons_expansions {
-    sql: ${TABLE}.num_refined_search_buttons_expansions ;;
-    type: number
-  }
-
-  dimension: num_shopping_tab_ads_blocked {
-    sql: ${TABLE}.num_shopping_tab_ads_blocked ;;
-    type: number
-  }
-
-  dimension: num_shopping_tab_ads_visible {
-    sql: ${TABLE}.num_shopping_tab_ads_visible ;;
-    type: number
-  }
-
-  dimension: num_shopping_tab_clicks {
-    sql: ${TABLE}.num_shopping_tab_clicks ;;
     type: number
   }
 
