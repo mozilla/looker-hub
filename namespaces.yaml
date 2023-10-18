@@ -1887,6 +1887,124 @@ firefox_desktop:
       tables:
       - table: mozdata.firefox_desktop.urlbar_events
       type: table_view
+firefox_desktop_background_defaultagent:
+  explores:
+    baseline:
+      type: glean_ping_explore
+      views:
+        base_view: baseline
+    client_counts:
+      type: client_counts_explore
+      views:
+        base_view: client_counts
+        extended_view: baseline_clients_daily_table
+    default_agent:
+      type: glean_ping_explore
+      views:
+        base_view: default_agent
+    deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: deletion_request
+    events:
+      type: events_explore
+      views:
+        base_view: events
+        extended_view: events_unnested_table
+    growth_accounting:
+      type: growth_accounting_explore
+      views:
+        base_view: growth_accounting
+    metrics:
+      type: glean_ping_explore
+      views:
+        base_view: metrics
+  glean_app: true
+  owners:
+  - nrishel@mozilla.com
+  - install-update@mozilla.com
+  pretty_name: Firefox Desktop Default Agent Task
+  spoke: looker-spoke-default
+  views:
+    baseline:
+      tables:
+      - table: mozdata.firefox_desktop_background_defaultagent.baseline
+      type: glean_ping_view
+    baseline_clients_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_defaultagent.baseline_clients_daily
+      type: table_view
+    baseline_clients_first_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_defaultagent.baseline_clients_first_seen
+      type: table_view
+    baseline_clients_last_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_defaultagent.baseline_clients_last_seen
+      type: table_view
+    baseline_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_defaultagent.baseline
+      type: table_view
+    client_counts:
+      tables:
+      - table: mozdata.firefox_desktop_background_defaultagent.baseline_clients_daily
+      type: client_counts_view
+    default_agent:
+      tables:
+      - table: mozdata.firefox_desktop_background_defaultagent.default_agent
+      type: glean_ping_view
+    default_agent_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_defaultagent.default_agent
+      type: table_view
+    deletion_request:
+      tables:
+      - table: mozdata.firefox_desktop_background_defaultagent.deletion_request
+      type: glean_ping_view
+    deletion_request_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_defaultagent.deletion_request
+      type: table_view
+    events:
+      tables:
+      - base_table: mozdata.firefox_desktop_background_defaultagent.events_unnested
+        events_table_view: events_unnested_table
+      type: events_view
+    events_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_defaultagent.events
+      type: table_view
+    events_unnested_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_defaultagent.events_unnested
+      type: table_view
+    growth_accounting:
+      tables:
+      - table: mozdata.firefox_desktop_background_defaultagent.baseline_clients_last_seen
+      type: growth_accounting_view
+    metrics:
+      tables:
+      - table: mozdata.firefox_desktop_background_defaultagent.metrics
+      type: glean_ping_view
+    metrics_clients_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_defaultagent.metrics_clients_daily
+      type: table_view
+    metrics_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop_background_defaultagent.metrics
+      type: table_view
 firefox_desktop_background_tasks:
   explores:
     background_tasks:

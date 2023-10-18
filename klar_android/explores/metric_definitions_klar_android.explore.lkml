@@ -49,5 +49,5 @@ explore: metric_definitions_klar_android {
     ]
   }
 
-  fields: [ALL_FIELDS*]
+  fields: [ALL_FIELDS*, -metric_definitions_klar_android.have_completed_period]
 }

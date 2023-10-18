@@ -103,5 +103,5 @@ explore: metric_definitions_fenix {
     ]
   }
 
-  fields: [ALL_FIELDS*]
+  fields: [ALL_FIELDS*, -metric_definitions_fenix.have_completed_period]
 }

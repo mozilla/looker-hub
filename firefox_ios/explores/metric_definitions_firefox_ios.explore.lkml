@@ -123,5 +123,5 @@ explore: metric_definitions_firefox_ios {
     ]
   }
 
-  fields: [ALL_FIELDS*]
+  fields: [ALL_FIELDS*, -metric_definitions_firefox_ios.have_completed_period]
 }
