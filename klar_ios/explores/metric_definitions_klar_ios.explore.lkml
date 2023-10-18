@@ -49,5 +49,5 @@ explore: metric_definitions_klar_ios {
     ]
   }
 
-  fields: [ALL_FIELDS*]
+  fields: [ALL_FIELDS*, -metric_definitions_klar_ios.have_completed_period]
 }

@@ -147,5 +147,5 @@ explore: metric_definitions_firefox_desktop {
     ]
   }
 
-  fields: [ALL_FIELDS*]
+  fields: [ALL_FIELDS*, -metric_definitions_firefox_desktop.have_completed_period]
 }

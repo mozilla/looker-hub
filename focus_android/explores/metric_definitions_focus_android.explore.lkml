@@ -70,5 +70,5 @@ explore: metric_definitions_focus_android {
     ]
   }
 
-  fields: [ALL_FIELDS*]
+  fields: [ALL_FIELDS*, -metric_definitions_focus_android.have_completed_period]
 }
