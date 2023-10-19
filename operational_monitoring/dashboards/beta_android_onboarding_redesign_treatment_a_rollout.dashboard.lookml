@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: beta_android_onboarding_redesign_treatment_a_rollout
-    type: looker_line
-    fields: [
-      beta_android_onboarding_redesign_treatment_a_rollout.submission_date,
-      beta_android_onboarding_redesign_treatment_a_rollout.branch,
-      beta_android_onboarding_redesign_treatment_a_rollout.point
-    ]
-    pivots: [
-      beta_android_onboarding_redesign_treatment_a_rollout.branch
-    ]
-    filters:
-      beta_android_onboarding_redesign_treatment_a_rollout.metric: 'retained'
-      beta_android_onboarding_redesign_treatment_a_rollout.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: beta_android_onboarding_redesign_treatment_a_rollout.submission_date
-    field_y: beta_android_onboarding_redesign_treatment_a_rollout.point
-    log_scale: false
-    ci_lower: beta_android_onboarding_redesign_treatment_a_rollout.lower
-    ci_upper: beta_android_onboarding_redesign_treatment_a_rollout.upper
-    show_grid: true
-    listen:
-      Date: beta_android_onboarding_redesign_treatment_a_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Tagged Sap Searches
     name: Tagged Sap Searches_mean
     note_state: expanded
@@ -63,7 +29,75 @@
       beta_android_onboarding_redesign_treatment_a_rollout.metric: 'tagged_sap_searches'
       beta_android_onboarding_redesign_treatment_a_rollout.statistic: mean
     row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: beta_android_onboarding_redesign_treatment_a_rollout.submission_date
+    field_y: beta_android_onboarding_redesign_treatment_a_rollout.point
+    log_scale: false
+    ci_lower: beta_android_onboarding_redesign_treatment_a_rollout.lower
+    ci_upper: beta_android_onboarding_redesign_treatment_a_rollout.upper
+    show_grid: true
+    listen:
+      Date: beta_android_onboarding_redesign_treatment_a_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: beta_android_onboarding_redesign_treatment_a_rollout
+    type: looker_line
+    fields: [
+      beta_android_onboarding_redesign_treatment_a_rollout.submission_date,
+      beta_android_onboarding_redesign_treatment_a_rollout.branch,
+      beta_android_onboarding_redesign_treatment_a_rollout.point
+    ]
+    pivots: [
+      beta_android_onboarding_redesign_treatment_a_rollout.branch
+    ]
+    filters:
+      beta_android_onboarding_redesign_treatment_a_rollout.metric: 'ad_clicks'
+      beta_android_onboarding_redesign_treatment_a_rollout.statistic: mean
+    row: 0
     col: 12
+    width: 12
+    height: 8
+    field_x: beta_android_onboarding_redesign_treatment_a_rollout.submission_date
+    field_y: beta_android_onboarding_redesign_treatment_a_rollout.point
+    log_scale: false
+    ci_lower: beta_android_onboarding_redesign_treatment_a_rollout.lower
+    ci_upper: beta_android_onboarding_redesign_treatment_a_rollout.upper
+    show_grid: true
+    listen:
+      Date: beta_android_onboarding_redesign_treatment_a_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Uri Count
+    name: Uri Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: beta_android_onboarding_redesign_treatment_a_rollout
+    type: looker_line
+    fields: [
+      beta_android_onboarding_redesign_treatment_a_rollout.submission_date,
+      beta_android_onboarding_redesign_treatment_a_rollout.branch,
+      beta_android_onboarding_redesign_treatment_a_rollout.point
+    ]
+    pivots: [
+      beta_android_onboarding_redesign_treatment_a_rollout.branch
+    ]
+    filters:
+      beta_android_onboarding_redesign_treatment_a_rollout.metric: 'uri_count'
+      beta_android_onboarding_redesign_treatment_a_rollout.statistic: mean
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: beta_android_onboarding_redesign_treatment_a_rollout.submission_date
@@ -95,40 +129,6 @@
     ]
     filters:
       beta_android_onboarding_redesign_treatment_a_rollout.metric: 'search_count'
-      beta_android_onboarding_redesign_treatment_a_rollout.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: beta_android_onboarding_redesign_treatment_a_rollout.submission_date
-    field_y: beta_android_onboarding_redesign_treatment_a_rollout.point
-    log_scale: false
-    ci_lower: beta_android_onboarding_redesign_treatment_a_rollout.lower
-    ci_upper: beta_android_onboarding_redesign_treatment_a_rollout.upper
-    show_grid: true
-    listen:
-      Date: beta_android_onboarding_redesign_treatment_a_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: beta_android_onboarding_redesign_treatment_a_rollout
-    type: looker_line
-    fields: [
-      beta_android_onboarding_redesign_treatment_a_rollout.submission_date,
-      beta_android_onboarding_redesign_treatment_a_rollout.branch,
-      beta_android_onboarding_redesign_treatment_a_rollout.point
-    ]
-    pivots: [
-      beta_android_onboarding_redesign_treatment_a_rollout.branch
-    ]
-    filters:
-      beta_android_onboarding_redesign_treatment_a_rollout.metric: 'days_of_use'
       beta_android_onboarding_redesign_treatment_a_rollout.statistic: mean
     row: 10
     col: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       beta_android_onboarding_redesign_treatment_a_rollout.branch
     ]
     filters:
-      beta_android_onboarding_redesign_treatment_a_rollout.metric: 'uri_count'
+      beta_android_onboarding_redesign_treatment_a_rollout.metric: 'days_of_use'
       beta_android_onboarding_redesign_treatment_a_rollout.statistic: mean
     row: 20
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       beta_android_onboarding_redesign_treatment_a_rollout.branch
     ]
     filters:
-      beta_android_onboarding_redesign_treatment_a_rollout.metric: 'ad_clicks'
+      beta_android_onboarding_redesign_treatment_a_rollout.metric: 'retained'
       beta_android_onboarding_redesign_treatment_a_rollout.statistic: mean
     row: 30
     col: 0
