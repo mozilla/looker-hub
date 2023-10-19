@@ -783,6 +783,10 @@ fenix:
       type: funnel_analysis_explore
       views:
         base_view: funnel_analysis
+    fx_suggest:
+      type: glean_ping_explore
+      views:
+        base_view: fx_suggest
     growth_accounting:
       type: growth_accounting_explore
       views:
@@ -1168,6 +1172,20 @@ fenix:
       tables:
       - channel: release
         table: mozdata.fenix.funnel_retention_week_4
+      type: table_view
+    fx_suggest:
+      tables:
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.fx_suggest
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.fx_suggest
+      type: glean_ping_view
+    fx_suggest_table:
+      tables:
+      - channel: beta
+        table: mozdata.org_mozilla_firefox_beta.fx_suggest
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.fx_suggest
       type: table_view
     geckoview_version_table:
       tables:
@@ -4473,6 +4491,10 @@ mozilla_vpn:
       type: glean_ping_explore
       views:
         base_view: baseline_clients_first_seen
+    baseline_clients_last_seen:
+      type: glean_ping_explore
+      views:
+        base_view: baseline_clients_last_seen
     client_counts:
       type: client_counts_explore
       views:
@@ -4495,6 +4517,10 @@ mozilla_vpn:
       type: funnel_analysis_explore
       views:
         base_view: funnel_analysis
+    growth_accounting:
+      type: growth_accounting_explore
+      views:
+        base_view: growth_accounting
     main:
       type: glean_ping_explore
       views:
@@ -4561,6 +4587,16 @@ mozilla_vpn:
       tables:
       - channel: release
         table: mozdata.mozilla_vpn.baseline_clients_first_seen
+      type: table_view
+    baseline_clients_last_seen:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.baseline_clients_last_seen
+      type: glean_ping_view
+    baseline_clients_last_seen_table:
+      tables:
+      - channel: release
+        table: mozdata.mozilla_vpn.baseline_clients_last_seen
       type: table_view
     baseline_table:
       tables:
@@ -4670,6 +4706,10 @@ mozilla_vpn:
       - channel: release
         table: mozdata.mozilla_vpn.funnel_product_page_to_subscribed
       type: table_view
+    growth_accounting:
+      tables:
+      - table: mozdata.mozilla_vpn.baseline_clients_last_seen
+      type: growth_accounting_view
     login_flows_table:
       tables:
       - channel: release
@@ -13845,6 +13885,26 @@ revenue_private:
     search_revenue_levers_daily:
       tables:
       - table: mozdata.search.search_revenue_levers_daily
+      type: table_view
+review_checker_desktop:
+  glean_app: false
+  owners:
+  - betling@mozilla.com
+  - akommasani@mozilla.com
+  pretty_name: Review Checker Desktop
+  spoke: looker-spoke-default
+  views:
+    clients:
+      tables:
+      - table: mozdata.firefox_desktop.review_checker_clients
+      type: table_view
+    events:
+      tables:
+      - table: mozdata.firefox_desktop.review_checker_events
+      type: table_view
+    microsurvey:
+      tables:
+      - table: mozdata.firefox_desktop.review_checker_microsurvey
       type: table_view
 search:
   explores:
