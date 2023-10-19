@@ -4,11 +4,11 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/monitor_cirrus/views/metric_definitions_monitor_events_v1.view.lkml"
+include: "/looker-hub/monitor_cirrus/views/client_counts.view.lkml"
 include: "/looker-hub/monitor_cirrus/views/metric_definitions_monitor_events_v1.view.lkml"
 
 explore: metric_definitions_monitor_cirrus {
-  from: metric_definitions_monitor_events_v1
+  from: client_counts
   view_label: "Base Fields"
 
   join: metric_definitions_monitor_events_v1 {
@@ -27,5 +27,5 @@ explore: metric_definitions_monitor_cirrus {
     ]
   }
 
-  fields: [ALL_FIELDS*, -metric_definitions_monitor_events_v1.metrics*]
+  fields: [ALL_FIELDS*, -metric_definitions_monitor_cirrus.have_completed_period]
 }
