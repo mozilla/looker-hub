@@ -272,7 +272,7 @@ default engine, and hence both versions of these fields will be filled in.
     }
 
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 

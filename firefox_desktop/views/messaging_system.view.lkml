@@ -630,7 +630,7 @@ You may have forgotten to define an appropriate metric in
     }
 
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 

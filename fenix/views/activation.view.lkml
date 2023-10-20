@@ -58,7 +58,7 @@ This will never be sent in a ping that also contains the client_id.
     }
 
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 

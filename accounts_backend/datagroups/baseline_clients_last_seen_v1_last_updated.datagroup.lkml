@@ -6,7 +6,7 @@
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
 datagroup: baseline_clients_last_seen_v1_last_updated {
-  label: "baseline_clients_last_seen_v1 Last Updated"
+  label: "Baseline Clients Last Seen Last Updated"
   sql_trigger: SELECT MAX(last_modified_time)
     FROM `moz-fx-data-shared-prod`.accounts_backend_derived.INFORMATION_SCHEMA.PARTITIONS
     WHERE table_name = 'baseline_clients_last_seen_v1' ;;

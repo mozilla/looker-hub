@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2
-    type: looker_line
-    fields: [
-      release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.submission_date,
-      release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.branch,
-      release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.point
-    ]
-    pivots: [
-      release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.branch
-    ]
-    filters:
-      release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.metric: 'days_of_use'
-      release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.submission_date
-    field_y: release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.point
-    log_scale: false
-    ci_lower: release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.lower
-    ci_upper: release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.upper
-    show_grid: true
-    listen:
-      Date: release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -61,6 +27,40 @@
     ]
     filters:
       release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.metric: 'ad_clicks'
+      release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.submission_date
+    field_y: release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.point
+    log_scale: false
+    ci_lower: release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.lower
+    ci_upper: release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.upper
+    show_grid: true
+    listen:
+      Date: release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2
+    type: looker_line
+    fields: [
+      release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.submission_date,
+      release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.branch,
+      release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.point
+    ]
+    pivots: [
+      release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.branch
+    ]
+    filters:
+      release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.metric: 'search_count'
       release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.branch
     ]
     filters:
-      release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.metric: 'search_count'
+      release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.metric: 'days_of_use'
       release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.statistic: mean
     row: 10
     col: 12

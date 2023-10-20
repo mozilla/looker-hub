@@ -497,7 +497,7 @@ the tracking protection settings panel from the toolbar.
     }
 
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 
