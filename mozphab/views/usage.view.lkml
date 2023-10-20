@@ -291,7 +291,7 @@ We store the user identification in a file that is updated every week. We want t
     }
 
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 

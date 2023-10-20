@@ -1175,6 +1175,8 @@ fenix:
       type: table_view
     fx_suggest:
       tables:
+      - channel: release
+        table: mozdata.fenix.fx_suggest
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.fx_suggest
       - channel: nightly
@@ -1182,6 +1184,8 @@ fenix:
       type: glean_ping_view
     fx_suggest_table:
       tables:
+      - channel: release
+        table: mozdata.fenix.fx_suggest
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.fx_suggest
       - channel: nightly
