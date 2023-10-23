@@ -1240,6 +1240,12 @@ the tracking protection settings panel from the toolbar.
     description: "Indicates whether or not migration was successful for each nsIDataStorage."
   }
 
+  dimension: metrics__labeled_boolean__oskeystore_self_test {
+    sql: ${TABLE}.metrics.labeled_boolean.oskeystore_self_test ;;
+    hidden: yes
+    description: "Whether or not each step of the OSKeyStore self test succeeded."
+  }
+
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     hidden: yes
@@ -2177,7 +2183,7 @@ specifically overrides it for the app.
     group_label: "Metrics String"
     group_item_label: "Glean Client Annotation Experimentation Id"
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -4646,6 +4652,18 @@ view: metrics_table__metrics__labeled_boolean__cookie_banners_private_window_ser
 }
 
 view: metrics_table__metrics__labeled_boolean__data_storage_migration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__oskeystore_self_test {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
