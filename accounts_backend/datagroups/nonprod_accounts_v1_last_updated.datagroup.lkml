@@ -6,7 +6,7 @@
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
 datagroup: nonprod_accounts_v1_last_updated {
-  label: "FxA Accounts nonprod Last Updated"
+  label: "Accounts table from FxA database in stage environment Last Updated"
   sql_trigger: SELECT MAX(last_modified_time)
     FROM `moz-fx-data-shared-prod`.accounts_backend_external.INFORMATION_SCHEMA.PARTITIONS
     WHERE table_name = 'nonprod_accounts_v1' ;;
