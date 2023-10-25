@@ -91,7 +91,7 @@ view: fx_suggest {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The ping's type. Currently always \"fxsuggest-click\".
+    description: "The ping's type. Either \"fxsuggest-click\" or \"fxsuggest-impression\".
 "
   }
 
