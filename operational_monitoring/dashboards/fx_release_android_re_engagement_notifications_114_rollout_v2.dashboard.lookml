@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       fx_release_android_re_engagement_notifications_114_rollout_v2.branch
     ]
     filters:
-      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'retained'
+      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'uri_count'
       fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: mean
     row: 0
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       fx_release_android_re_engagement_notifications_114_rollout_v2.branch
     ]
     filters:
-      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'uri_count'
+      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'active_hours'
       fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: mean
     row: 10
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       fx_release_android_re_engagement_notifications_114_rollout_v2.branch
     ]
     filters:
-      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'active_hours'
+      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'retained'
       fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: mean
     row: 30
     col: 0
