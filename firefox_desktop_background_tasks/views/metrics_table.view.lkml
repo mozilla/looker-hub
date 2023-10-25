@@ -402,6 +402,13 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__datetime__raw_background_update_time_last_update_scheduled {
+    sql: ${TABLE}.metrics.datetime.raw_background_update_time_last_update_scheduled ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Background Update Time Last Update Scheduled"
+  }
+
   dimension: metrics__datetime__raw_glean_validation_first_run_hour {
     sql: ${TABLE}.metrics.datetime.raw_glean_validation_first_run_hour ;;
     type: string
@@ -530,7 +537,7 @@ This metric appears in both the metrics and baseline pings.
     group_label: "Metrics String"
     group_item_label: "Glean Client Annotation Experimentation Id"
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -543,6 +550,11 @@ for the purpose of experimenation enrollment.
 The specific values for reason are specific to each ping, and are
 documented in the ping's pings.yaml file.
 "
+  }
+
+  dimension: metrics__string_list__background_update_reasons_to_not_update {
+    sql: ${TABLE}.metrics.string_list.background_update_reasons_to_not_update ;;
+    hidden: yes
   }
 
   dimension: metrics__timing_distribution__glean_upload_send_failure__bucket_count {
@@ -873,6 +885,23 @@ documented in the ping's pings.yaml file.
       year,
     ]
     label: "Metadata Header: Parsed Date"
+  }
+
+  dimension_group: metrics__datetime__background_update_time_last_update_scheduled {
+    sql: ${TABLE}.metrics.datetime.background_update_time_last_update_scheduled ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Background Update Time Last Update Scheduled"
+    description: "Last time the background update was triggered.
+"
   }
 
   dimension_group: metrics__datetime__glean_validation_first_run_hour {

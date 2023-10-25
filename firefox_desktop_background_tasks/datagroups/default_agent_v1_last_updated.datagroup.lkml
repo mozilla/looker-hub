@@ -5,11 +5,11 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: vat_rates_v1_last_updated {
-  label: "VAT Rates Last Updated"
+datagroup: default_agent_v1_last_updated {
+  label: "default_agent_v1 Last Updated"
   sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.mozilla_vpn_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'vat_rates_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:mozilla_vpn_derived.vat_rates_v1 is modified."
+    FROM `moz-fx-data-shared-prod`.firefox_desktop_background_tasks_stable.INFORMATION_SCHEMA.PARTITIONS
+    WHERE table_name = 'default_agent_v1' ;;
+  description: "Updates when moz-fx-data-shared-prod:firefox_desktop_background_tasks_stable.default_agent_v1 is modified."
   max_cache_age: "24 hours"
 }
