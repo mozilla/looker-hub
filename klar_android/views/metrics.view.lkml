@@ -2270,6 +2270,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_boolean__oskeystore_self_test {
+    label: "Oskeystore Self Test"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.oskeystore_self_test ;;
+    type: string
+    group_label: "Oskeystore"
+    group_item_label: "Self Test"
+
+    link: {
+      label: "Glean Dictionary reference for Oskeystore Self Test"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/oskeystore_self_test"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not each step of the OSKeyStore self test succeeded."
+  }
+
   dimension: metrics__timing_distribution__paint_build_displaylist_time__sum {
     label: "Paint Build Displaylist Time Sum"
     hidden: no
@@ -3611,7 +3628,7 @@ To be used to validate GIFFT.
     }
 
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 

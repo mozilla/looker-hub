@@ -871,6 +871,27 @@ view: metrics_table {
     group_item_label: "Inactive Tabs Tray Open Recently Closed Tab"
   }
 
+  dimension: metrics__counter__logins_deleted {
+    sql: ${TABLE}.metrics.counter.logins_deleted ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Deleted"
+  }
+
+  dimension: metrics__counter__logins_modified {
+    sql: ${TABLE}.metrics.counter.logins_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Modified"
+  }
+
+  dimension: metrics__counter__logins_saved {
+    sql: ${TABLE}.metrics.counter.logins_saved ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Saved"
+  }
+
   dimension: metrics__counter__logins_store_migration_num_failed {
     sql: ${TABLE}.metrics.counter.logins_store_migration_num_failed ;;
     type: number
@@ -1577,6 +1598,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "History Num Visits"
+  }
+
+  dimension: metrics__quantity__logins_saved_all {
+    sql: ${TABLE}.metrics.quantity.logins_saved_all ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Logins Saved All"
   }
 
   dimension: metrics__quantity__places_history_migration_num_migrated {

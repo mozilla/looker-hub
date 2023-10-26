@@ -383,7 +383,7 @@ This version number does not have a physical unit: it's only useful to compare b
     }
 
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 

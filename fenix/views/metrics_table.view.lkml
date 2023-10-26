@@ -1137,6 +1137,13 @@ view: metrics_table {
     group_item_label: "Settings Sign Into Sync"
   }
 
+  dimension: metrics__counter__shopping_product_page_visits {
+    sql: ${TABLE}.metrics.counter.shopping_product_page_visits ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Shopping Product Page Visits"
+  }
+
   dimension: metrics__counter__tabs_tray_close_inactive_tab {
     sql: ${TABLE}.metrics.counter.tabs_tray_close_inactive_tab ;;
     type: number
@@ -1775,6 +1782,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_boolean__data_storage_migration {
     sql: ${TABLE}.metrics.labeled_boolean.data_storage_migration ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_boolean__oskeystore_self_test {
+    sql: ${TABLE}.metrics.labeled_boolean.oskeystore_self_test ;;
     hidden: yes
   }
 
@@ -11926,6 +11938,18 @@ view: metrics_table__metrics__labeled_boolean__cookie_banners_private_window_ser
 }
 
 view: metrics_table__metrics__labeled_boolean__data_storage_migration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__oskeystore_self_test {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

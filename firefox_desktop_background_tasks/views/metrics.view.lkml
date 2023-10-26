@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics {
+  dimension: metrics__datetime__background_update_time_last_update_scheduled {
+    label: "Background Update Time Last Update Scheduled"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.background_update_time_last_update_scheduled ;;
+    type: time
+    group_label: "Background Update"
+    group_item_label: "Time Last Update Scheduled"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Time Last Update Scheduled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_tasks/metrics/background_update_time_last_update_scheduled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Last time the background update was triggered.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation Id"
     hidden: no
@@ -20,7 +38,7 @@ view: metrics {
     }
 
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 

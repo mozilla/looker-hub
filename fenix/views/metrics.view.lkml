@@ -2961,6 +2961,26 @@ app will report 2, 3, and 4 when this metric is tracked.
 "
   }
 
+  dimension: metrics__counter__shopping_product_page_visits {
+    label: "Shopping Product Page Visits"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.shopping_product_page_visits ;;
+    type: number
+    group_label: "Shopping"
+    group_item_label: "Product Page Visits"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Product Page Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/shopping_product_page_visits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts number of visits to a supported retailer product page
+while enrolled in either the control or treatment branches
+of the shopping experiment.
+"
+  }
+
   dimension: metrics__boolean__shopping_settings_component_opted_out {
     label: "Shopping Settings Component Opted Out"
     hidden: no
@@ -4713,6 +4733,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_boolean__oskeystore_self_test {
+    label: "Oskeystore Self Test"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.oskeystore_self_test ;;
+    type: string
+    group_label: "Oskeystore"
+    group_item_label: "Self Test"
+
+    link: {
+      label: "Glean Dictionary reference for Oskeystore Self Test"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/oskeystore_self_test"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not each step of the OSKeyStore self test succeeded."
+  }
+
   dimension: metrics__timing_distribution__paint_build_displaylist_time__sum {
     label: "Paint Build Displaylist Time Sum"
     hidden: no
@@ -6054,7 +6091,7 @@ To be used to validate GIFFT.
     }
 
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -10568,6 +10605,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Settings Sign Into Sync"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/settings_sign_into_sync"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: shopping_product_page_visits {
+    type: sum
+    sql: ${metrics__counter__shopping_product_page_visits} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Product Page Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/shopping_product_page_visits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: shopping_product_page_visits_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__shopping_product_page_visits: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Product Page Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/shopping_product_page_visits"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

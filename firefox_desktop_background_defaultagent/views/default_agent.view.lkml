@@ -103,7 +103,7 @@ This value is updated every time the Default Agent runs, so when the default bro
     }
 
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 
