@@ -1137,6 +1137,13 @@ view: metrics_table {
     group_item_label: "Settings Sign Into Sync"
   }
 
+  dimension: metrics__counter__shopping_product_page_visits {
+    sql: ${TABLE}.metrics.counter.shopping_product_page_visits ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Shopping Product Page Visits"
+  }
+
   dimension: metrics__counter__tabs_tray_close_inactive_tab {
     sql: ${TABLE}.metrics.counter.tabs_tray_close_inactive_tab ;;
     type: number

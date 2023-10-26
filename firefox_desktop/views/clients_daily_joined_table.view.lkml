@@ -1782,6 +1782,11 @@ view: clients_daily_joined_table {
     type: number
   }
 
+  dimension: startup_profile_selection_reason_first {
+    sql: ${TABLE}.startup_profile_selection_reason_first ;;
+    type: string
+  }
+
   dimension: subsession_hours_sum {
     sql: ${TABLE}.subsession_hours_sum ;;
     type: number
