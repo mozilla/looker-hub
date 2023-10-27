@@ -1976,15 +1976,6 @@ firefox_desktop:
       tables:
       - table: mozdata.firefox_desktop.urlbar_events
       type: table_view
-    urlbar_events_table_temp_v2:
-      tables:
-      - table: mozdata.firefox_desktop.urlbar_events_temp_v2
-      type: table_view
-    urlbar_events_temp_v2:
-      tables:
-      - base_table: mozdata.firefox_desktop.urlbar_events_temp_v2
-        events_table_view: urlbar_events_table_temp_v2
-      type: events_view
     urlbar_events_temp_v2_table:
       tables:
       - channel: null
