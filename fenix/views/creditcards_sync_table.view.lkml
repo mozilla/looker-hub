@@ -603,6 +603,16 @@ view: creditcards_sync_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.creditcards_sync"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.creditcards_sync"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.creditcards_sync"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

@@ -209,6 +209,16 @@ view: baseline_clients_last_seen_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.baseline_clients_last_seen"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.baseline_clients_last_seen"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.baseline_clients_last_seen"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

@@ -15,6 +15,21 @@ view: urlbar_events_table {
     type: string
   }
 
+  dimension: engagement_type {
+    sql: ${TABLE}.engagement_type ;;
+    type: string
+  }
+
+  dimension: event_action {
+    sql: ${TABLE}.event_action ;;
+    type: string
+  }
+
+  dimension: event_id {
+    sql: ${TABLE}.event_id ;;
+    type: string
+  }
+
   dimension: event_name {
     sql: ${TABLE}.event_name ;;
     type: string
@@ -30,13 +45,13 @@ view: urlbar_events_table {
     hidden: yes
   }
 
-  dimension: first_result_type {
-    sql: ${TABLE}.first_result_type ;;
+  dimension: glean_client_id {
+    sql: ${TABLE}.glean_client_id ;;
     type: string
   }
 
-  dimension: glean_client_id {
-    sql: ${TABLE}.glean_client_id ;;
+  dimension: interaction {
+    sql: ${TABLE}.interaction ;;
     type: string
   }
 
@@ -60,58 +75,13 @@ view: urlbar_events_table {
     type: string
   }
 
-  dimension: num_add_on_impressions {
-    sql: ${TABLE}.num_add_on_impressions ;;
-    type: number
-  }
-
-  dimension: num_admarketplace_sponsored_impressions {
-    sql: ${TABLE}.num_admarketplace_sponsored_impressions ;;
-    type: number
-  }
-
-  dimension: num_bookmark_impressions {
-    sql: ${TABLE}.num_bookmark_impressions ;;
-    type: number
+  dimension: normalized_engine {
+    sql: ${TABLE}.normalized_engine ;;
+    type: string
   }
 
   dimension: num_chars_typed {
     sql: ${TABLE}.num_chars_typed ;;
-    type: number
-  }
-
-  dimension: num_default_partner_search_suggestion_impressions {
-    sql: ${TABLE}.num_default_partner_search_suggestion_impressions ;;
-    type: number
-  }
-
-  dimension: num_history_impressions {
-    sql: ${TABLE}.num_history_impressions ;;
-    type: number
-  }
-
-  dimension: num_navigational_impressions {
-    sql: ${TABLE}.num_navigational_impressions ;;
-    type: number
-  }
-
-  dimension: num_open_tab_impressions {
-    sql: ${TABLE}.num_open_tab_impressions ;;
-    type: number
-  }
-
-  dimension: num_pocket_collection_impressions {
-    sql: ${TABLE}.num_pocket_collection_impressions ;;
-    type: number
-  }
-
-  dimension: num_quick_action_impressions {
-    sql: ${TABLE}.num_quick_action_impressions ;;
-    type: number
-  }
-
-  dimension: num_search_engine_impressions {
-    sql: ${TABLE}.num_search_engine_impressions ;;
     type: number
   }
 
@@ -120,24 +90,19 @@ view: urlbar_events_table {
     type: number
   }
 
-  dimension: num_trending_suggestion_impressions {
-    sql: ${TABLE}.num_trending_suggestion_impressions ;;
-    type: number
+  dimension: pref_data_collection {
+    sql: ${TABLE}.pref_data_collection ;;
+    type: yesno
   }
 
-  dimension: num_weather_impressions {
-    sql: ${TABLE}.num_weather_impressions ;;
-    type: number
+  dimension: pref_fx_suggestions {
+    sql: ${TABLE}.pref_fx_suggestions ;;
+    type: yesno
   }
 
-  dimension: num_wikipedia_dynamic_impressions {
-    sql: ${TABLE}.num_wikipedia_dynamic_impressions ;;
-    type: number
-  }
-
-  dimension: num_wikipedia_enhanced_impressions {
-    sql: ${TABLE}.num_wikipedia_enhanced_impressions ;;
-    type: number
+  dimension: pref_sponsored_suggestions {
+    sql: ${TABLE}.pref_sponsored_suggestions ;;
+    type: yesno
   }
 
   dimension: product_engaged_result_type {
@@ -145,9 +110,14 @@ view: urlbar_events_table {
     type: string
   }
 
-  dimension: product_first_result_type {
-    sql: ${TABLE}.product_first_result_type ;;
+  dimension: product_selected_result {
+    sql: ${TABLE}.product_selected_result ;;
     type: string
+  }
+
+  dimension: results {
+    sql: ${TABLE}.results ;;
+    hidden: yes
   }
 
   dimension: sample_id {
@@ -155,9 +125,19 @@ view: urlbar_events_table {
     type: number
   }
 
-  dimension: session_action_type {
-    sql: ${TABLE}.session_action_type ;;
+  dimension: selected_position {
+    sql: ${TABLE}.selected_position ;;
+    type: number
+  }
+
+  dimension: selected_result {
+    sql: ${TABLE}.selected_result ;;
     type: string
+  }
+
+  dimension: seq {
+    sql: ${TABLE}.seq ;;
+    type: number
   }
 
   dimension_group: submission {
@@ -203,5 +183,27 @@ view: urlbar_events_table__experiments {
     type: string
     group_label: "Value Extra"
     group_item_label: "Type"
+  }
+}
+
+view: urlbar_events_table__results {
+  dimension: position {
+    sql: ${TABLE}.position ;;
+    type: number
+  }
+
+  dimension: product_result_type {
+    sql: ${TABLE}.product_result_type ;;
+    type: string
+  }
+
+  dimension: result_group {
+    sql: ${TABLE}.result_group ;;
+    type: string
+  }
+
+  dimension: result_type {
+    sql: ${TABLE}.result_type ;;
+    type: string
   }
 }

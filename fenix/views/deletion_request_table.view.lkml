@@ -457,6 +457,16 @@ view: deletion_request_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.deletion_request"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.deletion_request"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.deletion_request"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

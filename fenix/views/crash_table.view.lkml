@@ -521,6 +521,16 @@ view: crash_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.crash"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.crash"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.crash"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

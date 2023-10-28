@@ -487,6 +487,16 @@ view: topsites_impression_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.topsites_impression"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.topsites_impression"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.topsites_impression"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

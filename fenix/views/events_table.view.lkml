@@ -462,6 +462,16 @@ view: events_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.events"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.events"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.events"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;
