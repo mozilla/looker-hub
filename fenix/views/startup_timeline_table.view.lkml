@@ -527,6 +527,16 @@ view: startup_timeline_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.startup_timeline"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.startup_timeline"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.startup_timeline"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

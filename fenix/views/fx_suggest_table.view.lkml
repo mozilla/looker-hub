@@ -520,6 +520,16 @@ view: fx_suggest_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.fx_suggest"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.fx_suggest"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.fx_suggest"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

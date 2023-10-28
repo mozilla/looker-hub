@@ -617,6 +617,16 @@ view: history_sync_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.history_sync"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.history_sync"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.history_sync"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

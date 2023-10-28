@@ -603,6 +603,16 @@ view: tabs_sync_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.tabs_sync"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.tabs_sync"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.tabs_sync"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

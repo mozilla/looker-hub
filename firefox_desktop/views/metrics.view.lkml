@@ -1510,6 +1510,118 @@ Will likely be obsoleted by bug 1641989.
 "
   }
 
+  dimension: metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
+    label: "Fog Validation Gvsv Audio Stream Init"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.fog_validation_gvsv_audio_stream_init ;;
+    group_label: "Fog Validation"
+    group_item_label: "Gvsv Audio Stream Init"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Validation Gvsv Audio Stream Init"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_validation_gvsv_audio_stream_init"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Incremented when an audio stream is initialized, recorded alongside the
+GeckoView Streaming API for the purposes of Validation (hence GVSV).
+Uses a single label due to only labeled counters being supported
+"
+  }
+
+  dimension: metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko {
+    label: "Fog Validation Gvsv Audio Stream Init Gecko"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.fog_validation_gvsv_audio_stream_init_gecko ;;
+    group_label: "Fog Validation"
+    group_item_label: "Gvsv Audio Stream Init Gecko"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Validation Gvsv Audio Stream Init Gecko"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_validation_gvsv_audio_stream_init_gecko"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Incremented when an audio stream is initialized, recorded alongside the
+Glean API for the purposes of Validation (hence GVSV).
+Uses a single label due to only labeled counters being supported
+"
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__sum {
+    label: "Fog Validation Gvsv Composite Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.sum ;;
+    type: number
+    group_label: "Fog Validation"
+    group_item_label: "Gvsv Composite Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Validation Gvsv Composite Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_validation_gvsv_composite_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Glean equivalent to the Geckoview Stream gfx Composite Time metric.  Represents The time taken to composite a frame. Differs between  non-webrender and webrender, see the non-validation version for more details.
+"
+  }
+
+  dimension: metrics__custom_distribution__fog_validation_gvsv_number_of_unique_site_origins_all_tabs__sum {
+    label: "Fog Validation Gvsv Number Of Unique Site Origins All Tabs Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.fog_validation_gvsv_number_of_unique_site_origins_all_tabs.sum ;;
+    type: number
+    group_label: "Fog Validation"
+    group_item_label: "Gvsv Number Of Unique Site Origins All Tabs Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Validation Gvsv Number Of Unique Site Origins All Tabs Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_validation_gvsv_number_of_unique_site_origins_all_tabs"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between tab selection and first composite of the tab content onto the screen. Implemented alongside the Geckoview Streaming version to measure potential differences between the two.
+"
+  }
+
+  dimension: metrics__quantity__fog_validation_gvsv_primary_height {
+    label: "Fog Validation Gvsv Primary Height"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.fog_validation_gvsv_primary_height ;;
+    type: number
+    group_label: "Fog Validation"
+    group_item_label: "Gvsv Primary Height"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Validation Gvsv Primary Height"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_validation_gvsv_primary_height"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Primary display pixel height, recorded alongside the GeckoView Streaming 
+API for the purposes of Validation (hence GVSV).
+"
+  }
+
+  dimension: metrics__quantity__fog_validation_gvsv_primary_width {
+    label: "Fog Validation Gvsv Primary Width"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.fog_validation_gvsv_primary_width ;;
+    type: number
+    group_label: "Fog Validation"
+    group_item_label: "Gvsv Primary Width"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Validation Gvsv Primary Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_validation_gvsv_primary_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Primary display pixel width, recorded alongside the GeckoView Streaming 
+API for the purposes of Validation (hence GVSV).
+"
+  }
+
   dimension: metrics__quantity__formautofill_creditcards_autofill_profiles_count {
     label: "Formautofill Creditcards Autofill Profiles Count"
     hidden: no
@@ -5659,6 +5771,92 @@ view: metrics__metrics__labeled_counter__extensions_process_event {
   }
 }
 
+view: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
+  label: "Fog Validation - Gvsv Audio Stream Init"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko {
+  label: "Fog Validation - Gvsv Audio Stream Init Gecko"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__glean_error_invalid_label {
   label: "Glean Error - Invalid Label"
 
@@ -8011,6 +8209,44 @@ view: suggest__metrics__metrics__labeled_counter__extensions_process_event {
     count(*) as n
 from mozdata.firefox_desktop.metrics as t,
 unnest(metrics.labeled_counter.extensions_process_event) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.fog_validation_gvsv_audio_stream_init) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.fog_validation_gvsv_audio_stream_init_gecko) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

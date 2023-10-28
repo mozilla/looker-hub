@@ -9,6 +9,7 @@ include: "/looker-hub/firefox_desktop/views/metric_definitions_active_users_aggr
 include: "/looker-hub/firefox_desktop/views/metric_definitions_activity_stream_events.view.lkml"
 include: "/looker-hub/firefox_desktop/views/metric_definitions_browser_launched_to_handle_events.view.lkml"
 include: "/looker-hub/firefox_desktop/views/metric_definitions_clients_daily.view.lkml"
+include: "/looker-hub/firefox_desktop/views/metric_definitions_clients_first_seen_v2.view.lkml"
 include: "/looker-hub/firefox_desktop/views/metric_definitions_crash.view.lkml"
 include: "/looker-hub/firefox_desktop/views/metric_definitions_events.view.lkml"
 include: "/looker-hub/firefox_desktop/views/metric_definitions_events_memory.view.lkml"
@@ -59,6 +60,16 @@ explore: metric_definitions_firefox_desktop {
     sql_on: SAFE_CAST(metric_definitions_firefox_desktop.submission_date AS TIMESTAMP) =
                   SAFE_CAST(metric_definitions_clients_daily.submission_date AS TIMESTAMP) AND SAFE_CAST(metric_definitions_firefox_desktop.client_id AS STRING) =
                   SAFE_CAST(metric_definitions_clients_daily.client_id AS STRING) ;;
+  }
+
+  join: metric_definitions_clients_first_seen_v2 {
+    view_label: "Metric Definitions Clients First Seen V2"
+    relationship: many_to_many
+    type: full_outer
+    fields: [metrics*]
+    sql_on: SAFE_CAST(metric_definitions_firefox_desktop.submission_date AS TIMESTAMP) =
+                  SAFE_CAST(metric_definitions_clients_first_seen_v2.submission_date AS TIMESTAMP) AND SAFE_CAST(metric_definitions_firefox_desktop.client_id AS STRING) =
+                  SAFE_CAST(metric_definitions_clients_first_seen_v2.client_id AS STRING) ;;
   }
 
   join: metric_definitions_crash {

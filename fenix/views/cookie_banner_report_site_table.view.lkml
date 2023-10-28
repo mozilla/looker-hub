@@ -471,6 +471,16 @@ view: cookie_banner_report_site_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.cookie_banner_report_site"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.cookie_banner_report_site"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.cookie_banner_report_site"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

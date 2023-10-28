@@ -4,26 +4,20 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: metric_definitions_events {
+view: metric_definitions_clients_first_seen_v2 {
   derived_table: {
     sql: SELECT
-                COALESCE(LOGICAL_OR(            event_method = 'open_management'
-            AND event_category = 'pwmgr'
-         ), FALSE) AS view_about_logins,COALESCE(LOGICAL_OR(            event_method = 'show'
-            AND event_object = 'protection_report'
-         ), FALSE) AS view_about_protections,COALESCE(LOGICAL_OR(            event_method = 'connect'
-            AND event_object = 'account'
-         ), FALSE) AS connect_fxa,
+                COUNT(*) AS new_profiles_v1,
                 client_id AS client_id,
-                submission_date AS submission_date
+                first_seen_date AS submission_date
               FROM
                 (
     SELECT
         *
     FROM
-        mozdata.telemetry.events
+        moz-fx-data-shared-prod.telemetry_derived.clients_first_seen_v2
     )
-              WHERE submission_date BETWEEN
+              WHERE first_seen_date BETWEEN
                 SAFE_CAST({% date_start metric_definitions_firefox_desktop.submission_date %} AS DATE) AND
                 SAFE_CAST({% date_end metric_definitions_firefox_desktop.submission_date %} AS DATE)
               GROUP BY
@@ -91,30 +85,11 @@ view: metric_definitions_events {
     description: "Unique client identifier"
   }
 
-  dimension: view_about_logins {
-    label: "about:logins viewers"
-    description: "    Counts the number of clients that viewed about:logins.
-"
+  dimension: new_profiles_v1 {
+    label: "New Profiles"
+    description: "The number of newly acquired Firefox Desktop clients. A client is newly acquired on the first date they appear in either of new profile, main or first shutdown pings based on submission date"
     type: number
-    sql: ${TABLE}.view_about_logins ;;
-  }
-
-  dimension: view_about_protections {
-    label: "about:protections viewers"
-    description: "    Counts the number of clients that viewed about:protections.
-"
-    type: number
-    sql: ${TABLE}.view_about_protections ;;
-  }
-
-  dimension: connect_fxa {
-    label: "Connected FxA"
-    description: "    Counts the number of clients that took action to connect to FxA.
-    This does not include clients that were already connected to FxA at
-    the start of the experiment and remained connected.
-"
-    type: number
-    sql: ${TABLE}.connect_fxa ;;
+    sql: ${TABLE}.new_profiles_v1 ;;
   }
 
   dimension_group: submission {
@@ -184,6 +159,6 @@ view: metric_definitions_events {
   }
 
   set: metrics {
-    fields: [view_about_logins, view_about_protections, connect_fxa]
+    fields: [new_profiles_v1]
   }
 }

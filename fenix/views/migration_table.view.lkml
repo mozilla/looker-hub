@@ -1057,6 +1057,16 @@ view: migration_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.migration"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.migration"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.migration"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

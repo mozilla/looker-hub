@@ -627,6 +627,16 @@ view: bookmarks_sync_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.bookmarks_sync"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.bookmarks_sync"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.bookmarks_sync"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

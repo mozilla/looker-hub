@@ -478,6 +478,16 @@ view: fog_validation_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.fog_validation"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.fog_validation"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.fog_validation"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

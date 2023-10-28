@@ -457,6 +457,16 @@ view: pageload_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.pageload"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.pageload"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.pageload"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

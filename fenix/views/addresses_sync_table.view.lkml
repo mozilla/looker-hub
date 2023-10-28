@@ -603,6 +603,16 @@ view: addresses_sync_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.addresses_sync"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.addresses_sync"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.addresses_sync"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;
