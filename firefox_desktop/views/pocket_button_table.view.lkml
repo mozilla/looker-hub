@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: events_table {
+view: pocket_button_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -308,6 +308,15 @@ view: events_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__pocket_button_pocket_logged_in_status {
+    sql: ${TABLE}.metrics.boolean.pocket_button_pocket_logged_in_status ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Pocket Button Pocket Logged In Status"
+    description: "Whether there was a logged-in Pocket account in the Pocket-Firefox integration at the point in time this action occurred.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -340,6 +349,25 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__pocket_button_event_position {
+    sql: ${TABLE}.metrics.quantity.pocket_button_event_position ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Pocket Button Event Position"
+    description: "0-based index of the item on which the action was performed. Not always provided.
+"
+  }
+
+  dimension: metrics__quantity__pocket_button_profile_creation_date {
+    sql: ${TABLE}.metrics.quantity.pocket_button_profile_creation_date ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Pocket Button Profile Creation Date"
+    description: "The days since Jan 1, 1970 that the oldest file in the profile dir was modified. Or created. Or just the day and time of the first thing to ask for the profile age called in. Or something earlier or later than that.
+You may not want to use this.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
@@ -350,12 +378,39 @@ for the purpose of experimentation enrollment.
 "
   }
 
-  dimension: metrics__uuid__legacy_ids_client_id {
-    sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
+  dimension: metrics__string__pocket_button_event_action {
+    sql: ${TABLE}.metrics.string.pocket_button_event_action ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Pocket Button Event Action"
+    description: "The action that was taken, like \"click\" or... actually, it might only ever be \"click\".
+"
+  }
+
+  dimension: metrics__string__pocket_button_event_source {
+    sql: ${TABLE}.metrics.string.pocket_button_event_source ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Pocket Button Event Source"
+    description: "The source of the taken action, like \"save_button\", \"home_button\", \"on_save_recs\", or the like.
+"
+  }
+
+  dimension: metrics__string__pocket_button_model {
+    sql: ${TABLE}.metrics.string.pocket_button_model ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Pocket Button Model"
+    description: "A string that identifies the ML model (if any) used to generate on-save recommendations. Like \"doc2vec-incremental-best-article-pubspread\".
+"
+  }
+
+  dimension: metrics__uuid__pocket_button_impression_id {
+    sql: ${TABLE}.metrics.uuid.pocket_button_impression_id ;;
     type: string
     group_label: "Metrics Uuid"
-    group_item_label: "Legacy Ids Client Id"
-    description: "Sets the legacy client ID as part of the deletion-reqest and other pings.
+    group_item_label: "Pocket Button Impression Id"
+    description: "A UUID representing this profile. This isn't client_id, nor can it be used to link to a client_id. This also means it should never be sent in a ping with a client_id.
 "
   }
 
@@ -494,10 +549,10 @@ for the purpose of experimentation enrollment.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  sql_table_name: `mozdata.org_mozilla_klar.events` ;;
+  sql_table_name: `mozdata.firefox_desktop.pocket_button` ;;
 }
 
-view: events_table__events {
+view: pocket_button_table__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
@@ -519,7 +574,7 @@ view: events_table__events {
   }
 }
 
-view: events_table__events__extra {
+view: pocket_button_table__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -531,7 +586,7 @@ view: events_table__events__extra {
   }
 }
 
-view: events_table__ping_info__experiments {
+view: pocket_button_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
