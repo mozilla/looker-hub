@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,112 +60,10 @@
       fx_release_android_re_engagement_notifications_114_rollout_v2.branch
     ]
     filters:
-      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'ad_clicks'
+      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'search_count'
       fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: mean
     row: 0
     col: 12
-    width: 12
-    height: 8
-    field_x: fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date
-    field_y: fx_release_android_re_engagement_notifications_114_rollout_v2.point
-    log_scale: false
-    ci_lower: fx_release_android_re_engagement_notifications_114_rollout_v2.lower
-    ci_upper: fx_release_android_re_engagement_notifications_114_rollout_v2.upper
-    show_grid: true
-    listen:
-      Date: fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: fx_release_android_re_engagement_notifications_114_rollout_v2
-    type: looker_line
-    fields: [
-      fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date,
-      fx_release_android_re_engagement_notifications_114_rollout_v2.branch,
-      fx_release_android_re_engagement_notifications_114_rollout_v2.point
-    ]
-    pivots: [
-      fx_release_android_re_engagement_notifications_114_rollout_v2.branch
-    ]
-    filters:
-      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'uri_count'
-      fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date
-    field_y: fx_release_android_re_engagement_notifications_114_rollout_v2.point
-    log_scale: false
-    ci_lower: fx_release_android_re_engagement_notifications_114_rollout_v2.lower
-    ci_upper: fx_release_android_re_engagement_notifications_114_rollout_v2.upper
-    show_grid: true
-    listen:
-      Date: fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: fx_release_android_re_engagement_notifications_114_rollout_v2
-    type: looker_line
-    fields: [
-      fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date,
-      fx_release_android_re_engagement_notifications_114_rollout_v2.branch,
-      fx_release_android_re_engagement_notifications_114_rollout_v2.point
-    ]
-    pivots: [
-      fx_release_android_re_engagement_notifications_114_rollout_v2.branch
-    ]
-    filters:
-      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'active_hours'
-      fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date
-    field_y: fx_release_android_re_engagement_notifications_114_rollout_v2.point
-    log_scale: false
-    ci_lower: fx_release_android_re_engagement_notifications_114_rollout_v2.lower
-    ci_upper: fx_release_android_re_engagement_notifications_114_rollout_v2.upper
-    show_grid: true
-    listen:
-      Date: fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: fx_release_android_re_engagement_notifications_114_rollout_v2
-    type: looker_line
-    fields: [
-      fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date,
-      fx_release_android_re_engagement_notifications_114_rollout_v2.branch,
-      fx_release_android_re_engagement_notifications_114_rollout_v2.point
-    ]
-    pivots: [
-      fx_release_android_re_engagement_notifications_114_rollout_v2.branch
-    ]
-    filters:
-      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'days_of_use'
-      fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: mean
-    row: 20
-    col: 0
     width: 12
     height: 8
     field_x: fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date
@@ -198,6 +96,108 @@
     filters:
       fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'tagged_sap_searches'
       fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date
+    field_y: fx_release_android_re_engagement_notifications_114_rollout_v2.point
+    log_scale: false
+    ci_lower: fx_release_android_re_engagement_notifications_114_rollout_v2.lower
+    ci_upper: fx_release_android_re_engagement_notifications_114_rollout_v2.upper
+    show_grid: true
+    listen:
+      Date: fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: fx_release_android_re_engagement_notifications_114_rollout_v2
+    type: looker_line
+    fields: [
+      fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date,
+      fx_release_android_re_engagement_notifications_114_rollout_v2.branch,
+      fx_release_android_re_engagement_notifications_114_rollout_v2.point
+    ]
+    pivots: [
+      fx_release_android_re_engagement_notifications_114_rollout_v2.branch
+    ]
+    filters:
+      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'ad_clicks'
+      fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date
+    field_y: fx_release_android_re_engagement_notifications_114_rollout_v2.point
+    log_scale: false
+    ci_lower: fx_release_android_re_engagement_notifications_114_rollout_v2.lower
+    ci_upper: fx_release_android_re_engagement_notifications_114_rollout_v2.upper
+    show_grid: true
+    listen:
+      Date: fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: fx_release_android_re_engagement_notifications_114_rollout_v2
+    type: looker_line
+    fields: [
+      fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date,
+      fx_release_android_re_engagement_notifications_114_rollout_v2.branch,
+      fx_release_android_re_engagement_notifications_114_rollout_v2.point
+    ]
+    pivots: [
+      fx_release_android_re_engagement_notifications_114_rollout_v2.branch
+    ]
+    filters:
+      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'active_hours'
+      fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: mean
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date
+    field_y: fx_release_android_re_engagement_notifications_114_rollout_v2.point
+    log_scale: false
+    ci_lower: fx_release_android_re_engagement_notifications_114_rollout_v2.lower
+    ci_upper: fx_release_android_re_engagement_notifications_114_rollout_v2.upper
+    show_grid: true
+    listen:
+      Date: fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Uri Count
+    name: Uri Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: fx_release_android_re_engagement_notifications_114_rollout_v2
+    type: looker_line
+    fields: [
+      fx_release_android_re_engagement_notifications_114_rollout_v2.submission_date,
+      fx_release_android_re_engagement_notifications_114_rollout_v2.branch,
+      fx_release_android_re_engagement_notifications_114_rollout_v2.point
+    ]
+    pivots: [
+      fx_release_android_re_engagement_notifications_114_rollout_v2.branch
+    ]
+    filters:
+      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'uri_count'
+      fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: mean
     row: 20
     col: 12
     width: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       fx_release_android_re_engagement_notifications_114_rollout_v2.branch
     ]
     filters:
-      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'search_count'
+      fx_release_android_re_engagement_notifications_114_rollout_v2.metric: 'days_of_use'
       fx_release_android_re_engagement_notifications_114_rollout_v2.statistic: mean
     row: 30
     col: 0
