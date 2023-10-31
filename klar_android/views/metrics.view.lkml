@@ -2314,7 +2314,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__networking_http_content_onstart_delay__sum {
     label: "Networking Http Content Onstart Delay Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.sum ;;
     type: number
     group_label: "Networking"
@@ -2332,7 +2332,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__networking_http_content_onstop_delay__sum {
     label: "Networking Http Content Onstop Delay Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.sum ;;
     type: number
     group_label: "Networking"
