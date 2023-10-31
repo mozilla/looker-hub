@@ -78,6 +78,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_process_event}) AS metrics__metrics__labeled_counter__extensions_process_event ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_process_event.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__fog_validation_gvsv_audio_stream_init}) AS metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko}) AS metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__glean_error_invalid_label}) AS metrics__metrics__labeled_counter__glean_error_invalid_label ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -374,6 +384,14 @@ explore: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup
 }
 
 explore: suggest__metrics__metrics__labeled_counter__extensions_process_event {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko {
   hidden: yes
 }
 

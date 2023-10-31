@@ -526,6 +526,16 @@ view: client_deduplication_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.client_deduplication"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.client_deduplication"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.client_deduplication"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

@@ -471,6 +471,16 @@ view: spoc_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.spoc"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.spoc"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.spoc"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

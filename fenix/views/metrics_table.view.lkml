@@ -1241,6 +1241,25 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__fog_validation_gvsv_number_of_unique_site_origins_all_tabs__count {
+    sql: ${TABLE}.metrics.custom_distribution.fog_validation_gvsv_number_of_unique_site_origins_all_tabs.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Fog Validation Gvsv Number Of Unique Site Origins All Tabs"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__fog_validation_gvsv_number_of_unique_site_origins_all_tabs__sum {
+    sql: ${TABLE}.metrics.custom_distribution.fog_validation_gvsv_number_of_unique_site_origins_all_tabs.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Fog Validation Gvsv Number Of Unique Site Origins All Tabs"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__fog_validation_gvsv_number_of_unique_site_origins_all_tabs__values {
+    sql: ${TABLE}.metrics.custom_distribution.fog_validation_gvsv_number_of_unique_site_origins_all_tabs.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__geckoview_document_site_origins__count {
     sql: ${TABLE}.metrics.custom_distribution.geckoview_document_site_origins.count ;;
     type: number
@@ -1950,6 +1969,16 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
+    sql: ${TABLE}.metrics.labeled_counter.fog_validation_gvsv_audio_stream_init ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko {
+    sql: ${TABLE}.metrics.labeled_counter.fog_validation_gvsv_audio_stream_init_gecko ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__gfx_content_frame_time_reason {
     sql: ${TABLE}.metrics.labeled_counter.gfx_content_frame_time_reason ;;
     hidden: yes
@@ -2536,6 +2565,20 @@ view: metrics_table {
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Fog Max Pings Per Minute"
+  }
+
+  dimension: metrics__quantity__fog_validation_gvsv_primary_height {
+    sql: ${TABLE}.metrics.quantity.fog_validation_gvsv_primary_height ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Fog Validation Gvsv Primary Height"
+  }
+
+  dimension: metrics__quantity__fog_validation_gvsv_primary_width {
+    sql: ${TABLE}.metrics.quantity.fog_validation_gvsv_primary_width ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Fog Validation Gvsv Primary Width"
   }
 
   dimension: metrics__quantity__formautofill_creditcards_autofill_profiles_count {
@@ -3886,6 +3929,65 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__fog_ipc_flush_durations__values {
     sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Validation Gvsv Composite Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Validation Gvsv Composite Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fog Validation Gvsv Composite Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Validation Gvsv Composite Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Validation Gvsv Composite Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fog Validation Gvsv Composite Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Validation Gvsv Composite Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.values ;;
     hidden: yes
   }
 
@@ -7013,6 +7115,301 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__networking_dns_renewal_time_for_ttl__values {
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time_for_ttl.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.values ;;
     hidden: yes
   }
 
@@ -11514,6 +11911,16 @@ view: metrics_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.metrics"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.metrics"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.metrics"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;
@@ -11590,6 +11997,18 @@ view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_se
 }
 
 view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__fog_validation_gvsv_number_of_unique_site_origins_all_tabs__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -12202,6 +12621,18 @@ view: metrics_table__metrics__timing_distribution__first_session_adjust_attribut
 }
 
 view: metrics_table__metrics__timing_distribution__fog_ipc_flush_durations__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fog_validation_gvsv_composite_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -12838,6 +13269,66 @@ view: metrics_table__metrics__timing_distribution__networking_dns_renewal_time__
 }
 
 view: metrics_table__metrics__timing_distribution__networking_dns_renewal_time_for_ttl__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_content_ondatafinished_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

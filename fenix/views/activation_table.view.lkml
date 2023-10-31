@@ -471,6 +471,16 @@ view: activation_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.activation"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.activation"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.activation"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

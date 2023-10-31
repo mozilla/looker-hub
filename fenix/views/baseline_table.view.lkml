@@ -567,6 +567,16 @@ view: baseline_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.baseline"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.baseline"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.baseline"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

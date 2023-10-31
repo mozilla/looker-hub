@@ -346,7 +346,7 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics String"
     group_item_label: "Glean Client Annotation Experimentation Id"
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 

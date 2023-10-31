@@ -4,13 +4,14 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "urlbar_events_table.view.lkml"
+include: "/looker-hub/operational_monitoring/views/macos_attribution_reporting.view.lkml"
 
-view: urlbar_events_temp_v2 {
-  extends: [urlbar_events_table]
-
-  measure: event_count {
-    type: count
-    description: "The number of times the event(s) occurred."
+explore: macos_attribution_reporting {
+  always_filter: {
+    filters: [
+      branch: "enabled, disabled",
+    ]
   }
+
+  hidden: yes
 }
