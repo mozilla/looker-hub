@@ -4775,6 +4775,96 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__sum {
+    label: "Networking Http Content Html5Parser Ondatafinished To Onstop Delay Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Content Html5Parser Ondatafinished To Onstop Delay Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Content Html5Parser Ondatafinished To Onstop Delay Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_content_html5parser_ondatafinished_to_onstop_delay"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between processing OnDataFinished and processing OnStopRequest (if OnDataFinished comes first)
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__sum {
+    label: "Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Content Html5Parser Ondatafinished To Onstop Delay Negative Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between processing OnStopRequest and processing OnDataFinished (if OnStopRequest comes first)
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__sum {
+    label: "Networking Http Content Ondatafinished Delay Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Content Ondatafinished Delay Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Content Ondatafinished Delay Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_content_ondatafinished_delay"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between dispatching OnDataFinished from the socket thread and processing it.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__sum {
+    label: "Networking Http Content Ondatafinished To Onstop Delay Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Content Ondatafinished To Onstop Delay Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Content Ondatafinished To Onstop Delay Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_content_ondatafinished_to_onstop_delay"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between processing OnDataFinished and processing OnStopRequest (if OnDataFinished comes first)
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__sum {
+    label: "Networking Http Content Ondatafinished To Onstop Delay Negative Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Content Ondatafinished To Onstop Delay Negative Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Content Ondatafinished To Onstop Delay Negative Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_content_ondatafinished_to_onstop_delay_negative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between processing OnStopRequest and processing OnDataFinished (if OnStopRequest comes first)
+"
+  }
+
   dimension: metrics__timing_distribution__networking_http_content_onstart_delay__sum {
     label: "Networking Http Content Onstart Delay Sum"
     hidden: no

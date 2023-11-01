@@ -45,8 +45,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Undesired Events Ping Volume
-    name: Undesired Events Ping Volume_sum
+  - title: Client Volume
+    name: Client Volume_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -61,7 +61,7 @@
       firefox_messaging_system.branch
     ]
     filters:
-      firefox_messaging_system.metric: 'undesired_events_ping_volume'
+      firefox_messaging_system.metric: 'client_volume'
       firefox_messaging_system.statistic: sum
     row: 0
     col: 12
@@ -115,8 +115,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Client Volume
-    name: Client Volume_sum
+  - title: Undesired Events Ping Volume
+    name: Undesired Events Ping Volume_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -131,7 +131,7 @@
       firefox_messaging_system.branch
     ]
     filters:
-      firefox_messaging_system.metric: 'client_volume'
+      firefox_messaging_system.metric: 'undesired_events_ping_volume'
       firefox_messaging_system.statistic: sum
     row: 10
     col: 12
@@ -276,15 +276,15 @@
   - title: Normalized Channel
     name: Normalized Channel
     type: string_filter
-    default_value: 'aurora'
+    default_value: 'beta'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'aurora'
       - 'beta'
+      - 'aurora'
       - 'nightly'
       - 'release'
       - 'esr'

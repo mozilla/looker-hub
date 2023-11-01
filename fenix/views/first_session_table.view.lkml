@@ -345,6 +345,27 @@ view: first_session_table {
     group_item_label: "Glean Client Annotation Experimentation Id"
   }
 
+  dimension: metrics__string__meta_attribution_app {
+    sql: ${TABLE}.metrics.string.meta_attribution_app ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Meta Attribution App"
+  }
+
+  dimension: metrics__string__meta_attribution_nonce {
+    sql: ${TABLE}.metrics.string.meta_attribution_nonce ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Meta Attribution Nonce"
+  }
+
+  dimension: metrics__string__meta_attribution_t {
+    sql: ${TABLE}.metrics.string.meta_attribution_t ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Meta Attribution T"
+  }
+
   dimension: metrics__string__play_store_attribution_campaign {
     sql: ${TABLE}.metrics.string.play_store_attribution_campaign ;;
     type: string
@@ -378,6 +399,20 @@ view: first_session_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Play Store Attribution Term"
+  }
+
+  dimension: metrics__text__meta_attribution_data {
+    sql: ${TABLE}.metrics.text.meta_attribution_data ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Meta Attribution Data"
+  }
+
+  dimension: metrics__text2__meta_attribution_data {
+    sql: ${TABLE}.metrics.text2.meta_attribution_data ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Meta Attribution Data"
   }
 
   dimension: metrics__timespan__first_session_adjust_attribution_timespan__time_unit {
