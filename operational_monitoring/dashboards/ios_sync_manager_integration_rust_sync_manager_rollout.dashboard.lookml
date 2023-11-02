@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       ios_sync_manager_integration_rust_sync_manager_rollout.branch
     ]
     filters:
-      ios_sync_manager_integration_rust_sync_manager_rollout.metric: 'search_count'
+      ios_sync_manager_integration_rust_sync_manager_rollout.metric: 'active_hours'
       ios_sync_manager_integration_rust_sync_manager_rollout.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       ios_sync_manager_integration_rust_sync_manager_rollout.branch
     ]
     filters:
-      ios_sync_manager_integration_rust_sync_manager_rollout.metric: 'active_hours'
+      ios_sync_manager_integration_rust_sync_manager_rollout.metric: 'search_count'
       ios_sync_manager_integration_rust_sync_manager_rollout.statistic: mean
     row: 10
     col: 12

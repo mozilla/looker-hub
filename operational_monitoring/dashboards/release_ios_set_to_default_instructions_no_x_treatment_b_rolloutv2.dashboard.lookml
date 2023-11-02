@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.branch
     ]
     filters:
-      release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.metric: 'search_count'
+      release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.metric: 'active_hours'
       release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.branch
     ]
     filters:
-      release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.metric: 'active_hours'
+      release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.metric: 'search_count'
       release_ios_set_to_default_instructions_no_x_treatment_b_rolloutv2.statistic: mean
     row: 10
     col: 12

@@ -10,6 +10,40 @@
   preferred_viewer: dashboards-next
 
   elements:
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: macos_attribution_reporting
+    type: looker_line
+    fields: [
+      macos_attribution_reporting.submission_date,
+      macos_attribution_reporting.branch,
+      macos_attribution_reporting.point
+    ]
+    pivots: [
+      macos_attribution_reporting.branch
+    ]
+    filters:
+      macos_attribution_reporting.metric: 'qualified_cumulative_days_of_use'
+      macos_attribution_reporting.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: macos_attribution_reporting.submission_date
+    field_y: macos_attribution_reporting.point
+    log_scale: false
+    ci_lower: macos_attribution_reporting.lower
+    ci_upper: macos_attribution_reporting.upper
+    show_grid: true
+    listen:
+      Date: macos_attribution_reporting.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Retained
     name: Retained_mean
     note_state: expanded
@@ -29,7 +63,7 @@
       macos_attribution_reporting.metric: 'retained'
       macos_attribution_reporting.statistic: mean
     row: 0
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: macos_attribution_reporting.submission_date
@@ -61,40 +95,6 @@
     ]
     filters:
       macos_attribution_reporting.metric: 'search_count'
-      macos_attribution_reporting.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: macos_attribution_reporting.submission_date
-    field_y: macos_attribution_reporting.point
-    log_scale: false
-    ci_lower: macos_attribution_reporting.lower
-    ci_upper: macos_attribution_reporting.upper
-    show_grid: true
-    listen:
-      Date: macos_attribution_reporting.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: macos_attribution_reporting
-    type: looker_line
-    fields: [
-      macos_attribution_reporting.submission_date,
-      macos_attribution_reporting.branch,
-      macos_attribution_reporting.point
-    ]
-    pivots: [
-      macos_attribution_reporting.branch
-    ]
-    filters:
-      macos_attribution_reporting.metric: 'ad_clicks'
       macos_attribution_reporting.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,77 +162,9 @@
       macos_attribution_reporting.branch
     ]
     filters:
-      macos_attribution_reporting.metric: 'qualified_cumulative_days_of_use'
+      macos_attribution_reporting.metric: 'ad_clicks'
       macos_attribution_reporting.statistic: mean
     row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: macos_attribution_reporting.submission_date
-    field_y: macos_attribution_reporting.point
-    log_scale: false
-    ci_lower: macos_attribution_reporting.lower
-    ci_upper: macos_attribution_reporting.upper
-    show_grid: true
-    listen:
-      Date: macos_attribution_reporting.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: macos_attribution_reporting
-    type: looker_line
-    fields: [
-      macos_attribution_reporting.submission_date,
-      macos_attribution_reporting.branch,
-      macos_attribution_reporting.point
-    ]
-    pivots: [
-      macos_attribution_reporting.branch
-    ]
-    filters:
-      macos_attribution_reporting.metric: 'uri_count'
-      macos_attribution_reporting.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: macos_attribution_reporting.submission_date
-    field_y: macos_attribution_reporting.point
-    log_scale: false
-    ci_lower: macos_attribution_reporting.lower
-    ci_upper: macos_attribution_reporting.upper
-    show_grid: true
-    listen:
-      Date: macos_attribution_reporting.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: macos_attribution_reporting
-    type: looker_line
-    fields: [
-      macos_attribution_reporting.submission_date,
-      macos_attribution_reporting.branch,
-      macos_attribution_reporting.point
-    ]
-    pivots: [
-      macos_attribution_reporting.branch
-    ]
-    filters:
-      macos_attribution_reporting.metric: 'days_of_use'
-      macos_attribution_reporting.statistic: mean
-    row: 30
     col: 0
     width: 12
     height: 8
@@ -268,7 +200,7 @@
     filters:
       macos_attribution_reporting.metric: 'memory_total'
       macos_attribution_reporting.statistic: percentile
-    row: 30
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -281,6 +213,74 @@
     listen:
       Date: macos_attribution_reporting.submission_date
       Percentile: macos_attribution_reporting.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Uri Count
+    name: Uri Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: macos_attribution_reporting
+    type: looker_line
+    fields: [
+      macos_attribution_reporting.submission_date,
+      macos_attribution_reporting.branch,
+      macos_attribution_reporting.point
+    ]
+    pivots: [
+      macos_attribution_reporting.branch
+    ]
+    filters:
+      macos_attribution_reporting.metric: 'uri_count'
+      macos_attribution_reporting.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: macos_attribution_reporting.submission_date
+    field_y: macos_attribution_reporting.point
+    log_scale: false
+    ci_lower: macos_attribution_reporting.lower
+    ci_upper: macos_attribution_reporting.upper
+    show_grid: true
+    listen:
+      Date: macos_attribution_reporting.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: macos_attribution_reporting
+    type: looker_line
+    fields: [
+      macos_attribution_reporting.submission_date,
+      macos_attribution_reporting.branch,
+      macos_attribution_reporting.point
+    ]
+    pivots: [
+      macos_attribution_reporting.branch
+    ]
+    filters:
+      macos_attribution_reporting.metric: 'days_of_use'
+      macos_attribution_reporting.statistic: mean
+    row: 30
+    col: 12
+    width: 12
+    height: 8
+    field_x: macos_attribution_reporting.submission_date
+    field_y: macos_attribution_reporting.point
+    log_scale: false
+    ci_lower: macos_attribution_reporting.lower
+    ci_upper: macos_attribution_reporting.upper
+    show_grid: true
+    listen:
+      Date: macos_attribution_reporting.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
