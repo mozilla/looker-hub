@@ -37,7 +37,7 @@ view: fx_suggest {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "A unique identifier for the suggestion (a.k.a. a keywords block).
+    description: "A unique identifier for a sponsored suggestion. Not set for non-sponsored suggestions.
 "
   }
 
@@ -73,7 +73,8 @@ view: fx_suggest {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The suggestion's category. Either \"22 - Shopping\" or \"5 - Educational\".
+    description: "The suggestion's advertising category. \"22 - Shopping\" for sponsored suggestions.
+Not set for non-sponsored suggestions.
 "
   }
 
@@ -145,7 +146,8 @@ view: fx_suggest {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The url to report this interaction to.
+    description: "If this ping is for a sponsored suggestion, the partner URL for reporting this interaction.
+Not set for non-sponsored suggestions.
 "
   }
 
