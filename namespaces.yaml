@@ -7037,12 +7037,12 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id140
           normalized_channel:
-            default: aurora
+            default: release
             options:
-            - aurora
+            - release
             - beta
             - nightly
-            - release
+            - aurora
             - esr
             - default
             - nightly-pine
@@ -7151,11 +7151,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id146
           normalized_channel:
-            default: beta
+            default: aurora
             options:
-            - beta
             - aurora
             - nightly
+            - beta
             - release
             - esr
             - Other
@@ -7555,10 +7555,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id176
           os:
-            default: Mac
+            default: Windows
             options:
-            - Mac
             - Windows
+            - Mac
             - Linux
             - Other
         explore: garbage_collection
@@ -9316,8 +9316,8 @@ operational_monitoring:
             default: nightly
             options:
             - nightly
-            - beta
             - release
+            - beta
           os:
             default: Linux
             options:
@@ -14698,6 +14698,10 @@ shared:
   pretty_name: Shared
   spoke: looker-spoke-default
   views:
+    applications:
+      tables:
+      - table: mozdata.telemetry.applications
+      type: table_view
     countries:
       tables:
       - table: mozdata.static.country_codes_v1

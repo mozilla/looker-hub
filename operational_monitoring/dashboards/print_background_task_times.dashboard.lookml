@@ -193,8 +193,8 @@
       display: inline
       options:
       - 'nightly'
-      - 'beta'
       - 'release'
+      - 'beta'
       
   
   
