@@ -6998,10 +6998,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 10
+            default: Windows 7
             options:
-            - Windows 10
             - Windows 7
+            - Windows 10
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -7037,13 +7037,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id140
           normalized_channel:
-            default: release
+            default: nightly
             options:
-            - release
-            - beta
             - nightly
+            - beta
             - aurora
             - esr
+            - release
             - default
             - nightly-pine
             - nightly-oak
@@ -7151,10 +7151,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id146
           normalized_channel:
-            default: aurora
+            default: nightly
             options:
-            - aurora
             - nightly
+            - aurora
             - beta
             - release
             - esr
@@ -7555,11 +7555,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id176
           os:
-            default: Windows
+            default: Mac
             options:
-            - Windows
             - Mac
             - Linux
+            - Windows
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -9313,17 +9313,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id317
           channel:
-            default: nightly
+            default: release
             options:
-            - nightly
             - release
+            - nightly
             - beta
           os:
-            default: Linux
+            default: Darwin
             options:
+            - Darwin
             - Linux
             - Windows_NT
-            - Darwin
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id318
