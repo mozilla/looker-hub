@@ -1474,8 +1474,6 @@ fenix:
       type: table_view
     migration:
       tables:
-      - channel: release
-        table: mozdata.fenix.migration
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.migration
       - channel: nightly
@@ -1487,8 +1485,6 @@ fenix:
       type: glean_ping_view
     migration_table:
       tables:
-      - channel: release
-        table: mozdata.fenix.migration
       - channel: beta
         table: mozdata.org_mozilla_firefox_beta.migration
       - channel: nightly
@@ -6998,10 +6994,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 7
+            default: Windows 10
             options:
-            - Windows 7
             - Windows 10
+            - Windows 7
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -7037,13 +7033,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id140
           normalized_channel:
-            default: nightly
+            default: aurora
             options:
-            - nightly
-            - beta
             - aurora
-            - esr
             - release
+            - beta
+            - nightly
+            - esr
             - default
             - nightly-pine
             - nightly-oak
@@ -7151,11 +7147,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id146
           normalized_channel:
-            default: nightly
+            default: beta
             options:
-            - nightly
-            - aurora
             - beta
+            - aurora
+            - nightly
             - release
             - esr
             - Other
@@ -7555,11 +7551,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id176
           os:
-            default: Mac
+            default: Linux
             options:
-            - Mac
             - Linux
             - Windows
+            - Mac
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -9313,11 +9309,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id317
           channel:
-            default: release
+            default: beta
             options:
+            - beta
             - release
             - nightly
-            - beta
           os:
             default: Darwin
             options:
