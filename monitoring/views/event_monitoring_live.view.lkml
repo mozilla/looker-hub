@@ -26,6 +26,16 @@ view: event_monitoring_live {
     type: string
   }
 
+  dimension: experiment {
+    sql: ${TABLE}.experiment ;;
+    type: string
+  }
+
+  dimension: experiment_branch {
+    sql: ${TABLE}.experiment_branch ;;
+    type: string
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
