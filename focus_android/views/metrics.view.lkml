@@ -6305,7 +6305,7 @@ view: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_g
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko
     suggest_dimension: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -6317,13 +6317,13 @@ view: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_g
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
