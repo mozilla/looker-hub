@@ -96,24 +96,6 @@ the page that was viewed.
 "
   }
 
-  dimension: metrics__datetime__page_viewed {
-    label: "Page Viewed"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.page_viewed ;;
-    type: time
-    group_label: "Page"
-    group_item_label: "Viewed"
-
-    link: {
-      label: "Glean Dictionary reference for Page Viewed"
-      url: "https://dictionary.telemetry.mozilla.org/apps/bedrock/metrics/page_viewed"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time a page was viewed.
-"
-  }
-
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes
@@ -563,6 +545,31 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.sample_id ;;
     type: number
     description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
+  }
+
+  dimension_group: metrics__datetime__page_viewed {
+    label: "Page Viewed"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.page_viewed ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Page Viewed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bedrock/metrics/page_viewed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The time a page was viewed.
+"
   }
 
   dimension_group: metadata__header__parsed {

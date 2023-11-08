@@ -114,24 +114,6 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
-  dimension: metrics__datetime__bookmarks_sync_finished_at {
-    label: "Bookmarks Sync Finished At"
-    hidden: yes
-    sql: ${TABLE}.metrics.datetime.bookmarks_sync_finished_at ;;
-    type: time
-    group_label: "Bookmarks Sync"
-    group_item_label: "Finished At"
-
-    link: {
-      label: "Glean Dictionary reference for Bookmarks Sync Finished At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/bookmarks_sync_finished_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records when the bookmark sync finished.
-"
-  }
-
   dimension: metrics__labeled_counter__bookmarks_sync_incoming {
     label: "Bookmarks Sync Incoming"
     hidden: yes
@@ -201,24 +183,6 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
-  dimension: metrics__datetime__bookmarks_sync_started_at {
-    label: "Bookmarks Sync Started At"
-    hidden: yes
-    sql: ${TABLE}.metrics.datetime.bookmarks_sync_started_at ;;
-    type: time
-    group_label: "Bookmarks Sync"
-    group_item_label: "Started At"
-
-    link: {
-      label: "Glean Dictionary reference for Bookmarks Sync Started At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/bookmarks_sync_started_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records when the bookmark sync started.
-"
-  }
-
   dimension: metrics__string__bookmarks_sync_uid {
     label: "Bookmarks Sync Uid"
     hidden: yes
@@ -252,24 +216,6 @@ The labels are the `category.name` identifier of the metric.
     }
 
     description: "Records bookmark sync failure reasons.
-"
-  }
-
-  dimension: metrics__datetime__bookmarks_sync_v2_finished_at {
-    label: "Bookmarks Sync V2 Finished At"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.bookmarks_sync_v2_finished_at ;;
-    type: time
-    group_label: "Bookmarks Sync V2"
-    group_item_label: "Finished At"
-
-    link: {
-      label: "Glean Dictionary reference for Bookmarks Sync V2 Finished At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/bookmarks_sync_v2_finished_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records when the bookmark sync finished.
 "
   }
 
@@ -339,24 +285,6 @@ The labels are the `category.name` identifier of the metric.
     }
 
     description: "Records counts for structure problems and divergences in the remote bookmarks tree. These are documented in https://github.com/mozilla/dogear/blob/fbade15f2a4f11215e30b8f428a0a8df3defeaec/src/tree.rs#L1273-L1294.
-"
-  }
-
-  dimension: metrics__datetime__bookmarks_sync_v2_started_at {
-    label: "Bookmarks Sync V2 Started At"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.bookmarks_sync_v2_started_at ;;
-    type: time
-    group_label: "Bookmarks Sync V2"
-    group_item_label: "Started At"
-
-    link: {
-      label: "Glean Dictionary reference for Bookmarks Sync V2 Started At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/bookmarks_sync_v2_started_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records when the bookmark sync started.
 "
   }
 
@@ -761,6 +689,106 @@ The labels are the `category.name` identifier of the metric.
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+  }
+
+  dimension_group: metrics__datetime__bookmarks_sync_finished_at {
+    label: "Bookmarks Sync Finished At"
+    hidden: yes
+    sql: ${TABLE}.metrics.datetime.bookmarks_sync_finished_at ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Bookmarks Sync Finished At"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/bookmarks_sync_finished_at"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Records when the bookmark sync finished.
+"
+  }
+
+  dimension_group: metrics__datetime__bookmarks_sync_started_at {
+    label: "Bookmarks Sync Started At"
+    hidden: yes
+    sql: ${TABLE}.metrics.datetime.bookmarks_sync_started_at ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Bookmarks Sync Started At"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/bookmarks_sync_started_at"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Records when the bookmark sync started.
+"
+  }
+
+  dimension_group: metrics__datetime__bookmarks_sync_v2_finished_at {
+    label: "Bookmarks Sync V2 Finished At"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.bookmarks_sync_v2_finished_at ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Bookmarks Sync V2 Finished At"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/bookmarks_sync_v2_finished_at"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Records when the bookmark sync finished.
+"
+  }
+
+  dimension_group: metrics__datetime__bookmarks_sync_v2_started_at {
+    label: "Bookmarks Sync V2 Started At"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.bookmarks_sync_v2_started_at ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Bookmarks Sync V2 Started At"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/bookmarks_sync_v2_started_at"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Records when the bookmark sync started.
+"
   }
 
   dimension_group: metadata__header__parsed {

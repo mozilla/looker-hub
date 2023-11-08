@@ -20,28 +20,9 @@ view: airflow_trigger {
     type: string
   }
 
-  dimension: trigger_id {
-    sql: ${TABLE}.trigger_id ;;
-    type: number
-  }
-
   dimension: triggerer_id {
     sql: ${TABLE}.triggerer_id ;;
     type: number
-  }
-
-  dimension_group: created_at {
-    sql: ${TABLE}.created_at ;;
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
   }
 
   dimension_group: created {
