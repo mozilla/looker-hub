@@ -408,11 +408,25 @@ view: first_session_table {
     group_item_label: "Meta Attribution Data"
   }
 
+  dimension: metrics__text__play_store_attribution_install_referrer_response {
+    sql: ${TABLE}.metrics.text.play_store_attribution_install_referrer_response ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Play Store Attribution Install Referrer Response"
+  }
+
   dimension: metrics__text2__meta_attribution_data {
     sql: ${TABLE}.metrics.text2.meta_attribution_data ;;
     type: string
     group_label: "Metrics Text2"
     group_item_label: "Meta Attribution Data"
+  }
+
+  dimension: metrics__text2__play_store_attribution_install_referrer_response {
+    sql: ${TABLE}.metrics.text2.play_store_attribution_install_referrer_response ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Play Store Attribution Install Referrer Response"
   }
 
   dimension: metrics__timespan__first_session_adjust_attribution_timespan__time_unit {

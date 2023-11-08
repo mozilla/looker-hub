@@ -822,6 +822,13 @@ view: metrics_table {
     group_item_label: "Fog Ipc Shutdown Registration Failures"
   }
 
+  dimension: metrics__counter__fxa_client_operation_count {
+    sql: ${TABLE}.metrics.counter.fxa_client_operation_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Fxa Client Operation Count"
+  }
+
   dimension: metrics__counter__glean_error_io {
     sql: ${TABLE}.metrics.counter.glean_error_io ;;
     type: number
@@ -1976,6 +1983,16 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko {
     sql: ${TABLE}.metrics.labeled_counter.fog_validation_gvsv_audio_stream_init_gecko ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gvst {
+    sql: ${TABLE}.metrics.labeled_counter.fog_validation_gvsv_audio_stream_init_gvst ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__fxa_client_error_count {
+    sql: ${TABLE}.metrics.labeled_counter.fxa_client_error_count ;;
     hidden: yes
   }
 
