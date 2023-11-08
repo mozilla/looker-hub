@@ -1596,6 +1596,19 @@ broken down by structured ingestion namespace.
 "
   }
 
+  dimension: metrics__labeled_counter__search_service_initialization_status {
+    sql: ${TABLE}.metrics.labeled_counter.search_service_initialization_status ;;
+    hidden: yes
+    description: "Counts the type of initialization statuses on start up.
+failedSettings - failed loading and migrating the search settings file.
+failedFetchEngines - failed to load or parse the configuration from remote
+                     settings.
+failedLoadEngines - failed to create all the search engines from the
+                    configuration or user installed engines.
+success - search service successfully initialized.
+"
+  }
+
   dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__count {
     sql: ${TABLE}.metrics.memory_distribution.extensions_apis_dnr_startup_cache_read_size.count ;;
     type: number
@@ -3715,6 +3728,126 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__range {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__sum {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__values {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint From Response Start"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint From Response Start"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint From Response Start"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint From Response Start"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__range {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__sum {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint From Response Start"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint From Response Start"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint From Response Start"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__values {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__search_service_startup_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.bucket_count ;;
     type: number
@@ -4710,7 +4843,7 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
       year,
     ]
     label: "Metrics Datetime: Blocklist Mlbf Stash Time Newest"
-    description: "Keep track of the timestamp of the most recent stash of the addons blocklist. Only meaningful when mlbf_enabled is true.
+    description: "Keep track of the timestamp of the most recent stash of the addons blocklist.
 "
   }
 
@@ -4727,7 +4860,7 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
       year,
     ]
     label: "Metrics Datetime: Blocklist Mlbf Stash Time Oldest"
-    description: "Keep track of the timestamp of the oldest stash of the addons blocklist. Only meaningful when mlbf_enabled is true.
+    description: "Keep track of the timestamp of the oldest stash of the addons blocklist.
 "
   }
 
@@ -5443,6 +5576,30 @@ view: metrics_table__metrics__timing_distribution__networking_http_content_onsto
 }
 
 view: metrics_table__metrics__timing_distribution__paint_build_displaylist_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__perf_largest_contentful_paint__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

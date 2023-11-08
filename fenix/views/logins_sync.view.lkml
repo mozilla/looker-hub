@@ -114,24 +114,6 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
-  dimension: metrics__datetime__logins_sync_finished_at {
-    label: "Logins Sync Finished At"
-    hidden: yes
-    sql: ${TABLE}.metrics.datetime.logins_sync_finished_at ;;
-    type: time
-    group_label: "Logins Sync"
-    group_item_label: "Finished At"
-
-    link: {
-      label: "Glean Dictionary reference for Logins Sync Finished At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_sync_finished_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records when the passwords sync finished. This includes the time to download, apply, and upload all records.
-"
-  }
-
   dimension: metrics__labeled_counter__logins_sync_incoming {
     label: "Logins Sync Incoming"
     hidden: yes
@@ -184,24 +166,6 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
-  dimension: metrics__datetime__logins_sync_started_at {
-    label: "Logins Sync Started At"
-    hidden: yes
-    sql: ${TABLE}.metrics.datetime.logins_sync_started_at ;;
-    type: time
-    group_label: "Logins Sync"
-    group_item_label: "Started At"
-
-    link: {
-      label: "Glean Dictionary reference for Logins Sync Started At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_sync_started_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records when the passwords sync started.
-"
-  }
-
   dimension: metrics__string__logins_sync_uid {
     label: "Logins Sync Uid"
     hidden: yes
@@ -235,24 +199,6 @@ The labels are the `category.name` identifier of the metric.
     }
 
     description: "Records why the passwords sync failed: either due to an authentication error, unexpected exception, or other error. The error strings are truncated and sanitized to omit PII, like usernames and passwords.
-"
-  }
-
-  dimension: metrics__datetime__logins_sync_v2_finished_at {
-    label: "Logins Sync V2 Finished At"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.logins_sync_v2_finished_at ;;
-    type: time
-    group_label: "Logins Sync V2"
-    group_item_label: "Finished At"
-
-    link: {
-      label: "Glean Dictionary reference for Logins Sync V2 Finished At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_sync_v2_finished_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records when the passwords sync finished. This includes the time to download, apply, and upload all records.
 "
   }
 
@@ -305,24 +251,6 @@ The labels are the `category.name` identifier of the metric.
     }
 
     description: "Records the number of batches needed to upload all outgoing records. The Sync server has a hard limit on the number of records (and request body bytes) on the number of records that can fit into a single batch, and large syncs may require multiple batches.
-"
-  }
-
-  dimension: metrics__datetime__logins_sync_v2_started_at {
-    label: "Logins Sync V2 Started At"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.logins_sync_v2_started_at ;;
-    type: time
-    group_label: "Logins Sync V2"
-    group_item_label: "Started At"
-
-    link: {
-      label: "Glean Dictionary reference for Logins Sync V2 Started At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_sync_v2_started_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records when the passwords sync started.
 "
   }
 
@@ -727,6 +655,106 @@ The labels are the `category.name` identifier of the metric.
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+  }
+
+  dimension_group: metrics__datetime__logins_sync_finished_at {
+    label: "Logins Sync Finished At"
+    hidden: yes
+    sql: ${TABLE}.metrics.datetime.logins_sync_finished_at ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Logins Sync Finished At"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_sync_finished_at"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Records when the passwords sync finished. This includes the time to download, apply, and upload all records.
+"
+  }
+
+  dimension_group: metrics__datetime__logins_sync_started_at {
+    label: "Logins Sync Started At"
+    hidden: yes
+    sql: ${TABLE}.metrics.datetime.logins_sync_started_at ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Logins Sync Started At"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_sync_started_at"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Records when the passwords sync started.
+"
+  }
+
+  dimension_group: metrics__datetime__logins_sync_v2_finished_at {
+    label: "Logins Sync V2 Finished At"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.logins_sync_v2_finished_at ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Logins Sync V2 Finished At"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_sync_v2_finished_at"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Records when the passwords sync finished. This includes the time to download, apply, and upload all records.
+"
+  }
+
+  dimension_group: metrics__datetime__logins_sync_v2_started_at {
+    label: "Logins Sync V2 Started At"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.logins_sync_v2_started_at ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Logins Sync V2 Started At"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/logins_sync_v2_started_at"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Records when the passwords sync started.
+"
   }
 
   dimension_group: metadata__header__parsed {

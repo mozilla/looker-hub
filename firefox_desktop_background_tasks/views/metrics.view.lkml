@@ -5,24 +5,6 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics {
-  dimension: metrics__datetime__background_update_time_last_update_scheduled {
-    label: "Background Update Time Last Update Scheduled"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.background_update_time_last_update_scheduled ;;
-    type: time
-    group_label: "Background Update"
-    group_item_label: "Time Last Update Scheduled"
-
-    link: {
-      label: "Glean Dictionary reference for Background Update Time Last Update Scheduled"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_tasks/metrics/background_update_time_last_update_scheduled"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Last time the background update was triggered.
-"
-  }
-
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation Id"
     hidden: no
@@ -378,24 +360,6 @@ though the counts appear in the next successfully sent `metrics` ping.
     }
 
     description: "Time needed for a successful send of a ping to the servers and getting a reply back
-"
-  }
-
-  dimension: metrics__datetime__glean_validation_first_run_hour {
-    label: "Glean Validation First Run Hour"
-    hidden: yes
-    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
-    type: time
-    group_label: "Glean Validation"
-    group_item_label: "First Run Hour"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Validation First Run Hour"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_tasks/metrics/glean_validation_first_run_hour"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The hour of the first run of the application.
 "
   }
 
@@ -875,6 +839,56 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.sample_id ;;
     type: number
     description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
+  }
+
+  dimension_group: metrics__datetime__background_update_time_last_update_scheduled {
+    label: "Background Update Time Last Update Scheduled"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.background_update_time_last_update_scheduled ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Time Last Update Scheduled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_tasks/metrics/background_update_time_last_update_scheduled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Last time the background update was triggered.
+"
+  }
+
+  dimension_group: metrics__datetime__glean_validation_first_run_hour {
+    label: "Glean Validation First Run Hour"
+    hidden: yes
+    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation First Run Hour"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_tasks/metrics/glean_validation_first_run_hour"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The hour of the first run of the application.
+"
   }
 
   dimension_group: metadata__header__parsed {

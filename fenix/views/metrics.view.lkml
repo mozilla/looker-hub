@@ -3227,24 +3227,6 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
-  dimension: metrics__datetime__blocklist_last_modified_rs_addons_mblf {
-    label: "Blocklist Last Modified Rs Addons Mblf"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.blocklist_last_modified_rs_addons_mblf ;;
-    type: time
-    group_label: "Blocklist"
-    group_item_label: "Last Modified Rs Addons Mblf"
-
-    link: {
-      label: "Glean Dictionary reference for Blocklist Last Modified Rs Addons Mblf"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/blocklist_last_modified_rs_addons_mblf"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Keep track of the last time the \"addons-bloomfilters\" remotesetting blocklist has been successfully updated.
-"
-  }
-
   dimension: metrics__string__blocklist_mlbf_source {
     label: "Blocklist Mlbf Source"
     hidden: no
@@ -3260,42 +3242,6 @@ ensure it's not too expensive.  This value is only available on Android
     }
 
     description: "The source of the RemoteSettings attachment that holds the bloom filter. Possible values are \"dump_match\", \"cache_match\", \"remote_match\",\"dump_fallback\", \"cache_fallback\", \"unknown\". \"dump_match\", \"cache_match\" and \"remote_match\" are expected known-good values, and means that the loaded bloomfilter matches the blocklist record in the RemoteSettings collection. The prefix denotes the immediate source of the loaded data: \"dump\" means packaged with the application, \"remote\" means a freshly downloaded bloomfilter, \"cache\" means a previously downloaded bloomfilter. \"dump_fallback\" and \"cache_fallback\" means that the last known bloomfilter was used, despite it not matching the latest record in the RemoteSettings collection. In this case the outdated bloomfilter is used as a fallback (e.g. because the latest version cannot be downloaded). \"unknown\"  means that the bloomfilter cannot be loaded at all. This can happen if the blocklist is disabled via preferences or enterprise policies.
-"
-  }
-
-  dimension: metrics__datetime__blocklist_mlbf_stash_time_newest {
-    label: "Blocklist Mlbf Stash Time Newest"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_newest ;;
-    type: time
-    group_label: "Blocklist"
-    group_item_label: "Mlbf Stash Time Newest"
-
-    link: {
-      label: "Glean Dictionary reference for Blocklist Mlbf Stash Time Newest"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/blocklist_mlbf_stash_time_newest"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Keep track of the timestamp of the most recent stash of the addons blocklist.
-"
-  }
-
-  dimension: metrics__datetime__blocklist_mlbf_stash_time_oldest {
-    label: "Blocklist Mlbf Stash Time Oldest"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_oldest ;;
-    type: time
-    group_label: "Blocklist"
-    group_item_label: "Mlbf Stash Time Oldest"
-
-    link: {
-      label: "Glean Dictionary reference for Blocklist Mlbf Stash Time Oldest"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/blocklist_mlbf_stash_time_oldest"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Keep track of the timestamp of the oldest stash of the addons blocklist.
 "
   }
 
@@ -5074,6 +5020,42 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__sum {
+    label: "Perf Largest Contentful Paint Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.sum ;;
+    type: number
+    group_label: "Perf"
+    group_item_label: "Largest Contentful Paint Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Perf Largest Contentful Paint Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/perf_largest_contentful_paint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigation start to largest contentful paint.
+"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__sum {
+    label: "Perf Largest Contentful Paint From Response Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.sum ;;
+    type: number
+    group_label: "Perf"
+    group_item_label: "Largest Contentful Paint From Response Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Perf Largest Contentful Paint From Response Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/perf_largest_contentful_paint_from_response_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from response start to largest contentful paint.
+"
+  }
+
   dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__sum {
     label: "Power Battery Percentage When User Active Sum"
     hidden: no
@@ -6633,24 +6615,6 @@ though the counts appear in the next successfully sent `metrics` ping.
     }
 
     description: "Time needed for a successful send of a ping to the servers and getting a reply back
-"
-  }
-
-  dimension: metrics__datetime__glean_validation_first_run_hour {
-    label: "Glean Validation First Run Hour"
-    hidden: yes
-    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
-    type: time
-    group_label: "Glean Validation"
-    group_item_label: "First Run Hour"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Validation First Run Hour"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_first_run_hour"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The hour of the first run of the application.
 "
   }
 
@@ -9925,6 +9889,106 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+  }
+
+  dimension_group: metrics__datetime__blocklist_last_modified_rs_addons_mblf {
+    label: "Blocklist Last Modified Rs Addons Mblf"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.blocklist_last_modified_rs_addons_mblf ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Blocklist Last Modified Rs Addons Mblf"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/blocklist_last_modified_rs_addons_mblf"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Keep track of the last time the \"addons-bloomfilters\" remotesetting blocklist has been successfully updated.
+"
+  }
+
+  dimension_group: metrics__datetime__blocklist_mlbf_stash_time_newest {
+    label: "Blocklist Mlbf Stash Time Newest"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_newest ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Blocklist Mlbf Stash Time Newest"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/blocklist_mlbf_stash_time_newest"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Keep track of the timestamp of the most recent stash of the addons blocklist.
+"
+  }
+
+  dimension_group: metrics__datetime__blocklist_mlbf_stash_time_oldest {
+    label: "Blocklist Mlbf Stash Time Oldest"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_oldest ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Blocklist Mlbf Stash Time Oldest"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/blocklist_mlbf_stash_time_oldest"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Keep track of the timestamp of the oldest stash of the addons blocklist.
+"
+  }
+
+  dimension_group: metrics__datetime__glean_validation_first_run_hour {
+    label: "Glean Validation First Run Hour"
+    hidden: yes
+    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation First Run Hour"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_first_run_hour"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The hour of the first run of the application.
+"
   }
 
   dimension_group: metadata__header__parsed {

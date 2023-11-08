@@ -5,24 +5,6 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics {
-  dimension: metrics__datetime__background_update_time_last_update_scheduled {
-    label: "Background Update Time Last Update Scheduled"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.background_update_time_last_update_scheduled ;;
-    type: time
-    group_label: "Background Update"
-    group_item_label: "Time Last Update Scheduled"
-
-    link: {
-      label: "Glean Dictionary reference for Background Update Time Last Update Scheduled"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/background_update_time_last_update_scheduled"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Last time the background update was triggered.
-"
-  }
-
   dimension: metrics__counter__browser_engagement_active_ticks {
     label: "Browser Engagement Active Ticks"
     hidden: no
@@ -667,6 +649,29 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__labeled_counter__search_service_initialization_status {
+    label: "Search Service Initialization Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.search_service_initialization_status ;;
+    group_label: "Search Service"
+    group_item_label: "Initialization Status"
+
+    link: {
+      label: "Glean Dictionary reference for Search Service Initialization Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/search_service_initialization_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the type of initialization statuses on start up.
+failedSettings - failed loading and migrating the search settings file.
+failedFetchEngines - failed to load or parse the configuration from remote
+                     settings.
+failedLoadEngines - failed to create all the search engines from the
+                    configuration or user installed engines.
+success - search service successfully initialized.
+"
+  }
+
   dimension: metrics__timing_distribution__search_service_startup_time__sum {
     label: "Search Service Startup Time Sum"
     hidden: no
@@ -834,24 +839,6 @@ in browser.
 "
   }
 
-  dimension: metrics__datetime__blocklist_last_modified_rs_addons_mblf {
-    label: "Blocklist Last Modified Rs Addons Mblf"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.blocklist_last_modified_rs_addons_mblf ;;
-    type: time
-    group_label: "Blocklist"
-    group_item_label: "Last Modified Rs Addons Mblf"
-
-    link: {
-      label: "Glean Dictionary reference for Blocklist Last Modified Rs Addons Mblf"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/blocklist_last_modified_rs_addons_mblf"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Keep track of the last time the \"addons-bloomfilters\" remotesetting blocklist has been successfully updated.
-"
-  }
-
   dimension: metrics__string__blocklist_mlbf_source {
     label: "Blocklist Mlbf Source"
     hidden: no
@@ -867,42 +854,6 @@ in browser.
     }
 
     description: "The source of the RemoteSettings attachment that holds the bloom filter. Possible values are \"dump_match\", \"cache_match\", \"remote_match\",\"dump_fallback\", \"cache_fallback\", \"unknown\". \"dump_match\", \"cache_match\" and \"remote_match\" are expected known-good values, and means that the loaded bloomfilter matches the blocklist record in the RemoteSettings collection. The prefix denotes the immediate source of the loaded data: \"dump\" means packaged with the application, \"remote\" means a freshly downloaded bloomfilter, \"cache\" means a previously downloaded bloomfilter. \"dump_fallback\" and \"cache_fallback\" means that the last known bloomfilter was used, despite it not matching the latest record in the RemoteSettings collection. In this case the outdated bloomfilter is used as a fallback (e.g. because the latest version cannot be downloaded). \"unknown\"  means that the bloomfilter cannot be loaded at all. This can happen if the blocklist is disabled via preferences or enterprise policies.
-"
-  }
-
-  dimension: metrics__datetime__blocklist_mlbf_stash_time_newest {
-    label: "Blocklist Mlbf Stash Time Newest"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_newest ;;
-    type: time
-    group_label: "Blocklist"
-    group_item_label: "Mlbf Stash Time Newest"
-
-    link: {
-      label: "Glean Dictionary reference for Blocklist Mlbf Stash Time Newest"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/blocklist_mlbf_stash_time_newest"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Keep track of the timestamp of the most recent stash of the addons blocklist.
-"
-  }
-
-  dimension: metrics__datetime__blocklist_mlbf_stash_time_oldest {
-    label: "Blocklist Mlbf Stash Time Oldest"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_oldest ;;
-    type: time
-    group_label: "Blocklist"
-    group_item_label: "Mlbf Stash Time Oldest"
-
-    link: {
-      label: "Glean Dictionary reference for Blocklist Mlbf Stash Time Oldest"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/blocklist_mlbf_stash_time_oldest"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Keep track of the timestamp of the oldest stash of the addons blocklist.
 "
   }
 
@@ -2518,6 +2469,42 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__sum {
+    label: "Perf Largest Contentful Paint Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.sum ;;
+    type: number
+    group_label: "Perf"
+    group_item_label: "Largest Contentful Paint Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Perf Largest Contentful Paint Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/perf_largest_contentful_paint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigation start to largest contentful paint.
+"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__sum {
+    label: "Perf Largest Contentful Paint From Response Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.sum ;;
+    type: number
+    group_label: "Perf"
+    group_item_label: "Largest Contentful Paint From Response Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Perf Largest Contentful Paint From Response Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/perf_largest_contentful_paint_from_response_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from response start to largest contentful paint.
+"
+  }
+
   dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__sum {
     label: "Power Battery Percentage When User Active Sum"
     hidden: no
@@ -4080,24 +4067,6 @@ though the counts appear in the next successfully sent `metrics` ping.
 "
   }
 
-  dimension: metrics__datetime__glean_validation_first_run_hour {
-    label: "Glean Validation First Run Hour"
-    hidden: yes
-    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
-    type: time
-    group_label: "Glean Validation"
-    group_item_label: "First Run Hour"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Validation First Run Hour"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_validation_first_run_hour"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The hour of the first run of the application.
-"
-  }
-
   dimension: metrics__counter__glean_validation_foreground_count {
     label: "Glean Validation Foreground Count"
     hidden: no
@@ -4625,6 +4594,131 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.sample_id ;;
     type: number
     description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
+  }
+
+  dimension_group: metrics__datetime__background_update_time_last_update_scheduled {
+    label: "Background Update Time Last Update Scheduled"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.background_update_time_last_update_scheduled ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Time Last Update Scheduled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/background_update_time_last_update_scheduled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Last time the background update was triggered.
+"
+  }
+
+  dimension_group: metrics__datetime__blocklist_last_modified_rs_addons_mblf {
+    label: "Blocklist Last Modified Rs Addons Mblf"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.blocklist_last_modified_rs_addons_mblf ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Blocklist Last Modified Rs Addons Mblf"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/blocklist_last_modified_rs_addons_mblf"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Keep track of the last time the \"addons-bloomfilters\" remotesetting blocklist has been successfully updated.
+"
+  }
+
+  dimension_group: metrics__datetime__blocklist_mlbf_stash_time_newest {
+    label: "Blocklist Mlbf Stash Time Newest"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_newest ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Blocklist Mlbf Stash Time Newest"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/blocklist_mlbf_stash_time_newest"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Keep track of the timestamp of the most recent stash of the addons blocklist.
+"
+  }
+
+  dimension_group: metrics__datetime__blocklist_mlbf_stash_time_oldest {
+    label: "Blocklist Mlbf Stash Time Oldest"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_oldest ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Blocklist Mlbf Stash Time Oldest"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/blocklist_mlbf_stash_time_oldest"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Keep track of the timestamp of the oldest stash of the addons blocklist.
+"
+  }
+
+  dimension_group: metrics__datetime__glean_validation_first_run_hour {
+    label: "Glean Validation First Run Hour"
+    hidden: yes
+    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
+    type: time
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation First Run Hour"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_validation_first_run_hour"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The hour of the first run of the application.
+"
   }
 
   dimension_group: metadata__header__parsed {
@@ -8140,6 +8234,49 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_
   }
 }
 
+view: metrics__metrics__labeled_counter__search_service_initialization_status {
+  label: "Search Service - Initialization Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__search_service_initialization_status
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__search_service_initialization_status.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result {
   derived_table: {
     sql: select
@@ -9306,6 +9443,25 @@ view: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_bla
     count(*) as n
 from mozdata.firefox_desktop.metrics as t,
 unnest(metrics.labeled_counter.rtcrtpsender_setparameters_blame_stale_transactionid) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__search_service_initialization_status {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.search_service_initialization_status) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
