@@ -93,7 +93,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Keep track of the timestamp of the most recent stash of the addons blocklist. Only meaningful when mlbf_enabled is true.
+    description: "Keep track of the timestamp of the most recent stash of the addons blocklist.
 "
   }
 
@@ -111,7 +111,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Keep track of the timestamp of the oldest stash of the addons blocklist. Only meaningful when mlbf_enabled is true.
+    description: "Keep track of the timestamp of the oldest stash of the addons blocklist.
 "
   }
 

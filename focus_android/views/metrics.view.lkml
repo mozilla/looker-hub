@@ -814,7 +814,7 @@ the tracking protection settings panel from the toolbar.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Keep track of the timestamp of the most recent stash of the addons blocklist. Only meaningful when mlbf_enabled is true.
+    description: "Keep track of the timestamp of the most recent stash of the addons blocklist.
 "
   }
 
@@ -832,7 +832,7 @@ the tracking protection settings panel from the toolbar.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Keep track of the timestamp of the oldest stash of the addons blocklist. Only meaningful when mlbf_enabled is true.
+    description: "Keep track of the timestamp of the oldest stash of the addons blocklist.
 "
   }
 

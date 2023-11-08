@@ -24,7 +24,7 @@ view: metric_definitions_main {
         *,
         DATE(submission_timestamp) AS submission_date,
         environment.experiments
-    FROM `moz-fx-data-shared-prod.telemetry_stable.main_v4`
+    FROM `moz-fx-data-shared-prod.telemetry_stable.main_v5`
 )
     )
               WHERE submission_date BETWEEN
