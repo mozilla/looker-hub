@@ -626,13 +626,6 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
     sql: ${TABLE}.metrics.datetime.creditcards_sync_finished_at ;;
     type: time
-
-    link: {
-      label: "Glean Dictionary reference for Creditcards Sync Finished At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/creditcards_sync_finished_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
     timeframes: [
       raw,
       time,
@@ -651,13 +644,6 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
     sql: ${TABLE}.metrics.datetime.creditcards_sync_started_at ;;
     type: time
-
-    link: {
-      label: "Glean Dictionary reference for Creditcards Sync Started At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/creditcards_sync_started_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
     timeframes: [
       raw,
       time,
@@ -676,13 +662,6 @@ The labels are the `category.name` identifier of the metric.
     hidden: no
     sql: ${TABLE}.metrics.datetime.creditcards_sync_v2_finished_at ;;
     type: time
-
-    link: {
-      label: "Glean Dictionary reference for Creditcards Sync V2 Finished At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/creditcards_sync_v2_finished_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
     timeframes: [
       raw,
       time,
@@ -701,13 +680,6 @@ The labels are the `category.name` identifier of the metric.
     hidden: no
     sql: ${TABLE}.metrics.datetime.creditcards_sync_v2_started_at ;;
     type: time
-
-    link: {
-      label: "Glean Dictionary reference for Creditcards Sync V2 Started At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/creditcards_sync_v2_started_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
     timeframes: [
       raw,
       time,

@@ -481,13 +481,6 @@ The labels are the `category.name` identifier of the metric.
     hidden: no
     sql: ${TABLE}.metrics.datetime.page_loaded ;;
     type: time
-
-    link: {
-      label: "Glean Dictionary reference for Page Loaded"
-      url: "https://dictionary.telemetry.mozilla.org/apps/glean_dictionary/metrics/page_loaded"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
     timeframes: [
       raw,
       time,

@@ -846,13 +846,6 @@ documented in the ping's pings.yaml file.
     hidden: no
     sql: ${TABLE}.metrics.datetime.background_update_time_last_update_scheduled ;;
     type: time
-
-    link: {
-      label: "Glean Dictionary reference for Background Update Time Last Update Scheduled"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_tasks/metrics/background_update_time_last_update_scheduled"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
     timeframes: [
       raw,
       time,
@@ -871,13 +864,6 @@ documented in the ping's pings.yaml file.
     hidden: yes
     sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
     type: time
-
-    link: {
-      label: "Glean Dictionary reference for Glean Validation First Run Hour"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_tasks/metrics/glean_validation_first_run_hour"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
     timeframes: [
       raw,
       time,

@@ -554,13 +554,6 @@ The labels are the `category.name` identifier of the metric.
     hidden: no
     sql: ${TABLE}.metrics.datetime.session_session_end ;;
     type: time
-
-    link: {
-      label: "Glean Dictionary reference for Session Session End"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_session_end"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
     timeframes: [
       raw,
       time,
@@ -579,13 +572,6 @@ The labels are the `category.name` identifier of the metric.
     hidden: no
     sql: ${TABLE}.metrics.datetime.session_session_start ;;
     type: time
-
-    link: {
-      label: "Glean Dictionary reference for Session Session Start"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_session_start"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
     timeframes: [
       raw,
       time,
