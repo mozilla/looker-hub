@@ -1539,6 +1539,11 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fenix.releases
       type: table_view
+    review_checker_clients_table:
+      tables:
+      - channel: nightly
+        table: mozdata.org_mozilla_fenix.review_checker_clients
+      type: table_view
     review_checker_events_table:
       tables:
       - channel: nightly
@@ -14655,6 +14660,71 @@ revenue_private:
     search_revenue_levers_daily:
       tables:
       - table: mozdata.search.search_revenue_levers_daily
+      type: table_view
+review_checker:
+  explores:
+    android_clients:
+      type: table_explore
+      views:
+        base_view: android_clients
+    android_events:
+      type: table_explore
+      views:
+        base_view: android_events
+    desktop_clients:
+      type: table_explore
+      views:
+        base_view: desktop_clients
+    desktop_events:
+      type: table_explore
+      views:
+        base_view: desktop_events
+    desktop_microsurvey:
+      type: table_explore
+      views:
+        base_view: desktop_microsurvey
+    ios_clients:
+      type: table_explore
+      views:
+        base_view: ios_clients
+    ios_events:
+      type: table_explore
+      views:
+        base_view: ios_events
+  glean_app: false
+  owners:
+  - betling@mozilla.com
+  - akommasani@mozilla.com
+  pretty_name: Review Checker
+  spoke: looker-spoke-default
+  views:
+    android_clients:
+      tables:
+      - table: mozdata.org_mozilla_fenix.review_checker_clients
+      type: table_view
+    android_events:
+      tables:
+      - table: mozdata.org_mozilla_fenix.review_checker_events
+      type: table_view
+    desktop_clients:
+      tables:
+      - table: mozdata.firefox_desktop.review_checker_clients
+      type: table_view
+    desktop_events:
+      tables:
+      - table: mozdata.firefox_desktop.review_checker_events
+      type: table_view
+    desktop_microsurvey:
+      tables:
+      - table: mozdata.firefox_desktop.review_checker_microsurvey
+      type: table_view
+    ios_clients:
+      tables:
+      - table: mozdata.org_mozilla_ios_firefox.review_checker_clients
+      type: table_view
+    ios_events:
+      tables:
+      - table: mozdata.org_mozilla_ios_firefox.review_checker_events
       type: table_view
 review_checker_desktop:
   glean_app: false
