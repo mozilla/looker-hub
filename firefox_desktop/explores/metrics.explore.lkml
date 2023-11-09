@@ -327,6 +327,11 @@ explore: metrics {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid}) AS metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid.document_id} ;;
   }
+
+  join: metrics__metrics__labeled_counter__search_service_initialization_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__search_service_initialization_status}) AS metrics__metrics__labeled_counter__search_service_initialization_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__search_service_initialization_status.document_id} ;;
+  }
 }
 
 explore: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result {
@@ -574,5 +579,9 @@ explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_
 }
 
 explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__search_service_initialization_status {
   hidden: yes
 }

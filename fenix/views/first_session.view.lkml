@@ -240,6 +240,24 @@ to identify installs from Mozilla Online.
 "
   }
 
+  dimension: metrics__text2__play_store_attribution_install_referrer_response {
+    label: "Play Store Attribution Install Referrer Response"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.play_store_attribution_install_referrer_response ;;
+    type: string
+    group_label: "Play Store Attribution"
+    group_item_label: "Install Referrer Response"
+
+    link: {
+      label: "Glean Dictionary reference for Play Store Attribution Install Referrer Response"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_install_referrer_response"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The full install referrer response.
+"
+  }
+
   dimension: metrics__string__play_store_attribution_medium {
     label: "Play Store Attribution Medium"
     hidden: no

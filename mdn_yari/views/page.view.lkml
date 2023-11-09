@@ -23,6 +23,24 @@ view: page {
 "
   }
 
+  dimension: metrics__string__navigator_geo_iso {
+    label: "Navigator Geo Iso"
+    hidden: no
+    sql: ${TABLE}.metrics.string.navigator_geo_iso ;;
+    type: string
+    group_label: "Navigator"
+    group_item_label: "Geo Iso"
+
+    link: {
+      label: "Glean Dictionary reference for Navigator Geo Iso"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/navigator_geo_iso"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The navigator's two-letter ISO 3166 country code based on geo ip.
+"
+  }
+
   dimension: metrics__string__navigator_subscription_type {
     label: "Navigator Subscription Type"
     hidden: no

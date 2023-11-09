@@ -5,24 +5,6 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: page_view {
-  dimension: metrics__datetime__page_loaded {
-    label: "Page Loaded"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.page_loaded ;;
-    type: time
-    group_label: "Page"
-    group_item_label: "Loaded"
-
-    link: {
-      label: "Glean Dictionary reference for Page Loaded"
-      url: "https://dictionary.telemetry.mozilla.org/apps/glean_dictionary/metrics/page_loaded"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time the page was loaded.
-"
-  }
-
   dimension: metrics__string__page_path {
     label: "Page Path"
     hidden: no
@@ -492,6 +474,24 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.sample_id ;;
     type: number
     description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
+  }
+
+  dimension_group: metrics__datetime__page_loaded {
+    label: "Page Loaded"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.page_loaded ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The time the page was loaded.
+"
   }
 
   dimension_group: metadata__header__parsed {

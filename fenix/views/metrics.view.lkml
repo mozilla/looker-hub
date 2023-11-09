@@ -3227,24 +3227,6 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
-  dimension: metrics__datetime__blocklist_last_modified_rs_addons_mblf {
-    label: "Blocklist Last Modified Rs Addons Mblf"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.blocklist_last_modified_rs_addons_mblf ;;
-    type: time
-    group_label: "Blocklist"
-    group_item_label: "Last Modified Rs Addons Mblf"
-
-    link: {
-      label: "Glean Dictionary reference for Blocklist Last Modified Rs Addons Mblf"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/blocklist_last_modified_rs_addons_mblf"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Keep track of the last time the \"addons-bloomfilters\" remotesetting blocklist has been successfully updated.
-"
-  }
-
   dimension: metrics__string__blocklist_mlbf_source {
     label: "Blocklist Mlbf Source"
     hidden: no
@@ -3260,42 +3242,6 @@ ensure it's not too expensive.  This value is only available on Android
     }
 
     description: "The source of the RemoteSettings attachment that holds the bloom filter. Possible values are \"dump_match\", \"cache_match\", \"remote_match\",\"dump_fallback\", \"cache_fallback\", \"unknown\". \"dump_match\", \"cache_match\" and \"remote_match\" are expected known-good values, and means that the loaded bloomfilter matches the blocklist record in the RemoteSettings collection. The prefix denotes the immediate source of the loaded data: \"dump\" means packaged with the application, \"remote\" means a freshly downloaded bloomfilter, \"cache\" means a previously downloaded bloomfilter. \"dump_fallback\" and \"cache_fallback\" means that the last known bloomfilter was used, despite it not matching the latest record in the RemoteSettings collection. In this case the outdated bloomfilter is used as a fallback (e.g. because the latest version cannot be downloaded). \"unknown\"  means that the bloomfilter cannot be loaded at all. This can happen if the blocklist is disabled via preferences or enterprise policies.
-"
-  }
-
-  dimension: metrics__datetime__blocklist_mlbf_stash_time_newest {
-    label: "Blocklist Mlbf Stash Time Newest"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_newest ;;
-    type: time
-    group_label: "Blocklist"
-    group_item_label: "Mlbf Stash Time Newest"
-
-    link: {
-      label: "Glean Dictionary reference for Blocklist Mlbf Stash Time Newest"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/blocklist_mlbf_stash_time_newest"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Keep track of the timestamp of the most recent stash of the addons blocklist. Only meaningful when mlbf_enabled is true.
-"
-  }
-
-  dimension: metrics__datetime__blocklist_mlbf_stash_time_oldest {
-    label: "Blocklist Mlbf Stash Time Oldest"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_oldest ;;
-    type: time
-    group_label: "Blocklist"
-    group_item_label: "Mlbf Stash Time Oldest"
-
-    link: {
-      label: "Glean Dictionary reference for Blocklist Mlbf Stash Time Oldest"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/blocklist_mlbf_stash_time_oldest"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Keep track of the timestamp of the oldest stash of the addons blocklist. Only meaningful when mlbf_enabled is true.
 "
   }
 
@@ -5074,6 +5020,42 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__sum {
+    label: "Perf Largest Contentful Paint Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.sum ;;
+    type: number
+    group_label: "Perf"
+    group_item_label: "Largest Contentful Paint Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Perf Largest Contentful Paint Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/perf_largest_contentful_paint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigation start to largest contentful paint.
+"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__sum {
+    label: "Perf Largest Contentful Paint From Response Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.sum ;;
+    type: number
+    group_label: "Perf"
+    group_item_label: "Largest Contentful Paint From Response Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Perf Largest Contentful Paint From Response Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/perf_largest_contentful_paint_from_response_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from response start to largest contentful paint.
+"
+  }
+
   dimension: metrics__custom_distribution__power_battery_percentage_when_user_active__sum {
     label: "Power Battery Percentage When User Active Sum"
     hidden: no
@@ -6636,24 +6618,6 @@ though the counts appear in the next successfully sent `metrics` ping.
 "
   }
 
-  dimension: metrics__datetime__glean_validation_first_run_hour {
-    label: "Glean Validation First Run Hour"
-    hidden: yes
-    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
-    type: time
-    group_label: "Glean Validation"
-    group_item_label: "First Run Hour"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Validation First Run Hour"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_first_run_hour"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The hour of the first run of the application.
-"
-  }
-
   dimension: metrics__counter__glean_validation_foreground_count {
     label: "Glean Validation Foreground Count"
     hidden: no
@@ -6789,6 +6753,40 @@ startup, as part of the initialization sequence.
 
     description: "Measures how long `fetchExperiments` takes.
 "
+  }
+
+  dimension: metrics__labeled_counter__fxa_client_error_count {
+    label: "Fxa Client Error Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.fxa_client_error_count ;;
+    group_label: "Fxa Client"
+    group_item_label: "Error Count"
+
+    link: {
+      label: "Glean Dictionary reference for Fxa Client Error Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fxa_client_error_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of errors encountered during FxA operations, labeled by type. It is intended to be used together with `operation_count` to measure the overall error rate of FxA operations operations.
+"
+  }
+
+  dimension: metrics__counter__fxa_client_operation_count {
+    label: "Fxa Client Operation Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.fxa_client_operation_count ;;
+    type: number
+    group_label: "Fxa Client"
+    group_item_label: "Operation Count"
+
+    link: {
+      label: "Glean Dictionary reference for Fxa Client Operation Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fxa_client_operation_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of operations performed by the FxA client."
   }
 
   dimension: metrics__counter__logins_store_migration_num_failed {
@@ -9893,6 +9891,78 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     type: number
   }
 
+  dimension_group: metrics__datetime__blocklist_last_modified_rs_addons_mblf {
+    label: "Blocklist Last Modified Rs Addons Mblf"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.blocklist_last_modified_rs_addons_mblf ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Keep track of the last time the \"addons-bloomfilters\" remotesetting blocklist has been successfully updated.
+"
+  }
+
+  dimension_group: metrics__datetime__blocklist_mlbf_stash_time_newest {
+    label: "Blocklist Mlbf Stash Time Newest"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_newest ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Keep track of the timestamp of the most recent stash of the addons blocklist.
+"
+  }
+
+  dimension_group: metrics__datetime__blocklist_mlbf_stash_time_oldest {
+    label: "Blocklist Mlbf Stash Time Oldest"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_oldest ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Keep track of the timestamp of the oldest stash of the addons blocklist.
+"
+  }
+
+  dimension_group: metrics__datetime__glean_validation_first_run_hour {
+    label: "Glean Validation First Run Hour"
+    hidden: yes
+    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The hour of the first run of the application.
+"
+  }
+
   dimension_group: metadata__header__parsed {
     sql: ${TABLE}.metadata.header.parsed_date ;;
     type: time
@@ -11482,6 +11552,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Glean Validation Foreground Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_foreground_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fxa_client_operation_count {
+    type: sum
+    sql: ${metrics__counter__fxa_client_operation_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fxa Client Operation Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fxa_client_operation_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fxa_client_operation_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__fxa_client_operation_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fxa Client Operation Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fxa_client_operation_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -13206,6 +13301,49 @@ view: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_g
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__fxa_client_error_count {
+  label: "Fxa Client - Error Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__fxa_client_error_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__fxa_client_error_count.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -16681,6 +16819,25 @@ view: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stre
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.fog_validation_gvsv_audio_stream_init_gecko) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__fxa_client_error_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.fxa_client_error_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

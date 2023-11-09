@@ -380,6 +380,15 @@ expressed as a percentage.
 "
   }
 
+  dimension: metrics__string__navigator_geo_iso {
+    sql: ${TABLE}.metrics.string.navigator_geo_iso ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Navigator Geo Iso"
+    description: "The navigator's two-letter ISO 3166 country code based on geo ip.
+"
+  }
+
   dimension: metrics__string__navigator_subscription_type {
     sql: ${TABLE}.metrics.string.navigator_subscription_type ;;
     type: string

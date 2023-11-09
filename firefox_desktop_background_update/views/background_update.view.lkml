@@ -133,24 +133,6 @@ It is possible for a Firefox installation to not have a default profile, but in 
 "
   }
 
-  dimension: metrics__datetime__background_update_targeting_env_profile_age {
-    label: "Background Update Targeting Env Profile Age"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.background_update_targeting_env_profile_age ;;
-    type: time
-    group_label: "Background Update"
-    group_item_label: "Targeting Env Profile Age"
-
-    link: {
-      label: "Glean Dictionary reference for Background Update Targeting Env Profile Age"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_targeting_env_profile_age"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The `environment.profileAgeCreated` of the default profile's serialized targeting snapshot.
-"
-  }
-
   dimension: metrics__boolean__background_update_targeting_exception {
     label: "Background Update Targeting Exception"
     hidden: no
@@ -836,6 +818,24 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.sample_id ;;
     type: number
     description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
+  }
+
+  dimension_group: metrics__datetime__background_update_targeting_env_profile_age {
+    label: "Background Update Targeting Env Profile Age"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.background_update_targeting_env_profile_age ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The `environment.profileAgeCreated` of the default profile's serialized targeting snapshot.
+"
   }
 
   dimension_group: metadata__header__parsed {
