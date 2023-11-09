@@ -85,6 +85,11 @@ view: clients_daily_joined_table {
     type: string
   }
 
+  dimension: apple_model_id {
+    sql: ${TABLE}.apple_model_id ;;
+    type: string
+  }
+
   dimension: attribution__campaign {
     sql: ${TABLE}.attribution.campaign ;;
     type: string
@@ -132,6 +137,13 @@ view: clients_daily_joined_table {
     type: string
     group_label: "Attribution"
     group_item_label: "Source"
+  }
+
+  dimension: attribution__ua {
+    sql: ${TABLE}.attribution.ua ;;
+    type: string
+    group_label: "Attribution"
+    group_item_label: "Ua"
   }
 
   dimension: attribution__variation {
@@ -497,6 +509,21 @@ view: clients_daily_joined_table {
     type: string
   }
 
+  dimension: distribution_version {
+    sql: ${TABLE}.distribution_version ;;
+    type: string
+  }
+
+  dimension: distributor {
+    sql: ${TABLE}.distributor ;;
+    type: string
+  }
+
+  dimension: distributor_channel {
+    sql: ${TABLE}.distributor_channel ;;
+    type: string
+  }
+
   dimension: dom_parentprocess_private_window_used {
     sql: ${TABLE}.dom_parentprocess_private_window_used ;;
     type: yesno
@@ -517,8 +544,18 @@ view: clients_daily_joined_table {
     type: string
   }
 
+  dimension: env_build_platform_version {
+    sql: ${TABLE}.env_build_platform_version ;;
+    type: string
+  }
+
   dimension: env_build_version {
     sql: ${TABLE}.env_build_version ;;
+    type: string
+  }
+
+  dimension: env_build_xpcom_abi {
+    sql: ${TABLE}.env_build_xpcom_abi ;;
     type: string
   }
 
@@ -557,6 +594,11 @@ view: clients_daily_joined_table {
     hidden: yes
   }
 
+  dimension: first_document_id {
+    sql: ${TABLE}.first_document_id ;;
+    type: string
+  }
+
   dimension: first_paint_mean {
     sql: ${TABLE}.first_paint_mean ;;
     type: number
@@ -570,6 +612,11 @@ view: clients_daily_joined_table {
   dimension: fxa_configured {
     sql: ${TABLE}.fxa_configured ;;
     type: yesno
+  }
+
+  dimension: geo_db_version {
+    sql: ${TABLE}.geo_db_version ;;
+    type: string
   }
 
   dimension: geo_subdivision1 {
@@ -837,6 +884,11 @@ view: clients_daily_joined_table {
     type: number
   }
 
+  dimension: max_subsession_counter {
+    sql: ${TABLE}.max_subsession_counter ;;
+    type: number
+  }
+
   dimension: media_play_time_ms_audio_sum {
     sql: ${TABLE}.media_play_time_ms_audio_sum ;;
     type: number
@@ -849,6 +901,11 @@ view: clients_daily_joined_table {
 
   dimension: memory_mb {
     sql: ${TABLE}.memory_mb ;;
+    type: number
+  }
+
+  dimension: min_subsession_counter {
+    sql: ${TABLE}.min_subsession_counter ;;
     type: number
   }
 
@@ -909,6 +966,11 @@ view: clients_daily_joined_table {
 
   dimension: os_version {
     sql: ${TABLE}.os_version ;;
+    type: string
+  }
+
+  dimension: partner_id {
+    sql: ${TABLE}.partner_id ;;
     type: string
   }
 
