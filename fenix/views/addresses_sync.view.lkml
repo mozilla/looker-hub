@@ -626,13 +626,6 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
     sql: ${TABLE}.metrics.datetime.addresses_sync_finished_at ;;
     type: time
-
-    link: {
-      label: "Glean Dictionary reference for Addresses Sync Finished At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_sync_finished_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
     timeframes: [
       raw,
       time,
@@ -651,13 +644,6 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
     sql: ${TABLE}.metrics.datetime.addresses_sync_started_at ;;
     type: time
-
-    link: {
-      label: "Glean Dictionary reference for Addresses Sync Started At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_sync_started_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
     timeframes: [
       raw,
       time,
@@ -676,13 +662,6 @@ The labels are the `category.name` identifier of the metric.
     hidden: no
     sql: ${TABLE}.metrics.datetime.addresses_sync_v2_finished_at ;;
     type: time
-
-    link: {
-      label: "Glean Dictionary reference for Addresses Sync V2 Finished At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_sync_v2_finished_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
     timeframes: [
       raw,
       time,
@@ -701,13 +680,6 @@ The labels are the `category.name` identifier of the metric.
     hidden: no
     sql: ${TABLE}.metrics.datetime.addresses_sync_v2_started_at ;;
     type: time
-
-    link: {
-      label: "Glean Dictionary reference for Addresses Sync V2 Started At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/addresses_sync_v2_started_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
     timeframes: [
       raw,
       time,

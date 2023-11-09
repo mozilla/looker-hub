@@ -825,13 +825,6 @@ The labels are the `category.name` identifier of the metric.
     hidden: no
     sql: ${TABLE}.metrics.datetime.background_update_targeting_env_profile_age ;;
     type: time
-
-    link: {
-      label: "Glean Dictionary reference for Background Update Targeting Env Profile Age"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_targeting_env_profile_age"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
     timeframes: [
       raw,
       time,

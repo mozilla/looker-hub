@@ -552,13 +552,6 @@ The labels are the `category.name` identifier of the metric.
     hidden: no
     sql: ${TABLE}.metrics.datetime.page_viewed ;;
     type: time
-
-    link: {
-      label: "Glean Dictionary reference for Page Viewed"
-      url: "https://dictionary.telemetry.mozilla.org/apps/bedrock/metrics/page_viewed"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
     timeframes: [
       raw,
       time,
