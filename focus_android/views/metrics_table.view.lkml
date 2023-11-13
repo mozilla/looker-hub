@@ -744,6 +744,25 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__extensions_timing_event_page_running_time__count {
+    sql: ${TABLE}.metrics.custom_distribution.extensions_timing_event_page_running_time.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Extensions Timing Event Page Running Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__extensions_timing_event_page_running_time__sum {
+    sql: ${TABLE}.metrics.custom_distribution.extensions_timing_event_page_running_time.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Extensions Timing Event Page Running Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__extensions_timing_event_page_running_time__values {
+    sql: ${TABLE}.metrics.custom_distribution.extensions_timing_event_page_running_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__fog_validation_gvsv_number_of_unique_site_origins_all_tabs__count {
     sql: ${TABLE}.metrics.custom_distribution.fog_validation_gvsv_number_of_unique_site_origins_all_tabs.count ;;
     type: number
@@ -1098,6 +1117,16 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries {
     sql: ${TABLE}.metrics.labeled_counter.extensions_apis_dnr_startup_cache_entries ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__extensions_counters_browser_action_preload_result {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_counters_browser_action_preload_result ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__extensions_counters_event_page_idle_result {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_counters_event_page_idle_result ;;
     hidden: yes
   }
 
@@ -2136,6 +2165,537 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__values {
     sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_validate_rules_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.values ;;
     hidden: yes
   }
 
@@ -4527,6 +5087,18 @@ view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_se
   }
 }
 
+view: metrics_table__metrics__custom_distribution__extensions_timing_event_page_running_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__fog_validation_gvsv_number_of_unique_site_origins_all_tabs__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -4852,6 +5424,114 @@ view: metrics_table__metrics__timing_distribution__extensions_apis_dnr_startup_c
 }
 
 view: metrics_table__metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_background_page_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_browser_action_popup_open__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_content_script_injection__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_extension_startup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_page_action_popup_open__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_storage_local_get_idb__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_storage_local_get_json__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_storage_local_set_idb__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_storage_local_set_json__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
