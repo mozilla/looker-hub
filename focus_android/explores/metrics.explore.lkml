@@ -74,6 +74,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries}) AS metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_counters_browser_action_preload_result}) AS metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_counters_event_page_idle_result}) AS metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__extensions_process_event {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_process_event}) AS metrics__metrics__labeled_counter__extensions_process_event ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_process_event.document_id} ;;
@@ -381,6 +391,14 @@ explore: suggest__metrics__metrics__labeled_counter__dotprint_failure {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result {
   hidden: yes
 }
 
