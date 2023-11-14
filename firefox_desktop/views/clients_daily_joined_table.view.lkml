@@ -1844,6 +1844,11 @@ view: clients_daily_joined_table {
     type: number
   }
 
+  dimension: startup_profile_selection_first_ping_only {
+    sql: ${TABLE}.startup_profile_selection_first_ping_only ;;
+    type: string
+  }
+
   dimension: startup_profile_selection_reason_first {
     sql: ${TABLE}.startup_profile_selection_reason_first ;;
     type: string

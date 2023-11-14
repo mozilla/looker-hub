@@ -1156,6 +1156,40 @@ in browser.
 "
   }
 
+  dimension: metrics__labeled_counter__extensions_counters_browser_action_preload_result {
+    label: "Extensions Counters Browser Action Preload Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.extensions_counters_browser_action_preload_result ;;
+    group_label: "Extensions Counters"
+    group_item_label: "Browser Action Preload Result"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Counters Browser Action Preload Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_counters_browser_action_preload_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times an event page hit the idle timeout and results in one of the labels.
+"
+  }
+
+  dimension: metrics__labeled_counter__extensions_counters_event_page_idle_result {
+    label: "Extensions Counters Event Page Idle Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.extensions_counters_event_page_idle_result ;;
+    group_label: "Extensions Counters"
+    group_item_label: "Event Page Idle Result"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Counters Event Page Idle Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_counters_event_page_idle_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times an event page hit the idle timeout and results in one of the labels.
+"
+  }
+
   dimension: metrics__labeled_counter__extensions_process_event {
     label: "Extensions Process Event"
     hidden: yes
@@ -1227,6 +1261,189 @@ builds.
     }
 
     description: "SHA1 cryptographic hash of the quarantined domains string pref as it was set based on the value got synced from the RemoteSettings collection. AMRemoteSettings will be re-processing the entries on the next application startup and so this metric lifetime can be set to application and expect it to be always set to the value got from the RemoteSettings collection.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__sum {
+    label: "Extensions Timing Background Page Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Background Page Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Background Page Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_timing_background_page_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes to load a WebExtensions background page, from when the
+build function is called to when the page has finished processing the onload event.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__sum {
+    label: "Extensions Timing Browser Action Popup Open Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Browser Action Popup Open Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Browser Action Popup Open Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_timing_browser_action_popup_open"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes for a BrowserAction popup to open.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__sum {
+    label: "Extensions Timing Content Script Injection Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Content Script Injection Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Content Script Injection Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_timing_content_script_injection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes for content scripts from a WebExtension to be injected into a window.
+"
+  }
+
+  dimension: metrics__custom_distribution__extensions_timing_event_page_running_time__sum {
+    label: "Extensions Timing Event Page Running Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.extensions_timing_event_page_running_time.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Event Page Running Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Event Page Running Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_timing_event_page_running_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time (keyed by addon id) that an event page has been running before being suspended,
+or the entire addon shutdown.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__sum {
+    label: "Extensions Timing Extension Startup Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Extension Startup Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Extension Startup Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_timing_extension_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes for a WebExtension to start up, from when the
+startup function is called to when the startup promise resolves.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__sum {
+    label: "Extensions Timing Page Action Popup Open Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Page Action Popup Open Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Page Action Popup Open Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_timing_page_action_popup_open"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes for a PageAction popup to open.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__sum {
+    label: "Extensions Timing Storage Local Get Idb Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Storage Local Get Idb Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Storage Local Get Idb Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_timing_storage_local_get_idb"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes to perform a get via storage.local using the IndexedDB backend.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__sum {
+    label: "Extensions Timing Storage Local Get Json Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Storage Local Get Json Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Storage Local Get Json Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_timing_storage_local_get_json"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes to perform a get via storage.local using the JSONFile backend.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__sum {
+    label: "Extensions Timing Storage Local Set Idb Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Storage Local Set Idb Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Storage Local Set Idb Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_timing_storage_local_set_idb"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes to perform a set via storage.local using the Indexed backend.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__sum {
+    label: "Extensions Timing Storage Local Set Json Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Storage Local Set Json Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Storage Local Set Json Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_timing_storage_local_set_json"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes to perform a set via storage.local using the JSONFile backend.
 "
   }
 
@@ -5877,6 +6094,92 @@ view: metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entri
   }
 }
 
+view: metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result {
+  label: "Extensions Counters - Browser Action Preload Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result {
+  label: "Extensions Counters - Event Page Idle Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__extensions_process_event {
   label: "Extensions - Process Event"
 
@@ -8382,6 +8685,44 @@ view: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup_ca
     count(*) as n
 from mozdata.firefox_desktop.metrics as t,
 unnest(metrics.labeled_counter.extensions_apis_dnr_startup_cache_entries) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.extensions_counters_browser_action_preload_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.extensions_counters_event_page_idle_result) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
