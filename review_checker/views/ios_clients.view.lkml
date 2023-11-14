@@ -25,6 +25,21 @@ view: ios_clients {
     hidden: yes
   }
 
+  dimension: is_fx_dau {
+    sql: ${TABLE}.is_fx_dau ;;
+    type: number
+  }
+
+  dimension: is_nimbus_disabled {
+    sql: ${TABLE}.is_nimbus_disabled ;;
+    type: number
+  }
+
+  dimension: is_onboarded {
+    sql: ${TABLE}.is_onboarded ;;
+    type: number
+  }
+
   dimension: is_opt_in {
     sql: ${TABLE}.is_opt_in ;;
     type: number
