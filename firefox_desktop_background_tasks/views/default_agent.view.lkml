@@ -68,6 +68,25 @@ Possible values currently include the following (from [DefaultBrowser.cpp](https
 "
   }
 
+  dimension: metrics__string__system_default_pdf_handler {
+    label: "System Default Pdf Handler"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_default_pdf_handler ;;
+    type: string
+    group_label: "System Default"
+    group_item_label: "Pdf Handler"
+
+    link: {
+      label: "Glean Dictionary reference for System Default Pdf Handler"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_tasks/metrics/system_default_pdf_handler"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which pdf handler is currently set as the system default handler. This is simply a string with the name of the handler binned to a fixed set of known handlers.
+Possible values currently include the following (from [DefaultPDF.cpp](https://searchfox.org/mozilla-central/source/toolkit/mozapps/defaultagent/DefaultPDF.cpp)): * \"Error\" * \"\" (unknown) * \"Firefox\" * \"Microsoft Edge\" * \"Google Chrome\" * \"Adobe Acrobat\" * \"WPS\" * \"Nitro\" * \"Foxit\" * \"PDF-XChange\" * \"Avast\" * \"Sumatra\"
+"
+  }
+
   dimension: metrics__string__system_default_previous_browser {
     label: "System Default Previous Browser"
     hidden: no
