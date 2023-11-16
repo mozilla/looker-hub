@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: deletion_request_table {
+view: enrollment_status_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -485,10 +485,10 @@ for the purpose of experimentation enrollment.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  sql_table_name: `mozdata.firefox_desktop_background_update.deletion_request` ;;
+  sql_table_name: `mozdata.monitor_cirrus.enrollment_status` ;;
 }
 
-view: deletion_request_table__events {
+view: enrollment_status_table__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
@@ -510,7 +510,7 @@ view: deletion_request_table__events {
   }
 }
 
-view: deletion_request_table__events__extra {
+view: enrollment_status_table__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -522,7 +522,7 @@ view: deletion_request_table__events__extra {
   }
 }
 
-view: deletion_request_table__ping_info__experiments {
+view: enrollment_status_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
