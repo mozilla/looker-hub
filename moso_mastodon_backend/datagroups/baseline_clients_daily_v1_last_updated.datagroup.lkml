@@ -6,7 +6,7 @@
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
 datagroup: baseline_clients_daily_v1_last_updated {
-  label: "baseline_clients_daily_v1 Last Updated"
+  label: "Baseline Clients Daily Last Updated"
   sql_trigger: SELECT MAX(last_modified_time)
     FROM `moz-fx-data-shared-prod`.moso_mastodon_backend_derived.INFORMATION_SCHEMA.PARTITIONS
     WHERE table_name = 'baseline_clients_daily_v1' ;;
