@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       ios_search_bar_placement_v2_treatment_a_rollout.branch
     ]
     filters:
-      ios_search_bar_placement_v2_treatment_a_rollout.metric: 'search_count'
+      ios_search_bar_placement_v2_treatment_a_rollout.metric: 'ad_clicks'
       ios_search_bar_placement_v2_treatment_a_rollout.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       ios_search_bar_placement_v2_treatment_a_rollout.branch
     ]
     filters:
-      ios_search_bar_placement_v2_treatment_a_rollout.metric: 'ad_clicks'
+      ios_search_bar_placement_v2_treatment_a_rollout.metric: 'search_count'
       ios_search_bar_placement_v2_treatment_a_rollout.statistic: mean
     row: 10
     col: 12

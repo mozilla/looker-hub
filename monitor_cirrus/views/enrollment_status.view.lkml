@@ -4,7 +4,98 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: deletion_request_table {
+view: enrollment_status {
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/monitor_cirrus/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    label: "Glean Error Invalid Label"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Label"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/monitor_cirrus/metrics/glean_error_invalid_label"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set with an invalid label.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    label: "Glean Error Invalid Overflow"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Overflow"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/monitor_cirrus/metrics/glean_error_invalid_overflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set a value that overflowed.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    label: "Glean Error Invalid State"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid State"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/monitor_cirrus/metrics/glean_error_invalid_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a timing metric was used incorrectly.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    label: "Glean Error Invalid Value"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Value"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/monitor_cirrus/metrics/glean_error_invalid_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set to an invalid value.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -133,6 +224,7 @@ view: deletion_request_table {
     sql: ${TABLE}.document_id ;;
     hidden: yes
     description: "The document ID specified in the URI when the client sent this message"
+    primary_key: yes
   }
 
   dimension: events {
@@ -308,48 +400,6 @@ view: deletion_request_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__labeled_counter__glean_error_invalid_label {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
-    hidden: yes
-    description: "Counts the number of times a metric was set with an invalid label.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
-    hidden: yes
-    description: "Counts the number of times a metric was set a value that overflowed.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_state {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
-    hidden: yes
-    description: "Counts the number of times a timing metric was used incorrectly.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_value {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
-    hidden: yes
-    description: "Counts the number of times a metric was set to an invalid value.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__string__glean_client_annotation_experimentation_id {
-    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
-    type: string
-    group_label: "Metrics String"
-    group_item_label: "Glean Client Annotation Experimentation Id"
-    description: "An experimentation identifier derived and provided by the application
-for the purpose of experimentation enrollment.
-"
-  }
-
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -485,67 +535,262 @@ for the purpose of experimentation enrollment.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  sql_table_name: `mozdata.firefox_desktop_background_update.deletion_request` ;;
-}
-
-view: deletion_request_table__events {
-  dimension: category {
-    sql: ${TABLE}.category ;;
-    type: string
+  measure: clients {
+    type: count_distinct
+    sql: ${client_info__client_id} ;;
   }
 
-  dimension: extra {
-    sql: ${TABLE}.extra ;;
+  measure: ping_count {
+    type: count
+  }
+
+  sql_table_name: `mozdata.monitor_cirrus.enrollment_status` ;;
+}
+
+view: enrollment_status__metrics__labeled_counter__glean_error_invalid_label {
+  label: "Glean Error - Invalid Label"
+
+  dimension: document_id {
+    type: string
+    sql: ${enrollment_status.document_id} ;;
     hidden: yes
   }
 
-  dimension: name {
-    sql: ${TABLE}.name ;;
+  dimension: document_label_id {
     type: string
+    sql: ${enrollment_status.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
   }
 
-  dimension: timestamp {
-    sql: ${TABLE}.timestamp ;;
-    type: number
-  }
-}
-
-view: deletion_request_table__events__extra {
-  dimension: key {
+  dimension: label {
+    type: string
     sql: ${TABLE}.key ;;
-    type: string
+    suggest_explore: suggest__enrollment_status__metrics__labeled_counter__glean_error_invalid_label
+    suggest_dimension: suggest__enrollment_status__metrics__labeled_counter__glean_error_invalid_label.key
+    hidden: no
   }
 
   dimension: value {
+    type: number
     sql: ${TABLE}.value ;;
-    type: string
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${enrollment_status.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
-view: deletion_request_table__ping_info__experiments {
-  dimension: key {
+view: enrollment_status__metrics__labeled_counter__glean_error_invalid_overflow {
+  label: "Glean Error - Invalid Overflow"
+
+  dimension: document_id {
+    type: string
+    sql: ${enrollment_status.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${enrollment_status.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
     sql: ${TABLE}.key ;;
-    type: string
+    suggest_explore: suggest__enrollment_status__metrics__labeled_counter__glean_error_invalid_overflow
+    suggest_dimension: suggest__enrollment_status__metrics__labeled_counter__glean_error_invalid_overflow.key
+    hidden: no
   }
 
-  dimension: value__branch {
-    sql: ${TABLE}.value.branch ;;
-    type: string
-    group_label: "Value"
-    group_item_label: "Branch"
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
   }
 
-  dimension: value__extra__enrollment_id {
-    sql: ${TABLE}.value.extra.enrollment_id ;;
-    type: string
-    group_label: "Value Extra"
-    group_item_label: "Enrollment Id"
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
   }
 
-  dimension: value__extra__type {
-    sql: ${TABLE}.value.extra.type ;;
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${enrollment_status.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: enrollment_status__metrics__labeled_counter__glean_error_invalid_state {
+  label: "Glean Error - Invalid State"
+
+  dimension: document_id {
     type: string
-    group_label: "Value Extra"
-    group_item_label: "Type"
+    sql: ${enrollment_status.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${enrollment_status.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__enrollment_status__metrics__labeled_counter__glean_error_invalid_state
+    suggest_dimension: suggest__enrollment_status__metrics__labeled_counter__glean_error_invalid_state.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${enrollment_status.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: enrollment_status__metrics__labeled_counter__glean_error_invalid_value {
+  label: "Glean Error - Invalid Value"
+
+  dimension: document_id {
+    type: string
+    sql: ${enrollment_status.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${enrollment_status.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__enrollment_status__metrics__labeled_counter__glean_error_invalid_value
+    suggest_dimension: suggest__enrollment_status__metrics__labeled_counter__glean_error_invalid_value.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${enrollment_status.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: suggest__enrollment_status__metrics__labeled_counter__glean_error_invalid_label {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.monitor_cirrus.enrollment_status as t,
+unnest(metrics.labeled_counter.glean_error_invalid_label) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__enrollment_status__metrics__labeled_counter__glean_error_invalid_overflow {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.monitor_cirrus.enrollment_status as t,
+unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__enrollment_status__metrics__labeled_counter__glean_error_invalid_state {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.monitor_cirrus.enrollment_status as t,
+unnest(metrics.labeled_counter.glean_error_invalid_state) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__enrollment_status__metrics__labeled_counter__glean_error_invalid_value {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.monitor_cirrus.enrollment_status as t,
+unnest(metrics.labeled_counter.glean_error_invalid_value) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
   }
 }
