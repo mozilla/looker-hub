@@ -412,6 +412,40 @@ broken down by structured ingestion namespace.
 "
   }
 
+  dimension: metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown {
+    label: "Protocolhandler Mailto Handler Prompt Shown"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.protocolhandler_mailto_handler_prompt_shown ;;
+    group_label: "Protocolhandler Mailto"
+    group_item_label: "Handler Prompt Shown"
+
+    link: {
+      label: "Glean Dictionary reference for Protocolhandler Mailto Handler Prompt Shown"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/protocolhandler_mailto_handler_prompt_shown"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A website was visited, which called registerProtocolHandler for mailto://
+"
+  }
+
+  dimension: metrics__labeled_counter__protocolhandler_mailto_prompt_clicked {
+    label: "Protocolhandler Mailto Prompt Clicked"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.protocolhandler_mailto_prompt_clicked ;;
+    group_label: "Protocolhandler Mailto"
+    group_item_label: "Prompt Clicked"
+
+    link: {
+      label: "Glean Dictionary reference for Protocolhandler Mailto Prompt Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/protocolhandler_mailto_prompt_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "User clicked on a button to approve setting the current site as default web mail site. The sum of all counters is the total amount of user interactions and dismissing the same dialog often could be a sign of a bug.
+"
+  }
+
   dimension: metrics__string__search_engine_default_display_name {
     label: "Search Engine Default Display Name"
     hidden: no
@@ -8287,6 +8321,92 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactiv
   }
 }
 
+view: metrics__metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown {
+  label: "Protocolhandler Mailto - Handler Prompt Shown"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__protocolhandler_mailto_prompt_clicked {
+  label: "Protocolhandler Mailto - Prompt Clicked"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__protocolhandler_mailto_prompt_clicked
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__protocolhandler_mailto_prompt_clicked.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__pwmgr_form_autofill_result {
   label: "Pwmgr - Form Autofill Result"
 
@@ -9654,6 +9774,44 @@ view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_paren
     count(*) as n
 from mozdata.firefox_desktop.metrics as t,
 unnest(metrics.labeled_counter.power_wakeups_per_thread_parent_inactive) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.protocolhandler_mailto_handler_prompt_shown) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__protocolhandler_mailto_prompt_clicked {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.protocolhandler_mailto_prompt_clicked) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
