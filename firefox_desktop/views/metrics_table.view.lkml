@@ -1596,6 +1596,20 @@ broken down by structured ingestion namespace.
 "
   }
 
+  dimension: metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown {
+    sql: ${TABLE}.metrics.labeled_counter.protocolhandler_mailto_handler_prompt_shown ;;
+    hidden: yes
+    description: "A website was visited, which called registerProtocolHandler for mailto://
+"
+  }
+
+  dimension: metrics__labeled_counter__protocolhandler_mailto_prompt_clicked {
+    sql: ${TABLE}.metrics.labeled_counter.protocolhandler_mailto_prompt_clicked ;;
+    hidden: yes
+    description: "User clicked on a button to approve setting the current site as default web mail site. The sum of all counters is the total amount of user interactions and dismissing the same dialog often could be a sign of a bug.
+"
+  }
+
   dimension: metrics__labeled_counter__pwmgr_form_autofill_result {
     sql: ${TABLE}.metrics.labeled_counter.pwmgr_form_autofill_result ;;
     hidden: yes

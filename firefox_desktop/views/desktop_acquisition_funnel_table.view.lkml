@@ -10,11 +10,6 @@ view: desktop_acquisition_funnel_table {
     type: number
   }
 
-  dimension: activation_rate {
-    sql: ${TABLE}.activation_rate ;;
-    type: number
-  }
-
   dimension: attribution_campaign {
     sql: ${TABLE}.attribution_campaign ;;
     type: string
@@ -80,16 +75,6 @@ view: desktop_acquisition_funnel_table {
     type: number
   }
 
-  dimension: qualified_repeat_first_month_user_rate {
-    sql: ${TABLE}.qualified_repeat_first_month_user_rate ;;
-    type: number
-  }
-
-  dimension: qualified_retention_week4 {
-    sql: ${TABLE}.qualified_retention_week4 ;;
-    type: number
-  }
-
   dimension: qualified_second_day {
     sql: ${TABLE}.qualified_second_day ;;
     type: number
@@ -100,24 +85,19 @@ view: desktop_acquisition_funnel_table {
     type: number
   }
 
-  dimension: repeat_first_month_user_rate {
-    sql: ${TABLE}.repeat_first_month_user_rate ;;
-    type: number
-  }
-
   dimension: retained_week4 {
     sql: ${TABLE}.retained_week4 ;;
-    type: number
-  }
-
-  dimension: retention_week4 {
-    sql: ${TABLE}.retention_week4 ;;
     type: number
   }
 
   dimension: returned_second_day {
     sql: ${TABLE}.returned_second_day ;;
     type: number
+  }
+
+  dimension: startup_profile_selection_reason {
+    sql: ${TABLE}.startup_profile_selection_reason ;;
+    type: string
   }
 
   dimension_group: first_seen {
