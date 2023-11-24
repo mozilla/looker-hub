@@ -1039,6 +1039,13 @@ view: metrics_table {
     group_item_label: "Metrics Top Sites Count"
   }
 
+  dimension: metrics__counter__networking_residual_cache_folder_count {
+    sql: ${TABLE}.metrics.counter.networking_residual_cache_folder_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Residual Cache Folder Count"
+  }
+
   dimension: metrics__counter__pdfjs_used {
     sql: ${TABLE}.metrics.counter.pdfjs_used ;;
     type: number
@@ -2192,6 +2199,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
     sql: ${TABLE}.metrics.labeled_counter.networking_cookie_timestamp_fixed_count ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_residual_cache_folder_removal {
+    sql: ${TABLE}.metrics.labeled_counter.networking_residual_cache_folder_removal ;;
     hidden: yes
   }
 
