@@ -458,6 +458,13 @@ view: metrics_table {
     group_item_label: "Browser Total Uri Count"
   }
 
+  dimension: metrics__counter__cookie_banners_cookie_injection_fail {
+    sql: ${TABLE}.metrics.counter.cookie_banners_cookie_injection_fail ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Cookie Banners Cookie Injection Fail"
+  }
+
   dimension: metrics__counter__dotprint_android_dialog_requested {
     sql: ${TABLE}.metrics.counter.dotprint_android_dialog_requested ;;
     type: number
@@ -808,6 +815,101 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_cookie_count_part_by_key__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_part_by_key.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Part By Key"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_part_by_key__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_part_by_key.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Part By Key"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_part_by_key__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_part_by_key.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_partitioned__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_partitioned.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Partitioned"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_partitioned__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_partitioned.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Partitioned"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_partitioned__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_partitioned.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_total__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_total.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Total"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_total__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_total.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Total"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_total__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_total.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpart_by_key__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpart_by_key.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Unpart By Key"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpart_by_key__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpart_by_key.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Unpart By Key"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpart_by_key__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpart_by_key.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpartitioned__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpartitioned.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Unpartitioned"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpartitioned__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpartitioned.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Unpartitioned"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpartitioned__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpartitioned.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_cookie_creation_fixup_diff__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_cookie_creation_fixup_diff.count ;;
     type: number
@@ -824,6 +926,44 @@ view: metrics_table {
 
   dimension: metrics__custom_distribution__networking_cookie_creation_fixup_diff__values {
     sql: ${TABLE}.metrics.custom_distribution.networking_cookie_creation_fixup_diff.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_entry_max__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_entry_max.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Purge Entry Max"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_entry_max__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_entry_max.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Purge Entry Max"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_entry_max__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_entry_max.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_max__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_max.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Purge Max"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_max__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_max.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Purge Max"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_max__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_max.values ;;
     hidden: yes
   }
 
@@ -1094,6 +1234,16 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__cookie_banners_click_result {
     sql: ${TABLE}.metrics.labeled_counter.cookie_banners_click_result ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__cookie_banners_cmp_detected_cmp {
+    sql: ${TABLE}.metrics.labeled_counter.cookie_banners_cmp_detected_cmp ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__cookie_banners_cmp_result {
+    sql: ${TABLE}.metrics.labeled_counter.cookie_banners_cmp_result ;;
     hidden: yes
   }
 
@@ -1570,6 +1720,20 @@ view: metrics_table {
     group_item_label: "Shortcuts Shortcuts On Home Number"
   }
 
+  dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__denominator {
+    sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.denominator ;;
+    type: number
+    group_label: "Metrics Rate Cookie Banners Cmp Ratio Handled By Cmp Rule"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__numerator {
+    sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.numerator ;;
+    type: number
+    group_label: "Metrics Rate Cookie Banners Cmp Ratio Handled By Cmp Rule"
+    group_item_label: "Numerator"
+  }
+
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__denominator {
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_length_changed.denominator ;;
     type: number
@@ -1941,6 +2105,65 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__values {
     sql: ${TABLE}.metrics.timing_distribution.cookie_banners_click_handle_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.values ;;
     hidden: yes
   }
 
@@ -5135,7 +5358,91 @@ view: metrics_table__metrics__custom_distribution__networking_cookie_access_fixu
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_cookie_count_part_by_key__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_count_partitioned__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_count_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_count_unpart_by_key__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_count_unpartitioned__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_cookie_creation_fixup_diff__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_purge_entry_max__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_purge_max__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -5388,6 +5695,18 @@ view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_di
 }
 
 view: metrics_table__metrics__timing_distribution__cookie_banners_click_handle_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cookie_banners_cmp_handle_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
