@@ -1016,6 +1016,112 @@ in browser.
 "
   }
 
+  dimension: metrics__labeled_counter__cookie_banners_cmp_detected_cmp {
+    label: "Cookie Banners Cmp Detected Cmp"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cookie_banners_cmp_detected_cmp ;;
+    group_label: "Cookie Banners Cmp"
+    group_item_label: "Detected Cmp"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Cmp Detected Cmp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cookie_banners_cmp_detected_cmp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often a specific cmp has been detected by our cookie banner handling.
+"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__sum {
+    label: "Cookie Banners Cmp Handle Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.sum ;;
+    type: number
+    group_label: "Cookie Banners Cmp"
+    group_item_label: "Handle Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Cmp Handle Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cookie_banners_cmp_handle_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how long it takes to handle cookie banners successfully using CMP rules from DOMContentLoaded until click. This metric is a variant of the cookieBanners.click.handle_duration.
+"
+  }
+
+  dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__numerator {
+    label: "Cookie Banners Cmp Ratio Handled By Cmp Rule Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.numerator ;;
+    type: number
+    group_label: "Cookie Banners Cmp"
+    group_item_label: "Ratio Handled By Cmp Rule Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Cmp Ratio Handled By Cmp Rule Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cookie_banners_cmp_ratio_handled_by_cmp_rule"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of cookie banners handled by CMP rules within the total number of cases handled, including those handled by site-specific rules.
+"
+  }
+
+  dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__denominator {
+    label: "Cookie Banners Cmp Ratio Handled By Cmp Rule Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.denominator ;;
+    type: number
+    group_label: "Cookie Banners Cmp"
+    group_item_label: "Ratio Handled By Cmp Rule Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Cmp Ratio Handled By Cmp Rule Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cookie_banners_cmp_ratio_handled_by_cmp_rule"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of cookie banners handled by CMP rules within the total number of cases handled, including those handled by site-specific rules.
+"
+  }
+
+  dimension: metrics__labeled_counter__cookie_banners_cmp_result {
+    label: "Cookie Banners Cmp Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cookie_banners_cmp_result ;;
+    group_label: "Cookie Banners Cmp"
+    group_item_label: "Result"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Cmp Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cookie_banners_cmp_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Given a matching CMP rule, how often do we handle or fail to handle cookie banners, labelled by reason. The 'success' and 'fail' counters count the total numbers independently of the reason counters. Counters are incremented after the content window has been destroyed.
+"
+  }
+
+  dimension: metrics__counter__cookie_banners_cookie_injection_fail {
+    label: "Cookie Banners Cookie Injection Fail"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.cookie_banners_cookie_injection_fail ;;
+    type: number
+    group_label: "Cookie Banners"
+    group_item_label: "Cookie Injection Fail"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Cookie Injection Fail"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cookie_banners_cookie_injection_fail"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often the cookie banner is still shown even if we have injected cookies.
+"
+  }
+
   dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
     label: "Cookie Banners Normal Window Service Mode"
     hidden: no
@@ -2206,6 +2312,96 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__networking_cookie_count_part_by_key__sum {
+    label: "Networking Cookie Count Part By Key Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_part_by_key.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cookie Count Part By Key Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Count Part By Key Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_cookie_count_part_by_key"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A distribution of the partitioned cookies in storage belonging to a particular cookie key (host + origin attributes)
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_partitioned__sum {
+    label: "Networking Cookie Count Partitioned Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_partitioned.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cookie Count Partitioned Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Count Partitioned Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_cookie_count_partitioned"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Reports the number of partitioned cookies in storage
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_total__sum {
+    label: "Networking Cookie Count Total Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_total.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cookie Count Total Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Count Total Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_cookie_count_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Reports the total number of cookies in storage
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpart_by_key__sum {
+    label: "Networking Cookie Count Unpart By Key Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpart_by_key.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cookie Count Unpart By Key Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Count Unpart By Key Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_cookie_count_unpart_by_key"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A distribution of the unpartitioned cookies in storage belonging to a particular cookie key (host + origin attributes)
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpartitioned__sum {
+    label: "Networking Cookie Count Unpartitioned Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpartitioned.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cookie Count Unpartitioned Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Count Unpartitioned Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_cookie_count_unpartitioned"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Reports the number of unpartitioned cookies in storage
+"
+  }
+
   dimension: metrics__custom_distribution__networking_cookie_creation_fixup_diff__sum {
     label: "Networking Cookie Creation Fixup Diff Sum"
     hidden: no
@@ -2221,6 +2417,42 @@ To be used to validate GIFFT.
     }
 
     description: "If we fix up a cookie creation timestamp that is in the future this metric records the number of seconds that timestamp was off from NOW.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_entry_max__sum {
+    label: "Networking Cookie Purge Entry Max Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_entry_max.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cookie Purge Entry Max Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Purge Entry Max Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_cookie_purge_entry_max"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A distribution of the number of cookies purged for a single host + OA entry as a result of exceeding the maximum threshold for the given host + OA (single purge)
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_max__sum {
+    label: "Networking Cookie Purge Max Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_max.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cookie Purge Max Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Purge Max Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_cookie_purge_max"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A distribution of the number of cookies purged across all host + OAs as a result of exceeding the cookie maximum threshold (single purge)
 "
   }
 
@@ -2544,6 +2776,41 @@ To be used to validate GIFFT.
     }
 
     description: "The time between dispatching OnStopRequest from the socket thread and processing it on the main thread (content process).
+"
+  }
+
+  dimension: metrics__counter__networking_residual_cache_folder_count {
+    label: "Networking Residual Cache Folder Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.networking_residual_cache_folder_count ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Residual Cache Folder Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Residual Cache Folder Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_residual_cache_folder_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often we find a cache folder that wasn't purged at shutdown by a background task process.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_residual_cache_folder_removal {
+    label: "Networking Residual Cache Folder Removal"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_residual_cache_folder_removal ;;
+    group_label: "Networking"
+    group_item_label: "Residual Cache Folder Removal"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Residual Cache Folder Removal"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_residual_cache_folder_removal"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often succeed/fail in removing cache folder that wasn't purged at shutdown
 "
   }
 
@@ -5156,6 +5423,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: cookie_banners_cookie_injection_fail {
+    type: sum
+    sql: ${metrics__counter__cookie_banners_cookie_injection_fail} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Cookie Injection Fail"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cookie_banners_cookie_injection_fail"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: cookie_banners_cookie_injection_fail_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__cookie_banners_cookie_injection_fail: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Cookie Injection Fail"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cookie_banners_cookie_injection_fail"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: dotprint_android_dialog_requested {
     type: sum
     sql: ${metrics__counter__dotprint_android_dialog_requested} ;;
@@ -5302,6 +5594,31 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Fog Ipc Shutdown Registration Failures"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/fog_ipc_shutdown_registration_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_residual_cache_folder_count {
+    type: sum
+    sql: ${metrics__counter__networking_residual_cache_folder_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Residual Cache Folder Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_residual_cache_folder_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_residual_cache_folder_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__networking_residual_cache_folder_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Residual Cache Folder Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_residual_cache_folder_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -5805,6 +6122,92 @@ view: metrics__metrics__labeled_counter__cookie_banners_click_result {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result
     suggest_dimension: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp {
+  label: "Cookie Banners Cmp - Detected Cmp"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__cookie_banners_cmp_result {
+  label: "Cookie Banners Cmp - Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_result
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_result.key
     hidden: no
   }
 
@@ -7375,6 +7778,49 @@ view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_residual_cache_folder_removal {
+  label: "Networking - Residual Cache Folder Removal"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_residual_cache_folder_removal
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_residual_cache_folder_removal.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_speculative_connect_outcome {
   label: "Networking - Speculative Connect Outcome"
 
@@ -8684,6 +9130,44 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.cookie_banners_cmp_detected_cmp) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_result {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.cookie_banners_cmp_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
   derived_table: {
     sql: select
@@ -9356,6 +9840,25 @@ view: suggest__metrics__metrics__labeled_counter__networking_cookie_timestamp_fi
     count(*) as n
 from mozdata.firefox_desktop.metrics as t,
 unnest(metrics.labeled_counter.networking_cookie_timestamp_fixed_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_residual_cache_folder_removal {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.networking_residual_cache_folder_removal) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

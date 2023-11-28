@@ -47,6 +47,11 @@ view: funnel_retention_week_4_table {
 "
   }
 
+  dimension: install_source {
+    sql: ${TABLE}.install_source ;;
+    type: string
+  }
+
   dimension: new_profiles {
     sql: ${TABLE}.new_profiles ;;
     type: number

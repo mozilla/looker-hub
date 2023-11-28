@@ -45,6 +45,11 @@ view: funnel_retention_clients_table {
     type: string
   }
 
+  dimension: install_source {
+    sql: ${TABLE}.install_source ;;
+    type: string
+  }
+
   dimension: repeat_first_month_user {
     sql: ${TABLE}.repeat_first_month_user ;;
     type: yesno
