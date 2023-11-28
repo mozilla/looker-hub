@@ -23,6 +23,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cookie_banners_click_result}) AS metrics__metrics__labeled_counter__cookie_banners_click_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cookie_banners_click_result.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cookie_banners_cmp_detected_cmp}) AS metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__cookie_banners_cmp_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cookie_banners_cmp_result}) AS metrics__metrics__labeled_counter__cookie_banners_cmp_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cookie_banners_cmp_result.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cookie_banners_rule_lookup_by_domain}) AS metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain.document_id} ;;
@@ -56,6 +66,16 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries}) AS metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_counters_browser_action_preload_result}) AS metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_counters_event_page_idle_result}) AS metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__extensions_process_event {
@@ -193,6 +213,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_cookie_timestamp_fixed_count}) AS metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_residual_cache_folder_removal {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_residual_cache_folder_removal}) AS metrics__metrics__labeled_counter__networking_residual_cache_folder_removal ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_residual_cache_folder_removal.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_speculative_connect_outcome {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_speculative_connect_outcome}) AS metrics__metrics__labeled_counter__networking_speculative_connect_outcome ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_speculative_connect_outcome.document_id} ;;
@@ -303,6 +328,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_wakeups_per_thread_parent_inactive}) AS metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown}) AS metrics__metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__protocolhandler_mailto_prompt_clicked {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__protocolhandler_mailto_prompt_clicked}) AS metrics__metrics__labeled_counter__protocolhandler_mailto_prompt_clicked ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__protocolhandler_mailto_prompt_clicked.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__pwmgr_form_autofill_result {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pwmgr_form_autofill_result}) AS metrics__metrics__labeled_counter__pwmgr_form_autofill_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pwmgr_form_autofill_result.document_id} ;;
@@ -338,6 +373,14 @@ explore: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_result {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
   hidden: yes
 }
@@ -363,6 +406,14 @@ explore: suggest__metrics__metrics__labeled_counter__dotprint_failure {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result {
   hidden: yes
 }
 
@@ -474,6 +525,10 @@ explore: suggest__metrics__metrics__labeled_counter__networking_cookie_timestamp
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__networking_residual_cache_folder_removal {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__networking_speculative_connect_outcome {
   hidden: yes
 }
@@ -559,6 +614,14 @@ explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_pa
 }
 
 explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__protocolhandler_mailto_handler_prompt_shown {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__protocolhandler_mailto_prompt_clicked {
   hidden: yes
 }
 

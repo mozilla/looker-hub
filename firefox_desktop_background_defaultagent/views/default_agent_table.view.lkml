@@ -355,7 +355,7 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics String"
     group_item_label: "Glean Client Annotation Experimentation Id"
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -383,6 +383,16 @@ Many of the values correspond to buttons on the notification and should be prett
     group_item_label: "System Default Browser"
     description: "Which browser is currently set as the system default web browser. This is simply a string with the name of the browser binned to a fixed set of known browsers.
 Possible values currently include the following (from [DefaultBrowser.cpp](https://searchfox.org/mozilla-central/source/toolkit/mozapps/defaultagent/DefaultBrowser.cpp)): * \"error\" * \"\" (unknown) * \"firefox\" * \"chrome\" * \"edge\" * \"edge-chrome\" * \"ie\" * \"opera\" * \"brave\" * \"yandex\" * \"qq-browser\" * \"360-browser\" * \"sogou\" * \"duckduckgo\"
+"
+  }
+
+  dimension: metrics__string__system_default_pdf_handler {
+    sql: ${TABLE}.metrics.string.system_default_pdf_handler ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "System Default Pdf Handler"
+    description: "Which pdf handler is currently set as the system default handler. This is simply a string with the name of the handler binned to a fixed set of known handlers.
+Possible values currently include the following (from [DefaultPDF.cpp](https://searchfox.org/mozilla-central/source/toolkit/mozapps/defaultagent/DefaultPDF.cpp)): * \"Error\" * \"\" (unknown) * \"Firefox\" * \"Microsoft Edge\" * \"Google Chrome\" * \"Adobe Acrobat\" * \"WPS\" * \"Nitro\" * \"Foxit\" * \"PDF-XChange\" * \"Avast\" * \"Sumatra\"
 "
   }
 

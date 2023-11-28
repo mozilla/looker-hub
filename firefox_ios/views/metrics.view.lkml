@@ -631,6 +631,78 @@ autofill settings are enabled
 "
   }
 
+  dimension: metrics__counter__credit_card_deleted {
+    label: "Credit Card Deleted"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.credit_card_deleted ;;
+    type: number
+    group_label: "Credit Card"
+    group_item_label: "Deleted"
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of the number of credit cards that have been deleted by the user.
+"
+  }
+
+  dimension: metrics__counter__credit_card_modified {
+    label: "Credit Card Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.credit_card_modified ;;
+    type: number
+    group_label: "Credit Card"
+    group_item_label: "Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of the number of credit cards that have been modified by the user.
+"
+  }
+
+  dimension: metrics__counter__credit_card_saved {
+    label: "Credit Card Saved"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.credit_card_saved ;;
+    type: number
+    group_label: "Credit Card"
+    group_item_label: "Saved"
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Saved"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_saved"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of the number of credit cards that have been saved by the user.
+"
+  }
+
+  dimension: metrics__quantity__credit_card_saved_all {
+    label: "Credit Card Saved All"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.credit_card_saved_all ;;
+    type: number
+    group_label: "Credit Card"
+    group_item_label: "Saved All"
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Saved All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_saved_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record the number of ALL the credit cards that have been currently stored by the user.
+"
+  }
+
   dimension: metrics__boolean__credit_card_sync_enabled {
     label: "Credit Card Sync Enabled"
     hidden: no
@@ -5181,6 +5253,81 @@ startup, as part of the initialization sequence.
     link: {
       label: "Glean Dictionary reference for App Menu Whats New"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/app_menu_whats_new"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: credit_card_deleted {
+    type: sum
+    sql: ${metrics__counter__credit_card_deleted} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: credit_card_deleted_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__credit_card_deleted: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: credit_card_modified {
+    type: sum
+    sql: ${metrics__counter__credit_card_modified} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: credit_card_modified_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__credit_card_modified: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: credit_card_saved {
+    type: sum
+    sql: ${metrics__counter__credit_card_saved} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Saved"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_saved"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: credit_card_saved_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__credit_card_saved: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Saved"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_saved"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

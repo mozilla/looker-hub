@@ -5,6 +5,11 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: event_monitoring_live {
+  dimension: channel {
+    sql: ${TABLE}.channel ;;
+    type: string
+  }
+
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
@@ -38,11 +43,6 @@ view: event_monitoring_live {
 
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
-    type: string
-  }
-
-  dimension: normalized_channel {
-    sql: ${TABLE}.normalized_channel ;;
     type: string
   }
 

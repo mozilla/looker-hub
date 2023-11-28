@@ -591,6 +591,27 @@ view: metrics_table {
     group_item_label: "App Opened As Default Browser"
   }
 
+  dimension: metrics__counter__credit_card_deleted {
+    sql: ${TABLE}.metrics.counter.credit_card_deleted ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Credit Card Deleted"
+  }
+
+  dimension: metrics__counter__credit_card_modified {
+    sql: ${TABLE}.metrics.counter.credit_card_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Credit Card Modified"
+  }
+
+  dimension: metrics__counter__credit_card_saved {
+    sql: ${TABLE}.metrics.counter.credit_card_saved ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Credit Card Saved"
+  }
+
   dimension: metrics__counter__default_browser_card_dismiss_pressed {
     sql: ${TABLE}.metrics.counter.default_browser_card_dismiss_pressed ;;
     type: number
@@ -1591,6 +1612,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Bookmarks Mobile Bookmarks Count"
+  }
+
+  dimension: metrics__quantity__credit_card_saved_all {
+    sql: ${TABLE}.metrics.quantity.credit_card_saved_all ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Credit Card Saved All"
   }
 
   dimension: metrics__quantity__history_num_visits {

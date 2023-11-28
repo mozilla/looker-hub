@@ -383,6 +383,15 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__cookie_banners_cookie_injection_fail {
+    sql: ${TABLE}.metrics.counter.cookie_banners_cookie_injection_fail ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Cookie Banners Cookie Injection Fail"
+    description: "Counts how often the cookie banner is still shown even if we have injected cookies.
+"
+  }
+
   dimension: metrics__counter__dotprint_android_dialog_requested {
     sql: ${TABLE}.metrics.counter.dotprint_android_dialog_requested ;;
     type: number
@@ -532,6 +541,15 @@ This does not include deletion-request pings.
     group_label: "Metrics Counter"
     group_item_label: "Glean Validation Foreground Count"
     description: "On mobile, the number of times the application went to foreground.
+"
+  }
+
+  dimension: metrics__counter__networking_residual_cache_folder_count {
+    sql: ${TABLE}.metrics.counter.networking_residual_cache_folder_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Residual Cache Folder Count"
+    description: "Counts how often we find a cache folder that wasn't purged at shutdown by a background task process.
 "
   }
 
@@ -696,6 +714,26 @@ This does not include deletion-request pings.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__extensions_timing_event_page_running_time__count {
+    sql: ${TABLE}.metrics.custom_distribution.extensions_timing_event_page_running_time.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Extensions Timing Event Page Running Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__extensions_timing_event_page_running_time__sum {
+    sql: ${TABLE}.metrics.custom_distribution.extensions_timing_event_page_running_time.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Extensions Timing Event Page Running Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__extensions_timing_event_page_running_time__values {
+    sql: ${TABLE}.metrics.custom_distribution.extensions_timing_event_page_running_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__fog_validation_gvsv_number_of_unique_site_origins_all_tabs__count {
     sql: ${TABLE}.metrics.custom_distribution.fog_validation_gvsv_number_of_unique_site_origins_all_tabs.count ;;
     type: number
@@ -736,6 +774,106 @@ This does not include deletion-request pings.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_cookie_count_part_by_key__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_part_by_key.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Part By Key"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_part_by_key__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_part_by_key.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Part By Key"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_part_by_key__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_part_by_key.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_partitioned__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_partitioned.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Partitioned"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_partitioned__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_partitioned.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Partitioned"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_partitioned__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_partitioned.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_total__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_total.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Total"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_total__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_total.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Total"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_total__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_total.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpart_by_key__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpart_by_key.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Unpart By Key"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpart_by_key__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpart_by_key.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Unpart By Key"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpart_by_key__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpart_by_key.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpartitioned__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpartitioned.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Unpartitioned"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpartitioned__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpartitioned.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Unpartitioned"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpartitioned__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpartitioned.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_cookie_creation_fixup_diff__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_cookie_creation_fixup_diff.count ;;
     type: number
@@ -753,6 +891,46 @@ This does not include deletion-request pings.
 
   dimension: metrics__custom_distribution__networking_cookie_creation_fixup_diff__values {
     sql: ${TABLE}.metrics.custom_distribution.networking_cookie_creation_fixup_diff.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_entry_max__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_entry_max.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Purge Entry Max"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_entry_max__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_entry_max.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Purge Entry Max"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_entry_max__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_entry_max.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_max__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_max.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Purge Max"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_max__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_max.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Purge Max"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_max__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_max.values ;;
     hidden: yes
   }
 
@@ -1004,6 +1182,20 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__labeled_counter__cookie_banners_cmp_detected_cmp {
+    sql: ${TABLE}.metrics.labeled_counter.cookie_banners_cmp_detected_cmp ;;
+    hidden: yes
+    description: "Counts how often a specific cmp has been detected by our cookie banner handling.
+"
+  }
+
+  dimension: metrics__labeled_counter__cookie_banners_cmp_result {
+    sql: ${TABLE}.metrics.labeled_counter.cookie_banners_cmp_result ;;
+    hidden: yes
+    description: "Given a matching CMP rule, how often do we handle or fail to handle cookie banners, labelled by reason. The 'success' and 'fail' counters count the total numbers independently of the reason counters. Counters are incremented after the content window has been destroyed.
+"
+  }
+
   dimension: metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
     sql: ${TABLE}.metrics.labeled_counter.cookie_banners_rule_lookup_by_domain ;;
     hidden: yes
@@ -1036,6 +1228,20 @@ This does not include deletion-request pings.
     hidden: yes
     description: "Counters for startup cache data hits or misses on initializating
 DNR rules for extensions loaded on application startup.
+"
+  }
+
+  dimension: metrics__labeled_counter__extensions_counters_browser_action_preload_result {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_counters_browser_action_preload_result ;;
+    hidden: yes
+    description: "Number of times an event page hit the idle timeout and results in one of the labels.
+"
+  }
+
+  dimension: metrics__labeled_counter__extensions_counters_event_page_idle_result {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_counters_event_page_idle_result ;;
+    hidden: yes
+    description: "Number of times an event page hit the idle timeout and results in one of the labels.
 "
   }
 
@@ -1238,6 +1444,13 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.labeled_counter.networking_cookie_timestamp_fixed_count ;;
     hidden: yes
     description: "Counts the number of times a cookie's invalid timestamp was fixed when reading it from the DB.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_residual_cache_folder_removal {
+    sql: ${TABLE}.metrics.labeled_counter.networking_residual_cache_folder_removal ;;
+    hidden: yes
+    description: "Counts how often succeed/fail in removing cache folder that wasn't purged at shutdown
 "
   }
 
@@ -1591,6 +1804,20 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__denominator {
+    sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.denominator ;;
+    type: number
+    group_label: "Metrics Rate Cookie Banners Cmp Ratio Handled By Cmp Rule"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__numerator {
+    sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.numerator ;;
+    type: number
+    group_label: "Metrics Rate Cookie Banners Cmp Ratio Handled By Cmp Rule"
+    group_item_label: "Numerator"
+  }
+
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__denominator {
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_fail_length_changed.denominator ;;
     type: number
@@ -1941,6 +2168,66 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__extensions_apis_dnr_evaluate_rules_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_evaluate_rules_time.bucket_count ;;
     type: number
@@ -2178,6 +2465,546 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__values {
     sql: ${TABLE}.metrics.timing_distribution.extensions_apis_dnr_validate_rules_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.values ;;
     hidden: yes
   }
 
@@ -4477,6 +5304,18 @@ view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_se
   }
 }
 
+view: metrics_table__metrics__custom_distribution__extensions_timing_event_page_running_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__fog_validation_gvsv_number_of_unique_site_origins_all_tabs__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -4501,7 +5340,91 @@ view: metrics_table__metrics__custom_distribution__networking_cookie_access_fixu
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_cookie_count_part_by_key__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_count_partitioned__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_count_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_count_unpart_by_key__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_count_unpartitioned__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_cookie_creation_fixup_diff__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_purge_entry_max__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_purge_max__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -4753,6 +5676,18 @@ view: metrics_table__metrics__timing_distribution__cookie_banners_click_handle_d
   }
 }
 
+view: metrics_table__metrics__timing_distribution__cookie_banners_cmp_handle_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__extensions_apis_dnr_evaluate_rules_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -4790,6 +5725,114 @@ view: metrics_table__metrics__timing_distribution__extensions_apis_dnr_startup_c
 }
 
 view: metrics_table__metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_background_page_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_browser_action_popup_open__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_content_script_injection__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_extension_startup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_page_action_popup_open__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_storage_local_get_idb__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_storage_local_get_json__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_storage_local_set_idb__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_storage_local_set_json__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

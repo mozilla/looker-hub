@@ -139,6 +139,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cookie_banners_click_result}) AS metrics__metrics__labeled_counter__cookie_banners_click_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cookie_banners_click_result.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cookie_banners_cmp_detected_cmp}) AS metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__cookie_banners_cmp_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cookie_banners_cmp_result}) AS metrics__metrics__labeled_counter__cookie_banners_cmp_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cookie_banners_cmp_result.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cookie_banners_rule_lookup_by_domain}) AS metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain.document_id} ;;
@@ -372,6 +382,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_cookie_timestamp_fixed_count}) AS metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_residual_cache_folder_removal {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_residual_cache_folder_removal}) AS metrics__metrics__labeled_counter__networking_residual_cache_folder_removal ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_residual_cache_folder_removal.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__networking_speculative_connect_outcome {
@@ -631,6 +646,14 @@ explore: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_result {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
   hidden: yes
 }
@@ -816,6 +839,10 @@ explore: suggest__metrics__metrics__labeled_counter__network_data_size_per_type 
 }
 
 explore: suggest__metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__networking_residual_cache_folder_removal {
   hidden: yes
 }
 
