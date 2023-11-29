@@ -340,6 +340,89 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__identifiers_fxa_account_id {
+    sql: ${TABLE}.metrics.string.identifiers_fxa_account_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Identifiers Fxa Account Id"
+    description: "The user's FxA account ID, if available.
+data_taxonomy:
+  data_categories: [user.unique_id]
+  data_uses: [analytics.reporting, personalize.content]
+  data_subjects: [customer]
+  data_qualifier: [identified]
+"
+  }
+
+  dimension: metrics__string__identifiers_mastodon_account_handle {
+    sql: ${TABLE}.metrics.string.identifiers_mastodon_account_handle ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Identifiers Mastodon Account Handle"
+    description: "The user's full account handle, with domain. For example, `account_name@mozilla.social`.
+data_taxonomy:
+  data_categories: [user.account.username]
+  data_uses: [analytics.reporting, personalize.content]
+  data_subjects: [customer]
+"
+  }
+
+  dimension: metrics__string__identifiers_mastodon_account_id {
+    sql: ${TABLE}.metrics.string.identifiers_mastodon_account_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Identifiers Mastodon Account Id"
+    description: "The user's numeric account ID from Mastodon.
+data_taxonomy:
+  data_categories: [user.unique_id]
+  data_uses: [analytics.reporting, personalize.content]
+  data_subjects: [customer]
+  data_qualifier: [identified]
+"
+  }
+
+  dimension: metrics__string__identifiers_user_agent {
+    sql: ${TABLE}.metrics.string.identifiers_user_agent ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Identifiers User Agent"
+    description: "The device user agent string.
+data_taxonomy:
+  data_categories: [user.device]
+  data_uses: [analytics.reporting]
+  data_subjects: [customer, visitor]
+  data_qualifier: [n/a]
+"
+  }
+
+  dimension: metrics__string__web_page_url {
+    sql: ${TABLE}.metrics.string.web_page_url ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Web Page Url"
+    description: "The full URL of the page that was visited, along with URL query parameters. For example, `https://mozilla.social/home?utm_source=test`.
+data_taxonomy:
+  data_categories: [user.behavior.browsing_history]
+  data_uses: [analytics.reporting]
+  data_subjects: [customer, visitor]
+  data_qualifier: [n/a]
+"
+  }
+
+  dimension: metrics__string__web_referrer_url {
+    sql: ${TABLE}.metrics.string.web_referrer_url ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Web Referrer Url"
+    description: "The full URL of the previous web page from which a link was followed in order to trigger the page view. Comes from the `referrer` field of the HTTP header. May not always be available. For example, `https://www.google.com`.
+data_taxonomy:
+  data_categories: []
+  data_uses: [analytics.reporting]
+  data_subjects: [customer, visitor]
+  data_qualifier: [n/a]
+"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string

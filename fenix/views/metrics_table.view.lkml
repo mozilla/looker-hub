@@ -647,6 +647,13 @@ view: metrics_table {
     group_item_label: "Shopping Settings Component Opted Out"
   }
 
+  dimension: metrics__boolean__shopping_settings_disabled_ads {
+    sql: ${TABLE}.metrics.boolean.shopping_settings_disabled_ads ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Shopping Settings Disabled Ads"
+  }
+
   dimension: metrics__boolean__shopping_settings_nimbus_disabled_shopping {
     sql: ${TABLE}.metrics.boolean.shopping_settings_nimbus_disabled_shopping ;;
     type: yesno
