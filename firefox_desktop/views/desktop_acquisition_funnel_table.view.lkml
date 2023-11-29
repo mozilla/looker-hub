@@ -115,5 +115,5 @@ view: desktop_acquisition_funnel_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.analysis.gkabbz_sample_desktop_funnel` ;;
+  sql_table_name: `mozdata.telemetry.desktop_acquisition_funnel` ;;
 }

@@ -1402,7 +1402,15 @@ DNR rules for extensions loaded on application startup.
     description: "Counters for how many times the extension process has crashed or been created.
 The labels with \"_fg\" / \"_bg\" suffixes are only recorded in Android builds,
 while the \"created\" and \"crashed\" labels are recorded on both Desktop and Android
-builds. 
+builds.
+"
+  }
+
+  dimension: metrics__labeled_counter__extensions_startup_cache_read_errors {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_startup_cache_read_errors ;;
+    hidden: yes
+    description: "The number of times an unexpected error has been raised while reading
+the extensions StartupCache file.
 "
   }
 
@@ -1993,6 +2001,15 @@ count. Unset on other platforms.
     group_label: "Metrics Quantity"
     group_item_label: "Extensions Quarantined Domains Listsize"
     description: "Number of domains listed in the quarantined domains list pref for the client during this session.
+"
+  }
+
+  dimension: metrics__quantity__extensions_startup_cache_write_bytelength {
+    sql: ${TABLE}.metrics.quantity.extensions_startup_cache_write_bytelength ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Extensions Startup Cache Write Bytelength"
+    description: "The amount of bytes written to the extensions StartupCache file.
 "
   }
 
