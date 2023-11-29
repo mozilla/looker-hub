@@ -2085,7 +2085,7 @@ firefox_desktop:
       type: table_view
     desktop_acquisition_funnel_table:
       tables:
-      - table: mozdata.analysis.gkabbz_sample_desktop_funnel
+      - table: mozdata.telemetry.desktop_acquisition_funnel
       type: table_view
     desktop_events_table:
       tables:
@@ -7624,13 +7624,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id155
           normalized_channel:
-            default: aurora
+            default: nightly
             options:
-            - aurora
             - nightly
+            - beta
             - esr
             - release
-            - beta
+            - aurora
             - default
             - nightly-pine
             - nightly-oak
@@ -10091,17 +10091,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id344
           channel:
-            default: nightly
+            default: release
             options:
-            - nightly
-            - beta
             - release
+            - beta
+            - nightly
           os:
-            default: Darwin
+            default: Linux
             options:
-            - Darwin
             - Linux
             - Windows_NT
+            - Darwin
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id345

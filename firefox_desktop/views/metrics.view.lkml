@@ -1404,6 +1404,42 @@ builds.
 "
   }
 
+  dimension: metrics__labeled_counter__extensions_startup_cache_read_errors {
+    label: "Extensions Startup Cache Read Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.extensions_startup_cache_read_errors ;;
+    group_label: "Extensions"
+    group_item_label: "Startup Cache Read Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Startup Cache Read Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_startup_cache_read_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times an unexpected error has been raised while reading
+the extensions StartupCache file.
+"
+  }
+
+  dimension: metrics__quantity__extensions_startup_cache_write_bytelength {
+    label: "Extensions Startup Cache Write Bytelength"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.extensions_startup_cache_write_bytelength ;;
+    type: number
+    group_label: "Extensions"
+    group_item_label: "Startup Cache Write Bytelength"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Startup Cache Write Bytelength"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/extensions_startup_cache_write_bytelength"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The amount of bytes written to the extensions StartupCache file.
+"
+  }
+
   dimension: metrics__timing_distribution__extensions_timing_background_page_load__sum {
     label: "Extensions Timing Background Page Load Sum"
     hidden: no
@@ -6660,6 +6696,49 @@ view: metrics__metrics__labeled_counter__extensions_process_event {
   }
 }
 
+view: metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
+  label: "Extensions - Startup Cache Read Errors"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_startup_cache_read_errors
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_startup_cache_read_errors.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
   label: "Fog Validation - Gvsv Audio Stream Init"
 
@@ -9346,6 +9425,25 @@ view: suggest__metrics__metrics__labeled_counter__extensions_process_event {
     count(*) as n
 from mozdata.firefox_desktop.metrics as t,
 unnest(metrics.labeled_counter.extensions_process_event) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.extensions_startup_cache_read_errors) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

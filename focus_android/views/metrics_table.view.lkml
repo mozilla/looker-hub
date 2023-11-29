@@ -1292,6 +1292,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__extensions_startup_cache_read_errors {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_startup_cache_read_errors ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
     sql: ${TABLE}.metrics.labeled_counter.fog_validation_gvsv_audio_stream_init ;;
     hidden: yes
@@ -1683,6 +1688,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Extensions Quarantined Domains Listsize"
+  }
+
+  dimension: metrics__quantity__extensions_startup_cache_write_bytelength {
+    sql: ${TABLE}.metrics.quantity.extensions_startup_cache_write_bytelength ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Extensions Startup Cache Write Bytelength"
   }
 
   dimension: metrics__quantity__fog_max_pings_per_minute {
