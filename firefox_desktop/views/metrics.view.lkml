@@ -1346,7 +1346,7 @@ in browser.
     description: "Counters for how many times the extension process has crashed or been created.
 The labels with \"_fg\" / \"_bg\" suffixes are only recorded in Android builds,
 while the \"created\" and \"crashed\" labels are recorded on both Desktop and Android
-builds. 
+builds.
 "
   }
 
