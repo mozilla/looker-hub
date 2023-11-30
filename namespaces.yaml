@@ -879,6 +879,8 @@ fenix:
   - vzare@mozilla.com
   - ksiegler@mozilla.com
   - rbaffourawuah@mozilla.com
+  - kik@mozilla.com
+  - vsabino@mozilla.com
   pretty_name: Fenix
   spoke: looker-spoke-default
   views:
@@ -1360,6 +1362,10 @@ fenix:
       tables:
       - channel: release
         table: mozdata.fenix.funnel_retention_clients
+      type: table_view
+    funnel_retention_week_4:
+      tables:
+      - table: mozdata.fenix.funnel_retention_week_4
       type: table_view
     funnel_retention_week_4_table:
       tables:
@@ -7585,10 +7591,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 7
+            default: Windows 10
             options:
-            - Windows 7
             - Windows 10
+            - Windows 7
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -7624,13 +7630,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id155
           normalized_channel:
-            default: nightly
+            default: aurora
             options:
-            - nightly
-            - beta
-            - esr
-            - release
             - aurora
+            - esr
+            - beta
+            - release
+            - nightly
             - default
             - nightly-pine
             - nightly-oak
@@ -7757,11 +7763,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id164
           normalized_channel:
-            default: nightly
+            default: aurora
             options:
+            - aurora
             - nightly
             - beta
-            - aurora
             - release
             - esr
             - Other
@@ -10091,17 +10097,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id344
           channel:
-            default: release
+            default: nightly
             options:
+            - nightly
             - release
             - beta
-            - nightly
           os:
-            default: Linux
+            default: Darwin
             options:
-            - Linux
-            - Windows_NT
             - Darwin
+            - Windows_NT
+            - Linux
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id345
