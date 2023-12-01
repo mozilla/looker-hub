@@ -1906,7 +1906,7 @@ Uses a single label due to only labeled counters being supported
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Glean equivalent to the Geckoview Stream gfx Composite Time metric.  Represents The time taken to composite a frame. Differs between  non-webrender and webrender, see the non-validation version for more details.
+    description: "Glean equivalent to the Geckoview Stream gfx Composite Time metric. Represents The time taken to composite a frame. Differs between non-webrender and webrender, see the non-validation version for more details.
 "
   }
 
@@ -1942,7 +1942,7 @@ Uses a single label due to only labeled counters being supported
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Primary display pixel height, recorded alongside the GeckoView Streaming 
+    description: "Primary display pixel height, recorded alongside the GeckoView Streaming
 API for the purposes of Validation (hence GVSV).
 "
   }
@@ -1961,7 +1961,7 @@ API for the purposes of Validation (hence GVSV).
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Primary display pixel width, recorded alongside the GeckoView Streaming 
+    description: "Primary display pixel width, recorded alongside the GeckoView Streaming
 API for the purposes of Validation (hence GVSV).
 "
   }
