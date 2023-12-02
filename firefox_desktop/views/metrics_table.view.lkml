@@ -382,6 +382,15 @@ To be used to validate GIFFT.
     description: "Set to true if the tasks that are queued prior to Glean initialization time out."
   }
 
+  dimension: metrics__boolean__newtab_handoff_preference_enabled {
+    sql: ${TABLE}.metrics.boolean.newtab_handoff_preference_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Newtab Handoff Preference Enabled"
+    description: "Records whether the browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar preference is enabled or disabled
+"
+  }
+
   dimension: metrics__boolean__shopping_settings_component_opted_out {
     sql: ${TABLE}.metrics.boolean.shopping_settings_component_opted_out ;;
     type: yesno
@@ -389,6 +398,16 @@ To be used to validate GIFFT.
     group_item_label: "Shopping Settings Component Opted Out"
     description: "Indicates if the user has opted out of using the shopping component.
 Set during shopping component init and updated when changed in browser.
+"
+  }
+
+  dimension: metrics__boolean__shopping_settings_disabled_ads {
+    sql: ${TABLE}.metrics.boolean.shopping_settings_disabled_ads ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Shopping Settings Disabled Ads"
+    description: "Indicates if the user has manually disabled ads. Set during shopping
+component init and updated when changed in browser.
 "
   }
 
@@ -1641,6 +1660,13 @@ If you're unsure, please ask in
 "
   }
 
+  dimension: metrics__labeled_counter__networking_trr_request_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_trr_request_count ;;
+    hidden: yes
+    description: "The count of successful TRR requests keyed by regular/private browsing
+"
+  }
+
   dimension: metrics__labeled_counter__pdfjs_buttons {
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_buttons ;;
     hidden: yes
@@ -2027,7 +2053,7 @@ count. Unset on other platforms.
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Fog Validation Gvsv Primary Height"
-    description: "Primary display pixel height, recorded alongside the GeckoView Streaming 
+    description: "Primary display pixel height, recorded alongside the GeckoView Streaming
 API for the purposes of Validation (hence GVSV).
 "
   }
@@ -2037,7 +2063,7 @@ API for the purposes of Validation (hence GVSV).
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Fog Validation Gvsv Primary Width"
-    description: "Primary display pixel width, recorded alongside the GeckoView Streaming 
+    description: "Primary display pixel width, recorded alongside the GeckoView Streaming
 API for the purposes of Validation (hence GVSV).
 "
   }

@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Networking Http 1 Download Throughput
-    name: Networking Http 1 Download Throughput_percentile
+  - title: Networking Dns Lookup Time
+    name: Networking Dns Lookup Time_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -28,7 +28,7 @@
       performance_review_kenya_2.branch
     ]
     filters:
-      performance_review_kenya_2.metric: 'networking_http_1_download_throughput'
+      performance_review_kenya_2.metric: 'networking_dns_lookup_time'
       performance_review_kenya_2.statistic: percentile
     row: 0
     col: 0
@@ -47,8 +47,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Networking Http 1 Download Throughput - By country
-    name: Networking Http 1 Download Throughput - By country_percentile
+  - title: Networking Dns Lookup Time - By country
+    name: Networking Dns Lookup Time - By country_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -65,7 +65,7 @@
       performance_review_kenya_2.branch, performance_review_kenya_2.country 
     ]
     filters:
-      performance_review_kenya_2.metric: 'networking_http_1_download_throughput'
+      performance_review_kenya_2.metric: 'networking_dns_lookup_time'
       performance_review_kenya_2.statistic: percentile
     row: 0
     col: 12
@@ -84,8 +84,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Networking Http 3 Upload Throughput
-    name: Networking Http 3 Upload Throughput_percentile
+  - title: Performance Time Response Start
+    name: Performance Time Response Start_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -102,7 +102,7 @@
       performance_review_kenya_2.branch
     ]
     filters:
-      performance_review_kenya_2.metric: 'networking_http_3_upload_throughput'
+      performance_review_kenya_2.metric: 'performance_time_response_start'
       performance_review_kenya_2.statistic: percentile
     row: 10
     col: 0
@@ -121,8 +121,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Networking Http 3 Upload Throughput - By country
-    name: Networking Http 3 Upload Throughput - By country_percentile
+  - title: Performance Time Response Start - By country
+    name: Performance Time Response Start - By country_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -139,9 +139,83 @@
       performance_review_kenya_2.branch, performance_review_kenya_2.country 
     ]
     filters:
-      performance_review_kenya_2.metric: 'networking_http_3_upload_throughput'
+      performance_review_kenya_2.metric: 'performance_time_response_start'
       performance_review_kenya_2.statistic: percentile
     row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: performance_review_kenya_2.build_id
+    field_y: performance_review_kenya_2.point
+    log_scale: false
+    ci_lower: performance_review_kenya_2.lower
+    ci_upper: performance_review_kenya_2.upper
+    show_grid: true
+    listen:
+      Date: performance_review_kenya_2.build_id
+      Percentile: performance_review_kenya_2.parameter
+      Country: performance_review_kenya_2.country
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Perf Startup Cold Main App To First Frame
+    name: Perf Startup Cold Main App To First Frame_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: performance_review_kenya_2
+    type: "ci-line-chart"
+    fields: [
+      performance_review_kenya_2.build_id,
+      performance_review_kenya_2.branch,
+      performance_review_kenya_2.upper,
+      performance_review_kenya_2.lower,
+      performance_review_kenya_2.point
+    ]
+    pivots: [
+      performance_review_kenya_2.branch
+    ]
+    filters:
+      performance_review_kenya_2.metric: 'perf_startup_cold_main_app_to_first_frame'
+      performance_review_kenya_2.statistic: percentile
+    row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: performance_review_kenya_2.build_id
+    field_y: performance_review_kenya_2.point
+    log_scale: false
+    ci_lower: performance_review_kenya_2.lower
+    ci_upper: performance_review_kenya_2.upper
+    show_grid: true
+    listen:
+      Date: performance_review_kenya_2.build_id
+      Percentile: performance_review_kenya_2.parameter
+      Country: performance_review_kenya_2.country
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Perf Startup Cold Main App To First Frame - By country
+    name: Perf Startup Cold Main App To First Frame - By country_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: performance_review_kenya_2
+    type: "ci-line-chart"
+    fields: [
+      performance_review_kenya_2.build_id,
+      performance_review_kenya_2.branch,
+      performance_review_kenya_2.upper,
+      performance_review_kenya_2.lower,
+      performance_review_kenya_2.point
+    ]
+    pivots: [
+      performance_review_kenya_2.branch, performance_review_kenya_2.country 
+    ]
+    filters:
+      performance_review_kenya_2.metric: 'perf_startup_cold_main_app_to_first_frame'
+      performance_review_kenya_2.statistic: percentile
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -178,7 +252,7 @@
     filters:
       performance_review_kenya_2.metric: 'networking_http_3_download_throughput'
       performance_review_kenya_2.statistic: percentile
-    row: 20
+    row: 30
     col: 0
     width: 12
     height: 8
@@ -215,80 +289,6 @@
     filters:
       performance_review_kenya_2.metric: 'networking_http_3_download_throughput'
       performance_review_kenya_2.statistic: percentile
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: performance_review_kenya_2.build_id
-    field_y: performance_review_kenya_2.point
-    log_scale: false
-    ci_lower: performance_review_kenya_2.lower
-    ci_upper: performance_review_kenya_2.upper
-    show_grid: true
-    listen:
-      Date: performance_review_kenya_2.build_id
-      Percentile: performance_review_kenya_2.parameter
-      Country: performance_review_kenya_2.country
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Networking Http 2 Upload Throughput
-    name: Networking Http 2 Upload Throughput_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: performance_review_kenya_2
-    type: "ci-line-chart"
-    fields: [
-      performance_review_kenya_2.build_id,
-      performance_review_kenya_2.branch,
-      performance_review_kenya_2.upper,
-      performance_review_kenya_2.lower,
-      performance_review_kenya_2.point
-    ]
-    pivots: [
-      performance_review_kenya_2.branch
-    ]
-    filters:
-      performance_review_kenya_2.metric: 'networking_http_2_upload_throughput'
-      performance_review_kenya_2.statistic: percentile
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: performance_review_kenya_2.build_id
-    field_y: performance_review_kenya_2.point
-    log_scale: false
-    ci_lower: performance_review_kenya_2.lower
-    ci_upper: performance_review_kenya_2.upper
-    show_grid: true
-    listen:
-      Date: performance_review_kenya_2.build_id
-      Percentile: performance_review_kenya_2.parameter
-      Country: performance_review_kenya_2.country
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Networking Http 2 Upload Throughput - By country
-    name: Networking Http 2 Upload Throughput - By country_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: performance_review_kenya_2
-    type: "ci-line-chart"
-    fields: [
-      performance_review_kenya_2.build_id,
-      performance_review_kenya_2.branch,
-      performance_review_kenya_2.upper,
-      performance_review_kenya_2.lower,
-      performance_review_kenya_2.point
-    ]
-    pivots: [
-      performance_review_kenya_2.branch, performance_review_kenya_2.country 
-    ]
-    filters:
-      performance_review_kenya_2.metric: 'networking_http_2_upload_throughput'
-      performance_review_kenya_2.statistic: percentile
     row: 30
     col: 12
     width: 12
@@ -306,8 +306,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Performance Pageload Load Time
-    name: Performance Pageload Load Time_percentile
+  - title: Perf Startup Cold View App To First Frame
+    name: Perf Startup Cold View App To First Frame_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -324,7 +324,7 @@
       performance_review_kenya_2.branch
     ]
     filters:
-      performance_review_kenya_2.metric: 'performance_pageload_load_time'
+      performance_review_kenya_2.metric: 'perf_startup_cold_view_app_to_first_frame'
       performance_review_kenya_2.statistic: percentile
     row: 40
     col: 0
@@ -343,8 +343,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Performance Pageload Load Time - By country
-    name: Performance Pageload Load Time - By country_percentile
+  - title: Perf Startup Cold View App To First Frame - By country
+    name: Perf Startup Cold View App To First Frame - By country_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -361,7 +361,7 @@
       performance_review_kenya_2.branch, performance_review_kenya_2.country 
     ]
     filters:
-      performance_review_kenya_2.metric: 'performance_pageload_load_time'
+      performance_review_kenya_2.metric: 'perf_startup_cold_view_app_to_first_frame'
       performance_review_kenya_2.statistic: percentile
     row: 40
     col: 12
@@ -454,6 +454,80 @@
       
     active: "#3FE1B0"
     defaults_version: 0
+  - title: Storage Stats App Bytes
+    name: Storage Stats App Bytes_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: performance_review_kenya_2
+    type: "ci-line-chart"
+    fields: [
+      performance_review_kenya_2.build_id,
+      performance_review_kenya_2.branch,
+      performance_review_kenya_2.upper,
+      performance_review_kenya_2.lower,
+      performance_review_kenya_2.point
+    ]
+    pivots: [
+      performance_review_kenya_2.branch
+    ]
+    filters:
+      performance_review_kenya_2.metric: 'storage_stats_app_bytes'
+      performance_review_kenya_2.statistic: percentile
+    row: 60
+    col: 0
+    width: 12
+    height: 8
+    field_x: performance_review_kenya_2.build_id
+    field_y: performance_review_kenya_2.point
+    log_scale: false
+    ci_lower: performance_review_kenya_2.lower
+    ci_upper: performance_review_kenya_2.upper
+    show_grid: true
+    listen:
+      Date: performance_review_kenya_2.build_id
+      Percentile: performance_review_kenya_2.parameter
+      Country: performance_review_kenya_2.country
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Storage Stats App Bytes - By country
+    name: Storage Stats App Bytes - By country_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: performance_review_kenya_2
+    type: "ci-line-chart"
+    fields: [
+      performance_review_kenya_2.build_id,
+      performance_review_kenya_2.branch,
+      performance_review_kenya_2.upper,
+      performance_review_kenya_2.lower,
+      performance_review_kenya_2.point
+    ]
+    pivots: [
+      performance_review_kenya_2.branch, performance_review_kenya_2.country 
+    ]
+    filters:
+      performance_review_kenya_2.metric: 'storage_stats_app_bytes'
+      performance_review_kenya_2.statistic: percentile
+    row: 60
+    col: 12
+    width: 12
+    height: 8
+    field_x: performance_review_kenya_2.build_id
+    field_y: performance_review_kenya_2.point
+    log_scale: false
+    ci_lower: performance_review_kenya_2.lower
+    ci_upper: performance_review_kenya_2.upper
+    show_grid: true
+    listen:
+      Date: performance_review_kenya_2.build_id
+      Percentile: performance_review_kenya_2.parameter
+      Country: performance_review_kenya_2.country
+      
+    active: "#3FE1B0"
+    defaults_version: 0
   - title: Networking Http 2 Download Throughput
     name: Networking Http 2 Download Throughput_percentile
     note_state: expanded
@@ -474,7 +548,7 @@
     filters:
       performance_review_kenya_2.metric: 'networking_http_2_download_throughput'
       performance_review_kenya_2.statistic: percentile
-    row: 60
+    row: 70
     col: 0
     width: 12
     height: 8
@@ -511,7 +585,7 @@
     filters:
       performance_review_kenya_2.metric: 'networking_http_2_download_throughput'
       performance_review_kenya_2.statistic: percentile
-    row: 60
+    row: 70
     col: 12
     width: 12
     height: 8
@@ -528,8 +602,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Perf Startup Cold Main App To First Frame
-    name: Perf Startup Cold Main App To First Frame_percentile
+  - title: Networking Http 1 Download Throughput
+    name: Networking Http 1 Download Throughput_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -546,9 +620,9 @@
       performance_review_kenya_2.branch
     ]
     filters:
-      performance_review_kenya_2.metric: 'perf_startup_cold_main_app_to_first_frame'
+      performance_review_kenya_2.metric: 'networking_http_1_download_throughput'
       performance_review_kenya_2.statistic: percentile
-    row: 70
+    row: 80
     col: 0
     width: 12
     height: 8
@@ -565,8 +639,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Perf Startup Cold Main App To First Frame - By country
-    name: Perf Startup Cold Main App To First Frame - By country_percentile
+  - title: Networking Http 1 Download Throughput - By country
+    name: Networking Http 1 Download Throughput - By country_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -583,9 +657,231 @@
       performance_review_kenya_2.branch, performance_review_kenya_2.country 
     ]
     filters:
-      performance_review_kenya_2.metric: 'perf_startup_cold_main_app_to_first_frame'
+      performance_review_kenya_2.metric: 'networking_http_1_download_throughput'
       performance_review_kenya_2.statistic: percentile
-    row: 70
+    row: 80
+    col: 12
+    width: 12
+    height: 8
+    field_x: performance_review_kenya_2.build_id
+    field_y: performance_review_kenya_2.point
+    log_scale: false
+    ci_lower: performance_review_kenya_2.lower
+    ci_upper: performance_review_kenya_2.upper
+    show_grid: true
+    listen:
+      Date: performance_review_kenya_2.build_id
+      Percentile: performance_review_kenya_2.parameter
+      Country: performance_review_kenya_2.country
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Networking Http 2 Upload Throughput
+    name: Networking Http 2 Upload Throughput_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: performance_review_kenya_2
+    type: "ci-line-chart"
+    fields: [
+      performance_review_kenya_2.build_id,
+      performance_review_kenya_2.branch,
+      performance_review_kenya_2.upper,
+      performance_review_kenya_2.lower,
+      performance_review_kenya_2.point
+    ]
+    pivots: [
+      performance_review_kenya_2.branch
+    ]
+    filters:
+      performance_review_kenya_2.metric: 'networking_http_2_upload_throughput'
+      performance_review_kenya_2.statistic: percentile
+    row: 90
+    col: 0
+    width: 12
+    height: 8
+    field_x: performance_review_kenya_2.build_id
+    field_y: performance_review_kenya_2.point
+    log_scale: false
+    ci_lower: performance_review_kenya_2.lower
+    ci_upper: performance_review_kenya_2.upper
+    show_grid: true
+    listen:
+      Date: performance_review_kenya_2.build_id
+      Percentile: performance_review_kenya_2.parameter
+      Country: performance_review_kenya_2.country
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Networking Http 2 Upload Throughput - By country
+    name: Networking Http 2 Upload Throughput - By country_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: performance_review_kenya_2
+    type: "ci-line-chart"
+    fields: [
+      performance_review_kenya_2.build_id,
+      performance_review_kenya_2.branch,
+      performance_review_kenya_2.upper,
+      performance_review_kenya_2.lower,
+      performance_review_kenya_2.point
+    ]
+    pivots: [
+      performance_review_kenya_2.branch, performance_review_kenya_2.country 
+    ]
+    filters:
+      performance_review_kenya_2.metric: 'networking_http_2_upload_throughput'
+      performance_review_kenya_2.statistic: percentile
+    row: 90
+    col: 12
+    width: 12
+    height: 8
+    field_x: performance_review_kenya_2.build_id
+    field_y: performance_review_kenya_2.point
+    log_scale: false
+    ci_lower: performance_review_kenya_2.lower
+    ci_upper: performance_review_kenya_2.upper
+    show_grid: true
+    listen:
+      Date: performance_review_kenya_2.build_id
+      Percentile: performance_review_kenya_2.parameter
+      Country: performance_review_kenya_2.country
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Networking Http 3 Upload Throughput
+    name: Networking Http 3 Upload Throughput_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: performance_review_kenya_2
+    type: "ci-line-chart"
+    fields: [
+      performance_review_kenya_2.build_id,
+      performance_review_kenya_2.branch,
+      performance_review_kenya_2.upper,
+      performance_review_kenya_2.lower,
+      performance_review_kenya_2.point
+    ]
+    pivots: [
+      performance_review_kenya_2.branch
+    ]
+    filters:
+      performance_review_kenya_2.metric: 'networking_http_3_upload_throughput'
+      performance_review_kenya_2.statistic: percentile
+    row: 100
+    col: 0
+    width: 12
+    height: 8
+    field_x: performance_review_kenya_2.build_id
+    field_y: performance_review_kenya_2.point
+    log_scale: false
+    ci_lower: performance_review_kenya_2.lower
+    ci_upper: performance_review_kenya_2.upper
+    show_grid: true
+    listen:
+      Date: performance_review_kenya_2.build_id
+      Percentile: performance_review_kenya_2.parameter
+      Country: performance_review_kenya_2.country
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Networking Http 3 Upload Throughput - By country
+    name: Networking Http 3 Upload Throughput - By country_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: performance_review_kenya_2
+    type: "ci-line-chart"
+    fields: [
+      performance_review_kenya_2.build_id,
+      performance_review_kenya_2.branch,
+      performance_review_kenya_2.upper,
+      performance_review_kenya_2.lower,
+      performance_review_kenya_2.point
+    ]
+    pivots: [
+      performance_review_kenya_2.branch, performance_review_kenya_2.country 
+    ]
+    filters:
+      performance_review_kenya_2.metric: 'networking_http_3_upload_throughput'
+      performance_review_kenya_2.statistic: percentile
+    row: 100
+    col: 12
+    width: 12
+    height: 8
+    field_x: performance_review_kenya_2.build_id
+    field_y: performance_review_kenya_2.point
+    log_scale: false
+    ci_lower: performance_review_kenya_2.lower
+    ci_upper: performance_review_kenya_2.upper
+    show_grid: true
+    listen:
+      Date: performance_review_kenya_2.build_id
+      Percentile: performance_review_kenya_2.parameter
+      Country: performance_review_kenya_2.country
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Performance Pageload Load Time
+    name: Performance Pageload Load Time_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: performance_review_kenya_2
+    type: "ci-line-chart"
+    fields: [
+      performance_review_kenya_2.build_id,
+      performance_review_kenya_2.branch,
+      performance_review_kenya_2.upper,
+      performance_review_kenya_2.lower,
+      performance_review_kenya_2.point
+    ]
+    pivots: [
+      performance_review_kenya_2.branch
+    ]
+    filters:
+      performance_review_kenya_2.metric: 'performance_pageload_load_time'
+      performance_review_kenya_2.statistic: percentile
+    row: 110
+    col: 0
+    width: 12
+    height: 8
+    field_x: performance_review_kenya_2.build_id
+    field_y: performance_review_kenya_2.point
+    log_scale: false
+    ci_lower: performance_review_kenya_2.lower
+    ci_upper: performance_review_kenya_2.upper
+    show_grid: true
+    listen:
+      Date: performance_review_kenya_2.build_id
+      Percentile: performance_review_kenya_2.parameter
+      Country: performance_review_kenya_2.country
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Performance Pageload Load Time - By country
+    name: Performance Pageload Load Time - By country_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: performance_review_kenya_2
+    type: "ci-line-chart"
+    fields: [
+      performance_review_kenya_2.build_id,
+      performance_review_kenya_2.branch,
+      performance_review_kenya_2.upper,
+      performance_review_kenya_2.lower,
+      performance_review_kenya_2.point
+    ]
+    pivots: [
+      performance_review_kenya_2.branch, performance_review_kenya_2.country 
+    ]
+    filters:
+      performance_review_kenya_2.metric: 'performance_pageload_load_time'
+      performance_review_kenya_2.statistic: percentile
+    row: 110
     col: 12
     width: 12
     height: 8
@@ -622,7 +918,7 @@
     filters:
       performance_review_kenya_2.metric: 'storage_stats_data_dir_bytes'
       performance_review_kenya_2.statistic: percentile
-    row: 80
+    row: 120
     col: 0
     width: 12
     height: 8
@@ -658,302 +954,6 @@
     ]
     filters:
       performance_review_kenya_2.metric: 'storage_stats_data_dir_bytes'
-      performance_review_kenya_2.statistic: percentile
-    row: 80
-    col: 12
-    width: 12
-    height: 8
-    field_x: performance_review_kenya_2.build_id
-    field_y: performance_review_kenya_2.point
-    log_scale: false
-    ci_lower: performance_review_kenya_2.lower
-    ci_upper: performance_review_kenya_2.upper
-    show_grid: true
-    listen:
-      Date: performance_review_kenya_2.build_id
-      Percentile: performance_review_kenya_2.parameter
-      Country: performance_review_kenya_2.country
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Perf Startup Cold View App To First Frame
-    name: Perf Startup Cold View App To First Frame_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: performance_review_kenya_2
-    type: "ci-line-chart"
-    fields: [
-      performance_review_kenya_2.build_id,
-      performance_review_kenya_2.branch,
-      performance_review_kenya_2.upper,
-      performance_review_kenya_2.lower,
-      performance_review_kenya_2.point
-    ]
-    pivots: [
-      performance_review_kenya_2.branch
-    ]
-    filters:
-      performance_review_kenya_2.metric: 'perf_startup_cold_view_app_to_first_frame'
-      performance_review_kenya_2.statistic: percentile
-    row: 90
-    col: 0
-    width: 12
-    height: 8
-    field_x: performance_review_kenya_2.build_id
-    field_y: performance_review_kenya_2.point
-    log_scale: false
-    ci_lower: performance_review_kenya_2.lower
-    ci_upper: performance_review_kenya_2.upper
-    show_grid: true
-    listen:
-      Date: performance_review_kenya_2.build_id
-      Percentile: performance_review_kenya_2.parameter
-      Country: performance_review_kenya_2.country
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Perf Startup Cold View App To First Frame - By country
-    name: Perf Startup Cold View App To First Frame - By country_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: performance_review_kenya_2
-    type: "ci-line-chart"
-    fields: [
-      performance_review_kenya_2.build_id,
-      performance_review_kenya_2.branch,
-      performance_review_kenya_2.upper,
-      performance_review_kenya_2.lower,
-      performance_review_kenya_2.point
-    ]
-    pivots: [
-      performance_review_kenya_2.branch, performance_review_kenya_2.country 
-    ]
-    filters:
-      performance_review_kenya_2.metric: 'perf_startup_cold_view_app_to_first_frame'
-      performance_review_kenya_2.statistic: percentile
-    row: 90
-    col: 12
-    width: 12
-    height: 8
-    field_x: performance_review_kenya_2.build_id
-    field_y: performance_review_kenya_2.point
-    log_scale: false
-    ci_lower: performance_review_kenya_2.lower
-    ci_upper: performance_review_kenya_2.upper
-    show_grid: true
-    listen:
-      Date: performance_review_kenya_2.build_id
-      Percentile: performance_review_kenya_2.parameter
-      Country: performance_review_kenya_2.country
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Networking Dns Lookup Time
-    name: Networking Dns Lookup Time_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: performance_review_kenya_2
-    type: "ci-line-chart"
-    fields: [
-      performance_review_kenya_2.build_id,
-      performance_review_kenya_2.branch,
-      performance_review_kenya_2.upper,
-      performance_review_kenya_2.lower,
-      performance_review_kenya_2.point
-    ]
-    pivots: [
-      performance_review_kenya_2.branch
-    ]
-    filters:
-      performance_review_kenya_2.metric: 'networking_dns_lookup_time'
-      performance_review_kenya_2.statistic: percentile
-    row: 100
-    col: 0
-    width: 12
-    height: 8
-    field_x: performance_review_kenya_2.build_id
-    field_y: performance_review_kenya_2.point
-    log_scale: false
-    ci_lower: performance_review_kenya_2.lower
-    ci_upper: performance_review_kenya_2.upper
-    show_grid: true
-    listen:
-      Date: performance_review_kenya_2.build_id
-      Percentile: performance_review_kenya_2.parameter
-      Country: performance_review_kenya_2.country
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Networking Dns Lookup Time - By country
-    name: Networking Dns Lookup Time - By country_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: performance_review_kenya_2
-    type: "ci-line-chart"
-    fields: [
-      performance_review_kenya_2.build_id,
-      performance_review_kenya_2.branch,
-      performance_review_kenya_2.upper,
-      performance_review_kenya_2.lower,
-      performance_review_kenya_2.point
-    ]
-    pivots: [
-      performance_review_kenya_2.branch, performance_review_kenya_2.country 
-    ]
-    filters:
-      performance_review_kenya_2.metric: 'networking_dns_lookup_time'
-      performance_review_kenya_2.statistic: percentile
-    row: 100
-    col: 12
-    width: 12
-    height: 8
-    field_x: performance_review_kenya_2.build_id
-    field_y: performance_review_kenya_2.point
-    log_scale: false
-    ci_lower: performance_review_kenya_2.lower
-    ci_upper: performance_review_kenya_2.upper
-    show_grid: true
-    listen:
-      Date: performance_review_kenya_2.build_id
-      Percentile: performance_review_kenya_2.parameter
-      Country: performance_review_kenya_2.country
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Performance Time Response Start
-    name: Performance Time Response Start_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: performance_review_kenya_2
-    type: "ci-line-chart"
-    fields: [
-      performance_review_kenya_2.build_id,
-      performance_review_kenya_2.branch,
-      performance_review_kenya_2.upper,
-      performance_review_kenya_2.lower,
-      performance_review_kenya_2.point
-    ]
-    pivots: [
-      performance_review_kenya_2.branch
-    ]
-    filters:
-      performance_review_kenya_2.metric: 'performance_time_response_start'
-      performance_review_kenya_2.statistic: percentile
-    row: 110
-    col: 0
-    width: 12
-    height: 8
-    field_x: performance_review_kenya_2.build_id
-    field_y: performance_review_kenya_2.point
-    log_scale: false
-    ci_lower: performance_review_kenya_2.lower
-    ci_upper: performance_review_kenya_2.upper
-    show_grid: true
-    listen:
-      Date: performance_review_kenya_2.build_id
-      Percentile: performance_review_kenya_2.parameter
-      Country: performance_review_kenya_2.country
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Performance Time Response Start - By country
-    name: Performance Time Response Start - By country_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: performance_review_kenya_2
-    type: "ci-line-chart"
-    fields: [
-      performance_review_kenya_2.build_id,
-      performance_review_kenya_2.branch,
-      performance_review_kenya_2.upper,
-      performance_review_kenya_2.lower,
-      performance_review_kenya_2.point
-    ]
-    pivots: [
-      performance_review_kenya_2.branch, performance_review_kenya_2.country 
-    ]
-    filters:
-      performance_review_kenya_2.metric: 'performance_time_response_start'
-      performance_review_kenya_2.statistic: percentile
-    row: 110
-    col: 12
-    width: 12
-    height: 8
-    field_x: performance_review_kenya_2.build_id
-    field_y: performance_review_kenya_2.point
-    log_scale: false
-    ci_lower: performance_review_kenya_2.lower
-    ci_upper: performance_review_kenya_2.upper
-    show_grid: true
-    listen:
-      Date: performance_review_kenya_2.build_id
-      Percentile: performance_review_kenya_2.parameter
-      Country: performance_review_kenya_2.country
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Storage Stats App Bytes
-    name: Storage Stats App Bytes_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: performance_review_kenya_2
-    type: "ci-line-chart"
-    fields: [
-      performance_review_kenya_2.build_id,
-      performance_review_kenya_2.branch,
-      performance_review_kenya_2.upper,
-      performance_review_kenya_2.lower,
-      performance_review_kenya_2.point
-    ]
-    pivots: [
-      performance_review_kenya_2.branch
-    ]
-    filters:
-      performance_review_kenya_2.metric: 'storage_stats_app_bytes'
-      performance_review_kenya_2.statistic: percentile
-    row: 120
-    col: 0
-    width: 12
-    height: 8
-    field_x: performance_review_kenya_2.build_id
-    field_y: performance_review_kenya_2.point
-    log_scale: false
-    ci_lower: performance_review_kenya_2.lower
-    ci_upper: performance_review_kenya_2.upper
-    show_grid: true
-    listen:
-      Date: performance_review_kenya_2.build_id
-      Percentile: performance_review_kenya_2.parameter
-      Country: performance_review_kenya_2.country
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Storage Stats App Bytes - By country
-    name: Storage Stats App Bytes - By country_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: performance_review_kenya_2
-    type: "ci-line-chart"
-    fields: [
-      performance_review_kenya_2.build_id,
-      performance_review_kenya_2.branch,
-      performance_review_kenya_2.upper,
-      performance_review_kenya_2.lower,
-      performance_review_kenya_2.point
-    ]
-    pivots: [
-      performance_review_kenya_2.branch, performance_review_kenya_2.country 
-    ]
-    filters:
-      performance_review_kenya_2.metric: 'storage_stats_app_bytes'
       performance_review_kenya_2.statistic: percentile
     row: 120
     col: 12
