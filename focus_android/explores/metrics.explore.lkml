@@ -244,6 +244,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_speculative_connection_outcome}) AS metrics__metrics__labeled_counter__networking_speculative_connection_outcome ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_speculative_connection_outcome.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_trr_request_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_trr_request_count}) AS metrics__metrics__labeled_counter__networking_trr_request_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_trr_request_count.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__pdfjs_buttons {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_buttons}) AS metrics__metrics__labeled_counter__pdfjs_buttons ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_buttons.document_id} ;;
@@ -547,6 +552,10 @@ explore: suggest__metrics__metrics__labeled_counter__networking_speculative_conn
 }
 
 explore: suggest__metrics__metrics__labeled_counter__networking_speculative_connection_outcome {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__networking_trr_request_count {
   hidden: yes
 }
 

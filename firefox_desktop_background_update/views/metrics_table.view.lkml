@@ -1476,6 +1476,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_trr_request_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_trr_request_count ;;
+    hidden: yes
+    description: "The count of successful TRR requests keyed by regular/private browsing
+"
+  }
+
   dimension: metrics__labeled_counter__pdfjs_buttons {
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_buttons ;;
     hidden: yes
@@ -1797,7 +1804,7 @@ This metric appears in both the metrics and baseline pings.
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Fog Validation Gvsv Primary Height"
-    description: "Primary display pixel height, recorded alongside the GeckoView Streaming 
+    description: "Primary display pixel height, recorded alongside the GeckoView Streaming
 API for the purposes of Validation (hence GVSV).
 "
   }
@@ -1807,7 +1814,7 @@ API for the purposes of Validation (hence GVSV).
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Fog Validation Gvsv Primary Width"
-    description: "Primary display pixel width, recorded alongside the GeckoView Streaming 
+    description: "Primary display pixel width, recorded alongside the GeckoView Streaming
 API for the purposes of Validation (hence GVSV).
 "
   }

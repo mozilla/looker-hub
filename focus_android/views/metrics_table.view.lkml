@@ -1437,6 +1437,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_trr_request_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_trr_request_count ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__pdfjs_buttons {
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_buttons ;;
     hidden: yes
