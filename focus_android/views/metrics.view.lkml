@@ -800,6 +800,74 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__labeled_counter__codec_stats_audio_preferred_codec {
+    label: "Codec Stats Audio Preferred Codec"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_audio_preferred_codec ;;
+    group_label: "Codec Stats"
+    group_item_label: "Audio Preferred Codec"
+
+    link: {
+      label: "Glean Dictionary reference for Codec Stats Audio Preferred Codec"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/codec_stats_audio_preferred_codec"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the preferred audio codec being signaled to us to identify preferred audio codec.
+"
+  }
+
+  dimension: metrics__labeled_counter__codec_stats_other_fec_signaled {
+    label: "Codec Stats Other Fec Signaled"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_other_fec_signaled ;;
+    group_label: "Codec Stats"
+    group_item_label: "Other Fec Signaled"
+
+    link: {
+      label: "Glean Dictionary reference for Codec Stats Other Fec Signaled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/codec_stats_other_fec_signaled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count how many other fec options are being offered.
+"
+  }
+
+  dimension: metrics__labeled_counter__codec_stats_ulpfec_negotiated {
+    label: "Codec Stats Ulpfec Negotiated"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_ulpfec_negotiated ;;
+    group_label: "Codec Stats"
+    group_item_label: "Ulpfec Negotiated"
+
+    link: {
+      label: "Glean Dictionary reference for Codec Stats Ulpfec Negotiated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/codec_stats_ulpfec_negotiated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times that ulpfec is negotiated or not negotiated on the first negotiation for each video transceiver.
+"
+  }
+
+  dimension: metrics__labeled_counter__codec_stats_video_preferred_codec {
+    label: "Codec Stats Video Preferred Codec"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_video_preferred_codec ;;
+    group_label: "Codec Stats"
+    group_item_label: "Video Preferred Codec"
+
+    link: {
+      label: "Glean Dictionary reference for Codec Stats Video Preferred Codec"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/codec_stats_video_preferred_codec"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the preferred video codec being signaled to us to identify preferred video codec.
+"
+  }
+
   dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__sum {
     label: "Cookie Banners Click Handle Duration Sum"
     hidden: no
@@ -1382,7 +1450,7 @@ when dynamic or static rulesets have been loaded from disk.
     description: "Counters for how many times the extension process has crashed or been created.
 The labels with \"_fg\" / \"_bg\" suffixes are only recorded in Android builds,
 while the \"created\" and \"crashed\" labels are recorded on both Desktop and Android
-builds. 
+builds.
 "
   }
 
@@ -1455,6 +1523,42 @@ builds.
     }
 
     description: "Time to load and deserialize the extensions startupCache data.
+"
+  }
+
+  dimension: metrics__labeled_counter__extensions_startup_cache_read_errors {
+    label: "Extensions Startup Cache Read Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.extensions_startup_cache_read_errors ;;
+    group_label: "Extensions"
+    group_item_label: "Startup Cache Read Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Startup Cache Read Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/extensions_startup_cache_read_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times an unexpected error has been raised while reading
+the extensions StartupCache file.
+"
+  }
+
+  dimension: metrics__quantity__extensions_startup_cache_write_bytelength {
+    label: "Extensions Startup Cache Write Bytelength"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.extensions_startup_cache_write_bytelength ;;
+    type: number
+    group_label: "Extensions"
+    group_item_label: "Startup Cache Write Bytelength"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Startup Cache Write Bytelength"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/extensions_startup_cache_write_bytelength"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The amount of bytes written to the extensions StartupCache file.
 "
   }
 
@@ -1924,7 +2028,7 @@ Uses a single label due to only labeled counters being supported
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Glean equivalent to the Geckoview Stream gfx Composite Time metric.  Represents The time taken to composite a frame. Differs between  non-webrender and webrender, see the non-validation version for more details.
+    description: "Glean equivalent to the Geckoview Stream gfx Composite Time metric. Represents The time taken to composite a frame. Differs between non-webrender and webrender, see the non-validation version for more details.
 "
   }
 
@@ -1960,7 +2064,7 @@ Uses a single label due to only labeled counters being supported
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Primary display pixel height, recorded alongside the GeckoView Streaming 
+    description: "Primary display pixel height, recorded alongside the GeckoView Streaming
 API for the purposes of Validation (hence GVSV).
 "
   }
@@ -1979,7 +2083,7 @@ API for the purposes of Validation (hence GVSV).
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Primary display pixel width, recorded alongside the GeckoView Streaming 
+    description: "Primary display pixel width, recorded alongside the GeckoView Streaming
 API for the purposes of Validation (hence GVSV).
 "
   }
@@ -2868,6 +2972,132 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__networking_set_cookie {
+    label: "Networking Set Cookie"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.networking_set_cookie ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Cookie"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_set_cookie"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times we set a cookie. Introduced as a denomenator for measuring CHIPS adoption.
+"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign__numerator {
+    label: "Networking Set Cookie Foreign Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign.numerator ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Cookie Foreign Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie Foreign Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_set_cookie_foreign"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times we set a cookie from a foreign (not same-site) context. Introduced as a denomenator for measuring CHIPS adoption.
+"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign__denominator {
+    label: "Networking Set Cookie Foreign Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign.denominator ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Cookie Foreign Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie Foreign Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_set_cookie_foreign"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times we set a cookie from a foreign (not same-site) context. Introduced as a denomenator for measuring CHIPS adoption.
+"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign_partitioned__numerator {
+    label: "Networking Set Cookie Foreign Partitioned Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign_partitioned.numerator ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Cookie Foreign Partitioned Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie Foreign Partitioned Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_set_cookie_foreign_partitioned"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times we set a cookie that has the Partitioned attribute in a foreign (not same-site) context. This tracks the adoption of CHIPS.
+"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign_partitioned__denominator {
+    label: "Networking Set Cookie Foreign Partitioned Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign_partitioned.denominator ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Cookie Foreign Partitioned Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie Foreign Partitioned Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_set_cookie_foreign_partitioned"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times we set a cookie that has the Partitioned attribute in a foreign (not same-site) context. This tracks the adoption of CHIPS.
+"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_partitioned__numerator {
+    label: "Networking Set Cookie Partitioned Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_partitioned.numerator ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Cookie Partitioned Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie Partitioned Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_set_cookie_partitioned"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times we set a cookie that has the Partitioned attribute. This tracks the adoption of CHIPS.
+"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_partitioned__denominator {
+    label: "Networking Set Cookie Partitioned Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_partitioned.denominator ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Cookie Partitioned Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie Partitioned Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_set_cookie_partitioned"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times we set a cookie that has the Partitioned attribute. This tracks the adoption of CHIPS.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_speculative_connect_outcome {
     label: "Networking Speculative Connect Outcome"
     hidden: yes
@@ -2899,6 +3129,23 @@ To be used to validate GIFFT.
     }
 
     description: "Counts the occurrence of each outcome of a speculative connection
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_trr_request_count {
+    label: "Networking Trr Request Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_trr_request_count ;;
+    group_label: "Networking"
+    group_item_label: "Trr Request Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Trr Request Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_trr_request_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of successful TRR requests keyed by regular/private browsing
 "
   }
 
@@ -5809,6 +6056,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: networking_set_cookie {
+    type: sum
+    sql: ${metrics__counter__networking_set_cookie} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_set_cookie"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_set_cookie_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__networking_set_cookie: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_set_cookie"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: pdfjs_used {
     type: sum
     sql: ${metrics__counter__pdfjs_used} ;;
@@ -6467,6 +6739,178 @@ view: metrics__metrics__labeled_counter__browser_search_with_ads {
   }
 }
 
+view: metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
+  label: "Codec Stats - Audio Preferred Codec"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__codec_stats_other_fec_signaled {
+  label: "Codec Stats - Other Fec Signaled"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__codec_stats_other_fec_signaled
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__codec_stats_other_fec_signaled.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated {
+  label: "Codec Stats - Ulpfec Negotiated"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__codec_stats_video_preferred_codec {
+  label: "Codec Stats - Video Preferred Codec"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__codec_stats_video_preferred_codec
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__codec_stats_video_preferred_codec.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__cookie_banners_click_result {
   label: "Cookie Banners Click - Result"
 
@@ -6961,6 +7405,49 @@ view: metrics__metrics__labeled_counter__extensions_process_event {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_process_event
     suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_process_event.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
+  label: "Extensions - Startup Cache Read Errors"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_startup_cache_read_errors
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_startup_cache_read_errors.key
     hidden: no
   }
 
@@ -8187,6 +8674,49 @@ view: metrics__metrics__labeled_counter__networking_speculative_connection_outco
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_trr_request_count {
+  label: "Networking - Trr Request Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_trr_request_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_trr_request_count.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__pdfjs_buttons {
   label: "Pdfjs - Buttons"
 
@@ -9338,6 +9868,82 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.codec_stats_audio_preferred_codec) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__codec_stats_other_fec_signaled {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.codec_stats_other_fec_signaled) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.codec_stats_ulpfec_negotiated) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__codec_stats_video_preferred_codec {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.codec_stats_video_preferred_codec) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result {
   derived_table: {
     sql: select
@@ -9554,6 +10160,25 @@ view: suggest__metrics__metrics__labeled_counter__extensions_process_event {
     count(*) as n
 from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.extensions_process_event) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.extensions_startup_cache_read_errors) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -10086,6 +10711,25 @@ view: suggest__metrics__metrics__labeled_counter__networking_speculative_connect
     count(*) as n
 from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.networking_speculative_connection_outcome) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_trr_request_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.networking_trr_request_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

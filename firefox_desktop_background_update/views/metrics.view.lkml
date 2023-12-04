@@ -661,7 +661,7 @@ when dynamic or static rulesets have been loaded from disk.
     description: "Counters for how many times the extension process has crashed or been created.
 The labels with \"_fg\" / \"_bg\" suffixes are only recorded in Android builds,
 while the \"created\" and \"crashed\" labels are recorded on both Desktop and Android
-builds. 
+builds.
 "
   }
 
@@ -734,6 +734,42 @@ builds.
     }
 
     description: "Time to load and deserialize the extensions startupCache data.
+"
+  }
+
+  dimension: metrics__labeled_counter__extensions_startup_cache_read_errors {
+    label: "Extensions Startup Cache Read Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.extensions_startup_cache_read_errors ;;
+    group_label: "Extensions"
+    group_item_label: "Startup Cache Read Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Startup Cache Read Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/extensions_startup_cache_read_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times an unexpected error has been raised while reading
+the extensions StartupCache file.
+"
+  }
+
+  dimension: metrics__quantity__extensions_startup_cache_write_bytelength {
+    label: "Extensions Startup Cache Write Bytelength"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.extensions_startup_cache_write_bytelength ;;
+    type: number
+    group_label: "Extensions"
+    group_item_label: "Startup Cache Write Bytelength"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Startup Cache Write Bytelength"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/extensions_startup_cache_write_bytelength"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The amount of bytes written to the extensions StartupCache file.
 "
   }
 
@@ -1203,7 +1239,7 @@ Uses a single label due to only labeled counters being supported
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Glean equivalent to the Geckoview Stream gfx Composite Time metric.  Represents The time taken to composite a frame. Differs between  non-webrender and webrender, see the non-validation version for more details.
+    description: "Glean equivalent to the Geckoview Stream gfx Composite Time metric. Represents The time taken to composite a frame. Differs between non-webrender and webrender, see the non-validation version for more details.
 "
   }
 
@@ -1239,7 +1275,7 @@ Uses a single label due to only labeled counters being supported
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Primary display pixel height, recorded alongside the GeckoView Streaming 
+    description: "Primary display pixel height, recorded alongside the GeckoView Streaming
 API for the purposes of Validation (hence GVSV).
 "
   }
@@ -1258,7 +1294,7 @@ API for the purposes of Validation (hence GVSV).
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Primary display pixel width, recorded alongside the GeckoView Streaming 
+    description: "Primary display pixel width, recorded alongside the GeckoView Streaming
 API for the purposes of Validation (hence GVSV).
 "
   }
@@ -2178,6 +2214,23 @@ To be used to validate GIFFT.
     }
 
     description: "Counts the occurrence of each outcome of a speculative connection
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_trr_request_count {
+    label: "Networking Trr Request Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_trr_request_count ;;
+    group_label: "Networking"
+    group_item_label: "Trr Request Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Trr Request Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_trr_request_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of successful TRR requests keyed by regular/private browsing
 "
   }
 
@@ -5663,6 +5716,49 @@ view: metrics__metrics__labeled_counter__extensions_process_event {
   }
 }
 
+view: metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
+  label: "Extensions - Startup Cache Read Errors"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_startup_cache_read_errors
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_startup_cache_read_errors.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
   label: "Fog Validation - Gvsv Audio Stream Init"
 
@@ -6867,6 +6963,49 @@ view: metrics__metrics__labeled_counter__networking_speculative_connection_outco
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_trr_request_count {
+  label: "Networking - Trr Request Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_trr_request_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_trr_request_count.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__pdfjs_buttons {
   label: "Pdfjs - Buttons"
 
@@ -8065,6 +8204,25 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.extensions_startup_cache_read_errors) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
   derived_table: {
     sql: select
@@ -8585,6 +8743,25 @@ view: suggest__metrics__metrics__labeled_counter__networking_speculative_connect
     count(*) as n
 from mozdata.firefox_desktop_background_update.metrics as t,
 unnest(metrics.labeled_counter.networking_speculative_connection_outcome) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_trr_request_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.networking_trr_request_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

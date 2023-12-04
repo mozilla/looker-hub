@@ -1251,7 +1251,15 @@ DNR rules for extensions loaded on application startup.
     description: "Counters for how many times the extension process has crashed or been created.
 The labels with \"_fg\" / \"_bg\" suffixes are only recorded in Android builds,
 while the \"created\" and \"crashed\" labels are recorded on both Desktop and Android
-builds. 
+builds.
+"
+  }
+
+  dimension: metrics__labeled_counter__extensions_startup_cache_read_errors {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_startup_cache_read_errors ;;
+    hidden: yes
+    description: "The number of times an unexpected error has been raised while reading
+the extensions StartupCache file.
 "
   }
 
@@ -1465,6 +1473,13 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.labeled_counter.networking_speculative_connection_outcome ;;
     hidden: yes
     description: "Counts the occurrence of each outcome of a speculative connection
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_trr_request_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_trr_request_count ;;
+    hidden: yes
+    description: "The count of successful TRR requests keyed by regular/private browsing
 "
   }
 
@@ -1766,6 +1781,15 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__quantity__extensions_startup_cache_write_bytelength {
+    sql: ${TABLE}.metrics.quantity.extensions_startup_cache_write_bytelength ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Extensions Startup Cache Write Bytelength"
+    description: "The amount of bytes written to the extensions StartupCache file.
+"
+  }
+
   dimension: metrics__quantity__fog_max_pings_per_minute {
     sql: ${TABLE}.metrics.quantity.fog_max_pings_per_minute ;;
     type: number
@@ -1780,7 +1804,7 @@ This metric appears in both the metrics and baseline pings.
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Fog Validation Gvsv Primary Height"
-    description: "Primary display pixel height, recorded alongside the GeckoView Streaming 
+    description: "Primary display pixel height, recorded alongside the GeckoView Streaming
 API for the purposes of Validation (hence GVSV).
 "
   }
@@ -1790,7 +1814,7 @@ API for the purposes of Validation (hence GVSV).
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Fog Validation Gvsv Primary Width"
-    description: "Primary display pixel width, recorded alongside the GeckoView Streaming 
+    description: "Primary display pixel width, recorded alongside the GeckoView Streaming
 API for the purposes of Validation (hence GVSV).
 "
   }

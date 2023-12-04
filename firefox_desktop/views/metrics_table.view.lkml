@@ -382,6 +382,15 @@ To be used to validate GIFFT.
     description: "Set to true if the tasks that are queued prior to Glean initialization time out."
   }
 
+  dimension: metrics__boolean__newtab_handoff_preference_enabled {
+    sql: ${TABLE}.metrics.boolean.newtab_handoff_preference_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Newtab Handoff Preference Enabled"
+    description: "Records whether the browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar preference is enabled or disabled
+"
+  }
+
   dimension: metrics__boolean__shopping_settings_component_opted_out {
     sql: ${TABLE}.metrics.boolean.shopping_settings_component_opted_out ;;
     type: yesno
@@ -389,6 +398,16 @@ To be used to validate GIFFT.
     group_item_label: "Shopping Settings Component Opted Out"
     description: "Indicates if the user has opted out of using the shopping component.
 Set during shopping component init and updated when changed in browser.
+"
+  }
+
+  dimension: metrics__boolean__shopping_settings_disabled_ads {
+    sql: ${TABLE}.metrics.boolean.shopping_settings_disabled_ads ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Shopping Settings Disabled Ads"
+    description: "Indicates if the user has manually disabled ads. Set during shopping
+component init and updated when changed in browser.
 "
   }
 
@@ -1402,7 +1421,15 @@ DNR rules for extensions loaded on application startup.
     description: "Counters for how many times the extension process has crashed or been created.
 The labels with \"_fg\" / \"_bg\" suffixes are only recorded in Android builds,
 while the \"created\" and \"crashed\" labels are recorded on both Desktop and Android
-builds. 
+builds.
+"
+  }
+
+  dimension: metrics__labeled_counter__extensions_startup_cache_read_errors {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_startup_cache_read_errors ;;
+    hidden: yes
+    description: "The number of times an unexpected error has been raised while reading
+the extensions StartupCache file.
 "
   }
 
@@ -1630,6 +1657,13 @@ If you're unsure, please ask in
     sql: ${TABLE}.metrics.labeled_counter.networking_speculative_connection_outcome ;;
     hidden: yes
     description: "Counts the occurrence of each outcome of a speculative connection
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_trr_request_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_trr_request_count ;;
+    hidden: yes
+    description: "The count of successful TRR requests keyed by regular/private browsing
 "
   }
 
@@ -1996,6 +2030,15 @@ count. Unset on other platforms.
 "
   }
 
+  dimension: metrics__quantity__extensions_startup_cache_write_bytelength {
+    sql: ${TABLE}.metrics.quantity.extensions_startup_cache_write_bytelength ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Extensions Startup Cache Write Bytelength"
+    description: "The amount of bytes written to the extensions StartupCache file.
+"
+  }
+
   dimension: metrics__quantity__fog_max_pings_per_minute {
     sql: ${TABLE}.metrics.quantity.fog_max_pings_per_minute ;;
     type: number
@@ -2010,7 +2053,7 @@ count. Unset on other platforms.
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Fog Validation Gvsv Primary Height"
-    description: "Primary display pixel height, recorded alongside the GeckoView Streaming 
+    description: "Primary display pixel height, recorded alongside the GeckoView Streaming
 API for the purposes of Validation (hence GVSV).
 "
   }
@@ -2020,7 +2063,7 @@ API for the purposes of Validation (hence GVSV).
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Fog Validation Gvsv Primary Width"
-    description: "Primary display pixel width, recorded alongside the GeckoView Streaming 
+    description: "Primary display pixel width, recorded alongside the GeckoView Streaming
 API for the purposes of Validation (hence GVSV).
 "
   }

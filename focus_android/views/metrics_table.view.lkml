@@ -584,6 +584,13 @@ view: metrics_table {
     group_item_label: "Networking Residual Cache Folder Count"
   }
 
+  dimension: metrics__counter__networking_set_cookie {
+    sql: ${TABLE}.metrics.counter.networking_set_cookie ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Set Cookie"
+  }
+
   dimension: metrics__counter__pdfjs_used {
     sql: ${TABLE}.metrics.counter.pdfjs_used ;;
     type: number
@@ -1232,6 +1239,26 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__codec_stats_audio_preferred_codec {
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_audio_preferred_codec ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__codec_stats_other_fec_signaled {
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_other_fec_signaled ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__codec_stats_ulpfec_negotiated {
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_ulpfec_negotiated ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__codec_stats_video_preferred_codec {
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_video_preferred_codec ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__cookie_banners_click_result {
     sql: ${TABLE}.metrics.labeled_counter.cookie_banners_click_result ;;
     hidden: yes
@@ -1289,6 +1316,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__extensions_process_event {
     sql: ${TABLE}.metrics.labeled_counter.extensions_process_event ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__extensions_startup_cache_read_errors {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_startup_cache_read_errors ;;
     hidden: yes
   }
 
@@ -1429,6 +1461,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__networking_speculative_connection_outcome {
     sql: ${TABLE}.metrics.labeled_counter.networking_speculative_connection_outcome ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_trr_request_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_trr_request_count ;;
     hidden: yes
   }
 
@@ -1685,6 +1722,13 @@ view: metrics_table {
     group_item_label: "Extensions Quarantined Domains Listsize"
   }
 
+  dimension: metrics__quantity__extensions_startup_cache_write_bytelength {
+    sql: ${TABLE}.metrics.quantity.extensions_startup_cache_write_bytelength ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Extensions Startup Cache Write Bytelength"
+  }
+
   dimension: metrics__quantity__fog_max_pings_per_minute {
     sql: ${TABLE}.metrics.quantity.fog_max_pings_per_minute ;;
     type: number
@@ -1731,6 +1775,48 @@ view: metrics_table {
     sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.numerator ;;
     type: number
     group_label: "Metrics Rate Cookie Banners Cmp Ratio Handled By Cmp Rule"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign__denominator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign.denominator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Foreign"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign__numerator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign.numerator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Foreign"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign_partitioned__denominator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign_partitioned.denominator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Foreign Partitioned"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign_partitioned__numerator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign_partitioned.numerator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Foreign Partitioned"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_partitioned__denominator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_partitioned.denominator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Partitioned"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_partitioned__numerator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_partitioned.numerator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Partitioned"
     group_item_label: "Numerator"
   }
 

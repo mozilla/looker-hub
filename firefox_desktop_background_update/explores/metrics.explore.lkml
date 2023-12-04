@@ -73,6 +73,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_process_event}) AS metrics__metrics__labeled_counter__extensions_process_event ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_process_event.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_startup_cache_read_errors}) AS metrics__metrics__labeled_counter__extensions_startup_cache_read_errors ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_startup_cache_read_errors.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__fog_validation_gvsv_audio_stream_init}) AS metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init.document_id} ;;
@@ -211,6 +216,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__networking_speculative_connection_outcome {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_speculative_connection_outcome}) AS metrics__metrics__labeled_counter__networking_speculative_connection_outcome ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_speculative_connection_outcome.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_trr_request_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_trr_request_count}) AS metrics__metrics__labeled_counter__networking_trr_request_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_trr_request_count.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__pdfjs_buttons {
@@ -373,6 +383,10 @@ explore: suggest__metrics__metrics__labeled_counter__extensions_process_event {
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
   hidden: yes
 }
@@ -482,6 +496,10 @@ explore: suggest__metrics__metrics__labeled_counter__networking_speculative_conn
 }
 
 explore: suggest__metrics__metrics__labeled_counter__networking_speculative_connection_outcome {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__networking_trr_request_count {
   hidden: yes
 }
 

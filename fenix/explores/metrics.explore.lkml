@@ -134,6 +134,26 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__browser_search_with_ads}) AS metrics__metrics__labeled_counter__browser_search_with_ads ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__browser_search_with_ads.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__codec_stats_audio_preferred_codec}) AS metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__codec_stats_other_fec_signaled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__codec_stats_other_fec_signaled}) AS metrics__metrics__labeled_counter__codec_stats_other_fec_signaled ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__codec_stats_other_fec_signaled.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__codec_stats_ulpfec_negotiated}) AS metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__codec_stats_video_preferred_codec {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__codec_stats_video_preferred_codec}) AS metrics__metrics__labeled_counter__codec_stats_video_preferred_codec ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__codec_stats_video_preferred_codec.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__cookie_banners_click_result {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cookie_banners_click_result}) AS metrics__metrics__labeled_counter__cookie_banners_click_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cookie_banners_click_result.document_id} ;;
@@ -197,6 +217,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__extensions_process_event {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_process_event}) AS metrics__metrics__labeled_counter__extensions_process_event ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_process_event.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__extensions_startup_cache_read_errors}) AS metrics__metrics__labeled_counter__extensions_startup_cache_read_errors ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__extensions_startup_cache_read_errors.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
@@ -397,6 +422,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__networking_speculative_connection_outcome {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_speculative_connection_outcome}) AS metrics__metrics__labeled_counter__networking_speculative_connection_outcome ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_speculative_connection_outcome.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_trr_request_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_trr_request_count}) AS metrics__metrics__labeled_counter__networking_trr_request_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_trr_request_count.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__pdfjs_buttons {
@@ -642,6 +672,22 @@ explore: suggest__metrics__metrics__labeled_counter__browser_search_with_ads {
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__codec_stats_other_fec_signaled {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__codec_stats_video_preferred_codec {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result {
   hidden: yes
 }
@@ -691,6 +737,10 @@ explore: suggest__metrics__metrics__labeled_counter__extensions_counters_event_p
 }
 
 explore: suggest__metrics__metrics__labeled_counter__extensions_process_event {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
   hidden: yes
 }
 
@@ -851,6 +901,10 @@ explore: suggest__metrics__metrics__labeled_counter__networking_speculative_conn
 }
 
 explore: suggest__metrics__metrics__labeled_counter__networking_speculative_connection_outcome {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__networking_trr_request_count {
   hidden: yes
 }
 
