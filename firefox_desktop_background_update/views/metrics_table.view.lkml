@@ -553,6 +553,15 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__networking_set_cookie {
+    sql: ${TABLE}.metrics.counter.networking_set_cookie ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Set Cookie"
+    description: "This counts the number of times we set a cookie. Introduced as a denomenator for measuring CHIPS adoption.
+"
+  }
+
   dimension: metrics__counter__pdfjs_used {
     sql: ${TABLE}.metrics.counter.pdfjs_used ;;
     type: number
@@ -1173,6 +1182,34 @@ This does not include deletion-request pings.
     sql: ${TABLE}.metrics.labeled_boolean.oskeystore_self_test ;;
     hidden: yes
     description: "Whether or not each step of the OSKeyStore self test succeeded."
+  }
+
+  dimension: metrics__labeled_counter__codec_stats_audio_preferred_codec {
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_audio_preferred_codec ;;
+    hidden: yes
+    description: "Counts the preferred audio codec being signaled to us to identify preferred audio codec.
+"
+  }
+
+  dimension: metrics__labeled_counter__codec_stats_other_fec_signaled {
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_other_fec_signaled ;;
+    hidden: yes
+    description: "Count how many other fec options are being offered.
+"
+  }
+
+  dimension: metrics__labeled_counter__codec_stats_ulpfec_negotiated {
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_ulpfec_negotiated ;;
+    hidden: yes
+    description: "Counts the number of times that ulpfec is negotiated or not negotiated on the first negotiation for each video transceiver.
+"
+  }
+
+  dimension: metrics__labeled_counter__codec_stats_video_preferred_codec {
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_video_preferred_codec ;;
+    hidden: yes
+    description: "Counts the preferred video codec being signaled to us to identify preferred video codec.
+"
   }
 
   dimension: metrics__labeled_counter__cookie_banners_click_result {
@@ -1839,6 +1876,48 @@ API for the purposes of Validation (hence GVSV).
     sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.numerator ;;
     type: number
     group_label: "Metrics Rate Cookie Banners Cmp Ratio Handled By Cmp Rule"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign__denominator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign.denominator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Foreign"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign__numerator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign.numerator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Foreign"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign_partitioned__denominator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign_partitioned.denominator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Foreign Partitioned"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign_partitioned__numerator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign_partitioned.numerator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Foreign Partitioned"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_partitioned__denominator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_partitioned.denominator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Partitioned"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_partitioned__numerator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_partitioned.numerator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Partitioned"
     group_item_label: "Numerator"
   }
 
