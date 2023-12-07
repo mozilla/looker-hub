@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       disable_nimbus_enrollment_status_event_in_release.branch
     ]
     filters:
-      disable_nimbus_enrollment_status_event_in_release.metric: 'active_hours'
+      disable_nimbus_enrollment_status_event_in_release.metric: 'tagged_sap_searches'
       disable_nimbus_enrollment_status_event_in_release.statistic: mean
     row: 0
     col: 0
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       disable_nimbus_enrollment_status_event_in_release.branch
     ]
     filters:
-      disable_nimbus_enrollment_status_event_in_release.metric: 'tagged_sap_searches'
+      disable_nimbus_enrollment_status_event_in_release.metric: 'active_hours'
       disable_nimbus_enrollment_status_event_in_release.statistic: mean
     row: 20
     col: 12
