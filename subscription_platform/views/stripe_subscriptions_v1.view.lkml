@@ -106,6 +106,11 @@ view: stripe_subscriptions_v1 {
     type: string
   }
 
+  dimension: state {
+    sql: ${TABLE}.state ;;
+    type: string
+  }
+
   dimension: status {
     sql: ${TABLE}.status ;;
     type: string
