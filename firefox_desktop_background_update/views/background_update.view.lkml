@@ -81,7 +81,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__boolean__background_update_registered_restart_attempted {
     label: "Background Update Registered Restart Attempted"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.background_update_registered_restart_attempted ;;
     type: yesno
     group_label: "Background Update"
@@ -99,7 +99,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__boolean__background_update_registered_restart_success {
     label: "Background Update Registered Restart Success"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.background_update_registered_restart_success ;;
     type: yesno
     group_label: "Background Update"
