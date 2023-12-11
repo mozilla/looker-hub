@@ -2739,6 +2739,60 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_100__sum {
+    label: "Networking Http 1 Upload Throughput 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 1 Upload Throughput 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 1 Upload Throughput 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_1_upload_throughput_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/1.0, http/1.1 request size larger than 100MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_10_50__sum {
+    label: "Networking Http 1 Upload Throughput 10 50 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_10_50.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 1 Upload Throughput 10 50 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 1 Upload Throughput 10 50 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_1_upload_throughput_10_50"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/1.0, http/1.1 request size between 10MB and 50MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_50_100__sum {
+    label: "Networking Http 1 Upload Throughput 50 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_50_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 1 Upload Throughput 50 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 1 Upload Throughput 50 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_1_upload_throughput_50_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/1.0, http/1.1 request size between 50MB and 100MB. Measured in megabits per second, Mbps.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_http_2_download_throughput__sum {
     label: "Networking Http 2 Download Throughput Sum"
     hidden: no
@@ -2775,6 +2829,60 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_100__sum {
+    label: "Networking Http 2 Upload Throughput 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 2 Upload Throughput 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 2 Upload Throughput 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_2_upload_throughput_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/2 request size larger than 100MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_10_50__sum {
+    label: "Networking Http 2 Upload Throughput 10 50 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_10_50.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 2 Upload Throughput 10 50 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 2 Upload Throughput 10 50 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_2_upload_throughput_10_50"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/2 request size between 10MB and 50MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_50_100__sum {
+    label: "Networking Http 2 Upload Throughput 50 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_50_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 2 Upload Throughput 50 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 2 Upload Throughput 50 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_2_upload_throughput_50_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/2 request size between 50MB and 100MB. Measured in megabits per second, Mbps.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_download_throughput__sum {
     label: "Networking Http 3 Download Throughput Sum"
     hidden: no
@@ -2808,6 +2916,60 @@ To be used to validate GIFFT.
     }
 
     description: "The upload throughput for http/3 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_100__sum {
+    label: "Networking Http 3 Upload Throughput 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Upload Throughput 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Upload Throughput 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_3_upload_throughput_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/3 request size larger than 100MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_10_50__sum {
+    label: "Networking Http 3 Upload Throughput 10 50 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_10_50.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Upload Throughput 10 50 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Upload Throughput 10 50 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_3_upload_throughput_10_50"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/3 request size between 10MB and 50MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_50_100__sum {
+    label: "Networking Http 3 Upload Throughput 50 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_50_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Upload Throughput 50 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Upload Throughput 50 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_3_upload_throughput_50_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/3 request size between 50MB and 100MB. Measured in megabits per second, Mbps.
 "
   }
 

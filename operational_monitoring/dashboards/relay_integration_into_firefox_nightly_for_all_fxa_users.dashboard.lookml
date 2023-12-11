@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       relay_integration_into_firefox_nightly_for_all_fxa_users.branch
     ]
     filters:
-      relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'qualified_cumulative_days_of_use'
+      relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'uri_count'
       relay_integration_into_firefox_nightly_for_all_fxa_users.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       relay_integration_into_firefox_nightly_for_all_fxa_users.branch
     ]
     filters:
-      relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'search_count'
+      relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'ad_clicks'
       relay_integration_into_firefox_nightly_for_all_fxa_users.statistic: mean
     row: 0
     col: 12
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       relay_integration_into_firefox_nightly_for_all_fxa_users.branch
     ]
     filters:
-      relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'ad_clicks'
+      relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'search_count'
       relay_integration_into_firefox_nightly_for_all_fxa_users.statistic: mean
     row: 20
     col: 12
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       relay_integration_into_firefox_nightly_for_all_fxa_users.branch
     ]
     filters:
-      relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'uri_count'
+      relay_integration_into_firefox_nightly_for_all_fxa_users.metric: 'qualified_cumulative_days_of_use'
       relay_integration_into_firefox_nightly_for_all_fxa_users.statistic: mean
     row: 30
     col: 0
