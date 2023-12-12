@@ -5,6 +5,42 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: background_update {
+  dimension: metrics__boolean__background_update_automatic_restart_attempted {
+    label: "Background Update Automatic Restart Attempted"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.background_update_automatic_restart_attempted ;;
+    type: yesno
+    group_label: "Background Update"
+    group_item_label: "Automatic Restart Attempted"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Automatic Restart Attempted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_automatic_restart_attempted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the background update task successfully attempted an automatic restart.
+"
+  }
+
+  dimension: metrics__boolean__background_update_automatic_restart_success {
+    label: "Background Update Automatic Restart Success"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.background_update_automatic_restart_success ;;
+    type: yesno
+    group_label: "Background Update"
+    group_item_label: "Automatic Restart Success"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Automatic Restart Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_automatic_restart_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the background update task successfully restarted after an automatic restart.
+"
+  }
+
   dimension: metrics__uuid__background_update_client_id {
     label: "Background Update Client Id"
     hidden: no
@@ -81,7 +117,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__boolean__background_update_registered_restart_attempted {
     label: "Background Update Registered Restart Attempted"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.background_update_registered_restart_attempted ;;
     type: yesno
     group_label: "Background Update"
@@ -99,7 +135,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
 
   dimension: metrics__boolean__background_update_registered_restart_success {
     label: "Background Update Registered Restart Success"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.background_update_registered_restart_success ;;
     type: yesno
     group_label: "Background Update"

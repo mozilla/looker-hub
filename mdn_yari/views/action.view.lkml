@@ -168,7 +168,8 @@ expressed as a percentage.
 
     description: "The Baseline status of the page:
 null: the page has no baseline status
-\"baseline\": the page is baseline
+\"baseline_high\": the page is baseline high
+\"baseline_low\": the page is baseline low
 \"not_baseline\" the page is not baseline
 "
   }

@@ -1012,6 +1012,63 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput 100"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_100.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_10_50__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_10_50.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput 10 50"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_10_50__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_10_50.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput 10 50"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_10_50__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_10_50.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_50_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_50_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput 50 100"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_50_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_50_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput 50 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_50_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_50_100.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_2_download_throughput__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_2_download_throughput.count ;;
     type: number
@@ -1050,6 +1107,63 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput 100"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_100.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_10_50__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_10_50.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput 10 50"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_10_50__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_10_50.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput 10 50"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_10_50__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_10_50.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_50_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_50_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput 50 100"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_50_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_50_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput 50 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_50_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_50_100.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_download_throughput__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput.count ;;
     type: number
@@ -1085,6 +1199,63 @@ view: metrics_table {
 
   dimension: metrics__custom_distribution__networking_http_3_upload_throughput__values {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput 100"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_100.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_10_50__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_10_50.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput 10 50"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_10_50__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_10_50.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput 10 50"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_10_50__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_10_50.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_50_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_50_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput 50 100"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_50_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_50_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput 50 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_50_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_50_100.values ;;
     hidden: yes
   }
 
@@ -5564,6 +5735,42 @@ view: metrics_table__metrics__custom_distribution__networking_http_1_upload_thro
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_1_upload_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_1_upload_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_1_upload_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_2_download_throughput__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -5588,6 +5795,42 @@ view: metrics_table__metrics__custom_distribution__networking_http_2_upload_thro
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_2_upload_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_2_upload_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_2_upload_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_3_download_throughput__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -5601,6 +5844,42 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_download_th
 }
 
 view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput_50_100__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

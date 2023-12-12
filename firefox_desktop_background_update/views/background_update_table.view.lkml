@@ -308,6 +308,24 @@ view: background_update_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__background_update_automatic_restart_attempted {
+    sql: ${TABLE}.metrics.boolean.background_update_automatic_restart_attempted ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Update Automatic Restart Attempted"
+    description: "True if the background update task successfully attempted an automatic restart.
+"
+  }
+
+  dimension: metrics__boolean__background_update_automatic_restart_success {
+    sql: ${TABLE}.metrics.boolean.background_update_automatic_restart_success ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Update Automatic Restart Success"
+    description: "True if the background update task successfully restarted after an automatic restart.
+"
+  }
+
   dimension: metrics__boolean__background_update_exit_code_exception {
     sql: ${TABLE}.metrics.boolean.background_update_exit_code_exception ;;
     type: yesno
@@ -514,7 +532,7 @@ This version number does not have a physical unit: it's only useful to compare b
     group_label: "Metrics String"
     group_item_label: "Glean Client Annotation Experimentation Id"
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 

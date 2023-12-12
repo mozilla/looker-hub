@@ -171,6 +171,11 @@ view: all_subscriptions_table {
     type: string
   }
 
+  dimension: state {
+    sql: ${TABLE}.state ;;
+    type: string
+  }
+
   dimension: status {
     sql: ${TABLE}.status ;;
     type: string

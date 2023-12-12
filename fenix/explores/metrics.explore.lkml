@@ -234,6 +234,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko}) AS metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gvst {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gvst}) AS metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gvst ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gvst.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__fxa_client_error_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__fxa_client_error_count}) AS metrics__metrics__labeled_counter__fxa_client_error_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__fxa_client_error_count.document_id} ;;
@@ -749,6 +754,10 @@ explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_s
 }
 
 explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gvst {
   hidden: yes
 }
 

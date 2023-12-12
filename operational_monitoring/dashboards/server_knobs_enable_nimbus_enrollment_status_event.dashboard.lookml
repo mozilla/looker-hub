@@ -78,74 +78,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: server_knobs_enable_nimbus_enrollment_status_event
-    type: looker_line
-    fields: [
-      server_knobs_enable_nimbus_enrollment_status_event.submission_date,
-      server_knobs_enable_nimbus_enrollment_status_event.branch,
-      server_knobs_enable_nimbus_enrollment_status_event.point
-    ]
-    pivots: [
-      server_knobs_enable_nimbus_enrollment_status_event.branch
-    ]
-    filters:
-      server_knobs_enable_nimbus_enrollment_status_event.metric: 'search_count'
-      server_knobs_enable_nimbus_enrollment_status_event.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: server_knobs_enable_nimbus_enrollment_status_event.submission_date
-    field_y: server_knobs_enable_nimbus_enrollment_status_event.point
-    log_scale: false
-    ci_lower: server_knobs_enable_nimbus_enrollment_status_event.lower
-    ci_upper: server_knobs_enable_nimbus_enrollment_status_event.upper
-    show_grid: true
-    listen:
-      Date: server_knobs_enable_nimbus_enrollment_status_event.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: server_knobs_enable_nimbus_enrollment_status_event
-    type: looker_line
-    fields: [
-      server_knobs_enable_nimbus_enrollment_status_event.submission_date,
-      server_knobs_enable_nimbus_enrollment_status_event.branch,
-      server_knobs_enable_nimbus_enrollment_status_event.point
-    ]
-    pivots: [
-      server_knobs_enable_nimbus_enrollment_status_event.branch
-    ]
-    filters:
-      server_knobs_enable_nimbus_enrollment_status_event.metric: 'uri_count'
-      server_knobs_enable_nimbus_enrollment_status_event.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: server_knobs_enable_nimbus_enrollment_status_event.submission_date
-    field_y: server_knobs_enable_nimbus_enrollment_status_event.point
-    log_scale: false
-    ci_lower: server_knobs_enable_nimbus_enrollment_status_event.lower
-    ci_upper: server_knobs_enable_nimbus_enrollment_status_event.upper
-    show_grid: true
-    listen:
-      Date: server_knobs_enable_nimbus_enrollment_status_event.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Days Of Use
     name: Days Of Use_mean
     note_state: expanded
@@ -163,6 +95,74 @@
     ]
     filters:
       server_knobs_enable_nimbus_enrollment_status_event.metric: 'days_of_use'
+      server_knobs_enable_nimbus_enrollment_status_event.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: server_knobs_enable_nimbus_enrollment_status_event.submission_date
+    field_y: server_knobs_enable_nimbus_enrollment_status_event.point
+    log_scale: false
+    ci_lower: server_knobs_enable_nimbus_enrollment_status_event.lower
+    ci_upper: server_knobs_enable_nimbus_enrollment_status_event.upper
+    show_grid: true
+    listen:
+      Date: server_knobs_enable_nimbus_enrollment_status_event.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: server_knobs_enable_nimbus_enrollment_status_event
+    type: looker_line
+    fields: [
+      server_knobs_enable_nimbus_enrollment_status_event.submission_date,
+      server_knobs_enable_nimbus_enrollment_status_event.branch,
+      server_knobs_enable_nimbus_enrollment_status_event.point
+    ]
+    pivots: [
+      server_knobs_enable_nimbus_enrollment_status_event.branch
+    ]
+    filters:
+      server_knobs_enable_nimbus_enrollment_status_event.metric: 'active_hours'
+      server_knobs_enable_nimbus_enrollment_status_event.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: server_knobs_enable_nimbus_enrollment_status_event.submission_date
+    field_y: server_knobs_enable_nimbus_enrollment_status_event.point
+    log_scale: false
+    ci_lower: server_knobs_enable_nimbus_enrollment_status_event.lower
+    ci_upper: server_knobs_enable_nimbus_enrollment_status_event.upper
+    show_grid: true
+    listen:
+      Date: server_knobs_enable_nimbus_enrollment_status_event.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: server_knobs_enable_nimbus_enrollment_status_event
+    type: looker_line
+    fields: [
+      server_knobs_enable_nimbus_enrollment_status_event.submission_date,
+      server_knobs_enable_nimbus_enrollment_status_event.branch,
+      server_knobs_enable_nimbus_enrollment_status_event.point
+    ]
+    pivots: [
+      server_knobs_enable_nimbus_enrollment_status_event.branch
+    ]
+    filters:
+      server_knobs_enable_nimbus_enrollment_status_event.metric: 'search_count'
       server_knobs_enable_nimbus_enrollment_status_event.statistic: mean
     row: 20
     col: 0
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       server_knobs_enable_nimbus_enrollment_status_event.branch
     ]
     filters:
-      server_knobs_enable_nimbus_enrollment_status_event.metric: 'active_hours'
+      server_knobs_enable_nimbus_enrollment_status_event.metric: 'uri_count'
       server_knobs_enable_nimbus_enrollment_status_event.statistic: mean
     row: 30
     col: 0

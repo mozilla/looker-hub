@@ -18,6 +18,26 @@ explore: metrics {
     ]
   }
 
+  join: metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__codec_stats_audio_preferred_codec}) AS metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__codec_stats_other_fec_signaled {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__codec_stats_other_fec_signaled}) AS metrics__metrics__labeled_counter__codec_stats_other_fec_signaled ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__codec_stats_other_fec_signaled.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__codec_stats_ulpfec_negotiated}) AS metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__codec_stats_video_preferred_codec {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__codec_stats_video_preferred_codec}) AS metrics__metrics__labeled_counter__codec_stats_video_preferred_codec ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__codec_stats_video_preferred_codec.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__cookie_banners_click_result {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cookie_banners_click_result}) AS metrics__metrics__labeled_counter__cookie_banners_click_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cookie_banners_click_result.document_id} ;;
@@ -337,6 +357,22 @@ explore: metrics {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid}) AS metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid.document_id} ;;
   }
+}
+
+explore: suggest__metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__codec_stats_other_fec_signaled {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__codec_stats_video_preferred_codec {
+  hidden: yes
 }
 
 explore: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result {
