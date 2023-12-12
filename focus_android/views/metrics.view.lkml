@@ -2016,7 +2016,7 @@ Uses a single label due to only labeled counters being supported
 
   dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__sum {
     label: "Fog Validation Gvsv Composite Time Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.sum ;;
     type: number
     group_label: "Fog Validation"
@@ -2034,7 +2034,7 @@ Uses a single label due to only labeled counters being supported
 
   dimension: metrics__custom_distribution__fog_validation_gvsv_number_of_unique_site_origins_all_tabs__sum {
     label: "Fog Validation Gvsv Number Of Unique Site Origins All Tabs Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.custom_distribution.fog_validation_gvsv_number_of_unique_site_origins_all_tabs.sum ;;
     type: number
     group_label: "Fog Validation"
@@ -2052,7 +2052,7 @@ Uses a single label due to only labeled counters being supported
 
   dimension: metrics__quantity__fog_validation_gvsv_primary_height {
     label: "Fog Validation Gvsv Primary Height"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.fog_validation_gvsv_primary_height ;;
     type: number
     group_label: "Fog Validation"
@@ -2071,7 +2071,7 @@ API for the purposes of Validation (hence GVSV).
 
   dimension: metrics__quantity__fog_validation_gvsv_primary_width {
     label: "Fog Validation Gvsv Primary Width"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.fog_validation_gvsv_primary_width ;;
     type: number
     group_label: "Fog Validation"
@@ -7653,7 +7653,7 @@ view: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init
     suggest_dimension: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -7665,13 +7665,13 @@ view: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
