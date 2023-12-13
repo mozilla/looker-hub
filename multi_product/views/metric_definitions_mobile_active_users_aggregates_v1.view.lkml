@@ -35,6 +35,10 @@ view: metric_definitions_mobile_active_users_aggregates_v1 {
                 {%- if  metric_definitions_mobile_active_users_aggregates_v1._in_query %}
                 , SAFE_CAST(metric_definitions_mobile_active_users_aggregates_v1.client_id AS STRING)
                 {%- endif -%}
+            
+                {%- if  metric_definitions_search_revenue_levers_daily._in_query %}
+                , SAFE_CAST(metric_definitions_search_revenue_levers_daily.client_id AS STRING)
+                {%- endif -%}
             ) ;;
     label: "Client ID"
     primary_key: yes
@@ -78,6 +82,10 @@ view: metric_definitions_mobile_active_users_aggregates_v1 {
     sql: COALESCE(CAST(${TABLE}.submission_date AS TIMESTAMP)
                 {%- if  metric_definitions_mobile_active_users_aggregates_v1._in_query %}
                 , CAST(metric_definitions_mobile_active_users_aggregates_v1.submission_date AS TIMESTAMP)
+                {%- endif -%}
+            
+                {%- if  metric_definitions_search_revenue_levers_daily._in_query %}
+                , CAST(metric_definitions_search_revenue_levers_daily.submission_date AS TIMESTAMP)
                 {%- endif -%}
             ) ;;
     label: "Submission"
