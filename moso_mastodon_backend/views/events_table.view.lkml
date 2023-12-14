@@ -350,6 +350,51 @@ for the purpose of experimentation enrollment.
 "
   }
 
+  dimension: metrics__string__identifiers_adjust_device_id {
+    sql: ${TABLE}.metrics.string.identifiers_adjust_device_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Identifiers Adjust Device Id"
+    description: "The Adjust device ID for this user, if available.
+"
+  }
+
+  dimension: metrics__string__identifiers_fxa_account_id {
+    sql: ${TABLE}.metrics.string.identifiers_fxa_account_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Identifiers Fxa Account Id"
+    description: "The user's FxA account ID, if available.
+"
+  }
+
+  dimension: metrics__string__identifiers_mastodon_account_handle {
+    sql: ${TABLE}.metrics.string.identifiers_mastodon_account_handle ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Identifiers Mastodon Account Handle"
+    description: "The user's full account handle, with domain. For example, `account_name@mozilla.social`.
+"
+  }
+
+  dimension: metrics__string__identifiers_mastodon_account_id {
+    sql: ${TABLE}.metrics.string.identifiers_mastodon_account_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Identifiers Mastodon Account Id"
+    description: "The user's numeric account ID from Mastodon.
+"
+  }
+
+  dimension: metrics__string__identifiers_user_agent {
+    sql: ${TABLE}.metrics.string.identifiers_user_agent ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Identifiers User Agent"
+    description: "The device user agent string.
+"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
