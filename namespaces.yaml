@@ -16431,6 +16431,10 @@ subscription_platform:
       tables:
       - table: mozdata.subscription_platform.stripe_products
       type: table_view
+    stripe_subscriptions:
+      tables:
+      - table: moz-fx-data-shared-prod.subscription_platform_derived.stripe_subscriptions_v2
+      type: table_view
     stripe_subscriptions_v1:
       measures:
         count:
