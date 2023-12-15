@@ -5,6 +5,11 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: newtab_live_table {
+  dimension: app_build {
+    sql: ${TABLE}.app_build ;;
+    type: string
+  }
+
   dimension: app_display_version {
     sql: ${TABLE}.app_display_version ;;
     type: string

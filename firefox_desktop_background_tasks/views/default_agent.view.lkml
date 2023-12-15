@@ -49,6 +49,44 @@ Many of the values correspond to buttons on the notification and should be prett
 "
   }
 
+  dimension: metrics__string__system_os_version {
+    label: "System Os Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_os_version ;;
+    type: string
+    group_label: "System"
+    group_item_label: "Os Version"
+
+    link: {
+      label: "Glean Dictionary reference for System Os Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_tasks/metrics/system_os_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The current Windows OS version, usually as a dotted quad (\"x.y.z.w\") with Windows Update Build Revision (UBR), but potentially as a dotted triple (\"x.y.z\") without UBR.
+"
+  }
+
+  dimension: metrics__string__system_previous_os_version {
+    label: "System Previous Os Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.system_previous_os_version ;;
+    type: string
+    group_label: "System"
+    group_item_label: "Previous Os Version"
+
+    link: {
+      label: "Glean Dictionary reference for System Previous Os Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_tasks/metrics/system_previous_os_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Windows OS version before it was changed to the current setting. The possible values are the same as for `system.os_version`.
+The OS does not keep track of the previous OS version, so the agent records this information itself. That means that it will be inaccurate until the first time the default is changed after the agent task begins running. Before then, the value of `previous_os_version` will be the same as `os_version`.
+This value is updated every time the Default Agent runs, so when the default browser is first changed the values for `os_version` and `previous_os_version` will be different. But on subsequent executions of the Default Agent, the two values will be the same.
+"
+  }
+
   dimension: metrics__string__system_default_browser {
     label: "System Default Browser"
     hidden: no
