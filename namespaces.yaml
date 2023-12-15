@@ -921,6 +921,10 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.addresses_sync
       type: table_view
+    android_onboarding:
+      tables:
+      - table: moz-fx-data-shared-prod.fenix_derived.android_onboarding_v1
+      type: table_view
     android_store_performance:
       tables:
       - table: moz-fx-data-marketing-prod.google_play_store.Store_Performance_country_v1
@@ -1245,6 +1249,11 @@ fenix:
       tables:
       - channel: release
         table: mozdata.fenix.events_unnested
+      type: table_view
+    fenix_use_counters_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.fenix_use_counters
       type: table_view
     firefox_android_clients_table:
       tables:
@@ -2118,6 +2127,11 @@ firefox_desktop:
     feature_usage_table:
       tables:
       - table: mozdata.telemetry.feature_usage
+      type: table_view
+    firefox_desktop_use_counters_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.firefox_desktop_use_counters
       type: table_view
     first_startup:
       tables:
