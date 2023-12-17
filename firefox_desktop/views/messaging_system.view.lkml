@@ -347,7 +347,7 @@ Present only in some circumstances (see
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The type of event. Any user defined string (e.g. “click”, “share”, “delete”, “more_items”)
+    description: "The type of event. Any user defined string (e.g. “IMPRESSION”, “CLICK_BUTTON”, \"INDEXEDDB_OPEN_FAILED\", “SESSION_END”)
 "
   }
 
