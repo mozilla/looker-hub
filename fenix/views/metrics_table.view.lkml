@@ -3487,6 +3487,13 @@ view: metrics_table {
     group_item_label: "Glean Client Annotation Experimentation Id"
   }
 
+  dimension: metrics__string__glean_database_rkv_load_error {
+    sql: ${TABLE}.metrics.string.glean_database_rkv_load_error ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Database Rkv Load Error"
+  }
+
   dimension: metrics__string__metrics_adjust_ad_group {
     sql: ${TABLE}.metrics.string.metrics_adjust_ad_group ;;
     type: string

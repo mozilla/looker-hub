@@ -757,7 +757,16 @@ the keyboard appears on the screen.
     group_label: "Metrics String"
     group_item_label: "Glean Client Annotation Experimentation Id"
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
+"
+  }
+
+  dimension: metrics__string__glean_database_rkv_load_error {
+    sql: ${TABLE}.metrics.string.glean_database_rkv_load_error ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Database Rkv Load Error"
+    description: "If there was an error loading the RKV database, record it.
 "
   }
 

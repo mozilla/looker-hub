@@ -36,6 +36,21 @@ view: stripe_subscriptions_v1 {
     type: string
   }
 
+  dimension: has_fraudulent_charge_refunds {
+    sql: ${TABLE}.has_fraudulent_charge_refunds ;;
+    type: yesno
+  }
+
+  dimension: has_fraudulent_charges {
+    sql: ${TABLE}.has_fraudulent_charges ;;
+    type: yesno
+  }
+
+  dimension: has_refunds {
+    sql: ${TABLE}.has_refunds ;;
+    type: yesno
+  }
+
   dimension: plan_amount {
     sql: ${TABLE}.plan_amount ;;
     type: number

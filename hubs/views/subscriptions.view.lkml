@@ -61,6 +61,21 @@ view: subscriptions {
     type: string
   }
 
+  dimension: has_fraudulent_charge_refunds {
+    sql: ${TABLE}.has_fraudulent_charge_refunds ;;
+    type: yesno
+  }
+
+  dimension: has_fraudulent_charges {
+    sql: ${TABLE}.has_fraudulent_charges ;;
+    type: yesno
+  }
+
+  dimension: has_refunds {
+    sql: ${TABLE}.has_refunds ;;
+    type: yesno
+  }
+
   dimension: months_retained {
     sql: ${TABLE}.months_retained ;;
     type: number
