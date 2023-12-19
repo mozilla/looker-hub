@@ -38,7 +38,7 @@ and only sent with the activation ping.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Sets the legacy client ID as part of the deletion-reqest and other pings.
+    description: "Sets the legacy client ID as part of the deletion-request ping.
 "
   }
 
