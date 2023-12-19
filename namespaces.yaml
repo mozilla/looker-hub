@@ -3244,6 +3244,8 @@ firefox_ios:
       type: table_view
     fx_suggest:
       tables:
+      - channel: release
+        table: mozdata.firefox_ios.fx_suggest
       - channel: beta
         table: mozdata.org_mozilla_ios_firefoxbeta.fx_suggest
       - channel: nightly
@@ -3251,6 +3253,8 @@ firefox_ios:
       type: glean_ping_view
     fx_suggest_table:
       tables:
+      - channel: release
+        table: mozdata.firefox_ios.fx_suggest
       - channel: beta
         table: mozdata.org_mozilla_ios_firefoxbeta.fx_suggest
       - channel: nightly
