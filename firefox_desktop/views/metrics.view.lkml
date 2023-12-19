@@ -378,7 +378,7 @@ If you're unsure, please ask in
 
   dimension: metrics__counter__ping_centre_send_failures {
     label: "Ping Centre Send Failures"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.ping_centre_send_failures ;;
     type: number
     group_label: "Ping Centre"
@@ -8847,7 +8847,7 @@ view: metrics__metrics__labeled_counter__ping_centre_send_failures_by_namespace 
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__ping_centre_send_failures_by_namespace
     suggest_dimension: suggest__metrics__metrics__labeled_counter__ping_centre_send_failures_by_namespace.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -8859,13 +8859,13 @@ view: metrics__metrics__labeled_counter__ping_centre_send_failures_by_namespace 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -8890,7 +8890,7 @@ view: metrics__metrics__labeled_counter__ping_centre_send_successes_by_namespace
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__ping_centre_send_successes_by_namespace
     suggest_dimension: suggest__metrics__metrics__labeled_counter__ping_centre_send_successes_by_namespace.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -8902,13 +8902,13 @@ view: metrics__metrics__labeled_counter__ping_centre_send_successes_by_namespace
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 

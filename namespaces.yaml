@@ -385,6 +385,10 @@ combined_browser_metrics:
       tables:
       - table: moz-fx-data-shared-prod.telemetry.cohort_daily_statistics
       type: table_view
+    fenix_and_firefox_use_counters:
+      tables:
+      - table: moz-fx-data-shared-prod.telemetry.fenix_and_firefox_use_counters
+      type: table_view
 contextual_services:
   glean_app: false
   owners:
