@@ -4,24 +4,38 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: metric_definitions_events {
+view: metric_definitions_metrics {
   derived_table: {
     sql: SELECT
-                COALESCE(LOGICAL_OR(            event_method = 'open_management'
-            AND event_category = 'pwmgr'
-         ), FALSE) AS view_about_logins,COALESCE(LOGICAL_OR(            event_method = 'show'
-            AND event_object = 'protection_report'
-         ), FALSE) AS view_about_protections,COALESCE(LOGICAL_OR(            event_method = 'connect'
-            AND event_object = 'account'
-         ), FALSE) AS connect_fxa,
-                client_id AS client_id,
+                (
+    (COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "freetext")) > 0, FALSE) OR
+    COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "ink")) > 0, FALSE)) AND 
+    (COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "print")) > 0, FALSE) OR 
+    COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "save")) > 0, FALSE))
+) AS pdf_engagement,(
+    COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "freetext")) > 0, FALSE)
+) AS pdf_freetext,(
+    COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "ink")) > 0, FALSE)
+) AS pdf_ink,(
+    COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "print")) > 0, FALSE)
+) AS pdf_print,(
+    COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "save")) > 0, FALSE)
+) AS pdf_save,(
+    COALESCE(SUM(metrics.counter.pdfjs_used) > 0, FALSE)
+) AS pdf_opening,
+                metrics.uuid.legacy_telemetry_client_id AS client_id,
                 submission_date AS submission_date
               FROM
                 (
     SELECT
         *
     FROM
-        mozdata.telemetry.events
+        (
+    SELECT 
+      p.*,
+      DATE(p.submission_timestamp) AS submission_date
+    FROM `mozdata.firefox_desktop.metrics` p
+    )
     )
               WHERE submission_date BETWEEN
                 SAFE_CAST({% date_start metric_definitions_firefox_desktop.submission_date %} AS DATE) AND
@@ -95,30 +109,46 @@ view: metric_definitions_events {
     description: "Unique client identifier"
   }
 
-  dimension: view_about_logins {
-    label: "about:logins viewers"
-    description: "    Counts the number of clients that viewed about:logins.
-"
+  dimension: pdf_engagement {
+    label: "Pdf Engagement"
+    description: ""
     type: number
-    sql: ${TABLE}.view_about_logins ;;
+    sql: ${TABLE}.pdf_engagement ;;
   }
 
-  dimension: view_about_protections {
-    label: "about:protections viewers"
-    description: "    Counts the number of clients that viewed about:protections.
-"
+  dimension: pdf_freetext {
+    label: "Pdf Freetext"
+    description: ""
     type: number
-    sql: ${TABLE}.view_about_protections ;;
+    sql: ${TABLE}.pdf_freetext ;;
   }
 
-  dimension: connect_fxa {
-    label: "Connected FxA"
-    description: "    Counts the number of clients that took action to connect to FxA.
-    This does not include clients that were already connected to FxA at
-    the start of the experiment and remained connected.
-"
+  dimension: pdf_ink {
+    label: "Pdf Ink"
+    description: ""
     type: number
-    sql: ${TABLE}.connect_fxa ;;
+    sql: ${TABLE}.pdf_ink ;;
+  }
+
+  dimension: pdf_print {
+    label: "Pdf Print"
+    description: ""
+    type: number
+    sql: ${TABLE}.pdf_print ;;
+  }
+
+  dimension: pdf_save {
+    label: "Pdf Save"
+    description: ""
+    type: number
+    sql: ${TABLE}.pdf_save ;;
+  }
+
+  dimension: pdf_opening {
+    label: "Pdf Opening"
+    description: ""
+    type: number
+    sql: ${TABLE}.pdf_opening ;;
   }
 
   dimension_group: submission {
@@ -192,6 +222,13 @@ view: metric_definitions_events {
   }
 
   set: metrics {
-    fields: [view_about_logins, view_about_protections, connect_fxa]
+    fields: [
+      pdf_engagement,
+      pdf_freetext,
+      pdf_ink,
+      pdf_print,
+      pdf_save,
+      pdf_opening,
+    ]
   }
 }
