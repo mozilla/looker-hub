@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       mozillaaccounts_toolbar_button_default_visibility_existing_user.branch
     ]
     filters:
-      mozillaaccounts_toolbar_button_default_visibility_existing_user.metric: 'uri_count'
+      mozillaaccounts_toolbar_button_default_visibility_existing_user.metric: 'days_of_use'
       mozillaaccounts_toolbar_button_default_visibility_existing_user.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       mozillaaccounts_toolbar_button_default_visibility_existing_user.branch
     ]
     filters:
-      mozillaaccounts_toolbar_button_default_visibility_existing_user.metric: 'qualified_cumulative_days_of_use'
+      mozillaaccounts_toolbar_button_default_visibility_existing_user.metric: 'active_hours'
       mozillaaccounts_toolbar_button_default_visibility_existing_user.statistic: mean
     row: 0
     col: 12
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       mozillaaccounts_toolbar_button_default_visibility_existing_user.branch
     ]
     filters:
-      mozillaaccounts_toolbar_button_default_visibility_existing_user.metric: 'ad_clicks'
+      mozillaaccounts_toolbar_button_default_visibility_existing_user.metric: 'search_count'
       mozillaaccounts_toolbar_button_default_visibility_existing_user.statistic: mean
     row: 10
     col: 0
@@ -149,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,10 +165,44 @@
       mozillaaccounts_toolbar_button_default_visibility_existing_user.branch
     ]
     filters:
-      mozillaaccounts_toolbar_button_default_visibility_existing_user.metric: 'search_count'
+      mozillaaccounts_toolbar_button_default_visibility_existing_user.metric: 'qualified_cumulative_days_of_use'
       mozillaaccounts_toolbar_button_default_visibility_existing_user.statistic: mean
     row: 20
     col: 0
+    width: 12
+    height: 8
+    field_x: mozillaaccounts_toolbar_button_default_visibility_existing_user.submission_date
+    field_y: mozillaaccounts_toolbar_button_default_visibility_existing_user.point
+    log_scale: false
+    ci_lower: mozillaaccounts_toolbar_button_default_visibility_existing_user.lower
+    ci_upper: mozillaaccounts_toolbar_button_default_visibility_existing_user.upper
+    show_grid: true
+    listen:
+      Date: mozillaaccounts_toolbar_button_default_visibility_existing_user.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Uri Count
+    name: Uri Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: mozillaaccounts_toolbar_button_default_visibility_existing_user
+    type: looker_line
+    fields: [
+      mozillaaccounts_toolbar_button_default_visibility_existing_user.submission_date,
+      mozillaaccounts_toolbar_button_default_visibility_existing_user.branch,
+      mozillaaccounts_toolbar_button_default_visibility_existing_user.point
+    ]
+    pivots: [
+      mozillaaccounts_toolbar_button_default_visibility_existing_user.branch
+    ]
+    filters:
+      mozillaaccounts_toolbar_button_default_visibility_existing_user.metric: 'uri_count'
+      mozillaaccounts_toolbar_button_default_visibility_existing_user.statistic: mean
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: mozillaaccounts_toolbar_button_default_visibility_existing_user.submission_date
@@ -201,40 +235,6 @@
     filters:
       mozillaaccounts_toolbar_button_default_visibility_existing_user.metric: 'retained'
       mozillaaccounts_toolbar_button_default_visibility_existing_user.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: mozillaaccounts_toolbar_button_default_visibility_existing_user.submission_date
-    field_y: mozillaaccounts_toolbar_button_default_visibility_existing_user.point
-    log_scale: false
-    ci_lower: mozillaaccounts_toolbar_button_default_visibility_existing_user.lower
-    ci_upper: mozillaaccounts_toolbar_button_default_visibility_existing_user.upper
-    show_grid: true
-    listen:
-      Date: mozillaaccounts_toolbar_button_default_visibility_existing_user.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: mozillaaccounts_toolbar_button_default_visibility_existing_user
-    type: looker_line
-    fields: [
-      mozillaaccounts_toolbar_button_default_visibility_existing_user.submission_date,
-      mozillaaccounts_toolbar_button_default_visibility_existing_user.branch,
-      mozillaaccounts_toolbar_button_default_visibility_existing_user.point
-    ]
-    pivots: [
-      mozillaaccounts_toolbar_button_default_visibility_existing_user.branch
-    ]
-    filters:
-      mozillaaccounts_toolbar_button_default_visibility_existing_user.metric: 'active_hours'
-      mozillaaccounts_toolbar_button_default_visibility_existing_user.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       mozillaaccounts_toolbar_button_default_visibility_existing_user.branch
     ]
     filters:
-      mozillaaccounts_toolbar_button_default_visibility_existing_user.metric: 'days_of_use'
+      mozillaaccounts_toolbar_button_default_visibility_existing_user.metric: 'ad_clicks'
       mozillaaccounts_toolbar_button_default_visibility_existing_user.statistic: mean
     row: 30
     col: 12

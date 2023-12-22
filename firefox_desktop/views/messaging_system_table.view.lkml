@@ -397,13 +397,23 @@ You may have forgotten to define an appropriate metric in
 "
   }
 
+  dimension: metrics__quantity__messaging_system_event_screen_index {
+    sql: ${TABLE}.metrics.quantity.messaging_system_event_screen_index ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Messaging System Event Screen Index"
+    description: "A number identifier of the screen index in a sequence of screens
+(e.g. 0 for first message).
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Glean Client Annotation Experimentation Id"
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -539,7 +549,7 @@ name.
     type: string
     group_label: "Metrics String"
     group_item_label: "Messaging System Event"
-    description: "The type of event. Any user defined string (e.g. “click”, “share”, “delete”, “more_items”)
+    description: "The type of event. Any user defined string (e.g. “IMPRESSION”, “CLICK_BUTTON”, \"INDEXEDDB_OPEN_FAILED\", “SESSION_END”)
 "
   }
 
@@ -621,6 +631,27 @@ name.
     group_item_label: "Messaging System Event Context"
   }
 
+  dimension: metrics__text__messaging_system_event_screen_family {
+    sql: ${TABLE}.metrics.text.messaging_system_event_screen_family ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Messaging System Event Screen Family"
+  }
+
+  dimension: metrics__text__messaging_system_event_screen_id {
+    sql: ${TABLE}.metrics.text.messaging_system_event_screen_id ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Messaging System Event Screen Id"
+  }
+
+  dimension: metrics__text__messaging_system_event_screen_initials {
+    sql: ${TABLE}.metrics.text.messaging_system_event_screen_initials ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Messaging System Event Screen Initials"
+  }
+
   dimension: metrics__text__messaging_system_message_id {
     sql: ${TABLE}.metrics.text.messaging_system_message_id ;;
     type: string
@@ -643,6 +674,36 @@ name.
     group_label: "Metrics Text2"
     group_item_label: "Messaging System Event Context"
     description: "The stringified JSON of `event_context`.
+"
+  }
+
+  dimension: metrics__text2__messaging_system_event_screen_family {
+    sql: ${TABLE}.metrics.text2.messaging_system_event_screen_family ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Messaging System Event Screen Family"
+    description: "A string identifier of the message family derived from the message id
+(e.g. MR_WELCOME_DEFAULT).
+"
+  }
+
+  dimension: metrics__text2__messaging_system_event_screen_id {
+    sql: ${TABLE}.metrics.text2.messaging_system_event_screen_id ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Messaging System Event Screen Id"
+    description: "A string identifier of the message screen id
+(e.g. AW_MOBILE_DOWNLOAD).
+"
+  }
+
+  dimension: metrics__text2__messaging_system_event_screen_initials {
+    sql: ${TABLE}.metrics.text2.messaging_system_event_screen_initials ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Messaging System Event Screen Initials"
+    description: "A string identifier of the message screen initials
+(e.g. 'EMAG' for EASY_SETUP, MOBILE_DOWNLOADS, AMO, GRATITUDE).
 "
   }
 

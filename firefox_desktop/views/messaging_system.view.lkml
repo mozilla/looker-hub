@@ -424,6 +424,82 @@ Present only in some circumstances (see
 "
   }
 
+  dimension: metrics__text2__messaging_system_event_screen_family {
+    label: "Messaging System Event Screen Family"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.messaging_system_event_screen_family ;;
+    type: string
+    group_label: "Messaging System"
+    group_item_label: "Event Screen Family"
+
+    link: {
+      label: "Glean Dictionary reference for Messaging System Event Screen Family"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_event_screen_family"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A string identifier of the message family derived from the message id
+(e.g. MR_WELCOME_DEFAULT).
+"
+  }
+
+  dimension: metrics__text2__messaging_system_event_screen_id {
+    label: "Messaging System Event Screen Id"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.messaging_system_event_screen_id ;;
+    type: string
+    group_label: "Messaging System"
+    group_item_label: "Event Screen Id"
+
+    link: {
+      label: "Glean Dictionary reference for Messaging System Event Screen Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_event_screen_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A string identifier of the message screen id
+(e.g. AW_MOBILE_DOWNLOAD).
+"
+  }
+
+  dimension: metrics__quantity__messaging_system_event_screen_index {
+    label: "Messaging System Event Screen Index"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.messaging_system_event_screen_index ;;
+    type: number
+    group_label: "Messaging System"
+    group_item_label: "Event Screen Index"
+
+    link: {
+      label: "Glean Dictionary reference for Messaging System Event Screen Index"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_event_screen_index"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A number identifier of the screen index in a sequence of screens
+(e.g. 0 for first message).
+"
+  }
+
+  dimension: metrics__text2__messaging_system_event_screen_initials {
+    label: "Messaging System Event Screen Initials"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.messaging_system_event_screen_initials ;;
+    type: string
+    group_label: "Messaging System"
+    group_item_label: "Event Screen Initials"
+
+    link: {
+      label: "Glean Dictionary reference for Messaging System Event Screen Initials"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_event_screen_initials"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A string identifier of the message screen initials
+(e.g. 'EMAG' for EASY_SETUP, MOBILE_DOWNLOADS, AMO, GRATITUDE).
+"
+  }
+
   dimension: metrics__string__messaging_system_event_source {
     label: "Messaging System Event Source"
     hidden: no

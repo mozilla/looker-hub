@@ -168,6 +168,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__gmp_update_xml_fetch_result}) AS metrics__metrics__labeled_counter__gmp_update_xml_fetch_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__gmp_update_xml_fetch_result.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__gpu_process_crash_fallbacks {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__gpu_process_crash_fallbacks}) AS metrics__metrics__labeled_counter__gpu_process_crash_fallbacks ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__gpu_process_crash_fallbacks.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__ipc_received_messages_content_background {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_received_messages_content_background}) AS metrics__metrics__labeled_counter__ipc_received_messages_content_background ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_received_messages_content_background.document_id} ;;
@@ -511,6 +516,10 @@ explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_subm
 }
 
 explore: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__gpu_process_crash_fallbacks {
   hidden: yes
 }
 
