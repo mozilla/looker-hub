@@ -4660,6 +4660,77 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__gpu_process_crash_fallbacks {
+    label: "Gpu Process Crash Fallbacks"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.gpu_process_crash_fallbacks ;;
+    group_label: "Gpu Process"
+    group_item_label: "Crash Fallbacks"
+
+    link: {
+      label: "Glean Dictionary reference for Gpu Process Crash Fallbacks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gpu_process_crash_fallbacks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often we use different fallbacks when the GPU process crashes
+"
+  }
+
+  dimension: metrics__string__gpu_process_feature_status {
+    label: "Gpu Process Feature Status"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gpu_process_feature_status ;;
+    type: string
+    group_label: "Gpu Process"
+    group_item_label: "Feature Status"
+
+    link: {
+      label: "Glean Dictionary reference for Gpu Process Feature Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gpu_process_feature_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Current status of the GPU process feature
+"
+  }
+
+  dimension: metrics__quantity__gpu_process_total_launch_attempts {
+    label: "Gpu Process Total Launch Attempts"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gpu_process_total_launch_attempts ;;
+    type: number
+    group_label: "Gpu Process"
+    group_item_label: "Total Launch Attempts"
+
+    link: {
+      label: "Glean Dictionary reference for Gpu Process Total Launch Attempts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gpu_process_total_launch_attempts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of total GPU process launch attempts.
+"
+  }
+
+  dimension: metrics__quantity__gpu_process_unstable_launch_attempts {
+    label: "Gpu Process Unstable Launch Attempts"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gpu_process_unstable_launch_attempts ;;
+    type: number
+    group_label: "Gpu Process"
+    group_item_label: "Unstable Launch Attempts"
+
+    link: {
+      label: "Glean Dictionary reference for Gpu Process Unstable Launch Attempts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gpu_process_unstable_launch_attempts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of consecutive unstable launch attempts.
+"
+  }
+
   dimension: metrics__labeled_counter__ipc_received_messages_content_background {
     label: "Ipc Received Messages Content Background"
     hidden: yes
@@ -15144,6 +15215,49 @@ view: metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
   }
 }
 
+view: metrics__metrics__labeled_counter__gpu_process_crash_fallbacks {
+  label: "Gpu Process - Crash Fallbacks"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__gpu_process_crash_fallbacks
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__gpu_process_crash_fallbacks.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__ipc_received_messages_content_background {
   label: "Ipc Received Messages - Content Background"
 
@@ -18719,6 +18833,25 @@ view: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.gmp_update_xml_fetch_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__gpu_process_crash_fallbacks {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.gpu_process_crash_fallbacks) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

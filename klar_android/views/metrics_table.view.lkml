@@ -1888,6 +1888,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__gpu_process_crash_fallbacks {
+    sql: ${TABLE}.metrics.labeled_counter.gpu_process_crash_fallbacks ;;
+    hidden: yes
+    description: "How often we use different fallbacks when the GPU process crashes
+"
+  }
+
   dimension: metrics__labeled_counter__ipc_received_messages_content_background {
     sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_content_background ;;
     hidden: yes
@@ -2411,6 +2418,24 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__quantity__gpu_process_total_launch_attempts {
+    sql: ${TABLE}.metrics.quantity.gpu_process_total_launch_attempts ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Gpu Process Total Launch Attempts"
+    description: "The number of total GPU process launch attempts.
+"
+  }
+
+  dimension: metrics__quantity__gpu_process_unstable_launch_attempts {
+    sql: ${TABLE}.metrics.quantity.gpu_process_unstable_launch_attempts ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Gpu Process Unstable Launch Attempts"
+    description: "The number of consecutive unstable launch attempts.
+"
+  }
+
   dimension: metrics__quantity__shortcuts_shortcuts_on_home_number {
     sql: ${TABLE}.metrics.quantity.shortcuts_shortcuts_on_home_number ;;
     type: number
@@ -2761,6 +2786,15 @@ for the purpose of experimentation enrollment.
     group_label: "Metrics String"
     group_item_label: "Glean Database Rkv Load Error"
     description: "If there was an error loading the RKV database, record it.
+"
+  }
+
+  dimension: metrics__string__gpu_process_feature_status {
+    sql: ${TABLE}.metrics.string.gpu_process_feature_status ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gpu Process Feature Status"
+    description: "Current status of the GPU process feature
 "
   }
 
@@ -5831,7 +5865,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metrics Uuid"
     group_item_label: "Legacy Ids Client Id"
-    description: "Sets the legacy client ID as part of the deletion-reqest and other pings.
+    description: "Sets the legacy client ID as part of the deletion-request ping.
 "
   }
 
