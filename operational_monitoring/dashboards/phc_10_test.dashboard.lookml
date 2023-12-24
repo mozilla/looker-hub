@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       phc_10_test.branch
     ]
     filters:
-      phc_10_test.metric: 'qualified_cumulative_days_of_use'
+      phc_10_test.metric: 'retained'
       phc_10_test.statistic: mean
     row: 0
     col: 0
@@ -44,24 +44,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: phc_10_test
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       phc_10_test.submission_date,
       phc_10_test.branch,
+      phc_10_test.upper,
+      phc_10_test.lower,
       phc_10_test.point
     ]
     pivots: [
       phc_10_test.branch
     ]
     filters:
-      phc_10_test.metric: 'uri_count'
-      phc_10_test.statistic: mean
+      phc_10_test.metric: 'memory_total'
+      phc_10_test.statistic: percentile
     row: 0
     col: 12
     width: 12
@@ -74,12 +76,13 @@
     show_grid: true
     listen:
       Date: phc_10_test.submission_date
+      Percentile: phc_10_test.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +97,7 @@
       phc_10_test.branch
     ]
     filters:
-      phc_10_test.metric: 'ad_clicks'
+      phc_10_test.metric: 'days_of_use'
       phc_10_test.statistic: mean
     row: 10
     col: 0
@@ -146,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +165,7 @@
       phc_10_test.branch
     ]
     filters:
-      phc_10_test.metric: 'retained'
+      phc_10_test.metric: 'uri_count'
       phc_10_test.statistic: mean
     row: 20
     col: 0
@@ -214,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +233,7 @@
       phc_10_test.branch
     ]
     filters:
-      phc_10_test.metric: 'days_of_use'
+      phc_10_test.metric: 'ad_clicks'
       phc_10_test.statistic: mean
     row: 30
     col: 0
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: phc_10_test
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       phc_10_test.submission_date,
       phc_10_test.branch,
-      phc_10_test.upper,
-      phc_10_test.lower,
       phc_10_test.point
     ]
     pivots: [
       phc_10_test.branch
     ]
     filters:
-      phc_10_test.metric: 'memory_total'
-      phc_10_test.statistic: percentile
+      phc_10_test.metric: 'qualified_cumulative_days_of_use'
+      phc_10_test.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: phc_10_test.submission_date
-      Percentile: phc_10_test.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
