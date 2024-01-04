@@ -85,6 +85,10 @@ view: metric_definitions_events {
                 {%- if  metric_definitions_clients_first_seen_v2._in_query %}
                 , SAFE_CAST(metric_definitions_clients_first_seen_v2.client_id AS STRING)
                 {%- endif -%}
+            
+                {%- if  metric_definitions_metrics._in_query %}
+                , SAFE_CAST(metric_definitions_metrics.client_id AS STRING)
+                {%- endif -%}
             ) ;;
     label: "Client ID"
     primary_key: yes
@@ -170,6 +174,10 @@ view: metric_definitions_events {
             
                 {%- if  metric_definitions_clients_first_seen_v2._in_query %}
                 , CAST(metric_definitions_clients_first_seen_v2.submission_date AS TIMESTAMP)
+                {%- endif -%}
+            
+                {%- if  metric_definitions_metrics._in_query %}
+                , CAST(metric_definitions_metrics.submission_date AS TIMESTAMP)
                 {%- endif -%}
             ) ;;
     label: "Submission"

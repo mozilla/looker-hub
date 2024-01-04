@@ -10,24 +10,26 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Performance Page Non Blank Paint
+    name: Performance Page Non Blank Paint_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: android_add_ons_extension_process_release_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       android_add_ons_extension_process_release_rollout.submission_date,
       android_add_ons_extension_process_release_rollout.branch,
+      android_add_ons_extension_process_release_rollout.upper,
+      android_add_ons_extension_process_release_rollout.lower,
       android_add_ons_extension_process_release_rollout.point
     ]
     pivots: [
       android_add_ons_extension_process_release_rollout.branch
     ]
     filters:
-      android_add_ons_extension_process_release_rollout.metric: 'ad_clicks'
-      android_add_ons_extension_process_release_rollout.statistic: mean
+      android_add_ons_extension_process_release_rollout.metric: 'performance_page_non_blank_paint'
+      android_add_ons_extension_process_release_rollout.statistic: percentile
     row: 0
     col: 0
     width: 12
@@ -40,6 +42,7 @@
     show_grid: true
     listen:
       Date: android_add_ons_extension_process_release_rollout.submission_date
+      Percentile: android_add_ons_extension_process_release_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -180,26 +183,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Performance Page Non Blank Paint
-    name: Performance Page Non Blank Paint_percentile
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: android_add_ons_extension_process_release_rollout
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       android_add_ons_extension_process_release_rollout.submission_date,
       android_add_ons_extension_process_release_rollout.branch,
-      android_add_ons_extension_process_release_rollout.upper,
-      android_add_ons_extension_process_release_rollout.lower,
       android_add_ons_extension_process_release_rollout.point
     ]
     pivots: [
       android_add_ons_extension_process_release_rollout.branch
     ]
     filters:
-      android_add_ons_extension_process_release_rollout.metric: 'performance_page_non_blank_paint'
-      android_add_ons_extension_process_release_rollout.statistic: percentile
+      android_add_ons_extension_process_release_rollout.metric: 'ad_clicks'
+      android_add_ons_extension_process_release_rollout.statistic: mean
     row: 20
     col: 12
     width: 12
@@ -212,7 +213,6 @@
     show_grid: true
     listen:
       Date: android_add_ons_extension_process_release_rollout.submission_date
-      Percentile: android_add_ons_extension_process_release_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

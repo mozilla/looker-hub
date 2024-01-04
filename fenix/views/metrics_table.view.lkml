@@ -2432,6 +2432,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__gpu_process_crash_fallbacks {
+    sql: ${TABLE}.metrics.labeled_counter.gpu_process_crash_fallbacks ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__ipc_received_messages_content_background {
     sql: ${TABLE}.metrics.labeled_counter.ipc_received_messages_content_background ;;
     hidden: yes
@@ -3046,6 +3051,20 @@ view: metrics_table {
     group_item_label: "Gfx Display Primary Width"
   }
 
+  dimension: metrics__quantity__gpu_process_total_launch_attempts {
+    sql: ${TABLE}.metrics.quantity.gpu_process_total_launch_attempts ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Gpu Process Total Launch Attempts"
+  }
+
+  dimension: metrics__quantity__gpu_process_unstable_launch_attempts {
+    sql: ${TABLE}.metrics.quantity.gpu_process_unstable_launch_attempts ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Gpu Process Unstable Launch Attempts"
+  }
+
   dimension: metrics__quantity__logins_saved_all {
     sql: ${TABLE}.metrics.quantity.logins_saved_all ;;
     type: number
@@ -3492,6 +3511,13 @@ view: metrics_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Glean Database Rkv Load Error"
+  }
+
+  dimension: metrics__string__gpu_process_feature_status {
+    sql: ${TABLE}.metrics.string.gpu_process_feature_status ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gpu Process Feature Status"
   }
 
   dimension: metrics__string__metrics_adjust_ad_group {

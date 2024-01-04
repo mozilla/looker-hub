@@ -5,11 +5,11 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: firefox_desktop_use_counters_v1_last_updated {
-  label: "Firefox Desktop Use Counters Last Updated"
+datagroup: experiments_stats_v1_last_updated {
+  label: "Experiments Metrics External Last Updated"
   sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.firefox_desktop_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'firefox_desktop_use_counters_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:firefox_desktop_derived.firefox_desktop_use_counters_v1 is modified."
+    FROM `moz-fx-data-shared-prod`.telemetry_dev_cycle_external.INFORMATION_SCHEMA.PARTITIONS
+    WHERE table_name = 'experiments_stats_v1' ;;
+  description: "Updates when moz-fx-data-shared-prod:telemetry_dev_cycle_external.experiments_stats_v1 is modified."
   max_cache_age: "24 hours"
 }
