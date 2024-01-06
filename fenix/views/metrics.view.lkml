@@ -3685,7 +3685,7 @@ ensure it's not too expensive.  This value is only available on Android
 
   dimension: metrics__counter__dotprint_android_dialog_requested {
     label: "Dotprint Android Dialog Requested"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.dotprint_android_dialog_requested ;;
     type: number
     group_label: "Dotprint"
@@ -3720,7 +3720,7 @@ ensure it's not too expensive.  This value is only available on Android
 
   dimension: metrics__counter__dotprint_requested {
     label: "Dotprint Requested"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.dotprint_requested ;;
     type: number
     group_label: "Dotprint"
@@ -14419,7 +14419,7 @@ view: metrics__metrics__labeled_counter__dotprint_failure {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__dotprint_failure
     suggest_dimension: suggest__metrics__metrics__labeled_counter__dotprint_failure.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -14431,13 +14431,13 @@ view: metrics__metrics__labeled_counter__dotprint_failure {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
