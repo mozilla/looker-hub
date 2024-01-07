@@ -3650,6 +3650,40 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
+  dimension: metrics__quantity__data_storage_alternate_services {
+    label: "Data Storage Alternate Services"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.data_storage_alternate_services ;;
+    type: number
+    group_label: "Data Storage"
+    group_item_label: "Alternate Services"
+
+    link: {
+      label: "Glean Dictionary reference for Data Storage Alternate Services"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/data_storage_alternate_services"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of entries stored in the AlternateServices nsIDataStorage"
+  }
+
+  dimension: metrics__quantity__data_storage_client_auth_remember_list {
+    label: "Data Storage Client Auth Remember List"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.data_storage_client_auth_remember_list ;;
+    type: number
+    group_label: "Data Storage"
+    group_item_label: "Client Auth Remember List"
+
+    link: {
+      label: "Glean Dictionary reference for Data Storage Client Auth Remember List"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/data_storage_client_auth_remember_list"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of entries stored in the ClientAuthRememberList nsIDataStorage"
+  }
+
   dimension: metrics__labeled_counter__data_storage_entries {
     label: "Data Storage Entries"
     hidden: yes
@@ -3681,6 +3715,23 @@ ensure it's not too expensive.  This value is only available on Android
     }
 
     description: "Indicates whether or not migration was successful for each nsIDataStorage."
+  }
+
+  dimension: metrics__quantity__data_storage_site_security_service_state {
+    label: "Data Storage Site Security Service State"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.data_storage_site_security_service_state ;;
+    type: number
+    group_label: "Data Storage"
+    group_item_label: "Site Security Service State"
+
+    link: {
+      label: "Glean Dictionary reference for Data Storage Site Security Service State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/data_storage_site_security_service_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of entries stored in the SiteSecurityServiceState nsIDataStorage"
   }
 
   dimension: metrics__counter__dotprint_android_dialog_requested {
