@@ -5607,6 +5607,14 @@ mozillavpn_backend_cirrus:
       type: glean_ping_explore
       views:
         base_view: deletion_request
+    enrollment:
+      type: glean_ping_explore
+      views:
+        base_view: enrollment
+    enrollment_status:
+      type: glean_ping_explore
+      views:
+        base_view: enrollment_status
     events:
       type: events_explore
       views:
@@ -5616,6 +5624,10 @@ mozillavpn_backend_cirrus:
       type: glean_ping_explore
       views:
         base_view: metrics
+    startup:
+      type: glean_ping_explore
+      views:
+        base_view: startup
   glean_app: true
   owners:
   - brizental@mozilla.com
@@ -5639,6 +5651,24 @@ mozillavpn_backend_cirrus:
       tables:
       - channel: null
         table: mozdata.mozillavpn_backend_cirrus.deletion_request
+      type: table_view
+    enrollment:
+      tables:
+      - table: mozdata.mozillavpn_backend_cirrus.enrollment
+      type: glean_ping_view
+    enrollment_status:
+      tables:
+      - table: mozdata.mozillavpn_backend_cirrus.enrollment_status
+      type: glean_ping_view
+    enrollment_status_table:
+      tables:
+      - channel: null
+        table: mozdata.mozillavpn_backend_cirrus.enrollment_status
+      type: table_view
+    enrollment_table:
+      tables:
+      - channel: null
+        table: mozdata.mozillavpn_backend_cirrus.enrollment
       type: table_view
     events:
       tables:
@@ -5668,6 +5698,15 @@ mozillavpn_backend_cirrus:
       tables:
       - channel: null
         table: mozdata.mozillavpn_backend_cirrus.metrics
+      type: table_view
+    startup:
+      tables:
+      - table: mozdata.mozillavpn_backend_cirrus.startup
+      type: glean_ping_view
+    startup_table:
+      tables:
+      - channel: null
+        table: mozdata.mozillavpn_backend_cirrus.startup
       type: table_view
 mozphab:
   explores:
