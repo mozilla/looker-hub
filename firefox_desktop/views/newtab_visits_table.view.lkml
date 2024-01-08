@@ -306,6 +306,11 @@ view: newtab_visits_table__topsite_tile_interactions {
     type: number
   }
 
+  dimension: organic_topsite_tile_dismissals {
+    sql: ${TABLE}.organic_topsite_tile_dismissals ;;
+    type: number
+  }
+
   dimension: organic_topsite_tile_impressions {
     sql: ${TABLE}.organic_topsite_tile_impressions ;;
     type: number
@@ -313,6 +318,11 @@ view: newtab_visits_table__topsite_tile_interactions {
 
   dimension: sponsored_topsite_tile_clicks {
     sql: ${TABLE}.sponsored_topsite_tile_clicks ;;
+    type: number
+  }
+
+  dimension: sponsored_topsite_tile_dismissals {
+    sql: ${TABLE}.sponsored_topsite_tile_dismissals ;;
     type: number
   }
 
@@ -333,6 +343,11 @@ view: newtab_visits_table__topsite_tile_interactions {
 
   dimension: topsite_tile_clicks {
     sql: ${TABLE}.topsite_tile_clicks ;;
+    type: number
+  }
+
+  dimension: topsite_tile_dismissals {
+    sql: ${TABLE}.topsite_tile_dismissals ;;
     type: number
   }
 

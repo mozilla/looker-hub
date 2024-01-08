@@ -241,6 +241,20 @@ view: all_subscriptions_table {
     type: string
   }
 
+  dimension_group: attribution {
+    sql: ${TABLE}.attribution_timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+  }
+
   dimension_group: cancel_at {
     sql: ${TABLE}.cancel_at ;;
     type: time

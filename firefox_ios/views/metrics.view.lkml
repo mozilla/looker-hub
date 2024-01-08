@@ -2926,6 +2926,25 @@ Set in BrowserViewController and updated when changed by user.
 "
   }
 
+  dimension: metrics__boolean__shopping_settings_disabled_ads {
+    label: "Shopping Settings Disabled Ads"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.shopping_settings_disabled_ads ;;
+    type: yesno
+    group_label: "Shopping Settings"
+    group_item_label: "Disabled Ads"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Settings Disabled Ads"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/shopping_settings_disabled_ads"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if the user has opted out of being shown ads in the Fakespot screen
+experience. Set in BrowserViewController and updated when changed by user.
+"
+  }
+
   dimension: metrics__boolean__shopping_settings_nimbus_disabled_shopping {
     label: "Shopping Settings Nimbus Disabled Shopping"
     hidden: no
