@@ -357,17 +357,17 @@
   - title: Normalized Channel
     name: Normalized Channel
     type: string_filter
-    default_value: 'aurora'
+    default_value: 'release'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'aurora'
       - 'release'
-      - 'nightly'
       - 'beta'
+      - 'nightly'
+      - 'aurora'
       - 'esr'
       - 'default'
       - 'nightly-pine'
