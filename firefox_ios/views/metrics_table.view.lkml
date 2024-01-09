@@ -2478,6 +2478,124 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__tabs_tab_switch__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__tabs_tab_switch__count {
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__tabs_tab_switch__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__tabs_tab_switch__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__tabs_tab_switch__range {
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__tabs_tab_switch__sum {
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__tabs_tab_switch__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__tabs_tab_switch__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__tabs_tab_switch__values {
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__count {
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__range {
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__sum {
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__values {
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__uuid__legacy_ids_client_id {
     sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
     type: string
@@ -2850,6 +2968,30 @@ view: metrics_table__metrics__timing_distribution__nimbus_health_fetch_experimen
 }
 
 view: metrics_table__metrics__timing_distribution__places_history_migration_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__tabs_tab_switch__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__webview_page_load__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
