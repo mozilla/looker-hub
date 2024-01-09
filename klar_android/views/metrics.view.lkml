@@ -1169,6 +1169,40 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__quantity__data_storage_alternate_services {
+    label: "Data Storage Alternate Services"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.data_storage_alternate_services ;;
+    type: number
+    group_label: "Data Storage"
+    group_item_label: "Alternate Services"
+
+    link: {
+      label: "Glean Dictionary reference for Data Storage Alternate Services"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/data_storage_alternate_services"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of entries stored in the AlternateServices nsIDataStorage"
+  }
+
+  dimension: metrics__quantity__data_storage_client_auth_remember_list {
+    label: "Data Storage Client Auth Remember List"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.data_storage_client_auth_remember_list ;;
+    type: number
+    group_label: "Data Storage"
+    group_item_label: "Client Auth Remember List"
+
+    link: {
+      label: "Glean Dictionary reference for Data Storage Client Auth Remember List"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/data_storage_client_auth_remember_list"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of entries stored in the ClientAuthRememberList nsIDataStorage"
+  }
+
   dimension: metrics__labeled_counter__data_storage_entries {
     label: "Data Storage Entries"
     hidden: yes
@@ -1187,7 +1221,7 @@ the tracking protection settings panel from the toolbar.
 
   dimension: metrics__labeled_boolean__data_storage_migration {
     label: "Data Storage Migration"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_boolean.data_storage_migration ;;
     type: string
     group_label: "Data Storage"
@@ -1202,9 +1236,26 @@ the tracking protection settings panel from the toolbar.
     description: "Indicates whether or not migration was successful for each nsIDataStorage."
   }
 
+  dimension: metrics__quantity__data_storage_site_security_service_state {
+    label: "Data Storage Site Security Service State"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.data_storage_site_security_service_state ;;
+    type: number
+    group_label: "Data Storage"
+    group_item_label: "Site Security Service State"
+
+    link: {
+      label: "Glean Dictionary reference for Data Storage Site Security Service State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/data_storage_site_security_service_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of entries stored in the SiteSecurityServiceState nsIDataStorage"
+  }
+
   dimension: metrics__counter__dotprint_android_dialog_requested {
     label: "Dotprint Android Dialog Requested"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.dotprint_android_dialog_requested ;;
     type: number
     group_label: "Dotprint"
@@ -1239,7 +1290,7 @@ the tracking protection settings panel from the toolbar.
 
   dimension: metrics__counter__dotprint_requested {
     label: "Dotprint Requested"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.dotprint_requested ;;
     type: number
     group_label: "Dotprint"
@@ -7464,7 +7515,7 @@ view: metrics__metrics__labeled_counter__data_storage_entries {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__data_storage_entries
     suggest_dimension: suggest__metrics__metrics__labeled_counter__data_storage_entries.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -7476,13 +7527,13 @@ view: metrics__metrics__labeled_counter__data_storage_entries {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -7507,7 +7558,7 @@ view: metrics__metrics__labeled_counter__dotprint_failure {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__dotprint_failure
     suggest_dimension: suggest__metrics__metrics__labeled_counter__dotprint_failure.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -7519,13 +7570,13 @@ view: metrics__metrics__labeled_counter__dotprint_failure {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 

@@ -349,6 +349,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__do_task_implementation {
+    sql: ${TABLE}.metrics.string.do_task_implementation ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Do Task Implementation"
+    description: "Which implementation of `do-task` was used: \"JavaScript\" by default or \"C++\" if a Nimbus rollback was acted upon.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
