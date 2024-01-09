@@ -6,7 +6,7 @@
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
 datagroup: vat_rates_v1_last_updated {
-  label: "vat_rates_v1 Last Updated"
+  label: "VAT Rates Last Updated"
   sql_trigger: SELECT MAX(last_modified_time)
     FROM `moz-fx-data-shared-prod`.mozilla_vpn_derived.INFORMATION_SCHEMA.PARTITIONS
     WHERE table_name = 'vat_rates_v1' ;;

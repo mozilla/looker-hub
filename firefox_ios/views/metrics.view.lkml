@@ -3351,6 +3351,24 @@ button in the URL bar.
 "
   }
 
+  dimension: metrics__timing_distribution__tabs_tab_switch__sum {
+    label: "Tabs Tab Switch Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.sum ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Tab Switch Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Tab Switch Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_tab_switch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how long it takes to switch to another tab
+"
+  }
+
   dimension: metrics__boolean__theme_automatic_mode {
     label: "Theme Automatic Mode"
     hidden: yes
@@ -3537,6 +3555,24 @@ tracking-protection that is enabled. One of:
 
     description: "Recorded when the user enters the background. This reports
 the currently selected wallpaper if it's not the default.
+"
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__sum {
+    label: "Webview Page Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.sum ;;
+    type: number
+    group_label: "Webview"
+    group_item_label: "Page Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webview Page Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/webview_page_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how long each page takes to load
 "
   }
 
