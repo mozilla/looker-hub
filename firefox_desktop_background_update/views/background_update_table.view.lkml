@@ -121,6 +121,14 @@ view: background_update_table {
     description: "The version of the Glean SDK"
   }
 
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
@@ -300,6 +308,24 @@ view: background_update_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__background_update_automatic_restart_attempted {
+    sql: ${TABLE}.metrics.boolean.background_update_automatic_restart_attempted ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Update Automatic Restart Attempted"
+    description: "True if the background update task successfully attempted an automatic restart.
+"
+  }
+
+  dimension: metrics__boolean__background_update_automatic_restart_success {
+    sql: ${TABLE}.metrics.boolean.background_update_automatic_restart_success ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Update Automatic Restart Success"
+    description: "True if the background update task successfully restarted after an automatic restart.
+"
+  }
+
   dimension: metrics__boolean__background_update_exit_code_exception {
     sql: ${TABLE}.metrics.boolean.background_update_exit_code_exception ;;
     type: yesno
@@ -315,6 +341,42 @@ view: background_update_table {
     group_label: "Metrics Boolean"
     group_item_label: "Background Update Exit Code Success"
     description: "True if the exit code/status of the background update task is 0, which means success.
+"
+  }
+
+  dimension: metrics__boolean__background_update_registered_restart_attempted {
+    sql: ${TABLE}.metrics.boolean.background_update_registered_restart_attempted ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Update Registered Restart Attempted"
+    description: "True if the background update task successfully registered a restart.
+"
+  }
+
+  dimension: metrics__boolean__background_update_registered_restart_success {
+    sql: ${TABLE}.metrics.boolean.background_update_registered_restart_success ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Update Registered Restart Success"
+    description: "True if the background update task successfully restarted after a registered restart.
+"
+  }
+
+  dimension: metrics__boolean__background_update_targeting_exception {
+    sql: ${TABLE}.metrics.boolean.background_update_targeting_exception ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Update Targeting Exception"
+    description: "True if the default profile had a targeting snapshot serialized to disk, but an exception was thrown reading it.
+"
+  }
+
+  dimension: metrics__boolean__background_update_targeting_exists {
+    sql: ${TABLE}.metrics.boolean.background_update_targeting_exists ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Background Update Targeting Exists"
+    description: "True if the default profile had a targeting snapshot serialized to disk, and there was no exception thrown reading it.
 "
   }
 
@@ -390,9 +452,18 @@ view: background_update_table {
 "
   }
 
-  dimension: metrics__jwe {
-    sql: ${TABLE}.metrics.jwe ;;
-    hidden: yes
+  dimension: metrics__datetime__raw_background_update_targeting_env_current_date {
+    sql: ${TABLE}.metrics.datetime.raw_background_update_targeting_env_current_date ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Background Update Targeting Env Current Date"
+  }
+
+  dimension: metrics__datetime__raw_background_update_targeting_env_profile_age {
+    sql: ${TABLE}.metrics.datetime.raw_background_update_targeting_env_profile_age ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Background Update Targeting Env Profile Age"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -427,9 +498,23 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
-  dimension: metrics__labeled_rate {
-    sql: ${TABLE}.metrics.labeled_rate ;;
-    hidden: yes
+  dimension: metrics__quantity__background_update_targeting_env_firefox_version {
+    sql: ${TABLE}.metrics.quantity.background_update_targeting_env_firefox_version ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Background Update Targeting Env Firefox Version"
+    description: "The `environment.firefoxVersion` of the default profile's serialized targeting snapshot.  At the time of writing, this version is an integer representing the Firefox major version, e.g., `109`.
+"
+  }
+
+  dimension: metrics__quantity__background_update_targeting_version {
+    sql: ${TABLE}.metrics.quantity.background_update_targeting_version ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Background Update Targeting Version"
+    description: "If the default profile had a targeting snapshot serialized to disk, the `version` of the snapshot.
+This version number does not have a physical unit: it's only useful to compare between versions.
+"
   }
 
   dimension: metrics__string__background_update_final_state {
@@ -438,6 +523,16 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics String"
     group_item_label: "Background Update Final State"
     description: "String description of the final state the update state machine reached.
+"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -460,22 +555,14 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
   }
 
-  dimension: metrics__text {
-    sql: ${TABLE}.metrics.text ;;
-    hidden: yes
-  }
-
-  dimension: metrics__url {
-    sql: ${TABLE}.metrics.url ;;
-    hidden: yes
-  }
-
   dimension: metrics__uuid__background_update_client_id {
     sql: ${TABLE}.metrics.uuid.background_update_client_id ;;
     type: string
     group_label: "Metrics Uuid"
     group_item_label: "Background Update Client Id"
-    description: "The Telemetry client ID of the default profile.
+    description: "The legacy Telemetry client ID of this installation's default profile.
+The default profile is as determined by the Profile Service, namely `nsIToolkitProfileService.defaultProfile`.  The majority of users have only one Firefox installation and only one profile, so the default profile is their regular browsing profile.
+It is possible for a Firefox installation to not have a default profile, but in such cases the background update task will abort before sending any telemetry; therefore, the legacy Telemetry client ID should always be present.
 "
   }
 
@@ -569,6 +656,40 @@ The labels are the `category.name` identifier of the metric.
     label: "Metadata Header: Parsed Date"
   }
 
+  dimension_group: metrics__datetime__background_update_targeting_env_current {
+    sql: ${TABLE}.metrics.datetime.background_update_targeting_env_current_date ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Background Update Targeting Env Current Date"
+    description: "The `environment.currentDate` of the default profile's serialized targeting snapshot.
+"
+  }
+
+  dimension_group: metrics__datetime__background_update_targeting_env_profile_age {
+    sql: ${TABLE}.metrics.datetime.background_update_targeting_env_profile_age ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Background Update Targeting Env Profile Age"
+    description: "The `environment.profileAgeCreated` of the default profile's serialized targeting snapshot.
+"
+  }
+
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
@@ -651,75 +772,6 @@ view: background_update_table__events__extra {
   }
 }
 
-view: background_update_table__metrics__jwe {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: background_update_table__metrics__labeled_rate {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-}
-
-view: background_update_table__metrics__labeled_rate__value {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__denominator {
-    sql: ${TABLE}.value.denominator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Denominator"
-  }
-
-  dimension: value__numerator {
-    sql: ${TABLE}.value.numerator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Numerator"
-  }
-}
-
-view: background_update_table__metrics__text {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: background_update_table__metrics__url {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
 view: background_update_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -731,6 +783,13 @@ view: background_update_table__ping_info__experiments {
     type: string
     group_label: "Value"
     group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
   }
 
   dimension: value__extra__type {

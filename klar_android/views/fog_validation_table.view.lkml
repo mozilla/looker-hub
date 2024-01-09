@@ -121,6 +121,14 @@ view: fog_validation_table {
     description: "The version of the Glean SDK"
   }
 
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
@@ -348,6 +356,16 @@ The labels are the `category.name` identifier of the metric.
     description: "The version of the OS running Firefox, as detected by Gecko. To be sent only in the \"fog-validation\" ping."
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
   dimension: metrics__uuid__fog_validation_legacy_telemetry_client_id {
     sql: ${TABLE}.metrics.uuid.fog_validation_legacy_telemetry_client_id ;;
     type: string
@@ -539,6 +557,13 @@ view: fog_validation_table__ping_info__experiments {
     type: string
     group_label: "Value"
     group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
   }
 
   dimension: value__extra__type {

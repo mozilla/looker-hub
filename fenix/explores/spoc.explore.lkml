@@ -14,7 +14,7 @@ explore: spoc {
 
   always_filter: {
     filters: [
-      channel: "mozdata.fenix.spoc",
+      channel: "release",
       submission_date: "28 days",
     ]
   }

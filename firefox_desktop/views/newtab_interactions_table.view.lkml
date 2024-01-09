@@ -5,6 +5,11 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: newtab_interactions_table {
+  dimension: activity_segment {
+    sql: ${TABLE}.activity_segment ;;
+    type: string
+  }
+
   dimension: browser_name {
     sql: ${TABLE}.browser_name ;;
     type: string
@@ -55,6 +60,16 @@ view: newtab_interactions_table {
     type: number
   }
 
+  dimension: is_new_profile {
+    sql: ${TABLE}.is_new_profile ;;
+    type: yesno
+  }
+
+  dimension: legacy_telemetry_client_id {
+    sql: ${TABLE}.legacy_telemetry_client_id ;;
+    type: string
+  }
+
   dimension: newtab_homepage_category {
     sql: ${TABLE}.newtab_homepage_category ;;
     type: string
@@ -102,6 +117,21 @@ view: newtab_interactions_table {
 
   dimension: organic_pocket_saves {
     sql: ${TABLE}.organic_pocket_saves ;;
+    type: number
+  }
+
+  dimension: organic_topsite_clicks {
+    sql: ${TABLE}.organic_topsite_clicks ;;
+    type: number
+  }
+
+  dimension: organic_topsite_dismissals {
+    sql: ${TABLE}.organic_topsite_dismissals ;;
+    type: number
+  }
+
+  dimension: organic_topsite_impressions {
+    sql: ${TABLE}.organic_topsite_impressions ;;
     type: number
   }
 
@@ -185,6 +215,11 @@ view: newtab_interactions_table {
     type: number
   }
 
+  dimension: sponsored_topsite_dismissals {
+    sql: ${TABLE}.sponsored_topsite_dismissals ;;
+    type: number
+  }
+
   dimension: sponsored_topsite_impressions {
     sql: ${TABLE}.sponsored_topsite_impressions ;;
     type: number
@@ -215,6 +250,11 @@ view: newtab_interactions_table {
     type: number
   }
 
+  dimension: topsite_dismissals {
+    sql: ${TABLE}.topsite_dismissals ;;
+    type: number
+  }
+
   dimension: topsite_impressions {
     sql: ${TABLE}.topsite_impressions ;;
     type: number
@@ -223,6 +263,11 @@ view: newtab_interactions_table {
   dimension: topsites_enabled {
     sql: ${TABLE}.topsites_enabled ;;
     type: yesno
+  }
+
+  dimension: topsites_rows {
+    sql: ${TABLE}.topsites_rows ;;
+    type: number
   }
 
   dimension_group: submission {
@@ -254,6 +299,13 @@ view: newtab_interactions_table__experiments {
     type: string
     group_label: "Value"
     group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
   }
 
   dimension: value__extra__type {

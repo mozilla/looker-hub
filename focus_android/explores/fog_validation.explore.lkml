@@ -14,7 +14,7 @@ explore: fog_validation {
 
   always_filter: {
     filters: [
-      channel: "mozdata.focus^_android.fog^_validation",
+      channel: "release",
       submission_date: "28 days",
     ]
   }

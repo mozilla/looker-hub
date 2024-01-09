@@ -14,7 +14,7 @@ explore: temp_logins_sync {
 
   always_filter: {
     filters: [
-      channel: "mozdata.firefox^_ios.temp^_logins^_sync",
+      channel: "release",
       submission_date: "28 days",
     ]
   }

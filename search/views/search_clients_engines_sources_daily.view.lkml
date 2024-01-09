@@ -131,8 +131,18 @@ view: search_clients_engines_sources_daily {
     hidden: yes
   }
 
+  dimension: has_adblocker_addon {
+    sql: ${TABLE}.has_adblocker_addon ;;
+    type: yesno
+  }
+
   dimension: is_default_browser {
     sql: ${TABLE}.is_default_browser ;;
+    type: yesno
+  }
+
+  dimension: is_sap_monetizable {
+    sql: ${TABLE}.is_sap_monetizable ;;
     type: yesno
   }
 
@@ -339,11 +349,6 @@ view: search_clients_engines_sources_daily {
     ]
     convert_tz: no
     datatype: date
-  }
-
-  measure: clients {
-    type: count_distinct
-    sql: ${client_id} ;;
   }
 
   sql_table_name: `mozdata.search.search_clients_engines_sources_daily` ;;

@@ -5,6 +5,11 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: logs {
+  dimension: analysis_basis {
+    sql: ${TABLE}.analysis_basis ;;
+    type: string
+  }
+
   dimension: exception {
     sql: ${TABLE}.exception ;;
     type: string
@@ -42,6 +47,16 @@ view: logs {
 
   dimension: metric {
     sql: ${TABLE}.metric ;;
+    type: string
+  }
+
+  dimension: segment {
+    sql: ${TABLE}.segment ;;
+    type: string
+  }
+
+  dimension: source {
+    sql: ${TABLE}.source ;;
     type: string
   }
 

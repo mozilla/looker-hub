@@ -5,6 +5,175 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: action {
+  dimension: metrics__string__navigator_geo {
+    label: "Navigator Geo"
+    hidden: no
+    sql: ${TABLE}.metrics.string.navigator_geo ;;
+    type: string
+    group_label: "Navigator"
+    group_item_label: "Geo"
+
+    link: {
+      label: "Glean Dictionary reference for Navigator Geo"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/navigator_geo"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The navigators ISO 3166 country name (not code) based on geo ip.
+"
+  }
+
+  dimension: metrics__string__navigator_geo_iso {
+    label: "Navigator Geo Iso"
+    hidden: no
+    sql: ${TABLE}.metrics.string.navigator_geo_iso ;;
+    type: string
+    group_label: "Navigator"
+    group_item_label: "Geo Iso"
+
+    link: {
+      label: "Glean Dictionary reference for Navigator Geo Iso"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/navigator_geo_iso"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The navigator's two-letter ISO 3166 country code based on geo ip.
+"
+  }
+
+  dimension: metrics__string__navigator_subscription_type {
+    label: "Navigator Subscription Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.navigator_subscription_type ;;
+    type: string
+    group_label: "Navigator"
+    group_item_label: "Subscription Type"
+
+    link: {
+      label: "Glean Dictionary reference for Navigator Subscription Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/navigator_subscription_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The subscription type of the user. can be one of
+'core','mdn_plus_5m','mdn_plus_5y','mdn_plus_10m','mdn_plus_10y'
+"
+  }
+
+  dimension: metrics__string__navigator_user_agent {
+    label: "Navigator User Agent"
+    hidden: no
+    sql: ${TABLE}.metrics.string.navigator_user_agent ;;
+    type: string
+    group_label: "Navigator"
+    group_item_label: "User Agent"
+
+    link: {
+      label: "Glean Dictionary reference for Navigator User Agent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/navigator_user_agent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The navigators user agent.
+"
+  }
+
+  dimension: metrics__string__navigator_viewport_breakpoint {
+    label: "Navigator Viewport Breakpoint"
+    hidden: no
+    sql: ${TABLE}.metrics.string.navigator_viewport_breakpoint ;;
+    type: string
+    group_label: "Navigator"
+    group_item_label: "Viewport Breakpoint"
+
+    link: {
+      label: "Glean Dictionary reference for Navigator Viewport Breakpoint"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/navigator_viewport_breakpoint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The currently displayed viewport breakpoint,
+one of \"xs\", \"sm\", \"md\",\"lg\", \"xl\" or \"xxl\".
+"
+  }
+
+  dimension: metrics__quantity__navigator_viewport_horizontal_coverage {
+    label: "Navigator Viewport Horizontal Coverage"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.navigator_viewport_horizontal_coverage ;;
+    type: number
+    group_label: "Navigator"
+    group_item_label: "Viewport Horizontal Coverage"
+
+    link: {
+      label: "Glean Dictionary reference for Navigator Viewport Horizontal Coverage"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/navigator_viewport_horizontal_coverage"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The ratio of viewport width to screen width, expressed as a percentage.
+"
+  }
+
+  dimension: metrics__quantity__navigator_viewport_ratio {
+    label: "Navigator Viewport Ratio"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.navigator_viewport_ratio ;;
+    type: number
+    group_label: "Navigator"
+    group_item_label: "Viewport Ratio"
+
+    link: {
+      label: "Glean Dictionary reference for Navigator Viewport Ratio"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/navigator_viewport_ratio"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The ratio of viewport width to viewport height,
+expressed as a percentage.
+"
+  }
+
+  dimension: metrics__string__page_http_status {
+    label: "Page Http Status"
+    hidden: no
+    sql: ${TABLE}.metrics.string.page_http_status ;;
+    type: string
+    group_label: "Page"
+    group_item_label: "Http Status"
+
+    link: {
+      label: "Glean Dictionary reference for Page Http Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/page_http_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The HTTP status code of the page.
+"
+  }
+
+  dimension: metrics__string__page_is_baseline {
+    label: "Page Is Baseline"
+    hidden: no
+    sql: ${TABLE}.metrics.string.page_is_baseline ;;
+    type: string
+    group_label: "Page"
+    group_item_label: "Is Baseline"
+
+    link: {
+      label: "Glean Dictionary reference for Page Is Baseline"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/page_is_baseline"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Baseline status of the page:
+null: the page has no baseline status
+\"baseline_high\": the page is baseline high
+\"baseline_low\": the page is baseline low
+\"not_baseline\" the page is not baseline
+"
+  }
+
   dimension: metrics__url2__page_path {
     label: "Page Path"
     hidden: no
@@ -38,6 +207,29 @@ view: action {
     }
 
     description: "The referring URL that linked to the page that was viewed.
+"
+  }
+
+  dimension: metrics__labeled_string__page_utm {
+    label: "Page Utm"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.page_utm ;;
+    type: string
+    group_label: "Page"
+    group_item_label: "Utm"
+
+    link: {
+      label: "Glean Dictionary reference for Page Utm"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mdn_yari/metrics/page_utm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The UTM parameters of the page, used to attribute the source of traffic:
+\"source\": which site sent the traffic
+\"medium\": what type of link was used
+\"campaign\": what specific campaign or experiment does this relate to
+\"term\": here for completeness, the search term that was purchased/bid on
+\"content\": what specifically was clicked to bring the user to the site
 "
   }
 
@@ -227,6 +419,14 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
     description: "The version of the Glean SDK"
+  }
+
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
   }
 
   dimension: document_id {

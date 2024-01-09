@@ -5,6 +5,25 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: migration {
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes
@@ -1435,6 +1454,13 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Telemetry Sdk Build"
   }
 
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
@@ -1494,6 +1520,25 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "Dnt"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_cipher_hex ;;
+    type: string
+    group_label: "Metadata Header Parsed X Lb Tags"
+    group_item_label: "Tls Cipher Hex"
+  }
+
+  dimension: metadata__header__parsed_x_lb_tags__tls_version {
+    sql: ${TABLE}.metadata.header.parsed_x_lb_tags.tls_version ;;
+    type: string
+    group_label: "Metadata Header Parsed X Lb Tags"
+    group_item_label: "Tls Version"
+  }
+
+  dimension: metadata__header__parsed_x_source_tags {
+    sql: ${TABLE}.metadata.header.parsed_x_source_tags ;;
+    hidden: yes
   }
 
   dimension: metadata__header__x_debug_id {
@@ -1580,6 +1625,12 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Version"
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+    description: "App ID of the channel data was received from"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -1588,6 +1639,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
@@ -1648,6 +1700,51 @@ The labels are the `category.name` identifier of the metric.
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+  }
+
+  dimension_group: metadata__header__parsed {
+    sql: ${TABLE}.metadata.header.parsed_date ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata Header: Parsed Date"
+  }
+
+  dimension_group: ping_info__parsed_end {
+    sql: ${TABLE}.ping_info.parsed_end_time ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Ping Info: Parsed End Time"
+  }
+
+  dimension_group: ping_info__parsed_start {
+    sql: ${TABLE}.ping_info.parsed_start_time ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Ping Info: Parsed Start Time"
   }
 
   dimension_group: submission {
@@ -2473,27 +2570,15 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.fenix.migration"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.fenix.migration"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_firefox_beta.migration"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix.migration"
-    }
+  filter: channel {
+    type: string
+    description: "Filter by the app's channel"
+    sql: {% condition %} ${TABLE}.normalized_channel {% endcondition %} ;;
+    default_value: "release"
+    suggestions: ["release", "beta", "nightly"]
   }
 
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.fenix.migration` ;;
 }
 
 view: migration__metrics__labeled_counter__glean_error_invalid_label {

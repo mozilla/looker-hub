@@ -121,6 +121,14 @@ view: events_table {
     description: "The version of the Glean SDK"
   }
 
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
@@ -300,6 +308,13 @@ view: events_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__datetime__raw_page_viewed {
+    sql: ${TABLE}.metrics.datetime.raw_page_viewed ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Page Viewed"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -329,6 +344,50 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_string__page_query_params {
+    sql: ${TABLE}.metrics.labeled_string.page_query_params ;;
+    hidden: yes
+    description: "Query parameters associated with the URL of
+the page that was viewed.
+"
+  }
+
+  dimension: metrics__string__page_http_status {
+    sql: ${TABLE}.metrics.string.page_http_status ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Page Http Status"
+    description: "The HTTP status code of the page.
+"
+  }
+
+  dimension: metrics__string__page_locale {
+    sql: ${TABLE}.metrics.string.page_locale ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Page Locale"
+    description: "The locale of the page that was viewed.
+"
+  }
+
+  dimension: metrics__string__page_path {
+    sql: ${TABLE}.metrics.string.page_path ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Page Path"
+    description: "The URL path of the page that was viewed, excluding locale.
+"
+  }
+
+  dimension: metrics__string__page_referrer {
+    sql: ${TABLE}.metrics.string.page_referrer ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Page Referrer"
+    description: "The referring URL that linked to the page that was viewed.
 "
   }
 
@@ -422,6 +481,23 @@ The labels are the `category.name` identifier of the metric.
     label: "Metadata Header: Parsed Date"
   }
 
+  dimension_group: metrics__datetime__page_viewed {
+    sql: ${TABLE}.metrics.datetime.page_viewed ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Page Viewed"
+    description: "The time a page was viewed.
+"
+  }
+
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
@@ -504,6 +580,18 @@ view: events_table__events__extra {
   }
 }
 
+view: events_table__metrics__labeled_string__page_query_params {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
 view: events_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -515,6 +603,13 @@ view: events_table__ping_info__experiments {
     type: string
     group_label: "Value"
     group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
   }
 
   dimension: value__extra__type {

@@ -221,6 +221,24 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__quantity__topsites_rows {
+    label: "Topsites Rows"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.topsites_rows ;;
+    type: number
+    group_label: "Topsites"
+    group_item_label: "Rows"
+
+    link: {
+      label: "Glean Dictionary reference for Topsites Rows"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/topsites_rows"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of topsite tile rows configured to be shown on the newtab page. Corresponds to the value of the `browser.newtabpage.activity-stream.topSitesRows` pref. This is not the number of rows actually seen by the user: if the browser window is partially off-screen, or isn't wide enough to accommodate eight tiles per row, the actual number of rows may be different.
+"
+  }
+
   dimension: metrics__boolean__topsites_sponsored_enabled {
     label: "Topsites Sponsored Enabled"
     hidden: no
@@ -236,6 +254,25 @@ default engine, and hence both versions of these fields will be filled in.
     }
 
     description: "Whether sponsored topsites are enabled on the newtab. AKA the \"Sponsored Shortcuts\" section. Corresponds to the value of the `browser.newtabpage.activity-stream.showSponsoredTopSites` pref. Can be `true` even if topsites.enabled is `false`.
+"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -425,6 +462,14 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
     description: "The version of the Glean SDK"
+  }
+
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
   }
 
   dimension: document_id {

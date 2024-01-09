@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: topsites_impression {
+  dimension: metrics__boolean__customize_home_contile {
+    label: "Customize Home Contile"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.customize_home_contile ;;
+    type: yesno
+    group_label: "Customize Home"
+    group_item_label: "Contile"
+
+    link: {
+      label: "Glean Dictionary reference for Customize Home Contile"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/customize_home_contile"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An indication of whether Contile is enabled to be displayed
+"
+  }
+
   dimension: metrics__uuid__top_sites_context_id {
     label: "Top Sites Context Id"
     hidden: no
@@ -77,6 +95,25 @@ click_url for “click” event).
     }
 
     description: "A unique identifier provided by the AdM for the sponsored TopSites tile
+"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -251,6 +288,13 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
+  }
+
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
   }
 
   dimension: document_id {
@@ -555,27 +599,15 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.fenix.topsites_impression"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.fenix.topsites_impression"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_firefox_beta.topsites_impression"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix.topsites_impression"
-    }
+  filter: channel {
+    type: string
+    description: "Filter by the app's channel"
+    sql: {% condition %} ${TABLE}.normalized_channel {% endcondition %} ;;
+    default_value: "beta"
+    suggestions: ["beta", "nightly"]
   }
 
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.org_mozilla_firefox_beta.topsites_impression` ;;
 }
 
 view: suggest__topsites_impression__metrics__labeled_counter__glean_error_invalid_label {
@@ -583,7 +615,7 @@ view: suggest__topsites_impression__metrics__labeled_counter__glean_error_invali
     sql: select
     m.key,
     count(*) as n
-from mozdata.fenix.topsites_impression as t,
+from mozdata.org_mozilla_firefox_beta.topsites_impression as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -602,7 +634,7 @@ view: suggest__topsites_impression__metrics__labeled_counter__glean_error_invali
     sql: select
     m.key,
     count(*) as n
-from mozdata.fenix.topsites_impression as t,
+from mozdata.org_mozilla_firefox_beta.topsites_impression as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -621,7 +653,7 @@ view: suggest__topsites_impression__metrics__labeled_counter__glean_error_invali
     sql: select
     m.key,
     count(*) as n
-from mozdata.fenix.topsites_impression as t,
+from mozdata.org_mozilla_firefox_beta.topsites_impression as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -640,7 +672,7 @@ view: suggest__topsites_impression__metrics__labeled_counter__glean_error_invali
     sql: select
     m.key,
     count(*) as n
-from mozdata.fenix.topsites_impression as t,
+from mozdata.org_mozilla_firefox_beta.topsites_impression as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0

@@ -121,6 +121,14 @@ view: baseline_table {
     description: "The version of the Glean SDK"
   }
 
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
@@ -321,25 +329,25 @@ that programmatically redirect to a new location.
     description: "The number of metrics pings sent during the lifetime of this baseline ping."
   }
 
-  dimension: metrics__datetime__glean_validation_first_run_hour {
-    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
+  dimension: metrics__datetime__raw_glean_validation_first_run_hour {
+    sql: ${TABLE}.metrics.datetime.raw_glean_validation_first_run_hour ;;
     type: string
     group_label: "Metrics Datetime"
-    group_item_label: "Glean Validation First Run Hour"
-    description: "The hour of the first run of the application.
-"
-  }
-
-  dimension: metrics__jwe {
-    sql: ${TABLE}.metrics.jwe ;;
-    hidden: yes
+    group_item_label: "Raw Glean Validation First Run Hour"
   }
 
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     hidden: yes
     description: "Records clicks of adverts on SERP pages.
-The key format is `<provider-name>`.
+The key format is
+`<provider-name>.in-content.[sap|sap-follow-on|organic].[code|none](.[channel])?`,
+where:
+
+* `provider-name` is the name of the provider,
+* `sap|sap-follow-on|organic` is the search access point,
+* `code` is set when the url matches any of the provider's code prefixes,
+* `channel` is set to the url \"channel\" query parameter.
 "
   }
 
@@ -410,11 +418,6 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
-  dimension: metrics__labeled_rate {
-    sql: ${TABLE}.metrics.labeled_rate ;;
-    hidden: yes
-  }
-
   dimension: metrics__string__browser_default_search_engine {
     sql: ${TABLE}.metrics.string.browser_default_search_engine ;;
     type: string
@@ -436,9 +439,14 @@ to indicate \"undetermined\".
 "
   }
 
-  dimension: metrics__text {
-    sql: ${TABLE}.metrics.text ;;
-    hidden: yes
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimenation enrollment.
+"
   }
 
   dimension: metrics__timespan__glean_baseline_duration__time_unit {
@@ -455,9 +463,13 @@ to indicate \"undetermined\".
     group_item_label: "Value"
   }
 
-  dimension: metrics__url {
-    sql: ${TABLE}.metrics.url ;;
-    hidden: yes
+  dimension: metrics__uuid__legacy_ids_client_id {
+    sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Legacy Ids Client Id"
+    description: "Sets the legacy client ID as part of the deletion-reqest and other pings.
+"
   }
 
   dimension: normalized_app_name {
@@ -550,6 +562,23 @@ to indicate \"undetermined\".
     label: "Metadata Header: Parsed Date"
   }
 
+  dimension_group: metrics__datetime__glean_validation_first_run_hour {
+    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Glean Validation First Run Hour"
+    description: "The hour of the first run of the application.
+"
+  }
+
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
@@ -632,75 +661,6 @@ view: baseline_table__events__extra {
   }
 }
 
-view: baseline_table__metrics__jwe {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: baseline_table__metrics__labeled_rate {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-}
-
-view: baseline_table__metrics__labeled_rate__value {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__denominator {
-    sql: ${TABLE}.value.denominator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Denominator"
-  }
-
-  dimension: value__numerator {
-    sql: ${TABLE}.value.numerator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Numerator"
-  }
-}
-
-view: baseline_table__metrics__text {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: baseline_table__metrics__url {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
 view: baseline_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -712,6 +672,13 @@ view: baseline_table__ping_info__experiments {
     type: string
     group_label: "Value"
     group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
   }
 
   dimension: value__extra__type {

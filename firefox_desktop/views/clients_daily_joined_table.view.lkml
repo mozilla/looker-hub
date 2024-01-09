@@ -85,6 +85,11 @@ view: clients_daily_joined_table {
     type: string
   }
 
+  dimension: apple_model_id {
+    sql: ${TABLE}.apple_model_id ;;
+    type: string
+  }
+
   dimension: attribution__campaign {
     sql: ${TABLE}.attribution.campaign ;;
     type: string
@@ -97,6 +102,20 @@ view: clients_daily_joined_table {
     type: string
     group_label: "Attribution"
     group_item_label: "Content"
+  }
+
+  dimension: attribution__dlsource {
+    sql: ${TABLE}.attribution.dlsource ;;
+    type: string
+    group_label: "Attribution"
+    group_item_label: "Dlsource"
+  }
+
+  dimension: attribution__dltoken {
+    sql: ${TABLE}.attribution.dltoken ;;
+    type: string
+    group_label: "Attribution"
+    group_item_label: "Dltoken"
   }
 
   dimension: attribution__experiment {
@@ -118,6 +137,13 @@ view: clients_daily_joined_table {
     type: string
     group_label: "Attribution"
     group_item_label: "Source"
+  }
+
+  dimension: attribution__ua {
+    sql: ${TABLE}.attribution.ua ;;
+    type: string
+    group_label: "Attribution"
+    group_item_label: "Ua"
   }
 
   dimension: attribution__variation {
@@ -182,6 +208,11 @@ view: clients_daily_joined_table {
     type: number
   }
 
+  dimension: contextual_services_quicksuggest_block_dynamic_wikipedia_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_block_dynamic_wikipedia_sum ;;
+    hidden: yes
+  }
+
   dimension: contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum ;;
     hidden: yes
@@ -202,8 +233,23 @@ view: clients_daily_joined_table {
     hidden: yes
   }
 
+  dimension: contextual_services_quicksuggest_block_weather_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_block_weather_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_click_dynamic_wikipedia_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_click_dynamic_wikipedia_sum ;;
+    hidden: yes
+  }
+
   dimension: contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_click_nonsponsored_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_click_nonsponsored_sum ;;
     hidden: yes
   }
 
@@ -212,8 +258,23 @@ view: clients_daily_joined_table {
     hidden: yes
   }
 
+  dimension: contextual_services_quicksuggest_click_sponsored_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_click_sponsored_sum ;;
+    hidden: yes
+  }
+
   dimension: contextual_services_quicksuggest_click_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_click_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_click_weather_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_click_weather_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_help_dynamic_wikipedia_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_help_dynamic_wikipedia_sum ;;
     hidden: yes
   }
 
@@ -222,8 +283,18 @@ view: clients_daily_joined_table {
     hidden: yes
   }
 
+  dimension: contextual_services_quicksuggest_help_nonsponsored_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_help_nonsponsored_sum ;;
+    hidden: yes
+  }
+
   dimension: contextual_services_quicksuggest_help_sponsored_bestmatch_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_help_sponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_help_sponsored_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_help_sponsored_sum ;;
     hidden: yes
   }
 
@@ -232,8 +303,23 @@ view: clients_daily_joined_table {
     hidden: yes
   }
 
+  dimension: contextual_services_quicksuggest_help_weather_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_help_weather_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_impression_dynamic_wikipedia_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_impression_dynamic_wikipedia_sum ;;
+    hidden: yes
+  }
+
   dimension: contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_impression_nonsponsored_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_impression_nonsponsored_sum ;;
     hidden: yes
   }
 
@@ -242,8 +328,18 @@ view: clients_daily_joined_table {
     hidden: yes
   }
 
+  dimension: contextual_services_quicksuggest_impression_sponsored_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_impression_sponsored_sum ;;
+    hidden: yes
+  }
+
   dimension: contextual_services_quicksuggest_impression_sum {
     sql: ${TABLE}.contextual_services_quicksuggest_impression_sum ;;
+    hidden: yes
+  }
+
+  dimension: contextual_services_quicksuggest_impression_weather_sum {
+    sql: ${TABLE}.contextual_services_quicksuggest_impression_weather_sum ;;
     hidden: yes
   }
 
@@ -413,6 +509,21 @@ view: clients_daily_joined_table {
     type: string
   }
 
+  dimension: distribution_version {
+    sql: ${TABLE}.distribution_version ;;
+    type: string
+  }
+
+  dimension: distributor {
+    sql: ${TABLE}.distributor ;;
+    type: string
+  }
+
+  dimension: distributor_channel {
+    sql: ${TABLE}.distributor_channel ;;
+    type: string
+  }
+
   dimension: dom_parentprocess_private_window_used {
     sql: ${TABLE}.dom_parentprocess_private_window_used ;;
     type: yesno
@@ -433,8 +544,18 @@ view: clients_daily_joined_table {
     type: string
   }
 
+  dimension: env_build_platform_version {
+    sql: ${TABLE}.env_build_platform_version ;;
+    type: string
+  }
+
   dimension: env_build_version {
     sql: ${TABLE}.env_build_version ;;
+    type: string
+  }
+
+  dimension: env_build_xpcom_abi {
+    sql: ${TABLE}.env_build_xpcom_abi ;;
     type: string
   }
 
@@ -473,6 +594,11 @@ view: clients_daily_joined_table {
     hidden: yes
   }
 
+  dimension: first_document_id {
+    sql: ${TABLE}.first_document_id ;;
+    type: string
+  }
+
   dimension: first_paint_mean {
     sql: ${TABLE}.first_paint_mean ;;
     type: number
@@ -486,6 +612,11 @@ view: clients_daily_joined_table {
   dimension: fxa_configured {
     sql: ${TABLE}.fxa_configured ;;
     type: yesno
+  }
+
+  dimension: geo_db_version {
+    sql: ${TABLE}.geo_db_version ;;
+    type: string
   }
 
   dimension: geo_subdivision1 {
@@ -753,8 +884,28 @@ view: clients_daily_joined_table {
     type: number
   }
 
+  dimension: max_subsession_counter {
+    sql: ${TABLE}.max_subsession_counter ;;
+    type: number
+  }
+
+  dimension: media_play_time_ms_audio_sum {
+    sql: ${TABLE}.media_play_time_ms_audio_sum ;;
+    type: number
+  }
+
+  dimension: media_play_time_ms_video_sum {
+    sql: ${TABLE}.media_play_time_ms_video_sum ;;
+    type: number
+  }
+
   dimension: memory_mb {
     sql: ${TABLE}.memory_mb ;;
+    type: number
+  }
+
+  dimension: min_subsession_counter {
+    sql: ${TABLE}.min_subsession_counter ;;
     type: number
   }
 
@@ -818,6 +969,11 @@ view: clients_daily_joined_table {
     type: string
   }
 
+  dimension: partner_id {
+    sql: ${TABLE}.partner_id ;;
+    type: string
+  }
+
   dimension: pings_aggregated_by_this_row {
     sql: ${TABLE}.pings_aggregated_by_this_row ;;
     type: number
@@ -828,8 +984,38 @@ view: clients_daily_joined_table {
     type: number
   }
 
+  dimension: places_bookmarks_searchbar_cumulative_searches_sum {
+    sql: ${TABLE}.places_bookmarks_searchbar_cumulative_searches_sum ;;
+    type: number
+  }
+
+  dimension: places_library_cumulative_bookmark_searches_sum {
+    sql: ${TABLE}.places_library_cumulative_bookmark_searches_sum ;;
+    type: number
+  }
+
+  dimension: places_library_cumulative_history_searches_sum {
+    sql: ${TABLE}.places_library_cumulative_history_searches_sum ;;
+    type: number
+  }
+
   dimension: places_pages_count_mean {
     sql: ${TABLE}.places_pages_count_mean ;;
+    type: number
+  }
+
+  dimension: places_previousday_visits_mean {
+    sql: ${TABLE}.places_previousday_visits_mean ;;
+    type: number
+  }
+
+  dimension: places_searchbar_cumulative_filter_count_sum {
+    sql: ${TABLE}.places_searchbar_cumulative_filter_count_sum ;;
+    type: number
+  }
+
+  dimension: places_searchbar_cumulative_searches_sum {
+    sql: ${TABLE}.places_searchbar_cumulative_searches_sum ;;
     type: number
   }
 
@@ -1048,6 +1234,21 @@ view: clients_daily_joined_table {
     type: number
   }
 
+  dimension: scalar_parent_library_link_sum {
+    sql: ${TABLE}.scalar_parent_library_link_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_library_opened_sum {
+    sql: ${TABLE}.scalar_parent_library_opened_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_library_search_sum {
+    sql: ${TABLE}.scalar_parent_library_search_sum ;;
+    hidden: yes
+  }
+
   dimension: scalar_parent_navigator_storage_estimate_count_sum {
     sql: ${TABLE}.scalar_parent_navigator_storage_estimate_count_sum ;;
     type: number
@@ -1091,6 +1292,21 @@ view: clients_daily_joined_table {
   dimension: scalar_parent_os_environment_launched_via_taskbar_private {
     sql: ${TABLE}.scalar_parent_os_environment_launched_via_taskbar_private ;;
     type: yesno
+  }
+
+  dimension: scalar_parent_sidebar_link_sum {
+    sql: ${TABLE}.scalar_parent_sidebar_link_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_sidebar_opened_sum {
+    sql: ${TABLE}.scalar_parent_sidebar_opened_sum ;;
+    hidden: yes
+  }
+
+  dimension: scalar_parent_sidebar_search_sum {
+    sql: ${TABLE}.scalar_parent_sidebar_search_sum ;;
+    hidden: yes
   }
 
   dimension: scalar_parent_storage_sync_api_usage_extensions_using_sum {
@@ -1353,6 +1569,11 @@ view: clients_daily_joined_table {
     hidden: yes
   }
 
+  dimension: search_adclicks_urlbar_persisted_sum {
+    sql: ${TABLE}.search_adclicks_urlbar_persisted_sum ;;
+    hidden: yes
+  }
+
   dimension: search_adclicks_urlbar_searchmode_sum {
     sql: ${TABLE}.search_adclicks_urlbar_searchmode_sum ;;
     hidden: yes
@@ -1415,6 +1636,11 @@ view: clients_daily_joined_table {
 
   dimension: search_content_urlbar_handoff_sum {
     sql: ${TABLE}.search_content_urlbar_handoff_sum ;;
+    hidden: yes
+  }
+
+  dimension: search_content_urlbar_persisted_sum {
+    sql: ${TABLE}.search_content_urlbar_persisted_sum ;;
     hidden: yes
   }
 
@@ -1493,6 +1719,11 @@ view: clients_daily_joined_table {
     type: number
   }
 
+  dimension: search_count_urlbar_persisted {
+    sql: ${TABLE}.search_count_urlbar_persisted ;;
+    type: number
+  }
+
   dimension: search_count_urlbar_searchmode {
     sql: ${TABLE}.search_count_urlbar_searchmode ;;
     type: number
@@ -1563,6 +1794,11 @@ view: clients_daily_joined_table {
     hidden: yes
   }
 
+  dimension: search_withads_urlbar_persisted_sum {
+    sql: ${TABLE}.search_withads_urlbar_persisted_sum ;;
+    hidden: yes
+  }
+
   dimension: search_withads_urlbar_searchmode_sum {
     sql: ${TABLE}.search_withads_urlbar_searchmode_sum ;;
     hidden: yes
@@ -1606,6 +1842,16 @@ view: clients_daily_joined_table {
   dimension: ssl_handshake_result_success_sum {
     sql: ${TABLE}.ssl_handshake_result_success_sum ;;
     type: number
+  }
+
+  dimension: startup_profile_selection_first_ping_only {
+    sql: ${TABLE}.startup_profile_selection_first_ping_only ;;
+    type: string
+  }
+
+  dimension: startup_profile_selection_reason_first {
+    sql: ${TABLE}.startup_profile_selection_reason_first ;;
+    type: string
   }
 
   dimension: subsession_hours_sum {
@@ -1971,6 +2217,18 @@ view: clients_daily_joined_table__ad_clicks {
   }
 }
 
+view: clients_daily_joined_table__contextual_services_quicksuggest_block_dynamic_wikipedia_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: clients_daily_joined_table__contextual_services_quicksuggest_block_nonsponsored_bestmatch_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -2019,7 +2277,43 @@ view: clients_daily_joined_table__contextual_services_quicksuggest_block_sponsor
   }
 }
 
+view: clients_daily_joined_table__contextual_services_quicksuggest_block_weather_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__contextual_services_quicksuggest_click_dynamic_wikipedia_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: clients_daily_joined_table__contextual_services_quicksuggest_click_nonsponsored_bestmatch_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__contextual_services_quicksuggest_click_nonsponsored_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -2043,7 +2337,43 @@ view: clients_daily_joined_table__contextual_services_quicksuggest_click_sponsor
   }
 }
 
+view: clients_daily_joined_table__contextual_services_quicksuggest_click_sponsored_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: clients_daily_joined_table__contextual_services_quicksuggest_click_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__contextual_services_quicksuggest_click_weather_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__contextual_services_quicksuggest_help_dynamic_wikipedia_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -2067,7 +2397,31 @@ view: clients_daily_joined_table__contextual_services_quicksuggest_help_nonspons
   }
 }
 
+view: clients_daily_joined_table__contextual_services_quicksuggest_help_nonsponsored_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: clients_daily_joined_table__contextual_services_quicksuggest_help_sponsored_bestmatch_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__contextual_services_quicksuggest_help_sponsored_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -2091,7 +2445,43 @@ view: clients_daily_joined_table__contextual_services_quicksuggest_help_sum {
   }
 }
 
+view: clients_daily_joined_table__contextual_services_quicksuggest_help_weather_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__contextual_services_quicksuggest_impression_dynamic_wikipedia_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: clients_daily_joined_table__contextual_services_quicksuggest_impression_nonsponsored_bestmatch_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__contextual_services_quicksuggest_impression_nonsponsored_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -2115,7 +2505,31 @@ view: clients_daily_joined_table__contextual_services_quicksuggest_impression_sp
   }
 }
 
+view: clients_daily_joined_table__contextual_services_quicksuggest_impression_sponsored_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: clients_daily_joined_table__contextual_services_quicksuggest_impression_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__contextual_services_quicksuggest_impression_weather_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -2200,6 +2614,78 @@ view: clients_daily_joined_table__scalar_parent_browser_ui_interaction_preferenc
 }
 
 view: clients_daily_joined_table__scalar_parent_devtools_accessibility_select_accessible_for_node_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__scalar_parent_library_link_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__scalar_parent_library_opened_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__scalar_parent_library_search_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__scalar_parent_sidebar_link_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__scalar_parent_sidebar_opened_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__scalar_parent_sidebar_search_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -2751,6 +3237,18 @@ view: clients_daily_joined_table__search_adclicks_urlbar_handoff_sum {
   }
 }
 
+view: clients_daily_joined_table__search_adclicks_urlbar_persisted_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: clients_daily_joined_table__search_adclicks_urlbar_searchmode_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -2884,6 +3382,18 @@ view: clients_daily_joined_table__search_content_unknown_sum {
 }
 
 view: clients_daily_joined_table__search_content_urlbar_handoff_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__search_content_urlbar_persisted_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -3057,6 +3567,18 @@ view: clients_daily_joined_table__search_withads_unknown_sum {
 }
 
 view: clients_daily_joined_table__search_withads_urlbar_handoff_sum {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: clients_daily_joined_table__search_withads_urlbar_persisted_sum {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

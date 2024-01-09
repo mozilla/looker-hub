@@ -106,6 +106,13 @@ view: topsites_impression_table {
     group_item_label: "Telemetry Sdk Build"
   }
 
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
@@ -269,6 +276,13 @@ view: topsites_impression_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__customize_home_contile {
+    sql: ${TABLE}.metrics.boolean.customize_home_contile ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Customize Home Contile"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -296,11 +310,25 @@ view: topsites_impression_table {
     group_item_label: "Top Sites Contile Tile Id"
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+  }
+
   dimension: metrics__string__top_sites_contile_advertiser {
     sql: ${TABLE}.metrics.string.top_sites_contile_advertiser ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Top Sites Contile Advertiser"
+  }
+
+  dimension: metrics__url__top_sites_contile_reporting_url {
+    sql: ${TABLE}.metrics.url.top_sites_contile_reporting_url ;;
+    type: string
+    group_label: "Metrics Url"
+    group_item_label: "Top Sites Contile Reporting Url"
   }
 
   dimension: metrics__url2__top_sites_contile_reporting_url {
@@ -448,12 +476,7 @@ view: topsites_impression_table {
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.fenix.topsites_impression"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.fenix.topsites_impression"
-    }
+    default_value: "mozdata.org_mozilla_firefox_beta.topsites_impression"
 
     allowed_value: {
       label: "Beta"
@@ -463,6 +486,16 @@ view: topsites_impression_table {
     allowed_value: {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.topsites_impression"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.topsites_impression"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.topsites_impression"
     }
   }
 
@@ -514,6 +547,13 @@ view: topsites_impression_table__ping_info__experiments {
     type: string
     group_label: "Value"
     group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
   }
 
   dimension: value__extra__type {

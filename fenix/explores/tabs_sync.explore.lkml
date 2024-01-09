@@ -14,7 +14,7 @@ explore: tabs_sync {
 
   always_filter: {
     filters: [
-      channel: "mozdata.fenix.tabs^_sync",
+      channel: "release",
       submission_date: "28 days",
     ]
   }
@@ -48,6 +48,16 @@ explore: tabs_sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${tabs_sync.metrics__labeled_counter__tabs_sync_outgoing}) AS tabs_sync__metrics__labeled_counter__tabs_sync_outgoing ON ${tabs_sync.document_id} = ${tabs_sync__metrics__labeled_counter__tabs_sync_outgoing.document_id} ;;
   }
+
+  join: tabs_sync__metrics__labeled_counter__tabs_sync_v2_incoming {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${tabs_sync.metrics__labeled_counter__tabs_sync_v2_incoming}) AS tabs_sync__metrics__labeled_counter__tabs_sync_v2_incoming ON ${tabs_sync.document_id} = ${tabs_sync__metrics__labeled_counter__tabs_sync_v2_incoming.document_id} ;;
+  }
+
+  join: tabs_sync__metrics__labeled_counter__tabs_sync_v2_outgoing {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${tabs_sync.metrics__labeled_counter__tabs_sync_v2_outgoing}) AS tabs_sync__metrics__labeled_counter__tabs_sync_v2_outgoing ON ${tabs_sync.document_id} = ${tabs_sync__metrics__labeled_counter__tabs_sync_v2_outgoing.document_id} ;;
+  }
 }
 
 explore: suggest__tabs_sync__metrics__labeled_counter__glean_error_invalid_label {
@@ -71,5 +81,13 @@ explore: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_incoming {
 }
 
 explore: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_outgoing {
+  hidden: yes
+}
+
+explore: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_v2_incoming {
+  hidden: yes
+}
+
+explore: suggest__tabs_sync__metrics__labeled_counter__tabs_sync_v2_outgoing {
   hidden: yes
 }

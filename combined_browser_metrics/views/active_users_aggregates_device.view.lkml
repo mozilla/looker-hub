@@ -91,6 +91,11 @@ view: active_users_aggregates_device {
     type: string
   }
 
+  dimension: os_grouped {
+    sql: ${TABLE}.os_grouped ;;
+    type: string
+  }
+
   dimension: os_version {
     sql: ${TABLE}.os_version ;;
     type: string
@@ -104,6 +109,12 @@ view: active_users_aggregates_device {
   dimension: os_version_minor {
     sql: ${TABLE}.os_version_minor ;;
     type: number
+  }
+
+  dimension: qdau_desktop {
+    sql: ${TABLE}.qdau_desktop ;;
+    type: number
+    description: "Count of distinct, qualified Desktop clients that we received a main ping from on a given day. In mobile DAU = QDAU."
   }
 
   dimension: search_count {

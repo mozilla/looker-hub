@@ -14,7 +14,7 @@ explore: creditcards_sync {
 
   always_filter: {
     filters: [
-      channel: "mozdata.fenix.creditcards^_sync",
+      channel: "release",
       submission_date: "28 days",
     ]
   }
@@ -27,6 +27,16 @@ explore: creditcards_sync {
   join: creditcards_sync__metrics__labeled_counter__creditcards_sync_outgoing {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${creditcards_sync.metrics__labeled_counter__creditcards_sync_outgoing}) AS creditcards_sync__metrics__labeled_counter__creditcards_sync_outgoing ON ${creditcards_sync.document_id} = ${creditcards_sync__metrics__labeled_counter__creditcards_sync_outgoing.document_id} ;;
+  }
+
+  join: creditcards_sync__metrics__labeled_counter__creditcards_sync_v2_incoming {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${creditcards_sync.metrics__labeled_counter__creditcards_sync_v2_incoming}) AS creditcards_sync__metrics__labeled_counter__creditcards_sync_v2_incoming ON ${creditcards_sync.document_id} = ${creditcards_sync__metrics__labeled_counter__creditcards_sync_v2_incoming.document_id} ;;
+  }
+
+  join: creditcards_sync__metrics__labeled_counter__creditcards_sync_v2_outgoing {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${creditcards_sync.metrics__labeled_counter__creditcards_sync_v2_outgoing}) AS creditcards_sync__metrics__labeled_counter__creditcards_sync_v2_outgoing ON ${creditcards_sync.document_id} = ${creditcards_sync__metrics__labeled_counter__creditcards_sync_v2_outgoing.document_id} ;;
   }
 
   join: creditcards_sync__metrics__labeled_counter__glean_error_invalid_label {
@@ -55,6 +65,14 @@ explore: suggest__creditcards_sync__metrics__labeled_counter__creditcards_sync_i
 }
 
 explore: suggest__creditcards_sync__metrics__labeled_counter__creditcards_sync_outgoing {
+  hidden: yes
+}
+
+explore: suggest__creditcards_sync__metrics__labeled_counter__creditcards_sync_v2_incoming {
+  hidden: yes
+}
+
+explore: suggest__creditcards_sync__metrics__labeled_counter__creditcards_sync_v2_outgoing {
   hidden: yes
 }
 

@@ -14,7 +14,7 @@ explore: activation {
 
   always_filter: {
     filters: [
-      channel: "mozdata.fenix.activation",
+      channel: "release",
       submission_date: "28 days",
     ]
   }

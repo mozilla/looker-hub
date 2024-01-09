@@ -8,49 +8,37 @@ view: bigquery_table_storage_timeline_daily {
   dimension: avg_active_logical_bytes {
     sql: ${TABLE}.avg_active_logical_bytes ;;
     type: number
-    description: "Average number of logical bytes less than 90 days old"
+    description: "Average number of uncompressed bytes less than 90 days old"
   }
 
   dimension: avg_active_physical_bytes {
     sql: ${TABLE}.avg_active_physical_bytes ;;
     type: number
-    description: "Average number of physical bytes less than 90 days old"
-  }
-
-  dimension: avg_logical_billing_cost_usd {
-    sql: ${TABLE}.avg_logical_billing_cost_usd ;;
-    type: number
-    description: "Average costs for logical bytes billing in USD"
+    description: "Average number of compressed bytes less than 90 days old"
   }
 
   dimension: avg_long_term_logical_bytes {
     sql: ${TABLE}.avg_long_term_logical_bytes ;;
     type: number
-    description: "Average number of logical bytes more than 90 days old"
+    description: "Average number of uncompressed bytes more than 90 days old"
   }
 
   dimension: avg_long_term_physical_bytes {
     sql: ${TABLE}.avg_long_term_physical_bytes ;;
     type: number
-    description: "Average number of physical bytes more than 90 days old"
-  }
-
-  dimension: avg_physical_billing_cost_usd {
-    sql: ${TABLE}.avg_physical_billing_cost_usd ;;
-    type: number
-    description: "Average costs for physical bytes billing in USD"
+    description: "Average number of compressed bytes more than 90 days old"
   }
 
   dimension: avg_time_travel_physical_bytes {
     sql: ${TABLE}.avg_time_travel_physical_bytes ;;
     type: number
-    description: "Average number of physical bytes used by time travel"
+    description: "Average number of compressed bytes for deleted or changed data"
   }
 
   dimension: avg_total_logical_bytes {
     sql: ${TABLE}.avg_total_logical_bytes ;;
     type: number
-    description: "Average total number of logical bytes in the table"
+    description: "Average total number of uncompressed bytes in the table"
   }
 
   dimension: avg_total_partitions {
@@ -62,7 +50,7 @@ view: bigquery_table_storage_timeline_daily {
   dimension: avg_total_physical_bytes {
     sql: ${TABLE}.avg_total_physical_bytes ;;
     type: number
-    description: "Average total number of physical bytes used for storage"
+    description: "Average total number of compressed  bytes used for storage"
   }
 
   dimension: avg_total_rows {
@@ -74,7 +62,7 @@ view: bigquery_table_storage_timeline_daily {
   dimension: change_count {
     sql: ${TABLE}.change_count ;;
     type: number
-    description: "The total number of changes"
+    description: "The total number of changes to a table in one day"
   }
 
   dimension: dataset_id {
@@ -114,7 +102,7 @@ view: bigquery_table_storage_timeline_daily {
     ]
     convert_tz: no
     datatype: date
-    description: "Date of when storage was last recalculated"
+    description: "Date of change to the data in the table."
   }
 
   dimension_group: creation {

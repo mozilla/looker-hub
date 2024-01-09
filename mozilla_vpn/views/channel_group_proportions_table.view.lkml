@@ -15,6 +15,12 @@ view: channel_group_proportions_table {
     type: number
   }
 
+  dimension: country {
+    sql: ${TABLE}.country ;;
+    type: string
+    map_layer_name: countries
+  }
+
   dimension: country_name {
     sql: ${TABLE}.country_name ;;
     type: string
@@ -30,8 +36,23 @@ view: channel_group_proportions_table {
     type: string
   }
 
+  dimension: granular_event_type {
+    sql: ${TABLE}.granular_event_type ;;
+    type: string
+  }
+
   dimension: new_subscriptions {
     sql: ${TABLE}.new_subscriptions ;;
+    type: number
+  }
+
+  dimension: plan_interval {
+    sql: ${TABLE}.plan_interval ;;
+    type: string
+  }
+
+  dimension: plan_interval_count {
+    sql: ${TABLE}.plan_interval_count ;;
     type: number
   }
 

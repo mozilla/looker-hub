@@ -86,6 +86,11 @@ view: baseline_clients_first_seen_table {
     type: string
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+  }
+
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
@@ -173,6 +178,16 @@ view: baseline_clients_first_seen_table {
     allowed_value: {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.baseline_clients_first_seen"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.baseline_clients_first_seen"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.baseline_clients_first_seen"
     }
   }
 

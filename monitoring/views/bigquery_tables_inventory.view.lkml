@@ -11,6 +11,12 @@ view: bigquery_tables_inventory {
     description: "The name of the dataset that contains the table or view"
   }
 
+  dimension: owners {
+    sql: ${TABLE}.owners ;;
+    hidden: yes
+    description: "The owner of the table listed in metadata yaml file"
+  }
+
   dimension: project_id {
     sql: ${TABLE}.project_id ;;
     type: string
@@ -43,6 +49,54 @@ view: bigquery_tables_inventory {
     convert_tz: no
     datatype: date
     description: "The table's creation date"
+  }
+
+  dimension_group: last_modified {
+    sql: ${TABLE}.last_modified_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    description: "The table's last modified date"
+  }
+
+  dimension_group: last_used {
+    sql: ${TABLE}.last_used_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    description: "The date when the tables was last queried"
+  }
+
+  dimension_group: submission {
+    sql: ${TABLE}.submission_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    description: "The date when data was captured"
   }
 
   sql_table_name: `moz-fx-data-shared-prod.monitoring.bigquery_tables_inventory` ;;

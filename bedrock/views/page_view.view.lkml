@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: page_view {
+  dimension: metrics__string__page_http_status {
+    label: "Page Http Status"
+    hidden: no
+    sql: ${TABLE}.metrics.string.page_http_status ;;
+    type: string
+    group_label: "Page"
+    group_item_label: "Http Status"
+
+    link: {
+      label: "Glean Dictionary reference for Page Http Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bedrock/metrics/page_http_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The HTTP status code of the page.
+"
+  }
+
   dimension: metrics__string__page_locale {
     label: "Page Locale"
     hidden: no
@@ -75,24 +93,6 @@ the page that was viewed.
     }
 
     description: "The referring URL that linked to the page that was viewed.
-"
-  }
-
-  dimension: metrics__datetime__page_viewed {
-    label: "Page Viewed"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.page_viewed ;;
-    type: string
-    group_label: "Page"
-    group_item_label: "Viewed"
-
-    link: {
-      label: "Glean Dictionary reference for Page Viewed"
-      url: "https://dictionary.telemetry.mozilla.org/apps/bedrock/metrics/page_viewed"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time a page was viewed.
 "
   }
 
@@ -282,6 +282,14 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
     description: "The version of the Glean SDK"
+  }
+
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
   }
 
   dimension: document_id {
@@ -537,6 +545,24 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.sample_id ;;
     type: number
     description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
+  }
+
+  dimension_group: metrics__datetime__page_viewed {
+    label: "Page Viewed"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.page_viewed ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The time a page was viewed.
+"
   }
 
   dimension_group: metadata__header__parsed {

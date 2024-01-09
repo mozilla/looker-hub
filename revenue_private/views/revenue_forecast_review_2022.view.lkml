@@ -5,11 +5,6 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: revenue_forecast_review_2022 {
-  dimension: date {
-    sql: ${TABLE}.date ;;
-    type: string
-  }
-
   dimension: forecast {
     sql: ${TABLE}.forecast ;;
     type: string
@@ -50,19 +45,37 @@ view: revenue_forecast_review_2022 {
     type: string
   }
 
+  dimension: year {
+    sql: ${TABLE}.year ;;
+    type: number
+  }
+
   dimension_group: asofdate {
     sql: ${TABLE}.asofdate ;;
     type: time
     timeframes: [
       raw,
+      time,
       date,
       week,
       month,
       quarter,
       year,
     ]
-    convert_tz: no
-    datatype: date
+  }
+
+  dimension_group: date {
+    sql: ${TABLE}.date ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
   }
 
   sql_table_name: `mozdata.revenue_cat3_analysis.revenue_forecast_review_long` ;;

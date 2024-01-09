@@ -121,6 +121,14 @@ view: page_view_table {
     description: "The version of the Glean SDK"
   }
 
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
@@ -300,13 +308,11 @@ view: page_view_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__datetime__page_viewed {
-    sql: ${TABLE}.metrics.datetime.page_viewed ;;
+  dimension: metrics__datetime__raw_page_viewed {
+    sql: ${TABLE}.metrics.datetime.raw_page_viewed ;;
     type: string
     group_label: "Metrics Datetime"
-    group_item_label: "Page Viewed"
-    description: "The time a page was viewed.
-"
+    group_item_label: "Raw Page Viewed"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -346,6 +352,15 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
     description: "Query parameters associated with the URL of
 the page that was viewed.
+"
+  }
+
+  dimension: metrics__string__page_http_status {
+    sql: ${TABLE}.metrics.string.page_http_status ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Page Http Status"
+    description: "The HTTP status code of the page.
 "
   }
 
@@ -466,6 +481,23 @@ the page that was viewed.
     label: "Metadata Header: Parsed Date"
   }
 
+  dimension_group: metrics__datetime__page_viewed {
+    sql: ${TABLE}.metrics.datetime.page_viewed ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Page Viewed"
+    description: "The time a page was viewed.
+"
+  }
+
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
@@ -571,6 +603,13 @@ view: page_view_table__ping_info__experiments {
     type: string
     group_label: "Value"
     group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
   }
 
   dimension: value__extra__type {

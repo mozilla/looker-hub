@@ -23,6 +23,42 @@ view: first_session {
 "
   }
 
+  dimension: metrics__timing_distribution__first_session_adjust_attribution_time__sum {
+    label: "First Session Adjust Attribution Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.first_session_adjust_attribution_time.sum ;;
+    type: number
+    group_label: "First Session"
+    group_item_label: "Adjust Attribution Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for First Session Adjust Attribution Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_adjust_attribution_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time that it takes to derive the attribution parameters by the Adjust SDK.
+"
+  }
+
+  dimension: metrics__timespan__first_session_adjust_attribution_timespan__value {
+    label: "First Session Adjust Attribution Timespan Value"
+    hidden: no
+    sql: ${TABLE}.metrics.timespan.first_session_adjust_attribution_timespan.value ;;
+    type: number
+    group_label: "First Session"
+    group_item_label: "Adjust Attribution Timespan Value"
+
+    link: {
+      label: "Glean Dictionary reference for First Session Adjust Attribution Timespan Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_adjust_attribution_timespan"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time that it takes to derive the attribution parameters by the Adjust SDK.
+"
+  }
+
   dimension: metrics__string__first_session_campaign {
     label: "First Session Campaign"
     hidden: no
@@ -96,23 +132,202 @@ to identify installs from Mozilla Online.
 "
   }
 
-  dimension: metrics__datetime__first_session_timestamp {
-    label: "First Session Timestamp"
+  dimension: metrics__string__meta_attribution_app {
+    label: "Meta Attribution App"
     hidden: no
-    sql: ${TABLE}.metrics.datetime.first_session_timestamp ;;
+    sql: ${TABLE}.metrics.string.meta_attribution_app ;;
     type: string
-    group_label: "First Session"
-    group_item_label: "Timestamp"
+    group_label: "Meta Attribution"
+    group_item_label: "App"
 
     link: {
-      label: "Glean Dictionary reference for First Session Timestamp"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/first_session_timestamp"
+      label: "Glean Dictionary reference for Meta Attribution App"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/meta_attribution_app"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The Glean generated date and time of the installation. This is
-unique per app install, though the rest of the data in this
-ping is from Adjust and will remain static across installs.
+    description: "The mobile application ID in Meta's attribution.
+"
+  }
+
+  dimension: metrics__text2__meta_attribution_data {
+    label: "Meta Attribution Data"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.meta_attribution_data ;;
+    type: string
+    group_label: "Meta Attribution"
+    group_item_label: "Data"
+
+    link: {
+      label: "Glean Dictionary reference for Meta Attribution Data"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/meta_attribution_data"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Meta attribution data in encrypted format.
+"
+  }
+
+  dimension: metrics__string__meta_attribution_nonce {
+    label: "Meta Attribution Nonce"
+    hidden: no
+    sql: ${TABLE}.metrics.string.meta_attribution_nonce ;;
+    type: string
+    group_label: "Meta Attribution"
+    group_item_label: "Nonce"
+
+    link: {
+      label: "Glean Dictionary reference for Meta Attribution Nonce"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/meta_attribution_nonce"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Nonce used to decrypt the encrypted Meta attribution data.
+"
+  }
+
+  dimension: metrics__string__meta_attribution_t {
+    label: "Meta Attribution T"
+    hidden: no
+    sql: ${TABLE}.metrics.string.meta_attribution_t ;;
+    type: string
+    group_label: "Meta Attribution"
+    group_item_label: "T"
+
+    link: {
+      label: "Glean Dictionary reference for Meta Attribution T"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/meta_attribution_t"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value tracking user interaction with Meta attribution.
+"
+  }
+
+  dimension: metrics__string__play_store_attribution_campaign {
+    label: "Play Store Attribution Campaign"
+    hidden: no
+    sql: ${TABLE}.metrics.string.play_store_attribution_campaign ;;
+    type: string
+    group_label: "Play Store Attribution"
+    group_item_label: "Campaign"
+
+    link: {
+      label: "Glean Dictionary reference for Play Store Attribution Campaign"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_campaign"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the utm_campaign that is responsible for this installation.
+"
+  }
+
+  dimension: metrics__string__play_store_attribution_content {
+    label: "Play Store Attribution Content"
+    hidden: no
+    sql: ${TABLE}.metrics.string.play_store_attribution_content ;;
+    type: string
+    group_label: "Play Store Attribution"
+    group_item_label: "Content"
+
+    link: {
+      label: "Glean Dictionary reference for Play Store Attribution Content"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_content"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the utm_content that is responsible for this installation.
+"
+  }
+
+  dimension: metrics__text2__play_store_attribution_install_referrer_response {
+    label: "Play Store Attribution Install Referrer Response"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.play_store_attribution_install_referrer_response ;;
+    type: string
+    group_label: "Play Store Attribution"
+    group_item_label: "Install Referrer Response"
+
+    link: {
+      label: "Glean Dictionary reference for Play Store Attribution Install Referrer Response"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_install_referrer_response"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The full install referrer response.
+"
+  }
+
+  dimension: metrics__string__play_store_attribution_medium {
+    label: "Play Store Attribution Medium"
+    hidden: no
+    sql: ${TABLE}.metrics.string.play_store_attribution_medium ;;
+    type: string
+    group_label: "Play Store Attribution"
+    group_item_label: "Medium"
+
+    link: {
+      label: "Glean Dictionary reference for Play Store Attribution Medium"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_medium"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the utm_medium that is responsible for this installation.
+"
+  }
+
+  dimension: metrics__string__play_store_attribution_source {
+    label: "Play Store Attribution Source"
+    hidden: no
+    sql: ${TABLE}.metrics.string.play_store_attribution_source ;;
+    type: string
+    group_label: "Play Store Attribution"
+    group_item_label: "Source"
+
+    link: {
+      label: "Glean Dictionary reference for Play Store Attribution Source"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_source"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the utm_source that is responsible for this installation.
+"
+  }
+
+  dimension: metrics__string__play_store_attribution_term {
+    label: "Play Store Attribution Term"
+    hidden: no
+    sql: ${TABLE}.metrics.string.play_store_attribution_term ;;
+    type: string
+    group_label: "Play Store Attribution"
+    group_item_label: "Term"
+
+    link: {
+      label: "Glean Dictionary reference for Play Store Attribution Term"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_term"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the utm_term that is responsible for this installation.
+"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -191,7 +406,6 @@ The labels are the `category.name` identifier of the metric.
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
-    description: "A JSON string containing any payload properties not present in the schema"
   }
 
   dimension: client_info__android_sdk_version {
@@ -199,7 +413,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Android Sdk Version"
-    description: "The optional Android specific SDK version of the software running on this hardware device."
   }
 
   dimension: client_info__app_build {
@@ -207,7 +420,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "App Build"
-    description: "The build identifier generated by the CI system (e.g. \"1234/A\"). For language bindings that provide automatic detection for this value, (e.g. Android/Kotlin), in the unlikely event that the build identifier can not be retrieved from the OS, it is set to \"inaccessible\". For other language bindings, if the value was not provided through configuration, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__app_channel {
@@ -215,7 +427,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "App Channel"
-    description: "The channel the application is being distributed on."
   }
 
   dimension: client_info__app_display_version {
@@ -223,7 +434,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "App Display Version"
-    description: "The user visible version string (e.g. \"1.0.3\").  In the unlikely event that the display version can not be retrieved, it is set to \"inaccessible\"."
   }
 
   dimension: client_info__architecture {
@@ -231,7 +441,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Architecture"
-    description: "The architecture of the device, (e.g. \"arm\", \"x86\")."
   }
 
   dimension: client_info__build_date {
@@ -239,13 +448,11 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Build Date"
-    description: "The date & time the application was built"
   }
 
   dimension: client_info__client_id {
     sql: ${TABLE}.client_info.client_id ;;
     hidden: yes
-    description: "A UUID uniquely identifying the client."
   }
 
   dimension: client_info__device_manufacturer {
@@ -253,7 +460,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Device Manufacturer"
-    description: "The manufacturer of the device the application is running on. Not set if the device manufacturer can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__device_model {
@@ -261,7 +467,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Device Model"
-    description: "The model of the device the application is running on. On Android, this is Build.MODEL, the user-visible marketing name, like \"Pixel 2 XL\". Not set if the device model can't be determined (e.g. on Desktop)."
   }
 
   dimension: client_info__first_run_date {
@@ -269,7 +474,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "First Run Date"
-    description: "The date of the first run of the application."
   }
 
   dimension: client_info__locale {
@@ -277,7 +481,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Locale"
-    description: "The locale of the application during initialization (e.g. \"es-ES\"). If the locale can't be determined on the system, the value is [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers), to indicate \"undetermined\"."
   }
 
   dimension: client_info__os {
@@ -285,7 +488,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Os"
-    description: "The name of the operating system. Possible values: Android, iOS, Linux, Darwin, Windows, FreeBSD, NetBSD, OpenBSD, Solaris, unknown"
   }
 
   dimension: client_info__os_version {
@@ -293,7 +495,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
-    description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -301,13 +502,18 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
-    description: "The version of the Glean SDK"
+  }
+
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
   }
 
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
-    description: "The document ID specified in the URI when the client sent this message"
     primary_key: yes
   }
 
@@ -329,7 +535,6 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metadata Geo"
     group_item_label: "Country"
     map_layer_name: countries
-    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: metadata__geo__db_version {
@@ -337,7 +542,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Db Version"
-    description: "The specific geo database version used for this lookup"
   }
 
   dimension: metadata__geo__subdivision1 {
@@ -345,7 +549,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision1"
-    description: "First major country subdivision, typically a state, province, or county"
   }
 
   dimension: metadata__geo__subdivision2 {
@@ -353,7 +556,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Geo"
     group_item_label: "Subdivision2"
-    description: "Second major country subdivision; not applicable for most countries"
   }
 
   dimension: metadata__header__date {
@@ -361,7 +563,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "Date"
-    description: "Date HTTP header"
   }
 
   dimension: metadata__header__dnt {
@@ -369,7 +570,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "Dnt"
-    description: "DNT (Do Not Track) HTTP header"
   }
 
   dimension: metadata__header__parsed_x_lb_tags__tls_cipher_hex {
@@ -396,7 +596,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Debug Id"
-    description: "X-Debug-Id HTTP header"
   }
 
   dimension: metadata__header__x_foxsec_ip_reputation {
@@ -404,7 +603,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Foxsec Ip Reputation"
-    description: "X-Foxsec-IP-Reputation header"
   }
 
   dimension: metadata__header__x_lb_tags {
@@ -412,7 +610,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Lb Tags"
-    description: "X-LB-Tags HTTP header"
   }
 
   dimension: metadata__header__x_pingsender_version {
@@ -420,7 +617,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Pingsender Version"
-    description: "X-PingSender-Version HTTP header"
   }
 
   dimension: metadata__header__x_source_tags {
@@ -428,7 +624,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Source Tags"
-    description: "X-Source-Tags HTTP header"
   }
 
   dimension: metadata__header__x_telemetry_agent {
@@ -436,7 +631,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Header"
     group_item_label: "X Telemetry Agent"
-    description: "X-Telemetry-Agent HTTP header"
   }
 
   dimension: metadata__isp__db_version {
@@ -444,7 +638,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Db Version"
-    description: "The specific geo ISP database version used for this lookup"
   }
 
   dimension: metadata__isp__name {
@@ -452,7 +645,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Name"
-    description: "The name of the ISP associated with the client's IP address"
   }
 
   dimension: metadata__isp__organization {
@@ -460,7 +652,6 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Metadata Isp"
     group_item_label: "Organization"
-    description: "The name of a specific business entity associated with the client's IP address when available; otherwise the ISP name"
   }
 
   dimension: metadata__user_agent__browser {
@@ -484,28 +675,31 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Version"
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+    description: "App ID of the channel data was received from"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
-    description: "Set to \"Other\" if this message contained an unrecognized app name"
   }
 
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
-    description: "Set to \"Other\" if this message contained an unrecognized channel name"
+    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
     sql: ${TABLE}.normalized_country_code ;;
     type: string
-    description: "An ISO 3166-1 alpha-2 country code"
   }
 
   dimension: normalized_os {
     sql: ${TABLE}.normalized_os ;;
     type: string
-    description: "Set to \"Other\" if this message contained an unrecognized OS name"
   }
 
   dimension: normalized_os_version {
@@ -556,7 +750,6 @@ The labels are the `category.name` identifier of the metric.
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
-    description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
   }
 
   dimension_group: metadata__header__parsed {
@@ -616,7 +809,6 @@ The labels are the `category.name` identifier of the metric.
       quarter,
       year,
     ]
-    description: "Time when the ingestion edge server accepted this message"
   }
 
   measure: clients {
@@ -628,27 +820,15 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.fenix.first_session"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.fenix.first_session"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_firefox_beta.first_session"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix.first_session"
-    }
+  filter: channel {
+    type: string
+    description: "Filter by the app's channel"
+    sql: {% condition %} ${TABLE}.normalized_channel {% endcondition %} ;;
+    default_value: "release"
+    suggestions: ["release", "beta", "nightly"]
   }
 
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.fenix.first_session` ;;
 }
 
 view: first_session__metrics__labeled_counter__glean_error_invalid_label {

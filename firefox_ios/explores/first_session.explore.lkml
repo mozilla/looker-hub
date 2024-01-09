@@ -14,7 +14,7 @@ explore: first_session {
 
   always_filter: {
     filters: [
-      channel: "mozdata.firefox^_ios.first^_session",
+      channel: "release",
       submission_date: "28 days",
     ]
   }

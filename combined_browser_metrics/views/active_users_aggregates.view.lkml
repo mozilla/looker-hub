@@ -10,9 +10,9 @@ view: active_users_aggregates {
     type: number
   }
 
-  dimension: ad_clicks {
-    sql: ${TABLE}.ad_clicks ;;
-    type: number
+  dimension: adjust_network {
+    sql: ${TABLE}.adjust_network ;;
+    type: string
   }
 
   dimension: app_name {
@@ -23,6 +23,26 @@ view: active_users_aggregates {
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
     type: string
+  }
+
+  dimension: app_version_is_major_release {
+    sql: ${TABLE}.app_version_is_major_release ;;
+    type: yesno
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.app_version_major ;;
+    type: number
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.app_version_minor ;;
+    type: number
+  }
+
+  dimension: app_version_patch_revision {
+    sql: ${TABLE}.app_version_patch_revision ;;
+    type: number
   }
 
   dimension: attributed {
@@ -71,6 +91,11 @@ view: active_users_aggregates {
     type: number
   }
 
+  dimension: install_source {
+    sql: ${TABLE}.install_source ;;
+    type: string
+  }
+
   dimension: is_default_browser {
     sql: ${TABLE}.is_default_browser ;;
     type: yesno
@@ -91,13 +116,13 @@ view: active_users_aggregates {
     type: number
   }
 
-  dimension: organic_search_count {
-    sql: ${TABLE}.organic_search_count ;;
-    type: number
-  }
-
   dimension: os {
     sql: ${TABLE}.os ;;
+    type: string
+  }
+
+  dimension: os_grouped {
+    sql: ${TABLE}.os_grouped ;;
     type: string
   }
 
@@ -113,16 +138,6 @@ view: active_users_aggregates {
 
   dimension: os_version_minor {
     sql: ${TABLE}.os_version_minor ;;
-    type: number
-  }
-
-  dimension: search_count {
-    sql: ${TABLE}.search_count ;;
-    type: number
-  }
-
-  dimension: search_with_ads {
-    sql: ${TABLE}.search_with_ads ;;
     type: number
   }
 

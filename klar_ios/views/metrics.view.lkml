@@ -248,7 +248,7 @@ default browser onboarding is clicked.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The default search engine identifier if the search engine is
+    description: "The default search engine name if the search engine is
 pre-loaded with Focus.  If it's a custom search engine,
 then the value will be 'custom'.
 "
@@ -482,6 +482,43 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
+  dimension: metrics__string__glean_database_rkv_load_error {
+    label: "Glean Database Rkv Load Error"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_database_rkv_load_error ;;
+    type: string
+    group_label: "Glean Database"
+    group_item_label: "Rkv Load Error"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Database Rkv Load Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_database_rkv_load_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If there was an error loading the RKV database, record it.
+"
+  }
+
   dimension: metrics__memory_distribution__glean_database_size__sum {
     label: "Glean Database Size Sum"
     hidden: no
@@ -690,6 +727,44 @@ deletion request pings are never deleted.
 "
   }
 
+  dimension: metrics__counter__glean_upload_in_flight_pings_dropped {
+    label: "Glean Upload In Flight Pings Dropped"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.glean_upload_in_flight_pings_dropped ;;
+    type: number
+    group_label: "Glean Upload"
+    group_item_label: "In Flight Pings Dropped"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload In Flight Pings Dropped"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_upload_in_flight_pings_dropped"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many pings were dropped because we found them already in-flight.
+"
+  }
+
+  dimension: metrics__counter__glean_upload_missing_send_ids {
+    label: "Glean Upload Missing Send Ids"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.glean_upload_missing_send_ids ;;
+    type: number
+    group_label: "Glean Upload"
+    group_item_label: "Missing Send Ids"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload Missing Send Ids"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_upload_missing_send_ids"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many ping upload responses did we not record as a success or failure
+(in `glean.upload.send_success` or `glean.upload.send_failue`,
+respectively) due to an inconsistency in our internal bookkeeping?
+"
+  }
+
   dimension: metrics__counter__glean_upload_pending_pings {
     label: "Glean Upload Pending Pings"
     hidden: no
@@ -747,21 +822,39 @@ though the counts appear in the next successfully sent `metrics` ping.
 "
   }
 
-  dimension: metrics__datetime__glean_validation_first_run_hour {
-    label: "Glean Validation First Run Hour"
+  dimension: metrics__timing_distribution__glean_upload_send_failure__sum {
+    label: "Glean Upload Send Failure Sum"
     hidden: no
-    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
-    type: string
-    group_label: "Glean Validation"
-    group_item_label: "First Run Hour"
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.sum ;;
+    type: number
+    group_label: "Glean Upload"
+    group_item_label: "Send Failure Sum"
 
     link: {
-      label: "Glean Dictionary reference for Glean Validation First Run Hour"
-      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_validation_first_run_hour"
+      label: "Glean Dictionary reference for Glean Upload Send Failure Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_upload_send_failure"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The hour of the first run of the application.
+    description: "Time needed for a failed send of a ping to the servers and getting a reply back.
+"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__sum {
+    label: "Glean Upload Send Success Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.sum ;;
+    type: number
+    group_label: "Glean Upload"
+    group_item_label: "Send Success Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload Send Success Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_upload_send_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time needed for a successful send of a ping to the servers and getting a reply back
 "
   }
 
@@ -807,6 +900,43 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__sum {
+    label: "Glean Validation Shutdown Dispatcher Wait Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.sum ;;
+    type: number
+    group_label: "Glean Validation"
+    group_item_label: "Shutdown Dispatcher Wait Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation Shutdown Dispatcher Wait Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_validation_shutdown_dispatcher_wait"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time waited for the dispatcher to unblock during shutdown.
+Most samples are expected to be below the 10s timeout used.
+"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__sum {
+    label: "Glean Validation Shutdown Wait Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.sum ;;
+    type: number
+    group_label: "Glean Validation"
+    group_item_label: "Shutdown Wait Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Validation Shutdown Wait Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_validation_shutdown_wait"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time waited for the uploader at shutdown.
+"
+  }
+
   dimension: metrics__string__ping_reason {
     label: "Glean Ping Reason"
     hidden: yes
@@ -824,6 +954,44 @@ This metric appears in both the metrics and baseline pings.
     description: "The optional reason the ping was submitted.
 The specific values for reason are specific to each ping, and are
 documented in the ping's pings.yaml file.
+"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__sum {
+    label: "Nimbus Health Apply Pending Experiments Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.sum ;;
+    type: number
+    group_label: "Nimbus Health"
+    group_item_label: "Apply Pending Experiments Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Health Apply Pending Experiments Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/nimbus_health_apply_pending_experiments_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measure how long `applyPendingExperiments` takes.
+`applyPendingExperiments` uses disk I/O, and happens at
+startup, as part of the initialization sequence.
+"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__sum {
+    label: "Nimbus Health Fetch Experiments Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.sum ;;
+    type: number
+    group_label: "Nimbus Health"
+    group_item_label: "Fetch Experiments Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Nimbus Health Fetch Experiments Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/nimbus_health_fetch_experiments_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures how long `fetchExperiments` takes.
 "
   }
 
@@ -941,6 +1109,14 @@ documented in the ping's pings.yaml file.
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
     description: "The version of the Glean SDK"
+  }
+
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
   }
 
   dimension: document_id {
@@ -1196,6 +1372,24 @@ documented in the ping's pings.yaml file.
     sql: ${TABLE}.sample_id ;;
     type: number
     description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
+  }
+
+  dimension_group: metrics__datetime__glean_validation_first_run_hour {
+    label: "Glean Validation First Run Hour"
+    hidden: yes
+    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The hour of the first run of the application.
+"
   }
 
   dimension_group: metadata__header__parsed {
@@ -1613,6 +1807,56 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Glean Upload Deleted Pings After Quota Hit"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_upload_deleted_pings_after_quota_hit"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_upload_in_flight_pings_dropped {
+    type: sum
+    sql: ${metrics__counter__glean_upload_in_flight_pings_dropped} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload In Flight Pings Dropped"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_upload_in_flight_pings_dropped"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_upload_in_flight_pings_dropped_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__glean_upload_in_flight_pings_dropped: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload In Flight Pings Dropped"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_upload_in_flight_pings_dropped"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_upload_missing_send_ids {
+    type: sum
+    sql: ${metrics__counter__glean_upload_missing_send_ids} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload Missing Send Ids"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_upload_missing_send_ids"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: glean_upload_missing_send_ids_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__glean_upload_missing_send_ids: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Glean Upload Missing Send Ids"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_ios/metrics/glean_upload_missing_send_ids"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

@@ -30,6 +30,11 @@ view: experimenter_experiments {
     type: string
   }
 
+  dimension: feature_ids {
+    sql: ${TABLE}.feature_ids ;;
+    hidden: yes
+  }
+
   dimension: is_high_population {
     sql: ${TABLE}.is_high_population ;;
     type: yesno
@@ -124,6 +129,11 @@ view: experimenter_experiments {
 }
 
 view: experimenter_experiments__branches {
+  dimension: features {
+    sql: ${TABLE}.features ;;
+    hidden: yes
+  }
+
   dimension: ratio {
     sql: ${TABLE}.ratio ;;
     type: number
@@ -132,10 +142,5 @@ view: experimenter_experiments__branches {
   dimension: slug {
     sql: ${TABLE}.slug ;;
     type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
   }
 }

@@ -8,13 +8,13 @@ view: bigquery_table_storage {
   dimension: active_logical_bytes {
     sql: ${TABLE}.active_logical_bytes ;;
     type: number
-    description: "Number of logical bytes less than 90 days old"
+    description: "Number of uncompressed bytes less than 90 days old"
   }
 
   dimension: active_physical_bytes {
     sql: ${TABLE}.active_physical_bytes ;;
     type: number
-    description: "Number of physical bytes less than 90 days old"
+    description: "Number of compressed bytes less than 90 days old"
   }
 
   dimension: dataset_id {
@@ -23,28 +23,16 @@ view: bigquery_table_storage {
     description: "The name of the dataset that contains the table"
   }
 
-  dimension: logical_billing_cost_usd {
-    sql: ${TABLE}.logical_billing_cost_usd ;;
-    type: number
-    description: "Total costs for logical bytes billing"
-  }
-
   dimension: long_term_logical_bytes {
     sql: ${TABLE}.long_term_logical_bytes ;;
     type: number
-    description: "Number of logical bytes more than 90 days old"
+    description: "Number of uncompressed bytes more than 90 days old"
   }
 
   dimension: long_term_physical_bytes {
     sql: ${TABLE}.long_term_physical_bytes ;;
     type: number
-    description: "Number of physical bytes more than 90 days old"
-  }
-
-  dimension: physical_billing_cost_usd {
-    sql: ${TABLE}.physical_billing_cost_usd ;;
-    type: number
-    description: "Total costs for physical bytes billing"
+    description: "Number of compressed bytes more than 90 days old"
   }
 
   dimension: project_id {
@@ -62,25 +50,25 @@ view: bigquery_table_storage {
   dimension: time_travel_physical_bytes {
     sql: ${TABLE}.time_travel_physical_bytes ;;
     type: number
-    description: "Number of physical bytes used by time travel"
+    description: "Number of compressed bytes for deleted or changed data"
   }
 
   dimension: total_logical_bytes {
     sql: ${TABLE}.total_logical_bytes ;;
     type: number
-    description: "Total number of logical bytes in the table"
+    description: "Total number of uncompressed bytes in the table"
   }
 
   dimension: total_partitions {
     sql: ${TABLE}.total_partitions ;;
     type: number
-    description: "The number of partitions present in the table"
+    description: "The total number of partitions present in the table"
   }
 
   dimension: total_physical_bytes {
     sql: ${TABLE}.total_physical_bytes ;;
     type: number
-    description: "Total number of physical bytes used for storage"
+    description: "Total number of compressed bytes used for storage"
   }
 
   dimension: total_rows {

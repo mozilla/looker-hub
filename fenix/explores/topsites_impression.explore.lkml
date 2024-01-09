@@ -14,7 +14,7 @@ explore: topsites_impression {
 
   always_filter: {
     filters: [
-      channel: "mozdata.fenix.topsites^_impression",
+      channel: "beta",
       submission_date: "28 days",
     ]
   }

@@ -121,6 +121,14 @@ view: metrics_table {
     description: "The version of the Glean SDK"
   }
 
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
@@ -466,6 +474,26 @@ deletion request pings are never deleted.
 "
   }
 
+  dimension: metrics__counter__glean_upload_in_flight_pings_dropped {
+    sql: ${TABLE}.metrics.counter.glean_upload_in_flight_pings_dropped ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Glean Upload In Flight Pings Dropped"
+    description: "How many pings were dropped because we found them already in-flight.
+"
+  }
+
+  dimension: metrics__counter__glean_upload_missing_send_ids {
+    sql: ${TABLE}.metrics.counter.glean_upload_missing_send_ids ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Glean Upload Missing Send Ids"
+    description: "How many ping upload responses did we not record as a success or failure
+(in `glean.upload.send_success` or `glean.upload.send_failue`,
+respectively) due to an inconsistency in our internal bookkeeping?
+"
+  }
+
   dimension: metrics__counter__glean_upload_pending_pings {
     sql: ${TABLE}.metrics.counter.glean_upload_pending_pings ;;
     type: number
@@ -535,18 +563,11 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
-  dimension: metrics__datetime__glean_validation_first_run_hour {
-    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
+  dimension: metrics__datetime__raw_glean_validation_first_run_hour {
+    sql: ${TABLE}.metrics.datetime.raw_glean_validation_first_run_hour ;;
     type: string
     group_label: "Metrics Datetime"
-    group_item_label: "Glean Validation First Run Hour"
-    description: "The hour of the first run of the application.
-"
-  }
-
-  dimension: metrics__jwe {
-    sql: ${TABLE}.metrics.jwe ;;
-    hidden: yes
+    group_item_label: "Raw Glean Validation First Run Hour"
   }
 
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
@@ -650,16 +671,12 @@ It also indicates the screen it was removed from, home or browser.
 "
   }
 
-  dimension: metrics__labeled_rate {
-    sql: ${TABLE}.metrics.labeled_rate ;;
-    hidden: yes
-  }
-
   dimension: metrics__memory_distribution__glean_database_size__count {
     sql: ${TABLE}.metrics.memory_distribution.glean_database_size.count ;;
     type: number
     group_label: "Metrics Memory Distribution Glean Database Size"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__memory_distribution__glean_database_size__sum {
@@ -679,6 +696,7 @@ It also indicates the screen it was removed from, home or browser.
     type: number
     group_label: "Metrics Memory Distribution Glean Upload Discarded Exceeding Pings Size"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__sum {
@@ -698,6 +716,7 @@ It also indicates the screen it was removed from, home or browser.
     type: number
     group_label: "Metrics Memory Distribution Glean Upload Pending Pings Directory Size"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
@@ -732,6 +751,25 @@ the keyboard appears on the screen.
 "
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
+  dimension: metrics__string__glean_database_rkv_load_error {
+    sql: ${TABLE}.metrics.string.glean_database_rkv_load_error ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Database Rkv Load Error"
+    description: "If there was an error loading the RKV database, record it.
+"
+  }
+
   dimension: metrics__string__ping_reason {
     sql: ${TABLE}.metrics.string.ping_reason ;;
     type: string
@@ -757,19 +795,369 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metrics String"
     group_item_label: "Search Default Engine"
-    description: "The default search engine identifier if the search engine is
+    description: "The default search engine name if the search engine is
 pre-loaded with Focus.  If it's a custom search engine,
 then the value will be 'custom'.
 "
   }
 
-  dimension: metrics__text {
-    sql: ${TABLE}.metrics.text ;;
+  dimension: metrics__timing_distribution__glean_upload_send_failure__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_failure__count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_failure__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_failure__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_failure__range {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.range ;;
     hidden: yes
   }
 
-  dimension: metrics__url {
-    sql: ${TABLE}.metrics.url ;;
+  dimension: metrics__timing_distribution__glean_upload_send_failure__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_failure__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_failure__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Failure"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_failure__values {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_failure.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__range {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Upload Send Success"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_upload_send_success__values {
+    sql: ${TABLE}.metrics.timing_distribution.glean_upload_send_success.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__range {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__values {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_dispatcher_wait.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__count {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__range {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__sum {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__glean_validation_shutdown_wait__values {
+    sql: ${TABLE}.metrics.timing_distribution.glean_validation_shutdown_wait.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.nimbus_health_fetch_experiments_time.values ;;
     hidden: yes
   }
 
@@ -863,6 +1251,23 @@ then the value will be 'custom'.
     label: "Metadata Header: Parsed Date"
   }
 
+  dimension_group: metrics__datetime__glean_validation_first_run_hour {
+    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Glean Validation First Run Hour"
+    description: "The hour of the first run of the application.
+"
+  }
+
   dimension_group: ping_info__parsed_end {
     sql: ${TABLE}.ping_info.parsed_end_time ;;
     type: time
@@ -945,51 +1350,6 @@ view: metrics_table__events__extra {
   }
 }
 
-view: metrics_table__metrics__jwe {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: metrics_table__metrics__labeled_rate {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-}
-
-view: metrics_table__metrics__labeled_rate__value {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__denominator {
-    sql: ${TABLE}.value.denominator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Denominator"
-  }
-
-  dimension: value__numerator {
-    sql: ${TABLE}.value.numerator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Numerator"
-  }
-}
-
 view: metrics_table__metrics__memory_distribution__glean_database_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -1026,7 +1386,7 @@ view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_di
   }
 }
 
-view: metrics_table__metrics__text {
+view: metrics_table__metrics__timing_distribution__glean_upload_send_failure__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -1034,11 +1394,11 @@ view: metrics_table__metrics__text {
 
   dimension: value {
     sql: ${TABLE}.value ;;
-    type: string
+    type: number
   }
 }
 
-view: metrics_table__metrics__url {
+view: metrics_table__metrics__timing_distribution__glean_upload_send_success__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -1046,7 +1406,55 @@ view: metrics_table__metrics__url {
 
   dimension: value {
     sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
     type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__glean_validation_shutdown_wait__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__nimbus_health_fetch_experiments_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 
@@ -1061,6 +1469,13 @@ view: metrics_table__ping_info__experiments {
     type: string
     group_label: "Value"
     group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
   }
 
   dimension: value__extra__type {

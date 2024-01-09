@@ -111,6 +111,11 @@ view: mobile_search_clients_engines_sources_daily {
     type: string
   }
 
+  dimension: normalized_app_name_os {
+    sql: ${TABLE}.normalized_app_name_os ;;
+    type: string
+  }
+
   dimension: normalized_engine {
     sql: ${TABLE}.normalized_engine ;;
     type: string
@@ -199,11 +204,6 @@ view: mobile_search_clients_engines_sources_daily {
     ]
     convert_tz: no
     datatype: date
-  }
-
-  measure: clients {
-    type: count_distinct
-    sql: ${client_id} ;;
   }
 
   sql_table_name: `mozdata.search.mobile_search_clients_engines_sources_daily` ;;

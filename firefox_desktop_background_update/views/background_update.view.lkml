@@ -5,6 +5,42 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: background_update {
+  dimension: metrics__boolean__background_update_automatic_restart_attempted {
+    label: "Background Update Automatic Restart Attempted"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.background_update_automatic_restart_attempted ;;
+    type: yesno
+    group_label: "Background Update"
+    group_item_label: "Automatic Restart Attempted"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Automatic Restart Attempted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_automatic_restart_attempted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the background update task successfully attempted an automatic restart.
+"
+  }
+
+  dimension: metrics__boolean__background_update_automatic_restart_success {
+    label: "Background Update Automatic Restart Success"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.background_update_automatic_restart_success ;;
+    type: yesno
+    group_label: "Background Update"
+    group_item_label: "Automatic Restart Success"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Automatic Restart Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_automatic_restart_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the background update task successfully restarted after an automatic restart.
+"
+  }
+
   dimension: metrics__uuid__background_update_client_id {
     label: "Background Update Client Id"
     hidden: no
@@ -19,7 +55,9 @@ view: background_update {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The Telemetry client ID of the default profile.
+    description: "The legacy Telemetry client ID of this installation's default profile.
+The default profile is as determined by the Profile Service, namely `nsIToolkitProfileService.defaultProfile`.  The majority of users have only one Firefox installation and only one profile, so the default profile is their regular browsing profile.
+It is possible for a Firefox installation to not have a default profile, but in such cases the background update task will abort before sending any telemetry; therefore, the legacy Telemetry client ID should always be present.
 "
   }
 
@@ -74,6 +112,115 @@ view: background_update {
     }
 
     description: "String description of the final state the update state machine reached.
+"
+  }
+
+  dimension: metrics__boolean__background_update_registered_restart_attempted {
+    label: "Background Update Registered Restart Attempted"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.background_update_registered_restart_attempted ;;
+    type: yesno
+    group_label: "Background Update"
+    group_item_label: "Registered Restart Attempted"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Registered Restart Attempted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_registered_restart_attempted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the background update task successfully registered a restart.
+"
+  }
+
+  dimension: metrics__boolean__background_update_registered_restart_success {
+    label: "Background Update Registered Restart Success"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.background_update_registered_restart_success ;;
+    type: yesno
+    group_label: "Background Update"
+    group_item_label: "Registered Restart Success"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Registered Restart Success"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_registered_restart_success"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the background update task successfully restarted after a registered restart.
+"
+  }
+
+  dimension: metrics__quantity__background_update_targeting_env_firefox_version {
+    label: "Background Update Targeting Env Firefox Version"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.background_update_targeting_env_firefox_version ;;
+    type: number
+    group_label: "Background Update"
+    group_item_label: "Targeting Env Firefox Version"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Targeting Env Firefox Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_targeting_env_firefox_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The `environment.firefoxVersion` of the default profile's serialized targeting snapshot.  At the time of writing, this version is an integer representing the Firefox major version, e.g., `109`.
+"
+  }
+
+  dimension: metrics__boolean__background_update_targeting_exception {
+    label: "Background Update Targeting Exception"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.background_update_targeting_exception ;;
+    type: yesno
+    group_label: "Background Update"
+    group_item_label: "Targeting Exception"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Targeting Exception"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_targeting_exception"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the default profile had a targeting snapshot serialized to disk, but an exception was thrown reading it.
+"
+  }
+
+  dimension: metrics__boolean__background_update_targeting_exists {
+    label: "Background Update Targeting Exists"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.background_update_targeting_exists ;;
+    type: yesno
+    group_label: "Background Update"
+    group_item_label: "Targeting Exists"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Targeting Exists"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_targeting_exists"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if the default profile had a targeting snapshot serialized to disk, and there was no exception thrown reading it.
+"
+  }
+
+  dimension: metrics__quantity__background_update_targeting_version {
+    label: "Background Update Targeting Version"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.background_update_targeting_version ;;
+    type: number
+    group_label: "Background Update"
+    group_item_label: "Targeting Version"
+
+    link: {
+      label: "Glean Dictionary reference for Background Update Targeting Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/background_update_targeting_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If the default profile had a targeting snapshot serialized to disk, the `version` of the snapshot.
+This version number does not have a physical unit: it's only useful to compare between versions.
 "
   }
 
@@ -236,6 +383,25 @@ view: background_update {
     }
 
     description: "Preference \"app.update.service.enabled\": whether the Mozilla Maintenance Service is enabled.
+"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -425,6 +591,14 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Client Info"
     group_item_label: "Telemetry Sdk Build"
     description: "The version of the Glean SDK"
+  }
+
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
   }
 
   dimension: document_id {
@@ -680,6 +854,24 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.sample_id ;;
     type: number
     description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
+  }
+
+  dimension_group: metrics__datetime__background_update_targeting_env_profile_age {
+    label: "Background Update Targeting Env Profile Age"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.background_update_targeting_env_profile_age ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The `environment.profileAgeCreated` of the default profile's serialized targeting snapshot.
+"
   }
 
   dimension_group: metadata__header__parsed {

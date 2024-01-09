@@ -9,12 +9,12 @@ include: "/looker-hub/fenix/views/first_session.view.lkml"
 explore: first_session {
   sql_always_where: ${first_session.submission_date} >= '2010-01-01' ;;
   view_label: " First_Session"
-  description: "Explore for the first_session ping. This ping is intended to capture the source of the app install on the first session."
+  description: "Explore for the first_session ping. **THIS IS NOT A GENERIC FIRST USE PING** This ping is intended to capture Adjust attribution. Use of this ping for other analyses will result in undesirable outcomes."
   view_name: first_session
 
   always_filter: {
     filters: [
-      channel: "mozdata.fenix.first^_session",
+      channel: "release",
       submission_date: "28 days",
     ]
   }

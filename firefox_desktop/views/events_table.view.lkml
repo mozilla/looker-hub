@@ -121,6 +121,14 @@ view: events_table {
     description: "The version of the Glean SDK"
   }
 
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
@@ -300,9 +308,67 @@ view: events_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__jwe {
-    sql: ${TABLE}.metrics.jwe ;;
-    hidden: yes
+  dimension: metrics__boolean__urlbar_pref_quicksuggest_data_collection {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_quicksuggest_data_collection ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Urlbar Pref Quicksuggest Data Collection"
+    description: "Whether the user has opted in to data collection for Firefox Suggest, i.e., online suggestions served from Merino. Corresponds to the value of the `browser.urlbar.quicksuggest.dataCollection.enabled` pref.
+"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_quicksuggest_nonsponsored {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_quicksuggest_nonsponsored ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Urlbar Pref Quicksuggest Nonsponsored"
+    description: "Whether non-sponsored quick suggest results are shown in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.quicksuggest.nonsponsored` pref.
+"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_quicksuggest_sponsored {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_quicksuggest_sponsored ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Urlbar Pref Quicksuggest Sponsored"
+    description: "Whether sponsored quick suggest results are shown in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.quicksuggest.sponsored` pref.
+"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_data_collection {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_data_collection ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Urlbar Pref Suggest Data Collection"
+    description: "Whether the user has opted in to data collection for Firefox Suggest, i.e., online suggestions served from Merino. Corresponds to the value of the `browser.urlbar.quicksuggest.dataCollection.enabled` pref.
+"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_nonsponsored {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_nonsponsored ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Urlbar Pref Suggest Nonsponsored"
+    description: "Whether non-sponsored quick suggest results are shown in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.quicksuggest.nonsponsored` pref.
+"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_sponsored {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_sponsored ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Urlbar Pref Suggest Sponsored"
+    description: "Whether sponsored quick suggest results are shown in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.quicksuggest.sponsored` pref.
+"
+  }
+
+  dimension: metrics__boolean__urlbar_pref_suggest_topsites {
+    sql: ${TABLE}.metrics.boolean.urlbar_pref_suggest_topsites ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Urlbar Pref Suggest Topsites"
+    description: "Whether topsite results are enabled in the urlbar. Corresponds to the value of the `browser.urlbar.suggest.topsites` pref.
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -337,19 +403,23 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
-  dimension: metrics__labeled_rate {
-    sql: ${TABLE}.metrics.labeled_rate ;;
-    hidden: yes
+  dimension: metrics__quantity__urlbar_pref_max_results {
+    sql: ${TABLE}.metrics.quantity.urlbar_pref_max_results ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Urlbar Pref Max Results"
+    description: "Maximum results to show in the Address Bar. Corresponds to the value of the `browser.urlbar.maxRichResults` pref.
+"
   }
 
-  dimension: metrics__text {
-    sql: ${TABLE}.metrics.text ;;
-    hidden: yes
-  }
-
-  dimension: metrics__url {
-    sql: ${TABLE}.metrics.url ;;
-    hidden: yes
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimenation enrollment.
+"
   }
 
   dimension: metrics__uuid__legacy_telemetry_client_id {
@@ -540,75 +610,6 @@ view: events_table__events__extra {
   }
 }
 
-view: events_table__metrics__jwe {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: events_table__metrics__labeled_rate {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-}
-
-view: events_table__metrics__labeled_rate__value {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value__denominator {
-    sql: ${TABLE}.value.denominator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Denominator"
-  }
-
-  dimension: value__numerator {
-    sql: ${TABLE}.value.numerator ;;
-    type: number
-    group_label: "Value"
-    group_item_label: "Numerator"
-  }
-}
-
-view: events_table__metrics__text {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
-view: events_table__metrics__url {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: string
-  }
-}
-
 view: events_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -620,6 +621,13 @@ view: events_table__ping_info__experiments {
     type: string
     group_label: "Value"
     group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
   }
 
   dimension: value__extra__type {

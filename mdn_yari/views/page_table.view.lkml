@@ -121,6 +121,14 @@ view: page_table {
     description: "The version of the Glean SDK"
   }
 
+  dimension: client_info__windows_build_number {
+    sql: ${TABLE}.client_info.windows_build_number ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Windows Build Number"
+    description: "The optional Windows build number, reported by Windows (e.g. 22000) and not set for other platforms"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
@@ -332,6 +340,119 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_string__page_utm {
+    sql: ${TABLE}.metrics.labeled_string.page_utm ;;
+    hidden: yes
+    description: "The UTM parameters of the page, used to attribute the source of traffic:
+\"source\": which site sent the traffic
+\"medium\": what type of link was used
+\"campaign\": what specific campaign or experiment does this relate to
+\"term\": here for completeness, the search term that was purchased/bid on
+\"content\": what specifically was clicked to bring the user to the site
+"
+  }
+
+  dimension: metrics__quantity__navigator_viewport_horizontal_coverage {
+    sql: ${TABLE}.metrics.quantity.navigator_viewport_horizontal_coverage ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Navigator Viewport Horizontal Coverage"
+    description: "The ratio of viewport width to screen width, expressed as a percentage.
+"
+  }
+
+  dimension: metrics__quantity__navigator_viewport_ratio {
+    sql: ${TABLE}.metrics.quantity.navigator_viewport_ratio ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Navigator Viewport Ratio"
+    description: "The ratio of viewport width to viewport height,
+expressed as a percentage.
+"
+  }
+
+  dimension: metrics__string__navigator_geo {
+    sql: ${TABLE}.metrics.string.navigator_geo ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Navigator Geo"
+    description: "The navigators ISO 3166 country name (not code) based on geo ip.
+"
+  }
+
+  dimension: metrics__string__navigator_geo_iso {
+    sql: ${TABLE}.metrics.string.navigator_geo_iso ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Navigator Geo Iso"
+    description: "The navigator's two-letter ISO 3166 country code based on geo ip.
+"
+  }
+
+  dimension: metrics__string__navigator_subscription_type {
+    sql: ${TABLE}.metrics.string.navigator_subscription_type ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Navigator Subscription Type"
+    description: "The subscription type of the user. can be one of
+'core','mdn_plus_5m','mdn_plus_5y','mdn_plus_10m','mdn_plus_10y'
+"
+  }
+
+  dimension: metrics__string__navigator_user_agent {
+    sql: ${TABLE}.metrics.string.navigator_user_agent ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Navigator User Agent"
+    description: "The navigators user agent.
+"
+  }
+
+  dimension: metrics__string__navigator_viewport_breakpoint {
+    sql: ${TABLE}.metrics.string.navigator_viewport_breakpoint ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Navigator Viewport Breakpoint"
+    description: "The currently displayed viewport breakpoint,
+one of \"xs\", \"sm\", \"md\",\"lg\", \"xl\" or \"xxl\".
+"
+  }
+
+  dimension: metrics__string__page_http_status {
+    sql: ${TABLE}.metrics.string.page_http_status ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Page Http Status"
+    description: "The HTTP status code of the page.
+"
+  }
+
+  dimension: metrics__string__page_is_baseline {
+    sql: ${TABLE}.metrics.string.page_is_baseline ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Page Is Baseline"
+    description: "The Baseline status of the page:
+null: the page has no baseline status
+\"baseline\": the page is baseline
+\"not_baseline\" the page is not baseline
+"
+  }
+
+  dimension: metrics__url__page_path {
+    sql: ${TABLE}.metrics.url.page_path ;;
+    type: string
+    group_label: "Metrics Url"
+    group_item_label: "Page Path"
+  }
+
+  dimension: metrics__url__page_referrer {
+    sql: ${TABLE}.metrics.url.page_referrer ;;
+    type: string
+    group_label: "Metrics Url"
+    group_item_label: "Page Referrer"
+  }
+
   dimension: metrics__url2__page_path {
     sql: ${TABLE}.metrics.url2.page_path ;;
     type: string
@@ -522,6 +643,18 @@ view: page_table__events__extra {
   }
 }
 
+view: page_table__metrics__labeled_string__page_utm {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
 view: page_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -533,6 +666,13 @@ view: page_table__ping_info__experiments {
     type: string
     group_label: "Value"
     group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
   }
 
   dimension: value__extra__type {
