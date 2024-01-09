@@ -5112,7 +5112,7 @@ moso_mastodon_backend:
   glean_app: true
   owners:
   - breyes@mozilla.com
-  pretty_name: Mozilla.Social Mastodon Backend
+  pretty_name: Mozilla Social Mastodon Backend
   spoke: looker-spoke-default
   views:
     baseline:
@@ -5603,6 +5603,11 @@ mozillavpn_backend_cirrus:
       type: glean_ping_explore
       views:
         base_view: baseline
+    client_counts:
+      type: client_counts_explore
+      views:
+        base_view: client_counts
+        extended_view: baseline_clients_daily_table
     deletion_request:
       type: glean_ping_explore
       views:
@@ -5620,6 +5625,10 @@ mozillavpn_backend_cirrus:
       views:
         base_view: events
         extended_view: events_unnested_table
+    growth_accounting:
+      type: growth_accounting_explore
+      views:
+        base_view: growth_accounting
     metrics:
       type: glean_ping_explore
       views:
@@ -5638,11 +5647,30 @@ mozillavpn_backend_cirrus:
       tables:
       - table: mozdata.mozillavpn_backend_cirrus.baseline
       type: glean_ping_view
+    baseline_clients_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.mozillavpn_backend_cirrus.baseline_clients_daily
+      type: table_view
+    baseline_clients_first_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.mozillavpn_backend_cirrus.baseline_clients_first_seen
+      type: table_view
+    baseline_clients_last_seen_table:
+      tables:
+      - channel: null
+        table: mozdata.mozillavpn_backend_cirrus.baseline_clients_last_seen
+      type: table_view
     baseline_table:
       tables:
       - channel: null
         table: mozdata.mozillavpn_backend_cirrus.baseline
       type: table_view
+    client_counts:
+      tables:
+      - table: mozdata.mozillavpn_backend_cirrus.baseline_clients_daily
+      type: client_counts_view
     deletion_request:
       tables:
       - table: mozdata.mozillavpn_backend_cirrus.deletion_request
@@ -5685,6 +5713,10 @@ mozillavpn_backend_cirrus:
       - channel: null
         table: mozdata.mozillavpn_backend_cirrus.events_unnested
       type: table_view
+    growth_accounting:
+      tables:
+      - table: mozdata.mozillavpn_backend_cirrus.baseline_clients_last_seen
+      type: growth_accounting_view
     metrics:
       tables:
       - table: mozdata.mozillavpn_backend_cirrus.metrics

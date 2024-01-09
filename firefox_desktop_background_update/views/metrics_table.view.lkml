@@ -1987,6 +1987,30 @@ This metric appears in both the metrics and baseline pings.
     hidden: yes
   }
 
+  dimension: metrics__quantity__data_storage_alternate_services {
+    sql: ${TABLE}.metrics.quantity.data_storage_alternate_services ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Data Storage Alternate Services"
+    description: "The number of entries stored in the AlternateServices nsIDataStorage"
+  }
+
+  dimension: metrics__quantity__data_storage_client_auth_remember_list {
+    sql: ${TABLE}.metrics.quantity.data_storage_client_auth_remember_list ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Data Storage Client Auth Remember List"
+    description: "The number of entries stored in the ClientAuthRememberList nsIDataStorage"
+  }
+
+  dimension: metrics__quantity__data_storage_site_security_service_state {
+    sql: ${TABLE}.metrics.quantity.data_storage_site_security_service_state ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Data Storage Site Security Service State"
+    description: "The number of entries stored in the SiteSecurityServiceState nsIDataStorage"
+  }
+
   dimension: metrics__quantity__extensions_apis_dnr_evaluate_rules_count_max {
     sql: ${TABLE}.metrics.quantity.extensions_apis_dnr_evaluate_rules_count_max ;;
     type: number
