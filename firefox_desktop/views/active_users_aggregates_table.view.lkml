@@ -76,6 +76,11 @@ view: active_users_aggregates_table {
     map_layer_name: countries
   }
 
+  dimension: daily_users {
+    sql: ${TABLE}.daily_users ;;
+    type: number
+  }
+
   dimension: dau {
     sql: ${TABLE}.dau ;;
     type: number
@@ -103,6 +108,11 @@ view: active_users_aggregates_table {
 
   dimension: mau {
     sql: ${TABLE}.mau ;;
+    type: number
+  }
+
+  dimension: monthly_users {
+    sql: ${TABLE}.monthly_users ;;
     type: number
   }
 
@@ -141,11 +151,6 @@ view: active_users_aggregates_table {
     type: number
   }
 
-  dimension: qdau {
-    sql: ${TABLE}.qdau ;;
-    type: number
-  }
-
   dimension: search_count {
     sql: ${TABLE}.search_count ;;
     type: number
@@ -168,6 +173,11 @@ view: active_users_aggregates_table {
 
   dimension: wau {
     sql: ${TABLE}.wau ;;
+    type: number
+  }
+
+  dimension: weekly_users {
+    sql: ${TABLE}.weekly_users ;;
     type: number
   }
 

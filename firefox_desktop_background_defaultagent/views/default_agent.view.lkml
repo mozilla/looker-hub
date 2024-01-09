@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: default_agent {
+  dimension: metrics__string__do_task_implementation {
+    label: "Do Task Implementation"
+    hidden: no
+    sql: ${TABLE}.metrics.string.do_task_implementation ;;
+    type: string
+    group_label: "Do Task"
+    group_item_label: "Implementation"
+
+    link: {
+      label: "Glean Dictionary reference for Do Task Implementation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_defaultagent/metrics/do_task_implementation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Which implementation of `do-task` was used: \"JavaScript\" by default or \"C++\" if a Nimbus rollback was acted upon.
+"
+  }
+
   dimension: metrics__string__notification_action {
     label: "Notification Action"
     hidden: no
