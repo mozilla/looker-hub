@@ -8147,13 +8147,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id179
           normalized_channel:
-            default: nightly
+            default: esr
             options:
-            - nightly
-            - release
             - esr
+            - nightly
             - aurora
             - beta
+            - release
             - default
             - nightly-pine
             - nightly-oak
@@ -8798,10 +8798,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id227
           os:
-            default: Windows
+            default: Mac
             options:
-            - Windows
             - Mac
+            - Windows
             - Linux
             - Other
         explore: garbage_collection
@@ -9400,13 +9400,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id281
           app:
-            default: Android - vpnsession
+            default: Android - daemon
             options:
-            - Android - vpnsession
-            - iPhone - vpnsession
-            - Desktop - vpnsession
             - Android - daemon
             - iPhone - daemon
+            - Desktop - vpnsession
+            - iPhone - vpnsession
+            - Android - vpnsession
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id282
@@ -10938,17 +10938,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id392
           channel:
-            default: beta
+            default: nightly
             options:
-            - beta
             - nightly
             - release
+            - beta
           os:
-            default: Windows_NT
+            default: Linux
             options:
-            - Windows_NT
             - Linux
             - Darwin
+            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id393
@@ -17203,6 +17203,24 @@ telemetry_dev_cycle:
       tables:
       - table: mozdata.telemetry_dev_cycle.telemetry_probes_stats
       type: table_view
+tiktokreporter_android:
+  explores: {}
+  glean_app: true
+  owners:
+  - jessed@mozillafoundation.org
+  - tlong@mozilla.com
+  pretty_name: TikTok Reporter (Android)
+  spoke: looker-spoke-default
+  views: {}
+tiktokreporter_ios:
+  explores: {}
+  glean_app: true
+  owners:
+  - jessed@mozillafoundation.org
+  - tlong@mozilla.com
+  pretty_name: TikTok Reporter (iOS)
+  spoke: looker-spoke-default
+  views: {}
 treeherder:
   explores:
     classified:
