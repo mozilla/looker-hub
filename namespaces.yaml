@@ -387,7 +387,7 @@ combined_browser_metrics:
       type: table_view
     fenix_and_firefox_use_counters:
       tables:
-      - table: moz-fx-data-shared-prod.telemetry.fenix_and_firefox_use_counters
+      - table: mozilla-public-data.telemetry_derived.fenix_and_firefox_use_counters
       type: table_view
 contextual_services:
   glean_app: false
