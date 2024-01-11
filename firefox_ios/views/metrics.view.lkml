@@ -930,7 +930,7 @@ Show All button in the History section
 
   dimension: metrics__counter__firefox_home_page_history_highlights_view {
     label: "Firefox Home Page History Highlights View"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_view ;;
     type: number
     group_label: "Firefox Home Page"

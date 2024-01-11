@@ -10090,6 +10090,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Deprecated Ops Doc Form Submission Untrusted Event"
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_idbobject_store_create_index_locale {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_idbobject_store_create_index_locale ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Idbobject Store Create Index Locale"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_idbopen_dboptions_storage_type {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_idbopen_dboptions_storage_type ;;
     type: number
@@ -10438,6 +10445,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Page Form Submission Untrusted Event"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_idbobject_store_create_index_locale {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_idbobject_store_create_index_locale ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Idbobject Store Create Index Locale"
   }
 
   dimension: metrics__counter__use_counter_deprecated_ops_page_idbopen_dboptions_storage_type {
