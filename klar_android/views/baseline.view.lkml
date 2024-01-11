@@ -126,6 +126,7 @@ that programmatically redirect to a new location.
     }
 
     description: "Sets the legacy client ID as part of the deletion-request ping.
+**No longer reported set since Focus 124, where legacy telemetry was removed**.
 "
   }
 
