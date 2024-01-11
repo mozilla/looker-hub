@@ -44,8 +44,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Avg Session Duration - By app
-    name: Avg Session Duration - By app_mean
+  - title: Avg Sum Session Duration - By app
+    name: Avg Sum Session Duration - By app_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       mozilla_vpn.branch, mozilla_vpn.app
     ]
     filters:
-      mozilla_vpn.metric: 'avg_session_duration'
+      mozilla_vpn.metric: 'avg_sum_session_duration'
       mozilla_vpn.statistic: mean
     row: 0
     col: 12
@@ -78,8 +78,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Avg Session Duration - By app
-    name: Avg Session Duration - By app_percentile
+  - title: Avg Sum Session Duration - By app
+    name: Avg Sum Session Duration - By app_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -96,7 +96,7 @@
       mozilla_vpn.branch, mozilla_vpn.app
     ]
     filters:
-      mozilla_vpn.metric: 'avg_session_duration'
+      mozilla_vpn.metric: 'avg_sum_session_duration'
       mozilla_vpn.statistic: percentile
     row: 10
     col: 0
@@ -149,8 +149,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Avg Sum Session Duration - By app
-    name: Avg Sum Session Duration - By app_mean
+  - title: Avg Session Duration - By app
+    name: Avg Session Duration - By app_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,7 +165,7 @@
       mozilla_vpn.branch, mozilla_vpn.app
     ]
     filters:
-      mozilla_vpn.metric: 'avg_sum_session_duration'
+      mozilla_vpn.metric: 'avg_session_duration'
       mozilla_vpn.statistic: mean
     row: 20
     col: 0
@@ -183,8 +183,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Avg Sum Session Duration - By app
-    name: Avg Sum Session Duration - By app_percentile
+  - title: Avg Session Duration - By app
+    name: Avg Session Duration - By app_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -201,7 +201,7 @@
       mozilla_vpn.branch, mozilla_vpn.app
     ]
     filters:
-      mozilla_vpn.metric: 'avg_sum_session_duration'
+      mozilla_vpn.metric: 'avg_session_duration'
       mozilla_vpn.statistic: percentile
     row: 20
     col: 12

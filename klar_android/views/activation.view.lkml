@@ -39,6 +39,7 @@ and only sent with the activation ping.
     }
 
     description: "Sets the legacy client ID as part of the deletion-request ping.
+**No longer reported set since Focus 124, where legacy telemetry was removed**.
 "
   }
 
