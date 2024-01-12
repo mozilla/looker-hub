@@ -2182,6 +2182,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__avif_aom_decode_error {
+    sql: ${TABLE}.metrics.labeled_counter.avif_aom_decode_error ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__avif_bit_depth {
     sql: ${TABLE}.metrics.labeled_counter.avif_bit_depth ;;
     hidden: yes
@@ -3637,6 +3642,13 @@ view: metrics_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Preferences Etp Custom Cookies Selection"
+  }
+
+  dimension: metrics__string__preferences_open_links_in_app_enabled {
+    sql: ${TABLE}.metrics.string.preferences_open_links_in_app_enabled ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Preferences Open Links In App Enabled"
   }
 
   dimension: metrics__string__preferences_toolbar_position_setting {
