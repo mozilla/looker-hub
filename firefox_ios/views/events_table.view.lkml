@@ -283,6 +283,13 @@ view: events_table {
     group_item_label: "Firefox Home Page History Highlights Item Opened"
   }
 
+  dimension: metrics__counter__tabs_grouped_tab_closed {
+    sql: ${TABLE}.metrics.counter.tabs_grouped_tab_closed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tabs Grouped Tab Closed"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes

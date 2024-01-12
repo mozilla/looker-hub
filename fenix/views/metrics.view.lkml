@@ -2394,11 +2394,11 @@ default: true
 "
   }
 
-  dimension: metrics__boolean__preferences_open_links_in_app_enabled {
+  dimension: metrics__string__preferences_open_links_in_app_enabled {
     label: "Preferences Open Links In App Enabled"
     hidden: no
-    sql: ${TABLE}.metrics.boolean.preferences_open_links_in_app_enabled ;;
-    type: yesno
+    sql: ${TABLE}.metrics.string.preferences_open_links_in_app_enabled ;;
+    type: string
     group_label: "Preferences"
     group_item_label: "Open Links In App Enabled"
 

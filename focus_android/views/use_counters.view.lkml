@@ -25223,6 +25223,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_idbobject_store_create_index_locale {
+    label: "Use Counter Deprecated Ops Doc Idbobject Store Create Index Locale"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_idbobject_store_create_index_locale ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Doc"
+    group_item_label: "Idbobject Store Create Index Locale"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Idbobject Store Create Index Locale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_deprecated_ops_doc_idbobject_store_create_index_locale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used IDBObjectStoreCreateIndexLocale. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_import_xulinto_content {
     label: "Use Counter Deprecated Ops Doc Import Xulinto Content"
     hidden: no
@@ -25976,6 +25994,24 @@ view: use_counters {
     }
 
     description: "Whether a page used FormSubmissionUntrustedEvent. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_idbobject_store_create_index_locale {
+    label: "Use Counter Deprecated Ops Page Idbobject Store Create Index Locale"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_idbobject_store_create_index_locale ;;
+    type: number
+    group_label: "Use Counter Deprecated Ops Page"
+    group_item_label: "Idbobject Store Create Index Locale"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Idbobject Store Create Index Locale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_deprecated_ops_page_idbobject_store_create_index_locale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used IDBObjectStoreCreateIndexLocale. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -76703,6 +76739,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_deprecated_ops_doc_idbobject_store_create_index_locale {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_doc_idbobject_store_create_index_locale} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Idbobject Store Create Index Locale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_deprecated_ops_doc_idbobject_store_create_index_locale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_doc_idbobject_store_create_index_locale_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_doc_idbobject_store_create_index_locale: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Doc Idbobject Store Create Index Locale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_deprecated_ops_doc_idbobject_store_create_index_locale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_deprecated_ops_doc_import_xulinto_content {
     type: sum
     sql: ${metrics__counter__use_counter_deprecated_ops_doc_import_xulinto_content} ;;
@@ -77749,6 +77810,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Form Submission Untrusted Event"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_deprecated_ops_page_form_submission_untrusted_event"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_idbobject_store_create_index_locale {
+    type: sum
+    sql: ${metrics__counter__use_counter_deprecated_ops_page_idbobject_store_create_index_locale} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Idbobject Store Create Index Locale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_deprecated_ops_page_idbobject_store_create_index_locale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_deprecated_ops_page_idbobject_store_create_index_locale_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_deprecated_ops_page_idbobject_store_create_index_locale: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Deprecated Ops Page Idbobject Store Create Index Locale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_deprecated_ops_page_idbobject_store_create_index_locale"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
