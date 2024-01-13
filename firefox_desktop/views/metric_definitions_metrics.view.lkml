@@ -9,8 +9,8 @@ view: metric_definitions_metrics {
     sql: SELECT
                 (
     (COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "freetext")) > 0, FALSE) OR
-    COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "ink")) > 0, FALSE)) AND 
-    (COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "print")) > 0, FALSE) OR 
+    COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "ink")) > 0, FALSE)) AND
+    (COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "print")) > 0, FALSE) OR
     COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "save")) > 0, FALSE))
 ) AS pdf_engagement,(
     COALESCE(SUM(mozfun.map.get_key(metrics.labeled_counter.pdfjs_editing, "freetext")) > 0, FALSE)
@@ -31,7 +31,7 @@ view: metric_definitions_metrics {
         *
     FROM
         (
-    SELECT 
+    SELECT
       p.*,
       DATE(p.submission_timestamp) AS submission_date
     FROM `mozdata.firefox_desktop.metrics` p
@@ -102,6 +102,10 @@ view: metric_definitions_metrics {
             
                 {%- if  metric_definitions_metrics._in_query %}
                 , SAFE_CAST(metric_definitions_metrics.client_id AS STRING)
+                {%- endif -%}
+            
+                {%- if  metric_definitions_newtab_visits_topsite_tile_interactions._in_query %}
+                , SAFE_CAST(metric_definitions_newtab_visits_topsite_tile_interactions.client_id AS STRING)
                 {%- endif -%}
             ) ;;
     label: "Client ID"
@@ -208,6 +212,10 @@ view: metric_definitions_metrics {
             
                 {%- if  metric_definitions_metrics._in_query %}
                 , CAST(metric_definitions_metrics.submission_date AS TIMESTAMP)
+                {%- endif -%}
+            
+                {%- if  metric_definitions_newtab_visits_topsite_tile_interactions._in_query %}
+                , CAST(metric_definitions_newtab_visits_topsite_tile_interactions.submission_date AS TIMESTAMP)
                 {%- endif -%}
             ) ;;
     label: "Submission"

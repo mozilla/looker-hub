@@ -83,6 +83,10 @@ view: metric_definitions_newtab_interactions {
                 {%- if  metric_definitions_metrics._in_query %}
                 , SAFE_CAST(metric_definitions_metrics.client_id AS STRING)
                 {%- endif -%}
+            
+                {%- if  metric_definitions_newtab_visits_topsite_tile_interactions._in_query %}
+                , SAFE_CAST(metric_definitions_newtab_visits_topsite_tile_interactions.client_id AS STRING)
+                {%- endif -%}
             ) ;;
     label: "Client ID"
     primary_key: yes
@@ -298,6 +302,10 @@ view: metric_definitions_newtab_interactions {
             
                 {%- if  metric_definitions_metrics._in_query %}
                 , CAST(metric_definitions_metrics.submission_date AS TIMESTAMP)
+                {%- endif -%}
+            
+                {%- if  metric_definitions_newtab_visits_topsite_tile_interactions._in_query %}
+                , CAST(metric_definitions_newtab_visits_topsite_tile_interactions.submission_date AS TIMESTAMP)
                 {%- endif -%}
             ) ;;
     label: "Submission"

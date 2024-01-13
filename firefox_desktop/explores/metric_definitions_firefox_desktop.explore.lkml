@@ -16,6 +16,7 @@ include: "/looker-hub/firefox_desktop/views/metric_definitions_events_memory.vie
 include: "/looker-hub/firefox_desktop/views/metric_definitions_main.view.lkml"
 include: "/looker-hub/firefox_desktop/views/metric_definitions_metrics.view.lkml"
 include: "/looker-hub/firefox_desktop/views/metric_definitions_newtab_interactions.view.lkml"
+include: "/looker-hub/firefox_desktop/views/metric_definitions_newtab_visits_topsite_tile_interactions.view.lkml"
 include: "/looker-hub/firefox_desktop/views/metric_definitions_normandy_events.view.lkml"
 include: "/looker-hub/firefox_desktop/views/metric_definitions_search_clients_engines_sources_daily.view.lkml"
 include: "/looker-hub/firefox_desktop/views/metric_definitions_sponsored_tiles_clients_daily.view.lkml"
@@ -131,6 +132,16 @@ explore: metric_definitions_firefox_desktop {
     sql_on: SAFE_CAST(metric_definitions_firefox_desktop.submission_date AS TIMESTAMP) =
                   SAFE_CAST(metric_definitions_newtab_interactions.submission_date AS TIMESTAMP) AND SAFE_CAST(metric_definitions_firefox_desktop.client_id AS STRING) =
                   SAFE_CAST(metric_definitions_newtab_interactions.client_id AS STRING) ;;
+  }
+
+  join: metric_definitions_newtab_visits_topsite_tile_interactions {
+    view_label: "Metric Definitions Newtab Visits Topsite Tile Interactions"
+    relationship: many_to_many
+    type: full_outer
+    fields: [metrics*]
+    sql_on: SAFE_CAST(metric_definitions_firefox_desktop.submission_date AS TIMESTAMP) =
+                  SAFE_CAST(metric_definitions_newtab_visits_topsite_tile_interactions.submission_date AS TIMESTAMP) AND SAFE_CAST(metric_definitions_firefox_desktop.client_id AS STRING) =
+                  SAFE_CAST(metric_definitions_newtab_visits_topsite_tile_interactions.client_id AS STRING) ;;
   }
 
   join: metric_definitions_normandy_events {

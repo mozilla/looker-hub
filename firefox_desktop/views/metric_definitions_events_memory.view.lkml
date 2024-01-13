@@ -19,7 +19,7 @@ view: metric_definitions_events_memory {
         SELECT
             *
         FROM `moz-fx-data-shared-prod.telemetry.events`
-        WHERE 
+        WHERE
             event_category = 'memory_watcher'
             AND event_method = 'on_high_memory'
             AND event_object = 'stats'
@@ -92,6 +92,10 @@ view: metric_definitions_events_memory {
                 {%- if  metric_definitions_metrics._in_query %}
                 , SAFE_CAST(metric_definitions_metrics.client_id AS STRING)
                 {%- endif -%}
+            
+                {%- if  metric_definitions_newtab_visits_topsite_tile_interactions._in_query %}
+                , SAFE_CAST(metric_definitions_newtab_visits_topsite_tile_interactions.client_id AS STRING)
+                {%- endif -%}
             ) ;;
     label: "Client ID"
     primary_key: yes
@@ -162,6 +166,10 @@ view: metric_definitions_events_memory {
             
                 {%- if  metric_definitions_metrics._in_query %}
                 , CAST(metric_definitions_metrics.submission_date AS TIMESTAMP)
+                {%- endif -%}
+            
+                {%- if  metric_definitions_newtab_visits_topsite_tile_interactions._in_query %}
+                , CAST(metric_definitions_newtab_visits_topsite_tile_interactions.submission_date AS TIMESTAMP)
                 {%- endif -%}
             ) ;;
     label: "Submission"
