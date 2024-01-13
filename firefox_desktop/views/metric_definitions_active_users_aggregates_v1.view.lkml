@@ -87,6 +87,10 @@ view: metric_definitions_active_users_aggregates_v1 {
                 {%- if  metric_definitions_metrics._in_query %}
                 , SAFE_CAST(metric_definitions_metrics.client_id AS STRING)
                 {%- endif -%}
+            
+                {%- if  metric_definitions_newtab_visits_topsite_tile_interactions._in_query %}
+                , SAFE_CAST(metric_definitions_newtab_visits_topsite_tile_interactions.client_id AS STRING)
+                {%- endif -%}
             ) ;;
     label: "Client ID"
     primary_key: yes
@@ -101,7 +105,7 @@ view: metric_definitions_active_users_aggregates_v1 {
     Whenever possible, this is the preferred DAU reporting definition to use for Desktop.
     This metric needs to be aggregated by `submission_date`. If it is not aggregated by `submission_date`,
     it is similar to a \"days of use\" metric, and not DAU.
-    
+
     For more information, refer to [the DAU description in the Mozilla Data Documentation](https://docs.telemetry.mozilla.org/concepts/terminology.html#dau).
     For questions please contact bochocki@mozilla.com or firefox-kpi@mozilla.com.
 "
@@ -116,7 +120,7 @@ view: metric_definitions_active_users_aggregates_v1 {
     [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/blob/main/sql_generators/active_users/templates/desktop_query.sql)
     and is automatically cross-checked, actively monitored, and change controlled.
     To reconstruct the annual Desktop DAU KPI, this metric needs to be aggregated by
-    `EXTRACT(YEAR FROM submission_date)`.  
+    `EXTRACT(YEAR FROM submission_date)`.
 
     For more information, refer to [the DAU description in the Mozilla Data Documentation](https://docs.telemetry.mozilla.org/concepts/terminology.html#dau).
     For questions please contact bochocki@mozilla.com or firefox-kpi@mozilla.com.
@@ -182,6 +186,10 @@ view: metric_definitions_active_users_aggregates_v1 {
             
                 {%- if  metric_definitions_metrics._in_query %}
                 , CAST(metric_definitions_metrics.submission_date AS TIMESTAMP)
+                {%- endif -%}
+            
+                {%- if  metric_definitions_newtab_visits_topsite_tile_interactions._in_query %}
+                , CAST(metric_definitions_newtab_visits_topsite_tile_interactions.submission_date AS TIMESTAMP)
                 {%- endif -%}
             ) ;;
     label: "Submission"

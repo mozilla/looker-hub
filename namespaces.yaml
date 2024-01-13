@@ -2004,6 +2004,7 @@ firefox_desktop:
         - metric_definitions_main
         - metric_definitions_metrics
         - metric_definitions_newtab_interactions
+        - metric_definitions_newtab_visits_topsite_tile_interactions
         - metric_definitions_normandy_events
         - metric_definitions_search_clients_engines_sources_daily
         - metric_definitions_sponsored_tiles_clients_daily
@@ -2255,6 +2256,8 @@ firefox_desktop:
     metric_definitions_metrics:
       type: metric_definitions_view
     metric_definitions_newtab_interactions:
+      type: metric_definitions_view
+    metric_definitions_newtab_visits_topsite_tile_interactions:
       type: metric_definitions_view
     metric_definitions_normandy_events:
       type: metric_definitions_view
