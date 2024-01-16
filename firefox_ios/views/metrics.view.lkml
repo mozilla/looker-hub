@@ -890,25 +890,6 @@ with a home page origin.
 "
   }
 
-  dimension: metrics__counter__firefox_home_page_history_highlights_item_opened {
-    label: "Firefox Home Page History Highlights Item Opened"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_item_opened ;;
-    type: number
-    group_label: "Firefox Home Page"
-    group_item_label: "History Highlights Item Opened"
-
-    link: {
-      label: "Glean Dictionary reference for Firefox Home Page History Highlights Item Opened"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_history_highlights_item_opened"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times a user taps to open an
-existing tab from the History Highlights section
-"
-  }
-
   dimension: metrics__counter__firefox_home_page_history_highlights_show_all {
     label: "Firefox Home Page History Highlights Show All"
     hidden: no
@@ -1548,24 +1529,6 @@ section from inactive tabs tray.
 
     description: "Counts the number of times the Go To Settings button on
 default browser card is clicked.
-"
-  }
-
-  dimension: metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
-    label: "Inactive Tabs Tray Toggle Inactive Tab Tray"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.inactive_tabs_tray_toggle_inactive_tab_tray ;;
-    group_label: "Inactive Tabs Tray"
-    group_item_label: "Toggle Inactive Tab Tray"
-
-    link: {
-      label: "Glean Dictionary reference for Inactive Tabs Tray Toggle Inactive Tab Tray"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_toggle_inactive_tab_tray"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times user toggle (expand or collapse)
-inactive tab section.
 "
   }
 
@@ -3120,6 +3083,24 @@ divided by the number of baseline pings with
 `ping_info.reason=\"inactive\"` from the `start_time` to
 the `end_time` of the metrics ping to determine the
 average open tabs per foreground \"session\".
+"
+  }
+
+  dimension: metrics__counter__tabs_grouped_tab_closed {
+    label: "Tabs Grouped Tab Closed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tabs_grouped_tab_closed ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Grouped Tab Closed"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Grouped Tab Closed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_grouped_tab_closed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded when a user closes the tab in a group
 "
   }
 
@@ -5580,31 +5561,6 @@ startup, as part of the initialization sequence.
     }
   }
 
-  measure: firefox_home_page_history_highlights_item_opened {
-    type: sum
-    sql: ${metrics__counter__firefox_home_page_history_highlights_item_opened} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Firefox Home Page History Highlights Item Opened"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_history_highlights_item_opened"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: firefox_home_page_history_highlights_item_opened_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__firefox_home_page_history_highlights_item_opened: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Firefox Home Page History Highlights Item Opened"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_history_highlights_item_opened"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
   measure: firefox_home_page_history_highlights_show_all {
     type: sum
     sql: ${metrics__counter__firefox_home_page_history_highlights_show_all} ;;
@@ -7176,6 +7132,31 @@ startup, as part of the initialization sequence.
     link: {
       label: "Glean Dictionary reference for Tabs Cumulative Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_cumulative_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_grouped_tab_closed {
+    type: sum
+    sql: ${metrics__counter__tabs_grouped_tab_closed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Grouped Tab Closed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_grouped_tab_closed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_grouped_tab_closed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tabs_grouped_tab_closed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Grouped Tab Closed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_grouped_tab_closed"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -9023,49 +9004,6 @@ view: metrics__metrics__labeled_counter__history_selected_item {
   }
 }
 
-view: metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
-  label: "Inactive Tabs Tray - Toggle Inactive Tab Tray"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
 view: metrics__metrics__labeled_counter__library_panel_pressed {
   label: "Library - Panel Pressed"
 
@@ -10241,25 +10179,6 @@ view: suggest__metrics__metrics__labeled_counter__history_selected_item {
     count(*) as n
 from mozdata.firefox_ios.metrics as t,
 unnest(metrics.labeled_counter.history_selected_item) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.inactive_tabs_tray_toggle_inactive_tab_tray) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

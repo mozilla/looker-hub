@@ -90,6 +90,10 @@ view: metric_definitions_clients_daily {
                 {%- if  metric_definitions_metrics._in_query %}
                 , SAFE_CAST(metric_definitions_metrics.client_id AS STRING)
                 {%- endif -%}
+            
+                {%- if  metric_definitions_newtab_visits_topsite_tile_interactions._in_query %}
+                , SAFE_CAST(metric_definitions_newtab_visits_topsite_tile_interactions.client_id AS STRING)
+                {%- endif -%}
             ) ;;
     label: "Client ID"
     primary_key: yes
@@ -136,7 +140,7 @@ view: metric_definitions_clients_daily {
     description: "    The number of unique clients with >0 active hours and >0 URIs loaded that
     we received a main ping from each day. To be comparable to DAU used for KPI
     tracking, this metric needs to be aggregated by `submission_date`. If the
-    metric is NOT aggregated by `submission_date`, the metric is similar to a 
+    metric is NOT aggregated by `submission_date`, the metric is similar to a
     \"days of use\" metric. For more details, refer to
     [the DAU description in the Mozilla Data Documentation](https://docs.telemetry.mozilla.org/concepts/terminology.html#dau).
 
@@ -154,7 +158,7 @@ view: metric_definitions_clients_daily {
     exists only for cases where reporting `client_id` is required (e.g. for experiments). This metric
     needs to be aggregated by `submission_date`. If it is not aggregated by `submission_date`, it is
     similar to a \"days of use\" metric, and not DAU.
-    
+
     For more information, refer to [the DAU description in the Mozilla Data Documentation](https://docs.telemetry.mozilla.org/concepts/terminology.html#dau).
     For questions please contact bochocki@mozilla.com or firefox-kpi@mozilla.com.
 "
@@ -165,9 +169,9 @@ view: metric_definitions_clients_daily {
   dimension: desktop_dau_kpi {
     label: "Desktop DAU KPI"
     description: "    The average number of unique clients with >0 active hours and >0 URIs loaded that
-    we received a main ping from each day in the 28-day period ending on December 15th. 
+    we received a main ping from each day in the 28-day period ending on December 15th.
     To reconstruct the annual Desktop DAU KPI, this metric needs to be aggregated by
-    `EXTRACT(YEAR FROM submission_date)`.  
+    `EXTRACT(YEAR FROM submission_date)`.
 
     For questions, please contact bochocki@mozilla.com or firefox-kpi@mozilla.com.
 "
@@ -304,6 +308,10 @@ view: metric_definitions_clients_daily {
             
                 {%- if  metric_definitions_metrics._in_query %}
                 , CAST(metric_definitions_metrics.submission_date AS TIMESTAMP)
+                {%- endif -%}
+            
+                {%- if  metric_definitions_newtab_visits_topsite_tile_interactions._in_query %}
+                , CAST(metric_definitions_newtab_visits_topsite_tile_interactions.submission_date AS TIMESTAMP)
                 {%- endif -%}
             ) ;;
     label: "Submission"

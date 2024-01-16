@@ -23,20 +23,7 @@ view: metric_definitions_activity_stream_events {
     event = 'PREF_CHANGED'
     AND source = 'POCKET_SPOCS'
     AND JSON_EXTRACT_SCALAR(value, '$.status') = 'false'
-) AS disable_pocket_spocs_clicks,COUNTIF(
-        event = 'BLOCK'
-        AND value LIKE '%spoc%'
-        AND SOURCE = 'TOP_SITES'
-      ) AS sponsored_tiles_dismissals,COALESCE(LOGICAL_OR(
-        event = 'BLOCK'
-        AND value LIKE '%spoc%'
-        AND SOURCE = 'TOP_SITES'
-      ), FALSE) AS any_sponsored_tiles_dismissals,COUNTIF(
-        event = 'BLOCK'
-        AND value LIKE '%spoc%'
-        AND SOURCE = 'TOP_SITES'
-        AND action_position <= 1
-      ) AS sponsored_tiles_dismissals_pos1_2,
+) AS disable_pocket_spocs_clicks,
                 client_id AS client_id,
                 submission_date AS submission_date
               FROM
@@ -117,6 +104,10 @@ view: metric_definitions_activity_stream_events {
                 {%- if  metric_definitions_metrics._in_query %}
                 , SAFE_CAST(metric_definitions_metrics.client_id AS STRING)
                 {%- endif -%}
+            
+                {%- if  metric_definitions_newtab_visits_topsite_tile_interactions._in_query %}
+                , SAFE_CAST(metric_definitions_newtab_visits_topsite_tile_interactions.client_id AS STRING)
+                {%- endif -%}
             ) ;;
     label: "Client ID"
     primary_key: yes
@@ -154,27 +145,6 @@ view: metric_definitions_activity_stream_events {
 "
     type: number
     sql: ${TABLE}.disable_pocket_spocs_clicks ;;
-  }
-
-  dimension: sponsored_tiles_dismissals {
-    label: "Sponsored Tiles Dismissals Count"
-    description: "Count of sponsored tiles dismissals in all positions"
-    type: number
-    sql: ${TABLE}.sponsored_tiles_dismissals ;;
-  }
-
-  dimension: any_sponsored_tiles_dismissals {
-    label: "Any Sponsored Tiles Dismissed"
-    description: "Clients that dismissed any sponsored tiles"
-    type: number
-    sql: ${TABLE}.any_sponsored_tiles_dismissals ;;
-  }
-
-  dimension: sponsored_tiles_dismissals_pos1_2 {
-    label: "Sponsored Tiles Dismissals Count (Positions 1 and 2)"
-    description: "Count of sponsored tiles dismissals in the first two positions"
-    type: number
-    sql: ${TABLE}.sponsored_tiles_dismissals_pos1_2 ;;
   }
 
   dimension_group: submission {
@@ -235,6 +205,10 @@ view: metric_definitions_activity_stream_events {
                 {%- if  metric_definitions_metrics._in_query %}
                 , CAST(metric_definitions_metrics.submission_date AS TIMESTAMP)
                 {%- endif -%}
+            
+                {%- if  metric_definitions_newtab_visits_topsite_tile_interactions._in_query %}
+                , CAST(metric_definitions_newtab_visits_topsite_tile_interactions.submission_date AS TIMESTAMP)
+                {%- endif -%}
             ) ;;
     label: "Submission"
     timeframes: [
@@ -248,14 +222,6 @@ view: metric_definitions_activity_stream_events {
   }
 
   set: metrics {
-    fields: [
-      pocket_rec_clicks,
-      pocket_spoc_clicks,
-      disable_pocket_clicks,
-      disable_pocket_spocs_clicks,
-      sponsored_tiles_dismissals,
-      any_sponsored_tiles_dismissals,
-      sponsored_tiles_dismissals_pos1_2,
-    ]
+    fields: [pocket_rec_clicks, pocket_spoc_clicks, disable_pocket_clicks, disable_pocket_spocs_clicks]
   }
 }

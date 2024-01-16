@@ -34,6 +34,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_alpha}) AS metrics__metrics__labeled_counter__avif_alpha ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_alpha.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__avif_aom_decode_error {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_aom_decode_error}) AS metrics__metrics__labeled_counter__avif_aom_decode_error ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_aom_decode_error.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__avif_bit_depth {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_bit_depth}) AS metrics__metrics__labeled_counter__avif_bit_depth ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_bit_depth.document_id} ;;
@@ -599,6 +604,10 @@ explore: suggest__metrics__metrics__labeled_counter__avif_a1op {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__avif_alpha {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__avif_aom_decode_error {
   hidden: yes
 }
 

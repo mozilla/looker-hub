@@ -83,6 +83,10 @@ view: metric_definitions_search_clients_engines_sources_daily {
                 {%- if  metric_definitions_metrics._in_query %}
                 , SAFE_CAST(metric_definitions_metrics.client_id AS STRING)
                 {%- endif -%}
+            
+                {%- if  metric_definitions_newtab_visits_topsite_tile_interactions._in_query %}
+                , SAFE_CAST(metric_definitions_newtab_visits_topsite_tile_interactions.client_id AS STRING)
+                {%- endif -%}
             ) ;;
     label: "Client ID"
     primary_key: yes
@@ -158,7 +162,7 @@ view: metric_definitions_search_clients_engines_sources_daily {
   dimension: search_with_ads_organic {
     label: "Organic searches with ads"
     description: "    Counts search result pages from organic searches served with advertising. Organic searches
-    are _not_ performed through a Firefox SAP and are not monetizable. 
+    are _not_ performed through a Firefox SAP and are not monetizable.
     Users may not actually see these ads thanks to e.g. ad-blockers.
     Learn more in the
     [search analysis documentation](https://mozilla-private.report/search-analysis-docs/book/in_content_searches.html).
@@ -170,7 +174,7 @@ view: metric_definitions_search_clients_engines_sources_daily {
   dimension: ad_clicks_organic {
     label: "Organic ad clicks"
     description: "    Counts clicks on ads on search engine result pages organic searches.
-    Organic searches are _not_ performed through a Firefox SAP and are not monetizable. 
+    Organic searches are _not_ performed through a Firefox SAP and are not monetizable.
 "
     type: number
     sql: ${TABLE}.ad_clicks_organic ;;
@@ -268,6 +272,10 @@ view: metric_definitions_search_clients_engines_sources_daily {
             
                 {%- if  metric_definitions_metrics._in_query %}
                 , CAST(metric_definitions_metrics.submission_date AS TIMESTAMP)
+                {%- endif -%}
+            
+                {%- if  metric_definitions_newtab_visits_topsite_tile_interactions._in_query %}
+                , CAST(metric_definitions_newtab_visits_topsite_tile_interactions.submission_date AS TIMESTAMP)
                 {%- endif -%}
             ) ;;
     label: "Submission"
