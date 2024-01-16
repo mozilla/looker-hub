@@ -1163,6 +1163,22 @@ view: new_profile {
     description: "The machines amount of RAM."
   }
 
+  dimension: environment__system__os__distro {
+    sql: ${TABLE}.environment.system.os.distro ;;
+    type: string
+    group_label: "Environment System Os"
+    group_item_label: "Distro"
+    description: "The name of the Linux distribution. This is Linux only. `null` on failure."
+  }
+
+  dimension: environment__system__os__distro_version {
+    sql: ${TABLE}.environment.system.os.distro_version ;;
+    type: string
+    group_label: "Environment System Os"
+    group_item_label: "Distro Version"
+    description: "The version of the Linux distribution. This is Linux only. `null` on failure."
+  }
+
   dimension: environment__system__os__has_prefetch {
     sql: ${TABLE}.environment.system.os.has_prefetch ;;
     type: yesno
