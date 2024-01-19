@@ -65,6 +65,18 @@ view: install {
     description: "True if the installation failed because the drive we're trying to install to does not have enough space"
   }
 
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+    description: "ID of partner distribution, defaulting to 0 for Mozilla distributions"
+  }
+
+  dimension: distribution_version {
+    sql: ${TABLE}.distribution_version ;;
+    type: string
+    description: "Version of partner distribution, defaulting to 0 for Mozilla distributions"
+  }
+
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
