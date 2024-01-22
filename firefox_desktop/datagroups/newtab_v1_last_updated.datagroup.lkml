@@ -8,8 +8,8 @@
 datagroup: newtab_v1_last_updated {
   label: "newtab_v1 Last Updated"
   sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.firefox_desktop_live.INFORMATION_SCHEMA.PARTITIONS
+    FROM `moz-fx-data-shared-prod`.firefox_desktop_stable.INFORMATION_SCHEMA.PARTITIONS
     WHERE table_name = 'newtab_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:firefox_desktop_live.newtab_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod:firefox_desktop_stable.newtab_v1 is modified."
   max_cache_age: "24 hours"
 }

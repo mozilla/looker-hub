@@ -18,7 +18,7 @@ view: metric_definitions_mobile_search_clients_engines_sources_daily {
         (
     SELECT *
     FROM `mozdata.search.mobile_search_clients_engines_sources_daily`
-    WHERE app_name = 'Klar' and os = 'iOS'
+    WHERE normalized_app_name_os = 'Klar iOS'
  )
     )
               WHERE submission_date BETWEEN
