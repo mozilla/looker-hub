@@ -4,15 +4,14 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/monitoring/views/payload_bytes_decoded_all.view.lkml"
+include: "/looker-hub/operational_monitoring/views/viewpoint_ios_jan_2024.view.lkml"
 
-explore: payload_bytes_decoded_all {
-  sql_always_where: ${payload_bytes_decoded_all.submission_date} >= '2010-01-01' ;;
-  view_name: payload_bytes_decoded_all
-
+explore: viewpoint_ios_jan_2024 {
   always_filter: {
     filters: [
-      submission_date: "28 days",
+      branch: "enabled, disabled",
     ]
   }
+
+  hidden: yes
 }

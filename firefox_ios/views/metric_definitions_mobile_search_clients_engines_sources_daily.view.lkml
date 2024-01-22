@@ -18,7 +18,7 @@ view: metric_definitions_mobile_search_clients_engines_sources_daily {
         (
     SELECT *
     FROM `mozdata.search.mobile_search_clients_engines_sources_daily`
-    WHERE os = "iOS" AND normalized_app_name = "Fennec"
+    WHERE normalized_app_name_os = 'Firefox iOS'
 )
     )
               WHERE submission_date BETWEEN
