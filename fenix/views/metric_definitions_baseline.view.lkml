@@ -7,7 +7,7 @@
 view: metric_definitions_baseline {
   derived_table: {
     sql: SELECT
-                COALESCE(SUM(metrics.counter.events_total_uri_count), 0) AS uri_count,COALESCE(SUM(metrics.timespan.glean_baseline_duration.value), 0) / 3600.0 AS active_hours,COUNT(DISTINCT DATE(submission_timestamp)) AS days_of_use,COUNT(document_id) AS baseline_ping_count,MIN(client_info.first_run_date) AS first_run_date,
+                COALESCE(SUM(metrics.counter.events_normal_and_private_uri_count), 0) AS uri_count,COALESCE(SUM(metrics.timespan.glean_baseline_duration.value), 0) / 3600.0 AS active_hours,COUNT(DISTINCT DATE(submission_timestamp)) AS days_of_use,COUNT(document_id) AS baseline_ping_count,MIN(client_info.first_run_date) AS first_run_date,
                 client_info.client_id AS client_id,
                 submission_date AS submission_date
               FROM

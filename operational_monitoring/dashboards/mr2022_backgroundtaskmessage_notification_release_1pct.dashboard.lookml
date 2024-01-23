@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       mr2022_backgroundtaskmessage_notification_release_1pct.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_notification_release_1pct.metric: 'retained'
+      mr2022_backgroundtaskmessage_notification_release_1pct.metric: 'qualified_cumulative_days_of_use'
       mr2022_backgroundtaskmessage_notification_release_1pct.statistic: mean
     row: 0
     col: 0
@@ -115,40 +115,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: mr2022_backgroundtaskmessage_notification_release_1pct
-    type: looker_line
-    fields: [
-      mr2022_backgroundtaskmessage_notification_release_1pct.submission_date,
-      mr2022_backgroundtaskmessage_notification_release_1pct.branch,
-      mr2022_backgroundtaskmessage_notification_release_1pct.point
-    ]
-    pivots: [
-      mr2022_backgroundtaskmessage_notification_release_1pct.branch
-    ]
-    filters:
-      mr2022_backgroundtaskmessage_notification_release_1pct.metric: 'active_hours'
-      mr2022_backgroundtaskmessage_notification_release_1pct.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: mr2022_backgroundtaskmessage_notification_release_1pct.submission_date
-    field_y: mr2022_backgroundtaskmessage_notification_release_1pct.point
-    log_scale: false
-    ci_lower: mr2022_backgroundtaskmessage_notification_release_1pct.lower
-    ci_upper: mr2022_backgroundtaskmessage_notification_release_1pct.upper
-    show_grid: true
-    listen:
-      Date: mr2022_backgroundtaskmessage_notification_release_1pct.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Uri Count
     name: Uri Count_mean
     note_state: expanded
@@ -166,6 +132,40 @@
     ]
     filters:
       mr2022_backgroundtaskmessage_notification_release_1pct.metric: 'uri_count'
+      mr2022_backgroundtaskmessage_notification_release_1pct.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: mr2022_backgroundtaskmessage_notification_release_1pct.submission_date
+    field_y: mr2022_backgroundtaskmessage_notification_release_1pct.point
+    log_scale: false
+    ci_lower: mr2022_backgroundtaskmessage_notification_release_1pct.lower
+    ci_upper: mr2022_backgroundtaskmessage_notification_release_1pct.upper
+    show_grid: true
+    listen:
+      Date: mr2022_backgroundtaskmessage_notification_release_1pct.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: mr2022_backgroundtaskmessage_notification_release_1pct
+    type: looker_line
+    fields: [
+      mr2022_backgroundtaskmessage_notification_release_1pct.submission_date,
+      mr2022_backgroundtaskmessage_notification_release_1pct.branch,
+      mr2022_backgroundtaskmessage_notification_release_1pct.point
+    ]
+    pivots: [
+      mr2022_backgroundtaskmessage_notification_release_1pct.branch
+    ]
+    filters:
+      mr2022_backgroundtaskmessage_notification_release_1pct.metric: 'days_of_use'
       mr2022_backgroundtaskmessage_notification_release_1pct.statistic: mean
     row: 20
     col: 0
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       mr2022_backgroundtaskmessage_notification_release_1pct.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_notification_release_1pct.metric: 'days_of_use'
+      mr2022_backgroundtaskmessage_notification_release_1pct.metric: 'retained'
       mr2022_backgroundtaskmessage_notification_release_1pct.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       mr2022_backgroundtaskmessage_notification_release_1pct.branch
     ]
     filters:
-      mr2022_backgroundtaskmessage_notification_release_1pct.metric: 'qualified_cumulative_days_of_use'
+      mr2022_backgroundtaskmessage_notification_release_1pct.metric: 'active_hours'
       mr2022_backgroundtaskmessage_notification_release_1pct.statistic: mean
     row: 30
     col: 12
