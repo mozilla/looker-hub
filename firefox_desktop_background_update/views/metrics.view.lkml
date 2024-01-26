@@ -1436,6 +1436,22 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__labeled_counter__formautofill_form_submission_heuristic {
+    label: "Formautofill Form Submission Heuristic"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.formautofill_form_submission_heuristic ;;
+    group_label: "Formautofill"
+    group_item_label: "Form Submission Heuristic"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Form Submission Heuristic"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/formautofill_form_submission_heuristic"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The heuristic that detected the form submission."
+  }
+
   dimension: metrics__string__geckoview_validation_build_id {
     label: "Geckoview Validation Build Id"
     hidden: yes
@@ -2374,6 +2390,95 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
+    label: "Networking Http Channel Onstart Success Https Rr"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_onstart_success_https_rr ;;
+    group_label: "Networking"
+    group_item_label: "Http Channel Onstart Success Https Rr"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Onstart Success Https Rr"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_http_channel_onstart_success_https_rr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Successfully started HTTP channels when HTTPS RR is used
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__sum {
+    label: "Networking Http Channel Page Open To First Sent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Channel Page Open To First Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Page Open To First Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_http_channel_page_open_to_first_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from AsyncOpen to first byte of request sent, applicable for page loads without HTTPS RR
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__sum {
+    label: "Networking Http Channel Page Open To First Sent Https Rr Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Channel Page Open To First Sent Https Rr Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Page Open To First Sent Https Rr Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_http_channel_page_open_to_first_sent_https_rr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from AsyncOpen to first byte of request sent, applicable for page loads with HTTPS RR
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__sum {
+    label: "Networking Http Channel Sub Open To First Sent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Channel Sub Open To First Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Sub Open To First Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_http_channel_sub_open_to_first_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from AsyncOpen to first byte of request sent, applicable for sub-resource loads without HTTPS RR
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__sum {
+    label: "Networking Http Channel Sub Open To First Sent Https Rr Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Channel Sub Open To First Sent Https Rr Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Sub Open To First Sent Https Rr Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_http_channel_sub_open_to_first_sent_https_rr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from AsyncOpen to first byte of request sent, applicable for sub-resource loads with HTTPS RR
+"
+  }
+
   dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__sum {
     label: "Networking Http Content Html5Parser Ondatafinished To Onstop Delay Sum"
     hidden: no
@@ -2497,6 +2602,40 @@ To be used to validate GIFFT.
     }
 
     description: "The time between dispatching OnStopRequest from the socket thread and processing it on the main thread (content process).
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_https_rr_presented {
+    label: "Networking Https Rr Presented"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_rr_presented ;;
+    group_label: "Networking"
+    group_item_label: "Https Rr Presented"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Https Rr Presented"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_https_rr_presented"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTPS RR is presented or not
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_https_upgrade_with_https_rr {
+    label: "Networking Https Upgrade With Https Rr"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_upgrade_with_https_rr ;;
+    group_label: "Networking"
+    group_item_label: "Https Upgrade With Https Rr"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Https Upgrade With Https Rr"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_https_upgrade_with_https_rr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether an HTTP request gets upgraded to HTTPS because of HTTPS RR
 "
   }
 
@@ -2692,6 +2831,42 @@ To be used to validate GIFFT.
     }
 
     description: "Counts the occurrence of each outcome of a speculative connection
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__sum {
+    label: "Networking Transaction Wait Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Transaction Wait Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Transaction Wait Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_transaction_wait_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from submission to dispatch of transaction without HTTPS RR (ms)
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__sum {
+    label: "Networking Transaction Wait Time Https Rr Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Transaction Wait Time Https Rr Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Transaction Wait Time Https Rr Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_transaction_wait_time_https_rr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from submission to dispatch of transaction when HTTPS RR is used (ms)
 "
   }
 
@@ -3230,6 +3405,24 @@ To be used to validate GIFFT.
     }
 
     description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__sum {
+    label: "Privacy Sanitize Load Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.sum ;;
+    type: number
+    group_label: "Privacy Sanitize"
+    group_item_label: "Load Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Privacy Sanitize Load Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/privacy_sanitize_load_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How much time was spent to open the dialog, including loading data sizes
 "
   }
 
@@ -6538,6 +6731,49 @@ view: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_g
   }
 }
 
+view: metrics__metrics__labeled_counter__formautofill_form_submission_heuristic {
+  label: "Formautofill - Form Submission Heuristic"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__formautofill_form_submission_heuristic
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__formautofill_form_submission_heuristic.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__glean_error_invalid_label {
   label: "Glean Error - Invalid Label"
 
@@ -7548,6 +7784,135 @@ view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count
     suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
+  label: "Networking - Http Channel Onstart Success Https Rr"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_https_rr_presented {
+  label: "Networking - Https Rr Presented"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_https_rr_presented
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_https_rr_presented.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr {
+  label: "Networking - Https Upgrade With Https Rr"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr.key
     hidden: no
   }
 
@@ -9073,6 +9438,25 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__formautofill_form_submission_heuristic {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.formautofill_form_submission_heuristic) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
@@ -9517,6 +9901,63 @@ view: suggest__metrics__metrics__labeled_counter__networking_cookie_timestamp_fi
     count(*) as n
 from mozdata.firefox_desktop_background_update.metrics as t,
 unnest(metrics.labeled_counter.networking_cookie_timestamp_fixed_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.networking_http_channel_onstart_success_https_rr) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_https_rr_presented {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.networking_https_rr_presented) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.networking_https_upgrade_with_https_rr) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
