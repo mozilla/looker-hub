@@ -244,6 +244,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gvst}) AS metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gvst ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gvst.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__formautofill_form_submission_heuristic {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__formautofill_form_submission_heuristic}) AS metrics__metrics__labeled_counter__formautofill_form_submission_heuristic ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__formautofill_form_submission_heuristic.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__fxa_client_error_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__fxa_client_error_count}) AS metrics__metrics__labeled_counter__fxa_client_error_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__fxa_client_error_count.document_id} ;;
@@ -422,6 +427,21 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_cookie_timestamp_fixed_count}) AS metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_onstart_success_https_rr}) AS metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_https_rr_presented {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_https_rr_presented}) AS metrics__metrics__labeled_counter__networking_https_rr_presented ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_https_rr_presented.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_https_upgrade_with_https_rr}) AS metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__networking_residual_cache_folder_removal {
@@ -775,6 +795,10 @@ explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_s
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__formautofill_form_submission_heuristic {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__fxa_client_error_count {
   hidden: yes
 }
@@ -916,6 +940,18 @@ explore: suggest__metrics__metrics__labeled_counter__network_data_size_per_type 
 }
 
 explore: suggest__metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__networking_https_rr_presented {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr {
   hidden: yes
 }
 

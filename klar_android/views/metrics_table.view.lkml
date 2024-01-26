@@ -1826,6 +1826,12 @@ Uses a single label due to only labeled counters being supported
 "
   }
 
+  dimension: metrics__labeled_counter__formautofill_form_submission_heuristic {
+    sql: ${TABLE}.metrics.labeled_counter.formautofill_form_submission_heuristic ;;
+    hidden: yes
+    description: "The heuristic that detected the form submission."
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -2004,6 +2010,27 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.labeled_counter.networking_cookie_timestamp_fixed_count ;;
     hidden: yes
     description: "Counts the number of times a cookie's invalid timestamp was fixed when reading it from the DB.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_onstart_success_https_rr ;;
+    hidden: yes
+    description: "Successfully started HTTP channels when HTTPS RR is used
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_https_rr_presented {
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_rr_presented ;;
+    hidden: yes
+    description: "HTTPS RR is presented or not
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_https_upgrade_with_https_rr {
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_upgrade_with_https_rr ;;
+    hidden: yes
+    description: "Whether an HTTP request gets upgraded to HTTPS because of HTTPS RR
 "
   }
 
@@ -4504,6 +4531,246 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.bucket_count ;;
     type: number
@@ -4924,6 +5191,126 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time Https Rr"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time Https Rr"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time Https Rr"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time Https Rr"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time Https Rr"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time Https Rr"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time Https Rr"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.nimbus_health_apply_pending_experiments_time.bucket_count ;;
     type: number
@@ -5221,6 +5608,66 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__values {
     sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Privacy Sanitize Load Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Privacy Sanitize Load Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Privacy Sanitize Load Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Privacy Sanitize Load Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Privacy Sanitize Load Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Privacy Sanitize Load Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Privacy Sanitize Load Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.values ;;
     hidden: yes
   }
 
@@ -5890,6 +6337,7 @@ documented in the ping's pings.yaml file.
     group_label: "Metrics Uuid"
     group_item_label: "Legacy Ids Client Id"
     description: "Sets the legacy client ID as part of the deletion-request ping.
+**No longer reported set since Focus 124, where legacy telemetry was removed**.
 "
   }
 
@@ -7002,6 +7450,54 @@ view: metrics_table__metrics__timing_distribution__networking_dns_renewal_time_f
   }
 }
 
+view: metrics_table__metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -7086,6 +7582,30 @@ view: metrics_table__metrics__timing_distribution__networking_http_content_onsto
   }
 }
 
+view: metrics_table__metrics__timing_distribution__networking_transaction_wait_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_transaction_wait_time_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -7135,6 +7655,18 @@ view: metrics_table__metrics__timing_distribution__perf_largest_contentful_paint
 }
 
 view: metrics_table__metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__privacy_sanitize_load_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

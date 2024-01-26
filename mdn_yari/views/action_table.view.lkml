@@ -371,6 +371,16 @@ expressed as a percentage.
 "
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
   dimension: metrics__string__navigator_geo {
     sql: ${TABLE}.metrics.string.navigator_geo ;;
     type: string
@@ -434,7 +444,8 @@ one of \"xs\", \"sm\", \"md\",\"lg\", \"xl\" or \"xxl\".
     group_item_label: "Page Is Baseline"
     description: "The Baseline status of the page:
 null: the page has no baseline status
-\"baseline\": the page is baseline
+\"baseline_high\": the page is baseline high
+\"baseline_low\": the page is baseline low
 \"not_baseline\" the page is not baseline
 "
   }
