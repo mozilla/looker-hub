@@ -28517,6 +28517,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_htmldialogelement_show {
+    label: "Use Counter Doc Htmldialogelement Show"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldialogelement_show ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Htmldialogelement Show"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Htmldialogelement Show"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_htmldialogelement_show"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document called called HTMLDialogElement.show. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_htmldocument_named_getter_hit {
     label: "Use Counter Doc Htmldocument Named Getter Hit"
     hidden: no
@@ -34939,6 +34957,24 @@ view: use_counters {
     }
 
     description: "Whether a page called called HTMLButtonElement.popoverTargetElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldialogelement_show {
+    label: "Use Counter Page Htmldialogelement Show"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldialogelement_show ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Htmldialogelement Show"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Htmldialogelement Show"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_htmldialogelement_show"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page called called HTMLDialogElement.show. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -81345,6 +81381,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_doc_htmldialogelement_show {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_htmldialogelement_show} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Htmldialogelement Show"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_htmldialogelement_show"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_htmldialogelement_show_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_htmldialogelement_show: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Htmldialogelement Show"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_doc_htmldialogelement_show"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_doc_htmldocument_named_getter_hit {
     type: sum
     sql: ${metrics__counter__use_counter_doc_htmldocument_named_getter_hit} ;;
@@ -90241,6 +90302,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Page Htmlbuttonelement Popovertargetelement"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_htmlbuttonelement_popovertargetelement"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_htmldialogelement_show {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_htmldialogelement_show} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Htmldialogelement Show"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_htmldialogelement_show"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_htmldialogelement_show_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_htmldialogelement_show: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Htmldialogelement Show"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/use_counter_page_htmldialogelement_show"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

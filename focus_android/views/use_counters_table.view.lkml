@@ -11476,6 +11476,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Htmlbuttonelement Popovertargetelement"
   }
 
+  dimension: metrics__counter__use_counter_doc_htmldialogelement_show {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldialogelement_show ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldialogelement Show"
+  }
+
   dimension: metrics__counter__use_counter_doc_htmldocument_named_getter_hit {
     sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_named_getter_hit ;;
     type: number
@@ -13966,6 +13973,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmlbuttonelement Popovertargetelement"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldialogelement_show {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldialogelement_show ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldialogelement Show"
   }
 
   dimension: metrics__counter__use_counter_page_htmldocument_named_getter_hit {

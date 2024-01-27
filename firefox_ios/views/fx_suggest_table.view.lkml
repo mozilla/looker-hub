@@ -276,6 +276,13 @@ view: fx_suggest_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__fx_suggest_is_clicked {
+    sql: ${TABLE}.metrics.boolean.fx_suggest_is_clicked ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Fx Suggest Is Clicked"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes

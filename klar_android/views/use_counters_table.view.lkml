@@ -14708,6 +14708,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_htmldialogelement_show {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldialogelement_show ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldialogelement Show"
+    description: "Whether a document called called HTMLDialogElement.show. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_htmldocument_named_getter_hit {
     sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_named_getter_hit ;;
     type: number
@@ -17909,6 +17918,15 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Htmlbuttonelement Popovertargetelement"
     description: "Whether a page called called HTMLButtonElement.popoverTargetElement. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_htmldialogelement_show {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldialogelement_show ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldialogelement Show"
+    description: "Whether a page called called HTMLDialogElement.show. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
