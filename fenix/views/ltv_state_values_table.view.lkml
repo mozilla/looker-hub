@@ -9,7 +9,8 @@ view: ltv_state_values_table {
     sql: ${TABLE}.country ;;
     type: string
     map_layer_name: countries
-    description: "The country that this prediction is specified for."
+    description: "The country that this prediction is specified for. Countries not explicitly present are bucketed into \"ROW\".
+"
   }
 
   dimension: predicted_ad_clicks {

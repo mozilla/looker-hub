@@ -7,7 +7,10 @@
 view: metric_definitions_baseline_v2 {
   derived_table: {
     sql: SELECT
-                COUNT(DISTINCT CASE WHEN LOWER(metadata.isp.name) != 'browserstack' THEN client_info.client_id ELSE NULL END) AS daily_active_users,COUNT(DISTINCT CASE WHEN LOWER(metadata.isp.name) != 'browserstack' THEN client_info.client_id ELSE NULL END) AS client_level_daily_active_users_v1,
+                COUNT(DISTINCT CASE WHEN LOWER(metadata.isp.name) != 'browserstack' THEN client_info.client_id ELSE NULL END) AS daily_active_users,COUNT(DISTINCT CASE WHEN LOWER(metadata.isp.name) != 'browserstack' THEN client_info.client_id ELSE NULL END) AS client_level_daily_active_users_v1,    COUNT(DISTINCT CASE WHEN metrics.timespan.glean_baseline_duration.value > 0
+                         AND LOWER(metadata.isp.name) != 'browserstack'
+                        THEN client_info.client_id
+                        ELSE NULL END) AS client_level_daily_active_users_v2,
                 client_info.client_id AS client_id,
                 DATE(submission_timestamp) AS submission_date
               FROM
@@ -81,11 +84,27 @@ view: metric_definitions_baseline_v2 {
     needs to be aggregated by `submission_date`. If it is not aggregated by `submission_date`, it is
     similar to a \"days of use\" metric, and not DAU.
     
-    For more information, refer to [the DAU description in the Mozilla Data Documentation](https://docs.telemetry.mozilla.org/concepts/terminology.html#dau).
+    For more information, refer to [the DAU description in Confluence](https://mozilla-hub.atlassian.net/wiki/spaces/DATA/pages/314704478/Daily+Active+Users+DAU+Metric).
     For questions please contact bochocki@mozilla.com or firefox-kpi@mozilla.com.
 "
     type: number
     sql: ${TABLE}.client_level_daily_active_users_v1 ;;
+  }
+
+  dimension: client_level_daily_active_users_v2 {
+    label: "Focus iOS Client-Level DAU"
+    description: "    This metric reports DAU values similar (but not necessarily identical)
+    to the [official DAU reporting definition](https://mozilla.github.io/metric-hub/metrics/focus_ios/#daily_active_users_v2).
+    It's generally preferable to use the official DAU reporting definition when possible; this metric
+    exists only for cases where reporting `client_id` is required (e.g. for experiments). This metric
+    needs to be aggregated by `submission_date`. If it is not aggregated by `submission_date`, it is
+    similar to a \"days of use\" metric, and not DAU.
+
+For more information, refer to [the DAU description in Confluence](https://mozilla-hub.atlassian.net/wiki/spaces/DATA/pages/314704478/Daily+Active+Users+DAU+Metric).
+    For questions please contact bochocki@mozilla.com or firefox-kpi@mozilla.com.
+"
+    type: number
+    sql: ${TABLE}.client_level_daily_active_users_v2 ;;
   }
 
   dimension_group: submission {
@@ -123,6 +142,6 @@ view: metric_definitions_baseline_v2 {
   }
 
   set: metrics {
-    fields: [daily_active_users, client_level_daily_active_users_v1]
+    fields: [daily_active_users, client_level_daily_active_users_v1, client_level_daily_active_users_v2]
   }
 }
