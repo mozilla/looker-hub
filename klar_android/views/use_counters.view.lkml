@@ -29021,6 +29021,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_js_wasm_legacy_exceptions {
+    label: "Use Counter Doc Js Wasm Legacy Exceptions"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_wasm_legacy_exceptions ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Wasm Legacy Exceptions"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Wasm Legacy Exceptions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_wasm_legacy_exceptions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document uses WebAssembly legacy exception-handling. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_location_ancestororigins {
     label: "Use Counter Doc Location Ancestororigins"
     hidden: no
@@ -35461,6 +35479,24 @@ view: use_counters {
     }
 
     description: "Whether a page uses WebAssembly. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_wasm_legacy_exceptions {
+    label: "Use Counter Page Js Wasm Legacy Exceptions"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_wasm_legacy_exceptions ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Wasm Legacy Exceptions"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Wasm Legacy Exceptions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_wasm_legacy_exceptions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page uses WebAssembly legacy exception-handling. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -82081,6 +82117,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_doc_js_wasm_legacy_exceptions {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_wasm_legacy_exceptions} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Wasm Legacy Exceptions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_wasm_legacy_exceptions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_wasm_legacy_exceptions_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_wasm_legacy_exceptions: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Wasm Legacy Exceptions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_wasm_legacy_exceptions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_doc_location_ancestororigins {
     type: sum
     sql: ${metrics__counter__use_counter_doc_location_ancestororigins} ;;
@@ -91002,6 +91063,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Page Js Wasm"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_wasm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_wasm_legacy_exceptions {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_wasm_legacy_exceptions} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Wasm Legacy Exceptions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_wasm_legacy_exceptions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_wasm_legacy_exceptions_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_wasm_legacy_exceptions: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Wasm Legacy Exceptions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_wasm_legacy_exceptions"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
