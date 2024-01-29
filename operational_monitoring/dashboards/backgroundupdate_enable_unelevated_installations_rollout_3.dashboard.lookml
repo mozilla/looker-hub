@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       backgroundupdate_enable_unelevated_installations_rollout_3.branch
     ]
     filters:
-      backgroundupdate_enable_unelevated_installations_rollout_3.metric: 'days_of_use'
+      backgroundupdate_enable_unelevated_installations_rollout_3.metric: 'ad_clicks'
       backgroundupdate_enable_unelevated_installations_rollout_3.statistic: mean
     row: 0
     col: 12
@@ -149,8 +149,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,7 +165,7 @@
       backgroundupdate_enable_unelevated_installations_rollout_3.branch
     ]
     filters:
-      backgroundupdate_enable_unelevated_installations_rollout_3.metric: 'search_count'
+      backgroundupdate_enable_unelevated_installations_rollout_3.metric: 'retained'
       backgroundupdate_enable_unelevated_installations_rollout_3.statistic: mean
     row: 20
     col: 0
@@ -183,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -199,7 +199,7 @@
       backgroundupdate_enable_unelevated_installations_rollout_3.branch
     ]
     filters:
-      backgroundupdate_enable_unelevated_installations_rollout_3.metric: 'ad_clicks'
+      backgroundupdate_enable_unelevated_installations_rollout_3.metric: 'search_count'
       backgroundupdate_enable_unelevated_installations_rollout_3.statistic: mean
     row: 20
     col: 12
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       backgroundupdate_enable_unelevated_installations_rollout_3.branch
     ]
     filters:
-      backgroundupdate_enable_unelevated_installations_rollout_3.metric: 'retained'
+      backgroundupdate_enable_unelevated_installations_rollout_3.metric: 'days_of_use'
       backgroundupdate_enable_unelevated_installations_rollout_3.statistic: mean
     row: 30
     col: 12
