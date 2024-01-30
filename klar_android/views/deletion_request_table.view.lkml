@@ -346,7 +346,7 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics String"
     group_item_label: "Glean Client Annotation Experimentation Id"
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -355,7 +355,8 @@ for the purpose of experimenation enrollment.
     type: string
     group_label: "Metrics Uuid"
     group_item_label: "Legacy Ids Client Id"
-    description: "Sets the legacy client ID as part of the deletion-reqest and other pings.
+    description: "Sets the legacy client ID as part of the deletion-request ping.
+**No longer reported set since Focus 124, where legacy telemetry was removed**.
 "
   }
 

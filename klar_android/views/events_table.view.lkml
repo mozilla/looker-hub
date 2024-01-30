@@ -355,7 +355,8 @@ for the purpose of experimentation enrollment.
     type: string
     group_label: "Metrics Uuid"
     group_item_label: "Legacy Ids Client Id"
-    description: "Sets the legacy client ID as part of the deletion-reqest and other pings.
+    description: "Sets the legacy client ID as part of the deletion-request ping.
+**No longer reported set since Focus 124, where legacy telemetry was removed**.
 "
   }
 
