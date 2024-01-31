@@ -8843,6 +8843,42 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_text_wrap_mode {
+    label: "Use Counter Css Doc Css Text Wrap Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_wrap_mode ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Text Wrap Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Text Wrap Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_text_wrap_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property text-wrap-mode. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_text_wrap_style {
+    label: "Use Counter Css Doc Css Text Wrap Style"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_wrap_style ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Text Wrap Style"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Text Wrap Style"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_text_wrap_style"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property text-wrap-style. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_top {
     label: "Use Counter Css Doc Css Top"
     hidden: no
@@ -10496,6 +10532,24 @@ view: use_counters {
     }
 
     description: "Whether a document used the CSS property white-space. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_white_space_collapse {
+    label: "Use Counter Css Doc Css White Space Collapse"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_white_space_collapse ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css White Space Collapse"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css White Space Collapse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_white_space_collapse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property white-space-collapse. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21317,6 +21371,42 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_text_wrap_mode {
+    label: "Use Counter Css Page Css Text Wrap Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_text_wrap_mode ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Text Wrap Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Text Wrap Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_text_wrap_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property text-wrap-mode. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_text_wrap_style {
+    label: "Use Counter Css Page Css Text Wrap Style"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_text_wrap_style ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Text Wrap Style"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Text Wrap Style"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_text_wrap_style"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property text-wrap-style. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_top {
     label: "Use Counter Css Page Css Top"
     hidden: no
@@ -22970,6 +23060,24 @@ view: use_counters {
     }
 
     description: "Whether a page used the CSS property white-space. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_white_space_collapse {
+    label: "Use Counter Css Page Css White Space Collapse"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_white_space_collapse ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css White Space Collapse"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css White Space Collapse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_white_space_collapse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property white-space-collapse. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -54061,6 +54169,56 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_text_wrap_mode {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_text_wrap_mode} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Text Wrap Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_text_wrap_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_text_wrap_mode_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_text_wrap_mode: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Text Wrap Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_text_wrap_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_text_wrap_style {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_text_wrap_style} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Text Wrap Style"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_text_wrap_style"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_text_wrap_style_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_text_wrap_style: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Text Wrap Style"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_text_wrap_style"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_top {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_top} ;;
@@ -56357,6 +56515,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Doc Css White Space"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_white_space"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_white_space_collapse {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_white_space_collapse} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css White Space Collapse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_white_space_collapse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_white_space_collapse_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_white_space_collapse: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css White Space Collapse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_white_space_collapse"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -71386,6 +71569,56 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_page_css_text_wrap_mode {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_text_wrap_mode} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Text Wrap Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_text_wrap_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_text_wrap_mode_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_text_wrap_mode: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Text Wrap Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_text_wrap_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_text_wrap_style {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_text_wrap_style} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Text Wrap Style"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_text_wrap_style"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_text_wrap_style_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_text_wrap_style: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Text Wrap Style"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_text_wrap_style"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_page_css_top {
     type: sum
     sql: ${metrics__counter__use_counter_css_page_css_top} ;;
@@ -73682,6 +73915,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Page Css White Space"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_white_space"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_white_space_collapse {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_white_space_collapse} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css White Space Collapse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_white_space_collapse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_white_space_collapse_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_white_space_collapse: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css White Space Collapse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_white_space_collapse"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

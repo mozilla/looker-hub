@@ -62,7 +62,7 @@ view: bigquery_usage {
   dimension: query_id {
     sql: ${TABLE}.query_id ;;
     type: string
-    description: "query id of the job"
+    description: "The id of the query"
   }
 
   dimension: reference_dataset_id {
@@ -86,7 +86,13 @@ view: bigquery_usage {
   dimension: reservation_id {
     sql: ${TABLE}.reservation_id ;;
     type: string
-    description: "Name of the primary reservation (slots for distributing resources) assigned to this job."
+    description: "Name of the primary reservation (slots for distributing resources) assigned to this job"
+  }
+
+  dimension: resource_warning {
+    sql: ${TABLE}.resource_warning ;;
+    type: string
+    description: "The warning message that appears if the resource usage is above the internal threshold of the system"
   }
 
   dimension: source_project {
@@ -101,10 +107,28 @@ view: bigquery_usage {
     description: "Running state of the job"
   }
 
+  dimension: statement_type {
+    sql: ${TABLE}.statement_type ;;
+    type: string
+    description: "The type of query statement"
+  }
+
   dimension: task_duration {
     sql: ${TABLE}.task_duration ;;
     hidden: yes
     description: "The time it took to run the job"
+  }
+
+  dimension: total_slot_ms {
+    sql: ${TABLE}.total_slot_ms ;;
+    type: number
+    description: "Slot milliseconds for the job over its entire duration"
+  }
+
+  dimension: total_terabytes_billed {
+    sql: ${TABLE}.total_terabytes_billed ;;
+    type: number
+    description: "Total terabytes billed by the job if on-demand pricing is used"
   }
 
   dimension: total_terabytes_processed {
@@ -122,7 +146,7 @@ view: bigquery_usage {
   dimension: username {
     sql: ${TABLE}.username ;;
     type: string
-    description: "Email address of the user who ran the query"
+    description: "The name of the user who ran the job"
   }
 
   dimension_group: creation {
@@ -139,6 +163,22 @@ view: bigquery_usage {
     convert_tz: no
     datatype: date
     description: "Job creation date"
+  }
+
+  dimension_group: submission {
+    sql: ${TABLE}.submission_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    description: "Date Airflow DAG is executed, and partition date"
   }
 
   sql_table_name: `moz-fx-data-shared-prod.monitoring.bigquery_usage` ;;
