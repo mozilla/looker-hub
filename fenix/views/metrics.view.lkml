@@ -563,6 +563,24 @@ to be displayed
 "
   }
 
+  dimension: metrics__boolean__debug_drawer_debug_drawer_enabled {
+    label: "Debug Drawer Debug Drawer Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.debug_drawer_debug_drawer_enabled ;;
+    type: yesno
+    group_label: "Debug Drawer"
+    group_item_label: "Debug Drawer Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Debug Drawer Debug Drawer Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/debug_drawer_debug_drawer_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not the user has enabled the Debug Drawer feature.
+"
+  }
+
   dimension: metrics__counter__downloads_downloaded_pdf_open_count {
     label: "Downloads Downloaded Pdf Open Count"
     hidden: yes
@@ -7234,6 +7252,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__tls_certificate_verifications {
+    label: "Tls Certificate Verifications"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tls_certificate_verifications ;;
+    type: number
+    group_label: "Tls"
+    group_item_label: "Certificate Verifications"
+
+    link: {
+      label: "Glean Dictionary reference for Tls Certificate Verifications"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tls_certificate_verifications"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of successful TLS server certificate verifications.
+"
+  }
+
   dimension: metrics__rate__translations_error_rate__numerator {
     label: "Translations Error Rate Numerator"
     hidden: no
@@ -7285,6 +7321,186 @@ To be used to validate GIFFT.
     }
 
     description: "The count of translation requests.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_built_in_roots_module__numerator {
+    label: "Verification Used Cert From Built In Roots Module Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_built_in_roots_module.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Built In Roots Module Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Built In Roots Module Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_built_in_roots_module"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the built-in roots module.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_built_in_roots_module__denominator {
+    label: "Verification Used Cert From Built In Roots Module Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_built_in_roots_module.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Built In Roots Module Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Built In Roots Module Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_built_in_roots_module"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the built-in roots module.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_nss_cert_db__numerator {
+    label: "Verification Used Cert From Nss Cert Db Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_nss_cert_db.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Nss Cert Db Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Nss Cert Db Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_nss_cert_db"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the NSS cert DB.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_nss_cert_db__denominator {
+    label: "Verification Used Cert From Nss Cert Db Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_nss_cert_db.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Nss Cert Db Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Nss Cert Db Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_nss_cert_db"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the NSS cert DB.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_preloaded_intermediates__numerator {
+    label: "Verification Used Cert From Preloaded Intermediates Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_preloaded_intermediates.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Preloaded Intermediates Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Preloaded Intermediates Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_preloaded_intermediates"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from preloaded intermediates.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_preloaded_intermediates__denominator {
+    label: "Verification Used Cert From Preloaded Intermediates Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_preloaded_intermediates.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Preloaded Intermediates Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Preloaded Intermediates Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_preloaded_intermediates"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from preloaded intermediates.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_third_party_certificates__numerator {
+    label: "Verification Used Cert From Third Party Certificates Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_third_party_certificates.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Third Party Certificates Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Third Party Certificates Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_third_party_certificates"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a third-party certificate from the OS.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_third_party_certificates__denominator {
+    label: "Verification Used Cert From Third Party Certificates Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_third_party_certificates.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Third Party Certificates Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Third Party Certificates Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_third_party_certificates"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a third-party certificate from the OS.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_tls_handshake__numerator {
+    label: "Verification Used Cert From Tls Handshake Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_tls_handshake.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Tls Handshake Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Tls Handshake Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_tls_handshake"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the TLS handshake.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_tls_handshake__denominator {
+    label: "Verification Used Cert From Tls Handshake Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_tls_handshake.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Tls Handshake Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Tls Handshake Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_tls_handshake"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the TLS handshake.
 "
   }
 
@@ -12664,6 +12880,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Rtcrtpsender Count Setparameters Compat"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/rtcrtpsender_count_setparameters_compat"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tls_certificate_verifications {
+    type: sum
+    sql: ${metrics__counter__tls_certificate_verifications} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tls Certificate Verifications"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tls_certificate_verifications"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tls_certificate_verifications_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tls_certificate_verifications: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tls Certificate Verifications"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tls_certificate_verifications"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
