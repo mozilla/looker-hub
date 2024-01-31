@@ -183,11 +183,11 @@ special value of 'page+referral+-+not+part+of+a+campaign' is also allowed.
     }
 
     description: "The content on which the user acted.  For example, if the user clicked on the
-\"Get started here\" link in \"Looking for Firefox Sync? Get started here\", then
-the value for this metric would be 'fx-sync-get-started'.  The value has a max
-length of 128 characters with the alphanumeric characters, _ (underscore),
-forward slash (/), . (period), % (percentage sign), and - (hyphen) in the
-allowed set of characters.
+(previously available) \"Get started here\" link in \"Looking for Firefox Sync? Get
+started here\", then the value for this metric would be 'fx-sync-get-started'.
+The value has a max length of 128 characters with the alphanumeric characters,
+_ (underscore), forward slash (/), . (period), % (percentage sign), and - (hyphen)
+in the allowed set of characters.
 "
   }
 

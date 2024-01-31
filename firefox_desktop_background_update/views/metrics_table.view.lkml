@@ -634,6 +634,15 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__tls_certificate_verifications {
+    sql: ${TABLE}.metrics.counter.tls_certificate_verifications ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tls Certificate Verifications"
+    description: "The total number of successful TLS server certificate verifications.
+"
+  }
+
   dimension: metrics__counter__translations_requests_count {
     sql: ${TABLE}.metrics.counter.translations_requests_count ;;
     type: number
@@ -2370,6 +2379,76 @@ API for the purposes of Validation (hence GVSV).
     sql: ${TABLE}.metrics.rate.translations_error_rate.numerator ;;
     type: number
     group_label: "Metrics Rate Translations Error Rate"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_built_in_roots_module__denominator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_built_in_roots_module.denominator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Built In Roots Module"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_built_in_roots_module__numerator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_built_in_roots_module.numerator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Built In Roots Module"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_nss_cert_db__denominator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_nss_cert_db.denominator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Nss Cert Db"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_nss_cert_db__numerator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_nss_cert_db.numerator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Nss Cert Db"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_preloaded_intermediates__denominator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_preloaded_intermediates.denominator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Preloaded Intermediates"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_preloaded_intermediates__numerator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_preloaded_intermediates.numerator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Preloaded Intermediates"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_third_party_certificates__denominator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_third_party_certificates.denominator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Third Party Certificates"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_third_party_certificates__numerator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_third_party_certificates.numerator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Third Party Certificates"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_tls_handshake__denominator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_tls_handshake.denominator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Tls Handshake"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_tls_handshake__numerator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_tls_handshake.numerator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Tls Handshake"
     group_item_label: "Numerator"
   }
 
