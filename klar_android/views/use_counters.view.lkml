@@ -8843,6 +8843,42 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_text_wrap_mode {
+    label: "Use Counter Css Doc Css Text Wrap Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_wrap_mode ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Text Wrap Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Text Wrap Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_text_wrap_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property text-wrap-mode. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_text_wrap_style {
+    label: "Use Counter Css Doc Css Text Wrap Style"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_wrap_style ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Text Wrap Style"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Text Wrap Style"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_text_wrap_style"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property text-wrap-style. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_top {
     label: "Use Counter Css Doc Css Top"
     hidden: no
@@ -10496,6 +10532,24 @@ view: use_counters {
     }
 
     description: "Whether a document used the CSS property white-space. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_white_space_collapse {
+    label: "Use Counter Css Doc Css White Space Collapse"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_white_space_collapse ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css White Space Collapse"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css White Space Collapse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_white_space_collapse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property white-space-collapse. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -21317,6 +21371,42 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_text_wrap_mode {
+    label: "Use Counter Css Page Css Text Wrap Mode"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_text_wrap_mode ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Text Wrap Mode"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Text Wrap Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_text_wrap_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property text-wrap-mode. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_text_wrap_style {
+    label: "Use Counter Css Page Css Text Wrap Style"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_text_wrap_style ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Text Wrap Style"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Text Wrap Style"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_text_wrap_style"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property text-wrap-style. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_top {
     label: "Use Counter Css Page Css Top"
     hidden: no
@@ -22970,6 +23060,24 @@ view: use_counters {
     }
 
     description: "Whether a page used the CSS property white-space. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_white_space_collapse {
+    label: "Use Counter Css Page Css White Space Collapse"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_white_space_collapse ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css White Space Collapse"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css White Space Collapse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_white_space_collapse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property white-space-collapse. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -28517,6 +28625,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_htmldialogelement_show {
+    label: "Use Counter Doc Htmldialogelement Show"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldialogelement_show ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Htmldialogelement Show"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Htmldialogelement Show"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_htmldialogelement_show"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document called called HTMLDialogElement.show. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_htmldocument_named_getter_hit {
     label: "Use Counter Doc Htmldocument Named Getter Hit"
     hidden: no
@@ -29000,6 +29126,24 @@ view: use_counters {
     }
 
     description: "Whether a document uses WebAssembly. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_wasm_legacy_exceptions {
+    label: "Use Counter Doc Js Wasm Legacy Exceptions"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_wasm_legacy_exceptions ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Wasm Legacy Exceptions"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Wasm Legacy Exceptions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_wasm_legacy_exceptions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document uses WebAssembly legacy exception-handling. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -34942,6 +35086,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_htmldialogelement_show {
+    label: "Use Counter Page Htmldialogelement Show"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldialogelement_show ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Htmldialogelement Show"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Htmldialogelement Show"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_htmldialogelement_show"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page called called HTMLDialogElement.show. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_htmldocument_named_getter_hit {
     label: "Use Counter Page Htmldocument Named Getter Hit"
     hidden: no
@@ -35425,6 +35587,24 @@ view: use_counters {
     }
 
     description: "Whether a page uses WebAssembly. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_wasm_legacy_exceptions {
+    label: "Use Counter Page Js Wasm Legacy Exceptions"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_wasm_legacy_exceptions ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Wasm Legacy Exceptions"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Wasm Legacy Exceptions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_wasm_legacy_exceptions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page uses WebAssembly legacy exception-handling. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -54020,6 +54200,56 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_text_wrap_mode {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_text_wrap_mode} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Text Wrap Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_text_wrap_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_text_wrap_mode_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_text_wrap_mode: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Text Wrap Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_text_wrap_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_text_wrap_style {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_text_wrap_style} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Text Wrap Style"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_text_wrap_style"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_text_wrap_style_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_text_wrap_style: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Text Wrap Style"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_text_wrap_style"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_top {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_top} ;;
@@ -56316,6 +56546,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Doc Css White Space"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_white_space"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_white_space_collapse {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_white_space_collapse} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css White Space Collapse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_white_space_collapse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_white_space_collapse_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_white_space_collapse: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css White Space Collapse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_white_space_collapse"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -71345,6 +71600,56 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_page_css_text_wrap_mode {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_text_wrap_mode} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Text Wrap Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_text_wrap_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_text_wrap_mode_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_text_wrap_mode: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Text Wrap Mode"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_text_wrap_mode"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_text_wrap_style {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_text_wrap_style} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Text Wrap Style"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_text_wrap_style"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_text_wrap_style_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_text_wrap_style: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Text Wrap Style"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_text_wrap_style"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_page_css_top {
     type: sum
     sql: ${metrics__counter__use_counter_css_page_css_top} ;;
@@ -73641,6 +73946,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Page Css White Space"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_white_space"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_white_space_collapse {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_white_space_collapse} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css White Space Collapse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_white_space_collapse"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_white_space_collapse_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_white_space_collapse: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css White Space Collapse"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_white_space_collapse"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -81345,6 +81675,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_doc_htmldialogelement_show {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_htmldialogelement_show} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Htmldialogelement Show"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_htmldialogelement_show"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_htmldialogelement_show_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_htmldialogelement_show: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Htmldialogelement Show"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_htmldialogelement_show"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_doc_htmldocument_named_getter_hit {
     type: sum
     sql: ${metrics__counter__use_counter_doc_htmldocument_named_getter_hit} ;;
@@ -82016,6 +82371,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Doc Js Wasm"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_wasm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_wasm_legacy_exceptions {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_wasm_legacy_exceptions} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Wasm Legacy Exceptions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_wasm_legacy_exceptions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_wasm_legacy_exceptions_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_wasm_legacy_exceptions: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Wasm Legacy Exceptions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_wasm_legacy_exceptions"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -90245,6 +90625,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_page_htmldialogelement_show {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_htmldialogelement_show} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Htmldialogelement Show"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_htmldialogelement_show"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_htmldialogelement_show_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_htmldialogelement_show: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Htmldialogelement Show"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_htmldialogelement_show"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_page_htmldocument_named_getter_hit {
     type: sum
     sql: ${metrics__counter__use_counter_page_htmldocument_named_getter_hit} ;;
@@ -90916,6 +91321,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Page Js Wasm"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_wasm"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_wasm_legacy_exceptions {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_wasm_legacy_exceptions} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Wasm Legacy Exceptions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_wasm_legacy_exceptions"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_wasm_legacy_exceptions_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_wasm_legacy_exceptions: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Wasm Legacy Exceptions"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_wasm_legacy_exceptions"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

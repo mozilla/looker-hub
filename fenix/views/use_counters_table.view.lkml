@@ -3713,6 +3713,20 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css Text Wrap"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_text_wrap_mode {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_wrap_mode ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Text Wrap Mode"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_text_wrap_style {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_wrap_style ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Text Wrap Style"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_top {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_top ;;
     type: number
@@ -4355,6 +4369,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Doc Css White Space"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_white_space_collapse {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_white_space_collapse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css White Space Collapse"
   }
 
   dimension: metrics__counter__use_counter_css_doc_css_width {
@@ -8564,6 +8585,20 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Page Css Text Wrap"
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_text_wrap_mode {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_text_wrap_mode ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Text Wrap Mode"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_text_wrap_style {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_text_wrap_style ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Text Wrap Style"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_top {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_top ;;
     type: number
@@ -9206,6 +9241,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css White Space"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_white_space_collapse {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_white_space_collapse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css White Space Collapse"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_width {
@@ -11476,6 +11518,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Htmlbuttonelement Popovertargetelement"
   }
 
+  dimension: metrics__counter__use_counter_doc_htmldialogelement_show {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldialogelement_show ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldialogelement Show"
+  }
+
   dimension: metrics__counter__use_counter_doc_htmldocument_named_getter_hit {
     sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_named_getter_hit ;;
     type: number
@@ -11663,6 +11712,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Wasm"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_wasm_legacy_exceptions {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_wasm_legacy_exceptions ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Wasm Legacy Exceptions"
   }
 
   dimension: metrics__counter__use_counter_doc_location_ancestororigins {
@@ -13968,6 +14024,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Page Htmlbuttonelement Popovertargetelement"
   }
 
+  dimension: metrics__counter__use_counter_page_htmldialogelement_show {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldialogelement_show ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldialogelement Show"
+  }
+
   dimension: metrics__counter__use_counter_page_htmldocument_named_getter_hit {
     sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_named_getter_hit ;;
     type: number
@@ -14155,6 +14218,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Wasm"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_wasm_legacy_exceptions {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_wasm_legacy_exceptions ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Wasm Legacy Exceptions"
   }
 
   dimension: metrics__counter__use_counter_page_location_ancestororigins {

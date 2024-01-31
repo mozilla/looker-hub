@@ -4727,6 +4727,24 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_text_wrap_mode {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_wrap_mode ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Text Wrap Mode"
+    description: "Whether a document used the CSS property text-wrap-mode. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_text_wrap_style {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_text_wrap_style ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Text Wrap Style"
+    description: "Whether a document used the CSS property text-wrap-style. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_top {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_top ;;
     type: number
@@ -5552,6 +5570,15 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Doc Css White Space"
     description: "Whether a document used the CSS property white-space. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_white_space_collapse {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_white_space_collapse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css White Space Collapse"
+    description: "Whether a document used the CSS property white-space-collapse. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -10964,6 +10991,24 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_text_wrap_mode {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_text_wrap_mode ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Text Wrap Mode"
+    description: "Whether a page used the CSS property text-wrap-mode. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_text_wrap_style {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_text_wrap_style ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Text Wrap Style"
+    description: "Whether a page used the CSS property text-wrap-style. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_top {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_top ;;
     type: number
@@ -11789,6 +11834,15 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css White Space"
     description: "Whether a page used the CSS property white-space. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_white_space_collapse {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_white_space_collapse ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css White Space Collapse"
+    description: "Whether a page used the CSS property white-space-collapse. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -14708,6 +14762,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_htmldialogelement_show {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_htmldialogelement_show ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Htmldialogelement Show"
+    description: "Whether a document called called HTMLDialogElement.show. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_htmldocument_named_getter_hit {
     sql: ${TABLE}.metrics.counter.use_counter_doc_htmldocument_named_getter_hit ;;
     type: number
@@ -14948,6 +15011,15 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Doc Js Wasm"
     description: "Whether a document uses WebAssembly. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_wasm_legacy_exceptions {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_wasm_legacy_exceptions ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Wasm Legacy Exceptions"
+    description: "Whether a document uses WebAssembly legacy exception-handling. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -17912,6 +17984,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_page_htmldialogelement_show {
+    sql: ${TABLE}.metrics.counter.use_counter_page_htmldialogelement_show ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Htmldialogelement Show"
+    description: "Whether a page called called HTMLDialogElement.show. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_page_htmldocument_named_getter_hit {
     sql: ${TABLE}.metrics.counter.use_counter_page_htmldocument_named_getter_hit ;;
     type: number
@@ -18152,6 +18233,15 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Wasm"
     description: "Whether a page uses WebAssembly. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_wasm_legacy_exceptions {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_wasm_legacy_exceptions ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Wasm Legacy Exceptions"
+    description: "Whether a page uses WebAssembly legacy exception-handling. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

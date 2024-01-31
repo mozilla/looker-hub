@@ -78,6 +78,24 @@ Not set for non-sponsored suggestions.
 "
   }
 
+  dimension: metrics__boolean__fx_suggest_is_clicked {
+    label: "Fx Suggest Is Clicked"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.fx_suggest_is_clicked ;;
+    type: yesno
+    group_label: "Fx Suggest"
+    group_item_label: "Is Clicked"
+
+    link: {
+      label: "Glean Dictionary reference for Fx Suggest Is Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/fx_suggest_is_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If `ping_type` is \"fxsuggest-impression\", indicates whether this impression is for a clicked suggestion. If `ping_type` is \"fxsuggest-click\", always `true`.
+"
+  }
+
   dimension: metrics__string__fx_suggest_ping_type {
     label: "Fx Suggest Ping Type"
     hidden: no

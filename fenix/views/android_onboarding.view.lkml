@@ -5,11 +5,6 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: android_onboarding {
-  dimension: action {
-    sql: ${TABLE}.action ;;
-    type: string
-  }
-
   dimension: adjust_ad_group {
     sql: ${TABLE}.adjust_ad_group ;;
     type: string
@@ -46,6 +41,11 @@ view: android_onboarding {
     map_layer_name: countries
   }
 
+  dimension: default_browser {
+    sql: ${TABLE}.default_browser ;;
+    type: number
+  }
+
   dimension: device_manufacturer {
     sql: ${TABLE}.device_manufacturer ;;
     type: string
@@ -56,13 +56,18 @@ view: android_onboarding {
     type: string
   }
 
-  dimension: element_type {
-    sql: ${TABLE}.element_type ;;
-    type: string
+  dimension: first_card_impression {
+    sql: ${TABLE}.first_card_impression ;;
+    type: number
   }
 
-  dimension: first_card {
-    sql: ${TABLE}.first_card ;;
+  dimension: first_card_primary_click {
+    sql: ${TABLE}.first_card_primary_click ;;
+    type: number
+  }
+
+  dimension: first_card_secondary_click {
+    sql: ${TABLE}.first_card_secondary_click ;;
     type: number
   }
 
@@ -86,6 +91,11 @@ view: android_onboarding {
     type: string
   }
 
+  dimension: new_profile {
+    sql: ${TABLE}.new_profile ;;
+    type: number
+  }
+
   dimension: onboarding_completed {
     sql: ${TABLE}.onboarding_completed ;;
     type: number
@@ -106,13 +116,38 @@ view: android_onboarding {
     type: yesno
   }
 
-  dimension: second_card {
-    sql: ${TABLE}.second_card ;;
+  dimension: second_card_impression {
+    sql: ${TABLE}.second_card_impression ;;
     type: number
   }
 
-  dimension: third_card {
-    sql: ${TABLE}.third_card ;;
+  dimension: second_card_primary_click {
+    sql: ${TABLE}.second_card_primary_click ;;
+    type: number
+  }
+
+  dimension: second_card_secondary_click {
+    sql: ${TABLE}.second_card_secondary_click ;;
+    type: number
+  }
+
+  dimension: sync_sign_in {
+    sql: ${TABLE}.sync_sign_in ;;
+    type: number
+  }
+
+  dimension: third_card_impression {
+    sql: ${TABLE}.third_card_impression ;;
+    type: number
+  }
+
+  dimension: third_card_primary_click {
+    sql: ${TABLE}.third_card_primary_click ;;
+    type: number
+  }
+
+  dimension: third_card_secondary_click {
+    sql: ${TABLE}.third_card_secondary_click ;;
     type: number
   }
 

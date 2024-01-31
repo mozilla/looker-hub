@@ -11,6 +11,12 @@ view: countries {
     description: "ISO 3166 alpha-2 country code"
   }
 
+  dimension: code_3 {
+    sql: ${TABLE}.code_3 ;;
+    type: string
+    description: "ISO 3166 alpha-3 country code"
+  }
+
   dimension: intermediate_region_name {
     sql: ${TABLE}.intermediate_region_name ;;
     type: string

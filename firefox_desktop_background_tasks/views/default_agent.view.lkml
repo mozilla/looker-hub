@@ -7,7 +7,7 @@
 view: default_agent {
   dimension: metrics__string__do_task_implementation {
     label: "Do Task Implementation"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.do_task_implementation ;;
     type: string
     group_label: "Do Task"
