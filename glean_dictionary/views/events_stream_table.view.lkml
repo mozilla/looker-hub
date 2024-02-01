@@ -277,6 +277,11 @@ view: events_stream_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics {
+    sql: ${TABLE}.metrics ;;
+    hidden: yes
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
