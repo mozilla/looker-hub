@@ -17898,6 +17898,14 @@ tiktokreporter_android:
       type: glean_ping_explore
       views:
         base_view: deletion_request
+    download_data:
+      type: glean_ping_explore
+      views:
+        base_view: download_data
+    email:
+      type: glean_ping_explore
+      views:
+        base_view: email
     growth_accounting:
       type: growth_accounting_explore
       views:
@@ -17906,6 +17914,14 @@ tiktokreporter_android:
       type: glean_ping_explore
       views:
         base_view: metrics
+    screen_recording:
+      type: glean_ping_explore
+      views:
+        base_view: screen_recording
+    tiktok_report:
+      type: glean_ping_explore
+      views:
+        base_view: tiktok_report
   glean_app: true
   owners:
   - jessed@mozillafoundation.org
@@ -17950,6 +17966,24 @@ tiktokreporter_android:
       - channel: null
         table: mozdata.org_mozilla_tiktokreporter.deletion_request
       type: table_view
+    download_data:
+      tables:
+      - table: mozdata.org_mozilla_tiktokreporter.download_data
+      type: glean_ping_view
+    download_data_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_tiktokreporter.download_data
+      type: table_view
+    email:
+      tables:
+      - table: mozdata.org_mozilla_tiktokreporter.email
+      type: glean_ping_view
+    email_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_tiktokreporter.email
+      type: table_view
     events_table:
       tables:
       - channel: null
@@ -17968,6 +18002,24 @@ tiktokreporter_android:
       - channel: null
         table: mozdata.org_mozilla_tiktokreporter.metrics
       type: table_view
+    screen_recording:
+      tables:
+      - table: mozdata.org_mozilla_tiktokreporter.screen_recording
+      type: glean_ping_view
+    screen_recording_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_tiktokreporter.screen_recording
+      type: table_view
+    tiktok_report:
+      tables:
+      - table: mozdata.org_mozilla_tiktokreporter.tiktok_report
+      type: glean_ping_view
+    tiktok_report_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_tiktokreporter.tiktok_report
+      type: table_view
 tiktokreporter_ios:
   explores:
     baseline:
@@ -17983,6 +18035,14 @@ tiktokreporter_ios:
       type: glean_ping_explore
       views:
         base_view: deletion_request
+    download_data:
+      type: glean_ping_explore
+      views:
+        base_view: download_data
+    email:
+      type: glean_ping_explore
+      views:
+        base_view: email
     growth_accounting:
       type: growth_accounting_explore
       views:
@@ -17991,6 +18051,14 @@ tiktokreporter_ios:
       type: glean_ping_explore
       views:
         base_view: metrics
+    screen_recording:
+      type: glean_ping_explore
+      views:
+        base_view: screen_recording
+    tiktok_report:
+      type: glean_ping_explore
+      views:
+        base_view: tiktok_report
   glean_app: true
   owners:
   - jessed@mozillafoundation.org
@@ -18035,6 +18103,24 @@ tiktokreporter_ios:
       - channel: null
         table: mozdata.org_mozilla_ios_tiktok_reporter.deletion_request
       type: table_view
+    download_data:
+      tables:
+      - table: mozdata.org_mozilla_ios_tiktok_reporter.download_data
+      type: glean_ping_view
+    download_data_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_ios_tiktok_reporter.download_data
+      type: table_view
+    email:
+      tables:
+      - table: mozdata.org_mozilla_ios_tiktok_reporter.email
+      type: glean_ping_view
+    email_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_ios_tiktok_reporter.email
+      type: table_view
     events_table:
       tables:
       - channel: null
@@ -18052,6 +18138,24 @@ tiktokreporter_ios:
       tables:
       - channel: null
         table: mozdata.org_mozilla_ios_tiktok_reporter.metrics
+      type: table_view
+    screen_recording:
+      tables:
+      - table: mozdata.org_mozilla_ios_tiktok_reporter.screen_recording
+      type: glean_ping_view
+    screen_recording_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_ios_tiktok_reporter.screen_recording
+      type: table_view
+    tiktok_report:
+      tables:
+      - table: mozdata.org_mozilla_ios_tiktok_reporter.tiktok_report
+      type: glean_ping_view
+    tiktok_report_table:
+      tables:
+      - channel: null
+        table: mozdata.org_mozilla_ios_tiktok_reporter.tiktok_report
       type: table_view
 treeherder:
   explores:
