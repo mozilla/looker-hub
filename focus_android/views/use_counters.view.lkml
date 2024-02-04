@@ -9113,6 +9113,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_user_find {
+    label: "Use Counter Css Doc Css User Find"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_user_find ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css User Find"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css User Find"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_user_find"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property user-find. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_user_select {
     label: "Use Counter Css Doc Css User Select"
     hidden: no
@@ -21638,6 +21656,24 @@ view: use_counters {
     }
 
     description: "Whether a page used the CSS property unicode-bidi. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_user_find {
+    label: "Use Counter Css Page Css User Find"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_user_find ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css User Find"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css User Find"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_user_find"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property user-find. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -54544,6 +54580,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_user_find {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_user_find} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css User Find"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_user_find"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_user_find_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_user_find: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css User Find"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_user_find"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_user_select {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_user_select} ;;
@@ -71940,6 +72001,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Page Css Unicode Bidi"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_unicode_bidi"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_user_find {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_user_find} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css User Find"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_user_find"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_user_find_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_user_find: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css User Find"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_user_find"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

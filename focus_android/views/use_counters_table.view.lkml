@@ -3818,6 +3818,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css Unicode Bidi"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_user_find {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_user_find ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css User Find"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_user_select {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_user_select ;;
     type: number
@@ -8688,6 +8695,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Unicode Bidi"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_user_find {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_user_find ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css User Find"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_user_select {
