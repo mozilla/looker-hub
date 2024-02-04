@@ -8243,13 +8243,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id185
           normalized_channel:
-            default: release
+            default: esr
             options:
+            - esr
             - release
             - beta
             - nightly
             - aurora
-            - esr
             - default
             - nightly-pine
             - nightly-oak
@@ -8376,11 +8376,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id194
           normalized_channel:
-            default: nightly
+            default: beta
             options:
-            - nightly
-            - aurora
             - beta
+            - aurora
+            - nightly
             - release
             - esr
             - Other
@@ -8894,11 +8894,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id233
           os:
-            default: Mac
+            default: Linux
             options:
-            - Mac
-            - Windows
             - Linux
+            - Windows
+            - Mac
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -9572,13 +9572,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id293
           app:
-            default: Android - daemon
+            default: Android - vpnsession
             options:
+            - Android - vpnsession
+            - iPhone - vpnsession
             - Android - daemon
             - Desktop - vpnsession
             - iPhone - daemon
-            - iPhone - vpnsession
-            - Android - vpnsession
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id294
@@ -11110,17 +11110,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id404
           channel:
-            default: nightly
+            default: release
             options:
-            - nightly
             - release
             - beta
+            - nightly
           os:
             default: Windows_NT
             options:
             - Windows_NT
-            - Linux
             - Darwin
+            - Linux
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id405
