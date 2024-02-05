@@ -6,10 +6,10 @@
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
 datagroup: review_checker_events_v1_last_updated {
-  label: "Fenix review checker events data Last Updated"
+  label: "Firefox iOS review checker events data Last Updated"
   sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.org_mozilla_fenix_derived.INFORMATION_SCHEMA.PARTITIONS
+    FROM `moz-fx-data-shared-prod`.org_mozilla_ios_firefox_derived.INFORMATION_SCHEMA.PARTITIONS
     WHERE table_name = 'review_checker_events_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:org_mozilla_fenix_derived.review_checker_events_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod:org_mozilla_ios_firefox_derived.review_checker_events_v1 is modified."
   max_cache_age: "24 hours"
 }
