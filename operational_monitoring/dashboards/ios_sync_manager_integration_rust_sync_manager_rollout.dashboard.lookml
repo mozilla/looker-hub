@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Search Count
-    name: Search Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       ios_sync_manager_integration_rust_sync_manager_rollout.branch
     ]
     filters:
-      ios_sync_manager_integration_rust_sync_manager_rollout.metric: 'search_count'
+      ios_sync_manager_integration_rust_sync_manager_rollout.metric: 'retained'
       ios_sync_manager_integration_rust_sync_manager_rollout.statistic: mean
     row: 0
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       ios_sync_manager_integration_rust_sync_manager_rollout.branch
     ]
     filters:
-      ios_sync_manager_integration_rust_sync_manager_rollout.metric: 'retained'
+      ios_sync_manager_integration_rust_sync_manager_rollout.metric: 'search_count'
       ios_sync_manager_integration_rust_sync_manager_rollout.statistic: mean
     row: 20
     col: 0
