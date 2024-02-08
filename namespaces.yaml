@@ -5063,10 +5063,6 @@ monitoring:
       tables:
       - table: moz-fx-data-shared-prod.monitoring.bigquery_usage
       type: table_view
-    bigquery_usage_costs:
-      tables:
-      - table: moz-fx-data-shared-prod.monitoring.bigquery_usage_costs
-      type: table_view
     column_size:
       tables:
       - table: mozdata.monitoring.column_size
