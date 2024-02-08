@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Active Subscribers - By app
-    name: Active Subscribers - By app_sum
+  - title: Session Count - By app
+    name: Session Count - By app_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,7 +26,7 @@
       mozilla_vpn.branch, mozilla_vpn.app
     ]
     filters:
-      mozilla_vpn.metric: 'active_subscribers'
+      mozilla_vpn.metric: 'session_count'
       mozilla_vpn.statistic: sum
     row: 0
     col: 0
@@ -186,8 +186,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Session Count - By app
-    name: Session Count - By app_sum
+  - title: Active Subscribers - By app
+    name: Active Subscribers - By app_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -202,7 +202,7 @@
       mozilla_vpn.branch, mozilla_vpn.app
     ]
     filters:
-      mozilla_vpn.metric: 'session_count'
+      mozilla_vpn.metric: 'active_subscribers'
       mozilla_vpn.statistic: sum
     row: 20
     col: 12
@@ -252,7 +252,7 @@
   - title: App
     name: App
     type: string_filter
-    default_value: 'Android - daemon,Android - vpnsession,Desktop - vpnsession,iPhone - daemon,iPhone - vpnsession'
+    default_value: 'Android - daemon,Android - vpn,Android - vpnsession,Darwin - vpn,Desktop - vpnsession,iOS - daemon,iPhone - daemon,iPhone - vpnsession,Linux - vpn,Windows - vpn'
     allow_multiple_values: true
     required: true
     ui_config:
@@ -260,10 +260,15 @@
       display: inline
       options:
       - 'Android - daemon'
+      - 'Android - vpn'
       - 'Android - vpnsession'
+      - 'Darwin - vpn'
       - 'Desktop - vpnsession'
+      - 'iOS - daemon'
       - 'iPhone - daemon'
       - 'iPhone - vpnsession'
+      - 'Linux - vpn'
+      - 'Windows - vpn'
       
   
   

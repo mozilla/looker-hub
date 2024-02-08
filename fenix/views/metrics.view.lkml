@@ -4708,6 +4708,545 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__string__gfx_adapter_primary_description {
+    label: "Gfx Adapter Primary Description"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_description ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Description"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Description"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_description"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Long form description of the Graphics adapter (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_device_id {
+    label: "Gfx Adapter Primary Device Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_device_id ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Device Id"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Device Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_device_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter device identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_date {
+    label: "Gfx Adapter Primary Driver Date"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_date ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Driver Date"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Date"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_driver_date"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter driver date (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_files {
+    label: "Gfx Adapter Primary Driver Files"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_files ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Driver Files"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Files"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_driver_files"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "List of graphics adapter driver files (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_vendor {
+    label: "Gfx Adapter Primary Driver Vendor"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_vendor ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Driver Vendor"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Vendor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_driver_vendor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter driver vendor identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_version {
+    label: "Gfx Adapter Primary Driver Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_version ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Driver Version"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_driver_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter driver version (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_adapter_primary_ram {
+    label: "Gfx Adapter Primary Ram"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_adapter_primary_ram ;;
+    type: number
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Ram"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Ram"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_ram"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter dedicated memory (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_subsystem_id {
+    label: "Gfx Adapter Primary Subsystem Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_subsystem_id ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Subsystem Id"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Subsystem Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_subsystem_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter subsystem identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_vendor_id {
+    label: "Gfx Adapter Primary Vendor Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_vendor_id ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Vendor Id"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Vendor Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_vendor_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter vendor identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_duration__sum {
+    label: "Gfx Checkerboard Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_duration.sum ;;
+    type: number
+    group_label: "Gfx Checkerboard"
+    group_item_label: "Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Checkerboard Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_checkerboard_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The duration of a checkerboard event. Checkerboarding is when painting has not kept up with asynchronous panning and zooming so the compositor has to display a \"checkerboard pattern\" (or in practice, the background color) rather than the actual page content. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__sum {
+    label: "Gfx Checkerboard Peak Pixel Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_peak_pixel_count.sum ;;
+    type: number
+    group_label: "Gfx Checkerboard"
+    group_item_label: "Peak Pixel Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Checkerboard Peak Pixel Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_checkerboard_peak_pixel_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The peak number of CSS pixels that checkerboarded during a checkerboard event. The minimum value of the largest histogram bucket is the size of a 4k display with maximum APZ zooming. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_potential_duration__sum {
+    label: "Gfx Checkerboard Potential Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_potential_duration.sum ;;
+    type: number
+    group_label: "Gfx Checkerboard"
+    group_item_label: "Potential Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Checkerboard Potential Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_checkerboard_potential_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total amount of time that we could reasonably be checkerboarding. This is the union of two possibly-intersecting sets of time periods: The first set is that in which checkerboarding was actually happening, since by definition it could potentially be happening. The second set is that in which the APZC is actively transforming content in the compositor, since it could potentially transform it so as to display checkerboarding to the user. Combined with other information, this allows us to meaningfully say how frequently users actually enncounters checkerboarding. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_checkerboard_severity__sum {
+    label: "Gfx Checkerboard Severity Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_severity.sum ;;
+    type: number
+    group_label: "Gfx Checkerboard"
+    group_item_label: "Severity Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Checkerboard Severity Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_checkerboard_severity"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An opaque measurement of the severity of a checkerboard event. This doesn't have units, it's just useful for comparing two checkerboard events to see which one is worse, for some implementation-specific definition of \"worse\". The larger the value, the worse the checkerboarding. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_composite_time__sum {
+    label: "Gfx Composite Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_composite_time.sum ;;
+    type: number
+    group_label: "Gfx"
+    group_item_label: "Composite Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Composite Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_composite_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time taken to composite a frame. On non-webrender this is the time taken in `CompositorBridgeParent::CompositeToTarget()`. On webrender, this is the time taken from the start of `WebRenderBridgeParent::CompositeToTarget()`, until the render thread has rendered the frame (in `RenderThread::HandleFrameOneDoc()`). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_from_paint__sum {
+    label: "Gfx Content Frame Time From Paint Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_paint.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "From Paint Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time From Paint Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_from_paint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_from_vsync__sum {
+    label: "Gfx Content Frame Time From Vsync Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_vsync.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "From Vsync Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time From Vsync Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_from_vsync"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from the vsync that started a paint in the content process until that frame is presented in the compositor. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__gfx_content_frame_time_reason {
+    label: "Gfx Content Frame Time Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.gfx_content_frame_time_reason ;;
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The reason that `gfx.content.frame_time.from_paint` recorded a slow (>200ms) result, if any. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_with_svg__sum {
+    label: "Gfx Content Frame Time With Svg Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_with_svg.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "With Svg Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time With Svg Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_with_svg"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor, for frames that contained an SVG to be drawn by webrender. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_without_resource_upload__sum {
+    label: "Gfx Content Frame Time Without Resource Upload Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_resource_upload.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "Without Resource Upload Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time Without Resource Upload Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_without_resource_upload"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor by webrender, excluding time spent uploading resources. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_without_upload__sum {
+    label: "Gfx Content Frame Time Without Upload Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_upload.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "Without Upload Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time Without Upload Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_without_upload"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor by webrender, excluding time spent uploading any content. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_full_paint_time__sum {
+    label: "Gfx Content Full Paint Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_full_paint_time.sum ;;
+    type: number
+    group_label: "Gfx Content"
+    group_item_label: "Full Paint Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Full Paint Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_full_paint_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in the full paint pipeline for content until it's ready for composition. For non-webrender this includes `paint_time`, plus rasterization if OMTP is enabled. For webrender, this includes `paint_time`, plus scene building time. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_paint_time__sum {
+    label: "Gfx Content Paint Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_paint_time.sum ;;
+    type: number
+    group_label: "Gfx Content"
+    group_item_label: "Paint Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Paint Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_paint_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in the main-thread paint pipeline for content. For non-webrender, this includes display list building, layer building, and when OMTP is disabled, rasterization. For webrender, this includes display list building, and webrender display list building. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_display_count {
+    label: "Gfx Display Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_display_count ;;
+    type: number
+    group_label: "Gfx Display"
+    group_item_label: "Count"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Display Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_display_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of displays connected to the device (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_display_primary_height {
+    label: "Gfx Display Primary Height"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_display_primary_height ;;
+    type: number
+    group_label: "Gfx Display"
+    group_item_label: "Primary Height"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Display Primary Height"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_display_primary_height"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Height of the primary display, takes device rotation into account. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_display_primary_width {
+    label: "Gfx Display Primary Width"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_display_primary_width ;;
+    type: number
+    group_label: "Gfx Display"
+    group_item_label: "Primary Width"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Display Primary Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_display_primary_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Width of the primary display, takes device rotation into account. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_feature_webrender {
+    label: "Gfx Feature Webrender"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_feature_webrender ;;
+    type: string
+    group_label: "Gfx Feature"
+    group_item_label: "Webrender"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Feature Webrender"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_feature_webrender"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether webrender is enabled or disabled, and why. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_scroll_present_latency__sum {
+    label: "Gfx Scroll Present Latency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_scroll_present_latency.sum ;;
+    type: number
+    group_label: "Gfx"
+    group_item_label: "Scroll Present Latency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Scroll Present Latency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_scroll_present_latency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between receiving a scroll event on the event loop and compositing its result onto the screen (ms). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_status_compositor {
+    label: "Gfx Status Compositor"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_status_compositor ;;
+    type: string
+    group_label: "Gfx Status"
+    group_item_label: "Compositor"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Status Compositor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_status_compositor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Name of the graphics compositor in use. Possible values are \"opengl, d3d11, client, webrender or basic\" (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__boolean__gfx_status_headless {
+    label: "Gfx Status Headless"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.gfx_status_headless ;;
+    type: yesno
+    group_label: "Gfx Status"
+    group_item_label: "Headless"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Status Headless"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_status_headless"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Boolean indicated whether graphics is running in headless (no display) mode (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_status_last_compositor_gecko_version {
+    label: "Gfx Status Last Compositor Gecko Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_status_last_compositor_gecko_version ;;
+    type: string
+    group_label: "Gfx Status"
+    group_item_label: "Last Compositor Gecko Version"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Status Last Compositor Gecko Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_status_last_compositor_gecko_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The gecko version at the last time a compositor was initialized, and therefore when gfx_status_compositor was last updated. Due to gfx_status_compositor's user lifetime we see lots of unexpected values for the current gecko version. We believe this is because the user has not opened a tab since they were updated to a version where webrender should be enabled on their device. This can be used to verify that theory. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__boolean__gifft_validation_main_ping_assembling {
     label: "Gifft Validation Main Ping Assembling"
     hidden: yes
@@ -9036,42 +9575,6 @@ Uses a single label due to only labeled counters being supported
 "
   }
 
-  dimension: metrics__string__gfx_adapter_primary_description {
-    label: "Gfx Adapter Primary Description"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_adapter_primary_description ;;
-    type: string
-    group_label: "Gfx Adapter Primary"
-    group_item_label: "Description"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Adapter Primary Description"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_description"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Long form description of the Graphics adapter
-"
-  }
-
-  dimension: metrics__string__gfx_adapter_primary_device_id {
-    label: "Gfx Adapter Primary Device Id"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_adapter_primary_device_id ;;
-    type: string
-    group_label: "Gfx Adapter Primary"
-    group_item_label: "Device Id"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Adapter Primary Device Id"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_device_id"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Graphics adapter device identification
-"
-  }
-
   dimension: metrics__string__gfx_adapter_primary_device_id_last_seen {
     label: "Gfx Adapter Primary Device Id Last Seen"
     hidden: yes
@@ -9087,472 +9590,6 @@ Uses a single label due to only labeled counters being supported
     }
 
     description: "Graphics adapter device identification last seen This is a temporary workaround for some early telemetry system issues. See Bug 1601091 for more information
-"
-  }
-
-  dimension: metrics__string__gfx_adapter_primary_driver_date {
-    label: "Gfx Adapter Primary Driver Date"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_date ;;
-    type: string
-    group_label: "Gfx Adapter Primary"
-    group_item_label: "Driver Date"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Date"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_driver_date"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Graphics adapter driver date
-"
-  }
-
-  dimension: metrics__string__gfx_adapter_primary_driver_files {
-    label: "Gfx Adapter Primary Driver Files"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_files ;;
-    type: string
-    group_label: "Gfx Adapter Primary"
-    group_item_label: "Driver Files"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Files"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_driver_files"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "List of graphics adapter driver files
-"
-  }
-
-  dimension: metrics__string__gfx_adapter_primary_driver_vendor {
-    label: "Gfx Adapter Primary Driver Vendor"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_vendor ;;
-    type: string
-    group_label: "Gfx Adapter Primary"
-    group_item_label: "Driver Vendor"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Vendor"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_driver_vendor"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Graphics adapter driver vendor identification
-"
-  }
-
-  dimension: metrics__string__gfx_adapter_primary_driver_version {
-    label: "Gfx Adapter Primary Driver Version"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_version ;;
-    type: string
-    group_label: "Gfx Adapter Primary"
-    group_item_label: "Driver Version"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Version"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_driver_version"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Graphics adapter driver version
-"
-  }
-
-  dimension: metrics__quantity__gfx_adapter_primary_ram {
-    label: "Gfx Adapter Primary Ram"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.gfx_adapter_primary_ram ;;
-    type: number
-    group_label: "Gfx Adapter Primary"
-    group_item_label: "Ram"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Adapter Primary Ram"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_ram"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Graphics adapter dedicated memory
-"
-  }
-
-  dimension: metrics__string__gfx_adapter_primary_subsystem_id {
-    label: "Gfx Adapter Primary Subsystem Id"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_adapter_primary_subsystem_id ;;
-    type: string
-    group_label: "Gfx Adapter Primary"
-    group_item_label: "Subsystem Id"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Adapter Primary Subsystem Id"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_subsystem_id"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Graphics adapter subsystem identification
-"
-  }
-
-  dimension: metrics__string__gfx_adapter_primary_vendor_id {
-    label: "Gfx Adapter Primary Vendor Id"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_adapter_primary_vendor_id ;;
-    type: string
-    group_label: "Gfx Adapter Primary"
-    group_item_label: "Vendor Id"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Adapter Primary Vendor Id"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_vendor_id"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Graphics adapter vendor identification
-"
-  }
-
-  dimension: metrics__timing_distribution__gfx_checkerboard_duration__sum {
-    label: "Gfx Checkerboard Duration Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_duration.sum ;;
-    type: number
-    group_label: "Gfx Checkerboard"
-    group_item_label: "Duration Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Checkerboard Duration Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_checkerboard_duration"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The duration of a checkerboard event. Checkerboarding is when painting has not kept up with asynchronous panning and zooming so the compositor has to display a \"checkerboard pattern\" (or in practice, the background color) rather than the actual page content.
-"
-  }
-
-  dimension: metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__sum {
-    label: "Gfx Checkerboard Peak Pixel Count Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_peak_pixel_count.sum ;;
-    type: number
-    group_label: "Gfx Checkerboard"
-    group_item_label: "Peak Pixel Count Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Checkerboard Peak Pixel Count Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_checkerboard_peak_pixel_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The peak number of CSS pixels that checkerboarded during a checkerboard event. The minimum value of the largest histogram bucket is the size of a 4k display with maximum APZ zooming.
-"
-  }
-
-  dimension: metrics__timing_distribution__gfx_checkerboard_potential_duration__sum {
-    label: "Gfx Checkerboard Potential Duration Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_potential_duration.sum ;;
-    type: number
-    group_label: "Gfx Checkerboard"
-    group_item_label: "Potential Duration Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Checkerboard Potential Duration Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_checkerboard_potential_duration"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The total amount of time that we could reasonably be checkerboarding. This is the union of two possibly-intersecting sets of time periods: The first set is that in which checkerboarding was actually happening, since by definition it could potentially be happening. The second set is that in which the APZC is actively transforming content in the compositor, since it could potentially transform it so as to display checkerboarding to the user. Combined with other information, this allows us to meaningfully say how frequently users actually enncounters checkerboarding.
-"
-  }
-
-  dimension: metrics__custom_distribution__gfx_checkerboard_severity__sum {
-    label: "Gfx Checkerboard Severity Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_severity.sum ;;
-    type: number
-    group_label: "Gfx Checkerboard"
-    group_item_label: "Severity Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Checkerboard Severity Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_checkerboard_severity"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "An opaque measurement of the severity of a checkerboard event. This doesn't have units, it's just useful for comparing two checkerboard events to see which one is worse, for some implementation-specific definition of \"worse\". The larger the value, the worse the checkerboarding.
-"
-  }
-
-  dimension: metrics__timing_distribution__gfx_composite_time__sum {
-    label: "Gfx Composite Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.gfx_composite_time.sum ;;
-    type: number
-    group_label: "Gfx"
-    group_item_label: "Composite Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Composite Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_composite_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time taken to composite a frame. On non-webrender this is the time taken in `CompositorBridgeParent::CompositeToTarget()`. On webrender, this is the time taken from the start of `WebRenderBridgeParent::CompositeToTarget()`, until the render thread has rendered the frame (in `RenderThread::HandleFrameOneDoc()`).
-"
-  }
-
-  dimension: metrics__custom_distribution__gfx_content_frame_time_from_paint__sum {
-    label: "Gfx Content Frame Time From Paint Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_paint.sum ;;
-    type: number
-    group_label: "Gfx Content Frame Time"
-    group_item_label: "From Paint Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Content Frame Time From Paint Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_from_paint"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor.
-"
-  }
-
-  dimension: metrics__custom_distribution__gfx_content_frame_time_from_vsync__sum {
-    label: "Gfx Content Frame Time From Vsync Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_vsync.sum ;;
-    type: number
-    group_label: "Gfx Content Frame Time"
-    group_item_label: "From Vsync Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Content Frame Time From Vsync Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_from_vsync"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time, in percentage of a vsync interval, spent from the vsync that started a paint in the content process until that frame is presented in the compositor.
-"
-  }
-
-  dimension: metrics__labeled_counter__gfx_content_frame_time_reason {
-    label: "Gfx Content Frame Time Reason"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.gfx_content_frame_time_reason ;;
-    group_label: "Gfx Content Frame Time"
-    group_item_label: "Reason"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Content Frame Time Reason"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_reason"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The reason that `gfx.content.frame_time.from_paint` recorded a slow (>200ms) result, if any.
-"
-  }
-
-  dimension: metrics__custom_distribution__gfx_content_frame_time_with_svg__sum {
-    label: "Gfx Content Frame Time With Svg Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_with_svg.sum ;;
-    type: number
-    group_label: "Gfx Content Frame Time"
-    group_item_label: "With Svg Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Content Frame Time With Svg Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_with_svg"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor, for frames that contained an SVG to be drawn by webrender.
-"
-  }
-
-  dimension: metrics__custom_distribution__gfx_content_frame_time_without_resource_upload__sum {
-    label: "Gfx Content Frame Time Without Resource Upload Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_resource_upload.sum ;;
-    type: number
-    group_label: "Gfx Content Frame Time"
-    group_item_label: "Without Resource Upload Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Content Frame Time Without Resource Upload Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_without_resource_upload"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor by webrender, excluding time spent uploading resources.
-"
-  }
-
-  dimension: metrics__custom_distribution__gfx_content_frame_time_without_upload__sum {
-    label: "Gfx Content Frame Time Without Upload Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_upload.sum ;;
-    type: number
-    group_label: "Gfx Content Frame Time"
-    group_item_label: "Without Upload Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Content Frame Time Without Upload Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_without_upload"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor by webrender, excluding time spent uploading any content.
-"
-  }
-
-  dimension: metrics__timing_distribution__gfx_content_full_paint_time__sum {
-    label: "Gfx Content Full Paint Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.gfx_content_full_paint_time.sum ;;
-    type: number
-    group_label: "Gfx Content"
-    group_item_label: "Full Paint Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Content Full Paint Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_full_paint_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent in the full paint pipeline for content until it's ready for composition. For non-webrender this includes `paint_time`, plus rasterization if OMTP is enabled. For webrender, this includes `paint_time`, plus scene building time.
-"
-  }
-
-  dimension: metrics__timing_distribution__gfx_content_paint_time__sum {
-    label: "Gfx Content Paint Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.gfx_content_paint_time.sum ;;
-    type: number
-    group_label: "Gfx Content"
-    group_item_label: "Paint Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Content Paint Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_paint_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent in the main-thread paint pipeline for content. For non-webrender, this includes display list building, layer building, and when OMTP is disabled, rasterization. For webrender, this includes display list building, and webrender display list building.
-"
-  }
-
-  dimension: metrics__quantity__gfx_display_count {
-    label: "Gfx Display Count"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.gfx_display_count ;;
-    type: number
-    group_label: "Gfx Display"
-    group_item_label: "Count"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Display Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_display_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Amount of displays connected to the device
-"
-  }
-
-  dimension: metrics__quantity__gfx_display_primary_height {
-    label: "Gfx Display Primary Height"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.gfx_display_primary_height ;;
-    type: number
-    group_label: "Gfx Display"
-    group_item_label: "Primary Height"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Display Primary Height"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_display_primary_height"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Height of the primary display, takes device rotation into account.
-"
-  }
-
-  dimension: metrics__quantity__gfx_display_primary_width {
-    label: "Gfx Display Primary Width"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.gfx_display_primary_width ;;
-    type: number
-    group_label: "Gfx Display"
-    group_item_label: "Primary Width"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Display Primary Width"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_display_primary_width"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Width of the primary display, takes device rotation into account.
-"
-  }
-
-  dimension: metrics__string__gfx_feature_webrender {
-    label: "Gfx Feature Webrender"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_feature_webrender ;;
-    type: string
-    group_label: "Gfx Feature"
-    group_item_label: "Webrender"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Feature Webrender"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_feature_webrender"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether webrender is enabled or disabled, and why."
-  }
-
-  dimension: metrics__timing_distribution__gfx_scroll_present_latency__sum {
-    label: "Gfx Scroll Present Latency Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.gfx_scroll_present_latency.sum ;;
-    type: number
-    group_label: "Gfx"
-    group_item_label: "Scroll Present Latency Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Scroll Present Latency Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_scroll_present_latency"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time between receiving a scroll event on the event loop and compositing its result onto the screen (ms).
-"
-  }
-
-  dimension: metrics__string__gfx_status_compositor {
-    label: "Gfx Status Compositor"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_status_compositor ;;
-    type: string
-    group_label: "Gfx Status"
-    group_item_label: "Compositor"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Status Compositor"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_status_compositor"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Name of the graphics compositor in use. Possible values are \"opengl, d3d11, client, webrender or basic\"
 "
   }
 
@@ -9589,42 +9626,6 @@ Uses a single label due to only labeled counters being supported
     }
 
     description: "The time taken to build a webrender frame. This involves calculating the visibility of primitives, requesting resources, and building the render passes which will be used to render the frame.
-"
-  }
-
-  dimension: metrics__boolean__gfx_status_headless {
-    label: "Gfx Status Headless"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.gfx_status_headless ;;
-    type: yesno
-    group_label: "Gfx Status"
-    group_item_label: "Headless"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Status Headless"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_status_headless"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Boolean indicated whether graphics is running in headless (no display) mode
-"
-  }
-
-  dimension: metrics__string__gfx_status_last_compositor_gecko_version {
-    label: "Gfx Status Last Compositor Gecko Version"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_status_last_compositor_gecko_version ;;
-    type: string
-    group_label: "Gfx Status"
-    group_item_label: "Last Compositor Gecko Version"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Status Last Compositor Gecko Version"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_status_last_compositor_gecko_version"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The gecko version at the last time a compositor was initialized, and therefore when gfx_status_compositor was last updated. Due to gfx_status_compositor's user lifetime we see lots of unexpected values for the current gecko version. We believe this is because the user has not opened a tab since they were updated to a version where webrender should be enabled on their device. This can be used to verify that theory.
 "
   }
 

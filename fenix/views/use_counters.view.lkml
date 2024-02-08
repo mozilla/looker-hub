@@ -99729,7 +99729,7 @@ view: use_counters__metrics__labeled_counter__use_counter_error_unknown_counter 
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__use_counters__metrics__labeled_counter__use_counter_error_unknown_counter
     suggest_dimension: suggest__use_counters__metrics__labeled_counter__use_counter_error_unknown_counter.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -99741,12 +99741,12 @@ view: use_counters__metrics__labeled_counter__use_counter_error_unknown_counter 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${use_counters.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
