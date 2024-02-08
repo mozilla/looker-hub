@@ -305,6 +305,11 @@ bedrock:
       - base_table: mozdata.bedrock.events_unnested
         events_table_view: events_unnested_table
       type: events_view
+    events_stream_table:
+      tables:
+      - channel: null
+        table: mozdata.bedrock.events_stream
+      type: table_view
     events_table:
       tables:
       - channel: null
