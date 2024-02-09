@@ -113,6 +113,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__formautofill_form_submission_heuristic}) AS metrics__metrics__labeled_counter__formautofill_form_submission_heuristic ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__formautofill_form_submission_heuristic.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__gfx_content_frame_time_reason}) AS metrics__metrics__labeled_counter__gfx_content_frame_time_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__gfx_content_frame_time_reason.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__glean_error_invalid_label {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__glean_error_invalid_label}) AS metrics__metrics__labeled_counter__glean_error_invalid_label ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__glean_error_invalid_label.document_id} ;;
@@ -457,6 +462,10 @@ explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_s
 }
 
 explore: suggest__metrics__metrics__labeled_counter__formautofill_form_submission_heuristic {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
   hidden: yes
 }
 
