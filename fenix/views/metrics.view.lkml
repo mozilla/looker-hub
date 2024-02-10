@@ -5559,6 +5559,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__network_cache_hit_time__sum {
+    label: "Network Cache Hit Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Cache Hit Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cache Hit Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_cache_hit_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time to open existing cache entry file. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__labeled_counter__network_cors_authorization_header {
     label: "Network Cors Authorization Header"
     hidden: yes
@@ -5610,6 +5628,78 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__network_dns_end__sum {
+    label: "Network Dns End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Dns End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Dns End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_dns_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from the DNS request being issued to the response. Corresponds to Legacy histogram HTTP_PAGE_DNS_LOOKUP_TIME in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__sum {
+    label: "Network Dns Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Dns Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Dns Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_dns_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection open to the DNS request being issued. Corresponds to Legacy histogram HTTP_PAGE_DNS_ISSUE_TIME in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__sum {
+    label: "Network First From Cache Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "First From Cache Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network First From Cache Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_first_from_cache"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection open to cache read start. Corresponds to Legacy histogram HTTP_PAGE_OPEN_TO_FIRST_FROM_CACHE_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__sum {
+    label: "Network Font Download End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Font Download End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Font Download End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_font_download_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time after navigationStart that all webfont downloads are completed. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__sum {
     label: "Network Open To Transaction Pending Sum"
     hidden: yes
@@ -5625,6 +5715,42 @@ To be used to validate GIFFT.
     }
 
     description: "The time spent from HttpChannelChild::AsyncOpen to adding the transaction to the nsHttpConnectionMgr
+"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__sum {
+    label: "Network Tcp Connection Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Tcp Connection Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Tcp Connection Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_tcp_connection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from the TCP SYN packet is received to the connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_PAGE_TCP_CONNECTION_2 in Desktop (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__sum {
+    label: "Network Tls Handshake Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Tls Handshake Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Tls Handshake Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_tls_handshake"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from after the TCP SYN packet is received to the secure connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_PAGE_TLS_HANDSHAKE in Desktop. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -10110,132 +10236,6 @@ Uses a single label due to only labeled counters being supported
     }
 
     description: "Failure occurs when initializing the audio stream.
-"
-  }
-
-  dimension: metrics__timing_distribution__network_cache_hit_time__sum {
-    label: "Network Cache Hit Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.sum ;;
-    type: number
-    group_label: "Network"
-    group_item_label: "Cache Hit Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Network Cache Hit Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_cache_hit_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time to open existing cache entry file.
-"
-  }
-
-  dimension: metrics__timing_distribution__network_dns_end__sum {
-    label: "Network Dns End Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.sum ;;
-    type: number
-    group_label: "Network"
-    group_item_label: "Dns End Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Network Dns End Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_dns_end"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "In the HTTP page channel, time from the DNS request being issued to the response.
-"
-  }
-
-  dimension: metrics__timing_distribution__network_dns_start__sum {
-    label: "Network Dns Start Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.sum ;;
-    type: number
-    group_label: "Network"
-    group_item_label: "Dns Start Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Network Dns Start Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_dns_start"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "In the HTTP page channel, time from connection open to the DNS request being issued.
-"
-  }
-
-  dimension: metrics__timing_distribution__network_first_from_cache__sum {
-    label: "Network First From Cache Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.sum ;;
-    type: number
-    group_label: "Network"
-    group_item_label: "First From Cache Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Network First From Cache Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_first_from_cache"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "In the HTTP page channel, time from connection open to cache read start.
-"
-  }
-
-  dimension: metrics__timing_distribution__network_font_download_end__sum {
-    label: "Network Font Download End Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.sum ;;
-    type: number
-    group_label: "Network"
-    group_item_label: "Font Download End Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Network Font Download End Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_font_download_end"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time after navigationStart that all webfont downloads are completed.
-"
-  }
-
-  dimension: metrics__timing_distribution__network_tcp_connection__sum {
-    label: "Network Tcp Connection Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.sum ;;
-    type: number
-    group_label: "Network"
-    group_item_label: "Tcp Connection Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Network Tcp Connection Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_tcp_connection"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "In the HTTP page channel, time from the TCP SYN packet is received to the connection is established and ready for HTTP.
-"
-  }
-
-  dimension: metrics__timing_distribution__network_tls_handshake__sum {
-    label: "Network Tls Handshake Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.sum ;;
-    type: number
-    group_label: "Network"
-    group_item_label: "Tls Handshake Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Network Tls Handshake Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_tls_handshake"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "In the HTTP page channel, time from after the TCP SYN packet is received to the secure connection is established and ready for HTTP.
 "
   }
 

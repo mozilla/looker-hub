@@ -400,6 +400,16 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__boolean__shopping_settings_auto_open_user_disabled {
+    sql: ${TABLE}.metrics.boolean.shopping_settings_auto_open_user_disabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Shopping Settings Auto Open User Disabled"
+    description: "Indicates if the user has manually disabled the auto open sidebar feature.
+Set during shopping component init and updated when changed in browser.
+"
+  }
+
   dimension: metrics__boolean__shopping_settings_component_opted_out {
     sql: ${TABLE}.metrics.boolean.shopping_settings_component_opted_out ;;
     type: yesno

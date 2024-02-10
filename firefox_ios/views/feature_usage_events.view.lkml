@@ -5,6 +5,11 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: feature_usage_events {
+  dimension: adjust_network {
+    sql: ${TABLE}.adjust_network ;;
+    type: string
+  }
+
   dimension: app_icon_new_private_tab_tapped {
     sql: ${TABLE}.app_icon_new_private_tab_tapped ;;
     type: number
@@ -22,6 +27,36 @@ view: feature_usage_events {
 
   dimension: cc_autofill_failed_users {
     sql: ${TABLE}.cc_autofill_failed_users ;;
+    type: number
+  }
+
+  dimension: cc_autofill_prompt_dismissed {
+    sql: ${TABLE}.cc_autofill_prompt_dismissed ;;
+    type: number
+  }
+
+  dimension: cc_autofill_prompt_dismissed_users {
+    sql: ${TABLE}.cc_autofill_prompt_dismissed_users ;;
+    type: number
+  }
+
+  dimension: cc_autofill_prompt_expanded {
+    sql: ${TABLE}.cc_autofill_prompt_expanded ;;
+    type: number
+  }
+
+  dimension: cc_autofill_prompt_expanded_users {
+    sql: ${TABLE}.cc_autofill_prompt_expanded_users ;;
+    type: number
+  }
+
+  dimension: cc_autofill_prompt_shown {
+    sql: ${TABLE}.cc_autofill_prompt_shown ;;
+    type: number
+  }
+
+  dimension: cc_autofill_prompt_shown_users {
+    sql: ${TABLE}.cc_autofill_prompt_shown_users ;;
     type: number
   }
 
@@ -65,6 +100,26 @@ view: feature_usage_events {
     type: number
   }
 
+  dimension: cc_management_add_tapped {
+    sql: ${TABLE}.cc_management_add_tapped ;;
+    type: number
+  }
+
+  dimension: cc_management_add_tapped_users {
+    sql: ${TABLE}.cc_management_add_tapped_users ;;
+    type: number
+  }
+
+  dimension: cc_management_card_tapped {
+    sql: ${TABLE}.cc_management_card_tapped ;;
+    type: number
+  }
+
+  dimension: cc_management_card_tapped_users {
+    sql: ${TABLE}.cc_management_card_tapped_users ;;
+    type: number
+  }
+
   dimension: cc_save_prompt_create {
     sql: ${TABLE}.cc_save_prompt_create ;;
     type: number
@@ -72,6 +127,26 @@ view: feature_usage_events {
 
   dimension: cc_save_prompt_create_users {
     sql: ${TABLE}.cc_save_prompt_create_users ;;
+    type: number
+  }
+
+  dimension: cc_save_prompt_shown {
+    sql: ${TABLE}.cc_save_prompt_shown ;;
+    type: number
+  }
+
+  dimension: cc_save_prompt_shown_users {
+    sql: ${TABLE}.cc_save_prompt_shown_users ;;
+    type: number
+  }
+
+  dimension: cc_save_prompt_update {
+    sql: ${TABLE}.cc_save_prompt_update ;;
+    type: number
+  }
+
+  dimension: cc_save_prompt_update_users {
+    sql: ${TABLE}.cc_save_prompt_update_users ;;
     type: number
   }
 
@@ -85,6 +160,17 @@ view: feature_usage_events {
     type: number
   }
 
+  dimension: channel {
+    sql: ${TABLE}.channel ;;
+    type: string
+  }
+
+  dimension: country {
+    sql: ${TABLE}.country ;;
+    type: string
+    map_layer_name: countries
+  }
+
   dimension: drag_location_bar {
     sql: ${TABLE}.drag_location_bar ;;
     type: number
@@ -92,11 +178,6 @@ view: feature_usage_events {
 
   dimension: drag_location_bar_users {
     sql: ${TABLE}.drag_location_bar_users ;;
-    type: number
-  }
-
-  dimension: events_ping_distinct_client_count {
-    sql: ${TABLE}.events_ping_distinct_client_count ;;
     type: number
   }
 
@@ -205,6 +286,16 @@ view: feature_usage_events {
     type: number
   }
 
+  dimension: history_opened_item {
+    sql: ${TABLE}.history_opened_item ;;
+    type: number
+  }
+
+  dimension: history_opened_item_users {
+    sql: ${TABLE}.history_opened_item_users ;;
+    type: number
+  }
+
   dimension: history_opened_users {
     sql: ${TABLE}.history_opened_users ;;
     type: number
@@ -258,6 +349,11 @@ view: feature_usage_events {
   dimension: history_search_tap_users {
     sql: ${TABLE}.history_search_tap_users ;;
     type: number
+  }
+
+  dimension: is_default_browser {
+    sql: ${TABLE}.is_default_browser ;;
+    type: yesno
   }
 
   dimension: location_bottom {
@@ -325,13 +421,28 @@ view: feature_usage_events {
     type: number
   }
 
+  dimension: notification_alert_setting_disabled_users {
+    sql: ${TABLE}.notification_alert_setting_disabled_users ;;
+    type: number
+  }
+
   dimension: notification_alert_setting_enabled {
     sql: ${TABLE}.notification_alert_setting_enabled ;;
     type: number
   }
 
+  dimension: notification_alert_setting_enabled_users {
+    sql: ${TABLE}.notification_alert_setting_enabled_users ;;
+    type: number
+  }
+
   dimension: notification_alert_setting_not_supported {
     sql: ${TABLE}.notification_alert_setting_not_supported ;;
+    type: number
+  }
+
+  dimension: notification_alert_setting_not_supported_users {
+    sql: ${TABLE}.notification_alert_setting_not_supported_users ;;
     type: number
   }
 
@@ -350,13 +461,53 @@ view: feature_usage_events {
     type: number
   }
 
+  dimension: notification_status_denied_users {
+    sql: ${TABLE}.notification_status_denied_users ;;
+    type: number
+  }
+
   dimension: notification_status_notDetermined {
     sql: ${TABLE}.notification_status_notDetermined ;;
     type: number
   }
 
+  dimension: notification_status_notDetermined_users {
+    sql: ${TABLE}.notification_status_notDetermined_users ;;
+    type: number
+  }
+
   dimension: private_browsing_button_tapped {
     sql: ${TABLE}.private_browsing_button_tapped ;;
+    type: number
+  }
+
+  dimension: private_browsing_button_tapped_add {
+    sql: ${TABLE}.private_browsing_button_tapped_add ;;
+    type: number
+  }
+
+  dimension: private_browsing_button_tapped_add_users {
+    sql: ${TABLE}.private_browsing_button_tapped_add_users ;;
+    type: number
+  }
+
+  dimension: private_browsing_button_tapped_close_all_tabs {
+    sql: ${TABLE}.private_browsing_button_tapped_close_all_tabs ;;
+    type: number
+  }
+
+  dimension: private_browsing_button_tapped_close_all_tabs_users {
+    sql: ${TABLE}.private_browsing_button_tapped_close_all_tabs_users ;;
+    type: number
+  }
+
+  dimension: private_browsing_button_tapped_done {
+    sql: ${TABLE}.private_browsing_button_tapped_done ;;
+    type: number
+  }
+
+  dimension: private_browsing_button_tapped_done_users {
+    sql: ${TABLE}.private_browsing_button_tapped_done_users ;;
     type: number
   }
 
@@ -393,6 +544,21 @@ view: feature_usage_events {
   dimension: tabs_tray_new_private_tab_tapped_users {
     sql: ${TABLE}.tabs_tray_new_private_tab_tapped_users ;;
     type: number
+  }
+
+  dimension_group: ping {
+    sql: ${TABLE}.ping_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
   }
 
   dimension_group: submission {
