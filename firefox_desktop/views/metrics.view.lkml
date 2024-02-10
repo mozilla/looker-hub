@@ -780,6 +780,25 @@ of the shopping experiment.
 "
   }
 
+  dimension: metrics__boolean__shopping_settings_auto_open_user_disabled {
+    label: "Shopping Settings Auto Open User Disabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.shopping_settings_auto_open_user_disabled ;;
+    type: yesno
+    group_label: "Shopping Settings"
+    group_item_label: "Auto Open User Disabled"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Settings Auto Open User Disabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/shopping_settings_auto_open_user_disabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if the user has manually disabled the auto open sidebar feature.
+Set during shopping component init and updated when changed in browser.
+"
+  }
+
   dimension: metrics__boolean__shopping_settings_component_opted_out {
     label: "Shopping Settings Component Opted Out"
     hidden: no
