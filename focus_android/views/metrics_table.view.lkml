@@ -1782,8 +1782,18 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_dns_native_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_dns_native_count ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_onstart_success_https_rr ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_http_response_version {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_response_version ;;
     hidden: yes
   }
 
@@ -1939,6 +1949,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__shortcuts_shortcut_removed_counter {
     sql: ${TABLE}.metrics.labeled_counter.shortcuts_shortcut_removed_counter ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__tls_xyber_intolerance_reason {
+    sql: ${TABLE}.metrics.labeled_counter.tls_xyber_intolerance_reason ;;
     hidden: yes
   }
 
@@ -4359,6 +4374,301 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__network_cache_hit_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Hit Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Hit Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Cache Hit Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Hit Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Hit Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Cache Hit Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Hit Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_dns_end__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns End"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_end__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns End"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_end__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Dns End"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_end__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns End"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_end__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_dns_end__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns End"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_end__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Dns End"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_end__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns End"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_end__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network First From Cache"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network First From Cache"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network First From Cache"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network First From Cache"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network First From Cache"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network First From Cache"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network First From Cache"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Font Download End"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Font Download End"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Font Download End"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Font Download End"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Font Download End"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Font Download End"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Font Download End"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.bucket_count ;;
     type: number
@@ -4415,6 +4725,124 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__values {
     sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tcp Connection"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tcp Connection"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Tcp Connection"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tcp Connection"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tcp Connection"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Tcp Connection"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tcp Connection"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.values ;;
     hidden: yes
   }
 
@@ -7647,7 +8075,91 @@ view: metrics_table__metrics__timing_distribution__glean_validation_shutdown_wai
   }
 }
 
+view: metrics_table__metrics__timing_distribution__network_cache_hit_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_dns_end__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_dns_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_first_from_cache__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_font_download_end__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__network_open_to_transaction_pending__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_tcp_connection__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_tls_handshake__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -429,9 +429,19 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_cookie_timestamp_fixed_count}) AS metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_dns_native_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_dns_native_count}) AS metrics__metrics__labeled_counter__networking_dns_native_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_dns_native_count.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_onstart_success_https_rr}) AS metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_response_version {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_response_version}) AS metrics__metrics__labeled_counter__networking_http_response_version ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_response_version.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__networking_https_rr_presented {
@@ -607,6 +617,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__tabs_tray_access_point {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tabs_tray_access_point}) AS metrics__metrics__labeled_counter__tabs_tray_access_point ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tabs_tray_access_point.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tls_xyber_intolerance_reason}) AS metrics__metrics__labeled_counter__tls_xyber_intolerance_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tls_xyber_intolerance_reason.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__wallpapers_new_wallpaper_applied {
@@ -943,7 +958,15 @@ explore: suggest__metrics__metrics__labeled_counter__networking_cookie_timestamp
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__networking_dns_native_count {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__networking_http_response_version {
   hidden: yes
 }
 
@@ -1084,6 +1107,10 @@ explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_
 }
 
 explore: suggest__metrics__metrics__labeled_counter__tabs_tray_access_point {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
   hidden: yes
 }
 

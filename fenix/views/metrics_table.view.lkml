@@ -2591,8 +2591,18 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_dns_native_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_dns_native_count ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_onstart_success_https_rr ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_http_response_version {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_response_version ;;
     hidden: yes
   }
 
@@ -2768,6 +2778,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__tabs_tray_access_point {
     sql: ${TABLE}.metrics.labeled_counter.tabs_tray_access_point ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__tls_xyber_intolerance_reason {
+    sql: ${TABLE}.metrics.labeled_counter.tls_xyber_intolerance_reason ;;
     hidden: yes
   }
 

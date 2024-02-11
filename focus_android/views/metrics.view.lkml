@@ -3061,6 +3061,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__network_cache_hit_time__sum {
+    label: "Network Cache Hit Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Cache Hit Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cache Hit Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/network_cache_hit_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time to open existing cache entry file. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__labeled_counter__network_cors_authorization_header {
     label: "Network Cors Authorization Header"
     hidden: yes
@@ -3112,6 +3130,78 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__network_dns_end__sum {
+    label: "Network Dns End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Dns End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Dns End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/network_dns_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from the DNS request being issued to the response. Corresponds to Legacy histogram HTTP_PAGE_DNS_LOOKUP_TIME in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__sum {
+    label: "Network Dns Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Dns Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Dns Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/network_dns_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection open to the DNS request being issued. Corresponds to Legacy histogram HTTP_PAGE_DNS_ISSUE_TIME in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__sum {
+    label: "Network First From Cache Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "First From Cache Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network First From Cache Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/network_first_from_cache"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection open to cache read start. Corresponds to Legacy histogram HTTP_PAGE_OPEN_TO_FIRST_FROM_CACHE_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__sum {
+    label: "Network Font Download End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Font Download End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Font Download End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/network_font_download_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time after navigationStart that all webfont downloads are completed. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__sum {
     label: "Network Open To Transaction Pending Sum"
     hidden: yes
@@ -3127,6 +3217,42 @@ To be used to validate GIFFT.
     }
 
     description: "The time spent from HttpChannelChild::AsyncOpen to adding the transaction to the nsHttpConnectionMgr
+"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__sum {
+    label: "Network Tcp Connection Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Tcp Connection Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Tcp Connection Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/network_tcp_connection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from the TCP SYN packet is received to the connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_PAGE_TCP_CONNECTION_2 in Desktop (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__sum {
+    label: "Network Tls Handshake Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Tls Handshake Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Tls Handshake Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/network_tls_handshake"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from after the TCP SYN packet is received to the secure connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_PAGE_TLS_HANDSHAKE in Desktop. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -3342,6 +3468,23 @@ To be used to validate GIFFT.
     }
 
     description: "Time for a successful DNS resolution (msec) | Migrated from Firefox Telemetry's `DNS_LOOKUP_TIME`.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_dns_native_count {
+    label: "Networking Dns Native Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_dns_native_count ;;
+    group_label: "Networking"
+    group_item_label: "Dns Native Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Dns Native Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_dns_native_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of calls to the native DNS APIs
 "
   }
 
@@ -3863,6 +4006,23 @@ To be used to validate GIFFT.
     }
 
     description: "The time between dispatching OnStopRequest from the socket thread and processing it on the main thread (content process).
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_response_version {
+    label: "Networking Http Response Version"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_response_version ;;
+    group_label: "Networking"
+    group_item_label: "Http Response Version"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Response Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_response_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP protocol version used on response from nsHttp.h
 "
   }
 
@@ -5308,6 +5468,23 @@ To be used to validate GIFFT.
     }
 
     description: "The total number of successful TLS server certificate verifications.
+"
+  }
+
+  dimension: metrics__labeled_counter__tls_xyber_intolerance_reason {
+    label: "Tls Xyber Intolerance Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tls_xyber_intolerance_reason ;;
+    group_label: "Tls"
+    group_item_label: "Xyber Intolerance Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Tls Xyber Intolerance Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/tls_xyber_intolerance_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The error that was returned from a failed TLS 1.3 handshake in which the client sent a Xyber key share (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
 "
   }
 
@@ -9932,6 +10109,49 @@ view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_dns_native_count {
+  label: "Networking - Dns Native Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_dns_native_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_dns_native_count.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
   label: "Networking - Http Channel Onstart Success Https Rr"
 
@@ -9953,6 +10173,49 @@ view: metrics__metrics__labeled_counter__networking_http_channel_onstart_success
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr
     suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_response_version {
+  label: "Networking - Http Response Version"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_http_response_version
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_http_response_version.key
     hidden: no
   }
 
@@ -11308,6 +11571,49 @@ view: metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter {
   }
 }
 
+view: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
+  label: "Tls - Xyber Intolerance Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks {
   derived_table: {
     sql: select
@@ -12239,6 +12545,25 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__networking_dns_native_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.networking_dns_native_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
   derived_table: {
     sql: select
@@ -12246,6 +12571,25 @@ view: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstar
     count(*) as n
 from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.networking_http_channel_onstart_success_https_rr) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_http_response_version {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.networking_http_response_version) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -12835,6 +13179,25 @@ view: suggest__metrics__metrics__labeled_counter__shortcuts_shortcut_removed_cou
     count(*) as n
 from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.shortcuts_shortcut_removed_counter) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.tls_xyber_intolerance_reason) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
