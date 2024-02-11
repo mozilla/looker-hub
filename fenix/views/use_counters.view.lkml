@@ -25477,7 +25477,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_deprecated_ops_doc_is_external_ctap2_security_key_supported {
     label: "Use Counter Deprecated Ops Doc Is External Ctap2 Security Key Supported"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_is_external_ctap2_security_key_supported ;;
     type: number
     group_label: "Use Counter Deprecated Ops Doc"
@@ -26251,7 +26251,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_deprecated_ops_page_is_external_ctap2_security_key_supported {
     label: "Use Counter Deprecated Ops Page Is External Ctap2 Security Key Supported"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_is_external_ctap2_security_key_supported ;;
     type: number
     group_label: "Use Counter Deprecated Ops Page"

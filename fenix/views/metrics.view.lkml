@@ -5525,6 +5525,166 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__sum {
+    label: "Javascript Pageload Baseline Compile Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Baseline Compile Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Baseline Compile Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_baseline_compile_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load baseline compiling Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_delazification_time__sum {
+    label: "Javascript Pageload Delazification Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Delazification Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Delazification Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_delazification_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load delazifying Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_execution_time__sum {
+    label: "Javascript Pageload Execution Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Execution Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Execution Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_execution_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load executing Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_gc_time__sum {
+    label: "Javascript Pageload Gc Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Gc Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Gc Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_gc_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load in the GC in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_parse_time__sum {
+    label: "Javascript Pageload Parse Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Parse Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Parse Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_parse_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load syntax parsing JS scripts on the main thread in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_protect_time__sum {
+    label: "Javascript Pageload Protect Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Protect Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Protect Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_protect_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load protecting JIT executable memory. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__sum {
+    label: "Javascript Pageload Xdr Encode Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Xdr Encode Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Xdr Encode Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_xdr_encode_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load XDR encoding Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_backend {
+    label: "Media Audio Backend"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_backend ;;
+    group_label: "Media Audio"
+    group_item_label: "Backend"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Backend"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_backend"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The operating system audio backend (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_init_failure {
+    label: "Media Audio Init Failure"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
+    group_label: "Media"
+    group_item_label: "Audio Init Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Init Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_init_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Failure occurs when initializing the audio stream.
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_early_hints {
     label: "Netwerk Early Hints"
     hidden: yes
@@ -5966,6 +6126,23 @@ To be used to validate GIFFT.
     }
 
     description: "Time for a successful DNS resolution (msec) | Migrated from Firefox Telemetry's `DNS_LOOKUP_TIME`.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_dns_native_count {
+    label: "Networking Dns Native Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_dns_native_count ;;
+    group_label: "Networking"
+    group_item_label: "Dns Native Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Dns Native Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_dns_native_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of calls to the native DNS APIs
 "
   }
 
@@ -6490,6 +6667,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_response_version {
+    label: "Networking Http Response Version"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_response_version ;;
+    group_label: "Networking"
+    group_item_label: "Http Response Version"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Response Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_response_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP protocol version used on response from nsHttp.h
+"
+  }
+
   dimension: metrics__labeled_counter__networking_https_rr_presented {
     label: "Networking Https Rr Presented"
     hidden: yes
@@ -6944,6 +7138,240 @@ To be used to validate GIFFT.
     }
 
     description: "Time from response start to largest contentful paint.
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__sum {
+    label: "Performance Interaction Keypress Present Latency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.sum ;;
+    type: number
+    group_label: "Performance Interaction"
+    group_item_label: "Keypress Present Latency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Interaction Keypress Present Latency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_interaction_keypress_present_latency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between receiving a keypress event in the event loop and compositing its result onto the screen. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__sum {
+    label: "Performance Interaction Mouseup Click Present Latency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.sum ;;
+    type: number
+    group_label: "Performance Interaction"
+    group_item_label: "Mouseup Click Present Latency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Interaction Mouseup Click Present Latency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_interaction_mouseup_click_present_latency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between receiving a mouseup which follow by a mouseclick on the event loop and compositing its result onto the screen. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_non_blank_paint__sum {
+    label: "Performance Page Non Blank Paint Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.sum ;;
+    type: number
+    group_label: "Performance Page"
+    group_item_label: "Non Blank Paint Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Page Non Blank Paint Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_page_non_blank_paint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first non-blank paint of a foreground root content document, in milliseconds. This only records documents that were in an active docshell throughout the whole time between navigation start and non-blank paint. The non-blank paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp__sum {
+    label: "Performance Pageload Fcp Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Fcp Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Fcp Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_fcp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__sum {
+    label: "Performance Pageload Fcp Responsestart Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Fcp Responsestart Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Fcp Responsestart Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_fcp_responsestart"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between responseStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time__sum {
+    label: "Performance Pageload Load Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Load Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Load Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_load_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from navigationStart to loadEventStart for the foreground http or https root content document. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__sum {
+    label: "Performance Pageload Load Time Responsestart Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time_responsestart.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Load Time Responsestart Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Load Time Responsestart Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_load_time_responsestart"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from responseStart to loadEventStart for the foreground http or https root content document. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_complete__sum {
+    label: "Performance Time Dom Complete Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Complete Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Complete Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_dom_complete"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domComplete as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__sum {
+    label: "Performance Time Dom Content Loaded End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Content Loaded End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Content Loaded End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_dom_content_loaded_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domContentLoadedEventEnd as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__sum {
+    label: "Performance Time Dom Content Loaded Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Content Loaded Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Content Loaded Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_dom_content_loaded_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domContentLoadedEventStart as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_interactive__sum {
+    label: "Performance Time Dom Interactive Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Interactive Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Interactive Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_dom_interactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domInteractive as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_end__sum {
+    label: "Performance Time Load Event End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Load Event End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Load Event End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_load_event_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to loadEventEnd as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_start__sum {
+    label: "Performance Time Load Event Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Load Event Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Load Event Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_load_event_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to loadEventStart as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
 "
   }
 
@@ -7932,6 +8360,23 @@ To be used to validate GIFFT.
     }
 
     description: "The total number of successful TLS server certificate verifications.
+"
+  }
+
+  dimension: metrics__labeled_counter__tls_xyber_intolerance_reason {
+    label: "Tls Xyber Intolerance Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tls_xyber_intolerance_reason ;;
+    group_label: "Tls"
+    group_item_label: "Xyber Intolerance Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Tls Xyber Intolerance Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tls_xyber_intolerance_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The error that was returned from a failed TLS 1.3 handshake in which the client sent a Xyber key share (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
 "
   }
 
@@ -9989,132 +10434,6 @@ Uses a single label due to only labeled counters being supported
 "
   }
 
-  dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__sum {
-    label: "Javascript Pageload Baseline Compile Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.sum ;;
-    type: number
-    group_label: "Javascript Pageload"
-    group_item_label: "Baseline Compile Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Pageload Baseline Compile Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_baseline_compile_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent during page load baseline compiling Javascript in ms.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_pageload_delazification_time__sum {
-    label: "Javascript Pageload Delazification Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.sum ;;
-    type: number
-    group_label: "Javascript Pageload"
-    group_item_label: "Delazification Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Pageload Delazification Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_delazification_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent during page load delazifying Javascript in ms.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_pageload_execution_time__sum {
-    label: "Javascript Pageload Execution Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.sum ;;
-    type: number
-    group_label: "Javascript Pageload"
-    group_item_label: "Execution Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Pageload Execution Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_execution_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent during page load executing Javascript in ms.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_pageload_gc_time__sum {
-    label: "Javascript Pageload Gc Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.sum ;;
-    type: number
-    group_label: "Javascript Pageload"
-    group_item_label: "Gc Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Pageload Gc Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_gc_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent during page load in the GC in ms.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_pageload_parse_time__sum {
-    label: "Javascript Pageload Parse Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.sum ;;
-    type: number
-    group_label: "Javascript Pageload"
-    group_item_label: "Parse Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Pageload Parse Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_parse_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent during page load syntax parsing JS scripts on the main thread in ms.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_pageload_protect_time__sum {
-    label: "Javascript Pageload Protect Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.sum ;;
-    type: number
-    group_label: "Javascript Pageload"
-    group_item_label: "Protect Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Pageload Protect Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_protect_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent during page load protecting JIT executable memory.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__sum {
-    label: "Javascript Pageload Xdr Encode Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.sum ;;
-    type: number
-    group_label: "Javascript Pageload"
-    group_item_label: "Xdr Encode Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Pageload Xdr Encode Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_xdr_encode_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent during page load XDR encoding Javascript in ms.
-"
-  }
-
   dimension: metrics__custom_distribution__js_baseline_compile_percentage__sum {
     label: "Js Baseline Compile Percentage Sum"
     hidden: yes
@@ -10205,40 +10524,6 @@ Uses a single label due to only labeled counters being supported
 "
   }
 
-  dimension: metrics__labeled_counter__media_audio_backend {
-    label: "Media Audio Backend"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.media_audio_backend ;;
-    group_label: "Media Audio"
-    group_item_label: "Backend"
-
-    link: {
-      label: "Glean Dictionary reference for Media Audio Backend"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_backend"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The operating system audio backend
-"
-  }
-
-  dimension: metrics__labeled_counter__media_audio_init_failure {
-    label: "Media Audio Init Failure"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
-    group_label: "Media"
-    group_item_label: "Audio Init Failure"
-
-    link: {
-      label: "Glean Dictionary reference for Media Audio Init Failure"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_init_failure"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Failure occurs when initializing the audio stream.
-"
-  }
-
   dimension: metrics__custom_distribution__performance_clone_deserialize_items__sum {
     label: "Performance Clone Deserialize Items Sum"
     hidden: no
@@ -10293,42 +10578,6 @@ Uses a single label due to only labeled counters being supported
 "
   }
 
-  dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__sum {
-    label: "Performance Interaction Keypress Present Latency Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.sum ;;
-    type: number
-    group_label: "Performance Interaction"
-    group_item_label: "Keypress Present Latency Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Interaction Keypress Present Latency Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_interaction_keypress_present_latency"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time between receiving a keypress event in the event loop and compositing its result onto the screen.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__sum {
-    label: "Performance Interaction Mouseup Click Present Latency Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.sum ;;
-    type: number
-    group_label: "Performance Interaction"
-    group_item_label: "Mouseup Click Present Latency Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Interaction Mouseup Click Present Latency Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_interaction_mouseup_click_present_latency"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time between receiving a mouseup which follow by a mouseclick on the event loop and compositing its result onto the screen.
-"
-  }
-
   dimension: metrics__timing_distribution__performance_interaction_tab_switch_composite__sum {
     label: "Performance Interaction Tab Switch Composite Sum"
     hidden: no
@@ -10344,24 +10593,6 @@ Uses a single label due to only labeled counters being supported
     }
 
     description: "Time between tab selection and first composite of the tab content onto the screen.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_page_non_blank_paint__sum {
-    label: "Performance Page Non Blank Paint Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.sum ;;
-    type: number
-    group_label: "Performance Page"
-    group_item_label: "Non Blank Paint Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Page Non Blank Paint Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_page_non_blank_paint"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time between navigationStart and the first non-blank paint of a foreground root content document, in milliseconds. This only records documents that were in an active docshell throughout the whole time between navigation start and non-blank paint. The non-blank paint timestamp is taken during display list building and does not include rasterization or compositing of that paint.
 "
   }
 
@@ -10419,78 +10650,6 @@ Uses a single label due to only labeled counters being supported
 "
   }
 
-  dimension: metrics__timing_distribution__performance_pageload_fcp__sum {
-    label: "Performance Pageload Fcp Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.sum ;;
-    type: number
-    group_label: "Performance Pageload"
-    group_item_label: "Fcp Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Pageload Fcp Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_fcp"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time between navigationStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__sum {
-    label: "Performance Pageload Fcp Responsestart Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.sum ;;
-    type: number
-    group_label: "Performance Pageload"
-    group_item_label: "Fcp Responsestart Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Pageload Fcp Responsestart Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_fcp_responsestart"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time between responseStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_pageload_load_time__sum {
-    label: "Performance Pageload Load Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.sum ;;
-    type: number
-    group_label: "Performance Pageload"
-    group_item_label: "Load Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Pageload Load Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_load_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time in milliseconds from navigationStart to loadEventStart for the foreground http or https root content document.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__sum {
-    label: "Performance Pageload Load Time Responsestart Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time_responsestart.sum ;;
-    type: number
-    group_label: "Performance Pageload"
-    group_item_label: "Load Time Responsestart Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Pageload Load Time Responsestart Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_load_time_responsestart"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time in milliseconds from responseStart to loadEventStart for the foreground http or https root content document.
-"
-  }
-
   dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__sum {
     label: "Performance Pageload Req Anim Frame Callback Sum"
     hidden: no
@@ -10527,96 +10686,6 @@ Uses a single label due to only labeled counters being supported
 "
   }
 
-  dimension: metrics__timing_distribution__performance_time_dom_complete__sum {
-    label: "Performance Time Dom Complete Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.sum ;;
-    type: number
-    group_label: "Performance Time"
-    group_item_label: "Dom Complete Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Time Dom Complete Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_dom_complete"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time from navigationStart to domComplete as per the W3C Performance Timing API.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__sum {
-    label: "Performance Time Dom Content Loaded End Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.sum ;;
-    type: number
-    group_label: "Performance Time"
-    group_item_label: "Dom Content Loaded End Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Time Dom Content Loaded End Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_dom_content_loaded_end"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time from navigationStart to domContentLoadedEventEnd as per the W3C Performance Timing API.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__sum {
-    label: "Performance Time Dom Content Loaded Start Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.sum ;;
-    type: number
-    group_label: "Performance Time"
-    group_item_label: "Dom Content Loaded Start Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Time Dom Content Loaded Start Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_dom_content_loaded_start"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time from navigationStart to domContentLoadedEventStart as per the W3C Performance Timing API.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_time_dom_interactive__sum {
-    label: "Performance Time Dom Interactive Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.sum ;;
-    type: number
-    group_label: "Performance Time"
-    group_item_label: "Dom Interactive Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Time Dom Interactive Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_dom_interactive"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time from navigationStart to domInteractive as per the W3C Performance Timing API.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_time_load_event_end__sum {
-    label: "Performance Time Load Event End Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.sum ;;
-    type: number
-    group_label: "Performance Time"
-    group_item_label: "Load Event End Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Time Load Event End Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_load_event_end"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time from navigationStart to loadEventEnd as per the W3C Performance Timing API.
-"
-  }
-
   dimension: metrics__timing_distribution__performance_time_load_event_end_no_preload__sum {
     label: "Performance Time Load Event End No Preload Sum"
     hidden: yes
@@ -10650,24 +10719,6 @@ Uses a single label due to only labeled counters being supported
     }
 
     description: "Time from navigationStart to [`loadEventEnd`](https://www.w3.org/TR/ navigation-timing/#dom-performancetiming-loadend) as per the W3C Performance Timing API. This is only submitted on when the document would preload a resource (i.e., if it encounters a `<link>` element or a `Link` header with `rel=\"preload\"`), even if the `network.preload` pref is disabled.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_time_load_event_start__sum {
-    label: "Performance Time Load Event Start Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start.sum ;;
-    type: number
-    group_label: "Performance Time"
-    group_item_label: "Load Event Start Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Time Load Event Start Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_load_event_start"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time from navigationStart to loadEventStart as per the W3C Performance Timing API.
 "
   }
 
@@ -16947,6 +16998,49 @@ view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_dns_native_count {
+  label: "Networking - Dns Native Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_dns_native_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_dns_native_count.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
   label: "Networking - Http Channel Onstart Success Https Rr"
 
@@ -16968,6 +17062,49 @@ view: metrics__metrics__labeled_counter__networking_http_channel_onstart_success
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr
     suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_response_version {
+  label: "Networking - Http Response Version"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_http_response_version
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_http_response_version.key
     hidden: no
   }
 
@@ -18473,6 +18610,49 @@ view: metrics__metrics__labeled_counter__tabs_tray_access_point {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__tabs_tray_access_point
     suggest_dimension: suggest__metrics__metrics__labeled_counter__tabs_tray_access_point.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
+  label: "Tls - Xyber Intolerance Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason.key
     hidden: no
   }
 
@@ -20096,6 +20276,25 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__networking_dns_native_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.networking_dns_native_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
   derived_table: {
     sql: select
@@ -20103,6 +20302,25 @@ view: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstar
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.networking_http_channel_onstart_success_https_rr) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_http_response_version {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.networking_http_response_version) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -20768,6 +20986,25 @@ view: suggest__metrics__metrics__labeled_counter__tabs_tray_access_point {
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.tabs_tray_access_point) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.tls_xyber_intolerance_reason) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
