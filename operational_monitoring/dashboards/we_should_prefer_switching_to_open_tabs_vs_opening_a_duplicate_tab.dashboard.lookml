@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab
-    type: looker_line
-    fields: [
-      we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.submission_date,
-      we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.branch,
-      we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.point
-    ]
-    pivots: [
-      we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.branch
-    ]
-    filters:
-      we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.metric: 'retained'
-      we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.submission_date
-    field_y: we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.point
-    log_scale: false
-    ci_lower: we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.lower
-    ci_upper: we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.upper
-    show_grid: true
-    listen:
-      Date: we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -63,7 +29,7 @@
       we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.metric: 'ad_clicks'
       we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.statistic: mean
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.submission_date
@@ -96,8 +62,8 @@
     filters:
       we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.metric: 'search_count'
       we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.submission_date
@@ -129,6 +95,40 @@
     ]
     filters:
       we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.metric: 'active_hours'
+      we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.submission_date
+    field_y: we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.point
+    log_scale: false
+    ci_lower: we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.lower
+    ci_upper: we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.upper
+    show_grid: true
+    listen:
+      Date: we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab
+    type: looker_line
+    fields: [
+      we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.submission_date,
+      we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.branch,
+      we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.point
+    ]
+    pivots: [
+      we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.branch
+    ]
+    filters:
+      we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.metric: 'retained'
       we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab.statistic: mean
     row: 10
     col: 12

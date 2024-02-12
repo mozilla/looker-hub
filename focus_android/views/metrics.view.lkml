@@ -3027,6 +3027,166 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__sum {
+    label: "Javascript Pageload Baseline Compile Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Baseline Compile Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Baseline Compile Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/javascript_pageload_baseline_compile_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load baseline compiling Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_delazification_time__sum {
+    label: "Javascript Pageload Delazification Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Delazification Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Delazification Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/javascript_pageload_delazification_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load delazifying Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_execution_time__sum {
+    label: "Javascript Pageload Execution Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Execution Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Execution Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/javascript_pageload_execution_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load executing Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_gc_time__sum {
+    label: "Javascript Pageload Gc Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Gc Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Gc Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/javascript_pageload_gc_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load in the GC in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_parse_time__sum {
+    label: "Javascript Pageload Parse Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Parse Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Parse Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/javascript_pageload_parse_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load syntax parsing JS scripts on the main thread in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_protect_time__sum {
+    label: "Javascript Pageload Protect Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Protect Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Protect Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/javascript_pageload_protect_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load protecting JIT executable memory. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__sum {
+    label: "Javascript Pageload Xdr Encode Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Xdr Encode Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Xdr Encode Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/javascript_pageload_xdr_encode_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load XDR encoding Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_backend {
+    label: "Media Audio Backend"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_backend ;;
+    group_label: "Media Audio"
+    group_item_label: "Backend"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Backend"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/media_audio_backend"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The operating system audio backend (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_init_failure {
+    label: "Media Audio Init Failure"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
+    group_label: "Media Audio"
+    group_item_label: "Init Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Init Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/media_audio_init_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_early_hints {
     label: "Netwerk Early Hints"
     hidden: yes
@@ -4480,6 +4640,240 @@ To be used to validate GIFFT.
     }
 
     description: "Time from response start to largest contentful paint.
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__sum {
+    label: "Performance Interaction Keypress Present Latency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.sum ;;
+    type: number
+    group_label: "Performance Interaction"
+    group_item_label: "Keypress Present Latency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Interaction Keypress Present Latency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_interaction_keypress_present_latency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between receiving a keypress event in the event loop and compositing its result onto the screen. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__sum {
+    label: "Performance Interaction Mouseup Click Present Latency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.sum ;;
+    type: number
+    group_label: "Performance Interaction"
+    group_item_label: "Mouseup Click Present Latency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Interaction Mouseup Click Present Latency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_interaction_mouseup_click_present_latency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between receiving a mouseup which follow by a mouseclick on the event loop and compositing its result onto the screen. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_non_blank_paint__sum {
+    label: "Performance Page Non Blank Paint Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.sum ;;
+    type: number
+    group_label: "Performance Page"
+    group_item_label: "Non Blank Paint Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Page Non Blank Paint Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_page_non_blank_paint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first non-blank paint of a foreground root content document, in milliseconds. This only records documents that were in an active docshell throughout the whole time between navigation start and non-blank paint. The non-blank paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp__sum {
+    label: "Performance Pageload Fcp Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Fcp Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Fcp Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_pageload_fcp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__sum {
+    label: "Performance Pageload Fcp Responsestart Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Fcp Responsestart Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Fcp Responsestart Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_pageload_fcp_responsestart"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between responseStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time__sum {
+    label: "Performance Pageload Load Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Load Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Load Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_pageload_load_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from navigationStart to loadEventStart for the foreground http or https root content document. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__sum {
+    label: "Performance Pageload Load Time Responsestart Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time_responsestart.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Load Time Responsestart Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Load Time Responsestart Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_pageload_load_time_responsestart"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from responseStart to loadEventStart for the foreground http or https root content document. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_complete__sum {
+    label: "Performance Time Dom Complete Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Complete Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Complete Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_time_dom_complete"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domComplete as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__sum {
+    label: "Performance Time Dom Content Loaded End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Content Loaded End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Content Loaded End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_time_dom_content_loaded_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domContentLoadedEventEnd as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__sum {
+    label: "Performance Time Dom Content Loaded Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Content Loaded Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Content Loaded Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_time_dom_content_loaded_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domContentLoadedEventStart as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_interactive__sum {
+    label: "Performance Time Dom Interactive Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Interactive Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Interactive Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_time_dom_interactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domInteractive as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_end__sum {
+    label: "Performance Time Load Event End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Load Event End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Load Event End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_time_load_event_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to loadEventEnd as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_start__sum {
+    label: "Performance Time Load Event Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Load Event Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Load Event Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/performance_time_load_event_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to loadEventStart as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
 "
   }
 
@@ -9851,6 +10245,92 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
   }
 }
 
+view: metrics__metrics__labeled_counter__media_audio_backend {
+  label: "Media Audio - Backend"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__media_audio_backend
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__media_audio_backend.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_audio_init_failure {
+  label: "Media Audio - Init Failure"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__media_audio_init_failure
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__media_audio_init_failure.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__netwerk_early_hints {
   label: "Netwerk - Early Hints"
 
@@ -12419,6 +12899,44 @@ view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inact
     count(*) as n
 from mozdata.focus_android.metrics as t,
 unnest(metrics.labeled_counter.ipc_sent_messages_parent_inactive) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__media_audio_backend {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.media_audio_backend) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__media_audio_init_failure {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.focus_android.metrics as t,
+unnest(metrics.labeled_counter.media_audio_init_failure) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
