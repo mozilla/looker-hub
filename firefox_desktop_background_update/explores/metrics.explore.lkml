@@ -208,6 +208,16 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__ipc_sent_messages_parent_inactive}) AS metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__media_audio_backend {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_audio_backend}) AS metrics__metrics__labeled_counter__media_audio_backend ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_audio_backend.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__media_audio_init_failure {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__media_audio_init_failure}) AS metrics__metrics__labeled_counter__media_audio_init_failure ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__media_audio_init_failure.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__netwerk_early_hints {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__netwerk_early_hints}) AS metrics__metrics__labeled_counter__netwerk_early_hints ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__netwerk_early_hints.document_id} ;;
@@ -238,9 +248,19 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_cookie_timestamp_fixed_count}) AS metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_dns_native_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_dns_native_count}) AS metrics__metrics__labeled_counter__networking_dns_native_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_dns_native_count.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_onstart_success_https_rr}) AS metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_response_version {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_response_version}) AS metrics__metrics__labeled_counter__networking_http_response_version ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_response_version.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__networking_https_rr_presented {
@@ -386,6 +406,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid}) AS metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tls_xyber_intolerance_reason}) AS metrics__metrics__labeled_counter__tls_xyber_intolerance_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tls_xyber_intolerance_reason.document_id} ;;
   }
 }
 
@@ -541,6 +566,14 @@ explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_in
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__media_audio_backend {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__media_audio_init_failure {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__netwerk_early_hints {
   hidden: yes
 }
@@ -565,7 +598,15 @@ explore: suggest__metrics__metrics__labeled_counter__networking_cookie_timestamp
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__networking_dns_native_count {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__networking_http_response_version {
   hidden: yes
 }
 
@@ -682,5 +723,9 @@ explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_
 }
 
 explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
   hidden: yes
 }
