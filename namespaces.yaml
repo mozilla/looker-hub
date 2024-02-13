@@ -5346,14 +5346,61 @@ monitoring:
       - table: mozdata.monitoring.telemetry_missing_columns
       type: ping_view
 moso_mastodon_android:
-  explores: {}
+  explores:
+    baseline:
+      type: glean_ping_explore
+      views:
+        base_view: baseline
+    deletion_request:
+      type: glean_ping_explore
+      views:
+        base_view: deletion_request
+    metrics:
+      type: glean_ping_explore
+      views:
+        base_view: metrics
   glean_app: true
   owners:
   - kdemtchouk@mozilla.com
   - klong@mozilla.com
   pretty_name: Mozilla Social Android App
   spoke: looker-spoke-default
-  views: {}
+  views:
+    baseline:
+      tables:
+      - channel: nightly
+        table: mozdata.org_mozilla_social_nightly.baseline
+      type: glean_ping_view
+    baseline_table:
+      tables:
+      - channel: nightly
+        table: mozdata.org_mozilla_social_nightly.baseline
+      type: table_view
+    deletion_request:
+      tables:
+      - channel: nightly
+        table: mozdata.org_mozilla_social_nightly.deletion_request
+      type: glean_ping_view
+    deletion_request_table:
+      tables:
+      - channel: nightly
+        table: mozdata.org_mozilla_social_nightly.deletion_request
+      type: table_view
+    events_table:
+      tables:
+      - channel: nightly
+        table: mozdata.org_mozilla_social_nightly.events
+      type: table_view
+    metrics:
+      tables:
+      - channel: nightly
+        table: mozdata.org_mozilla_social_nightly.metrics
+      type: glean_ping_view
+    metrics_table:
+      tables:
+      - channel: nightly
+        table: mozdata.org_mozilla_social_nightly.metrics
+      type: table_view
 moso_mastodon_backend:
   explores:
     baseline:
