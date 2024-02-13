@@ -273,6 +273,10 @@ bedrock:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream_table:
+      type: table_explore
+      views:
+        base_view: events_stream_table
     interaction:
       type: glean_ping_explore
       views:
@@ -533,6 +537,10 @@ debug_ping_view:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream_table:
+      type: table_explore
+      views:
+        base_view: events_stream_table
   glean_app: true
   owners:
   - glean-team@mozilla.com
@@ -777,6 +785,10 @@ fenix:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream_table:
+      type: table_explore
+      views:
+        base_view: events_stream_table
     events_unnested:
       type: glean_ping_explore
       views:
@@ -825,19 +837,38 @@ fenix:
       type: glean_ping_explore
       views:
         base_view: logins_sync
-    metric_definitions_fenix:
+    metric_definitions_active_users_aggregates_v1:
       type: metric_definitions_explore
       views:
-        base_view: client_counts
-        joined_views:
-        - metric_definitions_active_users_aggregates_v1
-        - metric_definitions_baseline
-        - metric_definitions_baseline_v2
-        - metric_definitions_events
-        - metric_definitions_metrics
-        - metric_definitions_mobile_search_clients_engines_sources_daily
-        - metric_definitions_new_profile_activation
-        - metric_definitions_special_onboarding_events
+        base_view: metric_definitions_active_users_aggregates_v1
+    metric_definitions_baseline:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_baseline
+    metric_definitions_baseline_v2:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_baseline_v2
+    metric_definitions_events:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_events
+    metric_definitions_metrics:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_metrics
+    metric_definitions_mobile_search_clients_engines_sources_daily:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_mobile_search_clients_engines_sources_daily
+    metric_definitions_new_profile_activation:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_new_profile_activation
+    metric_definitions_special_onboarding_events:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_special_onboarding_events
     metrics:
       type: glean_ping_explore
       views:
@@ -1540,20 +1571,36 @@ fenix:
         table: mozdata.fenix.marketing_attributable_metrics
       type: table_view
     metric_definitions_active_users_aggregates_v1:
+      tables:
+      - table: mozdata.fenix.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_baseline:
+      tables:
+      - table: mozdata.fenix.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_baseline_v2:
+      tables:
+      - table: mozdata.fenix.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_events:
+      tables:
+      - table: mozdata.fenix.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_metrics:
+      tables:
+      - table: mozdata.fenix.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_mobile_search_clients_engines_sources_daily:
+      tables:
+      - table: mozdata.fenix.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_new_profile_activation:
+      tables:
+      - table: mozdata.fenix.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_special_onboarding_events:
+      tables:
+      - table: mozdata.fenix.baseline_clients_daily
       type: metric_definitions_view
     metrics:
       tables:
@@ -2013,26 +2060,66 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: messaging_system
-    metric_definitions_firefox_desktop:
+    metric_definitions_active_users_aggregates_v1:
       type: metric_definitions_explore
       views:
-        base_view: client_counts
-        joined_views:
-        - metric_definitions_active_users_aggregates_v1
-        - metric_definitions_activity_stream_events
-        - metric_definitions_browser_launched_to_handle_events
-        - metric_definitions_clients_daily
-        - metric_definitions_clients_first_seen_v2
-        - metric_definitions_crash
-        - metric_definitions_events
-        - metric_definitions_events_memory
-        - metric_definitions_main
-        - metric_definitions_metrics
-        - metric_definitions_newtab_interactions
-        - metric_definitions_newtab_visits_topsite_tile_interactions
-        - metric_definitions_normandy_events
-        - metric_definitions_search_clients_engines_sources_daily
-        - metric_definitions_sponsored_tiles_clients_daily
+        base_view: metric_definitions_active_users_aggregates_v1
+    metric_definitions_activity_stream_events:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_activity_stream_events
+    metric_definitions_browser_launched_to_handle_events:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_browser_launched_to_handle_events
+    metric_definitions_clients_daily:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_clients_daily
+    metric_definitions_clients_first_seen_v2:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_clients_first_seen_v2
+    metric_definitions_crash:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_crash
+    metric_definitions_events:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_events
+    metric_definitions_events_memory:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_events_memory
+    metric_definitions_main:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_main
+    metric_definitions_metrics:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_metrics
+    metric_definitions_newtab_interactions:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_newtab_interactions
+    metric_definitions_newtab_visits_topsite_tile_interactions:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_newtab_visits_topsite_tile_interactions
+    metric_definitions_normandy_events:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_normandy_events
+    metric_definitions_search_clients_engines_sources_daily:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_search_clients_engines_sources_daily
+    metric_definitions_sponsored_tiles_clients_daily:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_sponsored_tiles_clients_daily
     metrics:
       type: glean_ping_explore
       views:
@@ -2261,34 +2348,64 @@ firefox_desktop:
         table: mozdata.firefox_desktop.messaging_system
       type: table_view
     metric_definitions_active_users_aggregates_v1:
+      tables:
+      - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
     metric_definitions_activity_stream_events:
+      tables:
+      - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
     metric_definitions_browser_launched_to_handle_events:
+      tables:
+      - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
     metric_definitions_clients_daily:
+      tables:
+      - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
     metric_definitions_clients_first_seen_v2:
+      tables:
+      - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
     metric_definitions_crash:
+      tables:
+      - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
     metric_definitions_events:
+      tables:
+      - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
     metric_definitions_events_memory:
+      tables:
+      - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
     metric_definitions_main:
+      tables:
+      - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
     metric_definitions_metrics:
+      tables:
+      - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
     metric_definitions_newtab_interactions:
+      tables:
+      - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
     metric_definitions_newtab_visits_topsite_tile_interactions:
+      tables:
+      - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
     metric_definitions_normandy_events:
+      tables:
+      - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
     metric_definitions_search_clients_engines_sources_daily:
+      tables:
+      - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
     metric_definitions_sponsored_tiles_clients_daily:
+      tables:
+      - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
     metrics:
       tables:
@@ -2998,21 +3115,46 @@ firefox_ios:
       type: glean_ping_explore
       views:
         base_view: logins_sync
-    metric_definitions_firefox_ios:
+    metric_definitions_active_users_aggregates_v1:
       type: metric_definitions_explore
       views:
-        base_view: client_counts
-        joined_views:
-        - metric_definitions_active_users_aggregates_v1
-        - metric_definitions_appstore_funnel
-        - metric_definitions_baseline
-        - metric_definitions_baseline_v2
-        - metric_definitions_events
-        - metric_definitions_funnel_retention
-        - metric_definitions_metrics
-        - metric_definitions_mobile_search_clients_engines_sources_daily
-        - metric_definitions_new_profile_activation
-        - metric_definitions_special_onboarding_events
+        base_view: metric_definitions_active_users_aggregates_v1
+    metric_definitions_appstore_funnel:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_appstore_funnel
+    metric_definitions_baseline:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_baseline
+    metric_definitions_baseline_v2:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_baseline_v2
+    metric_definitions_events:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_events
+    metric_definitions_funnel_retention:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_funnel_retention
+    metric_definitions_metrics:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_metrics
+    metric_definitions_mobile_search_clients_engines_sources_daily:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_mobile_search_clients_engines_sources_daily
+    metric_definitions_new_profile_activation:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_new_profile_activation
+    metric_definitions_special_onboarding_events:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_special_onboarding_events
     metrics:
       type: glean_ping_explore
       views:
@@ -3386,24 +3528,44 @@ firefox_ios:
         table: mozdata.org_mozilla_ios_fennec.logins_sync
       type: table_view
     metric_definitions_active_users_aggregates_v1:
+      tables:
+      - table: mozdata.firefox_ios.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_appstore_funnel:
+      tables:
+      - table: mozdata.firefox_ios.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_baseline:
+      tables:
+      - table: mozdata.firefox_ios.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_baseline_v2:
+      tables:
+      - table: mozdata.firefox_ios.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_events:
+      tables:
+      - table: mozdata.firefox_ios.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_funnel_retention:
+      tables:
+      - table: mozdata.firefox_ios.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_metrics:
+      tables:
+      - table: mozdata.firefox_ios.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_mobile_search_clients_engines_sources_daily:
+      tables:
+      - table: mozdata.firefox_ios.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_new_profile_activation:
+      tables:
+      - table: mozdata.firefox_ios.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_special_onboarding_events:
+      tables:
+      - table: mozdata.firefox_ios.baseline_clients_daily
       type: metric_definitions_view
     metrics:
       tables:
@@ -3725,16 +3887,26 @@ focus_android:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
-    metric_definitions_focus_android:
+    metric_definitions_active_users_aggregates_v1:
       type: metric_definitions_explore
       views:
-        base_view: client_counts
-        joined_views:
-        - metric_definitions_active_users_aggregates_v1
-        - metric_definitions_baseline
-        - metric_definitions_baseline_v2
-        - metric_definitions_metrics
-        - metric_definitions_mobile_search_clients_engines_sources_daily
+        base_view: metric_definitions_active_users_aggregates_v1
+    metric_definitions_baseline:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_baseline
+    metric_definitions_baseline_v2:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_baseline_v2
+    metric_definitions_metrics:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_metrics
+    metric_definitions_mobile_search_clients_engines_sources_daily:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_mobile_search_clients_engines_sources_daily
     metrics:
       type: glean_ping_explore
       views:
@@ -3966,14 +4138,24 @@ focus_android:
       - table: mozdata.focus_android.baseline_clients_last_seen
       type: growth_accounting_view
     metric_definitions_active_users_aggregates_v1:
+      tables:
+      - table: mozdata.focus_android.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_baseline:
+      tables:
+      - table: mozdata.focus_android.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_baseline_v2:
+      tables:
+      - table: mozdata.focus_android.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_metrics:
+      tables:
+      - table: mozdata.focus_android.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_mobile_search_clients_engines_sources_daily:
+      tables:
+      - table: mozdata.focus_android.baseline_clients_daily
       type: metric_definitions_view
     metrics:
       tables:
@@ -4058,16 +4240,26 @@ focus_ios:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
-    metric_definitions_focus_ios:
+    metric_definitions_active_users_aggregates_v1:
       type: metric_definitions_explore
       views:
-        base_view: client_counts
-        joined_views:
-        - metric_definitions_active_users_aggregates_v1
-        - metric_definitions_baseline
-        - metric_definitions_baseline_v2
-        - metric_definitions_metrics
-        - metric_definitions_mobile_search_clients_engines_sources_daily
+        base_view: metric_definitions_active_users_aggregates_v1
+    metric_definitions_baseline:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_baseline
+    metric_definitions_baseline_v2:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_baseline_v2
+    metric_definitions_metrics:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_metrics
+    metric_definitions_mobile_search_clients_engines_sources_daily:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_mobile_search_clients_engines_sources_daily
     metrics:
       type: glean_ping_explore
       views:
@@ -4127,14 +4319,24 @@ focus_ios:
       - table: mozdata.org_mozilla_ios_focus.baseline_clients_last_seen
       type: growth_accounting_view
     metric_definitions_active_users_aggregates_v1:
+      tables:
+      - table: mozdata.org_mozilla_ios_focus.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_baseline:
+      tables:
+      - table: mozdata.org_mozilla_ios_focus.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_baseline_v2:
+      tables:
+      - table: mozdata.org_mozilla_ios_focus.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_metrics:
+      tables:
+      - table: mozdata.org_mozilla_ios_focus.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_mobile_search_clients_engines_sources_daily:
+      tables:
+      - table: mozdata.org_mozilla_ios_focus.baseline_clients_daily
       type: metric_definitions_view
     metrics:
       tables:
@@ -4165,6 +4367,10 @@ glean_dictionary:
       views:
         base_view: events
         extended_view: events_unnested_table
+    events_stream_table:
+      type: table_explore
+      views:
+        base_view: events_stream_table
     page_view:
       type: glean_ping_explore
       views:
@@ -4276,14 +4482,18 @@ klar_android:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
-    metric_definitions_klar_android:
+    metric_definitions_baseline:
       type: metric_definitions_explore
       views:
-        base_view: client_counts
-        joined_views:
-        - metric_definitions_baseline
-        - metric_definitions_metrics
-        - metric_definitions_mobile_search_clients_engines_sources_daily
+        base_view: metric_definitions_baseline
+    metric_definitions_metrics:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_metrics
+    metric_definitions_mobile_search_clients_engines_sources_daily:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_mobile_search_clients_engines_sources_daily
     metrics:
       type: glean_ping_explore
       views:
@@ -4395,10 +4605,16 @@ klar_android:
       - table: mozdata.org_mozilla_klar.baseline_clients_last_seen
       type: growth_accounting_view
     metric_definitions_baseline:
+      tables:
+      - table: mozdata.org_mozilla_klar.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_metrics:
+      tables:
+      - table: mozdata.org_mozilla_klar.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_mobile_search_clients_engines_sources_daily:
+      tables:
+      - table: mozdata.org_mozilla_klar.baseline_clients_daily
       type: metric_definitions_view
     metrics:
       tables:
@@ -4446,14 +4662,18 @@ klar_ios:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
-    metric_definitions_klar_ios:
+    metric_definitions_baseline:
       type: metric_definitions_explore
       views:
-        base_view: client_counts
-        joined_views:
-        - metric_definitions_baseline
-        - metric_definitions_metrics
-        - metric_definitions_mobile_search_clients_engines_sources_daily
+        base_view: metric_definitions_baseline
+    metric_definitions_metrics:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_metrics
+    metric_definitions_mobile_search_clients_engines_sources_daily:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_mobile_search_clients_engines_sources_daily
     metrics:
       type: glean_ping_explore
       views:
@@ -4512,10 +4732,16 @@ klar_ios:
       - table: mozdata.org_mozilla_ios_klar.baseline_clients_last_seen
       type: growth_accounting_view
     metric_definitions_baseline:
+      tables:
+      - table: mozdata.org_mozilla_ios_klar.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_metrics:
+      tables:
+      - table: mozdata.org_mozilla_ios_klar.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_mobile_search_clients_engines_sources_daily:
+      tables:
+      - table: mozdata.org_mozilla_ios_klar.baseline_clients_daily
       type: metric_definitions_view
     metrics:
       tables:
@@ -4771,12 +4997,10 @@ monitor_cirrus:
       type: growth_accounting_explore
       views:
         base_view: growth_accounting
-    metric_definitions_monitor_cirrus:
+    metric_definitions_monitor_events_v1:
       type: metric_definitions_explore
       views:
-        base_view: client_counts
-        joined_views:
-        - metric_definitions_monitor_events_v1
+        base_view: metric_definitions_monitor_events_v1
     metrics:
       type: glean_ping_explore
       views:
@@ -4869,6 +5093,8 @@ monitor_cirrus:
       - table: mozdata.monitor_cirrus.baseline_clients_last_seen
       type: growth_accounting_view
     metric_definitions_monitor_events_v1:
+      tables:
+      - table: mozdata.monitor_cirrus.baseline_clients_daily
       type: metric_definitions_view
     metrics:
       tables:
@@ -6009,13 +6235,14 @@ mozregression:
       type: table_view
 multi_product:
   explores:
-    metric_definitions_multi_product:
+    metric_definitions_mobile_active_users_aggregates_v1:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_mobile_active_users_aggregates_v1
-        joined_views:
-        - metric_definitions_mobile_active_users_aggregates_v1
-        - metric_definitions_search_revenue_levers_daily
+    metric_definitions_search_revenue_levers_daily:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_search_revenue_levers_daily
   glean_app: false
   pretty_name: Multi Product
   spoke: looker-spoke-default
@@ -8247,10 +8474,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 7
+            default: Windows 10
             options:
-            - Windows 7
             - Windows 10
+            - Windows 7
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -8286,13 +8513,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id188
           normalized_channel:
-            default: beta
+            default: release
             options:
-            - beta
-            - esr
-            - aurora
-            - nightly
             - release
+            - beta
+            - nightly
+            - aurora
+            - esr
             - default
             - nightly-pine
             - nightly-oak
@@ -8419,10 +8646,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id197
           normalized_channel:
-            default: nightly
+            default: beta
             options:
-            - nightly
             - beta
+            - nightly
             - aurora
             - release
             - esr
@@ -8940,8 +9167,8 @@ operational_monitoring:
             default: Mac
             options:
             - Mac
-            - Windows
             - Linux
+            - Windows
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -9615,37 +9842,46 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id296
           app:
-            default: Android - daemon
+            default: iOS - vpn_session
             options:
-            - Android - daemon
-            - iPhone - vpnsession
-            - Android - vpnsession
-            - iPhone - daemon
-            - Desktop - vpnsession
-            - Linux - vpn
-            - iOS - vpn
-            - iOS - daemon
-            - Windows - vpn
-            - Darwin - vpn
+            - iOS - vpn_session
+            - Android - vpn_session
+            - iOS - daemon_session
+            - Android - daemon_session
+            - Linux - vpn_session
+            - Darwin - vpn_session
+            - Windows - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id297
-        - metric: avg_session_duration
+        - metric: active_subscribers
           metric_groups: []
-          statistic: mean
-        - metric: avg_session_duration
-          metric_groups: []
-          statistic: percentile
+          statistic: sum
         - metric: session_count
           metric_groups: []
           statistic: sum
+        - metric: avg_session_duration
+          metric_groups: []
+          statistic: mean
+        - metric: avg_session_duration
+          metric_groups: []
+          statistic: percentile
         - metric: avg_sum_session_duration
           metric_groups: []
           statistic: mean
         - metric: avg_sum_session_duration
           metric_groups: []
           statistic: percentile
-        - metric: active_subscribers
+        - metric: cnt_sessions_start_and_end
+          metric_groups: []
+          statistic: sum
+        - metric: cnt_session_starts
+          metric_groups: []
+          statistic: sum
+        - metric: cnt_session_ends
+          metric_groups: []
+          statistic: sum
+        - metric: cnt_negative_session_lengths
           metric_groups: []
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.mozilla_vpn_statistics
@@ -11196,14 +11432,14 @@ operational_monitoring:
             default: nightly
             options:
             - nightly
-            - beta
             - release
+            - beta
           os:
-            default: Windows_NT
+            default: Darwin
             options:
+            - Darwin
             - Windows_NT
             - Linux
-            - Darwin
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id411
@@ -18383,6 +18619,10 @@ websites:
     firefox_whatsnew_summary:
       tables:
       - table: moz-fx-data-marketing-prod.ga_derived.firefox_whatsnew_summary_v1
+      type: table_view
+    ga4_blogs_sessions:
+      tables:
+      - table: moz-fx-data-marketing-prod.ga_derived.blogs_sessions_v2
       type: table_view
     ga4_firefox_whatsnew_summary:
       tables:
