@@ -189,6 +189,42 @@ view: firefox_android_clients {
     description: "Version of the Operating System where the client is originally installed."
   }
 
+  dimension: play_store_attribution_campaign {
+    sql: ${TABLE}.play_store_attribution_campaign ;;
+    type: string
+    description: "The utm_campaign this install is attributed to. Reported by the install referrer service, not Adjust."
+  }
+
+  dimension: play_store_attribution_content {
+    sql: ${TABLE}.play_store_attribution_content ;;
+    type: string
+    description: "The utm_content this install is attributed to. Reported by the install referrer service, not Adjust."
+  }
+
+  dimension: play_store_attribution_install_referrer_response {
+    sql: ${TABLE}.play_store_attribution_install_referrer_response ;;
+    type: string
+    description: "The full install referrer response."
+  }
+
+  dimension: play_store_attribution_medium {
+    sql: ${TABLE}.play_store_attribution_medium ;;
+    type: string
+    description: "The utm_medium this install is attributed to. Reported by the install referrer service, not Adjust."
+  }
+
+  dimension: play_store_attribution_source {
+    sql: ${TABLE}.play_store_attribution_source ;;
+    type: string
+    description: "The utm_source this install is attributed to. Reported by the install referrer service, not Adjust."
+  }
+
+  dimension: play_store_attribution_term {
+    sql: ${TABLE}.play_store_attribution_term ;;
+    type: string
+    description: "The utm_term this install is attributed to. Reported by the install referrer service, not Adjust."
+  }
+
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
@@ -324,6 +360,102 @@ view: firefox_android_clients {
     datatype: date
     label: "Metadata: Min Metrics Ping Submission Date"
     description: "Date when the first reported metrics ping is received by the server."
+  }
+
+  dimension_group: metadata__play_store_attribution_campaign__ping_datetime {
+    sql: ${TABLE}.metadata.play_store_attribution_campaign__ping_datetime ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata: Play Store Attribution Campaign  Ping Datetime"
+    description: "Datetime of the ping that reported the first play_store_attribution_campaign__ping_datetime value."
+  }
+
+  dimension_group: metadata__play_store_attribution_content__ping_datetime {
+    sql: ${TABLE}.metadata.play_store_attribution_content__ping_datetime ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata: Play Store Attribution Content  Ping Datetime"
+    description: "Datetime of the ping that reported the first play_store_attribution_content__ping_datetime value."
+  }
+
+  dimension_group: metadata__play_store_attribution_install_referrer_response__ping_datetime {
+    sql: ${TABLE}.metadata.play_store_attribution_install_referrer_response__ping_datetime ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata: Play Store Attribution Install Referrer Response  Ping Datetime"
+    description: "Datetime of the ping that reported the first play_store_attribution_install_referrer_response__ping_datetime value."
+  }
+
+  dimension_group: metadata__play_store_attribution_medium__ping_datetime {
+    sql: ${TABLE}.metadata.play_store_attribution_medium__ping_datetime ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata: Play Store Attribution Medium  Ping Datetime"
+    description: "Datetime of the ping that reported the first play_store_attribution_medium__ping_datetime value."
+  }
+
+  dimension_group: metadata__play_store_attribution_source__ping_datetime {
+    sql: ${TABLE}.metadata.play_store_attribution_source__ping_datetime ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata: Play Store Attribution Source  Ping Datetime"
+    description: "Datetime of the ping that reported the first play_store_attribution_source__ping_datetime value."
+  }
+
+  dimension_group: metadata__play_store_attribution_term__ping_datetime {
+    sql: ${TABLE}.metadata.play_store_attribution_term__ping_datetime ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata: Play Store Attribution Term  Ping Datetime"
+    description: "Datetime of the ping that reported the first play_store_attribution_term__ping_datetime value."
   }
 
   dimension_group: submission {

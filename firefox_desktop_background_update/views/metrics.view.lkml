@@ -1488,6 +1488,545 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__string__gfx_adapter_primary_description {
+    label: "Gfx Adapter Primary Description"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_description ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Description"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Description"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_adapter_primary_description"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Long form description of the Graphics adapter (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_device_id {
+    label: "Gfx Adapter Primary Device Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_device_id ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Device Id"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Device Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_adapter_primary_device_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter device identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_date {
+    label: "Gfx Adapter Primary Driver Date"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_date ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Driver Date"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Date"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_adapter_primary_driver_date"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter driver date (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_files {
+    label: "Gfx Adapter Primary Driver Files"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_files ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Driver Files"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Files"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_adapter_primary_driver_files"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "List of graphics adapter driver files (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_vendor {
+    label: "Gfx Adapter Primary Driver Vendor"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_vendor ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Driver Vendor"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Vendor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_adapter_primary_driver_vendor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter driver vendor identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_version {
+    label: "Gfx Adapter Primary Driver Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_version ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Driver Version"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_adapter_primary_driver_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter driver version (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_adapter_primary_ram {
+    label: "Gfx Adapter Primary Ram"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_adapter_primary_ram ;;
+    type: number
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Ram"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Ram"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_adapter_primary_ram"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter dedicated memory (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_subsystem_id {
+    label: "Gfx Adapter Primary Subsystem Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_subsystem_id ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Subsystem Id"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Subsystem Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_adapter_primary_subsystem_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter subsystem identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_vendor_id {
+    label: "Gfx Adapter Primary Vendor Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_vendor_id ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Vendor Id"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Vendor Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_adapter_primary_vendor_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter vendor identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_duration__sum {
+    label: "Gfx Checkerboard Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_duration.sum ;;
+    type: number
+    group_label: "Gfx Checkerboard"
+    group_item_label: "Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Checkerboard Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_checkerboard_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The duration of a checkerboard event. Checkerboarding is when painting has not kept up with asynchronous panning and zooming so the compositor has to display a \"checkerboard pattern\" (or in practice, the background color) rather than the actual page content. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__sum {
+    label: "Gfx Checkerboard Peak Pixel Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_peak_pixel_count.sum ;;
+    type: number
+    group_label: "Gfx Checkerboard"
+    group_item_label: "Peak Pixel Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Checkerboard Peak Pixel Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_checkerboard_peak_pixel_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The peak number of CSS pixels that checkerboarded during a checkerboard event. The minimum value of the largest histogram bucket is the size of a 4k display with maximum APZ zooming. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_potential_duration__sum {
+    label: "Gfx Checkerboard Potential Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_potential_duration.sum ;;
+    type: number
+    group_label: "Gfx Checkerboard"
+    group_item_label: "Potential Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Checkerboard Potential Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_checkerboard_potential_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total amount of time that we could reasonably be checkerboarding. This is the union of two possibly-intersecting sets of time periods: The first set is that in which checkerboarding was actually happening, since by definition it could potentially be happening. The second set is that in which the APZC is actively transforming content in the compositor, since it could potentially transform it so as to display checkerboarding to the user. Combined with other information, this allows us to meaningfully say how frequently users actually enncounters checkerboarding. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_checkerboard_severity__sum {
+    label: "Gfx Checkerboard Severity Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_severity.sum ;;
+    type: number
+    group_label: "Gfx Checkerboard"
+    group_item_label: "Severity Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Checkerboard Severity Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_checkerboard_severity"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An opaque measurement of the severity of a checkerboard event. This doesn't have units, it's just useful for comparing two checkerboard events to see which one is worse, for some implementation-specific definition of \"worse\". The larger the value, the worse the checkerboarding. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_composite_time__sum {
+    label: "Gfx Composite Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_composite_time.sum ;;
+    type: number
+    group_label: "Gfx"
+    group_item_label: "Composite Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Composite Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_composite_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time taken to composite a frame. On non-webrender this is the time taken in `CompositorBridgeParent::CompositeToTarget()`. On webrender, this is the time taken from the start of `WebRenderBridgeParent::CompositeToTarget()`, until the render thread has rendered the frame (in `RenderThread::HandleFrameOneDoc()`). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_from_paint__sum {
+    label: "Gfx Content Frame Time From Paint Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_paint.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "From Paint Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time From Paint Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_content_frame_time_from_paint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_from_vsync__sum {
+    label: "Gfx Content Frame Time From Vsync Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_vsync.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "From Vsync Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time From Vsync Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_content_frame_time_from_vsync"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from the vsync that started a paint in the content process until that frame is presented in the compositor. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__gfx_content_frame_time_reason {
+    label: "Gfx Content Frame Time Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.gfx_content_frame_time_reason ;;
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_content_frame_time_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The reason that `gfx.content.frame_time.from_paint` recorded a slow (>200ms) result, if any. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_with_svg__sum {
+    label: "Gfx Content Frame Time With Svg Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_with_svg.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "With Svg Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time With Svg Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_content_frame_time_with_svg"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor, for frames that contained an SVG to be drawn by webrender. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_without_resource_upload__sum {
+    label: "Gfx Content Frame Time Without Resource Upload Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_resource_upload.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "Without Resource Upload Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time Without Resource Upload Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_content_frame_time_without_resource_upload"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor by webrender, excluding time spent uploading resources. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_without_upload__sum {
+    label: "Gfx Content Frame Time Without Upload Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_upload.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "Without Upload Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time Without Upload Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_content_frame_time_without_upload"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor by webrender, excluding time spent uploading any content. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_full_paint_time__sum {
+    label: "Gfx Content Full Paint Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_full_paint_time.sum ;;
+    type: number
+    group_label: "Gfx Content"
+    group_item_label: "Full Paint Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Full Paint Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_content_full_paint_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in the full paint pipeline for content until it's ready for composition. For non-webrender this includes `paint_time`, plus rasterization if OMTP is enabled. For webrender, this includes `paint_time`, plus scene building time. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_paint_time__sum {
+    label: "Gfx Content Paint Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_paint_time.sum ;;
+    type: number
+    group_label: "Gfx Content"
+    group_item_label: "Paint Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Paint Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_content_paint_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in the main-thread paint pipeline for content. For non-webrender, this includes display list building, layer building, and when OMTP is disabled, rasterization. For webrender, this includes display list building, and webrender display list building. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_display_count {
+    label: "Gfx Display Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_display_count ;;
+    type: number
+    group_label: "Gfx Display"
+    group_item_label: "Count"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Display Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_display_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of displays connected to the device (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_display_primary_height {
+    label: "Gfx Display Primary Height"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_display_primary_height ;;
+    type: number
+    group_label: "Gfx Display"
+    group_item_label: "Primary Height"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Display Primary Height"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_display_primary_height"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Height of the primary display, takes device rotation into account. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_display_primary_width {
+    label: "Gfx Display Primary Width"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_display_primary_width ;;
+    type: number
+    group_label: "Gfx Display"
+    group_item_label: "Primary Width"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Display Primary Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_display_primary_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Width of the primary display, takes device rotation into account. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_feature_webrender {
+    label: "Gfx Feature Webrender"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_feature_webrender ;;
+    type: string
+    group_label: "Gfx Feature"
+    group_item_label: "Webrender"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Feature Webrender"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_feature_webrender"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether webrender is enabled or disabled, and why. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_scroll_present_latency__sum {
+    label: "Gfx Scroll Present Latency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_scroll_present_latency.sum ;;
+    type: number
+    group_label: "Gfx"
+    group_item_label: "Scroll Present Latency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Scroll Present Latency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_scroll_present_latency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between receiving a scroll event on the event loop and compositing its result onto the screen (ms). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_status_compositor {
+    label: "Gfx Status Compositor"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_status_compositor ;;
+    type: string
+    group_label: "Gfx Status"
+    group_item_label: "Compositor"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Status Compositor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_status_compositor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Name of the graphics compositor in use. Possible values are \"opengl, d3d11, client, webrender or basic\" (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__boolean__gfx_status_headless {
+    label: "Gfx Status Headless"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.gfx_status_headless ;;
+    type: yesno
+    group_label: "Gfx Status"
+    group_item_label: "Headless"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Status Headless"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_status_headless"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Boolean indicated whether graphics is running in headless (no display) mode (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_status_last_compositor_gecko_version {
+    label: "Gfx Status Last Compositor Gecko Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_status_last_compositor_gecko_version ;;
+    type: string
+    group_label: "Gfx Status"
+    group_item_label: "Last Compositor Gecko Version"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Status Last Compositor Gecko Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/gfx_status_last_compositor_gecko_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The gecko version at the last time a compositor was initialized, and therefore when gfx_status_compositor was last updated. Due to gfx_status_compositor's user lifetime we see lots of unexpected values for the current gecko version. We believe this is because the user has not opened a tab since they were updated to a version where webrender should be enabled on their device. This can be used to verify that theory. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__boolean__gifft_validation_main_ping_assembling {
     label: "Gifft Validation Main Ping Assembling"
     hidden: yes
@@ -1766,6 +2305,166 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__sum {
+    label: "Javascript Pageload Baseline Compile Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Baseline Compile Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Baseline Compile Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_pageload_baseline_compile_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load baseline compiling Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_delazification_time__sum {
+    label: "Javascript Pageload Delazification Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Delazification Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Delazification Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_pageload_delazification_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load delazifying Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_execution_time__sum {
+    label: "Javascript Pageload Execution Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Execution Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Execution Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_pageload_execution_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load executing Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_gc_time__sum {
+    label: "Javascript Pageload Gc Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Gc Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Gc Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_pageload_gc_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load in the GC in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_parse_time__sum {
+    label: "Javascript Pageload Parse Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Parse Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Parse Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_pageload_parse_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load syntax parsing JS scripts on the main thread in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_protect_time__sum {
+    label: "Javascript Pageload Protect Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Protect Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Protect Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_pageload_protect_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load protecting JIT executable memory. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__sum {
+    label: "Javascript Pageload Xdr Encode Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Xdr Encode Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Xdr Encode Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/javascript_pageload_xdr_encode_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load XDR encoding Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_backend {
+    label: "Media Audio Backend"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_backend ;;
+    group_label: "Media Audio"
+    group_item_label: "Backend"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Backend"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/media_audio_backend"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The operating system audio backend (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_init_failure {
+    label: "Media Audio Init Failure"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
+    group_label: "Media Audio"
+    group_item_label: "Init Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Init Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/media_audio_init_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_early_hints {
     label: "Netwerk Early Hints"
     hidden: yes
@@ -1797,6 +2496,24 @@ To be used to validate GIFFT.
     }
 
     description: "Counts different type of link headers that are sent in early hint
+"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__sum {
+    label: "Network Cache Hit Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Cache Hit Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cache Hit Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_cache_hit_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time to open existing cache entry file. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -1851,6 +2568,78 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__network_dns_end__sum {
+    label: "Network Dns End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Dns End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Dns End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_dns_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from the DNS request being issued to the response. Corresponds to Legacy histogram HTTP_PAGE_DNS_LOOKUP_TIME in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__sum {
+    label: "Network Dns Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Dns Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Dns Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_dns_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection open to the DNS request being issued. Corresponds to Legacy histogram HTTP_PAGE_DNS_ISSUE_TIME in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__sum {
+    label: "Network First From Cache Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "First From Cache Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network First From Cache Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_first_from_cache"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection open to cache read start. Corresponds to Legacy histogram HTTP_PAGE_OPEN_TO_FIRST_FROM_CACHE_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__sum {
+    label: "Network Font Download End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Font Download End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Font Download End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_font_download_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time after navigationStart that all webfont downloads are completed. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__sum {
     label: "Network Open To Transaction Pending Sum"
     hidden: yes
@@ -1866,6 +2655,42 @@ To be used to validate GIFFT.
     }
 
     description: "The time spent from HttpChannelChild::AsyncOpen to adding the transaction to the nsHttpConnectionMgr
+"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__sum {
+    label: "Network Tcp Connection Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Tcp Connection Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Tcp Connection Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_tcp_connection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from the TCP SYN packet is received to the connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_PAGE_TCP_CONNECTION_2 in Desktop (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__sum {
+    label: "Network Tls Handshake Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Tls Handshake Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Tls Handshake Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/network_tls_handshake"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from after the TCP SYN packet is received to the secure connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_PAGE_TLS_HANDSHAKE in Desktop. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -2081,6 +2906,23 @@ To be used to validate GIFFT.
     }
 
     description: "Time for a successful DNS resolution (msec) | Migrated from Firefox Telemetry's `DNS_LOOKUP_TIME`.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_dns_native_count {
+    label: "Networking Dns Native Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_dns_native_count ;;
+    group_label: "Networking"
+    group_item_label: "Dns Native Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Dns Native Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_dns_native_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of calls to the native DNS APIs
 "
   }
 
@@ -2605,6 +3447,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_response_version {
+    label: "Networking Http Response Version"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_response_version ;;
+    group_label: "Networking"
+    group_item_label: "Http Response Version"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Response Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_http_response_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP protocol version used on response from nsHttp.h
+"
+  }
+
   dimension: metrics__labeled_counter__networking_https_rr_presented {
     label: "Networking Https Rr Presented"
     hidden: yes
@@ -3059,6 +3918,240 @@ To be used to validate GIFFT.
     }
 
     description: "Time from response start to largest contentful paint.
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__sum {
+    label: "Performance Interaction Keypress Present Latency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.sum ;;
+    type: number
+    group_label: "Performance Interaction"
+    group_item_label: "Keypress Present Latency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Interaction Keypress Present Latency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/performance_interaction_keypress_present_latency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between receiving a keypress event in the event loop and compositing its result onto the screen. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__sum {
+    label: "Performance Interaction Mouseup Click Present Latency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.sum ;;
+    type: number
+    group_label: "Performance Interaction"
+    group_item_label: "Mouseup Click Present Latency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Interaction Mouseup Click Present Latency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/performance_interaction_mouseup_click_present_latency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between receiving a mouseup which follow by a mouseclick on the event loop and compositing its result onto the screen. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_non_blank_paint__sum {
+    label: "Performance Page Non Blank Paint Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.sum ;;
+    type: number
+    group_label: "Performance Page"
+    group_item_label: "Non Blank Paint Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Page Non Blank Paint Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/performance_page_non_blank_paint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first non-blank paint of a foreground root content document, in milliseconds. This only records documents that were in an active docshell throughout the whole time between navigation start and non-blank paint. The non-blank paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp__sum {
+    label: "Performance Pageload Fcp Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Fcp Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Fcp Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/performance_pageload_fcp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__sum {
+    label: "Performance Pageload Fcp Responsestart Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Fcp Responsestart Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Fcp Responsestart Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/performance_pageload_fcp_responsestart"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between responseStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time__sum {
+    label: "Performance Pageload Load Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Load Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Load Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/performance_pageload_load_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from navigationStart to loadEventStart for the foreground http or https root content document. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__sum {
+    label: "Performance Pageload Load Time Responsestart Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time_responsestart.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Load Time Responsestart Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Load Time Responsestart Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/performance_pageload_load_time_responsestart"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from responseStart to loadEventStart for the foreground http or https root content document. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_complete__sum {
+    label: "Performance Time Dom Complete Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Complete Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Complete Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/performance_time_dom_complete"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domComplete as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__sum {
+    label: "Performance Time Dom Content Loaded End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Content Loaded End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Content Loaded End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/performance_time_dom_content_loaded_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domContentLoadedEventEnd as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__sum {
+    label: "Performance Time Dom Content Loaded Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Content Loaded Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Content Loaded Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/performance_time_dom_content_loaded_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domContentLoadedEventStart as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_interactive__sum {
+    label: "Performance Time Dom Interactive Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Interactive Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Interactive Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/performance_time_dom_interactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domInteractive as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_end__sum {
+    label: "Performance Time Load Event End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Load Event End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Load Event End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/performance_time_load_event_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to loadEventEnd as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_start__sum {
+    label: "Performance Time Load Event Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Load Event Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Load Event Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/performance_time_load_event_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to loadEventStart as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
 "
   }
 
@@ -4032,6 +5125,41 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__tls_certificate_verifications {
+    label: "Tls Certificate Verifications"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tls_certificate_verifications ;;
+    type: number
+    group_label: "Tls"
+    group_item_label: "Certificate Verifications"
+
+    link: {
+      label: "Glean Dictionary reference for Tls Certificate Verifications"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/tls_certificate_verifications"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of successful TLS server certificate verifications.
+"
+  }
+
+  dimension: metrics__labeled_counter__tls_xyber_intolerance_reason {
+    label: "Tls Xyber Intolerance Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tls_xyber_intolerance_reason ;;
+    group_label: "Tls"
+    group_item_label: "Xyber Intolerance Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Tls Xyber Intolerance Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/tls_xyber_intolerance_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The error that was returned from a failed TLS 1.3 handshake in which the client sent a Xyber key share (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
+"
+  }
+
   dimension: metrics__rate__translations_error_rate__numerator {
     label: "Translations Error Rate Numerator"
     hidden: no
@@ -4083,6 +5211,186 @@ To be used to validate GIFFT.
     }
 
     description: "The count of translation requests.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_built_in_roots_module__numerator {
+    label: "Verification Used Cert From Built In Roots Module Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_built_in_roots_module.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Built In Roots Module Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Built In Roots Module Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/verification_used_cert_from_built_in_roots_module"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the built-in roots module.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_built_in_roots_module__denominator {
+    label: "Verification Used Cert From Built In Roots Module Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_built_in_roots_module.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Built In Roots Module Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Built In Roots Module Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/verification_used_cert_from_built_in_roots_module"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the built-in roots module.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_nss_cert_db__numerator {
+    label: "Verification Used Cert From Nss Cert Db Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_nss_cert_db.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Nss Cert Db Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Nss Cert Db Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/verification_used_cert_from_nss_cert_db"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the NSS cert DB.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_nss_cert_db__denominator {
+    label: "Verification Used Cert From Nss Cert Db Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_nss_cert_db.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Nss Cert Db Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Nss Cert Db Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/verification_used_cert_from_nss_cert_db"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the NSS cert DB.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_preloaded_intermediates__numerator {
+    label: "Verification Used Cert From Preloaded Intermediates Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_preloaded_intermediates.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Preloaded Intermediates Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Preloaded Intermediates Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/verification_used_cert_from_preloaded_intermediates"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from preloaded intermediates.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_preloaded_intermediates__denominator {
+    label: "Verification Used Cert From Preloaded Intermediates Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_preloaded_intermediates.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Preloaded Intermediates Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Preloaded Intermediates Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/verification_used_cert_from_preloaded_intermediates"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from preloaded intermediates.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_third_party_certificates__numerator {
+    label: "Verification Used Cert From Third Party Certificates Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_third_party_certificates.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Third Party Certificates Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Third Party Certificates Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/verification_used_cert_from_third_party_certificates"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a third-party certificate from the OS.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_third_party_certificates__denominator {
+    label: "Verification Used Cert From Third Party Certificates Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_third_party_certificates.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Third Party Certificates Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Third Party Certificates Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/verification_used_cert_from_third_party_certificates"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a third-party certificate from the OS.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_tls_handshake__numerator {
+    label: "Verification Used Cert From Tls Handshake Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_tls_handshake.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Tls Handshake Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Tls Handshake Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/verification_used_cert_from_tls_handshake"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the TLS handshake.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_tls_handshake__denominator {
+    label: "Verification Used Cert From Tls Handshake Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_tls_handshake.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Tls Handshake Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Tls Handshake Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/verification_used_cert_from_tls_handshake"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the TLS handshake.
 "
   }
 
@@ -5729,6 +7037,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: tls_certificate_verifications {
+    type: sum
+    sql: ${metrics__counter__tls_certificate_verifications} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tls Certificate Verifications"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/tls_certificate_verifications"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tls_certificate_verifications_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tls_certificate_verifications: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tls Certificate Verifications"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/tls_certificate_verifications"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: translations_requests_count {
     type: sum
     sql: ${metrics__counter__translations_requests_count} ;;
@@ -6774,6 +8107,49 @@ view: metrics__metrics__labeled_counter__formautofill_form_submission_heuristic 
   }
 }
 
+view: metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
+  label: "Gfx Content Frame Time - Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__gfx_content_frame_time_reason
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__gfx_content_frame_time_reason.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__glean_error_invalid_label {
   label: "Glean Error - Invalid Label"
 
@@ -7548,6 +8924,92 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
   }
 }
 
+view: metrics__metrics__labeled_counter__media_audio_backend {
+  label: "Media Audio - Backend"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__media_audio_backend
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__media_audio_backend.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_audio_init_failure {
+  label: "Media Audio - Init Failure"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__media_audio_init_failure
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__media_audio_init_failure.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__netwerk_early_hints {
   label: "Netwerk - Early Hints"
 
@@ -7806,6 +9268,49 @@ view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_dns_native_count {
+  label: "Networking - Dns Native Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_dns_native_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_dns_native_count.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
   label: "Networking - Http Channel Onstart Success Https Rr"
 
@@ -7827,6 +9332,49 @@ view: metrics__metrics__labeled_counter__networking_http_channel_onstart_success
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr
     suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_response_version {
+  label: "Networking - Http Response Version"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_http_response_version
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_http_response_version.key
     hidden: no
   }
 
@@ -9096,6 +10644,49 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_
   }
 }
 
+view: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
+  label: "Tls - Xyber Intolerance Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
   derived_table: {
     sql: select
@@ -9457,6 +11048,25 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.gfx_content_frame_time_reason) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
@@ -9799,6 +11409,44 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__media_audio_backend {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.media_audio_backend) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__media_audio_init_failure {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.media_audio_init_failure) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__netwerk_early_hints {
   derived_table: {
     sql: select
@@ -9913,6 +11561,25 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__networking_dns_native_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.networking_dns_native_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
   derived_table: {
     sql: select
@@ -9920,6 +11587,25 @@ view: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstar
     count(*) as n
 from mozdata.firefox_desktop_background_update.metrics as t,
 unnest(metrics.labeled_counter.networking_http_channel_onstart_success_https_rr) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_http_response_version {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.networking_http_response_version) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -10471,6 +12157,25 @@ view: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_bla
     count(*) as n
 from mozdata.firefox_desktop_background_update.metrics as t,
 unnest(metrics.labeled_counter.rtcrtpsender_setparameters_blame_stale_transactionid) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.tls_xyber_intolerance_reason) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key

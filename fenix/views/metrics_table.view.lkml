@@ -374,6 +374,13 @@ view: metrics_table {
     group_item_label: "Customize Home Sponsored Pocket"
   }
 
+  dimension: metrics__boolean__debug_drawer_debug_drawer_enabled {
+    sql: ${TABLE}.metrics.boolean.debug_drawer_debug_drawer_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Debug Drawer Debug Drawer Enabled"
+  }
+
   dimension: metrics__boolean__events_marketing_notification_allowed {
     sql: ${TABLE}.metrics.boolean.events_marketing_notification_allowed ;;
     type: yesno
@@ -1191,6 +1198,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Tabs Tray Open Inactive Tab"
+  }
+
+  dimension: metrics__counter__tls_certificate_verifications {
+    sql: ${TABLE}.metrics.counter.tls_certificate_verifications ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tls Certificate Verifications"
   }
 
   dimension: metrics__counter__translations_requests_count {
@@ -2577,8 +2591,18 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_dns_native_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_dns_native_count ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_onstart_success_https_rr ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_http_response_version {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_response_version ;;
     hidden: yes
   }
 
@@ -2754,6 +2778,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__tabs_tray_access_point {
     sql: ${TABLE}.metrics.labeled_counter.tabs_tray_access_point ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__tls_xyber_intolerance_reason {
+    sql: ${TABLE}.metrics.labeled_counter.tls_xyber_intolerance_reason ;;
     hidden: yes
   }
 
@@ -3388,6 +3417,76 @@ view: metrics_table {
     sql: ${TABLE}.metrics.rate.translations_error_rate.numerator ;;
     type: number
     group_label: "Metrics Rate Translations Error Rate"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_built_in_roots_module__denominator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_built_in_roots_module.denominator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Built In Roots Module"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_built_in_roots_module__numerator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_built_in_roots_module.numerator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Built In Roots Module"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_nss_cert_db__denominator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_nss_cert_db.denominator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Nss Cert Db"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_nss_cert_db__numerator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_nss_cert_db.numerator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Nss Cert Db"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_preloaded_intermediates__denominator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_preloaded_intermediates.denominator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Preloaded Intermediates"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_preloaded_intermediates__numerator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_preloaded_intermediates.numerator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Preloaded Intermediates"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_third_party_certificates__denominator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_third_party_certificates.denominator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Third Party Certificates"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_third_party_certificates__numerator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_third_party_certificates.numerator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Third Party Certificates"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_tls_handshake__denominator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_tls_handshake.denominator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Tls Handshake"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_tls_handshake__numerator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_tls_handshake.numerator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Tls Handshake"
     group_item_label: "Numerator"
   }
 

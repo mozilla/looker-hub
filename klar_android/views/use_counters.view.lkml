@@ -9113,6 +9113,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_user_find {
+    label: "Use Counter Css Doc Css User Find"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_user_find ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css User Find"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css User Find"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_user_find"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property user-find. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_user_select {
     label: "Use Counter Css Doc Css User Select"
     hidden: no
@@ -21641,6 +21659,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_user_find {
+    label: "Use Counter Css Page Css User Find"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_user_find ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css User Find"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css User Find"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_user_find"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property user-find. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_user_select {
     label: "Use Counter Css Page Css User Select"
     hidden: no
@@ -25441,7 +25477,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_deprecated_ops_doc_is_external_ctap2_security_key_supported {
     label: "Use Counter Deprecated Ops Doc Is External Ctap2 Security Key Supported"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_is_external_ctap2_security_key_supported ;;
     type: number
     group_label: "Use Counter Deprecated Ops Doc"
@@ -26215,7 +26251,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_deprecated_ops_page_is_external_ctap2_security_key_supported {
     label: "Use Counter Deprecated Ops Page Is External Ctap2 Security Key Supported"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_is_external_ctap2_security_key_supported ;;
     type: number
     group_label: "Use Counter Deprecated Ops Page"
@@ -54575,6 +54611,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_user_find {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_user_find} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css User Find"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_user_find"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_user_find_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_user_find: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css User Find"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_user_find"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_user_select {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_user_select} ;;
@@ -71971,6 +72032,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Page Css Unicode Bidi"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_unicode_bidi"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_user_find {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_user_find} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css User Find"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_user_find"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_user_find_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_user_find: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css User Find"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_user_find"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -99666,7 +99752,7 @@ view: use_counters__metrics__labeled_counter__use_counter_error_unknown_counter 
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__use_counters__metrics__labeled_counter__use_counter_error_unknown_counter
     suggest_dimension: suggest__use_counters__metrics__labeled_counter__use_counter_error_unknown_counter.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -99678,12 +99764,12 @@ view: use_counters__metrics__labeled_counter__use_counter_error_unknown_counter 
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${use_counters.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }

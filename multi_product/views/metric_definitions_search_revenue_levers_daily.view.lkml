@@ -7,41 +7,73 @@
 view: metric_definitions_search_revenue_levers_daily {
   derived_table: {
     sql: SELECT
-                COALESCE(SUM(dau), 0) AS search_forecasting_daily_active_users,COALESCE(SUM(dau_w_engine_as_default), 0) AS search_forecasting_daily_active_users_w_google_default,COALESCE(SUM(dau_engaged_w_sap), 0) AS search_forecasting_daily_active_searchers_w_google_default,COALESCE(SUM(sap), 0) AS search_forecasting_search_count,COALESCE(SUM(ad_click), 0) AS search_forecasting_ad_clicks,
-                NULL AS client_id,
-                submission_date AS submission_date
-              FROM
+                COALESCE(SUM(dau), 0) AS search_forecasting_daily_active_users,
+COALESCE(SUM(dau_w_engine_as_default), 0) AS search_forecasting_daily_active_users_w_google_default,
+COALESCE(SUM(dau_engaged_w_sap), 0) AS search_forecasting_daily_active_searchers_w_google_default,
+COALESCE(SUM(sap), 0) AS search_forecasting_search_count,
+COALESCE(SUM(ad_click), 0) AS search_forecasting_ad_clicks,
+
+                
+                m.NULL AS client_id,
+                {% if aggregate_metrics_by._parameter_value == 'day' %}
+                m.submission_date AS analysis_basis
+                {% elsif aggregate_metrics_by._parameter_value == 'week'  %}
+                (FORMAT_DATE(
+                    '%F',
+                    DATE_TRUNC(m.submission_date,
+                    WEEK(MONDAY)))
+                ) AS analysis_basis
+                {% elsif aggregate_metrics_by._parameter_value == 'month'  %}
+                (FORMAT_DATE(
+                    '%Y-%m',
+                    m.submission_date)
+                ) AS analysis_basis
+                {% elsif aggregate_metrics_by._parameter_value == 'quarter'  %}
+                (FORMAT_DATE(
+                    '%Y-%m',
+                    DATE_TRUNC(m.submission_date,
+                    QUARTER))
+                ) AS analysis_basis
+                {% elsif aggregate_metrics_by._parameter_value == 'year'  %}
+                (EXTRACT(
+                    YEAR FROM m.submission_date)
+                ) AS analysis_basis
+                {% else %}
+                NULL as analysis_basis
+                {% endif %}
+            FROM
                 (
     SELECT
         *
     FROM
         mozdata.search.search_revenue_levers_daily
     )
-              WHERE submission_date BETWEEN
-                SAFE_CAST({% date_start metric_definitions_multi_product.submission_date %} AS DATE) AND
-                SAFE_CAST({% date_end metric_definitions_multi_product.submission_date %} AS DATE)
-              GROUP BY
+            AS m
+            
+            WHERE m.submission_date BETWEEN
+                SAFE_CAST(
+                    {% date_start submission_date %} AS DATE
+                ) AND
+                SAFE_CAST(
+                    {% date_end submission_date %} AS DATE
+                )
+            GROUP BY
+                
                 client_id,
-                submission_date ;;
+                analysis_basis ;;
   }
 
   dimension: client_id {
     type: string
-    sql: COALESCE(SAFE_CAST(${TABLE}.client_id AS STRING)
-                {%- if  metric_definitions_mobile_active_users_aggregates_v1._in_query %}
-                , SAFE_CAST(metric_definitions_mobile_active_users_aggregates_v1.client_id AS STRING)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_search_revenue_levers_daily._in_query %}
-                , SAFE_CAST(metric_definitions_search_revenue_levers_daily.client_id AS STRING)
-                {%- endif -%}
-            ) ;;
+    sql: SAFE_CAST(${TABLE}.client_id AS STRING) ;;
     label: "Client ID"
     primary_key: yes
+    group_label: "Base Fields"
     description: "Unique client identifier"
   }
 
   dimension: search_forecasting_daily_active_users {
+    group_label: "Metrics"
     label: "Daily Active Users"
     description: "    Counts the number of daily active users (DAU) for search revenue forecasting purposes.
 "
@@ -50,6 +82,7 @@ view: metric_definitions_search_revenue_levers_daily {
   }
 
   dimension: search_forecasting_daily_active_users_w_google_default {
+    group_label: "Metrics"
     label: "Daily Active Users with Google as Default"
     description: "    Counts the number of daily active users (DAU) with Google as default search engine for search revenue forecasting purposes.
 "
@@ -58,6 +91,7 @@ view: metric_definitions_search_revenue_levers_daily {
   }
 
   dimension: search_forecasting_daily_active_searchers_w_google_default {
+    group_label: "Metrics"
     label: "Daily Active Users who Search with Google as Default"
     description: "    Counts the number of daily active users (DAU) with Google as default search engine who also conduct a search for search revenue forecasting purposes.
 "
@@ -66,6 +100,7 @@ view: metric_definitions_search_revenue_levers_daily {
   }
 
   dimension: search_forecasting_search_count {
+    group_label: "Metrics"
     label: "SAP search volume"
     description: "    Counts the number of searches a user performed through Firefox's
     Search Access Points.
@@ -77,6 +112,7 @@ view: metric_definitions_search_revenue_levers_daily {
   }
 
   dimension: search_forecasting_ad_clicks {
+    group_label: "Metrics"
     label: "Ad click volume"
     description: "    Counts clicks on ads on search engine result pages with a Mozilla
     partner tag.
@@ -87,15 +123,8 @@ view: metric_definitions_search_revenue_levers_daily {
 
   dimension_group: submission {
     type: time
-    sql: COALESCE(CAST(${TABLE}.submission_date AS TIMESTAMP)
-                {%- if  metric_definitions_mobile_active_users_aggregates_v1._in_query %}
-                , CAST(metric_definitions_mobile_active_users_aggregates_v1.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_search_revenue_levers_daily._in_query %}
-                , CAST(metric_definitions_search_revenue_levers_daily.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            ) ;;
+    group_label: "Base Fields"
+    sql: CAST(${TABLE}.analysis_basis AS TIMESTAMP) ;;
     label: "Submission"
     timeframes: [
       raw,
@@ -115,5 +144,41 @@ view: metric_definitions_search_revenue_levers_daily {
       search_forecasting_search_count,
       search_forecasting_ad_clicks,
     ]
+  }
+
+  parameter: aggregate_metrics_by {
+    label: "Aggregate Client Metrics Per"
+    type: unquoted
+    default_value: "day"
+
+    allowed_value: {
+      label: "Per Day"
+      value: "day"
+    }
+
+    allowed_value: {
+      label: "Per Week"
+      value: "week"
+    }
+
+    allowed_value: {
+      label: "Per Month"
+      value: "month"
+    }
+
+    allowed_value: {
+      label: "Per Quarter"
+      value: "quarter"
+    }
+
+    allowed_value: {
+      label: "Per Year"
+      value: "year"
+    }
+
+    allowed_value: {
+      label: "Overall"
+      value: "overall"
+    }
   }
 }

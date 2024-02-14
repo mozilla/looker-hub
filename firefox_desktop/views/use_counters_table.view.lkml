@@ -4862,6 +4862,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_user_find {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_user_find ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css User Find"
+    description: "Whether a document used the CSS property user-find. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_user_select {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_user_select ;;
     type: number
@@ -11123,6 +11132,15 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Unicode Bidi"
     description: "Whether a page used the CSS property unicode-bidi. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_user_find {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_user_find ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css User Find"
+    description: "Whether a page used the CSS property user-find. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
