@@ -7,9 +7,10 @@
 
 datagroup: blogs_daily_summary_v1_last_updated {
   label: "Blogs Daily Summary Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-marketing-prod`.ga_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'blogs_daily_summary_v1' ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM `moz-fx-data-marketing-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'ga_derived'
+    AND table_name = 'blogs_daily_summary_v1' ;;
   description: "Updates when moz-fx-data-marketing-prod:ga_derived.blogs_daily_summary_v1 is modified."
   max_cache_age: "24 hours"
 }

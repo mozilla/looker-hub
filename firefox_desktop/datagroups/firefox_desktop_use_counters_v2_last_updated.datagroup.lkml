@@ -7,9 +7,10 @@
 
 datagroup: firefox_desktop_use_counters_v2_last_updated {
   label: "firefox_desktop_use_counters_v2 Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `mozilla-public-data`.firefox_desktop_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'firefox_desktop_use_counters_v2' ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM `mozilla-public-data`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'firefox_desktop_derived'
+    AND table_name = 'firefox_desktop_use_counters_v2' ;;
   description: "Updates when mozilla-public-data:firefox_desktop_derived.firefox_desktop_use_counters_v2 is modified."
   max_cache_age: "24 hours"
 }

@@ -7,9 +7,10 @@
 
 datagroup: nonprod_accounts_v1_last_updated {
   label: "Accounts table from FxA database in stage environment Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.accounts_backend_external.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'nonprod_accounts_v1' ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'accounts_backend_external'
+    AND table_name = 'nonprod_accounts_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:accounts_backend_external.nonprod_accounts_v1 is modified."
   max_cache_age: "24 hours"
 }

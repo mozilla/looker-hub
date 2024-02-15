@@ -7,9 +7,10 @@
 
 datagroup: usage_v1_last_updated {
   label: "usage_v1 Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.mozilla_mach_stable.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'usage_v1' ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'mozilla_mach_stable'
+    AND table_name = 'usage_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:mozilla_mach_stable.usage_v1 is modified."
   max_cache_age: "24 hours"
 }
