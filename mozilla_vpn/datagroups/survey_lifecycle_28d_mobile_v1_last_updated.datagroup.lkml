@@ -7,9 +7,10 @@
 
 datagroup: survey_lifecycle_28d_mobile_v1_last_updated {
   label: "survey_lifecycle_28d_mobile_v1 Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.mozilla_vpn_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'survey_lifecycle_28d_mobile_v1' ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'mozilla_vpn_derived'
+    AND table_name = 'survey_lifecycle_28d_mobile_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:mozilla_vpn_derived.survey_lifecycle_28d_mobile_v1 is modified."
   max_cache_age: "24 hours"
 }

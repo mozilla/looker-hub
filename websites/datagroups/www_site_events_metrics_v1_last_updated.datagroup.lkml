@@ -7,9 +7,10 @@
 
 datagroup: www_site_events_metrics_v1_last_updated {
   label: "WWW Site Event Metrics Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-marketing-prod`.ga_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'www_site_events_metrics_v1' ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM `moz-fx-data-marketing-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'ga_derived'
+    AND table_name = 'www_site_events_metrics_v1' ;;
   description: "Updates when moz-fx-data-marketing-prod:ga_derived.www_site_events_metrics_v1 is modified."
   max_cache_age: "24 hours"
 }

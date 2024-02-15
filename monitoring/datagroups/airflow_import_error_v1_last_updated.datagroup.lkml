@@ -7,9 +7,10 @@
 
 datagroup: airflow_import_error_v1_last_updated {
   label: "Airflow DAG import errors Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.monitoring_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'airflow_import_error_v1' ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'monitoring_derived'
+    AND table_name = 'airflow_import_error_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:monitoring_derived.airflow_import_error_v1 is modified."
   max_cache_age: "24 hours"
 }

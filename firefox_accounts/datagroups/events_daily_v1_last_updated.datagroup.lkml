@@ -7,9 +7,10 @@
 
 datagroup: events_daily_v1_last_updated {
   label: "Firefox Accounts Events Daily Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.firefox_accounts_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'events_daily_v1' ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'firefox_accounts_derived'
+    AND table_name = 'events_daily_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_accounts_derived.events_daily_v1 is modified."
   max_cache_age: "24 hours"
 }
