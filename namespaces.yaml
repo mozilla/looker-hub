@@ -5351,6 +5351,11 @@ moso_mastodon_android:
       type: glean_ping_explore
       views:
         base_view: baseline
+    client_counts:
+      type: client_counts_explore
+      views:
+        base_view: client_counts
+        extended_view: baseline_clients_daily_table
     deletion_request:
       type: glean_ping_explore
       views:
@@ -5371,11 +5376,25 @@ moso_mastodon_android:
       - channel: nightly
         table: mozdata.org_mozilla_social_nightly.baseline
       type: glean_ping_view
+    baseline_clients_daily_table:
+      tables:
+      - channel: nightly
+        table: mozdata.org_mozilla_social_nightly.baseline_clients_daily
+      type: table_view
+    baseline_clients_first_seen_table:
+      tables:
+      - channel: nightly
+        table: mozdata.org_mozilla_social_nightly.baseline_clients_first_seen
+      type: table_view
     baseline_table:
       tables:
       - channel: nightly
         table: mozdata.org_mozilla_social_nightly.baseline
       type: table_view
+    client_counts:
+      tables:
+      - table: mozdata.org_mozilla_social_nightly.baseline_clients_daily
+      type: client_counts_view
     deletion_request:
       tables:
       - channel: nightly
