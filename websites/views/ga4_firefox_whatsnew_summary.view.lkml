@@ -8,7 +8,7 @@ view: ga4_firefox_whatsnew_summary {
   dimension: bounces {
     sql: ${TABLE}.bounces ;;
     type: number
-    description: "Bounces - Counts the number of unique visits where the session was considered a bounce"
+    description: "Bounces - The number of unique visits where the session was considered a bounce"
   }
 
   dimension: country {
@@ -57,7 +57,7 @@ view: ga4_firefox_whatsnew_summary {
   dimension: visits {
     sql: ${TABLE}.visits ;;
     type: number
-    description: "Visits - The number of unique visits - combo of user_pseudo_id (cookie ID) and Google Analytics session ID"
+    description: "Visits - The number of unique visits, where a unique visit is the user_pseudo_id plus session ID"
   }
 
   dimension_group: date {

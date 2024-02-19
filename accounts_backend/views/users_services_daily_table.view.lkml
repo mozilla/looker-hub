@@ -1,0 +1,60 @@
+
+# *Do not manually modify this file*
+#
+# This file has been generated via https://github.com/mozilla/lookml-generator
+# You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
+
+view: users_services_daily_table {
+  dimension: country {
+    sql: ${TABLE}.country ;;
+    type: string
+    map_layer_name: countries
+  }
+
+  dimension: language {
+    sql: ${TABLE}.language ;;
+    type: string
+  }
+
+  dimension: registered {
+    sql: ${TABLE}.registered ;;
+    type: yesno
+  }
+
+  dimension: seen_in_tier1_country {
+    sql: ${TABLE}.seen_in_tier1_country ;;
+    type: yesno
+  }
+
+  dimension: service {
+    sql: ${TABLE}.service ;;
+    type: string
+  }
+
+  dimension: service_events {
+    sql: ${TABLE}.service_events ;;
+    hidden: yes
+  }
+
+  dimension: user_id {
+    sql: ${TABLE}.user_id ;;
+    type: string
+  }
+
+  dimension_group: submission {
+    sql: ${TABLE}.submission_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+  }
+
+  sql_table_name: `mozdata.accounts_backend.users_services_daily` ;;
+}
