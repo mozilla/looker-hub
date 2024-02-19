@@ -25,6 +25,26 @@ view: feature_usage_metrics_table {
     type: number
   }
 
+  dimension: adjust_network {
+    sql: ${TABLE}.adjust_network ;;
+    type: string
+  }
+
+  dimension: awesomebar_bottom_users {
+    sql: ${TABLE}.awesomebar_bottom_users ;;
+    type: number
+  }
+
+  dimension: awesomebar_null_users {
+    sql: ${TABLE}.awesomebar_null_users ;;
+    type: number
+  }
+
+  dimension: awesomebar_top_users {
+    sql: ${TABLE}.awesomebar_top_users ;;
+    type: number
+  }
+
   dimension: bookmarks_add {
     sql: ${TABLE}.bookmarks_add ;;
     type: number
@@ -63,6 +83,17 @@ view: feature_usage_metrics_table {
   dimension: bookmarks_open_users {
     sql: ${TABLE}.bookmarks_open_users ;;
     type: number
+  }
+
+  dimension: channel {
+    sql: ${TABLE}.channel ;;
+    type: string
+  }
+
+  dimension: country {
+    sql: ${TABLE}.country ;;
+    type: string
+    map_layer_name: countries
   }
 
   dimension: credit_cards_deleted {
@@ -215,6 +246,11 @@ view: feature_usage_metrics_table {
     type: number
   }
 
+  dimension: is_default_browser {
+    sql: ${TABLE}.is_default_browser ;;
+    type: yesno
+  }
+
   dimension: logins_deleted {
     sql: ${TABLE}.logins_deleted ;;
     type: number
@@ -295,11 +331,6 @@ view: feature_usage_metrics_table {
     type: number
   }
 
-  dimension: metrics_ping_distinct_client_count {
-    sql: ${TABLE}.metrics_ping_distinct_client_count ;;
-    type: number
-  }
-
   dimension: metrics_private_tabs_open_count {
     sql: ${TABLE}.metrics_private_tabs_open_count ;;
     type: number
@@ -318,6 +349,21 @@ view: feature_usage_metrics_table {
   dimension: metrics_tabs_open_count_users {
     sql: ${TABLE}.metrics_tabs_open_count_users ;;
     type: number
+  }
+
+  dimension_group: ping {
+    sql: ${TABLE}.ping_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
   }
 
   dimension_group: submission {

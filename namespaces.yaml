@@ -142,6 +142,11 @@ accounts_backend:
       - channel: null
         table: mozdata.accounts_backend.nonprod_accounts
       type: table_view
+    users_services_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.accounts_backend.users_services_daily
+      type: table_view
 accounts_frontend:
   explores:
     accounts_events:

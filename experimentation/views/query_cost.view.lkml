@@ -15,6 +15,11 @@ view: query_cost {
     type: string
   }
 
+  dimension: experiment_slug {
+    sql: ${TABLE}.experiment_slug ;;
+    type: string
+  }
+
   dimension: query {
     sql: ${TABLE}.query ;;
     type: string
@@ -22,6 +27,11 @@ view: query_cost {
 
   dimension: total_bytes_processed {
     sql: ${TABLE}.total_bytes_processed ;;
+    type: number
+  }
+
+  dimension: total_slot_ms {
+    sql: ${TABLE}.total_slot_ms ;;
     type: number
   }
 
