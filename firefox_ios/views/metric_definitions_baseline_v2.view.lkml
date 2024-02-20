@@ -323,6 +323,38 @@ For more information, refer to [the DAU description in Confluence](https://mozil
     ]
   }
 
+  dimension_group: first_run {
+    sql: ${TABLE}.first_run_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.first_seen_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
   set: metrics {
     fields: [daily_active_users, client_level_daily_active_users_v1, client_level_daily_active_users_v2]
   }

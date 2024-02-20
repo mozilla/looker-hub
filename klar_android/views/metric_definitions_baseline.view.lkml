@@ -296,6 +296,38 @@ telemetry_sdk_build,
     ]
   }
 
+  dimension_group: first_run {
+    sql: ${TABLE}.first_run_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.first_seen_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
   set: metrics {
     fields: [baseline_ping_count, first_run_date, active_hours, days_of_use]
   }

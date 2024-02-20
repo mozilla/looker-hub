@@ -2109,6 +2109,10 @@ firefox_desktop:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_newtab_interactions
+    metric_definitions_newtab_visits:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_newtab_visits
     metric_definitions_newtab_visits_topsite_tile_interactions:
       type: metric_definitions_explore
       views:
@@ -2396,6 +2400,10 @@ firefox_desktop:
       tables:
       - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
+    metric_definitions_newtab_visits:
+      tables:
+      - table: mozdata.telemetry.clients_daily
+      type: metric_definitions_view
     metric_definitions_newtab_visits_topsite_tile_interactions:
       tables:
       - table: mozdata.telemetry.clients_daily
@@ -2576,6 +2584,11 @@ firefox_desktop:
       - base_table: mozdata.firefox_desktop.urlbar_events
         events_table_view: urlbar_events_table
       type: events_view
+    urlbar_events_daily_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.urlbar_events_daily
+      type: table_view
     urlbar_events_table:
       tables:
       - table: mozdata.firefox_desktop.urlbar_events
@@ -18872,6 +18885,10 @@ websites:
     firefox_whatsnew_summary:
       tables:
       - table: moz-fx-data-marketing-prod.ga_derived.firefox_whatsnew_summary_v1
+      type: table_view
+    ga4_blogs_goals:
+      tables:
+      - table: moz-fx-data-marketing-prod.ga_derived.blogs_goals_v2
       type: table_view
     ga4_blogs_sessions:
       tables:

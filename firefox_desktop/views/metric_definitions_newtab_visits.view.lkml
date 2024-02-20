@@ -4,29 +4,11 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: metric_definitions_activity_stream_events {
+view: metric_definitions_newtab_visits {
   derived_table: {
     sql: SELECT
-                COUNTIF(
-    event = 'CLICK'
-    AND source = 'CARDGRID'
-    AND JSON_EXTRACT_SCALAR(value, '$.card_type') = 'organic'
-) AS pocket_rec_clicks,
-COUNTIF(
-    event = 'CLICK'
-    AND source = 'CARDGRID'
-    AND JSON_EXTRACT_SCALAR(value, '$.card_type') = 'spoc'
-) AS pocket_spoc_clicks,
-COUNTIF(
-    event = 'PREF_CHANGED'
-    AND source = 'TOP_STORIES'
-    AND JSON_EXTRACT_SCALAR(value, '$.status') = 'false'
-) AS disable_pocket_clicks,
-COUNTIF(
-    event = 'PREF_CHANGED'
-    AND source = 'POCKET_SPOCS'
-    AND JSON_EXTRACT_SCALAR(value, '$.status') = 'false'
-) AS disable_pocket_spocs_clicks,
+                COALESCE(COUNT(DISTINCT newtab_visit_id), 0) AS newtab_visits,
+COALESCE(COUNTIF(had_non_impression_engagement), 0) AS newtab_engaged_visits,
 
                 a11y_theme,
 base.aborts_content_sum,
@@ -437,7 +419,7 @@ base.web_notification_shown_sum,
 base.windows_build_number,
 base.windows_ubr,
 
-                m.client_id AS client_id,
+                m.legacy_telemetry_client_id AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
                 m.submission_date AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'week'  %}
@@ -469,19 +451,14 @@ base.windows_ubr,
     SELECT
         *
     FROM
-        (
-    SELECT
-        *,
-        DATE(submission_timestamp) AS submission_date
-    FROM mozdata.activity_stream.events
-)
+        moz-fx-data-shared-prod.telemetry.newtab_visits
     )
             AS m
             
             INNER JOIN mozdata.telemetry.clients_daily base
             ON
                 base.submission_date = m.submission_date AND
-                base.client_id = m.client_id
+                base.client_id = m.legacy_telemetry_client_id
             WHERE base.submission_date BETWEEN
                 SAFE_CAST(
                     {% date_start submission_date %} AS DATE
@@ -920,41 +897,22 @@ windows_ubr,
     description: "Unique client identifier"
   }
 
-  dimension: pocket_rec_clicks {
+  dimension: newtab_visits {
     group_label: "Metrics"
-    label: "Clicked Pocket organic recs in New Tab"
-    description: "    Counts the number of Pocket rec clicks made by each client.
+    label: "Newtab Visit Count"
+    description: "Count of New Tab visits
 "
     type: number
-    sql: ${TABLE}.pocket_rec_clicks ;;
+    sql: ${TABLE}.newtab_visits ;;
   }
 
-  dimension: pocket_spoc_clicks {
+  dimension: newtab_engaged_visits {
     group_label: "Metrics"
-    label: "Clicked Pocket sponsored content in New Tab"
-    description: "    Counts the number of Pocket sponsored content clicks made by each client.
+    label: "Newtab Engaged Visit Count"
+    description: "Count of New Tab visits with any engagement
 "
     type: number
-    sql: ${TABLE}.pocket_spoc_clicks ;;
-  }
-
-  dimension: disable_pocket_clicks {
-    group_label: "Metrics"
-    label: "Disabled Pocket in New Tab"
-    description: "    Counts the number of clicks to disable Pocket in New Tab made by each client.
-"
-    type: number
-    sql: ${TABLE}.disable_pocket_clicks ;;
-  }
-
-  dimension: disable_pocket_spocs_clicks {
-    group_label: "Metrics"
-    label: "Disabled Pocket sponsored content in New Tab"
-    description: "    Counts the number of clicks to disable Pocket sponsored content
-    in New Tab made by each client.
-"
-    type: number
-    sql: ${TABLE}.disable_pocket_spocs_clicks ;;
+    sql: ${TABLE}.newtab_engaged_visits ;;
   }
 
   dimension: a11y_theme {
@@ -3499,7 +3457,7 @@ windows_ubr,
   }
 
   set: metrics {
-    fields: [pocket_rec_clicks, pocket_spoc_clicks, disable_pocket_clicks, disable_pocket_spocs_clicks]
+    fields: [newtab_visits, newtab_engaged_visits]
   }
 
   parameter: aggregate_metrics_by {

@@ -420,27 +420,27 @@ base.windows_ubr,
 
                 m.client_id AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
-                m.DATE(submission_date) AS analysis_basis
+                m.submission_date AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'week'  %}
                 (FORMAT_DATE(
                     '%F',
-                    DATE_TRUNC(m.DATE(submission_date),
+                    DATE_TRUNC(m.submission_date,
                     WEEK(MONDAY)))
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'month'  %}
                 (FORMAT_DATE(
                     '%Y-%m',
-                    m.DATE(submission_date))
+                    m.submission_date)
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'quarter'  %}
                 (FORMAT_DATE(
                     '%Y-%m',
-                    DATE_TRUNC(m.DATE(submission_date),
+                    DATE_TRUNC(m.submission_date,
                     QUARTER))
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'year'  %}
                 (EXTRACT(
-                    YEAR FROM m.DATE(submission_date))
+                    YEAR FROM m.submission_date)
                 ) AS analysis_basis
                 {% else %}
                 NULL as analysis_basis
@@ -465,22 +465,22 @@ base.windows_ubr,
             
             INNER JOIN mozdata.telemetry.clients_daily base
             ON
-                base.submission_date = m.DATE(submission_date) AND
+                base.submission_date = m.submission_date AND
                 base.client_id = m.client_id
             WHERE base.submission_date BETWEEN
                 SAFE_CAST(
-                    {% date_start DATE(submission_date) %} AS DATE
+                    {% date_start submission_date %} AS DATE
                 ) AND
                 SAFE_CAST(
-                    {% date_end DATE(submission_date) %} AS DATE
+                    {% date_end submission_date %} AS DATE
                 )
             
             AND m.submission_date BETWEEN
                 SAFE_CAST(
-                    {% date_start DATE(submission_date) %} AS DATE
+                    {% date_start submission_date %} AS DATE
                 ) AND
                 SAFE_CAST(
-                    {% date_end DATE(submission_date) %} AS DATE
+                    {% date_end submission_date %} AS DATE
                 )
             GROUP BY
                 a11y_theme,
@@ -3389,6 +3389,69 @@ windows_ubr,
       quarter,
       year,
     ]
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.first_seen_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: second_seen {
+    sql: ${TABLE}.second_seen_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: submission_date_s3 {
+    sql: ${TABLE}.submission_date_s3 ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: submission_timestamp_min {
+    sql: ${TABLE}.submission_timestamp_min ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    group_label: "Base Fields"
   }
 
   set: metrics {
