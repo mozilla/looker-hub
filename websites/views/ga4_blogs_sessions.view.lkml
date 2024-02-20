@@ -63,7 +63,7 @@ view: ga4_blogs_sessions {
   dimension: sessions {
     sql: ${TABLE}.sessions ;;
     type: number
-    description: "Number of Sessions"
+    description: "Number of Sessions - The number of sessions with an entrances value of 1"
   }
 
   dimension: source {
