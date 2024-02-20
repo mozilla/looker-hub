@@ -8,6 +8,8 @@ view: metric_definitions_newtab_interactions {
   derived_table: {
     sql: SELECT
                 SUM(COALESCE(searches, 0)) AS newtab_searches,
+COALESCE(LOGICAL_OR(searches > 0), FALSE) AS newtab_any_searches,
+COALESCE(CASE WHEN SUM(searches) > 4 THEN 1 ELSE 0 END, 0) AS newtab_gt4_searches,
 SUM(COALESCE(tagged_search_ad_impressions, 0)) AS newtab_searches_with_ads,
 SUM(COALESCE(tagged_search_ad_clicks, 0)) AS newtab_ad_clicks,
 SAFE_DIVIDE(SUM(COALESCE(tagged_search_ad_clicks, 0)),  SUM(COALESCE(tagged_search_ad_impressions, 0))) AS newtab_ad_click_rate,
@@ -911,6 +913,24 @@ windows_ubr,
 "
     type: number
     sql: ${TABLE}.newtab_searches ;;
+  }
+
+  dimension: newtab_any_searches {
+    group_label: "Metrics"
+    label: "Any Newtab Searches"
+    description: "Client performed any Newtab Handoff searches during the experiment
+"
+    type: number
+    sql: ${TABLE}.newtab_any_searches ;;
+  }
+
+  dimension: newtab_gt4_searches {
+    group_label: "Metrics"
+    label: "Any Newtab Searches"
+    description: "Client performed any Newtab Handoff searches during the experiment
+"
+    type: number
+    sql: ${TABLE}.newtab_gt4_searches ;;
   }
 
   dimension: newtab_searches_with_ads {
@@ -3463,9 +3483,74 @@ windows_ubr,
     ]
   }
 
+  dimension_group: first_seen {
+    sql: ${TABLE}.first_seen_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: second_seen {
+    sql: ${TABLE}.second_seen_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: submission_date_s3 {
+    sql: ${TABLE}.submission_date_s3 ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: submission_timestamp_min {
+    sql: ${TABLE}.submission_timestamp_min ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    group_label: "Base Fields"
+  }
+
   set: metrics {
     fields: [
       newtab_searches,
+      newtab_any_searches,
+      newtab_gt4_searches,
       newtab_searches_with_ads,
       newtab_ad_clicks,
       newtab_ad_click_rate,
