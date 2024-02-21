@@ -3245,6 +3245,329 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
+  dimension: metrics__labeled_counter__avif_a1lx {
+    label: "Avif A1Lx"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_a1lx ;;
+    group_label: "Avif"
+    group_item_label: "A1Lx"
+
+    link: {
+      label: "Glean Dictionary reference for Avif A1Lx"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_a1lx"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AV1LayeredImageIndexingProperty (a1lx). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_a1op {
+    label: "Avif A1Op"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_a1op ;;
+    group_label: "Avif"
+    group_item_label: "A1Op"
+
+    link: {
+      label: "Glean Dictionary reference for Avif A1Op"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_a1op"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF OperatingPointSelectorProperty (a1op). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_alpha {
+    label: "Avif Alpha"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_alpha ;;
+    group_label: "Avif"
+    group_item_label: "Alpha"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Alpha"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_alpha"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF alpha plane. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_aom_decode_error {
+    label: "Avif Aom Decode Error"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_aom_decode_error ;;
+    group_label: "Avif"
+    group_item_label: "Aom Decode Error"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Aom Decode Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_aom_decode_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Image-decode Error from AOM decoder (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_bit_depth {
+    label: "Avif Bit Depth"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_bit_depth ;;
+    group_label: "Avif"
+    group_item_label: "Bit Depth"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Bit Depth"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_bit_depth"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bits per pixel of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_cicp_cp {
+    label: "Avif Cicp Cp"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_cp ;;
+    group_label: "Avif"
+    group_item_label: "Cicp Cp"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Cicp Cp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_cicp_cp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF CICP colour primaries. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_cicp_mc {
+    label: "Avif Cicp Mc"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_mc ;;
+    group_label: "Avif"
+    group_item_label: "Cicp Mc"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Cicp Mc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_cicp_mc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF CICP transfer characteristics. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_cicp_tc {
+    label: "Avif Cicp Tc"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_tc ;;
+    group_label: "Avif"
+    group_item_label: "Cicp Tc"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Cicp Tc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_cicp_tc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF CICP transfer characteristics. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_clap {
+    label: "Avif Clap"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_clap ;;
+    group_label: "Avif"
+    group_item_label: "Clap"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Clap"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_clap"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF CleanApertureBox (clap). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_colr {
+    label: "Avif Colr"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_colr ;;
+    group_label: "Avif"
+    group_item_label: "Colr"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Colr"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_colr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF colour information type. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_decode_result {
+    label: "Avif Decode Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_decode_result ;;
+    group_label: "Avif"
+    group_item_label: "Decode Result"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Decode Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_decode_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Decode result of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_decoder {
+    label: "Avif Decoder"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_decoder ;;
+    group_label: "Avif"
+    group_item_label: "Decoder"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Decoder"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_decoder"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Decoder of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_grid {
+    label: "Avif Grid"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_grid ;;
+    group_label: "Avif"
+    group_item_label: "Grid"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Grid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_grid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF AVIF grid-based image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_ipro {
+    label: "Avif Ipro"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_ipro ;;
+    group_label: "Avif"
+    group_item_label: "Ipro"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Ipro"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_ipro"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF ItemProtectionBox (ipro). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_ispe {
+    label: "Avif Ispe"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_ispe ;;
+    group_label: "Avif"
+    group_item_label: "Ispe"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Ispe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_ispe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF spatial extents (image size). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_lsel {
+    label: "Avif Lsel"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_lsel ;;
+    group_label: "Avif"
+    group_item_label: "Lsel"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Lsel"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_lsel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF LayerSelectorProperty (lsel). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_pasp {
+    label: "Avif Pasp"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_pasp ;;
+    group_label: "Avif"
+    group_item_label: "Pasp"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Pasp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_pasp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF pixel aspect ratio. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_pixi {
+    label: "Avif Pixi"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_pixi ;;
+    group_label: "Avif"
+    group_item_label: "Pixi"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Pixi"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_pixi"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF pixel information (bits per channel). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_yuv_color_space {
+    label: "Avif Yuv Color Space"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_yuv_color_space ;;
+    group_label: "Avif"
+    group_item_label: "Yuv Color Space"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Yuv Color Space"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_yuv_color_space"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "YUV color space of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__counter__bloburl_resolve_stopped {
     label: "Bloburl Resolve Stopped"
     hidden: no
@@ -4672,6 +4995,132 @@ API for the purposes of Validation (hence GVSV).
     description: "The heuristic that detected the form submission."
   }
 
+  dimension: metrics__timing_distribution__geckoview_content_process_lifetime__sum {
+    label: "Geckoview Content Process Lifetime Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_content_process_lifetime.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Content Process Lifetime Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Content Process Lifetime Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_content_process_lifetime"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The uptime of content processes. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__geckoview_document_site_origins__sum {
+    label: "Geckoview Document Site Origins Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.geckoview_document_site_origins.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Document Site Origins Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Document Site Origins Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_document_site_origins"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When a document is loaded, report the number of [site origins](https://searchfox.org/ mozilla-central/rev/ 3300072e993ae05d50d5c63d815260367eaf9179/ caps/nsIPrincipal.idl#264) of the entire browser if it has been at least 5 minutes since last time we collect this data. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_progress_time__sum {
+    label: "Geckoview Page Load Progress Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_progress_time.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Page Load Progress Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Page Load Progress Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_page_load_progress_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between page load progress starts (0) and completion (100). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_time__sum {
+    label: "Geckoview Page Load Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_time.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Page Load Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Page Load Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_page_load_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time taken to load a page. This includes all static contents, no dynamic content. Loading of about: pages is not counted. Back back navigation (sometimes via BFCache) is included which is a source of bimodality due to the <50ms load times. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_reload_time__sum {
+    label: "Geckoview Page Reload Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_reload_time.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Page Reload Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Page Reload Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_page_reload_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to reload a page. This includes all static contents, no dynamic content. Loading of about: pages is not counted. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__geckoview_per_document_site_origins__sum {
+    label: "Geckoview Per Document Site Origins Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.geckoview_per_document_site_origins.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Per Document Site Origins Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Per Document Site Origins Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_per_document_site_origins"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When a document is unloaded, report the highest number of [site origins](https://searchfox.org/ mozilla-central/rev/ 3300072e993ae05d50d5c63d815260367eaf9179/ caps/nsIPrincipal.idl#264) loaded simultaneously in that document. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_startup_runtime__sum {
+    label: "Geckoview Startup Runtime Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_startup_runtime.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Startup Runtime Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Startup Runtime Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_startup_runtime"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time taken to initialize GeckoRuntime. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__string__geckoview_validation_build_id {
     label: "Geckoview Validation Build Id"
     hidden: yes
@@ -5522,6 +5971,150 @@ To be used to validate GIFFT.
     }
 
     description: "How many times each IPC message type was sent. Broken down by process type.
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_compact_time__sum {
+    label: "Javascript Gc Compact Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Compact Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Compact Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_compact_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent in the compact phase. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_roots_time__sum {
+    label: "Javascript Gc Mark Roots Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Mark Roots Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Mark Roots Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_mark_roots_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent marking GC roots. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_time__sum {
+    label: "Javascript Gc Mark Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Mark Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Mark Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_mark_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent in the mark phase. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_minor_time__sum {
+    label: "Javascript Gc Minor Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Minor Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Minor Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_minor_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time taked by a minor (nursery) collection. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_prepare_time__sum {
+    label: "Javascript Gc Prepare Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Prepare Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Prepare Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_prepare_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent in the preparation phase. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_slice_time__sum {
+    label: "Javascript Gc Slice Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Slice Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Slice Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_slice_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent running a GC slice. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_sweep_time__sum {
+    label: "Javascript Gc Sweep Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Sweep Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Sweep Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_sweep_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent in the sweep phase. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_total_time__sum {
+    label: "Javascript Gc Total Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Total Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Total Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_total_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total time taken by a major collection. (Migrated from the geckoview metric of the same name.)
 "
   }
 
@@ -7141,6 +7734,60 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__performance_clone_deserialize_items__sum {
+    label: "Performance Clone Deserialize Items Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.performance_clone_deserialize_items.sum ;;
+    type: number
+    group_label: "Performance Clone Deserialize"
+    group_item_label: "Items Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Clone Deserialize Items Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_clone_deserialize_items"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of deserialized data, in items
+"
+  }
+
+  dimension: metrics__memory_distribution__performance_clone_deserialize_size__sum {
+    label: "Performance Clone Deserialize Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.performance_clone_deserialize_size.sum ;;
+    type: number
+    group_label: "Performance Clone Deserialize"
+    group_item_label: "Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Clone Deserialize Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_clone_deserialize_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of deserialized data, in bytes
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_clone_deserialize_time__sum {
+    label: "Performance Clone Deserialize Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.sum ;;
+    type: number
+    group_label: "Performance Clone Deserialize"
+    group_item_label: "Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Clone Deserialize Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_clone_deserialize_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent deserializing structured data
+"
+  }
+
   dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__sum {
     label: "Performance Interaction Keypress Present Latency Sum"
     hidden: no
@@ -7192,6 +7839,24 @@ To be used to validate GIFFT.
     }
 
     description: "The time between navigationStart and the first non-blank paint of a foreground root content document, in milliseconds. This only records documents that were in an active docshell throughout the whole time between navigation start and non-blank paint. The non-blank paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_total_content_page_load__sum {
+    label: "Performance Page Total Content Page Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_total_content_page_load.sum ;;
+    type: number
+    group_label: "Performance Page"
+    group_item_label: "Total Content Page Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Page Total Content Page Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_page_total_content_page_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time to load all of a page's resources and render. (Migrated from the geckoview metric of the same name.)
 "
   }
 
@@ -7264,6 +7929,42 @@ To be used to validate GIFFT.
     }
 
     description: "Time in milliseconds from responseStart to loadEventStart for the foreground http or https root content document. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__sum {
+    label: "Performance Pageload Req Anim Frame Callback Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Req Anim Frame Callback Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Req Anim Frame Callback Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_req_anim_frame_callback"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in milliseconds calling all request animation frame callbacks for a document before it has reached readystate complete. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__sum {
+    label: "Performance Responsiveness Req Anim Frame Callback Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_responsiveness_req_anim_frame_callback.sum ;;
+    type: number
+    group_label: "Performance Responsiveness"
+    group_item_label: "Req Anim Frame Callback Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Responsiveness Req Anim Frame Callback Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_responsiveness_req_anim_frame_callback"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in milliseconds calling all request animation frame callbacks for a document after it has reached readystate complete. (Migrated from the geckoview metric of the same name.)
 "
   }
 
@@ -7372,6 +8073,24 @@ To be used to validate GIFFT.
     }
 
     description: "Time from navigationStart to loadEventStart as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_response_start__sum {
+    label: "Performance Time Response Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_response_start.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Response Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Response Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_response_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to responseStart as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
 "
   }
 
@@ -9590,176 +10309,6 @@ startup, as part of the initialization sequence.
 "
   }
 
-  dimension: metrics__labeled_counter__avif_a1lx {
-    label: "Avif A1Lx"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_a1lx ;;
-    group_label: "Avif"
-    group_item_label: "A1Lx"
-
-    link: {
-      label: "Glean Dictionary reference for Avif A1Lx"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_a1lx"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AV1LayeredImageIndexingProperty (a1lx).
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_a1op {
-    label: "Avif A1Op"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_a1op ;;
-    group_label: "Avif"
-    group_item_label: "A1Op"
-
-    link: {
-      label: "Glean Dictionary reference for Avif A1Op"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_a1op"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF OperatingPointSelectorProperty (a1op).
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_alpha {
-    label: "Avif Alpha"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_alpha ;;
-    group_label: "Avif"
-    group_item_label: "Alpha"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Alpha"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_alpha"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF alpha plane.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_aom_decode_error {
-    label: "Avif Aom Decode Error"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_aom_decode_error ;;
-    group_label: "Avif"
-    group_item_label: "Aom Decode Error"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Aom Decode Error"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_aom_decode_error"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Image-decode Error from AOM decoder
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_bit_depth {
-    label: "Avif Bit Depth"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_bit_depth ;;
-    group_label: "Avif"
-    group_item_label: "Bit Depth"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Bit Depth"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_bit_depth"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Bits per pixel of AVIF image.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_cicp_cp {
-    label: "Avif Cicp Cp"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_cp ;;
-    group_label: "Avif"
-    group_item_label: "Cicp Cp"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Cicp Cp"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_cicp_cp"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF CICP colour primaries.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_cicp_mc {
-    label: "Avif Cicp Mc"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_mc ;;
-    group_label: "Avif"
-    group_item_label: "Cicp Mc"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Cicp Mc"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_cicp_mc"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF CICP transfer characteristics.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_cicp_tc {
-    label: "Avif Cicp Tc"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_tc ;;
-    group_label: "Avif"
-    group_item_label: "Cicp Tc"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Cicp Tc"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_cicp_tc"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF CICP transfer characteristics.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_clap {
-    label: "Avif Clap"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_clap ;;
-    group_label: "Avif"
-    group_item_label: "Clap"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Clap"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_clap"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF CleanApertureBox (clap).
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_colr {
-    label: "Avif Colr"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_colr ;;
-    group_label: "Avif"
-    group_item_label: "Colr"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Colr"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_colr"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF colour information type.
-"
-  }
-
   dimension: metrics__quantity__avif_dav1d_decode_error {
     label: "Avif Dav1D Decode Error"
     hidden: yes
@@ -9775,108 +10324,6 @@ startup, as part of the initialization sequence.
     }
 
     description: "Image-decode Error from dav1d decoder
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_decode_result {
-    label: "Avif Decode Result"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_decode_result ;;
-    group_label: "Avif"
-    group_item_label: "Decode Result"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Decode Result"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_decode_result"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Decode result of AVIF image.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_decoder {
-    label: "Avif Decoder"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_decoder ;;
-    group_label: "Avif"
-    group_item_label: "Decoder"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Decoder"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_decoder"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Decoder of AVIF image.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_grid {
-    label: "Avif Grid"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_grid ;;
-    group_label: "Avif"
-    group_item_label: "Grid"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Grid"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_grid"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF AVIF grid-based image.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_ipro {
-    label: "Avif Ipro"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_ipro ;;
-    group_label: "Avif"
-    group_item_label: "Ipro"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Ipro"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_ipro"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF ItemProtectionBox (ipro).
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_ispe {
-    label: "Avif Ispe"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_ispe ;;
-    group_label: "Avif"
-    group_item_label: "Ispe"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Ispe"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_ispe"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF spatial extents (image size).
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_lsel {
-    label: "Avif Lsel"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_lsel ;;
-    group_label: "Avif"
-    group_item_label: "Lsel"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Lsel"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_lsel"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF LayerSelectorProperty (lsel).
 "
   }
 
@@ -9897,40 +10344,6 @@ startup, as part of the initialization sequence.
 "
   }
 
-  dimension: metrics__labeled_counter__avif_pasp {
-    label: "Avif Pasp"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_pasp ;;
-    group_label: "Avif"
-    group_item_label: "Pasp"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Pasp"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_pasp"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF pixel aspect ratio.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_pixi {
-    label: "Avif Pixi"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_pixi ;;
-    group_label: "Avif"
-    group_item_label: "Pixi"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Pixi"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_pixi"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF pixel information (bits per channel).
-"
-  }
-
   dimension: metrics__labeled_counter__avif_sequence {
     label: "Avif Sequence"
     hidden: yes
@@ -9945,23 +10358,6 @@ startup, as part of the initialization sequence.
     }
 
     description: "AVIF image sequence.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_yuv_color_space {
-    label: "Avif Yuv Color Space"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_yuv_color_space ;;
-    group_label: "Avif"
-    group_item_label: "Yuv Color Space"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Yuv Color Space"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_yuv_color_space"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "YUV color space of AVIF image.
 "
   }
 
@@ -9999,132 +10395,6 @@ Uses a single label due to only labeled counters being supported
     }
 
     description: "The Buildid of the Gecko engine, example: 20200205124310
-"
-  }
-
-  dimension: metrics__timing_distribution__geckoview_content_process_lifetime__sum {
-    label: "Geckoview Content Process Lifetime Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.geckoview_content_process_lifetime.sum ;;
-    type: number
-    group_label: "Geckoview"
-    group_item_label: "Content Process Lifetime Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Geckoview Content Process Lifetime Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_content_process_lifetime"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The uptime of content processes in ms
-"
-  }
-
-  dimension: metrics__custom_distribution__geckoview_document_site_origins__sum {
-    label: "Geckoview Document Site Origins Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.geckoview_document_site_origins.sum ;;
-    type: number
-    group_label: "Geckoview"
-    group_item_label: "Document Site Origins Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Geckoview Document Site Origins Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_document_site_origins"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "When a document is loaded, report the number of [site origins](https://searchfox.org/ mozilla-central/rev/ 3300072e993ae05d50d5c63d815260367eaf9179/ caps/nsIPrincipal.idl#264) of the entire browser if it has been at least 5 minutes since last time we collect this data.
-"
-  }
-
-  dimension: metrics__timing_distribution__geckoview_page_load_progress_time__sum {
-    label: "Geckoview Page Load Progress Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_progress_time.sum ;;
-    type: number
-    group_label: "Geckoview"
-    group_item_label: "Page Load Progress Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Geckoview Page Load Progress Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_page_load_progress_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time between page load progress starts (0) and completion (100).
-"
-  }
-
-  dimension: metrics__timing_distribution__geckoview_page_load_time__sum {
-    label: "Geckoview Page Load Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_time.sum ;;
-    type: number
-    group_label: "Geckoview"
-    group_item_label: "Page Load Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Geckoview Page Load Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_page_load_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time taken to load a page. This includes all static contents, no dynamic content. Loading of about: pages is not counted. Back back navigation (sometimes via BFCache) is included which is a source of bimodality due to the <50ms load times.
-"
-  }
-
-  dimension: metrics__timing_distribution__geckoview_page_reload_time__sum {
-    label: "Geckoview Page Reload Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_reload_time.sum ;;
-    type: number
-    group_label: "Geckoview"
-    group_item_label: "Page Reload Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Geckoview Page Reload Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_page_reload_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time taken to reload a page. This includes all static contents, no dynamic content. Loading of about: pages is not counted.
-"
-  }
-
-  dimension: metrics__custom_distribution__geckoview_per_document_site_origins__sum {
-    label: "Geckoview Per Document Site Origins Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.geckoview_per_document_site_origins.sum ;;
-    type: number
-    group_label: "Geckoview"
-    group_item_label: "Per Document Site Origins Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Geckoview Per Document Site Origins Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_per_document_site_origins"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "When a document is unloaded, report the highest number of [site origins](https://searchfox.org/ mozilla-central/rev/ 3300072e993ae05d50d5c63d815260367eaf9179/ caps/nsIPrincipal.idl#264) loaded simultaneously in that document.
-"
-  }
-
-  dimension: metrics__timing_distribution__geckoview_startup_runtime__sum {
-    label: "Geckoview Startup Runtime Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.geckoview_startup_runtime.sum ;;
-    type: number
-    group_label: "Geckoview"
-    group_item_label: "Startup Runtime Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Geckoview Startup Runtime Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_startup_runtime"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time taken to initialize GeckoRuntime.
 "
   }
 
@@ -10290,150 +10560,6 @@ Uses a single label due to only labeled counters being supported
 "
   }
 
-  dimension: metrics__timing_distribution__javascript_gc_compact_time__sum {
-    label: "Javascript Gc Compact Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.sum ;;
-    type: number
-    group_label: "Javascript Gc"
-    group_item_label: "Compact Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Gc Compact Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_compact_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time spent in the compact phase.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_mark_roots_time__sum {
-    label: "Javascript Gc Mark Roots Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.sum ;;
-    type: number
-    group_label: "Javascript Gc"
-    group_item_label: "Mark Roots Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Gc Mark Roots Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_mark_roots_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time spent marking GC roots.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_mark_time__sum {
-    label: "Javascript Gc Mark Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.sum ;;
-    type: number
-    group_label: "Javascript Gc"
-    group_item_label: "Mark Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Gc Mark Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_mark_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time spent in the mark phase.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_minor_time__sum {
-    label: "Javascript Gc Minor Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.sum ;;
-    type: number
-    group_label: "Javascript Gc"
-    group_item_label: "Minor Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Gc Minor Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_minor_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time taked by a minor (nursery) collection.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_prepare_time__sum {
-    label: "Javascript Gc Prepare Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.sum ;;
-    type: number
-    group_label: "Javascript Gc"
-    group_item_label: "Prepare Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Gc Prepare Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_prepare_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time spent in the preparation phase.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_slice_time__sum {
-    label: "Javascript Gc Slice Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.sum ;;
-    type: number
-    group_label: "Javascript Gc"
-    group_item_label: "Slice Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Gc Slice Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_slice_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time spent running a GC slice.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_sweep_time__sum {
-    label: "Javascript Gc Sweep Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.sum ;;
-    type: number
-    group_label: "Javascript Gc"
-    group_item_label: "Sweep Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Gc Sweep Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_sweep_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time spent in the sweep phase.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_total_time__sum {
-    label: "Javascript Gc Total Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.sum ;;
-    type: number
-    group_label: "Javascript Gc"
-    group_item_label: "Total Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Gc Total Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_total_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The total time taken by a major collection.
-"
-  }
-
   dimension: metrics__custom_distribution__js_baseline_compile_percentage__sum {
     label: "Js Baseline Compile Percentage Sum"
     hidden: yes
@@ -10524,60 +10650,6 @@ Uses a single label due to only labeled counters being supported
 "
   }
 
-  dimension: metrics__custom_distribution__performance_clone_deserialize_items__sum {
-    label: "Performance Clone Deserialize Items Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.performance_clone_deserialize_items.sum ;;
-    type: number
-    group_label: "Performance Clone Deserialize"
-    group_item_label: "Items Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Clone Deserialize Items Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_clone_deserialize_items"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Size of deserialized data, in items
-"
-  }
-
-  dimension: metrics__memory_distribution__performance_clone_deserialize_size__sum {
-    label: "Performance Clone Deserialize Size Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.memory_distribution.performance_clone_deserialize_size.sum ;;
-    type: number
-    group_label: "Performance Clone Deserialize"
-    group_item_label: "Size Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Clone Deserialize Size Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_clone_deserialize_size"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Size of deserialized data, in bytes
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_clone_deserialize_time__sum {
-    label: "Performance Clone Deserialize Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.sum ;;
-    type: number
-    group_label: "Performance Clone Deserialize"
-    group_item_label: "Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Clone Deserialize Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_clone_deserialize_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent deserializing structured data
-"
-  }
-
   dimension: metrics__timing_distribution__performance_interaction_tab_switch_composite__sum {
     label: "Performance Interaction Tab Switch Composite Sum"
     hidden: no
@@ -10593,24 +10665,6 @@ Uses a single label due to only labeled counters being supported
     }
 
     description: "Time between tab selection and first composite of the tab content onto the screen.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_page_total_content_page_load__sum {
-    label: "Performance Page Total Content Page Load Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_page_total_content_page_load.sum ;;
-    type: number
-    group_label: "Performance Page"
-    group_item_label: "Total Content Page Load Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Page Total Content Page Load Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_page_total_content_page_load"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time to load all of a page's resources and render.
 "
   }
 
@@ -10647,42 +10701,6 @@ Uses a single label due to only labeled counters being supported
     }
 
     description: "Time in milliseconds from responseStart to domContentLoaded for the foreground http or https root content document.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__sum {
-    label: "Performance Pageload Req Anim Frame Callback Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.sum ;;
-    type: number
-    group_label: "Performance Pageload"
-    group_item_label: "Req Anim Frame Callback Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Pageload Req Anim Frame Callback Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_req_anim_frame_callback"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent in milliseconds calling all request animation frame callbacks for a document before it has reached readystate complete.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__sum {
-    label: "Performance Responsiveness Req Anim Frame Callback Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_responsiveness_req_anim_frame_callback.sum ;;
-    type: number
-    group_label: "Performance Responsiveness"
-    group_item_label: "Req Anim Frame Callback Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Responsiveness Req Anim Frame Callback Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_responsiveness_req_anim_frame_callback"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent in milliseconds calling all request animation frame callbacks for a document after it has reached readystate complete.
 "
   }
 
@@ -10755,24 +10773,6 @@ Uses a single label due to only labeled counters being supported
     }
 
     description: "Time from navigationStart to [`loadEventStart`](https://www.w3.org/TR/ navigation-timing/#dom-performancetiming-loadstart) as per the W3C Performance Timing API. This is only submitted on when the document would preload a resource (i.e., if it encounters a `<link>` element or a `Link` header with `rel=\"preload\"`), even if the `network.preload` pref is disabled.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_time_response_start__sum {
-    label: "Performance Time Response Start Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_time_response_start.sum ;;
-    type: number
-    group_label: "Performance Time"
-    group_item_label: "Response Start Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Time Response Start Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_response_start"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time from navigationStart to responseStart as per the W3C Performance Timing API.
 "
   }
 

@@ -9115,7 +9115,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_doc_css_user_find {
     label: "Use Counter Css Doc Css User Find"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_user_find ;;
     type: number
     group_label: "Use Counter Css Doc"
@@ -21661,7 +21661,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_page_css_user_find {
     label: "Use Counter Css Page Css User Find"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_user_find ;;
     type: number
     group_label: "Use Counter Css Page"
