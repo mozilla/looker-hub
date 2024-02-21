@@ -37,6 +37,21 @@ explore: daemonsession {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${daemonsession.metrics__labeled_counter__glean_error_invalid_value}) AS daemonsession__metrics__labeled_counter__glean_error_invalid_value ON ${daemonsession.document_id} = ${daemonsession__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: daemonsession__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${daemonsession.events}) AS daemonsession__events ;;
+  }
+
+  join: daemonsession__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${daemonsession__events.extra}) AS daemonsession__events__extra ;;
+  }
+
+  join: daemonsession__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${daemonsession.ping_info__experiments}) AS daemonsession__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__daemonsession__metrics__labeled_counter__glean_error_invalid_label {

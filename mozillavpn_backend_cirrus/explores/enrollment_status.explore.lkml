@@ -37,6 +37,21 @@ explore: enrollment_status {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${enrollment_status.metrics__labeled_counter__glean_error_invalid_value}) AS enrollment_status__metrics__labeled_counter__glean_error_invalid_value ON ${enrollment_status.document_id} = ${enrollment_status__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: enrollment_status__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${enrollment_status.events}) AS enrollment_status__events ;;
+  }
+
+  join: enrollment_status__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${enrollment_status__events.extra}) AS enrollment_status__events__extra ;;
+  }
+
+  join: enrollment_status__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${enrollment_status.ping_info__experiments}) AS enrollment_status__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__enrollment_status__metrics__labeled_counter__glean_error_invalid_label {

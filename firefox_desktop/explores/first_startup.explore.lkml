@@ -37,6 +37,21 @@ explore: first_startup {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${first_startup.metrics__labeled_counter__glean_error_invalid_value}) AS first_startup__metrics__labeled_counter__glean_error_invalid_value ON ${first_startup.document_id} = ${first_startup__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: first_startup__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${first_startup.events}) AS first_startup__events ;;
+  }
+
+  join: first_startup__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${first_startup__events.extra}) AS first_startup__events__extra ;;
+  }
+
+  join: first_startup__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${first_startup.ping_info__experiments}) AS first_startup__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__first_startup__metrics__labeled_counter__glean_error_invalid_label {

@@ -17,4 +17,14 @@ explore: events_unnested {
       submission_date: "28 days",
     ]
   }
+
+  join: events_unnested__event_extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${events_unnested.event_extra}) AS events_unnested__event_extra ;;
+  }
+
+  join: events_unnested__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${events_unnested.ping_info__experiments}) AS events_unnested__ping_info__experiments ;;
+  }
 }

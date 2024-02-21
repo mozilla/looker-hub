@@ -38,6 +38,21 @@ explore: deletion_request {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${deletion_request.metrics__labeled_counter__glean_error_invalid_value}) AS deletion_request__metrics__labeled_counter__glean_error_invalid_value ON ${deletion_request.document_id} = ${deletion_request__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: deletion_request__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${deletion_request.events}) AS deletion_request__events ;;
+  }
+
+  join: deletion_request__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${deletion_request__events.extra}) AS deletion_request__events__extra ;;
+  }
+
+  join: deletion_request__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${deletion_request.ping_info__experiments}) AS deletion_request__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__deletion_request__metrics__labeled_counter__glean_error_invalid_label {

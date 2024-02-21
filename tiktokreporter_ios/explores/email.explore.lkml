@@ -37,6 +37,21 @@ explore: email {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${email.metrics__labeled_counter__glean_error_invalid_value}) AS email__metrics__labeled_counter__glean_error_invalid_value ON ${email.document_id} = ${email__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: email__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${email.events}) AS email__events ;;
+  }
+
+  join: email__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${email__events.extra}) AS email__events__extra ;;
+  }
+
+  join: email__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${email.ping_info__experiments}) AS email__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__email__metrics__labeled_counter__glean_error_invalid_label {

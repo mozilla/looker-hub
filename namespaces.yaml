@@ -2081,6 +2081,10 @@ firefox_desktop:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_clients_daily
+    metric_definitions_clients_first_seen_28_days_later:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_clients_first_seen_28_days_later
     metric_definitions_clients_first_seen_v2:
       type: metric_definitions_explore
       views:
@@ -2089,6 +2093,10 @@ firefox_desktop:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_crash
+    metric_definitions_desktop_cohort_daily_retention:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_desktop_cohort_daily_retention
     metric_definitions_events:
       type: metric_definitions_explore
       views:
@@ -2372,11 +2380,19 @@ firefox_desktop:
       tables:
       - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
+    metric_definitions_clients_first_seen_28_days_later:
+      tables:
+      - table: mozdata.telemetry.clients_daily
+      type: metric_definitions_view
     metric_definitions_clients_first_seen_v2:
       tables:
       - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
     metric_definitions_crash:
+      tables:
+      - table: mozdata.telemetry.clients_daily
+      type: metric_definitions_view
+    metric_definitions_desktop_cohort_daily_retention:
       tables:
       - table: mozdata.telemetry.clients_daily
       type: metric_definitions_view
@@ -5306,10 +5322,6 @@ monitoring:
     bigquery_usage:
       tables:
       - table: moz-fx-data-shared-prod.monitoring.bigquery_usage
-      type: table_view
-    bigquery_usage_costs:
-      tables:
-      - table: moz-fx-data-shared-prod.monitoring.bigquery_usage_costs
       type: table_view
     column_size:
       tables:
@@ -18886,9 +18898,17 @@ websites:
       tables:
       - table: moz-fx-data-marketing-prod.ga_derived.firefox_whatsnew_summary_v1
       type: table_view
+    ga4_blogs_daily_summary:
+      tables:
+      - table: moz-fx-data-marketing-prod.ga_derived.blogs_daily_summary_v2
+      type: table_view
     ga4_blogs_goals:
       tables:
       - table: moz-fx-data-marketing-prod.ga_derived.blogs_goals_v2
+      type: table_view
+    ga4_blogs_landing_page_summary:
+      tables:
+      - table: moz-fx-data-marketing-prod.ga_derived.blogs_landing_page_summary_v2
       type: table_view
     ga4_blogs_sessions:
       tables:
