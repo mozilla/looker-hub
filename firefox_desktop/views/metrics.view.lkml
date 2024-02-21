@@ -292,7 +292,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__string__gecko_build_id {
     label: "Gecko Build Id"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.gecko_build_id ;;
     type: string
     group_label: "Gecko"
@@ -310,7 +310,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__string__gecko_version {
     label: "Gecko Version"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.gecko_version ;;
     type: string
     group_label: "Gecko"
