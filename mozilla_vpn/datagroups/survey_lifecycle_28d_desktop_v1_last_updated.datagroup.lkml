@@ -6,7 +6,7 @@
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
 datagroup: survey_lifecycle_28d_desktop_v1_last_updated {
-  label: "survey_lifecycle_28d_desktop_v1 Last Updated"
+  label: "Mozilla VPN Lifecycle Survey - Early Usage - 28d - Desktop Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'mozilla_vpn_derived'

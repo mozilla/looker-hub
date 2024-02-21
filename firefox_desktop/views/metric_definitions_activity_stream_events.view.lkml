@@ -3435,6 +3435,69 @@ windows_ubr,
     ]
   }
 
+  dimension_group: first_seen {
+    sql: ${TABLE}.first_seen_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: second_seen {
+    sql: ${TABLE}.second_seen_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: submission_date_s3 {
+    sql: ${TABLE}.submission_date_s3 ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
+  dimension_group: submission_timestamp_min {
+    sql: ${TABLE}.submission_timestamp_min ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    group_label: "Base Fields"
+  }
+
   set: metrics {
     fields: [pocket_rec_clicks, pocket_spoc_clicks, disable_pocket_clicks, disable_pocket_spocs_clicks]
   }

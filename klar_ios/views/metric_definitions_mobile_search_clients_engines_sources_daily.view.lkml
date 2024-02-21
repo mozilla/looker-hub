@@ -344,6 +344,22 @@ telemetry_sdk_build,
     ]
   }
 
+  dimension_group: first_seen {
+    sql: ${TABLE}.first_seen_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
   set: metrics {
     fields: [
       ad_clicks,

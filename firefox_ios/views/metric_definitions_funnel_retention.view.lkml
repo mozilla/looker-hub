@@ -305,6 +305,22 @@ telemetry_sdk_build,
     ]
   }
 
+  dimension_group: first_seen {
+    sql: ${TABLE}.first_seen_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
   set: metrics {
     fields: [funnel_new_profiles, repeat_users, week_4_retained_users]
   }

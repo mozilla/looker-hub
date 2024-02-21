@@ -38,27 +38,27 @@ base.telemetry_sdk_build,
 
                 m.client_info.client_id AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
-                m.DATE(submission_timestamp) AS analysis_basis
+                m.submission_date AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'week'  %}
                 (FORMAT_DATE(
                     '%F',
-                    DATE_TRUNC(m.DATE(submission_timestamp),
+                    DATE_TRUNC(m.submission_date,
                     WEEK(MONDAY)))
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'month'  %}
                 (FORMAT_DATE(
                     '%Y-%m',
-                    m.DATE(submission_timestamp))
+                    m.submission_date)
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'quarter'  %}
                 (FORMAT_DATE(
                     '%Y-%m',
-                    DATE_TRUNC(m.DATE(submission_timestamp),
+                    DATE_TRUNC(m.submission_date,
                     QUARTER))
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'year'  %}
                 (EXTRACT(
-                    YEAR FROM m.DATE(submission_timestamp))
+                    YEAR FROM m.submission_date)
                 ) AS analysis_basis
                 {% else %}
                 NULL as analysis_basis
@@ -79,22 +79,22 @@ base.telemetry_sdk_build,
             
             INNER JOIN mozdata.focus_android.baseline_clients_daily base
             ON
-                base.submission_date = m.DATE(submission_timestamp) AND
+                base.submission_date = m.submission_date AND
                 base.client_id = m.client_info.client_id
             WHERE base.submission_date BETWEEN
                 SAFE_CAST(
-                    {% date_start DATE(submission_timestamp) %} AS DATE
+                    {% date_start submission_date %} AS DATE
                 ) AND
                 SAFE_CAST(
-                    {% date_end DATE(submission_timestamp) %} AS DATE
+                    {% date_end submission_date %} AS DATE
                 )
             
             AND m.submission_date BETWEEN
                 SAFE_CAST(
-                    {% date_start DATE(submission_timestamp) %} AS DATE
+                    {% date_start submission_date %} AS DATE
                 ) AND
                 SAFE_CAST(
-                    {% date_end DATE(submission_timestamp) %} AS DATE
+                    {% date_end submission_date %} AS DATE
                 )
             GROUP BY
                 android_sdk_version,
@@ -323,6 +323,22 @@ For more information, refer to [the DAU description in Confluence](https://mozil
       quarter,
       year,
     ]
+  }
+
+  dimension_group: first_seen {
+    sql: ${TABLE}.first_seen_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
   }
 
   set: metrics {
