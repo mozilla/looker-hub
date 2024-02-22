@@ -8,26 +8,37 @@ view: bigquery_tables_inventory {
   dimension: dataset_id {
     sql: ${TABLE}.dataset_id ;;
     type: string
+    description: "The name of the dataset that contains the table or view"
+  }
+
+  dimension: deprecated {
+    sql: ${TABLE}.deprecated ;;
+    type: yesno
+    description: "Whether the table has been deprecated and pending deletion"
   }
 
   dimension: owners {
     sql: ${TABLE}.owners ;;
     hidden: yes
+    description: "The owner of the table listed in metadata yaml file"
   }
 
   dimension: project_id {
     sql: ${TABLE}.project_id ;;
     type: string
+    description: "The ID of the project that contains the dataset"
   }
 
   dimension: table_id {
     sql: ${TABLE}.table_id ;;
     type: string
+    description: "The name of the table or view"
   }
 
   dimension: table_type {
     sql: ${TABLE}.table_type ;;
     type: string
+    description: "The table type"
   }
 
   dimension_group: creation {
@@ -43,6 +54,7 @@ view: bigquery_tables_inventory {
     ]
     convert_tz: no
     datatype: date
+    description: "The table's creation date"
   }
 
   dimension_group: last_modified {
@@ -58,6 +70,7 @@ view: bigquery_tables_inventory {
     ]
     convert_tz: no
     datatype: date
+    description: "The table's last modified date"
   }
 
   dimension_group: last_used {
@@ -73,6 +86,7 @@ view: bigquery_tables_inventory {
     ]
     convert_tz: no
     datatype: date
+    description: "The date when the tables was last queried"
   }
 
   dimension_group: submission {
@@ -88,6 +102,7 @@ view: bigquery_tables_inventory {
     ]
     convert_tz: no
     datatype: date
+    description: "The date when data was captured"
   }
 
   sql_table_name: `moz-fx-data-shared-prod.monitoring.bigquery_tables_inventory` ;;

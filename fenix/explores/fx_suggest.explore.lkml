@@ -38,6 +38,21 @@ explore: fx_suggest {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${fx_suggest.metrics__labeled_counter__glean_error_invalid_value}) AS fx_suggest__metrics__labeled_counter__glean_error_invalid_value ON ${fx_suggest.document_id} = ${fx_suggest__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: fx_suggest__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${fx_suggest.events}) AS fx_suggest__events ;;
+  }
+
+  join: fx_suggest__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${fx_suggest__events.extra}) AS fx_suggest__events__extra ;;
+  }
+
+  join: fx_suggest__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${fx_suggest.ping_info__experiments}) AS fx_suggest__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__fx_suggest__metrics__labeled_counter__glean_error_invalid_label {

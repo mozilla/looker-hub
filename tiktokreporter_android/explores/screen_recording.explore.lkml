@@ -37,6 +37,21 @@ explore: screen_recording {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${screen_recording.metrics__labeled_counter__glean_error_invalid_value}) AS screen_recording__metrics__labeled_counter__glean_error_invalid_value ON ${screen_recording.document_id} = ${screen_recording__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: screen_recording__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${screen_recording.events}) AS screen_recording__events ;;
+  }
+
+  join: screen_recording__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${screen_recording__events.extra}) AS screen_recording__events__extra ;;
+  }
+
+  join: screen_recording__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${screen_recording.ping_info__experiments}) AS screen_recording__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__screen_recording__metrics__labeled_counter__glean_error_invalid_label {

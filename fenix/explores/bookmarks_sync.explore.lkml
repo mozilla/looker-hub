@@ -68,6 +68,21 @@ explore: bookmarks_sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${bookmarks_sync.metrics__labeled_counter__glean_error_invalid_value}) AS bookmarks_sync__metrics__labeled_counter__glean_error_invalid_value ON ${bookmarks_sync.document_id} = ${bookmarks_sync__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: bookmarks_sync__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${bookmarks_sync.events}) AS bookmarks_sync__events ;;
+  }
+
+  join: bookmarks_sync__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${bookmarks_sync__events.extra}) AS bookmarks_sync__events__extra ;;
+  }
+
+  join: bookmarks_sync__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${bookmarks_sync.ping_info__experiments}) AS bookmarks_sync__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming {

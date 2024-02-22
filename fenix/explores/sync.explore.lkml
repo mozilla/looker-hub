@@ -38,6 +38,21 @@ explore: sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${sync.metrics__labeled_counter__glean_error_invalid_value}) AS sync__metrics__labeled_counter__glean_error_invalid_value ON ${sync.document_id} = ${sync__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: sync__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${sync.events}) AS sync__events ;;
+  }
+
+  join: sync__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${sync__events.extra}) AS sync__events__extra ;;
+  }
+
+  join: sync__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${sync.ping_info__experiments}) AS sync__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__sync__metrics__labeled_counter__glean_error_invalid_label {

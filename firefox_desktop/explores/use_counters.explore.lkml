@@ -42,6 +42,21 @@ explore: use_counters {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${use_counters.metrics__labeled_counter__use_counter_error_unknown_counter}) AS use_counters__metrics__labeled_counter__use_counter_error_unknown_counter ON ${use_counters.document_id} = ${use_counters__metrics__labeled_counter__use_counter_error_unknown_counter.document_id} ;;
   }
+
+  join: use_counters__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${use_counters.events}) AS use_counters__events ;;
+  }
+
+  join: use_counters__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${use_counters__events.extra}) AS use_counters__events__extra ;;
+  }
+
+  join: use_counters__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${use_counters.ping_info__experiments}) AS use_counters__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__use_counters__metrics__labeled_counter__glean_error_invalid_label {
