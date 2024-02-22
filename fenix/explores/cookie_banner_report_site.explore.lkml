@@ -38,6 +38,21 @@ explore: cookie_banner_report_site {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${cookie_banner_report_site.metrics__labeled_counter__glean_error_invalid_value}) AS cookie_banner_report_site__metrics__labeled_counter__glean_error_invalid_value ON ${cookie_banner_report_site.document_id} = ${cookie_banner_report_site__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: cookie_banner_report_site__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${cookie_banner_report_site.events}) AS cookie_banner_report_site__events ;;
+  }
+
+  join: cookie_banner_report_site__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${cookie_banner_report_site__events.extra}) AS cookie_banner_report_site__events__extra ;;
+  }
+
+  join: cookie_banner_report_site__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${cookie_banner_report_site.ping_info__experiments}) AS cookie_banner_report_site__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__cookie_banner_report_site__metrics__labeled_counter__glean_error_invalid_label {

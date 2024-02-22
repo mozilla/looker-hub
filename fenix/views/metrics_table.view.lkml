@@ -3525,6 +3525,20 @@ view: metrics_table {
     group_item_label: "Extensions Quarantined Domains Remotehash"
   }
 
+  dimension: metrics__string__gecko_build_id {
+    sql: ${TABLE}.metrics.string.gecko_build_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gecko Build Id"
+  }
+
+  dimension: metrics__string__gecko_version {
+    sql: ${TABLE}.metrics.string.gecko_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gecko Version"
+  }
+
   dimension: metrics__string__geckoview_build_id {
     sql: ${TABLE}.metrics.string.geckoview_build_id ;;
     type: string

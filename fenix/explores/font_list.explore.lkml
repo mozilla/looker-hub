@@ -38,6 +38,21 @@ explore: font_list {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${font_list.metrics__labeled_counter__glean_error_invalid_value}) AS font_list__metrics__labeled_counter__glean_error_invalid_value ON ${font_list.document_id} = ${font_list__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: font_list__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${font_list.events}) AS font_list__events ;;
+  }
+
+  join: font_list__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${font_list__events.extra}) AS font_list__events__extra ;;
+  }
+
+  join: font_list__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${font_list.ping_info__experiments}) AS font_list__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__font_list__metrics__labeled_counter__glean_error_invalid_label {

@@ -37,6 +37,21 @@ explore: crash {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${crash.metrics__labeled_counter__glean_error_invalid_value}) AS crash__metrics__labeled_counter__glean_error_invalid_value ON ${crash.document_id} = ${crash__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: crash__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${crash.events}) AS crash__events ;;
+  }
+
+  join: crash__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${crash__events.extra}) AS crash__events__extra ;;
+  }
+
+  join: crash__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${crash.ping_info__experiments}) AS crash__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__crash__metrics__labeled_counter__glean_error_invalid_label {

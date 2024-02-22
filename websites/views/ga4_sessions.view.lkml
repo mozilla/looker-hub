@@ -81,7 +81,13 @@ view: ga4_sessions {
   dimension: gclid {
     sql: ${TABLE}.gclid ;;
     type: string
-    description: "A Google Click ID, which uniquely represent an ad click for Google ads."
+    description: "The last reported Google Click ID, which uniquely represent an ad click for Google ads."
+  }
+
+  dimension: gclid_array {
+    sql: ${TABLE}.gclid_array ;;
+    hidden: yes
+    description: "All reported Google Click IDs, which uniquely represent an ad click for Google ads."
   }
 
   dimension: had_download_event {
