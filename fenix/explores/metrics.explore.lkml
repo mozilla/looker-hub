@@ -454,6 +454,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_https_upgrade_with_https_rr}) AS metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_proxy_info_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_proxy_info_type}) AS metrics__metrics__labeled_counter__networking_proxy_info_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_proxy_info_type.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_residual_cache_folder_removal {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_residual_cache_folder_removal}) AS metrics__metrics__labeled_counter__networking_residual_cache_folder_removal ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_residual_cache_folder_removal.document_id} ;;
@@ -990,6 +995,10 @@ explore: suggest__metrics__metrics__labeled_counter__networking_https_rr_present
 }
 
 explore: suggest__metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__networking_proxy_info_type {
   hidden: yes
 }
 
