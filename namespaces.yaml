@@ -19026,6 +19026,14 @@ websites:
       tables:
       - table: moz-fx-data-marketing-prod.ga_derived.www_site_hits_v2
       type: table_view
+    google_search_impressions_by_page:
+      tables:
+      - table: moz-fx-data-marketing-prod.google_search_console.search_impressions_by_page
+      type: table_view
+    google_search_impressions_by_site:
+      tables:
+      - table: moz-fx-data-marketing-prod.google_search_console.search_impressions_by_site
+      type: table_view
     moz_org_landing_page_metrics:
       tables:
       - table: moz-fx-data-marketing-prod.ga_derived.www_site_landing_page_metrics_v1
