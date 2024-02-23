@@ -429,6 +429,20 @@ view: sync {
     hidden: yes
   }
 
+  dimension: payload__os__distro {
+    sql: ${TABLE}.payload.os.distro ;;
+    type: string
+    group_label: "Payload Os"
+    group_item_label: "Distro"
+  }
+
+  dimension: payload__os__distro_version {
+    sql: ${TABLE}.payload.os.distro_version ;;
+    type: string
+    group_label: "Payload Os"
+    group_item_label: "Distro Version"
+  }
+
   dimension: payload__os__has_prefetch {
     sql: ${TABLE}.payload.os.has_prefetch ;;
     type: yesno

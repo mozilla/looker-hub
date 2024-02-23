@@ -2616,6 +2616,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__networking_proxy_info_type {
+    sql: ${TABLE}.metrics.labeled_counter.networking_proxy_info_type ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_residual_cache_folder_removal {
     sql: ${TABLE}.metrics.labeled_counter.networking_residual_cache_folder_removal ;;
     hidden: yes
