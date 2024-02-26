@@ -8641,13 +8641,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id197
           normalized_channel:
-            default: aurora
+            default: beta
             options:
-            - aurora
             - beta
             - nightly
-            - esr
+            - aurora
             - release
+            - esr
             - default
             - nightly-pine
             - nightly-oak
@@ -8774,10 +8774,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id206
           normalized_channel:
-            default: beta
+            default: nightly
             options:
-            - beta
             - nightly
+            - beta
             - aurora
             - release
             - esr
@@ -10000,14 +10000,14 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id308
           app:
-            default: Linux - vpn_session
+            default: Darwin - vpn_session
             options:
-            - Linux - vpn_session
-            - iOS - vpn_session
             - Darwin - vpn_session
-            - Android - vpn_session
-            - iOS - daemon_session
+            - Linux - vpn_session
             - Android - daemon_session
+            - iOS - daemon_session
+            - iOS - vpn_session
+            - Android - vpn_session
             - Windows - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
@@ -11587,17 +11587,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id422
           channel:
-            default: release
+            default: nightly
             options:
-            - release
             - nightly
             - beta
+            - release
           os:
-            default: Linux
+            default: Windows_NT
             options:
+            - Windows_NT
             - Linux
             - Darwin
-            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id423
