@@ -11,11 +11,6 @@ view: users_services_daily_table {
     map_layer_name: countries
   }
 
-  dimension: language {
-    sql: ${TABLE}.language ;;
-    type: string
-  }
-
   dimension: registered {
     sql: ${TABLE}.registered ;;
     type: yesno
@@ -36,8 +31,8 @@ view: users_services_daily_table {
     hidden: yes
   }
 
-  dimension: user_id {
-    sql: ${TABLE}.user_id ;;
+  dimension: user_id_sha256 {
+    sql: ${TABLE}.user_id_sha256 ;;
     type: string
   }
 

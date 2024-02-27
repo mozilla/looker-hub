@@ -5,6 +5,11 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: feature_usage_events_table {
+  dimension: adjust_network {
+    sql: ${TABLE}.adjust_network ;;
+    type: string
+  }
+
   dimension: app_icon_private_tab_tapped {
     sql: ${TABLE}.app_icon_private_tab_tapped ;;
     type: number
@@ -285,6 +290,17 @@ view: feature_usage_events_table {
     type: number
   }
 
+  dimension: channel {
+    sql: ${TABLE}.channel ;;
+    type: string
+  }
+
+  dimension: country {
+    sql: ${TABLE}.country ;;
+    type: string
+    map_layer_name: countries
+  }
+
   dimension: default_browser_changed {
     sql: ${TABLE}.default_browser_changed ;;
     type: number
@@ -332,11 +348,6 @@ view: feature_usage_events_table {
 
   dimension: etp_tracker_list_users {
     sql: ${TABLE}.etp_tracker_list_users ;;
-    type: number
-  }
-
-  dimension: events_ping_distinct_client_count {
-    sql: ${TABLE}.events_ping_distinct_client_count ;;
     type: number
   }
 
@@ -550,6 +561,11 @@ view: feature_usage_events_table {
     type: number
   }
 
+  dimension: is_default_browser {
+    sql: ${TABLE}.is_default_browser ;;
+    type: yesno
+  }
+
   dimension: management_add_tapped_sum_address {
     sql: ${TABLE}.management_add_tapped_sum_address ;;
     type: number
@@ -607,6 +623,16 @@ view: feature_usage_events_table {
 
   dimension: management_tapped_users_logins {
     sql: ${TABLE}.management_tapped_users_logins ;;
+    type: number
+  }
+
+  dimension: modified_sum_cc {
+    sql: ${TABLE}.modified_sum_cc ;;
+    type: number
+  }
+
+  dimension: modified_users_cc {
+    sql: ${TABLE}.modified_users_cc ;;
     type: number
   }
 
@@ -838,6 +864,21 @@ view: feature_usage_events_table {
   dimension: tab_tray_private_mode_tapped_users {
     sql: ${TABLE}.tab_tray_private_mode_tapped_users ;;
     type: number
+  }
+
+  dimension_group: ping {
+    sql: ${TABLE}.ping_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
   }
 
   dimension_group: submission {
