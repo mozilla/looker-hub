@@ -116,6 +116,11 @@ view: growth_accounting {
     type: string
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+  }
+
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
@@ -347,5 +352,5 @@ view: growth_accounting {
     sql: SAFE_DIVIDE(${new_users} + ${overall_resurrected},${established_users_churned_count} + ${new_users_churned_count}) ;;
   }
 
-  sql_table_name: `mozdata.org_mozilla_ios_tiktok_reporter.baseline_clients_last_seen` ;;
+  sql_table_name: `mozdata.tiktokreporter_ios.baseline_clients_last_seen` ;;
 }

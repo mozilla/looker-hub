@@ -86,6 +86,11 @@ view: baseline_clients_daily_table {
     type: string
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+  }
+
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
@@ -156,5 +161,5 @@ view: baseline_clients_daily_table {
     datatype: date
   }
 
-  sql_table_name: `mozdata.org_mozilla_ios_tiktok_reporter.baseline_clients_daily` ;;
+  sql_table_name: `mozdata.tiktokreporter_ios.baseline_clients_daily` ;;
 }

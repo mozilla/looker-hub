@@ -7,7 +7,7 @@
 view: temp_baseline {
   dimension: metrics__timespan__baseline_validation_baseline_duration__value {
     label: "Baseline Validation Baseline Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.baseline_validation_baseline_duration.value ;;
     type: number
     group_label: "Baseline Validation"
@@ -26,7 +26,7 @@ This should be equivalent to `baseline.duration`
 
   dimension: metrics__timespan__baseline_validation_startup_duration__value {
     label: "Baseline Validation Startup Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.baseline_validation_startup_duration.value ;;
     type: number
     group_label: "Baseline Validation"
@@ -44,7 +44,7 @@ This should be equivalent to `baseline.duration`
 
   dimension: metrics__timespan__baseline_validation_visible_duration__value {
     label: "Baseline Validation Visible Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.baseline_validation_visible_duration.value ;;
     type: number
     group_label: "Baseline Validation"
