@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: deletion_request_table {
+view: events_unnested_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -106,21 +106,29 @@ view: deletion_request_table {
     group_item_label: "Telemetry Sdk Build"
   }
 
-  dimension: client_info__windows_build_number {
-    sql: ${TABLE}.client_info.windows_build_number ;;
-    type: number
-    group_label: "Client Info"
-    group_item_label: "Windows Build Number"
-  }
-
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
   }
 
-  dimension: events {
-    sql: ${TABLE}.events ;;
+  dimension: event_category {
+    sql: ${TABLE}.event_category ;;
+    type: string
+  }
+
+  dimension: event_extra {
+    sql: ${TABLE}.event_extra ;;
     hidden: yes
+  }
+
+  dimension: event_name {
+    sql: ${TABLE}.event_name ;;
+    type: string
+  }
+
+  dimension: event_timestamp {
+    sql: ${TABLE}.event_timestamp ;;
+    type: number
   }
 
   dimension: metadata__geo__city {
@@ -276,37 +284,9 @@ view: deletion_request_table {
     group_item_label: "Version"
   }
 
-  dimension: metrics__labeled_counter__glean_error_invalid_label {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_state {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
-    hidden: yes
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_value {
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
-    hidden: yes
-  }
-
-  dimension: metrics__string__glean_client_annotation_experimentation_id {
-    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
-    type: string
-    group_label: "Metrics String"
-    group_item_label: "Glean Client Annotation Experimentation Id"
-  }
-
   dimension: normalized_app_id {
     sql: ${TABLE}.normalized_app_id ;;
     type: string
-    description: "App ID of the channel data was received from"
   }
 
   dimension: normalized_app_name {
@@ -317,7 +297,6 @@ view: deletion_request_table {
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
-    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
@@ -439,32 +418,10 @@ view: deletion_request_table {
     ]
   }
 
-  sql_table_name: `mozdata.tiktokreporter_ios.deletion_request` ;;
+  sql_table_name: `mozdata.tiktokreporter_ios.events_unnested` ;;
 }
 
-view: deletion_request_table__events {
-  dimension: category {
-    sql: ${TABLE}.category ;;
-    type: string
-  }
-
-  dimension: extra {
-    sql: ${TABLE}.extra ;;
-    hidden: yes
-  }
-
-  dimension: name {
-    sql: ${TABLE}.name ;;
-    type: string
-  }
-
-  dimension: timestamp {
-    sql: ${TABLE}.timestamp ;;
-    type: number
-  }
-}
-
-view: deletion_request_table__events__extra {
+view: events_unnested_table__event_extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -476,7 +433,7 @@ view: deletion_request_table__events__extra {
   }
 }
 
-view: deletion_request_table__ping_info__experiments {
+view: events_unnested_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
