@@ -14,21 +14,33 @@ view: users_services_last_seen_table {
   dimension: days_registered_bits {
     sql: ${TABLE}.days_registered_bits ;;
     type: number
+    description: "No. of days since registration event.
+"
   }
 
   dimension: days_seen_bits {
     sql: ${TABLE}.days_seen_bits ;;
     type: number
+    description: "No. of days since the user had activity event.
+"
   }
 
   dimension: days_seen_in_tier1_country_bits {
     sql: ${TABLE}.days_seen_in_tier1_country_bits ;;
     type: number
+    description: "No. of days since seen_in_tier1_country was last True.
+"
   }
 
   dimension: service {
     sql: ${TABLE}.service ;;
     type: string
+  }
+
+  dimension: user_agent_device_count {
+    sql: ${TABLE}.user_agent_device_count ;;
+    type: number
+    description: "Number of devices associated with the user, per service, per day. Estimated from the number of unique user agent strings."
   }
 
   dimension: user_id_sha256 {
