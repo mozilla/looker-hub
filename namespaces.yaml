@@ -811,6 +811,10 @@ fenix:
       type: table_explore
       views:
         base_view: feature_usage_metrics
+    firefox_android_clients:
+      type: table_explore
+      views:
+        base_view: firefox_android_clients
     first_session:
       type: glean_ping_explore
       views:
@@ -1345,6 +1349,10 @@ fenix:
       tables:
       - channel: release
         table: mozdata.fenix.fenix_use_counters
+      type: table_view
+    firefox_android_clients:
+      tables:
+      - table: mozdata.fenix.firefox_android_clients
       type: table_view
     firefox_android_clients_table:
       tables:
@@ -3138,6 +3146,10 @@ firefox_ios:
       type: table_explore
       views:
         base_view: feature_usage_metrics
+    firefox_ios_clients:
+      type: table_explore
+      views:
+        base_view: firefox_ios_clients
     first_session:
       type: glean_ping_explore
       views:
@@ -3478,6 +3490,10 @@ firefox_ios:
       tables:
       - channel: release
         table: mozdata.firefox_ios.feature_usage_metrics
+      type: table_view
+    firefox_ios_clients:
+      tables:
+      - table: mozdata.firefox_ios.firefox_ios_clients
       type: table_view
     firefox_ios_clients_table:
       tables:
