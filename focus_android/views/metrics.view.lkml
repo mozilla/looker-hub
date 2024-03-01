@@ -16242,6 +16242,18 @@ view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput
   }
 }
 
+view: metrics__metrics__custom_distribution__pdfjs_editing_highlight_thickness__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__custom_distribution__pdfjs_time_to_view__values {
   dimension: key {
     sql: ${TABLE}.key ;;

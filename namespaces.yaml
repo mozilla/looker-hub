@@ -3109,6 +3109,10 @@ firefox_ios:
       views:
         base_view: client_counts
         extended_view: baseline_clients_daily_table
+    clients_activation:
+      type: table_explore
+      views:
+        base_view: clients_activation
     creditcards_sync:
       type: glean_ping_explore
       views:
@@ -3383,6 +3387,10 @@ firefox_ios:
       tables:
       - table: mozdata.firefox_ios.baseline_clients_daily
       type: client_counts_view
+    clients_activation:
+      tables:
+      - table: mozdata.firefox_ios.clients_activation
+      type: table_view
     clients_activation_table:
       tables:
       - channel: release
