@@ -4,9 +4,14 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/tiktokreporter_ios/views/growth_accounting.view.lkml"
+include: "/looker-hub/operational_monitoring/views/legacy_nimbus_test_1_viewpoint.view.lkml"
 
-explore: growth_accounting {
-  sql_always_where: ${growth_accounting.submission_date} >= '2010-01-01' ;;
-  view_name: growth_accounting
+explore: legacy_nimbus_test_1_viewpoint {
+  always_filter: {
+    filters: [
+      branch: "enabled, disabled",
+    ]
+  }
+
+  hidden: yes
 }

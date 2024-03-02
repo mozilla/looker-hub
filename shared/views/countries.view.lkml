@@ -47,6 +47,12 @@ view: countries {
     description: "The UNSD region name."
   }
 
+  dimension: sponsored_tiles_available_on_newtab {
+    sql: ${TABLE}.sponsored_tiles_available_on_newtab ;;
+    type: yesno
+    description: "Whether sponsored tiles are available on the newtab page in this country. Note that Pocket might only be available in certain locales/languages within a country."
+  }
+
   dimension: subregion_name {
     sql: ${TABLE}.subregion_name ;;
     type: string
