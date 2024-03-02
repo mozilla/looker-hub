@@ -703,6 +703,69 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__pdfjs_editing_highlight_color_changed {
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_color_changed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Pdfjs Editing Highlight Color Changed"
+    description: "Counts the number of times the user changes the color of a highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_deleted {
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_deleted ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Pdfjs Editing Highlight Deleted"
+    description: "Counts the number of times the user deletes highlights.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_edited {
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_edited ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Pdfjs Editing Highlight Edited"
+    description: "Counts the number of times the user edits highlights.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_print {
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_print ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Pdfjs Editing Highlight Print"
+    description: "Counts the number of times the user prints a PDF with highlights.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_save {
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_save ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Pdfjs Editing Highlight Save"
+    description: "Counts the number of times the user saves a PDF with highlights.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_thickness_changed {
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_thickness_changed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Pdfjs Editing Highlight Thickness Changed"
+    description: "Counts the number of times the user changes the thickness of a free highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_toggle_visibility {
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_toggle_visibility ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Pdfjs Editing Highlight Toggle Visibility"
+    description: "Counts the number of times the user toggles the visibility of highlights.
+"
+  }
+
   dimension: metrics__counter__pdfjs_used {
     sql: ${TABLE}.metrics.counter.pdfjs_used ;;
     type: number
@@ -1593,6 +1656,26 @@ of the shopping experiment.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__pdfjs_editing_highlight_thickness__count {
+    sql: ${TABLE}.metrics.custom_distribution.pdfjs_editing_highlight_thickness.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Pdfjs Editing Highlight Thickness"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__pdfjs_editing_highlight_thickness__sum {
+    sql: ${TABLE}.metrics.custom_distribution.pdfjs_editing_highlight_thickness.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Pdfjs Editing Highlight Thickness"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__pdfjs_editing_highlight_thickness__values {
+    sql: ${TABLE}.metrics.custom_distribution.pdfjs_editing_highlight_thickness.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__pdfjs_time_to_view__count {
     sql: ${TABLE}.metrics.custom_distribution.pdfjs_time_to_view.count ;;
     type: number
@@ -2332,6 +2415,34 @@ If you're unsure, please ask in
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing ;;
     hidden: yes
     description: "Counts the number of times some PDF editing features are used.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_color {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_color ;;
+    hidden: yes
+    description: "Counts the number of times a given color is used to highlight.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_kind {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_kind ;;
+    hidden: yes
+    description: "Counts the number of times a given kind is used to highlight.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_method {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_method ;;
+    hidden: yes
+    description: "Counts the number of times a given method is used to highlight.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_number_of_colors ;;
+    hidden: yes
+    description: "Counts the number of different colors used to highlight.
 "
   }
 
@@ -10850,6 +10961,18 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_upload_thro
 }
 
 view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__pdfjs_editing_highlight_thickness__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

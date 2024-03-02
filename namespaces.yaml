@@ -811,6 +811,10 @@ fenix:
       type: table_explore
       views:
         base_view: feature_usage_metrics
+    firefox_android_clients:
+      type: table_explore
+      views:
+        base_view: firefox_android_clients
     first_session:
       type: glean_ping_explore
       views:
@@ -1345,6 +1349,10 @@ fenix:
       tables:
       - channel: release
         table: mozdata.fenix.fenix_use_counters
+      type: table_view
+    firefox_android_clients:
+      tables:
+      - table: mozdata.fenix.firefox_android_clients
       type: table_view
     firefox_android_clients_table:
       tables:
@@ -3109,6 +3117,10 @@ firefox_ios:
       views:
         base_view: client_counts
         extended_view: baseline_clients_daily_table
+    clients_activation:
+      type: table_explore
+      views:
+        base_view: clients_activation
     creditcards_sync:
       type: glean_ping_explore
       views:
@@ -3134,6 +3146,10 @@ firefox_ios:
       type: table_explore
       views:
         base_view: feature_usage_metrics
+    firefox_ios_clients:
+      type: table_explore
+      views:
+        base_view: firefox_ios_clients
     first_session:
       type: glean_ping_explore
       views:
@@ -3383,6 +3399,10 @@ firefox_ios:
       tables:
       - table: mozdata.firefox_ios.baseline_clients_daily
       type: client_counts_view
+    clients_activation:
+      tables:
+      - table: mozdata.firefox_ios.clients_activation
+      type: table_view
     clients_activation_table:
       tables:
       - channel: release
@@ -3470,6 +3490,10 @@ firefox_ios:
       tables:
       - channel: release
         table: mozdata.firefox_ios.feature_usage_metrics
+      type: table_view
+    firefox_ios_clients:
+      tables:
+      - table: mozdata.firefox_ios.firefox_ios_clients
       type: table_view
     firefox_ios_clients_table:
       tables:
@@ -8607,10 +8631,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 7
+            default: Windows 10
             options:
-            - Windows 7
             - Windows 10
+            - Windows 7
             - Windows 8.1
             - Windows 8
             - Windows 11
@@ -8646,13 +8670,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id197
           normalized_channel:
-            default: release
+            default: nightly
             options:
+            - nightly
+            - beta
             - release
             - aurora
             - esr
-            - nightly
-            - beta
             - default
             - nightly-pine
             - nightly-oak
@@ -8779,11 +8803,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id206
           normalized_channel:
-            default: nightly
+            default: beta
             options:
+            - beta
             - nightly
             - aurora
-            - beta
             - release
             - esr
             - Other
@@ -9297,10 +9321,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id245
           os:
-            default: Linux
+            default: Mac
             options:
-            - Linux
             - Mac
+            - Linux
             - Windows
             - Other
         explore: garbage_collection
@@ -10005,15 +10029,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id308
           app:
-            default: iOS - vpn_session
+            default: Windows - vpn_session
             options:
+            - Windows - vpn_session
             - iOS - vpn_session
+            - iOS - daemon_session
             - Linux - vpn_session
             - Android - daemon_session
-            - Darwin - vpn_session
-            - Windows - vpn_session
-            - iOS - daemon_session
             - Android - vpn_session
+            - Darwin - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id309
@@ -11592,17 +11616,17 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id422
           channel:
-            default: beta
+            default: nightly
             options:
-            - beta
             - nightly
+            - beta
             - release
           os:
-            default: Windows_NT
+            default: Darwin
             options:
-            - Windows_NT
-            - Linux
             - Darwin
+            - Linux
+            - Windows_NT
         explore: print_background_task_times
         group_by_dimension: null
         summaries: &id423
@@ -18774,205 +18798,14 @@ tiktokreporter_android:
         table: mozdata.org_mozilla_tiktokreporter.tiktok_report
       type: table_view
 tiktokreporter_ios:
-  explores:
-    baseline:
-      type: glean_ping_explore
-      views:
-        base_view: baseline
-    baseline_clients_daily:
-      type: glean_ping_explore
-      views:
-        base_view: baseline_clients_daily
-    baseline_clients_first_seen:
-      type: glean_ping_explore
-      views:
-        base_view: baseline_clients_first_seen
-    baseline_clients_last_seen:
-      type: glean_ping_explore
-      views:
-        base_view: baseline_clients_last_seen
-    client_counts:
-      type: client_counts_explore
-      views:
-        base_view: client_counts
-        extended_view: baseline_clients_daily_table
-    deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: deletion_request
-    download_data:
-      type: glean_ping_explore
-      views:
-        base_view: download_data
-    email:
-      type: glean_ping_explore
-      views:
-        base_view: email
-    events:
-      type: events_explore
-      views:
-        base_view: events
-        extended_view: events_unnested_table
-    events_unnested:
-      type: glean_ping_explore
-      views:
-        base_view: events_unnested
-    growth_accounting:
-      type: growth_accounting_explore
-      views:
-        base_view: growth_accounting
-    metrics:
-      type: glean_ping_explore
-      views:
-        base_view: metrics
-    screen_recording:
-      type: glean_ping_explore
-      views:
-        base_view: screen_recording
-    tiktok_report:
-      type: glean_ping_explore
-      views:
-        base_view: tiktok_report
+  explores: {}
   glean_app: true
   owners:
   - jessed@mozillafoundation.org
   - tlong@mozilla.com
   pretty_name: TikTok Reporter (iOS)
   spoke: looker-spoke-default
-  views:
-    baseline:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.baseline
-      type: glean_ping_view
-    baseline_clients_daily:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.baseline_clients_daily
-      type: glean_ping_view
-    baseline_clients_daily_table:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.baseline_clients_daily
-      type: table_view
-    baseline_clients_first_seen:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.baseline_clients_first_seen
-      type: glean_ping_view
-    baseline_clients_first_seen_table:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.baseline_clients_first_seen
-      type: table_view
-    baseline_clients_last_seen:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.baseline_clients_last_seen
-      type: glean_ping_view
-    baseline_clients_last_seen_table:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.baseline_clients_last_seen
-      type: table_view
-    baseline_table:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.baseline
-      type: table_view
-    client_counts:
-      tables:
-      - table: mozdata.tiktokreporter_ios.baseline_clients_daily
-      type: client_counts_view
-    deletion_request:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.deletion_request
-      type: glean_ping_view
-    deletion_request_table:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.deletion_request
-      type: table_view
-    download_data:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.download_data
-      type: glean_ping_view
-    download_data_table:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.download_data
-      type: table_view
-    email:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.email
-      type: glean_ping_view
-    email_table:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.email
-      type: table_view
-    events:
-      tables:
-      - base_table: mozdata.tiktokreporter_ios.events_unnested
-        events_table_view: events_unnested_table
-      type: events_view
-    events_table:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.events
-      type: table_view
-    events_unnested:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.events_unnested
-      type: glean_ping_view
-    events_unnested_table:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.events_unnested
-      type: table_view
-    growth_accounting:
-      tables:
-      - table: mozdata.tiktokreporter_ios.baseline_clients_last_seen
-      type: growth_accounting_view
-    metrics:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.metrics
-      type: glean_ping_view
-    metrics_clients_daily_table:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.metrics_clients_daily
-      type: table_view
-    metrics_table:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.metrics
-      type: table_view
-    screen_recording:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.screen_recording
-      type: glean_ping_view
-    screen_recording_table:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.screen_recording
-      type: table_view
-    tiktok_report:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.tiktok_report
-      type: glean_ping_view
-    tiktok_report_table:
-      tables:
-      - channel: release
-        table: mozdata.tiktokreporter_ios.tiktok_report
-      type: table_view
+  views: {}
 treeherder:
   explores:
     classified:

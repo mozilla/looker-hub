@@ -428,6 +428,26 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_editing}) AS metrics__metrics__labeled_counter__pdfjs_editing ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_editing.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__pdfjs_editing_highlight_color {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_editing_highlight_color}) AS metrics__metrics__labeled_counter__pdfjs_editing_highlight_color ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_editing_highlight_color.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_editing_highlight_kind}) AS metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pdfjs_editing_highlight_method {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_editing_highlight_method}) AS metrics__metrics__labeled_counter__pdfjs_editing_highlight_method ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_editing_highlight_method.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors}) AS metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__pdfjs_geckoview {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_geckoview}) AS metrics__metrics__labeled_counter__pdfjs_geckoview ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_geckoview.document_id} ;;
@@ -889,6 +909,22 @@ explore: suggest__metrics__metrics__labeled_counter__pdfjs_buttons {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_color {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_method {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors {
   hidden: yes
 }
 
