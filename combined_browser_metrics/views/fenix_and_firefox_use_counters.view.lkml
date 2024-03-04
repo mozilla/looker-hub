@@ -46,5 +46,5 @@ view: fenix_and_firefox_use_counters {
     datatype: date
   }
 
-  sql_table_name: `moz-fx-data-shared-prod.telemetry.fenix_and_firefox_use_counters` ;;
+  sql_table_name: `mozilla-public-data.telemetry_derived.fenix_and_firefox_use_counters` ;;
 }

@@ -183,11 +183,11 @@ special value of 'page+referral+-+not+part+of+a+campaign' is also allowed.
     }
 
     description: "The content on which the user acted.  For example, if the user clicked on the
-\"Get started here\" link in \"Looking for Firefox Sync? Get started here\", then
-the value for this metric would be 'fx-sync-get-started'.  The value has a max
-length of 128 characters with the alphanumeric characters, _ (underscore),
-forward slash (/), . (period), % (percentage sign), and - (hyphen) in the
-allowed set of characters.
+(previously available) \"Get started here\" link in \"Looking for Firefox Sync? Get
+started here\", then the value for this metric would be 'fx-sync-get-started'.
+The value has a max length of 128 characters with the alphanumeric characters,
+_ (underscore), forward slash (/), . (period), % (percentage sign), and - (hyphen)
+in the allowed set of characters.
 "
   }
 
@@ -255,6 +255,25 @@ could be 'aboutwelcome-default-screen'.  The value has a max length of 128
 characters with the alphanumeric characters, _ (underscore), forward slash (/),
 . (period), % (percentage sign), and - (hyphen) in the allowed set of
 characters.
+"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_frontend/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -1026,5 +1045,67 @@ order by n desc ;;
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
+  }
+}
+
+view: accounts_events__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: accounts_events__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: accounts_events__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }

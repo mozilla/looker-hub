@@ -890,25 +890,6 @@ with a home page origin.
 "
   }
 
-  dimension: metrics__counter__firefox_home_page_history_highlights_item_opened {
-    label: "Firefox Home Page History Highlights Item Opened"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_item_opened ;;
-    type: number
-    group_label: "Firefox Home Page"
-    group_item_label: "History Highlights Item Opened"
-
-    link: {
-      label: "Glean Dictionary reference for Firefox Home Page History Highlights Item Opened"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_history_highlights_item_opened"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times a user taps to open an
-existing tab from the History Highlights section
-"
-  }
-
   dimension: metrics__counter__firefox_home_page_history_highlights_show_all {
     label: "Firefox Home Page History Highlights Show All"
     hidden: no
@@ -930,7 +911,7 @@ Show All button in the History section
 
   dimension: metrics__counter__firefox_home_page_history_highlights_view {
     label: "Firefox Home Page History Highlights View"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_view ;;
     type: number
     group_label: "Firefox Home Page"
@@ -1548,24 +1529,6 @@ section from inactive tabs tray.
 
     description: "Counts the number of times the Go To Settings button on
 default browser card is clicked.
-"
-  }
-
-  dimension: metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
-    label: "Inactive Tabs Tray Toggle Inactive Tab Tray"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.inactive_tabs_tray_toggle_inactive_tab_tray ;;
-    group_label: "Inactive Tabs Tray"
-    group_item_label: "Toggle Inactive Tab Tray"
-
-    link: {
-      label: "Glean Dictionary reference for Inactive Tabs Tray Toggle Inactive Tab Tray"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_toggle_inactive_tab_tray"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times user toggle (expand or collapse)
-inactive tab section.
 "
   }
 
@@ -3123,6 +3086,24 @@ average open tabs per foreground \"session\".
 "
   }
 
+  dimension: metrics__counter__tabs_grouped_tab_closed {
+    label: "Tabs Grouped Tab Closed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tabs_grouped_tab_closed ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Grouped Tab Closed"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Grouped Tab Closed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_grouped_tab_closed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded when a user closes the tab in a group
+"
+  }
+
   dimension: metrics__counter__tabs_grouped_tab_search {
     label: "Tabs Grouped Tab Search"
     hidden: no
@@ -3351,6 +3332,24 @@ button in the URL bar.
 "
   }
 
+  dimension: metrics__timing_distribution__tabs_tab_switch__sum {
+    label: "Tabs Tab Switch Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.sum ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Tab Switch Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Tab Switch Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_tab_switch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how long it takes to switch to another tab
+"
+  }
+
   dimension: metrics__boolean__theme_automatic_mode {
     label: "Theme Automatic Mode"
     hidden: yes
@@ -3537,6 +3536,24 @@ tracking-protection that is enabled. One of:
 
     description: "Recorded when the user enters the background. This reports
 the currently selected wallpaper if it's not the default.
+"
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__sum {
+    label: "Webview Page Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.sum ;;
+    type: number
+    group_label: "Webview"
+    group_item_label: "Page Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webview Page Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/webview_page_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how long each page takes to load
 "
   }
 
@@ -5544,31 +5561,6 @@ startup, as part of the initialization sequence.
     }
   }
 
-  measure: firefox_home_page_history_highlights_item_opened {
-    type: sum
-    sql: ${metrics__counter__firefox_home_page_history_highlights_item_opened} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Firefox Home Page History Highlights Item Opened"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_history_highlights_item_opened"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: firefox_home_page_history_highlights_item_opened_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__firefox_home_page_history_highlights_item_opened: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Firefox Home Page History Highlights Item Opened"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_history_highlights_item_opened"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
   measure: firefox_home_page_history_highlights_show_all {
     type: sum
     sql: ${metrics__counter__firefox_home_page_history_highlights_show_all} ;;
@@ -7140,6 +7132,31 @@ startup, as part of the initialization sequence.
     link: {
       label: "Glean Dictionary reference for Tabs Cumulative Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_cumulative_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_grouped_tab_closed {
+    type: sum
+    sql: ${metrics__counter__tabs_grouped_tab_closed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Grouped Tab Closed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_grouped_tab_closed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_grouped_tab_closed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tabs_grouped_tab_closed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Grouped Tab Closed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_grouped_tab_closed"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -8987,49 +9004,6 @@ view: metrics__metrics__labeled_counter__history_selected_item {
   }
 }
 
-view: metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
-  label: "Inactive Tabs Tray - Toggle Inactive Tab Tray"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
 view: metrics__metrics__labeled_counter__library_panel_pressed {
   label: "Library - Panel Pressed"
 
@@ -10217,25 +10191,6 @@ order by n desc ;;
   }
 }
 
-view: suggest__metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.inactive_tabs_tray_toggle_inactive_tab_tray) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
 view: suggest__metrics__metrics__labeled_counter__library_panel_pressed {
   derived_table: {
     sql: select
@@ -10556,5 +10511,259 @@ order by n desc ;;
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
+  }
+}
+
+view: metrics__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: metrics__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics__metrics__memory_distribution__glean_database_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__awesomebar_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_upload_send_failure__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_upload_send_success__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_validation_shutdown_wait__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__logins_store_read_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__logins_store_unlock_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__logins_store_write_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__nimbus_health_fetch_experiments_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_history_migration_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__tabs_tab_switch__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__webview_page_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }

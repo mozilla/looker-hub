@@ -5,6 +5,11 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: feature_usage_metrics {
+  dimension: adjust_network {
+    sql: ${TABLE}.adjust_network ;;
+    type: string
+  }
+
   dimension: app_menu_customize_homepage {
     sql: ${TABLE}.app_menu_customize_homepage ;;
     type: number
@@ -75,6 +80,17 @@ view: feature_usage_metrics {
     type: number
   }
 
+  dimension: channel {
+    sql: ${TABLE}.channel ;;
+    type: string
+  }
+
+  dimension: country {
+    sql: ${TABLE}.country ;;
+    type: string
+    map_layer_name: countries
+  }
+
   dimension: credit_card_autofill_enabled {
     sql: ${TABLE}.credit_card_autofill_enabled ;;
     type: number
@@ -82,6 +98,46 @@ view: feature_usage_metrics {
 
   dimension: credit_card_autofill_enabled_users {
     sql: ${TABLE}.credit_card_autofill_enabled_users ;;
+    type: number
+  }
+
+  dimension: credit_card_deleted {
+    sql: ${TABLE}.credit_card_deleted ;;
+    type: number
+  }
+
+  dimension: credit_card_deleted_users {
+    sql: ${TABLE}.credit_card_deleted_users ;;
+    type: number
+  }
+
+  dimension: credit_card_modified {
+    sql: ${TABLE}.credit_card_modified ;;
+    type: number
+  }
+
+  dimension: credit_card_modified_users {
+    sql: ${TABLE}.credit_card_modified_users ;;
+    type: number
+  }
+
+  dimension: credit_card_saved {
+    sql: ${TABLE}.credit_card_saved ;;
+    type: number
+  }
+
+  dimension: credit_card_saved_all {
+    sql: ${TABLE}.credit_card_saved_all ;;
+    type: number
+  }
+
+  dimension: credit_card_saved_all_users {
+    sql: ${TABLE}.credit_card_saved_all_users ;;
+    type: number
+  }
+
+  dimension: credit_card_saved_users {
+    sql: ${TABLE}.credit_card_saved_users ;;
     type: number
   }
 
@@ -113,6 +169,11 @@ view: feature_usage_metrics {
   dimension: has_mobile_bookmarks_users {
     sql: ${TABLE}.has_mobile_bookmarks_users ;;
     type: number
+  }
+
+  dimension: is_default_browser {
+    sql: ${TABLE}.is_default_browser ;;
+    type: yesno
   }
 
   dimension: logins_deleted {
@@ -152,11 +213,6 @@ view: feature_usage_metrics {
 
   dimension: logins_saved_users {
     sql: ${TABLE}.logins_saved_users ;;
-    type: number
-  }
-
-  dimension: metrics_ping_distinct_client_count {
-    sql: ${TABLE}.metrics_ping_distinct_client_count ;;
     type: number
   }
 
@@ -330,6 +386,21 @@ view: feature_usage_metrics {
     type: number
   }
 
+  dimension_group: ping {
+    sql: ${TABLE}.ping_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+  }
+
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
@@ -343,6 +414,7 @@ view: feature_usage_metrics {
     ]
     convert_tz: no
     datatype: date
+    description: "Airflow's internal execution_date."
   }
 
   sql_table_name: `moz-fx-data-shared-prod.firefox_ios.feature_usage_metrics` ;;

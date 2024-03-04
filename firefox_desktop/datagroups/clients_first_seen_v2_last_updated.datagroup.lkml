@@ -7,9 +7,10 @@
 
 datagroup: clients_first_seen_v2_last_updated {
   label: "Clients First Seen Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.telemetry_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'clients_first_seen_v2' ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'telemetry_derived'
+    AND table_name = 'clients_first_seen_v2' ;;
   description: "Updates when moz-fx-data-shared-prod:telemetry_derived.clients_first_seen_v2 is modified."
   max_cache_age: "24 hours"
 }

@@ -43,6 +43,21 @@ explore: temp_sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${temp_sync.metrics__labeled_counter__sync_failure_reason}) AS temp_sync__metrics__labeled_counter__sync_failure_reason ON ${temp_sync.document_id} = ${temp_sync__metrics__labeled_counter__sync_failure_reason.document_id} ;;
   }
+
+  join: temp_sync__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${temp_sync.events}) AS temp_sync__events ;;
+  }
+
+  join: temp_sync__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${temp_sync__events.extra}) AS temp_sync__events__extra ;;
+  }
+
+  join: temp_sync__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${temp_sync.ping_info__experiments}) AS temp_sync__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__temp_sync__metrics__labeled_counter__glean_error_invalid_label {

@@ -37,6 +37,21 @@ explore: default_agent {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${default_agent.metrics__labeled_counter__glean_error_invalid_value}) AS default_agent__metrics__labeled_counter__glean_error_invalid_value ON ${default_agent.document_id} = ${default_agent__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: default_agent__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${default_agent.events}) AS default_agent__events ;;
+  }
+
+  join: default_agent__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${default_agent__events.extra}) AS default_agent__events__extra ;;
+  }
+
+  join: default_agent__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${default_agent.ping_info__experiments}) AS default_agent__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__default_agent__metrics__labeled_counter__glean_error_invalid_label {

@@ -7,9 +7,10 @@
 
 datagroup: active_users_aggregates_v3_last_updated {
   label: "Firefox iOS Active Users Aggregates Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.firefox_ios_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'active_users_aggregates_v3' ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'firefox_ios_derived'
+    AND table_name = 'active_users_aggregates_v3' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_ios_derived.active_users_aggregates_v3 is modified."
   max_cache_age: "24 hours"
 }

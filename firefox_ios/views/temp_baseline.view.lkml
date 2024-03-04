@@ -7,7 +7,7 @@
 view: temp_baseline {
   dimension: metrics__timespan__baseline_validation_baseline_duration__value {
     label: "Baseline Validation Baseline Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.baseline_validation_baseline_duration.value ;;
     type: number
     group_label: "Baseline Validation"
@@ -26,7 +26,7 @@ This should be equivalent to `baseline.duration`
 
   dimension: metrics__timespan__baseline_validation_startup_duration__value {
     label: "Baseline Validation Startup Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.baseline_validation_startup_duration.value ;;
     type: number
     group_label: "Baseline Validation"
@@ -44,7 +44,7 @@ This should be equivalent to `baseline.duration`
 
   dimension: metrics__timespan__baseline_validation_visible_duration__value {
     label: "Baseline Validation Visible Duration Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.baseline_validation_visible_duration.value ;;
     type: number
     group_label: "Baseline Validation"
@@ -825,5 +825,67 @@ view: temp_baseline__metrics__labeled_counter__glean_error_invalid_value {
     type: count_distinct
     sql: case when ${value} > 0 then ${temp_baseline.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: temp_baseline__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: temp_baseline__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: temp_baseline__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }

@@ -34,6 +34,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_alpha}) AS metrics__metrics__labeled_counter__avif_alpha ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_alpha.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__avif_aom_decode_error {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_aom_decode_error}) AS metrics__metrics__labeled_counter__avif_aom_decode_error ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_aom_decode_error.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__avif_bit_depth {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_bit_depth}) AS metrics__metrics__labeled_counter__avif_bit_depth ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_bit_depth.document_id} ;;
@@ -239,6 +244,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gvst}) AS metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gvst ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gvst.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__formautofill_form_submission_heuristic {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__formautofill_form_submission_heuristic}) AS metrics__metrics__labeled_counter__formautofill_form_submission_heuristic ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__formautofill_form_submission_heuristic.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__fxa_client_error_count {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__fxa_client_error_count}) AS metrics__metrics__labeled_counter__fxa_client_error_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__fxa_client_error_count.document_id} ;;
@@ -419,6 +429,36 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_cookie_timestamp_fixed_count}) AS metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__networking_dns_native_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_dns_native_count}) AS metrics__metrics__labeled_counter__networking_dns_native_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_dns_native_count.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_channel_onstart_success_https_rr}) AS metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_http_response_version {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_http_response_version}) AS metrics__metrics__labeled_counter__networking_http_response_version ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_http_response_version.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_https_rr_presented {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_https_rr_presented}) AS metrics__metrics__labeled_counter__networking_https_rr_presented ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_https_rr_presented.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_https_upgrade_with_https_rr}) AS metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__networking_proxy_info_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_proxy_info_type}) AS metrics__metrics__labeled_counter__networking_proxy_info_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_proxy_info_type.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__networking_residual_cache_folder_removal {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__networking_residual_cache_folder_removal}) AS metrics__metrics__labeled_counter__networking_residual_cache_folder_removal ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__networking_residual_cache_folder_removal.document_id} ;;
@@ -447,6 +487,26 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__pdfjs_editing {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_editing}) AS metrics__metrics__labeled_counter__pdfjs_editing ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_editing.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pdfjs_editing_highlight_color {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_editing_highlight_color}) AS metrics__metrics__labeled_counter__pdfjs_editing_highlight_color ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_editing_highlight_color.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_editing_highlight_kind}) AS metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pdfjs_editing_highlight_method {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_editing_highlight_method}) AS metrics__metrics__labeled_counter__pdfjs_editing_highlight_method ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_editing_highlight_method.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors}) AS metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__pdfjs_geckoview {
@@ -584,9 +644,29 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tabs_tray_access_point}) AS metrics__metrics__labeled_counter__tabs_tray_access_point ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tabs_tray_access_point.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tls_xyber_intolerance_reason}) AS metrics__metrics__labeled_counter__tls_xyber_intolerance_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tls_xyber_intolerance_reason.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__wallpapers_new_wallpaper_applied {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__wallpapers_new_wallpaper_applied}) AS metrics__metrics__labeled_counter__wallpapers_new_wallpaper_applied ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__wallpapers_new_wallpaper_applied.document_id} ;;
+  }
+
+  join: metrics__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.events}) AS metrics__events ;;
+  }
+
+  join: metrics__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.extra}) AS metrics__events__extra ;;
+  }
+
+  join: metrics__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.ping_info__experiments}) AS metrics__ping_info__experiments ;;
   }
 }
 
@@ -599,6 +679,10 @@ explore: suggest__metrics__metrics__labeled_counter__avif_a1op {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__avif_alpha {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__avif_aom_decode_error {
   hidden: yes
 }
 
@@ -766,6 +850,10 @@ explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_s
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__formautofill_form_submission_heuristic {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__fxa_client_error_count {
   hidden: yes
 }
@@ -910,6 +998,30 @@ explore: suggest__metrics__metrics__labeled_counter__networking_cookie_timestamp
   hidden: yes
 }
 
+explore: suggest__metrics__metrics__labeled_counter__networking_dns_native_count {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__networking_http_response_version {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__networking_https_rr_presented {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__networking_proxy_info_type {
+  hidden: yes
+}
+
 explore: suggest__metrics__metrics__labeled_counter__networking_residual_cache_folder_removal {
   hidden: yes
 }
@@ -931,6 +1043,22 @@ explore: suggest__metrics__metrics__labeled_counter__pdfjs_buttons {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_color {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_method {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors {
   hidden: yes
 }
 
@@ -1039,6 +1167,10 @@ explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_
 }
 
 explore: suggest__metrics__metrics__labeled_counter__tabs_tray_access_point {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
   hidden: yes
 }
 

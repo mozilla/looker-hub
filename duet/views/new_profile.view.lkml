@@ -1163,6 +1163,22 @@ view: new_profile {
     description: "The machines amount of RAM."
   }
 
+  dimension: environment__system__os__distro {
+    sql: ${TABLE}.environment.system.os.distro ;;
+    type: string
+    group_label: "Environment System Os"
+    group_item_label: "Distro"
+    description: "The name of the Linux distribution. This is Linux only. `null` on failure."
+  }
+
+  dimension: environment__system__os__distro_version {
+    sql: ${TABLE}.environment.system.os.distro_version ;;
+    type: string
+    group_label: "Environment System Os"
+    group_item_label: "Distro Version"
+    description: "The version of the Linux distribution. This is Linux only. `null` on failure."
+  }
+
   dimension: environment__system__os__has_prefetch {
     sql: ${TABLE}.environment.system.os.has_prefetch ;;
     type: yesno
@@ -1587,6 +1603,24 @@ view: new_profile {
 "
   }
 
+  dimension: payload__processes__parent__scalars__startup_profile_count {
+    sql: ${TABLE}.payload.processes.parent.scalars.startup_profile_count ;;
+    type: number
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Startup Profile Count"
+    description: "This records the number of known profiles after startup completes. This includes any profiles that were created during startup.
+"
+  }
+
+  dimension: payload__processes__parent__scalars__startup_profile_database_version {
+    sql: ${TABLE}.payload.processes.parent.scalars.startup_profile_database_version ;;
+    type: string
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Startup Profile Database Version"
+    description: "The version of the profiles.ini database loaded during startup. A value of \"0\" is used to indicate that no file was present during startup.
+"
+  }
+
   dimension: payload__processes__parent__scalars__startup_profile_selection_reason {
     sql: ${TABLE}.payload.processes.parent.scalars.startup_profile_selection_reason ;;
     type: string
@@ -1765,6 +1799,22 @@ view: new_profile__environment__addons__active_addons {
     group_label: "Value"
     group_item_label: "Name"
     description: "The add-on name, limited to 100 characters. This field is only available after the 'sessionstore-windows-restored' topic is notified."
+  }
+
+  dimension: value__quarantine_ignored_by_app {
+    sql: ${TABLE}.value.quarantine_ignored_by_app ;;
+    type: yesno
+    group_label: "Value"
+    group_item_label: "Quarantine Ignored By App"
+    description: "Whether or not the add-on has quarantine ignored by the app."
+  }
+
+  dimension: value__quarantine_ignored_by_user {
+    sql: ${TABLE}.value.quarantine_ignored_by_user ;;
+    type: yesno
+    group_label: "Value"
+    group_item_label: "Quarantine Ignored By User"
+    description: "Whether or not the add-on has quarantine ignored by the user."
   }
 
   dimension: value__scope {

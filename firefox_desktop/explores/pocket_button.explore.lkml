@@ -37,6 +37,21 @@ explore: pocket_button {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${pocket_button.metrics__labeled_counter__glean_error_invalid_value}) AS pocket_button__metrics__labeled_counter__glean_error_invalid_value ON ${pocket_button.document_id} = ${pocket_button__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: pocket_button__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${pocket_button.events}) AS pocket_button__events ;;
+  }
+
+  join: pocket_button__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${pocket_button__events.extra}) AS pocket_button__events__extra ;;
+  }
+
+  join: pocket_button__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${pocket_button.ping_info__experiments}) AS pocket_button__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__pocket_button__metrics__labeled_counter__glean_error_invalid_label {

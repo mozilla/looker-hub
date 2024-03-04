@@ -47,6 +47,21 @@ explore: metrics {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__glean_validation_pings_submitted}) AS metrics__metrics__labeled_counter__glean_validation_pings_submitted ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__glean_validation_pings_submitted.document_id} ;;
   }
+
+  join: metrics__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.events}) AS metrics__events ;;
+  }
+
+  join: metrics__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.extra}) AS metrics__events__extra ;;
+  }
+
+  join: metrics__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.ping_info__experiments}) AS metrics__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {

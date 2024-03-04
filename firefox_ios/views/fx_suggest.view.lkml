@@ -78,6 +78,24 @@ Not set for non-sponsored suggestions.
 "
   }
 
+  dimension: metrics__boolean__fx_suggest_is_clicked {
+    label: "Fx Suggest Is Clicked"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.fx_suggest_is_clicked ;;
+    type: yesno
+    group_label: "Fx Suggest"
+    group_item_label: "Is Clicked"
+
+    link: {
+      label: "Glean Dictionary reference for Fx Suggest Is Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/fx_suggest_is_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If `ping_type` is \"fxsuggest-impression\", indicates whether this impression is for a clicked suggestion. If `ping_type` is \"fxsuggest-click\", always `true`.
+"
+  }
+
   dimension: metrics__string__fx_suggest_ping_type {
     label: "Fx Suggest Ping Type"
     hidden: no
@@ -897,5 +915,67 @@ order by n desc ;;
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
+  }
+}
+
+view: fx_suggest__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: fx_suggest__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: fx_suggest__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }

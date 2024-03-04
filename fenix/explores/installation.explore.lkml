@@ -38,6 +38,21 @@ explore: installation {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${installation.metrics__labeled_counter__glean_error_invalid_value}) AS installation__metrics__labeled_counter__glean_error_invalid_value ON ${installation.document_id} = ${installation__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: installation__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${installation.events}) AS installation__events ;;
+  }
+
+  join: installation__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${installation__events.extra}) AS installation__events__extra ;;
+  }
+
+  join: installation__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${installation.ping_info__experiments}) AS installation__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__installation__metrics__labeled_counter__glean_error_invalid_label {

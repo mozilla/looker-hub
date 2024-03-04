@@ -63,6 +63,21 @@ explore: baseline {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${baseline.metrics__labeled_counter__metrics_search_count}) AS baseline__metrics__labeled_counter__metrics_search_count ON ${baseline.document_id} = ${baseline__metrics__labeled_counter__metrics_search_count.document_id} ;;
   }
+
+  join: baseline__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${baseline.events}) AS baseline__events ;;
+  }
+
+  join: baseline__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${baseline__events.extra}) AS baseline__events__extra ;;
+  }
+
+  join: baseline__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${baseline.ping_info__experiments}) AS baseline__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__baseline__metrics__labeled_counter__browser_search_ad_clicks {

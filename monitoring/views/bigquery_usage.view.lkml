@@ -40,6 +40,11 @@ view: bigquery_usage {
     type: string
   }
 
+  dimension: is_scheduled {
+    sql: ${TABLE}.is_scheduled ;;
+    type: yesno
+  }
+
   dimension: job_id {
     sql: ${TABLE}.job_id ;;
     type: string
@@ -52,6 +57,11 @@ view: bigquery_usage {
 
   dimension: query_id {
     sql: ${TABLE}.query_id ;;
+    type: string
+  }
+
+  dimension: query_url {
+    sql: ${TABLE}.query_url ;;
     type: string
   }
 
@@ -117,6 +127,11 @@ view: bigquery_usage {
 
   dimension: user_email {
     sql: ${TABLE}.user_email ;;
+    type: string
+  }
+
+  dimension: user_type {
+    sql: ${TABLE}.user_type ;;
     type: string
   }
 

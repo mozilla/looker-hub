@@ -229,6 +229,96 @@ view: attributable_clients_v2_table {
     label: "Firefox Android Clients Metadata: Min Metrics Ping Submission Date"
   }
 
+  dimension_group: firefox_android_clients_metadata__play_store_attribution_campaign__ping_datetime {
+    sql: ${TABLE}.firefox_android_clients_metadata.play_store_attribution_campaign__ping_datetime ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Firefox Android Clients Metadata: Play Store Attribution Campaign  Ping Datetime"
+  }
+
+  dimension_group: firefox_android_clients_metadata__play_store_attribution_content__ping_datetime {
+    sql: ${TABLE}.firefox_android_clients_metadata.play_store_attribution_content__ping_datetime ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Firefox Android Clients Metadata: Play Store Attribution Content  Ping Datetime"
+  }
+
+  dimension_group: firefox_android_clients_metadata__play_store_attribution_install_referrer_response__ping_datetime {
+    sql: ${TABLE}.firefox_android_clients_metadata.play_store_attribution_install_referrer_response__ping_datetime ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Firefox Android Clients Metadata: Play Store Attribution Install Referrer Response  Ping Datetime"
+  }
+
+  dimension_group: firefox_android_clients_metadata__play_store_attribution_medium__ping_datetime {
+    sql: ${TABLE}.firefox_android_clients_metadata.play_store_attribution_medium__ping_datetime ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Firefox Android Clients Metadata: Play Store Attribution Medium  Ping Datetime"
+  }
+
+  dimension_group: firefox_android_clients_metadata__play_store_attribution_source__ping_datetime {
+    sql: ${TABLE}.firefox_android_clients_metadata.play_store_attribution_source__ping_datetime ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Firefox Android Clients Metadata: Play Store Attribution Source  Ping Datetime"
+  }
+
+  dimension_group: firefox_android_clients_metadata__play_store_attribution_term__ping_datetime {
+    sql: ${TABLE}.firefox_android_clients_metadata.play_store_attribution_term__ping_datetime ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Firefox Android Clients Metadata: Play Store Attribution Term  Ping Datetime"
+  }
+
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time

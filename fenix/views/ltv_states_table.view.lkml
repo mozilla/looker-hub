@@ -72,6 +72,13 @@ view: ltv_states_table {
     group_item_label: "Android States V1"
   }
 
+  dimension: markov_states__android_states_v2 {
+    sql: ${TABLE}.markov_states.android_states_v2 ;;
+    type: string
+    group_label: "Markov States"
+    group_item_label: "Android States V2"
+  }
+
   dimension: markov_states__android_states_with_paid_v1 {
     sql: ${TABLE}.markov_states.android_states_with_paid_v1 ;;
     type: string

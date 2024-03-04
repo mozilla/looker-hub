@@ -282,6 +282,7 @@ that programmatically redirect to a new location.
     }
 
     description: "Sets the legacy client ID as part of the deletion-request ping.
+**No longer reported set since Focus 124, where legacy telemetry was removed**.
 "
   }
 
@@ -743,6 +744,329 @@ at least once.
 
     description: "A counter that indicates how many times a user has opened
 the tracking protection settings panel from the toolbar.
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_a1lx {
+    label: "Avif A1Lx"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_a1lx ;;
+    group_label: "Avif"
+    group_item_label: "A1Lx"
+
+    link: {
+      label: "Glean Dictionary reference for Avif A1Lx"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_a1lx"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AV1LayeredImageIndexingProperty (a1lx). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_a1op {
+    label: "Avif A1Op"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_a1op ;;
+    group_label: "Avif"
+    group_item_label: "A1Op"
+
+    link: {
+      label: "Glean Dictionary reference for Avif A1Op"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_a1op"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF OperatingPointSelectorProperty (a1op). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_alpha {
+    label: "Avif Alpha"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_alpha ;;
+    group_label: "Avif"
+    group_item_label: "Alpha"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Alpha"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_alpha"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF alpha plane. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_aom_decode_error {
+    label: "Avif Aom Decode Error"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_aom_decode_error ;;
+    group_label: "Avif"
+    group_item_label: "Aom Decode Error"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Aom Decode Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_aom_decode_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Image-decode Error from AOM decoder (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_bit_depth {
+    label: "Avif Bit Depth"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_bit_depth ;;
+    group_label: "Avif"
+    group_item_label: "Bit Depth"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Bit Depth"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_bit_depth"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bits per pixel of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_cicp_cp {
+    label: "Avif Cicp Cp"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_cp ;;
+    group_label: "Avif"
+    group_item_label: "Cicp Cp"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Cicp Cp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_cicp_cp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF CICP colour primaries. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_cicp_mc {
+    label: "Avif Cicp Mc"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_mc ;;
+    group_label: "Avif"
+    group_item_label: "Cicp Mc"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Cicp Mc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_cicp_mc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF CICP transfer characteristics. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_cicp_tc {
+    label: "Avif Cicp Tc"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_tc ;;
+    group_label: "Avif"
+    group_item_label: "Cicp Tc"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Cicp Tc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_cicp_tc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF CICP transfer characteristics. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_clap {
+    label: "Avif Clap"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_clap ;;
+    group_label: "Avif"
+    group_item_label: "Clap"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Clap"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_clap"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF CleanApertureBox (clap). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_colr {
+    label: "Avif Colr"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_colr ;;
+    group_label: "Avif"
+    group_item_label: "Colr"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Colr"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_colr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF colour information type. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_decode_result {
+    label: "Avif Decode Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_decode_result ;;
+    group_label: "Avif"
+    group_item_label: "Decode Result"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Decode Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_decode_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Decode result of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_decoder {
+    label: "Avif Decoder"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_decoder ;;
+    group_label: "Avif"
+    group_item_label: "Decoder"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Decoder"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_decoder"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Decoder of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_grid {
+    label: "Avif Grid"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_grid ;;
+    group_label: "Avif"
+    group_item_label: "Grid"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Grid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_grid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF AVIF grid-based image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_ipro {
+    label: "Avif Ipro"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_ipro ;;
+    group_label: "Avif"
+    group_item_label: "Ipro"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Ipro"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_ipro"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF ItemProtectionBox (ipro). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_ispe {
+    label: "Avif Ispe"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_ispe ;;
+    group_label: "Avif"
+    group_item_label: "Ispe"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Ispe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_ispe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF spatial extents (image size). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_lsel {
+    label: "Avif Lsel"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_lsel ;;
+    group_label: "Avif"
+    group_item_label: "Lsel"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Lsel"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_lsel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF LayerSelectorProperty (lsel). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_pasp {
+    label: "Avif Pasp"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_pasp ;;
+    group_label: "Avif"
+    group_item_label: "Pasp"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Pasp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_pasp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF pixel aspect ratio. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_pixi {
+    label: "Avif Pixi"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_pixi ;;
+    group_label: "Avif"
+    group_item_label: "Pixi"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Pixi"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_pixi"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF pixel information (bits per channel). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_yuv_color_space {
+    label: "Avif Yuv Color Space"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_yuv_color_space ;;
+    group_label: "Avif"
+    group_item_label: "Yuv Color Space"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Yuv Color Space"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/avif_yuv_color_space"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "YUV color space of AVIF image. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -2157,6 +2481,184 @@ API for the purposes of Validation (hence GVSV).
 "
   }
 
+  dimension: metrics__labeled_counter__formautofill_form_submission_heuristic {
+    label: "Formautofill Form Submission Heuristic"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.formautofill_form_submission_heuristic ;;
+    group_label: "Formautofill"
+    group_item_label: "Form Submission Heuristic"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Form Submission Heuristic"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/formautofill_form_submission_heuristic"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The heuristic that detected the form submission."
+  }
+
+  dimension: metrics__string__gecko_build_id {
+    label: "Gecko Build Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gecko_build_id ;;
+    type: string
+    group_label: "Gecko"
+    group_item_label: "Build Id"
+
+    link: {
+      label: "Glean Dictionary reference for Gecko Build Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gecko_build_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Buildid of the Gecko engine, example: 20200205124310 (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gecko_version {
+    label: "Gecko Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gecko_version ;;
+    type: string
+    group_label: "Gecko"
+    group_item_label: "Version"
+
+    link: {
+      label: "Glean Dictionary reference for Gecko Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gecko_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of the Gecko engine, example: 74.0a1 (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_content_process_lifetime__sum {
+    label: "Geckoview Content Process Lifetime Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_content_process_lifetime.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Content Process Lifetime Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Content Process Lifetime Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/geckoview_content_process_lifetime"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The uptime of content processes. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__geckoview_document_site_origins__sum {
+    label: "Geckoview Document Site Origins Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.geckoview_document_site_origins.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Document Site Origins Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Document Site Origins Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/geckoview_document_site_origins"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When a document is loaded, report the number of [site origins](https://searchfox.org/ mozilla-central/rev/ 3300072e993ae05d50d5c63d815260367eaf9179/ caps/nsIPrincipal.idl#264) of the entire browser if it has been at least 5 minutes since last time we collect this data. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_progress_time__sum {
+    label: "Geckoview Page Load Progress Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_progress_time.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Page Load Progress Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Page Load Progress Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/geckoview_page_load_progress_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between page load progress starts (0) and completion (100). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_time__sum {
+    label: "Geckoview Page Load Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_time.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Page Load Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Page Load Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/geckoview_page_load_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time taken to load a page. This includes all static contents, no dynamic content. Loading of about: pages is not counted. Back back navigation (sometimes via BFCache) is included which is a source of bimodality due to the <50ms load times. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_reload_time__sum {
+    label: "Geckoview Page Reload Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_reload_time.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Page Reload Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Page Reload Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/geckoview_page_reload_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to reload a page. This includes all static contents, no dynamic content. Loading of about: pages is not counted. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__geckoview_per_document_site_origins__sum {
+    label: "Geckoview Per Document Site Origins Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.geckoview_per_document_site_origins.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Per Document Site Origins Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Per Document Site Origins Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/geckoview_per_document_site_origins"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When a document is unloaded, report the highest number of [site origins](https://searchfox.org/ mozilla-central/rev/ 3300072e993ae05d50d5c63d815260367eaf9179/ caps/nsIPrincipal.idl#264) loaded simultaneously in that document. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_startup_runtime__sum {
+    label: "Geckoview Startup Runtime Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_startup_runtime.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Startup Runtime Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Startup Runtime Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/geckoview_startup_runtime"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time taken to initialize GeckoRuntime. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__string__geckoview_validation_build_id {
     label: "Geckoview Validation Build Id"
     hidden: yes
@@ -2190,6 +2692,545 @@ API for the purposes of Validation (hence GVSV).
     }
 
     description: "The version of the Gecko engine, example: 74.0a1 Mirror of `geckoview.version` for validation of migrated data.
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_description {
+    label: "Gfx Adapter Primary Description"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_description ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Description"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Description"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_adapter_primary_description"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Long form description of the Graphics adapter (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_device_id {
+    label: "Gfx Adapter Primary Device Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_device_id ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Device Id"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Device Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_adapter_primary_device_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter device identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_date {
+    label: "Gfx Adapter Primary Driver Date"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_date ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Driver Date"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Date"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_adapter_primary_driver_date"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter driver date (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_files {
+    label: "Gfx Adapter Primary Driver Files"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_files ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Driver Files"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Files"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_adapter_primary_driver_files"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "List of graphics adapter driver files (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_vendor {
+    label: "Gfx Adapter Primary Driver Vendor"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_vendor ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Driver Vendor"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Vendor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_adapter_primary_driver_vendor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter driver vendor identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_version {
+    label: "Gfx Adapter Primary Driver Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_version ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Driver Version"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_adapter_primary_driver_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter driver version (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_adapter_primary_ram {
+    label: "Gfx Adapter Primary Ram"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_adapter_primary_ram ;;
+    type: number
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Ram"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Ram"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_adapter_primary_ram"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter dedicated memory (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_subsystem_id {
+    label: "Gfx Adapter Primary Subsystem Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_subsystem_id ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Subsystem Id"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Subsystem Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_adapter_primary_subsystem_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter subsystem identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_vendor_id {
+    label: "Gfx Adapter Primary Vendor Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_vendor_id ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Vendor Id"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Vendor Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_adapter_primary_vendor_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter vendor identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_duration__sum {
+    label: "Gfx Checkerboard Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_duration.sum ;;
+    type: number
+    group_label: "Gfx Checkerboard"
+    group_item_label: "Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Checkerboard Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_checkerboard_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The duration of a checkerboard event. Checkerboarding is when painting has not kept up with asynchronous panning and zooming so the compositor has to display a \"checkerboard pattern\" (or in practice, the background color) rather than the actual page content. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__sum {
+    label: "Gfx Checkerboard Peak Pixel Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_peak_pixel_count.sum ;;
+    type: number
+    group_label: "Gfx Checkerboard"
+    group_item_label: "Peak Pixel Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Checkerboard Peak Pixel Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_checkerboard_peak_pixel_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The peak number of CSS pixels that checkerboarded during a checkerboard event. The minimum value of the largest histogram bucket is the size of a 4k display with maximum APZ zooming. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_potential_duration__sum {
+    label: "Gfx Checkerboard Potential Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_potential_duration.sum ;;
+    type: number
+    group_label: "Gfx Checkerboard"
+    group_item_label: "Potential Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Checkerboard Potential Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_checkerboard_potential_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total amount of time that we could reasonably be checkerboarding. This is the union of two possibly-intersecting sets of time periods: The first set is that in which checkerboarding was actually happening, since by definition it could potentially be happening. The second set is that in which the APZC is actively transforming content in the compositor, since it could potentially transform it so as to display checkerboarding to the user. Combined with other information, this allows us to meaningfully say how frequently users actually enncounters checkerboarding. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_checkerboard_severity__sum {
+    label: "Gfx Checkerboard Severity Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_severity.sum ;;
+    type: number
+    group_label: "Gfx Checkerboard"
+    group_item_label: "Severity Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Checkerboard Severity Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_checkerboard_severity"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An opaque measurement of the severity of a checkerboard event. This doesn't have units, it's just useful for comparing two checkerboard events to see which one is worse, for some implementation-specific definition of \"worse\". The larger the value, the worse the checkerboarding. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_composite_time__sum {
+    label: "Gfx Composite Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_composite_time.sum ;;
+    type: number
+    group_label: "Gfx"
+    group_item_label: "Composite Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Composite Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_composite_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time taken to composite a frame. On non-webrender this is the time taken in `CompositorBridgeParent::CompositeToTarget()`. On webrender, this is the time taken from the start of `WebRenderBridgeParent::CompositeToTarget()`, until the render thread has rendered the frame (in `RenderThread::HandleFrameOneDoc()`). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_from_paint__sum {
+    label: "Gfx Content Frame Time From Paint Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_paint.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "From Paint Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time From Paint Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_content_frame_time_from_paint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_from_vsync__sum {
+    label: "Gfx Content Frame Time From Vsync Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_vsync.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "From Vsync Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time From Vsync Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_content_frame_time_from_vsync"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from the vsync that started a paint in the content process until that frame is presented in the compositor. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__gfx_content_frame_time_reason {
+    label: "Gfx Content Frame Time Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.gfx_content_frame_time_reason ;;
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_content_frame_time_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The reason that `gfx.content.frame_time.from_paint` recorded a slow (>200ms) result, if any. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_with_svg__sum {
+    label: "Gfx Content Frame Time With Svg Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_with_svg.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "With Svg Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time With Svg Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_content_frame_time_with_svg"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor, for frames that contained an SVG to be drawn by webrender. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_without_resource_upload__sum {
+    label: "Gfx Content Frame Time Without Resource Upload Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_resource_upload.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "Without Resource Upload Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time Without Resource Upload Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_content_frame_time_without_resource_upload"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor by webrender, excluding time spent uploading resources. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_without_upload__sum {
+    label: "Gfx Content Frame Time Without Upload Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_upload.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "Without Upload Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time Without Upload Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_content_frame_time_without_upload"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor by webrender, excluding time spent uploading any content. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_full_paint_time__sum {
+    label: "Gfx Content Full Paint Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_full_paint_time.sum ;;
+    type: number
+    group_label: "Gfx Content"
+    group_item_label: "Full Paint Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Full Paint Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_content_full_paint_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in the full paint pipeline for content until it's ready for composition. For non-webrender this includes `paint_time`, plus rasterization if OMTP is enabled. For webrender, this includes `paint_time`, plus scene building time. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_paint_time__sum {
+    label: "Gfx Content Paint Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_paint_time.sum ;;
+    type: number
+    group_label: "Gfx Content"
+    group_item_label: "Paint Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Paint Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_content_paint_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in the main-thread paint pipeline for content. For non-webrender, this includes display list building, layer building, and when OMTP is disabled, rasterization. For webrender, this includes display list building, and webrender display list building. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_display_count {
+    label: "Gfx Display Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_display_count ;;
+    type: number
+    group_label: "Gfx Display"
+    group_item_label: "Count"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Display Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_display_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of displays connected to the device (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_display_primary_height {
+    label: "Gfx Display Primary Height"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_display_primary_height ;;
+    type: number
+    group_label: "Gfx Display"
+    group_item_label: "Primary Height"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Display Primary Height"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_display_primary_height"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Height of the primary display, takes device rotation into account. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_display_primary_width {
+    label: "Gfx Display Primary Width"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_display_primary_width ;;
+    type: number
+    group_label: "Gfx Display"
+    group_item_label: "Primary Width"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Display Primary Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_display_primary_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Width of the primary display, takes device rotation into account. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_feature_webrender {
+    label: "Gfx Feature Webrender"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_feature_webrender ;;
+    type: string
+    group_label: "Gfx Feature"
+    group_item_label: "Webrender"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Feature Webrender"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_feature_webrender"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether webrender is enabled or disabled, and why. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_scroll_present_latency__sum {
+    label: "Gfx Scroll Present Latency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_scroll_present_latency.sum ;;
+    type: number
+    group_label: "Gfx"
+    group_item_label: "Scroll Present Latency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Scroll Present Latency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_scroll_present_latency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between receiving a scroll event on the event loop and compositing its result onto the screen (ms). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_status_compositor {
+    label: "Gfx Status Compositor"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_status_compositor ;;
+    type: string
+    group_label: "Gfx Status"
+    group_item_label: "Compositor"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Status Compositor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_status_compositor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Name of the graphics compositor in use. Possible values are \"opengl, d3d11, client, webrender or basic\" (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__boolean__gfx_status_headless {
+    label: "Gfx Status Headless"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.gfx_status_headless ;;
+    type: yesno
+    group_label: "Gfx Status"
+    group_item_label: "Headless"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Status Headless"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_status_headless"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Boolean indicated whether graphics is running in headless (no display) mode (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_status_last_compositor_gecko_version {
+    label: "Gfx Status Last Compositor Gecko Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_status_last_compositor_gecko_version ;;
+    type: string
+    group_label: "Gfx Status"
+    group_item_label: "Last Compositor Gecko Version"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Status Last Compositor Gecko Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/gfx_status_last_compositor_gecko_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The gecko version at the last time a compositor was initialized, and therefore when gfx_status_compositor was last updated. Due to gfx_status_compositor's user lifetime we see lots of unexpected values for the current gecko version. We believe this is because the user has not opened a tab since they were updated to a version where webrender should be enabled on their device. This can be used to verify that theory. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -2471,6 +3512,310 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__javascript_gc_compact_time__sum {
+    label: "Javascript Gc Compact Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Compact Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Compact Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_gc_compact_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent in the compact phase. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_roots_time__sum {
+    label: "Javascript Gc Mark Roots Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Mark Roots Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Mark Roots Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_gc_mark_roots_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent marking GC roots. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_time__sum {
+    label: "Javascript Gc Mark Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Mark Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Mark Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_gc_mark_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent in the mark phase. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_minor_time__sum {
+    label: "Javascript Gc Minor Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Minor Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Minor Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_gc_minor_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time taked by a minor (nursery) collection. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_prepare_time__sum {
+    label: "Javascript Gc Prepare Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Prepare Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Prepare Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_gc_prepare_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent in the preparation phase. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_slice_time__sum {
+    label: "Javascript Gc Slice Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Slice Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Slice Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_gc_slice_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent running a GC slice. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_sweep_time__sum {
+    label: "Javascript Gc Sweep Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Sweep Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Sweep Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_gc_sweep_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent in the sweep phase. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_total_time__sum {
+    label: "Javascript Gc Total Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Total Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Total Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_gc_total_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total time taken by a major collection. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__sum {
+    label: "Javascript Pageload Baseline Compile Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Baseline Compile Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Baseline Compile Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_pageload_baseline_compile_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load baseline compiling Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_delazification_time__sum {
+    label: "Javascript Pageload Delazification Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Delazification Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Delazification Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_pageload_delazification_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load delazifying Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_execution_time__sum {
+    label: "Javascript Pageload Execution Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Execution Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Execution Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_pageload_execution_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load executing Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_gc_time__sum {
+    label: "Javascript Pageload Gc Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Gc Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Gc Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_pageload_gc_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load in the GC in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_parse_time__sum {
+    label: "Javascript Pageload Parse Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Parse Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Parse Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_pageload_parse_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load syntax parsing JS scripts on the main thread in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_protect_time__sum {
+    label: "Javascript Pageload Protect Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Protect Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Protect Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_pageload_protect_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load protecting JIT executable memory. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__sum {
+    label: "Javascript Pageload Xdr Encode Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Xdr Encode Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Xdr Encode Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/javascript_pageload_xdr_encode_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load XDR encoding Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_backend {
+    label: "Media Audio Backend"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_backend ;;
+    group_label: "Media Audio"
+    group_item_label: "Backend"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Backend"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/media_audio_backend"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The operating system audio backend (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_init_failure {
+    label: "Media Audio Init Failure"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
+    group_label: "Media Audio"
+    group_item_label: "Init Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Init Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/media_audio_init_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_early_hints {
     label: "Netwerk Early Hints"
     hidden: yes
@@ -2502,6 +3847,24 @@ To be used to validate GIFFT.
     }
 
     description: "Counts different type of link headers that are sent in early hint
+"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__sum {
+    label: "Network Cache Hit Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Cache Hit Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cache Hit Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_cache_hit_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time to open existing cache entry file. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -2556,6 +3919,78 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__network_dns_end__sum {
+    label: "Network Dns End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Dns End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Dns End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_dns_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from the DNS request being issued to the response. Corresponds to Legacy histogram HTTP_PAGE_DNS_LOOKUP_TIME in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__sum {
+    label: "Network Dns Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Dns Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Dns Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_dns_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection open to the DNS request being issued. Corresponds to Legacy histogram HTTP_PAGE_DNS_ISSUE_TIME in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__sum {
+    label: "Network First From Cache Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "First From Cache Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network First From Cache Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_first_from_cache"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection open to cache read start. Corresponds to Legacy histogram HTTP_PAGE_OPEN_TO_FIRST_FROM_CACHE_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__sum {
+    label: "Network Font Download End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Font Download End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Font Download End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_font_download_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time after navigationStart that all webfont downloads are completed. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__sum {
     label: "Network Open To Transaction Pending Sum"
     hidden: yes
@@ -2571,6 +4006,42 @@ To be used to validate GIFFT.
     }
 
     description: "The time spent from HttpChannelChild::AsyncOpen to adding the transaction to the nsHttpConnectionMgr
+"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__sum {
+    label: "Network Tcp Connection Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Tcp Connection Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Tcp Connection Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_tcp_connection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from the TCP SYN packet is received to the connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_PAGE_TCP_CONNECTION_2 in Desktop (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__sum {
+    label: "Network Tls Handshake Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Tls Handshake Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Tls Handshake Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/network_tls_handshake"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from after the TCP SYN packet is received to the secure connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_PAGE_TLS_HANDSHAKE in Desktop. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -2786,6 +4257,23 @@ To be used to validate GIFFT.
     }
 
     description: "Time for a successful DNS resolution (msec) | Migrated from Firefox Telemetry's `DNS_LOOKUP_TIME`.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_dns_native_count {
+    label: "Networking Dns Native Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_dns_native_count ;;
+    group_label: "Networking"
+    group_item_label: "Dns Native Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Dns Native Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_dns_native_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of calls to the native DNS APIs
 "
   }
 
@@ -3095,6 +4583,95 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
+    label: "Networking Http Channel Onstart Success Https Rr"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_onstart_success_https_rr ;;
+    group_label: "Networking"
+    group_item_label: "Http Channel Onstart Success Https Rr"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Onstart Success Https Rr"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_channel_onstart_success_https_rr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Successfully started HTTP channels when HTTPS RR is used
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__sum {
+    label: "Networking Http Channel Page Open To First Sent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Channel Page Open To First Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Page Open To First Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_channel_page_open_to_first_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from AsyncOpen to first byte of request sent, applicable for page loads without HTTPS RR
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__sum {
+    label: "Networking Http Channel Page Open To First Sent Https Rr Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Channel Page Open To First Sent Https Rr Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Page Open To First Sent Https Rr Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_channel_page_open_to_first_sent_https_rr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from AsyncOpen to first byte of request sent, applicable for page loads with HTTPS RR
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__sum {
+    label: "Networking Http Channel Sub Open To First Sent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Channel Sub Open To First Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Sub Open To First Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_channel_sub_open_to_first_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from AsyncOpen to first byte of request sent, applicable for sub-resource loads without HTTPS RR
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__sum {
+    label: "Networking Http Channel Sub Open To First Sent Https Rr Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Channel Sub Open To First Sent Https Rr Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Sub Open To First Sent Https Rr Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_channel_sub_open_to_first_sent_https_rr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from AsyncOpen to first byte of request sent, applicable for sub-resource loads with HTTPS RR
+"
+  }
+
   dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__sum {
     label: "Networking Http Content Html5Parser Ondatafinished To Onstop Delay Sum"
     hidden: no
@@ -3218,6 +4795,74 @@ To be used to validate GIFFT.
     }
 
     description: "The time between dispatching OnStopRequest from the socket thread and processing it on the main thread (content process).
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_response_version {
+    label: "Networking Http Response Version"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_response_version ;;
+    group_label: "Networking"
+    group_item_label: "Http Response Version"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Response Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_response_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP protocol version used on response from nsHttp.h
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_https_rr_presented {
+    label: "Networking Https Rr Presented"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_rr_presented ;;
+    group_label: "Networking"
+    group_item_label: "Https Rr Presented"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Https Rr Presented"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_https_rr_presented"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTPS RR is presented or not
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_https_upgrade_with_https_rr {
+    label: "Networking Https Upgrade With Https Rr"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_upgrade_with_https_rr ;;
+    group_label: "Networking"
+    group_item_label: "Https Upgrade With Https Rr"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Https Upgrade With Https Rr"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_https_upgrade_with_https_rr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether an HTTP request gets upgraded to HTTPS because of HTTPS RR
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_proxy_info_type {
+    label: "Networking Proxy Info Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_proxy_info_type ;;
+    group_label: "Networking"
+    group_item_label: "Proxy Info Type"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Proxy Info Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_proxy_info_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proxies configurations created in the browser session (SOCKSv4, SOCKSv5, HTTP, HTTPS)
 "
   }
 
@@ -3416,6 +5061,42 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__sum {
+    label: "Networking Transaction Wait Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Transaction Wait Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Transaction Wait Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_transaction_wait_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from submission to dispatch of transaction without HTTPS RR (ms)
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__sum {
+    label: "Networking Transaction Wait Time Https Rr Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Transaction Wait Time Https Rr Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Transaction Wait Time Https Rr Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_transaction_wait_time_https_rr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from submission to dispatch of transaction when HTTPS RR is used (ms)
+"
+  }
+
   dimension: metrics__labeled_counter__networking_trr_request_count {
     label: "Networking Trr Request Count"
     hidden: yes
@@ -3499,6 +5180,218 @@ To be used to validate GIFFT.
     }
 
     description: "Counts the number of times some PDF editing features are used.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_color {
+    label: "Pdfjs Editing Highlight Color"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_color ;;
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Color"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Color"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_color"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a given color is used to highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_color_changed {
+    label: "Pdfjs Editing Highlight Color Changed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_color_changed ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Color Changed"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Color Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_color_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user changes the color of a highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_deleted {
+    label: "Pdfjs Editing Highlight Deleted"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_deleted ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Deleted"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user deletes highlights.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_edited {
+    label: "Pdfjs Editing Highlight Edited"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_edited ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Edited"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Edited"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_edited"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user edits highlights.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_kind {
+    label: "Pdfjs Editing Highlight Kind"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_kind ;;
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Kind"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Kind"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_kind"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a given kind is used to highlight.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_method {
+    label: "Pdfjs Editing Highlight Method"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_method ;;
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Method"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Method"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_method"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a given method is used to highlight.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors {
+    label: "Pdfjs Editing Highlight Number Of Colors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_number_of_colors ;;
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Number Of Colors"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Number Of Colors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_number_of_colors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of different colors used to highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_print {
+    label: "Pdfjs Editing Highlight Print"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_print ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Print"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Print"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_print"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user prints a PDF with highlights.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_save {
+    label: "Pdfjs Editing Highlight Save"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_save ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Save"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Save"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_save"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user saves a PDF with highlights.
+"
+  }
+
+  dimension: metrics__custom_distribution__pdfjs_editing_highlight_thickness__sum {
+    label: "Pdfjs Editing Highlight Thickness Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.pdfjs_editing_highlight_thickness.sum ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Thickness Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Thickness Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_thickness"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The thickness used to draw a free highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_thickness_changed {
+    label: "Pdfjs Editing Highlight Thickness Changed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_thickness_changed ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Thickness Changed"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Thickness Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_thickness_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user changes the thickness of a free highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_toggle_visibility {
+    label: "Pdfjs Editing Highlight Toggle Visibility"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_toggle_visibility ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Toggle Visibility"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Toggle Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_toggle_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user toggles the visibility of highlights.
 "
   }
 
@@ -3605,6 +5498,366 @@ To be used to validate GIFFT.
     }
 
     description: "Time from response start to largest contentful paint.
+"
+  }
+
+  dimension: metrics__custom_distribution__performance_clone_deserialize_items__sum {
+    label: "Performance Clone Deserialize Items Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.performance_clone_deserialize_items.sum ;;
+    type: number
+    group_label: "Performance Clone Deserialize"
+    group_item_label: "Items Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Clone Deserialize Items Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_clone_deserialize_items"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of deserialized data, in items
+"
+  }
+
+  dimension: metrics__memory_distribution__performance_clone_deserialize_size__sum {
+    label: "Performance Clone Deserialize Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.performance_clone_deserialize_size.sum ;;
+    type: number
+    group_label: "Performance Clone Deserialize"
+    group_item_label: "Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Clone Deserialize Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_clone_deserialize_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of deserialized data, in bytes
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_clone_deserialize_time__sum {
+    label: "Performance Clone Deserialize Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.sum ;;
+    type: number
+    group_label: "Performance Clone Deserialize"
+    group_item_label: "Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Clone Deserialize Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_clone_deserialize_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent deserializing structured data
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__sum {
+    label: "Performance Interaction Keypress Present Latency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.sum ;;
+    type: number
+    group_label: "Performance Interaction"
+    group_item_label: "Keypress Present Latency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Interaction Keypress Present Latency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_interaction_keypress_present_latency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between receiving a keypress event in the event loop and compositing its result onto the screen. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__sum {
+    label: "Performance Interaction Mouseup Click Present Latency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.sum ;;
+    type: number
+    group_label: "Performance Interaction"
+    group_item_label: "Mouseup Click Present Latency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Interaction Mouseup Click Present Latency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_interaction_mouseup_click_present_latency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between receiving a mouseup which follow by a mouseclick on the event loop and compositing its result onto the screen. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_non_blank_paint__sum {
+    label: "Performance Page Non Blank Paint Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.sum ;;
+    type: number
+    group_label: "Performance Page"
+    group_item_label: "Non Blank Paint Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Page Non Blank Paint Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_page_non_blank_paint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first non-blank paint of a foreground root content document, in milliseconds. This only records documents that were in an active docshell throughout the whole time between navigation start and non-blank paint. The non-blank paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_total_content_page_load__sum {
+    label: "Performance Page Total Content Page Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_total_content_page_load.sum ;;
+    type: number
+    group_label: "Performance Page"
+    group_item_label: "Total Content Page Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Page Total Content Page Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_page_total_content_page_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time to load all of a page's resources and render. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp__sum {
+    label: "Performance Pageload Fcp Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Fcp Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Fcp Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_pageload_fcp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__sum {
+    label: "Performance Pageload Fcp Responsestart Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Fcp Responsestart Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Fcp Responsestart Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_pageload_fcp_responsestart"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between responseStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time__sum {
+    label: "Performance Pageload Load Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Load Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Load Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_pageload_load_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from navigationStart to loadEventStart for the foreground http or https root content document. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__sum {
+    label: "Performance Pageload Load Time Responsestart Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time_responsestart.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Load Time Responsestart Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Load Time Responsestart Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_pageload_load_time_responsestart"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from responseStart to loadEventStart for the foreground http or https root content document. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__sum {
+    label: "Performance Pageload Req Anim Frame Callback Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Req Anim Frame Callback Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Req Anim Frame Callback Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_pageload_req_anim_frame_callback"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in milliseconds calling all request animation frame callbacks for a document before it has reached readystate complete. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__sum {
+    label: "Performance Responsiveness Req Anim Frame Callback Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_responsiveness_req_anim_frame_callback.sum ;;
+    type: number
+    group_label: "Performance Responsiveness"
+    group_item_label: "Req Anim Frame Callback Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Responsiveness Req Anim Frame Callback Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_responsiveness_req_anim_frame_callback"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in milliseconds calling all request animation frame callbacks for a document after it has reached readystate complete. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_complete__sum {
+    label: "Performance Time Dom Complete Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Complete Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Complete Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_time_dom_complete"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domComplete as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__sum {
+    label: "Performance Time Dom Content Loaded End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Content Loaded End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Content Loaded End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_time_dom_content_loaded_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domContentLoadedEventEnd as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__sum {
+    label: "Performance Time Dom Content Loaded Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Content Loaded Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Content Loaded Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_time_dom_content_loaded_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domContentLoadedEventStart as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_interactive__sum {
+    label: "Performance Time Dom Interactive Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Interactive Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Interactive Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_time_dom_interactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domInteractive as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_end__sum {
+    label: "Performance Time Load Event End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Load Event End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Load Event End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_time_load_event_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to loadEventEnd as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_start__sum {
+    label: "Performance Time Load Event Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Load Event Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Load Event Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_time_load_event_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to loadEventStart as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_response_start__sum {
+    label: "Performance Time Response Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_response_start.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Response Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Response Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_time_response_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to responseStart as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
 "
   }
 
@@ -3951,6 +6204,24 @@ To be used to validate GIFFT.
     }
 
     description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__sum {
+    label: "Privacy Sanitize Load Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.sum ;;
+    type: number
+    group_label: "Privacy Sanitize"
+    group_item_label: "Load Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Privacy Sanitize Load Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/privacy_sanitize_load_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How much time was spent to open the dialog, including loading data sizes
 "
   }
 
@@ -4560,6 +6831,41 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__tls_certificate_verifications {
+    label: "Tls Certificate Verifications"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tls_certificate_verifications ;;
+    type: number
+    group_label: "Tls"
+    group_item_label: "Certificate Verifications"
+
+    link: {
+      label: "Glean Dictionary reference for Tls Certificate Verifications"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/tls_certificate_verifications"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of successful TLS server certificate verifications.
+"
+  }
+
+  dimension: metrics__labeled_counter__tls_xyber_intolerance_reason {
+    label: "Tls Xyber Intolerance Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tls_xyber_intolerance_reason ;;
+    group_label: "Tls"
+    group_item_label: "Xyber Intolerance Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Tls Xyber Intolerance Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/tls_xyber_intolerance_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The error that was returned from a failed TLS 1.3 handshake in which the client sent a Xyber key share (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
+"
+  }
+
   dimension: metrics__rate__translations_error_rate__numerator {
     label: "Translations Error Rate Numerator"
     hidden: no
@@ -4611,6 +6917,186 @@ To be used to validate GIFFT.
     }
 
     description: "The count of translation requests.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_built_in_roots_module__numerator {
+    label: "Verification Used Cert From Built In Roots Module Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_built_in_roots_module.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Built In Roots Module Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Built In Roots Module Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/verification_used_cert_from_built_in_roots_module"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the built-in roots module.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_built_in_roots_module__denominator {
+    label: "Verification Used Cert From Built In Roots Module Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_built_in_roots_module.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Built In Roots Module Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Built In Roots Module Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/verification_used_cert_from_built_in_roots_module"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the built-in roots module.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_nss_cert_db__numerator {
+    label: "Verification Used Cert From Nss Cert Db Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_nss_cert_db.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Nss Cert Db Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Nss Cert Db Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/verification_used_cert_from_nss_cert_db"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the NSS cert DB.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_nss_cert_db__denominator {
+    label: "Verification Used Cert From Nss Cert Db Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_nss_cert_db.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Nss Cert Db Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Nss Cert Db Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/verification_used_cert_from_nss_cert_db"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the NSS cert DB.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_preloaded_intermediates__numerator {
+    label: "Verification Used Cert From Preloaded Intermediates Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_preloaded_intermediates.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Preloaded Intermediates Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Preloaded Intermediates Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/verification_used_cert_from_preloaded_intermediates"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from preloaded intermediates.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_preloaded_intermediates__denominator {
+    label: "Verification Used Cert From Preloaded Intermediates Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_preloaded_intermediates.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Preloaded Intermediates Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Preloaded Intermediates Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/verification_used_cert_from_preloaded_intermediates"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from preloaded intermediates.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_third_party_certificates__numerator {
+    label: "Verification Used Cert From Third Party Certificates Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_third_party_certificates.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Third Party Certificates Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Third Party Certificates Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/verification_used_cert_from_third_party_certificates"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a third-party certificate from the OS.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_third_party_certificates__denominator {
+    label: "Verification Used Cert From Third Party Certificates Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_third_party_certificates.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Third Party Certificates Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Third Party Certificates Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/verification_used_cert_from_third_party_certificates"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a third-party certificate from the OS.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_tls_handshake__numerator {
+    label: "Verification Used Cert From Tls Handshake Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_tls_handshake.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Tls Handshake Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Tls Handshake Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/verification_used_cert_from_tls_handshake"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the TLS handshake.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_tls_handshake__denominator {
+    label: "Verification Used Cert From Tls Handshake Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_tls_handshake.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Tls Handshake Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Tls Handshake Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/verification_used_cert_from_tls_handshake"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the TLS handshake.
 "
   }
 
@@ -6414,6 +8900,181 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: pdfjs_editing_highlight_color_changed {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_color_changed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Color Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_color_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_color_changed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_color_changed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Color Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_color_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_deleted {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_deleted} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_deleted_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_deleted: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_edited {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_edited} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Edited"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_edited"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_edited_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_edited: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Edited"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_edited"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_print {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_print} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Print"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_print"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_print_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_print: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Print"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_print"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_save {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_save} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Save"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_save"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_save_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_save: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Save"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_save"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_thickness_changed {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_thickness_changed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Thickness Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_thickness_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_thickness_changed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_thickness_changed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Thickness Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_thickness_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_toggle_visibility {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_toggle_visibility} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Toggle Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_toggle_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_toggle_visibility_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_toggle_visibility: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Toggle Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/pdfjs_editing_highlight_toggle_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: pdfjs_used {
     type: sum
     sql: ${metrics__counter__pdfjs_used} ;;
@@ -6610,6 +9271,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Rtcrtpsender Count Setparameters Compat"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/rtcrtpsender_count_setparameters_compat"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tls_certificate_verifications {
+    type: sum
+    sql: ${metrics__counter__tls_certificate_verifications} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tls Certificate Verifications"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/tls_certificate_verifications"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tls_certificate_verifications_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tls_certificate_verifications: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tls Certificate Verifications"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/tls_certificate_verifications"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -6890,6 +9576,823 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
   }
 
   sql_table_name: `mozdata.org_mozilla_klar.metrics` ;;
+}
+
+view: metrics__metrics__labeled_counter__avif_a1lx {
+  label: "Avif - A1Lx"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_a1lx
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_a1lx.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_a1op {
+  label: "Avif - A1Op"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_a1op
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_a1op.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_alpha {
+  label: "Avif - Alpha"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_alpha
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_alpha.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_aom_decode_error {
+  label: "Avif - Aom Decode Error"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_aom_decode_error
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_aom_decode_error.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_bit_depth {
+  label: "Avif - Bit Depth"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_bit_depth
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_bit_depth.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_cicp_cp {
+  label: "Avif - Cicp Cp"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_cicp_cp
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_cicp_cp.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_cicp_mc {
+  label: "Avif - Cicp Mc"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_cicp_mc
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_cicp_mc.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_cicp_tc {
+  label: "Avif - Cicp Tc"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_cicp_tc
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_cicp_tc.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_clap {
+  label: "Avif - Clap"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_clap
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_clap.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_colr {
+  label: "Avif - Colr"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_colr
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_colr.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_decode_result {
+  label: "Avif - Decode Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_decode_result
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_decode_result.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_decoder {
+  label: "Avif - Decoder"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_decoder
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_decoder.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_grid {
+  label: "Avif - Grid"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_grid
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_grid.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_ipro {
+  label: "Avif - Ipro"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_ipro
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_ipro.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_ispe {
+  label: "Avif - Ispe"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_ispe
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_ispe.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_lsel {
+  label: "Avif - Lsel"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_lsel
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_lsel.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_pasp {
+  label: "Avif - Pasp"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_pasp
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_pasp.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_pixi {
+  label: "Avif - Pixi"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_pixi
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_pixi.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_yuv_color_space {
+  label: "Avif - Yuv Color Space"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_yuv_color_space
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_yuv_color_space.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
 }
 
 view: metrics__metrics__labeled_counter__browser_search_ad_clicks {
@@ -7881,6 +11384,92 @@ view: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_g
   }
 }
 
+view: metrics__metrics__labeled_counter__formautofill_form_submission_heuristic {
+  label: "Formautofill - Form Submission Heuristic"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__formautofill_form_submission_heuristic
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__formautofill_form_submission_heuristic.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
+  label: "Gfx Content Frame Time - Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__gfx_content_frame_time_reason
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__gfx_content_frame_time_reason.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__glean_error_invalid_label {
   label: "Glean Error - Invalid Label"
 
@@ -8655,6 +12244,92 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
   }
 }
 
+view: metrics__metrics__labeled_counter__media_audio_backend {
+  label: "Media Audio - Backend"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__media_audio_backend
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__media_audio_backend.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_audio_init_failure {
+  label: "Media Audio - Init Failure"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__media_audio_init_failure
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__media_audio_init_failure.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__netwerk_early_hints {
   label: "Netwerk - Early Hints"
 
@@ -8913,6 +12588,264 @@ view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_dns_native_count {
+  label: "Networking - Dns Native Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_dns_native_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_dns_native_count.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
+  label: "Networking - Http Channel Onstart Success Https Rr"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_response_version {
+  label: "Networking - Http Response Version"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_http_response_version
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_http_response_version.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_https_rr_presented {
+  label: "Networking - Https Rr Presented"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_https_rr_presented
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_https_rr_presented.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr {
+  label: "Networking - Https Upgrade With Https Rr"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_proxy_info_type {
+  label: "Networking - Proxy Info Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_proxy_info_type
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_proxy_info_type.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_residual_cache_folder_removal {
   label: "Networking - Residual Cache Folder Removal"
 
@@ -9149,6 +13082,178 @@ view: metrics__metrics__labeled_counter__pdfjs_editing {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing
     suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_editing_highlight_color {
+  label: "Pdfjs Editing Highlight - Color"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_color
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_color.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind {
+  label: "Pdfjs Editing Highlight - Kind"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_editing_highlight_method {
+  label: "Pdfjs Editing Highlight - Method"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_method
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_method.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors {
+  label: "Pdfjs Editing Highlight - Number Of Colors"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors.key
     hidden: no
   }
 
@@ -10160,6 +14265,410 @@ view: metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter {
   }
 }
 
+view: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
+  label: "Tls - Xyber Intolerance Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_a1lx {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_a1lx) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_a1op {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_a1op) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_alpha {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_alpha) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_aom_decode_error {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_aom_decode_error) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_bit_depth {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_bit_depth) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_cicp_cp {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_cicp_cp) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_cicp_mc {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_cicp_mc) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_cicp_tc {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_cicp_tc) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_clap {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_clap) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_colr {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_colr) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_decode_result {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_decode_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_decoder {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_decoder) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_grid {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_grid) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_ipro {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_ipro) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_ispe {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_ispe) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_lsel {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_lsel) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_pasp {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_pasp) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_pixi {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_pixi) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_yuv_color_space {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.avif_yuv_color_space) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks {
   derived_table: {
     sql: select
@@ -10597,6 +15106,44 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__formautofill_form_submission_heuristic {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.formautofill_form_submission_heuristic) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.gfx_content_frame_time_reason) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
@@ -10939,6 +15486,44 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__media_audio_backend {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.media_audio_backend) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__media_audio_init_failure {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.media_audio_init_failure) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__netwerk_early_hints {
   derived_table: {
     sql: select
@@ -11053,6 +15638,120 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__networking_dns_native_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.networking_dns_native_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.networking_http_channel_onstart_success_https_rr) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_http_response_version {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.networking_http_response_version) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_https_rr_presented {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.networking_https_rr_presented) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.networking_https_upgrade_with_https_rr) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_proxy_info_type {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.networking_proxy_info_type) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__networking_residual_cache_folder_removal {
   derived_table: {
     sql: select
@@ -11155,6 +15854,82 @@ view: suggest__metrics__metrics__labeled_counter__pdfjs_editing {
     count(*) as n
 from mozdata.org_mozilla_klar.metrics as t,
 unnest(metrics.labeled_counter.pdfjs_editing) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_color {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.pdfjs_editing_highlight_color) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.pdfjs_editing_highlight_kind) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_method {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.pdfjs_editing_highlight_method) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.pdfjs_editing_highlight_number_of_colors) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -11601,5 +16376,2054 @@ order by n desc ;;
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.tls_xyber_intolerance_reason) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: metrics__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: metrics__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics__metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__extensions_timing_event_page_running_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__fog_validation_gvsv_number_of_unique_site_origins_all_tabs__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__geckoview_document_site_origins__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__geckoview_per_document_site_origins__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__gfx_checkerboard_severity__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__gfx_content_frame_time_from_paint__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__gfx_content_frame_time_from_vsync__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__gfx_content_frame_time_with_svg__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__gfx_content_frame_time_without_resource_upload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__gfx_content_frame_time_without_upload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_access_fixup_diff__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_count_part_by_key__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_count_partitioned__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_count_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_count_unpart_by_key__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_count_unpartitioned__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_creation_fixup_diff__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_purge_entry_max__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_purge_max__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_1_download_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_1_upload_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_1_upload_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_1_upload_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_1_upload_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_2_download_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_2_upload_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_2_upload_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_2_upload_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_2_upload_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_download_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__pdfjs_editing_highlight_thickness__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__pdfjs_time_to_view__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__performance_clone_deserialize_items__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__power_battery_percentage_when_user_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__tab_count_app_backgrounded__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__timer_thread_timers_fired_per_wakeup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__cookie_banners_private_window_service_mode {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__data_storage_migration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__oskeystore_self_test {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__extensions_apis_dnr_startup_cache_write_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__fog_ipc_buffer_sizes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__glean_database_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__performance_clone_deserialize_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cookie_banners_click_handle_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cookie_banners_cmp_handle_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_apis_dnr_evaluate_rules_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_apis_dnr_startup_cache_read_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_apis_dnr_startup_cache_write_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_timing_background_page_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_timing_browser_action_popup_open__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_timing_content_script_injection__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_timing_extension_startup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_timing_page_action_popup_open__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_timing_storage_local_get_idb__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_timing_storage_local_get_json__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_timing_storage_local_set_idb__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_timing_storage_local_set_json__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fog_ipc_flush_durations__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fog_validation_gvsv_composite_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__geckoview_content_process_lifetime__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__geckoview_page_load_progress_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__geckoview_page_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__geckoview_page_reload_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__geckoview_startup_runtime__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gfx_checkerboard_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gfx_checkerboard_potential_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gfx_composite_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gfx_content_full_paint_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gfx_content_paint_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gfx_scroll_present_latency__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_upload_send_failure__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_upload_send_success__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_validation_shutdown_wait__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_compact_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_mark_roots_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_mark_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_minor_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_prepare_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_slice_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_sweep_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_total_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_pageload_baseline_compile_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_pageload_delazification_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_pageload_execution_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_pageload_gc_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_pageload_parse_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_pageload_protect_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_pageload_xdr_encode_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_cache_hit_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_dns_end__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_dns_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_first_from_cache__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_font_download_end__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_open_to_transaction_pending__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_tcp_connection__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_tls_handshake__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_dns_failed_lookup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_dns_lookup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_dns_renewal_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_dns_renewal_time_for_ttl__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_content_ondatafinished_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_content_onstart_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_content_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_transaction_wait_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_transaction_wait_time_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__nimbus_health_fetch_experiments_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__paint_build_displaylist_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_largest_contentful_paint__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_clone_deserialize_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_interaction_keypress_present_latency__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_page_non_blank_paint__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_page_total_content_page_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_fcp__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_fcp_responsestart__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_load_time_responsestart__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_req_anim_frame_callback__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_time_dom_complete__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_time_dom_content_loaded_end__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_time_dom_content_loaded_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_time_dom_interactive__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_time_load_event_end__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_time_load_event_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_time_response_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__privacy_sanitize_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_framebuild_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_gpu_wait_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_rasterize_blobs_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_rasterize_glyphs_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_renderer_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_renderer_time_no_sc__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_scenebuild_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_sceneswap_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_texture_cache_update_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_time_to_frame_build__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_time_to_render_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }

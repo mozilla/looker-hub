@@ -7,7 +7,7 @@
 view: messaging_system {
   dimension: metrics__string__messaging_system_action {
     label: "Messaging System Action"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.messaging_system_action ;;
     type: string
     group_label: "Messaging System"
@@ -291,7 +291,7 @@ Either add this key to a list of known attribution keys in
 
   dimension: metrics__text2__messaging_system_cfr_action {
     label: "Messaging System Cfr Action"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.messaging_system_cfr_action ;;
     type: string
     group_label: "Messaging System"
@@ -598,7 +598,7 @@ If you're unsure, please ask in
 
   dimension: metrics__string__messaging_system_page {
     label: "Messaging System Page"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.messaging_system_page ;;
     type: string
     group_label: "Messaging System"
@@ -1714,5 +1714,67 @@ order by n desc ;;
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
+  }
+}
+
+view: messaging_system__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: messaging_system__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: messaging_system__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }

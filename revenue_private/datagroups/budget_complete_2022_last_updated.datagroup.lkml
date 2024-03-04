@@ -7,9 +7,10 @@
 
 datagroup: budget_complete_2022_last_updated {
   label: "budget_complete_2022 Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `mozdata`.revenue_cat3_analysis.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'budget_complete_2022' ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM `mozdata`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'revenue_cat3_analysis'
+    AND table_name = 'budget_complete_2022' ;;
   description: "Updates when mozdata:revenue_cat3_analysis.budget_complete_2022 is modified."
   max_cache_age: "24 hours"
 }

@@ -37,6 +37,21 @@ explore: background_update {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${background_update.metrics__labeled_counter__glean_error_invalid_value}) AS background_update__metrics__labeled_counter__glean_error_invalid_value ON ${background_update.document_id} = ${background_update__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: background_update__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${background_update.events}) AS background_update__events ;;
+  }
+
+  join: background_update__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${background_update__events.extra}) AS background_update__events__extra ;;
+  }
+
+  join: background_update__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${background_update.ping_info__experiments}) AS background_update__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__background_update__metrics__labeled_counter__glean_error_invalid_label {

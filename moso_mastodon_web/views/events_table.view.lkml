@@ -340,6 +340,16 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
   dimension: metrics__string__identifiers_fxa_account_id {
     sql: ${TABLE}.metrics.string.identifiers_fxa_account_id ;;
     type: string
@@ -413,6 +423,48 @@ data_taxonomy:
     sql: ${TABLE}.metrics.string.web_referrer_url ;;
     type: string
     group_label: "Metrics String"
+    group_item_label: "Web Referrer Url"
+    description: "The full URL of the previous web page from which a link was followed in order to trigger the page view. Comes from the `referrer` field of the HTTP header. May not always be available. For example, `https://www.google.com`.
+data_taxonomy:
+  data_categories: []
+  data_uses: [analytics.reporting]
+  data_subjects: [customer, visitor]
+  data_qualifier: [n/a]
+"
+  }
+
+  dimension: metrics__url__web_page_url {
+    sql: ${TABLE}.metrics.url.web_page_url ;;
+    type: string
+    group_label: "Metrics Url"
+    group_item_label: "Web Page Url"
+  }
+
+  dimension: metrics__url__web_referrer_url {
+    sql: ${TABLE}.metrics.url.web_referrer_url ;;
+    type: string
+    group_label: "Metrics Url"
+    group_item_label: "Web Referrer Url"
+  }
+
+  dimension: metrics__url2__web_page_url {
+    sql: ${TABLE}.metrics.url2.web_page_url ;;
+    type: string
+    group_label: "Metrics Url2"
+    group_item_label: "Web Page Url"
+    description: "The full URL of the page that was visited, along with URL query parameters. For example, `https://mozilla.social/home?utm_source=test`.
+data_taxonomy:
+  data_categories: [user.behavior.browsing_history]
+  data_uses: [analytics.reporting]
+  data_subjects: [customer, visitor]
+  data_qualifier: [n/a]
+"
+  }
+
+  dimension: metrics__url2__web_referrer_url {
+    sql: ${TABLE}.metrics.url2.web_referrer_url ;;
+    type: string
+    group_label: "Metrics Url2"
     group_item_label: "Web Referrer Url"
     description: "The full URL of the previous web page from which a link was followed in order to trigger the page view. Comes from the `referrer` field of the HTTP header. May not always be available. For example, `https://www.google.com`.
 data_taxonomy:

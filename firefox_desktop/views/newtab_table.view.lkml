@@ -403,13 +403,22 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__topsites_sponsored_tiles_configured {
+    sql: ${TABLE}.metrics.quantity.topsites_sponsored_tiles_configured ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Topsites Sponsored Tiles Configured"
+    description: "The number of topsite tiles configured to be shown on newtab.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Glean Client Annotation Experimentation Id"
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -477,6 +486,22 @@ default engine, and hence both versions of these fields will be filled in.
   dimension: metrics__string_list__newtab_sov_allocation {
     sql: ${TABLE}.metrics.string_list.newtab_sov_allocation ;;
     hidden: yes
+  }
+
+  dimension: metrics__text__topsites_sponsored_tiles_received {
+    sql: ${TABLE}.metrics.text.topsites_sponsored_tiles_received ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Topsites Sponsored Tiles Received"
+  }
+
+  dimension: metrics__text2__topsites_sponsored_tiles_received {
+    sql: ${TABLE}.metrics.text2.topsites_sponsored_tiles_received ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Topsites Sponsored Tiles Received"
+    description: "The stringified JSON of tiles processed for display (array of objects). Includes tiles not displayed and reason for not displaying. Fields included: advertiser, provider, display_position, display_fail_reason.
+"
   }
 
   dimension: metrics__uuid__legacy_telemetry_client_id {

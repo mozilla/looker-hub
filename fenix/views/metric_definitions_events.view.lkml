@@ -8,22 +8,74 @@ view: metric_definitions_events {
   derived_table: {
     sql: SELECT
                     COUNTIF(event.name = 'browser_menu_action' AND
-    mozfun.map.get_key(event.extra, 'item') = 'report_site_issue') AS user_reports_site_issue_count,    COUNTIF(event.name = 'browser_menu_action' AND
-    mozfun.map.get_key(event.extra, 'item') = 'reload') AS user_reload_count,      COALESCE(COUNTIF(
+    mozfun.map.get_key(event.extra, 'item') = 'report_site_issue') AS user_reports_site_issue_count,
+    COUNTIF(event.name = 'browser_menu_action' AND
+    mozfun.map.get_key(event.extra, 'item') = 'reload') AS user_reload_count,
+      COALESCE(COUNTIF(
           event.category = 'top_sites'
           AND event.name = 'contile_impression'
-      ),0) AS spoc_tiles_impressions,      COALESCE(COUNTIF(
+      ),0) AS spoc_tiles_impressions,
+      COALESCE(COUNTIF(
           event.category = 'top_sites'
           AND event.name = 'contile_click'
-      ),0) AS spoc_tiles_clicks,  COALESCE(SUM(CASE WHEN
+      ),0) AS spoc_tiles_clicks,
+  COALESCE(SUM(CASE WHEN
           event.category = 'customize_home'
           AND event.name = 'preference_toggled'
           AND `mozfun.map.get_key`(event.extra, 'preference_key') = 'contile'
 	THEN 1 ELSE 0 END
   ),0) AS spoc_tiles_preference_toggled,
-                client_info.client_id AS client_id,
-                submission_date AS submission_date
-              FROM
+
+                android_sdk_version,
+base.app_build,
+base.app_channel,
+base.app_display_version,
+base.architecture,
+base.city,
+base.country,
+base.days_seen_session_end_bits,
+base.days_seen_session_start_bits,
+base.device_manufacturer,
+base.device_model,
+base.durations,
+base.is_new_profile,
+base.isp,
+base.locale,
+base.normalized_app_id,
+base.normalized_channel,
+base.normalized_os,
+base.normalized_os_version,
+base.sample_id,
+base.telemetry_sdk_build,
+
+                m.client_info.client_id AS client_id,
+                {% if aggregate_metrics_by._parameter_value == 'day' %}
+                m.submission_date AS analysis_basis
+                {% elsif aggregate_metrics_by._parameter_value == 'week'  %}
+                (FORMAT_DATE(
+                    '%F',
+                    DATE_TRUNC(m.submission_date,
+                    WEEK(MONDAY)))
+                ) AS analysis_basis
+                {% elsif aggregate_metrics_by._parameter_value == 'month'  %}
+                (FORMAT_DATE(
+                    '%Y-%m',
+                    m.submission_date)
+                ) AS analysis_basis
+                {% elsif aggregate_metrics_by._parameter_value == 'quarter'  %}
+                (FORMAT_DATE(
+                    '%Y-%m',
+                    DATE_TRUNC(m.submission_date,
+                    QUARTER))
+                ) AS analysis_basis
+                {% elsif aggregate_metrics_by._parameter_value == 'year'  %}
+                (EXTRACT(
+                    YEAR FROM m.submission_date)
+                ) AS analysis_basis
+                {% else %}
+                NULL as analysis_basis
+                {% endif %}
+            FROM
                 (
     SELECT
         *
@@ -39,55 +91,65 @@ view: metric_definitions_events {
         UNNEST(p.events) AS event
 )
     )
-              WHERE submission_date BETWEEN
-                SAFE_CAST({% date_start metric_definitions_fenix.submission_date %} AS DATE) AND
-                SAFE_CAST({% date_end metric_definitions_fenix.submission_date %} AS DATE)
-              GROUP BY
+            AS m
+            
+            INNER JOIN mozdata.fenix.baseline_clients_daily base
+            ON
+                base.submission_date = m.submission_date AND
+                base.client_id = m.client_info.client_id
+            WHERE base.submission_date BETWEEN
+                SAFE_CAST(
+                    {% date_start submission_date %} AS DATE
+                ) AND
+                SAFE_CAST(
+                    {% date_end submission_date %} AS DATE
+                )
+            
+            AND m.submission_date BETWEEN
+                SAFE_CAST(
+                    {% date_start submission_date %} AS DATE
+                ) AND
+                SAFE_CAST(
+                    {% date_end submission_date %} AS DATE
+                )
+            GROUP BY
+                android_sdk_version,
+app_build,
+app_channel,
+app_display_version,
+architecture,
+city,
+country,
+days_seen_session_end_bits,
+days_seen_session_start_bits,
+device_manufacturer,
+device_model,
+durations,
+is_new_profile,
+isp,
+locale,
+normalized_app_id,
+normalized_channel,
+normalized_os,
+normalized_os_version,
+sample_id,
+telemetry_sdk_build,
+
                 client_id,
-                submission_date ;;
+                analysis_basis ;;
   }
 
   dimension: client_id {
     type: string
-    sql: COALESCE(SAFE_CAST(${TABLE}.client_id AS STRING)
-                {%- if  metric_definitions_active_users_aggregates_v1._in_query %}
-                , SAFE_CAST(metric_definitions_active_users_aggregates_v1.client_id AS STRING)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_baseline._in_query %}
-                , SAFE_CAST(metric_definitions_baseline.client_id AS STRING)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_baseline_v2._in_query %}
-                , SAFE_CAST(metric_definitions_baseline_v2.client_id AS STRING)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_events._in_query %}
-                , SAFE_CAST(metric_definitions_events.client_id AS STRING)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_metrics._in_query %}
-                , SAFE_CAST(metric_definitions_metrics.client_id AS STRING)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_mobile_search_clients_engines_sources_daily._in_query %}
-                , SAFE_CAST(metric_definitions_mobile_search_clients_engines_sources_daily.client_id AS STRING)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_new_profile_activation._in_query %}
-                , SAFE_CAST(metric_definitions_new_profile_activation.client_id AS STRING)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_special_onboarding_events._in_query %}
-                , SAFE_CAST(metric_definitions_special_onboarding_events.client_id AS STRING)
-                {%- endif -%}
-            ) ;;
+    sql: SAFE_CAST(${TABLE}.client_id AS STRING) ;;
     label: "Client ID"
     primary_key: yes
+    group_label: "Base Fields"
     description: "Unique client identifier"
   }
 
   dimension: user_reports_site_issue_count {
+    group_label: "Metrics"
     label: "Site issues reported"
     description: "Counts the number of times clients reported an issue with a site."
     type: number
@@ -95,6 +157,7 @@ view: metric_definitions_events {
   }
 
   dimension: user_reload_count {
+    group_label: "Metrics"
     label: "Pages reloaded"
     description: "Counts the number of times a client reloaded a page."
     type: number
@@ -102,6 +165,7 @@ view: metric_definitions_events {
   }
 
   dimension: spoc_tiles_impressions {
+    group_label: "Metrics"
     label: "Sponsored Tiles Impressions"
     description: "Number of times Contile Sponsored Tiles are shown."
     type: number
@@ -109,6 +173,7 @@ view: metric_definitions_events {
   }
 
   dimension: spoc_tiles_clicks {
+    group_label: "Metrics"
     label: "Sponsored Tiles Clicks"
     description: "Number of times user clicked a Contile Sponsored Tile."
     type: number
@@ -116,47 +181,144 @@ view: metric_definitions_events {
   }
 
   dimension: spoc_tiles_preference_toggled {
+    group_label: "Metrics"
     label: "Sponsored Tiles Preference Toggled"
     description: "Number of times Contile Sponsored Tiles setting is flipped."
     type: number
     sql: ${TABLE}.spoc_tiles_preference_toggled ;;
   }
 
+  dimension: android_sdk_version {
+    sql: ${TABLE}.android_sdk_version ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: app_build {
+    sql: ${TABLE}.app_build ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: app_channel {
+    sql: ${TABLE}.app_channel ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: app_display_version {
+    sql: ${TABLE}.app_display_version ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: architecture {
+    sql: ${TABLE}.architecture ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: city {
+    sql: ${TABLE}.city ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: country {
+    sql: ${TABLE}.country ;;
+    type: string
+    map_layer_name: countries
+    group_label: "Base Fields"
+  }
+
+  dimension: days_seen_session_end_bits {
+    sql: ${TABLE}.days_seen_session_end_bits ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: days_seen_session_start_bits {
+    sql: ${TABLE}.days_seen_session_start_bits ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: device_manufacturer {
+    sql: ${TABLE}.device_manufacturer ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: device_model {
+    sql: ${TABLE}.device_model ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: durations {
+    sql: ${TABLE}.durations ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: is_new_profile {
+    sql: ${TABLE}.is_new_profile ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: isp {
+    sql: ${TABLE}.isp ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: locale {
+    sql: ${TABLE}.locale ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: normalized_channel {
+    sql: ${TABLE}.normalized_channel ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: normalized_os {
+    sql: ${TABLE}.normalized_os ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: normalized_os_version {
+    sql: ${TABLE}.normalized_os_version ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: sample_id {
+    sql: ${TABLE}.sample_id ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: telemetry_sdk_build {
+    sql: ${TABLE}.telemetry_sdk_build ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
   dimension_group: submission {
     type: time
-    sql: COALESCE(CAST(${TABLE}.submission_date AS TIMESTAMP)
-                {%- if  metric_definitions_active_users_aggregates_v1._in_query %}
-                , CAST(metric_definitions_active_users_aggregates_v1.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_baseline._in_query %}
-                , CAST(metric_definitions_baseline.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_baseline_v2._in_query %}
-                , CAST(metric_definitions_baseline_v2.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_events._in_query %}
-                , CAST(metric_definitions_events.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_metrics._in_query %}
-                , CAST(metric_definitions_metrics.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_mobile_search_clients_engines_sources_daily._in_query %}
-                , CAST(metric_definitions_mobile_search_clients_engines_sources_daily.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_new_profile_activation._in_query %}
-                , CAST(metric_definitions_new_profile_activation.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_special_onboarding_events._in_query %}
-                , CAST(metric_definitions_special_onboarding_events.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            ) ;;
+    group_label: "Base Fields"
+    sql: CAST(${TABLE}.analysis_basis AS TIMESTAMP) ;;
     label: "Submission"
     timeframes: [
       raw,
@@ -168,6 +330,22 @@ view: metric_definitions_events {
     ]
   }
 
+  dimension_group: first_seen {
+    sql: ${TABLE}.first_seen_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    group_label: "Base Fields"
+  }
+
   set: metrics {
     fields: [
       user_reports_site_issue_count,
@@ -176,5 +354,41 @@ view: metric_definitions_events {
       spoc_tiles_clicks,
       spoc_tiles_preference_toggled,
     ]
+  }
+
+  parameter: aggregate_metrics_by {
+    label: "Aggregate Client Metrics Per"
+    type: unquoted
+    default_value: "day"
+
+    allowed_value: {
+      label: "Per Day"
+      value: "day"
+    }
+
+    allowed_value: {
+      label: "Per Week"
+      value: "week"
+    }
+
+    allowed_value: {
+      label: "Per Month"
+      value: "month"
+    }
+
+    allowed_value: {
+      label: "Per Quarter"
+      value: "quarter"
+    }
+
+    allowed_value: {
+      label: "Per Year"
+      value: "year"
+    }
+
+    allowed_value: {
+      label: "Overall"
+      value: "overall"
+    }
   }
 }

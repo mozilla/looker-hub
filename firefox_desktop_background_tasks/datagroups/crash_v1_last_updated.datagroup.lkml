@@ -7,9 +7,10 @@
 
 datagroup: crash_v1_last_updated {
   label: "crash_v1 Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.firefox_desktop_background_tasks_stable.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'crash_v1' ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'firefox_desktop_background_tasks_stable'
+    AND table_name = 'crash_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_desktop_background_tasks_stable.crash_v1 is modified."
   max_cache_age: "24 hours"
 }

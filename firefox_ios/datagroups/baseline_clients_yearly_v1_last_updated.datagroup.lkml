@@ -7,9 +7,10 @@
 
 datagroup: baseline_clients_yearly_v1_last_updated {
   label: "Baseline Clients Yearly Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.firefox_ios_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'baseline_clients_yearly_v1' ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'firefox_ios_derived'
+    AND table_name = 'baseline_clients_yearly_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:firefox_ios_derived.baseline_clients_yearly_v1 is modified."
   max_cache_age: "24 hours"
 }

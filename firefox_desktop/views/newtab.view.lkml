@@ -257,6 +257,42 @@ default engine, and hence both versions of these fields will be filled in.
 "
   }
 
+  dimension: metrics__quantity__topsites_sponsored_tiles_configured {
+    label: "Topsites Sponsored Tiles Configured"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.topsites_sponsored_tiles_configured ;;
+    type: number
+    group_label: "Topsites"
+    group_item_label: "Sponsored Tiles Configured"
+
+    link: {
+      label: "Glean Dictionary reference for Topsites Sponsored Tiles Configured"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/topsites_sponsored_tiles_configured"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of topsite tiles configured to be shown on newtab.
+"
+  }
+
+  dimension: metrics__text2__topsites_sponsored_tiles_received {
+    label: "Topsites Sponsored Tiles Received"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.topsites_sponsored_tiles_received ;;
+    type: string
+    group_label: "Topsites"
+    group_item_label: "Sponsored Tiles Received"
+
+    link: {
+      label: "Glean Dictionary reference for Topsites Sponsored Tiles Received"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/topsites_sponsored_tiles_received"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The stringified JSON of tiles processed for display (array of objects). Includes tiles not displayed and reason for not displaying. Fields included: advertiser, provider, display_position, display_fail_reason.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation Id"
     hidden: no
@@ -1044,5 +1080,67 @@ order by n desc ;;
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
+  }
+}
+
+view: newtab__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: newtab__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: newtab__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }

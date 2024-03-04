@@ -51,6 +51,11 @@ view: event_aggregates_suggest {
     type: string
   }
 
+  dimension: query_type {
+    sql: ${TABLE}.query_type ;;
+    type: string
+  }
+
   dimension: release_channel {
     sql: ${TABLE}.release_channel ;;
     type: string
