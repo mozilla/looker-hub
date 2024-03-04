@@ -7347,6 +7347,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_proxy_info_type {
+    label: "Networking Proxy Info Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_proxy_info_type ;;
+    group_label: "Networking"
+    group_item_label: "Proxy Info Type"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Proxy Info Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_proxy_info_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proxies configurations created in the browser session (SOCKSv4, SOCKSv5, HTTP, HTTPS)
+"
+  }
+
   dimension: metrics__counter__networking_residual_cache_folder_count {
     label: "Networking Residual Cache Folder Count"
     hidden: no
@@ -7661,6 +7678,218 @@ To be used to validate GIFFT.
     }
 
     description: "Counts the number of times some PDF editing features are used.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_color {
+    label: "Pdfjs Editing Highlight Color"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_color ;;
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Color"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Color"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_color"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a given color is used to highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_color_changed {
+    label: "Pdfjs Editing Highlight Color Changed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_color_changed ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Color Changed"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Color Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_color_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user changes the color of a highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_deleted {
+    label: "Pdfjs Editing Highlight Deleted"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_deleted ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Deleted"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user deletes highlights.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_edited {
+    label: "Pdfjs Editing Highlight Edited"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_edited ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Edited"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Edited"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_edited"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user edits highlights.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_kind {
+    label: "Pdfjs Editing Highlight Kind"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_kind ;;
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Kind"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Kind"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_kind"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a given kind is used to highlight.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_method {
+    label: "Pdfjs Editing Highlight Method"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_method ;;
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Method"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Method"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_method"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a given method is used to highlight.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors {
+    label: "Pdfjs Editing Highlight Number Of Colors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_number_of_colors ;;
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Number Of Colors"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Number Of Colors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_number_of_colors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of different colors used to highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_print {
+    label: "Pdfjs Editing Highlight Print"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_print ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Print"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Print"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_print"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user prints a PDF with highlights.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_save {
+    label: "Pdfjs Editing Highlight Save"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_save ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Save"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Save"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_save"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user saves a PDF with highlights.
+"
+  }
+
+  dimension: metrics__custom_distribution__pdfjs_editing_highlight_thickness__sum {
+    label: "Pdfjs Editing Highlight Thickness Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.pdfjs_editing_highlight_thickness.sum ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Thickness Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Thickness Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_thickness"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The thickness used to draw a free highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_thickness_changed {
+    label: "Pdfjs Editing Highlight Thickness Changed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_thickness_changed ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Thickness Changed"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Thickness Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_thickness_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user changes the thickness of a free highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_toggle_visibility {
+    label: "Pdfjs Editing Highlight Toggle Visibility"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_toggle_visibility ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Toggle Visibility"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Toggle Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_toggle_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user toggles the visibility of highlights.
 "
   }
 
@@ -12772,6 +13001,181 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: pdfjs_editing_highlight_color_changed {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_color_changed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Color Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_color_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_color_changed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_color_changed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Color Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_color_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_deleted {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_deleted} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_deleted_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_deleted: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_edited {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_edited} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Edited"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_edited"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_edited_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_edited: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Edited"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_edited"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_print {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_print} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Print"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_print"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_print_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_print: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Print"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_print"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_save {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_save} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Save"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_save"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_save_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_save: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Save"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_save"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_thickness_changed {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_thickness_changed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Thickness Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_thickness_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_thickness_changed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_thickness_changed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Thickness Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_thickness_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_toggle_visibility {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_toggle_visibility} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Toggle Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_toggle_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_toggle_visibility_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_toggle_visibility: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Toggle Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_toggle_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: pdfjs_used {
     type: sum
     sql: ${metrics__counter__pdfjs_used} ;;
@@ -17249,6 +17653,49 @@ view: metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr 
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_proxy_info_type {
+  label: "Networking - Proxy Info Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_proxy_info_type
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_proxy_info_type.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_residual_cache_folder_removal {
   label: "Networking - Residual Cache Folder Removal"
 
@@ -17485,6 +17932,178 @@ view: metrics__metrics__labeled_counter__pdfjs_editing {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing
     suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_editing_highlight_color {
+  label: "Pdfjs Editing Highlight - Color"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_color
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_color.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind {
+  label: "Pdfjs Editing Highlight - Kind"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_editing_highlight_method {
+  label: "Pdfjs Editing Highlight - Method"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_method
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_method.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors {
+  label: "Pdfjs Editing Highlight - Number Of Colors"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors.key
     hidden: no
   }
 
@@ -20407,6 +21026,25 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__networking_proxy_info_type {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.networking_proxy_info_type) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__networking_residual_cache_folder_removal {
   derived_table: {
     sql: select
@@ -20509,6 +21147,82 @@ view: suggest__metrics__metrics__labeled_counter__pdfjs_editing {
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.pdfjs_editing) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_color {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.pdfjs_editing_highlight_color) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.pdfjs_editing_highlight_kind) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_method {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.pdfjs_editing_highlight_method) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.pdfjs_editing_highlight_number_of_colors) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -21611,6 +22325,18 @@ view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput
 }
 
 view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__pdfjs_editing_highlight_thickness__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

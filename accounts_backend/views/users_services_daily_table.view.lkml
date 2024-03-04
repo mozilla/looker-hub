@@ -11,11 +11,6 @@ view: users_services_daily_table {
     map_layer_name: countries
   }
 
-  dimension: language {
-    sql: ${TABLE}.language ;;
-    type: string
-  }
-
   dimension: registered {
     sql: ${TABLE}.registered ;;
     type: yesno
@@ -31,13 +26,14 @@ view: users_services_daily_table {
     type: string
   }
 
-  dimension: service_events {
-    sql: ${TABLE}.service_events ;;
-    hidden: yes
+  dimension: user_agent_device_count {
+    sql: ${TABLE}.user_agent_device_count ;;
+    type: number
+    description: "Number of devices associated with the user, per service, per day. Estimated from the number of unique user agent strings."
   }
 
-  dimension: user_id {
-    sql: ${TABLE}.user_id ;;
+  dimension: user_id_sha256 {
+    sql: ${TABLE}.user_id_sha256 ;;
     type: string
   }
 

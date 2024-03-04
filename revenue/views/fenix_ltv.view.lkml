@@ -25,8 +25,28 @@ view: fenix_ltv {
     type: number
   }
 
+  dimension: revenue_per_click {
+    sql: ${TABLE}.revenue_per_click ;;
+    type: number
+  }
+
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
+    type: number
+  }
+
+  dimension: total_future_ad_clicks {
+    sql: ${TABLE}.total_future_ad_clicks ;;
+    type: number
+  }
+
+  dimension: total_historic_ad_clicks {
+    sql: ${TABLE}.total_historic_ad_clicks ;;
+    type: number
+  }
+
+  dimension: total_predicted_ad_clicks {
+    sql: ${TABLE}.total_predicted_ad_clicks ;;
     type: number
   }
 

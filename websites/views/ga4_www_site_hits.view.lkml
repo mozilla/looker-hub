@@ -216,6 +216,18 @@ view: ga4_www_site_hits {
     description: "Page Path Level 1"
   }
 
+  dimension: platform_type {
+    sql: ${TABLE}.platform_type ;;
+    type: string
+    description: "Platform Type - For product download events, what platform type was the download requested from"
+  }
+
+  dimension: product_type {
+    sql: ${TABLE}.product_type ;;
+    type: string
+    description: "Product Type - For product download events, what product type was downloaded"
+  }
+
   dimension: single_page_session {
     sql: ${TABLE}.single_page_session ;;
     type: yesno

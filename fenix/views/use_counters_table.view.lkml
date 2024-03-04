@@ -3776,6 +3776,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css Transition"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_transition_behavior {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_transition_behavior ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Transition Behavior"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_transition_delay {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_transition_delay ;;
     type: number
@@ -8653,6 +8660,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Transition"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_transition_behavior {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_transition_behavior ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Transition Behavior"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_transition_delay {

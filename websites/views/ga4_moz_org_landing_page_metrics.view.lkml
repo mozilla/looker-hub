@@ -45,7 +45,7 @@ view: ga4_moz_org_landing_page_metrics {
   dimension: downloads {
     sql: ${TABLE}.downloads ;;
     type: number
-    description: "Downloads - The number of product_download events"
+    description: "Downloads - The number of Firefox Desktop downloads"
   }
 
   dimension: exits {
@@ -81,7 +81,7 @@ view: ga4_moz_org_landing_page_metrics {
   dimension: non_fx_downloads {
     sql: ${TABLE}.non_fx_downloads ;;
     type: number
-    description: "Non Firefox Downloads - The number of product_download events on a non-Firefox browser"
+    description: "Non Firefox Downloads - The number of Firefox Desktop downloads from a non-Firefox browser"
   }
 
   dimension: non_fx_sessions {

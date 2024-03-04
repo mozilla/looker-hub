@@ -39,7 +39,7 @@ view: ga4_www_site_downloads {
   dimension: download_events {
     sql: ${TABLE}.download_events ;;
     type: number
-    description: "Download Events"
+    description: "Download Events - Number of Firefox Desktop Downloads"
   }
 
   dimension: downloads {
@@ -63,7 +63,7 @@ view: ga4_www_site_downloads {
   dimension: non_fx_downloads {
     sql: ${TABLE}.non_fx_downloads ;;
     type: number
-    description: "Non Firefox Downloads"
+    description: "Non Firefox Downloads - Number of Firefox Desktop Downloads from a Non-Firefox Browser"
   }
 
   dimension: operating_system {

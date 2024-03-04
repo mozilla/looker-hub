@@ -7,7 +7,7 @@
 view: font_list {
   dimension: metrics__text2__metrics_font_list_json {
     label: "Metrics Font List Json"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.metrics_font_list_json ;;
     type: string
     group_label: "Metrics"
