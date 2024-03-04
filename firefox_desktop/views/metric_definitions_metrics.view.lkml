@@ -481,15 +481,16 @@ base.windows_ubr,
             
             INNER JOIN mozdata.telemetry.clients_daily base
             ON
-                base.submission_date = m.submission_date AND
-                base.client_id = m.metrics.uuid.legacy_telemetry_client_id
+                base.submission_date = m.submission_date
+                 AND base.client_id = m.metrics.uuid.legacy_telemetry_client_id
             WHERE base.submission_date BETWEEN
                 SAFE_CAST(
                     {% date_start submission_date %} AS DATE
                 ) AND
                 SAFE_CAST(
                     {% date_end submission_date %} AS DATE
-                )
+                ) AND
+                base.sample_id < {% parameter sampling %}
             
             AND m.submission_date BETWEEN
                 SAFE_CAST(
@@ -3555,5 +3556,12 @@ windows_ubr,
       label: "Overall"
       value: "overall"
     }
+  }
+
+  parameter: sampling {
+    label: "Sample of source data in %"
+    type: unquoted
+    default_value: "100"
+    hidden: no
   }
 }

@@ -384,7 +384,7 @@ combined_browser_metrics:
   - lvargas@mozilla.com
   - mhirose@mozilla.com
   - anicholson@mozilla.com
-  - kignasiak@mozilla.com
+  - kik@mozilla.com
   pretty_name: Combined Browser Metrics
   spoke: looker-spoke-default
   views:
@@ -867,6 +867,10 @@ fenix:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_events
+    metric_definitions_feature_usage_metrics_v1:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_feature_usage_metrics_v1
     metric_definitions_metrics:
       type: metric_definitions_explore
       views:
@@ -926,8 +930,8 @@ fenix:
   - vzare@mozilla.com
   - ksiegler@mozilla.com
   - rbaffourawuah@mozilla.com
-  - kik@mozilla.com
   - vsabino@mozilla.com
+  - kik@mozilla.com
   pretty_name: Fenix
   spoke: looker-spoke-default
   views:
@@ -1601,6 +1605,10 @@ fenix:
       - table: mozdata.fenix.baseline_clients_daily
       type: metric_definitions_view
     metric_definitions_events:
+      tables:
+      - table: mozdata.fenix.baseline_clients_daily
+      type: metric_definitions_view
+    metric_definitions_feature_usage_metrics_v1:
       tables:
       - table: mozdata.fenix.baseline_clients_daily
       type: metric_definitions_view
@@ -3266,7 +3274,6 @@ firefox_ios:
   owners:
   - tlong@mozilla.com
   - dthorn@mozilla.com
-  - athomas@mozilla.com
   - darcese@mozilla.com
   - kik@mozilla.com
   - rbaffourawuah@mozilla.com
@@ -4939,7 +4946,7 @@ mach:
 marketing:
   glean_app: false
   owners:
-  - kignasiak@mozilla.com
+  - kik@mozilla.com
   pretty_name: Marketing
   spoke: looker-spoke-default
   views:
@@ -5259,7 +5266,7 @@ monitoring:
   - akomar@mozilla.com
   - anicholson@mozilla.com
   - mhirose@mozilla.com
-  - kignasiak@mozilla.com
+  - kik@mozilla.com
   - wichan@mozilla.com
   pretty_name: Monitoring (Data Pipeline)
   spoke: looker-spoke-default
@@ -18915,7 +18922,7 @@ treeherder:
 websites:
   glean_app: false
   owners:
-  - kignasiak@mozilla.com
+  - kik@mozilla.com
   pretty_name: Websites
   spoke: looker-spoke-default
   views:

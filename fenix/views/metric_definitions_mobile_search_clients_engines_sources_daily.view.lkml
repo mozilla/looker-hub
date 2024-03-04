@@ -80,15 +80,16 @@ base.telemetry_sdk_build,
             
             INNER JOIN mozdata.fenix.baseline_clients_daily base
             ON
-                base.submission_date = m.submission_date AND
-                base.client_id = m.client_id
+                base.submission_date = m.submission_date
+                 AND base.client_id = m.client_id
             WHERE base.submission_date BETWEEN
                 SAFE_CAST(
                     {% date_start submission_date %} AS DATE
                 ) AND
                 SAFE_CAST(
                     {% date_end submission_date %} AS DATE
-                )
+                ) AND
+                base.sample_id < {% parameter sampling %}
             
             AND m.submission_date BETWEEN
                 SAFE_CAST(
@@ -379,6 +380,14 @@ telemetry_sdk_build,
     group_label: "Base Fields"
   }
 
+  measure: ad_click_organic_average {
+    type: average
+    sql: ${TABLE}.ad_click_organic ;;
+    label: "Organic Ad Click Count Average"
+    group_label: "Statistics"
+    description: "Average of Organic Ad Click Count"
+  }
+
   set: metrics {
     fields: [
       tagged_sap_searches,
@@ -389,6 +398,7 @@ telemetry_sdk_build,
       ad_clicks,
       tagged_search_count,
       tagged_follow_on,
+      ad_click_organic_average,
     ]
   }
 
@@ -426,5 +436,12 @@ telemetry_sdk_build,
       label: "Overall"
       value: "overall"
     }
+  }
+
+  parameter: sampling {
+    label: "Sample of source data in %"
+    type: unquoted
+    default_value: "100"
+    hidden: no
   }
 }

@@ -31,6 +31,9 @@ LOGICAL_OR(history_migrations_quantity_all IS NOT NULL AND history_migrations_qu
 NULLIF(SUM(history_migrations_quantity_all), 0) AS imported_history_count,
 CAST(COALESCE(SUM(CASE WHEN fxa_configured IS TRUE THEN 1 ELSE 0 END),0) > 0 AS INT) AS fxa_signed_in,
 COALESCE(SUM(pings_aggregated_by_this_row), 0) > 0 AS retained,
+SUM(socket_crash_count) AS socket_crash_count_v1,
+SUM(IF(socket_crash_count > 0, active_hours_sum, 0)) AS socket_crash_active_hours_v1,
+COUNTIF(socket_crash_count > 0) AS socket_crash_dau_v1,
 
                 a11y_theme,
 base.aborts_content_sum,
@@ -478,15 +481,16 @@ base.windows_ubr,
             
             INNER JOIN mozdata.telemetry.clients_daily base
             ON
-                base.submission_date = m.submission_date AND
-                base.client_id = m.client_id
+                base.submission_date = m.submission_date
+                 AND base.client_id = m.client_id
             WHERE base.submission_date BETWEEN
                 SAFE_CAST(
                     {% date_start submission_date %} AS DATE
                 ) AND
                 SAFE_CAST(
                     {% date_end submission_date %} AS DATE
-                )
+                ) AND
+                base.sample_id < {% parameter sampling %}
             
             AND m.submission_date BETWEEN
                 SAFE_CAST(
@@ -1083,6 +1087,30 @@ windows_ubr,
     description: "Records whether a client submitted any pings (i.e. used Firefox)."
     type: number
     sql: ${TABLE}.retained ;;
+  }
+
+  dimension: socket_crash_count_v1 {
+    group_label: "Metrics"
+    label: "Client Crash Count"
+    description: "Number of Socket crashes by a single client. Filter on this field to remove clients with large numbers of crashes."
+    type: number
+    sql: ${TABLE}.socket_crash_count_v1 ;;
+  }
+
+  dimension: socket_crash_active_hours_v1 {
+    group_label: "Metrics"
+    label: "Client Crash Active Hours"
+    description: "Total active hours of a client with socket crashes"
+    type: number
+    sql: ${TABLE}.socket_crash_active_hours_v1 ;;
+  }
+
+  dimension: socket_crash_dau_v1 {
+    group_label: "Metrics"
+    label: "Daily Active Users with socket crashes"
+    description: "Daily active user count with socket crashes"
+    type: number
+    sql: ${TABLE}.socket_crash_dau_v1 ;;
   }
 
   dimension: a11y_theme {
@@ -3620,6 +3648,65 @@ windows_ubr,
     group_label: "Base Fields"
   }
 
+  measure: days_of_use_average {
+    type: average
+    sql: ${TABLE}.days_of_use ;;
+    label: "Days of use Average"
+    group_label: "Statistics"
+    description: "Average of Days of use"
+  }
+
+  measure: socket_crash_count_v1_sum {
+    type: sum
+    sql: ${TABLE}.socket_crash_count_v1*100 / {% parameter sampling %} ;;
+    label: "Client Crash Count Sum"
+    group_label: "Statistics"
+    description: "Sum of Client Crash Count"
+  }
+
+  measure: socket_crash_count_v1_ratio {
+    type: number
+    label: "Client Crash Count Ratio"
+    sql: SAFE_DIVIDE(${socket_crash_count_v1_sum}, ${socket_crash_active_hours_v1_sum}) ;;
+    group_label: "Statistics"
+    description: "\"
+                                        Ratio between socket_crash_count_v1.sum and
+                                        socket_crash_active_hours_v1.sum"
+  }
+
+  measure: socket_crash_active_hours_v1_sum {
+    type: sum
+    sql: ${TABLE}.socket_crash_active_hours_v1*100 / {% parameter sampling %} ;;
+    label: "Client Crash Active Hours Sum"
+    group_label: "Statistics"
+    description: "Sum of Client Crash Active Hours"
+  }
+
+  measure: socket_crash_active_hours_v1_client_count_sampled {
+    type: count_distinct
+    label: "Client Crash Active Hours Client Count"
+    group_label: "Statistics"
+    sql: IF(SAFE_CAST(${TABLE}.socket_crash_active_hours_v1 AS BOOL), ${TABLE}.client_id, SAFE_CAST(NULL AS STRING)) ;;
+    description: "Number of clients with Client Crash Active Hours"
+    hidden: yes
+  }
+
+  measure: socket_crash_active_hours_v1_client_count {
+    type: number
+    label: "Client Crash Active Hours Client Count"
+    group_label: "Statistics"
+    sql: ${socket_crash_active_hours_v1_client_count_sampled} *100 / {% parameter sampling %} ;;
+    description: "Number of clients with Client Crash Active Hours"
+  }
+
+  measure: socket_crash_dau_v1_sum {
+    type: sum
+    sql: ${TABLE}.socket_crash_dau_v1*100 / {% parameter sampling %} ;;
+    label: "Daily Active Users with socket crashes Sum"
+    group_label: "Statistics"
+    description: "Sum of Daily Active Users with socket crashes"
+  }
+
   set: metrics {
     fields: [
       active_hours,
@@ -3639,6 +3726,16 @@ windows_ubr,
       imported_history_count,
       fxa_signed_in,
       retained,
+      socket_crash_count_v1,
+      socket_crash_active_hours_v1,
+      socket_crash_dau_v1,
+      days_of_use_average,
+      socket_crash_count_v1_sum,
+      socket_crash_count_v1_ratio,
+      socket_crash_active_hours_v1_sum,
+      socket_crash_active_hours_v1_client_count_sampled,
+      socket_crash_active_hours_v1_client_count,
+      socket_crash_dau_v1_sum,
     ]
   }
 
@@ -3676,5 +3773,12 @@ windows_ubr,
       label: "Overall"
       value: "overall"
     }
+  }
+
+  parameter: sampling {
+    label: "Sample of source data in %"
+    type: unquoted
+    default_value: "100"
+    hidden: no
   }
 }

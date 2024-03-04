@@ -78,15 +78,16 @@ base.telemetry_sdk_build,
             
             INNER JOIN mozdata.fenix.baseline_clients_daily base
             ON
-                base.submission_date = m.submission_date AND
-                base.client_id = m.client_info.client_id
+                base.submission_date = m.submission_date
+                 AND base.client_id = m.client_info.client_id
             WHERE base.submission_date BETWEEN
                 SAFE_CAST(
                     {% date_start submission_date %} AS DATE
                 ) AND
                 SAFE_CAST(
                     {% date_end submission_date %} AS DATE
-                )
+                ) AND
+                base.sample_id < {% parameter sampling %}
             
             AND m.submission_date BETWEEN
                 SAFE_CAST(
@@ -329,6 +330,22 @@ telemetry_sdk_build,
     group_label: "Base Fields"
   }
 
+  measure: active_hours_average {
+    type: average
+    sql: ${TABLE}.active_hours ;;
+    label: "Active Hours Average"
+    group_label: "Statistics"
+    description: "Average of Active Hours"
+  }
+
+  measure: days_of_use_average {
+    type: average
+    sql: ${TABLE}.days_of_use ;;
+    label: "Days of use Average"
+    group_label: "Statistics"
+    description: "Average of Days of use"
+  }
+
   set: metrics {
     fields: [
       uri_count,
@@ -336,6 +353,8 @@ telemetry_sdk_build,
       days_of_use,
       baseline_ping_count,
       first_run_date,
+      active_hours_average,
+      days_of_use_average,
     ]
   }
 
@@ -373,5 +392,12 @@ telemetry_sdk_build,
       label: "Overall"
       value: "overall"
     }
+  }
+
+  parameter: sampling {
+    label: "Sample of source data in %"
+    type: unquoted
+    default_value: "100"
+    hidden: no
   }
 }
