@@ -8677,13 +8677,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id197
           normalized_channel:
-            default: esr
+            default: nightly
             options:
+            - nightly
             - esr
             - aurora
-            - release
-            - nightly
             - beta
+            - release
             - default
             - nightly-pine
             - nightly-oak
@@ -8813,8 +8813,8 @@ operational_monitoring:
             default: beta
             options:
             - beta
-            - nightly
             - aurora
+            - nightly
             - release
             - esr
             - Other
@@ -9328,11 +9328,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id245
           os:
-            default: Mac
+            default: Linux
             options:
-            - Mac
-            - Windows
             - Linux
+            - Windows
+            - Mac
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -10077,12 +10077,12 @@ operational_monitoring:
             default: iOS - daemon_session
             options:
             - iOS - daemon_session
+            - iOS - vpn_session
             - Android - daemon_session
-            - Android - vpn_session
             - Linux - vpn_session
             - Darwin - vpn_session
+            - Android - vpn_session
             - Windows - vpn_session
-            - iOS - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id312
@@ -11664,13 +11664,13 @@ operational_monitoring:
             default: release
             options:
             - release
-            - nightly
             - beta
+            - nightly
           os:
-            default: Darwin
+            default: Windows_NT
             options:
-            - Darwin
             - Windows_NT
+            - Darwin
             - Linux
         explore: print_background_task_times
         group_by_dimension: null
