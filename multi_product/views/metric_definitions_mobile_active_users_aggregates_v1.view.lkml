@@ -11,7 +11,7 @@ view: metric_definitions_mobile_active_users_aggregates_v1 {
 SUM(IF(FORMAT_DATE('%m-%d', submission_date) BETWEEN '11-18' AND '12-15', dau, 0)) / 28 AS mobile_dau_kpi_v1,
 
                 
-                m.NULL AS client_id,
+                NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
                 m.submission_date AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'week'  %}
@@ -160,5 +160,12 @@ SUM(IF(FORMAT_DATE('%m-%d', submission_date) BETWEEN '11-18' AND '12-15', dau, 0
       label: "Overall"
       value: "overall"
     }
+  }
+
+  parameter: sampling {
+    label: "Sample of source data in %"
+    type: unquoted
+    default_value: "100"
+    hidden: yes
   }
 }

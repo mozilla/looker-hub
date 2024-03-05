@@ -14,27 +14,27 @@ view: metric_definitions_metrics {
   ),0) AS spoc_tiles_disable_rate,
 MAX(IF(metrics.boolean.preferences_signed_in_sync, 1, 0)) AS fxa_sign_in,
 
-                android_sdk_version,
-base.app_build,
-base.app_channel,
-base.app_display_version,
-base.architecture,
-base.city,
-base.country,
-base.days_seen_session_end_bits,
-base.days_seen_session_start_bits,
-base.device_manufacturer,
-base.device_model,
-base.durations,
-base.is_new_profile,
-base.isp,
-base.locale,
-base.normalized_app_id,
-base.normalized_channel,
-base.normalized_os,
-base.normalized_os_version,
-base.sample_id,
-base.telemetry_sdk_build,
+                base_android_sdk_version AS android_sdk_version,
+base.base_app_build AS app_build,
+base.base_app_channel AS app_channel,
+base.base_app_display_version AS app_display_version,
+base.base_architecture AS architecture,
+base.base_city AS city,
+base.base_country AS country,
+base.base_days_seen_session_end_bits AS days_seen_session_end_bits,
+base.base_days_seen_session_start_bits AS days_seen_session_start_bits,
+base.base_device_manufacturer AS device_manufacturer,
+base.base_device_model AS device_model,
+base.base_durations AS durations,
+base.base_is_new_profile AS is_new_profile,
+base.base_isp AS isp,
+base.base_locale AS locale,
+base.base_normalized_app_id AS normalized_app_id,
+base.base_normalized_channel AS normalized_channel,
+base.base_normalized_os AS normalized_os,
+base.base_normalized_os_version AS normalized_os_version,
+base.base_sample_id AS sample_id,
+base.base_telemetry_sdk_build AS telemetry_sdk_build,
 
                 m.client_info.client_id AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
@@ -77,17 +77,46 @@ base.telemetry_sdk_build,
     )
             AS m
             
-            INNER JOIN mozdata.fenix.baseline_clients_daily base
+            INNER JOIN (
+                SELECT
+                client_id AS base_client_id,
+                submission_date AS base_submission_date,
+                android_sdk_version AS base_android_sdk_version,
+app_build AS base_app_build,
+app_channel AS base_app_channel,
+app_display_version AS base_app_display_version,
+architecture AS base_architecture,
+city AS base_city,
+country AS base_country,
+days_seen_session_end_bits AS base_days_seen_session_end_bits,
+days_seen_session_start_bits AS base_days_seen_session_start_bits,
+device_manufacturer AS base_device_manufacturer,
+device_model AS base_device_model,
+durations AS base_durations,
+is_new_profile AS base_is_new_profile,
+isp AS base_isp,
+locale AS base_locale,
+normalized_app_id AS base_normalized_app_id,
+normalized_channel AS base_normalized_channel,
+normalized_os AS base_normalized_os,
+normalized_os_version AS base_normalized_os_version,
+sample_id AS base_sample_id,
+telemetry_sdk_build AS base_telemetry_sdk_build,
+
+                FROM
+                mozdata.fenix.baseline_clients_daily
+            ) base
             ON
-                base.submission_date = m.submission_date AND
-                base.client_id = m.client_info.client_id
-            WHERE base.submission_date BETWEEN
+                base.base_submission_date = m.submission_date
+                 AND base.base_client_id = m.client_info.client_id
+            WHERE base.base_submission_date BETWEEN
                 SAFE_CAST(
                     {% date_start submission_date %} AS DATE
                 ) AND
                 SAFE_CAST(
                     {% date_end submission_date %} AS DATE
-                )
+                ) AND
+                base.base_sample_id < {% parameter sampling %}
             
             AND m.submission_date BETWEEN
                 SAFE_CAST(
@@ -352,5 +381,12 @@ telemetry_sdk_build,
       label: "Overall"
       value: "overall"
     }
+  }
+
+  parameter: sampling {
+    label: "Sample of source data in %"
+    type: unquoted
+    default_value: "100"
+    hidden: no
   }
 }
