@@ -5116,7 +5116,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__labeled_boolean__oskeystore_self_test {
     label: "Oskeystore Self Test"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_boolean.oskeystore_self_test ;;
     type: string
     group_label: "Oskeystore"
@@ -7986,6 +7986,22 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     group_label: "Client Info"
     group_item_label: "Os Version"
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
+  }
+
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+    description: "An optional running counter of the number of sessions for a client."
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+    description: "An optional UUID uniquely identifying the client's current session."
   }
 
   dimension: client_info__telemetry_sdk_build {

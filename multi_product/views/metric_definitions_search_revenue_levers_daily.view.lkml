@@ -14,7 +14,7 @@ COALESCE(SUM(sap), 0) AS search_forecasting_search_count,
 COALESCE(SUM(ad_click), 0) AS search_forecasting_ad_clicks,
 
                 
-                m.NULL AS client_id,
+                NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
                 m.submission_date AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'week'  %}
@@ -180,5 +180,12 @@ COALESCE(SUM(ad_click), 0) AS search_forecasting_ad_clicks,
       label: "Overall"
       value: "overall"
     }
+  }
+
+  parameter: sampling {
+    label: "Sample of source data in %"
+    type: unquoted
+    default_value: "100"
+    hidden: yes
   }
 }
