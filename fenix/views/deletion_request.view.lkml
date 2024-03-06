@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: deletion_request {
+  dimension: metrics__uuid__characteristics_client_identifier {
+    label: "Characteristics Client Identifier"
+    hidden: no
+    sql: ${TABLE}.metrics.uuid.characteristics_client_identifier ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Client Identifier"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Client Identifier"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/characteristics_client_identifier"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A unique identifier for a user, not the same as the normal Telemetry client_id, but needed so we can deduplicate reports and only take the most recent one per user.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation Id"
     hidden: no
@@ -188,6 +206,20 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
+  }
+
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
   }
 
   dimension: client_info__telemetry_sdk_build {
