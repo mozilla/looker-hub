@@ -2202,6 +2202,10 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: use_counters
+    user_characteristics:
+      type: glean_ping_explore
+      views:
+        base_view: user_characteristics
   glean_app: true
   owners:
   - chutten@mozilla.com
@@ -2638,6 +2642,15 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.use_counters
+      type: table_view
+    user_characteristics:
+      tables:
+      - table: mozdata.firefox_desktop.user_characteristics
+      type: glean_ping_view
+    user_characteristics_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.user_characteristics
       type: table_view
 firefox_desktop_background_defaultagent:
   explores:
@@ -18725,11 +18738,6 @@ tiktokreporter_android:
       type: glean_ping_explore
       views:
         base_view: baseline
-    client_counts:
-      type: client_counts_explore
-      views:
-        base_view: client_counts
-        extended_view: baseline_clients_daily_table
     deletion_request:
       type: glean_ping_explore
       views:
@@ -18742,10 +18750,6 @@ tiktokreporter_android:
       type: glean_ping_explore
       views:
         base_view: email
-    growth_accounting:
-      type: growth_accounting_explore
-      views:
-        base_view: growth_accounting
     metrics:
       type: glean_ping_explore
       views:
@@ -18769,30 +18773,11 @@ tiktokreporter_android:
       tables:
       - table: mozdata.org_mozilla_tiktokreporter.baseline
       type: glean_ping_view
-    baseline_clients_daily_table:
-      tables:
-      - channel: null
-        table: mozdata.org_mozilla_tiktokreporter.baseline_clients_daily
-      type: table_view
-    baseline_clients_first_seen_table:
-      tables:
-      - channel: null
-        table: mozdata.org_mozilla_tiktokreporter.baseline_clients_first_seen
-      type: table_view
-    baseline_clients_last_seen_table:
-      tables:
-      - channel: null
-        table: mozdata.org_mozilla_tiktokreporter.baseline_clients_last_seen
-      type: table_view
     baseline_table:
       tables:
       - channel: null
         table: mozdata.org_mozilla_tiktokreporter.baseline
       type: table_view
-    client_counts:
-      tables:
-      - table: mozdata.org_mozilla_tiktokreporter.baseline_clients_daily
-      type: client_counts_view
     deletion_request:
       tables:
       - table: mozdata.org_mozilla_tiktokreporter.deletion_request
@@ -18825,10 +18810,6 @@ tiktokreporter_android:
       - channel: null
         table: mozdata.org_mozilla_tiktokreporter.events
       type: table_view
-    growth_accounting:
-      tables:
-      - table: mozdata.org_mozilla_tiktokreporter.baseline_clients_last_seen
-      type: growth_accounting_view
     metrics:
       tables:
       - table: mozdata.org_mozilla_tiktokreporter.metrics
