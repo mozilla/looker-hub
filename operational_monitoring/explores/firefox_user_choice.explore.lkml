@@ -4,9 +4,14 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/tiktokreporter_android/views/growth_accounting.view.lkml"
+include: "/looker-hub/operational_monitoring/views/firefox_user_choice.view.lkml"
 
-explore: growth_accounting {
-  sql_always_where: ${growth_accounting.submission_date} >= '2010-01-01' ;;
-  view_name: growth_accounting
+explore: firefox_user_choice {
+  always_filter: {
+    filters: [
+      branch: "active",
+    ]
+  }
+
+  hidden: yes
 }
