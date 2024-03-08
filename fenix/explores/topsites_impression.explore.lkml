@@ -14,7 +14,7 @@ explore: topsites_impression {
 
   always_filter: {
     filters: [
-      channel: "beta",
+      channel: "release",
       submission_date: "28 days",
     ]
   }
