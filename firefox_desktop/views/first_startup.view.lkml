@@ -41,6 +41,24 @@ view: first_startup {
 "
   }
 
+  dimension: metrics__boolean__first_startup_new_profile {
+    label: "First Startup New Profile"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.first_startup_new_profile ;;
+    type: yesno
+    group_label: "First Startup"
+    group_item_label: "New Profile"
+
+    link: {
+      label: "Glean Dictionary reference for First Startup New Profile"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/first_startup_new_profile"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "True if FirstStartup was initted after a new profile was just created. If false, this means that FirstStartup was initted with a pre-existing profile, which is a no-op.
+"
+  }
+
   dimension: metrics__quantity__first_startup_normandy_init_time {
     label: "First Startup Normandy Init Time"
     hidden: no
