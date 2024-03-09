@@ -8984,13 +8984,16 @@ operational_monitoring:
             - Windows 10
             - Windows 11
             - Windows 8
+            - Windows XP
+            - Windows Vista
+            - Windows 7
         explore: firefox_user_choice
         group_by_dimension: null
         summaries: &id216
-        - metric: ErrExeHash_client_volume
+        - metric: ErrLaunchExe_client_volume
           metric_groups: []
           statistic: sum
-        - metric: ErrExeHash_client_volume
+        - metric: ErrLaunchExe_client_volume
           metric_groups: []
           statistic: total_ratio
         - metric: ErrOther_client_volume
@@ -8999,6 +9002,27 @@ operational_monitoring:
         - metric: ErrOther_client_volume
           metric_groups: []
           statistic: total_ratio
+        - metric: ErrHash_event_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrHash_event_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrBuild_client_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrBuild_client_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrExeRejected_event_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrExeRejected_event_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: total_event_volume
+          metric_groups: []
+          statistic: sum
         - metric: ErrExeOther_client_volume
           metric_groups: []
           statistic: sum
@@ -9008,6 +9032,72 @@ operational_monitoring:
         - metric: total_client_volume
           metric_groups: []
           statistic: sum
+        - metric: ErrProgID_event_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrProgID_event_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrExeTimeout_client_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrExeTimeout_client_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrExeHash_event_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrExeHash_event_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrExeTimeout_event_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrExeTimeout_event_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrExeProgID_client_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrExeProgID_client_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrExeRejected_client_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrExeRejected_client_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrOther_event_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrOther_event_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: Success_client_volume
+          metric_groups: []
+          statistic: sum
+        - metric: Success_client_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: not_Success_client_volume
+          metric_groups: []
+          statistic: sum
+        - metric: not_Success_client_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrExeOther_event_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrExeOther_event_volume
+          metric_groups: []
+          statistic: total_ratio
+        - metric: ErrProgID_client_volume
+          metric_groups: []
+          statistic: sum
+        - metric: ErrProgID_client_volume
+          metric_groups: []
+          statistic: total_ratio
         - metric: Success_event_volume
           metric_groups: []
           statistic: sum
@@ -9020,97 +9110,10 @@ operational_monitoring:
         - metric: not_Success_event_volume
           metric_groups: []
           statistic: total_ratio
-        - metric: Success_client_volume
-          metric_groups: []
-          statistic: sum
-        - metric: Success_client_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrExeProgID_event_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrExeProgID_event_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrBuild_client_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrBuild_client_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrExeHash_event_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrExeHash_event_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrExeTimeout_client_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrExeTimeout_client_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrProgID_client_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrProgID_client_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrExeProgID_client_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrExeProgID_client_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrOther_event_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrOther_event_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrHash_client_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrHash_client_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrProgID_event_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrProgID_event_volume
-          metric_groups: []
-          statistic: total_ratio
         - metric: ErrBuild_event_volume
           metric_groups: []
           statistic: sum
         - metric: ErrBuild_event_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrExeTimeout_event_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrExeTimeout_event_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: total_event_volume
-          metric_groups: []
-          statistic: sum
-        - metric: not_Success_client_volume
-          metric_groups: []
-          statistic: sum
-        - metric: not_Success_client_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrExeRejected_event_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrExeRejected_event_volume
-          metric_groups: []
-          statistic: total_ratio
-        - metric: ErrHash_event_volume
-          metric_groups: []
-          statistic: sum
-        - metric: ErrHash_event_volume
           metric_groups: []
           statistic: total_ratio
         - metric: ErrLaunchExe_event_volume
@@ -9119,22 +9122,22 @@ operational_monitoring:
         - metric: ErrLaunchExe_event_volume
           metric_groups: []
           statistic: total_ratio
-        - metric: ErrExeRejected_client_volume
+        - metric: ErrExeProgID_event_volume
           metric_groups: []
           statistic: sum
-        - metric: ErrExeRejected_client_volume
+        - metric: ErrExeProgID_event_volume
           metric_groups: []
           statistic: total_ratio
-        - metric: ErrLaunchExe_client_volume
+        - metric: ErrHash_client_volume
           metric_groups: []
           statistic: sum
-        - metric: ErrLaunchExe_client_volume
+        - metric: ErrHash_client_volume
           metric_groups: []
           statistic: total_ratio
-        - metric: ErrExeOther_event_volume
+        - metric: ErrExeHash_client_volume
           metric_groups: []
           statistic: sum
-        - metric: ErrExeOther_event_volume
+        - metric: ErrExeHash_client_volume
           metric_groups: []
           statistic: total_ratio
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_user_choice_statistics
@@ -18977,120 +18980,6 @@ telemetry_dev_cycle:
       tables:
       - table: mozdata.telemetry_dev_cycle.telemetry_probes_stats
       type: table_view
-tiktokreporter_android:
-  explores:
-    baseline:
-      type: glean_ping_explore
-      views:
-        base_view: baseline
-    deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: deletion_request
-    download_data:
-      type: glean_ping_explore
-      views:
-        base_view: download_data
-    email:
-      type: glean_ping_explore
-      views:
-        base_view: email
-    metrics:
-      type: glean_ping_explore
-      views:
-        base_view: metrics
-    screen_recording:
-      type: glean_ping_explore
-      views:
-        base_view: screen_recording
-    tiktok_report:
-      type: glean_ping_explore
-      views:
-        base_view: tiktok_report
-  glean_app: true
-  owners:
-  - jessed@mozillafoundation.org
-  - tlong@mozilla.com
-  pretty_name: TikTok Reporter (Android)
-  spoke: looker-spoke-default
-  views:
-    baseline:
-      tables:
-      - table: mozdata.org_mozilla_tiktokreporter.baseline
-      type: glean_ping_view
-    baseline_table:
-      tables:
-      - channel: null
-        table: mozdata.org_mozilla_tiktokreporter.baseline
-      type: table_view
-    deletion_request:
-      tables:
-      - table: mozdata.org_mozilla_tiktokreporter.deletion_request
-      type: glean_ping_view
-    deletion_request_table:
-      tables:
-      - channel: null
-        table: mozdata.org_mozilla_tiktokreporter.deletion_request
-      type: table_view
-    download_data:
-      tables:
-      - table: mozdata.org_mozilla_tiktokreporter.download_data
-      type: glean_ping_view
-    download_data_table:
-      tables:
-      - channel: null
-        table: mozdata.org_mozilla_tiktokreporter.download_data
-      type: table_view
-    email:
-      tables:
-      - table: mozdata.org_mozilla_tiktokreporter.email
-      type: glean_ping_view
-    email_table:
-      tables:
-      - channel: null
-        table: mozdata.org_mozilla_tiktokreporter.email
-      type: table_view
-    events_table:
-      tables:
-      - channel: null
-        table: mozdata.org_mozilla_tiktokreporter.events
-      type: table_view
-    metrics:
-      tables:
-      - table: mozdata.org_mozilla_tiktokreporter.metrics
-      type: glean_ping_view
-    metrics_table:
-      tables:
-      - channel: null
-        table: mozdata.org_mozilla_tiktokreporter.metrics
-      type: table_view
-    screen_recording:
-      tables:
-      - table: mozdata.org_mozilla_tiktokreporter.screen_recording
-      type: glean_ping_view
-    screen_recording_table:
-      tables:
-      - channel: null
-        table: mozdata.org_mozilla_tiktokreporter.screen_recording
-      type: table_view
-    tiktok_report:
-      tables:
-      - table: mozdata.org_mozilla_tiktokreporter.tiktok_report
-      type: glean_ping_view
-    tiktok_report_table:
-      tables:
-      - channel: null
-        table: mozdata.org_mozilla_tiktokreporter.tiktok_report
-      type: table_view
-tiktokreporter_ios:
-  explores: {}
-  glean_app: true
-  owners:
-  - jessed@mozillafoundation.org
-  - tlong@mozilla.com
-  pretty_name: TikTok Reporter (iOS)
-  spoke: looker-spoke-default
-  views: {}
 treeherder:
   explores:
     classified:
