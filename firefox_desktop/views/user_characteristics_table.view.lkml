@@ -324,6 +324,42 @@ view: user_characteristics_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__characteristics_inverted_colors {
+    sql: ${TABLE}.metrics.boolean.characteristics_inverted_colors ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Inverted Colors"
+    description: "What LookAndFeel(InvertedColors) reports.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefers_reduced_motion {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefers_reduced_motion ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefers Reduced Motion"
+    description: "What LookAndFeel(PrefersReducedMotion) reports.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefers_reduced_transparency {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefers_reduced_transparency ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefers Reduced Transparency"
+    description: "What LookAndFeel(PrefersReducedTransparency) reports.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_video_dynamic_range {
+    sql: ${TABLE}.metrics.boolean.characteristics_video_dynamic_range ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Video Dynamic Range"
+    description: "What LookAndFeel(VideoDynamicRange) reports. Note that CSSVideoDynamicRange has an additional dependency on Color Depth.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -353,6 +389,51 @@ The labels are the `category.name` identifier of the metric.
     hidden: yes
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_depth {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_depth ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Depth"
+    description: "The Color Depth reported by CSS
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_gamut {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_gamut ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Gamut"
+    description: "The Color Gamut reported by CSS
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_scheme {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_scheme ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Scheme"
+    description: "The Color Scheme used for Content, from ContentPrefs() Preference Sheet.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_max_touch_points {
+    sql: ${TABLE}.metrics.quantity.characteristics_max_touch_points ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Max Touch Points"
+    description: "The number of touch points we will report to the web. On Android, this is based on Android's FEATURE_TOUCHSCREEN* constants - Mozilla caps this at 5 as Android stops distinguishing between numbers greater than 5.  On Windows this comes from the SM_MAXIMUMTOUCHES System Metric.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_prefers_contrast {
+    sql: ${TABLE}.metrics.quantity.characteristics_prefers_contrast ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Prefers Contrast"
+    description: "What Gecko_MediaFeatures_PrefersContrast reports for a ContentDocument
 "
   }
 

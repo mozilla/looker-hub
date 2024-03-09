@@ -23,6 +23,150 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__quantity__characteristics_color_depth {
+    label: "Characteristics Color Depth"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_color_depth ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Color Depth"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Color Depth"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_color_depth"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Color Depth reported by CSS
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_gamut {
+    label: "Characteristics Color Gamut"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_color_gamut ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Color Gamut"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Color Gamut"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_color_gamut"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Color Gamut reported by CSS
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_scheme {
+    label: "Characteristics Color Scheme"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_color_scheme ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Color Scheme"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Color Scheme"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_color_scheme"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Color Scheme used for Content, from ContentPrefs() Preference Sheet.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_inverted_colors {
+    label: "Characteristics Inverted Colors"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_inverted_colors ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Inverted Colors"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Inverted Colors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_inverted_colors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "What LookAndFeel(InvertedColors) reports.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_max_touch_points {
+    label: "Characteristics Max Touch Points"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_max_touch_points ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Max Touch Points"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Max Touch Points"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_max_touch_points"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of touch points we will report to the web. On Android, this is based on Android's FEATURE_TOUCHSCREEN* constants - Mozilla caps this at 5 as Android stops distinguishing between numbers greater than 5.  On Windows this comes from the SM_MAXIMUMTOUCHES System Metric.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_prefers_contrast {
+    label: "Characteristics Prefers Contrast"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_prefers_contrast ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Prefers Contrast"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefers Contrast"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefers_contrast"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "What Gecko_MediaFeatures_PrefersContrast reports for a ContentDocument
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefers_reduced_motion {
+    label: "Characteristics Prefers Reduced Motion"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefers_reduced_motion ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefers Reduced Motion"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefers Reduced Motion"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefers_reduced_motion"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "What LookAndFeel(PrefersReducedMotion) reports.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefers_reduced_transparency {
+    label: "Characteristics Prefers Reduced Transparency"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefers_reduced_transparency ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefers Reduced Transparency"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefers Reduced Transparency"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefers_reduced_transparency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "What LookAndFeel(PrefersReducedTransparency) reports.
+"
+  }
+
   dimension: metrics__quantity__characteristics_submission_schema {
     label: "Characteristics Submission Schema"
     hidden: no
@@ -38,6 +182,24 @@ view: user_characteristics {
     }
 
     description: "An incrementing constant that represents the current schema/source of the data present in a ping. By referring to this value in a ping, one can know for certain the provenance of other data present in the ping, and what data may or may not be present.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_video_dynamic_range {
+    label: "Characteristics Video Dynamic Range"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_video_dynamic_range ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Video Dynamic Range"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Video Dynamic Range"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_video_dynamic_range"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "What LookAndFeel(VideoDynamicRange) reports. Note that CSSVideoDynamicRange has an additional dependency on Color Depth.
 "
   }
 
