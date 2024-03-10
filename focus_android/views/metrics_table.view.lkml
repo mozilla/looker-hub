@@ -2359,6 +2359,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__object__fog_validation_some_object {
+    sql: ${TABLE}.metrics.object.fog_validation_some_object ;;
+    hidden: yes
+  }
+
   dimension: metrics__quantity__data_storage_alternate_services {
     sql: ${TABLE}.metrics.quantity.data_storage_alternate_services ;;
     type: number
