@@ -3107,6 +3107,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__object__fog_validation_some_object {
+    sql: ${TABLE}.metrics.object.fog_validation_some_object ;;
+    hidden: yes
+  }
+
   dimension: metrics__quantity__addresses_saved_all {
     sql: ${TABLE}.metrics.quantity.addresses_saved_all ;;
     type: number
