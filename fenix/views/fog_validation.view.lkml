@@ -56,6 +56,25 @@ view: fog_validation {
     description: "True iff the type of the disk the current Firefox profile is stored on is an SSD. (Windows only)."
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes
@@ -220,6 +239,20 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
+  }
+
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -801,5 +834,67 @@ order by n desc ;;
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
+  }
+}
+
+view: fog_validation__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: fog_validation__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: fog_validation__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }

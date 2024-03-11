@@ -563,6 +563,24 @@ to be displayed
 "
   }
 
+  dimension: metrics__boolean__debug_drawer_debug_drawer_enabled {
+    label: "Debug Drawer Debug Drawer Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.debug_drawer_debug_drawer_enabled ;;
+    type: yesno
+    group_label: "Debug Drawer"
+    group_item_label: "Debug Drawer Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Debug Drawer Debug Drawer Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/debug_drawer_debug_drawer_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not the user has enabled the Debug Drawer feature.
+"
+  }
+
   dimension: metrics__counter__downloads_downloaded_pdf_open_count {
     label: "Downloads Downloaded Pdf Open Count"
     hidden: yes
@@ -1255,6 +1273,24 @@ folder. This value will only be set if the user has at least *one*
 bookmark. If they have 0, this ping will not get sent, resulting in a
 null value. To disambiguate between a failed `desktop_bookmarks_count`
 ping and 0 bookmarks, please see `has_desktop_bookmarks`.
+"
+  }
+
+  dimension: metrics__quantity__metrics_device_total_ram {
+    label: "Metrics Device Total Ram"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.metrics_device_total_ram ;;
+    type: number
+    group_label: "Metrics"
+    group_item_label: "Device Total Ram"
+
+    link: {
+      label: "Glean Dictionary reference for Metrics Device Total Ram"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/metrics_device_total_ram"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total amount of memory this device in bytes, when available will be MemoryInfo.advertisedMem otherwise it will be MemoryInfo.totalMem. This doesn't represent memory available to the application however.
 "
   }
 
@@ -2239,7 +2275,7 @@ homescreen because the link was invalid).
 
   dimension: metrics__timespan__play_store_attribution_deferred_deeplink_time__value {
     label: "Play Store Attribution Deferred Deeplink Time Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.play_store_attribution_deferred_deeplink_time.value ;;
     type: number
     group_label: "Play Store Attribution"
@@ -2376,11 +2412,11 @@ default: true
 "
   }
 
-  dimension: metrics__boolean__preferences_open_links_in_app_enabled {
+  dimension: metrics__string__preferences_open_links_in_app_enabled {
     label: "Preferences Open Links In App Enabled"
     hidden: no
-    sql: ${TABLE}.metrics.boolean.preferences_open_links_in_app_enabled ;;
-    type: yesno
+    sql: ${TABLE}.metrics.string.preferences_open_links_in_app_enabled ;;
+    type: string
     group_label: "Preferences"
     group_item_label: "Open Links In App Enabled"
 
@@ -2943,6 +2979,98 @@ app will report 2, 3, and 4 when this metric is tracked.
 "
   }
 
+  dimension: metrics__counter__shopping_product_page_visits {
+    label: "Shopping Product Page Visits"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.shopping_product_page_visits ;;
+    type: number
+    group_label: "Shopping"
+    group_item_label: "Product Page Visits"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Product Page Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/shopping_product_page_visits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts number of visits to a supported retailer product page
+while enrolled in either the control or treatment branches
+of the shopping experiment.
+"
+  }
+
+  dimension: metrics__boolean__shopping_settings_component_opted_out {
+    label: "Shopping Settings Component Opted Out"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.shopping_settings_component_opted_out ;;
+    type: yesno
+    group_label: "Shopping Settings"
+    group_item_label: "Component Opted Out"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Settings Component Opted Out"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/shopping_settings_component_opted_out"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not the user opted out of review quality check feature.
+"
+  }
+
+  dimension: metrics__boolean__shopping_settings_disabled_ads {
+    label: "Shopping Settings Disabled Ads"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.shopping_settings_disabled_ads ;;
+    type: yesno
+    group_label: "Shopping Settings"
+    group_item_label: "Disabled Ads"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Settings Disabled Ads"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/shopping_settings_disabled_ads"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if the user has disabled ads.
+"
+  }
+
+  dimension: metrics__boolean__shopping_settings_nimbus_disabled_shopping {
+    label: "Shopping Settings Nimbus Disabled Shopping"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.shopping_settings_nimbus_disabled_shopping ;;
+    type: yesno
+    group_label: "Shopping Settings"
+    group_item_label: "Nimbus Disabled Shopping"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Settings Nimbus Disabled Shopping"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/shopping_settings_nimbus_disabled_shopping"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not Nimbus has disabled the use of the shopping component.
+"
+  }
+
+  dimension: metrics__boolean__shopping_settings_user_has_onboarded {
+    label: "Shopping Settings User Has Onboarded"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.shopping_settings_user_has_onboarded ;;
+    type: yesno
+    group_label: "Shopping Settings"
+    group_item_label: "User Has Onboarded"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Settings User Has Onboarded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/shopping_settings_user_has_onboarded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or the user has completed the review quality check onboarding.
+"
+  }
+
   dimension: metrics__memory_distribution__storage_stats_app_bytes__sum {
     label: "Storage Stats App Bytes Sum"
     hidden: no
@@ -3117,6 +3245,329 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
+  dimension: metrics__labeled_counter__avif_a1lx {
+    label: "Avif A1Lx"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_a1lx ;;
+    group_label: "Avif"
+    group_item_label: "A1Lx"
+
+    link: {
+      label: "Glean Dictionary reference for Avif A1Lx"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_a1lx"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AV1LayeredImageIndexingProperty (a1lx). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_a1op {
+    label: "Avif A1Op"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_a1op ;;
+    group_label: "Avif"
+    group_item_label: "A1Op"
+
+    link: {
+      label: "Glean Dictionary reference for Avif A1Op"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_a1op"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF OperatingPointSelectorProperty (a1op). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_alpha {
+    label: "Avif Alpha"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_alpha ;;
+    group_label: "Avif"
+    group_item_label: "Alpha"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Alpha"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_alpha"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF alpha plane. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_aom_decode_error {
+    label: "Avif Aom Decode Error"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_aom_decode_error ;;
+    group_label: "Avif"
+    group_item_label: "Aom Decode Error"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Aom Decode Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_aom_decode_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Image-decode Error from AOM decoder (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_bit_depth {
+    label: "Avif Bit Depth"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_bit_depth ;;
+    group_label: "Avif"
+    group_item_label: "Bit Depth"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Bit Depth"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_bit_depth"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Bits per pixel of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_cicp_cp {
+    label: "Avif Cicp Cp"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_cp ;;
+    group_label: "Avif"
+    group_item_label: "Cicp Cp"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Cicp Cp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_cicp_cp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF CICP colour primaries. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_cicp_mc {
+    label: "Avif Cicp Mc"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_mc ;;
+    group_label: "Avif"
+    group_item_label: "Cicp Mc"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Cicp Mc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_cicp_mc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF CICP transfer characteristics. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_cicp_tc {
+    label: "Avif Cicp Tc"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_tc ;;
+    group_label: "Avif"
+    group_item_label: "Cicp Tc"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Cicp Tc"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_cicp_tc"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF CICP transfer characteristics. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_clap {
+    label: "Avif Clap"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_clap ;;
+    group_label: "Avif"
+    group_item_label: "Clap"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Clap"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_clap"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF CleanApertureBox (clap). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_colr {
+    label: "Avif Colr"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_colr ;;
+    group_label: "Avif"
+    group_item_label: "Colr"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Colr"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_colr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF colour information type. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_decode_result {
+    label: "Avif Decode Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_decode_result ;;
+    group_label: "Avif"
+    group_item_label: "Decode Result"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Decode Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_decode_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Decode result of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_decoder {
+    label: "Avif Decoder"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_decoder ;;
+    group_label: "Avif"
+    group_item_label: "Decoder"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Decoder"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_decoder"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Decoder of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_grid {
+    label: "Avif Grid"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_grid ;;
+    group_label: "Avif"
+    group_item_label: "Grid"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Grid"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_grid"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF AVIF grid-based image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_ipro {
+    label: "Avif Ipro"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_ipro ;;
+    group_label: "Avif"
+    group_item_label: "Ipro"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Ipro"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_ipro"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF ItemProtectionBox (ipro). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_ispe {
+    label: "Avif Ispe"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_ispe ;;
+    group_label: "Avif"
+    group_item_label: "Ispe"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Ispe"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_ispe"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF spatial extents (image size). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_lsel {
+    label: "Avif Lsel"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_lsel ;;
+    group_label: "Avif"
+    group_item_label: "Lsel"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Lsel"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_lsel"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF LayerSelectorProperty (lsel). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_pasp {
+    label: "Avif Pasp"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_pasp ;;
+    group_label: "Avif"
+    group_item_label: "Pasp"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Pasp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_pasp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF pixel aspect ratio. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_pixi {
+    label: "Avif Pixi"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_pixi ;;
+    group_label: "Avif"
+    group_item_label: "Pixi"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Pixi"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_pixi"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "AVIF pixel information (bits per channel). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_yuv_color_space {
+    label: "Avif Yuv Color Space"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.avif_yuv_color_space ;;
+    group_label: "Avif"
+    group_item_label: "Yuv Color Space"
+
+    link: {
+      label: "Glean Dictionary reference for Avif Yuv Color Space"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_yuv_color_space"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "YUV color space of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__counter__bloburl_resolve_stopped {
     label: "Bloburl Resolve Stopped"
     hidden: no
@@ -3132,24 +3583,6 @@ ensure it's not too expensive.  This value is only available on Android
     }
 
     description: "Counts how many times we do not resolve a blob URL because of different partition keys
-"
-  }
-
-  dimension: metrics__datetime__blocklist_last_modified_rs_addons_mblf {
-    label: "Blocklist Last Modified Rs Addons Mblf"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.blocklist_last_modified_rs_addons_mblf ;;
-    type: time
-    group_label: "Blocklist"
-    group_item_label: "Last Modified Rs Addons Mblf"
-
-    link: {
-      label: "Glean Dictionary reference for Blocklist Last Modified Rs Addons Mblf"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/blocklist_last_modified_rs_addons_mblf"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Keep track of the last time the \"addons-bloomfilters\" remotesetting blocklist has been successfully updated.
 "
   }
 
@@ -3171,42 +3604,6 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
-  dimension: metrics__datetime__blocklist_mlbf_stash_time_newest {
-    label: "Blocklist Mlbf Stash Time Newest"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_newest ;;
-    type: time
-    group_label: "Blocklist"
-    group_item_label: "Mlbf Stash Time Newest"
-
-    link: {
-      label: "Glean Dictionary reference for Blocklist Mlbf Stash Time Newest"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/blocklist_mlbf_stash_time_newest"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Keep track of the timestamp of the most recent stash of the addons blocklist. Only meaningful when mlbf_enabled is true.
-"
-  }
-
-  dimension: metrics__datetime__blocklist_mlbf_stash_time_oldest {
-    label: "Blocklist Mlbf Stash Time Oldest"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_oldest ;;
-    type: time
-    group_label: "Blocklist"
-    group_item_label: "Mlbf Stash Time Oldest"
-
-    link: {
-      label: "Glean Dictionary reference for Blocklist Mlbf Stash Time Oldest"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/blocklist_mlbf_stash_time_oldest"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Keep track of the timestamp of the oldest stash of the addons blocklist. Only meaningful when mlbf_enabled is true.
-"
-  }
-
   dimension: metrics__boolean__browser_ui_proton_enabled {
     label: "Browser Ui Proton Enabled"
     hidden: yes
@@ -3222,6 +3619,74 @@ ensure it's not too expensive.  This value is only available on Android
     }
 
     description: "True if the Proton default theme is enabled.
+"
+  }
+
+  dimension: metrics__labeled_counter__codec_stats_audio_preferred_codec {
+    label: "Codec Stats Audio Preferred Codec"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_audio_preferred_codec ;;
+    group_label: "Codec Stats"
+    group_item_label: "Audio Preferred Codec"
+
+    link: {
+      label: "Glean Dictionary reference for Codec Stats Audio Preferred Codec"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/codec_stats_audio_preferred_codec"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the preferred audio codec being signaled to us to identify preferred audio codec.
+"
+  }
+
+  dimension: metrics__labeled_counter__codec_stats_other_fec_signaled {
+    label: "Codec Stats Other Fec Signaled"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_other_fec_signaled ;;
+    group_label: "Codec Stats"
+    group_item_label: "Other Fec Signaled"
+
+    link: {
+      label: "Glean Dictionary reference for Codec Stats Other Fec Signaled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/codec_stats_other_fec_signaled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count how many other fec options are being offered.
+"
+  }
+
+  dimension: metrics__labeled_counter__codec_stats_ulpfec_negotiated {
+    label: "Codec Stats Ulpfec Negotiated"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_ulpfec_negotiated ;;
+    group_label: "Codec Stats"
+    group_item_label: "Ulpfec Negotiated"
+
+    link: {
+      label: "Glean Dictionary reference for Codec Stats Ulpfec Negotiated"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/codec_stats_ulpfec_negotiated"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times that ulpfec is negotiated or not negotiated on the first negotiation for each video transceiver.
+"
+  }
+
+  dimension: metrics__labeled_counter__codec_stats_video_preferred_codec {
+    label: "Codec Stats Video Preferred Codec"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_video_preferred_codec ;;
+    group_label: "Codec Stats"
+    group_item_label: "Video Preferred Codec"
+
+    link: {
+      label: "Glean Dictionary reference for Codec Stats Video Preferred Codec"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/codec_stats_video_preferred_codec"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the preferred video codec being signaled to us to identify preferred video codec.
 "
   }
 
@@ -3243,6 +3708,78 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__sum {
+    label: "Cookie Banners Click Query Selector Run Count Per Window Frame Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_frame.sum ;;
+    type: number
+    group_label: "Cookie Banners Click"
+    group_item_label: "Query Selector Run Count Per Window Frame Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Click Query Selector Run Count Per Window Frame Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cookie_banners_click_query_selector_run_count_per_window_frame"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often a query selector is run during the lifetime of a sub-frame content window.
+"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__sum {
+    label: "Cookie Banners Click Query Selector Run Count Per Window Top Level Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_top_level.sum ;;
+    type: number
+    group_label: "Cookie Banners Click"
+    group_item_label: "Query Selector Run Count Per Window Top Level Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Click Query Selector Run Count Per Window Top Level Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cookie_banners_click_query_selector_run_count_per_window_top_level"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often a query selector is run during the lifetime of a top-level content window.
+"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__sum {
+    label: "Cookie Banners Click Query Selector Run Duration Per Window Frame Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_frame.sum ;;
+    type: number
+    group_label: "Cookie Banners Click"
+    group_item_label: "Query Selector Run Duration Per Window Frame Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Click Query Selector Run Duration Per Window Frame Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cookie_banners_click_query_selector_run_duration_per_window_frame"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total time spent (in microseconds) on running querySelector for the lifetime of a sub-frame content window.
+"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__sum {
+    label: "Cookie Banners Click Query Selector Run Duration Per Window Top Level Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_top_level.sum ;;
+    type: number
+    group_label: "Cookie Banners Click"
+    group_item_label: "Query Selector Run Duration Per Window Top Level Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Click Query Selector Run Duration Per Window Top Level Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cookie_banners_click_query_selector_run_duration_per_window_top_level"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Total time spent (in microseconds) on running querySelector for the lifetime of a top-level content window.
+"
+  }
+
   dimension: metrics__labeled_counter__cookie_banners_click_result {
     label: "Cookie Banners Click Result"
     hidden: yes
@@ -3257,6 +3794,112 @@ ensure it's not too expensive.  This value is only available on Android
     }
 
     description: "Given a matching cookie banner rule, how often do we handle or fail to handle cookie banners, labelled by reason. The 'success' and 'fail' counters count the total numbers independently of the reason counters. Counters are incremented after the content window has been destroyed. This metric additionally reports cookie injections after which we didn't see a banner as \"success_cookie_injected\".
+"
+  }
+
+  dimension: metrics__labeled_counter__cookie_banners_cmp_detected_cmp {
+    label: "Cookie Banners Cmp Detected Cmp"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cookie_banners_cmp_detected_cmp ;;
+    group_label: "Cookie Banners Cmp"
+    group_item_label: "Detected Cmp"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Cmp Detected Cmp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cookie_banners_cmp_detected_cmp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often a specific cmp has been detected by our cookie banner handling.
+"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__sum {
+    label: "Cookie Banners Cmp Handle Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.sum ;;
+    type: number
+    group_label: "Cookie Banners Cmp"
+    group_item_label: "Handle Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Cmp Handle Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cookie_banners_cmp_handle_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how long it takes to handle cookie banners successfully using CMP rules from DOMContentLoaded until click. This metric is a variant of the cookieBanners.click.handle_duration.
+"
+  }
+
+  dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__numerator {
+    label: "Cookie Banners Cmp Ratio Handled By Cmp Rule Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.numerator ;;
+    type: number
+    group_label: "Cookie Banners Cmp"
+    group_item_label: "Ratio Handled By Cmp Rule Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Cmp Ratio Handled By Cmp Rule Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cookie_banners_cmp_ratio_handled_by_cmp_rule"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of cookie banners handled by CMP rules within the total number of cases handled, including those handled by site-specific rules.
+"
+  }
+
+  dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__denominator {
+    label: "Cookie Banners Cmp Ratio Handled By Cmp Rule Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.denominator ;;
+    type: number
+    group_label: "Cookie Banners Cmp"
+    group_item_label: "Ratio Handled By Cmp Rule Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Cmp Ratio Handled By Cmp Rule Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cookie_banners_cmp_ratio_handled_by_cmp_rule"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proportion of cookie banners handled by CMP rules within the total number of cases handled, including those handled by site-specific rules.
+"
+  }
+
+  dimension: metrics__labeled_counter__cookie_banners_cmp_result {
+    label: "Cookie Banners Cmp Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cookie_banners_cmp_result ;;
+    group_label: "Cookie Banners Cmp"
+    group_item_label: "Result"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Cmp Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cookie_banners_cmp_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Given a matching CMP rule, how often do we handle or fail to handle cookie banners, labelled by reason. The 'success' and 'fail' counters count the total numbers independently of the reason counters. Counters are incremented after the content window has been destroyed.
+"
+  }
+
+  dimension: metrics__counter__cookie_banners_cookie_injection_fail {
+    label: "Cookie Banners Cookie Injection Fail"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.cookie_banners_cookie_injection_fail ;;
+    type: number
+    group_label: "Cookie Banners"
+    group_item_label: "Cookie Injection Fail"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Cookie Injection Fail"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cookie_banners_cookie_injection_fail"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often the cookie banner is still shown even if we have injected cookies.
 "
   }
 
@@ -3348,6 +3991,40 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
+  dimension: metrics__quantity__data_storage_alternate_services {
+    label: "Data Storage Alternate Services"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.data_storage_alternate_services ;;
+    type: number
+    group_label: "Data Storage"
+    group_item_label: "Alternate Services"
+
+    link: {
+      label: "Glean Dictionary reference for Data Storage Alternate Services"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/data_storage_alternate_services"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of entries stored in the AlternateServices nsIDataStorage"
+  }
+
+  dimension: metrics__quantity__data_storage_client_auth_remember_list {
+    label: "Data Storage Client Auth Remember List"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.data_storage_client_auth_remember_list ;;
+    type: number
+    group_label: "Data Storage"
+    group_item_label: "Client Auth Remember List"
+
+    link: {
+      label: "Glean Dictionary reference for Data Storage Client Auth Remember List"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/data_storage_client_auth_remember_list"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of entries stored in the ClientAuthRememberList nsIDataStorage"
+  }
+
   dimension: metrics__labeled_counter__data_storage_entries {
     label: "Data Storage Entries"
     hidden: yes
@@ -3366,7 +4043,7 @@ ensure it's not too expensive.  This value is only available on Android
 
   dimension: metrics__labeled_boolean__data_storage_migration {
     label: "Data Storage Migration"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.labeled_boolean.data_storage_migration ;;
     type: string
     group_label: "Data Storage"
@@ -3381,9 +4058,26 @@ ensure it's not too expensive.  This value is only available on Android
     description: "Indicates whether or not migration was successful for each nsIDataStorage."
   }
 
+  dimension: metrics__quantity__data_storage_site_security_service_state {
+    label: "Data Storage Site Security Service State"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.data_storage_site_security_service_state ;;
+    type: number
+    group_label: "Data Storage"
+    group_item_label: "Site Security Service State"
+
+    link: {
+      label: "Glean Dictionary reference for Data Storage Site Security Service State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/data_storage_site_security_service_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of entries stored in the SiteSecurityServiceState nsIDataStorage"
+  }
+
   dimension: metrics__counter__dotprint_android_dialog_requested {
     label: "Dotprint Android Dialog Requested"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.dotprint_android_dialog_requested ;;
     type: number
     group_label: "Dotprint"
@@ -3418,7 +4112,7 @@ ensure it's not too expensive.  This value is only available on Android
 
   dimension: metrics__counter__dotprint_requested {
     label: "Dotprint Requested"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.dotprint_requested ;;
     type: number
     group_label: "Dotprint"
@@ -3579,6 +4273,40 @@ when dynamic or static rulesets have been loaded from disk.
 "
   }
 
+  dimension: metrics__labeled_counter__extensions_counters_browser_action_preload_result {
+    label: "Extensions Counters Browser Action Preload Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.extensions_counters_browser_action_preload_result ;;
+    group_label: "Extensions Counters"
+    group_item_label: "Browser Action Preload Result"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Counters Browser Action Preload Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_counters_browser_action_preload_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times an event page hit the idle timeout and results in one of the labels.
+"
+  }
+
+  dimension: metrics__labeled_counter__extensions_counters_event_page_idle_result {
+    label: "Extensions Counters Event Page Idle Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.extensions_counters_event_page_idle_result ;;
+    group_label: "Extensions Counters"
+    group_item_label: "Event Page Idle Result"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Counters Event Page Idle Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_counters_event_page_idle_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of times an event page hit the idle timeout and results in one of the labels.
+"
+  }
+
   dimension: metrics__labeled_counter__extensions_process_event {
     label: "Extensions Process Event"
     hidden: yes
@@ -3595,7 +4323,7 @@ when dynamic or static rulesets have been loaded from disk.
     description: "Counters for how many times the extension process has crashed or been created.
 The labels with \"_fg\" / \"_bg\" suffixes are only recorded in Android builds,
 while the \"created\" and \"crashed\" labels are recorded on both Desktop and Android
-builds. 
+builds.
 "
   }
 
@@ -3668,6 +4396,225 @@ builds.
     }
 
     description: "Time to load and deserialize the extensions startupCache data.
+"
+  }
+
+  dimension: metrics__labeled_counter__extensions_startup_cache_read_errors {
+    label: "Extensions Startup Cache Read Errors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.extensions_startup_cache_read_errors ;;
+    group_label: "Extensions"
+    group_item_label: "Startup Cache Read Errors"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Startup Cache Read Errors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_startup_cache_read_errors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of times an unexpected error has been raised while reading
+the extensions StartupCache file.
+"
+  }
+
+  dimension: metrics__quantity__extensions_startup_cache_write_bytelength {
+    label: "Extensions Startup Cache Write Bytelength"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.extensions_startup_cache_write_bytelength ;;
+    type: number
+    group_label: "Extensions"
+    group_item_label: "Startup Cache Write Bytelength"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Startup Cache Write Bytelength"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_startup_cache_write_bytelength"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The amount of bytes written to the extensions StartupCache file.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__sum {
+    label: "Extensions Timing Background Page Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Background Page Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Background Page Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_timing_background_page_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes to load a WebExtensions background page, from when the
+build function is called to when the page has finished processing the onload event.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__sum {
+    label: "Extensions Timing Browser Action Popup Open Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Browser Action Popup Open Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Browser Action Popup Open Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_timing_browser_action_popup_open"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes for a BrowserAction popup to open.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__sum {
+    label: "Extensions Timing Content Script Injection Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Content Script Injection Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Content Script Injection Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_timing_content_script_injection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes for content scripts from a WebExtension to be injected into a window.
+"
+  }
+
+  dimension: metrics__custom_distribution__extensions_timing_event_page_running_time__sum {
+    label: "Extensions Timing Event Page Running Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.extensions_timing_event_page_running_time.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Event Page Running Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Event Page Running Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_timing_event_page_running_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time (keyed by addon id) that an event page has been running before being suspended,
+or the entire addon shutdown.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__sum {
+    label: "Extensions Timing Extension Startup Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Extension Startup Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Extension Startup Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_timing_extension_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes for a WebExtension to start up, from when the
+startup function is called to when the startup promise resolves.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__sum {
+    label: "Extensions Timing Page Action Popup Open Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Page Action Popup Open Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Page Action Popup Open Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_timing_page_action_popup_open"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes for a PageAction popup to open.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__sum {
+    label: "Extensions Timing Storage Local Get Idb Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Storage Local Get Idb Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Storage Local Get Idb Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_timing_storage_local_get_idb"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes to perform a get via storage.local using the IndexedDB backend.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__sum {
+    label: "Extensions Timing Storage Local Get Json Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Storage Local Get Json Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Storage Local Get Json Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_timing_storage_local_get_json"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes to perform a get via storage.local using the JSONFile backend.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__sum {
+    label: "Extensions Timing Storage Local Set Idb Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Storage Local Set Idb Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Storage Local Set Idb Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_timing_storage_local_set_idb"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes to perform a set via storage.local using the Indexed backend.
+"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__sum {
+    label: "Extensions Timing Storage Local Set Json Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.sum ;;
+    type: number
+    group_label: "Extensions Timing"
+    group_item_label: "Storage Local Set Json Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Extensions Timing Storage Local Set Json Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/extensions_timing_storage_local_set_json"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of time it takes to perform a set via storage.local using the JSONFile backend.
 "
   }
 
@@ -3902,6 +4849,118 @@ Will likely be obsoleted by bug 1641989.
 "
   }
 
+  dimension: metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
+    label: "Fog Validation Gvsv Audio Stream Init"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.fog_validation_gvsv_audio_stream_init ;;
+    group_label: "Fog Validation"
+    group_item_label: "Gvsv Audio Stream Init"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Validation Gvsv Audio Stream Init"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_validation_gvsv_audio_stream_init"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Incremented when an audio stream is initialized, recorded alongside the
+GeckoView Streaming API for the purposes of Validation (hence GVSV).
+Uses a single label due to only labeled counters being supported
+"
+  }
+
+  dimension: metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko {
+    label: "Fog Validation Gvsv Audio Stream Init Gecko"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.fog_validation_gvsv_audio_stream_init_gecko ;;
+    group_label: "Fog Validation"
+    group_item_label: "Gvsv Audio Stream Init Gecko"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Validation Gvsv Audio Stream Init Gecko"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_validation_gvsv_audio_stream_init_gecko"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Incremented when an audio stream is initialized, recorded alongside the
+Glean API for the purposes of Validation (hence GVSV).
+Uses a single label due to only labeled counters being supported
+"
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__sum {
+    label: "Fog Validation Gvsv Composite Time Sum"
+    hidden: yes
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.sum ;;
+    type: number
+    group_label: "Fog Validation"
+    group_item_label: "Gvsv Composite Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Validation Gvsv Composite Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_validation_gvsv_composite_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Glean equivalent to the Geckoview Stream gfx Composite Time metric. Represents The time taken to composite a frame. Differs between non-webrender and webrender, see the non-validation version for more details.
+"
+  }
+
+  dimension: metrics__custom_distribution__fog_validation_gvsv_number_of_unique_site_origins_all_tabs__sum {
+    label: "Fog Validation Gvsv Number Of Unique Site Origins All Tabs Sum"
+    hidden: yes
+    sql: ${TABLE}.metrics.custom_distribution.fog_validation_gvsv_number_of_unique_site_origins_all_tabs.sum ;;
+    type: number
+    group_label: "Fog Validation"
+    group_item_label: "Gvsv Number Of Unique Site Origins All Tabs Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Validation Gvsv Number Of Unique Site Origins All Tabs Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_validation_gvsv_number_of_unique_site_origins_all_tabs"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between tab selection and first composite of the tab content onto the screen. Implemented alongside the Geckoview Streaming version to measure potential differences between the two.
+"
+  }
+
+  dimension: metrics__quantity__fog_validation_gvsv_primary_height {
+    label: "Fog Validation Gvsv Primary Height"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.fog_validation_gvsv_primary_height ;;
+    type: number
+    group_label: "Fog Validation"
+    group_item_label: "Gvsv Primary Height"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Validation Gvsv Primary Height"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_validation_gvsv_primary_height"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Primary display pixel height, recorded alongside the GeckoView Streaming
+API for the purposes of Validation (hence GVSV).
+"
+  }
+
+  dimension: metrics__quantity__fog_validation_gvsv_primary_width {
+    label: "Fog Validation Gvsv Primary Width"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.fog_validation_gvsv_primary_width ;;
+    type: number
+    group_label: "Fog Validation"
+    group_item_label: "Gvsv Primary Width"
+
+    link: {
+      label: "Glean Dictionary reference for Fog Validation Gvsv Primary Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_validation_gvsv_primary_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Primary display pixel width, recorded alongside the GeckoView Streaming
+API for the purposes of Validation (hence GVSV).
+"
+  }
+
   dimension: metrics__quantity__formautofill_creditcards_autofill_profiles_count {
     label: "Formautofill Creditcards Autofill Profiles Count"
     hidden: no
@@ -3917,6 +4976,184 @@ Will likely be obsoleted by bug 1641989.
     }
 
     description: "Count at store time how many credit card autofill profiles the user has.
+"
+  }
+
+  dimension: metrics__labeled_counter__formautofill_form_submission_heuristic {
+    label: "Formautofill Form Submission Heuristic"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.formautofill_form_submission_heuristic ;;
+    group_label: "Formautofill"
+    group_item_label: "Form Submission Heuristic"
+
+    link: {
+      label: "Glean Dictionary reference for Formautofill Form Submission Heuristic"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/formautofill_form_submission_heuristic"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The heuristic that detected the form submission."
+  }
+
+  dimension: metrics__string__gecko_build_id {
+    label: "Gecko Build Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gecko_build_id ;;
+    type: string
+    group_label: "Gecko"
+    group_item_label: "Build Id"
+
+    link: {
+      label: "Glean Dictionary reference for Gecko Build Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gecko_build_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Buildid of the Gecko engine, example: 20200205124310 (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gecko_version {
+    label: "Gecko Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gecko_version ;;
+    type: string
+    group_label: "Gecko"
+    group_item_label: "Version"
+
+    link: {
+      label: "Glean Dictionary reference for Gecko Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gecko_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of the Gecko engine, example: 74.0a1 (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_content_process_lifetime__sum {
+    label: "Geckoview Content Process Lifetime Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_content_process_lifetime.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Content Process Lifetime Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Content Process Lifetime Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_content_process_lifetime"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The uptime of content processes. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__geckoview_document_site_origins__sum {
+    label: "Geckoview Document Site Origins Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.geckoview_document_site_origins.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Document Site Origins Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Document Site Origins Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_document_site_origins"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When a document is loaded, report the number of [site origins](https://searchfox.org/ mozilla-central/rev/ 3300072e993ae05d50d5c63d815260367eaf9179/ caps/nsIPrincipal.idl#264) of the entire browser if it has been at least 5 minutes since last time we collect this data. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_progress_time__sum {
+    label: "Geckoview Page Load Progress Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_progress_time.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Page Load Progress Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Page Load Progress Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_page_load_progress_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between page load progress starts (0) and completion (100). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_time__sum {
+    label: "Geckoview Page Load Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_time.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Page Load Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Page Load Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_page_load_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time taken to load a page. This includes all static contents, no dynamic content. Loading of about: pages is not counted. Back back navigation (sometimes via BFCache) is included which is a source of bimodality due to the <50ms load times. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_reload_time__sum {
+    label: "Geckoview Page Reload Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_reload_time.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Page Reload Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Page Reload Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_page_reload_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time taken to reload a page. This includes all static contents, no dynamic content. Loading of about: pages is not counted. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__geckoview_per_document_site_origins__sum {
+    label: "Geckoview Per Document Site Origins Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.geckoview_per_document_site_origins.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Per Document Site Origins Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Per Document Site Origins Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_per_document_site_origins"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "When a document is unloaded, report the highest number of [site origins](https://searchfox.org/ mozilla-central/rev/ 3300072e993ae05d50d5c63d815260367eaf9179/ caps/nsIPrincipal.idl#264) loaded simultaneously in that document. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_startup_runtime__sum {
+    label: "Geckoview Startup Runtime Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_startup_runtime.sum ;;
+    type: number
+    group_label: "Geckoview"
+    group_item_label: "Startup Runtime Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Geckoview Startup Runtime Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_startup_runtime"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time taken to initialize GeckoRuntime. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -3956,6 +5193,545 @@ Will likely be obsoleted by bug 1641989.
 "
   }
 
+  dimension: metrics__string__gfx_adapter_primary_description {
+    label: "Gfx Adapter Primary Description"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_description ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Description"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Description"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_description"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Long form description of the Graphics adapter (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_device_id {
+    label: "Gfx Adapter Primary Device Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_device_id ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Device Id"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Device Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_device_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter device identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_date {
+    label: "Gfx Adapter Primary Driver Date"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_date ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Driver Date"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Date"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_driver_date"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter driver date (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_files {
+    label: "Gfx Adapter Primary Driver Files"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_files ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Driver Files"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Files"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_driver_files"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "List of graphics adapter driver files (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_vendor {
+    label: "Gfx Adapter Primary Driver Vendor"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_vendor ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Driver Vendor"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Vendor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_driver_vendor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter driver vendor identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_version {
+    label: "Gfx Adapter Primary Driver Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_version ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Driver Version"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_driver_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter driver version (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_adapter_primary_ram {
+    label: "Gfx Adapter Primary Ram"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_adapter_primary_ram ;;
+    type: number
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Ram"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Ram"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_ram"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter dedicated memory (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_subsystem_id {
+    label: "Gfx Adapter Primary Subsystem Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_subsystem_id ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Subsystem Id"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Subsystem Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_subsystem_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter subsystem identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_vendor_id {
+    label: "Gfx Adapter Primary Vendor Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_vendor_id ;;
+    type: string
+    group_label: "Gfx Adapter Primary"
+    group_item_label: "Vendor Id"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Adapter Primary Vendor Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_vendor_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Graphics adapter vendor identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_duration__sum {
+    label: "Gfx Checkerboard Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_duration.sum ;;
+    type: number
+    group_label: "Gfx Checkerboard"
+    group_item_label: "Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Checkerboard Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_checkerboard_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The duration of a checkerboard event. Checkerboarding is when painting has not kept up with asynchronous panning and zooming so the compositor has to display a \"checkerboard pattern\" (or in practice, the background color) rather than the actual page content. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__sum {
+    label: "Gfx Checkerboard Peak Pixel Count Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_peak_pixel_count.sum ;;
+    type: number
+    group_label: "Gfx Checkerboard"
+    group_item_label: "Peak Pixel Count Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Checkerboard Peak Pixel Count Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_checkerboard_peak_pixel_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The peak number of CSS pixels that checkerboarded during a checkerboard event. The minimum value of the largest histogram bucket is the size of a 4k display with maximum APZ zooming. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_potential_duration__sum {
+    label: "Gfx Checkerboard Potential Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_potential_duration.sum ;;
+    type: number
+    group_label: "Gfx Checkerboard"
+    group_item_label: "Potential Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Checkerboard Potential Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_checkerboard_potential_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total amount of time that we could reasonably be checkerboarding. This is the union of two possibly-intersecting sets of time periods: The first set is that in which checkerboarding was actually happening, since by definition it could potentially be happening. The second set is that in which the APZC is actively transforming content in the compositor, since it could potentially transform it so as to display checkerboarding to the user. Combined with other information, this allows us to meaningfully say how frequently users actually enncounters checkerboarding. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_checkerboard_severity__sum {
+    label: "Gfx Checkerboard Severity Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_severity.sum ;;
+    type: number
+    group_label: "Gfx Checkerboard"
+    group_item_label: "Severity Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Checkerboard Severity Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_checkerboard_severity"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An opaque measurement of the severity of a checkerboard event. This doesn't have units, it's just useful for comparing two checkerboard events to see which one is worse, for some implementation-specific definition of \"worse\". The larger the value, the worse the checkerboarding. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_composite_time__sum {
+    label: "Gfx Composite Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_composite_time.sum ;;
+    type: number
+    group_label: "Gfx"
+    group_item_label: "Composite Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Composite Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_composite_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time taken to composite a frame. On non-webrender this is the time taken in `CompositorBridgeParent::CompositeToTarget()`. On webrender, this is the time taken from the start of `WebRenderBridgeParent::CompositeToTarget()`, until the render thread has rendered the frame (in `RenderThread::HandleFrameOneDoc()`). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_from_paint__sum {
+    label: "Gfx Content Frame Time From Paint Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_paint.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "From Paint Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time From Paint Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_from_paint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_from_vsync__sum {
+    label: "Gfx Content Frame Time From Vsync Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_vsync.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "From Vsync Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time From Vsync Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_from_vsync"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from the vsync that started a paint in the content process until that frame is presented in the compositor. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__gfx_content_frame_time_reason {
+    label: "Gfx Content Frame Time Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.gfx_content_frame_time_reason ;;
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The reason that `gfx.content.frame_time.from_paint` recorded a slow (>200ms) result, if any. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_with_svg__sum {
+    label: "Gfx Content Frame Time With Svg Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_with_svg.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "With Svg Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time With Svg Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_with_svg"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor, for frames that contained an SVG to be drawn by webrender. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_without_resource_upload__sum {
+    label: "Gfx Content Frame Time Without Resource Upload Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_resource_upload.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "Without Resource Upload Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time Without Resource Upload Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_without_resource_upload"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor by webrender, excluding time spent uploading resources. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_without_upload__sum {
+    label: "Gfx Content Frame Time Without Upload Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_upload.sum ;;
+    type: number
+    group_label: "Gfx Content Frame Time"
+    group_item_label: "Without Upload Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Frame Time Without Upload Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_without_upload"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor by webrender, excluding time spent uploading any content. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_full_paint_time__sum {
+    label: "Gfx Content Full Paint Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_full_paint_time.sum ;;
+    type: number
+    group_label: "Gfx Content"
+    group_item_label: "Full Paint Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Full Paint Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_full_paint_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in the full paint pipeline for content until it's ready for composition. For non-webrender this includes `paint_time`, plus rasterization if OMTP is enabled. For webrender, this includes `paint_time`, plus scene building time. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_paint_time__sum {
+    label: "Gfx Content Paint Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_paint_time.sum ;;
+    type: number
+    group_label: "Gfx Content"
+    group_item_label: "Paint Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Content Paint Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_paint_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in the main-thread paint pipeline for content. For non-webrender, this includes display list building, layer building, and when OMTP is disabled, rasterization. For webrender, this includes display list building, and webrender display list building. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_display_count {
+    label: "Gfx Display Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_display_count ;;
+    type: number
+    group_label: "Gfx Display"
+    group_item_label: "Count"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Display Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_display_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Amount of displays connected to the device (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_display_primary_height {
+    label: "Gfx Display Primary Height"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_display_primary_height ;;
+    type: number
+    group_label: "Gfx Display"
+    group_item_label: "Primary Height"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Display Primary Height"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_display_primary_height"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Height of the primary display, takes device rotation into account. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_display_primary_width {
+    label: "Gfx Display Primary Width"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gfx_display_primary_width ;;
+    type: number
+    group_label: "Gfx Display"
+    group_item_label: "Primary Width"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Display Primary Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_display_primary_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Width of the primary display, takes device rotation into account. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_feature_webrender {
+    label: "Gfx Feature Webrender"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_feature_webrender ;;
+    type: string
+    group_label: "Gfx Feature"
+    group_item_label: "Webrender"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Feature Webrender"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_feature_webrender"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether webrender is enabled or disabled, and why. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__gfx_scroll_present_latency__sum {
+    label: "Gfx Scroll Present Latency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.gfx_scroll_present_latency.sum ;;
+    type: number
+    group_label: "Gfx"
+    group_item_label: "Scroll Present Latency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Scroll Present Latency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_scroll_present_latency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between receiving a scroll event on the event loop and compositing its result onto the screen (ms). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_status_compositor {
+    label: "Gfx Status Compositor"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_status_compositor ;;
+    type: string
+    group_label: "Gfx Status"
+    group_item_label: "Compositor"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Status Compositor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_status_compositor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Name of the graphics compositor in use. Possible values are \"opengl, d3d11, client, webrender or basic\" (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__boolean__gfx_status_headless {
+    label: "Gfx Status Headless"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.gfx_status_headless ;;
+    type: yesno
+    group_label: "Gfx Status"
+    group_item_label: "Headless"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Status Headless"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_status_headless"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Boolean indicated whether graphics is running in headless (no display) mode (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_status_last_compositor_gecko_version {
+    label: "Gfx Status Last Compositor Gecko Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gfx_status_last_compositor_gecko_version ;;
+    type: string
+    group_label: "Gfx Status"
+    group_item_label: "Last Compositor Gecko Version"
+
+    link: {
+      label: "Glean Dictionary reference for Gfx Status Last Compositor Gecko Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_status_last_compositor_gecko_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The gecko version at the last time a compositor was initialized, and therefore when gfx_status_compositor was last updated. Due to gfx_status_compositor's user lifetime we see lots of unexpected values for the current gecko version. We believe this is because the user has not opened a tab since they were updated to a version where webrender should be enabled on their device. This can be used to verify that theory. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__boolean__gifft_validation_main_ping_assembling {
     label: "Gifft Validation Main Ping Assembling"
     hidden: yes
@@ -3990,6 +5766,77 @@ To be used to validate GIFFT.
     }
 
     description: "The result of Gecko fetching an update.xml from Balrog. This captures 3 different data points: success or failure of the request, if cert pinning or content signatures were used to verify the result, and the reason for failure, if the request failed.
+"
+  }
+
+  dimension: metrics__labeled_counter__gpu_process_crash_fallbacks {
+    label: "Gpu Process Crash Fallbacks"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.gpu_process_crash_fallbacks ;;
+    group_label: "Gpu Process"
+    group_item_label: "Crash Fallbacks"
+
+    link: {
+      label: "Glean Dictionary reference for Gpu Process Crash Fallbacks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gpu_process_crash_fallbacks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How often we use different fallbacks when the GPU process crashes
+"
+  }
+
+  dimension: metrics__string__gpu_process_feature_status {
+    label: "Gpu Process Feature Status"
+    hidden: no
+    sql: ${TABLE}.metrics.string.gpu_process_feature_status ;;
+    type: string
+    group_label: "Gpu Process"
+    group_item_label: "Feature Status"
+
+    link: {
+      label: "Glean Dictionary reference for Gpu Process Feature Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gpu_process_feature_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Current status of the GPU process feature
+"
+  }
+
+  dimension: metrics__quantity__gpu_process_total_launch_attempts {
+    label: "Gpu Process Total Launch Attempts"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gpu_process_total_launch_attempts ;;
+    type: number
+    group_label: "Gpu Process"
+    group_item_label: "Total Launch Attempts"
+
+    link: {
+      label: "Glean Dictionary reference for Gpu Process Total Launch Attempts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gpu_process_total_launch_attempts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of total GPU process launch attempts.
+"
+  }
+
+  dimension: metrics__quantity__gpu_process_unstable_launch_attempts {
+    label: "Gpu Process Unstable Launch Attempts"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.gpu_process_unstable_launch_attempts ;;
+    type: number
+    group_label: "Gpu Process"
+    group_item_label: "Unstable Launch Attempts"
+
+    link: {
+      label: "Glean Dictionary reference for Gpu Process Unstable Launch Attempts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gpu_process_unstable_launch_attempts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of consecutive unstable launch attempts.
 "
   }
 
@@ -4163,6 +6010,310 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__javascript_gc_compact_time__sum {
+    label: "Javascript Gc Compact Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Compact Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Compact Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_compact_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent in the compact phase. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_roots_time__sum {
+    label: "Javascript Gc Mark Roots Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Mark Roots Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Mark Roots Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_mark_roots_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent marking GC roots. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_time__sum {
+    label: "Javascript Gc Mark Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Mark Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Mark Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_mark_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent in the mark phase. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_minor_time__sum {
+    label: "Javascript Gc Minor Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Minor Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Minor Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_minor_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time taked by a minor (nursery) collection. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_prepare_time__sum {
+    label: "Javascript Gc Prepare Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Prepare Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Prepare Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_prepare_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent in the preparation phase. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_slice_time__sum {
+    label: "Javascript Gc Slice Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Slice Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Slice Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_slice_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent running a GC slice. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_sweep_time__sum {
+    label: "Javascript Gc Sweep Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Sweep Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Sweep Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_sweep_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time spent in the sweep phase. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_total_time__sum {
+    label: "Javascript Gc Total Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.sum ;;
+    type: number
+    group_label: "Javascript Gc"
+    group_item_label: "Total Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Gc Total Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_total_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total time taken by a major collection. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__sum {
+    label: "Javascript Pageload Baseline Compile Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Baseline Compile Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Baseline Compile Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_baseline_compile_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load baseline compiling Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_delazification_time__sum {
+    label: "Javascript Pageload Delazification Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Delazification Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Delazification Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_delazification_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load delazifying Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_execution_time__sum {
+    label: "Javascript Pageload Execution Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Execution Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Execution Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_execution_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load executing Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_gc_time__sum {
+    label: "Javascript Pageload Gc Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Gc Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Gc Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_gc_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load in the GC in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_parse_time__sum {
+    label: "Javascript Pageload Parse Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Parse Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Parse Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_parse_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load syntax parsing JS scripts on the main thread in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_protect_time__sum {
+    label: "Javascript Pageload Protect Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Protect Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Protect Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_protect_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load protecting JIT executable memory. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__sum {
+    label: "Javascript Pageload Xdr Encode Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.sum ;;
+    type: number
+    group_label: "Javascript Pageload"
+    group_item_label: "Xdr Encode Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Javascript Pageload Xdr Encode Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_xdr_encode_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent during page load XDR encoding Javascript in ms. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_backend {
+    label: "Media Audio Backend"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_backend ;;
+    group_label: "Media Audio"
+    group_item_label: "Backend"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Backend"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_backend"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The operating system audio backend (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_init_failure {
+    label: "Media Audio Init Failure"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
+    group_label: "Media"
+    group_item_label: "Audio Init Failure"
+
+    link: {
+      label: "Glean Dictionary reference for Media Audio Init Failure"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_init_failure"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Failure occurs when initializing the audio stream.
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_early_hints {
     label: "Netwerk Early Hints"
     hidden: yes
@@ -4194,6 +6345,24 @@ To be used to validate GIFFT.
     }
 
     description: "Counts different type of link headers that are sent in early hint
+"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__sum {
+    label: "Network Cache Hit Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Cache Hit Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Cache Hit Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_cache_hit_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time to open existing cache entry file. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -4248,6 +6417,78 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__network_dns_end__sum {
+    label: "Network Dns End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Dns End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Dns End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_dns_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from the DNS request being issued to the response. Corresponds to Legacy histogram HTTP_PAGE_DNS_LOOKUP_TIME in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__sum {
+    label: "Network Dns Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Dns Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Dns Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_dns_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection open to the DNS request being issued. Corresponds to Legacy histogram HTTP_PAGE_DNS_ISSUE_TIME in Desktop. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__sum {
+    label: "Network First From Cache Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "First From Cache Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network First From Cache Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_first_from_cache"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from connection open to cache read start. Corresponds to Legacy histogram HTTP_PAGE_OPEN_TO_FIRST_FROM_CACHE_V2 in Desktop.
+"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__sum {
+    label: "Network Font Download End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Font Download End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Font Download End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_font_download_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time after navigationStart that all webfont downloads are completed. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__sum {
     label: "Network Open To Transaction Pending Sum"
     hidden: yes
@@ -4263,6 +6504,42 @@ To be used to validate GIFFT.
     }
 
     description: "The time spent from HttpChannelChild::AsyncOpen to adding the transaction to the nsHttpConnectionMgr
+"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__sum {
+    label: "Network Tcp Connection Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Tcp Connection Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Tcp Connection Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_tcp_connection"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from the TCP SYN packet is received to the connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_PAGE_TCP_CONNECTION_2 in Desktop (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__sum {
+    label: "Network Tls Handshake Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.sum ;;
+    type: number
+    group_label: "Network"
+    group_item_label: "Tls Handshake Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Network Tls Handshake Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_tls_handshake"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "In the HTTP page channel, time from after the TCP SYN packet is received to the secure connection is established and ready for HTTP. Corresponds to Legacy histogram HTTP_PAGE_TLS_HANDSHAKE in Desktop. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -4284,6 +6561,96 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__networking_cookie_count_part_by_key__sum {
+    label: "Networking Cookie Count Part By Key Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_part_by_key.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cookie Count Part By Key Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Count Part By Key Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_cookie_count_part_by_key"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A distribution of the partitioned cookies in storage belonging to a particular cookie key (host + origin attributes)
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_partitioned__sum {
+    label: "Networking Cookie Count Partitioned Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_partitioned.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cookie Count Partitioned Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Count Partitioned Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_cookie_count_partitioned"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Reports the number of partitioned cookies in storage
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_total__sum {
+    label: "Networking Cookie Count Total Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_total.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cookie Count Total Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Count Total Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_cookie_count_total"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Reports the total number of cookies in storage
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpart_by_key__sum {
+    label: "Networking Cookie Count Unpart By Key Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpart_by_key.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cookie Count Unpart By Key Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Count Unpart By Key Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_cookie_count_unpart_by_key"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A distribution of the unpartitioned cookies in storage belonging to a particular cookie key (host + origin attributes)
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpartitioned__sum {
+    label: "Networking Cookie Count Unpartitioned Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpartitioned.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cookie Count Unpartitioned Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Count Unpartitioned Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_cookie_count_unpartitioned"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Reports the number of unpartitioned cookies in storage
+"
+  }
+
   dimension: metrics__custom_distribution__networking_cookie_creation_fixup_diff__sum {
     label: "Networking Cookie Creation Fixup Diff Sum"
     hidden: no
@@ -4299,6 +6666,42 @@ To be used to validate GIFFT.
     }
 
     description: "If we fix up a cookie creation timestamp that is in the future this metric records the number of seconds that timestamp was off from NOW.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_entry_max__sum {
+    label: "Networking Cookie Purge Entry Max Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_entry_max.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cookie Purge Entry Max Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Purge Entry Max Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_cookie_purge_entry_max"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A distribution of the number of cookies purged for a single host + OA entry as a result of exceeding the maximum threshold for the given host + OA (single purge)
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_max__sum {
+    label: "Networking Cookie Purge Max Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_max.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Cookie Purge Max Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Cookie Purge Max Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_cookie_purge_max"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A distribution of the number of cookies purged across all host + OAs as a result of exceeding the cookie maximum threshold (single purge)
 "
   }
 
@@ -4352,6 +6755,23 @@ To be used to validate GIFFT.
     }
 
     description: "Time for a successful DNS resolution (msec) | Migrated from Firefox Telemetry's `DNS_LOOKUP_TIME`.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_dns_native_count {
+    label: "Networking Dns Native Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_dns_native_count ;;
+    group_label: "Networking"
+    group_item_label: "Dns Native Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Dns Native Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_dns_native_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of calls to the native DNS APIs
 "
   }
 
@@ -4409,6 +6829,78 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput__sum {
+    label: "Networking Http 1 Upload Throughput Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 1 Upload Throughput Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 1 Upload Throughput Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_1_upload_throughput"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/1.0, http/1.1 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_100__sum {
+    label: "Networking Http 1 Upload Throughput 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 1 Upload Throughput 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 1 Upload Throughput 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_1_upload_throughput_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/1.0, http/1.1 request size larger than 100MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_10_50__sum {
+    label: "Networking Http 1 Upload Throughput 10 50 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_10_50.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 1 Upload Throughput 10 50 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 1 Upload Throughput 10 50 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_1_upload_throughput_10_50"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/1.0, http/1.1 request size between 10MB and 50MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_50_100__sum {
+    label: "Networking Http 1 Upload Throughput 50 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_50_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 1 Upload Throughput 50 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 1 Upload Throughput 50 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_1_upload_throughput_50_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/1.0, http/1.1 request size between 50MB and 100MB. Measured in megabits per second, Mbps.
+"
+  }
+
   dimension: metrics__custom_distribution__networking_http_2_download_throughput__sum {
     label: "Networking Http 2 Download Throughput Sum"
     hidden: no
@@ -4424,6 +6916,78 @@ To be used to validate GIFFT.
     }
 
     description: "The download throughput for http/2 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput__sum {
+    label: "Networking Http 2 Upload Throughput Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 2 Upload Throughput Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 2 Upload Throughput Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_2_upload_throughput"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/2 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_100__sum {
+    label: "Networking Http 2 Upload Throughput 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 2 Upload Throughput 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 2 Upload Throughput 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_2_upload_throughput_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/2 request size larger than 100MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_10_50__sum {
+    label: "Networking Http 2 Upload Throughput 10 50 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_10_50.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 2 Upload Throughput 10 50 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 2 Upload Throughput 10 50 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_2_upload_throughput_10_50"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/2 request size between 10MB and 50MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_50_100__sum {
+    label: "Networking Http 2 Upload Throughput 50 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_50_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 2 Upload Throughput 50 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 2 Upload Throughput 50 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_2_upload_throughput_50_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/2 request size between 50MB and 100MB. Measured in megabits per second, Mbps.
 "
   }
 
@@ -4445,9 +7009,260 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput__sum {
+    label: "Networking Http 3 Upload Throughput Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Upload Throughput Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Upload Throughput Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_upload_throughput"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/3 requests larger than 10MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_100__sum {
+    label: "Networking Http 3 Upload Throughput 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Upload Throughput 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Upload Throughput 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_upload_throughput_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/3 request size larger than 100MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_10_50__sum {
+    label: "Networking Http 3 Upload Throughput 10 50 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_10_50.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Upload Throughput 10 50 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Upload Throughput 10 50 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_upload_throughput_10_50"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/3 request size between 10MB and 50MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_50_100__sum {
+    label: "Networking Http 3 Upload Throughput 50 100 Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_50_100.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http 3 Upload Throughput 50 100 Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http 3 Upload Throughput 50 100 Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_3_upload_throughput_50_100"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The upload throughput for http/3 request size between 50MB and 100MB. Measured in megabits per second, Mbps.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
+    label: "Networking Http Channel Onstart Success Https Rr"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_onstart_success_https_rr ;;
+    group_label: "Networking"
+    group_item_label: "Http Channel Onstart Success Https Rr"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Onstart Success Https Rr"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_channel_onstart_success_https_rr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Successfully started HTTP channels when HTTPS RR is used
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__sum {
+    label: "Networking Http Channel Page Open To First Sent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Channel Page Open To First Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Page Open To First Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_channel_page_open_to_first_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from AsyncOpen to first byte of request sent, applicable for page loads without HTTPS RR
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__sum {
+    label: "Networking Http Channel Page Open To First Sent Https Rr Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Channel Page Open To First Sent Https Rr Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Page Open To First Sent Https Rr Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_channel_page_open_to_first_sent_https_rr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from AsyncOpen to first byte of request sent, applicable for page loads with HTTPS RR
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__sum {
+    label: "Networking Http Channel Sub Open To First Sent Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Channel Sub Open To First Sent Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Sub Open To First Sent Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_channel_sub_open_to_first_sent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from AsyncOpen to first byte of request sent, applicable for sub-resource loads without HTTPS RR
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__sum {
+    label: "Networking Http Channel Sub Open To First Sent Https Rr Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Channel Sub Open To First Sent Https Rr Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Channel Sub Open To First Sent Https Rr Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_channel_sub_open_to_first_sent_https_rr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from AsyncOpen to first byte of request sent, applicable for sub-resource loads with HTTPS RR
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__sum {
+    label: "Networking Http Content Html5Parser Ondatafinished To Onstop Delay Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Content Html5Parser Ondatafinished To Onstop Delay Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Content Html5Parser Ondatafinished To Onstop Delay Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_content_html5parser_ondatafinished_to_onstop_delay"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between processing OnDataFinished and processing OnStopRequest (if OnDataFinished comes first)
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__sum {
+    label: "Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Content Html5Parser Ondatafinished To Onstop Delay Negative Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between processing OnStopRequest and processing OnDataFinished (if OnStopRequest comes first)
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__sum {
+    label: "Networking Http Content Ondatafinished Delay Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Content Ondatafinished Delay Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Content Ondatafinished Delay Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_content_ondatafinished_delay"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between dispatching OnDataFinished from the socket thread and processing it.
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__sum {
+    label: "Networking Http Content Ondatafinished To Onstop Delay Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Content Ondatafinished To Onstop Delay Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Content Ondatafinished To Onstop Delay Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_content_ondatafinished_to_onstop_delay"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between processing OnDataFinished and processing OnStopRequest (if OnDataFinished comes first)
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__sum {
+    label: "Networking Http Content Ondatafinished To Onstop Delay Negative Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Content Ondatafinished To Onstop Delay Negative Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Content Ondatafinished To Onstop Delay Negative Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_content_ondatafinished_to_onstop_delay_negative"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between processing OnStopRequest and processing OnDataFinished (if OnStopRequest comes first)
+"
+  }
+
   dimension: metrics__timing_distribution__networking_http_content_onstart_delay__sum {
     label: "Networking Http Content Onstart Delay Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.sum ;;
     type: number
     group_label: "Networking"
@@ -4465,7 +7280,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__networking_http_content_onstop_delay__sum {
     label: "Networking Http Content Onstop Delay Sum"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstop_delay.sum ;;
     type: number
     group_label: "Networking"
@@ -4478,6 +7293,235 @@ To be used to validate GIFFT.
     }
 
     description: "The time between dispatching OnStopRequest from the socket thread and processing it on the main thread (content process).
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_response_version {
+    label: "Networking Http Response Version"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_response_version ;;
+    group_label: "Networking"
+    group_item_label: "Http Response Version"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Response Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_response_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTP protocol version used on response from nsHttp.h
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_https_rr_presented {
+    label: "Networking Https Rr Presented"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_rr_presented ;;
+    group_label: "Networking"
+    group_item_label: "Https Rr Presented"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Https Rr Presented"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_https_rr_presented"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "HTTPS RR is presented or not
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_https_upgrade_with_https_rr {
+    label: "Networking Https Upgrade With Https Rr"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_upgrade_with_https_rr ;;
+    group_label: "Networking"
+    group_item_label: "Https Upgrade With Https Rr"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Https Upgrade With Https Rr"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_https_upgrade_with_https_rr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether an HTTP request gets upgraded to HTTPS because of HTTPS RR
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_proxy_info_type {
+    label: "Networking Proxy Info Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_proxy_info_type ;;
+    group_label: "Networking"
+    group_item_label: "Proxy Info Type"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Proxy Info Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_proxy_info_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The proxies configurations created in the browser session (SOCKSv4, SOCKSv5, HTTP, HTTPS)
+"
+  }
+
+  dimension: metrics__counter__networking_residual_cache_folder_count {
+    label: "Networking Residual Cache Folder Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.networking_residual_cache_folder_count ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Residual Cache Folder Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Residual Cache Folder Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_residual_cache_folder_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often we find a cache folder that wasn't purged at shutdown by a background task process.
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_residual_cache_folder_removal {
+    label: "Networking Residual Cache Folder Removal"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_residual_cache_folder_removal ;;
+    group_label: "Networking"
+    group_item_label: "Residual Cache Folder Removal"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Residual Cache Folder Removal"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_residual_cache_folder_removal"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often succeed/fail in removing cache folder that wasn't purged at shutdown
+"
+  }
+
+  dimension: metrics__counter__networking_set_cookie {
+    label: "Networking Set Cookie"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.networking_set_cookie ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Cookie"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_set_cookie"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times we set a cookie. Introduced as a denomenator for measuring CHIPS adoption.
+"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign__numerator {
+    label: "Networking Set Cookie Foreign Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign.numerator ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Cookie Foreign Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie Foreign Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_set_cookie_foreign"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times we set a cookie from a foreign (not same-site) context. Introduced as a denomenator for measuring CHIPS adoption.
+"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign__denominator {
+    label: "Networking Set Cookie Foreign Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign.denominator ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Cookie Foreign Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie Foreign Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_set_cookie_foreign"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times we set a cookie from a foreign (not same-site) context. Introduced as a denomenator for measuring CHIPS adoption.
+"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign_partitioned__numerator {
+    label: "Networking Set Cookie Foreign Partitioned Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign_partitioned.numerator ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Cookie Foreign Partitioned Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie Foreign Partitioned Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_set_cookie_foreign_partitioned"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times we set a cookie that has the Partitioned attribute in a foreign (not same-site) context. This tracks the adoption of CHIPS.
+"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign_partitioned__denominator {
+    label: "Networking Set Cookie Foreign Partitioned Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign_partitioned.denominator ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Cookie Foreign Partitioned Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie Foreign Partitioned Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_set_cookie_foreign_partitioned"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times we set a cookie that has the Partitioned attribute in a foreign (not same-site) context. This tracks the adoption of CHIPS.
+"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_partitioned__numerator {
+    label: "Networking Set Cookie Partitioned Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_partitioned.numerator ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Cookie Partitioned Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie Partitioned Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_set_cookie_partitioned"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times we set a cookie that has the Partitioned attribute. This tracks the adoption of CHIPS.
+"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_partitioned__denominator {
+    label: "Networking Set Cookie Partitioned Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_partitioned.denominator ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Set Cookie Partitioned Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie Partitioned Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_set_cookie_partitioned"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This counts the number of times we set a cookie that has the Partitioned attribute. This tracks the adoption of CHIPS.
 "
   }
 
@@ -4513,6 +7557,76 @@ To be used to validate GIFFT.
 
     description: "Counts the occurrence of each outcome of a speculative connection
 "
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__sum {
+    label: "Networking Transaction Wait Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Transaction Wait Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Transaction Wait Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_transaction_wait_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from submission to dispatch of transaction without HTTPS RR (ms)
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__sum {
+    label: "Networking Transaction Wait Time Https Rr Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Transaction Wait Time Https Rr Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Transaction Wait Time Https Rr Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_transaction_wait_time_https_rr"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from submission to dispatch of transaction when HTTPS RR is used (ms)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_trr_request_count {
+    label: "Networking Trr Request Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.networking_trr_request_count ;;
+    group_label: "Networking"
+    group_item_label: "Trr Request Count"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Trr Request Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_trr_request_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The count of successful TRR requests keyed by regular/private browsing
+"
+  }
+
+  dimension: metrics__labeled_boolean__oskeystore_self_test {
+    label: "Oskeystore Self Test"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_boolean.oskeystore_self_test ;;
+    type: string
+    group_label: "Oskeystore"
+    group_item_label: "Self Test"
+
+    link: {
+      label: "Glean Dictionary reference for Oskeystore Self Test"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/oskeystore_self_test"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not each step of the OSKeyStore self test succeeded."
   }
 
   dimension: metrics__timing_distribution__paint_build_displaylist_time__sum {
@@ -4567,6 +7681,218 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_color {
+    label: "Pdfjs Editing Highlight Color"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_color ;;
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Color"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Color"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_color"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a given color is used to highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_color_changed {
+    label: "Pdfjs Editing Highlight Color Changed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_color_changed ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Color Changed"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Color Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_color_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user changes the color of a highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_deleted {
+    label: "Pdfjs Editing Highlight Deleted"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_deleted ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Deleted"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user deletes highlights.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_edited {
+    label: "Pdfjs Editing Highlight Edited"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_edited ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Edited"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Edited"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_edited"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user edits highlights.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_kind {
+    label: "Pdfjs Editing Highlight Kind"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_kind ;;
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Kind"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Kind"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_kind"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a given kind is used to highlight.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_method {
+    label: "Pdfjs Editing Highlight Method"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_method ;;
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Method"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Method"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_method"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a given method is used to highlight.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors {
+    label: "Pdfjs Editing Highlight Number Of Colors"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_number_of_colors ;;
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Number Of Colors"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Number Of Colors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_number_of_colors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of different colors used to highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_print {
+    label: "Pdfjs Editing Highlight Print"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_print ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Print"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Print"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_print"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user prints a PDF with highlights.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_save {
+    label: "Pdfjs Editing Highlight Save"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_save ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Save"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Save"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_save"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user saves a PDF with highlights.
+"
+  }
+
+  dimension: metrics__custom_distribution__pdfjs_editing_highlight_thickness__sum {
+    label: "Pdfjs Editing Highlight Thickness Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.pdfjs_editing_highlight_thickness.sum ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Thickness Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Thickness Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_thickness"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The thickness used to draw a free highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_thickness_changed {
+    label: "Pdfjs Editing Highlight Thickness Changed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_thickness_changed ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Thickness Changed"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Thickness Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_thickness_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user changes the thickness of a free highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_toggle_visibility {
+    label: "Pdfjs Editing Highlight Toggle Visibility"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_toggle_visibility ;;
+    type: number
+    group_label: "Pdfjs Editing Highlight"
+    group_item_label: "Toggle Visibility"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Toggle Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_toggle_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times the user toggles the visibility of highlights.
+"
+  }
+
   dimension: metrics__labeled_counter__pdfjs_geckoview {
     label: "Pdfjs Geckoview"
     hidden: yes
@@ -4581,6 +7907,23 @@ To be used to validate GIFFT.
     }
 
     description: "Counts the number of times some actions are executed in the PDF viewer.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_stamp {
+    label: "Pdfjs Stamp"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_stamp ;;
+    group_label: "Pdfjs"
+    group_item_label: "Stamp"
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Stamp"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_stamp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times some PDF editing features are used.
 "
   }
 
@@ -4617,6 +7960,402 @@ To be used to validate GIFFT.
     }
 
     description: "How many times PDF Viewer was used.
+"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__sum {
+    label: "Perf Largest Contentful Paint Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.sum ;;
+    type: number
+    group_label: "Perf"
+    group_item_label: "Largest Contentful Paint Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Perf Largest Contentful Paint Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/perf_largest_contentful_paint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigation start to largest contentful paint.
+"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__sum {
+    label: "Perf Largest Contentful Paint From Response Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.sum ;;
+    type: number
+    group_label: "Perf"
+    group_item_label: "Largest Contentful Paint From Response Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Perf Largest Contentful Paint From Response Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/perf_largest_contentful_paint_from_response_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from response start to largest contentful paint.
+"
+  }
+
+  dimension: metrics__custom_distribution__performance_clone_deserialize_items__sum {
+    label: "Performance Clone Deserialize Items Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.custom_distribution.performance_clone_deserialize_items.sum ;;
+    type: number
+    group_label: "Performance Clone Deserialize"
+    group_item_label: "Items Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Clone Deserialize Items Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_clone_deserialize_items"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of deserialized data, in items
+"
+  }
+
+  dimension: metrics__memory_distribution__performance_clone_deserialize_size__sum {
+    label: "Performance Clone Deserialize Size Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.memory_distribution.performance_clone_deserialize_size.sum ;;
+    type: number
+    group_label: "Performance Clone Deserialize"
+    group_item_label: "Size Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Clone Deserialize Size Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_clone_deserialize_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Size of deserialized data, in bytes
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_clone_deserialize_time__sum {
+    label: "Performance Clone Deserialize Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.sum ;;
+    type: number
+    group_label: "Performance Clone Deserialize"
+    group_item_label: "Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Clone Deserialize Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_clone_deserialize_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent deserializing structured data
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__sum {
+    label: "Performance Interaction Keypress Present Latency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.sum ;;
+    type: number
+    group_label: "Performance Interaction"
+    group_item_label: "Keypress Present Latency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Interaction Keypress Present Latency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_interaction_keypress_present_latency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between receiving a keypress event in the event loop and compositing its result onto the screen. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__sum {
+    label: "Performance Interaction Mouseup Click Present Latency Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.sum ;;
+    type: number
+    group_label: "Performance Interaction"
+    group_item_label: "Mouseup Click Present Latency Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Interaction Mouseup Click Present Latency Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_interaction_mouseup_click_present_latency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time between receiving a mouseup which follow by a mouseclick on the event loop and compositing its result onto the screen. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_non_blank_paint__sum {
+    label: "Performance Page Non Blank Paint Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.sum ;;
+    type: number
+    group_label: "Performance Page"
+    group_item_label: "Non Blank Paint Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Page Non Blank Paint Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_page_non_blank_paint"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first non-blank paint of a foreground root content document, in milliseconds. This only records documents that were in an active docshell throughout the whole time between navigation start and non-blank paint. The non-blank paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_total_content_page_load__sum {
+    label: "Performance Page Total Content Page Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_total_content_page_load.sum ;;
+    type: number
+    group_label: "Performance Page"
+    group_item_label: "Total Content Page Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Page Total Content Page Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_page_total_content_page_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time to load all of a page's resources and render. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp__sum {
+    label: "Performance Pageload Fcp Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Fcp Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Fcp Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_fcp"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between navigationStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__sum {
+    label: "Performance Pageload Fcp Responsestart Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Fcp Responsestart Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Fcp Responsestart Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_fcp_responsestart"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between responseStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time__sum {
+    label: "Performance Pageload Load Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Load Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Load Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_load_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from navigationStart to loadEventStart for the foreground http or https root content document. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__sum {
+    label: "Performance Pageload Load Time Responsestart Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time_responsestart.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Load Time Responsestart Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Load Time Responsestart Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_load_time_responsestart"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds from responseStart to loadEventStart for the foreground http or https root content document. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__sum {
+    label: "Performance Pageload Req Anim Frame Callback Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Req Anim Frame Callback Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Req Anim Frame Callback Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_req_anim_frame_callback"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in milliseconds calling all request animation frame callbacks for a document before it has reached readystate complete. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__sum {
+    label: "Performance Responsiveness Req Anim Frame Callback Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_responsiveness_req_anim_frame_callback.sum ;;
+    type: number
+    group_label: "Performance Responsiveness"
+    group_item_label: "Req Anim Frame Callback Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Responsiveness Req Anim Frame Callback Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_responsiveness_req_anim_frame_callback"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in milliseconds calling all request animation frame callbacks for a document after it has reached readystate complete. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_complete__sum {
+    label: "Performance Time Dom Complete Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Complete Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Complete Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_dom_complete"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domComplete as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__sum {
+    label: "Performance Time Dom Content Loaded End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Content Loaded End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Content Loaded End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_dom_content_loaded_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domContentLoadedEventEnd as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__sum {
+    label: "Performance Time Dom Content Loaded Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Content Loaded Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Content Loaded Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_dom_content_loaded_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domContentLoadedEventStart as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_interactive__sum {
+    label: "Performance Time Dom Interactive Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Dom Interactive Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Dom Interactive Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_dom_interactive"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to domInteractive as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_end__sum {
+    label: "Performance Time Load Event End Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Load Event End Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Load Event End Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_load_event_end"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to loadEventEnd as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_start__sum {
+    label: "Performance Time Load Event Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Load Event Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Load Event Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_load_event_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to loadEventStart as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_response_start__sum {
+    label: "Performance Time Response Start Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_response_start.sum ;;
+    type: number
+    group_label: "Performance Time"
+    group_item_label: "Response Start Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Time Response Start Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_response_start"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time from navigationStart to responseStart as per the W3C Performance Timing API. (Migrated from the geckoview metric of the same name.)
 "
   }
 
@@ -4963,6 +8702,24 @@ To be used to validate GIFFT.
     }
 
     description: "How many times threads woke up and could have woken up a CPU core. Broken down by thread name for a given process type.
+"
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__sum {
+    label: "Privacy Sanitize Load Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.sum ;;
+    type: number
+    group_label: "Privacy Sanitize"
+    group_item_label: "Load Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Privacy Sanitize Load Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/privacy_sanitize_load_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How much time was spent to open the dialog, including loading data sizes
 "
   }
 
@@ -5484,7 +9241,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_stale_transactionid__numerator {
     label: "Rtcrtpsender Setparameters Warn Stale Transactionid Numerator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_stale_transactionid.numerator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -5502,7 +9259,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__rate__rtcrtpsender_setparameters_warn_stale_transactionid__denominator {
     label: "Rtcrtpsender Setparameters Warn Stale Transactionid Denominator"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.rate.rtcrtpsender_setparameters_warn_stale_transactionid.denominator ;;
     type: number
     group_label: "Rtcrtpsender Setparameters"
@@ -5572,6 +9329,41 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__tls_certificate_verifications {
+    label: "Tls Certificate Verifications"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tls_certificate_verifications ;;
+    type: number
+    group_label: "Tls"
+    group_item_label: "Certificate Verifications"
+
+    link: {
+      label: "Glean Dictionary reference for Tls Certificate Verifications"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tls_certificate_verifications"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of successful TLS server certificate verifications.
+"
+  }
+
+  dimension: metrics__labeled_counter__tls_xyber_intolerance_reason {
+    label: "Tls Xyber Intolerance Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.tls_xyber_intolerance_reason ;;
+    group_label: "Tls"
+    group_item_label: "Xyber Intolerance Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Tls Xyber Intolerance Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tls_xyber_intolerance_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The error that was returned from a failed TLS 1.3 handshake in which the client sent a Xyber key share (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
+"
+  }
+
   dimension: metrics__rate__translations_error_rate__numerator {
     label: "Translations Error Rate Numerator"
     hidden: no
@@ -5623,6 +9415,186 @@ To be used to validate GIFFT.
     }
 
     description: "The count of translation requests.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_built_in_roots_module__numerator {
+    label: "Verification Used Cert From Built In Roots Module Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_built_in_roots_module.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Built In Roots Module Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Built In Roots Module Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_built_in_roots_module"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the built-in roots module.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_built_in_roots_module__denominator {
+    label: "Verification Used Cert From Built In Roots Module Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_built_in_roots_module.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Built In Roots Module Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Built In Roots Module Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_built_in_roots_module"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the built-in roots module.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_nss_cert_db__numerator {
+    label: "Verification Used Cert From Nss Cert Db Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_nss_cert_db.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Nss Cert Db Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Nss Cert Db Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_nss_cert_db"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the NSS cert DB.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_nss_cert_db__denominator {
+    label: "Verification Used Cert From Nss Cert Db Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_nss_cert_db.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Nss Cert Db Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Nss Cert Db Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_nss_cert_db"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the NSS cert DB.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_preloaded_intermediates__numerator {
+    label: "Verification Used Cert From Preloaded Intermediates Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_preloaded_intermediates.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Preloaded Intermediates Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Preloaded Intermediates Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_preloaded_intermediates"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from preloaded intermediates.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_preloaded_intermediates__denominator {
+    label: "Verification Used Cert From Preloaded Intermediates Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_preloaded_intermediates.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Preloaded Intermediates Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Preloaded Intermediates Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_preloaded_intermediates"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from preloaded intermediates.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_third_party_certificates__numerator {
+    label: "Verification Used Cert From Third Party Certificates Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_third_party_certificates.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Third Party Certificates Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Third Party Certificates Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_third_party_certificates"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a third-party certificate from the OS.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_third_party_certificates__denominator {
+    label: "Verification Used Cert From Third Party Certificates Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_third_party_certificates.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Third Party Certificates Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Third Party Certificates Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_third_party_certificates"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a third-party certificate from the OS.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_tls_handshake__numerator {
+    label: "Verification Used Cert From Tls Handshake Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_tls_handshake.numerator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Tls Handshake Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Tls Handshake Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_tls_handshake"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the TLS handshake.
+"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_tls_handshake__denominator {
+    label: "Verification Used Cert From Tls Handshake Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_tls_handshake.denominator ;;
+    type: number
+    group_label: "Verification Used Cert From"
+    group_item_label: "Tls Handshake Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Verification Used Cert From Tls Handshake Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/verification_used_cert_from_tls_handshake"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many successfully-built certificate chains used a certificate from the TLS handshake.
 "
   }
 
@@ -5821,6 +9793,43 @@ To be used to validate GIFFT.
     }
 
     description: "Time elapsed between the construction of a frame and the start of rendering.
+"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
+  dimension: metrics__string__glean_database_rkv_load_error {
+    label: "Glean Database Rkv Load Error"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_database_rkv_load_error ;;
+    type: string
+    group_label: "Glean Database"
+    group_item_label: "Rkv Load Error"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Database Rkv Load Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_database_rkv_load_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If there was an error loading the RKV database, record it.
 "
   }
 
@@ -6163,24 +10172,6 @@ though the counts appear in the next successfully sent `metrics` ping.
 "
   }
 
-  dimension: metrics__datetime__glean_validation_first_run_hour {
-    label: "Glean Validation First Run Hour"
-    hidden: yes
-    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
-    type: time
-    group_label: "Glean Validation"
-    group_item_label: "First Run Hour"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Validation First Run Hour"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_first_run_hour"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The hour of the first run of the application.
-"
-  }
-
   dimension: metrics__counter__glean_validation_foreground_count {
     label: "Glean Validation Foreground Count"
     hidden: no
@@ -6316,6 +10307,40 @@ startup, as part of the initialization sequence.
 
     description: "Measures how long `fetchExperiments` takes.
 "
+  }
+
+  dimension: metrics__labeled_counter__fxa_client_error_count {
+    label: "Fxa Client Error Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.fxa_client_error_count ;;
+    group_label: "Fxa Client"
+    group_item_label: "Error Count"
+
+    link: {
+      label: "Glean Dictionary reference for Fxa Client Error Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fxa_client_error_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of errors encountered during FxA operations, labeled by type. It is intended to be used together with `operation_count` to measure the overall error rate of FxA operations operations.
+"
+  }
+
+  dimension: metrics__counter__fxa_client_operation_count {
+    label: "Fxa Client Operation Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.fxa_client_operation_count ;;
+    type: number
+    group_label: "Fxa Client"
+    group_item_label: "Operation Count"
+
+    link: {
+      label: "Glean Dictionary reference for Fxa Client Operation Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fxa_client_operation_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of operations performed by the FxA client."
   }
 
   dimension: metrics__counter__logins_store_migration_num_failed {
@@ -6549,177 +10574,6 @@ startup, as part of the initialization sequence.
 "
   }
 
-  dimension: metrics__labeled_counter__avif_a1lx {
-    label: "Avif A1Lx"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_a1lx ;;
-    group_label: "Avif"
-    group_item_label: "A1Lx"
-
-    link: {
-      label: "Glean Dictionary reference for Avif A1Lx"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_a1lx"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AV1LayeredImageIndexingProperty (a1lx).
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_a1op {
-    label: "Avif A1Op"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_a1op ;;
-    group_label: "Avif"
-    group_item_label: "A1Op"
-
-    link: {
-      label: "Glean Dictionary reference for Avif A1Op"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_a1op"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF OperatingPointSelectorProperty (a1op).
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_alpha {
-    label: "Avif Alpha"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_alpha ;;
-    group_label: "Avif"
-    group_item_label: "Alpha"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Alpha"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_alpha"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF alpha plane.
-"
-  }
-
-  dimension: metrics__quantity__avif_aom_decode_error {
-    label: "Avif Aom Decode Error"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.avif_aom_decode_error ;;
-    type: number
-    group_label: "Avif"
-    group_item_label: "Aom Decode Error"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Aom Decode Error"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_aom_decode_error"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Image-decode Error from AOM decoder
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_bit_depth {
-    label: "Avif Bit Depth"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_bit_depth ;;
-    group_label: "Avif"
-    group_item_label: "Bit Depth"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Bit Depth"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_bit_depth"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Bits per pixel of AVIF image.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_cicp_cp {
-    label: "Avif Cicp Cp"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_cp ;;
-    group_label: "Avif"
-    group_item_label: "Cicp Cp"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Cicp Cp"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_cicp_cp"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF CICP colour primaries.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_cicp_mc {
-    label: "Avif Cicp Mc"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_mc ;;
-    group_label: "Avif"
-    group_item_label: "Cicp Mc"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Cicp Mc"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_cicp_mc"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF CICP transfer characteristics.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_cicp_tc {
-    label: "Avif Cicp Tc"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_tc ;;
-    group_label: "Avif"
-    group_item_label: "Cicp Tc"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Cicp Tc"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_cicp_tc"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF CICP transfer characteristics.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_clap {
-    label: "Avif Clap"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_clap ;;
-    group_label: "Avif"
-    group_item_label: "Clap"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Clap"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_clap"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF CleanApertureBox (clap).
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_colr {
-    label: "Avif Colr"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_colr ;;
-    group_label: "Avif"
-    group_item_label: "Colr"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Colr"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_colr"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF colour information type.
-"
-  }
-
   dimension: metrics__quantity__avif_dav1d_decode_error {
     label: "Avif Dav1D Decode Error"
     hidden: yes
@@ -6735,108 +10589,6 @@ startup, as part of the initialization sequence.
     }
 
     description: "Image-decode Error from dav1d decoder
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_decode_result {
-    label: "Avif Decode Result"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_decode_result ;;
-    group_label: "Avif"
-    group_item_label: "Decode Result"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Decode Result"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_decode_result"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Decode result of AVIF image.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_decoder {
-    label: "Avif Decoder"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_decoder ;;
-    group_label: "Avif"
-    group_item_label: "Decoder"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Decoder"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_decoder"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Decoder of AVIF image.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_grid {
-    label: "Avif Grid"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_grid ;;
-    group_label: "Avif"
-    group_item_label: "Grid"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Grid"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_grid"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF AVIF grid-based image.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_ipro {
-    label: "Avif Ipro"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_ipro ;;
-    group_label: "Avif"
-    group_item_label: "Ipro"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Ipro"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_ipro"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF ItemProtectionBox (ipro).
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_ispe {
-    label: "Avif Ispe"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_ispe ;;
-    group_label: "Avif"
-    group_item_label: "Ispe"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Ispe"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_ispe"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF spatial extents (image size).
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_lsel {
-    label: "Avif Lsel"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_lsel ;;
-    group_label: "Avif"
-    group_item_label: "Lsel"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Lsel"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_lsel"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF LayerSelectorProperty (lsel).
 "
   }
 
@@ -6857,40 +10609,6 @@ startup, as part of the initialization sequence.
 "
   }
 
-  dimension: metrics__labeled_counter__avif_pasp {
-    label: "Avif Pasp"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_pasp ;;
-    group_label: "Avif"
-    group_item_label: "Pasp"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Pasp"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_pasp"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF pixel aspect ratio.
-"
-  }
-
-  dimension: metrics__labeled_counter__avif_pixi {
-    label: "Avif Pixi"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_pixi ;;
-    group_label: "Avif"
-    group_item_label: "Pixi"
-
-    link: {
-      label: "Glean Dictionary reference for Avif Pixi"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_pixi"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "AVIF pixel information (bits per channel).
-"
-  }
-
   dimension: metrics__labeled_counter__avif_sequence {
     label: "Avif Sequence"
     hidden: yes
@@ -6908,20 +10626,22 @@ startup, as part of the initialization sequence.
 "
   }
 
-  dimension: metrics__labeled_counter__avif_yuv_color_space {
-    label: "Avif Yuv Color Space"
+  dimension: metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gvst {
+    label: "Fog Validation Gvsv Audio Stream Init Gvst"
     hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.avif_yuv_color_space ;;
-    group_label: "Avif"
-    group_item_label: "Yuv Color Space"
+    sql: ${TABLE}.metrics.labeled_counter.fog_validation_gvsv_audio_stream_init_gvst ;;
+    group_label: "Fog Validation"
+    group_item_label: "Gvsv Audio Stream Init Gvst"
 
     link: {
-      label: "Glean Dictionary reference for Avif Yuv Color Space"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/avif_yuv_color_space"
+      label: "Glean Dictionary reference for Fog Validation Gvsv Audio Stream Init Gvst"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_validation_gvsv_audio_stream_init_gvst"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "YUV color space of AVIF image.
+    description: "Incremented when an audio stream is initialized, recorded alongside the
+Glean API for the purposes of Validation (hence GVSV).
+Uses a single label due to only labeled counters being supported
 "
   }
 
@@ -6943,132 +10663,6 @@ startup, as part of the initialization sequence.
 "
   }
 
-  dimension: metrics__timing_distribution__geckoview_content_process_lifetime__sum {
-    label: "Geckoview Content Process Lifetime Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.geckoview_content_process_lifetime.sum ;;
-    type: number
-    group_label: "Geckoview"
-    group_item_label: "Content Process Lifetime Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Geckoview Content Process Lifetime Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_content_process_lifetime"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The uptime of content processes in ms
-"
-  }
-
-  dimension: metrics__custom_distribution__geckoview_document_site_origins__sum {
-    label: "Geckoview Document Site Origins Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.geckoview_document_site_origins.sum ;;
-    type: number
-    group_label: "Geckoview"
-    group_item_label: "Document Site Origins Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Geckoview Document Site Origins Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_document_site_origins"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "When a document is loaded, report the number of [site origins](https://searchfox.org/ mozilla-central/rev/ 3300072e993ae05d50d5c63d815260367eaf9179/ caps/nsIPrincipal.idl#264) of the entire browser if it has been at least 5 minutes since last time we collect this data.
-"
-  }
-
-  dimension: metrics__timing_distribution__geckoview_page_load_progress_time__sum {
-    label: "Geckoview Page Load Progress Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_progress_time.sum ;;
-    type: number
-    group_label: "Geckoview"
-    group_item_label: "Page Load Progress Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Geckoview Page Load Progress Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_page_load_progress_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time between page load progress starts (0) and completion (100).
-"
-  }
-
-  dimension: metrics__timing_distribution__geckoview_page_load_time__sum {
-    label: "Geckoview Page Load Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_time.sum ;;
-    type: number
-    group_label: "Geckoview"
-    group_item_label: "Page Load Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Geckoview Page Load Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_page_load_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time taken to load a page. This includes all static contents, no dynamic content. Loading of about: pages is not counted. Back back navigation (sometimes via BFCache) is included which is a source of bimodality due to the <50ms load times.
-"
-  }
-
-  dimension: metrics__timing_distribution__geckoview_page_reload_time__sum {
-    label: "Geckoview Page Reload Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_reload_time.sum ;;
-    type: number
-    group_label: "Geckoview"
-    group_item_label: "Page Reload Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Geckoview Page Reload Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_page_reload_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time taken to reload a page. This includes all static contents, no dynamic content. Loading of about: pages is not counted.
-"
-  }
-
-  dimension: metrics__custom_distribution__geckoview_per_document_site_origins__sum {
-    label: "Geckoview Per Document Site Origins Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.geckoview_per_document_site_origins.sum ;;
-    type: number
-    group_label: "Geckoview"
-    group_item_label: "Per Document Site Origins Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Geckoview Per Document Site Origins Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_per_document_site_origins"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "When a document is unloaded, report the highest number of [site origins](https://searchfox.org/ mozilla-central/rev/ 3300072e993ae05d50d5c63d815260367eaf9179/ caps/nsIPrincipal.idl#264) loaded simultaneously in that document.
-"
-  }
-
-  dimension: metrics__timing_distribution__geckoview_startup_runtime__sum {
-    label: "Geckoview Startup Runtime Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.geckoview_startup_runtime.sum ;;
-    type: number
-    group_label: "Geckoview"
-    group_item_label: "Startup Runtime Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Geckoview Startup Runtime Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/geckoview_startup_runtime"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time taken to initialize GeckoRuntime.
-"
-  }
-
   dimension: metrics__string__geckoview_version {
     label: "Geckoview Version"
     hidden: no
@@ -7087,42 +10681,6 @@ startup, as part of the initialization sequence.
 "
   }
 
-  dimension: metrics__string__gfx_adapter_primary_description {
-    label: "Gfx Adapter Primary Description"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_adapter_primary_description ;;
-    type: string
-    group_label: "Gfx Adapter Primary"
-    group_item_label: "Description"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Adapter Primary Description"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_description"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Long form description of the Graphics adapter
-"
-  }
-
-  dimension: metrics__string__gfx_adapter_primary_device_id {
-    label: "Gfx Adapter Primary Device Id"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_adapter_primary_device_id ;;
-    type: string
-    group_label: "Gfx Adapter Primary"
-    group_item_label: "Device Id"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Adapter Primary Device Id"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_device_id"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Graphics adapter device identification
-"
-  }
-
   dimension: metrics__string__gfx_adapter_primary_device_id_last_seen {
     label: "Gfx Adapter Primary Device Id Last Seen"
     hidden: yes
@@ -7138,472 +10696,6 @@ startup, as part of the initialization sequence.
     }
 
     description: "Graphics adapter device identification last seen This is a temporary workaround for some early telemetry system issues. See Bug 1601091 for more information
-"
-  }
-
-  dimension: metrics__string__gfx_adapter_primary_driver_date {
-    label: "Gfx Adapter Primary Driver Date"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_date ;;
-    type: string
-    group_label: "Gfx Adapter Primary"
-    group_item_label: "Driver Date"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Date"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_driver_date"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Graphics adapter driver date
-"
-  }
-
-  dimension: metrics__string__gfx_adapter_primary_driver_files {
-    label: "Gfx Adapter Primary Driver Files"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_files ;;
-    type: string
-    group_label: "Gfx Adapter Primary"
-    group_item_label: "Driver Files"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Files"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_driver_files"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "List of graphics adapter driver files
-"
-  }
-
-  dimension: metrics__string__gfx_adapter_primary_driver_vendor {
-    label: "Gfx Adapter Primary Driver Vendor"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_vendor ;;
-    type: string
-    group_label: "Gfx Adapter Primary"
-    group_item_label: "Driver Vendor"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Vendor"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_driver_vendor"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Graphics adapter driver vendor identification
-"
-  }
-
-  dimension: metrics__string__gfx_adapter_primary_driver_version {
-    label: "Gfx Adapter Primary Driver Version"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_version ;;
-    type: string
-    group_label: "Gfx Adapter Primary"
-    group_item_label: "Driver Version"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Adapter Primary Driver Version"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_driver_version"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Graphics adapter driver version
-"
-  }
-
-  dimension: metrics__quantity__gfx_adapter_primary_ram {
-    label: "Gfx Adapter Primary Ram"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.gfx_adapter_primary_ram ;;
-    type: number
-    group_label: "Gfx Adapter Primary"
-    group_item_label: "Ram"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Adapter Primary Ram"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_ram"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Graphics adapter dedicated memory
-"
-  }
-
-  dimension: metrics__string__gfx_adapter_primary_subsystem_id {
-    label: "Gfx Adapter Primary Subsystem Id"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_adapter_primary_subsystem_id ;;
-    type: string
-    group_label: "Gfx Adapter Primary"
-    group_item_label: "Subsystem Id"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Adapter Primary Subsystem Id"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_subsystem_id"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Graphics adapter subsystem identification
-"
-  }
-
-  dimension: metrics__string__gfx_adapter_primary_vendor_id {
-    label: "Gfx Adapter Primary Vendor Id"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_adapter_primary_vendor_id ;;
-    type: string
-    group_label: "Gfx Adapter Primary"
-    group_item_label: "Vendor Id"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Adapter Primary Vendor Id"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_adapter_primary_vendor_id"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Graphics adapter vendor identification
-"
-  }
-
-  dimension: metrics__timing_distribution__gfx_checkerboard_duration__sum {
-    label: "Gfx Checkerboard Duration Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_duration.sum ;;
-    type: number
-    group_label: "Gfx Checkerboard"
-    group_item_label: "Duration Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Checkerboard Duration Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_checkerboard_duration"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The duration of a checkerboard event. Checkerboarding is when painting has not kept up with asynchronous panning and zooming so the compositor has to display a \"checkerboard pattern\" (or in practice, the background color) rather than the actual page content.
-"
-  }
-
-  dimension: metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__sum {
-    label: "Gfx Checkerboard Peak Pixel Count Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_peak_pixel_count.sum ;;
-    type: number
-    group_label: "Gfx Checkerboard"
-    group_item_label: "Peak Pixel Count Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Checkerboard Peak Pixel Count Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_checkerboard_peak_pixel_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The peak number of CSS pixels that checkerboarded during a checkerboard event. The minimum value of the largest histogram bucket is the size of a 4k display with maximum APZ zooming.
-"
-  }
-
-  dimension: metrics__timing_distribution__gfx_checkerboard_potential_duration__sum {
-    label: "Gfx Checkerboard Potential Duration Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_potential_duration.sum ;;
-    type: number
-    group_label: "Gfx Checkerboard"
-    group_item_label: "Potential Duration Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Checkerboard Potential Duration Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_checkerboard_potential_duration"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The total amount of time that we could reasonably be checkerboarding. This is the union of two possibly-intersecting sets of time periods: The first set is that in which checkerboarding was actually happening, since by definition it could potentially be happening. The second set is that in which the APZC is actively transforming content in the compositor, since it could potentially transform it so as to display checkerboarding to the user. Combined with other information, this allows us to meaningfully say how frequently users actually enncounters checkerboarding.
-"
-  }
-
-  dimension: metrics__custom_distribution__gfx_checkerboard_severity__sum {
-    label: "Gfx Checkerboard Severity Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_severity.sum ;;
-    type: number
-    group_label: "Gfx Checkerboard"
-    group_item_label: "Severity Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Checkerboard Severity Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_checkerboard_severity"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "An opaque measurement of the severity of a checkerboard event. This doesn't have units, it's just useful for comparing two checkerboard events to see which one is worse, for some implementation-specific definition of \"worse\". The larger the value, the worse the checkerboarding.
-"
-  }
-
-  dimension: metrics__timing_distribution__gfx_composite_time__sum {
-    label: "Gfx Composite Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.gfx_composite_time.sum ;;
-    type: number
-    group_label: "Gfx"
-    group_item_label: "Composite Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Composite Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_composite_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time taken to composite a frame. On non-webrender this is the time taken in `CompositorBridgeParent::CompositeToTarget()`. On webrender, this is the time taken from the start of `WebRenderBridgeParent::CompositeToTarget()`, until the render thread has rendered the frame (in `RenderThread::HandleFrameOneDoc()`).
-"
-  }
-
-  dimension: metrics__custom_distribution__gfx_content_frame_time_from_paint__sum {
-    label: "Gfx Content Frame Time From Paint Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_paint.sum ;;
-    type: number
-    group_label: "Gfx Content Frame Time"
-    group_item_label: "From Paint Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Content Frame Time From Paint Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_from_paint"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor.
-"
-  }
-
-  dimension: metrics__custom_distribution__gfx_content_frame_time_from_vsync__sum {
-    label: "Gfx Content Frame Time From Vsync Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_vsync.sum ;;
-    type: number
-    group_label: "Gfx Content Frame Time"
-    group_item_label: "From Vsync Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Content Frame Time From Vsync Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_from_vsync"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time, in percentage of a vsync interval, spent from the vsync that started a paint in the content process until that frame is presented in the compositor.
-"
-  }
-
-  dimension: metrics__labeled_counter__gfx_content_frame_time_reason {
-    label: "Gfx Content Frame Time Reason"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.gfx_content_frame_time_reason ;;
-    group_label: "Gfx Content Frame Time"
-    group_item_label: "Reason"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Content Frame Time Reason"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_reason"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The reason that `gfx.content.frame_time.from_paint` recorded a slow (>200ms) result, if any.
-"
-  }
-
-  dimension: metrics__custom_distribution__gfx_content_frame_time_with_svg__sum {
-    label: "Gfx Content Frame Time With Svg Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_with_svg.sum ;;
-    type: number
-    group_label: "Gfx Content Frame Time"
-    group_item_label: "With Svg Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Content Frame Time With Svg Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_with_svg"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor, for frames that contained an SVG to be drawn by webrender.
-"
-  }
-
-  dimension: metrics__custom_distribution__gfx_content_frame_time_without_resource_upload__sum {
-    label: "Gfx Content Frame Time Without Resource Upload Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_resource_upload.sum ;;
-    type: number
-    group_label: "Gfx Content Frame Time"
-    group_item_label: "Without Resource Upload Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Content Frame Time Without Resource Upload Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_without_resource_upload"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor by webrender, excluding time spent uploading resources.
-"
-  }
-
-  dimension: metrics__custom_distribution__gfx_content_frame_time_without_upload__sum {
-    label: "Gfx Content Frame Time Without Upload Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_upload.sum ;;
-    type: number
-    group_label: "Gfx Content Frame Time"
-    group_item_label: "Without Upload Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Content Frame Time Without Upload Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_frame_time_without_upload"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time, in percentage of a vsync interval, spent from beginning a paint in the content process until that frame is presented in the compositor by webrender, excluding time spent uploading any content.
-"
-  }
-
-  dimension: metrics__timing_distribution__gfx_content_full_paint_time__sum {
-    label: "Gfx Content Full Paint Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.gfx_content_full_paint_time.sum ;;
-    type: number
-    group_label: "Gfx Content"
-    group_item_label: "Full Paint Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Content Full Paint Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_full_paint_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent in the full paint pipeline for content until it's ready for composition. For non-webrender this includes `paint_time`, plus rasterization if OMTP is enabled. For webrender, this includes `paint_time`, plus scene building time.
-"
-  }
-
-  dimension: metrics__timing_distribution__gfx_content_paint_time__sum {
-    label: "Gfx Content Paint Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.gfx_content_paint_time.sum ;;
-    type: number
-    group_label: "Gfx Content"
-    group_item_label: "Paint Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Content Paint Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_content_paint_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent in the main-thread paint pipeline for content. For non-webrender, this includes display list building, layer building, and when OMTP is disabled, rasterization. For webrender, this includes display list building, and webrender display list building.
-"
-  }
-
-  dimension: metrics__quantity__gfx_display_count {
-    label: "Gfx Display Count"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.gfx_display_count ;;
-    type: number
-    group_label: "Gfx Display"
-    group_item_label: "Count"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Display Count"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_display_count"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Amount of displays connected to the device
-"
-  }
-
-  dimension: metrics__quantity__gfx_display_primary_height {
-    label: "Gfx Display Primary Height"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.gfx_display_primary_height ;;
-    type: number
-    group_label: "Gfx Display"
-    group_item_label: "Primary Height"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Display Primary Height"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_display_primary_height"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Height of the primary display, takes device rotation into account.
-"
-  }
-
-  dimension: metrics__quantity__gfx_display_primary_width {
-    label: "Gfx Display Primary Width"
-    hidden: no
-    sql: ${TABLE}.metrics.quantity.gfx_display_primary_width ;;
-    type: number
-    group_label: "Gfx Display"
-    group_item_label: "Primary Width"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Display Primary Width"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_display_primary_width"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Width of the primary display, takes device rotation into account.
-"
-  }
-
-  dimension: metrics__string__gfx_feature_webrender {
-    label: "Gfx Feature Webrender"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_feature_webrender ;;
-    type: string
-    group_label: "Gfx Feature"
-    group_item_label: "Webrender"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Feature Webrender"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_feature_webrender"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Whether webrender is enabled or disabled, and why."
-  }
-
-  dimension: metrics__timing_distribution__gfx_scroll_present_latency__sum {
-    label: "Gfx Scroll Present Latency Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.gfx_scroll_present_latency.sum ;;
-    type: number
-    group_label: "Gfx"
-    group_item_label: "Scroll Present Latency Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Scroll Present Latency Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_scroll_present_latency"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time between receiving a scroll event on the event loop and compositing its result onto the screen (ms).
-"
-  }
-
-  dimension: metrics__string__gfx_status_compositor {
-    label: "Gfx Status Compositor"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_status_compositor ;;
-    type: string
-    group_label: "Gfx Status"
-    group_item_label: "Compositor"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Status Compositor"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_status_compositor"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Name of the graphics compositor in use. Possible values are \"opengl, d3d11, client, webrender or basic\"
 "
   }
 
@@ -7640,42 +10732,6 @@ startup, as part of the initialization sequence.
     }
 
     description: "The time taken to build a webrender frame. This involves calculating the visibility of primitives, requesting resources, and building the render passes which will be used to render the frame.
-"
-  }
-
-  dimension: metrics__boolean__gfx_status_headless {
-    label: "Gfx Status Headless"
-    hidden: no
-    sql: ${TABLE}.metrics.boolean.gfx_status_headless ;;
-    type: yesno
-    group_label: "Gfx Status"
-    group_item_label: "Headless"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Status Headless"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_status_headless"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Boolean indicated whether graphics is running in headless (no display) mode
-"
-  }
-
-  dimension: metrics__string__gfx_status_last_compositor_gecko_version {
-    label: "Gfx Status Last Compositor Gecko Version"
-    hidden: no
-    sql: ${TABLE}.metrics.string.gfx_status_last_compositor_gecko_version ;;
-    type: string
-    group_label: "Gfx Status"
-    group_item_label: "Last Compositor Gecko Version"
-
-    link: {
-      label: "Glean Dictionary reference for Gfx Status Last Compositor Gecko Version"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/gfx_status_last_compositor_gecko_version"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The gecko version at the last time a compositor was initialized, and therefore when gfx_status_compositor was last updated. Due to gfx_status_compositor's user lifetime we see lots of unexpected values for the current gecko version. We believe this is because the user has not opened a tab since they were updated to a version where webrender should be enabled on their device. This can be used to verify that theory.
 "
   }
 
@@ -7769,276 +10825,6 @@ startup, as part of the initialization sequence.
 "
   }
 
-  dimension: metrics__timing_distribution__javascript_gc_compact_time__sum {
-    label: "Javascript Gc Compact Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.sum ;;
-    type: number
-    group_label: "Javascript Gc"
-    group_item_label: "Compact Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Gc Compact Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_compact_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time spent in the compact phase.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_mark_roots_time__sum {
-    label: "Javascript Gc Mark Roots Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.sum ;;
-    type: number
-    group_label: "Javascript Gc"
-    group_item_label: "Mark Roots Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Gc Mark Roots Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_mark_roots_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time spent marking GC roots.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_mark_time__sum {
-    label: "Javascript Gc Mark Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.sum ;;
-    type: number
-    group_label: "Javascript Gc"
-    group_item_label: "Mark Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Gc Mark Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_mark_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time spent in the mark phase.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_minor_time__sum {
-    label: "Javascript Gc Minor Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.sum ;;
-    type: number
-    group_label: "Javascript Gc"
-    group_item_label: "Minor Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Gc Minor Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_minor_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time taked by a minor (nursery) collection.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_prepare_time__sum {
-    label: "Javascript Gc Prepare Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.sum ;;
-    type: number
-    group_label: "Javascript Gc"
-    group_item_label: "Prepare Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Gc Prepare Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_prepare_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time spent in the preparation phase.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_slice_time__sum {
-    label: "Javascript Gc Slice Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.sum ;;
-    type: number
-    group_label: "Javascript Gc"
-    group_item_label: "Slice Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Gc Slice Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_slice_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time spent running a GC slice.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_sweep_time__sum {
-    label: "Javascript Gc Sweep Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.sum ;;
-    type: number
-    group_label: "Javascript Gc"
-    group_item_label: "Sweep Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Gc Sweep Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_sweep_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time spent in the sweep phase.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_gc_total_time__sum {
-    label: "Javascript Gc Total Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.sum ;;
-    type: number
-    group_label: "Javascript Gc"
-    group_item_label: "Total Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Gc Total Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_gc_total_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The total time taken by a major collection.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__sum {
-    label: "Javascript Pageload Baseline Compile Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.sum ;;
-    type: number
-    group_label: "Javascript Pageload"
-    group_item_label: "Baseline Compile Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Pageload Baseline Compile Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_baseline_compile_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent during page load baseline compiling Javascript in ms.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_pageload_delazification_time__sum {
-    label: "Javascript Pageload Delazification Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.sum ;;
-    type: number
-    group_label: "Javascript Pageload"
-    group_item_label: "Delazification Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Pageload Delazification Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_delazification_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent during page load delazifying Javascript in ms.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_pageload_execution_time__sum {
-    label: "Javascript Pageload Execution Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.sum ;;
-    type: number
-    group_label: "Javascript Pageload"
-    group_item_label: "Execution Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Pageload Execution Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_execution_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent during page load executing Javascript in ms.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_pageload_gc_time__sum {
-    label: "Javascript Pageload Gc Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.sum ;;
-    type: number
-    group_label: "Javascript Pageload"
-    group_item_label: "Gc Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Pageload Gc Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_gc_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent during page load in the GC in ms.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_pageload_parse_time__sum {
-    label: "Javascript Pageload Parse Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.sum ;;
-    type: number
-    group_label: "Javascript Pageload"
-    group_item_label: "Parse Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Pageload Parse Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_parse_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent during page load syntax parsing JS scripts on the main thread in ms.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_pageload_protect_time__sum {
-    label: "Javascript Pageload Protect Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.sum ;;
-    type: number
-    group_label: "Javascript Pageload"
-    group_item_label: "Protect Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Pageload Protect Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_protect_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent during page load protecting JIT executable memory.
-"
-  }
-
-  dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__sum {
-    label: "Javascript Pageload Xdr Encode Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.sum ;;
-    type: number
-    group_label: "Javascript Pageload"
-    group_item_label: "Xdr Encode Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Javascript Pageload Xdr Encode Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/javascript_pageload_xdr_encode_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent during page load XDR encoding Javascript in ms.
-"
-  }
-
   dimension: metrics__custom_distribution__js_baseline_compile_percentage__sum {
     label: "Js Baseline Compile Percentage Sum"
     hidden: yes
@@ -8129,256 +10915,6 @@ startup, as part of the initialization sequence.
 "
   }
 
-  dimension: metrics__labeled_counter__media_audio_backend {
-    label: "Media Audio Backend"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.media_audio_backend ;;
-    group_label: "Media Audio"
-    group_item_label: "Backend"
-
-    link: {
-      label: "Glean Dictionary reference for Media Audio Backend"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_backend"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The operating system audio backend
-"
-  }
-
-  dimension: metrics__labeled_counter__media_audio_init_failure {
-    label: "Media Audio Init Failure"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
-    group_label: "Media"
-    group_item_label: "Audio Init Failure"
-
-    link: {
-      label: "Glean Dictionary reference for Media Audio Init Failure"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/media_audio_init_failure"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Failure occurs when initializing the audio stream.
-"
-  }
-
-  dimension: metrics__timing_distribution__network_cache_hit_time__sum {
-    label: "Network Cache Hit Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.sum ;;
-    type: number
-    group_label: "Network"
-    group_item_label: "Cache Hit Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Network Cache Hit Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_cache_hit_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time to open existing cache entry file.
-"
-  }
-
-  dimension: metrics__timing_distribution__network_dns_end__sum {
-    label: "Network Dns End Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.sum ;;
-    type: number
-    group_label: "Network"
-    group_item_label: "Dns End Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Network Dns End Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_dns_end"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "In the HTTP page channel, time from the DNS request being issued to the response.
-"
-  }
-
-  dimension: metrics__timing_distribution__network_dns_start__sum {
-    label: "Network Dns Start Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.sum ;;
-    type: number
-    group_label: "Network"
-    group_item_label: "Dns Start Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Network Dns Start Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_dns_start"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "In the HTTP page channel, time from connection open to the DNS request being issued.
-"
-  }
-
-  dimension: metrics__timing_distribution__network_first_from_cache__sum {
-    label: "Network First From Cache Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.sum ;;
-    type: number
-    group_label: "Network"
-    group_item_label: "First From Cache Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Network First From Cache Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_first_from_cache"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "In the HTTP page channel, time from connection open to cache read start.
-"
-  }
-
-  dimension: metrics__timing_distribution__network_font_download_end__sum {
-    label: "Network Font Download End Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.sum ;;
-    type: number
-    group_label: "Network"
-    group_item_label: "Font Download End Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Network Font Download End Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_font_download_end"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time after navigationStart that all webfont downloads are completed.
-"
-  }
-
-  dimension: metrics__timing_distribution__network_tcp_connection__sum {
-    label: "Network Tcp Connection Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.sum ;;
-    type: number
-    group_label: "Network"
-    group_item_label: "Tcp Connection Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Network Tcp Connection Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_tcp_connection"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "In the HTTP page channel, time from the TCP SYN packet is received to the connection is established and ready for HTTP.
-"
-  }
-
-  dimension: metrics__timing_distribution__network_tls_handshake__sum {
-    label: "Network Tls Handshake Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.sum ;;
-    type: number
-    group_label: "Network"
-    group_item_label: "Tls Handshake Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Network Tls Handshake Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/network_tls_handshake"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "In the HTTP page channel, time from after the TCP SYN packet is received to the secure connection is established and ready for HTTP.
-"
-  }
-
-  dimension: metrics__custom_distribution__performance_clone_deserialize_items__sum {
-    label: "Performance Clone Deserialize Items Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.custom_distribution.performance_clone_deserialize_items.sum ;;
-    type: number
-    group_label: "Performance Clone Deserialize"
-    group_item_label: "Items Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Clone Deserialize Items Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_clone_deserialize_items"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Size of deserialized data, in items
-"
-  }
-
-  dimension: metrics__memory_distribution__performance_clone_deserialize_size__sum {
-    label: "Performance Clone Deserialize Size Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.memory_distribution.performance_clone_deserialize_size.sum ;;
-    type: number
-    group_label: "Performance Clone Deserialize"
-    group_item_label: "Size Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Clone Deserialize Size Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_clone_deserialize_size"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Size of deserialized data, in bytes
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_clone_deserialize_time__sum {
-    label: "Performance Clone Deserialize Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.sum ;;
-    type: number
-    group_label: "Performance Clone Deserialize"
-    group_item_label: "Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Clone Deserialize Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_clone_deserialize_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent deserializing structured data
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__sum {
-    label: "Performance Interaction Keypress Present Latency Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.sum ;;
-    type: number
-    group_label: "Performance Interaction"
-    group_item_label: "Keypress Present Latency Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Interaction Keypress Present Latency Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_interaction_keypress_present_latency"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time between receiving a keypress event in the event loop and compositing its result onto the screen.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__sum {
-    label: "Performance Interaction Mouseup Click Present Latency Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.sum ;;
-    type: number
-    group_label: "Performance Interaction"
-    group_item_label: "Mouseup Click Present Latency Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Interaction Mouseup Click Present Latency Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_interaction_mouseup_click_present_latency"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time between receiving a mouseup which follow by a mouseclick on the event loop and compositing its result onto the screen.
-"
-  }
-
   dimension: metrics__timing_distribution__performance_interaction_tab_switch_composite__sum {
     label: "Performance Interaction Tab Switch Composite Sum"
     hidden: no
@@ -8394,42 +10930,6 @@ startup, as part of the initialization sequence.
     }
 
     description: "Time between tab selection and first composite of the tab content onto the screen.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_page_non_blank_paint__sum {
-    label: "Performance Page Non Blank Paint Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.sum ;;
-    type: number
-    group_label: "Performance Page"
-    group_item_label: "Non Blank Paint Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Page Non Blank Paint Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_page_non_blank_paint"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time between navigationStart and the first non-blank paint of a foreground root content document, in milliseconds. This only records documents that were in an active docshell throughout the whole time between navigation start and non-blank paint. The non-blank paint timestamp is taken during display list building and does not include rasterization or compositing of that paint.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_page_total_content_page_load__sum {
-    label: "Performance Page Total Content Page Load Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_page_total_content_page_load.sum ;;
-    type: number
-    group_label: "Performance Page"
-    group_item_label: "Total Content Page Load Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Page Total Content Page Load Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_page_total_content_page_load"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time to load all of a page's resources and render.
 "
   }
 
@@ -8469,204 +10969,6 @@ startup, as part of the initialization sequence.
 "
   }
 
-  dimension: metrics__timing_distribution__performance_pageload_fcp__sum {
-    label: "Performance Pageload Fcp Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.sum ;;
-    type: number
-    group_label: "Performance Pageload"
-    group_item_label: "Fcp Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Pageload Fcp Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_fcp"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time between navigationStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__sum {
-    label: "Performance Pageload Fcp Responsestart Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.sum ;;
-    type: number
-    group_label: "Performance Pageload"
-    group_item_label: "Fcp Responsestart Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Pageload Fcp Responsestart Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_fcp_responsestart"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time between responseStart and the first contentful paint of a foreground http or https root content document, in milliseconds. The contentful paint timestamp is taken during display list building and does not include rasterization or compositing of that paint.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_pageload_load_time__sum {
-    label: "Performance Pageload Load Time Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.sum ;;
-    type: number
-    group_label: "Performance Pageload"
-    group_item_label: "Load Time Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Pageload Load Time Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_load_time"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time in milliseconds from navigationStart to loadEventStart for the foreground http or https root content document.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__sum {
-    label: "Performance Pageload Load Time Responsestart Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time_responsestart.sum ;;
-    type: number
-    group_label: "Performance Pageload"
-    group_item_label: "Load Time Responsestart Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Pageload Load Time Responsestart Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_load_time_responsestart"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time in milliseconds from responseStart to loadEventStart for the foreground http or https root content document.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__sum {
-    label: "Performance Pageload Req Anim Frame Callback Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.sum ;;
-    type: number
-    group_label: "Performance Pageload"
-    group_item_label: "Req Anim Frame Callback Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Pageload Req Anim Frame Callback Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_pageload_req_anim_frame_callback"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent in milliseconds calling all request animation frame callbacks for a document before it has reached readystate complete.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__sum {
-    label: "Performance Responsiveness Req Anim Frame Callback Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_responsiveness_req_anim_frame_callback.sum ;;
-    type: number
-    group_label: "Performance Responsiveness"
-    group_item_label: "Req Anim Frame Callback Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Responsiveness Req Anim Frame Callback Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_responsiveness_req_anim_frame_callback"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time spent in milliseconds calling all request animation frame callbacks for a document after it has reached readystate complete.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_time_dom_complete__sum {
-    label: "Performance Time Dom Complete Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.sum ;;
-    type: number
-    group_label: "Performance Time"
-    group_item_label: "Dom Complete Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Time Dom Complete Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_dom_complete"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time from navigationStart to domComplete as per the W3C Performance Timing API.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__sum {
-    label: "Performance Time Dom Content Loaded End Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.sum ;;
-    type: number
-    group_label: "Performance Time"
-    group_item_label: "Dom Content Loaded End Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Time Dom Content Loaded End Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_dom_content_loaded_end"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time from navigationStart to domContentLoadedEventEnd as per the W3C Performance Timing API.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__sum {
-    label: "Performance Time Dom Content Loaded Start Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.sum ;;
-    type: number
-    group_label: "Performance Time"
-    group_item_label: "Dom Content Loaded Start Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Time Dom Content Loaded Start Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_dom_content_loaded_start"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time from navigationStart to domContentLoadedEventStart as per the W3C Performance Timing API.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_time_dom_interactive__sum {
-    label: "Performance Time Dom Interactive Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.sum ;;
-    type: number
-    group_label: "Performance Time"
-    group_item_label: "Dom Interactive Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Time Dom Interactive Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_dom_interactive"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time from navigationStart to domInteractive as per the W3C Performance Timing API.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_time_load_event_end__sum {
-    label: "Performance Time Load Event End Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.sum ;;
-    type: number
-    group_label: "Performance Time"
-    group_item_label: "Load Event End Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Time Load Event End Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_load_event_end"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time from navigationStart to loadEventEnd as per the W3C Performance Timing API.
-"
-  }
-
   dimension: metrics__timing_distribution__performance_time_load_event_end_no_preload__sum {
     label: "Performance Time Load Event End No Preload Sum"
     hidden: yes
@@ -8703,24 +11005,6 @@ startup, as part of the initialization sequence.
 "
   }
 
-  dimension: metrics__timing_distribution__performance_time_load_event_start__sum {
-    label: "Performance Time Load Event Start Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start.sum ;;
-    type: number
-    group_label: "Performance Time"
-    group_item_label: "Load Event Start Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Time Load Event Start Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_load_event_start"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time from navigationStart to loadEventStart as per the W3C Performance Timing API.
-"
-  }
-
   dimension: metrics__timing_distribution__performance_time_load_event_start_no_preload__sum {
     label: "Performance Time Load Event Start No Preload Sum"
     hidden: yes
@@ -8754,24 +11038,6 @@ startup, as part of the initialization sequence.
     }
 
     description: "Time from navigationStart to [`loadEventStart`](https://www.w3.org/TR/ navigation-timing/#dom-performancetiming-loadstart) as per the W3C Performance Timing API. This is only submitted on when the document would preload a resource (i.e., if it encounters a `<link>` element or a `Link` header with `rel=\"preload\"`), even if the `network.preload` pref is disabled.
-"
-  }
-
-  dimension: metrics__timing_distribution__performance_time_response_start__sum {
-    label: "Performance Time Response Start Sum"
-    hidden: no
-    sql: ${TABLE}.metrics.timing_distribution.performance_time_response_start.sum ;;
-    type: number
-    group_label: "Performance Time"
-    group_item_label: "Response Start Sum"
-
-    link: {
-      label: "Glean Dictionary reference for Performance Time Response Start Sum"
-      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/performance_time_response_start"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Time from navigationStart to responseStart as per the W3C Performance Timing API.
 "
   }
 
@@ -9165,6 +11431,20 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     group_item_label: "Os Version"
   }
 
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+  }
+
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
@@ -9418,6 +11698,78 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+  }
+
+  dimension_group: metrics__datetime__blocklist_last_modified_rs_addons_mblf {
+    label: "Blocklist Last Modified Rs Addons Mblf"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.blocklist_last_modified_rs_addons_mblf ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Keep track of the last time the \"addons-bloomfilters\" remotesetting blocklist has been successfully updated.
+"
+  }
+
+  dimension_group: metrics__datetime__blocklist_mlbf_stash_time_newest {
+    label: "Blocklist Mlbf Stash Time Newest"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_newest ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Keep track of the timestamp of the most recent stash of the addons blocklist.
+"
+  }
+
+  dimension_group: metrics__datetime__blocklist_mlbf_stash_time_oldest {
+    label: "Blocklist Mlbf Stash Time Oldest"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.blocklist_mlbf_stash_time_oldest ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Keep track of the timestamp of the oldest stash of the addons blocklist.
+"
+  }
+
+  dimension_group: metrics__datetime__glean_validation_first_run_hour {
+    label: "Glean Validation First Run Hour"
+    hidden: yes
+    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The hour of the first run of the application.
+"
   }
 
   dimension_group: metadata__header__parsed {
@@ -10338,6 +12690,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: shopping_product_page_visits {
+    type: sum
+    sql: ${metrics__counter__shopping_product_page_visits} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Product Page Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/shopping_product_page_visits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: shopping_product_page_visits_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__shopping_product_page_visits: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Product Page Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/shopping_product_page_visits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: tabs_tray_close_inactive_tab {
     type: sum
     sql: ${metrics__counter__tabs_tray_close_inactive_tab} ;;
@@ -10409,6 +12786,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Bloburl Resolve Stopped"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/bloburl_resolve_stopped"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: cookie_banners_cookie_injection_fail {
+    type: sum
+    sql: ${metrics__counter__cookie_banners_cookie_injection_fail} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Cookie Injection Fail"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cookie_banners_cookie_injection_fail"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: cookie_banners_cookie_injection_fail_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__cookie_banners_cookie_injection_fail: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Cookie Injection Fail"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cookie_banners_cookie_injection_fail"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -10559,6 +12961,231 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Fog Ipc Shutdown Registration Failures"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fog_ipc_shutdown_registration_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_residual_cache_folder_count {
+    type: sum
+    sql: ${metrics__counter__networking_residual_cache_folder_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Residual Cache Folder Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_residual_cache_folder_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_residual_cache_folder_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__networking_residual_cache_folder_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Residual Cache Folder Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_residual_cache_folder_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_set_cookie {
+    type: sum
+    sql: ${metrics__counter__networking_set_cookie} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_set_cookie"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: networking_set_cookie_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__networking_set_cookie: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Networking Set Cookie"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_set_cookie"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_color_changed {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_color_changed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Color Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_color_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_color_changed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_color_changed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Color Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_color_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_deleted {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_deleted} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_deleted_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_deleted: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_edited {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_edited} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Edited"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_edited"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_edited_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_edited: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Edited"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_edited"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_print {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_print} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Print"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_print"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_print_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_print: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Print"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_print"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_save {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_save} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Save"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_save"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_save_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_save: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Save"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_save"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_thickness_changed {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_thickness_changed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Thickness Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_thickness_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_thickness_changed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_thickness_changed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Thickness Changed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_thickness_changed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_toggle_visibility {
+    type: sum
+    sql: ${metrics__counter__pdfjs_editing_highlight_toggle_visibility} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Toggle Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_toggle_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: pdfjs_editing_highlight_toggle_visibility_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__pdfjs_editing_highlight_toggle_visibility: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Pdfjs Editing Highlight Toggle Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/pdfjs_editing_highlight_toggle_visibility"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -10759,6 +13386,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Rtcrtpsender Count Setparameters Compat"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/rtcrtpsender_count_setparameters_compat"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tls_certificate_verifications {
+    type: sum
+    sql: ${metrics__counter__tls_certificate_verifications} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tls Certificate Verifications"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tls_certificate_verifications"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tls_certificate_verifications_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tls_certificate_verifications: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tls Certificate Verifications"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tls_certificate_verifications"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -10984,6 +13636,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Glean Validation Foreground Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_validation_foreground_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fxa_client_operation_count {
+    type: sum
+    sql: ${metrics__counter__fxa_client_operation_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fxa Client Operation Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fxa_client_operation_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: fxa_client_operation_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__fxa_client_operation_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Fxa Client Operation Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/fxa_client_operation_count"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -11356,6 +14033,49 @@ view: metrics__metrics__labeled_counter__avif_alpha {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__avif_alpha
     suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_alpha.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__avif_aom_decode_error {
+  label: "Avif - Aom Decode Error"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_aom_decode_error
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_aom_decode_error.key
     hidden: no
   }
 
@@ -12238,6 +14958,178 @@ view: metrics__metrics__labeled_counter__browser_search_with_ads {
   }
 }
 
+view: metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
+  label: "Codec Stats - Audio Preferred Codec"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__codec_stats_other_fec_signaled {
+  label: "Codec Stats - Other Fec Signaled"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__codec_stats_other_fec_signaled
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__codec_stats_other_fec_signaled.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated {
+  label: "Codec Stats - Ulpfec Negotiated"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__codec_stats_video_preferred_codec {
+  label: "Codec Stats - Video Preferred Codec"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__codec_stats_video_preferred_codec
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__codec_stats_video_preferred_codec.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__cookie_banners_click_result {
   label: "Cookie Banners Click - Result"
 
@@ -12259,6 +15151,92 @@ view: metrics__metrics__labeled_counter__cookie_banners_click_result {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result
     suggest_dimension: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp {
+  label: "Cookie Banners Cmp - Detected Cmp"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__cookie_banners_cmp_result {
+  label: "Cookie Banners Cmp - Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_result
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_result.key
     hidden: no
   }
 
@@ -12431,7 +15409,7 @@ view: metrics__metrics__labeled_counter__data_storage_entries {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__data_storage_entries
     suggest_dimension: suggest__metrics__metrics__labeled_counter__data_storage_entries.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -12443,13 +15421,13 @@ view: metrics__metrics__labeled_counter__data_storage_entries {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -12474,7 +15452,7 @@ view: metrics__metrics__labeled_counter__dotprint_failure {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__dotprint_failure
     suggest_dimension: suggest__metrics__metrics__labeled_counter__dotprint_failure.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -12486,13 +15464,13 @@ view: metrics__metrics__labeled_counter__dotprint_failure {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -12582,6 +15560,92 @@ view: metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entri
   }
 }
 
+view: metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result {
+  label: "Extensions Counters - Browser Action Preload Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result {
+  label: "Extensions Counters - Event Page Idle Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__extensions_process_event {
   label: "Extensions - Process Event"
 
@@ -12603,6 +15667,264 @@ view: metrics__metrics__labeled_counter__extensions_process_event {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_process_event
     suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_process_event.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
+  label: "Extensions - Startup Cache Read Errors"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_startup_cache_read_errors
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_startup_cache_read_errors.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
+  label: "Fog Validation - Gvsv Audio Stream Init"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init.key
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko {
+  label: "Fog Validation - Gvsv Audio Stream Init Gecko"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko.key
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gvst {
+  label: "Fog Validation - Gvsv Audio Stream Init Gvst"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gvst
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gvst.key
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: yes
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__formautofill_form_submission_heuristic {
+  label: "Formautofill - Form Submission Heuristic"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__formautofill_form_submission_heuristic
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__formautofill_form_submission_heuristic.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__fxa_client_error_count {
+  label: "Fxa Client - Error Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__fxa_client_error_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__fxa_client_error_count.key
     hidden: no
   }
 
@@ -12947,6 +16269,49 @@ view: metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result
     suggest_dimension: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__gpu_process_crash_fallbacks {
+  label: "Gpu Process - Crash Fallbacks"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__gpu_process_crash_fallbacks
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__gpu_process_crash_fallbacks.key
     hidden: no
   }
 
@@ -14087,6 +17452,307 @@ view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count
   }
 }
 
+view: metrics__metrics__labeled_counter__networking_dns_native_count {
+  label: "Networking - Dns Native Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_dns_native_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_dns_native_count.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
+  label: "Networking - Http Channel Onstart Success Https Rr"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_http_response_version {
+  label: "Networking - Http Response Version"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_http_response_version
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_http_response_version.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_https_rr_presented {
+  label: "Networking - Https Rr Presented"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_https_rr_presented
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_https_rr_presented.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr {
+  label: "Networking - Https Upgrade With Https Rr"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_proxy_info_type {
+  label: "Networking - Proxy Info Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_proxy_info_type
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_proxy_info_type.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_residual_cache_folder_removal {
+  label: "Networking - Residual Cache Folder Removal"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_residual_cache_folder_removal
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_residual_cache_folder_removal.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__networking_speculative_connect_outcome {
   label: "Networking - Speculative Connect Outcome"
 
@@ -14170,6 +17836,49 @@ view: metrics__metrics__labeled_counter__networking_speculative_connection_outco
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
     hidden: yes
+  }
+}
+
+view: metrics__metrics__labeled_counter__networking_trr_request_count {
+  label: "Networking - Trr Request Count"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_trr_request_count
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_trr_request_count.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
   }
 }
 
@@ -14259,6 +17968,178 @@ view: metrics__metrics__labeled_counter__pdfjs_editing {
   }
 }
 
+view: metrics__metrics__labeled_counter__pdfjs_editing_highlight_color {
+  label: "Pdfjs Editing Highlight - Color"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_color
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_color.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind {
+  label: "Pdfjs Editing Highlight - Kind"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_editing_highlight_method {
+  label: "Pdfjs Editing Highlight - Method"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_method
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_method.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors {
+  label: "Pdfjs Editing Highlight - Number Of Colors"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__pdfjs_geckoview {
   label: "Pdfjs - Geckoview"
 
@@ -14280,6 +18161,49 @@ view: metrics__metrics__labeled_counter__pdfjs_geckoview {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_geckoview
     suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_geckoview.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__pdfjs_stamp {
+  label: "Pdfjs - Stamp"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_stamp
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_stamp.key
     hidden: no
   }
 
@@ -15312,7 +19236,7 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid
     suggest_dimension: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid.key
-    hidden: no
+    hidden: yes
   }
 
   dimension: value {
@@ -15324,13 +19248,13 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
+    hidden: yes
   }
 
   measure: client_count {
     type: count_distinct
     sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
+    hidden: yes
   }
 }
 
@@ -15355,6 +19279,49 @@ view: metrics__metrics__labeled_counter__tabs_tray_access_point {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__tabs_tray_access_point
     suggest_dimension: suggest__metrics__metrics__labeled_counter__tabs_tray_access_point.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
+  label: "Tls - Xyber Intolerance Reason"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason.key
     hidden: no
   }
 
@@ -15465,6 +19432,25 @@ view: suggest__metrics__metrics__labeled_counter__avif_alpha {
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.avif_alpha) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__avif_aom_decode_error {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.avif_aom_decode_error) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -15857,6 +19843,82 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.codec_stats_audio_preferred_codec) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__codec_stats_other_fec_signaled {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.codec_stats_other_fec_signaled) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.codec_stats_ulpfec_negotiated) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__codec_stats_video_preferred_codec {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.codec_stats_video_preferred_codec) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result {
   derived_table: {
     sql: select
@@ -15864,6 +19926,44 @@ view: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result {
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.cookie_banners_click_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.cookie_banners_cmp_detected_cmp) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_result {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.cookie_banners_cmp_result) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -16009,6 +20109,44 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.extensions_counters_browser_action_preload_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.extensions_counters_event_page_idle_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__extensions_process_event {
   derived_table: {
     sql: select
@@ -16016,6 +20154,120 @@ view: suggest__metrics__metrics__labeled_counter__extensions_process_event {
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.extensions_process_event) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.extensions_startup_cache_read_errors) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.fog_validation_gvsv_audio_stream_init) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.fog_validation_gvsv_audio_stream_init_gecko) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gvst {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.fog_validation_gvsv_audio_stream_init_gvst) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__formautofill_form_submission_heuristic {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.formautofill_form_submission_heuristic) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__fxa_client_error_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.fxa_client_error_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -16168,6 +20420,25 @@ view: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.gmp_update_xml_fetch_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__gpu_process_crash_fallbacks {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.gpu_process_crash_fallbacks) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -16674,6 +20945,139 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__networking_dns_native_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.networking_dns_native_count) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.networking_http_channel_onstart_success_https_rr) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_http_response_version {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.networking_http_response_version) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_https_rr_presented {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.networking_https_rr_presented) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.networking_https_upgrade_with_https_rr) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_proxy_info_type {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.networking_proxy_info_type) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_residual_cache_folder_removal {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.networking_residual_cache_folder_removal) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__networking_speculative_connect_outcome {
   derived_table: {
     sql: select
@@ -16700,6 +21104,25 @@ view: suggest__metrics__metrics__labeled_counter__networking_speculative_connect
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.networking_speculative_connection_outcome) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__networking_trr_request_count {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.networking_trr_request_count) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -16750,6 +21173,82 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_color {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.pdfjs_editing_highlight_color) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.pdfjs_editing_highlight_kind) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_method {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.pdfjs_editing_highlight_method) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.pdfjs_editing_highlight_number_of_colors) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__pdfjs_geckoview {
   derived_table: {
     sql: select
@@ -16757,6 +21256,25 @@ view: suggest__metrics__metrics__labeled_counter__pdfjs_geckoview {
     count(*) as n
 from mozdata.fenix.metrics as t,
 unnest(metrics.labeled_counter.pdfjs_geckoview) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__pdfjs_stamp {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.pdfjs_stamp) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -17244,6 +21762,25 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.tls_xyber_intolerance_reason) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__wallpapers_new_wallpaper_applied {
   derived_table: {
     sql: select
@@ -17260,5 +21797,2755 @@ order by n desc ;;
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
+  }
+}
+
+view: metrics__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: metrics__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics__metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__extensions_timing_event_page_running_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__fog_validation_gvsv_number_of_unique_site_origins_all_tabs__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__geckoview_document_site_origins__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__geckoview_per_document_site_origins__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__gfx_checkerboard_severity__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__gfx_content_frame_time_from_paint__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__gfx_content_frame_time_from_vsync__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__gfx_content_frame_time_with_svg__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__gfx_content_frame_time_without_resource_upload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__gfx_content_frame_time_without_upload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__js_baseline_compile_percentage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__js_delazification_percentage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__js_execution_percentage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__js_xdr_encode_percentage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_access_fixup_diff__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_count_part_by_key__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_count_partitioned__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_count_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_count_unpart_by_key__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_count_unpartitioned__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_creation_fixup_diff__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_purge_entry_max__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_cookie_purge_max__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_1_download_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_1_upload_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_1_upload_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_1_upload_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_1_upload_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_2_download_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_2_upload_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_2_upload_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_2_upload_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_2_upload_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_download_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__networking_http_3_upload_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__pdfjs_editing_highlight_thickness__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__pdfjs_time_to_view__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__performance_clone_deserialize_items__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__power_battery_percentage_when_user_active__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__search_terms_group_size_distribution__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__custom_distribution__timer_thread_timers_fired_per_wakeup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__cookie_banners_private_window_service_mode {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__data_storage_migration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_boolean__oskeystore_self_test {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics__metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__extensions_apis_dnr_startup_cache_write_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__fog_ipc_buffer_sizes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__glean_database_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__performance_clone_deserialize_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__places_manager_db_size_after_maintenance__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__storage_stats_app_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__storage_stats_cache_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__storage_stats_data_dir_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cookie_banners_click_handle_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cookie_banners_cmp_handle_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__engine_tab_kill_background_age__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__engine_tab_kill_foreground_age__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_apis_dnr_evaluate_rules_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_apis_dnr_startup_cache_read_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_apis_dnr_startup_cache_write_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_apis_dnr_validate_rules_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_timing_background_page_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_timing_browser_action_popup_open__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_timing_content_script_injection__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_timing_extension_startup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_timing_page_action_popup_open__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_timing_storage_local_get_idb__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_timing_storage_local_get_json__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_timing_storage_local_set_idb__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__extensions_timing_storage_local_set_json__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__first_session_adjust_attribution_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fog_ipc_flush_durations__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__fog_validation_gvsv_composite_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__geckoview_content_process_lifetime__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__geckoview_page_load_progress_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__geckoview_page_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__geckoview_page_reload_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__geckoview_startup_runtime__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gfx_checkerboard_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gfx_checkerboard_potential_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gfx_composite_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gfx_content_full_paint_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gfx_content_paint_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gfx_scroll_present_latency__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gfx_status_framebuild_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gfx_status_sceneswap_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gfx_webrender_framebuild_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gfx_webrender_render_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gfx_webrender_scenebuild_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__gfx_webrender_sceneswap_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_upload_send_failure__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_upload_send_success__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_validation_shutdown_wait__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_compact_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_mark_roots_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_mark_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_minor_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_prepare_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_slice_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_sweep_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_gc_total_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_pageload_baseline_compile_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_pageload_delazification_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_pageload_execution_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_pageload_gc_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_pageload_parse_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_pageload_protect_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__javascript_pageload_xdr_encode_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__js_bytecode_caching_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__logins_store_read_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__logins_store_unlock_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__logins_store_write_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__metrics_search_page_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_cache_hit_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_dns_end__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_dns_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_first_from_cache__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_font_download_end__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_open_to_transaction_pending__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_tcp_connection__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__network_tls_handshake__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_dns_failed_lookup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_dns_lookup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_dns_renewal_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_dns_renewal_time_for_ttl__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_content_ondatafinished_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_content_onstart_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_content_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_transaction_wait_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_transaction_wait_time_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__nimbus_health_fetch_experiments_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__paint_build_displaylist_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_awesomebar_bookmark_suggestions__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_awesomebar_clipboard_suggestions__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_awesomebar_history_suggestions__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_awesomebar_search_engine_suggestions__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_awesomebar_session_suggestions__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_awesomebar_shortcuts_suggestions__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_awesomebar_synced_tabs_suggestions__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_largest_contentful_paint__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_startup_app_on_create_to_glean_init__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_startup_app_on_create_to_megazord_init__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_startup_app_on_create_to_setup_in_main__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_startup_application_on_create__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_startup_base_bfragment_on_create_view__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_startup_base_bfragment_on_view_created__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_startup_cold_main_app_to_first_frame__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_startup_cold_unknwn_app_to_first_frame__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_startup_cold_view_app_to_first_frame__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_startup_home_activity_on_create__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_startup_home_activity_on_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_startup_home_fragment_on_create_view__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__perf_startup_home_fragment_on_view_created__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_clone_deserialize_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_interaction_keypress_present_latency__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_interaction_tab_switch_composite__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_page_non_blank_paint__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_page_total_content_page_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_dcl__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_dcl_responsestart__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_fcp__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_fcp_responsestart__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_load_time_responsestart__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_req_anim_frame_callback__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_time_dom_complete__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_time_dom_content_loaded_end__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_time_dom_content_loaded_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_time_dom_interactive__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_time_load_event_end__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_time_load_event_end_no_preload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_time_load_event_end_preload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_time_load_event_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_time_load_event_start_no_preload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_time_load_event_start_preload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_time_response_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_manager_read_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_manager_run_maintenance_chk_pnt_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_manager_run_maintenance_optimize_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_manager_run_maintenance_prune_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_manager_run_maintenance_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_manager_run_maintenance_vacuum_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_manager_scan_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_manager_write_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__play_store_attribution_attribution_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__privacy_sanitize_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__recent_synced_tabs_recent_synced_tab_time_to_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__storage_stats_query_stats_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_framebuild_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_gpu_wait_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_rasterize_blobs_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_rasterize_glyphs_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_renderer_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_renderer_time_no_sc__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_scenebuild_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_sceneswap_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_texture_cache_update_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_time_to_frame_build__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__wr_time_to_render_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }

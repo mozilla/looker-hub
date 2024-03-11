@@ -132,6 +132,78 @@ to identify installs from Mozilla Online.
 "
   }
 
+  dimension: metrics__string__meta_attribution_app {
+    label: "Meta Attribution App"
+    hidden: no
+    sql: ${TABLE}.metrics.string.meta_attribution_app ;;
+    type: string
+    group_label: "Meta Attribution"
+    group_item_label: "App"
+
+    link: {
+      label: "Glean Dictionary reference for Meta Attribution App"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/meta_attribution_app"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The mobile application ID in Meta's attribution.
+"
+  }
+
+  dimension: metrics__text2__meta_attribution_data {
+    label: "Meta Attribution Data"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.meta_attribution_data ;;
+    type: string
+    group_label: "Meta Attribution"
+    group_item_label: "Data"
+
+    link: {
+      label: "Glean Dictionary reference for Meta Attribution Data"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/meta_attribution_data"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Meta attribution data in encrypted format.
+"
+  }
+
+  dimension: metrics__string__meta_attribution_nonce {
+    label: "Meta Attribution Nonce"
+    hidden: no
+    sql: ${TABLE}.metrics.string.meta_attribution_nonce ;;
+    type: string
+    group_label: "Meta Attribution"
+    group_item_label: "Nonce"
+
+    link: {
+      label: "Glean Dictionary reference for Meta Attribution Nonce"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/meta_attribution_nonce"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Nonce used to decrypt the encrypted Meta attribution data.
+"
+  }
+
+  dimension: metrics__string__meta_attribution_t {
+    label: "Meta Attribution T"
+    hidden: no
+    sql: ${TABLE}.metrics.string.meta_attribution_t ;;
+    type: string
+    group_label: "Meta Attribution"
+    group_item_label: "T"
+
+    link: {
+      label: "Glean Dictionary reference for Meta Attribution T"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/meta_attribution_t"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value tracking user interaction with Meta attribution.
+"
+  }
+
   dimension: metrics__string__play_store_attribution_campaign {
     label: "Play Store Attribution Campaign"
     hidden: no
@@ -165,6 +237,24 @@ to identify installs from Mozilla Online.
     }
 
     description: "The name of the utm_content that is responsible for this installation.
+"
+  }
+
+  dimension: metrics__text2__play_store_attribution_install_referrer_response {
+    label: "Play Store Attribution Install Referrer Response"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.play_store_attribution_install_referrer_response ;;
+    type: string
+    group_label: "Play Store Attribution"
+    group_item_label: "Install Referrer Response"
+
+    link: {
+      label: "Glean Dictionary reference for Play Store Attribution Install Referrer Response"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/play_store_attribution_install_referrer_response"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The full install referrer response.
 "
   }
 
@@ -219,6 +309,25 @@ to identify installs from Mozilla Online.
     }
 
     description: "The name of the utm_term that is responsible for this installation.
+"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -386,6 +495,20 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
+  }
+
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -967,5 +1090,79 @@ order by n desc ;;
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
+  }
+}
+
+view: first_session__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: first_session__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: first_session__metrics__timing_distribution__first_session_adjust_attribution_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: first_session__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }

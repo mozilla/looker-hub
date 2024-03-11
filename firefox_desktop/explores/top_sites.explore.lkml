@@ -37,6 +37,21 @@ explore: top_sites {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${top_sites.metrics__labeled_counter__glean_error_invalid_value}) AS top_sites__metrics__labeled_counter__glean_error_invalid_value ON ${top_sites.document_id} = ${top_sites__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: top_sites__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${top_sites.events}) AS top_sites__events ;;
+  }
+
+  join: top_sites__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${top_sites__events.extra}) AS top_sites__events__extra ;;
+  }
+
+  join: top_sites__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${top_sites.ping_info__experiments}) AS top_sites__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__top_sites__metrics__labeled_counter__glean_error_invalid_label {

@@ -71,6 +71,21 @@ view: all_subscriptions_table {
     type: string
   }
 
+  dimension: has_fraudulent_charge_refunds {
+    sql: ${TABLE}.has_fraudulent_charge_refunds ;;
+    type: yesno
+  }
+
+  dimension: has_fraudulent_charges {
+    sql: ${TABLE}.has_fraudulent_charges ;;
+    type: yesno
+  }
+
+  dimension: has_refunds {
+    sql: ${TABLE}.has_refunds ;;
+    type: yesno
+  }
+
   dimension: months_retained {
     sql: ${TABLE}.months_retained ;;
     type: number
@@ -171,6 +186,11 @@ view: all_subscriptions_table {
     type: string
   }
 
+  dimension: state {
+    sql: ${TABLE}.state ;;
+    type: string
+  }
+
   dimension: status {
     sql: ${TABLE}.status ;;
     type: string
@@ -219,6 +239,20 @@ view: all_subscriptions_table {
   dimension: website_channel_group {
     sql: ${TABLE}.website_channel_group ;;
     type: string
+  }
+
+  dimension_group: attribution {
+    sql: ${TABLE}.attribution_timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
   }
 
   dimension_group: cancel_at {

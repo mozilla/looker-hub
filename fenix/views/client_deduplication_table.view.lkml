@@ -99,6 +99,20 @@ view: client_deduplication_table {
     group_item_label: "Os Version"
   }
 
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+  }
+
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
@@ -358,6 +372,13 @@ view: client_deduplication_table {
     group_item_label: "Client Deduplication Hashed Gaid"
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+  }
+
   dimension: metrics__string__search_default_engine_code {
     sql: ${TABLE}.metrics.string.search_default_engine_code ;;
     type: string
@@ -518,6 +539,16 @@ view: client_deduplication_table {
     allowed_value: {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.client_deduplication"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.client_deduplication"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.client_deduplication"
     }
   }
 

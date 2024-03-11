@@ -221,6 +221,61 @@ view: quick_suggest {
 "
   }
 
+  dimension: metrics__string__quick_suggest_suggested_index {
+    label: "Quick Suggest Suggested Index"
+    hidden: no
+    sql: ${TABLE}.metrics.string.quick_suggest_suggested_index ;;
+    type: string
+    group_label: "Quick Suggest"
+    group_item_label: "Suggested Index"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest Suggested Index"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_suggested_index"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A stringified integer value that is the intended index of the suggestion being interacted with. If `suggested_index_relative_to_group` is true, the index is relative to the \"Firefox Suggest\" group; otherwise the index is relative to the entire list of suggestions. Non-negative values (starting at 0) are relative to the start/top of the group/list; negative values are relative to the end/bottom of the group/list.
+"
+  }
+
+  dimension: metrics__boolean__quick_suggest_suggested_index_relative_to_group {
+    label: "Quick Suggest Suggested Index Relative To Group"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.quick_suggest_suggested_index_relative_to_group ;;
+    type: yesno
+    group_label: "Quick Suggest"
+    group_item_label: "Suggested Index Relative To Group"
+
+    link: {
+      label: "Glean Dictionary reference for Quick Suggest Suggested Index Relative To Group"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/quick_suggest_suggested_index_relative_to_group"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether `suggested_index` is relative to the \"Firefox Suggest\" group. If false, it is relative to the entire list of suggestions.
+"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes
@@ -385,6 +440,20 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
+  }
+
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -951,5 +1020,67 @@ order by n desc ;;
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
+  }
+}
+
+view: quick_suggest__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: quick_suggest__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: quick_suggest__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }

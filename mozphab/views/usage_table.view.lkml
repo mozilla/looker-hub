@@ -113,6 +113,22 @@ view: usage_table {
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+    description: "An optional running counter of the number of sessions for a client."
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+    description: "An optional UUID uniquely identifying the client's current session."
+  }
+
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
@@ -381,6 +397,7 @@ The labels are the `category.name` identifier of the metric.
     type: number
     group_label: "Metrics Memory Distribution Mozphab Submission Files Size"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__memory_distribution__mozphab_submission_files_size__sum {
@@ -393,6 +410,16 @@ The labels are the `category.name` identifier of the metric.
   dimension: metrics__memory_distribution__mozphab_submission_files_size__values {
     sql: ${TABLE}.metrics.memory_distribution.mozphab_submission_files_size.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
   }
 
   dimension: metrics__string__mozphab_environment_distribution_version {

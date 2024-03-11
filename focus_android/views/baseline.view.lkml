@@ -125,7 +125,8 @@ that programmatically redirect to a new location.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Sets the legacy client ID as part of the deletion-reqest and other pings.
+    description: "Sets the legacy client ID as part of the deletion-request ping.
+**No longer reported set since Focus 124, where legacy telemetry was removed**.
 "
   }
 
@@ -165,6 +166,25 @@ that programmatically redirect to a new location.
 If the locale can't be determined on the system, the value is
 [\"und\"](https://unicode.org/reports/tr35/#Unknown_or_Invalid_Identifiers),
 to indicate \"undetermined\".
+"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -237,24 +257,6 @@ The labels are the `category.name` identifier of the metric.
 
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__datetime__glean_validation_first_run_hour {
-    label: "Glean Validation First Run Hour"
-    hidden: yes
-    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
-    type: time
-    group_label: "Glean Validation"
-    group_item_label: "First Run Hour"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Validation First Run Hour"
-      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/glean_validation_first_run_hour"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The hour of the first run of the application.
 "
   }
 
@@ -391,6 +393,20 @@ This metric appears in both the metrics and baseline pings.
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
+  }
+
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -646,6 +662,24 @@ This metric appears in both the metrics and baseline pings.
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+  }
+
+  dimension_group: metrics__datetime__glean_validation_first_run_hour {
+    label: "Glean Validation First Run Hour"
+    hidden: yes
+    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The hour of the first run of the application.
+"
   }
 
   dimension_group: metadata__header__parsed {
@@ -1270,5 +1304,67 @@ order by n desc ;;
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
+  }
+}
+
+view: baseline__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: baseline__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: baseline__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }

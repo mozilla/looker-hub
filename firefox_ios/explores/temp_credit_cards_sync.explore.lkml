@@ -53,6 +53,21 @@ explore: temp_credit_cards_sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${temp_credit_cards_sync.metrics__labeled_counter__glean_error_invalid_value}) AS temp_credit_cards_sync__metrics__labeled_counter__glean_error_invalid_value ON ${temp_credit_cards_sync.document_id} = ${temp_credit_cards_sync__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: temp_credit_cards_sync__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${temp_credit_cards_sync.events}) AS temp_credit_cards_sync__events ;;
+  }
+
+  join: temp_credit_cards_sync__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${temp_credit_cards_sync__events.extra}) AS temp_credit_cards_sync__events__extra ;;
+  }
+
+  join: temp_credit_cards_sync__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${temp_credit_cards_sync.ping_info__experiments}) AS temp_credit_cards_sync__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__temp_credit_cards_sync__metrics__labeled_counter__credit_cards_sync_failure_reason {

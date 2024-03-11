@@ -88,24 +88,6 @@ Collected only on mobile apps.
 "
   }
 
-  dimension: metrics__datetime__session_session_end {
-    label: "Session Session End"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.session_session_end ;;
-    type: time
-    group_label: "Session"
-    group_item_label: "Session End"
-
-    link: {
-      label: "Glean Dictionary reference for Session Session End"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_session_end"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The time the user ends a VPN session from the app
-"
-  }
-
   dimension: metrics__uuid__session_session_id {
     label: "Session Session Id"
     hidden: no
@@ -127,21 +109,22 @@ system settings.
 "
   }
 
-  dimension: metrics__datetime__session_session_start {
-    label: "Session Session Start"
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
     hidden: no
-    sql: ${TABLE}.metrics.datetime.session_session_start ;;
-    type: time
-    group_label: "Session"
-    group_item_label: "Session Start"
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
 
     link: {
-      label: "Glean Dictionary reference for Session Session Start"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/session_session_start"
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The time the user starts a VPN session from the app
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -309,6 +292,20 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
+  }
+
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -564,6 +561,42 @@ The labels are the `category.name` identifier of the metric.
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+  }
+
+  dimension_group: metrics__datetime__session_session_end {
+    label: "Session Session End"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.session_session_end ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The time the user ends a VPN session from the app
+"
+  }
+
+  dimension_group: metrics__datetime__session_session_start {
+    label: "Session Session Start"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.session_session_start ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The time the user starts a VPN session from the app
+"
   }
 
   dimension_group: metadata__header__parsed {
@@ -907,5 +940,67 @@ view: vpnsession__metrics__labeled_counter__glean_error_invalid_value {
     type: count_distinct
     sql: case when ${value} > 0 then ${vpnsession.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: vpnsession__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: vpnsession__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: vpnsession__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }

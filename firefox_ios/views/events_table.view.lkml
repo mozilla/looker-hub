@@ -99,6 +99,20 @@ view: events_table {
     group_item_label: "Os Version"
   }
 
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+  }
+
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
@@ -283,6 +297,13 @@ view: events_table {
     group_item_label: "Firefox Home Page History Highlights Item Opened"
   }
 
+  dimension: metrics__counter__tabs_grouped_tab_closed {
+    sql: ${TABLE}.metrics.counter.tabs_grouped_tab_closed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tabs Grouped Tab Closed"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -306,6 +327,13 @@ view: events_table {
   dimension: metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
     sql: ${TABLE}.metrics.labeled_counter.inactive_tabs_tray_toggle_inactive_tab_tray ;;
     hidden: yes
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
   }
 
   dimension: normalized_app_id {

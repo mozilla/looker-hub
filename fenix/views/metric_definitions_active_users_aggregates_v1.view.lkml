@@ -8,9 +8,36 @@ view: metric_definitions_active_users_aggregates_v1 {
   derived_table: {
     sql: SELECT
                 SUM(dau) AS daily_active_users_v2,
+
+                
                 NULL AS client_id,
-                submission_date AS submission_date
-              FROM
+                {% if aggregate_metrics_by._parameter_value == 'day' %}
+                m.submission_date AS analysis_basis
+                {% elsif aggregate_metrics_by._parameter_value == 'week'  %}
+                (FORMAT_DATE(
+                    '%F',
+                    DATE_TRUNC(m.submission_date,
+                    WEEK(MONDAY)))
+                ) AS analysis_basis
+                {% elsif aggregate_metrics_by._parameter_value == 'month'  %}
+                (FORMAT_DATE(
+                    '%Y-%m',
+                    m.submission_date)
+                ) AS analysis_basis
+                {% elsif aggregate_metrics_by._parameter_value == 'quarter'  %}
+                (FORMAT_DATE(
+                    '%Y-%m',
+                    DATE_TRUNC(m.submission_date,
+                    QUARTER))
+                ) AS analysis_basis
+                {% elsif aggregate_metrics_by._parameter_value == 'year'  %}
+                (EXTRACT(
+                    YEAR FROM m.submission_date)
+                ) AS analysis_basis
+                {% else %}
+                NULL as analysis_basis
+                {% endif %}
+            FROM
                 (
     SELECT
         *
@@ -21,55 +48,32 @@ view: metric_definitions_active_users_aggregates_v1 {
     WHERE app_name = 'Fenix'
 )
     )
-              WHERE submission_date BETWEEN
-                SAFE_CAST({% date_start metric_definitions_fenix.submission_date %} AS DATE) AND
-                SAFE_CAST({% date_end metric_definitions_fenix.submission_date %} AS DATE)
-              GROUP BY
+            AS m
+            
+            WHERE m.submission_date BETWEEN
+                SAFE_CAST(
+                    {% date_start submission_date %} AS DATE
+                ) AND
+                SAFE_CAST(
+                    {% date_end submission_date %} AS DATE
+                )
+            GROUP BY
+                
                 client_id,
-                submission_date ;;
+                analysis_basis ;;
   }
 
   dimension: client_id {
     type: string
-    sql: COALESCE(SAFE_CAST(${TABLE}.client_id AS STRING)
-                {%- if  metric_definitions_active_users_aggregates_v1._in_query %}
-                , SAFE_CAST(metric_definitions_active_users_aggregates_v1.client_id AS STRING)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_baseline._in_query %}
-                , SAFE_CAST(metric_definitions_baseline.client_id AS STRING)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_baseline_v2._in_query %}
-                , SAFE_CAST(metric_definitions_baseline_v2.client_id AS STRING)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_events._in_query %}
-                , SAFE_CAST(metric_definitions_events.client_id AS STRING)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_metrics._in_query %}
-                , SAFE_CAST(metric_definitions_metrics.client_id AS STRING)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_mobile_search_clients_engines_sources_daily._in_query %}
-                , SAFE_CAST(metric_definitions_mobile_search_clients_engines_sources_daily.client_id AS STRING)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_new_profile_activation._in_query %}
-                , SAFE_CAST(metric_definitions_new_profile_activation.client_id AS STRING)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_special_onboarding_events._in_query %}
-                , SAFE_CAST(metric_definitions_special_onboarding_events.client_id AS STRING)
-                {%- endif -%}
-            ) ;;
+    sql: SAFE_CAST(${TABLE}.client_id AS STRING) ;;
     label: "Client ID"
     primary_key: yes
+    group_label: "Base Fields"
     description: "Unique client identifier"
   }
 
   dimension: daily_active_users_v2 {
+    group_label: "Metrics"
     label: "Fenix DAU"
     description: "    This is the official DAU reporting definition. The logic is
     [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/blob/main/sql_generators/active_users/templates/mobile_query.sql)
@@ -78,7 +82,7 @@ view: metric_definitions_active_users_aggregates_v1 {
     This metric needs to be aggregated by `submission_date`. If it is not aggregated by `submission_date`,
     it is similar to a \"days of use\" metric, and not DAU.
 
-    For more information, refer to [the DAU description in the Mozilla Data Documentation](https://docs.telemetry.mozilla.org/concepts/terminology.html#dau).
+    For more information, refer to [the DAU description in Confluence](https://mozilla-hub.atlassian.net/wiki/spaces/DATA/pages/314704478/Daily+Active+Users+DAU+Metric).
     For questions please contact bochocki@mozilla.com or firefox-kpi@mozilla.com.
 "
     type: number
@@ -87,39 +91,8 @@ view: metric_definitions_active_users_aggregates_v1 {
 
   dimension_group: submission {
     type: time
-    sql: COALESCE(CAST(${TABLE}.submission_date AS TIMESTAMP)
-                {%- if  metric_definitions_active_users_aggregates_v1._in_query %}
-                , CAST(metric_definitions_active_users_aggregates_v1.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_baseline._in_query %}
-                , CAST(metric_definitions_baseline.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_baseline_v2._in_query %}
-                , CAST(metric_definitions_baseline_v2.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_events._in_query %}
-                , CAST(metric_definitions_events.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_metrics._in_query %}
-                , CAST(metric_definitions_metrics.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_mobile_search_clients_engines_sources_daily._in_query %}
-                , CAST(metric_definitions_mobile_search_clients_engines_sources_daily.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_new_profile_activation._in_query %}
-                , CAST(metric_definitions_new_profile_activation.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            
-                {%- if  metric_definitions_special_onboarding_events._in_query %}
-                , CAST(metric_definitions_special_onboarding_events.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            ) ;;
+    group_label: "Base Fields"
+    sql: CAST(${TABLE}.analysis_basis AS TIMESTAMP) ;;
     label: "Submission"
     timeframes: [
       raw,
@@ -133,5 +106,48 @@ view: metric_definitions_active_users_aggregates_v1 {
 
   set: metrics {
     fields: [daily_active_users_v2]
+  }
+
+  parameter: aggregate_metrics_by {
+    label: "Aggregate Client Metrics Per"
+    type: unquoted
+    default_value: "day"
+
+    allowed_value: {
+      label: "Per Day"
+      value: "day"
+    }
+
+    allowed_value: {
+      label: "Per Week"
+      value: "week"
+    }
+
+    allowed_value: {
+      label: "Per Month"
+      value: "month"
+    }
+
+    allowed_value: {
+      label: "Per Quarter"
+      value: "quarter"
+    }
+
+    allowed_value: {
+      label: "Per Year"
+      value: "year"
+    }
+
+    allowed_value: {
+      label: "Overall"
+      value: "overall"
+    }
+  }
+
+  parameter: sampling {
+    label: "Sample of source data in %"
+    type: unquoted
+    default_value: "100"
+    hidden: yes
   }
 }

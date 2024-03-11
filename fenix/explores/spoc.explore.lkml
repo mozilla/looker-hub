@@ -38,6 +38,21 @@ explore: spoc {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${spoc.metrics__labeled_counter__glean_error_invalid_value}) AS spoc__metrics__labeled_counter__glean_error_invalid_value ON ${spoc.document_id} = ${spoc__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: spoc__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${spoc.events}) AS spoc__events ;;
+  }
+
+  join: spoc__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${spoc__events.extra}) AS spoc__events__extra ;;
+  }
+
+  join: spoc__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${spoc.ping_info__experiments}) AS spoc__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__spoc__metrics__labeled_counter__glean_error_invalid_label {

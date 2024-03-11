@@ -11,6 +11,12 @@ view: bigquery_tables_inventory {
     description: "The name of the dataset that contains the table or view"
   }
 
+  dimension: deprecated {
+    sql: ${TABLE}.deprecated ;;
+    type: yesno
+    description: "Whether the table has been deprecated and pending deletion"
+  }
+
   dimension: owners {
     sql: ${TABLE}.owners ;;
     hidden: yes

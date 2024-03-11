@@ -113,6 +113,22 @@ view: action_table {
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+    description: "An optional running counter of the number of sessions for a client."
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+    description: "An optional UUID uniquely identifying the client's current session."
+  }
+
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
@@ -340,6 +356,18 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__labeled_string__page_utm {
+    sql: ${TABLE}.metrics.labeled_string.page_utm ;;
+    hidden: yes
+    description: "The UTM parameters of the page, used to attribute the source of traffic:
+\"source\": which site sent the traffic
+\"medium\": what type of link was used
+\"campaign\": what specific campaign or experiment does this relate to
+\"term\": here for completeness, the search term that was purchased/bid on
+\"content\": what specifically was clicked to bring the user to the site
+"
+  }
+
   dimension: metrics__quantity__navigator_viewport_horizontal_coverage {
     sql: ${TABLE}.metrics.quantity.navigator_viewport_horizontal_coverage ;;
     type: number
@@ -359,12 +387,31 @@ expressed as a percentage.
 "
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
   dimension: metrics__string__navigator_geo {
     sql: ${TABLE}.metrics.string.navigator_geo ;;
     type: string
     group_label: "Metrics String"
     group_item_label: "Navigator Geo"
     description: "The navigators ISO 3166 country name (not code) based on geo ip.
+"
+  }
+
+  dimension: metrics__string__navigator_geo_iso {
+    sql: ${TABLE}.metrics.string.navigator_geo_iso ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Navigator Geo Iso"
+    description: "The navigator's two-letter ISO 3166 country code based on geo ip.
 "
   }
 
@@ -413,7 +460,8 @@ one of \"xs\", \"sm\", \"md\",\"lg\", \"xl\" or \"xxl\".
     group_item_label: "Page Is Baseline"
     description: "The Baseline status of the page:
 null: the page has no baseline status
-\"baseline\": the page is baseline
+\"baseline_high\": the page is baseline high
+\"baseline_low\": the page is baseline low
 \"not_baseline\" the page is not baseline
 "
   }
@@ -611,6 +659,18 @@ view: action_table__events {
 }
 
 view: action_table__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: action_table__metrics__labeled_string__page_utm {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

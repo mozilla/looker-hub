@@ -30,6 +30,16 @@ view: stripe_itemized_payout_reconciliation {
     type: string
   }
 
+  dimension: card_postal_code {
+    sql: ${TABLE}.card_postal_code ;;
+    type: string
+  }
+
+  dimension: card_state {
+    sql: ${TABLE}.card_state ;;
+    type: string
+  }
+
   dimension: charge_id {
     sql: ${TABLE}.charge_id ;;
     type: string
@@ -125,8 +135,33 @@ view: stripe_itemized_payout_reconciliation {
     type: string
   }
 
-  dimension: postal_code {
-    sql: ${TABLE}.postal_code ;;
+  dimension: plan_id {
+    sql: ${TABLE}.plan_id ;;
+    type: string
+  }
+
+  dimension: plan_interval {
+    sql: ${TABLE}.plan_interval ;;
+    type: string
+  }
+
+  dimension: plan_interval_count {
+    sql: ${TABLE}.plan_interval_count ;;
+    type: number
+  }
+
+  dimension: plan_name {
+    sql: ${TABLE}.plan_name ;;
+    type: string
+  }
+
+  dimension: product_id {
+    sql: ${TABLE}.product_id ;;
+    type: string
+  }
+
+  dimension: product_name {
+    sql: ${TABLE}.product_name ;;
     type: string
   }
 
@@ -170,11 +205,6 @@ view: stripe_itemized_payout_reconciliation {
     type: string
   }
 
-  dimension: state {
-    sql: ${TABLE}.state ;;
-    type: string
-  }
-
   dimension: statement_descriptor {
     sql: ${TABLE}.statement_descriptor ;;
     type: string
@@ -182,6 +212,31 @@ view: stripe_itemized_payout_reconciliation {
 
   dimension: subscription_id {
     sql: ${TABLE}.subscription_id ;;
+    type: string
+  }
+
+  dimension: tax_amount {
+    sql: ${TABLE}.tax_amount ;;
+    type: number
+  }
+
+  dimension: tax_country {
+    sql: ${TABLE}.tax_country ;;
+    type: string
+  }
+
+  dimension: tax_currency {
+    sql: ${TABLE}.tax_currency ;;
+    type: string
+  }
+
+  dimension: tax_postal_code {
+    sql: ${TABLE}.tax_postal_code ;;
+    type: string
+  }
+
+  dimension: tax_state {
+    sql: ${TABLE}.tax_state ;;
     type: string
   }
 

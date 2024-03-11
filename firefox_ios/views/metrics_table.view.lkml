@@ -99,6 +99,20 @@ view: metrics_table {
     group_item_label: "Os Version"
   }
 
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+  }
+
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
@@ -437,6 +451,34 @@ view: metrics_table {
     group_item_label: "Preferences Tips And Features Notifs"
   }
 
+  dimension: metrics__boolean__shopping_settings_component_opted_out {
+    sql: ${TABLE}.metrics.boolean.shopping_settings_component_opted_out ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Shopping Settings Component Opted Out"
+  }
+
+  dimension: metrics__boolean__shopping_settings_disabled_ads {
+    sql: ${TABLE}.metrics.boolean.shopping_settings_disabled_ads ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Shopping Settings Disabled Ads"
+  }
+
+  dimension: metrics__boolean__shopping_settings_nimbus_disabled_shopping {
+    sql: ${TABLE}.metrics.boolean.shopping_settings_nimbus_disabled_shopping ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Shopping Settings Nimbus Disabled Shopping"
+  }
+
+  dimension: metrics__boolean__shopping_settings_user_has_onboarded {
+    sql: ${TABLE}.metrics.boolean.shopping_settings_user_has_onboarded ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Shopping Settings User Has Onboarded"
+  }
+
   dimension: metrics__boolean__theme_automatic_mode {
     sql: ${TABLE}.metrics.boolean.theme_automatic_mode ;;
     type: yesno
@@ -568,6 +610,27 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "App Opened As Default Browser"
+  }
+
+  dimension: metrics__counter__credit_card_deleted {
+    sql: ${TABLE}.metrics.counter.credit_card_deleted ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Credit Card Deleted"
+  }
+
+  dimension: metrics__counter__credit_card_modified {
+    sql: ${TABLE}.metrics.counter.credit_card_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Credit Card Modified"
+  }
+
+  dimension: metrics__counter__credit_card_saved {
+    sql: ${TABLE}.metrics.counter.credit_card_saved ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Credit Card Saved"
   }
 
   dimension: metrics__counter__default_browser_card_dismiss_pressed {
@@ -850,6 +913,27 @@ view: metrics_table {
     group_item_label: "Inactive Tabs Tray Open Recently Closed Tab"
   }
 
+  dimension: metrics__counter__logins_deleted {
+    sql: ${TABLE}.metrics.counter.logins_deleted ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Deleted"
+  }
+
+  dimension: metrics__counter__logins_modified {
+    sql: ${TABLE}.metrics.counter.logins_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Modified"
+  }
+
+  dimension: metrics__counter__logins_saved {
+    sql: ${TABLE}.metrics.counter.logins_saved ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Logins Saved"
+  }
+
   dimension: metrics__counter__logins_store_migration_num_failed {
     sql: ${TABLE}.metrics.counter.logins_store_migration_num_failed ;;
     type: number
@@ -1116,6 +1200,13 @@ view: metrics_table {
     group_item_label: "Settings Menu Set As Default Browser Pressed"
   }
 
+  dimension: metrics__counter__shopping_product_page_visits {
+    sql: ${TABLE}.metrics.counter.shopping_product_page_visits ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Shopping Product Page Visits"
+  }
+
   dimension: metrics__counter__sync_create_account_pressed {
     sql: ${TABLE}.metrics.counter.sync_create_account_pressed ;;
     type: number
@@ -1149,6 +1240,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Tabs Cumulative Count"
+  }
+
+  dimension: metrics__counter__tabs_grouped_tab_closed {
+    sql: ${TABLE}.metrics.counter.tabs_grouped_tab_closed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tabs Grouped Tab Closed"
   }
 
   dimension: metrics__counter__tabs_grouped_tab_search {
@@ -1544,11 +1642,25 @@ view: metrics_table {
     group_item_label: "Bookmarks Mobile Bookmarks Count"
   }
 
+  dimension: metrics__quantity__credit_card_saved_all {
+    sql: ${TABLE}.metrics.quantity.credit_card_saved_all ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Credit Card Saved All"
+  }
+
   dimension: metrics__quantity__history_num_visits {
     sql: ${TABLE}.metrics.quantity.history_num_visits ;;
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "History Num Visits"
+  }
+
+  dimension: metrics__quantity__logins_saved_all {
+    sql: ${TABLE}.metrics.quantity.logins_saved_all ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Logins Saved All"
   }
 
   dimension: metrics__quantity__places_history_migration_num_migrated {
@@ -1640,6 +1752,20 @@ view: metrics_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Adjust Network"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+  }
+
+  dimension: metrics__string__glean_database_rkv_load_error {
+    sql: ${TABLE}.metrics.string.glean_database_rkv_load_error ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Database Rkv Load Error"
   }
 
   dimension: metrics__string__ping_reason {
@@ -2373,6 +2499,124 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__tabs_tab_switch__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__tabs_tab_switch__count {
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__tabs_tab_switch__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__tabs_tab_switch__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__tabs_tab_switch__range {
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__tabs_tab_switch__sum {
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__tabs_tab_switch__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__tabs_tab_switch__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Tabs Tab Switch"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__tabs_tab_switch__values {
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__count {
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__range {
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__sum {
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Webview Page Load"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__values {
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__uuid__legacy_ids_client_id {
     sql: ${TABLE}.metrics.uuid.legacy_ids_client_id ;;
     type: string
@@ -2745,6 +2989,30 @@ view: metrics_table__metrics__timing_distribution__nimbus_health_fetch_experimen
 }
 
 view: metrics_table__metrics__timing_distribution__places_history_migration_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__tabs_tab_switch__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__webview_page_load__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

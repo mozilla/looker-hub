@@ -7,10 +7,38 @@
 view: metric_definitions_mobile_active_users_aggregates_v1 {
   derived_table: {
     sql: SELECT
-                SUM(dau) AS mobile_daily_active_users_v1,SUM(IF(FORMAT_DATE('%m-%d', submission_date) BETWEEN '11-18' AND '12-15', dau, 0)) / 28 AS mobile_dau_kpi_v1,
+                SUM(dau) AS mobile_daily_active_users_v1,
+SUM(IF(FORMAT_DATE('%m-%d', submission_date) BETWEEN '11-18' AND '12-15', dau, 0)) / 28 AS mobile_dau_kpi_v1,
+
+                
                 NULL AS client_id,
-                submission_date AS submission_date
-              FROM
+                {% if aggregate_metrics_by._parameter_value == 'day' %}
+                m.submission_date AS analysis_basis
+                {% elsif aggregate_metrics_by._parameter_value == 'week'  %}
+                (FORMAT_DATE(
+                    '%F',
+                    DATE_TRUNC(m.submission_date,
+                    WEEK(MONDAY)))
+                ) AS analysis_basis
+                {% elsif aggregate_metrics_by._parameter_value == 'month'  %}
+                (FORMAT_DATE(
+                    '%Y-%m',
+                    m.submission_date)
+                ) AS analysis_basis
+                {% elsif aggregate_metrics_by._parameter_value == 'quarter'  %}
+                (FORMAT_DATE(
+                    '%Y-%m',
+                    DATE_TRUNC(m.submission_date,
+                    QUARTER))
+                ) AS analysis_basis
+                {% elsif aggregate_metrics_by._parameter_value == 'year'  %}
+                (EXTRACT(
+                    YEAR FROM m.submission_date)
+                ) AS analysis_basis
+                {% else %}
+                NULL as analysis_basis
+                {% endif %}
+            FROM
                 (
     SELECT
         *
@@ -21,27 +49,32 @@ view: metric_definitions_mobile_active_users_aggregates_v1 {
     WHERE app_name IN ('Fenix',  'Firefox iOS', 'Focus Android', 'Focus iOS')
 )
     )
-              WHERE submission_date BETWEEN
-                SAFE_CAST({% date_start metric_definitions_multi_product.submission_date %} AS DATE) AND
-                SAFE_CAST({% date_end metric_definitions_multi_product.submission_date %} AS DATE)
-              GROUP BY
+            AS m
+            
+            WHERE m.submission_date BETWEEN
+                SAFE_CAST(
+                    {% date_start submission_date %} AS DATE
+                ) AND
+                SAFE_CAST(
+                    {% date_end submission_date %} AS DATE
+                )
+            GROUP BY
+                
                 client_id,
-                submission_date ;;
+                analysis_basis ;;
   }
 
   dimension: client_id {
     type: string
-    sql: COALESCE(SAFE_CAST(${TABLE}.client_id AS STRING)
-                {%- if  metric_definitions_mobile_active_users_aggregates_v1._in_query %}
-                , SAFE_CAST(metric_definitions_mobile_active_users_aggregates_v1.client_id AS STRING)
-                {%- endif -%}
-            ) ;;
+    sql: SAFE_CAST(${TABLE}.client_id AS STRING) ;;
     label: "Client ID"
     primary_key: yes
+    group_label: "Base Fields"
     description: "Unique client identifier"
   }
 
   dimension: mobile_daily_active_users_v1 {
+    group_label: "Metrics"
     label: "Mobile DAU"
     description: "    This is the official DAU reporting definition. The logic is
     [defined in `bigquery-etl`](https://github.com/mozilla/bigquery-etl/tree/main/sql_generators/active_users/templates)
@@ -50,7 +83,7 @@ view: metric_definitions_mobile_active_users_aggregates_v1 {
     This metric needs to be aggregated by `submission_date`. If it is not aggregated by `submission_date`,
     it is similar to a \"days of use\" metric, and not DAU.
     
-    For more information, refer to [the DAU description in the Mozilla Data Documentation](https://docs.telemetry.mozilla.org/concepts/terminology.html#dau).
+    For more information, refer to [the DAU description in Confluence](https://mozilla-hub.atlassian.net/wiki/spaces/DATA/pages/314704478/Daily+Active+Users+DAU+Metric).
     For questions please contact bochocki@mozilla.com or firefox-kpi@mozilla.com.
 "
     type: number
@@ -58,6 +91,7 @@ view: metric_definitions_mobile_active_users_aggregates_v1 {
   }
 
   dimension: mobile_dau_kpi_v1 {
+    group_label: "Metrics"
     label: "Mobile DAU KPI"
     description: "    The average [Mobile DAU](https://mozilla.github.io/metric-hub/metrics/multi_product/#mobile_daily_active_users) in the 28-day period ending on December 15th. This is the official
     Mobile DAU KPI reporting definition. The logic for calculating DAU is
@@ -66,7 +100,7 @@ view: metric_definitions_mobile_active_users_aggregates_v1 {
     To reconstruct the annual Mobile DAU KPI, this metric needs to be aggregated by
     `EXTRACT(YEAR FROM submission_date)`.  
 
-    For more information, refer to [the DAU description in the Mozilla Data Documentation](https://docs.telemetry.mozilla.org/concepts/terminology.html#dau).
+    For more information, refer to [the DAU description in Confluence](https://mozilla-hub.atlassian.net/wiki/spaces/DATA/pages/314704478/Daily+Active+Users+DAU+Metric).
     For questions please contact bochocki@mozilla.com or firefox-kpi@mozilla.com.
 "
     type: number
@@ -75,11 +109,8 @@ view: metric_definitions_mobile_active_users_aggregates_v1 {
 
   dimension_group: submission {
     type: time
-    sql: COALESCE(CAST(${TABLE}.submission_date AS TIMESTAMP)
-                {%- if  metric_definitions_mobile_active_users_aggregates_v1._in_query %}
-                , CAST(metric_definitions_mobile_active_users_aggregates_v1.submission_date AS TIMESTAMP)
-                {%- endif -%}
-            ) ;;
+    group_label: "Base Fields"
+    sql: CAST(${TABLE}.analysis_basis AS TIMESTAMP) ;;
     label: "Submission"
     timeframes: [
       raw,
@@ -93,5 +124,48 @@ view: metric_definitions_mobile_active_users_aggregates_v1 {
 
   set: metrics {
     fields: [mobile_daily_active_users_v1, mobile_dau_kpi_v1]
+  }
+
+  parameter: aggregate_metrics_by {
+    label: "Aggregate Client Metrics Per"
+    type: unquoted
+    default_value: "day"
+
+    allowed_value: {
+      label: "Per Day"
+      value: "day"
+    }
+
+    allowed_value: {
+      label: "Per Week"
+      value: "week"
+    }
+
+    allowed_value: {
+      label: "Per Month"
+      value: "month"
+    }
+
+    allowed_value: {
+      label: "Per Quarter"
+      value: "quarter"
+    }
+
+    allowed_value: {
+      label: "Per Year"
+      value: "year"
+    }
+
+    allowed_value: {
+      label: "Overall"
+      value: "overall"
+    }
+  }
+
+  parameter: sampling {
+    label: "Sample of source data in %"
+    type: unquoted
+    default_value: "100"
+    hidden: yes
   }
 }

@@ -5,13 +5,6 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: app_store_funnel_ios {
-  dimension: activations {
-    sql: ${TABLE}.activations ;;
-    type: number
-    description: "Number of users that ended up activating that were first seen on the date.
-"
-  }
-
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
@@ -24,6 +17,13 @@ view: app_store_funnel_ios {
     sql: ${TABLE}.first_time_downloads ;;
     type: number
     description: "Number of first time downloads of the Firefox iOS app from the Apple Store.
+"
+  }
+
+  dimension: impressions {
+    sql: ${TABLE}.impressions ;;
+    type: number
+    description: "Number of Firefox iOS app unique impressions in the Apple Store.
 "
   }
 
@@ -48,15 +48,8 @@ view: app_store_funnel_ios {
 "
   }
 
-  dimension: views {
-    sql: ${TABLE}.views ;;
-    type: number
-    description: "Number of Firefox iOS app views in the Apple Store.
-"
-  }
-
-  dimension_group: date {
-    sql: ${TABLE}.date ;;
+  dimension_group: first_seen {
+    sql: ${TABLE}.first_seen_date ;;
     type: time
     timeframes: [
       raw,
@@ -69,6 +62,23 @@ view: app_store_funnel_ios {
     convert_tz: no
     datatype: date
     description: "Date of when the user was first seen.
+"
+  }
+
+  dimension_group: submission {
+    sql: ${TABLE}.submission_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    description: "Partition field, also corresponds to internal execution date of the job. submision_date - 7 days gives us the same date as the date field.
 "
   }
 

@@ -81,6 +81,11 @@ view: active_users_aggregates_table {
     map_layer_name: countries
   }
 
+  dimension: daily_users {
+    sql: ${TABLE}.daily_users ;;
+    type: number
+  }
+
   dimension: dau {
     sql: ${TABLE}.dau ;;
     type: number
@@ -111,8 +116,8 @@ view: active_users_aggregates_table {
     type: string
   }
 
-  dimension: mau {
-    sql: ${TABLE}.mau ;;
+  dimension: monthly_users {
+    sql: ${TABLE}.monthly_users ;;
     type: number
   }
 
@@ -171,8 +176,8 @@ view: active_users_aggregates_table {
     type: number
   }
 
-  dimension: wau {
-    sql: ${TABLE}.wau ;;
+  dimension: weekly_users {
+    sql: ${TABLE}.weekly_users ;;
     type: number
   }
 

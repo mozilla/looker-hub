@@ -96,21 +96,22 @@ the page that was viewed.
 "
   }
 
-  dimension: metrics__datetime__page_viewed {
-    label: "Page Viewed"
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
     hidden: no
-    sql: ${TABLE}.metrics.datetime.page_viewed ;;
-    type: time
-    group_label: "Page"
-    group_item_label: "Viewed"
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
 
     link: {
-      label: "Glean Dictionary reference for Page Viewed"
-      url: "https://dictionary.telemetry.mozilla.org/apps/bedrock/metrics/page_viewed"
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/bedrock/metrics/glean_client_annotation_experimentation_id"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The time a page was viewed.
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -292,6 +293,22 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Client Info"
     group_item_label: "Os Version"
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
+  }
+
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+    description: "An optional running counter of the number of sessions for a client."
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+    description: "An optional UUID uniquely identifying the client's current session."
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -563,6 +580,24 @@ The labels are the `category.name` identifier of the metric.
     sql: ${TABLE}.sample_id ;;
     type: number
     description: "Hashed version of client_id (if present) useful for partitioning; ranges from 0 to 99"
+  }
+
+  dimension_group: metrics__datetime__page_viewed {
+    label: "Page Viewed"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.page_viewed ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The time a page was viewed.
+"
   }
 
   dimension_group: metadata__header__parsed {
@@ -882,5 +917,79 @@ order by n desc ;;
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
+  }
+}
+
+view: interaction__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: interaction__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: interaction__metrics__labeled_string__page_query_params {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: interaction__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }
