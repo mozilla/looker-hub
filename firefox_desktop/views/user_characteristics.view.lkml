@@ -113,6 +113,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__text2__characteristics_missing_fonts {
+    label: "Characteristics Missing Fonts"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_missing_fonts ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Missing Fonts"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Missing Fonts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_missing_fonts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If a Font List is available for the user's platform, this string_list contains the fonts that are missing from the user's computer.
+"
+  }
+
   dimension: metrics__quantity__characteristics_prefers_contrast {
     label: "Characteristics Prefers Contrast"
     hidden: no
@@ -167,6 +185,114 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_prefs_intl_accept_languages {
+    label: "Characteristics Prefs Intl Accept Languages"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_prefs_intl_accept_languages ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Prefs Intl Accept Languages"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs Intl Accept Languages"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_intl_accept_languages"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of the intl.accept_languages pref.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_media_eme_enabled {
+    label: "Characteristics Prefs Media Eme Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_media_eme_enabled ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefs Media Eme Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs Media Eme Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_media_eme_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of the media.eme.enabled pref.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_zoom_text_only {
+    label: "Characteristics Prefs Zoom Text Only"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_zoom_text_only ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefs Zoom Text Only"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs Zoom Text Only"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_zoom_text_only"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Text-only zoom enabled (vs. full-zoom)
+"
+  }
+
+  dimension: metrics__quantity__characteristics_processor_count {
+    label: "Characteristics Processor Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_processor_count ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Processor Count"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Processor Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_processor_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of processors.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_screen_height {
+    label: "Characteristics Screen Height"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_screen_height ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Screen Height"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Screen Height"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_screen_height"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Height of the primary screen in pixels.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_screen_width {
+    label: "Characteristics Screen Width"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_screen_width ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Screen Width"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Screen Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_screen_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Width of the primary screen in pixels.
+"
+  }
+
   dimension: metrics__quantity__characteristics_submission_schema {
     label: "Characteristics Submission Schema"
     hidden: no
@@ -182,6 +308,42 @@ view: user_characteristics {
     }
 
     description: "An incrementing constant that represents the current schema/source of the data present in a ping. By referring to this value in a ping, one can know for certain the provenance of other data present in the ping, and what data may or may not be present.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_target_frame_rate {
+    label: "Characteristics Target Frame Rate"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_target_frame_rate ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Target Frame Rate"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Target Frame Rate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_target_frame_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The target frame rate in frames-per-second.
+"
+  }
+
+  dimension: metrics__string__characteristics_timezone {
+    label: "Characteristics Timezone"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_timezone ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Timezone"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Timezone"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_timezone"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The the current timezone of the system
 "
   }
 

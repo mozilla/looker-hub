@@ -66,6 +66,12 @@ view: ga4_sessions {
     description: "First reported device category value. The type of device (Mobile, Tablet, Desktop)."
   }
 
+  dimension: firefox_desktop_downloads {
+    sql: ${TABLE}.firefox_desktop_downloads ;;
+    type: number
+    description: "The number of firefox desktop downloads during this session."
+  }
+
   dimension: ga_client_id {
     sql: ${TABLE}.ga_client_id ;;
     type: string
