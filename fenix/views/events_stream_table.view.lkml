@@ -418,5 +418,20 @@ view: events_stream_table {
     ]
   }
 
-  sql_table_name: `mozdata.org_mozilla_fenix.events_stream` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.org_mozilla_firefox_beta.events_stream"
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_firefox_beta.events_stream"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix.events_stream"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }

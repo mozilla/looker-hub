@@ -351,6 +351,24 @@ view: user_characteristics_table {
 "
   }
 
+  dimension: metrics__boolean__characteristics_prefs_media_eme_enabled {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_media_eme_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefs Media Eme Enabled"
+    description: "Value of the media.eme.enabled pref.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_zoom_text_only {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_zoom_text_only ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefs Zoom Text Only"
+    description: "Text-only zoom enabled (vs. full-zoom)
+"
+  }
+
   dimension: metrics__boolean__characteristics_video_dynamic_range {
     sql: ${TABLE}.metrics.boolean.characteristics_video_dynamic_range ;;
     type: yesno
@@ -437,12 +455,66 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_processor_count {
+    sql: ${TABLE}.metrics.quantity.characteristics_processor_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Processor Count"
+    description: "Number of processors.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_screen_height {
+    sql: ${TABLE}.metrics.quantity.characteristics_screen_height ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Screen Height"
+    description: "Height of the primary screen in pixels.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_screen_width {
+    sql: ${TABLE}.metrics.quantity.characteristics_screen_width ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Screen Width"
+    description: "Width of the primary screen in pixels.
+"
+  }
+
   dimension: metrics__quantity__characteristics_submission_schema {
     sql: ${TABLE}.metrics.quantity.characteristics_submission_schema ;;
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Submission Schema"
     description: "An incrementing constant that represents the current schema/source of the data present in a ping. By referring to this value in a ping, one can know for certain the provenance of other data present in the ping, and what data may or may not be present.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_target_frame_rate {
+    sql: ${TABLE}.metrics.quantity.characteristics_target_frame_rate ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Target Frame Rate"
+    description: "The target frame rate in frames-per-second.
+"
+  }
+
+  dimension: metrics__string__characteristics_prefs_intl_accept_languages {
+    sql: ${TABLE}.metrics.string.characteristics_prefs_intl_accept_languages ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Prefs Intl Accept Languages"
+    description: "Value of the intl.accept_languages pref.
+"
+  }
+
+  dimension: metrics__string__characteristics_timezone {
+    sql: ${TABLE}.metrics.string.characteristics_timezone ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Timezone"
+    description: "The the current timezone of the system
 "
   }
 
@@ -453,6 +525,22 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Glean Client Annotation Experimentation Id"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
+"
+  }
+
+  dimension: metrics__text__characteristics_missing_fonts {
+    sql: ${TABLE}.metrics.text.characteristics_missing_fonts ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Missing Fonts"
+  }
+
+  dimension: metrics__text2__characteristics_missing_fonts {
+    sql: ${TABLE}.metrics.text2.characteristics_missing_fonts ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Missing Fonts"
+    description: "If a Font List is available for the user's platform, this string_list contains the fonts that are missing from the user's computer.
 "
   }
 
