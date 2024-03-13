@@ -1887,8 +1887,8 @@
       - 'Windows 11'
       - 'Windows 8'
       - 'Windows XP'
-      - 'Windows Vista'
       - 'Windows 7'
+      - 'Windows Vista'
       
   
   
