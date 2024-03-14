@@ -10,45 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: csv_import_release_rollout
-    type: "ci-line-chart"
-    fields: [
-      csv_import_release_rollout.submission_date,
-      csv_import_release_rollout.branch,
-      csv_import_release_rollout.upper,
-      csv_import_release_rollout.lower,
-      csv_import_release_rollout.point
-    ]
-    pivots: [
-      csv_import_release_rollout.branch
-    ]
-    filters:
-      csv_import_release_rollout.metric: 'memory_total'
-      csv_import_release_rollout.statistic: percentile
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: csv_import_release_rollout.submission_date
-    field_y: csv_import_release_rollout.point
-    log_scale: false
-    ci_lower: csv_import_release_rollout.lower
-    ci_upper: csv_import_release_rollout.upper
-    show_grid: true
-    listen:
-      Date: csv_import_release_rollout.submission_date
-      Percentile: csv_import_release_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -63,7 +26,41 @@
       csv_import_release_rollout.branch
     ]
     filters:
-      csv_import_release_rollout.metric: 'retained'
+      csv_import_release_rollout.metric: 'uri_count'
+      csv_import_release_rollout.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: csv_import_release_rollout.submission_date
+    field_y: csv_import_release_rollout.point
+    log_scale: false
+    ci_lower: csv_import_release_rollout.lower
+    ci_upper: csv_import_release_rollout.upper
+    show_grid: true
+    listen:
+      Date: csv_import_release_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: csv_import_release_rollout
+    type: looker_line
+    fields: [
+      csv_import_release_rollout.submission_date,
+      csv_import_release_rollout.branch,
+      csv_import_release_rollout.point
+    ]
+    pivots: [
+      csv_import_release_rollout.branch
+    ]
+    filters:
+      csv_import_release_rollout.metric: 'active_hours'
       csv_import_release_rollout.statistic: mean
     row: 0
     col: 12
@@ -115,6 +112,43 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: csv_import_release_rollout
+    type: "ci-line-chart"
+    fields: [
+      csv_import_release_rollout.submission_date,
+      csv_import_release_rollout.branch,
+      csv_import_release_rollout.upper,
+      csv_import_release_rollout.lower,
+      csv_import_release_rollout.point
+    ]
+    pivots: [
+      csv_import_release_rollout.branch
+    ]
+    filters:
+      csv_import_release_rollout.metric: 'memory_total'
+      csv_import_release_rollout.statistic: percentile
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: csv_import_release_rollout.submission_date
+    field_y: csv_import_release_rollout.point
+    log_scale: false
+    ci_lower: csv_import_release_rollout.lower
+    ci_upper: csv_import_release_rollout.upper
+    show_grid: true
+    listen:
+      Date: csv_import_release_rollout.submission_date
+      Percentile: csv_import_release_rollout.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -133,8 +167,8 @@
     filters:
       csv_import_release_rollout.metric: 'search_count'
       csv_import_release_rollout.statistic: mean
-    row: 10
-    col: 12
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: csv_import_release_rollout.submission_date
@@ -149,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -165,10 +199,10 @@
       csv_import_release_rollout.branch
     ]
     filters:
-      csv_import_release_rollout.metric: 'uri_count'
+      csv_import_release_rollout.metric: 'retained'
       csv_import_release_rollout.statistic: mean
     row: 20
-    col: 0
+    col: 12
     width: 12
     height: 8
     field_x: csv_import_release_rollout.submission_date
@@ -200,40 +234,6 @@
     ]
     filters:
       csv_import_release_rollout.metric: 'ad_clicks'
-      csv_import_release_rollout.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: csv_import_release_rollout.submission_date
-    field_y: csv_import_release_rollout.point
-    log_scale: false
-    ci_lower: csv_import_release_rollout.lower
-    ci_upper: csv_import_release_rollout.upper
-    show_grid: true
-    listen:
-      Date: csv_import_release_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: csv_import_release_rollout
-    type: looker_line
-    fields: [
-      csv_import_release_rollout.submission_date,
-      csv_import_release_rollout.branch,
-      csv_import_release_rollout.point
-    ]
-    pivots: [
-      csv_import_release_rollout.branch
-    ]
-    filters:
-      csv_import_release_rollout.metric: 'active_hours'
       csv_import_release_rollout.statistic: mean
     row: 30
     col: 0
