@@ -2195,6 +2195,10 @@ firefox_desktop:
       type: glean_ping_explore
       views:
         base_view: search_with
+    serp_categorization:
+      type: glean_ping_explore
+      views:
+        base_view: serp_categorization
     spoc:
       type: glean_ping_explore
       views:
@@ -2584,6 +2588,15 @@ firefox_desktop:
       tables:
       - channel: null
         table: mozdata.firefox_desktop.search_with
+      type: table_view
+    serp_categorization:
+      tables:
+      - table: mozdata.firefox_desktop.serp_categorization
+      type: glean_ping_view
+    serp_categorization_table:
+      tables:
+      - channel: null
+        table: mozdata.firefox_desktop.serp_categorization
       type: table_view
     serp_events_table:
       tables:

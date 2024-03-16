@@ -32,7 +32,6 @@ view: acoustic_email_events {
   dimension: email {
     sql: ${TABLE}.email ;;
     type: string
-    description: "The contact’s email address."
   }
 
   dimension: event_type {
