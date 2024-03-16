@@ -74,6 +74,7 @@ view: acoustic_contact_change_events {
   dimension: recipient_id {
     sql: ${TABLE}.recipient_id ;;
     type: number
+    description: "Recipient's ID"
   }
 
   dimension: relay_waitlist_geo {
