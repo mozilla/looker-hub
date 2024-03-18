@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Http Page Open To First Sent
-    name: Http Page Open To First Sent_percentile
+  - title: Dns Lookup Time
+    name: Dns Lookup Time_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -28,7 +28,7 @@
       network_performance_desktop_build_by_build.branch
     ]
     filters:
-      network_performance_desktop_build_by_build.metric: 'http_page_open_to_first_sent'
+      network_performance_desktop_build_by_build.metric: 'dns_lookup_time'
       network_performance_desktop_build_by_build.statistic: percentile
     row: 0
     col: 0
@@ -158,8 +158,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Dns Lookup Time
-    name: Dns Lookup Time_percentile
+  - title: Http Page Open To First Sent
+    name: Http Page Open To First Sent_percentile
     note_state: expanded
     note_display: above
     note_text: Percentile
@@ -176,7 +176,7 @@
       network_performance_desktop_build_by_build.branch
     ]
     filters:
-      network_performance_desktop_build_by_build.metric: 'dns_lookup_time'
+      network_performance_desktop_build_by_build.metric: 'http_page_open_to_first_sent'
       network_performance_desktop_build_by_build.statistic: percentile
     row: 20
     col: 0
