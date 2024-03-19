@@ -7,7 +7,7 @@
 view: daemonsession {
   dimension: metrics__counter__session_connection_health_stable_count {
     label: "Session Connection Health Stable Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.session_connection_health_stable_count ;;
     type: number
     group_label: "Session"
