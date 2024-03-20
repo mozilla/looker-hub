@@ -2841,6 +2841,15 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__quantity__browser_backup_prof_d_disk_space {
+    sql: ${TABLE}.metrics.quantity.browser_backup_prof_d_disk_space ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Prof D Disk Space"
+    description: "The total disk space available on the storage device that the profile directory is stored on. To reduce fingerprintability, we round to the nearest 10 megabytes and return the result in kilobytes.
+"
+  }
+
   dimension: metrics__quantity__browser_engagement_profile_count {
     sql: ${TABLE}.metrics.quantity.browser_engagement_profile_count ;;
     type: number

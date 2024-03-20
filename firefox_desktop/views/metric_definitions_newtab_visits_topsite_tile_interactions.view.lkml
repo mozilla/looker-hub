@@ -430,6 +430,10 @@ base.base_vr_crash_count AS vr_crash_count,
 base.base_web_notification_shown_sum AS web_notification_shown_sum,
 base.base_windows_build_number AS windows_build_number,
 base.base_windows_ubr AS windows_ubr,
+base.base_first_seen_date AS first_seen_date,
+base.base_second_seen_date AS second_seen_date,
+base.base_submission_date_s3 AS submission_date_s3,
+base.base_submission_timestamp_min AS submission_timestamp_min,
 
                 m.legacy_telemetry_client_id AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
@@ -809,29 +813,50 @@ vr_crash_count AS base_vr_crash_count,
 web_notification_shown_sum AS base_web_notification_shown_sum,
 windows_build_number AS base_windows_build_number,
 windows_ubr AS base_windows_ubr,
+first_seen_date AS base_first_seen_date,
+second_seen_date AS base_second_seen_date,
+submission_date_s3 AS base_submission_date_s3,
+submission_timestamp_min AS base_submission_timestamp_min,
 
                 FROM
                 mozdata.telemetry.clients_daily
+                WHERE
+                submission_date BETWEEN
+                COALESCE(
+                    SAFE_CAST(
+                    {% date_start submission_date %} AS DATE),
+                CURRENT_DATE()) AND
+                COALESCE(
+                    SAFE_CAST(
+                        {% date_end submission_date %} AS DATE
+                ), CURRENT_DATE())
             ) base
             ON
                 base.base_submission_date = m.submission_date
                  AND base.base_client_id = m.legacy_telemetry_client_id
             WHERE base.base_submission_date BETWEEN
+            COALESCE(
                 SAFE_CAST(
                     {% date_start submission_date %} AS DATE
-                ) AND
+            ), CURRENT_DATE()) AND
+            COALESCE(
                 SAFE_CAST(
                     {% date_end submission_date %} AS DATE
-                ) AND
+                ), CURRENT_DATE())
+            AND
                 base.base_sample_id < {% parameter sampling %}
             
-            AND m.submission_date BETWEEN
+            AND
+            m.submission_date
+            BETWEEN
+            COALESCE(
                 SAFE_CAST(
                     {% date_start submission_date %} AS DATE
-                ) AND
+                ), CURRENT_DATE()) AND
+            COALESCE(
                 SAFE_CAST(
                     {% date_end submission_date %} AS DATE
-                )
+                ), CURRENT_DATE())
             GROUP BY
                 aborts_content_sum,
 aborts_gmplugin_sum,
@@ -1163,6 +1188,10 @@ vr_crash_count,
 web_notification_shown_sum,
 windows_build_number,
 windows_ubr,
+first_seen_date,
+second_seen_date,
+submission_date_s3,
+submission_timestamp_min,
 
                 client_id,
                 analysis_basis ;;
