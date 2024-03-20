@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics {
+  dimension: metrics__quantity__browser_backup_prof_d_disk_space {
+    label: "Browser Backup Prof D Disk Space"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.browser_backup_prof_d_disk_space ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Prof D Disk Space"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Prof D Disk Space"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_prof_d_disk_space"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total disk space available on the storage device that the profile directory is stored on. To reduce fingerprintability, we round to the nearest 10 megabytes and return the result in kilobytes.
+"
+  }
+
   dimension: metrics__counter__browser_engagement_active_ticks {
     label: "Browser Engagement Active Ticks"
     hidden: no

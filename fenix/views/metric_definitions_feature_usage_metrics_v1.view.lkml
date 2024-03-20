@@ -63,13 +63,17 @@ SUM(dau) AS feature_usage_dau_v1,
     )
             AS m
             
-            WHERE m.submission_date BETWEEN
+            WHERE
+            m.submission_date
+            BETWEEN
+            COALESCE(
                 SAFE_CAST(
                     {% date_start submission_date %} AS DATE
-                ) AND
+                ), CURRENT_DATE()) AND
+            COALESCE(
                 SAFE_CAST(
                     {% date_end submission_date %} AS DATE
-                )
+                ), CURRENT_DATE())
             GROUP BY
                 
                 client_id,

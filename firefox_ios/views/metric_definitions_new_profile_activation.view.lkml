@@ -30,6 +30,7 @@ base.base_normalized_os AS normalized_os,
 base.base_normalized_os_version AS normalized_os_version,
 base.base_sample_id AS sample_id,
 base.base_telemetry_sdk_build AS telemetry_sdk_build,
+base.base_first_seen_date AS first_seen_date,
 
                 m.client_id AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
@@ -92,29 +93,47 @@ normalized_os AS base_normalized_os,
 normalized_os_version AS base_normalized_os_version,
 sample_id AS base_sample_id,
 telemetry_sdk_build AS base_telemetry_sdk_build,
+first_seen_date AS base_first_seen_date,
 
                 FROM
                 mozdata.firefox_ios.baseline_clients_daily
+                WHERE
+                submission_date BETWEEN
+                COALESCE(
+                    SAFE_CAST(
+                    {% date_start submission_date %} AS DATE),
+                CURRENT_DATE()) AND
+                COALESCE(
+                    SAFE_CAST(
+                        {% date_end submission_date %} AS DATE
+                ), CURRENT_DATE())
             ) base
             ON
                 base.base_submission_date = m.submission_date
                  AND base.base_client_id = m.client_id
             WHERE base.base_submission_date BETWEEN
+            COALESCE(
                 SAFE_CAST(
                     {% date_start submission_date %} AS DATE
-                ) AND
+            ), CURRENT_DATE()) AND
+            COALESCE(
                 SAFE_CAST(
                     {% date_end submission_date %} AS DATE
-                ) AND
+                ), CURRENT_DATE())
+            AND
                 base.base_sample_id < {% parameter sampling %}
             
-            AND m.submission_date BETWEEN
+            AND
+            m.submission_date
+            BETWEEN
+            COALESCE(
                 SAFE_CAST(
                     {% date_start submission_date %} AS DATE
-                ) AND
+                ), CURRENT_DATE()) AND
+            COALESCE(
                 SAFE_CAST(
                     {% date_end submission_date %} AS DATE
-                )
+                ), CURRENT_DATE())
             GROUP BY
                 android_sdk_version,
 app_build,
@@ -137,6 +156,7 @@ normalized_os,
 normalized_os_version,
 sample_id,
 telemetry_sdk_build,
+first_seen_date,
 
                 client_id,
                 analysis_basis ;;
