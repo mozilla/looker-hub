@@ -691,6 +691,42 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__httpsfirst_downgraded {
+    sql: ${TABLE}.metrics.counter.httpsfirst_downgraded ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Httpsfirst Downgraded"
+    description: "How many regular HTTPS-First (`dom.security.https_first` enabled) upgrades get downgraded again.
+"
+  }
+
+  dimension: metrics__counter__httpsfirst_downgraded_schemeless {
+    sql: ${TABLE}.metrics.counter.httpsfirst_downgraded_schemeless ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Httpsfirst Downgraded Schemeless"
+    description: "How many schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrades get downgraded again.
+"
+  }
+
+  dimension: metrics__counter__httpsfirst_upgraded {
+    sql: ${TABLE}.metrics.counter.httpsfirst_upgraded ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Httpsfirst Upgraded"
+    description: "Counts how often a load is marked to be upgraded to HTTPS because of HTTPS-First (`dom.security.https_first` enabled).
+"
+  }
+
+  dimension: metrics__counter__httpsfirst_upgraded_schemeless {
+    sql: ${TABLE}.metrics.counter.httpsfirst_upgraded_schemeless ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Httpsfirst Upgraded Schemeless"
+    description: "Counts how often a load is marked to be upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless).
+"
+  }
+
   dimension: metrics__counter__messaging_system_glean_ping_for_ping_failures {
     sql: ${TABLE}.metrics.counter.messaging_system_glean_ping_for_ping_failures ;;
     type: number
@@ -2798,6 +2834,22 @@ success - search service successfully initialized.
     hidden: yes
   }
 
+  dimension: metrics__object__fog_validation_some_object {
+    sql: ${TABLE}.metrics.object.fog_validation_some_object ;;
+    hidden: yes
+    description: "Static data recorded to verify the new object metric type end-to-end.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_prof_d_disk_space {
+    sql: ${TABLE}.metrics.quantity.browser_backup_prof_d_disk_space ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Prof D Disk Space"
+    description: "The total disk space available on the storage device that the profile directory is stored on. To reduce fingerprintability, we round to the nearest 10 megabytes and return the result in kilobytes.
+"
+  }
+
   dimension: metrics__quantity__browser_engagement_profile_count {
     sql: ${TABLE}.metrics.quantity.browser_engagement_profile_count ;;
     type: number
@@ -2974,6 +3026,34 @@ API for the purposes of Validation (hence GVSV).
     sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.numerator ;;
     type: number
     group_label: "Metrics Rate Cookie Banners Cmp Ratio Handled By Cmp Rule"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__httpsfirst_downgraded_on_timer__denominator {
+    sql: ${TABLE}.metrics.rate.httpsfirst_downgraded_on_timer.denominator ;;
+    type: number
+    group_label: "Metrics Rate Httpsfirst Downgraded On Timer"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__httpsfirst_downgraded_on_timer__numerator {
+    sql: ${TABLE}.metrics.rate.httpsfirst_downgraded_on_timer.numerator ;;
+    type: number
+    group_label: "Metrics Rate Httpsfirst Downgraded On Timer"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__httpsfirst_downgraded_on_timer_schemeless__denominator {
+    sql: ${TABLE}.metrics.rate.httpsfirst_downgraded_on_timer_schemeless.denominator ;;
+    type: number
+    group_label: "Metrics Rate Httpsfirst Downgraded On Timer Schemeless"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__httpsfirst_downgraded_on_timer_schemeless__numerator {
+    sql: ${TABLE}.metrics.rate.httpsfirst_downgraded_on_timer_schemeless.numerator ;;
+    type: number
+    group_label: "Metrics Rate Httpsfirst Downgraded On Timer Schemeless"
     group_item_label: "Numerator"
   }
 
@@ -5625,6 +5705,126 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__count {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__range {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__sum {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__values {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__javascript_gc_compact_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.bucket_count ;;
     type: number
@@ -7482,6 +7682,66 @@ default engine, and hence both versions of these fields will be filled in.
 
   dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__values {
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.values ;;
     hidden: yes
   }
 
@@ -11588,6 +11848,30 @@ view: metrics_table__metrics__timing_distribution__glean_validation_shutdown_wai
   }
 }
 
+view: metrics_table__metrics__timing_distribution__httpsfirst_downgrade_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__javascript_gc_compact_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -11949,6 +12233,18 @@ view: metrics_table__metrics__timing_distribution__networking_http_channel_sub_o
 }
 
 view: metrics_table__metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

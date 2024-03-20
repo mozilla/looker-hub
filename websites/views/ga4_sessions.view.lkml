@@ -66,6 +66,12 @@ view: ga4_sessions {
     description: "First reported device category value. The type of device (Mobile, Tablet, Desktop)."
   }
 
+  dimension: firefox_desktop_downloads {
+    sql: ${TABLE}.firefox_desktop_downloads ;;
+    type: number
+    description: "The number of firefox desktop downloads during this session."
+  }
+
   dimension: ga_client_id {
     sql: ${TABLE}.ga_client_id ;;
     type: string
@@ -209,5 +215,5 @@ view: ga4_sessions {
     description: "The date of the session. Some sessions span two days: if it does, we take the earlier date."
   }
 
-  sql_table_name: `moz-fx-data-shared-prod.mozilla_org_derived.ga_sessions_v2` ;;
+  sql_table_name: `moz-fx-data-shared-prod.mozilla_org.ga_sessions_v2` ;;
 }

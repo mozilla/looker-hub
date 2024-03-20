@@ -5,23 +5,6 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: startup {
-  dimension: metrics__string__cirrus_events_instance_name {
-    label: "Cirrus Events Instance Name"
-    hidden: no
-    sql: ${TABLE}.metrics.string.cirrus_events_instance_name ;;
-    type: string
-    group_label: "Cirrus Events"
-    group_item_label: "Instance Name"
-
-    link: {
-      label: "Glean Dictionary reference for Cirrus Events Instance Name"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozillavpn_backend_cirrus/metrics/cirrus_events_instance_name"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The name of the instance"
-  }
-
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation Id"
     hidden: no
@@ -111,6 +94,23 @@ The labels are the `category.name` identifier of the metric.
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
+  }
+
+  dimension: metrics__string__cirrus_events_instance_name {
+    label: "Cirrus Events Instance Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.cirrus_events_instance_name ;;
+    type: string
+    group_label: "Cirrus Events"
+    group_item_label: "Instance Name"
+
+    link: {
+      label: "Glean Dictionary reference for Cirrus Events Instance Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozillavpn_backend_cirrus/metrics/cirrus_events_instance_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the instance"
   }
 
   dimension: additional_properties {

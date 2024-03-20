@@ -948,6 +948,34 @@ view: metrics_table {
     group_item_label: "Home Screen Standard Homepage View Count"
   }
 
+  dimension: metrics__counter__httpsfirst_downgraded {
+    sql: ${TABLE}.metrics.counter.httpsfirst_downgraded ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Httpsfirst Downgraded"
+  }
+
+  dimension: metrics__counter__httpsfirst_downgraded_schemeless {
+    sql: ${TABLE}.metrics.counter.httpsfirst_downgraded_schemeless ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Httpsfirst Downgraded Schemeless"
+  }
+
+  dimension: metrics__counter__httpsfirst_upgraded {
+    sql: ${TABLE}.metrics.counter.httpsfirst_upgraded ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Httpsfirst Upgraded"
+  }
+
+  dimension: metrics__counter__httpsfirst_upgraded_schemeless {
+    sql: ${TABLE}.metrics.counter.httpsfirst_upgraded_schemeless ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Httpsfirst Upgraded Schemeless"
+  }
+
   dimension: metrics__counter__logins_deleted {
     sql: ${TABLE}.metrics.counter.logins_deleted ;;
     type: number
@@ -3107,6 +3135,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__object__fog_validation_some_object {
+    sql: ${TABLE}.metrics.object.fog_validation_some_object ;;
+    hidden: yes
+  }
+
   dimension: metrics__quantity__addresses_saved_all {
     sql: ${TABLE}.metrics.quantity.addresses_saved_all ;;
     type: number
@@ -3286,6 +3319,34 @@ view: metrics_table {
     sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.numerator ;;
     type: number
     group_label: "Metrics Rate Cookie Banners Cmp Ratio Handled By Cmp Rule"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__httpsfirst_downgraded_on_timer__denominator {
+    sql: ${TABLE}.metrics.rate.httpsfirst_downgraded_on_timer.denominator ;;
+    type: number
+    group_label: "Metrics Rate Httpsfirst Downgraded On Timer"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__httpsfirst_downgraded_on_timer__numerator {
+    sql: ${TABLE}.metrics.rate.httpsfirst_downgraded_on_timer.numerator ;;
+    type: number
+    group_label: "Metrics Rate Httpsfirst Downgraded On Timer"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__httpsfirst_downgraded_on_timer_schemeless__denominator {
+    sql: ${TABLE}.metrics.rate.httpsfirst_downgraded_on_timer_schemeless.denominator ;;
+    type: number
+    group_label: "Metrics Rate Httpsfirst Downgraded On Timer Schemeless"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__httpsfirst_downgraded_on_timer_schemeless__numerator {
+    sql: ${TABLE}.metrics.rate.httpsfirst_downgraded_on_timer_schemeless.numerator ;;
+    type: number
+    group_label: "Metrics Rate Httpsfirst Downgraded On Timer Schemeless"
     group_item_label: "Numerator"
   }
 
@@ -6612,6 +6673,124 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__count {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__range {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__sum {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__values {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__javascript_gc_compact_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.bucket_count ;;
     type: number
@@ -8733,6 +8912,65 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__values {
     sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.values ;;
     hidden: yes
   }
 
@@ -15145,6 +15383,30 @@ view: metrics_table__metrics__timing_distribution__glean_validation_shutdown_wai
   }
 }
 
+view: metrics_table__metrics__timing_distribution__httpsfirst_downgrade_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__javascript_gc_compact_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -15566,6 +15828,18 @@ view: metrics_table__metrics__timing_distribution__networking_http_channel_sub_o
 }
 
 view: metrics_table__metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

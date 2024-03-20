@@ -225,5 +225,5 @@ view: acoustic_contact_current_snapshot {
     datatype: date
   }
 
-  sql_table_name: `moz-fx-data-marketing-prod.acoustic.contact_current_snapshot_v1` ;;
+  sql_table_name: `mozdata.acoustic.contact_current_snapshot` ;;
 }
