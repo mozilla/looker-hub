@@ -389,12 +389,6 @@ view: serp_categorization__metrics__labeled_counter__glean_error_invalid_label {
     sql: ${value} ;;
     hidden: no
   }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${serp_categorization.None} end ;;
-    hidden: no
-  }
 }
 
 view: serp_categorization__metrics__labeled_counter__glean_error_invalid_overflow {
@@ -430,12 +424,6 @@ view: serp_categorization__metrics__labeled_counter__glean_error_invalid_overflo
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${serp_categorization.None} end ;;
     hidden: no
   }
 }
@@ -475,12 +463,6 @@ view: serp_categorization__metrics__labeled_counter__glean_error_invalid_state {
     sql: ${value} ;;
     hidden: no
   }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${serp_categorization.None} end ;;
-    hidden: no
-  }
 }
 
 view: serp_categorization__metrics__labeled_counter__glean_error_invalid_value {
@@ -516,12 +498,6 @@ view: serp_categorization__metrics__labeled_counter__glean_error_invalid_value {
   measure: count {
     type: sum
     sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${serp_categorization.None} end ;;
     hidden: no
   }
 }

@@ -5,6 +5,42 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics {
+  dimension: metrics__quantity__browser_backup_favicons_size {
+    label: "Browser Backup Favicons Size"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.browser_backup_favicons_size ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Favicons Size"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Favicons Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_favicons_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total file size of the favicons.sqlite db located in the current profile directory, in kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_places_size {
+    label: "Browser Backup Places Size"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.browser_backup_places_size ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Places Size"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Places Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_places_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total file size of the places.sqlite db located in the current profile directory, in kilobytes.
+"
+  }
+
   dimension: metrics__quantity__browser_backup_prof_d_disk_space {
     label: "Browser Backup Prof D Disk Space"
     hidden: no
