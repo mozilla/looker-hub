@@ -509,6 +509,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__string__characteristics_system_locale {
+    sql: ${TABLE}.metrics.string.characteristics_system_locale ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics System Locale"
+    description: "The locale used by the host OS for localization.
+"
+  }
+
   dimension: metrics__string__characteristics_timezone {
     sql: ${TABLE}.metrics.string.characteristics_timezone ;;
     type: string

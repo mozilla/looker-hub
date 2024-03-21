@@ -311,6 +311,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_system_locale {
+    label: "Characteristics System Locale"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_system_locale ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "System Locale"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics System Locale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_system_locale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The locale used by the host OS for localization.
+"
+  }
+
   dimension: metrics__quantity__characteristics_target_frame_rate {
     label: "Characteristics Target Frame Rate"
     hidden: no

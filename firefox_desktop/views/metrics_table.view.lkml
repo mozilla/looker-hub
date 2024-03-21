@@ -2841,6 +2841,24 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__quantity__browser_backup_favicons_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_favicons_size ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Favicons Size"
+    description: "The total file size of the favicons.sqlite db located in the current profile directory, in kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_places_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_places_size ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Places Size"
+    description: "The total file size of the places.sqlite db located in the current profile directory, in kilobytes.
+"
+  }
+
   dimension: metrics__quantity__browser_backup_prof_d_disk_space {
     sql: ${TABLE}.metrics.quantity.browser_backup_prof_d_disk_space ;;
     type: number
