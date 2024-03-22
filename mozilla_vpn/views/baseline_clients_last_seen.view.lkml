@@ -46,6 +46,11 @@ view: baseline_clients_last_seen {
     map_layer_name: countries
   }
 
+  dimension: days_active_bits {
+    sql: ${TABLE}.days_active_bits ;;
+    type: number
+  }
+
   dimension: days_created_profile_bits {
     sql: ${TABLE}.days_created_profile_bits ;;
     type: number
@@ -63,6 +68,11 @@ view: baseline_clients_last_seen {
 
   dimension: days_seen_session_start_bits {
     sql: ${TABLE}.days_seen_session_start_bits ;;
+    type: number
+  }
+
+  dimension: days_since_active {
+    sql: ${TABLE}.days_since_active ;;
     type: number
   }
 

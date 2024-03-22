@@ -1635,6 +1635,13 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__quantity__addresses_saved_all {
+    sql: ${TABLE}.metrics.quantity.addresses_saved_all ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Addresses Saved All"
+  }
+
   dimension: metrics__quantity__bookmarks_mobile_bookmarks_count {
     sql: ${TABLE}.metrics.quantity.bookmarks_mobile_bookmarks_count ;;
     type: number
