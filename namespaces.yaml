@@ -152,6 +152,15 @@ accounts_backend:
       - channel: null
         table: mozdata.accounts_backend.users_services_last_seen
       type: table_view
+accounts_cirrus:
+  explores: {}
+  glean_app: true
+  owners:
+  - fxa-staff@mozilla.com
+  - project-nimbus@mozilla.com
+  pretty_name: Mozilla Accounts (Cirrus)
+  spoke: looker-spoke-default
+  views: {}
 accounts_frontend:
   explores:
     accounts_events:
