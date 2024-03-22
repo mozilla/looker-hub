@@ -7,7 +7,7 @@
 view: metric_definitions_new_profile_activation {
   derived_table: {
     sql: SELECT
-                COALESCE(SUM(activated)) AS new_profile_activation,
+                COUNTIF(is_activated) AS new_profile_activation,
 
                 base_android_sdk_version AS android_sdk_version,
 base.base_app_build AS app_build,
@@ -64,7 +64,7 @@ base.base_first_seen_date AS first_seen_date,
     SELECT
         *
     FROM
-        `moz-fx-data-shared-prod.firefox_ios.new_profile_activation`
+        `mozdata.firefox_ios.clients_activation`
     )
             AS m
             

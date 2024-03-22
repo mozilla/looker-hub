@@ -7,7 +7,7 @@
 view: page_view {
   dimension: metrics__string__page_path {
     label: "Page Path"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.page_path ;;
     type: string
     group_label: "Page"
@@ -513,7 +513,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension_group: metrics__datetime__page_loaded {
     label: "Page Loaded"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.datetime.page_loaded ;;
     type: time
     timeframes: [
