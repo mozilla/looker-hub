@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics {
+  dimension: metrics__quantity__browser_backup_credentials_data_size {
+    label: "Browser Backup Credentials Data Size"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.browser_backup_credentials_data_size ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Credentials Data Size"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Credentials Data Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_credentials_data_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total size of logins, payment method, and form autofill related files in the current profile directory, in kilobytes.
+"
+  }
+
   dimension: metrics__quantity__browser_backup_favicons_size {
     label: "Browser Backup Favicons Size"
     hidden: no
@@ -56,6 +74,24 @@ view: metrics {
     }
 
     description: "The total disk space available on the storage device that the profile directory is stored on. To reduce fingerprintability, we round to the nearest 10 megabytes and return the result in kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_security_data_size {
+    label: "Browser Backup Security Data Size"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.browser_backup_security_data_size ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Security Data Size"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Security Data Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_security_data_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total size of files needed for NSS initialization parameters and security certificate settings in the current profile directory, in kilobytes.
 "
   }
 

@@ -628,7 +628,7 @@ If you're unsure, please ask in
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Type of event the ping is capturing. e.g. \"cfr\", \"whats-new-panel\", \"onboarding\"
+    description: "Type of event the ping is capturing. e.g. \"cfr\", \"onboarding\"
 "
   }
 

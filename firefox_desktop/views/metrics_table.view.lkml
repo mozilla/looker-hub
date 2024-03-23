@@ -2841,6 +2841,15 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__quantity__browser_backup_credentials_data_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_credentials_data_size ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Credentials Data Size"
+    description: "The total size of logins, payment method, and form autofill related files in the current profile directory, in kilobytes.
+"
+  }
+
   dimension: metrics__quantity__browser_backup_favicons_size {
     sql: ${TABLE}.metrics.quantity.browser_backup_favicons_size ;;
     type: number
@@ -2865,6 +2874,15 @@ success - search service successfully initialized.
     group_label: "Metrics Quantity"
     group_item_label: "Browser Backup Prof D Disk Space"
     description: "The total disk space available on the storage device that the profile directory is stored on. To reduce fingerprintability, we round to the nearest 10 megabytes and return the result in kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_security_data_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_security_data_size ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Security Data Size"
+    description: "The total size of files needed for NSS initialization parameters and security certificate settings in the current profile directory, in kilobytes.
 "
   }
 
