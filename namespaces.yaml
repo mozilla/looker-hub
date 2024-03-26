@@ -351,6 +351,10 @@ accounts_frontend:
       - channel: null
         table: mozdata.accounts_frontend.events_unnested
       type: table_view
+    password_reset_funnels:
+      tables:
+      - table: moz-fx-data-shared-prod.accounts_frontend_derived.pwd_reset_funnels_v1
+      type: table_view
 activity_stream:
   explores:
     event_counts:
