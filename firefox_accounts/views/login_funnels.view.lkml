@@ -15,8 +15,13 @@ view: login_funnels {
     type: string
   }
 
-  dimension: login_confirm_2fa {
-    sql: ${TABLE}.login_confirm_2fa ;;
+  dimension: login_2fa_success {
+    sql: ${TABLE}.login_2fa_success ;;
+    type: number
+  }
+
+  dimension: login_2fa_view {
+    sql: ${TABLE}.login_2fa_view ;;
     type: number
   }
 

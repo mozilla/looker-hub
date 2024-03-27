@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Client Volume
-    name: Client Volume_sum
+  - title: Unexpected Data
+    name: Unexpected Data_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -23,10 +23,10 @@
       firefox_messaging_system.point
     ]
     pivots: [
-      firefox_messaging_system.branch
+      firefox_messaging_system.branch, firefox_messaging_system.metric
     ]
     filters:
-      firefox_messaging_system.metric: 'client_volume'
+      firefox_messaging_system.metric: '"invalid_nested_data_volume", "unknown_keys_volume"'
       firefox_messaging_system.statistic: sum
     row: 0
     col: 0
@@ -61,7 +61,7 @@
       firefox_messaging_system.branch, firefox_messaging_system.metric
     ]
     filters:
-      firefox_messaging_system.metric: '"moments_ping_volume", "infobar_ping_volume", "null_ping_volume", "whats_new_panel_ping_volume", "cfr_ping_volume", "other_ping_volume", "spotlight_ping_volume"'
+      firefox_messaging_system.metric: '"null_ping_volume", "whats_new_panel_ping_volume", "spotlight_ping_volume", "cfr_ping_volume", "moments_ping_volume", "other_ping_volume", "infobar_ping_volume"'
       firefox_messaging_system.statistic: sum
     row: 0
     col: 12
@@ -150,8 +150,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Unexpected Data
-    name: Unexpected Data_sum
+  - title: Client Volume
+    name: Client Volume_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -163,10 +163,10 @@
       firefox_messaging_system.point
     ]
     pivots: [
-      firefox_messaging_system.branch, firefox_messaging_system.metric
+      firefox_messaging_system.branch
     ]
     filters:
-      firefox_messaging_system.metric: '"invalid_nested_data_volume", "unknown_keys_volume"'
+      firefox_messaging_system.metric: 'client_volume'
       firefox_messaging_system.statistic: sum
     row: 20
     col: 0
@@ -276,16 +276,16 @@
   - title: Normalized Channel
     name: Normalized Channel
     type: string_filter
-    default_value: 'beta'
+    default_value: 'nightly'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'beta'
       - 'nightly'
       - 'aurora'
+      - 'beta'
       - 'release'
       - 'esr'
       - 'Other'
