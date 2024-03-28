@@ -185,6 +185,60 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__boolean__characteristics_prefs_block_popups {
+    label: "Characteristics Prefs Block Popups"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_block_popups ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefs Block Popups"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs Block Popups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_block_popups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Block pop-up windows (The dom.disable_open_during_load pref)
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_general_autoscroll {
+    label: "Characteristics Prefs General Autoscroll"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_general_autoscroll ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefs General Autoscroll"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs General Autoscroll"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_general_autoscroll"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Use autoscrolling
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_general_smoothscroll {
+    label: "Characteristics Prefs General Smoothscroll"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_general_smoothscroll ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefs General Smoothscroll"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs General Smoothscroll"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_general_smoothscroll"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Use smooth scrolling
+"
+  }
+
   dimension: metrics__string__characteristics_prefs_intl_accept_languages {
     label: "Characteristics Prefs Intl Accept Languages"
     hidden: no
@@ -218,6 +272,60 @@ view: user_characteristics {
     }
 
     description: "Value of the media.eme.enabled pref.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_overlay_scrollbars {
+    label: "Characteristics Prefs Overlay Scrollbars"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_overlay_scrollbars ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefs Overlay Scrollbars"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs Overlay Scrollbars"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_overlay_scrollbars"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Use overlay scrollbars (or otherwise \"Always show scrollbars\")
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_privacy_donottrackheader_enabled {
+    label: "Characteristics Prefs Privacy Donottrackheader Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_privacy_donottrackheader_enabled ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefs Privacy Donottrackheader Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs Privacy Donottrackheader Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_privacy_donottrackheader_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sending \"do not track\" HTTP header
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_privacy_globalprivacycontrol_enabled {
+    label: "Characteristics Prefs Privacy Globalprivacycontrol Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_privacy_globalprivacycontrol_enabled ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefs Privacy Globalprivacycontrol Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs Privacy Globalprivacycontrol Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_privacy_globalprivacycontrol_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sending \"global privacy control\" HTTP header
 "
   }
 

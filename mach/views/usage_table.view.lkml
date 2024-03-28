@@ -531,6 +531,14 @@ for the purpose of experimentation enrollment.
     description: "The compiler type in use (CC_TYPE), such as \"clang\" or \"gcc\"."
   }
 
+  dimension: metrics__string__mozbuild_project {
+    sql: ${TABLE}.metrics.string.mozbuild_project ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Mozbuild Project"
+    description: "The project being built."
+  }
+
   dimension: metrics__string_list__mach_argv {
     sql: ${TABLE}.metrics.string_list.mach_argv ;;
     hidden: yes
