@@ -4683,6 +4683,13 @@ glean_dictionary:
       - channel: null
         table: mozdata.glean_dictionary.page_view
       type: table_view
+growth:
+  glean_app: false
+  owners:
+  - fbertsch@mozilla.com
+  - kik@mozilla.com
+  pretty_name: Growth
+  spoke: looker-spoke-default
 hubs:
   glean_app: false
   owners:
@@ -5597,110 +5604,6 @@ monitoring:
       tables:
       - table: mozdata.monitoring.telemetry_missing_columns
       type: ping_view
-moso_mastodon_backend:
-  explores:
-    baseline:
-      type: glean_ping_explore
-      views:
-        base_view: baseline
-    client_counts:
-      type: client_counts_explore
-      views:
-        base_view: client_counts
-        extended_view: baseline_clients_daily_table
-    deletion_request:
-      type: glean_ping_explore
-      views:
-        base_view: deletion_request
-    events:
-      type: events_explore
-      views:
-        base_view: events
-        extended_view: events_unnested_table
-    growth_accounting:
-      type: growth_accounting_explore
-      views:
-        base_view: growth_accounting
-    metrics:
-      type: glean_ping_explore
-      views:
-        base_view: metrics
-  glean_app: true
-  owners:
-  - breyes@mozilla.com
-  pretty_name: Mozilla Social Mastodon Backend
-  spoke: looker-spoke-default
-  views:
-    baseline:
-      tables:
-      - table: mozdata.moso_mastodon_backend.baseline
-      type: glean_ping_view
-    baseline_clients_daily_table:
-      tables:
-      - channel: null
-        table: mozdata.moso_mastodon_backend.baseline_clients_daily
-      type: table_view
-    baseline_clients_first_seen_table:
-      tables:
-      - channel: null
-        table: mozdata.moso_mastodon_backend.baseline_clients_first_seen
-      type: table_view
-    baseline_clients_last_seen_table:
-      tables:
-      - channel: null
-        table: mozdata.moso_mastodon_backend.baseline_clients_last_seen
-      type: table_view
-    baseline_table:
-      tables:
-      - channel: null
-        table: mozdata.moso_mastodon_backend.baseline
-      type: table_view
-    client_counts:
-      tables:
-      - table: mozdata.moso_mastodon_backend.baseline_clients_daily
-      type: client_counts_view
-    deletion_request:
-      tables:
-      - table: mozdata.moso_mastodon_backend.deletion_request
-      type: glean_ping_view
-    deletion_request_table:
-      tables:
-      - channel: null
-        table: mozdata.moso_mastodon_backend.deletion_request
-      type: table_view
-    events:
-      tables:
-      - base_table: mozdata.moso_mastodon_backend.events_unnested
-        events_table_view: events_unnested_table
-      type: events_view
-    events_table:
-      tables:
-      - channel: null
-        table: mozdata.moso_mastodon_backend.events
-      type: table_view
-    events_unnested_table:
-      tables:
-      - channel: null
-        table: mozdata.moso_mastodon_backend.events_unnested
-      type: table_view
-    growth_accounting:
-      tables:
-      - table: mozdata.moso_mastodon_backend.baseline_clients_last_seen
-      type: growth_accounting_view
-    metrics:
-      tables:
-      - table: mozdata.moso_mastodon_backend.metrics
-      type: glean_ping_view
-    metrics_clients_daily_table:
-      tables:
-      - channel: null
-        table: mozdata.moso_mastodon_backend.metrics_clients_daily
-      type: table_view
-    metrics_table:
-      tables:
-      - channel: null
-        table: mozdata.moso_mastodon_backend.metrics
-      type: table_view
 mozilla_vpn:
   explores:
     baseline:
@@ -6453,6 +6356,12 @@ mozregression:
       - channel: null
         table: mozdata.org_mozilla_mozregression.usage
       type: table_view
+mr_2022:
+  glean_app: false
+  owners:
+  - loines@mozilla.com
+  pretty_name: MR 2022
+  spoke: looker-spoke-default
 multi_product:
   explores:
     metric_definitions_mobile_active_users_aggregates_v1:
@@ -12916,6 +12825,12 @@ pocket:
       tables:
       - table: moz-fx-data-shared-prod.pocket_derived.twice_weekly_active_user_counts_history_v1
       type: table_view
+pocket_snowflake:
+  glean_app: false
+  owners:
+  - mhirose@mozilla.com
+  pretty_name: Pocket Snowflake
+  spoke: looker-spoke-default
 reference:
   glean_app: false
   owners:
@@ -12926,17 +12841,6 @@ reference:
     macroeconomic_indices:
       tables:
       - table: mozdata.reference.macroeconomic_indices
-      type: table_view
-regrets_reporter:
-  glean_app: false
-  owners:
-  - jessed@mozillafoundation.org
-  pretty_name: RegretsReporter
-  spoke: looker-spoke-default
-  views:
-    regrets_reporter_summary:
-      tables:
-      - table: moz-fx-data-shared-prod.regrets_reporter_derived.regrets_reporter_summary_v1
       type: table_view
 relay:
   glean_app: false
@@ -13364,6 +13268,12 @@ treeherder:
       - channel: null
         table: mozdata.treeherder.events_unnested
       type: table_view
+user_journey:
+  glean_app: false
+  owners:
+  - fbertsch@mozilla.com
+  pretty_name: User Journey
+  spoke: looker-spoke-default
 websites:
   glean_app: false
   owners:

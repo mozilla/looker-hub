@@ -351,12 +351,66 @@ view: user_characteristics_table {
 "
   }
 
+  dimension: metrics__boolean__characteristics_prefs_block_popups {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_block_popups ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefs Block Popups"
+    description: "Block pop-up windows (The dom.disable_open_during_load pref)
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_general_autoscroll {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_general_autoscroll ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefs General Autoscroll"
+    description: "Use autoscrolling
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_general_smoothscroll {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_general_smoothscroll ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefs General Smoothscroll"
+    description: "Use smooth scrolling
+"
+  }
+
   dimension: metrics__boolean__characteristics_prefs_media_eme_enabled {
     sql: ${TABLE}.metrics.boolean.characteristics_prefs_media_eme_enabled ;;
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Characteristics Prefs Media Eme Enabled"
     description: "Value of the media.eme.enabled pref.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_overlay_scrollbars {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_overlay_scrollbars ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefs Overlay Scrollbars"
+    description: "Use overlay scrollbars (or otherwise \"Always show scrollbars\")
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_privacy_donottrackheader_enabled {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_privacy_donottrackheader_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefs Privacy Donottrackheader Enabled"
+    description: "Sending \"do not track\" HTTP header
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_privacy_globalprivacycontrol_enabled {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_privacy_globalprivacycontrol_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefs Privacy Globalprivacycontrol Enabled"
+    description: "Sending \"global privacy control\" HTTP header
 "
   }
 
