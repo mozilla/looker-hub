@@ -212,7 +212,7 @@ view: usage {
 
   dimension: metrics__boolean__mozbuild_artifact {
     label: "Mozbuild Artifact"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.mozbuild_artifact ;;
     type: yesno
     group_label: "Mozbuild"
@@ -229,7 +229,7 @@ view: usage {
 
   dimension: metrics__boolean__mozbuild_ccache {
     label: "Mozbuild Ccache"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.mozbuild_ccache ;;
     type: yesno
     group_label: "Mozbuild"
@@ -246,7 +246,7 @@ view: usage {
 
   dimension: metrics__boolean__mozbuild_clobber {
     label: "Mozbuild Clobber"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.mozbuild_clobber ;;
     type: yesno
     group_label: "Mozbuild"
@@ -263,7 +263,7 @@ view: usage {
 
   dimension: metrics__string__mozbuild_compiler {
     label: "Mozbuild Compiler"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.mozbuild_compiler ;;
     type: string
     group_label: "Mozbuild"
@@ -280,7 +280,7 @@ view: usage {
 
   dimension: metrics__boolean__mozbuild_debug {
     label: "Mozbuild Debug"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.mozbuild_debug ;;
     type: yesno
     group_label: "Mozbuild"
@@ -297,7 +297,7 @@ view: usage {
 
   dimension: metrics__boolean__mozbuild_icecream {
     label: "Mozbuild Icecream"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.mozbuild_icecream ;;
     type: yesno
     group_label: "Mozbuild"
@@ -314,7 +314,7 @@ view: usage {
 
   dimension: metrics__boolean__mozbuild_opt {
     label: "Mozbuild Opt"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.mozbuild_opt ;;
     type: yesno
     group_label: "Mozbuild"
@@ -331,7 +331,7 @@ view: usage {
 
   dimension: metrics__boolean__mozbuild_sccache {
     label: "Mozbuild Sccache"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.mozbuild_sccache ;;
     type: yesno
     group_label: "Mozbuild"
