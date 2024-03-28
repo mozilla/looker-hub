@@ -5,6 +5,15 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: moz_org_page_metrics {
+
+derived_table: {
+    sql:
+      SELECT *
+      FROM `moz-fx-data-marketing-prod.ga_derived.www_site_page_metrics_v2`
+      ;;
+  }
+
+
   dimension: ad_content {
     sql: ${TABLE}.ad_content ;;
     type: string
