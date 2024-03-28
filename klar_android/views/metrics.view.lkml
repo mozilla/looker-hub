@@ -1072,7 +1072,7 @@ the tracking protection settings panel from the toolbar.
 
   dimension: metrics__counter__bloburl_resolve_stopped {
     label: "Bloburl Resolve Stopped"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.bloburl_resolve_stopped ;;
     type: number
     group_label: "Bloburl"
