@@ -55,6 +55,11 @@ view: newtab_visits_table {
     type: yesno
   }
 
+  dimension: had_non_search_engagement {
+    sql: ${TABLE}.had_non_search_engagement ;;
+    type: yesno
+  }
+
   dimension: is_new_profile {
     sql: ${TABLE}.is_new_profile ;;
     type: yesno
@@ -62,6 +67,11 @@ view: newtab_visits_table {
 
   dimension: legacy_telemetry_client_id {
     sql: ${TABLE}.legacy_telemetry_client_id ;;
+    type: string
+  }
+
+  dimension: locale {
+    sql: ${TABLE}.locale ;;
     type: string
   }
 

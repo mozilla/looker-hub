@@ -99,6 +99,20 @@ view: daemonsession_table {
     group_item_label: "Os Version"
   }
 
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+  }
+
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
@@ -276,6 +290,27 @@ view: daemonsession_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__counter__connection_health_no_signal_count {
+    sql: ${TABLE}.metrics.counter.connection_health_no_signal_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Connection Health No Signal Count"
+  }
+
+  dimension: metrics__counter__connection_health_stable_count {
+    sql: ${TABLE}.metrics.counter.connection_health_stable_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Connection Health Stable Count"
+  }
+
+  dimension: metrics__counter__connection_health_unstable_count {
+    sql: ${TABLE}.metrics.counter.connection_health_unstable_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Connection Health Unstable Count"
+  }
+
   dimension: metrics__counter__session_connection_health_stable_count {
     sql: ${TABLE}.metrics.counter.session_connection_health_stable_count ;;
     type: number
@@ -329,6 +364,183 @@ view: daemonsession_table {
     type: string
     group_label: "Metrics String"
     group_item_label: "Session Daemon Session Source"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_no_signal_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health No Signal Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_no_signal_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health No Signal Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_no_signal_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Connection Health No Signal Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_no_signal_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health No Signal Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_no_signal_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__connection_health_no_signal_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health No Signal Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_no_signal_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Connection Health No Signal Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_no_signal_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health No Signal Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_no_signal_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__connection_health_stable_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health Stable Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_stable_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health Stable Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_stable_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Connection Health Stable Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_stable_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health Stable Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_stable_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__connection_health_stable_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health Stable Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_stable_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Connection Health Stable Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_stable_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health Stable Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_stable_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__connection_health_unstable_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health Unstable Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_unstable_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health Unstable Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_unstable_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Connection Health Unstable Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_unstable_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health Unstable Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_unstable_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__connection_health_unstable_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health Unstable Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_unstable_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Connection Health Unstable Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_unstable_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Connection Health Unstable Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_unstable_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.values ;;
+    hidden: yes
   }
 
   dimension: metrics__uuid__session_daemon_session_id {
@@ -545,6 +757,42 @@ view: daemonsession_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: daemonsession_table__metrics__timing_distribution__connection_health_no_signal_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: daemonsession_table__metrics__timing_distribution__connection_health_stable_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: daemonsession_table__metrics__timing_distribution__connection_health_unstable_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

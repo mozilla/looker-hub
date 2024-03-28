@@ -5,9 +5,152 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: daemonsession {
+  dimension: metrics__counter__connection_health_no_signal_count {
+    label: "Connection Health No Signal Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.connection_health_no_signal_count ;;
+    type: number
+    group_label: "Connection Health"
+    group_item_label: "No Signal Count"
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health No Signal Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_no_signal_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of times that the connection health check results
+in no signal.
+
+The health check counters must not be considered as markers of time. There is a possible
+situation in the health check (which calls the telemetry) which frequently results in more
+than one count per second. The situation: A health check is conducted because a network
+check did not return, and milliseconds later that network check returns and another health
+check is started because of the return.
+"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_no_signal_time__sum {
+    label: "Connection Health No Signal Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_no_signal_time.sum ;;
+    type: number
+    group_label: "Connection Health"
+    group_item_label: "No Signal Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health No Signal Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_no_signal_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in no signal state.
+
+Only collected on desktop for vpnsession, as mobile apps
+frequently are relaunched during VPN sessions. It is
+collected in daemonsession, currently only on Android.
+To be done on iOS: https://mozilla-hub.atlassian.net/browse/VPN-4979
+"
+  }
+
+  dimension: metrics__counter__connection_health_stable_count {
+    label: "Connection Health Stable Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.connection_health_stable_count ;;
+    type: number
+    group_label: "Connection Health"
+    group_item_label: "Stable Count"
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health Stable Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_stable_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of times that the connection health check succeeds.
+
+The health check counters must not be considered as markers of time. There is a possible
+situation in the health check (which calls the telemetry) which frequently results in more
+than one count per second. The situation: A health check is conducted because a network
+check did not return, and milliseconds later that network check returns and another health
+check is started because of the return.
+"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_stable_time__sum {
+    label: "Connection Health Stable Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_stable_time.sum ;;
+    type: number
+    group_label: "Connection Health"
+    group_item_label: "Stable Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health Stable Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_stable_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in stable state.
+
+Only collected on desktop for vpnsession, as mobile apps
+frequently are relaunched during VPN sessions. It is
+collected in daemonsession, currently only on Android.
+To be done on iOS: https://mozilla-hub.atlassian.net/browse/VPN-4979
+"
+  }
+
+  dimension: metrics__counter__connection_health_unstable_count {
+    label: "Connection Health Unstable Count"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.connection_health_unstable_count ;;
+    type: number
+    group_label: "Connection Health"
+    group_item_label: "Unstable Count"
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health Unstable Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_unstable_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count of times that the connection health check results
+in unstable.
+
+The health check counters must not be considered as markers of time. There is a possible
+situation in the health check (which calls the telemetry) which frequently results in more
+than one count per second. The situation: A health check is conducted because a network
+check did not return, and milliseconds later that network check returns and another health
+check is started because of the return.
+"
+  }
+
+  dimension: metrics__timing_distribution__connection_health_unstable_time__sum {
+    label: "Connection Health Unstable Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.connection_health_unstable_time.sum ;;
+    type: number
+    group_label: "Connection Health"
+    group_item_label: "Unstable Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health Unstable Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_unstable_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in unstable state.
+
+Only collected on desktop for vpnsession, as mobile apps
+frequently are relaunched during VPN sessions. It is
+collected in daemonsession, currently only on Android.
+To be done on iOS: https://mozilla-hub.atlassian.net/browse/VPN-4979
+"
+  }
+
   dimension: metrics__counter__session_connection_health_stable_count {
     label: "Session Connection Health Stable Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.session_connection_health_stable_count ;;
     type: number
     group_label: "Session"
@@ -266,6 +409,20 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
+  }
+
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -627,6 +784,81 @@ The labels are the `category.name` identifier of the metric.
     type: count
   }
 
+  measure: connection_health_no_signal_count {
+    type: sum
+    sql: ${metrics__counter__connection_health_no_signal_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health No Signal Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_no_signal_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: connection_health_no_signal_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__connection_health_no_signal_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health No Signal Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_no_signal_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: connection_health_stable_count {
+    type: sum
+    sql: ${metrics__counter__connection_health_stable_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health Stable Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_stable_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: connection_health_stable_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__connection_health_stable_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health Stable Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_stable_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: connection_health_unstable_count {
+    type: sum
+    sql: ${metrics__counter__connection_health_unstable_count} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health Unstable Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_unstable_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: connection_health_unstable_count_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__connection_health_unstable_count: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Connection Health Unstable Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozilla_vpn/metrics/connection_health_unstable_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: session_connection_health_stable_count {
     type: sum
     sql: ${metrics__counter__session_connection_health_stable_count} ;;
@@ -934,6 +1166,42 @@ view: daemonsession__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: daemonsession__metrics__timing_distribution__connection_health_no_signal_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: daemonsession__metrics__timing_distribution__connection_health_stable_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: daemonsession__metrics__timing_distribution__connection_health_unstable_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
   }
 }
 

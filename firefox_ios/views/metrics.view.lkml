@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics {
+  dimension: metrics__quantity__addresses_saved_all {
+    label: "Addresses Saved All"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.addresses_saved_all ;;
+    type: number
+    group_label: "Addresses"
+    group_item_label: "Saved All"
+
+    link: {
+      label: "Glean Dictionary reference for Addresses Saved All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/addresses_saved_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of the number of all addresses that are currently saved by the user.
+"
+  }
+
   dimension: metrics__string__adjust_ad_group {
     label: "Adjust Ad Group"
     hidden: no
@@ -3410,7 +3428,7 @@ value of the automatic theme switching slider.
 
   dimension: metrics__boolean__theme_use_system_theme {
     label: "Theme Use System Theme"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.theme_use_system_theme ;;
     type: yesno
     group_label: "Theme"
@@ -4593,6 +4611,20 @@ startup, as part of the initialization sequence.
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
+  }
+
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
   }
 
   dimension: client_info__telemetry_sdk_build {

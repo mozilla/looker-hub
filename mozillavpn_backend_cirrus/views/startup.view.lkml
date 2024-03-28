@@ -5,23 +5,6 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: startup {
-  dimension: metrics__string__cirrus_events_instance_name {
-    label: "Cirrus Events Instance Name"
-    hidden: no
-    sql: ${TABLE}.metrics.string.cirrus_events_instance_name ;;
-    type: string
-    group_label: "Cirrus Events"
-    group_item_label: "Instance Name"
-
-    link: {
-      label: "Glean Dictionary reference for Cirrus Events Instance Name"
-      url: "https://dictionary.telemetry.mozilla.org/apps/mozillavpn_backend_cirrus/metrics/cirrus_events_instance_name"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The name of the instance"
-  }
-
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation Id"
     hidden: no
@@ -111,6 +94,23 @@ The labels are the `category.name` identifier of the metric.
     description: "Counts the number of times a metric was set to an invalid value.
 The labels are the `category.name` identifier of the metric.
 "
+  }
+
+  dimension: metrics__string__cirrus_events_instance_name {
+    label: "Cirrus Events Instance Name"
+    hidden: no
+    sql: ${TABLE}.metrics.string.cirrus_events_instance_name ;;
+    type: string
+    group_label: "Cirrus Events"
+    group_item_label: "Instance Name"
+
+    link: {
+      label: "Glean Dictionary reference for Cirrus Events Instance Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mozillavpn_backend_cirrus/metrics/cirrus_events_instance_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The name of the instance"
   }
 
   dimension: additional_properties {
@@ -219,6 +219,22 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Client Info"
     group_item_label: "Os Version"
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
+  }
+
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+    description: "An optional running counter of the number of sessions for a client."
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+    description: "An optional UUID uniquely identifying the client's current session."
   }
 
   dimension: client_info__telemetry_sdk_build {

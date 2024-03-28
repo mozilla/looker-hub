@@ -99,6 +99,20 @@ view: topsites_impression_table {
     group_item_label: "Os Version"
   }
 
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+  }
+
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
@@ -345,6 +359,12 @@ view: topsites_impression_table {
     group_item_label: "Top Sites Context Id"
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+    description: "App ID of the channel data was received from"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -353,6 +373,7 @@ view: topsites_impression_table {
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
@@ -476,7 +497,12 @@ view: topsites_impression_table {
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox_beta.topsites_impression"
+    default_value: "mozdata.fenix.topsites_impression"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.fenix.topsites_impression"
+    }
 
     allowed_value: {
       label: "Beta"

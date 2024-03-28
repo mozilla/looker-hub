@@ -99,6 +99,20 @@ view: metrics_table {
     group_item_label: "Os Version"
   }
 
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+  }
+
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
@@ -1619,6 +1633,13 @@ view: metrics_table {
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
     sql: ${TABLE}.metrics.memory_distribution.glean_upload_pending_pings_directory_size.values ;;
     hidden: yes
+  }
+
+  dimension: metrics__quantity__addresses_saved_all {
+    sql: ${TABLE}.metrics.quantity.addresses_saved_all ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Addresses Saved All"
   }
 
   dimension: metrics__quantity__bookmarks_mobile_bookmarks_count {

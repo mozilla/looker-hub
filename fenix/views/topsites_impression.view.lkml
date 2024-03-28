@@ -283,6 +283,20 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Os Version"
   }
 
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+  }
+
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
@@ -461,6 +475,12 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Version"
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+    description: "App ID of the channel data was received from"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -469,6 +489,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
@@ -603,11 +624,11 @@ The labels are the `category.name` identifier of the metric.
     type: string
     description: "Filter by the app's channel"
     sql: {% condition %} ${TABLE}.normalized_channel {% endcondition %} ;;
-    default_value: "beta"
-    suggestions: ["beta", "nightly"]
+    default_value: "release"
+    suggestions: ["release", "beta", "nightly"]
   }
 
-  sql_table_name: `mozdata.org_mozilla_firefox_beta.topsites_impression` ;;
+  sql_table_name: `mozdata.fenix.topsites_impression` ;;
 }
 
 view: suggest__topsites_impression__metrics__labeled_counter__glean_error_invalid_label {
@@ -615,7 +636,7 @@ view: suggest__topsites_impression__metrics__labeled_counter__glean_error_invali
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox_beta.topsites_impression as t,
+from mozdata.fenix.topsites_impression as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -634,7 +655,7 @@ view: suggest__topsites_impression__metrics__labeled_counter__glean_error_invali
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox_beta.topsites_impression as t,
+from mozdata.fenix.topsites_impression as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -653,7 +674,7 @@ view: suggest__topsites_impression__metrics__labeled_counter__glean_error_invali
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox_beta.topsites_impression as t,
+from mozdata.fenix.topsites_impression as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -672,7 +693,7 @@ view: suggest__topsites_impression__metrics__labeled_counter__glean_error_invali
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox_beta.topsites_impression as t,
+from mozdata.fenix.topsites_impression as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0

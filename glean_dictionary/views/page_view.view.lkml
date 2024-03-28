@@ -7,7 +7,7 @@
 view: page_view {
   dimension: metrics__string__page_path {
     label: "Page Path"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.page_path ;;
     type: string
     group_label: "Page"
@@ -222,6 +222,22 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Client Info"
     group_item_label: "Os Version"
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
+  }
+
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+    description: "An optional running counter of the number of sessions for a client."
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+    description: "An optional UUID uniquely identifying the client's current session."
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -497,7 +513,7 @@ The labels are the `category.name` identifier of the metric.
 
   dimension_group: metrics__datetime__page_loaded {
     label: "Page Loaded"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.datetime.page_loaded ;;
     type: time
     timeframes: [
