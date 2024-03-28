@@ -329,6 +329,23 @@ view: usage {
     description: "True if `--enable-optimize`."
   }
 
+  dimension: metrics__string__mozbuild_project {
+    label: "Mozbuild Project"
+    hidden: no
+    sql: ${TABLE}.metrics.string.mozbuild_project ;;
+    type: string
+    group_label: "Mozbuild"
+    group_item_label: "Project"
+
+    link: {
+      label: "Glean Dictionary reference for Mozbuild Project"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mach/metrics/mozbuild_project"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The project being built."
+  }
+
   dimension: metrics__boolean__mozbuild_sccache {
     label: "Mozbuild Sccache"
     hidden: no
