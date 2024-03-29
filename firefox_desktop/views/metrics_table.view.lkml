@@ -2841,6 +2841,15 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__quantity__browser_backup_cookies_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_cookies_size ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Cookies Size"
+    description: "The total file size of the cookies.sqlite db located in the current profile directory, in kilobytes.
+"
+  }
+
   dimension: metrics__quantity__browser_backup_credentials_data_size {
     sql: ${TABLE}.metrics.quantity.browser_backup_credentials_data_size ;;
     type: number
@@ -2859,12 +2868,39 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__quantity__browser_backup_form_history_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_form_history_size ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Form History Size"
+    description: "The file size of the formhistory.sqlite db located in the current profile directory, in kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_misc_data_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_misc_data_size ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Misc Data Size"
+    description: "The total size of files for telemetry, site storage, media device origin mapping and Mozilla Accounts in the current profile directory, rounded to the nearest tenth kilobyte.
+"
+  }
+
   dimension: metrics__quantity__browser_backup_places_size {
     sql: ${TABLE}.metrics.quantity.browser_backup_places_size ;;
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Browser Backup Places Size"
     description: "The total file size of the places.sqlite db located in the current profile directory, in kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_preferences_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_preferences_size ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Preferences Size"
+    description: "The total size of files relating to user preferences and permissions in the current profile directory, in kilobytes.
 "
   }
 
@@ -2883,6 +2919,24 @@ success - search service successfully initialized.
     group_label: "Metrics Quantity"
     group_item_label: "Browser Backup Security Data Size"
     description: "The total size of files needed for NSS initialization parameters and security certificate settings in the current profile directory, in kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_session_store_backups_directory_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_session_store_backups_directory_size ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Session Store Backups Directory Size"
+    description: "The total size of the session store backups directory, in kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_session_store_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_session_store_size ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Session Store Size"
+    description: "The size of uncompressed session store json, in kilobytes.
 "
   }
 

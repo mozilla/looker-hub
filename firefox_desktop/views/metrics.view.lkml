@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics {
+  dimension: metrics__quantity__browser_backup_cookies_size {
+    label: "Browser Backup Cookies Size"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.browser_backup_cookies_size ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Cookies Size"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Cookies Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_cookies_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total file size of the cookies.sqlite db located in the current profile directory, in kilobytes.
+"
+  }
+
   dimension: metrics__quantity__browser_backup_credentials_data_size {
     label: "Browser Backup Credentials Data Size"
     hidden: no
@@ -41,6 +59,42 @@ view: metrics {
 "
   }
 
+  dimension: metrics__quantity__browser_backup_form_history_size {
+    label: "Browser Backup Form History Size"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.browser_backup_form_history_size ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Form History Size"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Form History Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_form_history_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The file size of the formhistory.sqlite db located in the current profile directory, in kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_misc_data_size {
+    label: "Browser Backup Misc Data Size"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.browser_backup_misc_data_size ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Misc Data Size"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Misc Data Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_misc_data_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total size of files for telemetry, site storage, media device origin mapping and Mozilla Accounts in the current profile directory, rounded to the nearest tenth kilobyte.
+"
+  }
+
   dimension: metrics__quantity__browser_backup_places_size {
     label: "Browser Backup Places Size"
     hidden: no
@@ -56,6 +110,24 @@ view: metrics {
     }
 
     description: "The total file size of the places.sqlite db located in the current profile directory, in kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_preferences_size {
+    label: "Browser Backup Preferences Size"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.browser_backup_preferences_size ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Preferences Size"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Preferences Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_preferences_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total size of files relating to user preferences and permissions in the current profile directory, in kilobytes.
 "
   }
 
@@ -92,6 +164,42 @@ view: metrics {
     }
 
     description: "The total size of files needed for NSS initialization parameters and security certificate settings in the current profile directory, in kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_session_store_backups_directory_size {
+    label: "Browser Backup Session Store Backups Directory Size"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.browser_backup_session_store_backups_directory_size ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Session Store Backups Directory Size"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Session Store Backups Directory Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_session_store_backups_directory_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total size of the session store backups directory, in kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_session_store_size {
+    label: "Browser Backup Session Store Size"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.browser_backup_session_store_size ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Session Store Size"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Session Store Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_session_store_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The size of uncompressed session store json, in kilobytes.
 "
   }
 
