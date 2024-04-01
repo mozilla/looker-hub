@@ -691,6 +691,24 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__hls_canplay_requested {
+    sql: ${TABLE}.metrics.counter.hls_canplay_requested ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Hls Canplay Requested"
+    description: "Record when a page requests canPlayType for a HLS media type.
+"
+  }
+
+  dimension: metrics__counter__hls_canplay_supported {
+    sql: ${TABLE}.metrics.counter.hls_canplay_supported ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Hls Canplay Supported"
+    description: "Record when a canPlayType request supports HLS.
+"
+  }
+
   dimension: metrics__counter__httpsfirst_downgraded {
     sql: ${TABLE}.metrics.counter.httpsfirst_downgraded ;;
     type: number
