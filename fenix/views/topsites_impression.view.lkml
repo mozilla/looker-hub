@@ -98,6 +98,25 @@ click_url for “click” event).
 "
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     label: "Glean Error Invalid Label"
     hidden: yes
@@ -262,6 +281,20 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
+  }
+
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -442,6 +475,12 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Version"
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+    description: "App ID of the channel data was received from"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -450,6 +489,7 @@ The labels are the `category.name` identifier of the metric.
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
+    description: "Normalized channel name"
   }
 
   dimension: normalized_country_code {
@@ -584,11 +624,11 @@ The labels are the `category.name` identifier of the metric.
     type: string
     description: "Filter by the app's channel"
     sql: {% condition %} ${TABLE}.normalized_channel {% endcondition %} ;;
-    default_value: "beta"
-    suggestions: ["beta", "nightly"]
+    default_value: "release"
+    suggestions: ["release", "beta", "nightly"]
   }
 
-  sql_table_name: `mozdata.org_mozilla_firefox_beta.topsites_impression` ;;
+  sql_table_name: `mozdata.fenix.topsites_impression` ;;
 }
 
 view: suggest__topsites_impression__metrics__labeled_counter__glean_error_invalid_label {
@@ -596,7 +636,7 @@ view: suggest__topsites_impression__metrics__labeled_counter__glean_error_invali
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox_beta.topsites_impression as t,
+from mozdata.fenix.topsites_impression as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -615,7 +655,7 @@ view: suggest__topsites_impression__metrics__labeled_counter__glean_error_invali
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox_beta.topsites_impression as t,
+from mozdata.fenix.topsites_impression as t,
 unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -634,7 +674,7 @@ view: suggest__topsites_impression__metrics__labeled_counter__glean_error_invali
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox_beta.topsites_impression as t,
+from mozdata.fenix.topsites_impression as t,
 unnest(metrics.labeled_counter.glean_error_invalid_state) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -653,7 +693,7 @@ view: suggest__topsites_impression__metrics__labeled_counter__glean_error_invali
     sql: select
     m.key,
     count(*) as n
-from mozdata.org_mozilla_firefox_beta.topsites_impression as t,
+from mozdata.fenix.topsites_impression as t,
 unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
@@ -836,5 +876,67 @@ view: topsites_impression__metrics__labeled_counter__glean_error_invalid_value {
     type: count_distinct
     sql: case when ${value} > 0 then ${topsites_impression.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: topsites_impression__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: topsites_impression__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: topsites_impression__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }

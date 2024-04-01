@@ -113,6 +113,22 @@ view: metrics_table {
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+    description: "An optional running counter of the number of sessions for a client."
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+    description: "An optional UUID uniquely identifying the client's current session."
+  }
+
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
@@ -676,6 +692,7 @@ It also indicates the screen it was removed from, home or browser.
     type: number
     group_label: "Metrics Memory Distribution Glean Database Size"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__memory_distribution__glean_database_size__sum {
@@ -695,6 +712,7 @@ It also indicates the screen it was removed from, home or browser.
     type: number
     group_label: "Metrics Memory Distribution Glean Upload Discarded Exceeding Pings Size"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__sum {
@@ -714,6 +732,7 @@ It also indicates the screen it was removed from, home or browser.
     type: number
     group_label: "Metrics Memory Distribution Glean Upload Pending Pings Directory Size"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__memory_distribution__glean_upload_pending_pings_directory_size__sum {
@@ -748,6 +767,25 @@ the keyboard appears on the screen.
 "
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
+  dimension: metrics__string__glean_database_rkv_load_error {
+    sql: ${TABLE}.metrics.string.glean_database_rkv_load_error ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Database Rkv Load Error"
+    description: "If there was an error loading the RKV database, record it.
+"
+  }
+
   dimension: metrics__string__ping_reason {
     sql: ${TABLE}.metrics.string.ping_reason ;;
     type: string
@@ -773,7 +811,7 @@ documented in the ping's pings.yaml file.
     type: string
     group_label: "Metrics String"
     group_item_label: "Search Default Engine"
-    description: "The default search engine identifier if the search engine is
+    description: "The default search engine name if the search engine is
 pre-loaded with Focus.  If it's a custom search engine,
 then the value will be 'custom'.
 "
@@ -791,6 +829,7 @@ then the value will be 'custom'.
     type: number
     group_label: "Metrics Timing Distribution Glean Upload Send Failure"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__glean_upload_send_failure__histogram_type {
@@ -850,6 +889,7 @@ then the value will be 'custom'.
     type: number
     group_label: "Metrics Timing Distribution Glean Upload Send Success"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__glean_upload_send_success__histogram_type {
@@ -909,6 +949,7 @@ then the value will be 'custom'.
     type: number
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Dispatcher Wait"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__histogram_type {
@@ -968,6 +1009,7 @@ then the value will be 'custom'.
     type: number
     group_label: "Metrics Timing Distribution Glean Validation Shutdown Wait"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__glean_validation_shutdown_wait__histogram_type {
@@ -1027,6 +1069,7 @@ then the value will be 'custom'.
     type: number
     group_label: "Metrics Timing Distribution Nimbus Health Apply Pending Experiments Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__histogram_type {
@@ -1086,6 +1129,7 @@ then the value will be 'custom'.
     type: number
     group_label: "Metrics Timing Distribution Nimbus Health Fetch Experiments Time"
     group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
   }
 
   dimension: metrics__timing_distribution__nimbus_health_fetch_experiments_time__histogram_type {

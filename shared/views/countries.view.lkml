@@ -11,6 +11,12 @@ view: countries {
     description: "ISO 3166 alpha-2 country code"
   }
 
+  dimension: code_3 {
+    sql: ${TABLE}.code_3 ;;
+    type: string
+    description: "ISO 3166 alpha-3 country code"
+  }
+
   dimension: intermediate_region_name {
     sql: ${TABLE}.intermediate_region_name ;;
     type: string
@@ -39,6 +45,12 @@ view: countries {
     sql: ${TABLE}.region_name ;;
     type: string
     description: "The UNSD region name."
+  }
+
+  dimension: sponsored_tiles_available_on_newtab {
+    sql: ${TABLE}.sponsored_tiles_available_on_newtab ;;
+    type: yesno
+    description: "Whether sponsored tiles are available on the newtab page in this country. Note that Pocket might only be available in certain locales/languages within a country."
   }
 
   dimension: subregion_name {

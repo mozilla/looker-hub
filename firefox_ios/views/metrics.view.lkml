@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics {
+  dimension: metrics__quantity__addresses_saved_all {
+    label: "Addresses Saved All"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.addresses_saved_all ;;
+    type: number
+    group_label: "Addresses"
+    group_item_label: "Saved All"
+
+    link: {
+      label: "Glean Dictionary reference for Addresses Saved All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/addresses_saved_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of the number of all addresses that are currently saved by the user.
+"
+  }
+
   dimension: metrics__string__adjust_ad_group {
     label: "Adjust Ad Group"
     hidden: no
@@ -631,6 +649,78 @@ autofill settings are enabled
 "
   }
 
+  dimension: metrics__counter__credit_card_deleted {
+    label: "Credit Card Deleted"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.credit_card_deleted ;;
+    type: number
+    group_label: "Credit Card"
+    group_item_label: "Deleted"
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of the number of credit cards that have been deleted by the user.
+"
+  }
+
+  dimension: metrics__counter__credit_card_modified {
+    label: "Credit Card Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.credit_card_modified ;;
+    type: number
+    group_label: "Credit Card"
+    group_item_label: "Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of the number of credit cards that have been modified by the user.
+"
+  }
+
+  dimension: metrics__counter__credit_card_saved {
+    label: "Credit Card Saved"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.credit_card_saved ;;
+    type: number
+    group_label: "Credit Card"
+    group_item_label: "Saved"
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Saved"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_saved"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of the number of credit cards that have been saved by the user.
+"
+  }
+
+  dimension: metrics__quantity__credit_card_saved_all {
+    label: "Credit Card Saved All"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.credit_card_saved_all ;;
+    type: number
+    group_label: "Credit Card"
+    group_item_label: "Saved All"
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Saved All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_saved_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record the number of ALL the credit cards that have been currently stored by the user.
+"
+  }
+
   dimension: metrics__boolean__credit_card_sync_enabled {
     label: "Credit Card Sync Enabled"
     hidden: no
@@ -818,25 +908,6 @@ with a home page origin.
 "
   }
 
-  dimension: metrics__counter__firefox_home_page_history_highlights_item_opened {
-    label: "Firefox Home Page History Highlights Item Opened"
-    hidden: no
-    sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_item_opened ;;
-    type: number
-    group_label: "Firefox Home Page"
-    group_item_label: "History Highlights Item Opened"
-
-    link: {
-      label: "Glean Dictionary reference for Firefox Home Page History Highlights Item Opened"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_history_highlights_item_opened"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times a user taps to open an
-existing tab from the History Highlights section
-"
-  }
-
   dimension: metrics__counter__firefox_home_page_history_highlights_show_all {
     label: "Firefox Home Page History Highlights Show All"
     hidden: no
@@ -858,7 +929,7 @@ Show All button in the History section
 
   dimension: metrics__counter__firefox_home_page_history_highlights_view {
     label: "Firefox Home Page History Highlights View"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.firefox_home_page_history_highlights_view ;;
     type: number
     group_label: "Firefox Home Page"
@@ -1479,24 +1550,6 @@ default browser card is clicked.
 "
   }
 
-  dimension: metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
-    label: "Inactive Tabs Tray Toggle Inactive Tab Tray"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.inactive_tabs_tray_toggle_inactive_tab_tray ;;
-    group_label: "Inactive Tabs Tray"
-    group_item_label: "Toggle Inactive Tab Tray"
-
-    link: {
-      label: "Glean Dictionary reference for Inactive Tabs Tray Toggle Inactive Tab Tray"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_toggle_inactive_tab_tray"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times user toggle (expand or collapse)
-inactive tab section.
-"
-  }
-
   dimension: metrics__boolean__installed_mozilla_products_focus {
     label: "Installed Mozilla Products Focus"
     hidden: no
@@ -1567,6 +1620,78 @@ inactive tab section.
     description: "Counts the number of times a specific library panel
 button is tapped for Bookmarks, History, Reading List,
 Downloads and Synced tabs
+"
+  }
+
+  dimension: metrics__counter__logins_deleted {
+    label: "Logins Deleted"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.logins_deleted ;;
+    type: number
+    group_label: "Logins"
+    group_item_label: "Deleted"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of the number of passwords that have been deleted by the user.
+"
+  }
+
+  dimension: metrics__counter__logins_modified {
+    label: "Logins Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.logins_modified ;;
+    type: number
+    group_label: "Logins"
+    group_item_label: "Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of the number of passwords that have been modified by the user.
+"
+  }
+
+  dimension: metrics__counter__logins_saved {
+    label: "Logins Saved"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.logins_saved ;;
+    type: number
+    group_label: "Logins"
+    group_item_label: "Saved"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Saved"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_saved"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter of the number of passwords that have been saved by the user.
+"
+  }
+
+  dimension: metrics__quantity__logins_saved_all {
+    label: "Logins Saved All"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.logins_saved_all ;;
+    type: number
+    group_label: "Logins"
+    group_item_label: "Saved All"
+
+    link: {
+      label: "Glean Dictionary reference for Logins Saved All"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_saved_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record the number of ALL the passwords that have been currently stored by the user.
 "
   }
 
@@ -2745,6 +2870,99 @@ browser menu option is tapped.
 "
   }
 
+  dimension: metrics__counter__shopping_product_page_visits {
+    label: "Shopping Product Page Visits"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.shopping_product_page_visits ;;
+    type: number
+    group_label: "Shopping"
+    group_item_label: "Product Page Visits"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Product Page Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/shopping_product_page_visits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A count of the number of eligible product pages the user has visited.
+"
+  }
+
+  dimension: metrics__boolean__shopping_settings_component_opted_out {
+    label: "Shopping Settings Component Opted Out"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.shopping_settings_component_opted_out ;;
+    type: yesno
+    group_label: "Shopping Settings"
+    group_item_label: "Component Opted Out"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Settings Component Opted Out"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/shopping_settings_component_opted_out"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if the user has opted out of using the shopping component.
+Set in BrowserViewController and updated when changed by user.
+"
+  }
+
+  dimension: metrics__boolean__shopping_settings_disabled_ads {
+    label: "Shopping Settings Disabled Ads"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.shopping_settings_disabled_ads ;;
+    type: yesno
+    group_label: "Shopping Settings"
+    group_item_label: "Disabled Ads"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Settings Disabled Ads"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/shopping_settings_disabled_ads"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if the user has opted out of being shown ads in the Fakespot screen
+experience. Set in BrowserViewController and updated when changed by user.
+"
+  }
+
+  dimension: metrics__boolean__shopping_settings_nimbus_disabled_shopping {
+    label: "Shopping Settings Nimbus Disabled Shopping"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.shopping_settings_nimbus_disabled_shopping ;;
+    type: yesno
+    group_label: "Shopping Settings"
+    group_item_label: "Nimbus Disabled Shopping"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Settings Nimbus Disabled Shopping"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/shopping_settings_nimbus_disabled_shopping"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if Nimbus has disabled the use the shopping component.
+"
+  }
+
+  dimension: metrics__boolean__shopping_settings_user_has_onboarded {
+    label: "Shopping Settings User Has Onboarded"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.shopping_settings_user_has_onboarded ;;
+    type: yesno
+    group_label: "Shopping Settings"
+    group_item_label: "User Has Onboarded"
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Settings User Has Onboarded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/shopping_settings_user_has_onboarded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Indicates if the user has completed the Shopping product Onboarding
+experience. Set in BrowserViewController and updated when changed by user.
+"
+  }
+
   dimension: metrics__counter__sync_create_account_pressed {
     label: "Sync Create Account Pressed"
     hidden: no
@@ -2883,6 +3101,24 @@ divided by the number of baseline pings with
 `ping_info.reason=\"inactive\"` from the `start_time` to
 the `end_time` of the metrics ping to determine the
 average open tabs per foreground \"session\".
+"
+  }
+
+  dimension: metrics__counter__tabs_grouped_tab_closed {
+    label: "Tabs Grouped Tab Closed"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.tabs_grouped_tab_closed ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Grouped Tab Closed"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Grouped Tab Closed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_grouped_tab_closed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Recorded when a user closes the tab in a group
 "
   }
 
@@ -3114,6 +3350,24 @@ button in the URL bar.
 "
   }
 
+  dimension: metrics__timing_distribution__tabs_tab_switch__sum {
+    label: "Tabs Tab Switch Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.tabs_tab_switch.sum ;;
+    type: number
+    group_label: "Tabs"
+    group_item_label: "Tab Switch Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Tab Switch Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_tab_switch"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how long it takes to switch to another tab
+"
+  }
+
   dimension: metrics__boolean__theme_automatic_mode {
     label: "Theme Automatic Mode"
     hidden: yes
@@ -3174,7 +3428,7 @@ value of the automatic theme switching slider.
 
   dimension: metrics__boolean__theme_use_system_theme {
     label: "Theme Use System Theme"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.theme_use_system_theme ;;
     type: yesno
     group_label: "Theme"
@@ -3300,6 +3554,24 @@ tracking-protection that is enabled. One of:
 
     description: "Recorded when the user enters the background. This reports
 the currently selected wallpaper if it's not the default.
+"
+  }
+
+  dimension: metrics__timing_distribution__webview_page_load__sum {
+    label: "Webview Page Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.webview_page_load.sum ;;
+    type: number
+    group_label: "Webview"
+    group_item_label: "Page Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Webview Page Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/webview_page_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how long each page takes to load
 "
   }
 
@@ -3467,7 +3739,25 @@ widget opens firefox for regular search
     }
 
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
+"
+  }
+
+  dimension: metrics__string__glean_database_rkv_load_error {
+    label: "Glean Database Rkv Load Error"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_database_rkv_load_error ;;
+    type: string
+    group_label: "Glean Database"
+    group_item_label: "Rkv Load Error"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Database Rkv Load Error"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_database_rkv_load_error"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If there was an error loading the RKV database, record it.
 "
   }
 
@@ -3807,24 +4097,6 @@ though the counts appear in the next successfully sent `metrics` ping.
     }
 
     description: "Time needed for a successful send of a ping to the servers and getting a reply back
-"
-  }
-
-  dimension: metrics__datetime__glean_validation_first_run_hour {
-    label: "Glean Validation First Run Hour"
-    hidden: yes
-    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
-    type: time
-    group_label: "Glean Validation"
-    group_item_label: "First Run Hour"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Validation First Run Hour"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/glean_validation_first_run_hour"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "The hour of the first run of the application.
 "
   }
 
@@ -4341,6 +4613,20 @@ startup, as part of the initialization sequence.
     group_item_label: "Os Version"
   }
 
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+  }
+
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
@@ -4594,6 +4880,24 @@ startup, as part of the initialization sequence.
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+  }
+
+  dimension_group: metrics__datetime__glean_validation_first_run_hour {
+    label: "Glean Validation First Run Hour"
+    hidden: yes
+    sql: ${TABLE}.metrics.datetime.glean_validation_first_run_hour ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "The hour of the first run of the application.
+"
   }
 
   dimension_group: metadata__header__parsed {
@@ -5039,6 +5343,81 @@ startup, as part of the initialization sequence.
     }
   }
 
+  measure: credit_card_deleted {
+    type: sum
+    sql: ${metrics__counter__credit_card_deleted} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: credit_card_deleted_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__credit_card_deleted: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: credit_card_modified {
+    type: sum
+    sql: ${metrics__counter__credit_card_modified} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: credit_card_modified_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__credit_card_modified: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: credit_card_saved {
+    type: sum
+    sql: ${metrics__counter__credit_card_saved} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Saved"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_saved"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: credit_card_saved_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__credit_card_saved: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Credit Card Saved"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/credit_card_saved"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: default_browser_card_dismiss_pressed {
     type: sum
     sql: ${metrics__counter__default_browser_card_dismiss_pressed} ;;
@@ -5210,31 +5589,6 @@ startup, as part of the initialization sequence.
     link: {
       label: "Glean Dictionary reference for Firefox Home Page Firefox Homepage View"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_firefox_homepage_view"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: firefox_home_page_history_highlights_item_opened {
-    type: sum
-    sql: ${metrics__counter__firefox_home_page_history_highlights_item_opened} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Firefox Home Page History Highlights Item Opened"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_history_highlights_item_opened"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-  }
-
-  measure: firefox_home_page_history_highlights_item_opened_client_count {
-    type: count_distinct
-    filters: [
-      metrics__counter__firefox_home_page_history_highlights_item_opened: ">0",
-    ]
-    sql: ${client_info__client_id} ;;
-
-    link: {
-      label: "Glean Dictionary reference for Firefox Home Page History Highlights Item Opened"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/firefox_home_page_history_highlights_item_opened"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -5785,6 +6139,81 @@ startup, as part of the initialization sequence.
     link: {
       label: "Glean Dictionary reference for Inactive Tabs Tray Open Recently Closed Tab"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/inactive_tabs_tray_open_recently_closed_tab"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_deleted {
+    type: sum
+    sql: ${metrics__counter__logins_deleted} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_deleted_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_deleted: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Deleted"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_deleted"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_modified {
+    type: sum
+    sql: ${metrics__counter__logins_modified} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_modified_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_modified: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_saved {
+    type: sum
+    sql: ${metrics__counter__logins_saved} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Saved"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_saved"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: logins_saved_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__logins_saved: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Logins Saved"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/logins_saved"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -6589,6 +7018,31 @@ startup, as part of the initialization sequence.
     }
   }
 
+  measure: shopping_product_page_visits {
+    type: sum
+    sql: ${metrics__counter__shopping_product_page_visits} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Product Page Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/shopping_product_page_visits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: shopping_product_page_visits_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__shopping_product_page_visits: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Shopping Product Page Visits"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/shopping_product_page_visits"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: sync_create_account_pressed {
     type: sum
     sql: ${metrics__counter__sync_create_account_pressed} ;;
@@ -6710,6 +7164,31 @@ startup, as part of the initialization sequence.
     link: {
       label: "Glean Dictionary reference for Tabs Cumulative Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_cumulative_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_grouped_tab_closed {
+    type: sum
+    sql: ${metrics__counter__tabs_grouped_tab_closed} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Grouped Tab Closed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_grouped_tab_closed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: tabs_grouped_tab_closed_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__tabs_grouped_tab_closed: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Tabs Grouped Tab Closed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/tabs_grouped_tab_closed"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -8557,49 +9036,6 @@ view: metrics__metrics__labeled_counter__history_selected_item {
   }
 }
 
-view: metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
-  label: "Inactive Tabs Tray - Toggle Inactive Tab Tray"
-
-  dimension: document_id {
-    type: string
-    sql: ${metrics.document_id} ;;
-    hidden: yes
-  }
-
-  dimension: document_label_id {
-    type: string
-    sql: ${metrics.document_id}-${label} ;;
-    primary_key: yes
-    hidden: yes
-  }
-
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray.key
-    hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
-  }
-
-  measure: count {
-    type: sum
-    sql: ${value} ;;
-    hidden: no
-  }
-
-  measure: client_count {
-    type: count_distinct
-    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
-    hidden: no
-  }
-}
-
 view: metrics__metrics__labeled_counter__library_panel_pressed {
   label: "Library - Panel Pressed"
 
@@ -9787,25 +10223,6 @@ order by n desc ;;
   }
 }
 
-view: suggest__metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.metrics as t,
-unnest(metrics.labeled_counter.inactive_tabs_tray_toggle_inactive_tab_tray) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
 view: suggest__metrics__metrics__labeled_counter__library_panel_pressed {
   derived_table: {
     sql: select
@@ -10126,5 +10543,259 @@ order by n desc ;;
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
+  }
+}
+
+view: metrics__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: metrics__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: metrics__metrics__memory_distribution__glean_database_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__awesomebar_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_upload_send_failure__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_upload_send_success__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__glean_validation_shutdown_wait__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__logins_store_read_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__logins_store_unlock_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__logins_store_write_query_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__nimbus_health_apply_pending_experiments_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__nimbus_health_fetch_experiments_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__places_history_migration_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__tabs_tab_switch__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__webview_page_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }

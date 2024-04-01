@@ -20,7 +20,7 @@ view: addresses_sync {
     }
 
     description: "An experimentation identifier derived and provided by the application
-for the purpose of experimenation enrollment.
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -114,24 +114,6 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
-  dimension: metrics__datetime__addresses_sync_finished_at {
-    label: "Addresses Sync Finished At"
-    hidden: yes
-    sql: ${TABLE}.metrics.datetime.addresses_sync_finished_at ;;
-    type: time
-    group_label: "Addresses Sync"
-    group_item_label: "Finished At"
-
-    link: {
-      label: "Glean Dictionary reference for Addresses Sync Finished At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/addresses_sync_finished_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records when the addresses sync finished. This includes the time to download, apply, and upload all records.
-"
-  }
-
   dimension: metrics__labeled_counter__addresses_sync_incoming {
     label: "Addresses Sync Incoming"
     hidden: yes
@@ -184,24 +166,6 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
-  dimension: metrics__datetime__addresses_sync_started_at {
-    label: "Addresses Sync Started At"
-    hidden: yes
-    sql: ${TABLE}.metrics.datetime.addresses_sync_started_at ;;
-    type: time
-    group_label: "Addresses Sync"
-    group_item_label: "Started At"
-
-    link: {
-      label: "Glean Dictionary reference for Addresses Sync Started At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/addresses_sync_started_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records when the addresses sync started.
-"
-  }
-
   dimension: metrics__string__addresses_sync_uid {
     label: "Addresses Sync Uid"
     hidden: yes
@@ -235,24 +199,6 @@ The labels are the `category.name` identifier of the metric.
     }
 
     description: "Records why the addresses sync failed: either due to an authentication error, unexpected exception, or other error. The error strings are truncated and sanitized to omit PII, like URLs and file system paths.
-"
-  }
-
-  dimension: metrics__datetime__addresses_sync_v2_finished_at {
-    label: "Addresses Sync V2 Finished At"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.addresses_sync_v2_finished_at ;;
-    type: time
-    group_label: "Addresses Sync V2"
-    group_item_label: "Finished At"
-
-    link: {
-      label: "Glean Dictionary reference for Addresses Sync V2 Finished At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/addresses_sync_v2_finished_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records when the addresses sync finished. This includes the time to download, apply, and upload all records.
 "
   }
 
@@ -305,24 +251,6 @@ The labels are the `category.name` identifier of the metric.
     }
 
     description: "Records the number of batches needed to upload all outgoing records. The Sync server has a hard limit on the number of records (and request body bytes) on the number of records that can fit into a single batch, and large syncs may require multiple batches.
-"
-  }
-
-  dimension: metrics__datetime__addresses_sync_v2_started_at {
-    label: "Addresses Sync V2 Started At"
-    hidden: no
-    sql: ${TABLE}.metrics.datetime.addresses_sync_v2_started_at ;;
-    type: time
-    group_label: "Addresses Sync V2"
-    group_item_label: "Started At"
-
-    link: {
-      label: "Glean Dictionary reference for Addresses Sync V2 Started At"
-      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/addresses_sync_v2_started_at"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Records when the addresses sync started.
 "
   }
 
@@ -436,6 +364,20 @@ The labels are the `category.name` identifier of the metric.
     type: string
     group_label: "Client Info"
     group_item_label: "Os Version"
+  }
+
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -691,6 +633,78 @@ The labels are the `category.name` identifier of the metric.
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+  }
+
+  dimension_group: metrics__datetime__addresses_sync_finished_at {
+    label: "Addresses Sync Finished At"
+    hidden: yes
+    sql: ${TABLE}.metrics.datetime.addresses_sync_finished_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Records when the addresses sync finished. This includes the time to download, apply, and upload all records.
+"
+  }
+
+  dimension_group: metrics__datetime__addresses_sync_started_at {
+    label: "Addresses Sync Started At"
+    hidden: yes
+    sql: ${TABLE}.metrics.datetime.addresses_sync_started_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Records when the addresses sync started.
+"
+  }
+
+  dimension_group: metrics__datetime__addresses_sync_v2_finished_at {
+    label: "Addresses Sync V2 Finished At"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.addresses_sync_v2_finished_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Records when the addresses sync finished. This includes the time to download, apply, and upload all records.
+"
+  }
+
+  dimension_group: metrics__datetime__addresses_sync_v2_started_at {
+    label: "Addresses Sync V2 Started At"
+    hidden: no
+    sql: ${TABLE}.metrics.datetime.addresses_sync_v2_started_at ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    description: "Records when the addresses sync started.
+"
   }
 
   dimension_group: metadata__header__parsed {
@@ -1315,5 +1329,91 @@ order by n desc ;;
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
+  }
+}
+
+view: addresses_sync__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: addresses_sync__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: addresses_sync__metrics__labeled_string__addresses_sync_failure_reason {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: addresses_sync__metrics__labeled_string__addresses_sync_v2_failure_reason {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: addresses_sync__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }

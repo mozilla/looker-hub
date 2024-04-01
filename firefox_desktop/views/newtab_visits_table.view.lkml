@@ -55,6 +55,11 @@ view: newtab_visits_table {
     type: yesno
   }
 
+  dimension: had_non_search_engagement {
+    sql: ${TABLE}.had_non_search_engagement ;;
+    type: yesno
+  }
+
   dimension: is_new_profile {
     sql: ${TABLE}.is_new_profile ;;
     type: yesno
@@ -62,6 +67,11 @@ view: newtab_visits_table {
 
   dimension: legacy_telemetry_client_id {
     sql: ${TABLE}.legacy_telemetry_client_id ;;
+    type: string
+  }
+
+  dimension: locale {
+    sql: ${TABLE}.locale ;;
     type: string
   }
 
@@ -306,6 +316,11 @@ view: newtab_visits_table__topsite_tile_interactions {
     type: number
   }
 
+  dimension: organic_topsite_tile_dismissals {
+    sql: ${TABLE}.organic_topsite_tile_dismissals ;;
+    type: number
+  }
+
   dimension: organic_topsite_tile_impressions {
     sql: ${TABLE}.organic_topsite_tile_impressions ;;
     type: number
@@ -313,6 +328,11 @@ view: newtab_visits_table__topsite_tile_interactions {
 
   dimension: sponsored_topsite_tile_clicks {
     sql: ${TABLE}.sponsored_topsite_tile_clicks ;;
+    type: number
+  }
+
+  dimension: sponsored_topsite_tile_dismissals {
+    sql: ${TABLE}.sponsored_topsite_tile_dismissals ;;
     type: number
   }
 
@@ -333,6 +353,11 @@ view: newtab_visits_table__topsite_tile_interactions {
 
   dimension: topsite_tile_clicks {
     sql: ${TABLE}.topsite_tile_clicks ;;
+    type: number
+  }
+
+  dimension: topsite_tile_dismissals {
+    sql: ${TABLE}.topsite_tile_dismissals ;;
     type: number
   }
 

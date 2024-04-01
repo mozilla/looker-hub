@@ -212,7 +212,7 @@ view: usage {
 
   dimension: metrics__boolean__mozbuild_artifact {
     label: "Mozbuild Artifact"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.mozbuild_artifact ;;
     type: yesno
     group_label: "Mozbuild"
@@ -229,7 +229,7 @@ view: usage {
 
   dimension: metrics__boolean__mozbuild_ccache {
     label: "Mozbuild Ccache"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.mozbuild_ccache ;;
     type: yesno
     group_label: "Mozbuild"
@@ -246,7 +246,7 @@ view: usage {
 
   dimension: metrics__boolean__mozbuild_clobber {
     label: "Mozbuild Clobber"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.mozbuild_clobber ;;
     type: yesno
     group_label: "Mozbuild"
@@ -263,7 +263,7 @@ view: usage {
 
   dimension: metrics__string__mozbuild_compiler {
     label: "Mozbuild Compiler"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.mozbuild_compiler ;;
     type: string
     group_label: "Mozbuild"
@@ -280,7 +280,7 @@ view: usage {
 
   dimension: metrics__boolean__mozbuild_debug {
     label: "Mozbuild Debug"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.mozbuild_debug ;;
     type: yesno
     group_label: "Mozbuild"
@@ -297,7 +297,7 @@ view: usage {
 
   dimension: metrics__boolean__mozbuild_icecream {
     label: "Mozbuild Icecream"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.mozbuild_icecream ;;
     type: yesno
     group_label: "Mozbuild"
@@ -314,7 +314,7 @@ view: usage {
 
   dimension: metrics__boolean__mozbuild_opt {
     label: "Mozbuild Opt"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.mozbuild_opt ;;
     type: yesno
     group_label: "Mozbuild"
@@ -329,9 +329,26 @@ view: usage {
     description: "True if `--enable-optimize`."
   }
 
+  dimension: metrics__string__mozbuild_project {
+    label: "Mozbuild Project"
+    hidden: no
+    sql: ${TABLE}.metrics.string.mozbuild_project ;;
+    type: string
+    group_label: "Mozbuild"
+    group_item_label: "Project"
+
+    link: {
+      label: "Glean Dictionary reference for Mozbuild Project"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mach/metrics/mozbuild_project"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The project being built."
+  }
+
   dimension: metrics__boolean__mozbuild_sccache {
     label: "Mozbuild Sccache"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.mozbuild_sccache ;;
     type: yesno
     group_label: "Mozbuild"
@@ -344,6 +361,25 @@ view: usage {
     }
 
     description: "True if ccache in use is sccache."
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/mach/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
   }
 
   dimension: metrics__labeled_counter__glean_error_invalid_label {
@@ -524,6 +560,22 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Client Info"
     group_item_label: "Os Version"
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
+  }
+
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+    description: "An optional running counter of the number of sessions for a client."
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+    description: "An optional UUID uniquely identifying the client's current session."
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -1164,5 +1216,79 @@ view: usage__metrics__labeled_counter__glean_error_invalid_value {
     type: count_distinct
     sql: case when ${value} > 0 then ${usage.client_info__client_id} end ;;
     hidden: no
+  }
+}
+
+view: usage__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: usage__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: usage__metrics__memory_distribution__mach_system_memory__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: usage__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }

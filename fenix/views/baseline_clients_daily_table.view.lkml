@@ -179,6 +179,16 @@ view: baseline_clients_daily_table {
       label: "Nightly"
       value: "mozdata.org_mozilla_fenix.baseline_clients_daily"
     }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fenix_nightly.baseline_clients_daily"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_fennec_aurora.baseline_clients_daily"
+    }
   }
 
   sql_table_name: `{% parameter channel %}` ;;

@@ -5,22 +5,10 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: growth_accounting {
-  dimension: app_version {
-    sql: ${TABLE}.app_version ;;
-    type: string
-    description: "Mozilla app version most recently used,
-follows format: major.minor.patch (e.g. 99.3.3).
-"
-  }
-
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
     map_layer_name: countries
-    description: "User's country where activity took place.
-See: UDF mozdata.stats.mode_last for more
-info on how the function operates.
-"
   }
 
   dimension: days_registered_bits {
@@ -44,61 +32,20 @@ info on how the function operates.
 "
   }
 
-  dimension: days_seen_no_monitor_bits {
-    sql: ${TABLE}.days_seen_no_monitor_bits ;;
-    type: number
-    description: "No. of days since monitor flag was last True.
-"
-  }
-
-  dimension: days_since_registered {
-    sql: ${TABLE}.days_since_registered ;;
-    type: number
-  }
-
-  dimension: days_since_seen {
-    sql: ${TABLE}.days_since_seen ;;
-    type: number
-  }
-
-  dimension: days_since_seen_in_tier1_country {
-    sql: ${TABLE}.days_since_seen_in_tier1_country ;;
-    type: number
-  }
-
-  dimension: days_since_seen_no_monitor {
-    sql: ${TABLE}.days_since_seen_no_monitor ;;
-    type: number
-  }
-
-  dimension: language {
-    sql: ${TABLE}.language ;;
+  dimension: service {
+    sql: ${TABLE}.service ;;
     type: string
-    description: "Most recently used language.
-"
   }
 
-  dimension: os_name {
-    sql: ${TABLE}.os_name ;;
-    type: string
-    description: "OS on which the app was most recently running.
-For example: Android.
-"
+  dimension: user_agent_device_count {
+    sql: ${TABLE}.user_agent_device_count ;;
+    type: number
+    description: "Number of devices associated with the user, per service, per day. Estimated from the number of unique user agent strings."
   }
 
-  dimension: os_version {
-    sql: ${TABLE}.os_version ;;
+  dimension: user_id_sha256 {
+    sql: ${TABLE}.user_id_sha256 ;;
     type: string
-    description: "Version of the OS the device was most recently using.
-"
-  }
-
-  dimension: user_id {
-    sql: ${TABLE}.user_id ;;
-    type: string
-    description: "A 36 char long hash value representing
-User ID (registered user).
-"
   }
 
   dimension: active_this_week {
@@ -125,8 +72,8 @@ User ID (registered user).
     hidden: yes
   }
 
-  dimension: user_id_day {
-    sql: CONCAT(CAST(${TABLE}.submission_date AS STRING), ${user_id}) ;;
+  dimension: user_id_sha256_day {
+    sql: CONCAT(CAST(${TABLE}.submission_date AS STRING), ${user_id_sha256}) ;;
     type: string
     hidden: yes
     primary_key: yes
@@ -145,9 +92,6 @@ User ID (registered user).
     ]
     convert_tz: no
     datatype: date
-    description: "Corresponds to ETL processing date.
-Also, used for partitioning the table.
-"
   }
 
   measure: overall_active_previous {
@@ -280,5 +224,5 @@ Also, used for partitioning the table.
     sql: SAFE_DIVIDE(${new_users} + ${overall_resurrected},${established_users_churned_count} + ${new_users_churned_count}) ;;
   }
 
-  sql_table_name: `mozdata.firefox_accounts.fxa_users_last_seen` ;;
+  sql_table_name: `mozdata.accounts_backend.users_services_last_seen` ;;
 }

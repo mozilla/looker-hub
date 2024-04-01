@@ -7,9 +7,10 @@
 
 datagroup: non_interaction_v1_last_updated {
   label: "non_interaction_v1 Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.bedrock_stable.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'non_interaction_v1' ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'bedrock_stable'
+    AND table_name = 'non_interaction_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:bedrock_stable.non_interaction_v1 is modified."
   max_cache_age: "24 hours"
 }

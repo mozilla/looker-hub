@@ -53,6 +53,21 @@ explore: temp_rust_tabs_sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${temp_rust_tabs_sync.metrics__labeled_counter__rust_tabs_sync_outgoing}) AS temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_outgoing ON ${temp_rust_tabs_sync.document_id} = ${temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_outgoing.document_id} ;;
   }
+
+  join: temp_rust_tabs_sync__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${temp_rust_tabs_sync.events}) AS temp_rust_tabs_sync__events ;;
+  }
+
+  join: temp_rust_tabs_sync__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${temp_rust_tabs_sync__events.extra}) AS temp_rust_tabs_sync__events__extra ;;
+  }
+
+  join: temp_rust_tabs_sync__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${temp_rust_tabs_sync.ping_info__experiments}) AS temp_rust_tabs_sync__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_label {

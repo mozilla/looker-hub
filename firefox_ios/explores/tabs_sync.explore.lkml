@@ -58,6 +58,21 @@ explore: tabs_sync {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${tabs_sync.metrics__labeled_counter__tabs_sync_v2_outgoing}) AS tabs_sync__metrics__labeled_counter__tabs_sync_v2_outgoing ON ${tabs_sync.document_id} = ${tabs_sync__metrics__labeled_counter__tabs_sync_v2_outgoing.document_id} ;;
   }
+
+  join: tabs_sync__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${tabs_sync.events}) AS tabs_sync__events ;;
+  }
+
+  join: tabs_sync__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${tabs_sync__events.extra}) AS tabs_sync__events__extra ;;
+  }
+
+  join: tabs_sync__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${tabs_sync.ping_info__experiments}) AS tabs_sync__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__tabs_sync__metrics__labeled_counter__glean_error_invalid_label {

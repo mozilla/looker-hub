@@ -7,9 +7,10 @@
 
 datagroup: page_view_v1_last_updated {
   label: "page_view_v1 Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.glean_dictionary_stable.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'page_view_v1' ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'glean_dictionary_stable'
+    AND table_name = 'page_view_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:glean_dictionary_stable.page_view_v1 is modified."
   max_cache_age: "24 hours"
 }

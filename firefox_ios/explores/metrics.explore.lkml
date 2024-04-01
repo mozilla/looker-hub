@@ -139,11 +139,6 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__history_selected_item}) AS metrics__metrics__labeled_counter__history_selected_item ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__history_selected_item.document_id} ;;
   }
 
-  join: metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
-    relationship: one_to_many
-    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray}) AS metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray.document_id} ;;
-  }
-
   join: metrics__metrics__labeled_counter__library_panel_pressed {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__library_panel_pressed}) AS metrics__metrics__labeled_counter__library_panel_pressed ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__library_panel_pressed.document_id} ;;
@@ -227,6 +222,21 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__wallpaper_analytics_themed_wallpaper}) AS metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__wallpaper_analytics_themed_wallpaper.document_id} ;;
+  }
+
+  join: metrics__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.events}) AS metrics__events ;;
+  }
+
+  join: metrics__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics__events.extra}) AS metrics__events__extra ;;
+  }
+
+  join: metrics__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.ping_info__experiments}) AS metrics__ping_info__experiments ;;
   }
 }
 
@@ -323,10 +333,6 @@ explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_subm
 }
 
 explore: suggest__metrics__metrics__labeled_counter__history_selected_item {
-  hidden: yes
-}
-
-explore: suggest__metrics__metrics__labeled_counter__inactive_tabs_tray_toggle_inactive_tab_tray {
   hidden: yes
 }
 

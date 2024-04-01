@@ -26,6 +26,11 @@ view: revenue_google_top10_row_data {
     type: string
   }
 
+  dimension: overall_contribution {
+    sql: ${TABLE}.overall_contribution ;;
+    type: number
+  }
+
   dimension: rank {
     sql: ${TABLE}.rank ;;
     type: number

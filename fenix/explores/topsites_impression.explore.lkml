@@ -14,7 +14,7 @@ explore: topsites_impression {
 
   always_filter: {
     filters: [
-      channel: "beta",
+      channel: "release",
       submission_date: "28 days",
     ]
   }
@@ -37,6 +37,21 @@ explore: topsites_impression {
   join: topsites_impression__metrics__labeled_counter__glean_error_invalid_value {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${topsites_impression.metrics__labeled_counter__glean_error_invalid_value}) AS topsites_impression__metrics__labeled_counter__glean_error_invalid_value ON ${topsites_impression.document_id} = ${topsites_impression__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
+  }
+
+  join: topsites_impression__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${topsites_impression.events}) AS topsites_impression__events ;;
+  }
+
+  join: topsites_impression__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${topsites_impression__events.extra}) AS topsites_impression__events__extra ;;
+  }
+
+  join: topsites_impression__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${topsites_impression.ping_info__experiments}) AS topsites_impression__ping_info__experiments ;;
   }
 }
 

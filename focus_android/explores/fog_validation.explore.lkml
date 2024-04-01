@@ -38,6 +38,21 @@ explore: fog_validation {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${fog_validation.metrics__labeled_counter__glean_error_invalid_value}) AS fog_validation__metrics__labeled_counter__glean_error_invalid_value ON ${fog_validation.document_id} = ${fog_validation__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: fog_validation__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${fog_validation.events}) AS fog_validation__events ;;
+  }
+
+  join: fog_validation__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${fog_validation__events.extra}) AS fog_validation__events__extra ;;
+  }
+
+  join: fog_validation__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${fog_validation.ping_info__experiments}) AS fog_validation__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__fog_validation__metrics__labeled_counter__glean_error_invalid_label {

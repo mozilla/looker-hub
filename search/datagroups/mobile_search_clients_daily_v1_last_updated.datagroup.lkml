@@ -7,9 +7,10 @@
 
 datagroup: mobile_search_clients_daily_v1_last_updated {
   label: "Mobile Search Clients Daily Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `moz-fx-data-shared-prod`.search_derived.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'mobile_search_clients_daily_v1' ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'search_derived'
+    AND table_name = 'mobile_search_clients_daily_v1' ;;
   description: "Updates when moz-fx-data-shared-prod:search_derived.mobile_search_clients_daily_v1 is modified."
   max_cache_age: "24 hours"
 }

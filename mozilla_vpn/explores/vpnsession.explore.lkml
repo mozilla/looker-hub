@@ -37,6 +37,21 @@ explore: vpnsession {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${vpnsession.metrics__labeled_counter__glean_error_invalid_value}) AS vpnsession__metrics__labeled_counter__glean_error_invalid_value ON ${vpnsession.document_id} = ${vpnsession__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: vpnsession__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${vpnsession.events}) AS vpnsession__events ;;
+  }
+
+  join: vpnsession__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${vpnsession__events.extra}) AS vpnsession__events__extra ;;
+  }
+
+  join: vpnsession__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${vpnsession.ping_info__experiments}) AS vpnsession__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__vpnsession__metrics__labeled_counter__glean_error_invalid_label {

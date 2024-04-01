@@ -7,7 +7,7 @@
 view: messaging_system {
   dimension: metrics__string__messaging_system_action {
     label: "Messaging System Action"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.messaging_system_action ;;
     type: string
     group_label: "Messaging System"
@@ -291,7 +291,7 @@ Either add this key to a list of known attribution keys in
 
   dimension: metrics__text2__messaging_system_cfr_action {
     label: "Messaging System Cfr Action"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.text2.messaging_system_cfr_action ;;
     type: string
     group_label: "Messaging System"
@@ -347,7 +347,7 @@ Present only in some circumstances (see
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The type of event. Any user defined string (e.g. “click”, “share”, “delete”, “more_items”)
+    description: "The type of event. Any user defined string (e.g. “IMPRESSION”, “CLICK_BUTTON”, \"INDEXEDDB_OPEN_FAILED\", “SESSION_END”)
 "
   }
 
@@ -421,6 +421,82 @@ Present only in some circumstances (see
 
     description: "The event_context's `reason`. Likely something like
 \"welcome-window-closed\" or \"app-shut-down\",.
+"
+  }
+
+  dimension: metrics__text2__messaging_system_event_screen_family {
+    label: "Messaging System Event Screen Family"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.messaging_system_event_screen_family ;;
+    type: string
+    group_label: "Messaging System"
+    group_item_label: "Event Screen Family"
+
+    link: {
+      label: "Glean Dictionary reference for Messaging System Event Screen Family"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_event_screen_family"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A string identifier of the message family derived from the message id
+(e.g. MR_WELCOME_DEFAULT).
+"
+  }
+
+  dimension: metrics__text2__messaging_system_event_screen_id {
+    label: "Messaging System Event Screen Id"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.messaging_system_event_screen_id ;;
+    type: string
+    group_label: "Messaging System"
+    group_item_label: "Event Screen Id"
+
+    link: {
+      label: "Glean Dictionary reference for Messaging System Event Screen Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_event_screen_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A string identifier of the message screen id
+(e.g. AW_MOBILE_DOWNLOAD).
+"
+  }
+
+  dimension: metrics__quantity__messaging_system_event_screen_index {
+    label: "Messaging System Event Screen Index"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.messaging_system_event_screen_index ;;
+    type: number
+    group_label: "Messaging System"
+    group_item_label: "Event Screen Index"
+
+    link: {
+      label: "Glean Dictionary reference for Messaging System Event Screen Index"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_event_screen_index"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A number identifier of the screen index in a sequence of screens
+(e.g. 0 for first message).
+"
+  }
+
+  dimension: metrics__text2__messaging_system_event_screen_initials {
+    label: "Messaging System Event Screen Initials"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.messaging_system_event_screen_initials ;;
+    type: string
+    group_label: "Messaging System"
+    group_item_label: "Event Screen Initials"
+
+    link: {
+      label: "Glean Dictionary reference for Messaging System Event Screen Initials"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/messaging_system_event_screen_initials"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A string identifier of the message screen initials
+(e.g. 'EMAG' for EASY_SETUP, MOBILE_DOWNLOADS, AMO, GRATITUDE).
 "
   }
 
@@ -522,7 +598,7 @@ If you're unsure, please ask in
 
   dimension: metrics__string__messaging_system_page {
     label: "Messaging System Page"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.string.messaging_system_page ;;
     type: string
     group_label: "Messaging System"
@@ -552,7 +628,7 @@ If you're unsure, please ask in
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Type of event the ping is capturing. e.g. \"cfr\", \"whats-new-panel\", \"onboarding\"
+    description: "Type of event the ping is capturing. e.g. \"cfr\", \"onboarding\"
 "
   }
 
@@ -612,6 +688,25 @@ we did not have a corresponding metric mapped to how often they attempted
 to be recorded.
 You may have forgotten to define an appropriate metric in
 `browser/components/newtab/metrics.yaml`.
+"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
 "
   }
 
@@ -793,6 +888,22 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Client Info"
     group_item_label: "Os Version"
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
+  }
+
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+    description: "An optional running counter of the number of sessions for a client."
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+    description: "An optional UUID uniquely identifying the client's current session."
   }
 
   dimension: client_info__telemetry_sdk_build {
@@ -1619,5 +1730,67 @@ order by n desc ;;
   dimension: key {
     type: string
     sql: ${TABLE}.key ;;
+  }
+}
+
+view: messaging_system__events {
+  dimension: category {
+    sql: ${TABLE}.category ;;
+    type: string
+  }
+
+  dimension: extra {
+    sql: ${TABLE}.extra ;;
+    hidden: yes
+  }
+
+  dimension: name {
+    sql: ${TABLE}.name ;;
+    type: string
+  }
+
+  dimension: timestamp {
+    sql: ${TABLE}.timestamp ;;
+    type: number
+  }
+}
+
+view: messaging_system__events__extra {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
+view: messaging_system__ping_info__experiments {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value__branch {
+    sql: ${TABLE}.value.branch ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Branch"
+  }
+
+  dimension: value__extra__enrollment_id {
+    sql: ${TABLE}.value.extra.enrollment_id ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Enrollment Id"
+  }
+
+  dimension: value__extra__type {
+    sql: ${TABLE}.value.extra.type ;;
+    type: string
+    group_label: "Value Extra"
+    group_item_label: "Type"
   }
 }

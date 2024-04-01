@@ -113,6 +113,22 @@ view: metrics_table {
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+    description: "An optional running counter of the number of sessions for a client."
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+    description: "An optional UUID uniquely identifying the client's current session."
+  }
+
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
@@ -355,6 +371,15 @@ Child-process data will likely be absent, or incomplete.
 "
   }
 
+  dimension: metrics__boolean__gfx_status_headless {
+    sql: ${TABLE}.metrics.boolean.gfx_status_headless ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Gfx Status Headless"
+    description: "Boolean indicated whether graphics is running in headless (no display) mode (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__boolean__gifft_validation_main_ping_assembling {
     sql: ${TABLE}.metrics.boolean.gifft_validation_main_ping_assembling ;;
     type: yesno
@@ -380,6 +405,15 @@ To be used to validate GIFFT.
     group_label: "Metrics Counter"
     group_item_label: "Bloburl Resolve Stopped"
     description: "Counts how many times we do not resolve a blob URL because of different partition keys
+"
+  }
+
+  dimension: metrics__counter__cookie_banners_cookie_injection_fail {
+    sql: ${TABLE}.metrics.counter.cookie_banners_cookie_injection_fail ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Cookie Banners Cookie Injection Fail"
+    description: "Counts how often the cookie banner is still shown even if we have injected cookies.
 "
   }
 
@@ -535,6 +569,123 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__httpsfirst_downgraded {
+    sql: ${TABLE}.metrics.counter.httpsfirst_downgraded ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Httpsfirst Downgraded"
+    description: "How many regular HTTPS-First (`dom.security.https_first` enabled) upgrades get downgraded again.
+"
+  }
+
+  dimension: metrics__counter__httpsfirst_downgraded_schemeless {
+    sql: ${TABLE}.metrics.counter.httpsfirst_downgraded_schemeless ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Httpsfirst Downgraded Schemeless"
+    description: "How many schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrades get downgraded again.
+"
+  }
+
+  dimension: metrics__counter__httpsfirst_upgraded {
+    sql: ${TABLE}.metrics.counter.httpsfirst_upgraded ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Httpsfirst Upgraded"
+    description: "Counts how often a load is marked to be upgraded to HTTPS because of HTTPS-First (`dom.security.https_first` enabled).
+"
+  }
+
+  dimension: metrics__counter__httpsfirst_upgraded_schemeless {
+    sql: ${TABLE}.metrics.counter.httpsfirst_upgraded_schemeless ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Httpsfirst Upgraded Schemeless"
+    description: "Counts how often a load is marked to be upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless).
+"
+  }
+
+  dimension: metrics__counter__networking_residual_cache_folder_count {
+    sql: ${TABLE}.metrics.counter.networking_residual_cache_folder_count ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Residual Cache Folder Count"
+    description: "Counts how often we find a cache folder that wasn't purged at shutdown by a background task process.
+"
+  }
+
+  dimension: metrics__counter__networking_set_cookie {
+    sql: ${TABLE}.metrics.counter.networking_set_cookie ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Networking Set Cookie"
+    description: "This counts the number of times we set a cookie. Introduced as a denomenator for measuring CHIPS adoption.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_color_changed {
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_color_changed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Pdfjs Editing Highlight Color Changed"
+    description: "Counts the number of times the user changes the color of a highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_deleted {
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_deleted ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Pdfjs Editing Highlight Deleted"
+    description: "Counts the number of times the user deletes highlights.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_edited {
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_edited ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Pdfjs Editing Highlight Edited"
+    description: "Counts the number of times the user edits highlights.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_print {
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_print ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Pdfjs Editing Highlight Print"
+    description: "Counts the number of times the user prints a PDF with highlights.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_save {
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_save ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Pdfjs Editing Highlight Save"
+    description: "Counts the number of times the user saves a PDF with highlights.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_thickness_changed {
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_thickness_changed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Pdfjs Editing Highlight Thickness Changed"
+    description: "Counts the number of times the user changes the thickness of a free highlight.
+"
+  }
+
+  dimension: metrics__counter__pdfjs_editing_highlight_toggle_visibility {
+    sql: ${TABLE}.metrics.counter.pdfjs_editing_highlight_toggle_visibility ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Pdfjs Editing Highlight Toggle Visibility"
+    description: "Counts the number of times the user toggles the visibility of highlights.
+"
+  }
+
   dimension: metrics__counter__pdfjs_used {
     sql: ${TABLE}.metrics.counter.pdfjs_used ;;
     type: number
@@ -607,6 +758,15 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__counter__tls_certificate_verifications {
+    sql: ${TABLE}.metrics.counter.tls_certificate_verifications ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Tls Certificate Verifications"
+    description: "The total number of successful TLS server certificate verifications.
+"
+  }
+
   dimension: metrics__counter__translations_requests_count {
     sql: ${TABLE}.metrics.counter.translations_requests_count ;;
     type: number
@@ -614,6 +774,306 @@ This does not include deletion-request pings.
     group_item_label: "Translations Requests Count"
     description: "The count of translation requests.
 "
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__count {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_frame.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Count Per Window Frame"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_frame.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Count Per Window Frame"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__values {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_frame.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__count {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_top_level.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Count Per Window Top Level"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_top_level.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Count Per Window Top Level"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__values {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_count_per_window_top_level.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__count {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_frame.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Duration Per Window Frame"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_frame.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Duration Per Window Frame"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__values {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_frame.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__count {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_top_level.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Duration Per Window Top Level"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__sum {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_top_level.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Cookie Banners Click Query Selector Run Duration Per Window Top Level"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__values {
+    sql: ${TABLE}.metrics.custom_distribution.cookie_banners_click_query_selector_run_duration_per_window_top_level.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__extensions_timing_event_page_running_time__count {
+    sql: ${TABLE}.metrics.custom_distribution.extensions_timing_event_page_running_time.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Extensions Timing Event Page Running Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__extensions_timing_event_page_running_time__sum {
+    sql: ${TABLE}.metrics.custom_distribution.extensions_timing_event_page_running_time.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Extensions Timing Event Page Running Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__extensions_timing_event_page_running_time__values {
+    sql: ${TABLE}.metrics.custom_distribution.extensions_timing_event_page_running_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__fog_validation_gvsv_number_of_unique_site_origins_all_tabs__count {
+    sql: ${TABLE}.metrics.custom_distribution.fog_validation_gvsv_number_of_unique_site_origins_all_tabs.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Fog Validation Gvsv Number Of Unique Site Origins All Tabs"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__fog_validation_gvsv_number_of_unique_site_origins_all_tabs__sum {
+    sql: ${TABLE}.metrics.custom_distribution.fog_validation_gvsv_number_of_unique_site_origins_all_tabs.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Fog Validation Gvsv Number Of Unique Site Origins All Tabs"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__fog_validation_gvsv_number_of_unique_site_origins_all_tabs__values {
+    sql: ${TABLE}.metrics.custom_distribution.fog_validation_gvsv_number_of_unique_site_origins_all_tabs.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__geckoview_document_site_origins__count {
+    sql: ${TABLE}.metrics.custom_distribution.geckoview_document_site_origins.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Geckoview Document Site Origins"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__geckoview_document_site_origins__sum {
+    sql: ${TABLE}.metrics.custom_distribution.geckoview_document_site_origins.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Geckoview Document Site Origins"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__geckoview_document_site_origins__values {
+    sql: ${TABLE}.metrics.custom_distribution.geckoview_document_site_origins.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__geckoview_per_document_site_origins__count {
+    sql: ${TABLE}.metrics.custom_distribution.geckoview_per_document_site_origins.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Geckoview Per Document Site Origins"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__geckoview_per_document_site_origins__sum {
+    sql: ${TABLE}.metrics.custom_distribution.geckoview_per_document_site_origins.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Geckoview Per Document Site Origins"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__geckoview_per_document_site_origins__values {
+    sql: ${TABLE}.metrics.custom_distribution.geckoview_per_document_site_origins.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__count {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_peak_pixel_count.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Checkerboard Peak Pixel Count"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__sum {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_peak_pixel_count.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Checkerboard Peak Pixel Count"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__values {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_peak_pixel_count.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__gfx_checkerboard_severity__count {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_severity.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Checkerboard Severity"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__gfx_checkerboard_severity__sum {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_severity.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Checkerboard Severity"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__gfx_checkerboard_severity__values {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_checkerboard_severity.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_from_paint__count {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_paint.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Content Frame Time From Paint"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_from_paint__sum {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_paint.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Content Frame Time From Paint"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_from_paint__values {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_paint.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_from_vsync__count {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_vsync.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Content Frame Time From Vsync"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_from_vsync__sum {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_vsync.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Content Frame Time From Vsync"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_from_vsync__values {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_from_vsync.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_with_svg__count {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_with_svg.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Content Frame Time With Svg"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_with_svg__sum {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_with_svg.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Content Frame Time With Svg"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_with_svg__values {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_with_svg.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_without_resource_upload__count {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_resource_upload.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Content Frame Time Without Resource Upload"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_without_resource_upload__sum {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_resource_upload.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Content Frame Time Without Resource Upload"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_without_resource_upload__values {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_resource_upload.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_without_upload__count {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_upload.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Content Frame Time Without Upload"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_without_upload__sum {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_upload.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Gfx Content Frame Time Without Upload"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__gfx_content_frame_time_without_upload__values {
+    sql: ${TABLE}.metrics.custom_distribution.gfx_content_frame_time_without_upload.values ;;
+    hidden: yes
   }
 
   dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__count {
@@ -633,6 +1093,106 @@ This does not include deletion-request pings.
 
   dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__values {
     sql: ${TABLE}.metrics.custom_distribution.networking_cookie_access_fixup_diff.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_part_by_key__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_part_by_key.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Part By Key"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_part_by_key__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_part_by_key.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Part By Key"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_part_by_key__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_part_by_key.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_partitioned__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_partitioned.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Partitioned"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_partitioned__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_partitioned.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Partitioned"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_partitioned__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_partitioned.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_total__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_total.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Total"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_total__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_total.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Total"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_total__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_total.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpart_by_key__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpart_by_key.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Unpart By Key"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpart_by_key__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpart_by_key.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Unpart By Key"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpart_by_key__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpart_by_key.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpartitioned__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpartitioned.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Unpartitioned"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpartitioned__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpartitioned.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Count Unpartitioned"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_count_unpartitioned__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_count_unpartitioned.values ;;
     hidden: yes
   }
 
@@ -656,6 +1216,46 @@ This does not include deletion-request pings.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_cookie_purge_entry_max__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_entry_max.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Purge Entry Max"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_entry_max__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_entry_max.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Purge Entry Max"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_entry_max__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_entry_max.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_max__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_max.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Purge Max"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_max__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_max.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Cookie Purge Max"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_cookie_purge_max__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_cookie_purge_max.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_1_download_throughput__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput.count ;;
     type: number
@@ -673,6 +1273,86 @@ This does not include deletion-request pings.
 
   dimension: metrics__custom_distribution__networking_http_1_download_throughput__values {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_1_download_throughput.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput 100"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_100.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_10_50__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_10_50.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput 10 50"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_10_50__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_10_50.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput 10 50"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_10_50__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_10_50.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_50_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_50_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput 50 100"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_50_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_50_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 1 Upload Throughput 50 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_1_upload_throughput_50_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_1_upload_throughput_50_100.values ;;
     hidden: yes
   }
 
@@ -696,6 +1376,86 @@ This does not include deletion-request pings.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput 100"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_100.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_10_50__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_10_50.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput 10 50"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_10_50__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_10_50.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput 10 50"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_10_50__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_10_50.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_50_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_50_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput 50 100"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_50_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_50_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 2 Upload Throughput 50 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_2_upload_throughput_50_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_2_upload_throughput_50_100.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_http_3_download_throughput__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_http_3_download_throughput.count ;;
     type: number
@@ -716,6 +1476,106 @@ This does not include deletion-request pings.
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput 100"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_100.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_10_50__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_10_50.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput 10 50"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_10_50__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_10_50.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput 10 50"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_10_50__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_10_50.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_50_100__count {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_50_100.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput 50 100"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_50_100__sum {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_50_100.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Networking Http 3 Upload Throughput 50 100"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__networking_http_3_upload_throughput_50_100__values {
+    sql: ${TABLE}.metrics.custom_distribution.networking_http_3_upload_throughput_50_100.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__pdfjs_editing_highlight_thickness__count {
+    sql: ${TABLE}.metrics.custom_distribution.pdfjs_editing_highlight_thickness.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Pdfjs Editing Highlight Thickness"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__pdfjs_editing_highlight_thickness__sum {
+    sql: ${TABLE}.metrics.custom_distribution.pdfjs_editing_highlight_thickness.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Pdfjs Editing Highlight Thickness"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__pdfjs_editing_highlight_thickness__values {
+    sql: ${TABLE}.metrics.custom_distribution.pdfjs_editing_highlight_thickness.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__pdfjs_time_to_view__count {
     sql: ${TABLE}.metrics.custom_distribution.pdfjs_time_to_view.count ;;
     type: number
@@ -733,6 +1593,26 @@ This does not include deletion-request pings.
 
   dimension: metrics__custom_distribution__pdfjs_time_to_view__values {
     sql: ${TABLE}.metrics.custom_distribution.pdfjs_time_to_view.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__custom_distribution__performance_clone_deserialize_items__count {
+    sql: ${TABLE}.metrics.custom_distribution.performance_clone_deserialize_items.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Performance Clone Deserialize Items"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__custom_distribution__performance_clone_deserialize_items__sum {
+    sql: ${TABLE}.metrics.custom_distribution.performance_clone_deserialize_items.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Performance Clone Deserialize Items"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__performance_clone_deserialize_items__values {
+    sql: ${TABLE}.metrics.custom_distribution.performance_clone_deserialize_items.values ;;
     hidden: yes
   }
 
@@ -831,10 +1711,191 @@ This does not include deletion-request pings.
     description: "Indicates whether or not migration was successful for each nsIDataStorage."
   }
 
+  dimension: metrics__labeled_boolean__oskeystore_self_test {
+    sql: ${TABLE}.metrics.labeled_boolean.oskeystore_self_test ;;
+    hidden: yes
+    description: "Whether or not each step of the OSKeyStore self test succeeded."
+  }
+
+  dimension: metrics__labeled_counter__avif_a1lx {
+    sql: ${TABLE}.metrics.labeled_counter.avif_a1lx ;;
+    hidden: yes
+    description: "AV1LayeredImageIndexingProperty (a1lx). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_a1op {
+    sql: ${TABLE}.metrics.labeled_counter.avif_a1op ;;
+    hidden: yes
+    description: "AVIF OperatingPointSelectorProperty (a1op). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_alpha {
+    sql: ${TABLE}.metrics.labeled_counter.avif_alpha ;;
+    hidden: yes
+    description: "AVIF alpha plane. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_aom_decode_error {
+    sql: ${TABLE}.metrics.labeled_counter.avif_aom_decode_error ;;
+    hidden: yes
+    description: "Image-decode Error from AOM decoder (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_bit_depth {
+    sql: ${TABLE}.metrics.labeled_counter.avif_bit_depth ;;
+    hidden: yes
+    description: "Bits per pixel of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_cicp_cp {
+    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_cp ;;
+    hidden: yes
+    description: "AVIF CICP colour primaries. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_cicp_mc {
+    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_mc ;;
+    hidden: yes
+    description: "AVIF CICP transfer characteristics. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_cicp_tc {
+    sql: ${TABLE}.metrics.labeled_counter.avif_cicp_tc ;;
+    hidden: yes
+    description: "AVIF CICP transfer characteristics. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_clap {
+    sql: ${TABLE}.metrics.labeled_counter.avif_clap ;;
+    hidden: yes
+    description: "AVIF CleanApertureBox (clap). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_colr {
+    sql: ${TABLE}.metrics.labeled_counter.avif_colr ;;
+    hidden: yes
+    description: "AVIF colour information type. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_decode_result {
+    sql: ${TABLE}.metrics.labeled_counter.avif_decode_result ;;
+    hidden: yes
+    description: "Decode result of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_decoder {
+    sql: ${TABLE}.metrics.labeled_counter.avif_decoder ;;
+    hidden: yes
+    description: "Decoder of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_grid {
+    sql: ${TABLE}.metrics.labeled_counter.avif_grid ;;
+    hidden: yes
+    description: "AVIF AVIF grid-based image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_ipro {
+    sql: ${TABLE}.metrics.labeled_counter.avif_ipro ;;
+    hidden: yes
+    description: "AVIF ItemProtectionBox (ipro). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_ispe {
+    sql: ${TABLE}.metrics.labeled_counter.avif_ispe ;;
+    hidden: yes
+    description: "AVIF spatial extents (image size). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_lsel {
+    sql: ${TABLE}.metrics.labeled_counter.avif_lsel ;;
+    hidden: yes
+    description: "AVIF LayerSelectorProperty (lsel). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_pasp {
+    sql: ${TABLE}.metrics.labeled_counter.avif_pasp ;;
+    hidden: yes
+    description: "AVIF pixel aspect ratio. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_pixi {
+    sql: ${TABLE}.metrics.labeled_counter.avif_pixi ;;
+    hidden: yes
+    description: "AVIF pixel information (bits per channel). (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__avif_yuv_color_space {
+    sql: ${TABLE}.metrics.labeled_counter.avif_yuv_color_space ;;
+    hidden: yes
+    description: "YUV color space of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__codec_stats_audio_preferred_codec {
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_audio_preferred_codec ;;
+    hidden: yes
+    description: "Counts the preferred audio codec being signaled to us to identify preferred audio codec.
+"
+  }
+
+  dimension: metrics__labeled_counter__codec_stats_other_fec_signaled {
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_other_fec_signaled ;;
+    hidden: yes
+    description: "Count how many other fec options are being offered.
+"
+  }
+
+  dimension: metrics__labeled_counter__codec_stats_ulpfec_negotiated {
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_ulpfec_negotiated ;;
+    hidden: yes
+    description: "Counts the number of times that ulpfec is negotiated or not negotiated on the first negotiation for each video transceiver.
+"
+  }
+
+  dimension: metrics__labeled_counter__codec_stats_video_preferred_codec {
+    sql: ${TABLE}.metrics.labeled_counter.codec_stats_video_preferred_codec ;;
+    hidden: yes
+    description: "Counts the preferred video codec being signaled to us to identify preferred video codec.
+"
+  }
+
   dimension: metrics__labeled_counter__cookie_banners_click_result {
     sql: ${TABLE}.metrics.labeled_counter.cookie_banners_click_result ;;
     hidden: yes
     description: "Given a matching cookie banner rule, how often do we handle or fail to handle cookie banners, labelled by reason. The 'success' and 'fail' counters count the total numbers independently of the reason counters. Counters are incremented after the content window has been destroyed. This metric additionally reports cookie injections after which we didn't see a banner as \"success_cookie_injected\".
+"
+  }
+
+  dimension: metrics__labeled_counter__cookie_banners_cmp_detected_cmp {
+    sql: ${TABLE}.metrics.labeled_counter.cookie_banners_cmp_detected_cmp ;;
+    hidden: yes
+    description: "Counts how often a specific cmp has been detected by our cookie banner handling.
+"
+  }
+
+  dimension: metrics__labeled_counter__cookie_banners_cmp_result {
+    sql: ${TABLE}.metrics.labeled_counter.cookie_banners_cmp_result ;;
+    hidden: yes
+    description: "Given a matching CMP rule, how often do we handle or fail to handle cookie banners, labelled by reason. The 'success' and 'fail' counters count the total numbers independently of the reason counters. Counters are incremented after the content window has been destroyed.
 "
   }
 
@@ -873,13 +1934,66 @@ DNR rules for extensions loaded on application startup.
 "
   }
 
+  dimension: metrics__labeled_counter__extensions_counters_browser_action_preload_result {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_counters_browser_action_preload_result ;;
+    hidden: yes
+    description: "Number of times an event page hit the idle timeout and results in one of the labels.
+"
+  }
+
+  dimension: metrics__labeled_counter__extensions_counters_event_page_idle_result {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_counters_event_page_idle_result ;;
+    hidden: yes
+    description: "Number of times an event page hit the idle timeout and results in one of the labels.
+"
+  }
+
   dimension: metrics__labeled_counter__extensions_process_event {
     sql: ${TABLE}.metrics.labeled_counter.extensions_process_event ;;
     hidden: yes
     description: "Counters for how many times the extension process has crashed or been created.
 The labels with \"_fg\" / \"_bg\" suffixes are only recorded in Android builds,
 while the \"created\" and \"crashed\" labels are recorded on both Desktop and Android
-builds. 
+builds.
+"
+  }
+
+  dimension: metrics__labeled_counter__extensions_startup_cache_read_errors {
+    sql: ${TABLE}.metrics.labeled_counter.extensions_startup_cache_read_errors ;;
+    hidden: yes
+    description: "The number of times an unexpected error has been raised while reading
+the extensions StartupCache file.
+"
+  }
+
+  dimension: metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
+    sql: ${TABLE}.metrics.labeled_counter.fog_validation_gvsv_audio_stream_init ;;
+    hidden: yes
+    description: "Incremented when an audio stream is initialized, recorded alongside the
+GeckoView Streaming API for the purposes of Validation (hence GVSV).
+Uses a single label due to only labeled counters being supported
+"
+  }
+
+  dimension: metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko {
+    sql: ${TABLE}.metrics.labeled_counter.fog_validation_gvsv_audio_stream_init_gecko ;;
+    hidden: yes
+    description: "Incremented when an audio stream is initialized, recorded alongside the
+Glean API for the purposes of Validation (hence GVSV).
+Uses a single label due to only labeled counters being supported
+"
+  }
+
+  dimension: metrics__labeled_counter__formautofill_form_submission_heuristic {
+    sql: ${TABLE}.metrics.labeled_counter.formautofill_form_submission_heuristic ;;
+    hidden: yes
+    description: "The heuristic that detected the form submission."
+  }
+
+  dimension: metrics__labeled_counter__gfx_content_frame_time_reason {
+    sql: ${TABLE}.metrics.labeled_counter.gfx_content_frame_time_reason ;;
+    hidden: yes
+    description: "The reason that `gfx.content.frame_time.from_paint` recorded a slow (>200ms) result, if any. (Migrated from the geckoview metric of the same name).
 "
   }
 
@@ -942,6 +2056,13 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.labeled_counter.gmp_update_xml_fetch_result ;;
     hidden: yes
     description: "The result of Gecko fetching an update.xml from Balrog. This captures 3 different data points: success or failure of the request, if cert pinning or content signatures were used to verify the result, and the reason for failure, if the request failed.
+"
+  }
+
+  dimension: metrics__labeled_counter__gpu_process_crash_fallbacks {
+    sql: ${TABLE}.metrics.labeled_counter.gpu_process_crash_fallbacks ;;
+    hidden: yes
+    description: "How often we use different fallbacks when the GPU process crashes
 "
   }
 
@@ -1015,6 +2136,20 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__media_audio_backend {
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_backend ;;
+    hidden: yes
+    description: "The operating system audio backend (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__media_audio_init_failure {
+    sql: ${TABLE}.metrics.labeled_counter.media_audio_init_failure ;;
+    hidden: yes
+    description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__labeled_counter__netwerk_early_hints {
     sql: ${TABLE}.metrics.labeled_counter.netwerk_early_hints ;;
     hidden: yes
@@ -1057,6 +2192,55 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_dns_native_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_dns_native_count ;;
+    hidden: yes
+    description: "The count of calls to the native DNS APIs
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_onstart_success_https_rr ;;
+    hidden: yes
+    description: "Successfully started HTTP channels when HTTPS RR is used
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_http_response_version {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_response_version ;;
+    hidden: yes
+    description: "HTTP protocol version used on response from nsHttp.h
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_https_rr_presented {
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_rr_presented ;;
+    hidden: yes
+    description: "HTTPS RR is presented or not
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_https_upgrade_with_https_rr {
+    sql: ${TABLE}.metrics.labeled_counter.networking_https_upgrade_with_https_rr ;;
+    hidden: yes
+    description: "Whether an HTTP request gets upgraded to HTTPS because of HTTPS RR
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_proxy_info_type {
+    sql: ${TABLE}.metrics.labeled_counter.networking_proxy_info_type ;;
+    hidden: yes
+    description: "The proxies configurations created in the browser session (SOCKSv4, SOCKSv5, HTTP, HTTPS)
+"
+  }
+
+  dimension: metrics__labeled_counter__networking_residual_cache_folder_removal {
+    sql: ${TABLE}.metrics.labeled_counter.networking_residual_cache_folder_removal ;;
+    hidden: yes
+    description: "Counts how often succeed/fail in removing cache folder that wasn't purged at shutdown
+"
+  }
+
   dimension: metrics__labeled_counter__networking_speculative_connect_outcome {
     sql: ${TABLE}.metrics.labeled_counter.networking_speculative_connect_outcome ;;
     hidden: yes
@@ -1071,6 +2255,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__networking_trr_request_count {
+    sql: ${TABLE}.metrics.labeled_counter.networking_trr_request_count ;;
+    hidden: yes
+    description: "The count of successful TRR requests keyed by regular/private browsing
+"
+  }
+
   dimension: metrics__labeled_counter__pdfjs_buttons {
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_buttons ;;
     hidden: yes
@@ -1082,6 +2273,34 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing ;;
     hidden: yes
     description: "Counts the number of times some PDF editing features are used.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_color {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_color ;;
+    hidden: yes
+    description: "Counts the number of times a given color is used to highlight.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_kind {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_kind ;;
+    hidden: yes
+    description: "Counts the number of times a given kind is used to highlight.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_method {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_method ;;
+    hidden: yes
+    description: "Counts the number of times a given method is used to highlight.
+"
+  }
+
+  dimension: metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors {
+    sql: ${TABLE}.metrics.labeled_counter.pdfjs_editing_highlight_number_of_colors ;;
+    hidden: yes
+    description: "Counts the number of different colors used to highlight.
 "
   }
 
@@ -1231,6 +2450,13 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__tls_xyber_intolerance_reason {
+    sql: ${TABLE}.metrics.labeled_counter.tls_xyber_intolerance_reason ;;
+    hidden: yes
+    description: "The error that was returned from a failed TLS 1.3 handshake in which the client sent a Xyber key share (see tlsIntoleranceTelemetryBucket() in nsNSSIOLayer.cpp).
+"
+  }
+
   dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__count {
     sql: ${TABLE}.metrics.memory_distribution.extensions_apis_dnr_startup_cache_read_size.count ;;
     type: number
@@ -1351,6 +2577,57 @@ This metric appears in both the metrics and baseline pings.
     hidden: yes
   }
 
+  dimension: metrics__memory_distribution__performance_clone_deserialize_size__count {
+    sql: ${TABLE}.metrics.memory_distribution.performance_clone_deserialize_size.count ;;
+    type: number
+    group_label: "Metrics Memory Distribution Performance Clone Deserialize Size"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__memory_distribution__performance_clone_deserialize_size__sum {
+    sql: ${TABLE}.metrics.memory_distribution.performance_clone_deserialize_size.sum ;;
+    type: number
+    group_label: "Metrics Memory Distribution Performance Clone Deserialize Size"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__memory_distribution__performance_clone_deserialize_size__values {
+    sql: ${TABLE}.metrics.memory_distribution.performance_clone_deserialize_size.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__object__fog_validation_some_object {
+    sql: ${TABLE}.metrics.object.fog_validation_some_object ;;
+    hidden: yes
+    description: "Static data recorded to verify the new object metric type end-to-end.
+"
+  }
+
+  dimension: metrics__quantity__data_storage_alternate_services {
+    sql: ${TABLE}.metrics.quantity.data_storage_alternate_services ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Data Storage Alternate Services"
+    description: "The number of entries stored in the AlternateServices nsIDataStorage"
+  }
+
+  dimension: metrics__quantity__data_storage_client_auth_remember_list {
+    sql: ${TABLE}.metrics.quantity.data_storage_client_auth_remember_list ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Data Storage Client Auth Remember List"
+    description: "The number of entries stored in the ClientAuthRememberList nsIDataStorage"
+  }
+
+  dimension: metrics__quantity__data_storage_site_security_service_state {
+    sql: ${TABLE}.metrics.quantity.data_storage_site_security_service_state ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Data Storage Site Security Service State"
+    description: "The number of entries stored in the SiteSecurityServiceState nsIDataStorage"
+  }
+
   dimension: metrics__quantity__extensions_apis_dnr_evaluate_rules_count_max {
     sql: ${TABLE}.metrics.quantity.extensions_apis_dnr_evaluate_rules_count_max ;;
     type: number
@@ -1369,12 +2646,41 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__quantity__extensions_startup_cache_write_bytelength {
+    sql: ${TABLE}.metrics.quantity.extensions_startup_cache_write_bytelength ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Extensions Startup Cache Write Bytelength"
+    description: "The amount of bytes written to the extensions StartupCache file.
+"
+  }
+
   dimension: metrics__quantity__fog_max_pings_per_minute {
     sql: ${TABLE}.metrics.quantity.fog_max_pings_per_minute ;;
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Fog Max Pings Per Minute"
     description: "Value of the configurable rate limit, in pings per minute, for Glean pings as set at init.
+"
+  }
+
+  dimension: metrics__quantity__fog_validation_gvsv_primary_height {
+    sql: ${TABLE}.metrics.quantity.fog_validation_gvsv_primary_height ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Fog Validation Gvsv Primary Height"
+    description: "Primary display pixel height, recorded alongside the GeckoView Streaming
+API for the purposes of Validation (hence GVSV).
+"
+  }
+
+  dimension: metrics__quantity__fog_validation_gvsv_primary_width {
+    sql: ${TABLE}.metrics.quantity.fog_validation_gvsv_primary_width ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Fog Validation Gvsv Primary Width"
+    description: "Primary display pixel width, recorded alongside the GeckoView Streaming
+API for the purposes of Validation (hence GVSV).
 "
   }
 
@@ -1385,6 +2691,144 @@ This metric appears in both the metrics and baseline pings.
     group_item_label: "Formautofill Creditcards Autofill Profiles Count"
     description: "Count at store time how many credit card autofill profiles the user has.
 "
+  }
+
+  dimension: metrics__quantity__gfx_adapter_primary_ram {
+    sql: ${TABLE}.metrics.quantity.gfx_adapter_primary_ram ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Gfx Adapter Primary Ram"
+    description: "Graphics adapter dedicated memory (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_display_count {
+    sql: ${TABLE}.metrics.quantity.gfx_display_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Gfx Display Count"
+    description: "Amount of displays connected to the device (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_display_primary_height {
+    sql: ${TABLE}.metrics.quantity.gfx_display_primary_height ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Gfx Display Primary Height"
+    description: "Height of the primary display, takes device rotation into account. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gfx_display_primary_width {
+    sql: ${TABLE}.metrics.quantity.gfx_display_primary_width ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Gfx Display Primary Width"
+    description: "Width of the primary display, takes device rotation into account. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__quantity__gpu_process_total_launch_attempts {
+    sql: ${TABLE}.metrics.quantity.gpu_process_total_launch_attempts ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Gpu Process Total Launch Attempts"
+    description: "The number of total GPU process launch attempts.
+"
+  }
+
+  dimension: metrics__quantity__gpu_process_unstable_launch_attempts {
+    sql: ${TABLE}.metrics.quantity.gpu_process_unstable_launch_attempts ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Gpu Process Unstable Launch Attempts"
+    description: "The number of consecutive unstable launch attempts.
+"
+  }
+
+  dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__denominator {
+    sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.denominator ;;
+    type: number
+    group_label: "Metrics Rate Cookie Banners Cmp Ratio Handled By Cmp Rule"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__cookie_banners_cmp_ratio_handled_by_cmp_rule__numerator {
+    sql: ${TABLE}.metrics.rate.cookie_banners_cmp_ratio_handled_by_cmp_rule.numerator ;;
+    type: number
+    group_label: "Metrics Rate Cookie Banners Cmp Ratio Handled By Cmp Rule"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__httpsfirst_downgraded_on_timer__denominator {
+    sql: ${TABLE}.metrics.rate.httpsfirst_downgraded_on_timer.denominator ;;
+    type: number
+    group_label: "Metrics Rate Httpsfirst Downgraded On Timer"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__httpsfirst_downgraded_on_timer__numerator {
+    sql: ${TABLE}.metrics.rate.httpsfirst_downgraded_on_timer.numerator ;;
+    type: number
+    group_label: "Metrics Rate Httpsfirst Downgraded On Timer"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__httpsfirst_downgraded_on_timer_schemeless__denominator {
+    sql: ${TABLE}.metrics.rate.httpsfirst_downgraded_on_timer_schemeless.denominator ;;
+    type: number
+    group_label: "Metrics Rate Httpsfirst Downgraded On Timer Schemeless"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__httpsfirst_downgraded_on_timer_schemeless__numerator {
+    sql: ${TABLE}.metrics.rate.httpsfirst_downgraded_on_timer_schemeless.numerator ;;
+    type: number
+    group_label: "Metrics Rate Httpsfirst Downgraded On Timer Schemeless"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign__denominator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign.denominator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Foreign"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign__numerator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign.numerator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Foreign"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign_partitioned__denominator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign_partitioned.denominator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Foreign Partitioned"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_foreign_partitioned__numerator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_foreign_partitioned.numerator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Foreign Partitioned"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_partitioned__denominator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_partitioned.denominator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Partitioned"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__networking_set_cookie_partitioned__numerator {
+    sql: ${TABLE}.metrics.rate.networking_set_cookie_partitioned.numerator ;;
+    type: number
+    group_label: "Metrics Rate Networking Set Cookie Partitioned"
+    group_item_label: "Numerator"
   }
 
   dimension: metrics__rate__rtcrtpsender_setparameters_fail_length_changed__denominator {
@@ -1583,6 +3027,76 @@ This metric appears in both the metrics and baseline pings.
     group_item_label: "Numerator"
   }
 
+  dimension: metrics__rate__verification_used_cert_from_built_in_roots_module__denominator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_built_in_roots_module.denominator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Built In Roots Module"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_built_in_roots_module__numerator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_built_in_roots_module.numerator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Built In Roots Module"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_nss_cert_db__denominator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_nss_cert_db.denominator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Nss Cert Db"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_nss_cert_db__numerator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_nss_cert_db.numerator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Nss Cert Db"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_preloaded_intermediates__denominator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_preloaded_intermediates.denominator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Preloaded Intermediates"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_preloaded_intermediates__numerator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_preloaded_intermediates.numerator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Preloaded Intermediates"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_third_party_certificates__denominator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_third_party_certificates.denominator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Third Party Certificates"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_third_party_certificates__numerator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_third_party_certificates.numerator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Third Party Certificates"
+    group_item_label: "Numerator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_tls_handshake__denominator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_tls_handshake.denominator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Tls Handshake"
+    group_item_label: "Denominator"
+  }
+
+  dimension: metrics__rate__verification_used_cert_from_tls_handshake__numerator {
+    sql: ${TABLE}.metrics.rate.verification_used_cert_from_tls_handshake.numerator ;;
+    type: number
+    group_label: "Metrics Rate Verification Used Cert From Tls Handshake"
+    group_item_label: "Numerator"
+  }
+
   dimension: metrics__string__blocklist_mlbf_source {
     sql: ${TABLE}.metrics.string.blocklist_mlbf_source ;;
     type: string
@@ -1610,6 +3124,24 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__string__gecko_build_id {
+    sql: ${TABLE}.metrics.string.gecko_build_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gecko Build Id"
+    description: "The Buildid of the Gecko engine, example: 20200205124310 (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gecko_version {
+    sql: ${TABLE}.metrics.string.gecko_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gecko Version"
+    description: "The version of the Gecko engine, example: 74.0a1 (Migrated from the geckoview metric of the same name).
+"
+  }
+
   dimension: metrics__string__geckoview_validation_build_id {
     sql: ${TABLE}.metrics.string.geckoview_validation_build_id ;;
     type: string
@@ -1625,6 +3157,133 @@ This metric appears in both the metrics and baseline pings.
     group_label: "Metrics String"
     group_item_label: "Geckoview Validation Version"
     description: "The version of the Gecko engine, example: 74.0a1 Mirror of `geckoview.version` for validation of migrated data.
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_description {
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_description ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gfx Adapter Primary Description"
+    description: "Long form description of the Graphics adapter (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_device_id {
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_device_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gfx Adapter Primary Device Id"
+    description: "Graphics adapter device identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_date {
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_date ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gfx Adapter Primary Driver Date"
+    description: "Graphics adapter driver date (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_files {
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_files ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gfx Adapter Primary Driver Files"
+    description: "List of graphics adapter driver files (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_vendor {
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_vendor ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gfx Adapter Primary Driver Vendor"
+    description: "Graphics adapter driver vendor identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_driver_version {
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_driver_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gfx Adapter Primary Driver Version"
+    description: "Graphics adapter driver version (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_subsystem_id {
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_subsystem_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gfx Adapter Primary Subsystem Id"
+    description: "Graphics adapter subsystem identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_adapter_primary_vendor_id {
+    sql: ${TABLE}.metrics.string.gfx_adapter_primary_vendor_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gfx Adapter Primary Vendor Id"
+    description: "Graphics adapter vendor identification (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_feature_webrender {
+    sql: ${TABLE}.metrics.string.gfx_feature_webrender ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gfx Feature Webrender"
+    description: "Whether webrender is enabled or disabled, and why. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_status_compositor {
+    sql: ${TABLE}.metrics.string.gfx_status_compositor ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gfx Status Compositor"
+    description: "Name of the graphics compositor in use. Possible values are \"opengl, d3d11, client, webrender or basic\" (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__gfx_status_last_compositor_gecko_version {
+    sql: ${TABLE}.metrics.string.gfx_status_last_compositor_gecko_version ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gfx Status Last Compositor Gecko Version"
+    description: "The gecko version at the last time a compositor was initialized, and therefore when gfx_status_compositor was last updated. Due to gfx_status_compositor's user lifetime we see lots of unexpected values for the current gecko version. We believe this is because the user has not opened a tab since they were updated to a version where webrender should be enabled on their device. This can be used to verify that theory. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
+  dimension: metrics__string__glean_database_rkv_load_error {
+    sql: ${TABLE}.metrics.string.glean_database_rkv_load_error ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Database Rkv Load Error"
+    description: "If there was an error loading the RKV database, record it.
+"
+  }
+
+  dimension: metrics__string__gpu_process_feature_status {
+    sql: ${TABLE}.metrics.string.gpu_process_feature_status ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Gpu Process Feature Status"
+    description: "Current status of the GPU process feature
 "
   }
 
@@ -1724,6 +3383,66 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__values {
     sql: ${TABLE}.metrics.timing_distribution.cookie_banners_click_handle_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cookie Banners Cmp Handle Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cookie_banners_cmp_handle_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.cookie_banners_cmp_handle_duration.values ;;
     hidden: yes
   }
 
@@ -1967,6 +3686,546 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Background Page Load"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_background_page_load__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_background_page_load.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Browser Action Popup Open"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_browser_action_popup_open__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_browser_action_popup_open.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Content Script Injection"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_content_script_injection__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_content_script_injection.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Extension Startup"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_extension_startup__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_extension_startup.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Page Action Popup Open"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_page_action_popup_open__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_page_action_popup_open.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Idb"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_idb__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_idb.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Get Json"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Idb"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_idb__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_idb.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__count {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__range {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__sum {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Extensions Timing Storage Local Set Json"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__values {
+    sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.fingerprinting_protection_canvas_noise_calculate_time.bucket_count ;;
     type: number
@@ -2084,6 +4343,726 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__fog_ipc_flush_durations__values {
     sql: ${TABLE}.metrics.timing_distribution.fog_ipc_flush_durations.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Validation Gvsv Composite Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Validation Gvsv Composite Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fog Validation Gvsv Composite Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Validation Gvsv Composite Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Validation Gvsv Composite Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Fog Validation Gvsv Composite Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Fog Validation Gvsv Composite Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__fog_validation_gvsv_composite_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.fog_validation_gvsv_composite_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__geckoview_content_process_lifetime__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_content_process_lifetime.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Content Process Lifetime"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_content_process_lifetime__count {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_content_process_lifetime.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Content Process Lifetime"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_content_process_lifetime__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_content_process_lifetime.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Geckoview Content Process Lifetime"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_content_process_lifetime__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_content_process_lifetime.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Content Process Lifetime"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_content_process_lifetime__range {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_content_process_lifetime.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__geckoview_content_process_lifetime__sum {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_content_process_lifetime.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Content Process Lifetime"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_content_process_lifetime__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_content_process_lifetime.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Geckoview Content Process Lifetime"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_content_process_lifetime__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_content_process_lifetime.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Content Process Lifetime"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_content_process_lifetime__values {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_content_process_lifetime.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_progress_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_progress_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Page Load Progress Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_progress_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_progress_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Page Load Progress Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_progress_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_progress_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Geckoview Page Load Progress Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_progress_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_progress_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Page Load Progress Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_progress_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_progress_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_progress_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_progress_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Page Load Progress Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_progress_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_progress_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Geckoview Page Load Progress Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_progress_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_progress_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Page Load Progress Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_progress_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_progress_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Page Load Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Page Load Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Geckoview Page Load Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Page Load Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Page Load Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Geckoview Page Load Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Page Load Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_load_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_load_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_reload_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_reload_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Page Reload Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_reload_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_reload_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Page Reload Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_reload_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_reload_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Geckoview Page Reload Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_reload_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_reload_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Page Reload Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_reload_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_reload_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_reload_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_reload_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Page Reload Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_reload_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_reload_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Geckoview Page Reload Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_reload_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_reload_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Page Reload Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_page_reload_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_page_reload_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__geckoview_startup_runtime__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_startup_runtime.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Startup Runtime"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_startup_runtime__count {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_startup_runtime.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Startup Runtime"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_startup_runtime__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_startup_runtime.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Geckoview Startup Runtime"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_startup_runtime__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_startup_runtime.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Startup Runtime"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_startup_runtime__range {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_startup_runtime.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__geckoview_startup_runtime__sum {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_startup_runtime.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Startup Runtime"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_startup_runtime__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_startup_runtime.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Geckoview Startup Runtime"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_startup_runtime__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_startup_runtime.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Geckoview Startup Runtime"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__geckoview_startup_runtime__values {
+    sql: ${TABLE}.metrics.timing_distribution.geckoview_startup_runtime.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_duration.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Checkerboard Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Checkerboard Duration"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_duration.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Gfx Checkerboard Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_duration.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Checkerboard Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_duration.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Checkerboard Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Gfx Checkerboard Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_duration.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Checkerboard Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_potential_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_potential_duration.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Checkerboard Potential Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_potential_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_potential_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Checkerboard Potential Duration"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_potential_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_potential_duration.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Gfx Checkerboard Potential Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_potential_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_potential_duration.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Checkerboard Potential Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_potential_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_potential_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_potential_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_potential_duration.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Checkerboard Potential Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_potential_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_potential_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Gfx Checkerboard Potential Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_potential_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_potential_duration.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Checkerboard Potential Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__gfx_checkerboard_potential_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_checkerboard_potential_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__gfx_composite_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_composite_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Composite Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__gfx_composite_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_composite_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Composite Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__gfx_composite_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_composite_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Gfx Composite Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__gfx_composite_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_composite_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Composite Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__gfx_composite_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_composite_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__gfx_composite_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_composite_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Composite Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__gfx_composite_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_composite_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Gfx Composite Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__gfx_composite_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_composite_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Composite Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__gfx_composite_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_composite_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_full_paint_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_full_paint_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Content Full Paint Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_full_paint_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_full_paint_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Content Full Paint Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_full_paint_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_full_paint_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Gfx Content Full Paint Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_full_paint_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_full_paint_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Content Full Paint Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_full_paint_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_full_paint_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_full_paint_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_full_paint_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Content Full Paint Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_full_paint_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_full_paint_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Gfx Content Full Paint Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_full_paint_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_full_paint_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Content Full Paint Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_full_paint_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_full_paint_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_paint_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_paint_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Content Paint Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_paint_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_paint_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Content Paint Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_paint_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_paint_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Gfx Content Paint Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_paint_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_paint_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Content Paint Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_paint_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_paint_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_paint_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_paint_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Content Paint Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_paint_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_paint_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Gfx Content Paint Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_paint_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_paint_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Content Paint Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__gfx_content_paint_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_content_paint_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__gfx_scroll_present_latency__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_scroll_present_latency.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Scroll Present Latency"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__gfx_scroll_present_latency__count {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_scroll_present_latency.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Scroll Present Latency"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__gfx_scroll_present_latency__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_scroll_present_latency.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Gfx Scroll Present Latency"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__gfx_scroll_present_latency__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_scroll_present_latency.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Scroll Present Latency"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__gfx_scroll_present_latency__range {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_scroll_present_latency.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__gfx_scroll_present_latency__sum {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_scroll_present_latency.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Scroll Present Latency"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__gfx_scroll_present_latency__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_scroll_present_latency.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Gfx Scroll Present Latency"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__gfx_scroll_present_latency__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_scroll_present_latency.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Gfx Scroll Present Latency"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__gfx_scroll_present_latency__values {
+    sql: ${TABLE}.metrics.timing_distribution.gfx_scroll_present_latency.values ;;
     hidden: yes
   }
 
@@ -2327,6 +5306,1326 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__count {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__range {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__sum {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Httpsfirst Downgrade Time Schemeless"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__values {
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_compact_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Compact Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_compact_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Compact Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_compact_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Compact Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_compact_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Compact Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_compact_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_compact_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Compact Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_compact_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Compact Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_compact_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Compact Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_compact_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_compact_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_roots_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Roots Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_roots_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Roots Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_roots_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Roots Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_roots_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Roots Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_roots_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_roots_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Roots Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_roots_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Roots Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_roots_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Roots Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_roots_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_roots_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Mark Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_mark_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_mark_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_minor_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Minor Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_minor_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Minor Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_minor_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Minor Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_minor_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Minor Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_minor_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_minor_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Minor Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_minor_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Minor Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_minor_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Minor Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_minor_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_minor_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_prepare_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Prepare Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_prepare_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Prepare Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_prepare_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Prepare Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_prepare_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Prepare Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_prepare_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_prepare_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Prepare Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_prepare_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Prepare Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_prepare_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Prepare Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_prepare_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_prepare_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_slice_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Slice Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_slice_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Slice Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_slice_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Slice Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_slice_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Slice Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_slice_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_slice_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Slice Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_slice_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Slice Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_slice_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Slice Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_slice_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_slice_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_sweep_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Sweep Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_sweep_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Sweep Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_sweep_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Sweep Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_sweep_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Sweep Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_sweep_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_sweep_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Sweep Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_sweep_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Sweep Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_sweep_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Sweep Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_sweep_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_sweep_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_total_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Total Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_total_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Total Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_total_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Total Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_total_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Total Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_total_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_total_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Total Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_total_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Gc Total Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_total_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Gc Total Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_gc_total_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_gc_total_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Baseline Compile Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Baseline Compile Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Pageload Baseline Compile Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Baseline Compile Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Baseline Compile Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Pageload Baseline Compile Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Baseline Compile Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_baseline_compile_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_baseline_compile_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_delazification_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Delazification Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_delazification_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Delazification Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_delazification_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Pageload Delazification Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_delazification_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Delazification Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_delazification_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_delazification_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Delazification Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_delazification_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Pageload Delazification Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_delazification_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Delazification Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_delazification_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_delazification_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_execution_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Execution Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_execution_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Execution Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_execution_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Pageload Execution Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_execution_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Execution Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_execution_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_execution_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Execution Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_execution_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Pageload Execution Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_execution_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Execution Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_execution_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_execution_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_gc_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Gc Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_gc_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Gc Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_gc_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Pageload Gc Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_gc_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Gc Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_gc_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_gc_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Gc Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_gc_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Pageload Gc Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_gc_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Gc Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_gc_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_gc_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_parse_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Parse Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_parse_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Parse Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_parse_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Pageload Parse Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_parse_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Parse Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_parse_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_parse_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Parse Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_parse_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Pageload Parse Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_parse_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Parse Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_parse_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_parse_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_protect_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Protect Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_protect_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Protect Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_protect_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Pageload Protect Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_protect_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Protect Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_protect_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_protect_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Protect Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_protect_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Pageload Protect Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_protect_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Protect Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_protect_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_protect_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Xdr Encode Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Xdr Encode Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Pageload Xdr Encode Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Xdr Encode Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Xdr Encode Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Javascript Pageload Xdr Encode Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Javascript Pageload Xdr Encode Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__javascript_pageload_xdr_encode_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.javascript_pageload_xdr_encode_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Hit Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Hit Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Cache Hit Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Hit Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Hit Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Cache Hit Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Cache Hit Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_cache_hit_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_cache_hit_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_dns_end__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns End"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_end__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns End"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_end__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Dns End"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_end__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns End"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_end__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_dns_end__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns End"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_end__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Dns End"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_end__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns End"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_end__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_end.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Dns Start"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_dns_start__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_dns_start.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network First From Cache"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network First From Cache"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network First From Cache"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network First From Cache"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network First From Cache"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network First From Cache"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network First From Cache"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_first_from_cache__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_first_from_cache.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Font Download End"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Font Download End"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Font Download End"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Font Download End"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Font Download End"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Font Download End"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Font Download End"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_font_download_end__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_font_download_end.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.bucket_count ;;
     type: number
@@ -2384,6 +6683,126 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__network_open_to_transaction_pending__values {
     sql: ${TABLE}.metrics.timing_distribution.network_open_to_transaction_pending.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tcp Connection"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tcp Connection"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Tcp Connection"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tcp Connection"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tcp Connection"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Tcp Connection"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tcp Connection"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_tcp_connection__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_tcp_connection.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__count {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__range {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__sum {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Network Tls Handshake"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__network_tls_handshake__values {
+    sql: ${TABLE}.metrics.timing_distribution.network_tls_handshake.values ;;
     hidden: yes
   }
 
@@ -2627,6 +7046,606 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Page Open To First Sent Https Rr"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_page_open_to_first_sent_https_rr.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Channel Sub Open To First Sent Https Rr"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_channel_sub_open_to_first_sent_https_rr.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Cssloader Ondatafinished To Onstop Delay"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished Delay"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_delay__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_delay.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Content Ondatafinished To Onstop Delay Negative"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__networking_http_content_onstart_delay__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_onstart_delay.bucket_count ;;
     type: number
@@ -2747,6 +7766,126 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time Https Rr"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time Https Rr"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time Https Rr"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time Https Rr"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time Https Rr"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time Https Rr"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Transaction Wait Time Https Rr"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_transaction_wait_time_https_rr__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time_https_rr.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__paint_build_displaylist_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.bucket_count ;;
     type: number
@@ -2804,6 +7943,1266 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__paint_build_displaylist_time__values {
     sql: ${TABLE}.metrics.timing_distribution.paint_build_displaylist_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__range {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__sum {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint__values {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint From Response Start"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__count {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint From Response Start"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint From Response Start"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint From Response Start"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__range {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__sum {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint From Response Start"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint From Response Start"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Perf Largest Contentful Paint From Response Start"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__values {
+    sql: ${TABLE}.metrics.timing_distribution.perf_largest_contentful_paint_from_response_start.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_clone_deserialize_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Clone Deserialize Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_clone_deserialize_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Clone Deserialize Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_clone_deserialize_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Clone Deserialize Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_clone_deserialize_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Clone Deserialize Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_clone_deserialize_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_clone_deserialize_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Clone Deserialize Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_clone_deserialize_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Clone Deserialize Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_clone_deserialize_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Clone Deserialize Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_clone_deserialize_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_clone_deserialize_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Interaction Keypress Present Latency"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Interaction Keypress Present Latency"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Interaction Keypress Present Latency"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Interaction Keypress Present Latency"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Interaction Keypress Present Latency"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Interaction Keypress Present Latency"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Interaction Keypress Present Latency"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_keypress_present_latency__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_keypress_present_latency.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Interaction Mouseup Click Present Latency"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Interaction Mouseup Click Present Latency"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Interaction Mouseup Click Present Latency"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Interaction Mouseup Click Present Latency"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Interaction Mouseup Click Present Latency"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Interaction Mouseup Click Present Latency"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Interaction Mouseup Click Present Latency"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_interaction_mouseup_click_present_latency.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_page_non_blank_paint__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Page Non Blank Paint"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_non_blank_paint__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Page Non Blank Paint"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_non_blank_paint__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Page Non Blank Paint"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_non_blank_paint__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Page Non Blank Paint"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_non_blank_paint__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_page_non_blank_paint__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Page Non Blank Paint"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_non_blank_paint__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Page Non Blank Paint"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_non_blank_paint__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Page Non Blank Paint"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_non_blank_paint__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_non_blank_paint.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_page_total_content_page_load__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_total_content_page_load.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Page Total Content Page Load"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_total_content_page_load__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_total_content_page_load.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Page Total Content Page Load"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_total_content_page_load__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_total_content_page_load.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Page Total Content Page Load"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_total_content_page_load__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_total_content_page_load.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Page Total Content Page Load"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_total_content_page_load__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_total_content_page_load.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_page_total_content_page_load__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_total_content_page_load.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Page Total Content Page Load"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_total_content_page_load__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_total_content_page_load.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Page Total Content Page Load"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_total_content_page_load__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_total_content_page_load.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Page Total Content Page Load"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_page_total_content_page_load__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_page_total_content_page_load.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Fcp"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Fcp"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Fcp"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Fcp"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Fcp"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Fcp"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Fcp"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Fcp Responsestart"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Fcp Responsestart"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Fcp Responsestart"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Fcp Responsestart"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Fcp Responsestart"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Fcp Responsestart"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Fcp Responsestart"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_fcp_responsestart__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_fcp_responsestart.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Load Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Load Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Load Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Load Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Load Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Load Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Load Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time_responsestart.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Load Time Responsestart"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time_responsestart.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Load Time Responsestart"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time_responsestart.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Load Time Responsestart"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time_responsestart.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Load Time Responsestart"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time_responsestart.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time_responsestart.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Load Time Responsestart"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time_responsestart.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Load Time Responsestart"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time_responsestart.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Load Time Responsestart"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_load_time_responsestart__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_load_time_responsestart.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Req Anim Frame Callback"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Req Anim Frame Callback"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Req Anim Frame Callback"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Req Anim Frame Callback"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Req Anim Frame Callback"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Req Anim Frame Callback"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Req Anim Frame Callback"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_req_anim_frame_callback__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_req_anim_frame_callback.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_responsiveness_req_anim_frame_callback.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Responsiveness Req Anim Frame Callback"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_responsiveness_req_anim_frame_callback.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Responsiveness Req Anim Frame Callback"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_responsiveness_req_anim_frame_callback.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Responsiveness Req Anim Frame Callback"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_responsiveness_req_anim_frame_callback.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Responsiveness Req Anim Frame Callback"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_responsiveness_req_anim_frame_callback.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_responsiveness_req_anim_frame_callback.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Responsiveness Req Anim Frame Callback"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_responsiveness_req_anim_frame_callback.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Responsiveness Req Anim Frame Callback"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_responsiveness_req_anim_frame_callback.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Responsiveness Req Anim Frame Callback"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_responsiveness_req_anim_frame_callback.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_complete__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Complete"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_complete__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Complete"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_complete__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Time Dom Complete"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_complete__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Complete"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_complete__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_complete__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Complete"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_complete__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Time Dom Complete"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_complete__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Complete"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_complete__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_complete.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded End"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded End"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded End"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded End"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded End"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded End"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded End"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_end__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_end.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded Start"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded Start"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded Start"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded Start"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded Start"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded Start"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Content Loaded Start"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_content_loaded_start__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_content_loaded_start.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_interactive__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Interactive"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_interactive__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Interactive"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_interactive__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Time Dom Interactive"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_interactive__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Interactive"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_interactive__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_interactive__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Interactive"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_interactive__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Time Dom Interactive"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_interactive__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Dom Interactive"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_dom_interactive__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_dom_interactive.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_end__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Load Event End"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_end__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Load Event End"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_end__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Time Load Event End"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_end__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Load Event End"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_end__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_end__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Load Event End"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_end__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Time Load Event End"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_end__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Load Event End"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_end__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_end.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_start__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Load Event Start"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_start__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Load Event Start"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_start__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Time Load Event Start"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_start__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Load Event Start"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_start__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_start__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Load Event Start"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_start__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Time Load Event Start"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_start__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Load Event Start"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_load_event_start__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_load_event_start.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_time_response_start__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_response_start.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Response Start"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_response_start__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_response_start.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Response Start"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_response_start__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_response_start.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Time Response Start"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_response_start__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_response_start.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Response Start"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_response_start__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_response_start.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_time_response_start__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_response_start.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Response Start"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_response_start__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_response_start.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Time Response Start"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_response_start__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_response_start.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Time Response Start"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_time_response_start__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_time_response_start.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Privacy Sanitize Load Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Privacy Sanitize Load Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Privacy Sanitize Load Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Privacy Sanitize Load Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Privacy Sanitize Load Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Privacy Sanitize Load Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Privacy Sanitize Load Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__privacy_sanitize_load_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.privacy_sanitize_load_time.values ;;
     hidden: yes
   }
 
@@ -3615,7 +10014,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
       year,
     ]
     label: "Metrics Datetime: Blocklist Mlbf Stash Time Newest"
-    description: "Keep track of the timestamp of the most recent stash of the addons blocklist. Only meaningful when mlbf_enabled is true.
+    description: "Keep track of the timestamp of the most recent stash of the addons blocklist.
 "
   }
 
@@ -3632,7 +10031,7 @@ It is possible for a Firefox installation to not have a default profile, but in 
       year,
     ]
     label: "Metrics Datetime: Blocklist Mlbf Stash Time Oldest"
-    description: "Keep track of the timestamp of the oldest stash of the addons blocklist. Only meaningful when mlbf_enabled is true.
+    description: "Keep track of the timestamp of the oldest stash of the addons blocklist.
 "
   }
 
@@ -3735,7 +10134,247 @@ view: metrics_table__events__extra {
   }
 }
 
+view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_frame__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_selector_run_count_per_window_top_level__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_frame__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__cookie_banners_click_query_selector_run_duration_per_window_top_level__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__extensions_timing_event_page_running_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__fog_validation_gvsv_number_of_unique_site_origins_all_tabs__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__geckoview_document_site_origins__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__geckoview_per_document_site_origins__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__gfx_checkerboard_peak_pixel_count__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__gfx_checkerboard_severity__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__gfx_content_frame_time_from_paint__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__gfx_content_frame_time_from_vsync__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__gfx_content_frame_time_with_svg__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__gfx_content_frame_time_without_resource_upload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__gfx_content_frame_time_without_upload__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_cookie_access_fixup_diff__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_count_part_by_key__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_count_partitioned__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_count_total__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_count_unpart_by_key__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_count_unpartitioned__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -3759,7 +10398,79 @@ view: metrics_table__metrics__custom_distribution__networking_cookie_creation_fi
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_cookie_purge_entry_max__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_cookie_purge_max__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_1_download_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_1_upload_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_1_upload_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_1_upload_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_1_upload_throughput_50_100__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -3783,6 +10494,54 @@ view: metrics_table__metrics__custom_distribution__networking_http_2_download_th
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_2_upload_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_2_upload_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_2_upload_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_2_upload_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__networking_http_3_download_throughput__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -3795,7 +10554,79 @@ view: metrics_table__metrics__custom_distribution__networking_http_3_download_th
   }
 }
 
+view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput_10_50__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__networking_http_3_upload_throughput_50_100__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__pdfjs_editing_highlight_thickness__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__custom_distribution__pdfjs_time_to_view__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__performance_clone_deserialize_items__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -3856,6 +10687,18 @@ view: metrics_table__metrics__labeled_boolean__cookie_banners_private_window_ser
 }
 
 view: metrics_table__metrics__labeled_boolean__data_storage_migration {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_boolean__oskeystore_self_test {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -3939,7 +10782,31 @@ view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_di
   }
 }
 
+view: metrics_table__metrics__memory_distribution__performance_clone_deserialize_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__cookie_banners_click_handle_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cookie_banners_cmp_handle_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -3999,6 +10866,114 @@ view: metrics_table__metrics__timing_distribution__extensions_apis_dnr_validate_
   }
 }
 
+view: metrics_table__metrics__timing_distribution__extensions_timing_background_page_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_browser_action_popup_open__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_content_script_injection__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_extension_startup__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_page_action_popup_open__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_storage_local_get_idb__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_storage_local_get_json__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_storage_local_set_idb__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__extensions_timing_storage_local_set_json__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__fingerprinting_protection_canvas_noise_calculate_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -4012,6 +10987,150 @@ view: metrics_table__metrics__timing_distribution__fingerprinting_protection_can
 }
 
 view: metrics_table__metrics__timing_distribution__fog_ipc_flush_durations__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__fog_validation_gvsv_composite_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__geckoview_content_process_lifetime__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__geckoview_page_load_progress_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__geckoview_page_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__geckoview_page_reload_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__geckoview_startup_runtime__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__gfx_checkerboard_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__gfx_checkerboard_potential_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__gfx_composite_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__gfx_content_full_paint_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__gfx_content_paint_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__gfx_scroll_present_latency__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -4071,7 +11190,295 @@ view: metrics_table__metrics__timing_distribution__glean_validation_shutdown_wai
   }
 }
 
+view: metrics_table__metrics__timing_distribution__httpsfirst_downgrade_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_gc_compact_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_gc_mark_roots_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_gc_mark_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_gc_minor_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_gc_prepare_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_gc_slice_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_gc_sweep_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_gc_total_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_pageload_baseline_compile_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_pageload_delazification_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_pageload_execution_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_pageload_gc_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_pageload_parse_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_pageload_protect_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__javascript_pageload_xdr_encode_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_cache_hit_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_dns_end__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_dns_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_first_from_cache__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_font_download_end__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__network_open_to_transaction_pending__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_tcp_connection__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__network_tls_handshake__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -4131,6 +11538,126 @@ view: metrics_table__metrics__timing_distribution__networking_dns_renewal_time_f
   }
 }
 
+view: metrics_table__metrics__timing_distribution__networking_http_channel_page_open_to_first_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_channel_page_open_to_first_sent_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_content_ondatafinished_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__networking_http_content_onstart_delay__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -4155,7 +11682,283 @@ view: metrics_table__metrics__timing_distribution__networking_http_content_onsto
   }
 }
 
+view: metrics_table__metrics__timing_distribution__networking_transaction_wait_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_transaction_wait_time_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__paint_build_displaylist_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__perf_largest_contentful_paint__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__perf_largest_contentful_paint_from_response_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_clone_deserialize_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_interaction_keypress_present_latency__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_interaction_mouseup_click_present_latency__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_page_non_blank_paint__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_page_total_content_page_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_fcp__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_fcp_responsestart__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_load_time_responsestart__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_req_anim_frame_callback__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_responsiveness_req_anim_frame_callback__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_time_dom_complete__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_time_dom_content_loaded_end__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_time_dom_content_loaded_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_time_dom_interactive__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_time_load_event_end__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_time_load_event_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_time_response_start__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__privacy_sanitize_load_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

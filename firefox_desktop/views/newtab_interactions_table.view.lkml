@@ -125,6 +125,11 @@ view: newtab_interactions_table {
     type: number
   }
 
+  dimension: organic_topsite_dismissals {
+    sql: ${TABLE}.organic_topsite_dismissals ;;
+    type: number
+  }
+
   dimension: organic_topsite_impressions {
     sql: ${TABLE}.organic_topsite_impressions ;;
     type: number
@@ -210,6 +215,11 @@ view: newtab_interactions_table {
     type: number
   }
 
+  dimension: sponsored_topsite_dismissals {
+    sql: ${TABLE}.sponsored_topsite_dismissals ;;
+    type: number
+  }
+
   dimension: sponsored_topsite_impressions {
     sql: ${TABLE}.sponsored_topsite_impressions ;;
     type: number
@@ -237,6 +247,11 @@ view: newtab_interactions_table {
 
   dimension: topsite_clicks {
     sql: ${TABLE}.topsite_clicks ;;
+    type: number
+  }
+
+  dimension: topsite_dismissals {
+    sql: ${TABLE}.topsite_dismissals ;;
     type: number
   }
 

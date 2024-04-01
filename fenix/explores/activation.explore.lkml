@@ -38,6 +38,21 @@ explore: activation {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${activation.metrics__labeled_counter__glean_error_invalid_value}) AS activation__metrics__labeled_counter__glean_error_invalid_value ON ${activation.document_id} = ${activation__metrics__labeled_counter__glean_error_invalid_value.document_id} ;;
   }
+
+  join: activation__events {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${activation.events}) AS activation__events ;;
+  }
+
+  join: activation__events__extra {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${activation__events.extra}) AS activation__events__extra ;;
+  }
+
+  join: activation__ping_info__experiments {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${activation.ping_info__experiments}) AS activation__ping_info__experiments ;;
+  }
 }
 
 explore: suggest__activation__metrics__labeled_counter__glean_error_invalid_label {

@@ -254,6 +254,11 @@ view: default_browser {
     type: string
   }
 
+  dimension: previous_os_version {
+    sql: ${TABLE}.previous_os_version ;;
+    type: string
+  }
+
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number

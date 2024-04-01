@@ -7,9 +7,10 @@
 
 datagroup: marketing_firefox_for_families_forecasted_expectations_last_updated {
   label: "marketing_firefox_for_families_forecasted_expectations Last Updated"
-  sql_trigger: SELECT MAX(last_modified_time)
-    FROM `mozdata`.analysis.INFORMATION_SCHEMA.PARTITIONS
-    WHERE table_name = 'marketing_firefox_for_families_forecasted_expectations' ;;
+  sql_trigger: SELECT MAX(storage_last_modified_time)
+    FROM `mozdata`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'analysis'
+    AND table_name = 'marketing_firefox_for_families_forecasted_expectations' ;;
   description: "Updates when mozdata:analysis.marketing_firefox_for_families_forecasted_expectations is modified."
   max_cache_age: "24 hours"
 }

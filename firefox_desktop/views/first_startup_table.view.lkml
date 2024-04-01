@@ -113,6 +113,22 @@ view: first_startup_table {
     description: "The user-visible version of the operating system (e.g. \"1.2.3\"). If the version detection fails, this metric gets set to `Unknown`."
   }
 
+  dimension: client_info__session_count {
+    sql: ${TABLE}.client_info.session_count ;;
+    type: number
+    group_label: "Client Info"
+    group_item_label: "Session Count"
+    description: "An optional running counter of the number of sessions for a client."
+  }
+
+  dimension: client_info__session_id {
+    sql: ${TABLE}.client_info.session_id ;;
+    type: string
+    group_label: "Client Info"
+    group_item_label: "Session Id"
+    description: "An optional UUID uniquely identifying the client's current session."
+  }
+
   dimension: client_info__telemetry_sdk_build {
     sql: ${TABLE}.client_info.telemetry_sdk_build ;;
     type: string
@@ -308,6 +324,15 @@ view: first_startup_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__first_startup_new_profile {
+    sql: ${TABLE}.metrics.boolean.first_startup_new_profile ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "First Startup New Profile"
+    description: "True if FirstStartup was initted after a new profile was just created. If false, this means that FirstStartup was initted with a pre-existing profile, which is a no-op.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -374,6 +399,16 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "First Startup Status Code"
     description: "Status of the FirstStartup service, which runs
 post-install/early-startup in Firefox.
+"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
 "
   }
 
