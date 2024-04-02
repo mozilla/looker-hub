@@ -598,6 +598,20 @@ view: metrics_table {
     group_item_label: "Glean Validation Foreground Count"
   }
 
+  dimension: metrics__counter__hls_canplay_requested {
+    sql: ${TABLE}.metrics.counter.hls_canplay_requested ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Hls Canplay Requested"
+  }
+
+  dimension: metrics__counter__hls_canplay_supported {
+    sql: ${TABLE}.metrics.counter.hls_canplay_supported ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Hls Canplay Supported"
+  }
+
   dimension: metrics__counter__httpsfirst_downgraded {
     sql: ${TABLE}.metrics.counter.httpsfirst_downgraded ;;
     type: number
