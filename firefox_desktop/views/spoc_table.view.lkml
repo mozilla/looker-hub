@@ -324,6 +324,20 @@ view: spoc_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__datetime__raw_pocket_fetch_timestamp {
+    sql: ${TABLE}.metrics.datetime.raw_pocket_fetch_timestamp ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Pocket Fetch Timestamp"
+  }
+
+  dimension: metrics__datetime__raw_pocket_newtab_creation_timestamp {
+    sql: ${TABLE}.metrics.datetime.raw_pocket_newtab_creation_timestamp ;;
+    type: string
+    group_label: "Metrics Datetime"
+    group_item_label: "Raw Pocket Newtab Creation Timestamp"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -483,6 +497,40 @@ This shim should not be sent with the client_id.
       year,
     ]
     label: "Metadata Header: Parsed Date"
+  }
+
+  dimension_group: metrics__datetime__pocket_fetch {
+    sql: ${TABLE}.metrics.datetime.pocket_fetch_timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Pocket Fetch Timestamp"
+    description: "Timestamp of when the spoc was fetched by the client
+"
+  }
+
+  dimension_group: metrics__datetime__pocket_newtab_creation {
+    sql: ${TABLE}.metrics.datetime.pocket_newtab_creation_timestamp ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metrics Datetime: Pocket Newtab Creation Timestamp"
+    description: "Timestamp of when this instance of the newtab was first visible to the user.
+"
   }
 
   dimension_group: ping_info__parsed_end {
