@@ -5,26 +5,6 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: operating_system_usage {
-  dimension: AggInterval {
-    sql: ${TABLE}.AggInterval ;;
-    type: string
-  }
-
-  dimension: ConfidenceLevel {
-    sql: ${TABLE}.ConfidenceLevel ;;
-    type: string
-  }
-
-  dimension: Normalization {
-    sql: ${TABLE}.Normalization ;;
-    type: string
-  }
-
-  dimension: device_share {
-    sql: ${TABLE}.device_share ;;
-    type: string
-  }
-
   dimension: device_type {
     sql: ${TABLE}.device_type ;;
     type: string
@@ -35,9 +15,19 @@ view: operating_system_usage {
     type: string
   }
 
+  dimension: normalization_type {
+    sql: ${TABLE}.normalization_type ;;
+    type: string
+  }
+
   dimension: os {
     sql: ${TABLE}.os ;;
     type: string
+  }
+
+  dimension: os_share {
+    sql: ${TABLE}.os_share ;;
+    type: number
   }
 
   dimension_group: dte {
@@ -69,5 +59,5 @@ view: operating_system_usage {
     ]
   }
 
-  sql_table_name: `mozdata.analysis.cloudflare_os_usage_data` ;;
+  sql_table_name: `mozdata.cloudflare.os_usage` ;;
 }
