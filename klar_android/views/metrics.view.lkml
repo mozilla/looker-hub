@@ -3342,6 +3342,42 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__hls_canplay_requested {
+    label: "Hls Canplay Requested"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.hls_canplay_requested ;;
+    type: number
+    group_label: "Hls"
+    group_item_label: "Canplay Requested"
+
+    link: {
+      label: "Glean Dictionary reference for Hls Canplay Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/hls_canplay_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record when a page requests canPlayType for a HLS media type.
+"
+  }
+
+  dimension: metrics__counter__hls_canplay_supported {
+    label: "Hls Canplay Supported"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.hls_canplay_supported ;;
+    type: number
+    group_label: "Hls"
+    group_item_label: "Canplay Supported"
+
+    link: {
+      label: "Glean Dictionary reference for Hls Canplay Supported"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/hls_canplay_supported"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record when a canPlayType request supports HLS.
+"
+  }
+
   dimension: metrics__timing_distribution__httpsfirst_downgrade_time__sum {
     label: "Httpsfirst Downgrade Time Sum"
     hidden: no
@@ -9060,6 +9096,56 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Fog Ipc Shutdown Registration Failures"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/fog_ipc_shutdown_registration_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: hls_canplay_requested {
+    type: sum
+    sql: ${metrics__counter__hls_canplay_requested} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Hls Canplay Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/hls_canplay_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: hls_canplay_requested_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__hls_canplay_requested: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Hls Canplay Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/hls_canplay_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: hls_canplay_supported {
+    type: sum
+    sql: ${metrics__counter__hls_canplay_supported} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Hls Canplay Supported"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/hls_canplay_supported"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: hls_canplay_supported_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__hls_canplay_supported: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Hls Canplay Supported"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/hls_canplay_supported"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
