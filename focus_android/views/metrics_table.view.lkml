@@ -2268,6 +2268,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
+    sql: ${TABLE}.metrics.labeled_string.cookie_banners_google_gdpr_choice_cookie ;;
+    hidden: yes
+  }
+
   dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__count {
     sql: ${TABLE}.metrics.memory_distribution.extensions_apis_dnr_startup_cache_read_size.count ;;
     type: number
@@ -10508,6 +10513,18 @@ view: metrics_table__metrics__labeled_boolean__oskeystore_self_test {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
   }
 }
 

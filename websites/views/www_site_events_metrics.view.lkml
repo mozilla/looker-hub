@@ -131,5 +131,5 @@ view: www_site_events_metrics {
     datatype: date
   }
 
-  sql_table_name: `moz-fx-data-marketing-prod.ga_derived.www_site_events_metrics_v1` ;;
+  sql_table_name: `moz-fx-data-marketing-prod.ga.www_site_events_metrics` ;;
 }

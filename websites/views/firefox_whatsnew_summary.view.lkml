@@ -66,5 +66,5 @@ view: firefox_whatsnew_summary {
     datatype: date
   }
 
-  sql_table_name: `moz-fx-data-marketing-prod.ga_derived.firefox_whatsnew_summary_v1` ;;
+  sql_table_name: `moz-fx-data-marketing-prod.ga.firefox_whatsnew_summary` ;;
 }

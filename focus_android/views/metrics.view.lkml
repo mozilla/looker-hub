@@ -17395,6 +17395,18 @@ view: metrics__metrics__labeled_boolean__oskeystore_self_test {
   }
 }
 
+view: metrics__metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
 view: metrics__metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
