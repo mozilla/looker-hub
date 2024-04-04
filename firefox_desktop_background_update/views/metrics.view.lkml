@@ -683,6 +683,24 @@ It is possible for a Firefox installation to not have a default profile, but in 
 "
   }
 
+  dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
+    label: "Cookie Banners Google Gdpr Choice Cookie"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.cookie_banners_google_gdpr_choice_cookie ;;
+    type: string
+    group_label: "Cookie Banners"
+    group_item_label: "Google Gdpr Choice Cookie"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Google Gdpr Choice Cookie"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cookie_banners_google_gdpr_choice_cookie"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the GDPR choice on Google Search based on the \"SOCS\" cookie of the Google Search domains. The value could be \"Accept\", \"Reject\" or \"Custom\". We use the label to record different choices on different Google domains. We only collect this if the default search engine is Google.
+"
+  }
+
   dimension: metrics__labeled_boolean__cookie_banners_normal_window_service_mode {
     label: "Cookie Banners Normal Window Service Mode"
     hidden: no
@@ -4204,7 +4222,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__sum {
     label: "Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.sum ;;
     type: number
     group_label: "Networking"
@@ -4258,7 +4276,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__sum {
     label: "Networking Http Content Ondatafinished To Onstop Delay Negative Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.sum ;;
     type: number
     group_label: "Networking"
