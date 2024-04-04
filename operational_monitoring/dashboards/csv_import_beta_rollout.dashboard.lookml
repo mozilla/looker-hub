@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       csv_import_beta_rollout.branch
     ]
     filters:
-      csv_import_beta_rollout.metric: 'retained'
+      csv_import_beta_rollout.metric: 'qualified_cumulative_days_of_use'
       csv_import_beta_rollout.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       csv_import_beta_rollout.branch
     ]
     filters:
-      csv_import_beta_rollout.metric: 'active_hours'
+      csv_import_beta_rollout.metric: 'days_of_use'
       csv_import_beta_rollout.statistic: mean
     row: 0
     col: 12
@@ -115,8 +115,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -131,7 +131,7 @@
       csv_import_beta_rollout.branch
     ]
     filters:
-      csv_import_beta_rollout.metric: 'qualified_cumulative_days_of_use'
+      csv_import_beta_rollout.metric: 'uri_count'
       csv_import_beta_rollout.statistic: mean
     row: 10
     col: 12
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       csv_import_beta_rollout.branch
     ]
     filters:
-      csv_import_beta_rollout.metric: 'days_of_use'
+      csv_import_beta_rollout.metric: 'active_hours'
       csv_import_beta_rollout.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       csv_import_beta_rollout.branch
     ]
     filters:
-      csv_import_beta_rollout.metric: 'uri_count'
+      csv_import_beta_rollout.metric: 'retained'
       csv_import_beta_rollout.statistic: mean
     row: 30
     col: 12
