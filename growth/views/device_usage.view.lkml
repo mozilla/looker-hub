@@ -5,16 +5,6 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: device_usage {
-  dimension: Location {
-    sql: ${TABLE}.Location ;;
-    type: string
-  }
-
-  dimension: UserType {
-    sql: ${TABLE}.UserType ;;
-    type: string
-  }
-
   dimension: aggregation_interval {
     sql: ${TABLE}.aggregation_interval ;;
     type: string
@@ -23,6 +13,11 @@ view: device_usage {
   dimension: desktop_usage_pct {
     sql: ${TABLE}.desktop_usage_pct ;;
     type: number
+  }
+
+  dimension: location {
+    sql: ${TABLE}.location ;;
+    type: string
   }
 
   dimension: mobile_usage_pct {
@@ -38,6 +33,11 @@ view: device_usage {
   dimension: other_usage_pct {
     sql: ${TABLE}.other_usage_pct ;;
     type: number
+  }
+
+  dimension: user_type {
+    sql: ${TABLE}.user_type ;;
+    type: string
   }
 
   dimension_group: dte {
@@ -69,5 +69,5 @@ view: device_usage {
     ]
   }
 
-  sql_table_name: `mozdata.analysis.cloudflare_device_usage_data` ;;
+  sql_table_name: `mozdata.cloudflare.device_usage` ;;
 }

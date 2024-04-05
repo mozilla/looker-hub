@@ -121,5 +121,5 @@ view: site_metrics_summary {
     datatype: date
   }
 
-  sql_table_name: `mozdata.mozilla_vpn.site_metrics_summary` ;;
+  sql_table_name: `mozdata.mozilla_vpn.site_metrics_summary_v2` ;;
 }

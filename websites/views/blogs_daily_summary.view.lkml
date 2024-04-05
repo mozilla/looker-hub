@@ -101,5 +101,5 @@ view: blogs_daily_summary {
     datatype: date
   }
 
-  sql_table_name: `moz-fx-data-marketing-prod.ga_derived.blogs_daily_summary_v1` ;;
+  sql_table_name: `moz-fx-data-marketing-prod.ga.blogs_daily_summary` ;;
 }

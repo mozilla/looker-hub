@@ -4,14 +4,15 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/fox_doodle_set_to_default_early_day_user_car_fox_rollout.view.lkml"
+include: "/looker-hub/firefox_accounts/views/login_funnels_by_service.view.lkml"
 
-explore: fox_doodle_set_to_default_early_day_user_car_fox_rollout {
+explore: login_funnels_by_service {
+  sql_always_where: ${login_funnels_by_service.submission_date} >= '2010-01-01' ;;
+  view_name: login_funnels_by_service
+
   always_filter: {
     filters: [
-      branch: "enabled, disabled",
+      submission_date: "28 days",
     ]
   }
-
-  hidden: yes
 }

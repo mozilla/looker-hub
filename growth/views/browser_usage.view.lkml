@@ -5,18 +5,18 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: browser_usage {
-  dimension: Browser {
-    sql: ${TABLE}.Browser ;;
+  dimension: browser {
+    sql: ${TABLE}.browser ;;
     type: string
   }
 
-  dimension: DeviceType {
-    sql: ${TABLE}.DeviceType ;;
+  dimension: device_type {
+    sql: ${TABLE}.device_type ;;
     type: string
   }
 
-  dimension: Location {
-    sql: ${TABLE}.Location ;;
+  dimension: location {
+    sql: ${TABLE}.location ;;
     type: string
   }
 
@@ -30,18 +30,19 @@ view: browser_usage {
     type: number
   }
 
-  dimension_group: end_ts {
-    sql: ${TABLE}.end_ts ;;
+  dimension_group: dte {
+    sql: ${TABLE}.dte ;;
     type: time
     timeframes: [
       raw,
-      time,
       date,
       week,
       month,
       quarter,
       year,
     ]
+    convert_tz: no
+    datatype: date
   }
 
   dimension_group: last_updated_ts {
@@ -58,19 +59,5 @@ view: browser_usage {
     ]
   }
 
-  dimension_group: start_ts {
-    sql: ${TABLE}.start_ts ;;
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year,
-    ]
-  }
-
-  sql_table_name: `mozdata.analysis.cloudflare_browser_usage_data` ;;
+  sql_table_name: `mozdata.cloudflare.browser_usage` ;;
 }
