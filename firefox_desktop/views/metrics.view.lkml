@@ -5,6 +5,24 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: metrics {
+  dimension: metrics__quantity__browser_backup_browser_extension_data_size {
+    label: "Browser Backup Browser Extension Data Size"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.browser_backup_browser_extension_data_size ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Browser Extension Data Size"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Browser Extension Data Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_browser_extension_data_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total size of the current profiles storage.local legacy JSON backend in the browser-extension-data directory, rounded to the nearest 10 kilobytes.
+"
+  }
+
   dimension: metrics__quantity__browser_backup_cookies_size {
     label: "Browser Backup Cookies Size"
     hidden: no
@@ -38,6 +56,82 @@ view: metrics {
     }
 
     description: "The total size of logins, payment method, and form autofill related files in the current profile directory, in kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_extension_store_permissions_data_size {
+    label: "Browser Backup Extension Store Permissions Data Size"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.browser_backup_extension_store_permissions_data_size ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Extension Store Permissions Data Size"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Extension Store Permissions Data Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_extension_store_permissions_data_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The file size of the current profiles extension-store-permissions/data.safe.bin file, rounded to the nearest 10 kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_extensions_json_size {
+    label: "Browser Backup Extensions Json Size"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.browser_backup_extensions_json_size ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Extensions Json Size"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Extensions Json Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_extensions_json_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total file size of the current profiles extensions metadata files, rounded to the nearest 10 kilobytes. Files included are:
+  - extensions.json
+  - extension-settings.json
+  - extension-preferences.json
+  - addonStartup.json.lz4
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_extensions_storage_size {
+    label: "Browser Backup Extensions Storage Size"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.browser_backup_extensions_storage_size ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Extensions Storage Size"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Extensions Storage Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_extensions_storage_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total size of all extensions storage directories, rounded to the nearest 10 kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_extensions_xpi_directory_size {
+    label: "Browser Backup Extensions Xpi Directory Size"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.browser_backup_extensions_xpi_directory_size ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Extensions Xpi Directory Size"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Extensions Xpi Directory Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_extensions_xpi_directory_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total size of the current profiles extensions directory, rounded to the nearest 10 kilobytes.
 "
   }
 
@@ -91,7 +185,7 @@ view: metrics {
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "The total size of files for telemetry, site storage, media device origin mapping and Mozilla Accounts in the current profile directory, rounded to the nearest tenth kilobyte.
+    description: "The total size of files for telemetry, site storage, media device origin mapping, chrome privileged IndexedDB databases, and Mozilla Accounts in the current profile directory, rounded to the nearest tenth kilobyte.
 "
   }
 
@@ -200,6 +294,24 @@ view: metrics {
     }
 
     description: "The size of uncompressed session store json, in kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_storage_sync_size {
+    label: "Browser Backup Storage Sync Size"
+    hidden: yes
+    sql: ${TABLE}.metrics.quantity.browser_backup_storage_sync_size ;;
+    type: number
+    group_label: "Browser Backup"
+    group_item_label: "Storage Sync Size"
+
+    link: {
+      label: "Glean Dictionary reference for Browser Backup Storage Sync Size"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/browser_backup_storage_sync_size"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The file size of the current profiles storage-sync-v2.sqlite db, rounded to the nearest 10 kilobytes.
 "
   }
 
@@ -1540,6 +1652,41 @@ in browser.
 "
   }
 
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__sum {
+    label: "Cert Verifier Cert Trust Evaluation Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.sum ;;
+    type: number
+    group_label: "Cert Verifier"
+    group_item_label: "Cert Trust Evaluation Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verifier Cert Trust Evaluation Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cert_verifier_cert_trust_evaluation_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures how long we take to evaluate the trust status of a certificate.
+"
+  }
+
+  dimension: metrics__labeled_counter__cert_verifier_crlite_status {
+    label: "Cert Verifier Crlite Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_status ;;
+    group_label: "Cert Verifier"
+    group_item_label: "Crlite Status"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verifier Crlite Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cert_verifier_crlite_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times different CRLite statuses were returned.
+"
+  }
+
   dimension: metrics__labeled_counter__codec_stats_audio_preferred_codec {
     label: "Codec Stats Audio Preferred Codec"
     hidden: yes
@@ -1818,6 +1965,24 @@ in browser.
     }
 
     description: "Counts how often the cookie banner is still shown even if we have injected cookies.
+"
+  }
+
+  dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
+    label: "Cookie Banners Google Gdpr Choice Cookie"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.cookie_banners_google_gdpr_choice_cookie ;;
+    type: string
+    group_label: "Cookie Banners"
+    group_item_label: "Google Gdpr Choice Cookie"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Google Gdpr Choice Cookie"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/cookie_banners_google_gdpr_choice_cookie"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the GDPR choice on Google Search based on the \"SOCS\" cookie of the Google Search domains. The value could be \"Accept\", \"Reject\" or \"Custom\". We use the label to record different choices on different Google domains. We only collect this if the default search engine is Google.
 "
   }
 
@@ -5143,7 +5308,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__sum {
     label: "Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.sum ;;
     type: number
     group_label: "Networking"
@@ -5197,7 +5362,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__sum {
     label: "Networking Http Content Ondatafinished To Onstop Delay Negative Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.sum ;;
     type: number
     group_label: "Networking"
@@ -10849,6 +11014,49 @@ view: metrics__metrics__labeled_counter__avif_yuv_color_space {
   }
 }
 
+view: metrics__metrics__labeled_counter__cert_verifier_crlite_status {
+  label: "Cert Verifier - Crlite Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__cert_verifier_crlite_status
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__cert_verifier_crlite_status.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
   label: "Codec Stats - Audio Preferred Codec"
 
@@ -15166,6 +15374,25 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__cert_verifier_crlite_status {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop.metrics as t,
+unnest(metrics.labeled_counter.cert_verifier_crlite_status) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
   derived_table: {
     sql: select
@@ -17621,6 +17848,18 @@ view: metrics__metrics__memory_distribution__glean_upload_pending_pings_director
 }
 
 view: metrics__metrics__memory_distribution__performance_clone_deserialize_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

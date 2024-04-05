@@ -1833,6 +1833,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__cert_verifier_crlite_status {
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_status ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__codec_stats_audio_preferred_codec {
     sql: ${TABLE}.metrics.labeled_counter.codec_stats_audio_preferred_codec ;;
     hidden: yes
@@ -3102,6 +3107,65 @@ view: metrics_table {
     type: number
     group_label: "Metrics Timespan Nimbus Experiments Nimbus Initial Fetch"
     group_item_label: "Value"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.values ;;
+    hidden: yes
   }
 
   dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__bucket_count {
@@ -10601,6 +10665,18 @@ view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_di
 }
 
 view: metrics_table__metrics__memory_distribution__performance_clone_deserialize_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

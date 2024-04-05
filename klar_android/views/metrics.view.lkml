@@ -1124,6 +1124,41 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__sum {
+    label: "Cert Verifier Cert Trust Evaluation Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.sum ;;
+    type: number
+    group_label: "Cert Verifier"
+    group_item_label: "Cert Trust Evaluation Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verifier Cert Trust Evaluation Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_verifier_cert_trust_evaluation_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures how long we take to evaluate the trust status of a certificate.
+"
+  }
+
+  dimension: metrics__labeled_counter__cert_verifier_crlite_status {
+    label: "Cert Verifier Crlite Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_status ;;
+    group_label: "Cert Verifier"
+    group_item_label: "Crlite Status"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verifier Crlite Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_verifier_crlite_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times different CRLite statuses were returned.
+"
+  }
+
   dimension: metrics__labeled_counter__codec_stats_audio_preferred_codec {
     label: "Codec Stats Audio Preferred Codec"
     hidden: yes
@@ -1402,6 +1437,24 @@ the tracking protection settings panel from the toolbar.
     }
 
     description: "Counts how often the cookie banner is still shown even if we have injected cookies.
+"
+  }
+
+  dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
+    label: "Cookie Banners Google Gdpr Choice Cookie"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.cookie_banners_google_gdpr_choice_cookie ;;
+    type: string
+    group_label: "Cookie Banners"
+    group_item_label: "Google Gdpr Choice Cookie"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Google Gdpr Choice Cookie"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cookie_banners_google_gdpr_choice_cookie"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the GDPR choice on Google Search based on the \"SOCS\" cookie of the Google Search domains. The value could be \"Accept\", \"Reject\" or \"Custom\". We use the label to record different choices on different Google domains. We only collect this if the default search engine is Google.
 "
   }
 
@@ -4926,7 +4979,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__sum {
     label: "Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.sum ;;
     type: number
     group_label: "Networking"
@@ -4980,7 +5033,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__sum {
     label: "Networking Http Content Ondatafinished To Onstop Delay Negative Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.sum ;;
     type: number
     group_label: "Networking"
@@ -10967,6 +11020,49 @@ view: metrics__metrics__labeled_counter__browser_search_with_ads {
   }
 }
 
+view: metrics__metrics__labeled_counter__cert_verifier_crlite_status {
+  label: "Cert Verifier - Crlite Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__cert_verifier_crlite_status
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__cert_verifier_crlite_status.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
   label: "Codec Stats - Audio Preferred Codec"
 
@@ -15145,6 +15241,25 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__cert_verifier_crlite_status {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.org_mozilla_klar.metrics as t,
+unnest(metrics.labeled_counter.cert_verifier_crlite_status) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
   derived_table: {
     sql: select
@@ -17505,6 +17620,18 @@ view: metrics__metrics__memory_distribution__glean_upload_pending_pings_director
 }
 
 view: metrics__metrics__memory_distribution__performance_clone_deserialize_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

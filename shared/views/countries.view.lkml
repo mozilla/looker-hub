@@ -5,6 +5,12 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: countries {
+  dimension: ads_value_tier {
+    sql: ${TABLE}.ads_value_tier ;;
+    type: string
+    description: "Lowercase label detailing the monetary value tier that Mozilla Ads assign to that region based on market size and our existing products, e.g., tier 1, tier 2, etc."
+  }
+
   dimension: code {
     sql: ${TABLE}.code ;;
     type: string
