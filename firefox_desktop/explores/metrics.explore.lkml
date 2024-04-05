@@ -113,6 +113,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_yuv_color_space}) AS metrics__metrics__labeled_counter__avif_yuv_color_space ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_yuv_color_space.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__cert_verifier_crlite_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cert_verifier_crlite_status}) AS metrics__metrics__labeled_counter__cert_verifier_crlite_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cert_verifier_crlite_status.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__codec_stats_audio_preferred_codec}) AS metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec.document_id} ;;
@@ -662,6 +667,10 @@ explore: suggest__metrics__metrics__labeled_counter__avif_pixi {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__avif_yuv_color_space {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__cert_verifier_crlite_status {
   hidden: yes
 }
 

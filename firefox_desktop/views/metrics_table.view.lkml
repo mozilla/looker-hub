@@ -2034,6 +2034,13 @@ of the shopping experiment.
 "
   }
 
+  dimension: metrics__labeled_counter__cert_verifier_crlite_status {
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_status ;;
+    hidden: yes
+    description: "Counts the number of times different CRLite statuses were returned.
+"
+  }
+
   dimension: metrics__labeled_counter__codec_stats_audio_preferred_codec {
     sql: ${TABLE}.metrics.labeled_counter.codec_stats_audio_preferred_codec ;;
     hidden: yes
@@ -2866,6 +2873,15 @@ success - search service successfully initialized.
 "
   }
 
+  dimension: metrics__quantity__browser_backup_browser_extension_data_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_browser_extension_data_size ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Browser Extension Data Size"
+    description: "The total size of the current profiles storage.local legacy JSON backend in the browser-extension-data directory, rounded to the nearest 10 kilobytes.
+"
+  }
+
   dimension: metrics__quantity__browser_backup_cookies_size {
     sql: ${TABLE}.metrics.quantity.browser_backup_cookies_size ;;
     type: number
@@ -2881,6 +2897,46 @@ success - search service successfully initialized.
     group_label: "Metrics Quantity"
     group_item_label: "Browser Backup Credentials Data Size"
     description: "The total size of logins, payment method, and form autofill related files in the current profile directory, in kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_extension_store_permissions_data_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_extension_store_permissions_data_size ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Extension Store Permissions Data Size"
+    description: "The file size of the current profiles extension-store-permissions/data.safe.bin file, rounded to the nearest 10 kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_extensions_json_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_extensions_json_size ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Extensions Json Size"
+    description: "The total file size of the current profiles extensions metadata files, rounded to the nearest 10 kilobytes. Files included are:
+  - extensions.json
+  - extension-settings.json
+  - extension-preferences.json
+  - addonStartup.json.lz4
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_extensions_storage_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_extensions_storage_size ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Extensions Storage Size"
+    description: "The total size of all extensions storage directories, rounded to the nearest 10 kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_extensions_xpi_directory_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_extensions_xpi_directory_size ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Extensions Xpi Directory Size"
+    description: "The total size of the current profiles extensions directory, rounded to the nearest 10 kilobytes.
 "
   }
 
@@ -2907,7 +2963,7 @@ success - search service successfully initialized.
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Browser Backup Misc Data Size"
-    description: "The total size of files for telemetry, site storage, media device origin mapping and Mozilla Accounts in the current profile directory, rounded to the nearest tenth kilobyte.
+    description: "The total size of files for telemetry, site storage, media device origin mapping, chrome privileged IndexedDB databases, and Mozilla Accounts in the current profile directory, rounded to the nearest tenth kilobyte.
 "
   }
 
@@ -2962,6 +3018,15 @@ success - search service successfully initialized.
     group_label: "Metrics Quantity"
     group_item_label: "Browser Backup Session Store Size"
     description: "The size of uncompressed session store json, in kilobytes.
+"
+  }
+
+  dimension: metrics__quantity__browser_backup_storage_sync_size {
+    sql: ${TABLE}.metrics.quantity.browser_backup_storage_sync_size ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Browser Backup Storage Sync Size"
+    description: "The file size of the current profiles storage-sync-v2.sqlite db, rounded to the nearest 10 kilobytes.
 "
   }
 
@@ -3838,6 +3903,66 @@ default engine, and hence both versions of these fields will be filled in.
     type: number
     group_label: "Metrics Timespan Fog Initialization"
     group_item_label: "Value"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.values ;;
+    hidden: yes
   }
 
   dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__bucket_count {
@@ -11568,6 +11693,18 @@ view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_di
 }
 
 view: metrics_table__metrics__memory_distribution__performance_clone_deserialize_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
