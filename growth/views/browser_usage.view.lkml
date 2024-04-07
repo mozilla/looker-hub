@@ -25,6 +25,11 @@ view: browser_usage {
     type: string
   }
 
+  dimension: operating_system {
+    sql: ${TABLE}.operating_system ;;
+    type: string
+  }
+
   dimension: percent_share {
     sql: ${TABLE}.percent_share ;;
     type: number

@@ -7,7 +7,7 @@
 view: metrics {
   dimension: metrics__quantity__browser_backup_browser_extension_data_size {
     label: "Browser Backup Browser Extension Data Size"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.browser_backup_browser_extension_data_size ;;
     type: number
     group_label: "Browser Backup"
@@ -61,7 +61,7 @@ view: metrics {
 
   dimension: metrics__quantity__browser_backup_extension_store_permissions_data_size {
     label: "Browser Backup Extension Store Permissions Data Size"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.browser_backup_extension_store_permissions_data_size ;;
     type: number
     group_label: "Browser Backup"
@@ -79,7 +79,7 @@ view: metrics {
 
   dimension: metrics__quantity__browser_backup_extensions_json_size {
     label: "Browser Backup Extensions Json Size"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.browser_backup_extensions_json_size ;;
     type: number
     group_label: "Browser Backup"
@@ -101,7 +101,7 @@ view: metrics {
 
   dimension: metrics__quantity__browser_backup_extensions_storage_size {
     label: "Browser Backup Extensions Storage Size"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.browser_backup_extensions_storage_size ;;
     type: number
     group_label: "Browser Backup"
@@ -119,7 +119,7 @@ view: metrics {
 
   dimension: metrics__quantity__browser_backup_extensions_xpi_directory_size {
     label: "Browser Backup Extensions Xpi Directory Size"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.browser_backup_extensions_xpi_directory_size ;;
     type: number
     group_label: "Browser Backup"
@@ -299,7 +299,7 @@ view: metrics {
 
   dimension: metrics__quantity__browser_backup_storage_sync_size {
     label: "Browser Backup Storage Sync Size"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.browser_backup_storage_sync_size ;;
     type: number
     group_label: "Browser Backup"
