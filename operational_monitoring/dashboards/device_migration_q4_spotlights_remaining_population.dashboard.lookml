@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: device_migration_q4_spotlights_remaining_population
-    type: looker_line
-    fields: [
-      device_migration_q4_spotlights_remaining_population.submission_date,
-      device_migration_q4_spotlights_remaining_population.branch,
-      device_migration_q4_spotlights_remaining_population.point
-    ]
-    pivots: [
-      device_migration_q4_spotlights_remaining_population.branch
-    ]
-    filters:
-      device_migration_q4_spotlights_remaining_population.metric: 'days_of_use'
-      device_migration_q4_spotlights_remaining_population.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: device_migration_q4_spotlights_remaining_population.submission_date
-    field_y: device_migration_q4_spotlights_remaining_population.point
-    log_scale: false
-    ci_lower: device_migration_q4_spotlights_remaining_population.lower
-    ci_upper: device_migration_q4_spotlights_remaining_population.upper
-    show_grid: true
-    listen:
-      Date: device_migration_q4_spotlights_remaining_population.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -61,6 +27,40 @@
     ]
     filters:
       device_migration_q4_spotlights_remaining_population.metric: 'ad_clicks'
+      device_migration_q4_spotlights_remaining_population.statistic: mean
+    row: 0
+    col: 0
+    width: 12
+    height: 8
+    field_x: device_migration_q4_spotlights_remaining_population.submission_date
+    field_y: device_migration_q4_spotlights_remaining_population.point
+    log_scale: false
+    ci_lower: device_migration_q4_spotlights_remaining_population.lower
+    ci_upper: device_migration_q4_spotlights_remaining_population.upper
+    show_grid: true
+    listen:
+      Date: device_migration_q4_spotlights_remaining_population.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: device_migration_q4_spotlights_remaining_population
+    type: looker_line
+    fields: [
+      device_migration_q4_spotlights_remaining_population.submission_date,
+      device_migration_q4_spotlights_remaining_population.branch,
+      device_migration_q4_spotlights_remaining_population.point
+    ]
+    pivots: [
+      device_migration_q4_spotlights_remaining_population.branch
+    ]
+    filters:
+      device_migration_q4_spotlights_remaining_population.metric: 'search_count'
       device_migration_q4_spotlights_remaining_population.statistic: mean
     row: 0
     col: 12
@@ -112,40 +112,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: device_migration_q4_spotlights_remaining_population
-    type: looker_line
-    fields: [
-      device_migration_q4_spotlights_remaining_population.submission_date,
-      device_migration_q4_spotlights_remaining_population.branch,
-      device_migration_q4_spotlights_remaining_population.point
-    ]
-    pivots: [
-      device_migration_q4_spotlights_remaining_population.branch
-    ]
-    filters:
-      device_migration_q4_spotlights_remaining_population.metric: 'retained'
-      device_migration_q4_spotlights_remaining_population.statistic: mean
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: device_migration_q4_spotlights_remaining_population.submission_date
-    field_y: device_migration_q4_spotlights_remaining_population.point
-    log_scale: false
-    ci_lower: device_migration_q4_spotlights_remaining_population.lower
-    ci_upper: device_migration_q4_spotlights_remaining_population.upper
-    show_grid: true
-    listen:
-      Date: device_migration_q4_spotlights_remaining_population.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Memory Total
     name: Memory Total_percentile
     note_state: expanded
@@ -166,6 +132,41 @@
     filters:
       device_migration_q4_spotlights_remaining_population.metric: 'memory_total'
       device_migration_q4_spotlights_remaining_population.statistic: percentile
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: device_migration_q4_spotlights_remaining_population.submission_date
+    field_y: device_migration_q4_spotlights_remaining_population.point
+    log_scale: false
+    ci_lower: device_migration_q4_spotlights_remaining_population.lower
+    ci_upper: device_migration_q4_spotlights_remaining_population.upper
+    show_grid: true
+    listen:
+      Date: device_migration_q4_spotlights_remaining_population.submission_date
+      Percentile: device_migration_q4_spotlights_remaining_population.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: device_migration_q4_spotlights_remaining_population
+    type: looker_line
+    fields: [
+      device_migration_q4_spotlights_remaining_population.submission_date,
+      device_migration_q4_spotlights_remaining_population.branch,
+      device_migration_q4_spotlights_remaining_population.point
+    ]
+    pivots: [
+      device_migration_q4_spotlights_remaining_population.branch
+    ]
+    filters:
+      device_migration_q4_spotlights_remaining_population.metric: 'retained'
+      device_migration_q4_spotlights_remaining_population.statistic: mean
     row: 20
     col: 0
     width: 12
@@ -178,7 +179,40 @@
     show_grid: true
     listen:
       Date: device_migration_q4_spotlights_remaining_population.submission_date
-      Percentile: device_migration_q4_spotlights_remaining_population.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: device_migration_q4_spotlights_remaining_population
+    type: looker_line
+    fields: [
+      device_migration_q4_spotlights_remaining_population.submission_date,
+      device_migration_q4_spotlights_remaining_population.branch,
+      device_migration_q4_spotlights_remaining_population.point
+    ]
+    pivots: [
+      device_migration_q4_spotlights_remaining_population.branch
+    ]
+    filters:
+      device_migration_q4_spotlights_remaining_population.metric: 'days_of_use'
+      device_migration_q4_spotlights_remaining_population.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: device_migration_q4_spotlights_remaining_population.submission_date
+    field_y: device_migration_q4_spotlights_remaining_population.point
+    log_scale: false
+    ci_lower: device_migration_q4_spotlights_remaining_population.lower
+    ci_upper: device_migration_q4_spotlights_remaining_population.upper
+    show_grid: true
+    listen:
+      Date: device_migration_q4_spotlights_remaining_population.submission_date
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -201,8 +235,8 @@
     filters:
       device_migration_q4_spotlights_remaining_population.metric: 'qualified_cumulative_days_of_use'
       device_migration_q4_spotlights_remaining_population.statistic: mean
-    row: 20
-    col: 12
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: device_migration_q4_spotlights_remaining_population.submission_date
@@ -234,40 +268,6 @@
     ]
     filters:
       device_migration_q4_spotlights_remaining_population.metric: 'active_hours'
-      device_migration_q4_spotlights_remaining_population.statistic: mean
-    row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: device_migration_q4_spotlights_remaining_population.submission_date
-    field_y: device_migration_q4_spotlights_remaining_population.point
-    log_scale: false
-    ci_lower: device_migration_q4_spotlights_remaining_population.lower
-    ci_upper: device_migration_q4_spotlights_remaining_population.upper
-    show_grid: true
-    listen:
-      Date: device_migration_q4_spotlights_remaining_population.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: device_migration_q4_spotlights_remaining_population
-    type: looker_line
-    fields: [
-      device_migration_q4_spotlights_remaining_population.submission_date,
-      device_migration_q4_spotlights_remaining_population.branch,
-      device_migration_q4_spotlights_remaining_population.point
-    ]
-    pivots: [
-      device_migration_q4_spotlights_remaining_population.branch
-    ]
-    filters:
-      device_migration_q4_spotlights_remaining_population.metric: 'search_count'
       device_migration_q4_spotlights_remaining_population.statistic: mean
     row: 30
     col: 12

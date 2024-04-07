@@ -29167,7 +29167,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_js_late_weekday {
     label: "Use Counter Doc Js Late Weekday"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_late_weekday ;;
     type: number
     group_label: "Use Counter Doc"
@@ -29653,7 +29653,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_onbounce {
     label: "Use Counter Doc Onbounce"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_onbounce ;;
     type: number
     group_label: "Use Counter Doc"
@@ -29689,7 +29689,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_onfinish {
     label: "Use Counter Doc Onfinish"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_onfinish ;;
     type: number
     group_label: "Use Counter Doc"
@@ -29743,7 +29743,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_doc_onstart {
     label: "Use Counter Doc Onstart"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_doc_onstart ;;
     type: number
     group_label: "Use Counter Doc"
@@ -35628,7 +35628,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_js_late_weekday {
     label: "Use Counter Page Js Late Weekday"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_js_late_weekday ;;
     type: number
     group_label: "Use Counter Page"
@@ -36114,7 +36114,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_onbounce {
     label: "Use Counter Page Onbounce"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_onbounce ;;
     type: number
     group_label: "Use Counter Page"
@@ -36150,7 +36150,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_onfinish {
     label: "Use Counter Page Onfinish"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_onfinish ;;
     type: number
     group_label: "Use Counter Page"
@@ -36204,7 +36204,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_page_onstart {
     label: "Use Counter Page Onstart"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_page_onstart ;;
     type: number
     group_label: "Use Counter Page"
