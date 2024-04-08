@@ -37,7 +37,6 @@ COALESCE(
         ),
         0
       ) AS all_tile_clicks_pos3_more,
-SUM(COALESCE(topsite_tile_interactions.sponsored_topsite_tile_impressions, 0)) AS sponsored_tile_impressions,
 COALESCE(
         SUM(CASE
           WHEN
@@ -56,7 +55,6 @@ COALESCE(
           END),
         0
       ) AS sponsored_tile_impressions_pos3_more,
-SUM(COALESCE(topsite_tile_interactions.sponsored_topsite_tile_clicks, 0)) AS sponsored_tile_clicks,
 COALESCE(
         SUM(CASE
           WHEN
@@ -75,14 +73,9 @@ COALESCE(
           END),
         0
       ) AS sponsored_tile_clicks_pos3_more,
-COALESCE(MAX(IF(newtab_newtab_category = 'enabled', 1, 0)), 0) AS newtab_newtab_enabled,
-COALESCE(MAX(IF(newtab_homepage_category = 'enabled', 1, 0)), 0) AS newtab_homepage_enabled,
 COALESCE(MAX(CAST(newtab_search_enabled AS INT)), 0) AS newtab_search_enabled,
-COALESCE(MAX(CAST(topsites_enabled AS INT)), 0) AS newtab_tiles_enabled,
-COALESCE(MAX(CAST(pocket_enabled AS INT)), 0) AS newtab_pocket_enabled,
-COALESCE(MAX(CAST(pocket_sponsored_stories_enabled AS INT)), 0) AS newtab_sponsored_pocket_stories_enabled,
-SUM(COALESCE(topsite_tile_interactions.organic_topsite_tile_clicks, 0)) AS newtab_organic_topsite_clicks,
-SUM(COALESCE(topsite_tile_interactions.organic_topsite_tile_impressions, 0)) AS newtab_organic_topsite_impressions,
+COALESCE(SUM(topsite_tile_interactions.organic_topsite_tile_clicks, 0)) AS newtab_organic_topsite_clicks,
+COALESCE(SUM(topsite_tile_interactions.organic_topsite_tile_impressions, 0)) AS newtab_organic_topsite_impressions,
 COALESCE(SUM(topsite_tile_interactions.sponsored_topsite_tile_dismissals), 0) AS sponsored_tiles_dismissals,
 COALESCE(LOGICAL_OR(
         topsite_tile_interactions.sponsored_topsite_tile_dismissals > 0
@@ -1242,15 +1235,6 @@ submission_timestamp_min,
     sql: ${TABLE}.all_tile_clicks_pos3_more ;;
   }
 
-  dimension: sponsored_tile_impressions {
-    group_label: "Metrics"
-    label: "Sponsored Tile Impressions"
-    description: "Count of impressions of Sponsored Tiles (aka Sponsored Topsites on New Tab) across all positions.
-"
-    type: number
-    sql: ${TABLE}.sponsored_tile_impressions ;;
-  }
-
   dimension: sponsored_tile_impressions_pos1_2 {
     group_label: "Metrics"
     label: "All Tiles Impressions Count (Position 1 and 2)"
@@ -1267,15 +1251,6 @@ submission_timestamp_min,
 "
     type: number
     sql: ${TABLE}.sponsored_tile_impressions_pos3_more ;;
-  }
-
-  dimension: sponsored_tile_clicks {
-    group_label: "Metrics"
-    label: "Sponsored Tile Clicks"
-    description: "Count of clicks of Sponsored Tiles (aka Sponsored Topsites on New Tab) across all positions.
-"
-    type: number
-    sql: ${TABLE}.sponsored_tile_clicks ;;
   }
 
   dimension: sponsored_tile_clicks_pos1_2 {
@@ -1296,24 +1271,6 @@ submission_timestamp_min,
     sql: ${TABLE}.sponsored_tile_clicks_pos3_more ;;
   }
 
-  dimension: newtab_newtab_enabled {
-    group_label: "Metrics"
-    label: "Newtab Newtab Enabled"
-    description: "Whether or not new tabs are set to display the default New Tab page.
-"
-    type: number
-    sql: ${TABLE}.newtab_newtab_enabled ;;
-  }
-
-  dimension: newtab_homepage_enabled {
-    group_label: "Metrics"
-    label: "Newtab Homepage Enabled"
-    description: "Whether or not the homepage is set to display the default New Tab page.
-"
-    type: number
-    sql: ${TABLE}.newtab_homepage_enabled ;;
-  }
-
   dimension: newtab_search_enabled {
     group_label: "Metrics"
     label: "Newtab Search Enabled"
@@ -1321,33 +1278,6 @@ submission_timestamp_min,
 "
     type: number
     sql: ${TABLE}.newtab_search_enabled ;;
-  }
-
-  dimension: newtab_tiles_enabled {
-    group_label: "Metrics"
-    label: "Newtab Tiles Enabled"
-    description: "Whether or not tiles are enabled on the New Tab. Includes both sponsored and nonsponsored tiles.
-"
-    type: number
-    sql: ${TABLE}.newtab_tiles_enabled ;;
-  }
-
-  dimension: newtab_pocket_enabled {
-    group_label: "Metrics"
-    label: "Newtab Pocket Enabled"
-    description: "Whether or not Pocket is enabled on the New Tab.
-"
-    type: number
-    sql: ${TABLE}.newtab_pocket_enabled ;;
-  }
-
-  dimension: newtab_sponsored_pocket_stories_enabled {
-    group_label: "Metrics"
-    label: "Newtab Sponsored Pocket Stories Enabled"
-    description: "Whether or not Pocket Sponsored Stories is enabled on the New Tab.
-"
-    type: number
-    sql: ${TABLE}.newtab_sponsored_pocket_stories_enabled ;;
   }
 
   dimension: newtab_organic_topsite_clicks {
@@ -3963,18 +3893,11 @@ submission_timestamp_min,
       all_tile_impressions_pos3_more,
       all_tile_clicks_pos1_2,
       all_tile_clicks_pos3_more,
-      sponsored_tile_impressions,
       sponsored_tile_impressions_pos1_2,
       sponsored_tile_impressions_pos3_more,
-      sponsored_tile_clicks,
       sponsored_tile_clicks_pos1_2,
       sponsored_tile_clicks_pos3_more,
-      newtab_newtab_enabled,
-      newtab_homepage_enabled,
       newtab_search_enabled,
-      newtab_tiles_enabled,
-      newtab_pocket_enabled,
-      newtab_sponsored_pocket_stories_enabled,
       newtab_organic_topsite_clicks,
       newtab_organic_topsite_impressions,
       sponsored_tiles_dismissals,
