@@ -324,6 +324,114 @@ view: user_characteristics_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__characteristics_inverted_colors {
+    sql: ${TABLE}.metrics.boolean.characteristics_inverted_colors ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Inverted Colors"
+    description: "What LookAndFeel(InvertedColors) reports.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefers_reduced_motion {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefers_reduced_motion ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefers Reduced Motion"
+    description: "What LookAndFeel(PrefersReducedMotion) reports.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefers_reduced_transparency {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefers_reduced_transparency ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefers Reduced Transparency"
+    description: "What LookAndFeel(PrefersReducedTransparency) reports.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_block_popups {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_block_popups ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefs Block Popups"
+    description: "Block pop-up windows (The dom.disable_open_during_load pref)
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_general_autoscroll {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_general_autoscroll ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefs General Autoscroll"
+    description: "Use autoscrolling
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_general_smoothscroll {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_general_smoothscroll ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefs General Smoothscroll"
+    description: "Use smooth scrolling
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_media_eme_enabled {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_media_eme_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefs Media Eme Enabled"
+    description: "Value of the media.eme.enabled pref.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_overlay_scrollbars {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_overlay_scrollbars ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefs Overlay Scrollbars"
+    description: "Use overlay scrollbars (or otherwise \"Always show scrollbars\")
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_privacy_donottrackheader_enabled {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_privacy_donottrackheader_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefs Privacy Donottrackheader Enabled"
+    description: "Sending \"do not track\" HTTP header
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_privacy_globalprivacycontrol_enabled {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_privacy_globalprivacycontrol_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefs Privacy Globalprivacycontrol Enabled"
+    description: "Sending \"global privacy control\" HTTP header
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_zoom_text_only {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_zoom_text_only ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefs Zoom Text Only"
+    description: "Text-only zoom enabled (vs. full-zoom)
+"
+  }
+
+  dimension: metrics__boolean__characteristics_video_dynamic_range {
+    sql: ${TABLE}.metrics.boolean.characteristics_video_dynamic_range ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Video Dynamic Range"
+    description: "What LookAndFeel(VideoDynamicRange) reports. Note that CSSVideoDynamicRange has an additional dependency on Color Depth.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -356,12 +464,120 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_color_depth {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_depth ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Depth"
+    description: "The Color Depth reported by CSS
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_gamut {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_gamut ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Gamut"
+    description: "The Color Gamut reported by CSS
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_scheme {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_scheme ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Scheme"
+    description: "The Color Scheme used for Content, from ContentPrefs() Preference Sheet.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_max_touch_points {
+    sql: ${TABLE}.metrics.quantity.characteristics_max_touch_points ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Max Touch Points"
+    description: "The number of touch points we will report to the web. On Android, this is based on Android's FEATURE_TOUCHSCREEN* constants - Mozilla caps this at 5 as Android stops distinguishing between numbers greater than 5.  On Windows this comes from the SM_MAXIMUMTOUCHES System Metric.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_prefers_contrast {
+    sql: ${TABLE}.metrics.quantity.characteristics_prefers_contrast ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Prefers Contrast"
+    description: "What Gecko_MediaFeatures_PrefersContrast reports for a ContentDocument
+"
+  }
+
+  dimension: metrics__quantity__characteristics_processor_count {
+    sql: ${TABLE}.metrics.quantity.characteristics_processor_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Processor Count"
+    description: "Number of processors.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_screen_height {
+    sql: ${TABLE}.metrics.quantity.characteristics_screen_height ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Screen Height"
+    description: "Height of the primary screen in pixels.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_screen_width {
+    sql: ${TABLE}.metrics.quantity.characteristics_screen_width ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Screen Width"
+    description: "Width of the primary screen in pixels.
+"
+  }
+
   dimension: metrics__quantity__characteristics_submission_schema {
     sql: ${TABLE}.metrics.quantity.characteristics_submission_schema ;;
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Submission Schema"
     description: "An incrementing constant that represents the current schema/source of the data present in a ping. By referring to this value in a ping, one can know for certain the provenance of other data present in the ping, and what data may or may not be present.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_target_frame_rate {
+    sql: ${TABLE}.metrics.quantity.characteristics_target_frame_rate ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Target Frame Rate"
+    description: "The target frame rate in frames-per-second.
+"
+  }
+
+  dimension: metrics__string__characteristics_prefs_intl_accept_languages {
+    sql: ${TABLE}.metrics.string.characteristics_prefs_intl_accept_languages ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Prefs Intl Accept Languages"
+    description: "Value of the intl.accept_languages pref.
+"
+  }
+
+  dimension: metrics__string__characteristics_system_locale {
+    sql: ${TABLE}.metrics.string.characteristics_system_locale ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics System Locale"
+    description: "The locale used by the host OS for localization.
+"
+  }
+
+  dimension: metrics__string__characteristics_timezone {
+    sql: ${TABLE}.metrics.string.characteristics_timezone ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Timezone"
+    description: "The the current timezone of the system
 "
   }
 
@@ -372,6 +588,22 @@ The labels are the `category.name` identifier of the metric.
     group_item_label: "Glean Client Annotation Experimentation Id"
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
+"
+  }
+
+  dimension: metrics__text__characteristics_missing_fonts {
+    sql: ${TABLE}.metrics.text.characteristics_missing_fonts ;;
+    type: string
+    group_label: "Metrics Text"
+    group_item_label: "Characteristics Missing Fonts"
+  }
+
+  dimension: metrics__text2__characteristics_missing_fonts {
+    sql: ${TABLE}.metrics.text2.characteristics_missing_fonts ;;
+    type: string
+    group_label: "Metrics Text2"
+    group_item_label: "Characteristics Missing Fonts"
+    description: "If a Font List is available for the user's platform, this string_list contains the fonts that are missing from the user's computer.
 "
   }
 

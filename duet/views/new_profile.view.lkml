@@ -1833,6 +1833,14 @@ view: new_profile__environment__addons__active_addons {
     description: "The state of the signature of the add-on. This field is only available after the 'sessionstore-windows-restored' topic is notified."
   }
 
+  dimension: value__signed_types {
+    sql: ${TABLE}.value.signed_types ;;
+    type: string
+    group_label: "Value"
+    group_item_label: "Signed Types"
+    description: "A JSON-stringified array of signature types found for the add-on."
+  }
+
   dimension: value__type {
     sql: ${TABLE}.value.type ;;
     type: string

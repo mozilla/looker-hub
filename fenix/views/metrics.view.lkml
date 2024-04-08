@@ -3570,7 +3570,7 @@ ensure it's not too expensive.  This value is only available on Android
 
   dimension: metrics__counter__bloburl_resolve_stopped {
     label: "Bloburl Resolve Stopped"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.bloburl_resolve_stopped ;;
     type: number
     group_label: "Bloburl"
@@ -3619,6 +3619,41 @@ ensure it's not too expensive.  This value is only available on Android
     }
 
     description: "True if the Proton default theme is enabled.
+"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__sum {
+    label: "Cert Verifier Cert Trust Evaluation Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.sum ;;
+    type: number
+    group_label: "Cert Verifier"
+    group_item_label: "Cert Trust Evaluation Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verifier Cert Trust Evaluation Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cert_verifier_cert_trust_evaluation_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures how long we take to evaluate the trust status of a certificate.
+"
+  }
+
+  dimension: metrics__labeled_counter__cert_verifier_crlite_status {
+    label: "Cert Verifier Crlite Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_status ;;
+    group_label: "Cert Verifier"
+    group_item_label: "Crlite Status"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verifier Crlite Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cert_verifier_crlite_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times different CRLite statuses were returned.
 "
   }
 
@@ -3900,6 +3935,24 @@ ensure it's not too expensive.  This value is only available on Android
     }
 
     description: "Counts how often the cookie banner is still shown even if we have injected cookies.
+"
+  }
+
+  dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
+    label: "Cookie Banners Google Gdpr Choice Cookie"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.cookie_banners_google_gdpr_choice_cookie ;;
+    type: string
+    group_label: "Cookie Banners"
+    group_item_label: "Google Gdpr Choice Cookie"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Google Gdpr Choice Cookie"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/cookie_banners_google_gdpr_choice_cookie"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the GDPR choice on Google Search based on the \"SOCS\" cookie of the Google Search domains. The value could be \"Accept\", \"Reject\" or \"Custom\". We use the label to record different choices on different Google domains. We only collect this if the default search engine is Google.
 "
   }
 
@@ -5840,6 +5893,222 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__hls_canplay_requested {
+    label: "Hls Canplay Requested"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.hls_canplay_requested ;;
+    type: number
+    group_label: "Hls"
+    group_item_label: "Canplay Requested"
+
+    link: {
+      label: "Glean Dictionary reference for Hls Canplay Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/hls_canplay_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record when a page requests canPlayType for a HLS media type.
+"
+  }
+
+  dimension: metrics__counter__hls_canplay_supported {
+    label: "Hls Canplay Supported"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.hls_canplay_supported ;;
+    type: number
+    group_label: "Hls"
+    group_item_label: "Canplay Supported"
+
+    link: {
+      label: "Glean Dictionary reference for Hls Canplay Supported"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/hls_canplay_supported"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record when a canPlayType request supports HLS.
+"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time__sum {
+    label: "Httpsfirst Downgrade Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time.sum ;;
+    type: number
+    group_label: "Httpsfirst"
+    group_item_label: "Downgrade Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Httpsfirst Downgrade Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_downgrade_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If a HTTPS-First (`dom.security.https_first` enabled) upgrade isn't successful, measures the timespan between the navigation start and the downgrade. This is essentially the overhead caused by HTTPS-First if a site does not support HTTPS.
+"
+  }
+
+  dimension: metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__sum {
+    label: "Httpsfirst Downgrade Time Schemeless Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.httpsfirst_downgrade_time_schemeless.sum ;;
+    type: number
+    group_label: "Httpsfirst"
+    group_item_label: "Downgrade Time Schemeless Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Httpsfirst Downgrade Time Schemeless Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_downgrade_time_schemeless"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If a schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrade isn't successful, measures the timespan between the navigation start and the downgrade. This is essentially the overhead caused by HTTPS-First if a site does not support HTTPS.
+"
+  }
+
+  dimension: metrics__counter__httpsfirst_downgraded {
+    label: "Httpsfirst Downgraded"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.httpsfirst_downgraded ;;
+    type: number
+    group_label: "Httpsfirst"
+    group_item_label: "Downgraded"
+
+    link: {
+      label: "Glean Dictionary reference for Httpsfirst Downgraded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_downgraded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many regular HTTPS-First (`dom.security.https_first` enabled) upgrades get downgraded again.
+"
+  }
+
+  dimension: metrics__rate__httpsfirst_downgraded_on_timer__numerator {
+    label: "Httpsfirst Downgraded On Timer Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.httpsfirst_downgraded_on_timer.numerator ;;
+    type: number
+    group_label: "Httpsfirst"
+    group_item_label: "Downgraded On Timer Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Httpsfirst Downgraded On Timer Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_downgraded_on_timer"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many HTTPS-First (`dom.security.https_first` enabled) upgrades get downgraded again because the HTTP request fired after 3s received a answer faster than the HTTPS request.
+"
+  }
+
+  dimension: metrics__rate__httpsfirst_downgraded_on_timer__denominator {
+    label: "Httpsfirst Downgraded On Timer Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.httpsfirst_downgraded_on_timer.denominator ;;
+    type: number
+    group_label: "Httpsfirst"
+    group_item_label: "Downgraded On Timer Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Httpsfirst Downgraded On Timer Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_downgraded_on_timer"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many HTTPS-First (`dom.security.https_first` enabled) upgrades get downgraded again because the HTTP request fired after 3s received a answer faster than the HTTPS request.
+"
+  }
+
+  dimension: metrics__rate__httpsfirst_downgraded_on_timer_schemeless__numerator {
+    label: "Httpsfirst Downgraded On Timer Schemeless Numerator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.httpsfirst_downgraded_on_timer_schemeless.numerator ;;
+    type: number
+    group_label: "Httpsfirst"
+    group_item_label: "Downgraded On Timer Schemeless Numerator"
+
+    link: {
+      label: "Glean Dictionary reference for Httpsfirst Downgraded On Timer Schemeless Numerator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_downgraded_on_timer_schemeless"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrades get downgraded again because the HTTP request fired after 3s received a answer faster than the HTTPS request
+"
+  }
+
+  dimension: metrics__rate__httpsfirst_downgraded_on_timer_schemeless__denominator {
+    label: "Httpsfirst Downgraded On Timer Schemeless Denominator"
+    hidden: no
+    sql: ${TABLE}.metrics.rate.httpsfirst_downgraded_on_timer_schemeless.denominator ;;
+    type: number
+    group_label: "Httpsfirst"
+    group_item_label: "Downgraded On Timer Schemeless Denominator"
+
+    link: {
+      label: "Glean Dictionary reference for Httpsfirst Downgraded On Timer Schemeless Denominator"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_downgraded_on_timer_schemeless"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrades get downgraded again because the HTTP request fired after 3s received a answer faster than the HTTPS request
+"
+  }
+
+  dimension: metrics__counter__httpsfirst_downgraded_schemeless {
+    label: "Httpsfirst Downgraded Schemeless"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.httpsfirst_downgraded_schemeless ;;
+    type: number
+    group_label: "Httpsfirst"
+    group_item_label: "Downgraded Schemeless"
+
+    link: {
+      label: "Glean Dictionary reference for Httpsfirst Downgraded Schemeless"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_downgraded_schemeless"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How many schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrades get downgraded again.
+"
+  }
+
+  dimension: metrics__counter__httpsfirst_upgraded {
+    label: "Httpsfirst Upgraded"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.httpsfirst_upgraded ;;
+    type: number
+    group_label: "Httpsfirst"
+    group_item_label: "Upgraded"
+
+    link: {
+      label: "Glean Dictionary reference for Httpsfirst Upgraded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_upgraded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often a load is marked to be upgraded to HTTPS because of HTTPS-First (`dom.security.https_first` enabled).
+"
+  }
+
+  dimension: metrics__counter__httpsfirst_upgraded_schemeless {
+    label: "Httpsfirst Upgraded Schemeless"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.httpsfirst_upgraded_schemeless ;;
+    type: number
+    group_label: "Httpsfirst"
+    group_item_label: "Upgraded Schemeless"
+
+    link: {
+      label: "Glean Dictionary reference for Httpsfirst Upgraded Schemeless"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_upgraded_schemeless"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often a load is marked to be upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless).
+"
+  }
+
   dimension: metrics__labeled_counter__ipc_received_messages_content_background {
     label: "Ipc Received Messages Content Background"
     hidden: yes
@@ -7170,6 +7439,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__sum {
+    label: "Networking Http Content Cssloader Ondatafinished To Onstop Delay Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_content_cssloader_ondatafinished_to_onstop_delay.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Content Cssloader Ondatafinished To Onstop Delay Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Content Cssloader Ondatafinished To Onstop Delay Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_http_content_cssloader_ondatafinished_to_onstop_delay"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The time between processing OnDataFinished and processing OnStopRequest for CSSLoader in the content process
+"
+  }
+
   dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay__sum {
     label: "Networking Http Content Html5Parser Ondatafinished To Onstop Delay Sum"
     hidden: no
@@ -7190,7 +7477,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__sum {
     label: "Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.sum ;;
     type: number
     group_label: "Networking"
@@ -7244,7 +7531,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__sum {
     label: "Networking Http Content Ondatafinished To Onstop Delay Negative Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.sum ;;
     type: number
     group_label: "Networking"
@@ -12965,6 +13252,156 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: hls_canplay_requested {
+    type: sum
+    sql: ${metrics__counter__hls_canplay_requested} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Hls Canplay Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/hls_canplay_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: hls_canplay_requested_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__hls_canplay_requested: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Hls Canplay Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/hls_canplay_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: hls_canplay_supported {
+    type: sum
+    sql: ${metrics__counter__hls_canplay_supported} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Hls Canplay Supported"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/hls_canplay_supported"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: hls_canplay_supported_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__hls_canplay_supported: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Hls Canplay Supported"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/hls_canplay_supported"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: httpsfirst_downgraded {
+    type: sum
+    sql: ${metrics__counter__httpsfirst_downgraded} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Httpsfirst Downgraded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_downgraded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: httpsfirst_downgraded_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__httpsfirst_downgraded: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Httpsfirst Downgraded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_downgraded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: httpsfirst_downgraded_schemeless {
+    type: sum
+    sql: ${metrics__counter__httpsfirst_downgraded_schemeless} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Httpsfirst Downgraded Schemeless"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_downgraded_schemeless"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: httpsfirst_downgraded_schemeless_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__httpsfirst_downgraded_schemeless: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Httpsfirst Downgraded Schemeless"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_downgraded_schemeless"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: httpsfirst_upgraded {
+    type: sum
+    sql: ${metrics__counter__httpsfirst_upgraded} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Httpsfirst Upgraded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_upgraded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: httpsfirst_upgraded_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__httpsfirst_upgraded: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Httpsfirst Upgraded"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_upgraded"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: httpsfirst_upgraded_schemeless {
+    type: sum
+    sql: ${metrics__counter__httpsfirst_upgraded_schemeless} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Httpsfirst Upgraded Schemeless"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_upgraded_schemeless"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: httpsfirst_upgraded_schemeless_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__httpsfirst_upgraded_schemeless: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Httpsfirst Upgraded Schemeless"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/httpsfirst_upgraded_schemeless"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: networking_residual_cache_folder_count {
     type: sum
     sql: ${metrics__counter__networking_residual_cache_folder_count} ;;
@@ -14936,6 +15373,49 @@ view: metrics__metrics__labeled_counter__browser_search_with_ads {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_with_ads
     suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_with_ads.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__cert_verifier_crlite_status {
+  label: "Cert Verifier - Crlite Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__cert_verifier_crlite_status
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__cert_verifier_crlite_status.key
     hidden: no
   }
 
@@ -19843,6 +20323,25 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__cert_verifier_crlite_status {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.fenix.metrics as t,
+unnest(metrics.labeled_counter.cert_verifier_crlite_status) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
   derived_table: {
     sql: select
@@ -22470,6 +22969,18 @@ view: metrics__metrics__labeled_boolean__oskeystore_self_test {
   }
 }
 
+view: metrics__metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
+  }
+}
+
 view: metrics__metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -22591,6 +23102,18 @@ view: metrics__metrics__memory_distribution__storage_stats_cache_bytes__values {
 }
 
 view: metrics__metrics__memory_distribution__storage_stats_data_dir_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -23106,6 +23629,30 @@ view: metrics__metrics__timing_distribution__glean_validation_shutdown_wait__val
   }
 }
 
+view: metrics__metrics__timing_distribution__httpsfirst_downgrade_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__httpsfirst_downgrade_time_schemeless__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__javascript_gc_compact_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -23527,6 +24074,18 @@ view: metrics__metrics__timing_distribution__networking_http_channel_sub_open_to
 }
 
 view: metrics__metrics__timing_distribution__networking_http_channel_sub_open_to_first_sent_https_rr__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_content_cssloader_ondatafinished_to_onstop_delay__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -23,6 +23,384 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__quantity__characteristics_color_depth {
+    label: "Characteristics Color Depth"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_color_depth ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Color Depth"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Color Depth"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_color_depth"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Color Depth reported by CSS
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_gamut {
+    label: "Characteristics Color Gamut"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_color_gamut ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Color Gamut"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Color Gamut"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_color_gamut"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Color Gamut reported by CSS
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_scheme {
+    label: "Characteristics Color Scheme"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_color_scheme ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Color Scheme"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Color Scheme"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_color_scheme"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The Color Scheme used for Content, from ContentPrefs() Preference Sheet.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_inverted_colors {
+    label: "Characteristics Inverted Colors"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_inverted_colors ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Inverted Colors"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Inverted Colors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_inverted_colors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "What LookAndFeel(InvertedColors) reports.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_max_touch_points {
+    label: "Characteristics Max Touch Points"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_max_touch_points ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Max Touch Points"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Max Touch Points"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_max_touch_points"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of touch points we will report to the web. On Android, this is based on Android's FEATURE_TOUCHSCREEN* constants - Mozilla caps this at 5 as Android stops distinguishing between numbers greater than 5.  On Windows this comes from the SM_MAXIMUMTOUCHES System Metric.
+"
+  }
+
+  dimension: metrics__text2__characteristics_missing_fonts {
+    label: "Characteristics Missing Fonts"
+    hidden: no
+    sql: ${TABLE}.metrics.text2.characteristics_missing_fonts ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Missing Fonts"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Missing Fonts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_missing_fonts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "If a Font List is available for the user's platform, this string_list contains the fonts that are missing from the user's computer.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_prefers_contrast {
+    label: "Characteristics Prefers Contrast"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_prefers_contrast ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Prefers Contrast"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefers Contrast"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefers_contrast"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "What Gecko_MediaFeatures_PrefersContrast reports for a ContentDocument
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefers_reduced_motion {
+    label: "Characteristics Prefers Reduced Motion"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefers_reduced_motion ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefers Reduced Motion"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefers Reduced Motion"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefers_reduced_motion"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "What LookAndFeel(PrefersReducedMotion) reports.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefers_reduced_transparency {
+    label: "Characteristics Prefers Reduced Transparency"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefers_reduced_transparency ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefers Reduced Transparency"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefers Reduced Transparency"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefers_reduced_transparency"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "What LookAndFeel(PrefersReducedTransparency) reports.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_block_popups {
+    label: "Characteristics Prefs Block Popups"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_block_popups ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefs Block Popups"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs Block Popups"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_block_popups"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Block pop-up windows (The dom.disable_open_during_load pref)
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_general_autoscroll {
+    label: "Characteristics Prefs General Autoscroll"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_general_autoscroll ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefs General Autoscroll"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs General Autoscroll"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_general_autoscroll"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Use autoscrolling
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_general_smoothscroll {
+    label: "Characteristics Prefs General Smoothscroll"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_general_smoothscroll ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefs General Smoothscroll"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs General Smoothscroll"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_general_smoothscroll"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Use smooth scrolling
+"
+  }
+
+  dimension: metrics__string__characteristics_prefs_intl_accept_languages {
+    label: "Characteristics Prefs Intl Accept Languages"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_prefs_intl_accept_languages ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Prefs Intl Accept Languages"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs Intl Accept Languages"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_intl_accept_languages"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of the intl.accept_languages pref.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_media_eme_enabled {
+    label: "Characteristics Prefs Media Eme Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_media_eme_enabled ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefs Media Eme Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs Media Eme Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_media_eme_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of the media.eme.enabled pref.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_overlay_scrollbars {
+    label: "Characteristics Prefs Overlay Scrollbars"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_overlay_scrollbars ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefs Overlay Scrollbars"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs Overlay Scrollbars"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_overlay_scrollbars"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Use overlay scrollbars (or otherwise \"Always show scrollbars\")
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_privacy_donottrackheader_enabled {
+    label: "Characteristics Prefs Privacy Donottrackheader Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_privacy_donottrackheader_enabled ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefs Privacy Donottrackheader Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs Privacy Donottrackheader Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_privacy_donottrackheader_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sending \"do not track\" HTTP header
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_privacy_globalprivacycontrol_enabled {
+    label: "Characteristics Prefs Privacy Globalprivacycontrol Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_privacy_globalprivacycontrol_enabled ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefs Privacy Globalprivacycontrol Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs Privacy Globalprivacycontrol Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_privacy_globalprivacycontrol_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Sending \"global privacy control\" HTTP header
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_zoom_text_only {
+    label: "Characteristics Prefs Zoom Text Only"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_zoom_text_only ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefs Zoom Text Only"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs Zoom Text Only"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_zoom_text_only"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Text-only zoom enabled (vs. full-zoom)
+"
+  }
+
+  dimension: metrics__quantity__characteristics_processor_count {
+    label: "Characteristics Processor Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_processor_count ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Processor Count"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Processor Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_processor_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of processors.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_screen_height {
+    label: "Characteristics Screen Height"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_screen_height ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Screen Height"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Screen Height"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_screen_height"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Height of the primary screen in pixels.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_screen_width {
+    label: "Characteristics Screen Width"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_screen_width ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Screen Width"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Screen Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_screen_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Width of the primary screen in pixels.
+"
+  }
+
   dimension: metrics__quantity__characteristics_submission_schema {
     label: "Characteristics Submission Schema"
     hidden: no
@@ -38,6 +416,78 @@ view: user_characteristics {
     }
 
     description: "An incrementing constant that represents the current schema/source of the data present in a ping. By referring to this value in a ping, one can know for certain the provenance of other data present in the ping, and what data may or may not be present.
+"
+  }
+
+  dimension: metrics__string__characteristics_system_locale {
+    label: "Characteristics System Locale"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_system_locale ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "System Locale"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics System Locale"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_system_locale"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The locale used by the host OS for localization.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_target_frame_rate {
+    label: "Characteristics Target Frame Rate"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_target_frame_rate ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Target Frame Rate"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Target Frame Rate"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_target_frame_rate"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The target frame rate in frames-per-second.
+"
+  }
+
+  dimension: metrics__string__characteristics_timezone {
+    label: "Characteristics Timezone"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_timezone ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Timezone"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Timezone"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_timezone"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The the current timezone of the system
+"
+  }
+
+  dimension: metrics__boolean__characteristics_video_dynamic_range {
+    label: "Characteristics Video Dynamic Range"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_video_dynamic_range ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Video Dynamic Range"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Video Dynamic Range"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_video_dynamic_range"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "What LookAndFeel(VideoDynamicRange) reports. Note that CSSVideoDynamicRange has an additional dependency on Color Depth.
 "
   }
 

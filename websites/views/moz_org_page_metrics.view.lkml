@@ -161,5 +161,5 @@ view: moz_org_page_metrics {
     datatype: date
   }
 
-  sql_table_name: `moz-fx-data-marketing-prod.ga_derived.www_site_page_metrics_v1` ;;
+  sql_table_name: `moz-fx-data-marketing-prod.ga.www_site_page_metrics` ;;
 }
