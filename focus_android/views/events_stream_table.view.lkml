@@ -296,6 +296,11 @@ view: events_stream_table {
     hidden: yes
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -432,5 +437,25 @@ view: events_stream_table {
     ]
   }
 
-  sql_table_name: `mozdata.org_mozilla_focus_beta.events_stream` ;;
+  parameter: channel {
+    type: unquoted
+    default_value: "mozdata.focus_android.events_stream"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.focus_android.events_stream"
+    }
+
+    allowed_value: {
+      label: "Beta"
+      value: "mozdata.org_mozilla_focus_beta.events_stream"
+    }
+
+    allowed_value: {
+      label: "Nightly"
+      value: "mozdata.org_mozilla_focus_nightly.events_stream"
+    }
+  }
+
+  sql_table_name: `{% parameter channel %}` ;;
 }
