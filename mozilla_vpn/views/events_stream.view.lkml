@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: events_stream_table {
+view: events_stream {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -116,6 +116,7 @@ view: events_stream_table {
   dimension: document_id {
     sql: ${TABLE}.document_id ;;
     hidden: yes
+    primary_key: yes
   }
 
   dimension: event_category {
@@ -437,35 +438,14 @@ view: events_stream_table {
     ]
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.fenix.events_stream"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.fenix.events_stream"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_firefox_beta.events_stream"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix.events_stream"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix_nightly.events_stream"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fennec_aurora.events_stream"
-    }
+  measure: clients {
+    type: count_distinct
+    sql: ${client_id} ;;
   }
 
-  sql_table_name: `{% parameter channel %}` ;;
+  measure: ping_count {
+    type: count
+  }
+
+  sql_table_name: `mozdata.mozilla_vpn.events_stream` ;;
 }
