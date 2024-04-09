@@ -437,35 +437,5 @@ view: events_stream_table {
     ]
   }
 
-  parameter: channel {
-    type: unquoted
-    default_value: "mozdata.fenix.events_stream"
-
-    allowed_value: {
-      label: "Release"
-      value: "mozdata.fenix.events_stream"
-    }
-
-    allowed_value: {
-      label: "Beta"
-      value: "mozdata.org_mozilla_firefox_beta.events_stream"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix.events_stream"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fenix_nightly.events_stream"
-    }
-
-    allowed_value: {
-      label: "Nightly"
-      value: "mozdata.org_mozilla_fennec_aurora.events_stream"
-    }
-  }
-
-  sql_table_name: `{% parameter channel %}` ;;
+  sql_table_name: `mozdata.mozilla_vpn.events_stream` ;;
 }

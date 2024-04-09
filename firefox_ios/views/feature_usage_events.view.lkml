@@ -5,6 +5,76 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: feature_usage_events {
+  dimension: address_autofill_prompt_dismissed {
+    sql: ${TABLE}.address_autofill_prompt_dismissed ;;
+    type: number
+  }
+
+  dimension: address_autofill_prompt_dismissed_users {
+    sql: ${TABLE}.address_autofill_prompt_dismissed_users ;;
+    type: number
+  }
+
+  dimension: address_autofill_prompt_expanded {
+    sql: ${TABLE}.address_autofill_prompt_expanded ;;
+    type: number
+  }
+
+  dimension: address_autofill_prompt_expanded_users {
+    sql: ${TABLE}.address_autofill_prompt_expanded_users ;;
+    type: number
+  }
+
+  dimension: address_autofill_prompt_shown {
+    sql: ${TABLE}.address_autofill_prompt_shown ;;
+    type: number
+  }
+
+  dimension: address_autofill_prompt_shown_users {
+    sql: ${TABLE}.address_autofill_prompt_shown_users ;;
+    type: number
+  }
+
+  dimension: address_autofilled {
+    sql: ${TABLE}.address_autofilled ;;
+    type: number
+  }
+
+  dimension: address_autofilled_users {
+    sql: ${TABLE}.address_autofilled_users ;;
+    type: number
+  }
+
+  dimension: address_form_detected {
+    sql: ${TABLE}.address_form_detected ;;
+    type: number
+  }
+
+  dimension: address_form_detected_users {
+    sql: ${TABLE}.address_form_detected_users ;;
+    type: number
+  }
+
+  dimension: address_modified {
+    sql: ${TABLE}.address_modified ;;
+    type: number
+  }
+
+  dimension: address_modified_users {
+    sql: ${TABLE}.address_modified_users ;;
+    type: number
+  }
+
+  dimension: address_settings_autofill {
+    sql: ${TABLE}.address_settings_autofill ;;
+    type: number
+  }
+
+  dimension: address_settings_autofill_users {
+    sql: ${TABLE}.address_settings_autofill_users ;;
+    type: number
+  }
+
   dimension: adjust_network {
     sql: ${TABLE}.adjust_network ;;
     type: string
