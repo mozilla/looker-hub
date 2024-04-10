@@ -31,9 +31,19 @@ view: ga4_moz_org_metrics_summary {
     type: string
   }
 
+  dimension: distribution_model {
+    sql: ${TABLE}.distribution_model ;;
+    type: string
+  }
+
   dimension: downloads {
     sql: ${TABLE}.downloads ;;
     type: number
+  }
+
+  dimension: funnel_derived {
+    sql: ${TABLE}.funnel_derived ;;
+    type: string
   }
 
   dimension: language {
@@ -58,6 +68,11 @@ view: ga4_moz_org_metrics_summary {
 
   dimension: operating_system {
     sql: ${TABLE}.operating_system ;;
+    type: string
+  }
+
+  dimension: partner_org {
+    sql: ${TABLE}.partner_org ;;
     type: string
   }
 
