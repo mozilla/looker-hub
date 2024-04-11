@@ -3157,6 +3157,24 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
+  dimension: metrics__boolean__tab_strip_enabled {
+    label: "Tab Strip Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.tab_strip_enabled ;;
+    type: yesno
+    group_label: "Tab Strip"
+    group_item_label: "Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Tab Strip Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/tab_strip_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether or not the tab strip feature is enabled
+"
+  }
+
   dimension: metrics__labeled_counter__tabs_tray_access_point {
     label: "Tabs Tray Access Point"
     hidden: yes
