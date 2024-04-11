@@ -165,6 +165,11 @@ view: newtab_visits_table {
     type: number
   }
 
+  dimension: topsites_sponsored_enabled {
+    sql: ${TABLE}.topsites_sponsored_enabled ;;
+    type: yesno
+  }
+
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
