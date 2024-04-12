@@ -5883,11 +5883,6 @@ mozilla_vpn:
       - channel: release
         table: mozdata.mozilla_vpn.funnel_product_page_to_subscribed
       type: table_view
-    ga4_site_metrics_summary:
-      tables:
-      - channel: release
-        table: mozdata.mozilla_vpn.site_metrics_summary_v2
-      type: table_view
     growth_accounting:
       tables:
       - table: mozdata.mozilla_vpn.baseline_clients_last_seen
@@ -12911,37 +12906,13 @@ websites:
       tables:
       - table: moz-fx-data-marketing-prod.ga.firefox_whatsnew_summary
       type: table_view
-    ga4_blogs_daily_summary:
-      tables:
-      - table: moz-fx-data-marketing-prod.ga.blogs_daily_summary
-      type: table_view
     ga4_blogs_goals:
       tables:
       - table: moz-fx-data-marketing-prod.ga.blogs_goals
       type: table_view
-    ga4_blogs_landing_page_summary:
-      tables:
-      - table: moz-fx-data-marketing-prod.ga.blogs_landing_page_summary
-      type: table_view
     ga4_blogs_sessions:
       tables:
       - table: moz-fx-data-marketing-prod.ga.blogs_sessions
-      type: table_view
-    ga4_firefox_whatsnew_summary:
-      tables:
-      - table: moz-fx-data-marketing-prod.ga.firefox_whatsnew_summary
-      type: table_view
-    ga4_moz_org_landing_page_metrics:
-      tables:
-      - table: moz-fx-data-marketing-prod.ga.www_site_landing_page_metrics
-      type: table_view
-    ga4_moz_org_metrics_summary:
-      tables:
-      - table: moz-fx-data-marketing-prod.ga.www_site_metrics_summary
-      type: table_view
-    ga4_moz_org_page_metrics:
-      tables:
-      - table: moz-fx-data-marketing-prod.ga.www_site_page_metrics
       type: table_view
     ga4_sessions:
       tables:
@@ -12950,14 +12921,6 @@ websites:
     ga4_www_site_downloads:
       tables:
       - table: moz-fx-data-marketing-prod.ga.www_site_downloads
-      type: table_view
-    ga4_www_site_events_metrics:
-      tables:
-      - table: moz-fx-data-marketing-prod.ga.www_site_events_metrics
-      type: table_view
-    ga4_www_site_hits:
-      tables:
-      - table: moz-fx-data-marketing-prod.ga.www_site_hits
       type: table_view
     google_search_impressions_by_page:
       tables:
