@@ -48,8 +48,7 @@ check is started because of the return.
 
 Only collected on desktop for vpnsession, as mobile apps
 frequently are relaunched during VPN sessions. It is
-collected in daemonsession, currently only on Android.
-To be done on iOS: https://mozilla-hub.atlassian.net/browse/VPN-4979
+collected in daemonsession for mobile clients.
 "
   }
 
@@ -95,8 +94,7 @@ check is started because of the return.
 
 Only collected on desktop for vpnsession, as mobile apps
 frequently are relaunched during VPN sessions. It is
-collected in daemonsession, currently only on Android.
-To be done on iOS: https://mozilla-hub.atlassian.net/browse/VPN-4979
+collected in daemonsession for mobile clients.
 "
   }
 
@@ -143,8 +141,7 @@ check is started because of the return.
 
 Only collected on desktop for vpnsession, as mobile apps
 frequently are relaunched during VPN sessions. It is
-collected in daemonsession, currently only on Android.
-To be done on iOS: https://mozilla-hub.atlassian.net/browse/VPN-4979
+collected in daemonsession for mobile clients.
 "
   }
 
