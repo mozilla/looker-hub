@@ -689,6 +689,13 @@ view: metrics_table {
     group_item_label: "Shopping Settings User Has Onboarded"
   }
 
+  dimension: metrics__boolean__tab_strip_enabled {
+    sql: ${TABLE}.metrics.boolean.tab_strip_enabled ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Tab Strip Enabled"
+  }
+
   dimension: metrics__boolean__wallpapers_discovered_wallpaper_feature {
     sql: ${TABLE}.metrics.boolean.wallpapers_discovered_wallpaper_feature ;;
     type: yesno
