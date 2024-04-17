@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       enhanced_cross_platform_suggest_ios_beta.branch
     ]
     filters:
-      enhanced_cross_platform_suggest_ios_beta.metric: 'retained'
+      enhanced_cross_platform_suggest_ios_beta.metric: 'active_hours'
       enhanced_cross_platform_suggest_ios_beta.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       enhanced_cross_platform_suggest_ios_beta.branch
     ]
     filters:
-      enhanced_cross_platform_suggest_ios_beta.metric: 'ad_clicks'
+      enhanced_cross_platform_suggest_ios_beta.metric: 'retained'
       enhanced_cross_platform_suggest_ios_beta.statistic: mean
     row: 10
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       enhanced_cross_platform_suggest_ios_beta.branch
     ]
     filters:
-      enhanced_cross_platform_suggest_ios_beta.metric: 'active_hours'
+      enhanced_cross_platform_suggest_ios_beta.metric: 'ad_clicks'
       enhanced_cross_platform_suggest_ios_beta.statistic: mean
     row: 10
     col: 12
