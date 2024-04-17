@@ -22,11 +22,12 @@ view: vpnsession {
     description: "Count of times that the connection health check results
 in no signal.
 
-The health check counters must not be considered as markers of time. There is a possible
-situation in the health check (which calls the telemetry) which frequently results in more
-than one count per second. The situation: A health check is conducted because a network
-check did not return, and milliseconds later that network check returns and another health
-check is started because of the return.
+The health check counters must not be considered as markers of time.
+There is a possible situation in the health check (which calls the
+telemetry) which frequently results in more than one count per second.
+The situation: A health check is conducted because a network check did not
+return, and milliseconds later that network check returns and another
+health check is started because of the return.
 "
   }
 
@@ -68,11 +69,12 @@ collected in daemonsession for mobile clients.
 
     description: "Count of times that the connection health check succeeds.
 
-The health check counters must not be considered as markers of time. There is a possible
-situation in the health check (which calls the telemetry) which frequently results in more
-than one count per second. The situation: A health check is conducted because a network
-check did not return, and milliseconds later that network check returns and another health
-check is started because of the return.
+The health check counters must not be considered as markers of time.
+There is a possible situation in the health check (which calls the
+telemetry) which frequently results in more than one count per second.
+The situation: A health check is conducted because a network check did not
+return, and milliseconds later that network check returns and another
+health check is started because of the return.
 "
   }
 
@@ -115,11 +117,12 @@ collected in daemonsession for mobile clients.
     description: "Count of times that the connection health check results
 in unstable.
 
-The health check counters must not be considered as markers of time. There is a possible
-situation in the health check (which calls the telemetry) which frequently results in more
-than one count per second. The situation: A health check is conducted because a network
-check did not return, and milliseconds later that network check returns and another health
-check is started because of the return.
+The health check counters must not be considered as markers of time.
+There is a possible situation in the health check (which calls the
+telemetry) which frequently results in more than one count per second.
+The situation: A health check is conducted because a network check did not
+return, and milliseconds later that network check returns and another
+health check is started because of the return.
 "
   }
 

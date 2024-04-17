@@ -35,6 +35,11 @@ view: browser_usage {
     type: number
   }
 
+  dimension: user_type {
+    sql: ${TABLE}.user_type ;;
+    type: string
+  }
+
   dimension_group: dte {
     sql: ${TABLE}.dte ;;
     type: time
