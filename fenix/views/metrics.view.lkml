@@ -7062,6 +7062,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__sum {
+    label: "Networking Dns Native Https Call Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Dns Native Https Call Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Dns Native Https Call Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/networking_dns_native_https_call_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in the call to the native OS DNS resolution.
+"
+  }
+
   dimension: metrics__timing_distribution__networking_dns_renewal_time__sum {
     label: "Networking Dns Renewal Time Sum"
     hidden: no
@@ -24020,6 +24038,18 @@ view: metrics__metrics__timing_distribution__networking_dns_failed_lookup_time__
 }
 
 view: metrics__metrics__timing_distribution__networking_dns_lookup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_dns_native_https_call_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
