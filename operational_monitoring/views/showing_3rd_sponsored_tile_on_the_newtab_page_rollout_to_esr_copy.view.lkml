@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: address_autofill_ios_release_rollout {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.address_autofill_ios_release_rollout_statistics ;;
+view: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy_statistics ;;
 
   dimension: submission_date {
     type: date
