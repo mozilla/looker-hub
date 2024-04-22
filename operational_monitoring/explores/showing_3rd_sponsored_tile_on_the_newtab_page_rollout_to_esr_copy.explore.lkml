@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/address_autofill_ios_release_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/views/showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.view.lkml"
 
-explore: address_autofill_ios_release_rollout {
+explore: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy {
   always_filter: {
     filters: [
       branch: "enabled, disabled",

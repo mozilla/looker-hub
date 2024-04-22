@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       legacy_heartbeat_test_1_nightly_viewpoint.branch
     ]
     filters:
-      legacy_heartbeat_test_1_nightly_viewpoint.metric: 'ad_clicks'
+      legacy_heartbeat_test_1_nightly_viewpoint.metric: 'uri_count'
       legacy_heartbeat_test_1_nightly_viewpoint.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       legacy_heartbeat_test_1_nightly_viewpoint.branch
     ]
     filters:
-      legacy_heartbeat_test_1_nightly_viewpoint.metric: 'qualified_cumulative_days_of_use'
+      legacy_heartbeat_test_1_nightly_viewpoint.metric: 'active_hours'
       legacy_heartbeat_test_1_nightly_viewpoint.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       legacy_heartbeat_test_1_nightly_viewpoint.branch
     ]
     filters:
-      legacy_heartbeat_test_1_nightly_viewpoint.metric: 'active_hours'
+      legacy_heartbeat_test_1_nightly_viewpoint.metric: 'days_of_use'
       legacy_heartbeat_test_1_nightly_viewpoint.statistic: mean
     row: 10
     col: 12
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,10 +162,44 @@
       legacy_heartbeat_test_1_nightly_viewpoint.branch
     ]
     filters:
-      legacy_heartbeat_test_1_nightly_viewpoint.metric: 'uri_count'
+      legacy_heartbeat_test_1_nightly_viewpoint.metric: 'ad_clicks'
       legacy_heartbeat_test_1_nightly_viewpoint.statistic: mean
     row: 20
     col: 0
+    width: 12
+    height: 8
+    field_x: legacy_heartbeat_test_1_nightly_viewpoint.submission_date
+    field_y: legacy_heartbeat_test_1_nightly_viewpoint.point
+    log_scale: false
+    ci_lower: legacy_heartbeat_test_1_nightly_viewpoint.lower
+    ci_upper: legacy_heartbeat_test_1_nightly_viewpoint.upper
+    show_grid: true
+    listen:
+      Date: legacy_heartbeat_test_1_nightly_viewpoint.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: legacy_heartbeat_test_1_nightly_viewpoint
+    type: looker_line
+    fields: [
+      legacy_heartbeat_test_1_nightly_viewpoint.submission_date,
+      legacy_heartbeat_test_1_nightly_viewpoint.branch,
+      legacy_heartbeat_test_1_nightly_viewpoint.point
+    ]
+    pivots: [
+      legacy_heartbeat_test_1_nightly_viewpoint.branch
+    ]
+    filters:
+      legacy_heartbeat_test_1_nightly_viewpoint.metric: 'qualified_cumulative_days_of_use'
+      legacy_heartbeat_test_1_nightly_viewpoint.statistic: mean
+    row: 20
+    col: 12
     width: 12
     height: 8
     field_x: legacy_heartbeat_test_1_nightly_viewpoint.submission_date
@@ -197,40 +231,6 @@
     ]
     filters:
       legacy_heartbeat_test_1_nightly_viewpoint.metric: 'search_count'
-      legacy_heartbeat_test_1_nightly_viewpoint.statistic: mean
-    row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: legacy_heartbeat_test_1_nightly_viewpoint.submission_date
-    field_y: legacy_heartbeat_test_1_nightly_viewpoint.point
-    log_scale: false
-    ci_lower: legacy_heartbeat_test_1_nightly_viewpoint.lower
-    ci_upper: legacy_heartbeat_test_1_nightly_viewpoint.upper
-    show_grid: true
-    listen:
-      Date: legacy_heartbeat_test_1_nightly_viewpoint.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: legacy_heartbeat_test_1_nightly_viewpoint
-    type: looker_line
-    fields: [
-      legacy_heartbeat_test_1_nightly_viewpoint.submission_date,
-      legacy_heartbeat_test_1_nightly_viewpoint.branch,
-      legacy_heartbeat_test_1_nightly_viewpoint.point
-    ]
-    pivots: [
-      legacy_heartbeat_test_1_nightly_viewpoint.branch
-    ]
-    filters:
-      legacy_heartbeat_test_1_nightly_viewpoint.metric: 'days_of_use'
       legacy_heartbeat_test_1_nightly_viewpoint.statistic: mean
     row: 30
     col: 0
