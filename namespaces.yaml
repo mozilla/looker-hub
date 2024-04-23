@@ -4631,7 +4631,7 @@ growth:
   views:
     android_app_campaign_stats:
       tables:
-      - table: mozdata.google_ads.android_app_campaign_stats
+      - table: moz-fx-data-shared-prod.google_ads_derived.android_app_campaign_stats_v1
       type: table_view
     browser_usage:
       tables:
