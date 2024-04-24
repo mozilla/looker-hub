@@ -1159,6 +1159,24 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__quantity__cert_verifier_trust_obj_count {
+    label: "Cert Verifier Trust Obj Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.cert_verifier_trust_obj_count ;;
+    type: number
+    group_label: "Cert Verifier"
+    group_item_label: "Trust Obj Count"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verifier Trust Obj Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/cert_verifier_trust_obj_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of trust objects in cert9.db
+"
+  }
+
   dimension: metrics__labeled_counter__codec_stats_audio_preferred_codec {
     label: "Codec Stats Audio Preferred Codec"
     hidden: yes

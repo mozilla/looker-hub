@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: google_search_impressions_by_site {
+view: google_search_console_by_site {
   dimension: average_top_position {
     sql: ${TABLE}.average_top_position ;;
     type: number
