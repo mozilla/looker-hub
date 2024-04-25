@@ -3192,6 +3192,13 @@ view: metrics_table {
     group_item_label: "Avif Dav1D Decode Error"
   }
 
+  dimension: metrics__quantity__cert_verifier_trust_obj_count {
+    sql: ${TABLE}.metrics.quantity.cert_verifier_trust_obj_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Cert Verifier Trust Obj Count"
+  }
+
   dimension: metrics__quantity__credit_cards_saved_all {
     sql: ${TABLE}.metrics.quantity.credit_cards_saved_all ;;
     type: number

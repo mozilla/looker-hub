@@ -2636,6 +2636,15 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__quantity__cert_verifier_trust_obj_count {
+    sql: ${TABLE}.metrics.quantity.cert_verifier_trust_obj_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Cert Verifier Trust Obj Count"
+    description: "The total number of trust objects in cert9.db
+"
+  }
+
   dimension: metrics__quantity__data_storage_alternate_services {
     sql: ${TABLE}.metrics.quantity.data_storage_alternate_services ;;
     type: number

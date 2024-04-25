@@ -2416,6 +2416,13 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__quantity__cert_verifier_trust_obj_count {
+    sql: ${TABLE}.metrics.quantity.cert_verifier_trust_obj_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Cert Verifier Trust Obj Count"
+  }
+
   dimension: metrics__quantity__data_storage_alternate_services {
     sql: ${TABLE}.metrics.quantity.data_storage_alternate_services ;;
     type: number
