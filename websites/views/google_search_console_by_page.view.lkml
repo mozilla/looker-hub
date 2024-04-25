@@ -18,13 +18,6 @@ This will be null for Discover and Google News search impressions."
     description: "The number of times a user clicked a search result link to the page."
   }
 
-  dimension: country_code {
-    sql: ${TABLE}.country_code ;;
-    type: string
-    description: "Country from which the search was made, in ISO-3166-1-Alpha-3 format.
-This will be null for anonymized Discover impressions."
-  }
-
   dimension: device_type {
     sql: ${TABLE}.device_type ;;
     type: string
@@ -36,7 +29,7 @@ This will be null for Discover impressions."
     sql: ${TABLE}.has_good_page_experience ;;
     type: yesno
     description: "Whether Google Search considers the page to be providing a good page experience.
-This will be null prior to August 2023."
+This will be null when the source data wasn't exported directly to BigQuery by Google."
   }
 
   dimension: impressions {
@@ -53,6 +46,48 @@ The `query` field will be null for anonymized search impressions.
 The `country_code`, `page_url`, and related fields will be null for anonymized Discover impressions."
   }
 
+  dimension: localized_site {
+    sql: ${TABLE}.localized_site ;;
+    type: string
+    description: "Localized site description based on `localized_site_language` and `localized_site_country` (if any).
+This will be null for anonymized Discover impressions."
+  }
+
+  dimension: localized_site_code {
+    sql: ${TABLE}.localized_site_code ;;
+    type: string
+    description: "Localized site code such as `en-US` or `de` found in the first segment of the page URL path (if any).
+This will be null for anonymized Discover impressions."
+  }
+
+  dimension: localized_site_country {
+    sql: ${TABLE}.localized_site_country ;;
+    type: string
+    description: "Localized site country based on `localized_site_country_code` (if any).
+This will be null for anonymized Discover impressions."
+  }
+
+  dimension: localized_site_country_code {
+    sql: ${TABLE}.localized_site_country_code ;;
+    type: string
+    description: "Localized site country code in ISO-3166-1-alpha-2 format found in the first segment of the page URL path (if any).
+This will be null for anonymized Discover impressions."
+  }
+
+  dimension: localized_site_language {
+    sql: ${TABLE}.localized_site_language ;;
+    type: string
+    description: "Localized site language based on `localized_site_language_code` (if any).
+This will be null for anonymized Discover impressions."
+  }
+
+  dimension: localized_site_language_code {
+    sql: ${TABLE}.localized_site_language_code ;;
+    type: string
+    description: "Localized site language code in ISO-639-alpha-2 format found in the first segment of the page URL path (if any).
+This will be null for anonymized Discover impressions."
+  }
+
   dimension: page_domain_name {
     sql: ${TABLE}.page_domain_name ;;
     type: string
@@ -64,13 +99,6 @@ This will be null for anonymized Discover impressions."
     sql: ${TABLE}.page_path ;;
     type: string
     description: "The path part of the page URL.
-This will be null for anonymized Discover impressions."
-  }
-
-  dimension: page_path_segment_1 {
-    sql: ${TABLE}.page_path_segment_1 ;;
-    type: string
-    description: "The first segment of the page URL path, which is often a locale like `en-US` or `de`.
 This will be null for anonymized Discover impressions."
   }
 
@@ -88,11 +116,22 @@ This will be null for anonymized Discover impressions."
 This will be null for anonymized search impressions, and all Discover and Google News search impressions."
   }
 
+  dimension: query_type {
+    sql: ${TABLE}.query_type ;;
+    type: string
+    description: "Type of search query:
+  * Anonymized: Query was redacted by Google to protect the users' privacy.
+  * Brand: Query contained one or more Mozilla brand keywords.
+  * Non-Brand: Query didn't contain any Mozilla brand keywords.
+  * Unknown: Query couldn't be classified.
+This will be null for all Discover and Google News search impressions."
+  }
+
   dimension: search_appearance {
     sql: ${TABLE}.search_appearance ;;
     type: string
     description: "How the search result appeared (e.g. normal result, translated result, video).
-This will be null prior to August 2023."
+This will be null when the source data wasn't exported directly to BigQuery by Google."
   }
 
   dimension: search_type {
@@ -118,6 +157,20 @@ This will be null prior to August 2023."
     type: string
     description: "For domain properties, this will be `sc-domain:` followed by the domain name.
 For URL-prefix properties, it will be the full URL of the property definition."
+  }
+
+  dimension: user_country {
+    sql: ${TABLE}.user_country ;;
+    type: string
+    description: "Country from which the user was searching.
+This will be null for anonymized Discover impressions."
+  }
+
+  dimension: user_country_code {
+    sql: ${TABLE}.user_country_code ;;
+    type: string
+    description: "Country from which the user was searching, in ISO-3166-1-alpha-3 format.
+This will be null for anonymized Discover impressions."
   }
 
   dimension_group: date {

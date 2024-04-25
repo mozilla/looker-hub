@@ -17,12 +17,6 @@ view: google_search_console_by_site {
     description: "The number of times a user clicked at least one search result link to the site."
   }
 
-  dimension: country_code {
-    sql: ${TABLE}.country_code ;;
-    type: string
-    description: "Country from which the search was made, in ISO-3166-1-Alpha-3 format."
-  }
-
   dimension: device_type {
     sql: ${TABLE}.device_type ;;
     type: string
@@ -48,6 +42,16 @@ The `query` field will be null for anonymized search impressions."
     description: "The search query."
   }
 
+  dimension: query_type {
+    sql: ${TABLE}.query_type ;;
+    type: string
+    description: "Type of search query:
+  * Anonymized: Query was redacted by Google to protect the users' privacy.
+  * Brand: Query contained one or more Mozilla brand keywords.
+  * Non-Brand: Query didn't contain any Mozilla brand keywords.
+  * Unknown: Query couldn't be classified."
+  }
+
   dimension: search_type {
     sql: ${TABLE}.search_type ;;
     type: string
@@ -69,6 +73,18 @@ The `query` field will be null for anonymized search impressions."
     type: string
     description: "For domain properties, this will be `sc-domain:` followed by the domain name.
 For URL-prefix properties, it will be the full URL of the property definition."
+  }
+
+  dimension: user_country {
+    sql: ${TABLE}.user_country ;;
+    type: string
+    description: "Country from which the user was searching."
+  }
+
+  dimension: user_country_code {
+    sql: ${TABLE}.user_country_code ;;
+    type: string
+    description: "Country from which the user was searching, in ISO-3166-1-alpha-3 format."
   }
 
   dimension_group: date {
