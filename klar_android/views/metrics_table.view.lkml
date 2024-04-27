@@ -2848,6 +2848,41 @@ It also indicates the screen it was removed from, home or browser.
 "
   }
 
+  dimension: metrics__labeled_counter__webrtcdtls_cipher {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_cipher ;;
+    hidden: yes
+    description: "The CipherSuite used for each webrtc DTLS connection, as a string representation of the CipherSuite's ID in 4 hex digits (eg; TLS_DHE_RSA_WITH_AES_128_CBC_SHA would be \"0x0033\")
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_client_handshake_result {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_client_handshake_result ;;
+    hidden: yes
+    description: "The result of each webrtc client DTLS handshake as a string containing either the name of the error code (eg; SSL_ERROR_BAD_CERTIFICATE), SUCCESS for successful handshakes, ALPN_FAILURE when ALPN negotiation fails, or CERT_FAILURE when cert validation fails.
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_protocol_version {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_protocol_version ;;
+    hidden: yes
+    description: "The version of DTLS used for each webrtc connection. Can be 1.0, 1.2, or 1.3 (there is no 1.1 version of DTLS)
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_server_handshake_result {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_server_handshake_result ;;
+    hidden: yes
+    description: "The result of each webrtc server DTLS handshake, as the name of the error code (eg; SSL_ERROR_BAD_CERTIFICATE), the empty string for successful handshakes, ALPN_FAILURE when ALPN negotiation fails, or CERT_FAILURE when cert validation fails.
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_srtp_cipher {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_srtp_cipher ;;
+    hidden: yes
+    description: "The SRTPProtectionProfile (see RFC 5764) used for each webrtc SRTP connection, as a string representation of the SRTPProtectionProfile's ID in 4 hex digits (eg; SRTP_AES128_CM_HMAC_SHA1_80 would be \"0x0001\")
+"
+  }
+
   dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
     sql: ${TABLE}.metrics.labeled_string.cookie_banners_google_gdpr_choice_cookie ;;
     hidden: yes
