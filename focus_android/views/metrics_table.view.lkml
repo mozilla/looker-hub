@@ -2273,6 +2273,31 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__webrtcdtls_cipher {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_cipher ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_client_handshake_result {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_client_handshake_result ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_protocol_version {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_protocol_version ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_server_handshake_result {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_server_handshake_result ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_srtp_cipher {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_srtp_cipher ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
     sql: ${TABLE}.metrics.labeled_string.cookie_banners_google_gdpr_choice_cookie ;;
     hidden: yes
