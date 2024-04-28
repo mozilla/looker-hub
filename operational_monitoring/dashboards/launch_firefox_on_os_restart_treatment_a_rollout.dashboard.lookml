@@ -44,40 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: launch_firefox_on_os_restart_treatment_a_rollout
-    type: looker_line
-    fields: [
-      launch_firefox_on_os_restart_treatment_a_rollout.submission_date,
-      launch_firefox_on_os_restart_treatment_a_rollout.branch,
-      launch_firefox_on_os_restart_treatment_a_rollout.point
-    ]
-    pivots: [
-      launch_firefox_on_os_restart_treatment_a_rollout.branch
-    ]
-    filters:
-      launch_firefox_on_os_restart_treatment_a_rollout.metric: 'ad_clicks'
-      launch_firefox_on_os_restart_treatment_a_rollout.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: launch_firefox_on_os_restart_treatment_a_rollout.submission_date
-    field_y: launch_firefox_on_os_restart_treatment_a_rollout.point
-    log_scale: false
-    ci_lower: launch_firefox_on_os_restart_treatment_a_rollout.lower
-    ci_upper: launch_firefox_on_os_restart_treatment_a_rollout.upper
-    show_grid: true
-    listen:
-      Date: launch_firefox_on_os_restart_treatment_a_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -96,8 +62,8 @@
     filters:
       launch_firefox_on_os_restart_treatment_a_rollout.metric: 'search_count'
       launch_firefox_on_os_restart_treatment_a_rollout.statistic: mean
-    row: 10
-    col: 0
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: launch_firefox_on_os_restart_treatment_a_rollout.submission_date
@@ -131,7 +97,7 @@
       launch_firefox_on_os_restart_treatment_a_rollout.metric: 'active_hours'
       launch_firefox_on_os_restart_treatment_a_rollout.statistic: mean
     row: 10
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: launch_firefox_on_os_restart_treatment_a_rollout.submission_date
@@ -164,8 +130,8 @@
     filters:
       launch_firefox_on_os_restart_treatment_a_rollout.metric: 'qualified_cumulative_days_of_use'
       launch_firefox_on_os_restart_treatment_a_rollout.statistic: mean
-    row: 20
-    col: 0
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: launch_firefox_on_os_restart_treatment_a_rollout.submission_date
@@ -199,6 +165,42 @@
       launch_firefox_on_os_restart_treatment_a_rollout.metric: 'uri_count'
       launch_firefox_on_os_restart_treatment_a_rollout.statistic: mean
     row: 20
+    col: 0
+    width: 12
+    height: 8
+    field_x: launch_firefox_on_os_restart_treatment_a_rollout.submission_date
+    field_y: launch_firefox_on_os_restart_treatment_a_rollout.point
+    log_scale: false
+    ci_lower: launch_firefox_on_os_restart_treatment_a_rollout.lower
+    ci_upper: launch_firefox_on_os_restart_treatment_a_rollout.upper
+    show_grid: true
+    listen:
+      Date: launch_firefox_on_os_restart_treatment_a_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: launch_firefox_on_os_restart_treatment_a_rollout
+    type: "ci-line-chart"
+    fields: [
+      launch_firefox_on_os_restart_treatment_a_rollout.submission_date,
+      launch_firefox_on_os_restart_treatment_a_rollout.branch,
+      launch_firefox_on_os_restart_treatment_a_rollout.upper,
+      launch_firefox_on_os_restart_treatment_a_rollout.lower,
+      launch_firefox_on_os_restart_treatment_a_rollout.point
+    ]
+    pivots: [
+      launch_firefox_on_os_restart_treatment_a_rollout.branch
+    ]
+    filters:
+      launch_firefox_on_os_restart_treatment_a_rollout.metric: 'memory_total'
+      launch_firefox_on_os_restart_treatment_a_rollout.statistic: percentile
+    row: 20
     col: 12
     width: 12
     height: 8
@@ -210,6 +212,7 @@
     show_grid: true
     listen:
       Date: launch_firefox_on_os_restart_treatment_a_rollout.submission_date
+      Percentile: launch_firefox_on_os_restart_treatment_a_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: launch_firefox_on_os_restart_treatment_a_rollout
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       launch_firefox_on_os_restart_treatment_a_rollout.submission_date,
       launch_firefox_on_os_restart_treatment_a_rollout.branch,
-      launch_firefox_on_os_restart_treatment_a_rollout.upper,
-      launch_firefox_on_os_restart_treatment_a_rollout.lower,
       launch_firefox_on_os_restart_treatment_a_rollout.point
     ]
     pivots: [
       launch_firefox_on_os_restart_treatment_a_rollout.branch
     ]
     filters:
-      launch_firefox_on_os_restart_treatment_a_rollout.metric: 'memory_total'
-      launch_firefox_on_os_restart_treatment_a_rollout.statistic: percentile
+      launch_firefox_on_os_restart_treatment_a_rollout.metric: 'ad_clicks'
+      launch_firefox_on_os_restart_treatment_a_rollout.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: launch_firefox_on_os_restart_treatment_a_rollout.submission_date
-      Percentile: launch_firefox_on_os_restart_treatment_a_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
