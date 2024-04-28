@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       review_checker_continuity_rollout.branch
     ]
     filters:
-      review_checker_continuity_rollout.metric: 'retained'
+      review_checker_continuity_rollout.metric: 'tagged_sap_searches'
       review_checker_continuity_rollout.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       review_checker_continuity_rollout.branch
     ]
     filters:
-      review_checker_continuity_rollout.metric: 'ad_clicks'
+      review_checker_continuity_rollout.metric: 'retained'
       review_checker_continuity_rollout.statistic: mean
     row: 0
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       review_checker_continuity_rollout.branch
     ]
     filters:
-      review_checker_continuity_rollout.metric: 'tagged_sap_searches'
+      review_checker_continuity_rollout.metric: 'ad_clicks'
       review_checker_continuity_rollout.statistic: mean
     row: 30
     col: 0
