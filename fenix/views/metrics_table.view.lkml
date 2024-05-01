@@ -2307,6 +2307,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
+    sql: ${TABLE}.metrics.labeled_boolean.media_playback_device_hardware_decoder_support ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_boolean__oskeystore_self_test {
     sql: ${TABLE}.metrics.labeled_boolean.oskeystore_self_test ;;
     hidden: yes
@@ -4256,6 +4261,65 @@ view: metrics_table {
     type: number
     group_label: "Metrics Timespan Play Store Attribution Deferred Deeplink Time"
     group_item_label: "Value"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.values ;;
+    hidden: yes
   }
 
   dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__bucket_count {
@@ -14916,6 +14980,18 @@ view: metrics_table__metrics__labeled_boolean__data_storage_migration {
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__oskeystore_self_test {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -15061,6 +15137,18 @@ view: metrics_table__metrics__memory_distribution__storage_stats_cache_bytes__va
 }
 
 view: metrics_table__metrics__memory_distribution__storage_stats_data_dir_bytes__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

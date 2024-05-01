@@ -1106,6 +1106,24 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__sum {
+    label: "Bounce Tracking Protection Purge Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.sum ;;
+    type: number
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Purge Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/bounce_tracking_protection_purge_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "For every purge that is scheduled, we call the ClearDataService to purge persistent storage for each detected bounce tracker. This may do some blocking work on main thread and dispatch some cleanups to other threads. Collect telemetry on how long it takes to clear in the wild to determine whether we need to improve performance here.
+"
+  }
+
   dimension: metrics__boolean__browser_ui_proton_enabled {
     label: "Browser Ui Proton Enabled"
     hidden: yes
@@ -4101,6 +4119,23 @@ To be used to validate GIFFT.
 
     description: "Failure occurs when initializing the audio stream. (Migrated from the geckoview metric of the same name).
 "
+  }
+
+  dimension: metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
+    label: "Media Playback Device Hardware Decoder Support"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.media_playback_device_hardware_decoder_support ;;
+    type: string
+    group_label: "Media Playback"
+    group_item_label: "Device Hardware Decoder Support"
+
+    link: {
+      label: "Glean Dictionary reference for Media Playback Device Hardware Decoder Support"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/media_playback_device_hardware_decoder_support"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The results of hardware decoder support for different video codecs. True means that codec can be decoded by hardware on user's device."
   }
 
   dimension: metrics__labeled_counter__netwerk_early_hints {
@@ -17954,6 +17989,18 @@ view: metrics__metrics__labeled_boolean__data_storage_migration {
   }
 }
 
+view: metrics__metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics__metrics__labeled_boolean__oskeystore_self_test {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -18051,6 +18098,18 @@ view: metrics__metrics__memory_distribution__glean_upload_pending_pings_director
 }
 
 view: metrics__metrics__memory_distribution__performance_clone_deserialize_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

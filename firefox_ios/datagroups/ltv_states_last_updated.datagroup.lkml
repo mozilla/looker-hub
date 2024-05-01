@@ -5,12 +5,12 @@
 # Using a datagroup in an Explore: https://cloud.google.com/looker/docs/reference/param-explore-persist-with
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
-datagroup: ltv_states_v1_last_updated {
-  label: "Firefox iOS LTV States Last Updated"
+datagroup: ltv_states_last_updated {
+  label: "Ltv States Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
-    FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'firefox_ios_derived'
-    AND table_name = 'ltv_states_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:firefox_ios_derived.ltv_states_v1 is modified."
+    FROM `mozdata`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
+    WHERE table_schema = 'firefox_ios'
+    AND table_name = 'ltv_states' ;;
+  description: "Updates when mozdata:firefox_ios.ltv_states is modified."
   max_cache_age: "24 hours"
 }
