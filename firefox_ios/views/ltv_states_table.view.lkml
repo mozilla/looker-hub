@@ -23,16 +23,19 @@ view: ltv_states_table {
   dimension: client_id {
     sql: ${TABLE}.client_id ;;
     hidden: yes
+    description: "Unique ID for the client installation."
   }
 
   dimension: days_since_first_seen {
     sql: ${TABLE}.days_since_first_seen ;;
     type: number
+    description: "Days Since First Seen"
   }
 
   dimension: days_since_seen {
     sql: ${TABLE}.days_since_seen ;;
     type: number
+    description: "Days Since Seen"
   }
 
   dimension: death_time {
@@ -70,6 +73,7 @@ view: ltv_states_table {
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number
+    description: "Sample ID"
   }
 
   dimension_group: first_seen {
@@ -85,6 +89,7 @@ view: ltv_states_table {
     ]
     convert_tz: no
     datatype: date
+    description: "First Seen Date"
   }
 
   dimension_group: submission {
@@ -100,6 +105,7 @@ view: ltv_states_table {
     ]
     convert_tz: no
     datatype: date
+    description: "Submission Date"
   }
 
   sql_table_name: `mozdata.firefox_ios.ltv_states` ;;
