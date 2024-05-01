@@ -828,6 +828,24 @@ broken down by structured ingestion namespace.
 "
   }
 
+  dimension: metrics__timing_distribution__relevancy_classify_duration__sum {
+    label: "Relevancy Classify Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.relevancy_classify_duration.sum ;;
+    type: number
+    group_label: "Relevancy Classify"
+    group_item_label: "Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Relevancy Classify Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/relevancy_classify_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record the duration (in ms) of a successful classification.
+"
+  }
+
   dimension: metrics__string__search_engine_default_display_name {
     label: "Search Engine Default Display Name"
     hidden: no
@@ -3792,7 +3810,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "If a HTTPS-First (`dom.security.https_first` enabled) upgrade isn't successful, measures the timespan between the navigation start and the downgrade. This is essentially the overhead caused by HTTPS-First if a site does not support HTTPS.
+    description: "If a HTTPS-First (`dom.security.https_first` enabled) upgrade isn't successful, measures the timespan between the navigation start and the downgrade. This does not include the case in which the https request times out and the http request sent after 3s gets a response faster.
 "
   }
 
@@ -3810,7 +3828,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "If a schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrade isn't successful, measures the timespan between the navigation start and the downgrade. This is essentially the overhead caused by HTTPS-First if a site does not support HTTPS.
+    description: "If a schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrade isn't successful, measures the timespan between the navigation start and the downgrade. This does not include the case in which the https request times out and the http request sent after 3s gets a response faster.
 "
   }
 
@@ -19491,6 +19509,18 @@ view: metrics__metrics__timing_distribution__performance_time_response_start__va
 }
 
 view: metrics__metrics__timing_distribution__privacy_sanitize_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__relevancy_classify_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

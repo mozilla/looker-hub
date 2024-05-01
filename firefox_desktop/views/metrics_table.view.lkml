@@ -10009,6 +10009,66 @@ default engine, and hence both versions of these fields will be filled in.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__relevancy_classify_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.relevancy_classify_duration.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Relevancy Classify Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__relevancy_classify_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.relevancy_classify_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Relevancy Classify Duration"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__relevancy_classify_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.relevancy_classify_duration.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Relevancy Classify Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__relevancy_classify_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.relevancy_classify_duration.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Relevancy Classify Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__relevancy_classify_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.relevancy_classify_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__relevancy_classify_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.relevancy_classify_duration.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Relevancy Classify Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__relevancy_classify_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.relevancy_classify_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Relevancy Classify Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__relevancy_classify_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.relevancy_classify_duration.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Relevancy Classify Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__relevancy_classify_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.relevancy_classify_duration.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__search_service_startup_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.search_service_startup_time.bucket_count ;;
     type: number
@@ -13009,6 +13069,18 @@ view: metrics_table__metrics__timing_distribution__performance_time_response_sta
 }
 
 view: metrics_table__metrics__timing_distribution__privacy_sanitize_load_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__relevancy_classify_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
