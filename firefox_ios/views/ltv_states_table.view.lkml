@@ -76,6 +76,11 @@ view: ltv_states_table {
     description: "Sample ID"
   }
 
+  dimension: total_historic_ad_clicks {
+    sql: ${TABLE}.total_historic_ad_clicks ;;
+    type: number
+  }
+
   dimension_group: first_seen {
     sql: ${TABLE}.first_seen_date ;;
     type: time

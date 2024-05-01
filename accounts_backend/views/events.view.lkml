@@ -20,7 +20,8 @@ view: events {
     description: "The number of clients that completed the event(s)."
   }
 
-  dimension: document_id {
+  dimension: event_id {
     primary_key: yes
+    sql: ${event_id} ;;
   }
 }
