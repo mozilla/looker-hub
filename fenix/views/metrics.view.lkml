@@ -508,7 +508,7 @@ default: \"homepage after 4 hours\"
 
   dimension: metrics__boolean__customize_home_recently_saved {
     label: "Customize Home Recently Saved"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.customize_home_recently_saved ;;
     type: yesno
     group_label: "Customize Home"
@@ -2680,7 +2680,7 @@ default: true
 
   dimension: metrics__counter__recent_bookmarks_bookmark_clicked {
     label: "Recent Bookmarks Bookmark Clicked"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.recent_bookmarks_bookmark_clicked ;;
     type: number
     group_label: "Recent Bookmarks"
@@ -2700,7 +2700,7 @@ screen.
 
   dimension: metrics__quantity__recent_bookmarks_recent_bookmarks_count {
     label: "Recent Bookmarks Recent Bookmarks Count"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.quantity.recent_bookmarks_recent_bookmarks_count ;;
     type: number
     group_label: "Recent Bookmarks"
@@ -2719,7 +2719,7 @@ Recently Saved section on the home page.
 
   dimension: metrics__counter__recent_bookmarks_show_all_bookmarks {
     label: "Recent Bookmarks Show All Bookmarks"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.recent_bookmarks_show_all_bookmarks ;;
     type: number
     group_label: "Recent Bookmarks"
