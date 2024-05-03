@@ -411,6 +411,25 @@ manually by the user.
 "
   }
 
+  dimension: metrics__boolean__customize_home_bookmarks {
+    label: "Customize Home Bookmarks"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.customize_home_bookmarks ;;
+    type: yesno
+    group_label: "Customize Home"
+    group_item_label: "Bookmarks"
+
+    link: {
+      label: "Glean Dictionary reference for Customize Home Bookmarks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/customize_home_bookmarks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An indication of whether the recently
+saved section is enabled to be displayed. This was previously customize_home.recently_saved.
+"
+  }
+
   dimension: metrics__boolean__customize_home_contile {
     label: "Customize Home Contile"
     hidden: no
@@ -825,6 +844,65 @@ location.
     }
 
     description: "The time that it takes to derive the attribution parameters by the Adjust SDK.
+"
+  }
+
+  dimension: metrics__counter__home_bookmarks_bookmark_clicked {
+    label: "Home Bookmarks Bookmark Clicked"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.home_bookmarks_bookmark_clicked ;;
+    type: number
+    group_label: "Home Bookmarks"
+    group_item_label: "Bookmark Clicked"
+
+    link: {
+      label: "Glean Dictionary reference for Home Bookmarks Bookmark Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/home_bookmarks_bookmark_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates the number of times that a user
+has clicked on a bookmark from the home
+screen. This was previously recent_bookmarks.bookmark_clicked.
+"
+  }
+
+  dimension: metrics__quantity__home_bookmarks_bookmarks_count {
+    label: "Home Bookmarks Bookmarks Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.home_bookmarks_bookmarks_count ;;
+    type: number
+    group_label: "Home Bookmarks"
+    group_item_label: "Bookmarks Count"
+
+    link: {
+      label: "Glean Dictionary reference for Home Bookmarks Bookmarks Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/home_bookmarks_bookmarks_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of bookmarked items appearing in the
+Bookmarks section on the home page. This was previously recent_bookmarks.recent_bookmarks_count.
+"
+  }
+
+  dimension: metrics__counter__home_bookmarks_show_all_bookmarks {
+    label: "Home Bookmarks Show All Bookmarks"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.home_bookmarks_show_all_bookmarks ;;
+    type: number
+    group_label: "Home Bookmarks"
+    group_item_label: "Show All Bookmarks"
+
+    link: {
+      label: "Glean Dictionary reference for Home Bookmarks Show All Bookmarks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/home_bookmarks_show_all_bookmarks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A counter that indicates the number of times that a user
+has clicked the show all button for bookmarks
+on the home screen. This was previously recent_bookmarks.show_all_bookmarks.
 "
   }
 
@@ -3619,6 +3697,42 @@ ensure it's not too expensive.  This value is only available on Android
     }
 
     description: "The source of the RemoteSettings attachment that holds the bloom filter. Possible values are \"dump_match\", \"cache_match\", \"remote_match\",\"dump_fallback\", \"cache_fallback\", \"unknown\". \"dump_match\", \"cache_match\" and \"remote_match\" are expected known-good values, and means that the loaded bloomfilter matches the blocklist record in the RemoteSettings collection. The prefix denotes the immediate source of the loaded data: \"dump\" means packaged with the application, \"remote\" means a freshly downloaded bloomfilter, \"cache\" means a previously downloaded bloomfilter. \"dump_fallback\" and \"cache_fallback\" means that the last known bloomfilter was used, despite it not matching the latest record in the RemoteSettings collection. In this case the outdated bloomfilter is used as a fallback (e.g. because the latest version cannot be downloaded). \"unknown\"  means that the bloomfilter cannot be loaded at all. This can happen if the blocklist is disabled via preferences or enterprise policies.
+"
+  }
+
+  dimension: metrics__boolean__bounce_tracking_protection_enabled_at_startup {
+    label: "Bounce Tracking Protection Enabled At Startup"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_at_startup ;;
+    type: yesno
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Enabled At Startup"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Enabled At Startup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/bounce_tracking_protection_enabled_at_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Keeps track of whether the feature is enabled at startup.
+"
+  }
+
+  dimension: metrics__boolean__bounce_tracking_protection_enabled_dry_run_mode_at_startup {
+    label: "Bounce Tracking Protection Enabled Dry Run Mode At Startup"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_dry_run_mode_at_startup ;;
+    type: yesno
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Enabled Dry Run Mode At Startup"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Enabled Dry Run Mode At Startup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/bounce_tracking_protection_enabled_dry_run_mode_at_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Keeps track of whether the feature is enabled and running in dry-run mode at startup.
 "
   }
 
@@ -12672,6 +12786,56 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Events Total Uri Count"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/events_total_uri_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: home_bookmarks_bookmark_clicked {
+    type: sum
+    sql: ${metrics__counter__home_bookmarks_bookmark_clicked} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Home Bookmarks Bookmark Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/home_bookmarks_bookmark_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: home_bookmarks_bookmark_clicked_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__home_bookmarks_bookmark_clicked: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Home Bookmarks Bookmark Clicked"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/home_bookmarks_bookmark_clicked"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: home_bookmarks_show_all_bookmarks {
+    type: sum
+    sql: ${metrics__counter__home_bookmarks_show_all_bookmarks} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Home Bookmarks Show All Bookmarks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/home_bookmarks_show_all_bookmarks"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: home_bookmarks_show_all_bookmarks_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__home_bookmarks_show_all_bookmarks: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Home Bookmarks Show All Bookmarks"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/home_bookmarks_show_all_bookmarks"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
