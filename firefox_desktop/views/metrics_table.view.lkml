@@ -324,6 +324,24 @@ view: metrics_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__bounce_tracking_protection_enabled_at_startup {
+    sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_at_startup ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Bounce Tracking Protection Enabled At Startup"
+    description: "Keeps track of whether the feature is enabled at startup.
+"
+  }
+
+  dimension: metrics__boolean__bounce_tracking_protection_enabled_dry_run_mode_at_startup {
+    sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_dry_run_mode_at_startup ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Bounce Tracking Protection Enabled Dry Run Mode At Startup"
+    description: "Keeps track of whether the feature is enabled and running in dry-run mode at startup.
+"
+  }
+
   dimension: metrics__boolean__browser_ui_proton_enabled {
     sql: ${TABLE}.metrics.boolean.browser_ui_proton_enabled ;;
     type: yesno

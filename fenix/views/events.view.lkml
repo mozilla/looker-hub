@@ -22,6 +22,5 @@ view: events {
 
   dimension: event_id {
     primary_key: yes
-    sql: ${event_id} ;;
   }
 }

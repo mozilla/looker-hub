@@ -1106,6 +1106,42 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__boolean__bounce_tracking_protection_enabled_at_startup {
+    label: "Bounce Tracking Protection Enabled At Startup"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_at_startup ;;
+    type: yesno
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Enabled At Startup"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Enabled At Startup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/bounce_tracking_protection_enabled_at_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Keeps track of whether the feature is enabled at startup.
+"
+  }
+
+  dimension: metrics__boolean__bounce_tracking_protection_enabled_dry_run_mode_at_startup {
+    label: "Bounce Tracking Protection Enabled Dry Run Mode At Startup"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_dry_run_mode_at_startup ;;
+    type: yesno
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Enabled Dry Run Mode At Startup"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Enabled Dry Run Mode At Startup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/bounce_tracking_protection_enabled_dry_run_mode_at_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Keeps track of whether the feature is enabled and running in dry-run mode at startup.
+"
+  }
+
   dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__sum {
     label: "Bounce Tracking Protection Purge Duration Sum"
     hidden: no

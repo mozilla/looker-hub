@@ -318,6 +318,20 @@ view: metrics_table {
     group_item_label: "Android Autofill Supported"
   }
 
+  dimension: metrics__boolean__bounce_tracking_protection_enabled_at_startup {
+    sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_at_startup ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Bounce Tracking Protection Enabled At Startup"
+  }
+
+  dimension: metrics__boolean__bounce_tracking_protection_enabled_dry_run_mode_at_startup {
+    sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_dry_run_mode_at_startup ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Bounce Tracking Protection Enabled Dry Run Mode At Startup"
+  }
+
   dimension: metrics__boolean__browser_ui_proton_enabled {
     sql: ${TABLE}.metrics.boolean.browser_ui_proton_enabled ;;
     type: yesno
@@ -337,6 +351,13 @@ view: metrics_table {
     type: yesno
     group_label: "Metrics Boolean"
     group_item_label: "Cookie Banners Service Detect Only"
+  }
+
+  dimension: metrics__boolean__customize_home_bookmarks {
+    sql: ${TABLE}.metrics.boolean.customize_home_bookmarks ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Customize Home Bookmarks"
   }
 
   dimension: metrics__boolean__customize_home_contile {
@@ -953,6 +974,20 @@ view: metrics_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Hls Canplay Supported"
+  }
+
+  dimension: metrics__counter__home_bookmarks_bookmark_clicked {
+    sql: ${TABLE}.metrics.counter.home_bookmarks_bookmark_clicked ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Home Bookmarks Bookmark Clicked"
+  }
+
+  dimension: metrics__counter__home_bookmarks_show_all_bookmarks {
+    sql: ${TABLE}.metrics.counter.home_bookmarks_show_all_bookmarks ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Home Bookmarks Show All Bookmarks"
   }
 
   dimension: metrics__counter__home_screen_home_screen_view_count {
@@ -3346,6 +3381,13 @@ view: metrics_table {
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Gpu Process Unstable Launch Attempts"
+  }
+
+  dimension: metrics__quantity__home_bookmarks_bookmarks_count {
+    sql: ${TABLE}.metrics.quantity.home_bookmarks_bookmarks_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Home Bookmarks Bookmarks Count"
   }
 
   dimension: metrics__quantity__logins_saved_all {
