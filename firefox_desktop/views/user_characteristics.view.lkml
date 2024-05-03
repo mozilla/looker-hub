@@ -77,6 +77,474 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_font_default_default_group {
+    label: "Characteristics Font Default Default Group"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_font_default_default_group ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Font Default Default Group"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Default Default Group"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_default_default_group"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the font.default.<default language group> pref
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_default_modified {
+    label: "Characteristics Font Default Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_font_default_modified ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Font Default Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Default Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_default_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of other modified font.default prefs.
+"
+  }
+
+  dimension: metrics__string__characteristics_font_default_western {
+    label: "Characteristics Font Default Western"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_font_default_western ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Font Default Western"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Default Western"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_default_western"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the font.default.x-western pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_minimum_size_default_group {
+    label: "Characteristics Font Minimum Size Default Group"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_font_minimum_size_default_group ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Font Minimum Size Default Group"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Minimum Size Default Group"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_minimum_size_default_group"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the font.minimum-size.<default language group> pref
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_minimum_size_modified {
+    label: "Characteristics Font Minimum Size Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_font_minimum_size_modified ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Font Minimum Size Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Minimum Size Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_minimum_size_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of other modified font.minimum-size prefs.
+"
+  }
+
+  dimension: metrics__string__characteristics_font_minimum_size_western {
+    label: "Characteristics Font Minimum Size Western"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_font_minimum_size_western ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Font Minimum Size Western"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Minimum Size Western"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_minimum_size_western"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the font.minimum-size.x-western pref
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_name_list_cursive_modified {
+    label: "Characteristics Font Name List Cursive Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_font_name_list_cursive_modified ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Font Name List Cursive Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Name List Cursive Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_name_list_cursive_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of modified font.name-list.cursive. prefs.
+"
+  }
+
+  dimension: metrics__boolean__characteristics_font_name_list_emoji_modified {
+    label: "Characteristics Font Name List Emoji Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_font_name_list_emoji_modified ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Font Name List Emoji Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Name List Emoji Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_name_list_emoji_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the pref font.name-list.emoji was modified.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_name_list_monospace_modified {
+    label: "Characteristics Font Name List Monospace Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_font_name_list_monospace_modified ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Font Name List Monospace Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Name List Monospace Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_name_list_monospace_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of modified font.name-list.monospace. prefs.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_name_list_sans_serif_modified {
+    label: "Characteristics Font Name List Sans Serif Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_font_name_list_sans_serif_modified ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Font Name List Sans Serif Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Name List Sans Serif Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_name_list_sans_serif_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of modified font.name-list.sans-serif. prefs.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_name_list_serif_modified {
+    label: "Characteristics Font Name List Serif Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_font_name_list_serif_modified ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Font Name List Serif Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Name List Serif Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_name_list_serif_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of modified font.name-list.serif. prefs.
+"
+  }
+
+  dimension: metrics__string__characteristics_font_name_monospace_default_group {
+    label: "Characteristics Font Name Monospace Default Group"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_font_name_monospace_default_group ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Font Name Monospace Default Group"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Name Monospace Default Group"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_name_monospace_default_group"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the font.name.monospace.<default language group> pref
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_name_monospace_modified {
+    label: "Characteristics Font Name Monospace Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_font_name_monospace_modified ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Font Name Monospace Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Name Monospace Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_name_monospace_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of other modified font.name.monospace prefs.
+"
+  }
+
+  dimension: metrics__string__characteristics_font_name_monospace_western {
+    label: "Characteristics Font Name Monospace Western"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_font_name_monospace_western ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Font Name Monospace Western"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Name Monospace Western"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_name_monospace_western"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the font.name.monospace.x-western pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_name_sans_serif_default_group {
+    label: "Characteristics Font Name Sans Serif Default Group"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_font_name_sans_serif_default_group ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Font Name Sans Serif Default Group"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Name Sans Serif Default Group"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_name_sans_serif_default_group"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the font.name.sans-serif.<default language group> pref
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_name_sans_serif_modified {
+    label: "Characteristics Font Name Sans Serif Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_font_name_sans_serif_modified ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Font Name Sans Serif Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Name Sans Serif Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_name_sans_serif_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of other modified font.name.sans-serif prefs.
+"
+  }
+
+  dimension: metrics__string__characteristics_font_name_sans_serif_western {
+    label: "Characteristics Font Name Sans Serif Western"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_font_name_sans_serif_western ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Font Name Sans Serif Western"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Name Sans Serif Western"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_name_sans_serif_western"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the font.name.sans-serif.x-western pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_name_serif_default_group {
+    label: "Characteristics Font Name Serif Default Group"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_font_name_serif_default_group ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Font Name Serif Default Group"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Name Serif Default Group"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_name_serif_default_group"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the font.name.serif.<default language group> pref
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_name_serif_modified {
+    label: "Characteristics Font Name Serif Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_font_name_serif_modified ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Font Name Serif Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Name Serif Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_name_serif_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of other modified font.name.serif prefs.
+"
+  }
+
+  dimension: metrics__string__characteristics_font_name_serif_western {
+    label: "Characteristics Font Name Serif Western"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_font_name_serif_western ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Font Name Serif Western"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Name Serif Western"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_name_serif_western"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the font.name.serif.x-western pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_size_monospace_default_group {
+    label: "Characteristics Font Size Monospace Default Group"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_font_size_monospace_default_group ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Font Size Monospace Default Group"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Size Monospace Default Group"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_size_monospace_default_group"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the font.size.monospace.<default language group> pref
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_size_monospace_modified {
+    label: "Characteristics Font Size Monospace Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_font_size_monospace_modified ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Font Size Monospace Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Size Monospace Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_size_monospace_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of other modified font.size.monospace prefs.
+"
+  }
+
+  dimension: metrics__string__characteristics_font_size_monospace_western {
+    label: "Characteristics Font Size Monospace Western"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_font_size_monospace_western ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Font Size Monospace Western"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Size Monospace Western"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_size_monospace_western"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the font.size.monospace.x-western pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_size_variable_default_group {
+    label: "Characteristics Font Size Variable Default Group"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_font_size_variable_default_group ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Font Size Variable Default Group"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Size Variable Default Group"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_size_variable_default_group"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the font.size.variable.<default language group> pref
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_size_variable_modified {
+    label: "Characteristics Font Size Variable Modified"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_font_size_variable_modified ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Font Size Variable Modified"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Size Variable Modified"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_size_variable_modified"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The number of other modified font.size.variable prefs.
+"
+  }
+
+  dimension: metrics__string__characteristics_font_size_variable_western {
+    label: "Characteristics Font Size Variable Western"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_font_size_variable_western ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Font Size Variable Western"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Font Size Variable Western"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_font_size_variable_western"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The value of the font.size.variable.x-western pref
+"
+  }
+
   dimension: metrics__boolean__characteristics_inverted_colors {
     label: "Characteristics Inverted Colors"
     hidden: no
@@ -200,6 +668,24 @@ view: user_characteristics {
     }
 
     description: "Block pop-up windows (The dom.disable_open_during_load pref)
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_browser_display_use_document_fonts {
+    label: "Characteristics Prefs Browser Display Use Document Fonts"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_browser_display_use_document_fonts ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Prefs Browser Display Use Document Fonts"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs Browser Display Use Document Fonts"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_browser_display_use_document_fonts"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Allow pages to choose their own fonts.
 "
   }
 

@@ -13,4 +13,8 @@ view: urlbar_events {
     type: count
     description: "The number of times the event(s) occurred."
   }
+
+  dimension: event_id {
+    primary_key: yes
+  }
 }

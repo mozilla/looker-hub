@@ -290,6 +290,20 @@ view: metrics_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__bounce_tracking_protection_enabled_at_startup {
+    sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_at_startup ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Bounce Tracking Protection Enabled At Startup"
+  }
+
+  dimension: metrics__boolean__bounce_tracking_protection_enabled_dry_run_mode_at_startup {
+    sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_dry_run_mode_at_startup ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Bounce Tracking Protection Enabled Dry Run Mode At Startup"
+  }
+
   dimension: metrics__boolean__browser_is_default {
     sql: ${TABLE}.metrics.boolean.browser_is_default ;;
     type: yesno
@@ -1713,6 +1727,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
+    sql: ${TABLE}.metrics.labeled_boolean.media_playback_device_hardware_decoder_support ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_boolean__oskeystore_self_test {
     sql: ${TABLE}.metrics.labeled_boolean.oskeystore_self_test ;;
     hidden: yes
@@ -2273,6 +2292,31 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__webrtcdtls_cipher {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_cipher ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_client_handshake_result {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_client_handshake_result ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_protocol_version {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_protocol_version ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_server_handshake_result {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_server_handshake_result ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_srtp_cipher {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_srtp_cipher ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
     sql: ${TABLE}.metrics.labeled_string.cookie_banners_google_gdpr_choice_cookie ;;
     hidden: yes
@@ -2414,6 +2458,13 @@ view: metrics_table {
   dimension: metrics__object__fog_validation_some_object {
     sql: ${TABLE}.metrics.object.fog_validation_some_object ;;
     hidden: yes
+  }
+
+  dimension: metrics__quantity__cert_verifier_trust_obj_count {
+    sql: ${TABLE}.metrics.quantity.cert_verifier_trust_obj_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Cert Verifier Trust Obj Count"
   }
 
   dimension: metrics__quantity__data_storage_alternate_services {
@@ -3107,6 +3158,65 @@ view: metrics_table {
     type: number
     group_label: "Metrics Timespan Nimbus Experiments Nimbus Initial Fetch"
     group_item_label: "Value"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.values ;;
+    hidden: yes
   }
 
   dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__bucket_count {
@@ -6705,6 +6815,65 @@ view: metrics_table {
 
   dimension: metrics__timing_distribution__networking_dns_lookup_time__values {
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_lookup_time.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.values ;;
     hidden: yes
   }
 
@@ -10568,6 +10737,18 @@ view: metrics_table__metrics__labeled_boolean__data_storage_migration {
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__oskeystore_self_test {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -10665,6 +10846,18 @@ view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_di
 }
 
 view: metrics_table__metrics__memory_distribution__performance_clone_deserialize_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -11397,6 +11590,18 @@ view: metrics_table__metrics__timing_distribution__networking_dns_failed_lookup_
 }
 
 view: metrics_table__metrics__timing_distribution__networking_dns_lookup_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_dns_native_https_call_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -15,6 +15,11 @@ view: search_term_sanitization_job_metadata_daily {
     type: number
   }
 
+  dimension: contained_blank {
+    sql: ${TABLE}.contained_blank ;;
+    type: number
+  }
+
   dimension: contained_name {
     sql: ${TABLE}.contained_name ;;
     type: number
@@ -57,6 +62,11 @@ view: search_term_sanitization_job_metadata_daily {
 
   dimension: sum_words_all_search_terms {
     sql: ${TABLE}.sum_words_all_search_terms ;;
+    type: number
+  }
+
+  dimension: total_search_terms {
+    sql: ${TABLE}.total_search_terms ;;
     type: number
   }
 

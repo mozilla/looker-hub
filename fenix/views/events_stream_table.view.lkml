@@ -296,6 +296,11 @@ view: events_stream_table {
     hidden: yes
   }
 
+  dimension: normalized_app_id {
+    sql: ${TABLE}.normalized_app_id ;;
+    type: string
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -434,7 +439,12 @@ view: events_stream_table {
 
   parameter: channel {
     type: unquoted
-    default_value: "mozdata.org_mozilla_firefox_beta.events_stream"
+    default_value: "mozdata.fenix.events_stream"
+
+    allowed_value: {
+      label: "Release"
+      value: "mozdata.fenix.events_stream"
+    }
 
     allowed_value: {
       label: "Beta"
