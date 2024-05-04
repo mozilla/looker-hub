@@ -1471,7 +1471,7 @@ startup function is called to when the startup promise resolves.
 
   dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__sum {
     label: "Extensions Timing Storage Local Get Json Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.sum ;;
     type: number
     group_label: "Extensions Timing"
@@ -1507,7 +1507,7 @@ startup function is called to when the startup promise resolves.
 
   dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__sum {
     label: "Extensions Timing Storage Local Set Json Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.sum ;;
     type: number
     group_label: "Extensions Timing"

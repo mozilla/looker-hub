@@ -16,6 +16,26 @@ view: firefox_ios_ltv {
     map_layer_name: countries
   }
 
+  dimension: future_value {
+    sql: ${TABLE}.future_value ;;
+    type: number
+  }
+
+  dimension: historic_value {
+    sql: ${TABLE}.historic_value ;;
+    type: number
+  }
+
+  dimension: lifetime_value {
+    sql: ${TABLE}.lifetime_value ;;
+    type: number
+  }
+
+  dimension: revenue_per_click {
+    sql: ${TABLE}.revenue_per_click ;;
+    type: number
+  }
+
   dimension: sample_id {
     sql: ${TABLE}.sample_id ;;
     type: number

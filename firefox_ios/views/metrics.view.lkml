@@ -3724,6 +3724,24 @@ widget opens firefox for regular search
 "
   }
 
+  dimension: metrics__quantity__windows_ipad_window_count {
+    label: "Windows Ipad Window Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.windows_ipad_window_count ;;
+    type: number
+    group_label: "Windows"
+    group_item_label: "Ipad Window Count"
+
+    link: {
+      label: "Glean Dictionary reference for Windows Ipad Window Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_ios/metrics/windows_ipad_window_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "A snapshot of how many windows the user has opened on iPad.
+"
+  }
+
   dimension: metrics__string__glean_client_annotation_experimentation_id {
     label: "Glean Client Annotation Experimentation Id"
     hidden: no
