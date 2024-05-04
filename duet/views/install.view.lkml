@@ -71,6 +71,11 @@ view: install {
     description: "ID of partner distribution, defaulting to 0 for Mozilla distributions"
   }
 
+  dimension: distribution_model {
+    sql: ${TABLE}.distribution_model ;;
+    type: string
+  }
+
   dimension: distribution_version {
     sql: ${TABLE}.distribution_version ;;
     type: string
@@ -130,6 +135,11 @@ view: install {
     sql: ${TABLE}.from_msi ;;
     type: yesno
     description: "True if the install was launched from an MSI wrapper"
+  }
+
+  dimension: funnel_derived {
+    sql: ${TABLE}.funnel_derived ;;
+    type: string
   }
 
   dimension: funnelcake {
@@ -441,6 +451,11 @@ view: install {
     sql: ${TABLE}.out_of_retries ;;
     type: yesno
     description: "True if the installation failed because the download had to be retried too many times (currently 10)"
+  }
+
+  dimension: partner_org {
+    sql: ${TABLE}.partner_org ;;
+    type: string
   }
 
   dimension: ping_version {

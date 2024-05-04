@@ -65,10 +65,22 @@ view: android_app_campaign_stats {
     description: "Number of new profiles reported for this ad group on this day."
   }
 
+  dimension: repeat_users {
+    sql: ${TABLE}.repeat_users ;;
+    type: number
+    description: "Number of repeat users on this day."
+  }
+
   dimension: spend {
     sql: ${TABLE}.spend ;;
     type: number
     description: "Spend in US dollars attributed to this ad group on this day."
+  }
+
+  dimension: week_4_retained_users {
+    sql: ${TABLE}.week_4_retained_users ;;
+    type: number
+    description: "Number of week 4 retained users on this day."
   }
 
   dimension_group: date {

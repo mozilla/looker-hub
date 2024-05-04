@@ -1705,6 +1705,13 @@ view: metrics_table {
     group_item_label: "Tabs Private Tabs Quantity"
   }
 
+  dimension: metrics__quantity__windows_ipad_window_count {
+    sql: ${TABLE}.metrics.quantity.windows_ipad_window_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Windows Ipad Window Count"
+  }
+
   dimension: metrics__rate__places_history_migration_migration_ended_rate__denominator {
     sql: ${TABLE}.metrics.rate.places_history_migration_migration_ended_rate.denominator ;;
     type: number
