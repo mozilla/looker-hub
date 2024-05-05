@@ -761,6 +761,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__quantity__characteristics_prefs_network_cookie_cookiebehavior {
+    label: "Characteristics Prefs Network Cookie Cookiebehavior"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_prefs_network_cookie_cookiebehavior ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Prefs Network Cookie Cookiebehavior"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Prefs Network Cookie Cookiebehavior"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_prefs_network_cookie_cookiebehavior"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Value of the network.cookie.cookieBehavior pref.
+"
+  }
+
   dimension: metrics__boolean__characteristics_prefs_overlay_scrollbars {
     label: "Characteristics Prefs Overlay Scrollbars"
     hidden: no

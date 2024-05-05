@@ -6021,6 +6021,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__performance_pageload_async_sheet_load__sum {
+    label: "Performance Pageload Async Sheet Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_async_sheet_load.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Async Sheet Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Async Sheet Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/performance_pageload_async_sheet_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in milliseconds since a style sheet started loading async until it finished.
+"
+  }
+
   dimension: metrics__timing_distribution__performance_pageload_fcp__sum {
     label: "Performance Pageload Fcp Sum"
     hidden: no
@@ -19202,6 +19220,18 @@ view: metrics__metrics__timing_distribution__performance_page_non_blank_paint__v
 }
 
 view: metrics__metrics__timing_distribution__performance_page_total_content_page_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_async_sheet_load__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
