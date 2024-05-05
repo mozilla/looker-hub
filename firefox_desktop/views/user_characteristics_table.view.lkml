@@ -626,6 +626,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_prefs_network_cookie_cookiebehavior {
+    sql: ${TABLE}.metrics.quantity.characteristics_prefs_network_cookie_cookiebehavior ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Prefs Network Cookie Cookiebehavior"
+    description: "Value of the network.cookie.cookieBehavior pref.
+"
+  }
+
   dimension: metrics__quantity__characteristics_processor_count {
     sql: ${TABLE}.metrics.quantity.characteristics_processor_count ;;
     type: number
