@@ -44,74 +44,6 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy
-    type: looker_line
-    fields: [
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.submission_date,
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.branch,
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.point
-    ]
-    pivots: [
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.branch
-    ]
-    filters:
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.metric: 'qualified_cumulative_days_of_use'
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.submission_date
-    field_y: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.point
-    log_scale: false
-    ci_lower: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.lower
-    ci_upper: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.upper
-    show_grid: true
-    listen:
-      Date: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy
-    type: looker_line
-    fields: [
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.submission_date,
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.branch,
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.point
-    ]
-    pivots: [
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.branch
-    ]
-    filters:
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.metric: 'ad_clicks'
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.submission_date
-    field_y: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.point
-    log_scale: false
-    ci_lower: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.lower
-    ci_upper: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.upper
-    show_grid: true
-    listen:
-      Date: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -130,6 +62,74 @@
     filters:
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.metric: 'active_hours'
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.submission_date
+    field_y: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.point
+    log_scale: false
+    ci_lower: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.lower
+    ci_upper: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.upper
+    show_grid: true
+    listen:
+      Date: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Uri Count
+    name: Uri Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy
+    type: looker_line
+    fields: [
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.submission_date,
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.branch,
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.point
+    ]
+    pivots: [
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.branch
+    ]
+    filters:
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.metric: 'uri_count'
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.submission_date
+    field_y: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.point
+    log_scale: false
+    ci_lower: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.lower
+    ci_upper: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.upper
+    show_grid: true
+    listen:
+      Date: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy
+    type: looker_line
+    fields: [
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.submission_date,
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.branch,
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.point
+    ]
+    pivots: [
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.branch
+    ]
+    filters:
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.metric: 'qualified_cumulative_days_of_use'
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.statistic: mean
     row: 10
     col: 12
     width: 12
@@ -146,24 +146,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.submission_date,
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.branch,
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.upper,
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.lower,
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.point
     ]
     pivots: [
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.branch
     ]
     filters:
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.metric: 'days_of_use'
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.statistic: mean
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.metric: 'memory_total'
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.statistic: percentile
     row: 20
     col: 0
     width: 12
@@ -176,6 +178,7 @@
     show_grid: true
     listen:
       Date: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.submission_date
+      Percentile: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -214,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +233,7 @@
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.branch
     ]
     filters:
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.metric: 'uri_count'
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.metric: 'ad_clicks'
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.statistic: mean
     row: 30
     col: 0
@@ -248,26 +251,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.submission_date,
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.branch,
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.upper,
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.lower,
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.point
     ]
     pivots: [
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.branch
     ]
     filters:
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.metric: 'memory_total'
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.statistic: percentile
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.metric: 'days_of_use'
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.statistic: mean
     row: 30
     col: 12
     width: 12
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.submission_date
-      Percentile: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_esr_copy.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
