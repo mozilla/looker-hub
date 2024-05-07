@@ -159,6 +159,11 @@ view: firefox_android_clients {
     description: "Client locale."
   }
 
+  dimension: meta_attribution_app {
+    sql: ${TABLE}.meta_attribution_app ;;
+    type: string
+  }
+
   dimension: metadata__adjust_network__source_ping {
     sql: ${TABLE}.metadata.adjust_network__source_ping ;;
     type: string
@@ -325,6 +330,21 @@ view: firefox_android_clients {
     ]
     label: "Metadata: Install Source  Source Ping Datetime"
     description: "Datetime of the ping that reported the first install_source value."
+  }
+
+  dimension_group: metadata__meta_attribution_app__ping_datetime {
+    sql: ${TABLE}.metadata.meta_attribution_app__ping_datetime ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata: Meta Attribution App  Ping Datetime"
   }
 
   dimension_group: metadata__min_first_session_ping_run {
