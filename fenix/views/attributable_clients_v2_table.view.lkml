@@ -181,6 +181,21 @@ view: attributable_clients_v2_table {
     label: "Firefox Android Clients Metadata: Install Source  Source Ping Datetime"
   }
 
+  dimension_group: firefox_android_clients_metadata__meta_attribution_app__ping_datetime {
+    sql: ${TABLE}.firefox_android_clients_metadata.meta_attribution_app__ping_datetime ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Firefox Android Clients Metadata: Meta Attribution App  Ping Datetime"
+  }
+
   dimension_group: firefox_android_clients_metadata__min_first_session_ping_run {
     sql: ${TABLE}.firefox_android_clients_metadata.min_first_session_ping_run_date ;;
     type: time
