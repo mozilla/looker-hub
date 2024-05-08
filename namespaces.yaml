@@ -1040,6 +1040,11 @@ fenix:
       - channel: release
         table: mozdata.fenix.baseline_clients_last_seen
       type: glean_ping_view
+    baseline_clients_last_seen_extended_activity_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.baseline_clients_last_seen_extended_activity
+      type: table_view
     baseline_clients_last_seen_table:
       tables:
       - channel: release
@@ -3506,6 +3511,11 @@ firefox_ios:
       - channel: release
         table: mozdata.firefox_ios.baseline_clients_last_seen
       type: glean_ping_view
+    baseline_clients_last_seen_extended_activity_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.baseline_clients_last_seen_extended_activity
+      type: table_view
     baseline_clients_last_seen_table:
       tables:
       - channel: release
