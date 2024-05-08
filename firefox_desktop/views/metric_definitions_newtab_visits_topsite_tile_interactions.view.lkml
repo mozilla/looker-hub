@@ -74,8 +74,8 @@ COALESCE(
         0
       ) AS sponsored_tile_clicks_pos3_more,
 COALESCE(MAX(CAST(newtab_search_enabled AS INT)), 0) AS newtab_search_enabled,
-COALESCE(SUM(topsite_tile_interactions.organic_topsite_tile_clicks, 0)) AS newtab_organic_topsite_clicks,
-COALESCE(SUM(topsite_tile_interactions.organic_topsite_tile_impressions, 0)) AS newtab_organic_topsite_impressions,
+COALESCE(SUM(topsite_tile_interactions.organic_topsite_tile_clicks), 0) AS newtab_organic_topsite_clicks,
+COALESCE(SUM(topsite_tile_interactions.organic_topsite_tile_impressions), 0) AS newtab_organic_topsite_impressions,
 COALESCE(SUM(topsite_tile_interactions.sponsored_topsite_tile_dismissals), 0) AS sponsored_tiles_dismissals,
 COALESCE(LOGICAL_OR(
         topsite_tile_interactions.sponsored_topsite_tile_dismissals > 0

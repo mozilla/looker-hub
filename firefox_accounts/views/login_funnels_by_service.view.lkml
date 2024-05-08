@@ -5,28 +5,53 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: login_funnels_by_service {
-  dimension: confirm_email {
-    sql: ${TABLE}.confirm_email ;;
-    type: number
-  }
-
   dimension: funnel {
     sql: ${TABLE}.funnel ;;
     type: string
   }
 
-  dimension: login_2fa_success {
-    sql: ${TABLE}.login_2fa_success ;;
+  dimension: login_complete {
+    sql: ${TABLE}.login_complete ;;
     type: number
   }
 
-  dimension: login_2fa_view {
-    sql: ${TABLE}.login_2fa_view ;;
+  dimension: login_email_confirmation_submit {
+    sql: ${TABLE}.login_email_confirmation_submit ;;
+    type: number
+  }
+
+  dimension: login_email_confirmation_success {
+    sql: ${TABLE}.login_email_confirmation_success ;;
+    type: number
+  }
+
+  dimension: login_email_confirmation_view {
+    sql: ${TABLE}.login_email_confirmation_view ;;
+    type: number
+  }
+
+  dimension: login_submit {
+    sql: ${TABLE}.login_submit ;;
     type: number
   }
 
   dimension: login_success {
     sql: ${TABLE}.login_success ;;
+    type: number
+  }
+
+  dimension: login_two_factor_submit {
+    sql: ${TABLE}.login_two_factor_submit ;;
+    type: number
+  }
+
+  dimension: login_two_factor_success {
+    sql: ${TABLE}.login_two_factor_success ;;
+    type: number
+  }
+
+  dimension: login_two_factor_view {
+    sql: ${TABLE}.login_two_factor_view ;;
     type: number
   }
 

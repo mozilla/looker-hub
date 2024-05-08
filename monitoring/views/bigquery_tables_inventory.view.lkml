@@ -57,6 +57,22 @@ view: bigquery_tables_inventory {
     description: "The table's creation date"
   }
 
+  dimension_group: deletion {
+    sql: ${TABLE}.deletion_date ;;
+    type: time
+    timeframes: [
+      raw,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    convert_tz: no
+    datatype: date
+    description: "The date when the tables was scheduled for deletion"
+  }
+
   dimension_group: last_modified {
     sql: ${TABLE}.last_modified_date ;;
     type: time

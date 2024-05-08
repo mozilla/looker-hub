@@ -10,6 +10,11 @@ view: firefox_android_clients_table {
     type: yesno
   }
 
+  dimension: ad_group_id {
+    sql: ${TABLE}.ad_group_id ;;
+    type: number
+  }
+
   dimension: adjust_ad_group {
     sql: ${TABLE}.adjust_ad_group ;;
     type: string
@@ -33,6 +38,11 @@ view: firefox_android_clients_table {
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
     type: string
+  }
+
+  dimension: campaign_id {
+    sql: ${TABLE}.campaign_id ;;
+    type: number
   }
 
   dimension: channel {
@@ -122,6 +132,11 @@ view: firefox_android_clients_table {
 
   dimension: locale {
     sql: ${TABLE}.locale ;;
+    type: string
+  }
+
+  dimension: meta_attribution_app {
+    sql: ${TABLE}.meta_attribution_app ;;
     type: string
   }
 
@@ -273,6 +288,21 @@ view: firefox_android_clients_table {
       year,
     ]
     label: "Metadata: Install Source  Source Ping Datetime"
+  }
+
+  dimension_group: metadata__meta_attribution_app__ping_datetime {
+    sql: ${TABLE}.metadata.meta_attribution_app__ping_datetime ;;
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year,
+    ]
+    label: "Metadata: Meta Attribution App  Ping Datetime"
   }
 
   dimension_group: metadata__min_first_session_ping_run {

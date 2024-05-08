@@ -485,6 +485,16 @@ characters.
 "
   }
 
+  dimension: metrics__uuid__glean_page_id {
+    sql: ${TABLE}.metrics.uuid.glean_page_id ;;
+    type: string
+    group_label: "Metrics Uuid"
+    group_item_label: "Glean Page Id"
+    description: "Uniquely identifies a page_load, not the page itself, for the purpose of associating other events with the specific page load event. This gets
+rotated with each page load and is sent along with each event ping.
+"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string

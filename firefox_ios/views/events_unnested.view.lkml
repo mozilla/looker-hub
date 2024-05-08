@@ -122,6 +122,11 @@ view: events_unnested {
     hidden: yes
   }
 
+  dimension: event_id {
+    sql: ${TABLE}.event_id ;;
+    type: string
+  }
+
   dimension: event_name {
     sql: ${TABLE}.event_name ;;
     type: string
