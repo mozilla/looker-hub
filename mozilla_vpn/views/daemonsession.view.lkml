@@ -22,11 +22,12 @@ view: daemonsession {
     description: "Count of times that the connection health check results
 in no signal.
 
-The health check counters must not be considered as markers of time. There is a possible
-situation in the health check (which calls the telemetry) which frequently results in more
-than one count per second. The situation: A health check is conducted because a network
-check did not return, and milliseconds later that network check returns and another health
-check is started because of the return.
+The health check counters must not be considered as markers of time.
+There is a possible situation in the health check (which calls the
+telemetry) which frequently results in more than one count per second.
+The situation: A health check is conducted because a network check did not
+return, and milliseconds later that network check returns and another
+health check is started because of the return.
 "
   }
 
@@ -48,8 +49,7 @@ check is started because of the return.
 
 Only collected on desktop for vpnsession, as mobile apps
 frequently are relaunched during VPN sessions. It is
-collected in daemonsession, currently only on Android.
-To be done on iOS: https://mozilla-hub.atlassian.net/browse/VPN-4979
+collected in daemonsession for mobile clients.
 "
   }
 
@@ -69,11 +69,12 @@ To be done on iOS: https://mozilla-hub.atlassian.net/browse/VPN-4979
 
     description: "Count of times that the connection health check succeeds.
 
-The health check counters must not be considered as markers of time. There is a possible
-situation in the health check (which calls the telemetry) which frequently results in more
-than one count per second. The situation: A health check is conducted because a network
-check did not return, and milliseconds later that network check returns and another health
-check is started because of the return.
+The health check counters must not be considered as markers of time.
+There is a possible situation in the health check (which calls the
+telemetry) which frequently results in more than one count per second.
+The situation: A health check is conducted because a network check did not
+return, and milliseconds later that network check returns and another
+health check is started because of the return.
 "
   }
 
@@ -95,8 +96,7 @@ check is started because of the return.
 
 Only collected on desktop for vpnsession, as mobile apps
 frequently are relaunched during VPN sessions. It is
-collected in daemonsession, currently only on Android.
-To be done on iOS: https://mozilla-hub.atlassian.net/browse/VPN-4979
+collected in daemonsession for mobile clients.
 "
   }
 
@@ -117,11 +117,12 @@ To be done on iOS: https://mozilla-hub.atlassian.net/browse/VPN-4979
     description: "Count of times that the connection health check results
 in unstable.
 
-The health check counters must not be considered as markers of time. There is a possible
-situation in the health check (which calls the telemetry) which frequently results in more
-than one count per second. The situation: A health check is conducted because a network
-check did not return, and milliseconds later that network check returns and another health
-check is started because of the return.
+The health check counters must not be considered as markers of time.
+There is a possible situation in the health check (which calls the
+telemetry) which frequently results in more than one count per second.
+The situation: A health check is conducted because a network check did not
+return, and milliseconds later that network check returns and another
+health check is started because of the return.
 "
   }
 
@@ -143,8 +144,7 @@ check is started because of the return.
 
 Only collected on desktop for vpnsession, as mobile apps
 frequently are relaunched during VPN sessions. It is
-collected in daemonsession, currently only on Android.
-To be done on iOS: https://mozilla-hub.atlassian.net/browse/VPN-4979
+collected in daemonsession for mobile clients.
 "
   }
 
@@ -181,10 +181,10 @@ Collected only on mobile apps.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "(Mobile-only) A unique identifier for each session. This is used to connect
-unique VPN sessions across pings, and as a safety check on edge cases of VPN
-activation/deactivation, such as a session being started/ended from mobile
-system settings.
+    description: "(Mobile-only) A unique identifier for each session.
+This is used to connect unique VPN sessions across pings, and as a safety
+check on edge cases of VPN activation/deactivation, such as a session
+being started/ended from mobile system settings.
 "
   }
 
@@ -202,9 +202,9 @@ system settings.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "(Mobile-only) Where the VPN session started from, to determine how many sessions
-start outside the app. Values should be \"app\" or \"system\". \"system\" covers
-cases like system settings, autostart on boot, tile, etc.
+    description: "(Mobile-only) Where the VPN session started from, to determine how many
+sessions start outside the app. Values should be \"app\" or \"system\".
+\"system\" covers cases like system settings, autostart on boot, tile, etc.
 "
   }
 
@@ -694,7 +694,8 @@ The labels are the `category.name` identifier of the metric.
       quarter,
       year,
     ]
-    description: "(Mobile-only) The time the user ends a VPN session from the daemon or network extension
+    description: "(Mobile-only) The time the user ends a VPN session from the daemon or
+network extension
 "
   }
 
@@ -712,7 +713,8 @@ The labels are the `category.name` identifier of the metric.
       quarter,
       year,
     ]
-    description: "(Mobile-only) The time the user starts a VPN session from the daemon or network extension
+    description: "(Mobile-only) The time the user starts a VPN session from the daemon or
+network extension
 "
   }
 

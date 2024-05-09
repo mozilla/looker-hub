@@ -58,6 +58,97 @@ view: accounts_events {
     description: "additional context-dependent (on event.name) info, e.g. the cause of an error"
   }
 
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    label: "Glean Client Annotation Experimentation Id"
+    hidden: no
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Glean Client Annotation"
+    group_item_label: "Experimentation Id"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_client_annotation_experimentation_id"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    label: "Glean Error Invalid Label"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Label"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Label"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_error_invalid_label"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set with an invalid label.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    label: "Glean Error Invalid Overflow"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Overflow"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_error_invalid_overflow"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set a value that overflowed.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    label: "Glean Error Invalid State"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid State"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid State"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_error_invalid_state"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a timing metric was used incorrectly.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    label: "Glean Error Invalid Value"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    group_label: "Glean Error"
+    group_item_label: "Invalid Value"
+
+    link: {
+      label: "Glean Dictionary reference for Glean Error Invalid Value"
+      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_error_invalid_value"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times a metric was set to an invalid value.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
   dimension: metrics__string__relying_party_oauth_client_id {
     label: "Relying Party Oauth Client Id"
     hidden: no
@@ -228,7 +319,7 @@ has a max length of 128 characters with the alphanumeric characters, _
     }
 
     description: "The source from where the user started.  For example, if the user clicked on a
-link on the Firefox accounts web site, this value could be 'fx-website'.  The
+link on the Mozilla accounts web site, this value could be 'fx-website'.  The
 value has a max length of 128 characters with the alphanumeric characters, _
 (underscore), forward slash (/), . (period), % (percentage sign), and -
 (hyphen) in the allowed set of characters.
@@ -255,97 +346,6 @@ could be 'aboutwelcome-default-screen'.  The value has a max length of 128
 characters with the alphanumeric characters, _ (underscore), forward slash (/),
 . (period), % (percentage sign), and - (hyphen) in the allowed set of
 characters.
-"
-  }
-
-  dimension: metrics__string__glean_client_annotation_experimentation_id {
-    label: "Glean Client Annotation Experimentation Id"
-    hidden: no
-    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
-    type: string
-    group_label: "Glean Client Annotation"
-    group_item_label: "Experimentation Id"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Client Annotation Experimentation Id"
-      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_client_annotation_experimentation_id"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "An experimentation identifier derived and provided by the application
-for the purpose of experimentation enrollment.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_label {
-    label: "Glean Error Invalid Label"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
-    group_label: "Glean Error"
-    group_item_label: "Invalid Label"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Label"
-      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_error_invalid_label"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times a metric was set with an invalid label.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
-    label: "Glean Error Invalid Overflow"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
-    group_label: "Glean Error"
-    group_item_label: "Invalid Overflow"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Overflow"
-      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_error_invalid_overflow"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times a metric was set a value that overflowed.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_state {
-    label: "Glean Error Invalid State"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
-    group_label: "Glean Error"
-    group_item_label: "Invalid State"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Error Invalid State"
-      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_error_invalid_state"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times a timing metric was used incorrectly.
-The labels are the `category.name` identifier of the metric.
-"
-  }
-
-  dimension: metrics__labeled_counter__glean_error_invalid_value {
-    label: "Glean Error Invalid Value"
-    hidden: yes
-    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
-    group_label: "Glean Error"
-    group_item_label: "Invalid Value"
-
-    link: {
-      label: "Glean Dictionary reference for Glean Error Invalid Value"
-      url: "https://dictionary.telemetry.mozilla.org/apps/accounts_backend/metrics/glean_error_invalid_value"
-      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
-    }
-
-    description: "Counts the number of times a metric was set to an invalid value.
-The labels are the `category.name` identifier of the metric.
 "
   }
 

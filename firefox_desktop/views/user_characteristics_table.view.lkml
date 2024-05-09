@@ -324,6 +324,15 @@ view: user_characteristics_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__characteristics_font_name_list_emoji_modified {
+    sql: ${TABLE}.metrics.boolean.characteristics_font_name_list_emoji_modified ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Font Name List Emoji Modified"
+    description: "Whether the pref font.name-list.emoji was modified.
+"
+  }
+
   dimension: metrics__boolean__characteristics_inverted_colors {
     sql: ${TABLE}.metrics.boolean.characteristics_inverted_colors ;;
     type: yesno
@@ -357,6 +366,15 @@ view: user_characteristics_table {
     group_label: "Metrics Boolean"
     group_item_label: "Characteristics Prefs Block Popups"
     description: "Block pop-up windows (The dom.disable_open_during_load pref)
+"
+  }
+
+  dimension: metrics__boolean__characteristics_prefs_browser_display_use_document_fonts {
+    sql: ${TABLE}.metrics.boolean.characteristics_prefs_browser_display_use_document_fonts ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Prefs Browser Display Use Document Fonts"
+    description: "Allow pages to choose their own fonts.
 "
   }
 
@@ -491,6 +509,105 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_font_default_modified {
+    sql: ${TABLE}.metrics.quantity.characteristics_font_default_modified ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Font Default Modified"
+    description: "The number of other modified font.default prefs.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_minimum_size_modified {
+    sql: ${TABLE}.metrics.quantity.characteristics_font_minimum_size_modified ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Font Minimum Size Modified"
+    description: "The number of other modified font.minimum-size prefs.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_name_list_cursive_modified {
+    sql: ${TABLE}.metrics.quantity.characteristics_font_name_list_cursive_modified ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Font Name List Cursive Modified"
+    description: "The number of modified font.name-list.cursive. prefs.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_name_list_monospace_modified {
+    sql: ${TABLE}.metrics.quantity.characteristics_font_name_list_monospace_modified ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Font Name List Monospace Modified"
+    description: "The number of modified font.name-list.monospace. prefs.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_name_list_sans_serif_modified {
+    sql: ${TABLE}.metrics.quantity.characteristics_font_name_list_sans_serif_modified ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Font Name List Sans Serif Modified"
+    description: "The number of modified font.name-list.sans-serif. prefs.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_name_list_serif_modified {
+    sql: ${TABLE}.metrics.quantity.characteristics_font_name_list_serif_modified ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Font Name List Serif Modified"
+    description: "The number of modified font.name-list.serif. prefs.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_name_monospace_modified {
+    sql: ${TABLE}.metrics.quantity.characteristics_font_name_monospace_modified ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Font Name Monospace Modified"
+    description: "The number of other modified font.name.monospace prefs.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_name_sans_serif_modified {
+    sql: ${TABLE}.metrics.quantity.characteristics_font_name_sans_serif_modified ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Font Name Sans Serif Modified"
+    description: "The number of other modified font.name.sans-serif prefs.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_name_serif_modified {
+    sql: ${TABLE}.metrics.quantity.characteristics_font_name_serif_modified ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Font Name Serif Modified"
+    description: "The number of other modified font.name.serif prefs.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_size_monospace_modified {
+    sql: ${TABLE}.metrics.quantity.characteristics_font_size_monospace_modified ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Font Size Monospace Modified"
+    description: "The number of other modified font.size.monospace prefs.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_font_size_variable_modified {
+    sql: ${TABLE}.metrics.quantity.characteristics_font_size_variable_modified ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Font Size Variable Modified"
+    description: "The number of other modified font.size.variable prefs.
+"
+  }
+
   dimension: metrics__quantity__characteristics_max_touch_points {
     sql: ${TABLE}.metrics.quantity.characteristics_max_touch_points ;;
     type: number
@@ -506,6 +623,15 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Prefers Contrast"
     description: "What Gecko_MediaFeatures_PrefersContrast reports for a ContentDocument
+"
+  }
+
+  dimension: metrics__quantity__characteristics_prefs_network_cookie_cookiebehavior {
+    sql: ${TABLE}.metrics.quantity.characteristics_prefs_network_cookie_cookiebehavior ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Prefs Network Cookie Cookiebehavior"
+    description: "Value of the network.cookie.cookieBehavior pref.
 "
   }
 
@@ -551,6 +677,132 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Target Frame Rate"
     description: "The target frame rate in frames-per-second.
+"
+  }
+
+  dimension: metrics__string__characteristics_font_default_default_group {
+    sql: ${TABLE}.metrics.string.characteristics_font_default_default_group ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Font Default Default Group"
+    description: "The value of the font.default.<default language group> pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_default_western {
+    sql: ${TABLE}.metrics.string.characteristics_font_default_western ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Font Default Western"
+    description: "The value of the font.default.x-western pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_minimum_size_default_group {
+    sql: ${TABLE}.metrics.string.characteristics_font_minimum_size_default_group ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Font Minimum Size Default Group"
+    description: "The value of the font.minimum-size.<default language group> pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_minimum_size_western {
+    sql: ${TABLE}.metrics.string.characteristics_font_minimum_size_western ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Font Minimum Size Western"
+    description: "The value of the font.minimum-size.x-western pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_name_monospace_default_group {
+    sql: ${TABLE}.metrics.string.characteristics_font_name_monospace_default_group ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Font Name Monospace Default Group"
+    description: "The value of the font.name.monospace.<default language group> pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_name_monospace_western {
+    sql: ${TABLE}.metrics.string.characteristics_font_name_monospace_western ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Font Name Monospace Western"
+    description: "The value of the font.name.monospace.x-western pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_name_sans_serif_default_group {
+    sql: ${TABLE}.metrics.string.characteristics_font_name_sans_serif_default_group ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Font Name Sans Serif Default Group"
+    description: "The value of the font.name.sans-serif.<default language group> pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_name_sans_serif_western {
+    sql: ${TABLE}.metrics.string.characteristics_font_name_sans_serif_western ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Font Name Sans Serif Western"
+    description: "The value of the font.name.sans-serif.x-western pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_name_serif_default_group {
+    sql: ${TABLE}.metrics.string.characteristics_font_name_serif_default_group ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Font Name Serif Default Group"
+    description: "The value of the font.name.serif.<default language group> pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_name_serif_western {
+    sql: ${TABLE}.metrics.string.characteristics_font_name_serif_western ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Font Name Serif Western"
+    description: "The value of the font.name.serif.x-western pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_size_monospace_default_group {
+    sql: ${TABLE}.metrics.string.characteristics_font_size_monospace_default_group ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Font Size Monospace Default Group"
+    description: "The value of the font.size.monospace.<default language group> pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_size_monospace_western {
+    sql: ${TABLE}.metrics.string.characteristics_font_size_monospace_western ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Font Size Monospace Western"
+    description: "The value of the font.size.monospace.x-western pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_size_variable_default_group {
+    sql: ${TABLE}.metrics.string.characteristics_font_size_variable_default_group ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Font Size Variable Default Group"
+    description: "The value of the font.size.variable.<default language group> pref
+"
+  }
+
+  dimension: metrics__string__characteristics_font_size_variable_western {
+    sql: ${TABLE}.metrics.string.characteristics_font_size_variable_western ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Font Size Variable Western"
+    description: "The value of the font.size.variable.x-western pref
 "
   }
 

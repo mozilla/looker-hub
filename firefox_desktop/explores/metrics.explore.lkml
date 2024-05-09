@@ -113,6 +113,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_yuv_color_space}) AS metrics__metrics__labeled_counter__avif_yuv_color_space ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_yuv_color_space.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__cert_verifier_crlite_status {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cert_verifier_crlite_status}) AS metrics__metrics__labeled_counter__cert_verifier_crlite_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cert_verifier_crlite_status.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__codec_stats_audio_preferred_codec}) AS metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec.document_id} ;;
@@ -573,6 +578,31 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__tls_xyber_intolerance_reason}) AS metrics__metrics__labeled_counter__tls_xyber_intolerance_reason ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__tls_xyber_intolerance_reason.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__webrtcdtls_cipher {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webrtcdtls_cipher}) AS metrics__metrics__labeled_counter__webrtcdtls_cipher ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webrtcdtls_cipher.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webrtcdtls_client_handshake_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webrtcdtls_client_handshake_result}) AS metrics__metrics__labeled_counter__webrtcdtls_client_handshake_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webrtcdtls_client_handshake_result.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webrtcdtls_protocol_version {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webrtcdtls_protocol_version}) AS metrics__metrics__labeled_counter__webrtcdtls_protocol_version ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webrtcdtls_protocol_version.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webrtcdtls_server_handshake_result {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webrtcdtls_server_handshake_result}) AS metrics__metrics__labeled_counter__webrtcdtls_server_handshake_result ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webrtcdtls_server_handshake_result.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__webrtcdtls_srtp_cipher {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__webrtcdtls_srtp_cipher}) AS metrics__metrics__labeled_counter__webrtcdtls_srtp_cipher ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__webrtcdtls_srtp_cipher.document_id} ;;
+  }
+
   join: metrics__events {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.events}) AS metrics__events ;;
@@ -662,6 +692,10 @@ explore: suggest__metrics__metrics__labeled_counter__avif_pixi {
 }
 
 explore: suggest__metrics__metrics__labeled_counter__avif_yuv_color_space {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__cert_verifier_crlite_status {
   hidden: yes
 }
 
@@ -1030,5 +1064,25 @@ explore: suggest__metrics__metrics__labeled_counter__search_service_initializati
 }
 
 explore: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__webrtcdtls_cipher {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__webrtcdtls_client_handshake_result {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__webrtcdtls_protocol_version {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__webrtcdtls_server_handshake_result {
+  hidden: yes
+}
+
+explore: suggest__metrics__metrics__labeled_counter__webrtcdtls_srtp_cipher {
   hidden: yes
 }

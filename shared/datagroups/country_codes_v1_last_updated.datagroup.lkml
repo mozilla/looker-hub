@@ -6,7 +6,7 @@
 # Using a datagroup in a derived table: https://cloud.google.com/looker/docs/reference/param-view-datagroup-trigger
 
 datagroup: country_codes_v1_last_updated {
-  label: "country_codes_v1 Last Updated"
+  label: "Country Codes V1 Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM `mozdata`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
     WHERE table_schema = 'static'

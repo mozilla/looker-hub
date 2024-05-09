@@ -384,6 +384,60 @@ It is possible for a Firefox installation to not have a default profile, but in 
 "
   }
 
+  dimension: metrics__boolean__bounce_tracking_protection_enabled_at_startup {
+    label: "Bounce Tracking Protection Enabled At Startup"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_at_startup ;;
+    type: yesno
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Enabled At Startup"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Enabled At Startup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/bounce_tracking_protection_enabled_at_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Keeps track of whether the feature is enabled at startup.
+"
+  }
+
+  dimension: metrics__boolean__bounce_tracking_protection_enabled_dry_run_mode_at_startup {
+    label: "Bounce Tracking Protection Enabled Dry Run Mode At Startup"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_dry_run_mode_at_startup ;;
+    type: yesno
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Enabled Dry Run Mode At Startup"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Enabled Dry Run Mode At Startup"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/bounce_tracking_protection_enabled_dry_run_mode_at_startup"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Keeps track of whether the feature is enabled and running in dry-run mode at startup.
+"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__sum {
+    label: "Bounce Tracking Protection Purge Duration Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.sum ;;
+    type: number
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Purge Duration Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Duration Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/bounce_tracking_protection_purge_duration"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "For every purge that is scheduled, we call the ClearDataService to purge persistent storage for each detected bounce tracker. This may do some blocking work on main thread and dispatch some cleanups to other threads. Collect telemetry on how long it takes to clear in the wild to determine whether we need to improve performance here.
+"
+  }
+
   dimension: metrics__boolean__browser_ui_proton_enabled {
     label: "Browser Ui Proton Enabled"
     hidden: yes
@@ -399,6 +453,59 @@ It is possible for a Firefox installation to not have a default profile, but in 
     }
 
     description: "True if the Proton default theme is enabled.
+"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__sum {
+    label: "Cert Verifier Cert Trust Evaluation Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.sum ;;
+    type: number
+    group_label: "Cert Verifier"
+    group_item_label: "Cert Trust Evaluation Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verifier Cert Trust Evaluation Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cert_verifier_cert_trust_evaluation_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Measures how long we take to evaluate the trust status of a certificate.
+"
+  }
+
+  dimension: metrics__labeled_counter__cert_verifier_crlite_status {
+    label: "Cert Verifier Crlite Status"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_status ;;
+    group_label: "Cert Verifier"
+    group_item_label: "Crlite Status"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verifier Crlite Status"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cert_verifier_crlite_status"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts the number of times different CRLite statuses were returned.
+"
+  }
+
+  dimension: metrics__quantity__cert_verifier_trust_obj_count {
+    label: "Cert Verifier Trust Obj Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.cert_verifier_trust_obj_count ;;
+    type: number
+    group_label: "Cert Verifier"
+    group_item_label: "Trust Obj Count"
+
+    link: {
+      label: "Glean Dictionary reference for Cert Verifier Trust Obj Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cert_verifier_trust_obj_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The total number of trust objects in cert9.db
 "
   }
 
@@ -680,6 +787,24 @@ It is possible for a Firefox installation to not have a default profile, but in 
     }
 
     description: "Counts how often the cookie banner is still shown even if we have injected cookies.
+"
+  }
+
+  dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
+    label: "Cookie Banners Google Gdpr Choice Cookie"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_string.cookie_banners_google_gdpr_choice_cookie ;;
+    type: string
+    group_label: "Cookie Banners"
+    group_item_label: "Google Gdpr Choice Cookie"
+
+    link: {
+      label: "Glean Dictionary reference for Cookie Banners Google Gdpr Choice Cookie"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/cookie_banners_google_gdpr_choice_cookie"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Records the GDPR choice on Google Search based on the \"SOCS\" cookie of the Google Search domains. The value could be \"Accept\", \"Reject\" or \"Custom\". We use the label to record different choices on different Google domains. We only collect this if the default search engine is Google.
 "
   }
 
@@ -1346,7 +1471,7 @@ startup function is called to when the startup promise resolves.
 
   dimension: metrics__timing_distribution__extensions_timing_storage_local_get_json__sum {
     label: "Extensions Timing Storage Local Get Json Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_get_json.sum ;;
     type: number
     group_label: "Extensions Timing"
@@ -1382,7 +1507,7 @@ startup function is called to when the startup promise resolves.
 
   dimension: metrics__timing_distribution__extensions_timing_storage_local_set_json__sum {
     label: "Extensions Timing Storage Local Set Json Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.extensions_timing_storage_local_set_json.sum ;;
     type: number
     group_label: "Extensions Timing"
@@ -2620,6 +2745,42 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__hls_canplay_requested {
+    label: "Hls Canplay Requested"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.hls_canplay_requested ;;
+    type: number
+    group_label: "Hls"
+    group_item_label: "Canplay Requested"
+
+    link: {
+      label: "Glean Dictionary reference for Hls Canplay Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/hls_canplay_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record when a page requests canPlayType for a HLS media type.
+"
+  }
+
+  dimension: metrics__counter__hls_canplay_supported {
+    label: "Hls Canplay Supported"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.hls_canplay_supported ;;
+    type: number
+    group_label: "Hls"
+    group_item_label: "Canplay Supported"
+
+    link: {
+      label: "Glean Dictionary reference for Hls Canplay Supported"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/hls_canplay_supported"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Record when a canPlayType request supports HLS.
+"
+  }
+
   dimension: metrics__timing_distribution__httpsfirst_downgrade_time__sum {
     label: "Httpsfirst Downgrade Time Sum"
     hidden: no
@@ -2634,7 +2795,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "If a HTTPS-First (`dom.security.https_first` enabled) upgrade isn't successful, measures the timespan between the navigation start and the downgrade. This is essentially the overhead caused by HTTPS-First if a site does not support HTTPS.
+    description: "If a HTTPS-First (`dom.security.https_first` enabled) upgrade isn't successful, measures the timespan between the navigation start and the downgrade. This does not include the case in which the https request times out and the http request sent after 3s gets a response faster.
 "
   }
 
@@ -2652,7 +2813,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "If a schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrade isn't successful, measures the timespan between the navigation start and the downgrade. This is essentially the overhead caused by HTTPS-First if a site does not support HTTPS.
+    description: "If a schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrade isn't successful, measures the timespan between the navigation start and the downgrade. This does not include the case in which the https request times out and the http request sent after 3s gets a response faster.
 "
   }
 
@@ -3274,6 +3435,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
+    label: "Media Playback Device Hardware Decoder Support"
+    hidden: no
+    sql: ${TABLE}.metrics.labeled_boolean.media_playback_device_hardware_decoder_support ;;
+    type: string
+    group_label: "Media Playback"
+    group_item_label: "Device Hardware Decoder Support"
+
+    link: {
+      label: "Glean Dictionary reference for Media Playback Device Hardware Decoder Support"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/media_playback_device_hardware_decoder_support"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The results of hardware decoder support for different video codecs. True means that codec can be decoded by hardware on user's device."
+  }
+
   dimension: metrics__labeled_counter__netwerk_early_hints {
     label: "Netwerk Early Hints"
     hidden: yes
@@ -3735,6 +3913,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__sum {
+    label: "Networking Dns Native Https Call Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Dns Native Https Call Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Dns Native Https Call Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/networking_dns_native_https_call_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in the call to the native OS DNS resolution.
+"
+  }
+
   dimension: metrics__timing_distribution__networking_dns_renewal_time__sum {
     label: "Networking Dns Renewal Time Sum"
     hidden: no
@@ -4168,7 +4364,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative__sum {
     label: "Networking Http Content Html5Parser Ondatafinished To Onstop Delay Negative Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_html5parser_ondatafinished_to_onstop_delay_negative.sum ;;
     type: number
     group_label: "Networking"
@@ -4222,7 +4418,7 @@ To be used to validate GIFFT.
 
   dimension: metrics__timing_distribution__networking_http_content_ondatafinished_to_onstop_delay_negative__sum {
     label: "Networking Http Content Ondatafinished To Onstop Delay Negative Sum"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timing_distribution.networking_http_content_ondatafinished_to_onstop_delay_negative.sum ;;
     type: number
     group_label: "Networking"
@@ -5100,6 +5296,24 @@ To be used to validate GIFFT.
     }
 
     description: "Time to load all of a page's resources and render. (Migrated from the geckoview metric of the same name.)
+"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_async_sheet_load__sum {
+    label: "Performance Pageload Async Sheet Load Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_async_sheet_load.sum ;;
+    type: number
+    group_label: "Performance Pageload"
+    group_item_label: "Async Sheet Load Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Performance Pageload Async Sheet Load Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/performance_pageload_async_sheet_load"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time spent in milliseconds since a style sheet started loading async until it finished.
 "
   }
 
@@ -6576,6 +6790,91 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__webrtcdtls_cipher {
+    label: "Webrtcdtls Cipher"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_cipher ;;
+    group_label: "Webrtcdtls"
+    group_item_label: "Cipher"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Cipher"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/webrtcdtls_cipher"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The CipherSuite used for each webrtc DTLS connection, as a string representation of the CipherSuite's ID in 4 hex digits (eg; TLS_DHE_RSA_WITH_AES_128_CBC_SHA would be \"0x0033\")
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_client_handshake_result {
+    label: "Webrtcdtls Client Handshake Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_client_handshake_result ;;
+    group_label: "Webrtcdtls"
+    group_item_label: "Client Handshake Result"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Client Handshake Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/webrtcdtls_client_handshake_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The result of each webrtc client DTLS handshake as a string containing either the name of the error code (eg; SSL_ERROR_BAD_CERTIFICATE), SUCCESS for successful handshakes, ALPN_FAILURE when ALPN negotiation fails, or CERT_FAILURE when cert validation fails.
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_protocol_version {
+    label: "Webrtcdtls Protocol Version"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_protocol_version ;;
+    group_label: "Webrtcdtls"
+    group_item_label: "Protocol Version"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Protocol Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/webrtcdtls_protocol_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The version of DTLS used for each webrtc connection. Can be 1.0, 1.2, or 1.3 (there is no 1.1 version of DTLS)
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_server_handshake_result {
+    label: "Webrtcdtls Server Handshake Result"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_server_handshake_result ;;
+    group_label: "Webrtcdtls"
+    group_item_label: "Server Handshake Result"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Server Handshake Result"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/webrtcdtls_server_handshake_result"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The result of each webrtc server DTLS handshake, as the name of the error code (eg; SSL_ERROR_BAD_CERTIFICATE), the empty string for successful handshakes, ALPN_FAILURE when ALPN negotiation fails, or CERT_FAILURE when cert validation fails.
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_srtp_cipher {
+    label: "Webrtcdtls Srtp Cipher"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_srtp_cipher ;;
+    group_label: "Webrtcdtls"
+    group_item_label: "Srtp Cipher"
+
+    link: {
+      label: "Glean Dictionary reference for Webrtcdtls Srtp Cipher"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/webrtcdtls_srtp_cipher"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The SRTPProtectionProfile (see RFC 5764) used for each webrtc SRTP connection, as a string representation of the SRTPProtectionProfile's ID in 4 hex digits (eg; SRTP_AES128_CM_HMAC_SHA1_80 would be \"0x0001\")
+"
+  }
+
   dimension: metrics__timing_distribution__wr_framebuild_time__sum {
     label: "Wr Framebuild Time Sum"
     hidden: no
@@ -7981,6 +8280,56 @@ documented in the ping's pings.yaml file.
     link: {
       label: "Glean Dictionary reference for Fog Ipc Shutdown Registration Failures"
       url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/fog_ipc_shutdown_registration_failures"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: hls_canplay_requested {
+    type: sum
+    sql: ${metrics__counter__hls_canplay_requested} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Hls Canplay Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/hls_canplay_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: hls_canplay_requested_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__hls_canplay_requested: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Hls Canplay Requested"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/hls_canplay_requested"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: hls_canplay_supported {
+    type: sum
+    sql: ${metrics__counter__hls_canplay_supported} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Hls Canplay Supported"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/hls_canplay_supported"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: hls_canplay_supported_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__hls_canplay_supported: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Hls Canplay Supported"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop_background_update/metrics/hls_canplay_supported"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -9558,6 +9907,49 @@ view: metrics__metrics__labeled_counter__avif_yuv_color_space {
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__avif_yuv_color_space
     suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_yuv_color_space.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__cert_verifier_crlite_status {
+  label: "Cert Verifier - Crlite Status"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__cert_verifier_crlite_status
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__cert_verifier_crlite_status.key
     hidden: no
   }
 
@@ -13192,6 +13584,221 @@ view: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
   }
 }
 
+view: metrics__metrics__labeled_counter__webrtcdtls_cipher {
+  label: "Webrtcdtls - Cipher"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__webrtcdtls_cipher
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__webrtcdtls_cipher.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webrtcdtls_client_handshake_result {
+  label: "Webrtcdtls - Client Handshake Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__webrtcdtls_client_handshake_result
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__webrtcdtls_client_handshake_result.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webrtcdtls_protocol_version {
+  label: "Webrtcdtls - Protocol Version"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__webrtcdtls_protocol_version
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__webrtcdtls_protocol_version.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webrtcdtls_server_handshake_result {
+  label: "Webrtcdtls - Server Handshake Result"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__webrtcdtls_server_handshake_result
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__webrtcdtls_server_handshake_result.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__webrtcdtls_srtp_cipher {
+  label: "Webrtcdtls - Srtp Cipher"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    suggest_explore: suggest__metrics__metrics__labeled_counter__webrtcdtls_srtp_cipher
+    suggest_dimension: suggest__metrics__metrics__labeled_counter__webrtcdtls_srtp_cipher.key
+    hidden: no
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: suggest__metrics__metrics__labeled_counter__avif_a1lx {
   derived_table: {
     sql: select
@@ -13541,6 +14148,25 @@ view: suggest__metrics__metrics__labeled_counter__avif_yuv_color_space {
     count(*) as n
 from mozdata.firefox_desktop_background_update.metrics as t,
 unnest(metrics.labeled_counter.avif_yuv_color_space) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__cert_verifier_crlite_status {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.cert_verifier_crlite_status) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -15149,6 +15775,101 @@ order by n desc ;;
   }
 }
 
+view: suggest__metrics__metrics__labeled_counter__webrtcdtls_cipher {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.webrtcdtls_cipher) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__webrtcdtls_client_handshake_result {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.webrtcdtls_client_handshake_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__webrtcdtls_protocol_version {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.webrtcdtls_protocol_version) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__webrtcdtls_server_handshake_result {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.webrtcdtls_server_handshake_result) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
+view: suggest__metrics__metrics__labeled_counter__webrtcdtls_srtp_cipher {
+  derived_table: {
+    sql: select
+    m.key,
+    count(*) as n
+from mozdata.firefox_desktop_background_update.metrics as t,
+unnest(metrics.labeled_counter.webrtcdtls_srtp_cipher) as m
+where date(submission_timestamp) > date_sub(current_date, interval 30 day)
+    and sample_id = 0
+group by key
+order by n desc ;;
+  }
+
+  dimension: key {
+    type: string
+    sql: ${TABLE}.key ;;
+  }
+}
+
 view: metrics__events {
   dimension: category {
     sql: ${TABLE}.category ;;
@@ -15747,6 +16468,18 @@ view: metrics__metrics__labeled_boolean__data_storage_migration {
   }
 }
 
+view: metrics__metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics__metrics__labeled_boolean__oskeystore_self_test {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -15756,6 +16489,18 @@ view: metrics__metrics__labeled_boolean__oskeystore_self_test {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: yesno
+  }
+}
+
+view: metrics__metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
   }
 }
 
@@ -15832,6 +16577,30 @@ view: metrics__metrics__memory_distribution__glean_upload_pending_pings_director
 }
 
 view: metrics__metrics__memory_distribution__performance_clone_deserialize_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -16563,6 +17332,18 @@ view: metrics__metrics__timing_distribution__networking_dns_lookup_time__values 
   }
 }
 
+view: metrics__metrics__timing_distribution__networking_dns_native_https_call_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics__metrics__timing_distribution__networking_dns_renewal_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -16840,6 +17621,18 @@ view: metrics__metrics__timing_distribution__performance_page_non_blank_paint__v
 }
 
 view: metrics__metrics__timing_distribution__performance_page_total_content_page_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__performance_pageload_async_sheet_load__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

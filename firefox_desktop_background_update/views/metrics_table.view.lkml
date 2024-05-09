@@ -324,6 +324,24 @@ view: metrics_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__boolean__bounce_tracking_protection_enabled_at_startup {
+    sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_at_startup ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Bounce Tracking Protection Enabled At Startup"
+    description: "Keeps track of whether the feature is enabled at startup.
+"
+  }
+
+  dimension: metrics__boolean__bounce_tracking_protection_enabled_dry_run_mode_at_startup {
+    sql: ${TABLE}.metrics.boolean.bounce_tracking_protection_enabled_dry_run_mode_at_startup ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Bounce Tracking Protection Enabled Dry Run Mode At Startup"
+    description: "Keeps track of whether the feature is enabled and running in dry-run mode at startup.
+"
+  }
+
   dimension: metrics__boolean__browser_ui_proton_enabled {
     sql: ${TABLE}.metrics.boolean.browser_ui_proton_enabled ;;
     type: yesno
@@ -566,6 +584,24 @@ This does not include deletion-request pings.
     group_label: "Metrics Counter"
     group_item_label: "Glean Validation Foreground Count"
     description: "On mobile, the number of times the application went to foreground.
+"
+  }
+
+  dimension: metrics__counter__hls_canplay_requested {
+    sql: ${TABLE}.metrics.counter.hls_canplay_requested ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Hls Canplay Requested"
+    description: "Record when a page requests canPlayType for a HLS media type.
+"
+  }
+
+  dimension: metrics__counter__hls_canplay_supported {
+    sql: ${TABLE}.metrics.counter.hls_canplay_supported ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Hls Canplay Supported"
+    description: "Record when a canPlayType request supports HLS.
 "
   }
 
@@ -1711,6 +1747,12 @@ This does not include deletion-request pings.
     description: "Indicates whether or not migration was successful for each nsIDataStorage."
   }
 
+  dimension: metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
+    sql: ${TABLE}.metrics.labeled_boolean.media_playback_device_hardware_decoder_support ;;
+    hidden: yes
+    description: "The results of hardware decoder support for different video codecs. True means that codec can be decoded by hardware on user's device."
+  }
+
   dimension: metrics__labeled_boolean__oskeystore_self_test {
     sql: ${TABLE}.metrics.labeled_boolean.oskeystore_self_test ;;
     hidden: yes
@@ -1847,6 +1889,13 @@ This does not include deletion-request pings.
     sql: ${TABLE}.metrics.labeled_counter.avif_yuv_color_space ;;
     hidden: yes
     description: "YUV color space of AVIF image. (Migrated from the geckoview metric of the same name).
+"
+  }
+
+  dimension: metrics__labeled_counter__cert_verifier_crlite_status {
+    sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_status ;;
+    hidden: yes
+    description: "Counts the number of times different CRLite statuses were returned.
 "
   }
 
@@ -2457,6 +2506,48 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__webrtcdtls_cipher {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_cipher ;;
+    hidden: yes
+    description: "The CipherSuite used for each webrtc DTLS connection, as a string representation of the CipherSuite's ID in 4 hex digits (eg; TLS_DHE_RSA_WITH_AES_128_CBC_SHA would be \"0x0033\")
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_client_handshake_result {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_client_handshake_result ;;
+    hidden: yes
+    description: "The result of each webrtc client DTLS handshake as a string containing either the name of the error code (eg; SSL_ERROR_BAD_CERTIFICATE), SUCCESS for successful handshakes, ALPN_FAILURE when ALPN negotiation fails, or CERT_FAILURE when cert validation fails.
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_protocol_version {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_protocol_version ;;
+    hidden: yes
+    description: "The version of DTLS used for each webrtc connection. Can be 1.0, 1.2, or 1.3 (there is no 1.1 version of DTLS)
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_server_handshake_result {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_server_handshake_result ;;
+    hidden: yes
+    description: "The result of each webrtc server DTLS handshake, as the name of the error code (eg; SSL_ERROR_BAD_CERTIFICATE), the empty string for successful handshakes, ALPN_FAILURE when ALPN negotiation fails, or CERT_FAILURE when cert validation fails.
+"
+  }
+
+  dimension: metrics__labeled_counter__webrtcdtls_srtp_cipher {
+    sql: ${TABLE}.metrics.labeled_counter.webrtcdtls_srtp_cipher ;;
+    hidden: yes
+    description: "The SRTPProtectionProfile (see RFC 5764) used for each webrtc SRTP connection, as a string representation of the SRTPProtectionProfile's ID in 4 hex digits (eg; SRTP_AES128_CM_HMAC_SHA1_80 would be \"0x0001\")
+"
+  }
+
+  dimension: metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
+    sql: ${TABLE}.metrics.labeled_string.cookie_banners_google_gdpr_choice_cookie ;;
+    hidden: yes
+    description: "Records the GDPR choice on Google Search based on the \"SOCS\" cookie of the Google Search domains. The value could be \"Accept\", \"Reject\" or \"Custom\". We use the label to record different choices on different Google domains. We only collect this if the default search engine is Google.
+"
+  }
+
   dimension: metrics__memory_distribution__extensions_apis_dnr_startup_cache_read_size__count {
     sql: ${TABLE}.metrics.memory_distribution.extensions_apis_dnr_startup_cache_read_size.count ;;
     type: number
@@ -2601,6 +2692,15 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.object.fog_validation_some_object ;;
     hidden: yes
     description: "Static data recorded to verify the new object metric type end-to-end.
+"
+  }
+
+  dimension: metrics__quantity__cert_verifier_trust_obj_count {
+    sql: ${TABLE}.metrics.quantity.cert_verifier_trust_obj_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Cert Verifier Trust Obj Count"
+    description: "The total number of trust objects in cert9.db
 "
   }
 
@@ -3324,6 +3424,126 @@ documented in the ping's pings.yaml file.
     type: number
     group_label: "Metrics Timespan Fog Initialization"
     group_item_label: "Value"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__count {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__range {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__sum {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Bounce Tracking Protection Purge Duration"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
+    sql: ${TABLE}.metrics.timing_distribution.bounce_tracking_protection_purge_duration.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Cert Verifier Cert Trust Evaluation Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.cert_verifier_cert_trust_evaluation_time.values ;;
+    hidden: yes
   }
 
   dimension: metrics__timing_distribution__cookie_banners_click_handle_duration__bucket_count {
@@ -6926,6 +7146,66 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Dns Native Https Call Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_dns_native_https_call_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_dns_native_https_call_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__networking_dns_renewal_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.networking_dns_renewal_time.bucket_count ;;
     type: number
@@ -8363,6 +8643,66 @@ documented in the ping's pings.yaml file.
 
   dimension: metrics__timing_distribution__performance_page_total_content_page_load__values {
     sql: ${TABLE}.metrics.timing_distribution.performance_page_total_content_page_load.values ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_async_sheet_load__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_async_sheet_load.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Async Sheet Load"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_async_sheet_load__count {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_async_sheet_load.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Async Sheet Load"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_async_sheet_load__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_async_sheet_load.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Async Sheet Load"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_async_sheet_load__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_async_sheet_load.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Async Sheet Load"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_async_sheet_load__range {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_async_sheet_load.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_async_sheet_load__sum {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_async_sheet_load.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Async Sheet Load"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_async_sheet_load__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_async_sheet_load.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Performance Pageload Async Sheet Load"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_async_sheet_load__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_async_sheet_load.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Performance Pageload Async Sheet Load"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__performance_pageload_async_sheet_load__values {
+    sql: ${TABLE}.metrics.timing_distribution.performance_pageload_async_sheet_load.values ;;
     hidden: yes
   }
 
@@ -10698,6 +11038,18 @@ view: metrics_table__metrics__labeled_boolean__data_storage_migration {
   }
 }
 
+view: metrics_table__metrics__labeled_boolean__media_playback_device_hardware_decoder_support {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
+  }
+}
+
 view: metrics_table__metrics__labeled_boolean__oskeystore_self_test {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -10707,6 +11059,18 @@ view: metrics_table__metrics__labeled_boolean__oskeystore_self_test {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: yesno
+  }
+}
+
+view: metrics_table__metrics__labeled_string__cookie_banners_google_gdpr_choice_cookie {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: string
   }
 }
 
@@ -10783,6 +11147,30 @@ view: metrics_table__metrics__memory_distribution__glean_upload_pending_pings_di
 }
 
 view: metrics_table__metrics__memory_distribution__performance_clone_deserialize_size__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__bounce_tracking_protection_purge_duration__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__cert_verifier_cert_trust_evaluation_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -11514,6 +11902,18 @@ view: metrics_table__metrics__timing_distribution__networking_dns_lookup_time__v
   }
 }
 
+view: metrics_table__metrics__timing_distribution__networking_dns_native_https_call_time__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
 view: metrics_table__metrics__timing_distribution__networking_dns_renewal_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
@@ -11791,6 +12191,18 @@ view: metrics_table__metrics__timing_distribution__performance_page_non_blank_pa
 }
 
 view: metrics_table__metrics__timing_distribution__performance_page_total_content_page_load__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__performance_pageload_async_sheet_load__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
