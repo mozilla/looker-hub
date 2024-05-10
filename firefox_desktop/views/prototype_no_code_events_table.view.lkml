@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: deletion_request_table {
+view: prototype_no_code_events_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -501,10 +501,10 @@ for the purpose of experimentation enrollment.
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  sql_table_name: `mozdata.accounts_backend.deletion_request` ;;
+  sql_table_name: `mozdata.firefox_desktop.prototype_no_code_events` ;;
 }
 
-view: deletion_request_table__events {
+view: prototype_no_code_events_table__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
@@ -526,7 +526,7 @@ view: deletion_request_table__events {
   }
 }
 
-view: deletion_request_table__events__extra {
+view: prototype_no_code_events_table__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -538,7 +538,7 @@ view: deletion_request_table__events__extra {
   }
 }
 
-view: deletion_request_table__ping_info__experiments {
+view: prototype_no_code_events_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
