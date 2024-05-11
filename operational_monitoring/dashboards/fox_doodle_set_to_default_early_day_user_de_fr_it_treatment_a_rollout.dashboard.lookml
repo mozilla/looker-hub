@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,44 +26,10 @@
       fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.branch
     ]
     filters:
-      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.metric: 'uri_count'
+      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.metric: 'days_of_use'
       fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.statistic: mean
     row: 0
     col: 0
-    width: 12
-    height: 8
-    field_x: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.submission_date
-    field_y: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.point
-    log_scale: false
-    ci_lower: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.lower
-    ci_upper: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.upper
-    show_grid: true
-    listen:
-      Date: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout
-    type: looker_line
-    fields: [
-      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.submission_date,
-      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.branch,
-      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.point
-    ]
-    pivots: [
-      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.branch
-    ]
-    filters:
-      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.metric: 'ad_clicks'
-      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.statistic: mean
-    row: 0
-    col: 12
     width: 12
     height: 8
     field_x: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.submission_date
@@ -96,6 +62,42 @@
     filters:
       fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.metric: 'retained'
       fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.submission_date
+    field_y: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.point
+    log_scale: false
+    ci_lower: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.lower
+    ci_upper: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.upper
+    show_grid: true
+    listen:
+      Date: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout
+    type: "ci-line-chart"
+    fields: [
+      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.submission_date,
+      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.branch,
+      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.upper,
+      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.lower,
+      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.point
+    ]
+    pivots: [
+      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.branch
+    ]
+    filters:
+      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.metric: 'memory_total'
+      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.statistic: percentile
     row: 10
     col: 0
     width: 12
@@ -108,6 +110,7 @@
     show_grid: true
     listen:
       Date: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.submission_date
+      Percentile: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -180,8 +183,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +199,7 @@
       fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.branch
     ]
     filters:
-      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.metric: 'days_of_use'
+      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.metric: 'uri_count'
       fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.statistic: mean
     row: 20
     col: 12
@@ -214,26 +217,24 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.submission_date,
       fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.branch,
-      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.upper,
-      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.lower,
       fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.point
     ]
     pivots: [
       fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.branch
     ]
     filters:
-      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.metric: 'memory_total'
-      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.statistic: percentile
+      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.metric: 'ad_clicks'
+      fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.statistic: mean
     row: 30
     col: 0
     width: 12
@@ -246,7 +247,6 @@
     show_grid: true
     listen:
       Date: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.submission_date
-      Percentile: fox_doodle_set_to_default_early_day_user_de_fr_it_treatment_a_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
