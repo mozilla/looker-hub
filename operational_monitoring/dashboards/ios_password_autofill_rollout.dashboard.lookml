@@ -44,6 +44,40 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
+  - title: Ad Clicks
+    name: Ad Clicks_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: ios_password_autofill_rollout
+    type: looker_line
+    fields: [
+      ios_password_autofill_rollout.submission_date,
+      ios_password_autofill_rollout.branch,
+      ios_password_autofill_rollout.point
+    ]
+    pivots: [
+      ios_password_autofill_rollout.branch
+    ]
+    filters:
+      ios_password_autofill_rollout.metric: 'ad_clicks'
+      ios_password_autofill_rollout.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: ios_password_autofill_rollout.submission_date
+    field_y: ios_password_autofill_rollout.point
+    log_scale: false
+    ci_lower: ios_password_autofill_rollout.lower
+    ci_upper: ios_password_autofill_rollout.upper
+    show_grid: true
+    listen:
+      Date: ios_password_autofill_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
   - title: Search Count
     name: Search Count_mean
     note_state: expanded
@@ -62,8 +96,8 @@
     filters:
       ios_password_autofill_rollout.metric: 'search_count'
       ios_password_autofill_rollout.statistic: mean
-    row: 0
-    col: 12
+    row: 10
+    col: 0
     width: 12
     height: 8
     field_x: ios_password_autofill_rollout.submission_date
@@ -95,40 +129,6 @@
     ]
     filters:
       ios_password_autofill_rollout.metric: 'days_of_use'
-      ios_password_autofill_rollout.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: ios_password_autofill_rollout.submission_date
-    field_y: ios_password_autofill_rollout.point
-    log_scale: false
-    ci_lower: ios_password_autofill_rollout.lower
-    ci_upper: ios_password_autofill_rollout.upper
-    show_grid: true
-    listen:
-      Date: ios_password_autofill_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: ios_password_autofill_rollout
-    type: looker_line
-    fields: [
-      ios_password_autofill_rollout.submission_date,
-      ios_password_autofill_rollout.branch,
-      ios_password_autofill_rollout.point
-    ]
-    pivots: [
-      ios_password_autofill_rollout.branch
-    ]
-    filters:
-      ios_password_autofill_rollout.metric: 'ad_clicks'
       ios_password_autofill_rollout.statistic: mean
     row: 10
     col: 12
