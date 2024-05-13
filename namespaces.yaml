@@ -4037,6 +4037,21 @@ firefox_ios:
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.topsites_impression
       type: table_view
+firefox_okrs:
+  glean_app: false
+  owners:
+  - vsabino@mozilla.com
+  pretty_name: Firefox OKRs
+  spoke: looker-spoke-default
+  views:
+    desktop_engagement:
+      tables:
+      - table: moz-fx-data-shared-prod.telemetry.desktop_engagement
+      type: table_view
+    mobile_retention:
+      tables:
+      - table: moz-fx-data-shared-prod.telemetry.mobile_retention
+      type: table_view
 fivetran:
   glean_app: false
   owners:
