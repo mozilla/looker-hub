@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: metrics {
+view: prototype_no_code_events_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -149,7 +149,6 @@ view: metrics {
     sql: ${TABLE}.document_id ;;
     hidden: yes
     description: "The document ID specified in the URI when the client sent this message"
-    primary_key: yes
   }
 
   dimension: events {
@@ -325,6 +324,48 @@ view: metrics {
     group_item_label: "Version"
   }
 
+  dimension: metrics__labeled_counter__glean_error_invalid_label {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
+    hidden: yes
+    description: "Counts the number of times a metric was set with an invalid label.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_overflow {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_overflow ;;
+    hidden: yes
+    description: "Counts the number of times a metric was set a value that overflowed.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_state {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_state ;;
+    hidden: yes
+    description: "Counts the number of times a timing metric was used incorrectly.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__labeled_counter__glean_error_invalid_value {
+    sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_value ;;
+    hidden: yes
+    description: "Counts the number of times a metric was set to an invalid value.
+The labels are the `category.name` identifier of the metric.
+"
+  }
+
+  dimension: metrics__string__glean_client_annotation_experimentation_id {
+    sql: ${TABLE}.metrics.string.glean_client_annotation_experimentation_id ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Glean Client Annotation Experimentation Id"
+    description: "An experimentation identifier derived and provided by the application
+for the purpose of experimentation enrollment.
+"
+  }
+
   dimension: normalized_app_name {
     sql: ${TABLE}.normalized_app_name ;;
     type: string
@@ -460,19 +501,10 @@ view: metrics {
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  measure: clients {
-    type: count_distinct
-    sql: ${client_info__client_id} ;;
-  }
-
-  measure: ping_count {
-    type: count
-  }
-
-  sql_table_name: `mozdata.accounts_backend.metrics` ;;
+  sql_table_name: `mozdata.firefox_desktop.prototype_no_code_events` ;;
 }
 
-view: metrics__events {
+view: prototype_no_code_events_table__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
@@ -494,7 +526,7 @@ view: metrics__events {
   }
 }
 
-view: metrics__events__extra {
+view: prototype_no_code_events_table__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -506,91 +538,7 @@ view: metrics__events__extra {
   }
 }
 
-view: metrics__metrics__memory_distribution__glean_database_size__values {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: number
-  }
-}
-
-view: metrics__metrics__memory_distribution__glean_upload_discarded_exceeding_pings_size__values {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: number
-  }
-}
-
-view: metrics__metrics__memory_distribution__glean_upload_pending_pings_directory_size__values {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: number
-  }
-}
-
-view: metrics__metrics__timing_distribution__glean_upload_send_failure__values {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: number
-  }
-}
-
-view: metrics__metrics__timing_distribution__glean_upload_send_success__values {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: number
-  }
-}
-
-view: metrics__metrics__timing_distribution__glean_validation_shutdown_dispatcher_wait__values {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: number
-  }
-}
-
-view: metrics__metrics__timing_distribution__glean_validation_shutdown_wait__values {
-  dimension: key {
-    sql: ${TABLE}.key ;;
-    type: string
-  }
-
-  dimension: value {
-    sql: ${TABLE}.value ;;
-    type: number
-  }
-}
-
-view: metrics__ping_info__experiments {
+view: prototype_no_code_events_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

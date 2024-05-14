@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: baseline {
+view: events_table {
   dimension: additional_properties {
     sql: ${TABLE}.additional_properties ;;
     hidden: yes
@@ -149,7 +149,6 @@ view: baseline {
     sql: ${TABLE}.document_id ;;
     hidden: yes
     description: "The document ID specified in the URI when the client sent this message"
-    primary_key: yes
   }
 
   dimension: events {
@@ -460,19 +459,10 @@ view: baseline {
     description: "Time when the ingestion edge server accepted this message"
   }
 
-  measure: clients {
-    type: count_distinct
-    sql: ${client_info__client_id} ;;
-  }
-
-  measure: ping_count {
-    type: count
-  }
-
-  sql_table_name: `mozdata.accounts_backend.baseline` ;;
+  sql_table_name: `mozdata.relay_backend.events` ;;
 }
 
-view: baseline__events {
+view: events_table__events {
   dimension: category {
     sql: ${TABLE}.category ;;
     type: string
@@ -494,7 +484,7 @@ view: baseline__events {
   }
 }
 
-view: baseline__events__extra {
+view: events_table__events__extra {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
@@ -506,7 +496,7 @@ view: baseline__events__extra {
   }
 }
 
-view: baseline__ping_info__experiments {
+view: events_table__ping_info__experiments {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

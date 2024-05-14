@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       enable_activation_telemetry_android_beta.branch
     ]
     filters:
-      enable_activation_telemetry_android_beta.metric: 'retained'
+      enable_activation_telemetry_android_beta.metric: 'active_hours'
       enable_activation_telemetry_android_beta.statistic: mean
     row: 0
     col: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       enable_activation_telemetry_android_beta.branch
     ]
     filters:
-      enable_activation_telemetry_android_beta.metric: 'active_hours'
+      enable_activation_telemetry_android_beta.metric: 'search_count'
       enable_activation_telemetry_android_beta.statistic: mean
     row: 10
     col: 12
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       enable_activation_telemetry_android_beta.branch
     ]
     filters:
-      enable_activation_telemetry_android_beta.metric: 'uri_count'
+      enable_activation_telemetry_android_beta.metric: 'retained'
       enable_activation_telemetry_android_beta.statistic: mean
     row: 20
     col: 0
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       enable_activation_telemetry_android_beta.branch
     ]
     filters:
-      enable_activation_telemetry_android_beta.metric: 'search_count'
+      enable_activation_telemetry_android_beta.metric: 'uri_count'
       enable_activation_telemetry_android_beta.statistic: mean
     row: 30
     col: 0
