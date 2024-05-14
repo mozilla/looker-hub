@@ -9,8 +9,8 @@ datagroup: login_funnels_by_service_v1_last_updated {
   label: "Login Funnels By Service Last Updated"
   sql_trigger: SELECT MAX(storage_last_modified_time)
     FROM `moz-fx-data-shared-prod`.`region-us`.INFORMATION_SCHEMA.TABLE_STORAGE
-    WHERE table_schema = 'firefox_accounts_derived'
+    WHERE table_schema = 'accounts_frontend_derived'
     AND table_name = 'login_funnels_by_service_v1' ;;
-  description: "Updates when moz-fx-data-shared-prod:firefox_accounts_derived.login_funnels_by_service_v1 is modified."
+  description: "Updates when moz-fx-data-shared-prod:accounts_frontend_derived.login_funnels_by_service_v1 is modified."
   max_cache_age: "24 hours"
 }

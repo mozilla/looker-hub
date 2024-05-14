@@ -80,5 +80,5 @@ view: login_funnels_by_service {
     datatype: date
   }
 
-  sql_table_name: `moz-fx-data-shared-prod.firefox_accounts_derived.login_funnels_by_service_v1` ;;
+  sql_table_name: `moz-fx-data-shared-prod.accounts_frontend_derived.login_funnels_by_service_v1` ;;
 }
