@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Large File Write
-    name: Large File Write_sum
+  - title: Cpu Exception
+    name: Cpu Exception_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,7 +26,7 @@
       firefox_ios_health.branch
     ]
     filters:
-      firefox_ios_health.metric: 'large_file_write'
+      firefox_ios_health.metric: 'cpu_exception'
       firefox_ios_health.statistic: sum
     row: 0
     col: 0
@@ -76,8 +76,8 @@
       
     active: "#3FE1B0"
     defaults_version: 0
-  - title: Cpu Exception
-    name: Cpu Exception_sum
+  - title: Large File Write
+    name: Large File Write_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -92,7 +92,7 @@
       firefox_ios_health.branch
     ]
     filters:
-      firefox_ios_health.metric: 'cpu_exception'
+      firefox_ios_health.metric: 'large_file_write'
       firefox_ios_health.statistic: sum
     row: 10
     col: 0

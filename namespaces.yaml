@@ -7076,13 +7076,13 @@ operational_monitoring:
         explore: firefox_ios_health
         group_by_dimension: null
         summaries: &id105
-        - metric: large_file_write
+        - metric: cpu_exception
           metric_groups: []
           statistic: sum
         - metric: dirty_startup
           metric_groups: []
           statistic: sum
-        - metric: cpu_exception
+        - metric: large_file_write
           metric_groups: []
           statistic: sum
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_ios_health_statistics
@@ -10379,35 +10379,6 @@ operational_monitoring:
         xaxis: submission_date
       title: Viewpoint Ios March 2024 Launch
       type: operational_monitoring_dashboard
-    we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab:
-      tables:
-      - branches: &id346
-        - enabled
-        - disabled
-        compact_visualization: false
-        dimensions: &id347 {}
-        explore: we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab
-        group_by_dimension: null
-        summaries: &id348
-        - metric: search_count
-          metric_groups: []
-          statistic: mean
-        - metric: retained
-          metric_groups: []
-          statistic: mean
-        - metric: active_hours
-          metric_groups: []
-          statistic: mean
-        - metric: days_of_use
-          metric_groups: []
-          statistic: mean
-        - metric: ad_clicks
-          metric_groups: []
-          statistic: mean
-        table: moz-fx-data-shared-prod.operational_monitoring.we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_statistics
-        xaxis: submission_date
-      title: We Should Prefer Switching To Open Tabs Vs Opening A Duplicate Tab
-      type: operational_monitoring_dashboard
   explores:
     add_an_image_to_pdf_with_alt_text_rollout:
       branches: *id001
@@ -11345,14 +11316,6 @@ operational_monitoring:
       views:
         base_view: viewpoint_ios_march_2024_launch
       xaxis: submission_date
-    we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab:
-      branches: *id346
-      dimensions: *id347
-      summaries: *id348
-      type: operational_monitoring_explore
-      views:
-        base_view: we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab
-      xaxis: submission_date
   glean_app: false
   owners:
   - ascholtz@mozilla.com
@@ -12063,12 +12026,6 @@ operational_monitoring:
       tables:
       - dimensions: *id344
         table: moz-fx-data-shared-prod.operational_monitoring.viewpoint_ios_march_2024_launch_statistics
-        xaxis: submission_date
-      type: operational_monitoring_view
-    we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab:
-      tables:
-      - dimensions: *id347
-        table: moz-fx-data-shared-prod.operational_monitoring.we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_statistics
         xaxis: submission_date
       type: operational_monitoring_view
 reference:
