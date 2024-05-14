@@ -30,6 +30,11 @@ view: registration_funnels_by_service {
     type: string
   }
 
+  dimension: service_name {
+    sql: ${TABLE}.service_name ;;
+    type: string
+  }
+
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
@@ -45,5 +50,5 @@ view: registration_funnels_by_service {
     datatype: date
   }
 
-  sql_table_name: `moz-fx-data-shared-prod.accounts_frontend_derived.registration_funnels_by_service_v1` ;;
+  sql_table_name: `moz-fx-data-shared-prod.accounts_frontend.registration_funnels_by_service` ;;
 }
