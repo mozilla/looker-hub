@@ -6921,10 +6921,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 10
+            default: Windows 7
             options:
-            - Windows 10
             - Windows 7
+            - Windows 10
             - Windows 8
             - Windows 8.1
             - Windows 11
@@ -6960,13 +6960,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id098
           normalized_channel:
-            default: nightly
+            default: beta
             options:
-            - nightly
-            - aurora
-            - release
-            - esr
             - beta
+            - esr
+            - nightly
+            - release
+            - aurora
             - default
             - nightly-pine
             - nightly-oak
@@ -7096,11 +7096,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id107
           normalized_channel:
-            default: beta
+            default: nightly
             options:
-            - beta
             - nightly
             - aurora
+            - beta
             - release
             - esr
             - Other
@@ -7470,8 +7470,8 @@ operational_monitoring:
             default: Mac
             options:
             - Mac
-            - Linux
             - Windows
+            - Linux
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -7959,15 +7959,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id167
           app:
-            default: iOS - vpn_session
+            default: Linux - vpn_session
             options:
-            - iOS - vpn_session
-            - Windows - vpn_session
-            - Android - vpn_session
-            - Darwin - vpn_session
-            - iOS - daemon_session
-            - Android - daemon_session
             - Linux - vpn_session
+            - iOS - daemon_session
+            - iOS - vpn_session
+            - Android - vpn_session
+            - Windows - vpn_session
+            - Darwin - vpn_session
+            - Android - daemon_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id168
@@ -8795,16 +8795,16 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id221
           channel:
-            default: nightly
+            default: beta
             options:
-            - nightly
-            - release
             - beta
+            - release
+            - nightly
           os:
-            default: Windows_NT
+            default: Linux
             options:
-            - Windows_NT
             - Linux
+            - Windows_NT
             - Darwin
         explore: print_background_task_times
         group_by_dimension: null
