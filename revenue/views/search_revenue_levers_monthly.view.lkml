@@ -81,11 +81,6 @@ view: search_revenue_levers_monthly {
     type: number
   }
 
-  dimension: revenue_per_ad_click_1 {
-    sql: ${TABLE}.revenue_per_ad_click_1 ;;
-    type: number
-  }
-
   dimension: sap {
     sql: ${TABLE}.sap ;;
     type: number
