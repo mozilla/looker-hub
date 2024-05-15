@@ -3237,7 +3237,7 @@ ensure it's not too expensive.  This value is only available on Android
 
   dimension: metrics__boolean__tab_strip_enabled {
     label: "Tab Strip Enabled"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.boolean.tab_strip_enabled ;;
     type: yesno
     group_label: "Tab Strip"
