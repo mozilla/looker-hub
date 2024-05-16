@@ -87,6 +87,18 @@ For URL-prefix properties, it will be the full URL of the property definition."
     description: "Country from which the user was searching, in ISO-3166-1-alpha-3 format."
   }
 
+  dimension: user_region {
+    sql: ${TABLE}.user_region ;;
+    type: string
+    description: "Region from which the user was searching."
+  }
+
+  dimension: user_subregion {
+    sql: ${TABLE}.user_subregion ;;
+    type: string
+    description: "Sub-region from which the user was searching."
+  }
+
   dimension_group: date {
     sql: ${TABLE}.date ;;
     type: time
