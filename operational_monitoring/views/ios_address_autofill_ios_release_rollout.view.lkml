@@ -4,8 +4,8 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab {
-  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.we_should_prefer_switching_to_open_tabs_vs_opening_a_duplicate_tab_statistics ;;
+view: ios_address_autofill_ios_release_rollout {
+  sql_table_name: moz-fx-data-shared-prod.operational_monitoring.ios_address_autofill_ios_release_rollout_statistics ;;
 
   dimension: submission_date {
     type: date

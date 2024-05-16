@@ -15,6 +15,21 @@ view: search_revenue_levers_monthly {
     type: number
   }
 
+  dimension: avg_dau {
+    sql: ${TABLE}.avg_dau ;;
+    type: number
+  }
+
+  dimension: avg_dau_engaged_w_sap {
+    sql: ${TABLE}.avg_dau_engaged_w_sap ;;
+    type: number
+  }
+
+  dimension: avg_dau_w_engine_as_default {
+    sql: ${TABLE}.avg_dau_w_engine_as_default ;;
+    type: number
+  }
+
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string

@@ -4,12 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: mobile_retention {
-  dimension: active_metric_date {
-    sql: ${TABLE}.active_metric_date ;;
-    type: number
-  }
-
+view: mobile_engagement {
   dimension: adjust_ad_group {
     sql: ${TABLE}.adjust_ad_group ;;
     type: string
@@ -46,14 +41,14 @@ view: mobile_retention {
     map_layer_name: countries
   }
 
+  dimension: dau {
+    sql: ${TABLE}.dau ;;
+    type: number
+  }
+
   dimension: install_source {
     sql: ${TABLE}.install_source ;;
     type: string
-  }
-
-  dimension: is_suspicious_device_client {
-    sql: ${TABLE}.is_suspicious_device_client ;;
-    type: yesno
   }
 
   dimension: lifecycle_stage {
@@ -66,29 +61,19 @@ view: mobile_retention {
     type: string
   }
 
+  dimension: mau {
+    sql: ${TABLE}.mau ;;
+    type: number
+  }
+
   dimension: meta_attribution_app {
     sql: ${TABLE}.meta_attribution_app ;;
     type: string
   }
 
-  dimension: new_profiles_metric_date {
-    sql: ${TABLE}.new_profiles_metric_date ;;
-    type: number
-  }
-
   dimension: normalized_channel {
     sql: ${TABLE}.normalized_channel ;;
     type: string
-  }
-
-  dimension: ping_sent_metric_date {
-    sql: ${TABLE}.ping_sent_metric_date ;;
-    type: number
-  }
-
-  dimension: ping_sent_week_4 {
-    sql: ${TABLE}.ping_sent_week_4 ;;
-    type: number
   }
 
   dimension: play_store_attribution_campaign {
@@ -106,18 +91,8 @@ view: mobile_retention {
     type: string
   }
 
-  dimension: repeat_profiles {
-    sql: ${TABLE}.repeat_profiles ;;
-    type: number
-  }
-
-  dimension: retained_week_4 {
-    sql: ${TABLE}.retained_week_4 ;;
-    type: number
-  }
-
-  dimension: retained_week_4_new_profiles {
-    sql: ${TABLE}.retained_week_4_new_profiles ;;
+  dimension: wau {
+    sql: ${TABLE}.wau ;;
     type: number
   }
 
@@ -136,8 +111,8 @@ view: mobile_retention {
     datatype: date
   }
 
-  dimension_group: metric {
-    sql: ${TABLE}.metric_date ;;
+  dimension_group: submission {
+    sql: ${TABLE}.submission_date ;;
     type: time
     timeframes: [
       raw,
@@ -151,5 +126,5 @@ view: mobile_retention {
     datatype: date
   }
 
-  sql_table_name: `moz-fx-data-shared-prod.telemetry.mobile_retention` ;;
+  sql_table_name: `moz-fx-data-shared-prod.telemetry.mobile_engagement` ;;
 }
