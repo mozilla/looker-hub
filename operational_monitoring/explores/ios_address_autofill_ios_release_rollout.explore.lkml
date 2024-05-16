@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/address_autofill_desktop_beta_rollout.view.lkml"
+include: "/looker-hub/operational_monitoring/views/ios_address_autofill_ios_release_rollout.view.lkml"
 
-explore: address_autofill_desktop_beta_rollout {
+explore: ios_address_autofill_ios_release_rollout {
   always_filter: {
     filters: [
       branch: "enabled, disabled",

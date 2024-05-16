@@ -40,6 +40,11 @@ view: email_first_funnels_by_service {
     type: string
   }
 
+  dimension: service_name {
+    sql: ${TABLE}.service_name ;;
+    type: string
+  }
+
   dimension_group: submission {
     sql: ${TABLE}.submission_date ;;
     type: time
@@ -55,5 +60,5 @@ view: email_first_funnels_by_service {
     datatype: date
   }
 
-  sql_table_name: `moz-fx-data-shared-prod.accounts_frontend_derived.email_first_reg_login_funnels_by_service_v1` ;;
+  sql_table_name: `moz-fx-data-shared-prod.accounts_frontend.email_first_reg_login_funnels_by_service` ;;
 }

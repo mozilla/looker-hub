@@ -49,7 +49,7 @@ The `country_code`, `page_url`, and related fields will be null for anonymized D
   dimension: localized_site {
     sql: ${TABLE}.localized_site ;;
     type: string
-    description: "Localized site description based on `localized_site_language` and `localized_site_country` (if any).
+    description: "Description of the localized site language and/or country based on `localized_site_language_code` (if any).
 This will be null for anonymized Discover impressions."
   }
 
@@ -57,20 +57,6 @@ This will be null for anonymized Discover impressions."
     sql: ${TABLE}.localized_site_code ;;
     type: string
     description: "Localized site code such as `en-US` or `de` found in the first segment of the page URL path (if any).
-This will be null for anonymized Discover impressions."
-  }
-
-  dimension: localized_site_country {
-    sql: ${TABLE}.localized_site_country ;;
-    type: string
-    description: "Localized site country based on `localized_site_country_code` (if any).
-This will be null for anonymized Discover impressions."
-  }
-
-  dimension: localized_site_country_code {
-    sql: ${TABLE}.localized_site_country_code ;;
-    type: string
-    description: "Localized site country code in ISO-3166-1-alpha-2 format found in the first segment of the page URL path (if any).
 This will be null for anonymized Discover impressions."
   }
 
@@ -171,6 +157,18 @@ This will be null for anonymized Discover impressions."
     type: string
     description: "Country from which the user was searching, in ISO-3166-1-alpha-3 format.
 This will be null for anonymized Discover impressions."
+  }
+
+  dimension: user_region {
+    sql: ${TABLE}.user_region ;;
+    type: string
+    description: "Region from which the user was searching."
+  }
+
+  dimension: user_subregion {
+    sql: ${TABLE}.user_subregion ;;
+    type: string
+    description: "Sub-region from which the user was searching."
   }
 
   dimension_group: date {

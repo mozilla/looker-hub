@@ -20,11 +20,6 @@ view: countries {
     type: string
   }
 
-  dimension: intermediate_region_name {
-    sql: ${TABLE}.intermediate_region_name ;;
-    type: string
-  }
-
   dimension: mozilla_vpn_available {
     sql: ${TABLE}.mozilla_vpn_available ;;
     type: yesno

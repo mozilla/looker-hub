@@ -56,6 +56,11 @@ view: mobile_retention {
     type: yesno
   }
 
+  dimension: lifecycle_stage {
+    sql: ${TABLE}.lifecycle_stage ;;
+    type: string
+  }
+
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
