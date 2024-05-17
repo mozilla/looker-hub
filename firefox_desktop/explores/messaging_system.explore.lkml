@@ -72,27 +72,3 @@ explore: messaging_system {
 explore: suggest__messaging_system__metrics__labeled_counter__glean_error_invalid_label {
   hidden: yes
 }
-
-explore: suggest__messaging_system__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__messaging_system__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__messaging_system__metrics__labeled_counter__glean_error_invalid_value {
-  hidden: yes
-}
-
-explore: suggest__messaging_system__metrics__labeled_counter__messaging_system_attribution_unknown_keys {
-  hidden: yes
-}
-
-explore: suggest__messaging_system__metrics__labeled_counter__messaging_system_invalid_nested_data {
-  hidden: yes
-}
-
-explore: suggest__messaging_system__metrics__labeled_counter__messaging_system_unknown_keys {
-  hidden: yes
-}

@@ -70,30 +70,6 @@ explore: temp_clients_sync {
   }
 }
 
-explore: suggest__temp_clients_sync__metrics__labeled_counter__clients_sync_failure_reason {
-  hidden: yes
-}
-
-explore: suggest__temp_clients_sync__metrics__labeled_counter__clients_sync_incoming {
-  hidden: yes
-}
-
-explore: suggest__temp_clients_sync__metrics__labeled_counter__clients_sync_outgoing {
-  hidden: yes
-}
-
 explore: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}
-
-explore: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__temp_clients_sync__metrics__labeled_counter__glean_error_invalid_value {
   hidden: yes
 }

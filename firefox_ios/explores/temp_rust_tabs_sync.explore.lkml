@@ -73,27 +73,3 @@ explore: temp_rust_tabs_sync {
 explore: suggest__temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_label {
   hidden: yes
 }
-
-explore: suggest__temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__temp_rust_tabs_sync__metrics__labeled_counter__glean_error_invalid_value {
-  hidden: yes
-}
-
-explore: suggest__temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_failure_reason {
-  hidden: yes
-}
-
-explore: suggest__temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_incoming {
-  hidden: yes
-}
-
-explore: suggest__temp_rust_tabs_sync__metrics__labeled_counter__rust_tabs_sync_outgoing {
-  hidden: yes
-}
