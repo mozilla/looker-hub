@@ -25,7 +25,9 @@ base.base_days_seen_session_end_bits AS days_seen_session_end_bits,
 base.base_days_seen_session_start_bits AS days_seen_session_start_bits,
 base.base_device_manufacturer AS device_manufacturer,
 base.base_device_model AS device_model,
+base.base_distribution_id AS distribution_id,
 base.base_durations AS durations,
+base.base_geo_subdivision AS geo_subdivision,
 base.base_is_new_profile AS is_new_profile,
 base.base_isp AS isp,
 base.base_locale AS locale,
@@ -93,7 +95,9 @@ days_seen_session_end_bits AS base_days_seen_session_end_bits,
 days_seen_session_start_bits AS base_days_seen_session_start_bits,
 device_manufacturer AS base_device_manufacturer,
 device_model AS base_device_model,
+distribution_id AS base_distribution_id,
 durations AS base_durations,
+geo_subdivision AS base_geo_subdivision,
 is_new_profile AS base_is_new_profile,
 isp AS base_isp,
 locale AS base_locale,
@@ -156,7 +160,9 @@ days_seen_session_end_bits,
 days_seen_session_start_bits,
 device_manufacturer,
 device_model,
+distribution_id,
 durations,
+geo_subdivision,
 is_new_profile,
 isp,
 locale,
@@ -297,9 +303,21 @@ For more information, refer to [the DAU description in Confluence](https://mozil
     group_label: "Base Fields"
   }
 
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
   dimension: durations {
     sql: ${TABLE}.durations ;;
     type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: geo_subdivision {
+    sql: ${TABLE}.geo_subdivision ;;
+    type: string
     group_label: "Base Fields"
   }
 

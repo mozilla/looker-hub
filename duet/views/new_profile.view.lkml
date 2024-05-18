@@ -198,6 +198,22 @@ view: new_profile {
     description: "Indicates what scope the theme is installed in, per profile, user, system, or application."
   }
 
+  dimension: environment__addons__theme__signed_state {
+    sql: ${TABLE}.environment.addons.theme.signed_state ;;
+    type: number
+    group_label: "Environment Addons Theme"
+    group_item_label: "Signed State"
+    description: "The state of the signature of the theme."
+  }
+
+  dimension: environment__addons__theme__signed_types {
+    sql: ${TABLE}.environment.addons.theme.signed_types ;;
+    type: string
+    group_label: "Environment Addons Theme"
+    group_item_label: "Signed Types"
+    description: "A JSON-stringified array of signature types found for the theme."
+  }
+
   dimension: environment__addons__theme__update_day {
     sql: ${TABLE}.environment.addons.theme.update_day ;;
     type: number

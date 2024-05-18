@@ -441,6 +441,15 @@ view: user_characteristics_table {
 "
   }
 
+  dimension: metrics__boolean__characteristics_use_document_colors {
+    sql: ${TABLE}.metrics.boolean.characteristics_use_document_colors ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Use Document Colors"
+    description: "This is the derived PreferenceSheet::Prefs::mUseDocumentColors value.
+"
+  }
+
   dimension: metrics__boolean__characteristics_video_dynamic_range {
     sql: ${TABLE}.metrics.boolean.characteristics_video_dynamic_range ;;
     type: yesno
@@ -482,6 +491,42 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_color_accentcolor {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_accentcolor ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Accentcolor"
+    description: "The CSS system-color Accentcolor.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_accentcolortext {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_accentcolortext ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Accentcolortext"
+    description: "The CSS system-color Accentcolortext.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_canvas {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_canvas ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Canvas"
+    description: "The CSS system-color Canvas.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_canvastext {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_canvastext ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Canvastext"
+    description: "The CSS system-color Canvastext.
+"
+  }
+
   dimension: metrics__quantity__characteristics_color_depth {
     sql: ${TABLE}.metrics.quantity.characteristics_color_depth ;;
     type: number
@@ -500,12 +545,48 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_color_highlight {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_highlight ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Highlight"
+    description: "The CSS system-color Highlight.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_highlighttext {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_highlighttext ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Highlighttext"
+    description: "The CSS system-color Highlighttext.
+"
+  }
+
   dimension: metrics__quantity__characteristics_color_scheme {
     sql: ${TABLE}.metrics.quantity.characteristics_color_scheme ;;
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Color Scheme"
     description: "The Color Scheme used for Content, from ContentPrefs() Preference Sheet.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_selecteditem {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_selecteditem ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Selecteditem"
+    description: "The CSS system-color Selecteditem.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_selecteditemtext {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_selecteditemtext ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Selecteditemtext"
+    description: "The CSS system-color Selecteditemtext.
 "
   }
 
@@ -841,6 +922,11 @@ The labels are the `category.name` identifier of the metric.
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
 "
+  }
+
+  dimension: metrics__string_list__characteristics_gamepads {
+    sql: ${TABLE}.metrics.string_list.characteristics_gamepads ;;
+    hidden: yes
   }
 
   dimension: metrics__text__characteristics_missing_fonts {

@@ -2712,6 +2712,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__media_playback_not_supported_video_per_mime_type {
+    sql: ${TABLE}.metrics.labeled_counter.media_playback_not_supported_video_per_mime_type ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__metrics_bookmarks_add {
     sql: ${TABLE}.metrics.labeled_counter.metrics_bookmarks_add ;;
     hidden: yes

@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Dirty Startup
-    name: Dirty Startup_sum
+  - title: Total Baseline Pings
+    name: Total Baseline Pings_sum
     note_state: expanded
     note_display: above
     note_text: Sum
@@ -26,10 +26,43 @@
       firefox_ios_health.branch
     ]
     filters:
-      firefox_ios_health.metric: 'dirty_startup'
+      firefox_ios_health.metric: 'total_baseline_pings'
       firefox_ios_health.statistic: sum
     row: 0
     col: 0
+    width: 12
+    height: 8
+    field_x: firefox_ios_health.submission_date
+    field_y: firefox_ios_health.point
+    log_scale: false
+    ci_lower: firefox_ios_health.lower
+    ci_upper: firefox_ios_health.upper
+    show_grid: true
+    listen:
+      Date: firefox_ios_health.submission_date
+      
+    active: "#3FE1B0"
+    defaults_version: 0
+  - title: Cpu Exception
+    name: Cpu Exception_total_ratio
+    note_state: expanded
+    note_display: above
+    note_text: Total_Ratio
+    explore: firefox_ios_health
+    type: looker_line
+    fields: [
+      firefox_ios_health.submission_date,
+      firefox_ios_health.branch,
+      firefox_ios_health.point
+    ]
+    pivots: [
+      firefox_ios_health.branch
+    ]
+    filters:
+      firefox_ios_health.metric: 'cpu_exception'
+      firefox_ios_health.statistic: total_ratio
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: firefox_ios_health.submission_date
@@ -61,74 +94,8 @@
     filters:
       firefox_ios_health.metric: 'dirty_startup'
       firefox_ios_health.statistic: total_ratio
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: firefox_ios_health.submission_date
-    field_y: firefox_ios_health.point
-    log_scale: false
-    ci_lower: firefox_ios_health.lower
-    ci_upper: firefox_ios_health.upper
-    show_grid: true
-    listen:
-      Date: firefox_ios_health.submission_date
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Total Baseline Pings
-    name: Total Baseline Pings_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: firefox_ios_health
-    type: looker_line
-    fields: [
-      firefox_ios_health.submission_date,
-      firefox_ios_health.branch,
-      firefox_ios_health.point
-    ]
-    pivots: [
-      firefox_ios_health.branch
-    ]
-    filters:
-      firefox_ios_health.metric: 'total_baseline_pings'
-      firefox_ios_health.statistic: sum
     row: 10
     col: 0
-    width: 12
-    height: 8
-    field_x: firefox_ios_health.submission_date
-    field_y: firefox_ios_health.point
-    log_scale: false
-    ci_lower: firefox_ios_health.lower
-    ci_upper: firefox_ios_health.upper
-    show_grid: true
-    listen:
-      Date: firefox_ios_health.submission_date
-      
-    active: "#3FE1B0"
-    defaults_version: 0
-  - title: Cpu Exception
-    name: Cpu Exception_sum
-    note_state: expanded
-    note_display: above
-    note_text: Sum
-    explore: firefox_ios_health
-    type: looker_line
-    fields: [
-      firefox_ios_health.submission_date,
-      firefox_ios_health.branch,
-      firefox_ios_health.point
-    ]
-    pivots: [
-      firefox_ios_health.branch
-    ]
-    filters:
-      firefox_ios_health.metric: 'cpu_exception'
-      firefox_ios_health.statistic: sum
-    row: 10
-    col: 12
     width: 12
     height: 8
     field_x: firefox_ios_health.submission_date
@@ -143,10 +110,10 @@
     active: "#3FE1B0"
     defaults_version: 0
   - title: Large File Write
-    name: Large File Write_sum
+    name: Large File Write_total_ratio
     note_state: expanded
     note_display: above
-    note_text: Sum
+    note_text: Total_Ratio
     explore: firefox_ios_health
     type: looker_line
     fields: [
@@ -159,9 +126,9 @@
     ]
     filters:
       firefox_ios_health.metric: 'large_file_write'
-      firefox_ios_health.statistic: sum
-    row: 20
-    col: 0
+      firefox_ios_health.statistic: total_ratio
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: firefox_ios_health.submission_date
