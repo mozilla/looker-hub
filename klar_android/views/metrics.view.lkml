@@ -4174,6 +4174,22 @@ To be used to validate GIFFT.
     description: "The results of hardware decoder support for different video codecs. True means that codec can be decoded by hardware on user's device."
   }
 
+  dimension: metrics__labeled_counter__media_playback_not_supported_video_per_mime_type {
+    label: "Media Playback Not Supported Video Per Mime Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_playback_not_supported_video_per_mime_type ;;
+    group_label: "Media Playback"
+    group_item_label: "Not Supported Video Per Mime Type"
+
+    link: {
+      label: "Glean Dictionary reference for Media Playback Not Supported Video Per Mime Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/media_playback_not_supported_video_per_mime_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count the amount of times where video playback is failed to start due to the mime type is not supported by Firefox. The result is accumulated per mime type, eg. video/hevc."
+  }
+
   dimension: metrics__labeled_counter__netwerk_early_hints {
     label: "Netwerk Early Hints"
     hidden: yes
@@ -12869,6 +12885,47 @@ view: metrics__metrics__labeled_counter__media_audio_backend {
 
 view: metrics__metrics__labeled_counter__media_audio_init_failure {
   label: "Media Audio - Init Failure"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_playback_not_supported_video_per_mime_type {
+  label: "Media Playback - Not Supported Video Per Mime Type"
 
   dimension: document_id {
     type: string

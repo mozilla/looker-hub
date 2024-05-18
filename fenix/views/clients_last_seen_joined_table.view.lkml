@@ -111,6 +111,11 @@ view: clients_last_seen_joined_table {
     type: string
   }
 
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+  }
+
   dimension: durations {
     sql: ${TABLE}.durations ;;
     type: number
