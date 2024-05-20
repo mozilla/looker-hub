@@ -10,74 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Retained
-    name: Retained_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release
-    type: looker_line
-    fields: [
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date,
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.branch,
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.point
-    ]
-    pivots: [
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.branch
-    ]
-    filters:
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.metric: 'retained'
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date
-    field_y: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.point
-    log_scale: false
-    ci_lower: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.lower
-    ci_upper: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.upper
-    show_grid: true
-    listen:
-      Date: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release
-    type: looker_line
-    fields: [
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date,
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.branch,
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.point
-    ]
-    pivots: [
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.branch
-    ]
-    filters:
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.metric: 'days_of_use'
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date
-    field_y: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.point
-    log_scale: false
-    ci_lower: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.lower
-    ci_upper: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.upper
-    show_grid: true
-    listen:
-      Date: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Ad Clicks
     name: Ad Clicks_mean
     note_state: expanded
@@ -96,7 +28,7 @@
     filters:
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.metric: 'ad_clicks'
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.statistic: mean
-    row: 10
+    row: 0
     col: 0
     width: 12
     height: 8
@@ -108,43 +40,6 @@
     show_grid: true
     listen:
       Date: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release
-    type: "ci-line-chart"
-    fields: [
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date,
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.branch,
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.upper,
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.lower,
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.point
-    ]
-    pivots: [
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.branch
-    ]
-    filters:
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.metric: 'memory_total'
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.statistic: percentile
-    row: 10
-    col: 12
-    width: 12
-    height: 8
-    field_x: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date
-    field_y: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.point
-    log_scale: false
-    ci_lower: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.lower
-    ci_upper: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.upper
-    show_grid: true
-    listen:
-      Date: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date
-      Percentile: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -166,6 +61,108 @@
     ]
     filters:
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.metric: 'uri_count'
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.statistic: mean
+    row: 0
+    col: 12
+    width: 12
+    height: 8
+    field_x: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date
+    field_y: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.point
+    log_scale: false
+    ci_lower: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.lower
+    ci_upper: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.upper
+    show_grid: true
+    listen:
+      Date: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release
+    type: looker_line
+    fields: [
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date,
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.branch,
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.point
+    ]
+    pivots: [
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.branch
+    ]
+    filters:
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.metric: 'qualified_cumulative_days_of_use'
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.statistic: mean
+    row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date
+    field_y: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.point
+    log_scale: false
+    ci_lower: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.lower
+    ci_upper: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.upper
+    show_grid: true
+    listen:
+      Date: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release
+    type: looker_line
+    fields: [
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date,
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.branch,
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.point
+    ]
+    pivots: [
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.branch
+    ]
+    filters:
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.metric: 'active_hours'
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.statistic: mean
+    row: 10
+    col: 12
+    width: 12
+    height: 8
+    field_x: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date
+    field_y: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.point
+    log_scale: false
+    ci_lower: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.lower
+    ci_upper: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.upper
+    show_grid: true
+    listen:
+      Date: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Retained
+    name: Retained_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release
+    type: looker_line
+    fields: [
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date,
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.branch,
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.point
+    ]
+    pivots: [
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.branch
+    ]
+    filters:
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.metric: 'retained'
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.statistic: mean
     row: 20
     col: 0
@@ -217,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +230,7 @@
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.branch
     ]
     filters:
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.metric: 'qualified_cumulative_days_of_use'
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.metric: 'days_of_use'
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.statistic: mean
     row: 30
     col: 0
@@ -251,24 +248,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date,
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.branch,
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.upper,
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.lower,
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.point
     ]
     pivots: [
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.branch
     ]
     filters:
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.metric: 'active_hours'
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.statistic: mean
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.metric: 'memory_total'
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.statistic: percentile
     row: 30
     col: 12
     width: 12
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.submission_date
+      Percentile: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_non_release.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
