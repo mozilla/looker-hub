@@ -239,6 +239,42 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_anchor_name {
+    label: "Use Counter Css Doc Css Anchor Name"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_anchor_name ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Anchor Name"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Anchor Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_anchor_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property anchor-name. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_anchor_scope {
+    label: "Use Counter Css Doc Css Anchor Scope"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_anchor_scope ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Anchor Scope"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Anchor Scope"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_anchor_scope"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property anchor-scope. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_animation {
     label: "Use Counter Css Doc Css Animation"
     hidden: no
@@ -12800,6 +12836,42 @@ view: use_counters {
     }
 
     description: "Whether a page used the CSS property all. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_anchor_name {
+    label: "Use Counter Css Page Css Anchor Name"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_anchor_name ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Anchor Name"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Anchor Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_anchor_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property anchor-name. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_anchor_scope {
+    label: "Use Counter Css Page Css Anchor Scope"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_anchor_scope ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Anchor Scope"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Anchor Scope"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_anchor_scope"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property anchor-scope. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -42305,6 +42377,56 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_anchor_name {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_anchor_name} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Anchor Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_anchor_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_anchor_name_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_anchor_name: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Anchor Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_anchor_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_anchor_scope {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_anchor_scope} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Anchor Scope"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_anchor_scope"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_anchor_scope_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_anchor_scope: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Anchor Scope"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_doc_css_anchor_scope"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_animation {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_animation} ;;
@@ -59751,6 +59873,56 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Page Css All"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_anchor_name {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_anchor_name} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Anchor Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_anchor_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_anchor_name_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_anchor_name: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Anchor Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_anchor_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_anchor_scope {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_anchor_scope} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Anchor Scope"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_anchor_scope"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_anchor_scope_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_anchor_scope: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Anchor Scope"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/use_counter_css_page_css_anchor_scope"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

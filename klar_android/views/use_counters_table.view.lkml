@@ -441,6 +441,24 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_anchor_name {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_anchor_name ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Anchor Name"
+    description: "Whether a document used the CSS property anchor-name. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_anchor_scope {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_anchor_scope ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Anchor Scope"
+    description: "Whether a document used the CSS property anchor-scope. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_animation {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_animation ;;
     type: number
@@ -6720,6 +6738,24 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css All"
     description: "Whether a page used the CSS property all. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_anchor_name {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_anchor_name ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Anchor Name"
+    description: "Whether a page used the CSS property anchor-name. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_anchor_scope {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_anchor_scope ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Anchor Scope"
+    description: "Whether a page used the CSS property anchor-scope. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
