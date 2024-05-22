@@ -114,11 +114,11 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
                     BETWEEN
                     COALESCE(
                         SAFE_CAST(
-                            {% date_start first_seen_date %} AS DATE
+                            {% date_start submission_date %} AS DATE
                         ), CURRENT_DATE()) AND
                     COALESCE(
                         SAFE_CAST(
-                            {% date_end first_seen_date %} AS DATE
+                            {% date_end submission_date %} AS DATE
                         ), CURRENT_DATE())
                  AND 
                     looker_base_fields.submission_date
