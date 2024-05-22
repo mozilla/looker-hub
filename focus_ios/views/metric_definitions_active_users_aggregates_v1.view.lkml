@@ -9,60 +9,156 @@ view: metric_definitions_active_users_aggregates_v1 {
     sql: SELECT
                 SUM(dau) AS daily_active_users_v2,
 
-                
+                active_users_aggregates_v1_active_hours,
+active_users_aggregates_v1_adjust_network,
+active_users_aggregates_v1_app_name,
+active_users_aggregates_v1_app_version,
+active_users_aggregates_v1_app_version_is_major_release,
+active_users_aggregates_v1_app_version_major,
+active_users_aggregates_v1_app_version_minor,
+active_users_aggregates_v1_app_version_patch_revision,
+active_users_aggregates_v1_attributed,
+active_users_aggregates_v1_attribution_medium,
+active_users_aggregates_v1_attribution_source,
+active_users_aggregates_v1_channel,
+active_users_aggregates_v1_city,
+active_users_aggregates_v1_country,
+active_users_aggregates_v1_dau,
+active_users_aggregates_v1_distribution_id,
+active_users_aggregates_v1_first_seen_year,
+active_users_aggregates_v1_install_source,
+active_users_aggregates_v1_is_default_browser,
+active_users_aggregates_v1_language_name,
+active_users_aggregates_v1_mau,
+active_users_aggregates_v1_new_profiles,
+active_users_aggregates_v1_os,
+active_users_aggregates_v1_os_grouped,
+active_users_aggregates_v1_os_version,
+active_users_aggregates_v1_os_version_major,
+active_users_aggregates_v1_os_version_minor,
+active_users_aggregates_v1_segment,
+active_users_aggregates_v1_uri_count,
+active_users_aggregates_v1_wau,
+
                 NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
-                m.submission_date AS analysis_basis
+                submission_date AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'week'  %}
                 (FORMAT_DATE(
                     '%F',
-                    DATE_TRUNC(m.submission_date,
+                    DATE_TRUNC(submission_date,
                     WEEK(MONDAY)))
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'month'  %}
                 (FORMAT_DATE(
                     '%Y-%m',
-                    m.submission_date)
+                    submission_date)
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'quarter'  %}
                 (FORMAT_DATE(
                     '%Y-%m',
-                    DATE_TRUNC(m.submission_date,
+                    DATE_TRUNC(submission_date,
                     QUARTER))
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'year'  %}
                 (EXTRACT(
-                    YEAR FROM m.submission_date)
+                    YEAR FROM submission_date)
                 ) AS analysis_basis
                 {% else %}
                 NULL as analysis_basis
                 {% endif %}
             FROM
                 (
-    SELECT
-        *
-    FROM
-        (
+                    SELECT
+                        active_users_aggregates_v1.*,
+                        active_users_aggregates_v1.active_hours AS active_users_aggregates_v1_active_hours,
+active_users_aggregates_v1.adjust_network AS active_users_aggregates_v1_adjust_network,
+active_users_aggregates_v1.app_name AS active_users_aggregates_v1_app_name,
+active_users_aggregates_v1.app_version AS active_users_aggregates_v1_app_version,
+active_users_aggregates_v1.app_version_is_major_release AS active_users_aggregates_v1_app_version_is_major_release,
+active_users_aggregates_v1.app_version_major AS active_users_aggregates_v1_app_version_major,
+active_users_aggregates_v1.app_version_minor AS active_users_aggregates_v1_app_version_minor,
+active_users_aggregates_v1.app_version_patch_revision AS active_users_aggregates_v1_app_version_patch_revision,
+active_users_aggregates_v1.attributed AS active_users_aggregates_v1_attributed,
+active_users_aggregates_v1.attribution_medium AS active_users_aggregates_v1_attribution_medium,
+active_users_aggregates_v1.attribution_source AS active_users_aggregates_v1_attribution_source,
+active_users_aggregates_v1.channel AS active_users_aggregates_v1_channel,
+active_users_aggregates_v1.city AS active_users_aggregates_v1_city,
+active_users_aggregates_v1.country AS active_users_aggregates_v1_country,
+active_users_aggregates_v1.dau AS active_users_aggregates_v1_dau,
+active_users_aggregates_v1.distribution_id AS active_users_aggregates_v1_distribution_id,
+active_users_aggregates_v1.first_seen_year AS active_users_aggregates_v1_first_seen_year,
+active_users_aggregates_v1.install_source AS active_users_aggregates_v1_install_source,
+active_users_aggregates_v1.is_default_browser AS active_users_aggregates_v1_is_default_browser,
+active_users_aggregates_v1.language_name AS active_users_aggregates_v1_language_name,
+active_users_aggregates_v1.mau AS active_users_aggregates_v1_mau,
+active_users_aggregates_v1.new_profiles AS active_users_aggregates_v1_new_profiles,
+active_users_aggregates_v1.os AS active_users_aggregates_v1_os,
+active_users_aggregates_v1.os_grouped AS active_users_aggregates_v1_os_grouped,
+active_users_aggregates_v1.os_version AS active_users_aggregates_v1_os_version,
+active_users_aggregates_v1.os_version_major AS active_users_aggregates_v1_os_version_major,
+active_users_aggregates_v1.os_version_minor AS active_users_aggregates_v1_os_version_minor,
+active_users_aggregates_v1.segment AS active_users_aggregates_v1_segment,
+active_users_aggregates_v1.uri_count AS active_users_aggregates_v1_uri_count,
+active_users_aggregates_v1.wau AS active_users_aggregates_v1_wau,
+
+                    FROM
+                    (
+            SELECT
+                *
+            FROM
+                (
     SELECT *
      FROM `moz-fx-data-shared-prod.telemetry.active_users_aggregates`
     WHERE app_name = 'Focus iOS'
 )
-    )
-            AS m
-            
-            WHERE
-            m.submission_date
-            BETWEEN
-            COALESCE(
-                SAFE_CAST(
-                    {% date_start submission_date %} AS DATE
-                ), CURRENT_DATE()) AND
-            COALESCE(
-                SAFE_CAST(
-                    {% date_end submission_date %} AS DATE
-                ), CURRENT_DATE())
-            GROUP BY
+            ) AS active_users_aggregates_v1
+        
+                    WHERE 
+                    active_users_aggregates_v1.submission_date
+                    BETWEEN
+                    COALESCE(
+                        SAFE_CAST(
+                            {% date_start submission_date %} AS DATE
+                        ), CURRENT_DATE()) AND
+                    COALESCE(
+                        SAFE_CAST(
+                            {% date_end submission_date %} AS DATE
+                        ), CURRENT_DATE())
                 
+                )
+            GROUP BY
+                active_users_aggregates_v1_active_hours,
+active_users_aggregates_v1_adjust_network,
+active_users_aggregates_v1_app_name,
+active_users_aggregates_v1_app_version,
+active_users_aggregates_v1_app_version_is_major_release,
+active_users_aggregates_v1_app_version_major,
+active_users_aggregates_v1_app_version_minor,
+active_users_aggregates_v1_app_version_patch_revision,
+active_users_aggregates_v1_attributed,
+active_users_aggregates_v1_attribution_medium,
+active_users_aggregates_v1_attribution_source,
+active_users_aggregates_v1_channel,
+active_users_aggregates_v1_city,
+active_users_aggregates_v1_country,
+active_users_aggregates_v1_dau,
+active_users_aggregates_v1_distribution_id,
+active_users_aggregates_v1_first_seen_year,
+active_users_aggregates_v1_install_source,
+active_users_aggregates_v1_is_default_browser,
+active_users_aggregates_v1_language_name,
+active_users_aggregates_v1_mau,
+active_users_aggregates_v1_new_profiles,
+active_users_aggregates_v1_os,
+active_users_aggregates_v1_os_grouped,
+active_users_aggregates_v1_os_version,
+active_users_aggregates_v1_os_version_major,
+active_users_aggregates_v1_os_version_minor,
+active_users_aggregates_v1_segment,
+active_users_aggregates_v1_uri_count,
+active_users_aggregates_v1_wau,
+
                 client_id,
                 analysis_basis ;;
   }
@@ -91,6 +187,187 @@ view: metric_definitions_active_users_aggregates_v1 {
 "
     type: number
     sql: ${TABLE}.daily_active_users_v2 ;;
+  }
+
+  dimension: active_hours {
+    sql: ${TABLE}.active_users_aggregates_v1_active_hours ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: adjust_network {
+    sql: ${TABLE}.active_users_aggregates_v1_adjust_network ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: app_name {
+    sql: ${TABLE}.active_users_aggregates_v1_app_name ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version {
+    sql: ${TABLE}.active_users_aggregates_v1_app_version ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_is_major_release {
+    sql: ${TABLE}.active_users_aggregates_v1_app_version_is_major_release ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_major {
+    sql: ${TABLE}.active_users_aggregates_v1_app_version_major ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_minor {
+    sql: ${TABLE}.active_users_aggregates_v1_app_version_minor ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version_patch_revision {
+    sql: ${TABLE}.active_users_aggregates_v1_app_version_patch_revision ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: attributed {
+    sql: ${TABLE}.active_users_aggregates_v1_attributed ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: attribution_medium {
+    sql: ${TABLE}.active_users_aggregates_v1_attribution_medium ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: attribution_source {
+    sql: ${TABLE}.active_users_aggregates_v1_attribution_source ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: channel {
+    sql: ${TABLE}.active_users_aggregates_v1_channel ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: city {
+    sql: ${TABLE}.active_users_aggregates_v1_city ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: country {
+    sql: ${TABLE}.active_users_aggregates_v1_country ;;
+    type: string
+    map_layer_name: countries
+    group_label: "Base Fields"
+  }
+
+  dimension: dau {
+    sql: ${TABLE}.active_users_aggregates_v1_dau ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: distribution_id {
+    sql: ${TABLE}.active_users_aggregates_v1_distribution_id ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: first_seen_year {
+    sql: ${TABLE}.active_users_aggregates_v1_first_seen_year ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: install_source {
+    sql: ${TABLE}.active_users_aggregates_v1_install_source ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: is_default_browser {
+    sql: ${TABLE}.active_users_aggregates_v1_is_default_browser ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: language_name {
+    sql: ${TABLE}.active_users_aggregates_v1_language_name ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: mau {
+    sql: ${TABLE}.active_users_aggregates_v1_mau ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: new_profiles {
+    sql: ${TABLE}.active_users_aggregates_v1_new_profiles ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: os {
+    sql: ${TABLE}.active_users_aggregates_v1_os ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: os_grouped {
+    sql: ${TABLE}.active_users_aggregates_v1_os_grouped ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: os_version {
+    sql: ${TABLE}.active_users_aggregates_v1_os_version ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: os_version_major {
+    sql: ${TABLE}.active_users_aggregates_v1_os_version_major ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: os_version_minor {
+    sql: ${TABLE}.active_users_aggregates_v1_os_version_minor ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: segment {
+    sql: ${TABLE}.active_users_aggregates_v1_segment ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: uri_count {
+    sql: ${TABLE}.active_users_aggregates_v1_uri_count ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: wau {
+    sql: ${TABLE}.active_users_aggregates_v1_wau ;;
+    type: number
+    group_label: "Base Fields"
   }
 
   dimension_group: submission {

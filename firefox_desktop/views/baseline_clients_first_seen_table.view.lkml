@@ -66,9 +66,19 @@ view: baseline_clients_first_seen_table {
     type: string
   }
 
+  dimension: distribution_id {
+    sql: ${TABLE}.distribution_id ;;
+    type: string
+  }
+
   dimension: durations {
     sql: ${TABLE}.durations ;;
     type: number
+  }
+
+  dimension: geo_subdivision {
+    sql: ${TABLE}.geo_subdivision ;;
+    type: string
   }
 
   dimension: is_new_profile {

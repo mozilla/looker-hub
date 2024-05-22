@@ -11,59 +11,92 @@ view: metric_definitions_funnel_retention {
 SUM(repeat_user) AS repeat_users,
 SUM(retained_week_4) AS week_4_retained_users,
 
-                
+                funnel_retention_adjust_ad_group,
+funnel_retention_adjust_campaign,
+funnel_retention_adjust_creative,
+funnel_retention_adjust_network,
+funnel_retention_first_reported_country,
+funnel_retention_first_reported_isp,
+funnel_retention_new_profiles,
+funnel_retention_repeat_user,
+funnel_retention_retained_week_4,
+
                 NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
-                m.submission_date AS analysis_basis
+                submission_date AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'week'  %}
                 (FORMAT_DATE(
                     '%F',
-                    DATE_TRUNC(m.submission_date,
+                    DATE_TRUNC(submission_date,
                     WEEK(MONDAY)))
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'month'  %}
                 (FORMAT_DATE(
                     '%Y-%m',
-                    m.submission_date)
+                    submission_date)
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'quarter'  %}
                 (FORMAT_DATE(
                     '%Y-%m',
-                    DATE_TRUNC(m.submission_date,
+                    DATE_TRUNC(submission_date,
                     QUARTER))
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'year'  %}
                 (EXTRACT(
-                    YEAR FROM m.submission_date)
+                    YEAR FROM submission_date)
                 ) AS analysis_basis
                 {% else %}
                 NULL as analysis_basis
                 {% endif %}
             FROM
                 (
-    SELECT
-        *
-    FROM
-        (
+                    SELECT
+                        funnel_retention.*,
+                        funnel_retention.adjust_ad_group AS funnel_retention_adjust_ad_group,
+funnel_retention.adjust_campaign AS funnel_retention_adjust_campaign,
+funnel_retention.adjust_creative AS funnel_retention_adjust_creative,
+funnel_retention.adjust_network AS funnel_retention_adjust_network,
+funnel_retention.first_reported_country AS funnel_retention_first_reported_country,
+funnel_retention.first_reported_isp AS funnel_retention_first_reported_isp,
+funnel_retention.new_profiles AS funnel_retention_new_profiles,
+funnel_retention.repeat_user AS funnel_retention_repeat_user,
+funnel_retention.retained_week_4 AS funnel_retention_retained_week_4,
+
+                    FROM
+                    (
+            SELECT
+                *
+            FROM
+                (
     SELECT *
      FROM `mozdata.firefox_ios.funnel_retention_week_4`
 )
-    )
-            AS m
-            
-            WHERE
-            m.submission_date
-            BETWEEN
-            COALESCE(
-                SAFE_CAST(
-                    {% date_start submission_date %} AS DATE
-                ), CURRENT_DATE()) AND
-            COALESCE(
-                SAFE_CAST(
-                    {% date_end submission_date %} AS DATE
-                ), CURRENT_DATE())
-            GROUP BY
+            ) AS funnel_retention
+        
+                    WHERE 
+                    funnel_retention.submission_date
+                    BETWEEN
+                    COALESCE(
+                        SAFE_CAST(
+                            {% date_start submission_date %} AS DATE
+                        ), CURRENT_DATE()) AND
+                    COALESCE(
+                        SAFE_CAST(
+                            {% date_end submission_date %} AS DATE
+                        ), CURRENT_DATE())
                 
+                )
+            GROUP BY
+                funnel_retention_adjust_ad_group,
+funnel_retention_adjust_campaign,
+funnel_retention_adjust_creative,
+funnel_retention_adjust_network,
+funnel_retention_first_reported_country,
+funnel_retention_first_reported_isp,
+funnel_retention_new_profiles,
+funnel_retention_repeat_user,
+funnel_retention_retained_week_4,
+
                 client_id,
                 analysis_basis ;;
   }
@@ -111,6 +144,60 @@ SUM(retained_week_4) AS week_4_retained_users,
 "
     type: number
     sql: ${TABLE}.week_4_retained_users ;;
+  }
+
+  dimension: adjust_ad_group {
+    sql: ${TABLE}.funnel_retention_adjust_ad_group ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: adjust_campaign {
+    sql: ${TABLE}.funnel_retention_adjust_campaign ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: adjust_creative {
+    sql: ${TABLE}.funnel_retention_adjust_creative ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: adjust_network {
+    sql: ${TABLE}.funnel_retention_adjust_network ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: first_reported_country {
+    sql: ${TABLE}.funnel_retention_first_reported_country ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: first_reported_isp {
+    sql: ${TABLE}.funnel_retention_first_reported_isp ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: new_profiles {
+    sql: ${TABLE}.funnel_retention_new_profiles ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: repeat_user {
+    sql: ${TABLE}.funnel_retention_repeat_user ;;
+    type: number
+    group_label: "Base Fields"
+  }
+
+  dimension: retained_week_4 {
+    sql: ${TABLE}.funnel_retention_retained_week_4 ;;
+    type: number
+    group_label: "Base Fields"
   }
 
   dimension_group: submission {

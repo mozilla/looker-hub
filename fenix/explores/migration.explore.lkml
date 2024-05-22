@@ -73,27 +73,3 @@ explore: migration {
 explore: suggest__migration__metrics__labeled_counter__glean_error_invalid_label {
   hidden: yes
 }
-
-explore: suggest__migration__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__migration__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__migration__metrics__labeled_counter__glean_error_invalid_value {
-  hidden: yes
-}
-
-explore: suggest__migration__metrics__labeled_counter__migration_bookmarks_migrated {
-  hidden: yes
-}
-
-explore: suggest__migration__metrics__labeled_counter__migration_history_migrated {
-  hidden: yes
-}
-
-explore: suggest__migration__metrics__labeled_counter__migration_logins_failure_counts {
-  hidden: yes
-}

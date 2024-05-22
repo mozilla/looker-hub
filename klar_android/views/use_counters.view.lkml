@@ -239,6 +239,42 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_anchor_name {
+    label: "Use Counter Css Doc Css Anchor Name"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_anchor_name ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Anchor Name"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Anchor Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_anchor_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property anchor-name. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_anchor_scope {
+    label: "Use Counter Css Doc Css Anchor Scope"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_anchor_scope ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Anchor Scope"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Anchor Scope"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_anchor_scope"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property anchor-scope. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_animation {
     label: "Use Counter Css Doc Css Animation"
     hidden: no
@@ -12800,6 +12836,42 @@ view: use_counters {
     }
 
     description: "Whether a page used the CSS property all. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_anchor_name {
+    label: "Use Counter Css Page Css Anchor Name"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_anchor_name ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Anchor Name"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Anchor Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_anchor_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property anchor-name. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_anchor_scope {
+    label: "Use Counter Css Page Css Anchor Scope"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_anchor_scope ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Anchor Scope"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Anchor Scope"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_anchor_scope"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property anchor-scope. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -42338,6 +42410,56 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_anchor_name {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_anchor_name} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Anchor Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_anchor_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_anchor_name_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_anchor_name: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Anchor Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_anchor_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_anchor_scope {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_anchor_scope} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Anchor Scope"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_anchor_scope"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_anchor_scope_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_anchor_scope: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Anchor Scope"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_anchor_scope"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_animation {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_animation} ;;
@@ -59784,6 +59906,56 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Page Css All"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_all"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_anchor_name {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_anchor_name} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Anchor Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_anchor_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_anchor_name_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_anchor_name: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Anchor Name"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_anchor_name"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_anchor_scope {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_anchor_scope} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Anchor Scope"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_anchor_scope"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_anchor_scope_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_anchor_scope: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Anchor Scope"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_anchor_scope"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -99585,82 +99757,6 @@ order by n desc ;;
   }
 }
 
-view: suggest__use_counters__metrics__labeled_counter__glean_error_invalid_overflow {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.use_counters as t,
-unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__use_counters__metrics__labeled_counter__glean_error_invalid_state {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.use_counters as t,
-unnest(metrics.labeled_counter.glean_error_invalid_state) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__use_counters__metrics__labeled_counter__glean_error_invalid_value {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.use_counters as t,
-unnest(metrics.labeled_counter.glean_error_invalid_value) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__use_counters__metrics__labeled_counter__use_counter_error_unknown_counter {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.use_counters as t,
-unnest(metrics.labeled_counter.use_counter_error_unknown_counter) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
 view: use_counters__metrics__labeled_counter__glean_error_invalid_label {
   label: "Glean Error - Invalid Label"
 
@@ -99677,18 +99773,18 @@ view: use_counters__metrics__labeled_counter__glean_error_invalid_label {
     hidden: yes
   }
 
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__use_counters__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__use_counters__metrics__labeled_counter__glean_error_invalid_label.key
     hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
   }
 
   measure: count {
@@ -99720,18 +99816,16 @@ view: use_counters__metrics__labeled_counter__glean_error_invalid_overflow {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__use_counters__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__use_counters__metrics__labeled_counter__glean_error_invalid_overflow.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -99763,18 +99857,16 @@ view: use_counters__metrics__labeled_counter__glean_error_invalid_state {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__use_counters__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__use_counters__metrics__labeled_counter__glean_error_invalid_state.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -99806,18 +99898,16 @@ view: use_counters__metrics__labeled_counter__glean_error_invalid_value {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__use_counters__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__use_counters__metrics__labeled_counter__glean_error_invalid_value.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -99849,17 +99939,15 @@ view: use_counters__metrics__labeled_counter__use_counter_error_unknown_counter 
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__use_counters__metrics__labeled_counter__use_counter_error_unknown_counter
-    suggest_dimension: suggest__use_counters__metrics__labeled_counter__use_counter_error_unknown_counter.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 

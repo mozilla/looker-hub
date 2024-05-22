@@ -2379,6 +2379,12 @@ This metric appears in both the metrics and baseline pings.
 "
   }
 
+  dimension: metrics__labeled_counter__media_playback_not_supported_video_per_mime_type {
+    sql: ${TABLE}.metrics.labeled_counter.media_playback_not_supported_video_per_mime_type ;;
+    hidden: yes
+    description: "Count the amount of times where video playback is failed to start due to the mime type is not supported by Firefox. The result is accumulated per mime type, eg. video/hevc."
+  }
+
   dimension: metrics__labeled_counter__messaging_system_invalid_nested_data {
     sql: ${TABLE}.metrics.labeled_counter.messaging_system_invalid_nested_data ;;
     hidden: yes
