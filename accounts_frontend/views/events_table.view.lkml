@@ -324,6 +324,16 @@ view: events_table {
     group_item_label: "Version"
   }
 
+  dimension: metrics__labeled_boolean__sync_cwts {
+    sql: ${TABLE}.metrics.labeled_boolean.sync_cwts ;;
+    hidden: yes
+    description: "The set of Sync engine options at the time of an account sign up via
+Sync.  For example, if the user only opted into syncing their Firefox
+bookmarks and history, then \"bookmarks\" and \"history\" will have true for
+their values, while the rest of the labels will have false.
+"
+  }
+
   dimension: metrics__labeled_counter__glean_error_invalid_label {
     sql: ${TABLE}.metrics.labeled_counter.glean_error_invalid_label ;;
     hidden: yes
@@ -664,6 +674,18 @@ view: events_table__events__extra {
   dimension: value {
     sql: ${TABLE}.value ;;
     type: string
+  }
+}
+
+view: events_table__metrics__labeled_boolean__sync_cwts {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: yesno
   }
 }
 
