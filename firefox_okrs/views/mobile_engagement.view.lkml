@@ -60,6 +60,12 @@ view: mobile_engagement {
     description: "Install Source"
   }
 
+  dimension: is_mobile {
+    sql: ${TABLE}.is_mobile ;;
+    type: yesno
+    description: "Is Mobile"
+  }
+
   dimension: is_suspicious_device_client {
     sql: ${TABLE}.is_suspicious_device_client ;;
     type: yesno
