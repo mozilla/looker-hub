@@ -6791,6 +6791,23 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__labeled_counter__power_energy_per_process_type {
+    label: "Power Energy Per Process Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_energy_per_process_type ;;
+    group_label: "Power"
+    group_item_label: "Energy Per Process Type"
+
+    link: {
+      label: "Glean Dictionary reference for Power Energy Per Process Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_energy_per_process_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How much energy (in µWh) has been used, broken down by process type. Only available on Apple Silicon.
+"
+  }
+
   dimension: metrics__counter__power_gpu_time_bogus_values {
     label: "Power Gpu Time Bogus Values"
     hidden: no
@@ -14381,6 +14398,47 @@ view: metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
 
 view: metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms {
   label: "Power - Cpu Time Per Tracker Type Ms"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_energy_per_process_type {
+  label: "Power - Energy Per Process Type"
 
   dimension: document_id {
     type: string

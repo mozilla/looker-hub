@@ -2227,6 +2227,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__power_energy_per_process_type {
+    sql: ${TABLE}.metrics.labeled_counter.power_energy_per_process_type ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__power_gpu_time_per_process_type_ms {
     sql: ${TABLE}.metrics.labeled_counter.power_gpu_time_per_process_type_ms ;;
     hidden: yes
