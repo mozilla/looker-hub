@@ -54,6 +54,11 @@ view: retention_table {
     description: "Client's country on the metric date."
   }
 
+  dimension: is_mobile {
+    sql: ${TABLE}.is_mobile ;;
+    type: yesno
+  }
+
   dimension: is_suspicious_device_client {
     sql: ${TABLE}.is_suspicious_device_client ;;
     type: yesno
