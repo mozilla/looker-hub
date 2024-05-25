@@ -60,6 +60,11 @@ view: retention_table {
     description: "The source of a profile installation."
   }
 
+  dimension: is_mobile {
+    sql: ${TABLE}.is_mobile ;;
+    type: yesno
+  }
+
   dimension: lifecycle_stage {
     sql: ${TABLE}.lifecycle_stage ;;
     type: string

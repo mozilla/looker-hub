@@ -5208,6 +5208,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__sum {
+    label: "Networking Http Onstart Suspend Total Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Onstart Suspend Total Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Onstart Suspend Total Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/networking_http_onstart_suspend_total_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds that http channel spent suspended between AsyncOpen and OnStartRequest.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_response_version {
     label: "Networking Http Response Version"
     hidden: yes
@@ -16751,6 +16769,18 @@ view: metrics__metrics__timing_distribution__networking_http_content_onstart_del
 }
 
 view: metrics__metrics__timing_distribution__networking_http_content_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_onstart_suspend_total_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string
