@@ -10,40 +10,6 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: mixed_content_level_2_roll_out_release_115
-    type: looker_line
-    fields: [
-      mixed_content_level_2_roll_out_release_115.submission_date,
-      mixed_content_level_2_roll_out_release_115.branch,
-      mixed_content_level_2_roll_out_release_115.point
-    ]
-    pivots: [
-      mixed_content_level_2_roll_out_release_115.branch
-    ]
-    filters:
-      mixed_content_level_2_roll_out_release_115.metric: 'ad_clicks'
-      mixed_content_level_2_roll_out_release_115.statistic: mean
-    row: 0
-    col: 0
-    width: 12
-    height: 8
-    field_x: mixed_content_level_2_roll_out_release_115.submission_date
-    field_y: mixed_content_level_2_roll_out_release_115.point
-    log_scale: false
-    ci_lower: mixed_content_level_2_roll_out_release_115.lower
-    ci_upper: mixed_content_level_2_roll_out_release_115.upper
-    show_grid: true
-    listen:
-      Date: mixed_content_level_2_roll_out_release_115.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
   - title: Active Hours
     name: Active Hours_mean
     note_state: expanded
@@ -63,7 +29,7 @@
       mixed_content_level_2_roll_out_release_115.metric: 'active_hours'
       mixed_content_level_2_roll_out_release_115.statistic: mean
     row: 0
-    col: 12
+    col: 0
     width: 12
     height: 8
     field_x: mixed_content_level_2_roll_out_release_115.submission_date
@@ -96,41 +62,7 @@
     filters:
       mixed_content_level_2_roll_out_release_115.metric: 'days_of_use'
       mixed_content_level_2_roll_out_release_115.statistic: mean
-    row: 10
-    col: 0
-    width: 12
-    height: 8
-    field_x: mixed_content_level_2_roll_out_release_115.submission_date
-    field_y: mixed_content_level_2_roll_out_release_115.point
-    log_scale: false
-    ci_lower: mixed_content_level_2_roll_out_release_115.lower
-    ci_upper: mixed_content_level_2_roll_out_release_115.upper
-    show_grid: true
-    listen:
-      Date: mixed_content_level_2_roll_out_release_115.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: mixed_content_level_2_roll_out_release_115
-    type: looker_line
-    fields: [
-      mixed_content_level_2_roll_out_release_115.submission_date,
-      mixed_content_level_2_roll_out_release_115.branch,
-      mixed_content_level_2_roll_out_release_115.point
-    ]
-    pivots: [
-      mixed_content_level_2_roll_out_release_115.branch
-    ]
-    filters:
-      mixed_content_level_2_roll_out_release_115.metric: 'qualified_cumulative_days_of_use'
-      mixed_content_level_2_roll_out_release_115.statistic: mean
-    row: 10
+    row: 0
     col: 12
     width: 12
     height: 8
@@ -146,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,10 +94,44 @@
       mixed_content_level_2_roll_out_release_115.branch
     ]
     filters:
-      mixed_content_level_2_roll_out_release_115.metric: 'search_count'
+      mixed_content_level_2_roll_out_release_115.metric: 'ad_clicks'
       mixed_content_level_2_roll_out_release_115.statistic: mean
-    row: 20
+    row: 10
     col: 0
+    width: 12
+    height: 8
+    field_x: mixed_content_level_2_roll_out_release_115.submission_date
+    field_y: mixed_content_level_2_roll_out_release_115.point
+    log_scale: false
+    ci_lower: mixed_content_level_2_roll_out_release_115.lower
+    ci_upper: mixed_content_level_2_roll_out_release_115.upper
+    show_grid: true
+    listen:
+      Date: mixed_content_level_2_roll_out_release_115.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Uri Count
+    name: Uri Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: mixed_content_level_2_roll_out_release_115
+    type: looker_line
+    fields: [
+      mixed_content_level_2_roll_out_release_115.submission_date,
+      mixed_content_level_2_roll_out_release_115.branch,
+      mixed_content_level_2_roll_out_release_115.point
+    ]
+    pivots: [
+      mixed_content_level_2_roll_out_release_115.branch
+    ]
+    filters:
+      mixed_content_level_2_roll_out_release_115.metric: 'uri_count'
+      mixed_content_level_2_roll_out_release_115.statistic: mean
+    row: 10
+    col: 12
     width: 12
     height: 8
     field_x: mixed_content_level_2_roll_out_release_115.submission_date
@@ -201,41 +167,6 @@
       mixed_content_level_2_roll_out_release_115.metric: 'memory_total'
       mixed_content_level_2_roll_out_release_115.statistic: percentile
     row: 20
-    col: 12
-    width: 12
-    height: 8
-    field_x: mixed_content_level_2_roll_out_release_115.submission_date
-    field_y: mixed_content_level_2_roll_out_release_115.point
-    log_scale: false
-    ci_lower: mixed_content_level_2_roll_out_release_115.lower
-    ci_upper: mixed_content_level_2_roll_out_release_115.upper
-    show_grid: true
-    listen:
-      Date: mixed_content_level_2_roll_out_release_115.submission_date
-      Percentile: mixed_content_level_2_roll_out_release_115.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: mixed_content_level_2_roll_out_release_115
-    type: looker_line
-    fields: [
-      mixed_content_level_2_roll_out_release_115.submission_date,
-      mixed_content_level_2_roll_out_release_115.branch,
-      mixed_content_level_2_roll_out_release_115.point
-    ]
-    pivots: [
-      mixed_content_level_2_roll_out_release_115.branch
-    ]
-    filters:
-      mixed_content_level_2_roll_out_release_115.metric: 'uri_count'
-      mixed_content_level_2_roll_out_release_115.statistic: mean
-    row: 30
     col: 0
     width: 12
     height: 8
@@ -247,6 +178,7 @@
     show_grid: true
     listen:
       Date: mixed_content_level_2_roll_out_release_115.submission_date
+      Percentile: mixed_content_level_2_roll_out_release_115.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"
@@ -268,6 +200,74 @@
     ]
     filters:
       mixed_content_level_2_roll_out_release_115.metric: 'retained'
+      mixed_content_level_2_roll_out_release_115.statistic: mean
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: mixed_content_level_2_roll_out_release_115.submission_date
+    field_y: mixed_content_level_2_roll_out_release_115.point
+    log_scale: false
+    ci_lower: mixed_content_level_2_roll_out_release_115.lower
+    ci_upper: mixed_content_level_2_roll_out_release_115.upper
+    show_grid: true
+    listen:
+      Date: mixed_content_level_2_roll_out_release_115.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Search Count
+    name: Search Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: mixed_content_level_2_roll_out_release_115
+    type: looker_line
+    fields: [
+      mixed_content_level_2_roll_out_release_115.submission_date,
+      mixed_content_level_2_roll_out_release_115.branch,
+      mixed_content_level_2_roll_out_release_115.point
+    ]
+    pivots: [
+      mixed_content_level_2_roll_out_release_115.branch
+    ]
+    filters:
+      mixed_content_level_2_roll_out_release_115.metric: 'search_count'
+      mixed_content_level_2_roll_out_release_115.statistic: mean
+    row: 30
+    col: 0
+    width: 12
+    height: 8
+    field_x: mixed_content_level_2_roll_out_release_115.submission_date
+    field_y: mixed_content_level_2_roll_out_release_115.point
+    log_scale: false
+    ci_lower: mixed_content_level_2_roll_out_release_115.lower
+    ci_upper: mixed_content_level_2_roll_out_release_115.upper
+    show_grid: true
+    listen:
+      Date: mixed_content_level_2_roll_out_release_115.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: mixed_content_level_2_roll_out_release_115
+    type: looker_line
+    fields: [
+      mixed_content_level_2_roll_out_release_115.submission_date,
+      mixed_content_level_2_roll_out_release_115.branch,
+      mixed_content_level_2_roll_out_release_115.point
+    ]
+    pivots: [
+      mixed_content_level_2_roll_out_release_115.branch
+    ]
+    filters:
+      mixed_content_level_2_roll_out_release_115.metric: 'qualified_cumulative_days_of_use'
       mixed_content_level_2_roll_out_release_115.statistic: mean
     row: 30
     col: 12
