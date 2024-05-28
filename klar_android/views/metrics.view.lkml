@@ -3517,7 +3517,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "If a HTTPS-First (`dom.security.https_first` enabled) upgrade isn't successful, measures the timespan between the navigation start and the downgrade. This does not include the case in which the https request times out and the http request sent after 3s gets a response faster.
+    description: "If a HTTPS-First (`dom.security.https_first` enabled) upgrade isn't successful, measures the timespan between the navigation start and the downgrade.
 "
   }
 
@@ -3535,7 +3535,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "If a schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrade isn't successful, measures the timespan between the navigation start and the downgrade. This does not include the case in which the https request times out and the http request sent after 3s gets a response faster.
+    description: "If a schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrade isn't successful, measures the timespan between the navigation start and the downgrade.
 "
   }
 
@@ -3553,7 +3553,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "How many regular HTTPS-First (`dom.security.https_first` enabled) upgrades get downgraded again.
+    description: "How many regular HTTPS-First (`dom.security.https_first` enabled) upgrades fail and get downgraded again.
 "
   }
 
@@ -3643,7 +3643,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "How many schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrades get downgraded again.
+    description: "How many schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrades fail and get downgraded again.
 "
   }
 
@@ -3661,7 +3661,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts how often a load is marked to be upgraded to HTTPS because of HTTPS-First (`dom.security.https_first` enabled).
+    description: "Counts how often a load is successfully upgraded to HTTPS because of HTTPS-First (`dom.security.https_first` enabled). This does not include loads that get downgraded again.
 "
   }
 
@@ -3679,7 +3679,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts how often a load is marked to be upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless).
+    description: "Counts how often a load is successfully upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless). This does not include loads that get downgraded again.
 "
   }
 

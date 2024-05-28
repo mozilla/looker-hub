@@ -7351,7 +7351,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_doc_css_position_anchor {
     label: "Use Counter Css Doc Css Position Anchor"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_anchor ;;
     type: number
     group_label: "Use Counter Css Doc"
@@ -19969,7 +19969,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_page_css_position_anchor {
     label: "Use Counter Css Page Css Position Anchor"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_anchor ;;
     type: number
     group_label: "Use Counter Css Page"
