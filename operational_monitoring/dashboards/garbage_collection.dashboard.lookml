@@ -211,16 +211,16 @@
   - title: Os
     name: Os
     type: string_filter
-    default_value: 'Windows'
+    default_value: 'Linux'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
-      - 'Windows'
       - 'Linux'
       - 'Mac'
+      - 'Windows'
       - 'Other'
       
   

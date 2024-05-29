@@ -170,7 +170,7 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
         mobile_search_clients_engines_sources_daily.submission_date =
         looker_base_fields.submission_date
     
-            
+                
                     WHERE 
                     mobile_search_clients_engines_sources_daily.submission_date
                     BETWEEN

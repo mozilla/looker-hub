@@ -4,7 +4,7 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-view: mobile_engagement {
+view: engagement_clients_table {
   dimension: adjust_ad_group {
     sql: ${TABLE}.adjust_ad_group ;;
     type: string
@@ -35,15 +35,15 @@ view: mobile_engagement {
     type: string
   }
 
+  dimension: client_id {
+    sql: ${TABLE}.client_id ;;
+    hidden: yes
+  }
+
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
     map_layer_name: countries
-  }
-
-  dimension: dau {
-    sql: ${TABLE}.dau ;;
-    type: number
   }
 
   dimension: install_source {
@@ -51,14 +51,29 @@ view: mobile_engagement {
     type: string
   }
 
+  dimension: is_dau {
+    sql: ${TABLE}.is_dau ;;
+    type: yesno
+  }
+
+  dimension: is_mau {
+    sql: ${TABLE}.is_mau ;;
+    type: yesno
+  }
+
   dimension: is_mobile {
     sql: ${TABLE}.is_mobile ;;
     type: yesno
   }
 
-  dimension: is_suspicious_device_client {
-    sql: ${TABLE}.is_suspicious_device_client ;;
+  dimension: is_wau {
+    sql: ${TABLE}.is_wau ;;
     type: yesno
+  }
+
+  dimension: isp {
+    sql: ${TABLE}.isp ;;
+    type: string
   }
 
   dimension: lifecycle_stage {
@@ -69,11 +84,6 @@ view: mobile_engagement {
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
-  }
-
-  dimension: mau {
-    sql: ${TABLE}.mau ;;
-    type: number
   }
 
   dimension: meta_attribution_app {
@@ -101,8 +111,8 @@ view: mobile_engagement {
     type: string
   }
 
-  dimension: wau {
-    sql: ${TABLE}.wau ;;
+  dimension: sample_id {
+    sql: ${TABLE}.sample_id ;;
     type: number
   }
 
@@ -136,5 +146,5 @@ view: mobile_engagement {
     datatype: date
   }
 
-  sql_table_name: `moz-fx-data-shared-prod.telemetry.mobile_engagement` ;;
+  sql_table_name: `mozdata.fenix.engagement_clients` ;;
 }

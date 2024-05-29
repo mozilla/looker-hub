@@ -211,7 +211,7 @@ GROUP BY 1, 2, 3, 4, 5, 6
         special_onboarding_events.submission_date =
         looker_base_fields.submission_date
     
-            
+                
                     WHERE 
                     special_onboarding_events.submission_date
                     BETWEEN

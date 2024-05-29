@@ -1219,6 +1219,16 @@ fenix:
       - channel: nightly
         table: mozdata.org_mozilla_fennec_aurora.deletion_request
       type: table_view
+    engagement_clients_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.engagement_clients
+      type: table_view
+    engagement_table:
+      tables:
+      - channel: release
+        table: mozdata.fenix.engagement
+      type: table_view
     event_types_table:
       tables:
       - channel: release
@@ -3547,6 +3557,16 @@ firefox_ios:
         table: mozdata.org_mozilla_ios_firefoxbeta.deletion_request
       - channel: nightly
         table: mozdata.org_mozilla_ios_fennec.deletion_request
+      type: table_view
+    engagement_clients_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.engagement_clients
+      type: table_view
+    engagement_table:
+      tables:
+      - channel: release
+        table: mozdata.firefox_ios.engagement
       type: table_view
     events:
       tables:
@@ -6855,10 +6875,10 @@ operational_monitoring:
             - release
             - esr
           windows_version:
-            default: Windows 10
+            default: Windows 7
             options:
-            - Windows 10
             - Windows 7
+            - Windows 10
             - Windows 8
             - Windows 8.1
             - Windows 11
@@ -6894,13 +6914,13 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id098
           normalized_channel:
-            default: esr
+            default: aurora
             options:
-            - esr
-            - nightly
             - aurora
-            - beta
             - release
+            - nightly
+            - esr
+            - beta
             - default
             - nightly-pine
             - nightly-oak
@@ -7435,11 +7455,11 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id125
           os:
-            default: Windows
+            default: Linux
             options:
-            - Windows
             - Linux
             - Mac
+            - Windows
             - Other
         explore: garbage_collection
         group_by_dimension: null
@@ -8087,15 +8107,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id185
           app:
-            default: iOS - daemon_session
+            default: Linux - vpn_session
             options:
+            - Linux - vpn_session
+            - iOS - vpn_session
+            - Android - vpn_session
+            - Windows - vpn_session
             - iOS - daemon_session
             - Darwin - vpn_session
-            - Android - vpn_session
-            - Linux - vpn_session
             - Android - daemon_session
-            - iOS - vpn_session
-            - Windows - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id186
@@ -8923,16 +8943,16 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id239
           channel:
-            default: beta
+            default: release
             options:
-            - beta
             - release
+            - beta
             - nightly
           os:
-            default: Linux
+            default: Windows_NT
             options:
-            - Linux
             - Windows_NT
+            - Linux
             - Darwin
         explore: print_background_task_times
         group_by_dimension: null

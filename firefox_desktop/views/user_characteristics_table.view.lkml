@@ -491,6 +491,24 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_avail_height {
+    sql: ${TABLE}.metrics.quantity.characteristics_avail_height ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Avail Height"
+    description: "Available height property
+"
+  }
+
+  dimension: metrics__quantity__characteristics_avail_width {
+    sql: ${TABLE}.metrics.quantity.characteristics_avail_width ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Avail Width"
+    description: "Available width property
+"
+  }
+
   dimension: metrics__quantity__characteristics_color_accentcolor {
     sql: ${TABLE}.metrics.quantity.characteristics_color_accentcolor ;;
     type: number
@@ -695,6 +713,24 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Max Touch Points"
     description: "The number of touch points we will report to the web. On Android, this is based on Android's FEATURE_TOUCHSCREEN* constants - Mozilla caps this at 5 as Android stops distinguishing between numbers greater than 5.  On Windows this comes from the SM_MAXIMUMTOUCHES System Metric.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_orientation_angle {
+    sql: ${TABLE}.metrics.quantity.characteristics_orientation_angle ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Orientation Angle"
+    description: "Orientation angle of the screen
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pixel_depth {
+    sql: ${TABLE}.metrics.quantity.characteristics_pixel_depth ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Pixel Depth"
+    description: "Screen pixel depth property
 "
   }
 

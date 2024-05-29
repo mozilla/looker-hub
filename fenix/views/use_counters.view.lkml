@@ -7367,6 +7367,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_position_visibility {
+    label: "Use Counter Css Doc Css Position Visibility"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_visibility ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Position Visibility"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_position_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property position-visibility. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_print_color_adjust {
     label: "Use Counter Css Doc Css Print Color Adjust"
     hidden: no
@@ -19982,6 +20000,24 @@ view: use_counters {
     }
 
     description: "Whether a page used the CSS property position-anchor. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_visibility {
+    label: "Use Counter Css Page Css Position Visibility"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_visibility ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Position Visibility"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property position-visibility. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -52313,6 +52349,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_position_visibility {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_position_visibility} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_position_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_position_visibility_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_position_visibility: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_position_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_print_color_adjust {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_print_color_adjust} ;;
@@ -69834,6 +69895,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Page Css Position Anchor"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_anchor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_position_visibility {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_position_visibility} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_position_visibility_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_position_visibility: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_visibility"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

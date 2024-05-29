@@ -5,6 +5,42 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: user_characteristics {
+  dimension: metrics__quantity__characteristics_avail_height {
+    label: "Characteristics Avail Height"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_avail_height ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Avail Height"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Avail Height"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_avail_height"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Available height property
+"
+  }
+
+  dimension: metrics__quantity__characteristics_avail_width {
+    label: "Characteristics Avail Width"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_avail_width ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Avail Width"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Avail Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_avail_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Available width property
+"
+  }
+
   dimension: metrics__uuid__characteristics_client_identifier {
     label: "Characteristics Client Identifier"
     hidden: no
@@ -740,6 +776,42 @@ view: user_characteristics {
     }
 
     description: "If a Font List is available for the user's platform, this string_list contains the fonts that are missing from the user's computer.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_orientation_angle {
+    label: "Characteristics Orientation Angle"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_orientation_angle ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Orientation Angle"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Orientation Angle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_orientation_angle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Orientation angle of the screen
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pixel_depth {
+    label: "Characteristics Pixel Depth"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_pixel_depth ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Pixel Depth"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pixel Depth"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pixel_depth"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Screen pixel depth property
 "
   }
 
