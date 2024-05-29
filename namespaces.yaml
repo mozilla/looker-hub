@@ -647,6 +647,12 @@ experimentation:
       - channel: release
         table: moz-fx-data-experiments.monitoring.task_monitoring_logs
       type: table_view
+fakespot:
+  glean_app: false
+  owners:
+  - wstuckey@mozilla.com
+  pretty_name: Fakespot
+  spoke: looker-spoke-default
 fenix:
   explores:
     activation:
@@ -2120,6 +2126,10 @@ firefox_desktop:
       type: metric_definitions_explore
       views:
         base_view: metric_definitions_desktop_cohort_daily_retention
+    metric_definitions_desktop_engagement_v1:
+      type: metric_definitions_explore
+      views:
+        base_view: metric_definitions_desktop_engagement_v1
     metric_definitions_events:
       type: metric_definitions_explore
       views:
@@ -2423,6 +2433,8 @@ firefox_desktop:
     metric_definitions_crash:
       type: metric_definitions_view
     metric_definitions_desktop_cohort_daily_retention:
+      type: metric_definitions_view
+    metric_definitions_desktop_engagement_v1:
       type: metric_definitions_view
     metric_definitions_events:
       type: metric_definitions_view

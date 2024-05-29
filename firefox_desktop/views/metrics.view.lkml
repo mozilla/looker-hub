@@ -636,6 +636,204 @@ when dynamic or static rulesets have been loaded from disk.
 "
   }
 
+  dimension: metrics__boolean__installation_first_seen_admin_user {
+    label: "Installation First Seen Admin User"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_admin_user ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Admin User"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Admin User"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_admin_user"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the installer is running from an elevated admin user
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_default_path {
+    label: "Installation First Seen Default Path"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_default_path ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Default Path"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Default Path"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_default_path"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "(optional, present if installer_type is \"full\") Whether the default path was used
+"
+  }
+
+  dimension: metrics__string__installation_first_seen_failure_reason {
+    label: "Installation First Seen Failure Reason"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.installation_first_seen_failure_reason ;;
+    type: string
+    group_label: "Installation First Seen"
+    group_item_label: "Failure Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Failure Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_failure_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Only sent if unable to collect firstSeen data. Can have value \"NotFoundError\" if file not found or other values depending on the failure reason.
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_from_msi {
+    label: "Installation First Seen From Msi"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_from_msi ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "From Msi"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen From Msi"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_from_msi"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "(optional, present if installer_type is \"full\") Whether this was an MSI install
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_install_existed {
+    label: "Installation First Seen Install Existed"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_install_existed ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Install Existed"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Install Existed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_install_existed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether there was already an install in this location
+"
+  }
+
+  dimension: metrics__string__installation_first_seen_installer_type {
+    label: "Installation First Seen Installer Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.installation_first_seen_installer_type ;;
+    type: string
+    group_label: "Installation First Seen"
+    group_item_label: "Installer Type"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Installer Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_installer_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of installer used to install Firefox. The value is one of \"stub\", \"full\", or \"msix\"
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_other_inst {
+    label: "Installation First Seen Other Inst"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_other_inst ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Other Inst"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Other Inst"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_other_inst"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether there was already any non-MSIX install on this system
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_other_msix_inst {
+    label: "Installation First Seen Other Msix Inst"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_other_msix_inst ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Other Msix Inst"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Other Msix Inst"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_other_msix_inst"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether there was already any MSIX install on this system
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_profdir_existed {
+    label: "Installation First Seen Profdir Existed"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_profdir_existed ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Profdir Existed"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Profdir Existed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_profdir_existed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the top-level profile directory existed
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_silent {
+    label: "Installation First Seen Silent"
+    hidden: yes
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_silent ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Silent"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Silent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_silent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "(optional, present if installer_type is \"full\") Whether this was a silent install
+"
+  }
+
+  dimension: metrics__string__installation_first_seen_version {
+    label: "Installation First Seen Version"
+    hidden: yes
+    sql: ${TABLE}.metrics.string.installation_first_seen_version ;;
+    type: string
+    group_label: "Installation First Seen"
+    group_item_label: "Version"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The application version installed by the installer (not necessarily the current version)
+"
+  }
+
   dimension: metrics__uuid__legacy_telemetry_client_id {
     label: "Legacy Telemetry Client Id"
     hidden: no
