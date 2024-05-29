@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Search Count
+    name: Search Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,10 +26,44 @@
       disable_performanceclone_metrics.branch
     ]
     filters:
-      disable_performanceclone_metrics.metric: 'uri_count'
+      disable_performanceclone_metrics.metric: 'search_count'
       disable_performanceclone_metrics.statistic: mean
     row: 0
     col: 0
+    width: 12
+    height: 8
+    field_x: disable_performanceclone_metrics.submission_date
+    field_y: disable_performanceclone_metrics.point
+    log_scale: false
+    ci_lower: disable_performanceclone_metrics.lower
+    ci_upper: disable_performanceclone_metrics.upper
+    show_grid: true
+    listen:
+      Date: disable_performanceclone_metrics.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Active Hours
+    name: Active Hours_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: disable_performanceclone_metrics
+    type: looker_line
+    fields: [
+      disable_performanceclone_metrics.submission_date,
+      disable_performanceclone_metrics.branch,
+      disable_performanceclone_metrics.point
+    ]
+    pivots: [
+      disable_performanceclone_metrics.branch
+    ]
+    filters:
+      disable_performanceclone_metrics.metric: 'active_hours'
+      disable_performanceclone_metrics.statistic: mean
+    row: 0
+    col: 12
     width: 12
     height: 8
     field_x: disable_performanceclone_metrics.submission_date
@@ -62,40 +96,6 @@
     filters:
       disable_performanceclone_metrics.metric: 'retained'
       disable_performanceclone_metrics.statistic: mean
-    row: 0
-    col: 12
-    width: 12
-    height: 8
-    field_x: disable_performanceclone_metrics.submission_date
-    field_y: disable_performanceclone_metrics.point
-    log_scale: false
-    ci_lower: disable_performanceclone_metrics.lower
-    ci_upper: disable_performanceclone_metrics.upper
-    show_grid: true
-    listen:
-      Date: disable_performanceclone_metrics.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Search Count
-    name: Search Count_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: disable_performanceclone_metrics
-    type: looker_line
-    fields: [
-      disable_performanceclone_metrics.submission_date,
-      disable_performanceclone_metrics.branch,
-      disable_performanceclone_metrics.point
-    ]
-    pivots: [
-      disable_performanceclone_metrics.branch
-    ]
-    filters:
-      disable_performanceclone_metrics.metric: 'search_count'
-      disable_performanceclone_metrics.statistic: mean
     row: 10
     col: 0
     width: 12
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       disable_performanceclone_metrics.branch
     ]
     filters:
-      disable_performanceclone_metrics.metric: 'ad_clicks'
+      disable_performanceclone_metrics.metric: 'tagged_sap_searches'
       disable_performanceclone_metrics.statistic: mean
     row: 10
     col: 12
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       disable_performanceclone_metrics.branch
     ]
     filters:
-      disable_performanceclone_metrics.metric: 'active_hours'
+      disable_performanceclone_metrics.metric: 'uri_count'
       disable_performanceclone_metrics.statistic: mean
     row: 20
     col: 0
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       disable_performanceclone_metrics.branch
     ]
     filters:
-      disable_performanceclone_metrics.metric: 'tagged_sap_searches'
+      disable_performanceclone_metrics.metric: 'ad_clicks'
       disable_performanceclone_metrics.statistic: mean
     row: 30
     col: 0
