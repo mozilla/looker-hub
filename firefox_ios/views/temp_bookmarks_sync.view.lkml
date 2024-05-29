@@ -625,63 +625,6 @@ The labels are the `category.name` identifier of the metric.
   sql_table_name: `mozdata.firefox_ios.temp_bookmarks_sync` ;;
 }
 
-view: suggest__temp_bookmarks_sync__metrics__labeled_counter__bookmarks_sync_failure_reason {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.temp_bookmarks_sync as t,
-unnest(metrics.labeled_counter.bookmarks_sync_failure_reason) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__temp_bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.temp_bookmarks_sync as t,
-unnest(metrics.labeled_counter.bookmarks_sync_incoming) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__temp_bookmarks_sync__metrics__labeled_counter__bookmarks_sync_outgoing {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.temp_bookmarks_sync as t,
-unnest(metrics.labeled_counter.bookmarks_sync_outgoing) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
 view: suggest__temp_bookmarks_sync__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
@@ -689,63 +632,6 @@ view: suggest__temp_bookmarks_sync__metrics__labeled_counter__glean_error_invali
     count(*) as n
 from mozdata.firefox_ios.temp_bookmarks_sync as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__temp_bookmarks_sync__metrics__labeled_counter__glean_error_invalid_overflow {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.temp_bookmarks_sync as t,
-unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__temp_bookmarks_sync__metrics__labeled_counter__glean_error_invalid_state {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.temp_bookmarks_sync as t,
-unnest(metrics.labeled_counter.glean_error_invalid_state) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__temp_bookmarks_sync__metrics__labeled_counter__glean_error_invalid_value {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_ios.temp_bookmarks_sync as t,
-unnest(metrics.labeled_counter.glean_error_invalid_value) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -774,17 +660,15 @@ view: temp_bookmarks_sync__metrics__labeled_counter__bookmarks_sync_failure_reas
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__temp_bookmarks_sync__metrics__labeled_counter__bookmarks_sync_failure_reason
-    suggest_dimension: suggest__temp_bookmarks_sync__metrics__labeled_counter__bookmarks_sync_failure_reason.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -817,17 +701,15 @@ view: temp_bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__temp_bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming
-    suggest_dimension: suggest__temp_bookmarks_sync__metrics__labeled_counter__bookmarks_sync_incoming.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -860,17 +742,15 @@ view: temp_bookmarks_sync__metrics__labeled_counter__bookmarks_sync_outgoing {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__temp_bookmarks_sync__metrics__labeled_counter__bookmarks_sync_outgoing
-    suggest_dimension: suggest__temp_bookmarks_sync__metrics__labeled_counter__bookmarks_sync_outgoing.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -903,18 +783,18 @@ view: temp_bookmarks_sync__metrics__labeled_counter__glean_error_invalid_label {
     hidden: yes
   }
 
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__temp_bookmarks_sync__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__temp_bookmarks_sync__metrics__labeled_counter__glean_error_invalid_label.key
     hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
   }
 
   measure: count {
@@ -946,18 +826,16 @@ view: temp_bookmarks_sync__metrics__labeled_counter__glean_error_invalid_overflo
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__temp_bookmarks_sync__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__temp_bookmarks_sync__metrics__labeled_counter__glean_error_invalid_overflow.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -989,18 +867,16 @@ view: temp_bookmarks_sync__metrics__labeled_counter__glean_error_invalid_state {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__temp_bookmarks_sync__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__temp_bookmarks_sync__metrics__labeled_counter__glean_error_invalid_state.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -1032,18 +908,16 @@ view: temp_bookmarks_sync__metrics__labeled_counter__glean_error_invalid_value {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__temp_bookmarks_sync__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__temp_bookmarks_sync__metrics__labeled_counter__glean_error_invalid_value.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {

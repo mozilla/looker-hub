@@ -4,14 +4,14 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/viewpoint_android_feb_2024_launch.view.lkml"
+include: "/looker-hub/multi_product/views/metric_definitions_search_revenue_levers_monthly.view.lkml"
 
-explore: viewpoint_android_feb_2024_launch {
+explore: metric_definitions_search_revenue_levers_monthly {
   always_filter: {
     filters: [
-      branch: "enabled, disabled",
+      submission_date: "7 days",
     ]
   }
 
-  hidden: yes
+  fields: [ALL_FIELDS*]
 }

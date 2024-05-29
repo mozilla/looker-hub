@@ -466,6 +466,11 @@ null: the page has no baseline status
 "
   }
 
+  dimension: metrics__string_list__navigator_user_languages {
+    sql: ${TABLE}.metrics.string_list.navigator_user_languages ;;
+    hidden: yes
+  }
+
   dimension: metrics__url__page_path {
     sql: ${TABLE}.metrics.url.page_path ;;
     type: string

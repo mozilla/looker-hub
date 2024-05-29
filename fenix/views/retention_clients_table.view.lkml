@@ -66,6 +66,11 @@ view: retention_clients_table {
     type: string
   }
 
+  dimension: is_mobile {
+    sql: ${TABLE}.is_mobile ;;
+    type: yesno
+  }
+
   dimension: isp {
     sql: ${TABLE}.isp ;;
     type: string

@@ -4,9 +4,9 @@
 # This file has been generated via https://github.com/mozilla/lookml-generator
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
-include: "/looker-hub/operational_monitoring/views/viewpoint_ios_feb_2024_launch.view.lkml"
+include: "/looker-hub/operational_monitoring/views/disable_performanceclone_metrics.view.lkml"
 
-explore: viewpoint_ios_feb_2024_launch {
+explore: disable_performanceclone_metrics {
   always_filter: {
     filters: [
       branch: "enabled, disabled",

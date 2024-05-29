@@ -1142,6 +1142,24 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__counter__bounce_tracking_protection_purge_count_classified_tracker {
+    label: "Bounce Tracking Protection Purge Count Classified Tracker"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.bounce_tracking_protection_purge_count_classified_tracker ;;
+    type: number
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Purge Count Classified Tracker"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count Classified Tracker"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/bounce_tracking_protection_purge_count_classified_tracker"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts sites purged from BTP that are classified as trackers as part of the following lists: [emailtracking-protection, fingerprinting-protection, socialtracking-protection, tracking-protection]
+"
+  }
+
   dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__sum {
     label: "Bounce Tracking Protection Purge Duration Sum"
     hidden: no
@@ -3517,7 +3535,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "If a HTTPS-First (`dom.security.https_first` enabled) upgrade isn't successful, measures the timespan between the navigation start and the downgrade. This does not include the case in which the https request times out and the http request sent after 3s gets a response faster.
+    description: "If a HTTPS-First (`dom.security.https_first` enabled) upgrade isn't successful, measures the timespan between the navigation start and the downgrade.
 "
   }
 
@@ -3535,7 +3553,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "If a schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrade isn't successful, measures the timespan between the navigation start and the downgrade. This does not include the case in which the https request times out and the http request sent after 3s gets a response faster.
+    description: "If a schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrade isn't successful, measures the timespan between the navigation start and the downgrade.
 "
   }
 
@@ -3553,7 +3571,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "How many regular HTTPS-First (`dom.security.https_first` enabled) upgrades get downgraded again.
+    description: "How many regular HTTPS-First (`dom.security.https_first` enabled) upgrades fail and get downgraded again.
 "
   }
 
@@ -3643,7 +3661,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "How many schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrades get downgraded again.
+    description: "How many schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrades fail and get downgraded again.
 "
   }
 
@@ -3661,7 +3679,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts how often a load is marked to be upgraded to HTTPS because of HTTPS-First (`dom.security.https_first` enabled).
+    description: "Counts how often a load is successfully upgraded to HTTPS because of HTTPS-First (`dom.security.https_first` enabled). This does not include loads that get downgraded again.
 "
   }
 
@@ -3679,7 +3697,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts how often a load is marked to be upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless).
+    description: "Counts how often a load is successfully upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless). This does not include loads that get downgraded again.
 "
   }
 
@@ -4172,6 +4190,22 @@ To be used to validate GIFFT.
     }
 
     description: "The results of hardware decoder support for different video codecs. True means that codec can be decoded by hardware on user's device."
+  }
+
+  dimension: metrics__labeled_counter__media_playback_not_supported_video_per_mime_type {
+    label: "Media Playback Not Supported Video Per Mime Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.media_playback_not_supported_video_per_mime_type ;;
+    group_label: "Media Playback"
+    group_item_label: "Not Supported Video Per Mime Type"
+
+    link: {
+      label: "Glean Dictionary reference for Media Playback Not Supported Video Per Mime Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/media_playback_not_supported_video_per_mime_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Count the amount of times where video playback is failed to start due to the mime type is not supported by Firefox. The result is accumulated per mime type, eg. video/hevc."
   }
 
   dimension: metrics__labeled_counter__netwerk_early_hints {
@@ -5189,6 +5223,24 @@ To be used to validate GIFFT.
     }
 
     description: "The time between dispatching OnStopRequest from the socket thread and processing it on the main thread (content process).
+"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__sum {
+    label: "Networking Http Onstart Suspend Total Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Onstart Suspend Total Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Onstart Suspend Total Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/networking_http_onstart_suspend_total_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds that http channel spent suspended between AsyncOpen and OnStartRequest.
 "
   }
 
@@ -6425,6 +6477,23 @@ To be used to validate GIFFT.
     }
 
     description: "CPU time used by content processes used only for tracking resources, labeled by the category of the tracker.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_energy_per_process_type {
+    label: "Power Energy Per Process Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_energy_per_process_type ;;
+    group_label: "Power"
+    group_item_label: "Energy Per Process Type"
+
+    link: {
+      label: "Glean Dictionary reference for Power Energy Per Process Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/power_energy_per_process_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How much energy (in µWh) has been used, broken down by process type. Only available on Apple Silicon.
 "
   }
 
@@ -9188,6 +9257,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     }
   }
 
+  measure: bounce_tracking_protection_purge_count_classified_tracker {
+    type: sum
+    sql: ${metrics__counter__bounce_tracking_protection_purge_count_classified_tracker} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count Classified Tracker"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/bounce_tracking_protection_purge_count_classified_tracker"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: bounce_tracking_protection_purge_count_classified_tracker_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__bounce_tracking_protection_purge_count_classified_tracker: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count Classified Tracker"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/bounce_tracking_protection_purge_count_classified_tracker"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: cookie_banners_cookie_injection_fail {
     type: sum
     sql: ${metrics__counter__cookie_banners_cookie_injection_fail} ;;
@@ -10257,18 +10351,16 @@ view: metrics__metrics__labeled_counter__avif_a1lx {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_a1lx
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_a1lx.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -10300,18 +10392,16 @@ view: metrics__metrics__labeled_counter__avif_a1op {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_a1op
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_a1op.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -10343,18 +10433,16 @@ view: metrics__metrics__labeled_counter__avif_alpha {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_alpha
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_alpha.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -10386,18 +10474,16 @@ view: metrics__metrics__labeled_counter__avif_aom_decode_error {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_aom_decode_error
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_aom_decode_error.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -10429,18 +10515,16 @@ view: metrics__metrics__labeled_counter__avif_bit_depth {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_bit_depth
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_bit_depth.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -10472,18 +10556,16 @@ view: metrics__metrics__labeled_counter__avif_cicp_cp {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_cicp_cp
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_cicp_cp.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -10515,18 +10597,16 @@ view: metrics__metrics__labeled_counter__avif_cicp_mc {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_cicp_mc
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_cicp_mc.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -10558,18 +10638,16 @@ view: metrics__metrics__labeled_counter__avif_cicp_tc {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_cicp_tc
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_cicp_tc.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -10601,18 +10679,16 @@ view: metrics__metrics__labeled_counter__avif_clap {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_clap
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_clap.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -10644,18 +10720,16 @@ view: metrics__metrics__labeled_counter__avif_colr {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_colr
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_colr.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -10687,18 +10761,16 @@ view: metrics__metrics__labeled_counter__avif_decode_result {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_decode_result
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_decode_result.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -10730,18 +10802,16 @@ view: metrics__metrics__labeled_counter__avif_decoder {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_decoder
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_decoder.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -10773,18 +10843,16 @@ view: metrics__metrics__labeled_counter__avif_grid {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_grid
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_grid.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -10816,18 +10884,16 @@ view: metrics__metrics__labeled_counter__avif_ipro {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_ipro
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_ipro.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -10859,18 +10925,16 @@ view: metrics__metrics__labeled_counter__avif_ispe {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_ispe
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_ispe.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -10902,18 +10966,16 @@ view: metrics__metrics__labeled_counter__avif_lsel {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_lsel
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_lsel.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -10945,18 +11007,16 @@ view: metrics__metrics__labeled_counter__avif_pasp {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_pasp
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_pasp.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -10988,18 +11048,16 @@ view: metrics__metrics__labeled_counter__avif_pixi {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_pixi
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_pixi.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11031,18 +11089,16 @@ view: metrics__metrics__labeled_counter__avif_yuv_color_space {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__avif_yuv_color_space
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__avif_yuv_color_space.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11074,18 +11130,16 @@ view: metrics__metrics__labeled_counter__browser_search_ad_clicks {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11117,18 +11171,16 @@ view: metrics__metrics__labeled_counter__browser_search_in_content {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_in_content
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_in_content.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11160,18 +11212,16 @@ view: metrics__metrics__labeled_counter__browser_search_search_count {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_search_count
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_search_count.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11203,18 +11253,16 @@ view: metrics__metrics__labeled_counter__browser_search_with_ads {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__browser_search_with_ads
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__browser_search_with_ads.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11246,18 +11294,16 @@ view: metrics__metrics__labeled_counter__cert_verifier_crlite_status {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__cert_verifier_crlite_status
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__cert_verifier_crlite_status.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11289,18 +11335,16 @@ view: metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11332,18 +11376,16 @@ view: metrics__metrics__labeled_counter__codec_stats_other_fec_signaled {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__codec_stats_other_fec_signaled
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__codec_stats_other_fec_signaled.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11375,18 +11417,16 @@ view: metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11418,18 +11458,16 @@ view: metrics__metrics__labeled_counter__codec_stats_video_preferred_codec {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__codec_stats_video_preferred_codec
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__codec_stats_video_preferred_codec.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11461,18 +11499,16 @@ view: metrics__metrics__labeled_counter__cookie_banners_click_result {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11504,18 +11540,16 @@ view: metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11547,18 +11581,16 @@ view: metrics__metrics__labeled_counter__cookie_banners_cmp_result {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_result
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_result.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11590,18 +11622,16 @@ view: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11633,18 +11663,16 @@ view: metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11676,18 +11704,16 @@ view: metrics__metrics__labeled_counter__crash_metrics_crash_count {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__crash_metrics_crash_count
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__crash_metrics_crash_count.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11719,17 +11745,15 @@ view: metrics__metrics__labeled_counter__data_storage_entries {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__data_storage_entries
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__data_storage_entries.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -11762,17 +11786,15 @@ view: metrics__metrics__labeled_counter__dotprint_failure {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__dotprint_failure
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__dotprint_failure.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -11805,18 +11827,16 @@ view: metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entri
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11848,18 +11868,16 @@ view: metrics__metrics__labeled_counter__extensions_counters_browser_action_prel
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11891,18 +11909,16 @@ view: metrics__metrics__labeled_counter__extensions_counters_event_page_idle_res
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11934,18 +11950,16 @@ view: metrics__metrics__labeled_counter__extensions_process_event {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_process_event
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_process_event.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -11977,18 +11991,16 @@ view: metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__extensions_startup_cache_read_errors
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__extensions_startup_cache_read_errors.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -12020,17 +12032,15 @@ view: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -12063,17 +12073,15 @@ view: metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_g
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -12106,18 +12114,16 @@ view: metrics__metrics__labeled_counter__formautofill_form_submission_heuristic 
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__formautofill_form_submission_heuristic
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__formautofill_form_submission_heuristic.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -12149,18 +12155,16 @@ view: metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__gfx_content_frame_time_reason
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__gfx_content_frame_time_reason.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -12192,18 +12196,18 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_label {
     hidden: yes
   }
 
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label.key
     hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
   }
 
   measure: count {
@@ -12235,18 +12239,16 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_overflow {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -12278,18 +12280,16 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_state {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -12321,18 +12321,16 @@ view: metrics__metrics__labeled_counter__glean_error_invalid_value {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -12364,18 +12362,16 @@ view: metrics__metrics__labeled_counter__glean_upload_ping_upload_failure {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -12407,18 +12403,16 @@ view: metrics__metrics__labeled_counter__glean_validation_pings_submitted {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -12450,18 +12444,16 @@ view: metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -12493,18 +12485,16 @@ view: metrics__metrics__labeled_counter__gpu_process_crash_fallbacks {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__gpu_process_crash_fallbacks
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__gpu_process_crash_fallbacks.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -12536,17 +12526,15 @@ view: metrics__metrics__labeled_counter__ipc_received_messages_content_backgroun
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_background
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_background.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -12579,17 +12567,15 @@ view: metrics__metrics__labeled_counter__ipc_received_messages_content_foregroun
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_foreground
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_foreground.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -12622,17 +12608,15 @@ view: metrics__metrics__labeled_counter__ipc_received_messages_gpu_process {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_gpu_process
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_gpu_process.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -12665,17 +12649,15 @@ view: metrics__metrics__labeled_counter__ipc_received_messages_parent_active {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_active
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_active.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -12708,17 +12690,15 @@ view: metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -12751,17 +12731,15 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_content_background {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_background
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_background.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -12794,17 +12772,15 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -12837,17 +12813,15 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -12880,17 +12854,15 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_active {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_active
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_active.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -12923,17 +12895,15 @@ view: metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -12966,18 +12936,16 @@ view: metrics__metrics__labeled_counter__media_audio_backend {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__media_audio_backend
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__media_audio_backend.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13009,18 +12977,57 @@ view: metrics__metrics__labeled_counter__media_audio_init_failure {
     hidden: yes
   }
 
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__media_audio_init_failure
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__media_audio_init_failure.key
     hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__media_playback_not_supported_video_per_mime_type {
+  label: "Media Playback - Not Supported Video Per Mime Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
   }
 
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13052,18 +13059,16 @@ view: metrics__metrics__labeled_counter__netwerk_early_hints {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__netwerk_early_hints
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__netwerk_early_hints.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13095,18 +13100,16 @@ view: metrics__metrics__labeled_counter__netwerk_eh_link_type {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13138,18 +13141,16 @@ view: metrics__metrics__labeled_counter__network_cors_authorization_header {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__network_cors_authorization_header
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__network_cors_authorization_header.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13181,18 +13182,16 @@ view: metrics__metrics__labeled_counter__network_data_size_pb_per_type {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__network_data_size_pb_per_type
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__network_data_size_pb_per_type.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13224,18 +13223,16 @@ view: metrics__metrics__labeled_counter__network_data_size_per_type {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__network_data_size_per_type
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__network_data_size_per_type.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13267,18 +13264,16 @@ view: metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13310,18 +13305,16 @@ view: metrics__metrics__labeled_counter__networking_dns_native_count {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_dns_native_count
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_dns_native_count.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13353,18 +13346,16 @@ view: metrics__metrics__labeled_counter__networking_http_channel_onstart_success
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13396,18 +13387,16 @@ view: metrics__metrics__labeled_counter__networking_http_response_version {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_http_response_version
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_http_response_version.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13439,18 +13428,16 @@ view: metrics__metrics__labeled_counter__networking_https_rr_presented {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_https_rr_presented
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_https_rr_presented.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13482,18 +13469,16 @@ view: metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr 
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13525,18 +13510,16 @@ view: metrics__metrics__labeled_counter__networking_proxy_info_type {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_proxy_info_type
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_proxy_info_type.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13568,18 +13551,16 @@ view: metrics__metrics__labeled_counter__networking_residual_cache_folder_remova
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_residual_cache_folder_removal
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_residual_cache_folder_removal.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13611,18 +13592,16 @@ view: metrics__metrics__labeled_counter__networking_speculative_connect_outcome 
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_speculative_connect_outcome
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_speculative_connect_outcome.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13654,17 +13633,15 @@ view: metrics__metrics__labeled_counter__networking_speculative_connection_outco
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_speculative_connection_outcome
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_speculative_connection_outcome.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -13697,18 +13674,16 @@ view: metrics__metrics__labeled_counter__networking_trr_request_count {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__networking_trr_request_count
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__networking_trr_request_count.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13740,18 +13715,16 @@ view: metrics__metrics__labeled_counter__pdfjs_buttons {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_buttons
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_buttons.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13783,18 +13756,16 @@ view: metrics__metrics__labeled_counter__pdfjs_editing {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13826,18 +13797,16 @@ view: metrics__metrics__labeled_counter__pdfjs_editing_highlight_color {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_color
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_color.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13869,18 +13838,16 @@ view: metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13912,18 +13879,16 @@ view: metrics__metrics__labeled_counter__pdfjs_editing_highlight_method {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_method
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_method.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13955,18 +13920,16 @@ view: metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_color
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -13998,18 +13961,16 @@ view: metrics__metrics__labeled_counter__pdfjs_geckoview {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_geckoview
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_geckoview.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14041,18 +14002,16 @@ view: metrics__metrics__labeled_counter__pdfjs_stamp {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__pdfjs_stamp
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__pdfjs_stamp.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14084,18 +14043,16 @@ view: metrics__metrics__labeled_counter__perf_startup_startup_type {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__perf_startup_startup_type
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__perf_startup_startup_type.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14127,18 +14084,16 @@ view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_backgro
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14170,18 +14125,16 @@ view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foregro
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14213,18 +14166,16 @@ view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14256,18 +14207,16 @@ view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14299,18 +14248,16 @@ view: metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14342,18 +14289,16 @@ view: metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14385,18 +14330,57 @@ view: metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms {
     hidden: yes
   }
 
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms.key
     hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__power_energy_per_process_type {
+  label: "Power - Energy Per Process Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
   }
 
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14428,18 +14412,16 @@ view: metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14471,18 +14453,16 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_process_type {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_process_type
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_process_type.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14514,18 +14494,16 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_backgr
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14557,18 +14535,16 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foregr
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14600,18 +14576,16 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14643,18 +14617,16 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active 
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14686,18 +14658,16 @@ view: metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactiv
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14729,18 +14699,16 @@ view: metrics__metrics__labeled_counter__pwmgr_form_autofill_result {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__pwmgr_form_autofill_result
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__pwmgr_form_autofill_result.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14772,18 +14740,16 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14815,18 +14781,16 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_get
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_getparameters
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_getparameters.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14858,18 +14822,16 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_tra
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_transactionid
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_transactionid.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14901,17 +14863,15 @@ view: metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid.key
-    hidden: yes
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
     hidden: yes
   }
 
@@ -14944,18 +14904,16 @@ view: metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -14987,18 +14945,16 @@ view: metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -15030,18 +14986,16 @@ view: metrics__metrics__labeled_counter__webrtcdtls_cipher {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__webrtcdtls_cipher
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__webrtcdtls_cipher.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -15073,18 +15027,16 @@ view: metrics__metrics__labeled_counter__webrtcdtls_client_handshake_result {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__webrtcdtls_client_handshake_result
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__webrtcdtls_client_handshake_result.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -15116,18 +15068,16 @@ view: metrics__metrics__labeled_counter__webrtcdtls_protocol_version {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__webrtcdtls_protocol_version
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__webrtcdtls_protocol_version.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -15159,18 +15109,16 @@ view: metrics__metrics__labeled_counter__webrtcdtls_server_handshake_result {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__webrtcdtls_server_handshake_result
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__webrtcdtls_server_handshake_result.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -15202,18 +15150,16 @@ view: metrics__metrics__labeled_counter__webrtcdtls_srtp_cipher {
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__metrics__metrics__labeled_counter__webrtcdtls_srtp_cipher
-    suggest_dimension: suggest__metrics__metrics__labeled_counter__webrtcdtls_srtp_cipher.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -15229,861 +15175,6 @@ view: metrics__metrics__labeled_counter__webrtcdtls_srtp_cipher {
   }
 }
 
-view: suggest__metrics__metrics__labeled_counter__avif_a1lx {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_a1lx) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__avif_a1op {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_a1op) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__avif_alpha {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_alpha) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__avif_aom_decode_error {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_aom_decode_error) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__avif_bit_depth {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_bit_depth) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__avif_cicp_cp {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_cicp_cp) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__avif_cicp_mc {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_cicp_mc) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__avif_cicp_tc {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_cicp_tc) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__avif_clap {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_clap) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__avif_colr {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_colr) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__avif_decode_result {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_decode_result) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__avif_decoder {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_decoder) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__avif_grid {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_grid) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__avif_ipro {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_ipro) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__avif_ispe {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_ispe) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__avif_lsel {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_lsel) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__avif_pasp {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_pasp) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__avif_pixi {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_pixi) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__avif_yuv_color_space {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.avif_yuv_color_space) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__browser_search_ad_clicks {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.browser_search_ad_clicks) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__browser_search_in_content {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.browser_search_in_content) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__browser_search_search_count {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.browser_search_search_count) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__browser_search_with_ads {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.browser_search_with_ads) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__cert_verifier_crlite_status {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.cert_verifier_crlite_status) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__codec_stats_audio_preferred_codec {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.codec_stats_audio_preferred_codec) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__codec_stats_other_fec_signaled {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.codec_stats_other_fec_signaled) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__codec_stats_ulpfec_negotiated {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.codec_stats_ulpfec_negotiated) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__codec_stats_video_preferred_codec {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.codec_stats_video_preferred_codec) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__cookie_banners_click_result {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.cookie_banners_click_result) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_detected_cmp {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.cookie_banners_cmp_detected_cmp) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__cookie_banners_cmp_result {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.cookie_banners_cmp_result) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_domain {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.cookie_banners_rule_lookup_by_domain) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__cookie_banners_rule_lookup_by_load {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.cookie_banners_rule_lookup_by_load) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__crash_metrics_crash_count {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.crash_metrics_crash_count) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__data_storage_entries {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.data_storage_entries) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__dotprint_failure {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.dotprint_failure) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__extensions_apis_dnr_startup_cache_entries {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.extensions_apis_dnr_startup_cache_entries) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__extensions_counters_browser_action_preload_result {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.extensions_counters_browser_action_preload_result) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__extensions_counters_event_page_idle_result {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.extensions_counters_event_page_idle_result) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__extensions_process_event {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.extensions_process_event) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__extensions_startup_cache_read_errors {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.extensions_startup_cache_read_errors) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.fog_validation_gvsv_audio_stream_init) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__fog_validation_gvsv_audio_stream_init_gecko {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.fog_validation_gvsv_audio_stream_init_gecko) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__formautofill_form_submission_heuristic {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.formautofill_form_submission_heuristic) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__gfx_content_frame_time_reason {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.gfx_content_frame_time_reason) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
 view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
   derived_table: {
     sql: select
@@ -16091,1336 +15182,6 @@ view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_label {
     count(*) as n
 from mozdata.org_mozilla_klar.metrics as t,
 unnest(metrics.labeled_counter.glean_error_invalid_label) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_overflow {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_state {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.glean_error_invalid_state) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__glean_error_invalid_value {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.glean_error_invalid_value) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__glean_upload_ping_upload_failure {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.glean_upload_ping_upload_failure) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__glean_validation_pings_submitted {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.glean_validation_pings_submitted) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__gmp_update_xml_fetch_result {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.gmp_update_xml_fetch_result) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__gpu_process_crash_fallbacks {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.gpu_process_crash_fallbacks) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_background {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.ipc_received_messages_content_background) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_content_foreground {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.ipc_received_messages_content_foreground) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_gpu_process {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.ipc_received_messages_gpu_process) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_active {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.ipc_received_messages_parent_active) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_received_messages_parent_inactive {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.ipc_received_messages_parent_inactive) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_background {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.ipc_sent_messages_content_background) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_content_foreground {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.ipc_sent_messages_content_foreground) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_gpu_process {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.ipc_sent_messages_gpu_process) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_active {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.ipc_sent_messages_parent_active) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__ipc_sent_messages_parent_inactive {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.ipc_sent_messages_parent_inactive) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__media_audio_backend {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.media_audio_backend) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__media_audio_init_failure {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.media_audio_init_failure) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__netwerk_early_hints {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.netwerk_early_hints) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__netwerk_eh_link_type {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.netwerk_eh_link_type) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__network_cors_authorization_header {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.network_cors_authorization_header) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__network_data_size_pb_per_type {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.network_data_size_pb_per_type) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__network_data_size_per_type {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.network_data_size_per_type) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.networking_cookie_timestamp_fixed_count) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__networking_dns_native_count {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.networking_dns_native_count) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.networking_http_channel_onstart_success_https_rr) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__networking_http_response_version {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.networking_http_response_version) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__networking_https_rr_presented {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.networking_https_rr_presented) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__networking_https_upgrade_with_https_rr {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.networking_https_upgrade_with_https_rr) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__networking_proxy_info_type {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.networking_proxy_info_type) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__networking_residual_cache_folder_removal {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.networking_residual_cache_folder_removal) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__networking_speculative_connect_outcome {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.networking_speculative_connect_outcome) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__networking_speculative_connection_outcome {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.networking_speculative_connection_outcome) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__networking_trr_request_count {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.networking_trr_request_count) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__pdfjs_buttons {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.pdfjs_buttons) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__pdfjs_editing {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.pdfjs_editing) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_color {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.pdfjs_editing_highlight_color) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_kind {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.pdfjs_editing_highlight_kind) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_method {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.pdfjs_editing_highlight_method) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__pdfjs_editing_highlight_number_of_colors {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.pdfjs_editing_highlight_number_of_colors) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__pdfjs_geckoview {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.pdfjs_geckoview) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__pdfjs_stamp {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.pdfjs_stamp) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__perf_startup_startup_type {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.perf_startup_startup_type) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_background {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.power_cpu_ms_per_thread_content_background) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_content_foreground {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.power_cpu_ms_per_thread_content_foreground) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_gpu_process {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.power_cpu_ms_per_thread_gpu_process) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_active {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.power_cpu_ms_per_thread_parent_active) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__power_cpu_ms_per_thread_parent_inactive {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.power_cpu_ms_per_thread_parent_inactive) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_process_type_ms {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.power_cpu_time_per_process_type_ms) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.power_cpu_time_per_tracker_type_ms) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.power_gpu_time_per_process_type_ms) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_process_type {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.power_wakeups_per_process_type) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_background {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.power_wakeups_per_thread_content_background) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_content_foreground {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.power_wakeups_per_thread_content_foreground) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_gpu_process {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.power_wakeups_per_thread_gpu_process) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_active {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.power_wakeups_per_thread_parent_active) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__power_wakeups_per_thread_parent_inactive {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.power_wakeups_per_thread_parent_inactive) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__pwmgr_form_autofill_result {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.pwmgr_form_autofill_result) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_length_changed {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.rtcrtpsender_setparameters_blame_length_changed) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_getparameters {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.rtcrtpsender_setparameters_blame_no_getparameters) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_no_transactionid {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.rtcrtpsender_setparameters_blame_no_transactionid) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__rtcrtpsender_setparameters_blame_stale_transactionid {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.rtcrtpsender_setparameters_blame_stale_transactionid) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__shortcuts_shortcut_removed_counter {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.shortcuts_shortcut_removed_counter) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__tls_xyber_intolerance_reason {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.tls_xyber_intolerance_reason) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__webrtcdtls_cipher {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.webrtcdtls_cipher) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__webrtcdtls_client_handshake_result {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.webrtcdtls_client_handshake_result) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__webrtcdtls_protocol_version {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.webrtcdtls_protocol_version) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__webrtcdtls_server_handshake_result {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.webrtcdtls_server_handshake_result) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__metrics__metrics__labeled_counter__webrtcdtls_srtp_cipher {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.org_mozilla_klar.metrics as t,
-unnest(metrics.labeled_counter.webrtcdtls_srtp_cipher) as m
 where date(submission_timestamp) > date_sub(current_date, interval 30 day)
     and sample_id = 0
 group by key
@@ -19076,6 +16837,18 @@ view: metrics__metrics__timing_distribution__networking_http_content_onstart_del
 }
 
 view: metrics__metrics__timing_distribution__networking_http_content_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_onstart_suspend_total_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

@@ -5,6 +5,42 @@
 # You can extend this view in the looker-spoke-default project (https://github.com/mozilla/looker-spoke-default)
 
 view: user_characteristics {
+  dimension: metrics__quantity__characteristics_avail_height {
+    label: "Characteristics Avail Height"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_avail_height ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Avail Height"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Avail Height"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_avail_height"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Available height property
+"
+  }
+
+  dimension: metrics__quantity__characteristics_avail_width {
+    label: "Characteristics Avail Width"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_avail_width ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Avail Width"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Avail Width"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_avail_width"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Available width property
+"
+  }
+
   dimension: metrics__uuid__characteristics_client_identifier {
     label: "Characteristics Client Identifier"
     hidden: no
@@ -20,6 +56,78 @@ view: user_characteristics {
     }
 
     description: "A unique identifier for a user, not the same as the normal Telemetry client_id, but needed so we can deduplicate reports and only take the most recent one per user.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_accentcolor {
+    label: "Characteristics Color Accentcolor"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_color_accentcolor ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Color Accentcolor"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Color Accentcolor"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_color_accentcolor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The CSS system-color Accentcolor.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_accentcolortext {
+    label: "Characteristics Color Accentcolortext"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_color_accentcolortext ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Color Accentcolortext"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Color Accentcolortext"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_color_accentcolortext"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The CSS system-color Accentcolortext.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_canvas {
+    label: "Characteristics Color Canvas"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_color_canvas ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Color Canvas"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Color Canvas"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_color_canvas"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The CSS system-color Canvas.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_canvastext {
+    label: "Characteristics Color Canvastext"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_color_canvastext ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Color Canvastext"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Color Canvastext"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_color_canvastext"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The CSS system-color Canvastext.
 "
   }
 
@@ -59,6 +167,42 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__quantity__characteristics_color_highlight {
+    label: "Characteristics Color Highlight"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_color_highlight ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Color Highlight"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Color Highlight"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_color_highlight"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The CSS system-color Highlight.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_highlighttext {
+    label: "Characteristics Color Highlighttext"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_color_highlighttext ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Color Highlighttext"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Color Highlighttext"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_color_highlighttext"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The CSS system-color Highlighttext.
+"
+  }
+
   dimension: metrics__quantity__characteristics_color_scheme {
     label: "Characteristics Color Scheme"
     hidden: no
@@ -74,6 +218,42 @@ view: user_characteristics {
     }
 
     description: "The Color Scheme used for Content, from ContentPrefs() Preference Sheet.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_selecteditem {
+    label: "Characteristics Color Selecteditem"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_color_selecteditem ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Color Selecteditem"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Color Selecteditem"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_color_selecteditem"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The CSS system-color Selecteditem.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_selecteditemtext {
+    label: "Characteristics Color Selecteditemtext"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_color_selecteditemtext ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Color Selecteditemtext"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Color Selecteditemtext"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_color_selecteditemtext"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The CSS system-color Selecteditemtext.
 "
   }
 
@@ -599,6 +779,42 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__quantity__characteristics_orientation_angle {
+    label: "Characteristics Orientation Angle"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_orientation_angle ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Orientation Angle"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Orientation Angle"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_orientation_angle"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Orientation angle of the screen
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pixel_depth {
+    label: "Characteristics Pixel Depth"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_pixel_depth ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Pixel Depth"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Pixel Depth"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_pixel_depth"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Screen pixel depth property
+"
+  }
+
   dimension: metrics__quantity__characteristics_prefers_contrast {
     label: "Characteristics Prefers Contrast"
     hidden: no
@@ -974,6 +1190,24 @@ view: user_characteristics {
     }
 
     description: "The the current timezone of the system
+"
+  }
+
+  dimension: metrics__boolean__characteristics_use_document_colors {
+    label: "Characteristics Use Document Colors"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.characteristics_use_document_colors ;;
+    type: yesno
+    group_label: "Characteristics"
+    group_item_label: "Use Document Colors"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Use Document Colors"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_use_document_colors"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "This is the derived PreferenceSheet::Prefs::mUseDocumentColors value.
 "
   }
 
@@ -1572,63 +1806,6 @@ order by n desc ;;
   }
 }
 
-view: suggest__user_characteristics__metrics__labeled_counter__glean_error_invalid_overflow {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.user_characteristics as t,
-unnest(metrics.labeled_counter.glean_error_invalid_overflow) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__user_characteristics__metrics__labeled_counter__glean_error_invalid_state {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.user_characteristics as t,
-unnest(metrics.labeled_counter.glean_error_invalid_state) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
-view: suggest__user_characteristics__metrics__labeled_counter__glean_error_invalid_value {
-  derived_table: {
-    sql: select
-    m.key,
-    count(*) as n
-from mozdata.firefox_desktop.user_characteristics as t,
-unnest(metrics.labeled_counter.glean_error_invalid_value) as m
-where date(submission_timestamp) > date_sub(current_date, interval 30 day)
-    and sample_id = 0
-group by key
-order by n desc ;;
-  }
-
-  dimension: key {
-    type: string
-    sql: ${TABLE}.key ;;
-  }
-}
-
 view: user_characteristics__metrics__labeled_counter__glean_error_invalid_label {
   label: "Glean Error - Invalid Label"
 
@@ -1645,18 +1822,18 @@ view: user_characteristics__metrics__labeled_counter__glean_error_invalid_label 
     hidden: yes
   }
 
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
   dimension: label {
     type: string
     sql: ${TABLE}.key ;;
     suggest_explore: suggest__user_characteristics__metrics__labeled_counter__glean_error_invalid_label
     suggest_dimension: suggest__user_characteristics__metrics__labeled_counter__glean_error_invalid_label.key
     hidden: no
-  }
-
-  dimension: value {
-    type: number
-    sql: ${TABLE}.value ;;
-    hidden: yes
   }
 
   measure: count {
@@ -1688,18 +1865,16 @@ view: user_characteristics__metrics__labeled_counter__glean_error_invalid_overfl
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__user_characteristics__metrics__labeled_counter__glean_error_invalid_overflow
-    suggest_dimension: suggest__user_characteristics__metrics__labeled_counter__glean_error_invalid_overflow.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -1731,18 +1906,16 @@ view: user_characteristics__metrics__labeled_counter__glean_error_invalid_state 
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__user_characteristics__metrics__labeled_counter__glean_error_invalid_state
-    suggest_dimension: suggest__user_characteristics__metrics__labeled_counter__glean_error_invalid_state.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {
@@ -1774,18 +1947,16 @@ view: user_characteristics__metrics__labeled_counter__glean_error_invalid_value 
     hidden: yes
   }
 
-  dimension: label {
-    type: string
-    sql: ${TABLE}.key ;;
-    suggest_explore: suggest__user_characteristics__metrics__labeled_counter__glean_error_invalid_value
-    suggest_dimension: suggest__user_characteristics__metrics__labeled_counter__glean_error_invalid_value.key
-    hidden: no
-  }
-
   dimension: value {
     type: number
     sql: ${TABLE}.value ;;
     hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
   }
 
   measure: count {

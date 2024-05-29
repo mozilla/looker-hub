@@ -441,6 +441,15 @@ view: user_characteristics_table {
 "
   }
 
+  dimension: metrics__boolean__characteristics_use_document_colors {
+    sql: ${TABLE}.metrics.boolean.characteristics_use_document_colors ;;
+    type: yesno
+    group_label: "Metrics Boolean"
+    group_item_label: "Characteristics Use Document Colors"
+    description: "This is the derived PreferenceSheet::Prefs::mUseDocumentColors value.
+"
+  }
+
   dimension: metrics__boolean__characteristics_video_dynamic_range {
     sql: ${TABLE}.metrics.boolean.characteristics_video_dynamic_range ;;
     type: yesno
@@ -482,6 +491,60 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_avail_height {
+    sql: ${TABLE}.metrics.quantity.characteristics_avail_height ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Avail Height"
+    description: "Available height property
+"
+  }
+
+  dimension: metrics__quantity__characteristics_avail_width {
+    sql: ${TABLE}.metrics.quantity.characteristics_avail_width ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Avail Width"
+    description: "Available width property
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_accentcolor {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_accentcolor ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Accentcolor"
+    description: "The CSS system-color Accentcolor.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_accentcolortext {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_accentcolortext ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Accentcolortext"
+    description: "The CSS system-color Accentcolortext.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_canvas {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_canvas ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Canvas"
+    description: "The CSS system-color Canvas.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_canvastext {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_canvastext ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Canvastext"
+    description: "The CSS system-color Canvastext.
+"
+  }
+
   dimension: metrics__quantity__characteristics_color_depth {
     sql: ${TABLE}.metrics.quantity.characteristics_color_depth ;;
     type: number
@@ -500,12 +563,48 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_color_highlight {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_highlight ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Highlight"
+    description: "The CSS system-color Highlight.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_highlighttext {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_highlighttext ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Highlighttext"
+    description: "The CSS system-color Highlighttext.
+"
+  }
+
   dimension: metrics__quantity__characteristics_color_scheme {
     sql: ${TABLE}.metrics.quantity.characteristics_color_scheme ;;
     type: number
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Color Scheme"
     description: "The Color Scheme used for Content, from ContentPrefs() Preference Sheet.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_selecteditem {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_selecteditem ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Selecteditem"
+    description: "The CSS system-color Selecteditem.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_color_selecteditemtext {
+    sql: ${TABLE}.metrics.quantity.characteristics_color_selecteditemtext ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Color Selecteditemtext"
+    description: "The CSS system-color Selecteditemtext.
 "
   }
 
@@ -614,6 +713,24 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Max Touch Points"
     description: "The number of touch points we will report to the web. On Android, this is based on Android's FEATURE_TOUCHSCREEN* constants - Mozilla caps this at 5 as Android stops distinguishing between numbers greater than 5.  On Windows this comes from the SM_MAXIMUMTOUCHES System Metric.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_orientation_angle {
+    sql: ${TABLE}.metrics.quantity.characteristics_orientation_angle ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Orientation Angle"
+    description: "Orientation angle of the screen
+"
+  }
+
+  dimension: metrics__quantity__characteristics_pixel_depth {
+    sql: ${TABLE}.metrics.quantity.characteristics_pixel_depth ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Pixel Depth"
+    description: "Screen pixel depth property
 "
   }
 
@@ -841,6 +958,11 @@ The labels are the `category.name` identifier of the metric.
     description: "An experimentation identifier derived and provided by the application
 for the purpose of experimentation enrollment.
 "
+  }
+
+  dimension: metrics__string_list__characteristics_gamepads {
+    sql: ${TABLE}.metrics.string_list.characteristics_gamepads ;;
+    hidden: yes
   }
 
   dimension: metrics__text__characteristics_missing_fonts {

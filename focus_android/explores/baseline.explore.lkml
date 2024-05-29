@@ -75,34 +75,6 @@ explore: baseline {
   }
 }
 
-explore: suggest__baseline__metrics__labeled_counter__browser_search_ad_clicks {
-  hidden: yes
-}
-
-explore: suggest__baseline__metrics__labeled_counter__browser_search_in_content {
-  hidden: yes
-}
-
-explore: suggest__baseline__metrics__labeled_counter__browser_search_search_count {
-  hidden: yes
-}
-
 explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_label {
-  hidden: yes
-}
-
-explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_overflow {
-  hidden: yes
-}
-
-explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_state {
-  hidden: yes
-}
-
-explore: suggest__baseline__metrics__labeled_counter__glean_error_invalid_value {
-  hidden: yes
-}
-
-explore: suggest__baseline__metrics__labeled_counter__glean_validation_pings_submitted {
   hidden: yes
 }

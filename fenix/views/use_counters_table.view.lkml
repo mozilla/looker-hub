@@ -381,6 +381,20 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css All"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_anchor_name {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_anchor_name ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Anchor Name"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_anchor_scope {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_anchor_scope ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Anchor Scope"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_animation {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_animation ;;
     type: number
@@ -3132,6 +3146,20 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css Position"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_position_anchor {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_anchor ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Anchor"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_position_visibility {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_visibility ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Visibility"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_print_color_adjust {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_print_color_adjust ;;
     type: number
@@ -5265,6 +5293,20 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css All"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_anchor_name {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_anchor_name ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Anchor Name"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_anchor_scope {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_anchor_scope ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Anchor Scope"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_animation {
@@ -8016,6 +8058,20 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Position"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_anchor {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_anchor ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Anchor"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_visibility {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_visibility ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Visibility"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_print_color_adjust {

@@ -12,56 +12,112 @@ SUM(COALESCE(num_clients_dau_on_day, 0)) AS cohort_clients_active_on_day,
 SUM(COALESCE(num_clients_dau_active_atleastonce_in_last_7_days, 0)) AS cohort_clients_active_in_week,
 SUM(COALESCE(num_clients_dau_active_atleastonce_in_last_28_days, 0)) AS cohort_clients_active_in_month,
 
-                
+                looker_base_fields_app_name,
+looker_base_fields_app_version,
+looker_base_fields_country,
+looker_base_fields_default_search_engine,
+looker_base_fields_distribution_id,
+looker_base_fields_is_default_browser,
+looker_base_fields_locale,
+looker_base_fields_normalized_channel,
+looker_base_fields_normalized_os_version,
+looker_base_fields_os,
+looker_base_fields_partner_id,
+looker_base_fields_sample_id,
+
                 NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
-                m.submission_date AS analysis_basis
+                submission_date AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'week'  %}
                 (FORMAT_DATE(
                     '%F',
-                    DATE_TRUNC(m.submission_date,
+                    DATE_TRUNC(submission_date,
                     WEEK(MONDAY)))
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'month'  %}
                 (FORMAT_DATE(
                     '%Y-%m',
-                    m.submission_date)
+                    submission_date)
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'quarter'  %}
                 (FORMAT_DATE(
                     '%Y-%m',
-                    DATE_TRUNC(m.submission_date,
+                    DATE_TRUNC(submission_date,
                     QUARTER))
                 ) AS analysis_basis
                 {% elsif aggregate_metrics_by._parameter_value == 'year'  %}
                 (EXTRACT(
-                    YEAR FROM m.submission_date)
+                    YEAR FROM submission_date)
                 ) AS analysis_basis
                 {% else %}
                 NULL as analysis_basis
                 {% endif %}
             FROM
                 (
-    SELECT
-        *
-    FROM
-        `moz-fx-data-shared-prod.telemetry.desktop_cohort_daily_retention`
-    )
-            AS m
-            
-            WHERE
-            m.submission_date
-            BETWEEN
-            COALESCE(
-                SAFE_CAST(
-                    {% date_start submission_date %} AS DATE
-                ), CURRENT_DATE()) AND
-            COALESCE(
-                SAFE_CAST(
-                    {% date_end submission_date %} AS DATE
-                ), CURRENT_DATE())
-            GROUP BY
+                    SELECT
+                        desktop_cohort_daily_retention.*,
+                        looker_base_fields.app_name AS looker_base_fields_app_name,
+looker_base_fields.app_version AS looker_base_fields_app_version,
+looker_base_fields.country AS looker_base_fields_country,
+looker_base_fields.default_search_engine AS looker_base_fields_default_search_engine,
+looker_base_fields.distribution_id AS looker_base_fields_distribution_id,
+looker_base_fields.is_default_browser AS looker_base_fields_is_default_browser,
+looker_base_fields.locale AS looker_base_fields_locale,
+looker_base_fields.normalized_channel AS looker_base_fields_normalized_channel,
+looker_base_fields.normalized_os_version AS looker_base_fields_normalized_os_version,
+looker_base_fields.os AS looker_base_fields_os,
+looker_base_fields.partner_id AS looker_base_fields_partner_id,
+looker_base_fields.sample_id AS looker_base_fields_sample_id,
+
+                    FROM
+                    (
+            SELECT
+                *
+            FROM
+                `moz-fx-data-shared-prod.telemetry.desktop_cohort_daily_retention`
+            ) AS desktop_cohort_daily_retention
+        
+                    WHERE 
+                    desktop_cohort_daily_retention.submission_date
+                    BETWEEN
+                    COALESCE(
+                        SAFE_CAST(
+                            {% date_start submission_date %} AS DATE
+                        ), CURRENT_DATE()) AND
+                    COALESCE(
+                        SAFE_CAST(
+                            {% date_end submission_date %} AS DATE
+                        ), CURRENT_DATE())
+                 AND 
+                    looker_base_fields.submission_date
+                    BETWEEN
+                    COALESCE(
+                        SAFE_CAST(
+                            {% date_start submission_date %} AS DATE
+                        ), CURRENT_DATE()) AND
+                    COALESCE(
+                        SAFE_CAST(
+                            {% date_end submission_date %} AS DATE
+                        ), CURRENT_DATE())
                 
+                    AND
+                        looker_base_fields.sample_id < {% parameter sampling %}
+                
+                )
+            GROUP BY
+                looker_base_fields_app_name,
+looker_base_fields_app_version,
+looker_base_fields_country,
+looker_base_fields_default_search_engine,
+looker_base_fields_distribution_id,
+looker_base_fields_is_default_browser,
+looker_base_fields_locale,
+looker_base_fields_normalized_channel,
+looker_base_fields_normalized_os_version,
+looker_base_fields_os,
+looker_base_fields_partner_id,
+looker_base_fields_sample_id,
+
                 client_id,
                 analysis_basis ;;
   }
@@ -105,6 +161,85 @@ SUM(COALESCE(num_clients_dau_active_atleastonce_in_last_28_days, 0)) AS cohort_c
     description: "Number of Clients Retained (Qualifying as DAU) in previous 28 days (current day inclusive)"
     type: number
     sql: ${TABLE}.cohort_clients_active_in_month ;;
+  }
+
+  dimension: app_name {
+    sql: ${TABLE}.looker_base_fields_app_name ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: app_version {
+    sql: ${TABLE}.looker_base_fields_app_version ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: country {
+    sql: ${TABLE}.looker_base_fields_country ;;
+    type: string
+    map_layer_name: countries
+    group_label: "Base Fields"
+  }
+
+  dimension: default_search_engine {
+    sql: ${TABLE}.looker_base_fields_default_search_engine ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: distribution_id {
+    sql: ${TABLE}.looker_base_fields_distribution_id ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: experiments {
+    sql: ${TABLE}.looker_base_fields_experiments ;;
+    hidden: yes
+    group_label: "Base Fields"
+  }
+
+  dimension: is_default_browser {
+    sql: ${TABLE}.looker_base_fields_is_default_browser ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: locale {
+    sql: ${TABLE}.looker_base_fields_locale ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: normalized_channel {
+    sql: ${TABLE}.looker_base_fields_normalized_channel ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: normalized_os_version {
+    sql: ${TABLE}.looker_base_fields_normalized_os_version ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: os {
+    sql: ${TABLE}.looker_base_fields_os ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: partner_id {
+    sql: ${TABLE}.looker_base_fields_partner_id ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: sample_id {
+    sql: ${TABLE}.looker_base_fields_sample_id ;;
+    type: number
+    group_label: "Base Fields"
   }
 
   dimension_group: submission {
@@ -166,6 +301,6 @@ SUM(COALESCE(num_clients_dau_active_atleastonce_in_last_28_days, 0)) AS cohort_c
     label: "Sample of source data in %"
     type: unquoted
     default_value: "100"
-    hidden: yes
+    hidden: no
   }
 }

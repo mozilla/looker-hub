@@ -44,14 +44,19 @@ view: retention_table {
   dimension: app_version {
     sql: ${TABLE}.app_version ;;
     type: string
-    description: "Profile's app version on the metric date."
+    description: "Client's app version on the metric date."
   }
 
   dimension: country {
     sql: ${TABLE}.country ;;
     type: string
     map_layer_name: countries
-    description: "Profile's country on the metric date."
+    description: "Client's country on the metric date."
+  }
+
+  dimension: is_mobile {
+    sql: ${TABLE}.is_mobile ;;
+    type: yesno
   }
 
   dimension: is_suspicious_device_client {
@@ -68,7 +73,7 @@ view: retention_table {
   dimension: locale {
     sql: ${TABLE}.locale ;;
     type: string
-    description: "Profile's locale on the metric date."
+    description: "Client's locale on the metric date."
   }
 
   dimension: new_profiles_metric_date {
