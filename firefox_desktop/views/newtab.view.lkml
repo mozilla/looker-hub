@@ -102,6 +102,24 @@ Does not need to be sent in the Glean \"deletion-request\" ping.
 "
   }
 
+  dimension: metrics__boolean__newtab_weather_enabled {
+    label: "Newtab Weather Enabled"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.newtab_weather_enabled ;;
+    type: yesno
+    group_label: "Newtab"
+    group_item_label: "Weather Enabled"
+
+    link: {
+      label: "Glean Dictionary reference for Newtab Weather Enabled"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/newtab_weather_enabled"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the weather widget is enabled on the newtab. Corresponds to the value of the `browser.newtabpage.activity-stream.showWeather` pref.
+"
+  }
+
   dimension: metrics__boolean__pocket_enabled {
     label: "Pocket Enabled"
     hidden: no

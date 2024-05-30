@@ -3736,6 +3736,23 @@ ensure it's not too expensive.  This value is only available on Android
 "
   }
 
+  dimension: metrics__labeled_counter__bounce_tracking_protection_purge_count {
+    label: "Bounce Tracking Protection Purge Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.bounce_tracking_protection_purge_count ;;
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Purge Count"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/bounce_tracking_protection_purge_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often we purge trackers. Giving a high level overview about the effectivness of bounce tracking protection. Allows determining error rate with failed/success label. When in dry mode, we count the purges that would have happened under the dry label.
+"
+  }
+
   dimension: metrics__counter__bounce_tracking_protection_purge_count_classified_tracker {
     label: "Bounce Tracking Protection Purge Count Classified Tracker"
     hidden: no
@@ -15635,6 +15652,47 @@ view: metrics__metrics__labeled_counter__avif_sequence {
 
 view: metrics__metrics__labeled_counter__avif_yuv_color_space {
   label: "Avif - Yuv Color Space"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count {
+  label: "Bounce Tracking Protection - Purge Count"
 
   dimension: document_id {
     type: string

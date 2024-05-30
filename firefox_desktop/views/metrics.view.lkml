@@ -638,7 +638,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__boolean__installation_first_seen_admin_user {
     label: "Installation First Seen Admin User"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.installation_first_seen_admin_user ;;
     type: yesno
     group_label: "Installation First Seen"
@@ -656,7 +656,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__boolean__installation_first_seen_default_path {
     label: "Installation First Seen Default Path"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.installation_first_seen_default_path ;;
     type: yesno
     group_label: "Installation First Seen"
@@ -674,7 +674,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__string__installation_first_seen_failure_reason {
     label: "Installation First Seen Failure Reason"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.installation_first_seen_failure_reason ;;
     type: string
     group_label: "Installation First Seen"
@@ -692,7 +692,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__boolean__installation_first_seen_from_msi {
     label: "Installation First Seen From Msi"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.installation_first_seen_from_msi ;;
     type: yesno
     group_label: "Installation First Seen"
@@ -710,7 +710,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__boolean__installation_first_seen_install_existed {
     label: "Installation First Seen Install Existed"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.installation_first_seen_install_existed ;;
     type: yesno
     group_label: "Installation First Seen"
@@ -728,7 +728,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__string__installation_first_seen_installer_type {
     label: "Installation First Seen Installer Type"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.installation_first_seen_installer_type ;;
     type: string
     group_label: "Installation First Seen"
@@ -746,7 +746,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__boolean__installation_first_seen_other_inst {
     label: "Installation First Seen Other Inst"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.installation_first_seen_other_inst ;;
     type: yesno
     group_label: "Installation First Seen"
@@ -764,7 +764,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__boolean__installation_first_seen_other_msix_inst {
     label: "Installation First Seen Other Msix Inst"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.installation_first_seen_other_msix_inst ;;
     type: yesno
     group_label: "Installation First Seen"
@@ -782,7 +782,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__boolean__installation_first_seen_profdir_existed {
     label: "Installation First Seen Profdir Existed"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.installation_first_seen_profdir_existed ;;
     type: yesno
     group_label: "Installation First Seen"
@@ -800,7 +800,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__boolean__installation_first_seen_silent {
     label: "Installation First Seen Silent"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.installation_first_seen_silent ;;
     type: yesno
     group_label: "Installation First Seen"
@@ -818,7 +818,7 @@ when dynamic or static rulesets have been loaded from disk.
 
   dimension: metrics__string__installation_first_seen_version {
     label: "Installation First Seen Version"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.installation_first_seen_version ;;
     type: string
     group_label: "Installation First Seen"
@@ -1883,6 +1883,23 @@ in browser.
     }
 
     description: "Keeps track of whether the feature is enabled and running in dry-run mode at startup.
+"
+  }
+
+  dimension: metrics__labeled_counter__bounce_tracking_protection_purge_count {
+    label: "Bounce Tracking Protection Purge Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.bounce_tracking_protection_purge_count ;;
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Purge Count"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/bounce_tracking_protection_purge_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often we purge trackers. Giving a high level overview about the effectivness of bounce tracking protection. Allows determining error rate with failed/success label. When in dry mode, we count the purges that would have happened under the dry label.
 "
   }
 
@@ -11457,6 +11474,47 @@ view: metrics__metrics__labeled_counter__avif_pixi {
 
 view: metrics__metrics__labeled_counter__avif_yuv_color_space {
   label: "Avif - Yuv Color Space"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count {
+  label: "Bounce Tracking Protection - Purge Count"
 
   dimension: document_id {
     type: string

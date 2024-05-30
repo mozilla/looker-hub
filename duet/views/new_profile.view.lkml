@@ -1619,6 +1619,105 @@ view: new_profile {
 "
   }
 
+  dimension: payload__processes__parent__scalars__installation_first_seen_admin_user {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_admin_user ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Admin User"
+    description: "Whether the installer is running from an elevated admin user
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_default_path {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_default_path ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Default Path"
+    description: "(optional, present if installer_type is \"full\") Whether the default path was used
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_failure_reason {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_failure_reason ;;
+    type: string
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Failure Reason"
+    description: "Only sent if unable to collect firstSeen data. Can have value \"NotFoundError\" if file not found or other values depending on the failure reason.
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_from_msi {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_from_msi ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen From Msi"
+    description: "(optional, present if installer_type is \"full\") Whether this was an MSI install
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_install_existed {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_install_existed ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Install Existed"
+    description: "'Whether there was already an install in this location'
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_installer_type {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_installer_type ;;
+    type: string
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Installer Type"
+    description: "The type of installer used to install Firefox. The value is one of \"stub\", \"full\", or \"msix\"
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_other_inst {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_other_inst ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Other Inst"
+    description: "'Whether there was already any non-MSIX install on this system'
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_other_msix_inst {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_other_msix_inst ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Other Msix Inst"
+    description: "'Whether there was already any MSIX install on this system'
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_profdir_existed {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_profdir_existed ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Profdir Existed"
+    description: "'Whether the top-level profile directory existed'
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_silent {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_silent ;;
+    type: yesno
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Silent"
+    description: "(optional, present if installer_type is \"full\") Whether this was a silent install
+"
+  }
+
+  dimension: payload__processes__parent__scalars__installation_first_seen_version {
+    sql: ${TABLE}.payload.processes.parent.scalars.installation_first_seen_version ;;
+    type: string
+    group_label: "Payload Processes Parent Scalars"
+    group_item_label: "Installation First Seen Version"
+    description: "The application version installed by the installer (not necessarily the current version)
+"
+  }
+
   dimension: payload__processes__parent__scalars__startup_profile_count {
     sql: ${TABLE}.payload.processes.parent.scalars.startup_profile_count ;;
     type: number

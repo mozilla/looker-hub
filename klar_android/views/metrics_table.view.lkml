@@ -2170,6 +2170,13 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__labeled_counter__bounce_tracking_protection_purge_count {
+    sql: ${TABLE}.metrics.labeled_counter.bounce_tracking_protection_purge_count ;;
+    hidden: yes
+    description: "Counts how often we purge trackers. Giving a high level overview about the effectivness of bounce tracking protection. Allows determining error rate with failed/success label. When in dry mode, we count the purges that would have happened under the dry label.
+"
+  }
+
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     hidden: yes

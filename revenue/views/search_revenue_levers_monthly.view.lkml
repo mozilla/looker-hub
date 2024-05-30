@@ -46,11 +46,6 @@ view: search_revenue_levers_monthly {
     type: number
   }
 
-  dimension: number_days_in_month {
-    sql: ${TABLE}.number_days_in_month ;;
-    type: number
-  }
-
   dimension: organic {
     sql: ${TABLE}.organic ;;
     type: number
@@ -63,11 +58,6 @@ view: search_revenue_levers_monthly {
 
   dimension: revenue {
     sql: ${TABLE}.revenue ;;
-    type: number
-  }
-
-  dimension: revenue_per_ad_click {
-    sql: ${TABLE}.revenue_per_ad_click ;;
     type: number
   }
 
