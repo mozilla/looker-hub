@@ -169,7 +169,7 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
         baseline_v2.submission_date =
         looker_base_fields.submission_date
     
-            
+                
                     WHERE 
                     baseline_v2.submission_date
                     BETWEEN

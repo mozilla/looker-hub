@@ -199,7 +199,7 @@ looker_base_fields.sample_id AS looker_base_fields_sample_id,
         newtab_visits_topsite_tile_interactions.submission_date =
         looker_base_fields.submission_date
     
-            
+                
                     WHERE 
                     newtab_visits_topsite_tile_interactions.submission_date
                     BETWEEN

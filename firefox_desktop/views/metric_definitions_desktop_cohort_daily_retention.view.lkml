@@ -12,42 +12,18 @@ SUM(COALESCE(num_clients_dau_on_day, 0)) AS cohort_clients_active_on_day,
 SUM(COALESCE(num_clients_dau_active_atleastonce_in_last_7_days, 0)) AS cohort_clients_active_in_week,
 SUM(COALESCE(num_clients_dau_active_atleastonce_in_last_28_days, 0)) AS cohort_clients_active_in_month,
 
-                desktop_cohort_daily_retention_app_version,
-desktop_cohort_daily_retention_architecture,
-desktop_cohort_daily_retention_attribution_campaign,
-desktop_cohort_daily_retention_attribution_content,
-desktop_cohort_daily_retention_attribution_experiment,
-desktop_cohort_daily_retention_attribution_medium,
-desktop_cohort_daily_retention_attribution_source,
-desktop_cohort_daily_retention_attribution_ua,
-desktop_cohort_daily_retention_city,
-desktop_cohort_daily_retention_country,
-desktop_cohort_daily_retention_db_version,
-desktop_cohort_daily_retention_distribution_id,
-desktop_cohort_daily_retention_locale,
-desktop_cohort_daily_retention_normalized_app_name,
-desktop_cohort_daily_retention_normalized_channel,
-desktop_cohort_daily_retention_normalized_os,
-desktop_cohort_daily_retention_normalized_os_version,
-desktop_cohort_daily_retention_num_clients_active_atleastonce_in_last_28_days,
-desktop_cohort_daily_retention_num_clients_active_atleastonce_in_last_7_days,
-desktop_cohort_daily_retention_num_clients_active_on_day,
-desktop_cohort_daily_retention_num_clients_dau_active_atleastonce_in_last_28_days,
-desktop_cohort_daily_retention_num_clients_dau_active_atleastonce_in_last_7_days,
-desktop_cohort_daily_retention_num_clients_dau_on_day,
-desktop_cohort_daily_retention_num_clients_dau_repeat_first_month_users,
-desktop_cohort_daily_retention_num_clients_in_cohort,
-desktop_cohort_daily_retention_num_clients_repeat_first_month_users,
-desktop_cohort_daily_retention_os_version_major,
-desktop_cohort_daily_retention_os_version_minor,
-desktop_cohort_daily_retention_partner_distribution_version,
-desktop_cohort_daily_retention_partner_distributor,
-desktop_cohort_daily_retention_partner_distributor_channel,
-desktop_cohort_daily_retention_partner_id,
-desktop_cohort_daily_retention_platform_version,
-desktop_cohort_daily_retention_startup_profile_selection_reason,
-desktop_cohort_daily_retention_subdivision1,
-desktop_cohort_daily_retention_vendor,
+                looker_base_fields_app_name,
+looker_base_fields_app_version,
+looker_base_fields_country,
+looker_base_fields_default_search_engine,
+looker_base_fields_distribution_id,
+looker_base_fields_is_default_browser,
+looker_base_fields_locale,
+looker_base_fields_normalized_channel,
+looker_base_fields_normalized_os_version,
+looker_base_fields_os,
+looker_base_fields_partner_id,
+looker_base_fields_sample_id,
 
                 NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
@@ -80,42 +56,18 @@ desktop_cohort_daily_retention_vendor,
                 (
                     SELECT
                         desktop_cohort_daily_retention.*,
-                        desktop_cohort_daily_retention.app_version AS desktop_cohort_daily_retention_app_version,
-desktop_cohort_daily_retention.architecture AS desktop_cohort_daily_retention_architecture,
-desktop_cohort_daily_retention.attribution_campaign AS desktop_cohort_daily_retention_attribution_campaign,
-desktop_cohort_daily_retention.attribution_content AS desktop_cohort_daily_retention_attribution_content,
-desktop_cohort_daily_retention.attribution_experiment AS desktop_cohort_daily_retention_attribution_experiment,
-desktop_cohort_daily_retention.attribution_medium AS desktop_cohort_daily_retention_attribution_medium,
-desktop_cohort_daily_retention.attribution_source AS desktop_cohort_daily_retention_attribution_source,
-desktop_cohort_daily_retention.attribution_ua AS desktop_cohort_daily_retention_attribution_ua,
-desktop_cohort_daily_retention.city AS desktop_cohort_daily_retention_city,
-desktop_cohort_daily_retention.country AS desktop_cohort_daily_retention_country,
-desktop_cohort_daily_retention.db_version AS desktop_cohort_daily_retention_db_version,
-desktop_cohort_daily_retention.distribution_id AS desktop_cohort_daily_retention_distribution_id,
-desktop_cohort_daily_retention.locale AS desktop_cohort_daily_retention_locale,
-desktop_cohort_daily_retention.normalized_app_name AS desktop_cohort_daily_retention_normalized_app_name,
-desktop_cohort_daily_retention.normalized_channel AS desktop_cohort_daily_retention_normalized_channel,
-desktop_cohort_daily_retention.normalized_os AS desktop_cohort_daily_retention_normalized_os,
-desktop_cohort_daily_retention.normalized_os_version AS desktop_cohort_daily_retention_normalized_os_version,
-desktop_cohort_daily_retention.num_clients_active_atleastonce_in_last_28_days AS desktop_cohort_daily_retention_num_clients_active_atleastonce_in_last_28_days,
-desktop_cohort_daily_retention.num_clients_active_atleastonce_in_last_7_days AS desktop_cohort_daily_retention_num_clients_active_atleastonce_in_last_7_days,
-desktop_cohort_daily_retention.num_clients_active_on_day AS desktop_cohort_daily_retention_num_clients_active_on_day,
-desktop_cohort_daily_retention.num_clients_dau_active_atleastonce_in_last_28_days AS desktop_cohort_daily_retention_num_clients_dau_active_atleastonce_in_last_28_days,
-desktop_cohort_daily_retention.num_clients_dau_active_atleastonce_in_last_7_days AS desktop_cohort_daily_retention_num_clients_dau_active_atleastonce_in_last_7_days,
-desktop_cohort_daily_retention.num_clients_dau_on_day AS desktop_cohort_daily_retention_num_clients_dau_on_day,
-desktop_cohort_daily_retention.num_clients_dau_repeat_first_month_users AS desktop_cohort_daily_retention_num_clients_dau_repeat_first_month_users,
-desktop_cohort_daily_retention.num_clients_in_cohort AS desktop_cohort_daily_retention_num_clients_in_cohort,
-desktop_cohort_daily_retention.num_clients_repeat_first_month_users AS desktop_cohort_daily_retention_num_clients_repeat_first_month_users,
-desktop_cohort_daily_retention.os_version_major AS desktop_cohort_daily_retention_os_version_major,
-desktop_cohort_daily_retention.os_version_minor AS desktop_cohort_daily_retention_os_version_minor,
-desktop_cohort_daily_retention.partner_distribution_version AS desktop_cohort_daily_retention_partner_distribution_version,
-desktop_cohort_daily_retention.partner_distributor AS desktop_cohort_daily_retention_partner_distributor,
-desktop_cohort_daily_retention.partner_distributor_channel AS desktop_cohort_daily_retention_partner_distributor_channel,
-desktop_cohort_daily_retention.partner_id AS desktop_cohort_daily_retention_partner_id,
-desktop_cohort_daily_retention.platform_version AS desktop_cohort_daily_retention_platform_version,
-desktop_cohort_daily_retention.startup_profile_selection_reason AS desktop_cohort_daily_retention_startup_profile_selection_reason,
-desktop_cohort_daily_retention.subdivision1 AS desktop_cohort_daily_retention_subdivision1,
-desktop_cohort_daily_retention.vendor AS desktop_cohort_daily_retention_vendor,
+                        looker_base_fields.app_name AS looker_base_fields_app_name,
+looker_base_fields.app_version AS looker_base_fields_app_version,
+looker_base_fields.country AS looker_base_fields_country,
+looker_base_fields.default_search_engine AS looker_base_fields_default_search_engine,
+looker_base_fields.distribution_id AS looker_base_fields_distribution_id,
+looker_base_fields.is_default_browser AS looker_base_fields_is_default_browser,
+looker_base_fields.locale AS looker_base_fields_locale,
+looker_base_fields.normalized_channel AS looker_base_fields_normalized_channel,
+looker_base_fields.normalized_os_version AS looker_base_fields_normalized_os_version,
+looker_base_fields.os AS looker_base_fields_os,
+looker_base_fields.partner_id AS looker_base_fields_partner_id,
+looker_base_fields.sample_id AS looker_base_fields_sample_id,
 
                     FROM
                     (
@@ -136,45 +88,35 @@ desktop_cohort_daily_retention.vendor AS desktop_cohort_daily_retention_vendor,
                         SAFE_CAST(
                             {% date_end submission_date %} AS DATE
                         ), CURRENT_DATE())
+                 AND 
+                    looker_base_fields.submission_date
+                    BETWEEN
+                    COALESCE(
+                        SAFE_CAST(
+                            {% date_start submission_date %} AS DATE
+                        ), CURRENT_DATE()) AND
+                    COALESCE(
+                        SAFE_CAST(
+                            {% date_end submission_date %} AS DATE
+                        ), CURRENT_DATE())
+                
+                    AND
+                        looker_base_fields.sample_id < {% parameter sampling %}
                 
                 )
             GROUP BY
-                desktop_cohort_daily_retention_app_version,
-desktop_cohort_daily_retention_architecture,
-desktop_cohort_daily_retention_attribution_campaign,
-desktop_cohort_daily_retention_attribution_content,
-desktop_cohort_daily_retention_attribution_experiment,
-desktop_cohort_daily_retention_attribution_medium,
-desktop_cohort_daily_retention_attribution_source,
-desktop_cohort_daily_retention_attribution_ua,
-desktop_cohort_daily_retention_city,
-desktop_cohort_daily_retention_country,
-desktop_cohort_daily_retention_db_version,
-desktop_cohort_daily_retention_distribution_id,
-desktop_cohort_daily_retention_locale,
-desktop_cohort_daily_retention_normalized_app_name,
-desktop_cohort_daily_retention_normalized_channel,
-desktop_cohort_daily_retention_normalized_os,
-desktop_cohort_daily_retention_normalized_os_version,
-desktop_cohort_daily_retention_num_clients_active_atleastonce_in_last_28_days,
-desktop_cohort_daily_retention_num_clients_active_atleastonce_in_last_7_days,
-desktop_cohort_daily_retention_num_clients_active_on_day,
-desktop_cohort_daily_retention_num_clients_dau_active_atleastonce_in_last_28_days,
-desktop_cohort_daily_retention_num_clients_dau_active_atleastonce_in_last_7_days,
-desktop_cohort_daily_retention_num_clients_dau_on_day,
-desktop_cohort_daily_retention_num_clients_dau_repeat_first_month_users,
-desktop_cohort_daily_retention_num_clients_in_cohort,
-desktop_cohort_daily_retention_num_clients_repeat_first_month_users,
-desktop_cohort_daily_retention_os_version_major,
-desktop_cohort_daily_retention_os_version_minor,
-desktop_cohort_daily_retention_partner_distribution_version,
-desktop_cohort_daily_retention_partner_distributor,
-desktop_cohort_daily_retention_partner_distributor_channel,
-desktop_cohort_daily_retention_partner_id,
-desktop_cohort_daily_retention_platform_version,
-desktop_cohort_daily_retention_startup_profile_selection_reason,
-desktop_cohort_daily_retention_subdivision1,
-desktop_cohort_daily_retention_vendor,
+                looker_base_fields_app_name,
+looker_base_fields_app_version,
+looker_base_fields_country,
+looker_base_fields_default_search_engine,
+looker_base_fields_distribution_id,
+looker_base_fields_is_default_browser,
+looker_base_fields_locale,
+looker_base_fields_normalized_channel,
+looker_base_fields_normalized_os_version,
+looker_base_fields_os,
+looker_base_fields_partner_id,
+looker_base_fields_sample_id,
 
                 client_id,
                 analysis_basis ;;
@@ -221,220 +163,82 @@ desktop_cohort_daily_retention_vendor,
     sql: ${TABLE}.cohort_clients_active_in_month ;;
   }
 
+  dimension: app_name {
+    sql: ${TABLE}.looker_base_fields_app_name ;;
+    type: string
+    group_label: "Base Fields"
+  }
+
   dimension: app_version {
-    sql: ${TABLE}.desktop_cohort_daily_retention_app_version ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: architecture {
-    sql: ${TABLE}.desktop_cohort_daily_retention_architecture ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: attribution_campaign {
-    sql: ${TABLE}.desktop_cohort_daily_retention_attribution_campaign ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: attribution_content {
-    sql: ${TABLE}.desktop_cohort_daily_retention_attribution_content ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: attribution_experiment {
-    sql: ${TABLE}.desktop_cohort_daily_retention_attribution_experiment ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: attribution_medium {
-    sql: ${TABLE}.desktop_cohort_daily_retention_attribution_medium ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: attribution_source {
-    sql: ${TABLE}.desktop_cohort_daily_retention_attribution_source ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: attribution_ua {
-    sql: ${TABLE}.desktop_cohort_daily_retention_attribution_ua ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: city {
-    sql: ${TABLE}.desktop_cohort_daily_retention_city ;;
+    sql: ${TABLE}.looker_base_fields_app_version ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: country {
-    sql: ${TABLE}.desktop_cohort_daily_retention_country ;;
+    sql: ${TABLE}.looker_base_fields_country ;;
     type: string
     map_layer_name: countries
     group_label: "Base Fields"
   }
 
-  dimension: db_version {
-    sql: ${TABLE}.desktop_cohort_daily_retention_db_version ;;
+  dimension: default_search_engine {
+    sql: ${TABLE}.looker_base_fields_default_search_engine ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: distribution_id {
-    sql: ${TABLE}.desktop_cohort_daily_retention_distribution_id ;;
+    sql: ${TABLE}.looker_base_fields_distribution_id ;;
     type: string
+    group_label: "Base Fields"
+  }
+
+  dimension: experiments {
+    sql: ${TABLE}.looker_base_fields_experiments ;;
+    hidden: yes
+    group_label: "Base Fields"
+  }
+
+  dimension: is_default_browser {
+    sql: ${TABLE}.looker_base_fields_is_default_browser ;;
+    type: yesno
     group_label: "Base Fields"
   }
 
   dimension: locale {
-    sql: ${TABLE}.desktop_cohort_daily_retention_locale ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: normalized_app_name {
-    sql: ${TABLE}.desktop_cohort_daily_retention_normalized_app_name ;;
+    sql: ${TABLE}.looker_base_fields_locale ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: normalized_channel {
-    sql: ${TABLE}.desktop_cohort_daily_retention_normalized_channel ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: normalized_os {
-    sql: ${TABLE}.desktop_cohort_daily_retention_normalized_os ;;
+    sql: ${TABLE}.looker_base_fields_normalized_channel ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: normalized_os_version {
-    sql: ${TABLE}.desktop_cohort_daily_retention_normalized_os_version ;;
+    sql: ${TABLE}.looker_base_fields_normalized_os_version ;;
     type: string
     group_label: "Base Fields"
   }
 
-  dimension: num_clients_active_atleastonce_in_last_28_days {
-    sql: ${TABLE}.desktop_cohort_daily_retention_num_clients_active_atleastonce_in_last_28_days ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: num_clients_active_atleastonce_in_last_7_days {
-    sql: ${TABLE}.desktop_cohort_daily_retention_num_clients_active_atleastonce_in_last_7_days ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: num_clients_active_on_day {
-    sql: ${TABLE}.desktop_cohort_daily_retention_num_clients_active_on_day ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: num_clients_dau_active_atleastonce_in_last_28_days {
-    sql: ${TABLE}.desktop_cohort_daily_retention_num_clients_dau_active_atleastonce_in_last_28_days ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: num_clients_dau_active_atleastonce_in_last_7_days {
-    sql: ${TABLE}.desktop_cohort_daily_retention_num_clients_dau_active_atleastonce_in_last_7_days ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: num_clients_dau_on_day {
-    sql: ${TABLE}.desktop_cohort_daily_retention_num_clients_dau_on_day ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: num_clients_dau_repeat_first_month_users {
-    sql: ${TABLE}.desktop_cohort_daily_retention_num_clients_dau_repeat_first_month_users ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: num_clients_in_cohort {
-    sql: ${TABLE}.desktop_cohort_daily_retention_num_clients_in_cohort ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: num_clients_repeat_first_month_users {
-    sql: ${TABLE}.desktop_cohort_daily_retention_num_clients_repeat_first_month_users ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: os_version_major {
-    sql: ${TABLE}.desktop_cohort_daily_retention_os_version_major ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: os_version_minor {
-    sql: ${TABLE}.desktop_cohort_daily_retention_os_version_minor ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: partner_distribution_version {
-    sql: ${TABLE}.desktop_cohort_daily_retention_partner_distribution_version ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: partner_distributor {
-    sql: ${TABLE}.desktop_cohort_daily_retention_partner_distributor ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: partner_distributor_channel {
-    sql: ${TABLE}.desktop_cohort_daily_retention_partner_distributor_channel ;;
+  dimension: os {
+    sql: ${TABLE}.looker_base_fields_os ;;
     type: string
     group_label: "Base Fields"
   }
 
   dimension: partner_id {
-    sql: ${TABLE}.desktop_cohort_daily_retention_partner_id ;;
+    sql: ${TABLE}.looker_base_fields_partner_id ;;
     type: string
     group_label: "Base Fields"
   }
 
-  dimension: platform_version {
-    sql: ${TABLE}.desktop_cohort_daily_retention_platform_version ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: startup_profile_selection_reason {
-    sql: ${TABLE}.desktop_cohort_daily_retention_startup_profile_selection_reason ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: subdivision1 {
-    sql: ${TABLE}.desktop_cohort_daily_retention_subdivision1 ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: vendor {
-    sql: ${TABLE}.desktop_cohort_daily_retention_vendor ;;
-    type: string
+  dimension: sample_id {
+    sql: ${TABLE}.looker_base_fields_sample_id ;;
+    type: number
     group_label: "Base Fields"
   }
 
@@ -497,6 +301,6 @@ desktop_cohort_daily_retention_vendor,
     label: "Sample of source data in %"
     type: unquoted
     default_value: "100"
-    hidden: yes
+    hidden: no
   }
 }

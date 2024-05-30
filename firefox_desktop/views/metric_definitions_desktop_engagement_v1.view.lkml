@@ -11,26 +11,15 @@ view: metric_definitions_desktop_engagement_v1 {
 SUM(wau) AS desktop_engagement_wau_v1,
 SUM(mau) AS desktop_engagement_mau_v1,
 
-                desktop_engagement_v1_app_version,
-desktop_engagement_v1_attribution_campaign,
-desktop_engagement_v1_attribution_content,
-desktop_engagement_v1_attribution_dlsource,
-desktop_engagement_v1_attribution_experiment,
-desktop_engagement_v1_attribution_medium,
-desktop_engagement_v1_attribution_ua,
-desktop_engagement_v1_attribution_variation,
-desktop_engagement_v1_country,
-desktop_engagement_v1_dau,
-desktop_engagement_v1_distribution_id,
-desktop_engagement_v1_is_desktop,
-desktop_engagement_v1_lifecycle_stage,
-desktop_engagement_v1_locale,
-desktop_engagement_v1_mau,
-desktop_engagement_v1_normalized_channel,
-desktop_engagement_v1_normalized_os,
-desktop_engagement_v1_normalized_os_version,
-desktop_engagement_v1_startup_profile_selection_reason,
-desktop_engagement_v1_wau,
+                countries_ads_value_tier,
+countries_code,
+countries_code_3,
+countries_mozilla_vpn_available,
+countries_name,
+countries_pocket_available_on_newtab,
+countries_region_name,
+countries_sponsored_tiles_available_on_newtab,
+countries_subregion_name,
 
                 NULL AS client_id,
                 {% if aggregate_metrics_by._parameter_value == 'day' %}
@@ -63,26 +52,15 @@ desktop_engagement_v1_wau,
                 (
                     SELECT
                         desktop_engagement_v1.*,
-                        desktop_engagement_v1.app_version AS desktop_engagement_v1_app_version,
-desktop_engagement_v1.attribution_campaign AS desktop_engagement_v1_attribution_campaign,
-desktop_engagement_v1.attribution_content AS desktop_engagement_v1_attribution_content,
-desktop_engagement_v1.attribution_dlsource AS desktop_engagement_v1_attribution_dlsource,
-desktop_engagement_v1.attribution_experiment AS desktop_engagement_v1_attribution_experiment,
-desktop_engagement_v1.attribution_medium AS desktop_engagement_v1_attribution_medium,
-desktop_engagement_v1.attribution_ua AS desktop_engagement_v1_attribution_ua,
-desktop_engagement_v1.attribution_variation AS desktop_engagement_v1_attribution_variation,
-desktop_engagement_v1.country AS desktop_engagement_v1_country,
-desktop_engagement_v1.dau AS desktop_engagement_v1_dau,
-desktop_engagement_v1.distribution_id AS desktop_engagement_v1_distribution_id,
-desktop_engagement_v1.is_desktop AS desktop_engagement_v1_is_desktop,
-desktop_engagement_v1.lifecycle_stage AS desktop_engagement_v1_lifecycle_stage,
-desktop_engagement_v1.locale AS desktop_engagement_v1_locale,
-desktop_engagement_v1.mau AS desktop_engagement_v1_mau,
-desktop_engagement_v1.normalized_channel AS desktop_engagement_v1_normalized_channel,
-desktop_engagement_v1.normalized_os AS desktop_engagement_v1_normalized_os,
-desktop_engagement_v1.normalized_os_version AS desktop_engagement_v1_normalized_os_version,
-desktop_engagement_v1.startup_profile_selection_reason AS desktop_engagement_v1_startup_profile_selection_reason,
-desktop_engagement_v1.wau AS desktop_engagement_v1_wau,
+                        countries.ads_value_tier AS countries_ads_value_tier,
+countries.code AS countries_code,
+countries.code_3 AS countries_code_3,
+countries.mozilla_vpn_available AS countries_mozilla_vpn_available,
+countries.name AS countries_name,
+countries.pocket_available_on_newtab AS countries_pocket_available_on_newtab,
+countries.region_name AS countries_region_name,
+countries.sponsored_tiles_available_on_newtab AS countries_sponsored_tiles_available_on_newtab,
+countries.subregion_name AS countries_subregion_name,
 
                     FROM
                     (
@@ -91,7 +69,18 @@ desktop_engagement_v1.wau AS desktop_engagement_v1_wau,
             FROM
                 moz-fx-data-shared-prod.telemetry.desktop_engagement
             ) AS desktop_engagement_v1
+        LEFT JOIN
+    (
+            SELECT
+                *
+            FROM
+                mozdata.static.country_codes_v1
+            ) AS countries
         
+    ON 
+    desktop_engagement_v1.country = countries.code
+    
+                
                     WHERE 
                     desktop_engagement_v1.submission_date
                     BETWEEN
@@ -106,26 +95,15 @@ desktop_engagement_v1.wau AS desktop_engagement_v1_wau,
                 
                 )
             GROUP BY
-                desktop_engagement_v1_app_version,
-desktop_engagement_v1_attribution_campaign,
-desktop_engagement_v1_attribution_content,
-desktop_engagement_v1_attribution_dlsource,
-desktop_engagement_v1_attribution_experiment,
-desktop_engagement_v1_attribution_medium,
-desktop_engagement_v1_attribution_ua,
-desktop_engagement_v1_attribution_variation,
-desktop_engagement_v1_country,
-desktop_engagement_v1_dau,
-desktop_engagement_v1_distribution_id,
-desktop_engagement_v1_is_desktop,
-desktop_engagement_v1_lifecycle_stage,
-desktop_engagement_v1_locale,
-desktop_engagement_v1_mau,
-desktop_engagement_v1_normalized_channel,
-desktop_engagement_v1_normalized_os,
-desktop_engagement_v1_normalized_os_version,
-desktop_engagement_v1_startup_profile_selection_reason,
-desktop_engagement_v1_wau,
+                countries_ads_value_tier,
+countries_code,
+countries_code_3,
+countries_mozilla_vpn_available,
+countries_name,
+countries_pocket_available_on_newtab,
+countries_region_name,
+countries_sponsored_tiles_available_on_newtab,
+countries_subregion_name,
 
                 client_id,
                 analysis_basis ;;
@@ -164,124 +142,57 @@ desktop_engagement_v1_wau,
     sql: ${TABLE}.desktop_engagement_mau_v1 ;;
   }
 
-  dimension: app_version {
-    sql: ${TABLE}.desktop_engagement_v1_app_version ;;
+  dimension: ads_value_tier {
+    sql: ${TABLE}.countries_ads_value_tier ;;
     type: string
     group_label: "Base Fields"
   }
 
-  dimension: attribution_campaign {
-    sql: ${TABLE}.desktop_engagement_v1_attribution_campaign ;;
+  dimension: code {
+    sql: ${TABLE}.countries_code ;;
     type: string
     group_label: "Base Fields"
   }
 
-  dimension: attribution_content {
-    sql: ${TABLE}.desktop_engagement_v1_attribution_content ;;
+  dimension: code_3 {
+    sql: ${TABLE}.countries_code_3 ;;
     type: string
     group_label: "Base Fields"
   }
 
-  dimension: attribution_dlsource {
-    sql: ${TABLE}.desktop_engagement_v1_attribution_dlsource ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: attribution_experiment {
-    sql: ${TABLE}.desktop_engagement_v1_attribution_experiment ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: attribution_medium {
-    sql: ${TABLE}.desktop_engagement_v1_attribution_medium ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: attribution_ua {
-    sql: ${TABLE}.desktop_engagement_v1_attribution_ua ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: attribution_variation {
-    sql: ${TABLE}.desktop_engagement_v1_attribution_variation ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: country {
-    sql: ${TABLE}.desktop_engagement_v1_country ;;
-    type: string
-    map_layer_name: countries
-    group_label: "Base Fields"
-  }
-
-  dimension: dau {
-    sql: ${TABLE}.desktop_engagement_v1_dau ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: distribution_id {
-    sql: ${TABLE}.desktop_engagement_v1_distribution_id ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: is_desktop {
-    sql: ${TABLE}.desktop_engagement_v1_is_desktop ;;
+  dimension: mozilla_vpn_available {
+    sql: ${TABLE}.countries_mozilla_vpn_available ;;
     type: yesno
     group_label: "Base Fields"
   }
 
-  dimension: lifecycle_stage {
-    sql: ${TABLE}.desktop_engagement_v1_lifecycle_stage ;;
+  dimension: name {
+    sql: ${TABLE}.countries_name ;;
     type: string
     group_label: "Base Fields"
   }
 
-  dimension: locale {
-    sql: ${TABLE}.desktop_engagement_v1_locale ;;
+  dimension: pocket_available_on_newtab {
+    sql: ${TABLE}.countries_pocket_available_on_newtab ;;
+    type: yesno
+    group_label: "Base Fields"
+  }
+
+  dimension: region_name {
+    sql: ${TABLE}.countries_region_name ;;
     type: string
     group_label: "Base Fields"
   }
 
-  dimension: mau {
-    sql: ${TABLE}.desktop_engagement_v1_mau ;;
-    type: number
+  dimension: sponsored_tiles_available_on_newtab {
+    sql: ${TABLE}.countries_sponsored_tiles_available_on_newtab ;;
+    type: yesno
     group_label: "Base Fields"
   }
 
-  dimension: normalized_channel {
-    sql: ${TABLE}.desktop_engagement_v1_normalized_channel ;;
+  dimension: subregion_name {
+    sql: ${TABLE}.countries_subregion_name ;;
     type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: normalized_os {
-    sql: ${TABLE}.desktop_engagement_v1_normalized_os ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: normalized_os_version {
-    sql: ${TABLE}.desktop_engagement_v1_normalized_os_version ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: startup_profile_selection_reason {
-    sql: ${TABLE}.desktop_engagement_v1_startup_profile_selection_reason ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: wau {
-    sql: ${TABLE}.desktop_engagement_v1_wau ;;
-    type: number
     group_label: "Base Fields"
   }
 
@@ -318,6 +229,36 @@ desktop_engagement_v1_wau,
                                         desktop_engagement_mau_v1.sum"
   }
 
+  measure: desktop_engagement_dau_v1_1_day_rolling_average {
+    type: number
+    label: "(non-official) DAU 1 Day Rolling Average"
+    sql: AVG(sum(${TABLE}.desktop_engagement_dau_v1 * 1)) OVER (
+                                                ROWS 1 PRECEDING
+                                        ) ;;
+    group_label: "Statistics"
+    description: "1 day rolling average of (non-official) DAU"
+  }
+
+  measure: desktop_engagement_dau_v1_7_day_rolling_average {
+    type: number
+    label: "(non-official) DAU 7 Day Rolling Average"
+    sql: AVG(sum(${TABLE}.desktop_engagement_dau_v1 * 1)) OVER (
+                                                ROWS 7 PRECEDING
+                                        ) ;;
+    group_label: "Statistics"
+    description: "7 day rolling average of (non-official) DAU"
+  }
+
+  measure: desktop_engagement_dau_v1_28_day_rolling_average {
+    type: number
+    label: "(non-official) DAU 28 Day Rolling Average"
+    sql: AVG(sum(${TABLE}.desktop_engagement_dau_v1 * 1)) OVER (
+                                                ROWS 28 PRECEDING
+                                        ) ;;
+    group_label: "Statistics"
+    description: "28 day rolling average of (non-official) DAU"
+  }
+
   measure: desktop_engagement_wau_v1_sum {
     type: sum
     sql: ${TABLE}.desktop_engagement_wau_v1*1 ;;
@@ -341,6 +282,9 @@ desktop_engagement_v1_wau,
       desktop_engagement_mau_v1,
       desktop_engagement_dau_v1_sum,
       desktop_engagement_dau_v1_ratio,
+      desktop_engagement_dau_v1_1_day_rolling_average,
+      desktop_engagement_dau_v1_7_day_rolling_average,
+      desktop_engagement_dau_v1_28_day_rolling_average,
       desktop_engagement_wau_v1_sum,
       desktop_engagement_mau_v1_sum,
     ]

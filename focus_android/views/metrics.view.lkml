@@ -1142,6 +1142,24 @@ the tracking protection settings panel from the toolbar.
 "
   }
 
+  dimension: metrics__counter__bounce_tracking_protection_purge_count_classified_tracker {
+    label: "Bounce Tracking Protection Purge Count Classified Tracker"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.bounce_tracking_protection_purge_count_classified_tracker ;;
+    type: number
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Purge Count Classified Tracker"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count Classified Tracker"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/bounce_tracking_protection_purge_count_classified_tracker"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts sites purged from BTP that are classified as trackers as part of the following lists: [emailtracking-protection, fingerprinting-protection, socialtracking-protection, tracking-protection]
+"
+  }
+
   dimension: metrics__timing_distribution__bounce_tracking_protection_purge_duration__sum {
     label: "Bounce Tracking Protection Purge Duration Sum"
     hidden: no
@@ -9202,6 +9220,31 @@ Deprecated: `native_code_crash`, `fatal_native_code_crash` and `nonfatal_native_
     link: {
       label: "Glean Dictionary reference for Bloburl Resolve Stopped"
       url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/bloburl_resolve_stopped"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: bounce_tracking_protection_purge_count_classified_tracker {
+    type: sum
+    sql: ${metrics__counter__bounce_tracking_protection_purge_count_classified_tracker} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count Classified Tracker"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/bounce_tracking_protection_purge_count_classified_tracker"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: bounce_tracking_protection_purge_count_classified_tracker_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__bounce_tracking_protection_purge_count_classified_tracker: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count Classified Tracker"
+      url: "https://dictionary.telemetry.mozilla.org/apps/focus_android/metrics/bounce_tracking_protection_purge_count_classified_tracker"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

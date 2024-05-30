@@ -3153,6 +3153,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css Position Anchor"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_position_visibility {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_visibility ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Visibility"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_print_color_adjust {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_print_color_adjust ;;
     type: number
@@ -8058,6 +8065,13 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Position Anchor"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_visibility {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_visibility ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Visibility"
   }
 
   dimension: metrics__counter__use_counter_css_page_css_print_color_adjust {

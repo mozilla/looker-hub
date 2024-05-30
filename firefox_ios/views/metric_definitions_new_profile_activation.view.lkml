@@ -135,7 +135,7 @@ looker_base_fields.user_agent.version AS looker_base_fields_user_agent__version,
         new_profile_activation.submission_date =
         looker_base_fields.submission_date
     
-            
+                
                     WHERE 
                     new_profile_activation.submission_date
                     BETWEEN
