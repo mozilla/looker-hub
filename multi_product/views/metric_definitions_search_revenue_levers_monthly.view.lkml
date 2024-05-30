@@ -17,11 +17,9 @@ search_revenue_levers_monthly_dau_engaged_w_sap,
 search_revenue_levers_monthly_dau_w_engine_as_default,
 search_revenue_levers_monthly_device,
 search_revenue_levers_monthly_monetizable_sap,
-search_revenue_levers_monthly_number_days_in_month,
 search_revenue_levers_monthly_organic,
 search_revenue_levers_monthly_partner_name,
 search_revenue_levers_monthly_revenue,
-search_revenue_levers_monthly_revenue_per_ad_click,
 search_revenue_levers_monthly_sap,
 search_revenue_levers_monthly_search_with_ads,
 search_revenue_levers_monthly_search_with_ads_organic,
@@ -67,11 +65,9 @@ search_revenue_levers_monthly.dau_engaged_w_sap AS search_revenue_levers_monthly
 search_revenue_levers_monthly.dau_w_engine_as_default AS search_revenue_levers_monthly_dau_w_engine_as_default,
 search_revenue_levers_monthly.device AS search_revenue_levers_monthly_device,
 search_revenue_levers_monthly.monetizable_sap AS search_revenue_levers_monthly_monetizable_sap,
-search_revenue_levers_monthly.number_days_in_month AS search_revenue_levers_monthly_number_days_in_month,
 search_revenue_levers_monthly.organic AS search_revenue_levers_monthly_organic,
 search_revenue_levers_monthly.partner_name AS search_revenue_levers_monthly_partner_name,
 search_revenue_levers_monthly.revenue AS search_revenue_levers_monthly_revenue,
-search_revenue_levers_monthly.revenue_per_ad_click AS search_revenue_levers_monthly_revenue_per_ad_click,
 search_revenue_levers_monthly.sap AS search_revenue_levers_monthly_sap,
 search_revenue_levers_monthly.search_with_ads AS search_revenue_levers_monthly_search_with_ads,
 search_revenue_levers_monthly.search_with_ads_organic AS search_revenue_levers_monthly_search_with_ads_organic,
@@ -108,11 +104,9 @@ search_revenue_levers_monthly_dau_engaged_w_sap,
 search_revenue_levers_monthly_dau_w_engine_as_default,
 search_revenue_levers_monthly_device,
 search_revenue_levers_monthly_monetizable_sap,
-search_revenue_levers_monthly_number_days_in_month,
 search_revenue_levers_monthly_organic,
 search_revenue_levers_monthly_partner_name,
 search_revenue_levers_monthly_revenue,
-search_revenue_levers_monthly_revenue_per_ad_click,
 search_revenue_levers_monthly_sap,
 search_revenue_levers_monthly_search_with_ads,
 search_revenue_levers_monthly_search_with_ads_organic,
@@ -190,12 +184,6 @@ search_revenue_levers_monthly_tagged_sap,
     group_label: "Base Fields"
   }
 
-  dimension: number_days_in_month {
-    sql: ${TABLE}.search_revenue_levers_monthly_number_days_in_month ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
   dimension: organic {
     sql: ${TABLE}.search_revenue_levers_monthly_organic ;;
     type: number
@@ -210,12 +198,6 @@ search_revenue_levers_monthly_tagged_sap,
 
   dimension: revenue {
     sql: ${TABLE}.search_revenue_levers_monthly_revenue ;;
-    type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: revenue_per_ad_click {
-    sql: ${TABLE}.search_revenue_levers_monthly_revenue_per_ad_click ;;
     type: number
     group_label: "Base Fields"
   }

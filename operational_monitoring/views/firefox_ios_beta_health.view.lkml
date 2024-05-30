@@ -29,6 +29,11 @@ view: firefox_ios_beta_health {
     type: number
   }
 
+  dimension: release {
+    sql: ${TABLE}.release ;;
+    type: string
+  }
+
   dimension: statistic {
     sql: ${TABLE}.statistic ;;
     type: string
