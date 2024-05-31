@@ -51,6 +51,11 @@ view: mobile_retention {
     type: string
   }
 
+  dimension: is_mobile {
+    sql: ${TABLE}.is_mobile ;;
+    type: yesno
+  }
+
   dimension: is_suspicious_device_client {
     sql: ${TABLE}.is_suspicious_device_client ;;
     type: yesno

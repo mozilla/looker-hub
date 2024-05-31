@@ -444,6 +444,11 @@ view: clients_last_seen_table {
     type: number
   }
 
+  dimension: days_active_bits {
+    sql: ${TABLE}.days_active_bits ;;
+    type: number
+  }
+
   dimension: days_created_profile_bits {
     sql: ${TABLE}.days_created_profile_bits ;;
     type: number
@@ -472,6 +477,11 @@ view: clients_last_seen_table {
   dimension: days_seen_in_experiment {
     sql: ${TABLE}.days_seen_in_experiment ;;
     hidden: yes
+  }
+
+  dimension: days_since_active {
+    sql: ${TABLE}.days_since_active ;;
+    type: number
   }
 
   dimension: days_since_created_profile {
@@ -1927,6 +1937,11 @@ view: clients_last_seen_table {
   dimension: search_withads_webextension_sum {
     sql: ${TABLE}.search_withads_webextension_sum ;;
     hidden: yes
+  }
+
+  dimension: segment {
+    sql: ${TABLE}.segment ;;
+    type: string
   }
 
   dimension: session_restored_mean {

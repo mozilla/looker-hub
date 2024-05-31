@@ -3153,6 +3153,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Doc Css Position Anchor"
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_position_visibility {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_visibility ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Visibility"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_print_color_adjust {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_print_color_adjust ;;
     type: number
@@ -8060,6 +8067,13 @@ view: use_counters_table {
     group_item_label: "Use Counter Css Page Css Position Anchor"
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_position_visibility {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_visibility ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Visibility"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_print_color_adjust {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_print_color_adjust ;;
     type: number
@@ -11791,6 +11805,76 @@ view: use_counters_table {
     group_item_label: "Use Counter Doc Js Late Weekday"
   }
 
+  dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Array Type 2"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Array Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_arraybuffer_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_arraybuffer_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Arraybuffer Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_promise_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_promise_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Promise Type 2"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_promise_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_promise_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Promise Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_regexp_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_regexp_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Regexp Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_regexp_type_4 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_regexp_type_4 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Regexp Type 4"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_sharedarraybuffer_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_sharedarraybuffer_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Sharedarraybuffer Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_typedarray_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_typedarray_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Typedarray Type 2"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_typedarray_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_typedarray_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Typedarray Type 3"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_wasm {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_wasm ;;
     type: number
@@ -14295,6 +14379,76 @@ view: use_counters_table {
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Late Weekday"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_array_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_array_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Array Type 2"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_array_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_array_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Array Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_arraybuffer_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_arraybuffer_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Arraybuffer Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_promise_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_promise_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Promise Type 2"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_promise_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_promise_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Promise Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_regexp_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_regexp_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Regexp Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_regexp_type_4 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_regexp_type_4 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Regexp Type 4"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_sharedarraybuffer_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_sharedarraybuffer_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Sharedarraybuffer Type 3"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_typedarray_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_typedarray_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Typedarray Type 2"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_typedarray_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_typedarray_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Typedarray Type 3"
   }
 
   dimension: metrics__counter__use_counter_page_js_wasm {

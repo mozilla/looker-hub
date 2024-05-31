@@ -141,11 +141,6 @@ view: active_users_table {
     type: yesno
   }
 
-  dimension: is_desktop {
-    sql: ${TABLE}.is_desktop ;;
-    type: yesno
-  }
-
   dimension: is_mau {
     sql: ${TABLE}.is_mau ;;
     type: yesno

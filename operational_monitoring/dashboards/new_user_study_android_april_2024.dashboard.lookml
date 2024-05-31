@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       new_user_study_android_april_2024.branch
     ]
     filters:
-      new_user_study_android_april_2024.metric: 'uri_count'
+      new_user_study_android_april_2024.metric: 'active_hours'
       new_user_study_android_april_2024.statistic: mean
     row: 0
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       new_user_study_android_april_2024.branch
     ]
     filters:
-      new_user_study_android_april_2024.metric: 'active_hours'
+      new_user_study_android_april_2024.metric: 'uri_count'
       new_user_study_android_april_2024.statistic: mean
     row: 30
     col: 0

@@ -636,6 +636,204 @@ when dynamic or static rulesets have been loaded from disk.
 "
   }
 
+  dimension: metrics__boolean__installation_first_seen_admin_user {
+    label: "Installation First Seen Admin User"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_admin_user ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Admin User"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Admin User"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_admin_user"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the installer is running from an elevated admin user
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_default_path {
+    label: "Installation First Seen Default Path"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_default_path ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Default Path"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Default Path"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_default_path"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "(optional, present if installer_type is \"full\") Whether the default path was used
+"
+  }
+
+  dimension: metrics__string__installation_first_seen_failure_reason {
+    label: "Installation First Seen Failure Reason"
+    hidden: no
+    sql: ${TABLE}.metrics.string.installation_first_seen_failure_reason ;;
+    type: string
+    group_label: "Installation First Seen"
+    group_item_label: "Failure Reason"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Failure Reason"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_failure_reason"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Only sent if unable to collect firstSeen data. Can have value \"NotFoundError\" if file not found or other values depending on the failure reason.
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_from_msi {
+    label: "Installation First Seen From Msi"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_from_msi ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "From Msi"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen From Msi"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_from_msi"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "(optional, present if installer_type is \"full\") Whether this was an MSI install
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_install_existed {
+    label: "Installation First Seen Install Existed"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_install_existed ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Install Existed"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Install Existed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_install_existed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether there was already an install in this location
+"
+  }
+
+  dimension: metrics__string__installation_first_seen_installer_type {
+    label: "Installation First Seen Installer Type"
+    hidden: no
+    sql: ${TABLE}.metrics.string.installation_first_seen_installer_type ;;
+    type: string
+    group_label: "Installation First Seen"
+    group_item_label: "Installer Type"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Installer Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_installer_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The type of installer used to install Firefox. The value is one of \"stub\", \"full\", or \"msix\"
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_other_inst {
+    label: "Installation First Seen Other Inst"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_other_inst ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Other Inst"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Other Inst"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_other_inst"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether there was already any non-MSIX install on this system
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_other_msix_inst {
+    label: "Installation First Seen Other Msix Inst"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_other_msix_inst ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Other Msix Inst"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Other Msix Inst"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_other_msix_inst"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether there was already any MSIX install on this system
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_profdir_existed {
+    label: "Installation First Seen Profdir Existed"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_profdir_existed ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Profdir Existed"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Profdir Existed"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_profdir_existed"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether the top-level profile directory existed
+"
+  }
+
+  dimension: metrics__boolean__installation_first_seen_silent {
+    label: "Installation First Seen Silent"
+    hidden: no
+    sql: ${TABLE}.metrics.boolean.installation_first_seen_silent ;;
+    type: yesno
+    group_label: "Installation First Seen"
+    group_item_label: "Silent"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Silent"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_silent"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "(optional, present if installer_type is \"full\") Whether this was a silent install
+"
+  }
+
+  dimension: metrics__string__installation_first_seen_version {
+    label: "Installation First Seen Version"
+    hidden: no
+    sql: ${TABLE}.metrics.string.installation_first_seen_version ;;
+    type: string
+    group_label: "Installation First Seen"
+    group_item_label: "Version"
+
+    link: {
+      label: "Glean Dictionary reference for Installation First Seen Version"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/installation_first_seen_version"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "The application version installed by the installer (not necessarily the current version)
+"
+  }
+
   dimension: metrics__uuid__legacy_telemetry_client_id {
     label: "Legacy Telemetry Client Id"
     hidden: no
@@ -1685,6 +1883,41 @@ in browser.
     }
 
     description: "Keeps track of whether the feature is enabled and running in dry-run mode at startup.
+"
+  }
+
+  dimension: metrics__labeled_counter__bounce_tracking_protection_purge_count {
+    label: "Bounce Tracking Protection Purge Count"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.bounce_tracking_protection_purge_count ;;
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Purge Count"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/bounce_tracking_protection_purge_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts how often we purge trackers. Giving a high level overview about the effectivness of bounce tracking protection. Allows determining error rate with failed/success label. When in dry mode, we count the purges that would have happened under the dry label.
+"
+  }
+
+  dimension: metrics__counter__bounce_tracking_protection_purge_count_classified_tracker {
+    label: "Bounce Tracking Protection Purge Count Classified Tracker"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.bounce_tracking_protection_purge_count_classified_tracker ;;
+    type: number
+    group_label: "Bounce Tracking Protection"
+    group_item_label: "Purge Count Classified Tracker"
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count Classified Tracker"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/bounce_tracking_protection_purge_count_classified_tracker"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Counts sites purged from BTP that are classified as trackers as part of the following lists: [emailtracking-protection, fingerprinting-protection, socialtracking-protection, tracking-protection]
 "
   }
 
@@ -3864,7 +4097,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "If a HTTPS-First (`dom.security.https_first` enabled) upgrade isn't successful, measures the timespan between the navigation start and the downgrade. This does not include the case in which the https request times out and the http request sent after 3s gets a response faster.
+    description: "If a HTTPS-First (`dom.security.https_first` enabled) upgrade isn't successful, measures the timespan between the navigation start and the downgrade.
 "
   }
 
@@ -3882,7 +4115,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "If a schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrade isn't successful, measures the timespan between the navigation start and the downgrade. This does not include the case in which the https request times out and the http request sent after 3s gets a response faster.
+    description: "If a schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrade isn't successful, measures the timespan between the navigation start and the downgrade.
 "
   }
 
@@ -3900,7 +4133,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "How many regular HTTPS-First (`dom.security.https_first` enabled) upgrades get downgraded again.
+    description: "How many regular HTTPS-First (`dom.security.https_first` enabled) upgrades fail and get downgraded again.
 "
   }
 
@@ -3990,7 +4223,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "How many schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrades get downgraded again.
+    description: "How many schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrades fail and get downgraded again.
 "
   }
 
@@ -4008,7 +4241,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts how often a load is marked to be upgraded to HTTPS because of HTTPS-First (`dom.security.https_first` enabled).
+    description: "Counts how often a load is successfully upgraded to HTTPS because of HTTPS-First (`dom.security.https_first` enabled). This does not include loads that get downgraded again.
 "
   }
 
@@ -4026,7 +4259,7 @@ To be used to validate GIFFT.
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
 
-    description: "Counts how often a load is marked to be upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless).
+    description: "Counts how often a load is successfully upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless). This does not include loads that get downgraded again.
 "
   }
 
@@ -5555,6 +5788,24 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__sum {
+    label: "Networking Http Onstart Suspend Total Time Sum"
+    hidden: no
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.sum ;;
+    type: number
+    group_label: "Networking"
+    group_item_label: "Http Onstart Suspend Total Time Sum"
+
+    link: {
+      label: "Glean Dictionary reference for Networking Http Onstart Suspend Total Time Sum"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/networking_http_onstart_suspend_total_time"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Time in milliseconds that http channel spent suspended between AsyncOpen and OnStartRequest.
+"
+  }
+
   dimension: metrics__labeled_counter__networking_http_response_version {
     label: "Networking Http Response Version"
     hidden: yes
@@ -6788,6 +7039,23 @@ To be used to validate GIFFT.
     }
 
     description: "CPU time used by content processes used only for tracking resources, labeled by the category of the tracker.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_energy_per_process_type {
+    label: "Power Energy Per Process Type"
+    hidden: yes
+    sql: ${TABLE}.metrics.labeled_counter.power_energy_per_process_type ;;
+    group_label: "Power"
+    group_item_label: "Energy Per Process Type"
+
+    link: {
+      label: "Glean Dictionary reference for Power Energy Per Process Type"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/power_energy_per_process_type"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "How much energy (in µWh) has been used, broken down by process type. Only available on Apple Silicon.
 "
   }
 
@@ -9388,6 +9656,31 @@ documented in the ping's pings.yaml file.
     }
   }
 
+  measure: bounce_tracking_protection_purge_count_classified_tracker {
+    type: sum
+    sql: ${metrics__counter__bounce_tracking_protection_purge_count_classified_tracker} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count Classified Tracker"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/bounce_tracking_protection_purge_count_classified_tracker"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: bounce_tracking_protection_purge_count_classified_tracker_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__bounce_tracking_protection_purge_count_classified_tracker: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Bounce Tracking Protection Purge Count Classified Tracker"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/bounce_tracking_protection_purge_count_classified_tracker"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: cookie_banners_cookie_injection_fail {
     type: sum
     sql: ${metrics__counter__cookie_banners_cookie_injection_fail} ;;
@@ -11181,6 +11474,47 @@ view: metrics__metrics__labeled_counter__avif_pixi {
 
 view: metrics__metrics__labeled_counter__avif_yuv_color_space {
   label: "Avif - Yuv Color Space"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
+view: metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count {
+  label: "Bounce Tracking Protection - Purge Count"
 
   dimension: document_id {
     type: string
@@ -14420,6 +14754,47 @@ view: metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms {
   }
 }
 
+view: metrics__metrics__labeled_counter__power_energy_per_process_type {
+  label: "Power - Energy Per Process Type"
+
+  dimension: document_id {
+    type: string
+    sql: ${metrics.document_id} ;;
+    hidden: yes
+  }
+
+  dimension: document_label_id {
+    type: string
+    sql: ${metrics.document_id}-${label} ;;
+    primary_key: yes
+    hidden: yes
+  }
+
+  dimension: value {
+    type: number
+    sql: ${TABLE}.value ;;
+    hidden: yes
+  }
+
+  dimension: label {
+    type: string
+    sql: ${TABLE}.key ;;
+    hidden: no
+  }
+
+  measure: count {
+    type: sum
+    sql: ${value} ;;
+    hidden: no
+  }
+
+  measure: client_count {
+    type: count_distinct
+    sql: case when ${value} > 0 then ${metrics.client_info__client_id} end ;;
+    hidden: no
+  }
+}
+
 view: metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {
   label: "Power - Gpu Time Per Process Type Ms"
 
@@ -16943,6 +17318,18 @@ view: metrics__metrics__timing_distribution__networking_http_content_onstart_del
 }
 
 view: metrics__metrics__timing_distribution__networking_http_content_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics__metrics__timing_distribution__networking_http_onstart_suspend_total_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

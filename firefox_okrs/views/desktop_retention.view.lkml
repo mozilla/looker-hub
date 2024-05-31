@@ -66,6 +66,12 @@ view: desktop_retention {
     description: "Country"
   }
 
+  dimension: is_desktop {
+    sql: ${TABLE}.is_desktop ;;
+    type: yesno
+    description: "Indicates if the client is included in the desktop KPI"
+  }
+
   dimension: lifecycle_stage {
     sql: ${TABLE}.lifecycle_stage ;;
     type: string

@@ -7351,7 +7351,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_doc_css_position_anchor {
     label: "Use Counter Css Doc Css Position Anchor"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_anchor ;;
     type: number
     group_label: "Use Counter Css Doc"
@@ -7364,6 +7364,24 @@ view: use_counters {
     }
 
     description: "Whether a document used the CSS property position-anchor. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_position_visibility {
+    label: "Use Counter Css Doc Css Position Visibility"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_visibility ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Position Visibility"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_position_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property position-visibility. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -19969,7 +19987,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_page_css_position_anchor {
     label: "Use Counter Css Page Css Position Anchor"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_anchor ;;
     type: number
     group_label: "Use Counter Css Page"
@@ -19982,6 +20000,24 @@ view: use_counters {
     }
 
     description: "Whether a page used the CSS property position-anchor. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_position_visibility {
+    label: "Use Counter Css Page Css Position Visibility"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_visibility ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Position Visibility"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_position_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property position-visibility. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -29291,6 +29327,186 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_2 {
+    label: "Use Counter Doc Js Subclassing Array Type 2"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_2 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Array Type 2"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Array Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_array_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document Array is Type II subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_3 {
+    label: "Use Counter Doc Js Subclassing Array Type 3"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_3 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Array Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Array Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_array_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document Array is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_arraybuffer_type_3 {
+    label: "Use Counter Doc Js Subclassing Arraybuffer Type 3"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_arraybuffer_type_3 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Arraybuffer Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Arraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_arraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document ArrayBuffer is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_promise_type_2 {
+    label: "Use Counter Doc Js Subclassing Promise Type 2"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_promise_type_2 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Promise Type 2"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Promise Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_promise_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document Promise is Type II subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_promise_type_3 {
+    label: "Use Counter Doc Js Subclassing Promise Type 3"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_promise_type_3 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Promise Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Promise Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_promise_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document Promise is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_regexp_type_3 {
+    label: "Use Counter Doc Js Subclassing Regexp Type 3"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_regexp_type_3 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Regexp Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Regexp Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_regexp_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document RegExp is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_regexp_type_4 {
+    label: "Use Counter Doc Js Subclassing Regexp Type 4"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_regexp_type_4 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Regexp Type 4"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Regexp Type 4"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_regexp_type_4"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document RegExp is Type IV subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_sharedarraybuffer_type_3 {
+    label: "Use Counter Doc Js Subclassing Sharedarraybuffer Type 3"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_sharedarraybuffer_type_3 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Sharedarraybuffer Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Sharedarraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_sharedarraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document SharedArrayBuffer is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_typedarray_type_2 {
+    label: "Use Counter Doc Js Subclassing Typedarray Type 2"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_typedarray_type_2 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Typedarray Type 2"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Typedarray Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_typedarray_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document TypedArray is Type II subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_typedarray_type_3 {
+    label: "Use Counter Doc Js Subclassing Typedarray Type 3"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_typedarray_type_3 ;;
+    type: number
+    group_label: "Use Counter Doc"
+    group_item_label: "Js Subclassing Typedarray Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Typedarray Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_typedarray_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document TypedArray is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_wasm {
     label: "Use Counter Doc Js Wasm"
     hidden: no
@@ -35749,6 +35965,186 @@ view: use_counters {
     }
 
     description: "Whether a page parses a Date with day of week in an unexpected position. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_array_type_2 {
+    label: "Use Counter Page Js Subclassing Array Type 2"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_array_type_2 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Array Type 2"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Array Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_array_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page Array is Type II subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_array_type_3 {
+    label: "Use Counter Page Js Subclassing Array Type 3"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_array_type_3 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Array Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Array Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_array_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page Array is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_arraybuffer_type_3 {
+    label: "Use Counter Page Js Subclassing Arraybuffer Type 3"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_arraybuffer_type_3 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Arraybuffer Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Arraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_arraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page ArrayBuffer is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_promise_type_2 {
+    label: "Use Counter Page Js Subclassing Promise Type 2"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_promise_type_2 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Promise Type 2"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Promise Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_promise_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page Promise is Type II subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_promise_type_3 {
+    label: "Use Counter Page Js Subclassing Promise Type 3"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_promise_type_3 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Promise Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Promise Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_promise_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page Promise is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_regexp_type_3 {
+    label: "Use Counter Page Js Subclassing Regexp Type 3"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_regexp_type_3 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Regexp Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Regexp Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_regexp_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page RegExp is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_regexp_type_4 {
+    label: "Use Counter Page Js Subclassing Regexp Type 4"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_regexp_type_4 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Regexp Type 4"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Regexp Type 4"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_regexp_type_4"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page RegExp is Type IV subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_sharedarraybuffer_type_3 {
+    label: "Use Counter Page Js Subclassing Sharedarraybuffer Type 3"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_sharedarraybuffer_type_3 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Sharedarraybuffer Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Sharedarraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_sharedarraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page SharedArrayBuffer is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_typedarray_type_2 {
+    label: "Use Counter Page Js Subclassing Typedarray Type 2"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_typedarray_type_2 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Typedarray Type 2"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Typedarray Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_typedarray_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page TypedArray is Type II subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_typedarray_type_3 {
+    label: "Use Counter Page Js Subclassing Typedarray Type 3"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_typedarray_type_3 ;;
+    type: number
+    group_label: "Use Counter Page"
+    group_item_label: "Js Subclassing Typedarray Type 3"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Typedarray Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_typedarray_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page TypedArray is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -52342,6 +52738,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Doc Css Position Anchor"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_position_anchor"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_position_visibility {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_position_visibility} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_position_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_position_visibility_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_position_visibility: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_doc_css_position_visibility"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -69871,6 +70292,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_page_css_position_visibility {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_position_visibility} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_position_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_position_visibility_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_position_visibility: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Visibility"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_css_page_css_position_visibility"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_page_css_print_color_adjust {
     type: sum
     sql: ${metrics__counter__use_counter_css_page_css_print_color_adjust} ;;
@@ -82796,6 +83242,256 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_doc_js_subclassing_array_type_2 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_array_type_2} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Array Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_array_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_array_type_2_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_array_type_2: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Array Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_array_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_array_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_array_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Array Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_array_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_array_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_array_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Array Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_array_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_arraybuffer_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_arraybuffer_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Arraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_arraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_arraybuffer_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_arraybuffer_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Arraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_arraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_promise_type_2 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_promise_type_2} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Promise Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_promise_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_promise_type_2_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_promise_type_2: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Promise Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_promise_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_promise_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_promise_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Promise Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_promise_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_promise_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_promise_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Promise Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_promise_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_regexp_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_regexp_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Regexp Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_regexp_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_regexp_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_regexp_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Regexp Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_regexp_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_regexp_type_4 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_regexp_type_4} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Regexp Type 4"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_regexp_type_4"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_regexp_type_4_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_regexp_type_4: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Regexp Type 4"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_regexp_type_4"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_sharedarraybuffer_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_sharedarraybuffer_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Sharedarraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_sharedarraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_sharedarraybuffer_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_sharedarraybuffer_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Sharedarraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_sharedarraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_typedarray_type_2 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_typedarray_type_2} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Typedarray Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_typedarray_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_typedarray_type_2_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_typedarray_type_2: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Typedarray Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_typedarray_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_typedarray_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_doc_js_subclassing_typedarray_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Typedarray Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_typedarray_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_doc_js_subclassing_typedarray_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_doc_js_subclassing_typedarray_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Doc Js Subclassing Typedarray Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_doc_js_subclassing_typedarray_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_doc_js_wasm {
     type: sum
     sql: ${metrics__counter__use_counter_doc_js_wasm} ;;
@@ -91742,6 +92438,256 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Page Js Late Weekday"
       url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_late_weekday"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_array_type_2 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_array_type_2} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Array Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_array_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_array_type_2_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_array_type_2: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Array Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_array_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_array_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_array_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Array Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_array_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_array_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_array_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Array Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_array_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_arraybuffer_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_arraybuffer_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Arraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_arraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_arraybuffer_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_arraybuffer_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Arraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_arraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_promise_type_2 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_promise_type_2} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Promise Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_promise_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_promise_type_2_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_promise_type_2: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Promise Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_promise_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_promise_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_promise_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Promise Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_promise_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_promise_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_promise_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Promise Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_promise_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_regexp_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_regexp_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Regexp Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_regexp_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_regexp_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_regexp_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Regexp Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_regexp_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_regexp_type_4 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_regexp_type_4} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Regexp Type 4"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_regexp_type_4"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_regexp_type_4_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_regexp_type_4: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Regexp Type 4"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_regexp_type_4"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_sharedarraybuffer_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_sharedarraybuffer_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Sharedarraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_sharedarraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_sharedarraybuffer_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_sharedarraybuffer_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Sharedarraybuffer Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_sharedarraybuffer_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_typedarray_type_2 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_typedarray_type_2} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Typedarray Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_typedarray_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_typedarray_type_2_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_typedarray_type_2: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Typedarray Type 2"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_typedarray_type_2"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_typedarray_type_3 {
+    type: sum
+    sql: ${metrics__counter__use_counter_page_js_subclassing_typedarray_type_3} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Typedarray Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_typedarray_type_3"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_page_js_subclassing_typedarray_type_3_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_page_js_subclassing_typedarray_type_3: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Page Js Subclassing Typedarray Type 3"
+      url: "https://dictionary.telemetry.mozilla.org/apps/klar_android/metrics/use_counter_page_js_subclassing_typedarray_type_3"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

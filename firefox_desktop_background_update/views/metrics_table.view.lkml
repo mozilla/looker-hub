@@ -426,6 +426,15 @@ To be used to validate GIFFT.
 "
   }
 
+  dimension: metrics__counter__bounce_tracking_protection_purge_count_classified_tracker {
+    sql: ${TABLE}.metrics.counter.bounce_tracking_protection_purge_count_classified_tracker ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Bounce Tracking Protection Purge Count Classified Tracker"
+    description: "Counts sites purged from BTP that are classified as trackers as part of the following lists: [emailtracking-protection, fingerprinting-protection, socialtracking-protection, tracking-protection]
+"
+  }
+
   dimension: metrics__counter__cookie_banners_cookie_injection_fail {
     sql: ${TABLE}.metrics.counter.cookie_banners_cookie_injection_fail ;;
     type: number
@@ -610,7 +619,7 @@ This does not include deletion-request pings.
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Httpsfirst Downgraded"
-    description: "How many regular HTTPS-First (`dom.security.https_first` enabled) upgrades get downgraded again.
+    description: "How many regular HTTPS-First (`dom.security.https_first` enabled) upgrades fail and get downgraded again.
 "
   }
 
@@ -619,7 +628,7 @@ This does not include deletion-request pings.
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Httpsfirst Downgraded Schemeless"
-    description: "How many schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrades get downgraded again.
+    description: "How many schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless) upgrades fail and get downgraded again.
 "
   }
 
@@ -628,7 +637,7 @@ This does not include deletion-request pings.
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Httpsfirst Upgraded"
-    description: "Counts how often a load is marked to be upgraded to HTTPS because of HTTPS-First (`dom.security.https_first` enabled).
+    description: "Counts how often a load is successfully upgraded to HTTPS because of HTTPS-First (`dom.security.https_first` enabled). This does not include loads that get downgraded again.
 "
   }
 
@@ -637,7 +646,7 @@ This does not include deletion-request pings.
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Httpsfirst Upgraded Schemeless"
-    description: "Counts how often a load is marked to be upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless).
+    description: "Counts how often a load is successfully upgraded to HTTPS because of schemeless HTTPS-First (`dom.security.https_first` disabled, but load marked as schemeless). This does not include loads that get downgraded again.
 "
   }
 
@@ -1892,6 +1901,13 @@ This does not include deletion-request pings.
 "
   }
 
+  dimension: metrics__labeled_counter__bounce_tracking_protection_purge_count {
+    sql: ${TABLE}.metrics.labeled_counter.bounce_tracking_protection_purge_count ;;
+    hidden: yes
+    description: "Counts how often we purge trackers. Giving a high level overview about the effectivness of bounce tracking protection. Allows determining error rate with failed/success label. When in dry mode, we count the purges that would have happened under the dry label.
+"
+  }
+
   dimension: metrics__labeled_counter__cert_verifier_crlite_status {
     sql: ${TABLE}.metrics.labeled_counter.cert_verifier_crlite_status ;;
     hidden: yes
@@ -2419,6 +2435,13 @@ This metric appears in both the metrics and baseline pings.
     sql: ${TABLE}.metrics.labeled_counter.power_cpu_time_per_tracker_type_ms ;;
     hidden: yes
     description: "CPU time used by content processes used only for tracking resources, labeled by the category of the tracker.
+"
+  }
+
+  dimension: metrics__labeled_counter__power_energy_per_process_type {
+    sql: ${TABLE}.metrics.labeled_counter.power_energy_per_process_type ;;
+    hidden: yes
+    description: "How much energy (in µWh) has been used, broken down by process type. Only available on Apple Silicon.
 "
   }
 
@@ -8052,6 +8075,66 @@ documented in the ping's pings.yaml file.
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Count"
+    description: "This was accidentally sent in the past and is now deprecated. See https://bugzilla.mozilla.org/show_bug.cgi?id=1799509#c5"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__networking_transaction_wait_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.bucket_count ;;
     type: number
@@ -12077,6 +12160,18 @@ view: metrics_table__metrics__timing_distribution__networking_http_content_onsta
 }
 
 view: metrics_table__metrics__timing_distribution__networking_http_content_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_onstart_suspend_total_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

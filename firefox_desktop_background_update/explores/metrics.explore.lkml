@@ -113,6 +113,11 @@ explore: metrics {
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__avif_yuv_color_space}) AS metrics__metrics__labeled_counter__avif_yuv_color_space ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__avif_yuv_color_space.document_id} ;;
   }
 
+  join: metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__bounce_tracking_protection_purge_count}) AS metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__bounce_tracking_protection_purge_count.document_id} ;;
+  }
+
   join: metrics__metrics__labeled_counter__cert_verifier_crlite_status {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__cert_verifier_crlite_status}) AS metrics__metrics__labeled_counter__cert_verifier_crlite_status ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__cert_verifier_crlite_status.document_id} ;;
@@ -476,6 +481,11 @@ explore: metrics {
   join: metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms {
     relationship: one_to_many
     sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_cpu_time_per_tracker_type_ms}) AS metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_cpu_time_per_tracker_type_ms.document_id} ;;
+  }
+
+  join: metrics__metrics__labeled_counter__power_energy_per_process_type {
+    relationship: one_to_many
+    sql: LEFT JOIN UNNEST(${metrics.metrics__labeled_counter__power_energy_per_process_type}) AS metrics__metrics__labeled_counter__power_energy_per_process_type ON ${metrics.document_id} = ${metrics__metrics__labeled_counter__power_energy_per_process_type.document_id} ;;
   }
 
   join: metrics__metrics__labeled_counter__power_gpu_time_per_process_type_ms {

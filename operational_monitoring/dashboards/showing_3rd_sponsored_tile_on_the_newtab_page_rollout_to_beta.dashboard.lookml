@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.branch
     ]
     filters:
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.metric: 'uri_count'
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.metric: 'active_hours'
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.statistic: mean
     row: 0
     col: 0
@@ -180,8 +180,45 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Memory Total
+    name: Memory Total_percentile
+    note_state: expanded
+    note_display: above
+    note_text: Percentile
+    explore: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta
+    type: "ci-line-chart"
+    fields: [
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.submission_date,
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.branch,
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.upper,
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.lower,
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.point
+    ]
+    pivots: [
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.branch
+    ]
+    filters:
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.metric: 'memory_total'
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.statistic: percentile
+    row: 20
+    col: 12
+    width: 12
+    height: 8
+    field_x: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.submission_date
+    field_y: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.point
+    log_scale: false
+    ci_lower: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.lower
+    ci_upper: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.upper
+    show_grid: true
+    listen:
+      Date: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.submission_date
+      Percentile: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.parameter
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,10 +233,10 @@
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.branch
     ]
     filters:
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.metric: 'active_hours'
+      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.metric: 'uri_count'
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.statistic: mean
-    row: 20
-    col: 12
+    row: 30
+    col: 0
     width: 12
     height: 8
     field_x: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.submission_date
@@ -233,42 +270,6 @@
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.metric: 'qualified_cumulative_days_of_use'
       showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.statistic: mean
     row: 30
-    col: 0
-    width: 12
-    height: 8
-    field_x: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.submission_date
-    field_y: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.point
-    log_scale: false
-    ci_lower: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.lower
-    ci_upper: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.upper
-    show_grid: true
-    listen:
-      Date: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
-    note_state: expanded
-    note_display: above
-    note_text: Percentile
-    explore: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta
-    type: "ci-line-chart"
-    fields: [
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.submission_date,
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.branch,
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.upper,
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.lower,
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.point
-    ]
-    pivots: [
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.branch
-    ]
-    filters:
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.metric: 'memory_total'
-      showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.statistic: percentile
-    row: 30
     col: 12
     width: 12
     height: 8
@@ -280,7 +281,6 @@
     show_grid: true
     listen:
       Date: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.submission_date
-      Percentile: showing_3rd_sponsored_tile_on_the_newtab_page_rollout_to_beta.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

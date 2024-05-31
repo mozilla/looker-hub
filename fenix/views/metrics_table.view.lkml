@@ -773,6 +773,13 @@ view: metrics_table {
     group_item_label: "Bloburl Resolve Stopped"
   }
 
+  dimension: metrics__counter__bounce_tracking_protection_purge_count_classified_tracker {
+    sql: ${TABLE}.metrics.counter.bounce_tracking_protection_purge_count_classified_tracker ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Bounce Tracking Protection Purge Count Classified Tracker"
+  }
+
   dimension: metrics__counter__cookie_banners_cookie_injection_fail {
     sql: ${TABLE}.metrics.counter.cookie_banners_cookie_injection_fail ;;
     type: number
@@ -2457,6 +2464,11 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__bounce_tracking_protection_purge_count {
+    sql: ${TABLE}.metrics.labeled_counter.bounce_tracking_protection_purge_count ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__browser_search_ad_clicks {
     sql: ${TABLE}.metrics.labeled_counter.browser_search_ad_clicks ;;
     hidden: yes
@@ -2909,6 +2921,11 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__power_cpu_time_per_tracker_type_ms {
     sql: ${TABLE}.metrics.labeled_counter.power_cpu_time_per_tracker_type_ms ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__power_energy_per_process_type {
+    sql: ${TABLE}.metrics.labeled_counter.power_energy_per_process_type ;;
     hidden: yes
   }
 
@@ -9679,6 +9696,65 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__bucket_count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.bucket_count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Bucket Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__count {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.count ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__histogram_type {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.histogram_type ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Histogram Type"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__overflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.overflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Overflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__range {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.range ;;
+    hidden: yes
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__sum {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.sum ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__time_unit {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.time_unit ;;
+    type: string
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Time Unit"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__underflow {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.underflow ;;
+    type: number
+    group_label: "Metrics Timing Distribution Networking Http Onstart Suspend Total Time"
+    group_item_label: "Underflow"
+  }
+
+  dimension: metrics__timing_distribution__networking_http_onstart_suspend_total_time__values {
+    sql: ${TABLE}.metrics.timing_distribution.networking_http_onstart_suspend_total_time.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__timing_distribution__networking_transaction_wait_time__bucket_count {
     sql: ${TABLE}.metrics.timing_distribution.networking_transaction_wait_time.bucket_count ;;
     type: number
@@ -16335,6 +16411,18 @@ view: metrics_table__metrics__timing_distribution__networking_http_content_onsta
 }
 
 view: metrics_table__metrics__timing_distribution__networking_http_content_onstop_delay__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__timing_distribution__networking_http_onstart_suspend_total_time__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

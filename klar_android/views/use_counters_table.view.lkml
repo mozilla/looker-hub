@@ -4005,6 +4005,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_position_visibility {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_visibility ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Visibility"
+    description: "Whether a document used the CSS property position-visibility. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_print_color_adjust {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_print_color_adjust ;;
     type: number
@@ -10314,6 +10323,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_position_visibility {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_visibility ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Visibility"
+    description: "Whether a page used the CSS property position-visibility. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_print_color_adjust {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_print_color_adjust ;;
     type: number
@@ -15111,6 +15129,96 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Array Type 2"
+    description: "Whether a document Array is Type II subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_array_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_array_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Array Type 3"
+    description: "Whether a document Array is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_arraybuffer_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_arraybuffer_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Arraybuffer Type 3"
+    description: "Whether a document ArrayBuffer is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_promise_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_promise_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Promise Type 2"
+    description: "Whether a document Promise is Type II subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_promise_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_promise_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Promise Type 3"
+    description: "Whether a document Promise is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_regexp_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_regexp_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Regexp Type 3"
+    description: "Whether a document RegExp is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_regexp_type_4 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_regexp_type_4 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Regexp Type 4"
+    description: "Whether a document RegExp is Type IV subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_sharedarraybuffer_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_sharedarraybuffer_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Sharedarraybuffer Type 3"
+    description: "Whether a document SharedArrayBuffer is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_typedarray_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_typedarray_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Typedarray Type 2"
+    description: "Whether a document TypedArray is Type II subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_doc_js_subclassing_typedarray_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_doc_js_subclassing_typedarray_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Doc Js Subclassing Typedarray Type 3"
+    description: "Whether a document TypedArray is Type III subclassed. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_doc_js_wasm {
     sql: ${TABLE}.metrics.counter.use_counter_doc_js_wasm ;;
     type: number
@@ -18330,6 +18438,96 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Page Js Late Weekday"
     description: "Whether a page parses a Date with day of week in an unexpected position. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_array_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_array_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Array Type 2"
+    description: "Whether a page Array is Type II subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_array_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_array_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Array Type 3"
+    description: "Whether a page Array is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_arraybuffer_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_arraybuffer_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Arraybuffer Type 3"
+    description: "Whether a page ArrayBuffer is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_promise_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_promise_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Promise Type 2"
+    description: "Whether a page Promise is Type II subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_promise_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_promise_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Promise Type 3"
+    description: "Whether a page Promise is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_regexp_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_regexp_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Regexp Type 3"
+    description: "Whether a page RegExp is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_regexp_type_4 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_regexp_type_4 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Regexp Type 4"
+    description: "Whether a page RegExp is Type IV subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_sharedarraybuffer_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_sharedarraybuffer_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Sharedarraybuffer Type 3"
+    description: "Whether a page SharedArrayBuffer is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_typedarray_type_2 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_typedarray_type_2 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Typedarray Type 2"
+    description: "Whether a page TypedArray is Type II subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_page_js_subclassing_typedarray_type_3 {
+    sql: ${TABLE}.metrics.counter.use_counter_page_js_subclassing_typedarray_type_3 ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Page Js Subclassing Typedarray Type 3"
+    description: "Whether a page TypedArray is Type III subclassed. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
