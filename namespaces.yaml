@@ -6954,8 +6954,8 @@ operational_monitoring:
             - beta
             - nightly
             - aurora
-            - release
             - esr
+            - release
             - default
             - nightly-pine
             - nightly-oak
@@ -7063,18 +7063,18 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id107
           release:
-            default: '124.0'
+            default: '125.0'
             options:
-            - '124.0'
-            - '121.0'
-            - '122.0'
             - '125.0'
-            - '9000'
+            - '121.0'
             - '127.0'
+            - '124.0'
             - '126.0'
-            - '104.0'
-            - '119.0'
+            - '122.0'
+            - '9000'
+            - '123.0'
             - '118.0'
+            - '119.0'
         explore: firefox_ios_beta_health
         group_by_dimension: null
         summaries: &id108
@@ -7135,8 +7135,8 @@ operational_monitoring:
             default: beta
             options:
             - beta
-            - aurora
             - nightly
+            - aurora
             - release
             - esr
             - Other
@@ -8155,15 +8155,15 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id188
           app:
-            default: Darwin - vpn_session
+            default: Android - vpn_session
             options:
-            - Darwin - vpn_session
             - Android - vpn_session
-            - Linux - vpn_session
-            - iOS - vpn_session
             - Windows - vpn_session
-            - iOS - daemon_session
+            - iOS - vpn_session
             - Android - daemon_session
+            - iOS - daemon_session
+            - Linux - vpn_session
+            - Darwin - vpn_session
         explore: mozilla_vpn
         group_by_dimension: app
         summaries: &id189
@@ -8991,10 +8991,10 @@ operational_monitoring:
         compact_visualization: false
         dimensions: &id242
           channel:
-            default: release
+            default: beta
             options:
-            - release
             - beta
+            - release
             - nightly
           os:
             default: Linux
