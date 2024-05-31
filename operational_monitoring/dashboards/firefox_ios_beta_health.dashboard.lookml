@@ -212,23 +212,23 @@
   - title: Release
     name: Release
     type: string_filter
-    default_value: '124.0'
+    default_value: '126.0'
     allow_multiple_values: false
     required: true
     ui_config:
       type: dropdown_menu
       display: inline
       options:
+      - '126.0'
+      - '125.0'
       - '124.0'
       - '121.0'
-      - '122.0'
-      - '125.0'
-      - '9000'
       - '127.0'
-      - '126.0'
-      - '104.0'
-      - '119.0'
-      - '118.0'
+      - '9000'
+      - '122.0'
+      - '116.0'
+      - '117.0'
+      - '123.0'
       
   
   
