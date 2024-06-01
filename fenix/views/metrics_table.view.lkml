@@ -1729,6 +1729,25 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__custom_distribution__network_tls_early_data_bytes_written__count {
+    sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.count ;;
+    type: number
+    group_label: "Metrics Custom Distribution Network Tls Early Data Bytes Written"
+    group_item_label: "Count"
+  }
+
+  dimension: metrics__custom_distribution__network_tls_early_data_bytes_written__sum {
+    sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.sum ;;
+    type: number
+    group_label: "Metrics Custom Distribution Network Tls Early Data Bytes Written"
+    group_item_label: "Sum"
+  }
+
+  dimension: metrics__custom_distribution__network_tls_early_data_bytes_written__values {
+    sql: ${TABLE}.metrics.custom_distribution.network_tls_early_data_bytes_written.values ;;
+    hidden: yes
+  }
+
   dimension: metrics__custom_distribution__networking_cookie_access_fixup_diff__count {
     sql: ${TABLE}.metrics.custom_distribution.networking_cookie_access_fixup_diff.count ;;
     type: number
@@ -2779,6 +2798,16 @@ view: metrics_table {
     hidden: yes
   }
 
+  dimension: metrics__labeled_counter__network_tls_early_data_accepted {
+    sql: ${TABLE}.metrics.labeled_counter.network_tls_early_data_accepted ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__network_tls_early_data_negotiated {
+    sql: ${TABLE}.metrics.labeled_counter.network_tls_early_data_negotiated ;;
+    hidden: yes
+  }
+
   dimension: metrics__labeled_counter__networking_cookie_timestamp_fixed_count {
     sql: ${TABLE}.metrics.labeled_counter.networking_cookie_timestamp_fixed_count ;;
     hidden: yes
@@ -2791,6 +2820,16 @@ view: metrics_table {
 
   dimension: metrics__labeled_counter__networking_http_channel_onstart_success_https_rr {
     sql: ${TABLE}.metrics.labeled_counter.networking_http_channel_onstart_success_https_rr ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_http_redirect_to_scheme_subresource {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_redirect_to_scheme_subresource ;;
+    hidden: yes
+  }
+
+  dimension: metrics__labeled_counter__networking_http_redirect_to_scheme_top_level {
+    sql: ${TABLE}.metrics.labeled_counter.networking_http_redirect_to_scheme_top_level ;;
     hidden: yes
   }
 
@@ -14755,6 +14794,18 @@ view: metrics_table__metrics__custom_distribution__js_execution_percentage__valu
 }
 
 view: metrics_table__metrics__custom_distribution__js_xdr_encode_percentage__values {
+  dimension: key {
+    sql: ${TABLE}.key ;;
+    type: string
+  }
+
+  dimension: value {
+    sql: ${TABLE}.value ;;
+    type: number
+  }
+}
+
+view: metrics_table__metrics__custom_distribution__network_tls_early_data_bytes_written__values {
   dimension: key {
     sql: ${TABLE}.key ;;
     type: string

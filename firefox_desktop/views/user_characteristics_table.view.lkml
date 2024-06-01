@@ -770,6 +770,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_screen_orientation {
+    sql: ${TABLE}.metrics.quantity.characteristics_screen_orientation ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Screen Orientation"
+    description: "Orientation of the primary screen.
+"
+  }
+
   dimension: metrics__quantity__characteristics_screen_width {
     sql: ${TABLE}.metrics.quantity.characteristics_screen_width ;;
     type: number
