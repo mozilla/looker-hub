@@ -13050,12 +13050,75 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domattr_modified {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domattr_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domattr Modified"
+    description: "Whether a document used DOMAttrModified. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domcharacter_data_modified {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domcharacter_data_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domcharacter Data Modified"
+    description: "Whether a document used DOMCharacterDataModified. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domnode_inserted {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domnode_inserted ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domnode Inserted"
+    description: "Whether a document used DOMNodeInserted. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domnode_inserted_into_document {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domnode_inserted_into_document ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domnode Inserted Into Document"
+    description: "Whether a document used DOMNodeInsertedIntoDocument. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domnode_removed {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domnode_removed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domnode Removed"
+    description: "Whether a document used DOMNodeRemoved. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domnode_removed_from_document {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domnode_removed_from_document ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domnode Removed From Document"
+    description: "Whether a document used DOMNodeRemovedFromDocument. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_doc_domquad_bounds_attr {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domquad_bounds_attr ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Doc Domquad Bounds Attr"
     description: "Whether a document used DOMQuadBoundsAttr. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_doc_domsubtree_modified {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_doc_domsubtree_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Doc Domsubtree Modified"
+    description: "Whether a document used DOMSubtreeModified. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -13509,12 +13572,75 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domattr_modified {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domattr_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domattr Modified"
+    description: "Whether a page used DOMAttrModified. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domcharacter_data_modified {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domcharacter_data_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domcharacter Data Modified"
+    description: "Whether a page used DOMCharacterDataModified. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domnode_inserted {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domnode_inserted ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domnode Inserted"
+    description: "Whether a page used DOMNodeInserted. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domnode_inserted_into_document {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domnode_inserted_into_document ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domnode Inserted Into Document"
+    description: "Whether a page used DOMNodeInsertedIntoDocument. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domnode_removed {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domnode_removed ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domnode Removed"
+    description: "Whether a page used DOMNodeRemoved. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domnode_removed_from_document {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domnode_removed_from_document ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domnode Removed From Document"
+    description: "Whether a page used DOMNodeRemovedFromDocument. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_deprecated_ops_page_domquad_bounds_attr {
     sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domquad_bounds_attr ;;
     type: number
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Deprecated Ops Page Domquad Bounds Attr"
     description: "Whether a page used DOMQuadBoundsAttr. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_deprecated_ops_page_domsubtree_modified {
+    sql: ${TABLE}.metrics.counter.use_counter_deprecated_ops_page_domsubtree_modified ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Deprecated Ops Page Domsubtree Modified"
+    description: "Whether a page used DOMSubtreeModified. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

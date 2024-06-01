@@ -1103,6 +1103,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__quantity__characteristics_screen_orientation {
+    label: "Characteristics Screen Orientation"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_screen_orientation ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Screen Orientation"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Screen Orientation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_screen_orientation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Orientation of the primary screen.
+"
+  }
+
   dimension: metrics__quantity__characteristics_screen_width {
     label: "Characteristics Screen Width"
     hidden: no
