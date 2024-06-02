@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       android_add_ons_extension_process_beta.branch
     ]
     filters:
-      android_add_ons_extension_process_beta.metric: 'ad_clicks'
+      android_add_ons_extension_process_beta.metric: 'days_of_use'
       android_add_ons_extension_process_beta.statistic: mean
     row: 0
     col: 0
@@ -44,8 +44,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -60,7 +60,7 @@
       android_add_ons_extension_process_beta.branch
     ]
     filters:
-      android_add_ons_extension_process_beta.metric: 'retained'
+      android_add_ons_extension_process_beta.metric: 'tagged_sap_searches'
       android_add_ons_extension_process_beta.statistic: mean
     row: 0
     col: 12
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       android_add_ons_extension_process_beta.branch
     ]
     filters:
-      android_add_ons_extension_process_beta.metric: 'uri_count'
+      android_add_ons_extension_process_beta.metric: 'active_hours'
       android_add_ons_extension_process_beta.statistic: mean
     row: 10
     col: 0
@@ -146,8 +146,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -162,7 +162,7 @@
       android_add_ons_extension_process_beta.branch
     ]
     filters:
-      android_add_ons_extension_process_beta.metric: 'days_of_use'
+      android_add_ons_extension_process_beta.metric: 'ad_clicks'
       android_add_ons_extension_process_beta.statistic: mean
     row: 20
     col: 0
@@ -217,8 +217,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -233,7 +233,7 @@
       android_add_ons_extension_process_beta.branch
     ]
     filters:
-      android_add_ons_extension_process_beta.metric: 'tagged_sap_searches'
+      android_add_ons_extension_process_beta.metric: 'retained'
       android_add_ons_extension_process_beta.statistic: mean
     row: 30
     col: 0
@@ -251,8 +251,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -267,7 +267,7 @@
       android_add_ons_extension_process_beta.branch
     ]
     filters:
-      android_add_ons_extension_process_beta.metric: 'active_hours'
+      android_add_ons_extension_process_beta.metric: 'uri_count'
       android_add_ons_extension_process_beta.statistic: mean
     row: 30
     col: 12
