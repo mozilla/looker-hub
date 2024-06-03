@@ -4037,6 +4037,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_inset_area {
+    label: "Use Counter Css Doc Css Inset Area"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_inset_area ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Inset Area"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Inset Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_inset_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property inset-area. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_inset_block {
     label: "Use Counter Css Doc Css Inset Block"
     hidden: no
@@ -7367,6 +7385,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_position_try_order {
+    label: "Use Counter Css Doc Css Position Try Order"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try_order ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Position Try Order"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Try Order"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_position_try_order"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property position-try-order. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_position_visibility {
     label: "Use Counter Css Doc Css Position Visibility"
     hidden: no
@@ -10082,6 +10118,24 @@ view: use_counters {
     }
 
     description: "Whether a document used the CSS property -webkit-flex-wrap. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_webkit_font_smoothing {
+    label: "Use Counter Css Doc Css Webkit Font Smoothing"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_webkit_font_smoothing ;;
+    type: number
+    group_label: "Use Counter Css Doc"
+    group_item_label: "Css Webkit Font Smoothing"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Webkit Font Smoothing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_webkit_font_smoothing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a document used the CSS property -webkit-font-smoothing. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -16673,6 +16727,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_inset_area {
+    label: "Use Counter Css Page Css Inset Area"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_inset_area ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Inset Area"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Inset Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_inset_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property inset-area. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_inset_block {
     label: "Use Counter Css Page Css Inset Block"
     hidden: no
@@ -20003,6 +20075,24 @@ view: use_counters {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_position_try_order {
+    label: "Use Counter Css Page Css Position Try Order"
+    hidden: no
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try_order ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Position Try Order"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Try Order"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_try_order"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property position-try-order. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_position_visibility {
     label: "Use Counter Css Page Css Position Visibility"
     hidden: no
@@ -22718,6 +22808,24 @@ view: use_counters {
     }
 
     description: "Whether a page used the CSS property -webkit-flex-wrap. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_webkit_font_smoothing {
+    label: "Use Counter Css Page Css Webkit Font Smoothing"
+    hidden: yes
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_webkit_font_smoothing ;;
+    type: number
+    group_label: "Use Counter Css Page"
+    group_item_label: "Css Webkit Font Smoothing"
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Webkit Font Smoothing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_webkit_font_smoothing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Whether a page used the CSS property -webkit-font-smoothing. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -48336,6 +48444,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_inset_area {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_inset_area} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Inset Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_inset_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_inset_area_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_inset_area: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Inset Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_inset_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_inset_block {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_inset_block} ;;
@@ -52961,6 +53094,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_doc_css_position_try_order {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_position_try_order} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Try Order"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_position_try_order"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_position_try_order_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_position_try_order: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Position Try Order"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_position_try_order"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_doc_css_position_visibility {
     type: sum
     sql: ${metrics__counter__use_counter_css_doc_css_position_visibility} ;;
@@ -56732,6 +56890,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Doc Css Webkit Flex Wrap"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_webkit_flex_wrap"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_webkit_font_smoothing {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_doc_css_webkit_font_smoothing} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Webkit Font Smoothing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_webkit_font_smoothing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_doc_css_webkit_font_smoothing_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_doc_css_webkit_font_smoothing: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Doc Css Webkit Font Smoothing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_doc_css_webkit_font_smoothing"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }
@@ -65886,6 +66069,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_page_css_inset_area {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_inset_area} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Inset Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_inset_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_inset_area_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_inset_area: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Inset Area"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_inset_area"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_page_css_inset_block {
     type: sum
     sql: ${metrics__counter__use_counter_css_page_css_inset_block} ;;
@@ -70511,6 +70719,31 @@ The labels are the `category.name` identifier of the metric.
     }
   }
 
+  measure: use_counter_css_page_css_position_try_order {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_position_try_order} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Try Order"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_try_order"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_position_try_order_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_position_try_order: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Position Try Order"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_position_try_order"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
   measure: use_counter_css_page_css_position_visibility {
     type: sum
     sql: ${metrics__counter__use_counter_css_page_css_position_visibility} ;;
@@ -74282,6 +74515,31 @@ The labels are the `category.name` identifier of the metric.
     link: {
       label: "Glean Dictionary reference for Use Counter Css Page Css Webkit Flex Wrap"
       url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_webkit_flex_wrap"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_webkit_font_smoothing {
+    type: sum
+    sql: ${metrics__counter__use_counter_css_page_css_webkit_font_smoothing} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Webkit Font Smoothing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_webkit_font_smoothing"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+  }
+
+  measure: use_counter_css_page_css_webkit_font_smoothing_client_count {
+    type: count_distinct
+    filters: [
+      metrics__counter__use_counter_css_page_css_webkit_font_smoothing: ">0",
+    ]
+    sql: ${client_info__client_id} ;;
+
+    link: {
+      label: "Glean Dictionary reference for Use Counter Css Page Css Webkit Font Smoothing"
+      url: "https://dictionary.telemetry.mozilla.org/apps/fenix/metrics/use_counter_css_page_css_webkit_font_smoothing"
       icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
     }
   }

@@ -2340,6 +2340,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_inset_area {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_inset_area ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Inset Area"
+    description: "Whether a document used the CSS property inset-area. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_inset_block {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_inset_block ;;
     type: number
@@ -4005,6 +4014,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_doc_css_position_try_order {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_try_order ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Position Try Order"
+    description: "Whether a document used the CSS property position-try-order. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_doc_css_position_visibility {
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_position_visibility ;;
     type: number
@@ -5361,6 +5379,15 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Doc Css Webkit Flex Wrap"
     description: "Whether a document used the CSS property -webkit-flex-wrap. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_doc_css_webkit_font_smoothing {
+    sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_webkit_font_smoothing ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Doc Css Webkit Font Smoothing"
+    description: "Whether a document used the CSS property -webkit-font-smoothing. Compare against `use.counter.content_documents_destroyed` to calculate the rate.
 "
   }
 
@@ -8658,6 +8685,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_inset_area {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_inset_area ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Inset Area"
+    description: "Whether a page used the CSS property inset-area. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_inset_block {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_inset_block ;;
     type: number
@@ -10323,6 +10359,15 @@ view: use_counters_table {
 "
   }
 
+  dimension: metrics__counter__use_counter_css_page_css_position_try_order {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_try_order ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Position Try Order"
+    description: "Whether a page used the CSS property position-try-order. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
   dimension: metrics__counter__use_counter_css_page_css_position_visibility {
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_position_visibility ;;
     type: number
@@ -11679,6 +11724,15 @@ view: use_counters_table {
     group_label: "Metrics Counter"
     group_item_label: "Use Counter Css Page Css Webkit Flex Wrap"
     description: "Whether a page used the CSS property -webkit-flex-wrap. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
+"
+  }
+
+  dimension: metrics__counter__use_counter_css_page_css_webkit_font_smoothing {
+    sql: ${TABLE}.metrics.counter.use_counter_css_page_css_webkit_font_smoothing ;;
+    type: number
+    group_label: "Metrics Counter"
+    group_item_label: "Use Counter Css Page Css Webkit Font Smoothing"
+    description: "Whether a page used the CSS property -webkit-font-smoothing. Compare against `use.counter.top_level_content_documents_destroyed` to calculate the rate.
 "
   }
 

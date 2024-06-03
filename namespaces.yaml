@@ -990,11 +990,6 @@ fenix:
       - channel: release
         table: mozdata.fenix.baseline_clients_last_seen
       type: glean_ping_view
-    baseline_clients_last_seen_extended_activity_table:
-      tables:
-      - channel: release
-        table: mozdata.fenix.baseline_clients_last_seen_extended_activity
-      type: table_view
     baseline_clients_last_seen_table:
       tables:
       - channel: release
@@ -3461,11 +3456,6 @@ firefox_ios:
       - channel: release
         table: mozdata.firefox_ios.baseline_clients_last_seen
       type: glean_ping_view
-    baseline_clients_last_seen_extended_activity_table:
-      tables:
-      - channel: release
-        table: mozdata.firefox_ios.baseline_clients_last_seen_extended_activity
-      type: table_view
     baseline_clients_last_seen_table:
       tables:
       - channel: release
@@ -4326,6 +4316,16 @@ focus_android:
       - channel: nightly
         table: mozdata.org_mozilla_focus_nightly.deletion_request
       type: table_view
+    engagement_clients_table:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.engagement_clients
+      type: table_view
+    engagement_table:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.engagement
+      type: table_view
     events:
       tables:
       - base_table: mozdata.focus_android.events_unnested
@@ -4441,6 +4441,16 @@ focus_android:
         table: mozdata.org_mozilla_focus_beta.pageload
       - channel: nightly
         table: mozdata.org_mozilla_focus_nightly.pageload
+      type: table_view
+    retention_clients_table:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.retention_clients
+      type: table_view
+    retention_table:
+      tables:
+      - channel: release
+        table: mozdata.focus_android.retention
       type: table_view
     use_counters:
       tables:
@@ -7112,27 +7122,21 @@ operational_monitoring:
             - beta
             - nightly
           release:
-            default: '127.0'
+            default: '123.0'
             options:
-            - '127.0'
-            - '124.0'
-            - '125.0'
-            - '126.0'
-            - '122.0'
             - '123.0'
-            - '117.0'
+            - '122.0'
+            - '39.0'
             - '121.0'
+            - '124.0'
+            - '117.0'
             - '115.0'
-            - '118.0'
+            - '119.0'
+            - '125.0'
+            - '120.0'
         explore: firefox_ios_beta_health
         group_by_dimension: null
         summaries: &id111
-        - metric: hang_exception
-          metric_groups: []
-          statistic: total_ratio
-        - metric: cpu_exception
-          metric_groups: []
-          statistic: total_ratio
         - metric: large_file_write
           metric_groups: []
           statistic: total_ratio
@@ -7140,6 +7144,12 @@ operational_monitoring:
           metric_groups: []
           statistic: sum
         - metric: dirty_startup
+          metric_groups: []
+          statistic: total_ratio
+        - metric: hang_exception
+          metric_groups: []
+          statistic: total_ratio
+        - metric: cpu_exception
           metric_groups: []
           statistic: total_ratio
         table: moz-fx-data-shared-prod.operational_monitoring.firefox_ios_beta_health_statistics

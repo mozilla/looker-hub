@@ -101,6 +101,11 @@ view: mobile_engagement {
     type: string
   }
 
+  dimension: product_name {
+    sql: ${TABLE}.product_name ;;
+    type: string
+  }
+
   dimension: wau {
     sql: ${TABLE}.wau ;;
     type: number

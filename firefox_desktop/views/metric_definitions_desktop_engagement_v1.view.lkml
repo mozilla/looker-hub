@@ -109,7 +109,18 @@ desktop_engagement_v1.wau AS desktop_engagement_v1_wau,
             FROM
                 moz-fx-data-shared-prod.telemetry.desktop_engagement
             ) AS desktop_engagement_v1
+        LEFT JOIN
+    (
+            SELECT
+                *
+            FROM
+                mozdata.static.country_codes_v1
+            ) AS countries
         
+    ON 
+    desktop_engagement_v1.country = countries.code
+    
+                
                     WHERE 
                     desktop_engagement_v1.submission_date
                     BETWEEN
