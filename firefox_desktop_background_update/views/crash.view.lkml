@@ -7,7 +7,7 @@
 view: crash {
   dimension: metrics__string__crash_app_build {
     label: "Crash App Build"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.crash_app_build ;;
     type: string
     group_label: "Crash"
@@ -25,7 +25,7 @@ view: crash {
 
   dimension: metrics__string__crash_app_channel {
     label: "Crash App Channel"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.crash_app_channel ;;
     type: string
     group_label: "Crash"
@@ -43,7 +43,7 @@ view: crash {
 
   dimension: metrics__string__crash_app_display_version {
     label: "Crash App Display Version"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.crash_app_display_version ;;
     type: string
     group_label: "Crash"
@@ -61,7 +61,7 @@ view: crash {
 
   dimension: metrics__string__crash_background_task_name {
     label: "Crash Background Task Name"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.crash_background_task_name ;;
     type: string
     group_label: "Crash"
@@ -79,7 +79,7 @@ view: crash {
 
   dimension: metrics__quantity__crash_event_loop_nesting_level {
     label: "Crash Event Loop Nesting Level"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.crash_event_loop_nesting_level ;;
     type: number
     group_label: "Crash"
@@ -97,7 +97,7 @@ view: crash {
 
   dimension: metrics__string__crash_font_name {
     label: "Crash Font Name"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.crash_font_name ;;
     type: string
     group_label: "Crash"
@@ -115,7 +115,7 @@ view: crash {
 
   dimension: metrics__quantity__crash_gpu_process_launch {
     label: "Crash Gpu Process Launch"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.crash_gpu_process_launch ;;
     type: number
     group_label: "Crash"
@@ -133,7 +133,7 @@ view: crash {
 
   dimension: metrics__string__crash_ipc_channel_error {
     label: "Crash Ipc Channel Error"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.crash_ipc_channel_error ;;
     type: string
     group_label: "Crash"
@@ -151,7 +151,7 @@ view: crash {
 
   dimension: metrics__boolean__crash_is_garbage_collecting {
     label: "Crash Is Garbage Collecting"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.crash_is_garbage_collecting ;;
     type: yesno
     group_label: "Crash"
@@ -169,7 +169,7 @@ view: crash {
 
   dimension: metrics__string__crash_main_thread_runnable_name {
     label: "Crash Main Thread Runnable Name"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.crash_main_thread_runnable_name ;;
     type: string
     group_label: "Crash"
@@ -187,7 +187,7 @@ view: crash {
 
   dimension: metrics__string__crash_minidump_sha256_hash {
     label: "Crash Minidump Sha256 Hash"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.crash_minidump_sha256_hash ;;
     type: string
     group_label: "Crash"
@@ -205,7 +205,7 @@ view: crash {
 
   dimension: metrics__string__crash_moz_crash_reason {
     label: "Crash Moz Crash Reason"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.crash_moz_crash_reason ;;
     type: string
     group_label: "Crash"
@@ -241,7 +241,7 @@ view: crash {
 
   dimension: metrics__string__crash_profiler_child_shutdown_phase {
     label: "Crash Profiler Child Shutdown Phase"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.crash_profiler_child_shutdown_phase ;;
     type: string
     group_label: "Crash"
@@ -259,7 +259,7 @@ view: crash {
 
   dimension: metrics__string__crash_remote_type {
     label: "Crash Remote Type"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.crash_remote_type ;;
     type: string
     group_label: "Crash"
@@ -277,7 +277,7 @@ view: crash {
 
   dimension: metrics__string__crash_shutdown_progress {
     label: "Crash Shutdown Progress"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.crash_shutdown_progress ;;
     type: string
     group_label: "Crash"
@@ -313,7 +313,7 @@ view: crash {
 
   dimension: metrics__timespan__crash_uptime__value {
     label: "Crash Uptime Value"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.timespan.crash_uptime.value ;;
     type: number
     group_label: "Crash"
@@ -331,7 +331,7 @@ view: crash {
 
   dimension: metrics__boolean__crash_windows_error_reporting {
     label: "Crash Windows Error Reporting"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.crash_windows_error_reporting ;;
     type: yesno
     group_label: "Crash Windows"
@@ -349,7 +349,7 @@ view: crash {
 
   dimension: metrics__string__crash_windows_file_dialog_error_code {
     label: "Crash Windows File Dialog Error Code"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.crash_windows_file_dialog_error_code ;;
     type: string
     group_label: "Crash Windows"
@@ -367,7 +367,7 @@ view: crash {
 
   dimension: metrics__boolean__dll_blocklist_init_failed {
     label: "Dll Blocklist Init Failed"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.dll_blocklist_init_failed ;;
     type: yesno
     group_label: "Dll Blocklist"
@@ -385,7 +385,7 @@ view: crash {
 
   dimension: metrics__boolean__dll_blocklist_user32_loaded_before {
     label: "Dll Blocklist User32 Loaded Before"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.dll_blocklist_user32_loaded_before ;;
     type: yesno
     group_label: "Dll Blocklist"
@@ -403,7 +403,7 @@ view: crash {
 
   dimension: metrics__boolean__environment_headless_mode {
     label: "Environment Headless Mode"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.boolean.environment_headless_mode ;;
     type: yesno
     group_label: "Environment"
@@ -421,7 +421,7 @@ view: crash {
 
   dimension: metrics__timespan__environment_uptime__value {
     label: "Environment Uptime Value"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.timespan.environment_uptime.value ;;
     type: number
     group_label: "Environment"
@@ -439,7 +439,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_available_commit {
     label: "Memory Available Commit"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.memory_available_commit ;;
     type: number
     group_label: "Memory"
@@ -457,7 +457,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_available_physical {
     label: "Memory Available Physical"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.memory_available_physical ;;
     type: number
     group_label: "Memory"
@@ -475,7 +475,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_available_swap {
     label: "Memory Available Swap"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.memory_available_swap ;;
     type: number
     group_label: "Memory"
@@ -493,7 +493,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_available_virtual {
     label: "Memory Available Virtual"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.memory_available_virtual ;;
     type: number
     group_label: "Memory"
@@ -511,7 +511,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_low_physical {
     label: "Memory Low Physical"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.memory_low_physical ;;
     type: number
     group_label: "Memory"
@@ -529,7 +529,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_oom_allocation_size {
     label: "Memory Oom Allocation Size"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.memory_oom_allocation_size ;;
     type: number
     group_label: "Memory"
@@ -547,7 +547,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_purgeable_physical {
     label: "Memory Purgeable Physical"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.memory_purgeable_physical ;;
     type: number
     group_label: "Memory"
@@ -565,7 +565,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_system_use_percentage {
     label: "Memory System Use Percentage"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.memory_system_use_percentage ;;
     type: number
     group_label: "Memory"
@@ -583,7 +583,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_texture {
     label: "Memory Texture"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.memory_texture ;;
     type: number
     group_label: "Memory"
@@ -601,7 +601,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_total_page_file {
     label: "Memory Total Page File"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.memory_total_page_file ;;
     type: number
     group_label: "Memory"
@@ -619,7 +619,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_total_physical {
     label: "Memory Total Physical"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.memory_total_physical ;;
     type: number
     group_label: "Memory"
@@ -637,7 +637,7 @@ view: crash {
 
   dimension: metrics__quantity__memory_total_virtual {
     label: "Memory Total Virtual"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.quantity.memory_total_virtual ;;
     type: number
     group_label: "Memory"
@@ -655,7 +655,7 @@ view: crash {
 
   dimension: metrics__string__windows_package_family_name {
     label: "Windows Package Family Name"
-    hidden: yes
+    hidden: no
     sql: ${TABLE}.metrics.string.windows_package_family_name ;;
     type: string
     group_label: "Windows"

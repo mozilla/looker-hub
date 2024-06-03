@@ -205,7 +205,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_doc_css_align_tracks {
     label: "Use Counter Css Doc Css Align Tracks"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_align_tracks ;;
     type: number
     group_label: "Use Counter Css Doc"
@@ -4219,7 +4219,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_doc_css_justify_tracks {
     label: "Use Counter Css Doc Css Justify Tracks"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_doc_css_justify_tracks ;;
     type: number
     group_label: "Use Counter Css Doc"
@@ -12841,7 +12841,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_page_css_align_tracks {
     label: "Use Counter Css Page Css Align Tracks"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_align_tracks ;;
     type: number
     group_label: "Use Counter Css Page"
@@ -16855,7 +16855,7 @@ view: use_counters {
 
   dimension: metrics__counter__use_counter_css_page_css_justify_tracks {
     label: "Use Counter Css Page Css Justify Tracks"
-    hidden: no
+    hidden: yes
     sql: ${TABLE}.metrics.counter.use_counter_css_page_css_justify_tracks ;;
     type: number
     group_label: "Use Counter Css Page"
