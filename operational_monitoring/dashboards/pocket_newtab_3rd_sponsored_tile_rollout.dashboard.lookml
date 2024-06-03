@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Qualified Cumulative Days Of Use
+    name: Qualified Cumulative Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       pocket_newtab_3rd_sponsored_tile_rollout.branch
     ]
     filters:
-      pocket_newtab_3rd_sponsored_tile_rollout.metric: 'uri_count'
+      pocket_newtab_3rd_sponsored_tile_rollout.metric: 'qualified_cumulative_days_of_use'
       pocket_newtab_3rd_sponsored_tile_rollout.statistic: mean
     row: 0
     col: 0
@@ -44,63 +44,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Memory Total
-    name: Memory Total_percentile
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
-    note_text: Percentile
+    note_text: Mean
     explore: pocket_newtab_3rd_sponsored_tile_rollout
-    type: "ci-line-chart"
+    type: looker_line
     fields: [
       pocket_newtab_3rd_sponsored_tile_rollout.submission_date,
       pocket_newtab_3rd_sponsored_tile_rollout.branch,
-      pocket_newtab_3rd_sponsored_tile_rollout.upper,
-      pocket_newtab_3rd_sponsored_tile_rollout.lower,
       pocket_newtab_3rd_sponsored_tile_rollout.point
     ]
     pivots: [
       pocket_newtab_3rd_sponsored_tile_rollout.branch
     ]
     filters:
-      pocket_newtab_3rd_sponsored_tile_rollout.metric: 'memory_total'
-      pocket_newtab_3rd_sponsored_tile_rollout.statistic: percentile
+      pocket_newtab_3rd_sponsored_tile_rollout.metric: 'ad_clicks'
+      pocket_newtab_3rd_sponsored_tile_rollout.statistic: mean
     row: 0
     col: 12
-    width: 12
-    height: 8
-    field_x: pocket_newtab_3rd_sponsored_tile_rollout.submission_date
-    field_y: pocket_newtab_3rd_sponsored_tile_rollout.point
-    log_scale: false
-    ci_lower: pocket_newtab_3rd_sponsored_tile_rollout.lower
-    ci_upper: pocket_newtab_3rd_sponsored_tile_rollout.upper
-    show_grid: true
-    listen:
-      Date: pocket_newtab_3rd_sponsored_tile_rollout.submission_date
-      Percentile: pocket_newtab_3rd_sponsored_tile_rollout.parameter
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: pocket_newtab_3rd_sponsored_tile_rollout
-    type: looker_line
-    fields: [
-      pocket_newtab_3rd_sponsored_tile_rollout.submission_date,
-      pocket_newtab_3rd_sponsored_tile_rollout.branch,
-      pocket_newtab_3rd_sponsored_tile_rollout.point
-    ]
-    pivots: [
-      pocket_newtab_3rd_sponsored_tile_rollout.branch
-    ]
-    filters:
-      pocket_newtab_3rd_sponsored_tile_rollout.metric: 'days_of_use'
-      pocket_newtab_3rd_sponsored_tile_rollout.statistic: mean
-    row: 10
-    col: 0
     width: 12
     height: 8
     field_x: pocket_newtab_3rd_sponsored_tile_rollout.submission_date
@@ -134,7 +97,75 @@
       pocket_newtab_3rd_sponsored_tile_rollout.metric: 'search_count'
       pocket_newtab_3rd_sponsored_tile_rollout.statistic: mean
     row: 10
+    col: 0
+    width: 12
+    height: 8
+    field_x: pocket_newtab_3rd_sponsored_tile_rollout.submission_date
+    field_y: pocket_newtab_3rd_sponsored_tile_rollout.point
+    log_scale: false
+    ci_lower: pocket_newtab_3rd_sponsored_tile_rollout.lower
+    ci_upper: pocket_newtab_3rd_sponsored_tile_rollout.upper
+    show_grid: true
+    listen:
+      Date: pocket_newtab_3rd_sponsored_tile_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Uri Count
+    name: Uri Count_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: pocket_newtab_3rd_sponsored_tile_rollout
+    type: looker_line
+    fields: [
+      pocket_newtab_3rd_sponsored_tile_rollout.submission_date,
+      pocket_newtab_3rd_sponsored_tile_rollout.branch,
+      pocket_newtab_3rd_sponsored_tile_rollout.point
+    ]
+    pivots: [
+      pocket_newtab_3rd_sponsored_tile_rollout.branch
+    ]
+    filters:
+      pocket_newtab_3rd_sponsored_tile_rollout.metric: 'uri_count'
+      pocket_newtab_3rd_sponsored_tile_rollout.statistic: mean
+    row: 10
     col: 12
+    width: 12
+    height: 8
+    field_x: pocket_newtab_3rd_sponsored_tile_rollout.submission_date
+    field_y: pocket_newtab_3rd_sponsored_tile_rollout.point
+    log_scale: false
+    ci_lower: pocket_newtab_3rd_sponsored_tile_rollout.lower
+    ci_upper: pocket_newtab_3rd_sponsored_tile_rollout.upper
+    show_grid: true
+    listen:
+      Date: pocket_newtab_3rd_sponsored_tile_rollout.submission_date
+      
+    enabled: "#3FE1B0"
+    disabled: "#0060E0"
+    defaults_version: 0
+  - title: Days Of Use
+    name: Days Of Use_mean
+    note_state: expanded
+    note_display: above
+    note_text: Mean
+    explore: pocket_newtab_3rd_sponsored_tile_rollout
+    type: looker_line
+    fields: [
+      pocket_newtab_3rd_sponsored_tile_rollout.submission_date,
+      pocket_newtab_3rd_sponsored_tile_rollout.branch,
+      pocket_newtab_3rd_sponsored_tile_rollout.point
+    ]
+    pivots: [
+      pocket_newtab_3rd_sponsored_tile_rollout.branch
+    ]
+    filters:
+      pocket_newtab_3rd_sponsored_tile_rollout.metric: 'days_of_use'
+      pocket_newtab_3rd_sponsored_tile_rollout.statistic: mean
+    row: 20
+    col: 0
     width: 12
     height: 8
     field_x: pocket_newtab_3rd_sponsored_tile_rollout.submission_date
@@ -166,40 +197,6 @@
     ]
     filters:
       pocket_newtab_3rd_sponsored_tile_rollout.metric: 'retained'
-      pocket_newtab_3rd_sponsored_tile_rollout.statistic: mean
-    row: 20
-    col: 0
-    width: 12
-    height: 8
-    field_x: pocket_newtab_3rd_sponsored_tile_rollout.submission_date
-    field_y: pocket_newtab_3rd_sponsored_tile_rollout.point
-    log_scale: false
-    ci_lower: pocket_newtab_3rd_sponsored_tile_rollout.lower
-    ci_upper: pocket_newtab_3rd_sponsored_tile_rollout.upper
-    show_grid: true
-    listen:
-      Date: pocket_newtab_3rd_sponsored_tile_rollout.submission_date
-      
-    enabled: "#3FE1B0"
-    disabled: "#0060E0"
-    defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
-    note_state: expanded
-    note_display: above
-    note_text: Mean
-    explore: pocket_newtab_3rd_sponsored_tile_rollout
-    type: looker_line
-    fields: [
-      pocket_newtab_3rd_sponsored_tile_rollout.submission_date,
-      pocket_newtab_3rd_sponsored_tile_rollout.branch,
-      pocket_newtab_3rd_sponsored_tile_rollout.point
-    ]
-    pivots: [
-      pocket_newtab_3rd_sponsored_tile_rollout.branch
-    ]
-    filters:
-      pocket_newtab_3rd_sponsored_tile_rollout.metric: 'ad_clicks'
       pocket_newtab_3rd_sponsored_tile_rollout.statistic: mean
     row: 20
     col: 12
@@ -251,24 +248,26 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Qualified Cumulative Days Of Use
-    name: Qualified Cumulative Days Of Use_mean
+  - title: Memory Total
+    name: Memory Total_percentile
     note_state: expanded
     note_display: above
-    note_text: Mean
+    note_text: Percentile
     explore: pocket_newtab_3rd_sponsored_tile_rollout
-    type: looker_line
+    type: "ci-line-chart"
     fields: [
       pocket_newtab_3rd_sponsored_tile_rollout.submission_date,
       pocket_newtab_3rd_sponsored_tile_rollout.branch,
+      pocket_newtab_3rd_sponsored_tile_rollout.upper,
+      pocket_newtab_3rd_sponsored_tile_rollout.lower,
       pocket_newtab_3rd_sponsored_tile_rollout.point
     ]
     pivots: [
       pocket_newtab_3rd_sponsored_tile_rollout.branch
     ]
     filters:
-      pocket_newtab_3rd_sponsored_tile_rollout.metric: 'qualified_cumulative_days_of_use'
-      pocket_newtab_3rd_sponsored_tile_rollout.statistic: mean
+      pocket_newtab_3rd_sponsored_tile_rollout.metric: 'memory_total'
+      pocket_newtab_3rd_sponsored_tile_rollout.statistic: percentile
     row: 30
     col: 12
     width: 12
@@ -281,6 +280,7 @@
     show_grid: true
     listen:
       Date: pocket_newtab_3rd_sponsored_tile_rollout.submission_date
+      Percentile: pocket_newtab_3rd_sponsored_tile_rollout.parameter
       
     enabled: "#3FE1B0"
     disabled: "#0060E0"

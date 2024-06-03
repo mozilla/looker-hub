@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       new_user_survey_ios_april_2024_125.branch
     ]
     filters:
-      new_user_survey_ios_april_2024_125.metric: 'days_of_use'
+      new_user_survey_ios_april_2024_125.metric: 'ad_clicks'
       new_user_survey_ios_april_2024_125.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Retained
-    name: Retained_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       new_user_survey_ios_april_2024_125.branch
     ]
     filters:
-      new_user_survey_ios_april_2024_125.metric: 'retained'
+      new_user_survey_ios_april_2024_125.metric: 'days_of_use'
       new_user_survey_ios_april_2024_125.statistic: mean
     row: 10
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Retained
+    name: Retained_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       new_user_survey_ios_april_2024_125.branch
     ]
     filters:
-      new_user_survey_ios_april_2024_125.metric: 'ad_clicks'
+      new_user_survey_ios_april_2024_125.metric: 'retained'
       new_user_survey_ios_april_2024_125.statistic: mean
     row: 10
     col: 12
