@@ -10,8 +10,8 @@
   preferred_viewer: dashboards-next
 
   elements:
-  - title: Ad Clicks
-    name: Ad Clicks_mean
+  - title: Days Of Use
+    name: Days Of Use_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -26,7 +26,7 @@
       new_user_study_android_april_2024.branch
     ]
     filters:
-      new_user_study_android_april_2024.metric: 'ad_clicks'
+      new_user_study_android_april_2024.metric: 'days_of_use'
       new_user_study_android_april_2024.statistic: mean
     row: 0
     col: 0
@@ -78,8 +78,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Uri Count
-    name: Uri Count_mean
+  - title: Active Hours
+    name: Active Hours_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -94,7 +94,7 @@
       new_user_study_android_april_2024.branch
     ]
     filters:
-      new_user_study_android_april_2024.metric: 'uri_count'
+      new_user_study_android_april_2024.metric: 'active_hours'
       new_user_study_android_april_2024.statistic: mean
     row: 10
     col: 0
@@ -112,8 +112,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Days Of Use
-    name: Days Of Use_mean
+  - title: Tagged Sap Searches
+    name: Tagged Sap Searches_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -128,7 +128,7 @@
       new_user_study_android_april_2024.branch
     ]
     filters:
-      new_user_study_android_april_2024.metric: 'days_of_use'
+      new_user_study_android_april_2024.metric: 'tagged_sap_searches'
       new_user_study_android_april_2024.statistic: mean
     row: 10
     col: 12
@@ -180,8 +180,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Active Hours
-    name: Active Hours_mean
+  - title: Ad Clicks
+    name: Ad Clicks_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -196,7 +196,7 @@
       new_user_study_android_april_2024.branch
     ]
     filters:
-      new_user_study_android_april_2024.metric: 'active_hours'
+      new_user_study_android_april_2024.metric: 'ad_clicks'
       new_user_study_android_april_2024.statistic: mean
     row: 20
     col: 12
@@ -214,8 +214,8 @@
     enabled: "#3FE1B0"
     disabled: "#0060E0"
     defaults_version: 0
-  - title: Tagged Sap Searches
-    name: Tagged Sap Searches_mean
+  - title: Uri Count
+    name: Uri Count_mean
     note_state: expanded
     note_display: above
     note_text: Mean
@@ -230,7 +230,7 @@
       new_user_study_android_april_2024.branch
     ]
     filters:
-      new_user_study_android_april_2024.metric: 'tagged_sap_searches'
+      new_user_study_android_april_2024.metric: 'uri_count'
       new_user_study_android_april_2024.statistic: mean
     row: 30
     col: 0

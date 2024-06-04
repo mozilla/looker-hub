@@ -348,18 +348,6 @@ active_users_aggregates_v1_wau,
     group_label: "Base Fields"
   }
 
-  dimension: app_name {
-    sql: ${TABLE}.active_users_aggregates_v1_app_name ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: app_version {
-    sql: ${TABLE}.active_users_aggregates_v1_app_version ;;
-    type: string
-    group_label: "Base Fields"
-  }
-
   dimension: app_version_is_major_release {
     sql: ${TABLE}.active_users_aggregates_v1_app_version_is_major_release ;;
     type: yesno
@@ -414,22 +402,9 @@ active_users_aggregates_v1_wau,
     group_label: "Base Fields"
   }
 
-  dimension: country {
-    sql: ${TABLE}.active_users_aggregates_v1_country ;;
-    type: string
-    map_layer_name: countries
-    group_label: "Base Fields"
-  }
-
   dimension: dau {
     sql: ${TABLE}.active_users_aggregates_v1_dau ;;
     type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: distribution_id {
-    sql: ${TABLE}.active_users_aggregates_v1_distribution_id ;;
-    type: string
     group_label: "Base Fields"
   }
 
@@ -442,12 +417,6 @@ active_users_aggregates_v1_wau,
   dimension: install_source {
     sql: ${TABLE}.active_users_aggregates_v1_install_source ;;
     type: string
-    group_label: "Base Fields"
-  }
-
-  dimension: is_default_browser {
-    sql: ${TABLE}.active_users_aggregates_v1_is_default_browser ;;
-    type: yesno
     group_label: "Base Fields"
   }
 
@@ -466,12 +435,6 @@ active_users_aggregates_v1_wau,
   dimension: new_profiles {
     sql: ${TABLE}.active_users_aggregates_v1_new_profiles ;;
     type: number
-    group_label: "Base Fields"
-  }
-
-  dimension: os {
-    sql: ${TABLE}.active_users_aggregates_v1_os ;;
-    type: string
     group_label: "Base Fields"
   }
 
