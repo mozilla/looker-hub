@@ -770,6 +770,15 @@ The labels are the `category.name` identifier of the metric.
 "
   }
 
+  dimension: metrics__quantity__characteristics_screen_orientation {
+    sql: ${TABLE}.metrics.quantity.characteristics_screen_orientation ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Screen Orientation"
+    description: "Orientation of the primary screen.
+"
+  }
+
   dimension: metrics__quantity__characteristics_screen_width {
     sql: ${TABLE}.metrics.quantity.characteristics_screen_width ;;
     type: number
@@ -794,6 +803,15 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics Quantity"
     group_item_label: "Characteristics Target Frame Rate"
     description: "The target frame rate in frames-per-second.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_zoom_count {
+    sql: ${TABLE}.metrics.quantity.characteristics_zoom_count ;;
+    type: number
+    group_label: "Metrics Quantity"
+    group_item_label: "Characteristics Zoom Count"
+    description: "Number of domains the users has a non-default zoom level.
 "
   }
 
@@ -929,6 +947,15 @@ The labels are the `category.name` identifier of the metric.
     group_label: "Metrics String"
     group_item_label: "Characteristics Prefs Intl Accept Languages"
     description: "Value of the intl.accept_languages pref.
+"
+  }
+
+  dimension: metrics__string__characteristics_scalings {
+    sql: ${TABLE}.metrics.string.characteristics_scalings ;;
+    type: string
+    group_label: "Metrics String"
+    group_item_label: "Characteristics Scalings"
+    description: "Screen(s) scaling/zoom level
 "
   }
 

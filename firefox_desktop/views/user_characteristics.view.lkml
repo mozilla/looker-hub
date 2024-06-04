@@ -1085,6 +1085,24 @@ view: user_characteristics {
 "
   }
 
+  dimension: metrics__string__characteristics_scalings {
+    label: "Characteristics Scalings"
+    hidden: no
+    sql: ${TABLE}.metrics.string.characteristics_scalings ;;
+    type: string
+    group_label: "Characteristics"
+    group_item_label: "Scalings"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Scalings"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_scalings"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Screen(s) scaling/zoom level
+"
+  }
+
   dimension: metrics__quantity__characteristics_screen_height {
     label: "Characteristics Screen Height"
     hidden: no
@@ -1100,6 +1118,24 @@ view: user_characteristics {
     }
 
     description: "Height of the primary screen in pixels.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_screen_orientation {
+    label: "Characteristics Screen Orientation"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_screen_orientation ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Screen Orientation"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Screen Orientation"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_screen_orientation"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Orientation of the primary screen.
 "
   }
 
@@ -1226,6 +1262,24 @@ view: user_characteristics {
     }
 
     description: "What LookAndFeel(VideoDynamicRange) reports. Note that CSSVideoDynamicRange has an additional dependency on Color Depth.
+"
+  }
+
+  dimension: metrics__quantity__characteristics_zoom_count {
+    label: "Characteristics Zoom Count"
+    hidden: no
+    sql: ${TABLE}.metrics.quantity.characteristics_zoom_count ;;
+    type: number
+    group_label: "Characteristics"
+    group_item_label: "Zoom Count"
+
+    link: {
+      label: "Glean Dictionary reference for Characteristics Zoom Count"
+      url: "https://dictionary.telemetry.mozilla.org/apps/firefox_desktop/metrics/characteristics_zoom_count"
+      icon_url: "https://dictionary.telemetry.mozilla.org/favicon.png"
+    }
+
+    description: "Number of domains the users has a non-default zoom level.
 "
   }
 

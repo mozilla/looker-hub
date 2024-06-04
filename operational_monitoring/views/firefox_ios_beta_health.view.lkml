@@ -19,6 +19,11 @@ view: firefox_ios_beta_health {
     type: string
   }
 
+  dimension: channel {
+    sql: ${TABLE}.channel ;;
+    type: string
+  }
+
   dimension: metric {
     sql: ${TABLE}.metric ;;
     type: string
