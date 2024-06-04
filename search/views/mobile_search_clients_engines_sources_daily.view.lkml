@@ -166,6 +166,11 @@ view: mobile_search_clients_engines_sources_daily {
     type: number
   }
 
+  dimension: search_with_ads_organic {
+    sql: ${TABLE}.search_with_ads_organic ;;
+    type: number
+  }
+
   dimension: source {
     sql: ${TABLE}.source ;;
     type: string
